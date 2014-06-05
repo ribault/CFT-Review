@@ -127,7 +127,7 @@ The book \cite{zz90} by A. and Al. Zamoldochikov is in spirit quite close to thi
 \item
 Non-rational theories are covered in a review by V. Schomerus \cite{sch05}. That article uses multiple approaches, and pays particular attention to boundary conformal field theory, with applications to string theory in mind. 
 \item
-The Big Yellow Book \cite{fms97} is a useful reference, especially on rational conformal field theories. As its epic length suggests, it is more encyclopedic than pedagogic. 
+The Big Yellow Book \cite{fms97} is a useful reference, especially on rational conformal field theories. As its epic length suggests, it is rather encyclopedic. 
 \item
 The encyclopedic approach was extended in the direction of Liouville theory by Nakayama's review \cite{nak04}, which includes systematic guides to the literature.
 \item 
@@ -1103,11 +1103,12 @@ L_2 |\chi \rangle &= \left(6\Delta a_{1,1}+(4\Delta+\tfrac12 c) a_2\right)|\Delt
 \end{align}
 The vanishing of these two vectors leads to a system of two linear equations for the two unknowns $(a_{1,1},a_2)$, whose determinant is 
 \begin{align}
- D_2 = 4(2\Delta+1)^2 +(c-13)(2\Delta+1) +9\ . 
+ D_2(\Delta) = 4(2\Delta+1)^2 +(c-13)(2\Delta+1) +9\ . 
+\label{dud}
 \end{align}
 Singular vectors at the level $N=2$ exist if and only if
 \begin{align}
-D_2=0 \quad \Leftrightarrow \quad \Delta = \frac{5-c\pm \sqrt{(c-25)(c-1)}}{16}\ .
+D_2(\Delta)=0 \quad \Leftrightarrow \quad \Delta = \frac{5-c\pm \sqrt{(c-25)(c-1)}}{16}\ .
 \label{dcscc}
 \end{align}
 As our last explicit example, we look for a singular vector at the level $N=3$,
@@ -1122,11 +1123,11 @@ L_2|\chi\rangle &= \left((18\Delta+6)a_{1,1,1}+(4\Delta+\tfrac12c +9)a_{1,2}+5a_
 \end{align}
 This leads to a system of three linear equations for the three unknowns $(a_{1,1,1},a_{1,2},a_3)$, whose determinant is
 \begin{align}
- D_3 = 12\Big(3(\Delta+1)^2+(c-13)(\Delta+1)+12\Big)\ .
+ D_3(\Delta) = 12\Big(3(\Delta+1)^2+(c-13)(\Delta+1)+12\Big)\ .
 \end{align}
 Singular vectors at the level $N=3$ exist if and only if 
 \begin{align}
- D_3 = 0 \quad \Leftrightarrow \quad \Delta = \frac{7-c\pm\sqrt{(c-25)(c-1)}}{6}\ .
+ D_3(\Delta) = 0 \quad \Leftrightarrow \quad \Delta = \frac{7-c\pm\sqrt{(c-25)(c-1)}}{6}\ .
 \end{align}
 
 Such formulas can be simplified by the introduction of the Liouville notations for $c$ and $\Delta$. We actually introduce two new notations for the central charge $c$: the \textbf{\boldmath background charge}\index{background charge} $Q$ and the \textbf{\boldmath Liouville coupling constant}\index{Liouville coupling constant} $b$,
@@ -1995,12 +1996,28 @@ To begin with, let us show how an $s$-channel conformal block can be expressed i
 \begin{align}
  \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i) = \sum_{L_s\in\mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta_s,L_s} g^{L_s}_{\Delta_s,\Delta_3,\Delta_4}(z_2,z_3,z_4)z_{12}^{|L_s|+\Delta_s-\Delta_1-\Delta_2}\mathcal{F}^{(3)}(\Delta_s,\Delta_3,\Delta_4|z_2,z_3,z_4)\ .
 \end{align}
-Thanks to global conformal symmetry, we can restrict our attention to $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x)=\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x,0,\infty,1)$, from which $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$ can be reconstructed using eqs. (\ref{zgg}) and (\ref{fx}).  This simplifies the computation of the conformal block:
+Thanks to global conformal symmetry, we can restrict our attention to 
+\begin{align}
+ \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x)=\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x,0,\infty,1)\ ,
+\end{align}
+from which $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$ can be reconstructed using eqs. (\ref{zgg}) and (\ref{fx}).  This simplifies the computation of the conformal block:
 \begin{align}
  \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) = \sum_{L_s\in\mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta_s,L_s} g^{L_s}_{\Delta_s,\Delta_3,\Delta_4}x^{|L_s|+\Delta_s-\Delta_1-\Delta_2}\ ,
 \label{gsd}
 \end{align}
-where we defined $g^{L_s}_{\Delta_s,\Delta_3,\Delta_4} = g^{L_s}_{\Delta_s,\Delta_3,\Delta_4}(0,\infty,1)$.
+where we defined $g^{L_s}_{\Delta_s,\Delta_3,\Delta_4} = g^{L_s}_{\Delta_s,\Delta_3,\Delta_4}(0,\infty,1)$. Explicitly, using eqs. (\ref{flfo})-(\ref{fo}) for $f_{\Delta_1,\Delta_2}^{\Delta_s,L_s}$ and eqs. (\ref{glp})-(\ref{glt}) for $g^{L_s}_{\Delta_s,\Delta_3,\Delta_4}$, we find 
+\begin{multline}
+ \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) 
+= x^{\Delta_s - \Delta_1 - \Delta_2}\Bigg\{ 1 
++ \frac{(\Delta_s+\Delta_1-\Delta_2)(\Delta_s+\Delta_4-\Delta_3)}{2\Delta_s} x  
+\\
++ \frac{1}{D_2(\Delta_s)}
+\begin{bmatrix} (\Delta_s+\Delta_1-\Delta_2)_2 \\ \Delta_s+2\Delta_1-\Delta_2 \end{bmatrix}^T
+\begin{bmatrix} 2+\frac{c}{4\Delta_s} & -3 \\ -3 & 4\Delta_s+2 \end{bmatrix}
+\begin{bmatrix} (\Delta_s+\Delta_4-\Delta_3)_2 \\ \Delta_s+2\Delta_4-\Delta_3 \end{bmatrix}
+ x^2 + O(x^3)\Bigg\}\ ,
+\end{multline}
+where the level-$2$ determinant $D_2(\Delta_s)$ was defined in eq. (\ref{dud}). 
 Once $s$-channel blocks are known, $t$-channel blocks can be obtained by a permutation of the arguments, as suggested by the diagrammatic notations,
 \begin{align}
  \mathcal{F}^{(t)}_{\Delta_t}(\Delta_1,\Delta_2,\Delta_3,\Delta_4|z_1,z_2,z_3,z_4) = \mathcal{F}^{(s)}_{\Delta_t}(\Delta_2,\Delta_3,\Delta_4,\Delta_1|z_2,z_3,z_4,z_1)\ . 
@@ -2010,6 +2027,7 @@ Taking global conformal symmetry into account, this becomes
 \begin{align}
  \mathcal{F}^{(t)}_{\Delta_t}(\Delta_1,\Delta_2,\Delta_3,\Delta_4|x) = (1-x)^{\Delta_2+\Delta_3-\Delta_1-\Delta_4}\mathcal{F}^{(s)}_{\Delta_t}(\Delta_2,\Delta_3,\Delta_4,\Delta_1|1-x)\ .
 \end{align}
+
 For practical computations of conformal blocks, the formula (\ref{gsd}) is not very efficient: the number of terms grows quickly with the level $|L_s|$, and the cofficients $f_{\Delta_1,\Delta_2}^{\Delta_s,L_s} g^{L_s}_{\Delta_s,\Delta_3,\Delta_4}$ are not known explicitly.
 Fortunately, there is also Al. Zamolodchikov's recursion representation \cite{zz90}
 \begin{align}
@@ -2957,10 +2975,8 @@ Analyticity in $b$ then determines Liouville theory in the whole domain where th
  c\notin ]-\infty,1] \ .
 \label{cnot}
 \end{align}
-Actually, Liouville theory has an unambiguous $c\rightarrow 1$ limit \cite{sch03}. On the other hand, the $c\rightarrow c_0\in ]-\infty,-1[$ limit is ill-defined \cite{zam05}. In particular, we obtain a unique definition of Liouville theory in the whole domain permitted by unitarity,
-\begin{align}
- c\in [1,\infty[\ .
-\end{align}
+Actually, Liouville theory has an unambiguous $c\rightarrow 1$ limit \cite{sch03}, so that we obtain a unique definition of Liouville theory in the whole domain $c\in [1,\infty[$ permitted by unitarity.
+On the other hand, the $c\rightarrow c_0\in ]-\infty,-1[$ limit is ill-defined \cite{zam05}. 
 
 There is little doubt that Liouville theory exists for $c\geq 25$, in view of the unicity of the three-point structure constant, and of the relevance of Liouville theory to two-dimensional quantum gravity (reviewed in \cite{zam05}). While these two considerations no longer hold for $1\leq c < 25$, analyticity in $b$ suggests that the theory still exists. The associativity of the OPE has been tested numerically for $c=1$ \cite{rw01} and $c=13$ \cite{zz95}, and more extensive numerical tests are certainly doable. In addition, there is a purported proof \cite{tes03b} of the existence of Liouville theory for $c>25$, which may actually hold for $c>1$ by analytic continuation. But this proof has not received the attention and thorough checking it deserves, and is not universally accepted.
 
