@@ -1,5 +1,13 @@
+%%%%%%%%%%%%%%%%%%% README %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% For the 'pst-all' and 'hyperref' packages to work 
+% as intended, this file should be compiled as follows:
 
+% tex -> dvi -> ps -> pdf
+
+% In particular, PDFLatex won't work with 'pst-all'.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[12pt,a4paper,notitlepage]{report}
 
@@ -31,7 +39,6 @@
 
 \usepackage{verbatim}
 
-% For the pstricks pictures to work we need to do dvi -> ps -> pdf 
 \usepackage{pst-all}
 
 \numberwithin{equation}{section}
@@ -47,12 +54,8 @@
 \theoremstyle{break}    
 \newtheorem{exo}{Exercise}[chapter]
 
-% For the following package to work we need to do dvi -> ps -> pdf 
 % urlcolor is set to black because unwanted url links appear in the bibliography
 \usepackage[colorlinks=true,linktoc=all,linkcolor=black,citecolor=red,urlcolor=blue]{hyperref}
-
-%This cures some underfull vboxes.
-%\raggedbottom
 
 \title{\bfseries Conformal field theory on the plane}
 
@@ -78,6 +81,11 @@ We provide an introduction to conformal field theory on the plane in the conform
 \noindent conformal field theory, conformal bootstrap, Virasoro algebra, BPZ equations, Liouville theory, minimal models, free bosons,
 KZ equations, KZ-BPZ relation, $H_3^+$ model, WZW models
 
+\vspace{1cm}
+\begin{center}
+\textbf{Public domain notice}
+\end{center}
+\noindent To the extent possible under law, Sylvain Ribault has waived all copyright and related or neighboring rights to this text.
 
 \tableofcontents
 \hypersetup{linkcolor=blue}
@@ -93,9 +101,9 @@ As an introduction to two-dimensional conformal field theory, this text has the 
 Another advantage of the bootstrap approach is that by making assumptions explicit, we can better understand them, and if necessary lift them. For example, results such as the C-theorem, and the fact that scale invariance implies conformal invariance in two-dimensional unitary quantum field theories, rely on the strong assumption that there exists an energy-momentum tensor -- a conserved field with spin two and conformal dimension two, which generates conformal transformations. We will not lift this assumption, as we will study theories with local (i.e. not just global) conformal invariance, which therefore always have an energy-momentum tensor.
 
 We will however lift a number of other common assumptions, in particular the existence of a vacuum state, and the existence of theories on any Riemann surface (and not just on the plane). It would be interesting to investigate how this affects the set of possible models, and in particular the classification of minimal models. It is however mainly for the sake of generality and simplicity that
-we will lift these assumptions. We will indeed be studying not only rational, but also non-rational theories such as Liouville theory. But non-rational theories do not necessarily have a vacuum state, and assuming their consistency on the torus is of little help for determining their spectrums. 
+we will lift these assumptions. We will indeed be studying not only rational, but also non-rational theories such as Liouville theory. Non-rational theories do not necessarily have a vacuum state, and assuming their consistency on the torus is of little help for determining their spectrums. 
 
-Rational conformal field theories are usually considered as simpler, as their spectrums are made of finitely many representations. However, in order to ensure closure under fusion, these representations must have complicated structures. In Liouville theory, the spectrum is made of a continuum of representations, but these representations are merely Verma modules, so we will study this theory first. Then we will study minimal models, which are rational and therefore less generic and more complicated. Even later will come free theories: since we do not do use a perturbative approach, they do not play any fundamental role. 
+By definition, rational conformal field theories are have spectrums made of finitely many representations. However, in order to ensure closure under fusion, these representations must have complicated structures. In Liouville theory, the spectrum is made of a continuum of representations, but these representations are merely Verma modules, so we will study this theory first. Then we will study minimal models, which are rational and therefore less generic and more complicated. Even later will come free theories: since we do not do use a perturbative approach, they do not play any fundamental role. 
 
 
 \section{Plan of the article \label{secplan}}
@@ -133,7 +141,7 @@ The encyclopedic approach was extended in the direction of Liouville theory by N
 \item 
 On the more pedagogical side, Gaberdiel's review \cite{gab99} provides a consistent exposition using vertex operators, which mathematically formalize the conformal bootstrap approach. That text deals more with the symmetry algebras and their representations, than with correlation functions. Examples include logarithmic theories, but no non-rational theories.
 \item
-Motivations and applications are mostly absent from the present text. On the statistical mechanics side, they are given in Cardy's lecture notes \cite{car08}, which also provides a concise introduction to the formalism.
+Motivations and applications are mostly absent from the present text. On the statistical mechanics side, they are given in Cardy's lecture notes \cite{car08}, which also provide a concise introduction to the formalism.
 \item 
 $W$-symmetry is studied in depth in \cite{bs92}, where $W$-symmetric conformal field theories are however not solved systematically. An exposition of the $W$-symmetric minimal models and conformal Toda theories would be a natural extension of the present article, although these theories have not been fully solved so far. 
 \end{itemize}
@@ -162,7 +170,7 @@ This review article is intended as a tool for learning, and as a collection of t
 \item clarity and completeness (this often favours review articles over original works),
 \item my familiarity with the cited works (admittedly this favours my own works). 
 \end{enumerate}
-Citations are only one tool for accessing other texts on the subject. 
+Citations are only one tool for finding more information on the subject. 
 The reader is assumed to have access to other tools such as Google and Wikipedia. 
 To facilitate searches, an effort has been made to use standard terminology and notations. 
 
@@ -170,8 +178,8 @@ Traditional scientific articles, with their frozen texts and authors, are obviou
 \href{http://researchpracticesandtools.blogspot.fr/2014/02/the-case-for-emancipating-articles-from.html}
 {reused and modified by others}. For this purpose:
 \begin{itemize}
- \item This text will be in the public domain, in order to eliminate legal restrictions to its reuse. 
-\item This article will be distributed not only using Arxiv, but also using GitHub, so that it can be collaboratively modified. 
+ \item This text is in the public domain, in order to eliminate legal restrictions to its reuse. 
+\item This article is distributed not only using Arxiv, but also using GitHub, so that it can be collaboratively modified. 
 \item In the Latex file, there are no user-defined macros. This makes it easier to reuse excerpts of that file. 
 \end{itemize}
 
@@ -192,7 +200,7 @@ I am grateful to Fran\c{c}ois David, Quang-Dien Duong and Raoul Santachiara for 
 
 Remove all macros. Write blogpost on macrem, link to it.
 
-Public domain, Arxiv announcement: replace future with present tense.
+Public domain, Arxiv announcement: add links?
 
 Do \verb+\ref -> \eqref+ using a script.
 
@@ -203,17 +211,9 @@ Import bibliography into file.
 Do \verb+$ -> \(+: beware that this may be tricky in titles and footnotes, where the command \verb+\(+ might have to be protected.
 Can use Andrew Stacey's perl scripts: debuck and mathgrep. But only dollar delimiters work in the IPython Notebook!
 
-Write README preamble stating how to compile (no PDFLatex!)
-
 After removing \verb+\bla , \ela+ macros, adjust arraystretch for the resulting arrays? 
 
-Proofreaders: general email asking for volunteers, as pilot project for lecture notes? Babelon? Richard? 
-
-Add explicit CC0 text on title page. 
-
 List good Latex practices in some other file.
-
-Delete versioning info.
 
 %\end{comment}
 
@@ -3003,7 +3003,8 @@ the reflection relation (\ref{crc}), as follows from the identity
  R(\alpha)=\left[(ib)^{\frac{2}{b}-2b}\mu\right]^{Q-2\alpha}\frac{\hat{\Upsilon}_b(2\alpha)}{\hat{\Upsilon}_b(2\alpha-Q)}\ .
 \end{align}
 The function $\hat{C}_{\alpha_1,\alpha_2,\alpha_3}$ provides a natural analytic continuation of the three-point function of generalized minimal models (\ref{crisi}), and of certain Coulomb gas integrals (\ref{mint}). But is it the three-point structure constant of a consistent conformal field theory? Probably not in the $b^2\notin\R$ domain: even if we have several solutions of eq. (\ref{fcc}) and its 
-$b\rightarrow \frac{1}{b}$ dual, it is highly unlikely that we have more than one solution of the infinitely many extra equations of OPE associativity, and Liouville theory already provides one solution. However, for $b\in i\R$ i.e. $c<1$, there is no Liouville theory, and it is natural to conjecture that $\hat{C}_{\alpha_1,\alpha_2,\alpha_3}$ is the three-point function of a consistent theory, which is sometimes called \textbf{timelike Liouville theory}\index{timelike Liouville theory}. It is however not obvious what the spectrum of that theory is supposed to be. The natural guess is that the spectrum is given by eq. (\ref{aqd}), just like the spectrum of Liouville theory. Integrating on this spectrum for computing a four-point function as in eq. (\ref{fsd}), we meet singularities of the structure constants and conformal blocks, so the integral must somehow be regularized. Such issues with singularities are inevitable: if they were absent, we could analytically continue the theory to the whole $b\notin \R$ domain, which would contradict our considerations on unicity.
+$b\rightarrow \frac{1}{b}$ dual, it is unlikely that we have more than one solution of the infinitely many extra equations of OPE associativity, and Liouville theory already provides one solution. However, for $b\in i\R$ i.e. $c<1$, there is no Liouville theory, and it is natural to conjecture that $\hat{C}_{\alpha_1,\alpha_2,\alpha_3}$ is the three-point function of a consistent theory, which is sometimes called \textbf{timelike Liouville theory}\index{timelike Liouville theory}. It is however not obvious what the spectrum of that theory is supposed to be. The natural guess is that the spectrum is given by eq. (\ref{aqd}), just like the spectrum of Liouville theory. Integrating on this spectrum for computing a four-point function as in eq. (\ref{fsd}), we meet singularities of the structure constants and conformal blocks, so the integral must somehow be regularized. Such issues with singularities are inevitable: if they were absent, we could analytically continue the theory to the whole $b\notin \R$ 
+domain, which would contradict our considerations on unicity.
 
 
 \section{Minimal models \label{secvmm}}
