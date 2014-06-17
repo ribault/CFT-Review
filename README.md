@@ -14,6 +14,10 @@ To have the article on GitHub could already be useful by enabling readers to dir
 without having to go through the author. The hope is however that more substantial contributions will be made. 
 (If this occurs, it may become necessary to modify the authorship of the resulting text.) 
 
+For some indications on how to compile this article, see the comments in the Latex source file cft33.tex. 
+The necessary Latex packages are all standard except maybe underbracket.sty, which had to be included
+in the source files for Arxiv. 
+
 The BIB file contains hundreds of references, many more than are really used. 
 The superfluous references have not been removed, because some of them could be useful later, 
 in particular for versions that would include guides to the literature. 
