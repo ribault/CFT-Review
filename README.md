@@ -4,7 +4,7 @@ CFT-Review
 A review article on conformal field theory
 
 
-Why would a review article on theoretical physics end up on GitHub, and not just on Arxiv? 
+Why would a review article on theoretical physics end up on GitHub, and not just on [Arxiv](http://arxiv.org/abs/1406.4290)? 
 The idea is that review articles would be better if they were collaboratively written. 
 An interesting experiment was done with the [review of AdS/CFT integrability](http://arxiv.org/abs/arXiv:1012.3982), 
 where dozens of authors each contributed a relatively small piece. Here we test another approach: 
