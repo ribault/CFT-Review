@@ -228,7 +228,7 @@ I have tried to follow some stylistic good practices, such as: numbering all equ
 
 \section{Acknowledgements}
 
-I am grateful to my colleagues at IPhT Saclay, and in particular to Antoine Duval, Riccardo Guida, Vincent Pasquier and Pierre Ronceray, for the opportunity to give lectures on this subject, and for the exchanges that took place during the lectures.
+I am grateful to my colleagues at IPhT Saclay, and in particular to Antoine Duval, Riccardo Guida, Vincent Pasquier and Pierre Ronceray, for the opportunity to give lectures on this subject. I am also grateful to the organizers and participants to the 10th APCTP Focus Program on Liouville, Integrability and Branes in Pohang, and in particular to Soojong Rey, for including my lectures in an otherwise very advanced workshop. 
 
 I wish to thank Philippe Di Francesco, Matthias Gaberdiel, Slava Rychkov and G\'erard Watts for useful discussions and correspondence.
 
@@ -379,20 +379,21 @@ We will now explore in turn the symmetry assumptions and consistency conditions 
 
 \subsection{Symmetry assumptions \label{secsa}}
 
-If a model of quantum field theory has a symmetry algebra, then the spectrum $S$ must have a decomposition into representations of this algebra:
+If a model of quantum field theory has a symmetry algebra, then the spectrum $S$ must be a representation of this algebra, and can therefore be written as
 \begin{align}
- S = \bigoplus_R m_R  R\ ,\
+ S = \bigoplus_R m_R  R\ .\
 \label{somr}
 \end{align}
-where the number $m_R \in {\mathbb{N}}\cup\{\infty\}$ is the \textbf{\boldmath multiplicity}\index{multiplicity} of the representation $R$ of the algebra in the spectrum $S$.
+Here we have decomposed $S$ as a combination of some basic representations $R$ of the symmetry algebra, and the number $m_R \in {\mathbb{N}}\cup\{\infty\}$ is the \textbf{\boldmath multiplicity}\index{multiplicity} of the representation $R$ in the spectrum $S$.
 A state $\sigma$ in the spectrum can then be written as 
 \begin{align}
  \sigma = (R,v)\ ,
 \label{arv}
 \end{align}
 where $v$ is a state in the representation $R$, and the corresponding field can be written as 
-$V_\sigma(x)= V_{(R,v)}(x)$.
-The idea is that the dependence of a correlation function $\left\langle \prod_{i=1}^n V_{(R_i,v_i)}(x_i)\right\rangle$ on $v_i$ is determined by symmetry considerations, whereas the dependence on $R_i$ is constrained by consistency conditions.
+$V_\sigma(x)= V_{(R,v)}(x)$. For example, for any spin $j\in \frac12 \mathbb{N}$ the algebra $\mathfrak{sl}_2$ has a representation of dimension $2j+1$, whose states $\sigma = (j,m)$ can be labelled by their magnetic momentums $m\in\{-j, -j+1,\cdots j\}$.
+
+The idea is now that the dependence of a correlation function $\left\langle \prod_{i=1}^n V_{(R_i,v_i)}(x_i)\right\rangle$ on $v_i$ is determined by symmetry considerations, whereas the dependence on $R_i$ is constrained by consistency conditions.
 This idea however comes with a number of technical assumptions.
 In particular, for the dependence on $v_i$ to be completely determined by symmetry, $R_i$ must be an \textbf{\boldmath indecomposable representation}\index{indecomposable representation}, which cannot be written as a direct sum of smaller representations.
 \begin{align}
@@ -533,29 +534,15 @@ The number $N_{R_1R_2}^{R_3}\in {\mathbb{N}} \cup \{\infty\}$ of independent sol
 \end{align}
 The fusion rule is a representation-theoretic notion which encodes some of the universal properties of the OPE.
 In particular, the field $V_{\sigma_3}$ can appear in a $V_{\sigma_1}V_{\sigma_2}$ OPE only if $N_{R_1R_2}^{R_3}\neq 0$.
+
 It is actually possible to define an associative product of representations, called the \textbf{\boldmath fusion product}\index{fusion product}, such that eq. \eqref{rrnr} is the decomposition of the representation $R_1\times R_2$ into indecomposable representations. (See \cite{gab99} for the case of two-dimensional conformal field theory.) 
 The fusion product $R_1\times R_2$ is said to have nontrivial multiplicities if $N_{R_1R_2}^{R_3}\geq 2$ for some $R_3$, and trivial multiplicities if $N_{R_1R_2}^{R_3}\in \{0,1\}$, in which case the sum over $\lambda$ in eq. \eqref{clcf} can be omitted.
 A field is called a \textbf{\boldmath simple current}\index{simple current} if the corresponding representation $R$ is such that $R\times R'$ is indecomposable for any $R'$, so that $\sum_{R''} N_{RR'}^{R''} =1$. 
+The fusion product may seem quite similar to a tensor product, but there is an essential difference: while the tensor product is a purely algebraic notion, the definition of the fusion product involves the state-field correspondence, and therefore the space on which the field theory lives. 
 
-Using the decomposition \eqref{clcf} of the OPE coefficients, 
-the left-hand side of the 
-associativity equation \eqref{cccc} becomes
-\begin{multline}
- \sum_{\sigma_s\in S} C_{\sigma_1,\sigma_2}^{\sigma_s}(x_1,x_2) C_{\sigma_s,\sigma_3}^{\sigma_4}(x_2,x_3) 
-= \sum_{R_s}\sum_{\lambda=1}^{N_{R_1R_2}^{R_s}} \sum_{\mu=1}^{N_{R_sR_3}^{R_4}} C_{R_1,R_2}^{R_s,\lambda}(x_1,x_2) C_{R_s,R_3}^{R_4,\mu}(x_2,x_3)
-\\ 
-\times 
-\mathcal{F}^{R_s,\lambda,\mu}_{R_1,R_2,R_3,R_4}(v_1,v_2,v_3,v_4|x_1,x_2,x_3)\ ,
-\label{scce}
-\end{multline}
-where we define 
-\begin{align}
- \mathcal{F}^{R_s,\lambda,\mu}_{R_1,R_2,R_3,R_4}(v_1,v_2,v_3,v_4|x_1,x_2,x_3) = \sum_{v_s\in R_s} f_{R_1,R_2}^{R_s,\lambda}(v_1,v_2,v_s|x_1,x_2) f_{R_s,R_3}^{R_4,\mu}(v_s,v_3,v_4|x_2,x_3) \ .
-\end{align}
-This universal object is a sum over the states $v_s$ in a representation $R_s$ -- just like the character of $R_s$, or the conformal blocks which we will introduce in Section \ref{secaco}.
-Assuming this object is known, the sum over $\sigma_s=(R_s,v_s)$ in the associativity equation therefore reduces to a sum over $R_s$.
-If the symmetry algebra is large enough or the model simple enough, the number of representations $R_s$ in the spectrum can be small enough for the associativity equation to become tractable.
-In this case, the structure functions $C_{R_1,R_2}^{R_3,\lambda}(x_1,x_2)$ can be determined, and all the correlation functions computed, so that the model is solved.
+Using the decomposition \eqref{clcf} of the OPE coefficients, where we assume that $f_{R_1,R_2}^{R_3,\lambda}(v_i|x_j)$ is known, the 
+associativity equation \eqref{cccc} reduces to an equation for the structure function $C_{R_1,R_2}^{R_3,\lambda}(x_1,x_2)$, and the sums over states $\sigma_s$ and $\sigma_t$ reduce to sums over representations $R_s$ and $R_t$.
+If the symmetry algebra is large enough or the model simple enough, the number of representations in the spectrum can be small enough for the associativity equation to become tractable.
 To summarize,
 \begin{center}
 \fbox{
@@ -741,8 +728,9 @@ Another example is the long-range Ising model.
 
 In a quantum field theory with conformal symmetry, the spectrum is not a representation of the Witt algebra, but of 
 its central extension, called the \textbf{\boldmath Virasoro algebra}\index{Virasoro algebra} $\mathfrak{V}$.
-This is a general phenomenon in quantum theories: since states are defined up to scalar factors, the spectrum is a projective representation of any symmetry algebra, which is the same as an ordinary representation of the corresponding centrally extended algebra. 
-In our case, the Virasoro algebra is defined by the generators $(L_n)_{n\in {\mathbb{Z}}}$ and the commutation relations
+This is a general phenomenon in quantum theories: since states are defined up to scalar factors, the action of a symmetry group on space, which obeys $g\cdot(g'\cdot x) = (gg')\cdot x$, need only translate into a projective action on states, which obeys $g\cdot(g'\cdot|\sigma\rangle) = \lambda(g,g') (gg')\cdot |\sigma\rangle$ for some scalar factor $\lambda(g,g')$. 
+And a projective action of a symmetry algebra is equivalent to an action of the corresponding centrally-extended algebra. 
+So, the Virasoro algebra is defined by the generators $(L_n)_{n\in {\mathbb{Z}}}$, which correspond to the generators $(\ell_n)_{n\in \mathbb{Z}}$ of the Witt algebra, and the centrally-extended commutation relations
 \begin{align}
  \boxed{[L_n,L_m]=(n-m)L_{n+m} + \frac{c}{12} (n-1)n(n+1) \delta_{n+m,0}}\ .
 \label{vir}
@@ -790,25 +778,21 @@ We thus reach a definition of
 \begin{center}
 \fbox{
 \begin{minipage}{0.9\textwidth}
-Two-dimensional \textbf{\boldmath conformal field theory}\index{conformal field theory}: the study of two-dimensional quantum field theories which possess a $\mathfrak{V}\times \overline{\mathfrak{V}}$ symmetry algebra such that $L_n$ and $\bar{L}_n$ with $|n|\leq 1$ can be interpreted as the generators of global conformal transformations. 
+Two-dimensional \textbf{\boldmath conformal field theory}\index{conformal field theory}: the study of two-dimensional quantum field theories which possess a $\mathfrak{V}\times \overline{\mathfrak{V}}$ symmetry algebra such that $L_n$ and $\bar{L}_n$ generate conformal transformations. 
 \end{minipage}
 }
 \end{center}
-The assumption about the geometrical interpretation of $L_n$ and $\bar{L}_n$ with $|n|\leq 1$ is very important, as it is the only link between the symmetry algebra and the two-dimensional space.
+The assumption about the geometrical interpretation of $L_n$ and $\bar{L}_n$ is very important, as it is the only link between the symmetry algebra and the two-dimensional space.
 Some conformal field theories have several Virasoro symmetry algebras, only one of which corresponds to conformal symmetry.
 In the free boson theory, it is even possible to find Virasoro algebras with all possible values of the central charge. (See Section \ref{secaua}.)
 
 
 \section{Basic consequences of conformal symmetry}
 
-Having explained and motivated the symmetry assumptions which define two-dimensional conformal field theory, we will explore some of their consequences.
-We will follow the principles of the bootstrap approach, as enumerated in Section \ref{secprin}: we will start with the direct consequences of conformal symmetry on the structure of the spectrum, then comment on the form of the consistency conditions in the presence of conformal symmetry, and finally introduce the models which have the simplest spectrums -- minimal models and Liouville theory. 
-
 \subsection{Structure of the spectrum \label{secsots}}
 
-If a model has a $\mathfrak{V}\times \overline{\mathfrak{V}}$ symmetry algebra, then the spectrum $S$ must have a decomposition into representations of this algebra.
-From any two representations $R,R'$ of $\mathfrak{V}$, we can build a factorized representation $R\otimes \bar{R'}$ of the full symmetry algebra $\mathfrak{V}\times \overline{\mathfrak{V}}$. (The bar in $\overline{\mathfrak{V}}$ and $\bar{R'}$ is only meant to distinguished right-moving from left-moving objects, but as algebraic objects we have $\overline{\mathfrak{V}}=\mathfrak{V}$ and $\bar{R'} = R'$.)
-We assume that the spectrum is a combination of such factorized representations, and the decomposition \eqref{somr} takes the form
+We know that the spectrum $S$ must be a representation of the 
+$\mathfrak{V}\times \overline{\mathfrak{V}}$ symmetry algebra, and let us further assume that $S$ is a combination of factorized representations of the type $R\otimes \bar{R'}$, where $R$ and $R'$ are representations of $\mathfrak{V}$, and the bar in $\overline{\mathfrak{V}}$ and $\bar{R'}$ is only meant to distinguish right-moving from left-moving objects. Then the decomposition \eqref{somr} takes the form
 \begin{align}
  \boxed{S = \bigoplus_{(R,R')\in Rep(\mathfrak{V})^2} m_{R,R'} R\otimes \bar{R'}}\ ,
 \label{sorr}
@@ -836,13 +820,11 @@ There are two similar-looking axioms, which should not be adopted:
 \end{itemize}
 
 In order to characterize the action of the symmetry algebra on the spectrum, we need not only decompose the spectrum into representations of that algebra, but also know how the symmetry generators $L_n$ behave under the scalar product, in other words what are their Hermitian conjugates $L_n^\dagger$.
-We will deduce this from the geometrical interpretation of $L_n$ as a conformal transformation.
-Strictly speaking, this interpretation is only valid at $c=0$, but we will assume that the result does not change if $c\neq 0$.
-So, our expression \eqref{elln} for $\ell_n$ as a differential operator originated from expanding the infinitesimal parameter $\epsilon(z)$ of a conformal transformation as a Laurent series around $z=0$ as in eq. \eqref{sen}.
-Therefore, as a differential operator, $\ell_n$ acts on the space of analytic functions on ${\mathbb{C}}-\{0\}$, whose basis is $\{z^p\}_{p\in{\mathbb{Z}}}$.
+Let us first consider the case of the generators $\ell_n$ \eqref{elln} of the Witt algebra.  
+As a differential operator, $\ell_n$ acts on the space of analytic functions on ${\mathbb{C}}-\{0\}$, whose basis is $\{z^p\}_{p\in{\mathbb{Z}}}$.
 The natural scalar product on this space is 
 \begin{align}
- \langle f|g\rangle = -\frac{1}{2\pi i}\int_0^{2\pi}d\theta\  \overline{f(e^{i\theta})} {\frac{\partial}{\partial 	heta}} g(e^{i\theta}) \quad \Rightarrow \quad \langle z^p| z^q \rangle = -p\delta_{p,q}\ .
+ \langle f|g\rangle = -\frac{1}{2\pi i}\int_0^{2\pi}d\theta\  \overline{f(e^{i\theta})} {\frac{\partial}{\partial \theta}} g(e^{i\theta}) \quad \Rightarrow \quad \langle z^p| z^q \rangle = -p\delta_{p,q}\ .
 \label{fgd}
 \end{align}
 This scalar product, which is a fixed radius integral, comes from the idea of \textbf{\boldmath radial quantization}\index{radial quantization}: the radial direction is considered as the time direction, and the dilatation operator $\ell_0$ as the Hamiltonian, which is Hermitian i.e. $\ell_0^\dagger = \ell_0$.
@@ -908,23 +890,11 @@ The application of the bootstrap approach to conformal field theories, called th
 is particularly powerful in two dimensions.
 This is because the algebra of conformal transformations is infinite dimensional, 
 so that the spectrum can be decomposed into a small number of large representations.
-Moreover, the factorization of the symmetry algebra into two copies of the Virasoro algebra has important consequences, which we will now sketch. 
-
-Let us study the structure of an OPE coefficient in two-dimensional conformal field theory.
-A state $\sigma\in S$ is written as $\sigma = ((R,R'),(v,v'))$, where $R\otimes \bar{R}'$ is a representation of  $\mathfrak{V}\times \overline{\mathfrak{V}}$, with $v\in R$ and $v'\in R'$. 
-A position is written in complex coordinates as $x=(z,\bar{z})$.
-Moreover, the fusion of Virasoro representations has trivial multiplicities, as we will show in Section \ref{secope}. 
-Then the decomposition \eqref{clcf} of an OPE coefficient into model-dependent and universal data becomes
-\begin{multline}
- C^{((R_1,R'_1),(v_1,v'_1))}_{((R_2,R'_2),(v_2,v'_2)),((R_3,R'_3),(v_3,v'_3))}((z_1,\bar{z}_1),(z_2,\bar{z}_2)) 
-\\
-= C^{(R_3,R'_3)}_{(R_1,R'_1),(R_2,R'_2)}((z_1,\bar{z}_1),(z_2,\bar{z}_2)) f^{R_3}_{R_1,R_2}(v_1,v_2,v_3|z_1,z_2) f^{R'_3}_{R'_1,R'_2}(v'_1,v'_2,v'_3|\bar{z}_1,\bar{z}_2) \ ,
-\label{ccff}
-\end{multline}
-where $x_i=(z_i,\bar{z}_i)$.
-In words, the universal factor in the OPE coefficient factorizes into holomorphic and antiholomorphic factors, because the symmetry equations for the OPE coefficient factorize into holomorphic equations from the left-moving Virasoro algebra, and antiholomorphic equations from the right-moving Virasoro algebra.
+Moreover, the factorization of the symmetry algebra into two copies of the Virasoro algebra 
+implies that symmetry equations factorize into $z$-dependent equations from the left-moving Virasoro algebra, and $\bar{z}$-dependent equations from the right-moving Virasoro algebra.
+It follows that all universal quantities, for example $f_{R_1,R_2}^{R_3,\lambda}(v_i|x_j)$ from \eqref{clcf}, can be factorized into $z$-dependent and $\bar{z}$-dependent functions. 
 This is called \textbf{\boldmath holomorphic factorization}\index{holomorphic factorization}, where the term ``holomorphic''
-should be understood as \textbf{\boldmath locally holomorphic}\index{locally holomorphic} i.e. $\bar{z}$-independent: the coefficient $f^{R_3}_{R_1,R_2}(v_1,v_2,v_3|z_1,z_2)$ can have poles and branch cuts as a function of $z_i$.
+should be understood as \textbf{\boldmath locally holomorphic}\index{locally holomorphic}: the $z$-dependent factors are supposed to be $\bar{z}$-independent, but they can have singularities such as poles and branch cuts.
 We will see in more detail in Section \ref{secaco} how holomorphic factorization simplifies the condition \eqref{cccc} of OPE associativity.
 
 In two-dimensional conformal field theory, the assumption of the existence of an OPE has a natural generalization: the assumption that on any closed contour $C$, one can insert a decomposition of the identity operator,
@@ -1800,8 +1770,7 @@ Let us contemplate the consequences of the Virasoro symmetry on the OPE of two f
 Virasoro symmetry imposes some basic constraints on the OPE:
 \begin{enumerate}
 \item we anticipate that fusion multiplicities are trivial, as we will check below,
- \item the factorization of the symmetry algebra into left-moving and right-moving factors leads to the factorization of OPE coefficients as in eq. \eqref{ccff},
- \item the OPE's universal parts, like the Ward identities, should be invariant under translations and should respect dimensional analysis \eqref{zaz},
+ \item the OPE's universal parts, like the Ward identities, should respect holomorphic factorization, invariance under translations, and dimensional analysis \eqref{zaz},
 \item we assume that the OPE of primary or descendent fields only involves primary and descendent fields -- in other words, that the set of highest-weight representations is closed under fusion. (This assumption is not as innocent as it may seem: we will see in Section \ref{secslr} that the set of affine highest-weight representations is not closed under fusion.)
 \end{enumerate}
 Taking these constraints into account, the OPE of two descendent fields can be written as
@@ -2200,10 +2169,9 @@ Only special cases of conformal blocks will be needed in the sequel, and the com
 
 We will now define \textbf{\boldmath conformal blocks}\index{conformal block} as the universal constituents of correlation functions. 
 We want correlation functions to be decomposable as combinations of the model-dependent three-point structure constant, and conformal blocks.
-In this sense, we already encountered two types of conformal blocks: two-point blocks $\mathcal{F}^{(2)}(\Delta_1|z_1,z_2)$ \eqref{fzz}, and three-point blocks $\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)$ \eqref{fzzz}.
-Higher-point conformal blocks are however much more complicated.
+In this sense, we already encountered simple examples of conformal blocks: two-point blocks $\mathcal{F}^{(2)}(\Delta_1|z_1,z_2)$ \eqref{fzz}, and three-point blocks $\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)$ \eqref{fzzz}. (On the torus, there exist nontrivial zero-point blocks, which are also known as the characters of representations.)
 
-For example, using the OPE \eqref{vvs}, together with the results of Section \ref{secgcs}, a four-point function of descendent fields of the type $V_{s,\bar{s}}(z,\bar{z})$ where $s=(\Delta,L)$ can be decomposed as 
+Using the OPE \eqref{vvs}, together with the results of Section \ref{secgcs}, a four-point function of descendent fields of the type $V_{s,\bar{s}}(z,\bar{z})$ where $s=(\Delta,L)$ can be decomposed as 
 \begin{align}
  \left\langle \prod_{i=1}^4 V_{s_i,\bar{s}_i}(z_i,\bar{z}_i)\right\rangle = \sum_{\Delta_s,\bar{\Delta}_s} C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2,\Delta_s,\bar{\Delta}_s} C_{\Delta_s,\bar{\Delta}_s,\Delta_3,\bar{\Delta}_3,\Delta_4,\bar{\Delta}_4} \left| \mathcal{F}^{(s)}_{\Delta_s}(s_i|z_i)\right|^2\ ,
 \label{fsd}
