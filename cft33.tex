@@ -1764,29 +1764,22 @@ where we use the notation
 
 \subsection{Virasoro-symmetric OPEs \label{secope}}
 
-Let us contemplate the consequences of the Virasoro symmetry on the OPE of two fields, whose general form was given in eq. \eqref{ope}.
-Virasoro symmetry imposes some basic constraints on the OPE:
-\begin{enumerate}
-\item we anticipate that fusion multiplicities are trivial, as we will check below,
- \item the OPE's universal parts, like the Ward identities, should respect holomorphic factorization, invariance under translations, and dimensional analysis \eqref{zaz},
-\item we assume that the OPE of primary or descendent fields only involves primary and descendent fields -- in other words, that the set of highest-weight representations is closed under fusion. (This assumption is not as innocent as it may seem: we will see in Section \ref{secslr} that the set of affine highest-weight representations is not closed under fusion.)
-\end{enumerate}
-Taking these constraints into account, the OPE of two descendent fields can be written as
+We make the fundamental assumption that the OPE of primary or descendent fields only involves primary and descendent fields -- in other words, that the set of highest-weight representations is closed under fusion. This assumption is not as innocent as it may seem: we will see in Section \ref{secslr} that the set of affine highest-weight representations is not closed under fusion. The fields which appear in OPEs will then be denoted as $V_{s,\bar{s}}(z,\bar{z}) = L\bar{L} V_{\Delta,\bar{\Delta}}(z,\bar{z})$, where $s=(\Delta,L)$ is made of a conformal dimension $\Delta$, and an element $L$ of the basis $\mathcal{L}$ \eqref{lels} of $U(\mathfrak{V}^+)$.
+
+We already know the general form \eqref{ope} of OPEs, and we will now see how Virasoro symmetry constrains OPE coefficients. First, we anticipate that fusion multiplicities are trivial, as we will check below. Then the OPE's universal parts, like the Ward identities, should respect holomorphic factorization, invariance under translations, and dimensional analysis \eqref{zaz}. This leads to
 \begin{multline}
  V_{s_1,\bar{s}_1}(z_1,\bar{z}_1)V_{s_2,\bar{s}_2}(z_2,\bar{z}_2) = \sum_{\Delta,\bar{\Delta}}\sum_{L,\bar{L}\in \mathcal{L}} 
  C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2}^{\Delta,\bar{\Delta}}(z_1,\bar{z}_1,z_2,\bar{z}_2)
 \\ \times
  f_{s_1,s_2}^{s} f_{\bar{s}_1,\bar{s}_2}^{\bar{s}} (z_1-z_2)^{|L|-|L_1|-|L_2|} (\bar{z}_1-\bar{z}_2)^{|\bar{L}|-|\bar{L}_1|-|\bar{L}_2|}
- V_{s,\bar{s}}(z_2,\bar{z}_2) \ ,
+ L\bar{L} V_{\Delta,\bar{\Delta}}(z_2,\bar{z}_2) \ ,
 \label{vvs}
 \end{multline}
-where we parametrize a state $\sigma = (s,\bar{s}) = ((\Delta,L),(\bar{\Delta},\bar{L}))$ in the spectrum by the conformal dimensions $\Delta,\bar{\Delta}$ and the elements $L,\bar{L}$ of the basis $\mathcal{L}$ \eqref{lels} of $U(\mathfrak{V}^+)$, whose levels $|L|$ and $|\bar{L}|$ are defined in eq. \eqref{nsn}. 
-Let us write the contributions of the left-moving descendents of $V_\Delta(z_2)$ as 
+where $f_{s_1,s_2}^s$ is a universal, $z_i$-independent coefficient. In order to study this coefficient, we will focus on the contributions of the left-moving descendents of $V_\Delta(z_2)$ for a given $\Delta$, which we schematically write as
 \begin{align}
- V_{s_1}(z_1)V_{s_2}(z_2) \sim \sum_{L\in \mathcal{L}} f_{s_1,s_2}^{\Delta,L} (z_1-z_2)^{|L|-|L_1|-|L_2|} LV_\Delta(z_2)\ ,
+ V_{s_1}(z_1)V_{s_2}(z_2) \sim \sum_{L\in \mathcal{L}} f_{s_1,s_2}^{\Delta,L} (z_1-z_2)^{|L|-|L_1|-|L_2|} LV_\Delta(z_2)\ .
 \label{vvlv}
 \end{align}
-where we project on $V_\Delta(z_2)$ and its descendents, and we omit the $L,\bar{L}$-independent factors.
 Constraints from Virasoro symmetry can be obtained by inserting $\oint_C dz\ (z-z_2)^{n+1} T(z)$ on both sides of the OPE, where the contour $C$ encircles both $z_1$ and $z_2$.
 If $n\geq -1$, the resulting constraint is 
 \begin{align}
@@ -1956,10 +1949,9 @@ f_{r_1,r_2,r_3} = \left\{\begin{array}{l}  1 \quad \text{if} \quad
 \section{Consequences of conformal symmetry \label{secem}}
 
 In Section \ref{seclin}, we have studied the linear equations which are associated to a Virasoro symmetry algebra.
-But we have not yet assumed that this Virasoro algebra corresponds to conformal transformations.
-Actually, a conformal field theory may have several Virasoro symmetry algebras, only one of which corresponds to conformal transformations.
-We will now focus on that particular algebra, whose
-Virasoro field will be called the \textbf{\boldmath energy-momentum tensor}\index{energy-momentum tensor}. 
+We now further assume that this Virasoro algebra corresponds to conformal transformations.
+The associated 
+Virasoro field will then be called the \textbf{\boldmath energy-momentum tensor}\index{energy-momentum tensor}. 
 
 \subsection{The energy-momentum tensor}
 
@@ -2178,7 +2170,7 @@ where all quantities which are not three-point structure constants have been com
 The appearance of the factorized quantity $\left| \mathcal{F}^{(s)}_{\Delta_s}(s_i|z_i)\right|^2$ is a manifestation of holomophic factorization, and the conformal block $\mathcal{F}^{(s)}_{\Delta_s}(s_i|z_i)$ is a locally holomorphic function of $z_i$. 
 
 Our decomposition of the four-point function followed from the $V_1V_2$ OPE: what if we used the $V_2V_3$ OPE instead? We would then obtain a decomposition involving \textbf{\boldmath $t$-channel}\index{t-channel@$t$-channel} four-point conformal blocks  $\mathcal{F}^{(t)}_{\Delta_t}(s_i|z_i)$.
-The equality of the two decompositions is called the \textbf{\boldmath crossing symmetry}\index{crossing symmetry} of the four-point function, which is a manifestation of the associativity of the OPE.
+The equality of the two decompositions is called the \textbf{\boldmath crossing symmetry}\index{crossing symmetry} of the four-point function.
 Introducing two diagrammatic notations for conformal blocks, 
 \begin{align}
  \mathcal{F}^{(s)}_{\Delta_s}  =  
@@ -2304,7 +2296,7 @@ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 
 = C_{23t}C_{t41} 
 F^{-1}_{\Delta_t,\Delta_s}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}
 \end{align}
-This is particularly useful, because the fusing matrix is usually a simpler object than the conformal blocks, as we will see in a particular case in Section \ref{sechcb}.
+This can be useful, because the fusing matrix is usually a simpler object than the conformal blocks, as we will see in a special case in Section \ref{sechcb}.
 Explicit formulas for $F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}$ with generic values of $\Delta_i$ can be found in \cite{tv12}.
 
 Let us sketch how conformal blocks can be computed. 
@@ -2386,16 +2378,22 @@ The recursion representation has the following properties:
 \item it is manifestly invariant under reflections of all momentums,
 \item it has no known interpretation as a sum over descendents in some basis.
 \end{itemize}
-Alternatively, conformal blocks have a combinatorial expansion which follows from the AGT relation \cite{aflt10}, and which has the opposite properties. 
+Alternatively, conformal blocks have a combinatorial representation which follows from the AGT relation \cite{aflt10}, and which has the opposite properties. 
 
-In the remainder of Section \ref{secem}, we will encounter conformal blocks which obey differential equations, as a result of the presence of degenerate fields. 
+The general crossing symmetry equation \eqref{csd}, while it may in principle determine the three-point structure constant, is in practice often intractable, because
+\begin{enumerate}
+ \item it can involve sums over large sets of possible conformal dimensions in the $s$- and $t$-channels, 
+ \item the general conformal blocks are rather complicated. 
+\end{enumerate}
+So, while the general crossing equation is useful for testing the consistency of proposals for the spectrum and three-point structure constant, it is often useless for deriving specific proposals in the first place. However, it is possible to restrict the $s$- and $t$-channels conformal dimensions to finite sets, and to simplify the conformal blocks, by taking one of the four fields to be degenerate. If the other three fields remain generic, this still leads to constraints on the generic three-point structure constant. 
+
+So, in the remainder of Section \ref{secem}, we will study conformal blocks which involve degenerate fields, and therefore obey differential equations. 
 Notice however that the conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$ is a smooth function of $\Delta_i$, which has a finite value for $\Delta_1 = \Delta_{\langle r,s\rangle}$ -- irrespective of the values of $\Delta_2,\Delta_3,\Delta_4,\Delta_s$. 
 If however $\Delta_2$ and $\Delta_s$ happen to be related as dictated by the fusion rule of the degenerate field $V_{\langle r,s\rangle}$, then this value obeys a differential equation of order $rs$.
 In other words, a conformal block involving a degenerate representation coincides with the conformal block involving the corresponding Verma module.
 The degenerate representation manifests itself in the decompositions of correlation functions, where fusion rules dictate which conformal blocks contribute.
 On the other hand, conformal blocks involving a degenerate representation in the $s$-channel are not mere limits of $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$, which is actually singular at $\Delta_s = \Delta_{\langle r,s\rangle}$.
 The sum over descendents in eq. \eqref{gsd} is valid only if the $s$-channel representation is a Verma module, and must be modified otherwise. 
-
 
 \subsection{BPZ differential equations \label{secbpz}}
 
