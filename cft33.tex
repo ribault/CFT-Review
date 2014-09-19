@@ -132,7 +132,15 @@ We then consider WZW models, and in particular the $SU_2$ and $\widetilde{SL}_2(
 In each Chapter, the last Section is devoted to exercises.
 Some exercises are intended to test and improve one's comprehension of the material, but such exercises become scarcer in later Chapters.
 Some exercises sketch proofs of results from the main text, in cases when hints and guidance seem warranted.
-And some exercises provide supplementary material about: singular vectors of Verma modules (Exercise \ref{exosv}), logarithmic conformal field theory (Exercise \ref{exolog}), generalization of the Sugawara construction (Exercise \ref{exotqpj}), and the Wakimoto free-field representation of $\widehat{\mathfrak{sl}}_2$ (Exercise \ref{exowaki}).
+And some exercises provide supplementary material about: 
+\begin{itemize}
+ \item singular vectors of Verma modules (Exercise \ref{exosv}),
+\item logarithmic conformal field theory (Exercise \ref{exolog}), 
+\item fusion rules of unitary Verma modules (Exercise \ref{exoaur}), 
+\item Liouville theory with finite multiplicities (Exercise \ref{exomul}),
+\item generalization of the Sugawara construction (Exercise \ref{exotqpj}),
+\item the Wakimoto free-field representation of $\widehat{\mathfrak{sl}}_2$ (Exercise \ref{exowaki}).
+\end{itemize}
 
 This text comes with an index, which points to the one or two places in the text where each term is defined.
 At these places, the terms in question appear in bold. 
@@ -228,9 +236,9 @@ I have tried to follow some stylistic good practices, such as: numbering all equ
 
 \section{Acknowledgements}
 
-I am grateful to my colleagues at IPhT Saclay, and in particular to Antoine Duval, Riccardo Guida, Vincent Pasquier and Pierre Ronceray, for the opportunity to give lectures on this subject. I am also grateful to the organizers and participants to the 10th APCTP Focus Program on Liouville, Integrability and Branes in Pohang, and in particular to Soojong Rey, for including my lectures in an otherwise very advanced workshop. 
+I am grateful to my colleagues at IPhT Saclay, and in particular to Antoine Duval, Riccardo Guida, Vincent Pasquier and Pierre Ronceray, for the opportunity to give lectures on this subject. I am also grateful to the organizers and participants to the 10th APCTP Focus Program on Liouville, Integrability and Branes, and in particular to Soojong Rey, for including my lectures in an otherwise very advanced workshop. 
 
-I wish to thank Philippe Di Francesco, Matthias Gaberdiel, Slava Rychkov and G\'erard Watts for useful discussions and correspondence.
+I wish to thank Philippe Di Francesco, Matthias Gaberdiel, Christoph Keller, Slava Rychkov and G\'erard Watts for useful discussions and correspondence.
 
 I am grateful to Fran\c{c}ois David, Quang-Dien Duong and Raoul Santachiara for helpful comments on this text.
 
@@ -1443,7 +1451,6 @@ Assuming $\det M^{(N)}=0$, the space of states which are orthogonal to all state
 Conversely, notice that any singular vector and its descendents are orthogonal to all states.
 If there is such a singular vector at a level $N'\leq N$, then this singular vector or one of its descendents lives at the level $N$, and $\det M^{(N)}=0$.
 
-
 It is easy to see that $\det M^{(N)}$ must be a polynomial function of $\Delta$ and $c$.
 Knowing the zeros $\Delta_{\langle r,s \rangle}$ of $\det M^{(N)}$ as a function of $\Delta$ eq. \eqref{drs}, we obtain the \textbf{\boldmath Kac formula}\index{Kac formula} 
 \begin{align}
@@ -1468,6 +1475,35 @@ If $c=1$, the Verma module $\mathcal{V}_\Delta$ is unitary if $\Delta > 0$ by co
 If $c<1$, then the Verma module $\mathcal{V}_\Delta$ is never unitary. 
 This is because for a given $\Delta>0$, the values of $c$ such that $\Delta = \Delta_{\langle r,s \rangle}$ for some $\langle r,s \rangle$ accumulate at $c=1^-$.
 \end{enumerate}
+
+We still have to consider the unitarity of highest-weight representations which are not Verma modules.
+Such degenerate representations are cosets of the type $R=\frac{\mathcal{V}_\Delta}{R'}$, where the subrepresentation $R'$ contains at least one singular vector. 
+For $R$ to be unitary, the subrepresentation $R'$ must include all negative-norm states, that is all eigenstates of Gram matrices which correspond to negative eigenvalues.
+
+If $c > 1$, the only degnererate representation with a positive conformal dimension is $R_{\langle 1,1 \rangle}$, and actually $\Delta_{\langle 1,1 \rangle}=0$. This representation is unitary, because all the zero-norm states in $\mathcal{V}_0 = \underset{\Delta \rightarrow 0^+}{\lim} \mathcal{V}_\Delta$ are descendents of the level one singular vector. If $c=1$, all degenerate representations have positive conformal dimensions, and again they are unitary.
+
+If now $c<1$, it turns out that in order to have a unitary coset, a Verma module must have not only one but actually two independent singular vectors \cite{fms97}. 
+Since the existence of a singular vector in $\mathcal{V}_\Delta$ implies a relation between $\Delta$ and the central charge $c$, the existence of two singular vectors implies a constraint on $c$. 
+As we will see in Section \ref{secamm}, the corresponding values of $c$ correspond to the minimal models, whose central charges are given in eq. \eqref{cpq}. 
+However, the existence of two singular vectors is a necessary, but not yet a sufficient condition for a Verma module to have a unitary coset.
+The final result is that for $c<1$ unitary cosets exist only if the central charge $c$ takes values which correspond to the unitary minimal models,
+\begin{align}
+ c = 1-\frac{6}{p(p+1)}  \quad \text{with} \quad 2\leq p\ ,
+\label{cpp}
+\end{align}
+For these values of $c$,
+the conformal dimensions of Verma modules which have unitary cosets are $\Delta=\Delta_{\langle r,s \rangle}=\Delta_{\langle p-r, p+1-s \rangle}$ where
+\begin{align}
+   1\leq s\leq r\leq p-1 \ .
+\label{srp}
+\end{align}
+These unitary cosets are the maximally degenerate representations $R_{\langle r,s \rangle}$, which take the form
+\begin{align}
+ R_{\langle r,s \rangle} = \frac{\mathcal{V}_{\Delta_{\langle r,s \rangle}}}{U(\mathfrak{V}^+)|\chi_{\langle r,s \rangle}\rangle + U(\mathfrak{V}^+)|\chi_{\langle p-r,p+1-s \rangle}\rangle}\ ,
+\label{rrs}
+\end{align}
+where the sum of the two subrepresentations is not a direct sum, because their intersection is nonzero. 
+
 These results are summarized in the following table:
 \begin{center}
  \begin{tabular}{|c|c|c|c|}
@@ -1478,38 +1514,12 @@ central charge & $c<1$ & $c=1$ & $c>1$
 $\mathcal{V}_\Delta$ unitary? & no & $\Delta>0$ and $\Delta \neq \frac14 n^2$ & $\Delta>0$
 \\
 \hline
+$R_{\langle r,s\rangle}$ unitary? & see eqs. \eqref{cpp} and \eqref{srp} &  yes & $\langle r,s \rangle = \langle 1,1\rangle$
+\\
+\hline
  \end{tabular}
 \end{center}
 
-We still have to consider the unitarity of highest-weight representations which are not Verma modules.
-Such representations are cosets of Verma modules, of the type $R=\frac{\mathcal{V}_\Delta}{R'}$.
-For $R$ to be unitary, the subrepresentation $R'$ must include all negative-norm states, that is all eigenstates of Gram matrices which correspond to negative eigenvalues.
-We already know that such a nontrivial subrepresentation must contain a singular vector.
-Assuming $c<1$, it turns out that in order to have a unitary coset, a Verma module must have not only one but actually two independent singular vectors \cite{fms97}. 
-
-Since the existence of a singular vector in $\mathcal{V}_\Delta$ implies a relation between $\Delta$ and the central charge $c$, the existence of two singular vectors implies a constraint on $c$.
-More specifically, if 
-$\Delta=\Delta_{\langle r,s \rangle}=\Delta_{\langle r',s' \rangle}$ for some pairs of integers $\langle r,s \rangle\neq \langle r',s' \rangle$, then $\alpha_{\langle r,s \rangle}=\alpha_{\langle r',s' \rangle}$ or $\alpha_{\langle r,s \rangle}=Q-\alpha_{\langle r',s' \rangle}$ where $\alpha_{\langle r,s \rangle}$ is given in eq. \eqref{ars}.
-Therefore, $b^2$ must be rational -- and $c$ too.
-If $c<1$, the corresponding values of $c$ correspond to the minimal models, whose central charges are given in eq. \eqref{cpq}. 
-
-The existence of two singular vectors is a necessary, but not yet a sufficient condition for a Verma module to have a unitary coset.
-The final result is that for $c<1$ unitary cosets exist only if the central charge $c$ takes values which correspond to the unitary minimal models,
-\begin{align}
- c = 1-\frac{6}{p(p+1)}  \quad \text{with} \quad 2\leq p\ ,
-\label{cpp}
-\end{align}
-For these values of $c$,
-the conformal dimensions of Verma modules which have unitary cosets are $\Delta=\Delta_{\langle r,s \rangle}=\Delta_{\langle p-r,p+1-s \rangle}$ where
-\begin{align}
-   1\leq s\leq r\leq p-1 \quad \text{with } \quad b^2=-\frac{p+1}{p}\ .
-\end{align}
-These unitary cosets are the maximally degenerate representations $R_{\langle r,s \rangle}$, which take the form
-\begin{align}
- R_{\langle r,s \rangle} = \frac{\mathcal{V}_{\Delta_{\langle r,s \rangle}}}{U(\mathfrak{V}^+)|\chi_{\langle r,s \rangle}\rangle + U(\mathfrak{V}^+)|\chi_{\langle p-r,p+1-s \rangle}\rangle}\ ,
-\label{rrs}
-\end{align}
-where the sum of the two subrepresentations is not a direct sum, because their intersection is nonzero. 
 
 \section{Virasoro symmetry in two-dimensional quantum field theory\label{seclin}}
 
@@ -2866,9 +2876,7 @@ We assume
 \item that each theory is unitary;
 \item and that correlation functions are smooth as functions of $c$ and of the conformal dimensions of the fields, in a sense which we will make more precise.
 \end{itemize}
-In Section \ref{secuni}, we have discussed the unitarity of the two types of Virasoro representations -- Verma modules and degenerate representations.
-Unitary Verma modules exist only if $c\geq 1$, and their conformal dimensions obey $\Delta \geq 0$.
-And we need not concern ourselves with degenerate representations here, as their conformal dimensions take discrete values, whereas the spectrum of Liouville theory is assumed to be continuous. 
+Since the spectrum is continuous, it must involve Verma modules -- the other type of highest-weight representations, degenerate representations, form a discrete set. From Section \ref{secuni}, we know that unitary Verma modules exist only if $c\geq 1$, and their conformal dimensions obey $\Delta \geq 0$. So we assume $c\geq 1$. 
 
 When deriving the fusion rules \eqref{rtv} involving degenerate fields, we have seen that the natural parameters are not the conformal dimension $\Delta$ and the central charge $c$ -- rather, the momentum $\alpha$ \eqref{daq} and the Liouville coupling constant $b$ \eqref{cqb}.
 We assume that correlation functions are analytic as functions of $\alpha$ and $b$, with possibly poles, but no branch cuts. 
@@ -2920,6 +2928,9 @@ Therefore, the spectrum must be diagonal,
 \end{align}
 where the $\frac12$ factor in front of the integral over $\alpha$ is meant to eliminate the redundancy which comes from the reflection relation $\mathcal{V}_\alpha=\mathcal{V}_{Q-\alpha}$. 
 
+This spectrum does not contain any degenerate representation -- and anyway, unitarity would have allowed only the simplest degenerate representation $R_{\langle 1,1\rangle}$. 
+Nevertheless, we make the crucial assumption that degenerate fields exist, and in particular obey the axioms of associativity of OPEs, and single-valuedness of correlation functions.
+We will find that degenerate fields can be considered as analytic continuations of the physical fields -- the fields which do correspond to states in the spectrum.
 
 \subsection{The reflection relation and its consequences}
 
@@ -3015,7 +3026,6 @@ We then obtain
 \end{align}
 
 Let us discuss OPEs involving degenerate fields of the type $V_{\langle r,s \rangle}$.
-The corresponding degenerate representations do not belong to the spectrum, but we assume that OPEs and correlation functions of such fields nevertheless make sense. 
 Remembering the fusion rules \eqref{rtv}, an OPE involving $V_{\langle r,s \rangle}$ must be of the type
 \begin{align}
  \boxed{V_{\langle r,s \rangle} V_\alpha \sim \sum_{i=0}^{s-1}\sum_{j=0}^{r-1} C_{i,j}^{\langle r,s \rangle}(\alpha) V_{\alpha+\alpha_{\langle r,s \rangle}+ib+jb^{-1}}}\ .
@@ -3047,7 +3057,7 @@ the OPE of the degenerate field $V_{\langle 1,2 \rangle}$,
 \end{align}
 and relations involving the coefficients $\tilde{C}_+(\alpha)$ and $\tilde{C}_-(\alpha)$. 
 
-Finally, we assume that the OPE (\ref{vrsv}) still holds if $V_\alpha$ is replaced by the degenerate field $V_{\langle r',s'\rangle}$, and that the coefficients are simply $C_{i,j}^{\langle r,s \rangle}(\alpha_{\langle r',s'\rangle})$ where $\alpha_{\langle r',s'\rangle}$ is given by eq. \eqref{ars}. Similarly, the reflection coefficient for $V_{\langle r',s'\rangle}$ is assumed to be $R(\alpha_{\langle r',s'\rangle})$.
+Finally, we assume that the OPE \eqref{vrsv} still holds if $V_\alpha$ is replaced by the degenerate field $V_{\langle r',s'\rangle}$, and that the coefficients are simply $C_{i,j}^{\langle r,s \rangle}(\alpha_{\langle r',s'\rangle})$ where $\alpha_{\langle r',s'\rangle}$ is given by eq. \eqref{ars}. Similarly, the reflection coefficient for $V_{\langle r',s'\rangle}$ is assumed to be $R(\alpha_{\langle r',s'\rangle})$.
 
 \subsection{Conformal bootstrap equations \label{seccbe}}
 
@@ -3359,6 +3369,7 @@ This leads to the conclusion that the limit of $V_{\alpha_2}$ is a degenerate fi
 \end{align}
 whereas one might have expected the non-degenerate field $V_{\alpha_{\langle r,s \rangle}}$.
 The present calculation can then be interpreted as a derivation of the fusion rules \eqref{rtv}.
+It is actually tempting to use a similar calculation for deriving the fusion rules of the unitary Verma modules which do not belong to the spectrum. (See Exercise \ref{exoaur}.)
 
 Let us finish the computation of the degenerate OPE coefficient $C_{i,j}^{\langle r,s \rangle}(\alpha)$.
 Using eq. \eqref{caaa}, we obtain 
@@ -3401,9 +3412,9 @@ Actually, Liouville theory has an unambiguous $c\rightarrow 1$ limit \cite{sch03
 which includes the whole domain $c\in [1,\infty[$ permitted by unitarity.
 On the other hand, the $c\rightarrow c_0\in ]-\infty,-1[$ limit is ill-defined \cite{zam05}. 
 
-There is little doubt that Liouville theory exists for $c\geq 25$, in view of the unicity of the three-point structure constant, and of the relevance of Liouville theory to two-dimensional quantum gravity (reviewed in \cite{zam05}).
+There is little doubt that Liouville theory exists for $c\geq 25$, in view of the unicity of the three-point structure constant, and of the relevance of Liouville theory to two-dimensional quantum gravity (reviewed in \cite{zam05}). Actually, Liouville theory with $c> 25$ is known to be consistent also on the torus \cite{hjs09}, although its partition function is infinite. 
 Then analyticity in $b$ suggests that the theory exists in the domain \eqref{cnot}.
-In particular, the associativity of the OPE has been tested numerically for $c=1$ \cite{rw01} and $c=13$ \cite{zz95}, and more extensive numerical tests are certainly doable.
+In particular, the associativity of the OPE has been tested numerically for $c=1$ \cite{rw01} and $c=13$ \cite{zz95}, and more extensive numerical tests are doable.
 In addition, there is a proposed proof \cite{tes03b} of the existence of Liouville theory for $c>25$, which may actually hold for more general values of $c$ by analytic continuation.
 But this proof has not received the attention and thorough checking it deserves.
 
@@ -3439,7 +3450,7 @@ Integrating on this spectrum for computing a four-point function as in eq. \eqre
 Such issues with singularities are inevitable: if they were absent, we could analytically continue the theory to the whole $b\notin {\mathbb{R}}$ 
 domain, which would contradict our considerations on unicity.
 
-Finally, let us mention that Liouville theory with $c> 25$ is known to be consistent on the torus \cite{hjs09}, although its partition function is infinite. 
+Finally, let us mention that nothing new can be obtained by relaxing our assumption that the multiplicities of representations in the spectrum do not exceed one, and allowing finite multiplicities. (See Exercise \ref{exomul}.)
 
 \section{Minimal models \label{secvmm}}
 
@@ -3822,6 +3833,31 @@ To do this, study how $C_+(\alpha)$ and $\tilde{C}_+(\alpha)$ behave under field
 Use eq. \eqref{ctc} for showing that these equations for $\lambda(\alpha)$ are compatible with each other, and eq. \eqref{cpcp} for showing that they are compatible with the  assumed behaviour of $\lambda(\alpha)$ under reflections eq. \eqref{llo}.
 Conclude that these equations do have a solution.
 \end{exo}
+
+\begin{exo}[Fusion rules of all unitary representations if $c>1$]
+ ~\label{exoaur}
+Compute the analytic continuation of the Liouville OPE to momentums $\beta\in (0,Q)$, which correspond to unitary representation that do not belong to the spectrum \eqref{sad}. 
+Show that this leads to the following conjecture for the fusion rules, where we assume $\beta_1,\beta_2\in (0,\frac{Q}{2})$:
+\begin{align}
+ \mathcal{V}_\beta \times \mathcal{V}_\alpha  
+&= \frac12 \int_{\frac{Q}{2}+i\mathbb{R}} d\alpha'\ \mathcal{V}_{\alpha'}\ ,
+\\
+ \mathcal{V}_{\beta_1} \times \mathcal{V}_{\beta_2} 
+&= \sum_{\beta'\in (0,\frac{Q}{2})\cap \beta_1+\beta_2 + b\mathbb{N}+b^{-1}\mathbb{N}} \mathcal{V}_{\beta'}  
++ \frac12 \int_{\frac{Q}{2}+i\mathbb{R}} d\alpha'\ \mathcal{V}_{\alpha'}\ .
+\end{align}
+In particular, determine a lower bound on the conformal dimension $\Delta$, such that $\mathcal{V}_\Delta \times \mathcal{V}_\Delta$ belongs to the Liouville spectrum.
+What are the consequences of these results for possible extensions of Liouville theory?
+\end{exo}
+
+\begin{exo}[Allowing finite multiplicities in Liouville theory]
+ ~\label{exomul}
+Redo the analysis of Section \ref{seccbe}, after relaxing the assumption that the multiplies are at most one, and allowing a finite multiplicity $m\geq 2$ instead. 
+Assuming that the continuous fields are now vectors of size $m$ while the degenerate fields remain scalars, find the relations between the degenerate OPE coefficients and the reflection coefficient, all of which are now matrices of size $m$. 
+Requiring these quantities to be analytic functions of the momentum, show that the reflection coefficient must still be given by eq. \eqref{ram}, where the cosmological constant is now a matrix. 
+Conclude that the theory is equivalent to $m$ independent copies of Liouville theory. 
+\end{exo}
+
 
 \begin{exo}[Fusion rules of doubly degenerate representations]
  ~\label{exofus}
@@ -4390,6 +4426,7 @@ seen in the $N=3$ case \eqref{caaa}, and the linear dilaton correlation function
 \end{multline}
 The relation \eqref{lild} implies that Liouville theory can be viewed as a perturbation of the linear dilaton theory.
 This is an example of \textbf{\boldmath conformal perturbation theory}\index{conformal perturbation theory} -- the definition and study of two-dimensional quantum field theories (conformal or not) as perturbed conformal field theories.
+The perturbing operator, here $V_b$, is chosen so that its conformal dimension is one, a necessary but not sufficient condition for the perturbed theory to still have conformal symmetry.
 This example is rather pathological, as Liouville theory does not have a smooth $\mu\rightarrow 0$ limit where we could recover the linear dilaton theory, and the linear dilaton theory does not allow us to compute Liouville theory correlation functions, but only their residues at certain poles. 
 
 The integral \eqref{mint} is called a \textbf{\boldmath Coulomb gas integral}\index{Coulomb gas integral}.
@@ -4936,7 +4973,7 @@ Using eqs. \eqref{cpm} and \eqref{caaa} for $C_{\pm}(\alpha_1)$ and $C_{\alpha_1
 {\Upsilon_b(-\frac{j_1+j_2+j_3+1}{b})\Upsilon_b(-\frac{j_1+j_2-j_3}{b}) \Upsilon_b(-\frac{j_1-j_2+j_3}{b})\Upsilon_b(-\frac{-j_1+j_2+j_3}{b})}}\ ,
 \label{chp}
 \end{align}
-where the cosmological constant $\mu$ is inherited from Liouville theory.
+where the parameter $b$ is given by eq. \eqref{bk}, and the cosmological constant $\mu$ is inherited from Liouville theory.
 
 The $x$-basis two-point function can be obtained from the $\mu$-basis two-point function with the help of the formula 
 \begin{align}
