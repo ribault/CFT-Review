@@ -132,7 +132,15 @@ We then consider WZW models, and in particular the $SU_2$ and $\widetilde{SL}_2(
 In each Chapter, the last Section is devoted to exercises.
 Some exercises are intended to test and improve one's comprehension of the material, but such exercises become scarcer in later Chapters.
 Some exercises sketch proofs of results from the main text, in cases when hints and guidance seem warranted.
-And some exercises provide supplementary material about: singular vectors of Verma modules (Exercise \ref{exosv}), logarithmic conformal field theory (Exercise \ref{exolog}), generalization of the Sugawara construction (Exercise \ref{exotqpj}), and the Wakimoto free-field representation of $\widehat{\mathfrak{sl}}_2$ (Exercise \ref{exowaki}).
+And some exercises provide supplementary material about: 
+\begin{itemize}
+ \item singular vectors of Verma modules (Exercise \ref{exosv}),
+\item logarithmic conformal field theory (Exercise \ref{exolog}), 
+\item fusion rules of unitary Verma modules (Exercise \ref{exoaur}), 
+\item Liouville theory with finite multiplicities (Exercise \ref{exomul}),
+\item generalization of the Sugawara construction (Exercise \ref{exotqpj}),
+\item the Wakimoto free-field representation of $\widehat{\mathfrak{sl}}_2$ (Exercise \ref{exowaki}).
+\end{itemize}
 
 This text comes with an index, which points to the one or two places in the text where each term is defined.
 At these places, the terms in question appear in bold. 
@@ -228,9 +236,9 @@ I have tried to follow some stylistic good practices, such as: numbering all equ
 
 \section{Acknowledgements}
 
-I am grateful to my colleagues at IPhT Saclay, and in particular to Antoine Duval, Riccardo Guida, Vincent Pasquier and Pierre Ronceray, for the opportunity to give lectures on this subject, and for the exchanges that took place during the lectures.
+I am grateful to my colleagues at IPhT Saclay, and in particular to Antoine Duval, Riccardo Guida, Vincent Pasquier and Pierre Ronceray, for the opportunity to give lectures on this subject. I am also grateful to the organizers and participants to the 10th APCTP Focus Program on Liouville, Integrability and Branes, and in particular to Soojong Rey, for including my lectures in an otherwise very advanced workshop. 
 
-I wish to thank Philippe Di Francesco, Matthias Gaberdiel, Slava Rychkov and G\'erard Watts for useful discussions and correspondence.
+I wish to thank Philippe Di Francesco, Matthias Gaberdiel, Christoph Keller, Slava Rychkov and G\'erard Watts for useful discussions and correspondence.
 
 I am grateful to Fran\c{c}ois David, Quang-Dien Duong and Raoul Santachiara for helpful comments on this text.
 
@@ -379,20 +387,21 @@ We will now explore in turn the symmetry assumptions and consistency conditions 
 
 \subsection{Symmetry assumptions \label{secsa}}
 
-If a model of quantum field theory has a symmetry algebra, then the spectrum $S$ must have a decomposition into representations of this algebra:
+If a model of quantum field theory has a symmetry algebra, then the spectrum $S$ must be a representation of this algebra, and can therefore be written as
 \begin{align}
- S = \bigoplus_R m_R  R\ ,\
+ S = \bigoplus_R m_R  R\ .\
 \label{somr}
 \end{align}
-where the number $m_R \in {\mathbb{N}}\cup\{\infty\}$ is the \textbf{\boldmath multiplicity}\index{multiplicity} of the representation $R$ of the algebra in the spectrum $S$.
+Here we have decomposed $S$ as a combination of some basic representations $R$ of the symmetry algebra, and the number $m_R \in {\mathbb{N}}\cup\{\infty\}$ is the \textbf{\boldmath multiplicity}\index{multiplicity} of the representation $R$ in the spectrum $S$.
 A state $\sigma$ in the spectrum can then be written as 
 \begin{align}
  \sigma = (R,v)\ ,
 \label{arv}
 \end{align}
 where $v$ is a state in the representation $R$, and the corresponding field can be written as 
-$V_\sigma(x)= V_{(R,v)}(x)$.
-The idea is that the dependence of a correlation function $\left\langle \prod_{i=1}^n V_{(R_i,v_i)}(x_i)\right\rangle$ on $v_i$ is determined by symmetry considerations, whereas the dependence on $R_i$ is constrained by consistency conditions.
+$V_\sigma(x)= V_{(R,v)}(x)$. For example, for any spin $j\in \frac12 \mathbb{N}$ the algebra $\mathfrak{sl}_2$ has a representation of dimension $2j+1$, whose states $\sigma = (j,m)$ can be labelled by their magnetic momentums $m\in\{-j, -j+1,\cdots j\}$.
+
+The idea is now that the dependence of a correlation function $\left\langle \prod_{i=1}^n V_{(R_i,v_i)}(x_i)\right\rangle$ on $v_i$ is determined by symmetry considerations, whereas the dependence on $R_i$ is constrained by consistency conditions.
 This idea however comes with a number of technical assumptions.
 In particular, for the dependence on $v_i$ to be completely determined by symmetry, $R_i$ must be an \textbf{\boldmath indecomposable representation}\index{indecomposable representation}, which cannot be written as a direct sum of smaller representations.
 \begin{align}
@@ -533,29 +542,15 @@ The number $N_{R_1R_2}^{R_3}\in {\mathbb{N}} \cup \{\infty\}$ of independent sol
 \end{align}
 The fusion rule is a representation-theoretic notion which encodes some of the universal properties of the OPE.
 In particular, the field $V_{\sigma_3}$ can appear in a $V_{\sigma_1}V_{\sigma_2}$ OPE only if $N_{R_1R_2}^{R_3}\neq 0$.
+
 It is actually possible to define an associative product of representations, called the \textbf{\boldmath fusion product}\index{fusion product}, such that eq. \eqref{rrnr} is the decomposition of the representation $R_1\times R_2$ into indecomposable representations. (See \cite{gab99} for the case of two-dimensional conformal field theory.) 
 The fusion product $R_1\times R_2$ is said to have nontrivial multiplicities if $N_{R_1R_2}^{R_3}\geq 2$ for some $R_3$, and trivial multiplicities if $N_{R_1R_2}^{R_3}\in \{0,1\}$, in which case the sum over $\lambda$ in eq. \eqref{clcf} can be omitted.
 A field is called a \textbf{\boldmath simple current}\index{simple current} if the corresponding representation $R$ is such that $R\times R'$ is indecomposable for any $R'$, so that $\sum_{R''} N_{RR'}^{R''} =1$. 
+The fusion product may seem quite similar to a tensor product, but there is an essential difference: while the tensor product is a purely algebraic notion, the definition of the fusion product involves the state-field correspondence, and therefore the space on which the field theory lives. 
 
-Using the decomposition \eqref{clcf} of the OPE coefficients, 
-the left-hand side of the 
-associativity equation \eqref{cccc} becomes
-\begin{multline}
- \sum_{\sigma_s\in S} C_{\sigma_1,\sigma_2}^{\sigma_s}(x_1,x_2) C_{\sigma_s,\sigma_3}^{\sigma_4}(x_2,x_3) 
-= \sum_{R_s}\sum_{\lambda=1}^{N_{R_1R_2}^{R_s}} \sum_{\mu=1}^{N_{R_sR_3}^{R_4}} C_{R_1,R_2}^{R_s,\lambda}(x_1,x_2) C_{R_s,R_3}^{R_4,\mu}(x_2,x_3)
-\\ 
-\times 
-\mathcal{F}^{R_s,\lambda,\mu}_{R_1,R_2,R_3,R_4}(v_1,v_2,v_3,v_4|x_1,x_2,x_3)\ ,
-\label{scce}
-\end{multline}
-where we define 
-\begin{align}
- \mathcal{F}^{R_s,\lambda,\mu}_{R_1,R_2,R_3,R_4}(v_1,v_2,v_3,v_4|x_1,x_2,x_3) = \sum_{v_s\in R_s} f_{R_1,R_2}^{R_s,\lambda}(v_1,v_2,v_s|x_1,x_2) f_{R_s,R_3}^{R_4,\mu}(v_s,v_3,v_4|x_2,x_3) \ .
-\end{align}
-This universal object is a sum over the states $v_s$ in a representation $R_s$ -- just like the character of $R_s$, or the conformal blocks which we will introduce in Section \ref{secaco}.
-Assuming this object is known, the sum over $\sigma_s=(R_s,v_s)$ in the associativity equation therefore reduces to a sum over $R_s$.
-If the symmetry algebra is large enough or the model simple enough, the number of representations $R_s$ in the spectrum can be small enough for the associativity equation to become tractable.
-In this case, the structure functions $C_{R_1,R_2}^{R_3,\lambda}(x_1,x_2)$ can be determined, and all the correlation functions computed, so that the model is solved.
+Using the decomposition \eqref{clcf} of the OPE coefficients, where we assume that $f_{R_1,R_2}^{R_3,\lambda}(v_i|x_j)$ is known, the 
+associativity equation \eqref{cccc} reduces to an equation for the structure function $C_{R_1,R_2}^{R_3,\lambda}(x_1,x_2)$, and the sums over states $\sigma_s$ and $\sigma_t$ reduce to sums over representations $R_s$ and $R_t$.
+If the symmetry algebra is large enough or the model simple enough, the number of representations in the spectrum can be small enough for the associativity equation to become tractable.
 To summarize,
 \begin{center}
 \fbox{
@@ -741,8 +736,9 @@ Another example is the long-range Ising model.
 
 In a quantum field theory with conformal symmetry, the spectrum is not a representation of the Witt algebra, but of 
 its central extension, called the \textbf{\boldmath Virasoro algebra}\index{Virasoro algebra} $\mathfrak{V}$.
-This is a general phenomenon in quantum theories: since states are defined up to scalar factors, the spectrum is a projective representation of any symmetry algebra, which is the same as an ordinary representation of the corresponding centrally extended algebra. 
-In our case, the Virasoro algebra is defined by the generators $(L_n)_{n\in {\mathbb{Z}}}$ and the commutation relations
+This is a general phenomenon in quantum theories: since states are defined up to scalar factors, the action of a symmetry group on space, which obeys $g\cdot(g'\cdot x) = (gg')\cdot x$, need only translate into a projective action on states, which obeys $g\cdot(g'\cdot|\sigma\rangle) = \lambda(g,g') (gg')\cdot |\sigma\rangle$ for some scalar factor $\lambda(g,g')$. 
+And a projective action of a symmetry algebra is equivalent to an action of the corresponding centrally-extended algebra. 
+So, the Virasoro algebra is defined by the generators $(L_n)_{n\in {\mathbb{Z}}}$, which correspond to the generators $(\ell_n)_{n\in \mathbb{Z}}$ of the Witt algebra, and the centrally-extended commutation relations
 \begin{align}
  \boxed{[L_n,L_m]=(n-m)L_{n+m} + \frac{c}{12} (n-1)n(n+1) \delta_{n+m,0}}\ .
 \label{vir}
@@ -790,25 +786,21 @@ We thus reach a definition of
 \begin{center}
 \fbox{
 \begin{minipage}{0.9\textwidth}
-Two-dimensional \textbf{\boldmath conformal field theory}\index{conformal field theory}: the study of two-dimensional quantum field theories which possess a $\mathfrak{V}\times \overline{\mathfrak{V}}$ symmetry algebra such that $L_n$ and $\bar{L}_n$ with $|n|\leq 1$ can be interpreted as the generators of global conformal transformations. 
+Two-dimensional \textbf{\boldmath conformal field theory}\index{conformal field theory}: the study of two-dimensional quantum field theories which possess a $\mathfrak{V}\times \overline{\mathfrak{V}}$ symmetry algebra such that $L_n$ and $\bar{L}_n$ generate conformal transformations. 
 \end{minipage}
 }
 \end{center}
-The assumption about the geometrical interpretation of $L_n$ and $\bar{L}_n$ with $|n|\leq 1$ is very important, as it is the only link between the symmetry algebra and the two-dimensional space.
+The assumption about the geometrical interpretation of $L_n$ and $\bar{L}_n$ is very important, as it is the only link between the symmetry algebra and the two-dimensional space.
 Some conformal field theories have several Virasoro symmetry algebras, only one of which corresponds to conformal symmetry.
 In the free boson theory, it is even possible to find Virasoro algebras with all possible values of the central charge. (See Section \ref{secaua}.)
 
 
 \section{Basic consequences of conformal symmetry}
 
-Having explained and motivated the symmetry assumptions which define two-dimensional conformal field theory, we will explore some of their consequences.
-We will follow the principles of the bootstrap approach, as enumerated in Section \ref{secprin}: we will start with the direct consequences of conformal symmetry on the structure of the spectrum, then comment on the form of the consistency conditions in the presence of conformal symmetry, and finally introduce the models which have the simplest spectrums -- minimal models and Liouville theory. 
-
 \subsection{Structure of the spectrum \label{secsots}}
 
-If a model has a $\mathfrak{V}\times \overline{\mathfrak{V}}$ symmetry algebra, then the spectrum $S$ must have a decomposition into representations of this algebra.
-From any two representations $R,R'$ of $\mathfrak{V}$, we can build a factorized representation $R\otimes \bar{R'}$ of the full symmetry algebra $\mathfrak{V}\times \overline{\mathfrak{V}}$. (The bar in $\overline{\mathfrak{V}}$ and $\bar{R'}$ is only meant to distinguished right-moving from left-moving objects, but as algebraic objects we have $\overline{\mathfrak{V}}=\mathfrak{V}$ and $\bar{R'} = R'$.)
-We assume that the spectrum is a combination of such factorized representations, and the decomposition \eqref{somr} takes the form
+We know that the spectrum $S$ must be a representation of the 
+$\mathfrak{V}\times \overline{\mathfrak{V}}$ symmetry algebra, and let us further assume that $S$ is a combination of factorized representations of the type $R\otimes \bar{R'}$, where $R$ and $R'$ are representations of $\mathfrak{V}$, and the bar in $\overline{\mathfrak{V}}$ and $\bar{R'}$ is only meant to distinguish right-moving from left-moving objects. Then the decomposition \eqref{somr} takes the form
 \begin{align}
  \boxed{S = \bigoplus_{(R,R')\in Rep(\mathfrak{V})^2} m_{R,R'} R\otimes \bar{R'}}\ ,
 \label{sorr}
@@ -836,13 +828,11 @@ There are two similar-looking axioms, which should not be adopted:
 \end{itemize}
 
 In order to characterize the action of the symmetry algebra on the spectrum, we need not only decompose the spectrum into representations of that algebra, but also know how the symmetry generators $L_n$ behave under the scalar product, in other words what are their Hermitian conjugates $L_n^\dagger$.
-We will deduce this from the geometrical interpretation of $L_n$ as a conformal transformation.
-Strictly speaking, this interpretation is only valid at $c=0$, but we will assume that the result does not change if $c\neq 0$.
-So, our expression \eqref{elln} for $\ell_n$ as a differential operator originated from expanding the infinitesimal parameter $\epsilon(z)$ of a conformal transformation as a Laurent series around $z=0$ as in eq. \eqref{sen}.
-Therefore, as a differential operator, $\ell_n$ acts on the space of analytic functions on ${\mathbb{C}}-\{0\}$, whose basis is $\{z^p\}_{p\in{\mathbb{Z}}}$.
+Let us first consider the case of the generators $\ell_n$ \eqref{elln} of the Witt algebra.  
+As a differential operator, $\ell_n$ acts on the space of analytic functions on ${\mathbb{C}}-\{0\}$, whose basis is $\{z^p\}_{p\in{\mathbb{Z}}}$.
 The natural scalar product on this space is 
 \begin{align}
- \langle f|g\rangle = -\frac{1}{2\pi i}\int_0^{2\pi}d\theta\  \overline{f(e^{i\theta})} {\frac{\partial}{\partial 	heta}} g(e^{i\theta}) \quad \Rightarrow \quad \langle z^p| z^q \rangle = -p\delta_{p,q}\ .
+ \langle f|g\rangle = -\frac{1}{2\pi i}\int_0^{2\pi}d\theta\  \overline{f(e^{i\theta})} {\frac{\partial}{\partial \theta}} g(e^{i\theta}) \quad \Rightarrow \quad \langle z^p| z^q \rangle = -p\delta_{p,q}\ .
 \label{fgd}
 \end{align}
 This scalar product, which is a fixed radius integral, comes from the idea of \textbf{\boldmath radial quantization}\index{radial quantization}: the radial direction is considered as the time direction, and the dilatation operator $\ell_0$ as the Hamiltonian, which is Hermitian i.e. $\ell_0^\dagger = \ell_0$.
@@ -908,23 +898,11 @@ The application of the bootstrap approach to conformal field theories, called th
 is particularly powerful in two dimensions.
 This is because the algebra of conformal transformations is infinite dimensional, 
 so that the spectrum can be decomposed into a small number of large representations.
-Moreover, the factorization of the symmetry algebra into two copies of the Virasoro algebra has important consequences, which we will now sketch. 
-
-Let us study the structure of an OPE coefficient in two-dimensional conformal field theory.
-A state $\sigma\in S$ is written as $\sigma = ((R,R'),(v,v'))$, where $R\otimes \bar{R}'$ is a representation of  $\mathfrak{V}\times \overline{\mathfrak{V}}$, with $v\in R$ and $v'\in R'$. 
-A position is written in complex coordinates as $x=(z,\bar{z})$.
-Moreover, the fusion of Virasoro representations has trivial multiplicities, as we will show in Section \ref{secope}. 
-Then the decomposition \eqref{clcf} of an OPE coefficient into model-dependent and universal data becomes
-\begin{multline}
- C^{((R_1,R'_1),(v_1,v'_1))}_{((R_2,R'_2),(v_2,v'_2)),((R_3,R'_3),(v_3,v'_3))}((z_1,\bar{z}_1),(z_2,\bar{z}_2)) 
-\\
-= C^{(R_3,R'_3)}_{(R_1,R'_1),(R_2,R'_2)}((z_1,\bar{z}_1),(z_2,\bar{z}_2)) f^{R_3}_{R_1,R_2}(v_1,v_2,v_3|z_1,z_2) f^{R'_3}_{R'_1,R'_2}(v'_1,v'_2,v'_3|\bar{z}_1,\bar{z}_2) \ ,
-\label{ccff}
-\end{multline}
-where $x_i=(z_i,\bar{z}_i)$.
-In words, the universal factor in the OPE coefficient factorizes into holomorphic and antiholomorphic factors, because the symmetry equations for the OPE coefficient factorize into holomorphic equations from the left-moving Virasoro algebra, and antiholomorphic equations from the right-moving Virasoro algebra.
+Moreover, the factorization of the symmetry algebra into two copies of the Virasoro algebra 
+implies that symmetry equations factorize into $z$-dependent equations from the left-moving Virasoro algebra, and $\bar{z}$-dependent equations from the right-moving Virasoro algebra.
+It follows that all universal quantities, for example $f_{R_1,R_2}^{R_3,\lambda}(v_i|x_j)$ from \eqref{clcf}, can be factorized into $z$-dependent and $\bar{z}$-dependent functions. 
 This is called \textbf{\boldmath holomorphic factorization}\index{holomorphic factorization}, where the term ``holomorphic''
-should be understood as \textbf{\boldmath locally holomorphic}\index{locally holomorphic} i.e. $\bar{z}$-independent: the coefficient $f^{R_3}_{R_1,R_2}(v_1,v_2,v_3|z_1,z_2)$ can have poles and branch cuts as a function of $z_i$.
+should be understood as \textbf{\boldmath locally holomorphic}\index{locally holomorphic}: the $z$-dependent factors are supposed to be $\bar{z}$-independent, but they can have singularities such as poles and branch cuts.
 We will see in more detail in Section \ref{secaco} how holomorphic factorization simplifies the condition \eqref{cccc} of OPE associativity.
 
 In two-dimensional conformal field theory, the assumption of the existence of an OPE has a natural generalization: the assumption that on any closed contour $C$, one can insert a decomposition of the identity operator,
@@ -1176,7 +1154,7 @@ Since acting with $L_{n>0}$ decreases $L_0$-eigenvalues (see eq. \eqref{ddsn}), 
 \label{lvlv}
 \end{align}
 A representation generated by a primary state is called a \textbf{\boldmath highest-weight representation}\index{highest-weight representation}.
-The representation generated by a state $|v\rangle$ is $U(\mathfrak{V})|v\rangle$, where $U(\mathfrak{V})$ is the \textbf{\boldmath universal enveloping algebra}\index{universal enveloping algebra} of the Virasoro algebra -- the associative algebra which is generated by the Virasoro generators $L_n$.
+The representation generated by a state $|v\rangle$ is $U(\mathfrak{V})|v\rangle$, where $U(\mathfrak{V})$ is the universal enveloping algebra of the Virasoro algebra -- the associative algebra which is generated by the Virasoro generators $L_n$.
 If $|\Delta\rangle$ is a primary state, it is enough to consider the algebra $U(\mathfrak{V}^+)$ of the \textbf{\boldmath creation operators}\index{creation operator} which is generated by the creation modes $\{L_n\}_{n<0}$, and the corresponding highest-weight representation is 
 \begin{align}
  R = U(\mathfrak{V})|\Delta\rangle =U(\mathfrak{V}^+)|\Delta\rangle\ .
@@ -1275,7 +1253,7 @@ Other bases can be used, starting with the ``reverse-ordered'' basis $\{ L_{-n_1
 It can be tempting to use the fact that the two operators $\{L_{-1},L_{-2}\}$ algebraically generate $\{L_{n}\}_{n<0}$, and to consider $\{\prod_{i=1}^p L_{-n_i}\}_{n_i\in\{1,2\}}$.
 While this set does span $U(\mathfrak{V}^+)$, it however does not provide a basis. (See Exercise \ref{exoot}.)
 
-\subsection{Verma modules and singular vectors \label{secvm}}
+\subsection{Verma modules and degenerate representations \label{secvm}}
 
 We define the \textbf{\boldmath Verma module}\index{Verma module} $\mathcal{V}_\Delta$ with conformal dimension $\Delta$ as the highest-weight representation which contains a primary state $|\Delta\rangle$ with conformal dimension $\Delta$, and which is linearly isomorphic to $U(\mathfrak{V}^+)$ via the map $\varphi_{\mathcal{V}_\Delta}$ of eq. \eqref{pur}.
 In other words, $\mathcal{V}_\Delta$ is the representation whose basis is given by the states  $\left\{ L_{-n_1} \cdots L_{-n_p}|\Delta\rangle\right\}_{1\leq n_1\leq n_2\leq \cdots n_p}$.
@@ -1455,7 +1433,8 @@ A highest-weight representation $R$ is generated by a primary state $|\Delta\ran
 Since all other states are descendents of $|\Delta\rangle$, their scalar products can be computed using the assumption $L_n^\dagger = L_{-n}$ from eq. \eqref{ldn}.
 For example,
 \begin{align}
- \langle L_{-1} \Delta|L_{-1}\Delta\rangle = \langle \Delta |L_1 L_{-1}|\Delta\rangle = 2\langle \Delta|L_0|\Delta\rangle = 2\Delta\ .  
+ \langle L_{-1} \Delta|L_{-1}\Delta\rangle = \langle \Delta |L_1 L_{-1}|\Delta\rangle = 2\langle \Delta|L_0|\Delta\rangle = 2\Delta\ . 
+\label{levo} 
 \end{align}
 Since $L_0$ is self-conjugate, different $L_0$-eigenspaces are orthogonal, and a representation is unitary if and only if the scalar product is positive definite on each eigenspace. 
 In a highest-weight representation $R$, the $L_0$-eigenspace which corresponds to the eigenvalue $\Delta+N$ is the finite-dimensional level-$N$ subspace $R_N$.
@@ -1472,7 +1451,6 @@ Assuming $\det M^{(N)}=0$, the space of states which are orthogonal to all state
 Conversely, notice that any singular vector and its descendents are orthogonal to all states.
 If there is such a singular vector at a level $N'\leq N$, then this singular vector or one of its descendents lives at the level $N$, and $\det M^{(N)}=0$.
 
-
 It is easy to see that $\det M^{(N)}$ must be a polynomial function of $\Delta$ and $c$.
 Knowing the zeros $\Delta_{\langle r,s \rangle}$ of $\det M^{(N)}$ as a function of $\Delta$ eq. \eqref{drs}, we obtain the \textbf{\boldmath Kac formula}\index{Kac formula} 
 \begin{align}
@@ -1482,21 +1460,50 @@ where the constant of proportionality is a $\Delta,c$-independent positive numbe
 The multiplicity of the zero $\Delta_{\langle r,s \rangle}$ is $p(N-rs)$ because this is the number of linearly independent descendents at the level $N$ of a singular vector at the level $rs$.  
 
 We can now draw conclusions about the unitarity of highest-weight representations.
-As we saw in Section \ref{secsots}, the very definition of our scalar product requires the central charge $c$ to be real.
-The reality of $\det M^{(N)}$ requires the conformal dimension $\Delta$ to be real as well.
-We now distinguish three cases:
+According to eq. \eqref{levo}, the positivity of $M^{(1)}$ implies $\Delta >0$. 
+The unitarity of the Verma module $\mathcal{V}_\Delta$ will now depend on the value of the central charge $c$, which must be real 
+as we already saw in Section \ref{secsots}:
 \begin{enumerate}
  \item 
-If $c> 1$, then $\Delta_{\langle r,s \rangle}$ cannot be a real strictly positive number
- (See eq. \eqref{drs}.) Therefore, eigenvalues of $\det M^{(N)}$ do not change signs on the half-line $\Delta>0$.
-In the limit $\Delta\rightarrow \infty$, we have $\det M^{(N)}>0$, and actually all eigenvalues of $M^{(N)}$ are strictly positive.
-On the other hand, the case of $\det M^{(1)}$ already shows that Verma modules with $\Delta \leq 0$ are not unitary.
-Therefore, the Verma module $\mathcal{V}_\Delta$ is unitary if and only if $\Delta> 0$. 
+If $c > 1$, then $\Delta_{\langle r,s \rangle}$ \eqref{drs} cannot be a real, strictly positive number. 
+Therefore, eigenvalues of $\det M^{(N)}$ do not change signs on the half-line $c > 1$.
+In the limit $c \rightarrow \infty$, the matrix $M^{(N)}$ is positive definite. (See Exercise \ref{exoun}.) 
+Therefore, $\mathcal{V}_\Delta$ is unitary. 
 \item 
 If $c=1$, the Verma module $\mathcal{V}_\Delta$ is unitary if $\Delta > 0$ by continuity from the $c>1$ case, unless $\Delta=\Delta_{\langle r,s \rangle}$ for some $\langle r,s \rangle$, that is unless $\Delta =\frac14 n^2$ with $n\in {\mathbb{N}}$.
 \item 
-If $c<1$, then the values of $\Delta_{\langle r,s \rangle}$ for $r,s\geq 1$ include arbitrarily large real positive numbers, and $\det M^{(N)}$ is always negative for some $N$, so that Verma modules are never unitary.
+If $c<1$, then the Verma module $\mathcal{V}_\Delta$ is never unitary. 
+This is because for a given $\Delta>0$, the values of $c$ such that $\Delta = \Delta_{\langle r,s \rangle}$ for some $\langle r,s \rangle$ accumulate at $c=1^-$.
 \end{enumerate}
+
+We still have to consider the unitarity of highest-weight representations which are not Verma modules.
+Such degenerate representations are cosets of the type $R=\frac{\mathcal{V}_\Delta}{R'}$, where the subrepresentation $R'$ contains at least one singular vector. 
+For $R$ to be unitary, the subrepresentation $R'$ must include all negative-norm states, that is all eigenstates of Gram matrices which correspond to negative eigenvalues.
+
+If $c > 1$, the only degnererate representation with a positive conformal dimension is $R_{\langle 1,1 \rangle}$, and actually $\Delta_{\langle 1,1 \rangle}=0$. This representation is unitary, because all the zero-norm states in $\mathcal{V}_0 = \underset{\Delta \rightarrow 0^+}{\lim} \mathcal{V}_\Delta$ are descendents of the level one singular vector. If $c=1$, all degenerate representations have positive conformal dimensions, and again they are unitary.
+
+If now $c<1$, it turns out that in order to have a unitary coset, a Verma module must have not only one but actually two independent singular vectors \cite{fms97}. 
+Since the existence of a singular vector in $\mathcal{V}_\Delta$ implies a relation between $\Delta$ and the central charge $c$, the existence of two singular vectors implies a constraint on $c$. 
+As we will see in Section \ref{secamm}, the corresponding values of $c$ correspond to the minimal models, whose central charges are given in eq. \eqref{cpq}. 
+However, the existence of two singular vectors is a necessary, but not yet a sufficient condition for a Verma module to have a unitary coset.
+The final result is that for $c<1$ unitary cosets exist only if the central charge $c$ takes values which correspond to the unitary minimal models,
+\begin{align}
+ c = 1-\frac{6}{p(p+1)}  \quad \text{with} \quad 2\leq p\ ,
+\label{cpp}
+\end{align}
+For these values of $c$,
+the conformal dimensions of Verma modules which have unitary cosets are $\Delta=\Delta_{\langle r,s \rangle}=\Delta_{\langle p-r, p+1-s \rangle}$ where
+\begin{align}
+   1\leq s\leq r\leq p-1 \ .
+\label{srp}
+\end{align}
+These unitary cosets are the maximally degenerate representations $R_{\langle r,s \rangle}$, which take the form
+\begin{align}
+ R_{\langle r,s \rangle} = \frac{\mathcal{V}_{\Delta_{\langle r,s \rangle}}}{U(\mathfrak{V}^+)|\chi_{\langle r,s \rangle}\rangle + U(\mathfrak{V}^+)|\chi_{\langle p-r,p+1-s \rangle}\rangle}\ ,
+\label{rrs}
+\end{align}
+where the sum of the two subrepresentations is not a direct sum, because their intersection is nonzero. 
+
 These results are summarized in the following table:
 \begin{center}
  \begin{tabular}{|c|c|c|c|}
@@ -1507,38 +1514,12 @@ central charge & $c<1$ & $c=1$ & $c>1$
 $\mathcal{V}_\Delta$ unitary? & no & $\Delta>0$ and $\Delta \neq \frac14 n^2$ & $\Delta>0$
 \\
 \hline
+$R_{\langle r,s\rangle}$ unitary? & see eqs. \eqref{cpp} and \eqref{srp} &  yes & $\langle r,s \rangle = \langle 1,1\rangle$
+\\
+\hline
  \end{tabular}
 \end{center}
 
-We still have to consider the unitarity of highest-weight representations which are not Verma modules.
-Such representations are cosets of Verma modules, of the type $R=\frac{\mathcal{V}_\Delta}{R'}$.
-For $R$ to be unitary, the subrepresentation $R'$ must include all negative-norm states, that is all eigenstates of Gram matrices which correspond to negative eigenvalues.
-We already know that such a nontrivial subrepresentation must contain a singular vector.
-Assuming $c<1$, it turns out that in order to have a unitary coset, a Verma module must have not only one but actually two independent singular vectors \cite{fms97}. 
-
-Since the existence of a singular vector in $\mathcal{V}_\Delta$ implies a relation between $\Delta$ and the central charge $c$, the existence of two singular vectors implies a constraint on $c$.
-More specifically, if 
-$\Delta=\Delta_{\langle r,s \rangle}=\Delta_{\langle r',s' \rangle}$ for some pairs of integers $\langle r,s \rangle\neq \langle r',s' \rangle$, then $\alpha_{\langle r,s \rangle}=\alpha_{\langle r',s' \rangle}$ or $\alpha_{\langle r,s \rangle}=Q-\alpha_{\langle r',s' \rangle}$ where $\alpha_{\langle r,s \rangle}$ is given in eq. \eqref{ars}.
-Therefore, $b^2$ must be rational -- and $c$ too.
-If $c<1$, the corresponding values of $c$ correspond to the minimal models, whose central charges are given in eq. \eqref{cpq}. 
-
-The existence of two singular vectors is a necessary, but not yet a sufficient condition for a Verma module to have a unitary coset.
-The final result is that for $c<1$ unitary cosets exist only if the central charge $c$ takes values which correspond to the unitary minimal models,
-\begin{align}
- c = 1-\frac{6}{p(p+1)}  \quad \text{with} \quad 2\leq p\ ,
-\label{cpp}
-\end{align}
-For these values of $c$,
-the conformal dimensions of Verma modules which have unitary cosets are $\Delta=\Delta_{\langle r,s \rangle}=\Delta_{\langle p-r,p+1-s \rangle}$ where
-\begin{align}
-   1\leq s\leq r\leq p-1 \quad \text{with } \quad b^2=-\frac{p+1}{p}\ .
-\end{align}
-These unitary cosets are the maximally degenerate representations $R_{\langle r,s \rangle}$, which take the form
-\begin{align}
- R_{\langle r,s \rangle} = \frac{\mathcal{V}_{\Delta_{\langle r,s \rangle}}}{U(\mathfrak{V}^+)|\chi_{\langle r,s \rangle}\rangle + U(\mathfrak{V}^+)|\chi_{\langle p-r,p+1-s \rangle}\rangle}\ ,
-\label{rrs}
-\end{align}
-where the sum of the two subrepresentations is not a direct sum, because their intersection is nonzero. 
 
 \section{Virasoro symmetry in two-dimensional quantum field theory\label{seclin}}
 
@@ -1588,44 +1569,40 @@ In order to derive the equations which constrain and relate these correlation fu
 \subsection{The Virasoro field \label{sectvf}}
 
 We have called $L_n^{(z_0)}$ the action of the Virasoro generator $L_n$ on a field at the point $z_0$, thereby defining a family $(L_n^{(z_0)})_{z_0\in{\mathbb{C}}}$ of representations of the Virasoro algebra.
-We will now make crucial assumptions on the dependence of $L_n^{(z_0)}$ on $z_0$.
-These assumptions will be encoded in the existence and properties of the Virasoro field $T(y)$.
+But we should only have one left-moving Virasoro symmetry algebra: $(L_n^{(z_1)})_{n\in \mathbb{Z}}$ and $(L_n^{(z_2)})_{n\in \mathbb{Z}}$ should be understood of two bases of the same space of symmetry generators, and should be linearly related. 
+We will now determine this linear relation, which in practice will mean determining the 
+dependence of $L_n^{(z_0)}$ on $z_0$.
 
-To see how such an object can be built, consider the generators $\ell_n$ of the Witt algebra.
-We have given a representation of these generators as differential operators \eqref{elln}.
+Let us first consider the Witt algebra, whose generators $\ell_n$
+have a representation \eqref{elln} as differential operators.
 This representation corresponds to radial quantization with the reference point $z_0=0$.
-A representation which corresponds to an arbitrary reference point $z_0$ can easily be written as
+Performing a translation, we obtain
+a representation which corresponds to an arbitrary reference point $z_0$, 
 \begin{align}
  \ell_n^{(z_0)} = -(z-z_0)^{n+1}{\frac{\partial}{\partial z}}\ .
 \label{lzz}
 \end{align}
-Now it is possible to introduce an operator
+We now see that the dependence of $\ell_n^{(z_0)}$ on the reference point $z_0$ is such that
 \begin{align}
- t(y) = \frac{1}{y-z}{\frac{\partial}{\partial z}}\ ,
+ {\frac{\partial}{\partial z_0}} \ell_{n}^{(z_0)} = -(n+1) \ell_{n-1}^{(z_0)}\ .
 \end{align}
-such that for any $n\leq -2$ we have
-\begin{align}
- \ell_n^{(z_0)} = \frac{1}{2\pi i}\oint_{z_0} dy (y-z_0)^{n+1} t(y) \ .
-\label{lnz}
-\end{align}
-So, the generators $\ell_n^{(z_0)}$ for $n\leq -2$ are the modes of the operator $t(y)$, when this operator is expanded in powers of $(y-z_0)$. 
-Similarly, we assume that there exists a \textbf{\boldmath Virasoro field}\index{Virasoro field} $T(y)$ such that
-\begin{align}
-\boxed{ L_n^{(z_0)} = \frac{1}{2\pi i}\oint_{z_0} dy (y-z_0)^{n+1} T(y)} \ .
-\label{lit}
-\end{align}
-This equation is now supposed to hold for any $n\in{\mathbb{Z}}$, so that we can equivalently write 
-\begin{align}
- \boxed{T(y) = \sum_{n\in{\mathbb{Z}}} \frac{L_n^{(z_0)}}{(y-z_0)^{n+2}}}\ .
-\label{tsl}
-\end{align}
-This implicitly assumes that $T(y)$ does not depend on $z_0$, or equivalently
+We assume that the same equation applies to $L_n^{(z_0)}$, 
 \begin{align}
  {\frac{\partial}{\partial z_0}} L_{n}^{(z_0)} = -(n+1) L_{n-1}^{(z_0)}\ .
 \label{pll}
 \end{align}
-Of course, $T(y)$ is not an differential operator like $t(y)$, but rather a linear operator which acts on the spectrum, and which can therefore be considered as a field.
-Now, given any field $V_\sigma(z_0)$, where we do not indicate the dependence on $\bar{z}_0$ which plays no role here, we have
+This is equivalent to $\frac{\partial}{\partial z_0} T(y) = 0$, where we define $T(y)$ as 
+\begin{align}
+ \boxed{T(y) = \sum_{n\in{\mathbb{Z}}} \frac{L_n^{(z_0)}}{(y-z_0)^{n+2}}}\ .
+\label{tsl}
+\end{align}
+This is called the \textbf{\boldmath Virasoro field}\index{Virasoro field}: a field which encodes the action of the Virasoro algebra at all points. 
+From $T(y)$, we can indeed recover the Virasoro generators at any point,
+\begin{align}
+\boxed{ L_n^{(z_0)} = \frac{1}{2\pi i}\oint_{z_0} dy (y-z_0)^{n+1} T(y)} \ .
+\label{lit}
+\end{align}
+So, for any field $V_\sigma(z_0)$, where we do not indicate the dependence on $\bar{z}_0$ which plays no role here, we have
 \begin{align}
  \boxed{T(y)V_\sigma(z_0) = \sum_{n\in{\mathbb{Z}}} \frac{L_n V_\sigma(z_0)}{(y-z_0)^{n+2}}}\ .
 \label{tv}
@@ -1650,12 +1627,14 @@ This assumption will be justified in Section \ref{secgcs} in the case when $T(y)
 
 Now the commutation relations \eqref{vir} of the Virasoro algebra are equivalent to the following OPE of the field $T(y)$ with itself,
 \begin{align}
- \boxed{T(y)T(z) = \frac{\frac{c}{2}}{(y-z)^4} + \frac{2T(z)}{(y-z)^2} + \frac{\partial T(z)}{y-z} + O(1)}\ ,
+ \boxed{T(y)T(z) = \frac{\frac{c}{2}}{(y-z)^4} + \frac{2T(z)}{(y-z)^2} + \frac{\partial T(z)}{y-z} + O(1)}\ .
 \label{tt}
 \end{align}
-where we do not write the regular terms, which involve $L_{n\leq -2} T(z)$, and are not needed for the equivalence with the Virasoro algebra.
-The proof of this equivalence is sketched in Exercise \ref{exott}.
-Notice that the term $\frac{c}{2}$ should be understood as $\frac{c}{2}I$ where $I$ is the \textbf{\boldmath identity field}\index{identity field}, a field whose presence does not affect correlation functions, and which is in particular $z$-independent,
+The proof of this equivalence is sketched in Exercise \ref{exott}. 
+The regular terms of this OPE, which involve $L_{n\leq -2} T(z)$, do not appear in that proof, and are therefore omitted. 
+Regular terms are generally omitted when writing OPEs of $T(y)$, because that field is holomorphic and is therefore completely determined by its singularities. 
+
+Notice also that the term $\frac{c}{2}$ should be understood as $\frac{c}{2}I$ where $I$ is the \textbf{\boldmath identity field}\index{identity field}, a field whose presence does not affect correlation functions, and which is in particular $z$-independent,
 \begin{align}
  \left\langle I \cdots \right\rangle = \left\langle \cdots \right\rangle \ .
 \label{ivac}
@@ -1796,30 +1775,22 @@ where we use the notation
 
 \subsection{Virasoro-symmetric OPEs \label{secope}}
 
-Let us contemplate the consequences of the Virasoro symmetry on the OPE of two fields, whose general form was given in eq. \eqref{ope}.
-Virasoro symmetry imposes some basic constraints on the OPE:
-\begin{enumerate}
-\item we anticipate that fusion multiplicities are trivial, as we will check below,
- \item the factorization of the symmetry algebra into left-moving and right-moving factors leads to the factorization of OPE coefficients as in eq. \eqref{ccff},
- \item the OPE's universal parts, like the Ward identities, should be invariant under translations and should respect dimensional analysis \eqref{zaz},
-\item we assume that the OPE of primary or descendent fields only involves primary and descendent fields -- in other words, that the set of highest-weight representations is closed under fusion. (This assumption is not as innocent as it may seem: we will see in Section \ref{secslr} that the set of affine highest-weight representations is not closed under fusion.)
-\end{enumerate}
-Taking these constraints into account, the OPE of two descendent fields can be written as
+We make the fundamental assumption that the OPE of primary or descendent fields only involves primary and descendent fields -- in other words, that the set of highest-weight representations is closed under fusion. This assumption is not as innocent as it may seem: we will see in Section \ref{secslr} that the set of affine highest-weight representations is not closed under fusion. The fields which appear in OPEs will then be denoted as $V_{s,\bar{s}}(z,\bar{z}) = L\bar{L} V_{\Delta,\bar{\Delta}}(z,\bar{z})$, where $s=(\Delta,L)$ is made of a conformal dimension $\Delta$, and an element $L$ of the basis $\mathcal{L}$ \eqref{lels} of $U(\mathfrak{V}^+)$.
+
+We already know the general form \eqref{ope} of OPEs, and we will now see how Virasoro symmetry constrains OPE coefficients. First, we anticipate that fusion multiplicities are trivial, as we will check below. Then the OPE's universal parts, like the Ward identities, should respect holomorphic factorization, invariance under translations, and dimensional analysis \eqref{zaz}. This leads to
 \begin{multline}
  V_{s_1,\bar{s}_1}(z_1,\bar{z}_1)V_{s_2,\bar{s}_2}(z_2,\bar{z}_2) = \sum_{\Delta,\bar{\Delta}}\sum_{L,\bar{L}\in \mathcal{L}} 
  C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2}^{\Delta,\bar{\Delta}}(z_1,\bar{z}_1,z_2,\bar{z}_2)
 \\ \times
  f_{s_1,s_2}^{s} f_{\bar{s}_1,\bar{s}_2}^{\bar{s}} (z_1-z_2)^{|L|-|L_1|-|L_2|} (\bar{z}_1-\bar{z}_2)^{|\bar{L}|-|\bar{L}_1|-|\bar{L}_2|}
- V_{s,\bar{s}}(z_2,\bar{z}_2) \ ,
+ L\bar{L} V_{\Delta,\bar{\Delta}}(z_2,\bar{z}_2) \ ,
 \label{vvs}
 \end{multline}
-where we parametrize a state $\sigma = (s,\bar{s}) = ((\Delta,L),(\bar{\Delta},\bar{L}))$ in the spectrum by the conformal dimensions $\Delta,\bar{\Delta}$ and the elements $L,\bar{L}$ of the basis $\mathcal{L}$ \eqref{lels} of $U(\mathfrak{V}^+)$, whose levels $|L|$ and $|\bar{L}|$ are defined in eq. \eqref{nsn}. 
-Let us write the contributions of the left-moving descendents of $V_\Delta(z_2)$ as 
+where $f_{s_1,s_2}^s$ is a universal, $z_i$-independent coefficient. In order to study this coefficient, we will focus on the contributions of the left-moving descendents of $V_\Delta(z_2)$ for a given $\Delta$, which we schematically write as
 \begin{align}
- V_{s_1}(z_1)V_{s_2}(z_2) \sim \sum_{L\in \mathcal{L}} f_{s_1,s_2}^{\Delta,L} (z_1-z_2)^{|L|-|L_1|-|L_2|} LV_\Delta(z_2)\ ,
+ V_{s_1}(z_1)V_{s_2}(z_2) \sim \sum_{L\in \mathcal{L}} f_{s_1,s_2}^{\Delta,L} (z_1-z_2)^{|L|-|L_1|-|L_2|} LV_\Delta(z_2)\ .
 \label{vvlv}
 \end{align}
-where we project on $V_\Delta(z_2)$ and its descendents, and we omit the $L,\bar{L}$-independent factors.
 Constraints from Virasoro symmetry can be obtained by inserting $\oint_C dz\ (z-z_2)^{n+1} T(z)$ on both sides of the OPE, where the contour $C$ encircles both $z_1$ and $z_2$.
 If $n\geq -1$, the resulting constraint is 
 \begin{align}
@@ -1989,10 +1960,9 @@ f_{r_1,r_2,r_3} = \left\{\begin{array}{l}  1 \quad \text{if} \quad
 \section{Consequences of conformal symmetry \label{secem}}
 
 In Section \ref{seclin}, we have studied the linear equations which are associated to a Virasoro symmetry algebra.
-But we have not yet assumed that this Virasoro algebra corresponds to conformal transformations.
-Actually, a conformal field theory may have several Virasoro symmetry algebras, only one of which corresponds to conformal transformations.
-We will now focus on that particular algebra, whose
-Virasoro field will be called the \textbf{\boldmath energy-momentum tensor}\index{energy-momentum tensor}. 
+We now further assume that this Virasoro algebra corresponds to conformal transformations.
+The associated 
+Virasoro field will then be called the \textbf{\boldmath energy-momentum tensor}\index{energy-momentum tensor}. 
 
 \subsection{The energy-momentum tensor}
 
@@ -2200,10 +2170,9 @@ Only special cases of conformal blocks will be needed in the sequel, and the com
 
 We will now define \textbf{\boldmath conformal blocks}\index{conformal block} as the universal constituents of correlation functions. 
 We want correlation functions to be decomposable as combinations of the model-dependent three-point structure constant, and conformal blocks.
-In this sense, we already encountered two types of conformal blocks: two-point blocks $\mathcal{F}^{(2)}(\Delta_1|z_1,z_2)$ \eqref{fzz}, and three-point blocks $\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)$ \eqref{fzzz}.
-Higher-point conformal blocks are however much more complicated.
+In this sense, we already encountered simple examples of conformal blocks: two-point blocks $\mathcal{F}^{(2)}(\Delta_1|z_1,z_2)$ \eqref{fzz}, and three-point blocks $\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)$ \eqref{fzzz}. (On the torus, there exist nontrivial zero-point blocks, which are also known as the characters of representations.)
 
-For example, using the OPE \eqref{vvs}, together with the results of Section \ref{secgcs}, a four-point function of descendent fields of the type $V_{s,\bar{s}}(z,\bar{z})$ where $s=(\Delta,L)$ can be decomposed as 
+Using the OPE \eqref{vvs}, together with the results of Section \ref{secgcs}, a four-point function of descendent fields of the type $V_{s,\bar{s}}(z,\bar{z})$ where $s=(\Delta,L)$ can be decomposed as 
 \begin{align}
  \left\langle \prod_{i=1}^4 V_{s_i,\bar{s}_i}(z_i,\bar{z}_i)\right\rangle = \sum_{\Delta_s,\bar{\Delta}_s} C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2,\Delta_s,\bar{\Delta}_s} C_{\Delta_s,\bar{\Delta}_s,\Delta_3,\bar{\Delta}_3,\Delta_4,\bar{\Delta}_4} \left| \mathcal{F}^{(s)}_{\Delta_s}(s_i|z_i)\right|^2\ ,
 \label{fsd}
@@ -2212,7 +2181,7 @@ where all quantities which are not three-point structure constants have been com
 The appearance of the factorized quantity $\left| \mathcal{F}^{(s)}_{\Delta_s}(s_i|z_i)\right|^2$ is a manifestation of holomophic factorization, and the conformal block $\mathcal{F}^{(s)}_{\Delta_s}(s_i|z_i)$ is a locally holomorphic function of $z_i$. 
 
 Our decomposition of the four-point function followed from the $V_1V_2$ OPE: what if we used the $V_2V_3$ OPE instead? We would then obtain a decomposition involving \textbf{\boldmath $t$-channel}\index{t-channel@$t$-channel} four-point conformal blocks  $\mathcal{F}^{(t)}_{\Delta_t}(s_i|z_i)$.
-The equality of the two decompositions is called the \textbf{\boldmath crossing symmetry}\index{crossing symmetry} of the four-point function, which is a manifestation of the associativity of the OPE.
+The equality of the two decompositions is called the \textbf{\boldmath crossing symmetry}\index{crossing symmetry} of the four-point function.
 Introducing two diagrammatic notations for conformal blocks, 
 \begin{align}
  \mathcal{F}^{(s)}_{\Delta_s}  =  
@@ -2338,7 +2307,7 @@ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 
 = C_{23t}C_{t41} 
 F^{-1}_{\Delta_t,\Delta_s}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}
 \end{align}
-This is particularly useful, because the fusing matrix is usually a simpler object than the conformal blocks, as we will see in a particular case in Section \ref{sechcb}.
+This can be useful, because the fusing matrix is usually a simpler object than the conformal blocks, as we will see in a special case in Section \ref{sechcb}.
 Explicit formulas for $F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}$ with generic values of $\Delta_i$ can be found in \cite{tv12}.
 
 Let us sketch how conformal blocks can be computed. 
@@ -2420,16 +2389,22 @@ The recursion representation has the following properties:
 \item it is manifestly invariant under reflections of all momentums,
 \item it has no known interpretation as a sum over descendents in some basis.
 \end{itemize}
-Alternatively, conformal blocks have a combinatorial expansion which follows from the AGT relation \cite{aflt10}, and which has the opposite properties. 
+Alternatively, conformal blocks have a combinatorial representation which follows from the AGT relation \cite{aflt10}, and which has the opposite properties. 
 
-In the remainder of Section \ref{secem}, we will encounter conformal blocks which obey differential equations, as a result of the presence of degenerate fields. 
+The general crossing symmetry equation \eqref{csd}, while it may in principle determine the three-point structure constant, is in practice often intractable, because
+\begin{enumerate}
+ \item it can involve sums over large sets of possible conformal dimensions in the $s$- and $t$-channels, 
+ \item the general conformal blocks are rather complicated. 
+\end{enumerate}
+So, while the general crossing equation is useful for testing the consistency of proposals for the spectrum and three-point structure constant, it is often useless for deriving specific proposals in the first place. However, it is possible to restrict the $s$- and $t$-channels conformal dimensions to finite sets, and to simplify the conformal blocks, by taking one of the four fields to be degenerate. If the other three fields remain generic, this still leads to constraints on the generic three-point structure constant. 
+
+So, in the remainder of Section \ref{secem}, we will study conformal blocks which involve degenerate fields, and therefore obey differential equations. 
 Notice however that the conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$ is a smooth function of $\Delta_i$, which has a finite value for $\Delta_1 = \Delta_{\langle r,s\rangle}$ -- irrespective of the values of $\Delta_2,\Delta_3,\Delta_4,\Delta_s$. 
 If however $\Delta_2$ and $\Delta_s$ happen to be related as dictated by the fusion rule of the degenerate field $V_{\langle r,s\rangle}$, then this value obeys a differential equation of order $rs$.
 In other words, a conformal block involving a degenerate representation coincides with the conformal block involving the corresponding Verma module.
 The degenerate representation manifests itself in the decompositions of correlation functions, where fusion rules dictate which conformal blocks contribute.
 On the other hand, conformal blocks involving a degenerate representation in the $s$-channel are not mere limits of $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$, which is actually singular at $\Delta_s = \Delta_{\langle r,s\rangle}$.
 The sum over descendents in eq. \eqref{gsd} is valid only if the $s$-channel representation is a Verma module, and must be modified otherwise. 
-
 
 \subsection{BPZ differential equations \label{secbpz}}
 
@@ -2759,9 +2734,19 @@ Prove the identities
 Under suitable assumptions on $r$ and $s$, show that $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$ has two singular vectors $|\chi_{\langle r,s \rangle}\rangle$ and $|\chi_{\langle p-r,q-s \rangle}\rangle$.
 Show that each one of the two states  $|\chi_{\langle r,s \rangle}\rangle$ and $|\chi_{\langle p-r,q-s \rangle}\rangle$ has a descendent which is itself a singular vector at the level $pq+qr-ps$ in $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$.
 Assuming that these two singular vectors, which live at the same level $pq+qr-ps$, are in fact identical, enumerate all the singular vectors of $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$.
-Which ones are of the type $|\chi_{\langle r',s' \rangle}\rangle$? In particular, show that the singular vector at the level $pq+qr-ps$ is not of this type in $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$, although it is of this type when considered as a singular vector of the Verma modules generated by $|\chi_{\langle r,s \rangle}\rangle$ and $|\chi_{\langle p-r,q-s \rangle}\
-rangle$.
+Which ones are of the type $|\chi_{\langle r',s' \rangle}\rangle$? In particular, show that the singular vector at the level $pq+qr-ps$ is not of this type in $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$, although it is of this type when considered as a singular vector of the Verma modules generated by $|\chi_{\langle r,s \rangle}\rangle$ and $|\chi_{\langle p-r,q-s \rangle}\rangle$.
 \end{exo}
+
+\begin{exo}[Unitarity of Virasoro representations]
+~\label{exoun}
+Show that the Gram matrix $M^{(N)}$ of the level-$N$ subspace of the Verma module $\mathcal{V}_\Delta$ is positive definite in the limit $c\rightarrow \infty$, provided  $\Delta >0$. 
+To do this, notice that when computing the behaviour of the eigenvalues of $M^{(N)}$ in this limit, the Virasoro algebra \eqref{vir} effectively reduces to a sum of commuting finite-dimensional subalgebras, 
+\begin{align}
+ \underset{c\rightarrow \infty}{\lim} \mathfrak{V}  
+=  \operatorname{Span}(L_{-1},L_0,L_1) \oplus \bigoplus_{n=1}^\infty \operatorname{Span} (L_{-n}, L_n)\ .
+\end{align}
+\end{exo}
+
 
 \begin{exo}[Virasoro algebra and OPE] 
 ~\label{exott}
@@ -2891,9 +2876,7 @@ We assume
 \item that each theory is unitary;
 \item and that correlation functions are smooth as functions of $c$ and of the conformal dimensions of the fields, in a sense which we will make more precise.
 \end{itemize}
-In Section \ref{secuni}, we have discussed the unitarity of the two types of Virasoro representations -- Verma modules and degenerate representations.
-Unitary Verma modules exist only if $c\geq 1$, and their conformal dimensions obey $\Delta \geq 0$.
-And we need not concern ourselves with degenerate representations here, as their conformal dimensions take discrete values, whereas the spectrum of Liouville theory is assumed to be continuous. 
+Since the spectrum is continuous, it must involve Verma modules -- the other type of highest-weight representations, degenerate representations, form a discrete set. From Section \ref{secuni}, we know that unitary Verma modules exist only if $c\geq 1$, and their conformal dimensions obey $\Delta \geq 0$. So we assume $c\geq 1$. 
 
 When deriving the fusion rules \eqref{rtv} involving degenerate fields, we have seen that the natural parameters are not the conformal dimension $\Delta$ and the central charge $c$ -- rather, the momentum $\alpha$ \eqref{daq} and the Liouville coupling constant $b$ \eqref{cqb}.
 We assume that correlation functions are analytic as functions of $\alpha$ and $b$, with possibly poles, but no branch cuts. 
@@ -2945,8 +2928,11 @@ Therefore, the spectrum must be diagonal,
 \end{align}
 where the $\frac12$ factor in front of the integral over $\alpha$ is meant to eliminate the redundancy which comes from the reflection relation $\mathcal{V}_\alpha=\mathcal{V}_{Q-\alpha}$. 
 
+This spectrum does not contain any degenerate representation -- and anyway, unitarity would have allowed only the simplest degenerate representation $R_{\langle 1,1\rangle}$. 
+Nevertheless, we make the crucial assumption that degenerate fields exist, and in particular obey the axioms of associativity of OPEs, and single-valuedness of correlation functions.
+We will find that degenerate fields can be considered as analytic continuations of the physical fields -- the fields which do correspond to states in the spectrum.
 
-\subsection{Consequences of analyticity and reflection}
+\subsection{The reflection relation and its consequences}
 
 Since we
 use the momentum $\alpha$ instead of the conformal dimension $\Delta$ for parametrizing representations, we a priori have two notations $V_\alpha(z,\bar{z})$ and $V_{Q-\alpha}(z,\bar{z})$ for the primary field which corresponds to the representation $\mathcal{V}_\alpha \otimes \overline{\mathcal{V}}_\alpha$.
@@ -3040,13 +3026,7 @@ We then obtain
 \end{align}
 
 Let us discuss OPEs involving degenerate fields of the type $V_{\langle r,s \rangle}$.
-The corresponding degenerate representations do not belong to the spectrum, as can be seen by comparing their momentums $\alpha_{\langle r,s \rangle}$ \eqref{ars} with the set of allowed values \eqref{aqd}.
-So the very existence of OPEs and correlation functions involving such fields does not follow from general principles of conformal field theory, and relies instead on our analyticity assumptions for Liouville theory, which guarantee that fields $V_\alpha$ can be unambiguously continued to arbitrary complex values of $\alpha$. 
-These analyticity assumptions actually make the very notion of spectrum somewhat arbitrary, as we can deform the contour of integration over $\alpha$ in the OPE \eqref{vvi} without changing the result, so long we do not encounter singularities.
-We will see that singularities are encountered at the values $\alpha=\alpha_{\langle r,s \rangle}$ which correspond to degenerate fields.
-And it will turn out that at $\alpha=\alpha_{\langle r,s \rangle}$ we do not encounter the field $V_{\alpha_{\langle r,s \rangle}}$ which corresponds to a reducible Verma module, but the degenerate field $V_{\langle r,s \rangle}$ which corresponds to an irreducible representation. 
-
-Remembering the fusion rules \eqref{rtv}, an OPE involving the degenerate field $V_{\langle r,s \rangle}$ must be of the type
+Remembering the fusion rules \eqref{rtv}, an OPE involving $V_{\langle r,s \rangle}$ must be of the type
 \begin{align}
  \boxed{V_{\langle r,s \rangle} V_\alpha \sim \sum_{i=0}^{s-1}\sum_{j=0}^{r-1} C_{i,j}^{\langle r,s \rangle}(\alpha) V_{\alpha+\alpha_{\langle r,s \rangle}+ib+jb^{-1}}}\ .
 \label{vrsv}
@@ -3075,7 +3055,9 @@ the OPE of the degenerate field $V_{\langle 1,2 \rangle}$,
 \boxed{V_{\langle 1,2 \rangle} V_\alpha \sim \tilde{C}_+(\alpha) V_{\alpha-\frac{1}{2b}} + \tilde{C}_-(\alpha) V_{\alpha+\frac{1}{2b}}}\ ,
  \label{vto}
 \end{align}
-and relations involving the coefficients $\tilde{C}_+(\alpha)$ and $\tilde{C}_-(\alpha)$.
+and relations involving the coefficients $\tilde{C}_+(\alpha)$ and $\tilde{C}_-(\alpha)$. 
+
+Finally, we assume that the OPE \eqref{vrsv} still holds if $V_\alpha$ is replaced by the degenerate field $V_{\langle r',s'\rangle}$, and that the coefficients are simply $C_{i,j}^{\langle r,s \rangle}(\alpha_{\langle r',s'\rangle})$ where $\alpha_{\langle r',s'\rangle}$ is given by eq. \eqref{ars}. Similarly, the reflection coefficient for $V_{\langle r',s'\rangle}$ is assumed to be $R(\alpha_{\langle r',s'\rangle})$.
 
 \subsection{Conformal bootstrap equations \label{seccbe}}
 
@@ -3263,7 +3245,7 @@ The existence of $\Upsilon_b(x)$ is demonstrated by the following integral expre
 \label{lup}
 \end{align}
 If $x$ is outside the strip, the value of $\Upsilon_b(x)$ can be found by combining the above integral expression with the shift equations \eqref{upup}.
-An alternative formula for $\Upsilon_b(x)$ is 
+An alternative formula for $\Upsilon_b(x)$, which makes the zeros manifest, is 
 \begin{align}
  \Upsilon_b(x) = \lambda_b^{(\frac{Q}{2}-x)^2}\prod_{m,n=0}^\infty f\left(\frac{\frac{Q}{2}-x}{\frac{Q}{2}+mb+nb^{-1}}\right) \quad \text{with} \quad f(x)=(1-x^2)e^{x^2}\ ,
 \end{align}
@@ -3380,13 +3362,14 @@ The residues however have finite limits, and we obtain an OPE of the type of eq.
  \boxed{C_{i,j}^{\langle r,s \rangle}(\alpha_1) = \underset{\alpha_2\rightarrow \alpha_{\langle r,s \rangle}}{\lim}\ \underset{\alpha=\alpha_1+\alpha_2+ib+jb^{-1}}{\operatorname{ Res}}\ C_{\alpha_1,\alpha_2,Q-\alpha}}\ .
 \label{crs}
 \end{align}
-This shows that the limit of $V_{\alpha_2}$ is a degenerate field, so that 
+This leads to the conclusion that the limit of $V_{\alpha_2}$ is a degenerate field, 
 \begin{align}
- \boxed{V_{\langle r,s \rangle} = \underset{\alpha\rightarrow \alpha_{\langle r,s \rangle}}{\lim } V_\alpha} \ .
+ \boxed{\underset{\alpha\rightarrow \alpha_{\langle r,s \rangle}}{\lim } V_\alpha = V_{\langle r,s \rangle}} \ ,
 \label{vla}
 \end{align}
-The present calculation can then be interpreted 
-as a derivation of the fusion rules \eqref{rtv}.
+whereas one might have expected the non-degenerate field $V_{\alpha_{\langle r,s \rangle}}$.
+The present calculation can then be interpreted as a derivation of the fusion rules \eqref{rtv}.
+It is actually tempting to use a similar calculation for deriving the fusion rules of the unitary Verma modules which do not belong to the spectrum. (See Exercise \ref{exoaur}.)
 
 Let us finish the computation of the degenerate OPE coefficient $C_{i,j}^{\langle r,s \rangle}(\alpha)$.
 Using eq. \eqref{caaa}, we obtain 
@@ -3429,11 +3412,11 @@ Actually, Liouville theory has an unambiguous $c\rightarrow 1$ limit \cite{sch03
 which includes the whole domain $c\in [1,\infty[$ permitted by unitarity.
 On the other hand, the $c\rightarrow c_0\in ]-\infty,-1[$ limit is ill-defined \cite{zam05}. 
 
-There is little doubt that Liouville theory exists for $c\geq 25$, in view of the unicity of the three-point structure constant, and of the relevance of Liouville theory to two-dimensional quantum gravity (reviewed in \cite{zam05}).
+There is little doubt that Liouville theory exists for $c\geq 25$, in view of the unicity of the three-point structure constant, and of the relevance of Liouville theory to two-dimensional quantum gravity (reviewed in \cite{zam05}). Actually, Liouville theory with $c> 25$ is known to be consistent also on the torus \cite{hjs09}, although its partition function is infinite. 
 Then analyticity in $b$ suggests that the theory exists in the domain \eqref{cnot}.
-In particular, the associativity of the OPE has been tested numerically for $c=1$ \cite{rw01} and $c=13$ \cite{zz95}, and more extensive numerical tests are certainly doable.
-In addition, there is a purported proof \cite{tes03b} of the existence of Liouville theory for $c>25$, which may actually hold for more general values of $c$ by analytic continuation.
-But this proof has not received the attention and thorough checking it deserves, and is not universally accepted.
+In particular, the associativity of the OPE has been tested numerically for $c=1$ \cite{rw01} and $c=13$ \cite{zz95}, and more extensive numerical tests are doable.
+In addition, there is a proposed proof \cite{tes03b} of the existence of Liouville theory for $c>25$, which may actually hold for more general values of $c$ by analytic continuation.
+But this proof has not received the attention and thorough checking it deserves.
 
 In any region where $b^2\notin{\mathbb{R}}$, we can find alternative solutions of the equations \eqref{upup}, by multiplying $\Upsilon_b(x)$ with elliptic functions -- meromorphic functions $\theta(x)$ such that $\theta(x+b)=\theta(x+\frac{1}{b}) = \theta(x)$.
 The particular solution $\Upsilon_b(x)$ is characterized by having a finite limit for $b\in {\mathbb{R}}$. 
@@ -3460,14 +3443,14 @@ the reflection relation \eqref{crc}, as follows from the identity
 The function $\hat{C}_{\alpha_1,\alpha_2,\alpha_3}$ provides a natural analytic continuation of the three-point function of generalized minimal models \eqref{crisi}, and of certain Coulomb gas integrals \eqref{mint}.
 But is it the three-point structure constant of a consistent conformal field theory? Probably not in the $b^2\notin{\mathbb{R}}$ domain: even if we have several solutions of eq. \eqref{fcc} and its 
 $b\rightarrow \frac{1}{b}$ dual, it is unlikely that we have more than one solution of the infinitely many extra equations of OPE associativity, and Liouville theory already provides one solution.
-However, for $b\in i{\mathbb{R}}$ i.e. $c<1$, there is no Liouville theory, and it is natural to conjecture that $\hat{C}_{\alpha_1,\alpha_2,\alpha_3}$ is the three-point function of a consistent theory, which is sometimes called \textbf{timelike Liouville theory}\index{timelike Liouville theory}.
+However, for $b\in i{\mathbb{R}}$ i.e. $c<1$, there is no Liouville theory, and it is natural to conjecture that $\hat{C}_{\alpha_1,\alpha_2,\alpha_3}$ is the three-point function of a consistent theory.
 It is however not obvious what the spectrum of that theory is supposed to be.
 The natural guess is that the spectrum is given by eq. \eqref{aqd}, just like the spectrum of Liouville theory.
 Integrating on this spectrum for computing a four-point function as in eq. \eqref{fsd}, we meet singularities of the structure constants and conformal blocks, so the integral must somehow be regularized.
-Such issues with singularities are inevitable: if they were absent, we could analytically continue the theory to the whole $b\notin {\
-mathbb{R}}$ 
+Such issues with singularities are inevitable: if they were absent, we could analytically continue the theory to the whole $b\notin {\mathbb{R}}$ 
 domain, which would contradict our considerations on unicity.
 
+Finally, let us mention that nothing new can be obtained by relaxing our assumption that the multiplicities of representations in the spectrum do not exceed one, and allowing finite multiplicities. (See Exercise \ref{exomul}.)
 
 \section{Minimal models \label{secvmm}}
 
@@ -3568,7 +3551,7 @@ where we defined
 \end{align}
 The three-point structure constant \eqref{crisi} of a generalized minimal model is then
 \begin{align}
- C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =  \frac{(-1)^{r_0+s_0+1}\mu^{br_0 + b^{-1}s_0}}{P_{r_0}(b^2)P_{s_0}(b^{-2})Q_{r_0,s_0}(b)} \prod_{i=1}^3 \frac{P_{r_i-1}(b^2)P_{s_i-1}(b^{-2}) Q_{r_i-1,s_i-1}(b)}{P_{r_0-r_i}(b^2)P_{s_0-s_i}(b^{-2}) Q_{r_0-r_i,s_0-s_i}(b)} \ ,
+ C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =  \frac{-(-b^2)^{r_0-s_0}\mu^{br_0 + b^{-1}s_0}}{P_{r_0}(b^2)P_{s_0}(b^{-2})Q_{r_0,s_0}(b)} \prod_{i=1}^3 \frac{P_{r_i-1}(b^2)P_{s_i-1}(b^{-2}) Q_{r_i-1,s_i-1}(b)}{P_{r_0-r_i}(b^2)P_{s_0-s_i}(b^{-2}) Q_{r_0-r_i,s_0-s_i}(b)} \ ,
 \label{cpqb}
 \end{align}
 where we introduce the notations 
@@ -3580,7 +3563,7 @@ This contrasts with the three-point function of Liouville theory, which is singu
 
 Finally, let us warn that crossing symmetry in Liouville theory does not directly imply crossing symmetry in generalized minimal models.
 While many four-point functions of generalized minimal models are limits of Liouville theory four-point functions and are therefore crossing-symmetric, there are cases when the $\alpha_i\rightarrow \alpha_{\langle r_i,s_i\rangle}$ limit of the Liouville four-point function yields spurious terms in addition to the four-point function of the generalized minimal model, due to the non-vanishing of $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ in cases when the degenerate fusion rules are violated.
-Of course we expect that these spurious terms cancel with one another in the crossing symmetry equations.
+Of course we expect that these spurious terms cancel with one another in the crossing symmetry equations. On the other hand, nothing guarantees that generalized minimal models are consistent on the torus. Actually, correlation functions involving only the identity field reduce to the partition function, and are therefore infinite. And there is no reason for the other correlation functions to be better behaved.  
 
 
 \subsection{A-series minimal models \label{secamm}}
@@ -3659,6 +3642,7 @@ This set can therefore be used to build the spectrum of an A-series minimal mode
 where the factor $\frac12$ is here to avoid counting each representation $R_{\langle r,s \rangle}=R_{\langle p-r,q-s \rangle}$ twice.
 As in the case of generalized minimal models, we could define submodels whose spectrums would be based on smaller sets of representations, provided these smaller sets were closed under fusion.
 However, the minimal models have the distinction of being consistent not only on the sphere, but also on all other Riemann surfaces \cite{fms97}.
+It is easy to see that minimal models with $|p-q|>1$, and generalized minimal models, cannot be unitary, due to the presence of fields with negative conformal dimensions in their spectrums. (See Exercise \ref{exoneg}.)
 
 Finally, let us discuss the correlation functions of the A-series minimal models.
 The three-point structure constants are given by the same formula \eqref{cpqb} as in generalized minimal models, where the rationality of $b^2$ does not bring noteworthy simplifications. 
@@ -3850,6 +3834,31 @@ Use eq. \eqref{ctc} for showing that these equations for $\lambda(\alpha)$ are c
 Conclude that these equations do have a solution.
 \end{exo}
 
+\begin{exo}[Fusion rules of all unitary representations if $c>1$]
+ ~\label{exoaur}
+Compute the analytic continuation of the Liouville OPE to momentums $\beta\in (0,Q)$, which correspond to unitary representation that do not belong to the spectrum \eqref{sad}. 
+Show that this leads to the following conjecture for the fusion rules, where we assume $\beta_1,\beta_2\in (0,\frac{Q}{2})$:
+\begin{align}
+ \mathcal{V}_\beta \times \mathcal{V}_\alpha  
+&= \frac12 \int_{\frac{Q}{2}+i\mathbb{R}} d\alpha'\ \mathcal{V}_{\alpha'}\ ,
+\\
+ \mathcal{V}_{\beta_1} \times \mathcal{V}_{\beta_2} 
+&= \sum_{\beta'\in (0,\frac{Q}{2})\cap \beta_1+\beta_2 + b\mathbb{N}+b^{-1}\mathbb{N}} \mathcal{V}_{\beta'}  
++ \frac12 \int_{\frac{Q}{2}+i\mathbb{R}} d\alpha'\ \mathcal{V}_{\alpha'}\ .
+\end{align}
+In particular, determine a lower bound on the conformal dimension $\Delta$, such that $\mathcal{V}_\Delta \times \mathcal{V}_\Delta$ belongs to the Liouville spectrum.
+What are the consequences of these results for possible extensions of Liouville theory?
+\end{exo}
+
+\begin{exo}[Allowing finite multiplicities in Liouville theory]
+ ~\label{exomul}
+Redo the analysis of Section \ref{seccbe}, after relaxing the assumption that the multiplies are at most one, and allowing a finite multiplicity $m\geq 2$ instead. 
+Assuming that the continuous fields are now vectors of size $m$ while the degenerate fields remain scalars, find the relations between the degenerate OPE coefficients and the reflection coefficient, all of which are now matrices of size $m$. 
+Requiring these quantities to be analytic functions of the momentum, show that the reflection coefficient must still be given by eq. \eqref{ram}, where the cosmological constant is now a matrix. 
+Conclude that the theory is equivalent to $m$ independent copies of Liouville theory. 
+\end{exo}
+
+
 \begin{exo}[Fusion rules of doubly degenerate representations]
  ~\label{exofus}
 Derive the fusion rules \eqref{rrmm} of doubly degenerate representations.
@@ -3877,6 +3886,23 @@ Show that each one of the $16$ rectangles parametrized by the function $\epsilon
  \bigcup\ \big]|r_1+r_2-p|,p-|r_1-r_2|\big[\times \big]|s_1+s_2-q|,q-|s_1-s_2|\big[\ .
 \end{multline}
 Finally, rewrite this as eq. \eqref{rrmm}.
+\end{exo}
+
+\begin{exo}[Unitarity of (generalized) minimal models]
+ ~\label{exoneg}
+From Section \ref{secuni} on unitarity, assume we only remember that highest-weight representations with conformal dimensions $\Delta <0$ cannot be unitary. 
+Assuming $b^2 < -1$, show that the condition for the conformal dimension $\Delta_{\langle r,s \rangle}$ \eqref{drs} of a degenerate representation to be negative is 
+\begin{align}
+ \Delta_{\langle r,s \rangle} < 0 \quad \Leftrightarrow \quad \frac{r-1}{s-1} < -\frac{1}{b^2} < \frac{r+1}{s+1} \ .
+\end{align}
+If $b^2$ is irrational, show that this occurs for infinitely many choices of $\langle r,s \rangle$, by applying the Dirichlet approximation theorem to $-\frac{1}{b^2}$. 
+Deduce that the corresponding generalized minimal model is not unitary. 
+In the minimal model case $b^2 = -\frac{q}{p}$, show that 
+\begin{align}
+ \bigcup_{r=1}^{p-1}\bigcup_{s=1}^{q-1} \left( \frac{r-1}{s-1} , \frac{r+1}{s+1} \right)  = \left(0, \frac{p}{p+1}\right) \ .
+\end{align}
+(Pay special attention to the case $s=r+1$.) Deduce that if $|q-p|>1$, then the corresponding minimal model is not unitary.
+Assuming that the fusion product of two representations is unitary if and only if both representations are unitary, show that in non-unitary (generalized) minimal models, at least some of the representations with positive conformal dimensions are non-unitary.
 \end{exo}
 
 \begin{exo}[Structure constant of the $(5,2)$ minimal model]
@@ -4400,6 +4426,7 @@ seen in the $N=3$ case \eqref{caaa}, and the linear dilaton correlation function
 \end{multline}
 The relation \eqref{lild} implies that Liouville theory can be viewed as a perturbation of the linear dilaton theory.
 This is an example of \textbf{\boldmath conformal perturbation theory}\index{conformal perturbation theory} -- the definition and study of two-dimensional quantum field theories (conformal or not) as perturbed conformal field theories.
+The perturbing operator, here $V_b$, is chosen so that its conformal dimension is one, a necessary but not sufficient condition for the perturbed theory to still have conformal symmetry.
 This example is rather pathological, as Liouville theory does not have a smooth $\mu\rightarrow 0$ limit where we could recover the linear dilaton theory, and the linear dilaton theory does not allow us to compute Liouville theory correlation functions, but only their residues at certain poles. 
 
 The integral \eqref{mint} is called a \textbf{\boldmath Coulomb gas integral}\index{Coulomb gas integral}.
@@ -4946,7 +4973,7 @@ Using eqs. \eqref{cpm} and \eqref{caaa} for $C_{\pm}(\alpha_1)$ and $C_{\alpha_1
 {\Upsilon_b(-\frac{j_1+j_2+j_3+1}{b})\Upsilon_b(-\frac{j_1+j_2-j_3}{b}) \Upsilon_b(-\frac{j_1-j_2+j_3}{b})\Upsilon_b(-\frac{-j_1+j_2+j_3}{b})}}\ ,
 \label{chp}
 \end{align}
-where the cosmological constant $\mu$ is inherited from Liouville theory.
+where the parameter $b$ is given by eq. \eqref{bk}, and the cosmological constant $\mu$ is inherited from Liouville theory.
 
 The $x$-basis two-point function can be obtained from the $\mu$-basis two-point function with the help of the formula 
 \begin{align}
@@ -5677,6 +5704,9 @@ right-hand side using the formula \eqref{djm} for $\hat{J}^-(y)$, and conclude.
 
 
 \printindex
+
+%\bibliographystyle{cft}
+%\bibliography{cft}
 
 \input{refs.tex}
 
