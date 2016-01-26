@@ -1,13 +1,3 @@
-%%%%%%%%%%%%%%%%%%% README %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% For the 'pst-all' and 'hyperref' packages to work 
-% as intended, this file should be compiled as follows:
-
-% tex -> dvi -> ps -> pdf
-
-% In particular, PDFLatex won't work with 'pst-all'.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \documentclass[12pt,a4paper,notitlepage]{report}
 
@@ -15,7 +5,7 @@
 
 \usepackage[top=20mm,bottom=20mm,left=25mm,right=25mm]{geometry}
 
-%\usepackage{showkeys}
+\usepackage{showkeys}
 
 \usepackage{amsmath,amssymb,amsfonts}
 
@@ -23,7 +13,10 @@
 
 \usepackage{underbracket}
 
-\usepackage{pst-all}
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows}
 
 \numberwithin{equation}{section}
 
@@ -242,7 +235,6 @@ I wish to thank Philippe Di Francesco, Matthias Gaberdiel, Christoph Keller, Sla
 
 I am grateful to Fran\c{c}ois David, Quang-Dien Duong and Raoul Santachiara for helpful comments on this text.
 
-
 \chapter{Introduction \label{secintr}}
 
 \section{Quantum field theory \label{secqft} }
@@ -258,42 +250,37 @@ A model need not be directly related to a \textbf{\boldmath physical system}\ind
 This holds not only for physical systems, but also for what can be called theoretical systems, such as quantum gravity in $d$ dimensions.
 These notions are illustrated by the following examples:
 \begin{center}
- \psset{unit = .5cm}
-\pspicture[](30,11.5)
-\rput[c](5,11){Theories}
-\rput[c](13.5,11){Models}
-\rput[c](25,11){Systems}
-\psline(0,10.3)(30,10.3)
-\rput[l](0,8){\psframebox{
-\pspicture[](0,-1.6)(19,1.6)
-\rput[l](0,0){Newtonian mechanics}
-\rput[c](13,1){\rnode{ss}{\psframebox{Spinning solid}}}
-\rput[c](13,-1){\rnode{gb}{\psframebox{Gravitating bodies}}} 
-\endpspicture
-}}
-\rput[l](0,5){\psframebox{
-\pspicture[](0,-.6)(19,.6)
-\rput[l](0,0){General relativity}
-\rput[c](13,0){\rnode{rgb}{\psframebox{Relativistic gravitating bodies}}}
-\endpspicture
-}}
-\rput[l](0,2){\psframebox{
-\pspicture[](0,-1.6)(19,1.6)
-\rput[l](0,0){Conformal field theory}
-\rput[c](13,1){\rnode{mm}{\psframebox{Minimal model}}}
-\rput[c](13,-1){\rnode{lt}{\psframebox{Liouville theory}}} 
-\endpspicture
-}}
-\rput[c](25,9){\rnode{st}{\psframebox{Spinning top}}}
-\ncline[linestyle = dashed]{ss}{st}
-\rput[c](25,6.5){\rnode{ssy}{\psframebox{Solar system}}}
-\nccurve[linestyle = dashed,angleA=180]{ssy}{gb}
-\nccurve[linestyle = dashed,angleA=180]{ssy}{rgb}
-\rput[c](25,1){\rnode{str}{\psframebox{2d string}}}
-\nccurve[linestyle = dashed,angleA=180]{str}{lt}
-\rput[c](25,2.5){\rnode{qg}{\psframebox{2d quantum geometry}}}
-\nccurve[linestyle = dashed,angleA=180]{qg}{lt}
-\endpspicture
+ \begin{tikzpicture}[scale = .5]
+  \node at (5,11){Theories};
+  \node at (14,11){Models};
+  \node at (25,11){Systems};
+  \draw[thick] (0,10.3) -- (30,10.3);
+  
+  \draw[fill = red!10] (0, 6.3) rectangle (20, 9.7);
+  \draw[fill = red!10] (0, 4.1) rectangle (20, 5.9);
+  \draw[fill = red!10] (0, .3) rectangle (20, 3.7);
+  
+  \node at (.2, 8)[right] {Newtonian mechanics};
+  \node at (.2, 5)[right] {General relativity};
+  \node at (.2, 2)[right] {Conformal field theory};
+  
+  \draw (14, 8.8) node[draw, fill = white] (ss) {Spinning solid};
+  \draw (14, 7.2) node[draw, fill = white] (gb) {Gravitating bodies};
+  \draw (14, 5) node[draw, fill = white] (rgb) {Relativistic gravitating bodies};
+  \draw (14, 2.8) node[draw, fill = white] (mm) {Minimal model};
+  \draw (14, 1.2) node[draw, fill = white] (lt) {Liouville theory};
+  
+  \draw (25, 8.8) node[draw, fill = green!10] (st) {Spinning top};
+  \draw (25, 6.1) node[draw, fill = green!10] (ssys) {Solar system};
+  \draw (25, 2.8) node[draw, fill = green!10] (qg) {2d quantum geometry};
+  \draw (25, 1.2) node[draw, fill = green!10] (str) {2d string};
+  
+  \draw[thick, dashed] (ss.east) to [out = 0, in = 180] (st.west);
+  \draw[thick, dashed] (gb.east) to [out = 0, in = 180] (ssys.west);
+  \draw[thick, dashed] (rgb.east) to [out = 0, in = 180] (ssys.west);
+  \draw[thick, dashed] (lt.east) to [out = 0, in = 180] (qg.west);
+  \draw[thick, dashed] (lt.east) to [out = 0, in = 180] (str.west);
+ \end{tikzpicture}
 \end{center}
 
 Now, what is a \textbf{\boldmath quantum}\index{quantum} theory? First, this is a probabilistic theory, which does not predict the outcome of a given experiment, but the probabilities of different outcomes.
@@ -486,27 +473,16 @@ for any choice of the four states $(\sigma_1,\sigma_2,\sigma_3,\sigma_4)$.
 (See Exercise \ref{exoten} a similar calculation in a technically simpler context.) This condition can be represented schematically as 
 \begin{align}
 \sum_{s} 
- \psset{unit=.3cm}
-\pspicture[shift=-5](-6,-6)(6,5)
-\psline(0,-4)(0,-1)(-4,3)
-\psline(0,3)(-2,1)(0,-1)(4,3)
-\rput[c](-4,4){$1$}
-\rput[c](0,4){$2$}
-\rput[c](4,4){$3$}
-\rput[c](0,-5){$4$}
-\rput[c](-1.5,-.5){$s$}
-\endpspicture
+ \begin{tikzpicture}[scale = .2, baseline=(current  bounding  box.center), very thick]
+  \draw (-4,3) node [above] {$1$} -- (0, -1) -- (4, 3) node [above] {$3$};
+  \draw (0, 3) node [above] {$2$} -- (-2, 1) -- node [below left] {$s$} (0, -1) -- (0, -4) node [below] {$4$};
+ \end{tikzpicture}
 = \quad
 \sum_{t} 
-\pspicture[shift=-5](-6,-6)(6,5)
-\psline(0,-4)(0,-1)(4,3)
-\psline(0,3)(2,1)(0,-1)(-4,3)
-\rput[c](-4,4){$1$}
-\rput[c](0,4){$2$}
-\rput[c](4,4){$3$}
-\rput[c](0,-5){$4$}
-\rput[c](1.5,-.5){$t$}
-\endpspicture
+\begin{tikzpicture}[scale = .2, baseline=(current  bounding  box.center), very thick]
+  \draw (-4,3) node [above] {$1$} -- (0, -1) -- (4, 3) node [above] {$3$};
+  \draw (0, 3) node [above] {$2$} -- (2, 1) -- node [below right] {$t$} (0, -1) -- (0, -4) node [below] {$4$};
+  \end{tikzpicture}
 \label{sdsd}
 \end{align}
 where each node corresponds to an OPE coefficient. 
@@ -919,35 +895,36 @@ V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)  =  \sum_{\sigma\in S} \left\langle \sigma \l
 where we used the state-field correspondence in a cavalier way: we replaced the field $V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)$ with the corresponding state $|V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)\rangle$, and the state $|\sigma\rangle$ with the corresponding field $V_{\sigma}(x_2)$.
 This can be drawn as follows:
 \begin{align}
-\psset{unit = .4cm}
- \pspicture[shift=-3](-6,-3)(4,3)
- \psline(-4,2)(1,2)
-\psline(-4,-2)(1,-2)
-\rmultiput{\psline[linestyle=dashed](0,0)(2,0)}(-6,2)(-6,-2)
-\rmultiput{\psbezier(0,-2)(-1,-2)(-1,2)(0,2)\psbezier[linestyle=dashed](0,-2)(1,-2)(1,2)(0,2)}(0,0)(-4,0)
-\rput[r](-1,0){$C$}
-\psarc(1,0){2}{-90}{90}
-\psdots[dotstyle=+,dotangle=45,dotscale=1.4](2.8,.8)(2.8,-.8)
-\rput[l](3,.8){$V_{\sigma_1}$}
-\rput[l](3,-.8){$V_{\sigma_2}$}
-\endpspicture
+\newcommand{\myoval}[2]{\draw[dashed] (#1, #2 + 2) to [out = 0, in = 0] (#1, #2 - 2); 
+			\draw (#1, #2 + 2) to [out = 180, in = 180] (#1, #2 - 2);}
+\begin{tikzpicture}[scale = .45, baseline=(current  bounding  box.center)]
+  \myoval{0}{0};
+  \myoval{4}{0};
+  \draw (0, 2) -- (6, 2);
+  \draw (0, -2) -- (6, -2);
+  \draw[dashed] (0, 2) -- (-2, 2);
+  \draw[dashed] (0, -2) -- (-2, -2);
+  \draw (6, 2) arc (90 : -90 : 2);
+  \node at (2.4, 0) {$C$};
+  \filldraw (7.4, 1) circle [radius = 3pt] node [left] {$V_{\sigma_1}$};
+  \filldraw (7.4, -1) circle [radius = 3pt] node [left] {$V_{\sigma_2}$};
+ \end{tikzpicture}
 \quad
 = \ \ \sum_{\sigma\in S} 
 \quad
-\psset{unit = .4cm}
- \pspicture[shift=-3](-6,-3)(6,3)
-\psarc(-3,0){2}{-90}{90}
-\pscircle(3,0){2}
-\rput[r](-1.2,0){$V_\sigma$}
-\rput[l](1.2,0){$V_\sigma$}
-\psdots[dotstyle=+,dotangle=45,dotscale=1.4](-1,0)(1,0)
-\rmultiput{\psline(0,0)(1,0)}(-4,2)(-4,-2)
-\rmultiput{\psline[linestyle=dashed](0,0)(2,0)}(-6,2)(-6,-2)
-\rmultiput{\psbezier(0,-2)(-1,-2)(-1,2)(0,2)\psbezier[linestyle=dashed](0,-2)(1,-2)(1,2)(0,2)}(-4,0)
-\psdots[dotstyle=+,dotangle=45,dotscale=1.4](4.8,.8)(4.8,-.8)
-\rput[l](5,.8){$V_{\sigma_1}$}
-\rput[l](5,-.8){$V_{\sigma_2}$}
-\endpspicture
+\begin{tikzpicture}[scale = .45, baseline=(current  bounding  box.center)]
+  \myoval{0}{0};
+  \draw[dashed] (0, 2) -- (-2, 2);
+  \draw[dashed] (0, -2) -- (-2, -2);
+  \draw (0, 2) -- (2, 2);
+  \draw (0, -2) -- (2, -2);
+  \draw (2, 2) arc (90 : -90 : 2);
+  \filldraw (3.7, 0) circle [radius = 3pt] node [left] {$V_{\sigma}$};
+  \draw (8, 0) circle (2);
+  \filldraw (9.4, 1) circle [radius = 3pt] node [left] {$V_{\sigma_1}$};
+  \filldraw (9.4, -1) circle [radius = 3pt] node [left] {$V_{\sigma_2}$};
+  \filldraw (6.3, 0) circle [radius = 3pt] node [right] {$V_{\sigma}$};
+ \end{tikzpicture}
 \end{align}
 We thus obtain an OPE whose coefficient $\left\langle \sigma \left| V_{\sigma_1}(x_1)V_{\sigma_2}(x_2) \right. \right\rangle $ is essentially a three-point function.
 We will see the relation between OPE coefficients and three-point functions in more detail in Section \ref{secope}. 
@@ -955,28 +932,39 @@ We will see the relation between OPE coefficients and three-point functions in m
 Inserting the decomposition of the identity \eqref{oss} on a contour $C$ amounts to cutting the space into two pieces, and in each piece replacing the resulting hole with a puncture -- an insertion of a field $V_{\sigma}(x)$ for some $x$.
 If we view the space near the contour $C$ as a cylinder, this can be drawn as follows:
 \begin{align}
-\psset{unit = .4cm}
- \pspicture[shift=-3](-6,-3)(6,3)
- \psline(-4,2)(4,2)
-\psline(-4,-2)(4,-2)
-\rmultiput{\psline[linestyle=dashed](0,0)(2,0)}(-6,2)(4,2)(-6,-2)(4,-2)
-\rmultiput{\psbezier(0,-2)(-1,-2)(-1,2)(0,2)\psbezier[linestyle=dashed](0,-2)(1,-2)(1,2)(0,2)}(0,0)(-4,0)(4,0)
-\rput[r](-1,0){$C$}
-\endpspicture
+\newcommand{\myoval}[2]{\draw[dashed] (#1, #2 + 2) to [out = 0, in = 0] (#1, #2 - 2); 
+			\draw (#1, #2 + 2) to [out = 180, in = 180] (#1, #2 - 2);}
+\begin{tikzpicture}[scale = .45, baseline=(current  bounding  box.center)]
+  \myoval{0}{0};
+  \myoval{4}{0};
+  \myoval{8}{0};
+  \node at (2.4, 0) {$C$};
+  \draw (0, 2) -- (8, 2);
+  \draw (0, -2) -- (8, -2);
+  \draw[dashed] (0, 2) -- (-2, 2);
+  \draw[dashed] (0, -2) -- (-2, -2);
+  \draw[dashed] (8, 2) -- (10, 2);
+  \draw[dashed] (8, -2) -- (10, -2);
+ \end{tikzpicture}
 \quad
 = \ \ \sum_{\sigma\in S} 
 \quad
-\psset{unit = .4cm}
- \pspicture[shift=-3](-6,-3)(6,3)
-\psarc(-3,0){2}{-90}{90}
-\psarc(3,0){2}{90}{-90}
-\rput[r](-1.2,0){$V_\sigma$}
-\rput[l](1.2,0){$V_\sigma$}
-\psdots[dotstyle=+,dotangle=45,dotscale=1.4](-1,0)(1,0)
-\rmultiput{\psline(0,0)(1,0)}(-4,2)(-4,-2)(3,2)(3,-2)
-\rmultiput{\psline[linestyle=dashed](0,0)(2,0)}(-6,2)(4,2)(-6,-2)(4,-2)
-\rmultiput{\psbezier(0,-2)(-1,-2)(-1,2)(0,2)\psbezier[linestyle=dashed](0,-2)(1,-2)(1,2)(0,2)}(-4,0)(4,0)
-\endpspicture
+\begin{tikzpicture}[scale = .45, baseline=(current  bounding  box.center)]
+  \myoval{0}{0};
+  \myoval{8}{0};
+  \draw[dashed] (0, 2) -- (-2, 2);
+  \draw[dashed] (0, -2) -- (-2, -2);
+  \draw[dashed] (8, 2) -- (10, 2);
+  \draw[dashed] (8, -2) -- (10, -2);
+  \draw (1.5, 2) arc (90 : -90 : 2);
+  \draw (6.5, -2) arc (90 : -90: -2);
+  \draw (0, 2) -- (1.5, 2);
+  \draw (0, -2) -- (1.5, -2);
+  \draw (6.5, 2) -- (8, 2);
+  \draw (6.5, -2) -- (8, -2);
+  \filldraw (4.8, 0) circle [radius = 3pt] node [right] {$V_{\sigma}$};
+  \filldraw (3.2, 0) circle [radius = 3pt] node [left] {$V_{\sigma}$};
+\end{tikzpicture}
 \label{cscc}
 \end{align}
 In the case of a topologically trivial contour $C$, this equality amounts to using OPEs for replacing all fields within $C$ with one field $V_\sigma(x)$.
@@ -986,7 +974,6 @@ The study of constraints of this type is called the \textbf{\boldmath modular bo
 We will however only consider topologically trivial spaces (that is, surfaces of genus $g=0$), without assuming our models to be defined on spaces of nonzero genus.
 For our purposes, 
 the axiom of the existence of the OPE will therefore be general enough. 
-
 
 \subsection{Sketching the space of simple models \label{secmomo}}
 
@@ -1010,20 +997,19 @@ Then the central charge is $c=1-\frac{6}{p(p+1)}=0,\frac12,\frac{7}{10},\cdots$.
 The unitary minimal model with $c=\frac12$ is called the \textbf{\boldmath Ising model}\index{Ising model}.
 \end{itemize}
 On the $c\in{\mathbb{R}}$ line, the unitary diagonal models are therefore located as follows:
-\begin{align}
- \psset{unit=.6cm}
-\pspicture[shift=-2](-10,-2)(10,1)
-\psline[arrowscale=2]{->}(-11,0)(10,0)
-\rmultiput{\psline(0,-.2)(0,.2)}(-6,0)(-3,0)(-1.8,0)(-1.2,0)(-.86,0)(-.64,0)(-.5,0)(-.4,0)(-.33,0)(-.27,0)(-.23,0)
-\pspolygon*[linecolor=lightgray](-.2,-.2)(-.2,.2)(9.2,.2)(9.2,-.2)
-\pspolygon*(-.2,-.2)(-.2,.2)(0,.2)(0,-.2)
-\rput[t](-6,-.4){$0$}
-\rput[t](0,-.4){$1$}
-\rput[t](10,-.4){$c$}
-\rput[t](-3,-.6){Minimal\ Models}
-\rput[t](5,-.6){Liouville\ theory}
-\endpspicture
-\end{align}
+\begin{center}
+ \begin{tikzpicture}[scale = 5]
+ \draw[-latex] (-.4, 0) -- (2.4, 0) node [below right] {$c$};
+ \node[below] at (.5, -.05) {Minimal models};
+ \node[below] at (1.7, -.05) {Liouville theory};
+ \foreach \p in {2,...,20}
+  {
+  \draw [thick] ({1-6/(\p*(\p+1))}, -.03) -- ({1-6/(\p*(\p+1))}, .03);
+  }
+  \filldraw [opacity = .2] (.98, -.03) -- (.98, .03) -- (2.35, .03) -- (2.35, -.03) -- cycle;
+  \node [below] at (0, -.02) {$0$};  \node [below] at (.99, -.02) {$1$};
+\end{tikzpicture}
+\end{center}
 Other simple models include:
 \begin{itemize}
  \item the \textbf{\boldmath linear dilaton theory}\index{linear dilaton theory}, which like Liouville theory has a diagonal, continuous spectrum and is defined for any $c\in {\mathbb{C}}$, being unitary if $c\geq 1$.
@@ -1135,6 +1121,7 @@ Assuming that Cardy's formula holds for $S$ and $S'$, show that computing the la
 Conclude that Cardy's formula holds for $S\otimes S'$.
 \end{exo}
 
+\iffalse
 
 \chapter{From representation theory to differential equations \label{secccs}}
 
@@ -5702,6 +5689,8 @@ Compute the commutator of the
 right-hand side using the formula \eqref{djm} for $\hat{J}^-(y)$, and conclude.
 \end{exo}
 
+
+\fi
 
 \printindex
 
