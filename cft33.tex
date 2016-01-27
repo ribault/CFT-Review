@@ -1121,7 +1121,7 @@ Assuming that Cardy's formula holds for $S$ and $S'$, show that computing the la
 Conclude that Cardy's formula holds for $S\otimes S'$.
 \end{exo}
 
-\iffalse
+
 
 \chapter{From representation theory to differential equations \label{secccs}}
 
@@ -1180,58 +1180,52 @@ The conformal dimension of such a state is then $\Delta+N$.
 
 The dimension of the level-$N$ subspace of $U(\mathfrak{V}^+)$ is the number $p(N)$ of partitions of $N$.
 The basis of $U(\mathfrak{V}^+)$ up to the level $N=5$ can be plotted as follows: 
-\begin{align}
- \psset{unit=.28cm}
-\pspicture[shift=-16.5](-20,-34)(20,1)
-\rmultiput{\psline[linestyle=dotted](-20,0)(20,0)}(0,0)(0,-6)(0,-12)(0,-18)(0,-24)(0,-30)
-\psline{->}(20,0)(20,-33)
-\ncline[linestyle=dashed]{o}{oo}
-\rput*(0,0){\rnode{z}{$1$}}
-\rput*(-3.6,-6){\rnode{o}{$L_{-1}$}}
-\rput*(-7.2,-12){\rnode{oo}{$L_{-1}^2$}}
-\rput*(-10.8,-18){\rnode{ooo}{$L_{-1}^3$}}
-\rput*(-14.4,-24){\rnode{oooo}{$L_{-1}^4$}}
-\rput*(-18,-30){\rnode{ooooo}{$L_{-1}^5$}}
-\rput*(0,-12){\rnode{t}{$L_{-2}$}}
-\rput*(-4,-18){\rnode{ot}{$L_{-1}L_{-2}$}}
-\rput*(-8,-24){\rnode{oot}{$L_{-1}^2L_{-2}$}}
-\rput*(-12,-30){\rnode{ooot}{$L_{-1}^3L_{-2}$}}
-\rput*(-2,-24){\rnode{tt}{$L_{-2}^2$}}
-\rput*(-6,-30){\rnode{ott}{$L_{-1}L_{-2}^2$}}
-\rput*(6,-18){\rnode{th}{$L_{-3}$}}
-\rput*(3,-24){\rnode{oth}{$L_{-1}L_{-3}$}}
-\rput*(0,-30){\rnode{ooth}{$L_{-1}^2L_{-3}$}}
-\rput*(6,-30){\rnode{tth}{$L_{-2}L_{-3}$}}
-\rput*(12,-24){\rnode{f}{$L_{-4}$}}
-\rput*(12,-30){\rnode{of}{$L_{-1}L_{-4}$}}
-\rput*(18,-30){\rnode{fi}{$L_{-5}$}}
-\ncline[linestyle=dashed,nodesep=3pt]{->}{z}{o}
-\ncline[linestyle=dashed,nodesep=3pt]{->}{o}{oo}
-\ncline[linestyle=dashed,nodesep=3pt]{->}{oo}{ooo}
-\ncline[linestyle=dashed,nodesep=3pt]{->}{ooo}{oooo}
-\ncline[linestyle=dashed,nodesep=3pt]{->}{oooo}{ooooo}
-\ncline[linestyle=dashed,nodesep=3pt]{->}{z}{t}
-\ncline[linestyle=dashed,nodesep=3pt]{->}{t}{ot}
-\ncline[linestyle=dashed,nodesep=3pt]{->}{ot}{oot}
-\ncline[linestyle=dashed,nodesep=3pt]{->}{oot}{ooot}
-\ncline[linestyle=dashed,nodesep=3pt]{->}{t}{tt}
-\ncline[linestyle=dashed,nodesep=3pt]{->}{tt}{ott}
-\ncline[linestyle=dashed,nodesep=3pt]{->}{z}{th}
-\ncline[linestyle=dashed,nodesep=3pt]{->}{z}{f}
-\ncline[linestyle=dashed,nodesep=3pt]{->}{z}{fi}
-\ncline[linestyle=dashed,nodesep=3pt]{->}{th}{oth}
-\ncline[linestyle=dashed,nodesep=3pt]{->}{oth}{ooth}
-\ncline[linestyle=dashed,nodesep=3pt]{->}{th}{tth}
-\ncline[linestyle=dashed,nodesep=3pt]{->}{f}{of}
-\rput(21,0){$0$}
-\rput(21,-6){$1$}
-\rput(21,-12){$2$}
-\rput(21,-18){$3$}
-\rput(21,-24){$4$}
-\rput(21,-30){$5$}
-\rput(21,-33){$N$}
-\endpspicture
-\end{align}
+\begin{center}
+ \begin{tikzpicture}[scale = .3]
+  \draw[-latex, very thick] (20, 0) -- (20, -33) node [right] {$N$};
+  \foreach \x in {0, ..., 5}
+  {
+  \draw [dotted] (-20, {-6*\x}) -- (20, {-6*\x}) node [right] {${\x}$};
+  }
+  \node[fill = white] at (0, 0) (0) {$1$};
+  \node[fill = white] at (-3.6,-6) (1) {$L_{-1}$};
+  \node[fill = white] at (-7.2, -12) (11) {$L_{-1}^2$};
+  \node[fill = white] at (-10.8, -18) (111) {$L_{-1}^3$};
+  \node[fill = white] at (-14.4, -24) (1111) {$L_{-1}^4$};
+  \node[fill = white] at (-18, -30) (11111) {$L_{-1}^5$};
+  \node[fill = white] at (0,-12) (2) {$L_{-2}$};
+  \node[fill = white] at (-4,-18) (12) {$L_{-1}L_{-2}$};
+  \node[fill = white] at (-8,-24) (112) {$L_{-1}^2L_{-2}$};
+  \node[fill = white] at (-12,-30) (1112) {$L_{-1}^3L_{-2}$};
+  \node[fill = white] at (-2,-24) (22) {$L_{-2}^2$};
+  \node[fill = white] at (-6,-30) (122) {$L_{-1}L_{-2}^2$};
+  \node[fill = white] at (6,-18) (3) {$L_{-3}$};
+  \node[fill = white] at (3,-24) (13) {$L_{-1}L_{-3}$};
+  \node[fill = white] at (0,-30) (113) {$L_{-1}^2L_{-3}$};
+  \node[fill = white] at (6,-30) (23) {$L_{-2}L_{-3}$};
+  \node[fill = white] at (12,-24) (4) {$L_{-4}$};
+  \node[fill = white] at (12,-30) (14) {$L_{-1}L_{-4}$};
+  \node[fill = white] at (18,-30) (5) {$L_{-5}$};
+  \draw[-latex] (0) -- (1);
+  \draw[-latex] (1) -- (11);
+  \draw[-latex] (11) -- (111);
+  \draw[-latex] (111) -- (1111);
+  \draw[-latex] (1111) -- (11111);
+  \draw[-latex] (0) -- (2);
+  \draw[-latex] (0) -- (3);
+  \draw[-latex] (0) -- (4);
+  \draw[-latex] (0) -- (5);
+  \draw[-latex] (2) -- (12);
+  \draw[-latex] (12) -- (112);
+  \draw[-latex] (112) -- (1112);
+  \draw[-latex] (2) -- (22);
+  \draw[-latex] (22) -- (122);
+  \draw[-latex] (3) -- (13);
+  \draw[-latex] (13) -- (113);
+  \draw[-latex] (4) -- (14);
+  \draw[-latex] (3) -- (23);
+ \end{tikzpicture}
+\end{center}
 In this diagram, each arrow stands for the action of a Virasoro generator $L_n$ with $n<0$.
 Acting with generators which are not depicted on the diagram would produce linear combinations of our basis states, for example $L_{-2}L_{-1} = L_{-1}L_{-2} - L_{-3}$.
 
@@ -2172,78 +2166,43 @@ The equality of the two decompositions is called the \textbf{\boldmath crossing 
 Introducing two diagrammatic notations for conformal blocks, 
 \begin{align}
  \mathcal{F}^{(s)}_{\Delta_s}  =  
-\psset{unit=.2cm}
-\pspicture[shift=-3](-7,-3)(7,3)
- \psline(-5,3)(-2,0)(2,0)(5,3)
-\psline(-5,-3)(-2,0)
-\psline(2,0)(5,-3)
-\rput[r](-5.5,-3){$1$}
-\rput[r](-5.5,3){$2$}
-\rput[l](5.5,3){$3$}
-\rput[l](5.5,-3){$4$}
-\rput[b](0,.5){$s$}
-\endpspicture
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
+\draw (-1,2) node [left] {$2$} -- (0,0) -- node [above] {$s$} (4,0) -- (5,2) node [right] {$3$};
+\draw (-1,-2) node [left] {$1$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$4$};
+\end{tikzpicture}
 =
-\psset{unit=.3cm}
-\pspicture[shift=-3](-4,-3)(4,3)
-\psline(-3,0)(0,3)(3,0)(0,-3)(0,3)
-\psline(-3,0)(0,-3)
-\rput[tr](-2,-2){$1$}
-\rput[br](-2,2){$2$}
-\rput[bl](2,2){$3$}
-\rput[tl](2,-2){$4$}
-\rput[r](-.1,0){$s$}
-\endpspicture
-\quad ,\quad
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
+\draw (0, -2) -- node [below left] {$1$} (-2, 0) -- node [above left] {$2$} (0, 2) -- node [above right] {$3$} (2, 0) -- node [below right] {$4$} (0, -2) -- node [left] {$s$} (0, 2); 
+\end{tikzpicture}
+\quad\ ,\quad\
  \mathcal{F}^{(t)}_{\Delta_t}  =  
-\psset{unit=.2cm}
-\pspicture[shift=-5](-5,-5)(5,5)
- \psline(3,-5)(0,-2)(0,2)(3,5)
-\psline(-3,-5)(0,-2)
-\psline(0,2)(-3,5)
-\rput[r](-3.5,-5){$1$}
-\rput[r](-3.5,5){$2$}
-\rput[l](3.5,5){$3$}
-\rput[l](3.5,-5){$4$}
-\rput[r](-.5,0){$t$}
-\endpspicture
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
+ \draw (-2,3) node [left] {$2$} -- (0,2) -- node [left] {$t$} (0,-2) -- (-2, -3) node [left] {$1$};
+\draw (0,2) -- (2,3) node [right] {$3$};
+\draw (0,-2) -- (2, -3) node [right] {$4$};
+\end{tikzpicture}
 =
-\psset{unit=.3cm}
-\pspicture[shift=-3](-4,-3)(4,3)
-\psline(0,-3)(3,0)(0,3)(-3,0)(3,0)
-\psline(-3,0)(0,-3)
-\rput[tr](-2,-2){$1$}
-\rput[br](-2,2){$2$}
-\rput[bl](2,2){$3$}
-\rput[tl](2,-2){$4$}
-\rput[t](0,-.2){$t$}
-\endpspicture
-,
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
+\draw (-2, 0) -- node [above left] {$2$} (0, 2) -- node [above right] {$3$} (2, 0) -- node [below right] {$4$} (0, -2) -- node [below left] {$1$} (-2, 0) -- node [below] {$t$} (2, 0); 
+\end{tikzpicture}
+\ \ ,
 \end{align}
 we can write crossing symmetry of the four-point function as the equation
 \begin{align}
- \sum_{\Delta_s,\bar{\Delta}_s} C_{12s} C_{s34} \left| \psset{unit=.2cm}
-\pspicture[shift=-3.5](-8,-4)(8,4)
- \psline(-5,3)(-2,0)(2,0)(5,3)
-\psline(-5,-3)(-2,0)
-\psline(2,0)(5,-3)
-\rput[r](-5.5,-3){$1$}
-\rput[r](-5.5,3){$2$}
-\rput[l](5.5,3){$3$}
-\rput[l](5.5,-3){$4$}
-\rput[b](0,.5){$s$}
-\endpspicture \right|^2 = \sum_{\Delta_t,\bar{\Delta}_t} C_{23t}C_{t41} \left|
-\psset{unit=.2cm}
-\pspicture[shift=-5.5](-6,-6)(6,6)
- \psline(3,-5)(0,-2)(0,2)(3,5)
-\psline(-3,-5)(0,-2)
-\psline(0,2)(-3,5)
-\rput[r](-3.5,-5){$1$}
-\rput[r](-3.5,5){$2$}
-\rput[l](3.5,5){$3$}
-\rput[l](3.5,-5){$4$}
-\rput[r](-.5,0){$t$}
-\endpspicture\right|^2\ .
+ \sum_{\Delta_s,\bar{\Delta}_s} C_{12s} C_{s34} \left| 
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
+\draw (-1,2) node [left] {$2$} -- (0,0) -- node [above] {$s$} (4,0) -- (5,2) node [right] {$3$};
+\draw (-1,-2) node [left] {$1$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$4$};
+\end{tikzpicture} 
+\right|^2 = \sum_{\Delta_t,\bar{\Delta}_t} C_{23t}C_{t41} \left|
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
+ \draw (-2,3) node [left] {$2$} -- (0,2) -- node [left] {$t$} (0,-2) -- (-2, -3) node [left] {$1$};
+\draw (0,2) -- (2,3) node [right] {$3$};
+\draw (0,-2) -- (2, -3) node [right] {$4$};
+\end{tikzpicture}
+\right|^2\ .
 \label{csd}
 \end{align}
 Assuming the conformal blocks to be known, this is a quadratic equation for the three-point structure constant.
@@ -2262,21 +2221,13 @@ The parameters of the fusing matrix are in principle representations of the Vira
 The range of the summation over $\Delta_t$ may in principle differ from the range of the summation over $\Delta_s$ in the decomposition \eqref{fsd} of the four-point function: the former is universal, while the latter characterizes the spectrum of the model under consideration.
 A diagrammatic notation for the fusing matrix is 
 \begin{align}
- F_{s,t}\begin{bmatrix} 2 & 3 \\ 1 & 4 \end{bmatrix} = 
-\psset{unit=.3cm}
-\pspicture[shift=-3](-5,-3)(4,3)
-\psline(0,-3)(3,0)(0,3)(-3,0)(3,0)
-\psline(0,-3)(0,3)
-\psline[border=2pt](0,-1)(0,1)
-\psline(-3,0)(0,-3)
-\rput[tr](-2,-2){$1$}
-\rput[br](-2,2){$2$}
-\rput[bl](2,2){$3$}
-\rput[tl](2,-2){$4$}
-\rput[t](-1,-.2){$t$}
-\rput[r](-.1,1){$s$}
-\endpspicture
-.
+ F_{s,t}\begin{bmatrix} 2 & 3 \\ 1 & 4 \end{bmatrix} = \ \ 
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .55]
+\draw (0, -2) -- node [below left] {$1$} (-2, 0) -- node [above left] {$2$} (0, 2) -- node [above right] {$3$} (2, 0) -- node [below right] {$4$} (0, -2) -- (0, 2);
+\draw (-2, 0) -- (-.2, 0) node [below left] {$t$}; \draw (.2, 0) -- (2, 0);
+\node [above left] at (0, .2) {$s$};
+\end{tikzpicture}
+\ \ .
 \end{align}
 It is possible to eliminate the conformal blocks from the crossing symmetry equation \eqref{csd}, using the fusing relation and the linear independence of blocks within a given basis,
 \begin{align}
@@ -2463,33 +2414,22 @@ we recover the characteristic exponents $\lambda_\pm$, so that each characterist
 (See also Exercise \ref{exotbf}.) The corresponding solutions are called \textbf{\boldmath $s$-channel}\index{s-channel@$s$-channel} degenerate \textbf{conformal blocks}\index{conformal block}, denoted $\mathcal{F}^{(s)}_\pm(x)$, and depicted
 \begin{align}
  \mathcal{F}^{(s)}_\pm(x)  =  
-\psset{unit=.4cm}
-\pspicture[shift=-3](-8,-3)(8,3)
- \psline(-5,3)(-2,0)(2,0)(5,3)
-\psline[linestyle=dashed](-5,-3)(-2,0)
-\psline(2,0)(5,-3)
-\rput[r](-5.5,-3){$\langle 2,1 \rangle$}
-\rput[r](-5.5,3){$\alpha_1$}
-\rput[l](5.5,3){$\alpha_2$}
-\rput[l](5.5,-3){$\alpha_3$}
-\rput[b](0,.5){$\alpha_1\mp \frac{b}{2}$}
-\endpspicture
-=
-\psset{unit=.5cm}
-\pspicture[shift=-3](-5,-3)(4,3)
-\psline(-3,0)(0,3)(3,0)(0,-3)(0,3)
-\psline[linestyle=dashed](-3,0)(0,-3)
-\rput[tr](-2,-2){$\langle 2,1 \rangle$}
-\rput[br](-2,2){$\alpha_1$}
-\rput[bl](2,2){$\alpha_2$}
-\rput[tl](2,-2){$\alpha_3$}
-\rput[r](-.1,0){$\alpha_1\mp \frac{b}{2}$}
-\endpspicture
-,
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
+\draw (-1,2) node [left] {$\alpha_1$} -- (0,0) -- node [above] {$\alpha_1\mp \frac{b}{2}$} (4,0) -- (5,2) node [right] {$\alpha_2$};
+\draw[dashed] (-1,-2) node [left] {$\langle 2,1 \rangle$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$\alpha_3$};
+\end{tikzpicture}
+\ =\ 
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .7]
+\draw[dashed] (0, -2) -- node [below left] {$\langle 2,1 \rangle$} (-2, 0); 
+\draw (-2, 0) -- node [above left] {$\alpha_1$} (0, 2) -- node [above right] {$\alpha_2$} (2, 0) -- node [below right] {$\alpha_3$} (0, -2) -- node [left] {$\alpha_1\mp \frac{b}{2}\! \! $} (0, 2); 
+\end{tikzpicture}
+\  \ ,
 \label{gpic}
 \end{align}
 where the degenerate field is represented as a dashed line.
 These degenerate conformal blocks are special cases of the more general conformal blocks of Section \ref{secaco}.
+
 
 \subsection{Hypergeometric conformal blocks \label{sechcb}}
 
@@ -2560,7 +2500,6 @@ The corresponding solutions of the twisted equation \eqref{hj} are
 \label{fpm}
 \end{align}
 
-
 We can also define the \textbf{\boldmath $t$-channel}\index{t-channel@$t$-channel} basis of solutions, whose elements are associated to the characteristic exponents at the regular singular point $x=1$.
 Such solutions are obtained from the $s$-channel solutions by the exchange $\left\{\begin{smallmatrix} 1\leftrightarrow 3\\ x\leftrightarrow 1-x \end{smallmatrix}\right.$, and we find 
 \begin{align}
@@ -2571,29 +2510,19 @@ Such solutions are obtained from the $s$-channel solutions by the exchange $\lef
 whose diagrammatic representations are 
 \begin{align}
  \mathcal{F}^{(t)}_\pm(x)  =  
-\psset{unit=.4cm}
-\pspicture[shift=-5](-6,-5)(6,5)
- \psline(3,-5)(0,-2)(0,2)(3,5)
-\psline[linestyle=dashed](-3,-5)(0,-2)
-\psline(0,2)(-3,5)
-\rput[r](-3.5,-5){$\langle 2,1 \rangle$}
-\rput[r](-3.5,5){$\alpha_1$}
-\rput[l](3.5,5){$\alpha_2$}
-\rput[l](3.5,-5){$\alpha_3$}
-\rput[r](-.5,0){$\alpha_3\mp \frac{b}{2}$}
-\endpspicture
-=
-\psset{unit=.5cm}
-\pspicture[shift=-3](-5,-3)(4,3)
-\psline(0,-3)(3,0)(0,3)(-3,0)(3,0)
-\psline[linestyle=dashed](-3,0)(0,-3)
-\rput[tr](-2,-2){$\langle 2,1 \rangle$}
-\rput[br](-2,2){$\alpha_1$}
-\rput[bl](2,2){$\alpha_2$}
-\rput[tl](2,-2){$\alpha_3$}
-\rput[t](0,-.1){$\alpha_3\mp \frac{b}{2}$}
-\endpspicture
-.
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
+ \draw (-2,3) node [left] {$\alpha_1$} -- (0,2) -- node [left] {$\alpha_3\mp \frac{b}{2}$} (0,-2);
+ \draw[dashed] (0, -2) -- (-2, -3) node [left] {$\langle 2,1 \rangle$};
+\draw (0,2) -- (2,3) node [right] {$\alpha_2$};
+\draw (0,-2) -- (2, -3) node [right] {$\alpha_3$};
+\end{tikzpicture}
+\ =\
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .7]
+\draw (-2, 0) -- node [above left] {$\alpha_1$} (0, 2) -- node [above right] {$\alpha_2$} (2, 0) -- node [below right] {$\alpha_3$} (0, -2);
+\draw[dashed] (0, -2) -- node [below left] {$\langle 2,1 \rangle$} (-2, 0);
+\draw (-2, 0) -- node [below] {$\alpha_3\mp \frac{b}{2}$} (2, 0); 
+\end{tikzpicture}
+\ \ .
 \label{tpic}
 \end{align}
 The relation between our two bases of solutions follows from the formula
@@ -2624,23 +2553,15 @@ whose determinant is
 and whose elements can be represented diagrammatically as
 \begin{align}
 F_{ij} =
-\psset{unit=.5cm}
-\pspicture[shift=-3](-5,-3)(4,3)
-\psline(0,-3)(3,0)(0,3)(-3,0)(3,0)
-\psline(0,-3)(0,3)
-\psline[border=2pt](0,-1)(0,1)
-\psline[linestyle=dashed](-3,0)(0,-3)
-\rput[tr](-2,-2){$\langle 2,1 \rangle$}
-\rput[br](-2,2){$\alpha_1$}
-\rput[bl](2,2){$\alpha_2$}
-\rput[tl](2,-2){$\alpha_3$}
-\rput[t](-1,-.1){$j$}
-\rput[r](-.1,1){$i$}
-\endpspicture
-.
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .7]
+\draw (-2, 0) -- node [above left] {$\alpha_1$} (0, 2) -- node [above right] {$\alpha_2$} (2, 0) -- node [below right] {$\alpha_3$} (0, -2) -- (0, 2);
+\draw[dashed] (0, -2) -- node [below left] {$\langle 2,1 \rangle$} (-2, 0);
+\draw (-2, 0) -- (-.2, 0) node [below left] {$j$}; \draw (.2, 0) -- (2, 0);
+\node [above left] at (0, .2) {$i$};
+\end{tikzpicture}
+\ .
 \label{fpic}
 \end{align}
-
 
 Now how can the single-valued four-point function $\left\langle V_{\langle 2,1 \rangle}(x,\bar{x})V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle$ be decomposed as a combination of our solutions? We assume that we are dealing with a model whose spectrum is diagonal, so that the four-point function obeys not only the BPZ equation \eqref{sode}, but also the complex conjugate equation, and must be of the type 
 \begin{align}
@@ -2843,6 +2764,7 @@ What are the four possible choices for the pair $(\lambda,\mu)$?
 Show that the choice $\lambda=b\alpha_1,\ \mu=b\alpha_3$ leads to the values of $A,B,C$ given in eq. \eqref{abc}. 
 \end{exo}
 
+\iffalse
 
 % Ensuring the coming chapter begins on an odd-numbered page, in case we want to print the document in two halves.
 
