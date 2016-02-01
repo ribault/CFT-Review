@@ -9,6 +9,10 @@
 
 % From this BST style we derive the 'morder3' BST style by removing the calls to 'add.link', so that the 'hyperref' package is no longer needed.
 
+% Version morder5: Restored arxiv numbers for articles, as they are sometimes useful. This might also
+% help SPIRES understand who cites whom. Need we include 'arXiv' prefix for that? 
+% Removed some useless stuff.
+
 %% This is file `morder.bst',
 %% generated with the docstrip utility.
 %%
@@ -296,47 +300,6 @@ MACRO {nov} {"November"}
 
 MACRO {dec} {"December"}
 
-MACRO {acmcs} {"ACM Comput. Surv."}
-
-MACRO {acta} {"Acta Inf."}
-
-MACRO {cacm} {"Commun. ACM"}
-
-MACRO {ibmjrd} {"IBM J. Res. Dev."}
-
-MACRO {ibmsj} {"IBM Syst.~J."}
-
-MACRO {ieeese} {"IEEE Trans. Software Eng."}
-
-MACRO {ieeetc} {"IEEE Trans. Comput."}
-
-MACRO {ieeetcad}
- {"IEEE Trans. Comput. Aid. Des."}
-
-MACRO {ipl} {"Inf. Process. Lett."}
-
-MACRO {jacm} {"J.~ACM"}
-
-MACRO {jcss} {"J.~Comput. Syst. Sci."}
-
-MACRO {scp} {"Sci. Comput. Program."}
-
-MACRO {sicomp} {"SIAM J. Comput."}
-
-MACRO {tocs} {"ACM Trans. Comput. Syst."}
-
-MACRO {tods} {"ACM Trans. Database Syst."}
-
-MACRO {tog} {"ACM Trans. Graphic."}
-
-MACRO {toms} {"ACM Trans. Math. Software"}
-
-MACRO {toois} {"ACM Trans. Office Inf. Syst."}
-
-MACRO {toplas} {"ACM Trans. Progr. Lang. Syst."}
-
-MACRO {tcs} {"Theor. Comput. Sci."}
-
 FUNCTION {bibinfo.check}
 { swap$
   duplicate$ missing$
@@ -376,12 +339,12 @@ FUNCTION {bibinfo.warn}
 FUNCTION {format.eprint}
 { eprint duplicate$ empty$
     'skip$
-    { "\eprint"
+    { " "
       archive empty$
         'skip$
-        { "[" * archive * "]" * }
+        { * }
       if$
-      "{" * swap$ * "}" *
+      "[" * swap$ * "]" *
     }
   if$
 }
@@ -957,6 +920,7 @@ FUNCTION {article}
 { output.bibitem
   format.authors add.link "author" output.check
   format.richdate "year" output.check
+  format.eprint "eprint" output.check
   format.title "title" output.check  
   fin.entry
 }

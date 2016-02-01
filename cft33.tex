@@ -249,39 +249,39 @@ Similarly, Liouville theory is a conformal field theory.
 A model need not be directly related to a \textbf{\boldmath physical system}\index{physical system}: a given physical system can be described by several models, and a given model can describe a number (possibly zero) of physical systems.
 This holds not only for physical systems, but also for what can be called theoretical systems, such as quantum gravity in $d$ dimensions.
 These notions are illustrated by the following examples:
-\begin{center}
+\begin{align}
  \begin{tikzpicture}[scale = .5]
   \node at (5,11){Theories};
   \node at (14,11){Models};
   \node at (25,11){Systems};
   \draw[thick] (0,10.3) -- (30,10.3);
-  
+  %
   \draw[fill = red!10] (0, 6.3) rectangle (20, 9.7);
   \draw[fill = red!10] (0, 4.1) rectangle (20, 5.9);
   \draw[fill = red!10] (0, .3) rectangle (20, 3.7);
-  
+  %
   \node at (.2, 8)[right] {Newtonian mechanics};
   \node at (.2, 5)[right] {General relativity};
   \node at (.2, 2)[right] {Conformal field theory};
-  
+  %
   \draw (14, 8.8) node[draw, fill = white] (ss) {Spinning solid};
   \draw (14, 7.2) node[draw, fill = white] (gb) {Gravitating bodies};
   \draw (14, 5) node[draw, fill = white] (rgb) {Relativistic gravitating bodies};
   \draw (14, 2.8) node[draw, fill = white] (mm) {Minimal model};
   \draw (14, 1.2) node[draw, fill = white] (lt) {Liouville theory};
-  
+  %
   \draw (25, 8.8) node[draw, fill = green!10] (st) {Spinning top};
   \draw (25, 6.1) node[draw, fill = green!10] (ssys) {Solar system};
   \draw (25, 2.8) node[draw, fill = green!10] (qg) {2d quantum geometry};
   \draw (25, 1.2) node[draw, fill = green!10] (str) {2d string};
-  
+  %
   \draw[thick, dashed] (ss.east) to [out = 0, in = 180] (st.west);
   \draw[thick, dashed] (gb.east) to [out = 0, in = 180] (ssys.west);
   \draw[thick, dashed] (rgb.east) to [out = 0, in = 180] (ssys.west);
   \draw[thick, dashed] (lt.east) to [out = 0, in = 180] (qg.west);
   \draw[thick, dashed] (lt.east) to [out = 0, in = 180] (str.west);
  \end{tikzpicture}
-\end{center}
+\end{align}
 
 Now, what is a \textbf{\boldmath quantum}\index{quantum} theory? First, this is a probabilistic theory, which does not predict the outcome of a given experiment, but the probabilities of different outcomes.
 Second, a quantum theory does not predict just probabilities, but actually probability amplitudes.
@@ -736,7 +736,7 @@ generators $L_n$,  and
 $[L_n,\bar{L}_m]=0$.
 The generators $(L_n)_{n\in{\mathbb{Z}}}$ and $(\bar{L}_n)_{n\in{\mathbb{Z}}}$ are supposed to span two distinct Virasoro algebras, which we assume have the same central charge, called the central charge of the model. 
 We recapitulate these symmetry algebras in the following table:
-\begin{center}
+\begin{align}
 \renewcommand{\arraystretch}{1.3}
  \begin{tabular}{|c|c|c|c|}
  \hline
@@ -753,7 +753,7 @@ $\mathfrak{V}\times \overline{\mathfrak{V}}$ & full & $(L_n,\bar{L}_m)$ & $(c,c)
 \\  
 \hline
  \end{tabular}
-\end{center}
+\end{align}
 Considering $z$ and $\bar{z}$ as independent amounts to complexifying our two-dimensional real space ${\mathbb{C}}={\mathbb{R}}^2$ into the two-dimensional complex space ${\mathbb{C}}^2$.
 We must however insist that the correlation functions, which are the $z$-dependent observables of the theory, do live on the original space and not on ${\mathbb{C}}^2$.
 Functions such as $z^\frac12$ may appear at intermediate steps of calculations, but correlation functions can only involve single-valued functions such as $|z|$.
@@ -997,9 +997,9 @@ Then the central charge is $c=1-\frac{6}{p(p+1)}=0,\frac12,\frac{7}{10},\cdots$.
 The unitary minimal model with $c=\frac12$ is called the \textbf{\boldmath Ising model}\index{Ising model}.
 \end{itemize}
 On the $c\in{\mathbb{R}}$ line, the unitary diagonal models are therefore located as follows:
-\begin{center}
- \begin{tikzpicture}[scale = 5]
- \draw[-latex] (-.4, 0) -- (2.4, 0) node [below right] {$c$};
+\begin{align}
+ \begin{tikzpicture}[scale = 4.5, baseline=(current  bounding  box.center)]
+ \draw[-latex] (-.15, 0) -- (2.4, 0) node [below right] {$c$};
  \node[below] at (.5, -.05) {Minimal models};
  \node[below] at (1.7, -.05) {Liouville theory};
  \foreach \p in {2,...,20}
@@ -1009,7 +1009,7 @@ On the $c\in{\mathbb{R}}$ line, the unitary diagonal models are therefore locate
   \filldraw [opacity = .2] (.98, -.03) -- (.98, .03) -- (2.35, .03) -- (2.35, -.03) -- cycle;
   \node [below] at (0, -.02) {$0$};  \node [below] at (.99, -.02) {$1$};
 \end{tikzpicture}
-\end{center}
+\end{align}
 Other simple models include:
 \begin{itemize}
  \item the \textbf{\boldmath linear dilaton theory}\index{linear dilaton theory}, which like Liouville theory has a diagonal, continuous spectrum and is defined for any $c\in {\mathbb{C}}$, being unitary if $c\geq 1$.
@@ -1180,8 +1180,8 @@ The conformal dimension of such a state is then $\Delta+N$.
 
 The dimension of the level-$N$ subspace of $U(\mathfrak{V}^+)$ is the number $p(N)$ of partitions of $N$.
 The basis of $U(\mathfrak{V}^+)$ up to the level $N=5$ can be plotted as follows: 
-\begin{center}
- \begin{tikzpicture}[scale = .3]
+\begin{align}
+ \begin{tikzpicture}[scale = .3, baseline=(current  bounding  box.center)]
   \draw[-latex, very thick] (20, 0) -- (20, -33) node [right] {$N$};
   \foreach \x in {0, ..., 5}
   {
@@ -1225,7 +1225,7 @@ The basis of $U(\mathfrak{V}^+)$ up to the level $N=5$ can be plotted as follows
   \draw[-latex] (4) -- (14);
   \draw[-latex] (3) -- (23);
  \end{tikzpicture}
-\end{center}
+\end{align}
 In this diagram, each arrow stands for the action of a Virasoro generator $L_n$ with $n<0$.
 Acting with generators which are not depicted on the diagram would produce linear combinations of our basis states, for example $L_{-2}L_{-1} = L_{-1}L_{-2} - L_{-3}$.
 
@@ -1328,7 +1328,7 @@ The correspondences between the values of $c,Q$ and $b$ are
 \\
 \hline
 \text{Liouville\ coupling\ constant} &
-b& i{\mathbb{R}} & i\sqrt{\frac{p}{q}} & i & \{e^{i\theta},\theta\in{\mathbb{R}}\} & 1 & {\mathbb{R}}
+b& i{\mathbb{R}} & i\sqrt{\frac{p}{q}} & i & e^{i\mathbb{R}} & 1 & {\mathbb{R}}
 \\
 \hline
  \end{array}
@@ -1486,7 +1486,7 @@ These unitary cosets are the maximally degenerate representations $R_{\langle r,
 where the sum of the two subrepresentations is not a direct sum, because their intersection is nonzero. 
 
 These results are summarized in the following table:
-\begin{center}
+\begin{align}
  \begin{tabular}{|c|c|c|c|}
   \hline
 central charge & $c<1$ & $c=1$ & $c>1$
@@ -1499,7 +1499,7 @@ $R_{\langle r,s\rangle}$ unitary? & see eqs. \eqref{cpp} and \eqref{srp} &  yes 
 \\
 \hline
  \end{tabular}
-\end{center}
+\end{align}
 
 
 \section{Virasoro symmetry in two-dimensional quantum field theory\label{seclin}}
@@ -1637,7 +1637,7 @@ These identities follow from the properties of the Virasoro field $T(z)$, which 
 \begin{itemize}
  \item it is holomorphic on ${\mathbb{C}}-\{z_1,\cdots z_N\}$,
 \item its behaviour at $z=z_i$ is controlled by the OPE \eqref{tv},
-\item its behaviour at $z=\infty$ is contolled by the assumption \eqref{tyi}.
+\item its behaviour at $z=\infty$ is controlled by the assumption \eqref{tyi}.
 \end{itemize}
 For any meromorphic function $\epsilon(z)$, with no poles outside $\{z_1,\cdots z_N\}$, we therefore have
 \begin{align}
@@ -2793,14 +2793,14 @@ $b$ belongs to the real line or the unit circle.
 Each generic value of $c$ corresponds to four values of $b$, and we can assume $Q=b+\frac{1}{b}\geq 0$ without loss of generality.
 
 The set of values of $\alpha$ which obey the unitarity condition $\Delta(\alpha)\geq 0$ is the union of the segment $\alpha\in(0,Q)$ and the line $\alpha \in \frac{Q}{2}+i{\mathbb{R}}$:
-\begin{center}
- \begin{tikzpicture}[scale = .8]
+\begin{align}
+ \begin{tikzpicture}[scale = .8, baseline=(current  bounding  box.center)]
   \draw[-latex, very thin] (-1, 0) -- (0, 0) node[below right] {$0$} -- (2, 0) node[below right] {$\frac{Q}{2}$} -- (4, 0) node [below] {$Q$} -- (5, 0) node[above] {$\alpha$};
   \draw[red, ultra thick, dashed] (0, 0) -- (4, 0);
   \draw[red, ultra thick] (2, -3) -- (2, 3);
   \draw[very thin] (0, -3) -- (0, 3);
  \end{tikzpicture}
-\end{center}
+\end{align}
 We interpret our analyticity assumptions as implying that the set of values of $\alpha$ which appear in the spectrum has no endpoints. 
 We must then leave the segment $(0,Q)$ out, and build the spectrum from the line
 \begin{align}
@@ -2989,13 +2989,13 @@ The decompositions \eqref{zsc} of this four-point function involve the conformal
 \draw (-2, 0) -- node [above left] {$\alpha$\!\!\!} (0, 2) -- node [above right] {\!\!\!\!$Q-\alpha$} (2, 0);
 \draw (0, -2) -- node [left] {$\alpha\mp \frac{b}{2}\! \! $} (0, 2); 
 \end{tikzpicture}
-\quad , \quad
+, \quad
  \mathcal{F}^{(t)}_-  =  
  \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .55]
 \draw (-2, 0) -- node [above left] {$\alpha$\!\!\!} (0, 2) -- node [above right] {\!\!\!\!$Q-\alpha$} (2, 0);
 \draw[dashed] (0, -2) -- node [below left] {$\langle 2,1 \rangle$\!\!\!} (-2, 0) -- node [below] {$\langle 1,1 \rangle$} (2, 0) -- node [below right] {\!\!\!$\langle 2,1 \rangle$} (0, -2); 
 \end{tikzpicture}
-\quad , \quad
+, \quad
  \mathcal{F}^{(t)}_+  =  
  \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .55]
 \draw (-2, 0) -- node [above left] {$\alpha$\!\!\!} (0, 2) -- node [above right] {\!\!\!\!$Q-\alpha$} (2, 0);
@@ -3136,7 +3136,7 @@ It turns out that these zeros account for all the poles and zeros of $\frac{\Ups
 We now know all the needed properties of the function $\Upsilon_b(x)$, except one: its existence.
 The existence of $\Upsilon_b(x)$ is demonstrated by the following integral expression, which converges for $x$ in the strip $0<\Re x<Q$, 
 \begin{align}
- \log\Upsilon_b(x) = \int_0^\infty \frac{dt}{t} \left[\left(\tfrac{Q}{2}-x\right)^2 e^{-2t} -\frac{\sinh^2\left(\frac{Q}{2}-x\right)t}{\sinh bt\sinh\frac{t}{b}}\right]\ .
+ \log\Upsilon_b(x) = \int_0^\infty \frac{dt}{t} \left[\left(\tfrac{Q}{2}-x\right)^2 e^{-2t} -\frac{\sinh^2\left(\left(\frac{Q}{2}-x\right)\!t\right)}{\sinh (bt)\sinh\left(\frac{t}{b}\right)}\right]\ .
 \label{lup}
 \end{align}
 If $x$ is outside the strip, the value of $\Upsilon_b(x)$ can be found by combining the above integral expression with the shift equations \eqref{upup}.
@@ -3259,10 +3259,10 @@ In the special case $i=j=0$, we find
 In the cases $\langle r,s \rangle \in \{\langle 1,1 \rangle , \langle 1,2 \rangle, \langle 2,1 \rangle\}$, 
 this agrees with eqs. \eqref{cza} and \eqref{cco}.  
 
-\subsection{Existence and unicity of Liouville theory}
+\subsection{Existence and uniqueness of Liouville theory}
 
 We derived the three-point structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$ by solving the equation \eqref{fcc} and its dual equation under $b\rightarrow \frac{1}{b}$, which are consequences of the associativity of certain OPEs which involved degenerate fields.
-But is this solution unique? and is the resulting OPE associative in general, when degenerate fields are not necessarily involved? These are the questions of the unicity and existence of Liouville theory, as defined by the axioms of Section \ref{secspe}.
+But is this solution unique? and is the resulting OPE associative in general, when degenerate fields are not necessarily involved? These are the questions of the uniqueness and existence of Liouville theory, as defined by the axioms of Section \ref{secspe}.
 
 In our analysis, associativity of OPEs involving the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ boiled down to the two equations 
 \eqref{upup} for $\Upsilon_b(x)$.
@@ -3284,7 +3284,7 @@ Actually, Liouville theory has an unambiguous $c\rightarrow 1$ limit \cite{sch03
 which includes the whole domain $c\in [1,\infty[$ permitted by unitarity.
 On the other hand, the $c\rightarrow c_0\in ]-\infty,-1[$ limit is ill-defined \cite{zam05}. 
 
-There is little doubt that Liouville theory exists for $c\geq 25$, in view of the unicity of the three-point structure constant, and of the relevance of Liouville theory to two-dimensional quantum gravity (reviewed in \cite{zam05}). Actually, Liouville theory with $c> 25$ is known to be consistent also on the torus \cite{hjs09}, although its partition function is infinite. 
+There is little doubt that Liouville theory exists for $c\geq 25$, in view of the uniqueness of the three-point structure constant, and of the relevance of Liouville theory to two-dimensional quantum gravity (reviewed in \cite{zam05}). Actually, Liouville theory with $c> 25$ is known to be consistent also on the torus \cite{hjs09}, although its partition function is infinite. 
 Then analyticity in $b$ suggests that the theory exists in the domain \eqref{cnot}.
 In particular, the associativity of the OPE has been tested numerically for $c=1$ \cite{rw01} and $c=13$ \cite{zz95}, and more extensive numerical tests are doable.
 In addition, there is a proposed proof \cite{tes03b} of the existence of Liouville theory for $c>25$, which may actually hold for more general values of $c$ by analytic continuation.
@@ -3320,7 +3320,7 @@ It is however not obvious what the spectrum of that theory is supposed to be.
 The natural guess is that the spectrum is given by eq. \eqref{aqd}, just like the spectrum of Liouville theory.
 Integrating on this spectrum for computing a four-point function as in eq. \eqref{fsd}, we meet singularities of the structure constants and conformal blocks, so the integral must somehow be regularized.
 Such issues with singularities are inevitable: if they were absent, we could analytically continue the theory to the whole $b\notin {\mathbb{R}}$ 
-domain, which would contradict our considerations on unicity.
+domain, which would contradict our considerations on uniqueness.
 
 Finally, let us mention that nothing new can be obtained by relaxing our assumption that the multiplicities of representations in the spectrum do not exceed one, and allowing finite multiplicities. (See Exercise \ref{exomul}.)
 
@@ -3408,7 +3408,7 @@ The three-point function is therefore
 \begin{multline}
  \left\langle \prod_{i=1}^3 V_{\langle r_i,s_i \rangle}(z_i,\bar{z}_i) \right\rangle = C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}  
 \\ \times 
-f_{r_1,r_2,r_3} f_{s_1,s_2,s_3}\ |z_{12}|^{2(\Delta_3-\Delta_1-\Delta_2)} |z_{23}|^{2(\Delta_1-\Delta_2-\Delta_3)} |z_{31}|^{2(\Delta_3-\Delta_2-\Delta_1)}\ ,
+f_{r_1,r_2,r_3} f_{s_1,s_2,s_3}\ |z_{12}|^{2(\Delta_3-\Delta_1-\Delta_2)} |z_{23}|^{2(\Delta_1-\Delta_2-\Delta_3)} |z_{31}|^{2(\Delta_2-\Delta_3-\Delta_1)}\ ,
 \end{multline}
 where 
 the model-dependent data are $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$, and the universal data are the $z_i$-dependent factor as well as the factor $f_{r_1,r_2,r_3} f_{s_1,s_2,s_3}$, which appears in the fusion rules eq. \eqref{rrrsss}. 
@@ -3898,7 +3898,7 @@ Let us compare $\hat{\mathfrak{u}}_1$ and Virasoro highest-weight representation
 Under the action of the Virasoro algebra eqs. \eqref{lnj}-\eqref{lzj}, the $\hat{\mathfrak{u}}_1$ highest-weight representation $\mathcal{V}_\alpha$ is a Verma module -- the Verma module $\mathcal{V}_\alpha$ of Section \ref{secvm}.
 However, this Verma module is invariant under reflection of $\alpha$, whereas the $\hat{\mathfrak{u}}_1$ representation is not.
 To summarize,
-\begin{center}
+\begin{align}
 \renewcommand{\arraystretch}{1.3}
  \begin{tabular}{|l|c|c|}
   \hline
@@ -3915,7 +3915,7 @@ To summarize,
 \\
 \hline
  \end{tabular}
-\end{center}
+\end{align}
 
 Finally, the $\hat{\mathfrak{u}}_1$ fusion rules can be derived by 
 inserting $\oint_\infty J(z)dz$ in the OPE of two primary fields, and we find 
@@ -4284,7 +4284,7 @@ The analytic continuation of this structure constant is not quite the Liouville 
 Moreover, the Coulomb gas integral coincides with the partition functions of a certain matrix model.
 This is a manifestation of the
 relation between Liouville theory and matrix models:
-\begin{center}
+\begin{align}
  \begin{tabular}{|l|l|}
   \hline
 Liouville theory & matrix models
@@ -4303,7 +4303,7 @@ $y_k$ in eq. \eqref{mint} & matrix eigenvalue
 \\
 \hline
  \end{tabular}
-\end{center}
+\end{align}
 
 
 
@@ -5143,7 +5143,7 @@ This model, which exists for any positive integer value of $k$, is the \textbf{\
 The two- and three-point functions of this model are special cases of corresponding correlation functions of the generalized $SU_2$ WZW model. 
 
 The space of models with the $\widehat{\mathfrak{sl}}_2$ symmetry algebra is therefore similar to the space of models with Virasoro symmetry algebra, according to the following table:
-\begin{center}
+\begin{align}
 \renewcommand{\arraystretch}{1.3}
  \begin{tabular}{|l|l|}
   \hline
@@ -5158,7 +5158,7 @@ $SU_2$ WZW models & diagonal minimal models
 \\
 \hline
  \end{tabular}
-\end{center}
+\end{align}
 In addition, for both symmetry algebras, there exist rational, non-diagonal models, which in both cases fit in an A-D-E classification \cite{fms97}. 
 
 
