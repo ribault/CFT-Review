@@ -2764,7 +2764,6 @@ What are the four possible choices for the pair $(\lambda,\mu)$?
 Show that the choice $\lambda=b\alpha_1,\ \mu=b\alpha_3$ leads to the values of $A,B,C$ given in eq. \eqref{abc}. 
 \end{exo}
 
-\iffalse
 
 % Ensuring the coming chapter begins on an odd-numbered page, in case we want to print the document in two halves.
 
@@ -2790,36 +2789,18 @@ Since the spectrum is continuous, it must involve Verma modules -- the other typ
 When deriving the fusion rules \eqref{rtv} involving degenerate fields, we have seen that the natural parameters are not the conformal dimension $\Delta$ and the central charge $c$ -- rather, the momentum $\alpha$ \eqref{daq} and the Liouville coupling constant $b$ \eqref{cqb}.
 We assume that correlation functions are analytic as functions of $\alpha$ and $b$, with possibly poles, but no branch cuts. 
 The unitarity condition $c\geq 1$ implies that 
-$b$ belongs to the real line or the unit circle,
-\begin{align}
- \psset{unit = .2cm}
-\pspicture[shift=-7](-20,-7)(20,7)
-\psline[linewidth=.1]{->}(-20,0)(20,0)
-\psline[linewidth=.1](0,-7)(0,7)
-\psline[linewidth=.3](-19,0)(19,0)
-\pscircle[linewidth=.3](0,0){6}
-\rput[tr](5.5,-.5){$1$}
-\rput[tr](-.5,-.5){$0$}
-\rput[tr](-.5,5.5){$i$}
-\rput[b](20,.5){$b$}
-\endpspicture
-\end{align}
+$b$ belongs to the real line or the unit circle.
 Each generic value of $c$ corresponds to four values of $b$, and we can assume $Q=b+\frac{1}{b}\geq 0$ without loss of generality.
 
 The set of values of $\alpha$ which obey the unitarity condition $\Delta(\alpha)\geq 0$ is the union of the segment $\alpha\in(0,Q)$ and the line $\alpha \in \frac{Q}{2}+i{\mathbb{R}}$:
-\begin{align}
- \psset{unit = .3cm}
-\pspicture[shift=-10](-10,-10)(10,10)
-\rput[b](10,.5){$\alpha$}
-\psline[linewidth=.1]{->}(-10,0)(10,0)
-\psline[linewidth=.1](-6,-10)(-6,10)
-\psline[linewidth=.3](0,-10)(0,10)
-\psline[linewidth=.3](-6,0)(6,0)
-\rput[t](6.5,-.5){$Q$}
-\rput[t](.7,-.5){$\frac{Q}{2}$}
-\rput[t](-5.5,-.5){$0$}
-\endpspicture
-\end{align}
+\begin{center}
+ \begin{tikzpicture}[scale = .8]
+  \draw[-latex, very thin] (-1, 0) -- (0, 0) node[below right] {$0$} -- (2, 0) node[below right] {$\frac{Q}{2}$} -- (4, 0) node [below] {$Q$} -- (5, 0) node[above] {$\alpha$};
+  \draw[red, ultra thick, dashed] (0, 0) -- (4, 0);
+  \draw[red, ultra thick] (2, -3) -- (2, 3);
+  \draw[very thin] (0, -3) -- (0, 3);
+ \end{tikzpicture}
+\end{center}
 We interpret our analyticity assumptions as implying that the set of values of $\alpha$ which appear in the spectrum has no endpoints. 
 We must then leave the segment $(0,Q)$ out, and build the spectrum from the line
 \begin{align}
@@ -3003,41 +2984,23 @@ Consider now the four-point function
 The decompositions \eqref{zsc} of this four-point function involve the conformal blocks
  \begin{align}
 \mathcal{F}^{(s)}_\pm = 
-\psset{unit=.4cm}
-\pspicture[shift=-4](-4,-4)(4,4)
-\psline(-3,0)(0,3)(3,0)
-\psline(0,-3)(0,3)
-\psline[linestyle=dashed](-3,0)(0,-3)(3,0)
-\rput[tr](-2,-2){$\langle 2,1 \rangle$}
-\rput[br](-2,2){$\alpha$}
-\rput[bl](1.6,2){$Q-\alpha$}
-\rput[tl](2,-2){$\langle 2,1 \rangle$}
-\rput[r](-.1,0){$\alpha\mp \frac{b}{2}$}
-\endpspicture
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .6]
+\draw[dashed] (2, 0) -- node [below right] {\!\!\!$\langle 2,1 \rangle$} (0, -2) -- node [below left] {$\langle 2,1 \rangle$\!\!\!} (-2, 0); 
+\draw (-2, 0) -- node [above left] {$\alpha$\!\!\!} (0, 2) -- node [above right] {\!\!\!\!$Q-\alpha$} (2, 0);
+\draw (0, -2) -- node [left] {$\alpha\mp \frac{b}{2}\! \! $} (0, 2); 
+\end{tikzpicture}
 \quad , \quad
  \mathcal{F}^{(t)}_-  =  
-\psset{unit=.4cm}
-\pspicture[shift=-3](-4,-3)(4,3)
-\psline(3,0)(0,3)(-3,0)
-\psline[linestyle=dashed](-3,0)(0,-3)(3,0)(-3,0)
-\rput[tr](-2,-2){$\langle 2,1 \rangle$}
-\rput[br](-2,2){$\alpha$}
-\rput[bl](1.6,2){$Q-\alpha$}
-\rput[tl](2,-2){$\langle 2,1 \rangle$}
-\rput[t](0,-.2){$\langle 1,1 \rangle$}
-\endpspicture
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .55]
+\draw (-2, 0) -- node [above left] {$\alpha$\!\!\!} (0, 2) -- node [above right] {\!\!\!\!$Q-\alpha$} (2, 0);
+\draw[dashed] (0, -2) -- node [below left] {$\langle 2,1 \rangle$\!\!\!} (-2, 0) -- node [below] {$\langle 1,1 \rangle$} (2, 0) -- node [below right] {\!\!\!$\langle 2,1 \rangle$} (0, -2); 
+\end{tikzpicture}
 \quad , \quad
  \mathcal{F}^{(t)}_+  =  
-\psset{unit=.4cm}
-\pspicture[shift=-3](-4,-3)(4,3)
-\psline(3,0)(0,3)(-3,0)
-\psline[linestyle=dashed](-3,0)(0,-3)(3,0)(-3,0)
-\rput[tr](-2,-2){$\langle 2,1 \rangle$}
-\rput[br](-2,2){$\alpha$}
-\rput[bl](1.6,2){$Q-\alpha$}
-\rput[tl](2,-2){$\langle 2,1 \rangle$}
-\rput[t](0,-.2){$\langle 3,1 \rangle$}
-\endpspicture
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .55]
+\draw (-2, 0) -- node [above left] {$\alpha$\!\!\!} (0, 2) -- node [above right] {\!\!\!\!$Q-\alpha$} (2, 0);
+\draw[dashed] (0, -2) -- node [below left] {$\langle 2,1 \rangle$\!\!\!} (-2, 0) -- node [below] {$\langle 3,1 \rangle$} (2, 0) -- node [below right] {\!\!\!$\langle 2,1 \rangle$} (0, -2); 
+\end{tikzpicture}
 .
 \end{align}
 The coefficients $c^{(s)}_\pm,c^{(t)}_\pm$ of the decompositions of the four-point function can now be expressed in terms of OPE structure constants, with each triangle in the above diagrams corresponding to one structure constant, so that 
@@ -3100,6 +3063,18 @@ Next, we will discuss their solutions.
 
 \subsection{The three-point function \label{sectpf}}
 
+\begin{equation}
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .6]
+\draw (0, 2) node[left]{$i$} -- (0, 1) node[below left] {$0$} -- (1, 1) node[below] {$1$};
+\draw [thick, latex-latex] (4,3) -- (4,1) node[fill, circle, minimum size = 1mm, inner sep = 0]{} -- (4,-.3);
+\draw [thick, latex-latex] (8,3) -- (7,1) node[fill, circle, minimum size = 1mm, inner sep = 0]{}-- (7.6,-.2);
+\draw [thick, latex-latex] (12,1) -- (10,1) node[fill, circle, minimum size = 1mm, inner sep = 0]{} -- (11.3,1) ;
+\node at (4, -1.5){$\begin{array}{c} b\in i\mathbb{R} \\ c\leq 1 \end{array}$};
+\node at (7.5, -1.5){$\begin{array}{c} b\in \mathbb{C} \\ c\in\mathbb{C} \end{array}$};
+\node at (11, -1.5){$\begin{array}{c} b\in \mathbb{R} \\ c\geq 25 \end{array}$};
+ \end{tikzpicture}
+\end{equation}
+
 To solve eq. \eqref{fcc} together with the dual equation, we need a function $\Upsilon_b(x)$ such that 
 \begin{align}
  \frac{\Upsilon_b(x+b)}{\Upsilon_b(x)} \sim \gamma(bx)\quad \text{and} \quad \frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)} \sim \gamma(\tfrac{x}{b})\ ,
@@ -3133,16 +3108,27 @@ Adopting the latter alternative, the equations imply that
 \end{align}
 If $b>0$, these zeros lie on two half-lines, which we represent as follows:
 \begin{align}
-\psset{unit=.6cm}
- \pspicture[shift=-.5](-10,-.5)(10,.5)
-\psline[linewidth=.02]{->}(-10,0)(10,0)
-\rput[b](10,.2){$x$}
-\psline[linestyle=dashed,linewidth=.07](2,0)(9.5,0)
-\psline[linestyle=dashed,linewidth=.07](-2,0)(-10,0)
-\rput[bl](2,.2){$Q$}
-\rput[br](-2,.2){$0$}
-\psdots(2,0)(-2,0)
-\endpspicture
+\begin{tikzpicture}[scale = 1.3, baseline=(current  bounding  box.center)]
+\node[above] at (0, 0) {$0$};
+\node[below] at (1, .1) {$Q$};
+\draw [latex-latex] (.6, .3) node[above] {$b$} -- (0, 0) -- (.4, -.2) node[below] {$b^{-1}$};
+\begin{scope}[rotate = 90]
+\filldraw[blue, opacity = .1] (0,0) -- (-1.3, 2.5) -- (1.3, 2.5) -- cycle;
+\clip (-1.4, -.2) -- (1.4, -.2) -- (1.4, 2.5) -- (-1.4, 2.5) -- cycle;
+\foreach \x in {0, 1,...,4}{
+  \foreach \y in {0, 1,...,6}{
+    \node[draw,circle,inner sep=1pt,fill,blue] at (-.3*\x +.2*\y, .6*\x +.4*\y) {};
+  }}
+  \end{scope}
+\begin{scope}[shift = {(1, .1)}, rotate = -90]
+\filldraw[blue, opacity = .1] (0,0) -- (-1.3, 2.5) -- (1.3, 2.5) -- cycle;
+\clip (-1.4, -.2) -- (1.4, -.2) -- (1.4, 2.5) -- (-1.4, 2.5) -- cycle;
+\foreach \x in {0, 1,...,4}{
+  \foreach \y in {0, 1,...,6}{
+    \node[draw,circle,inner sep=1pt,fill,blue] at (-.3*\x +.2*\y, .6*\x +.4*\y) {};
+  }}  
+\end{scope}  
+ \end{tikzpicture}
 \label{lines}
 \end{align}
 It turns out that these zeros account for all the poles and zeros of $\frac{\Upsilon_b(x+b)}{\Upsilon_b(x)}$ and $\frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)}$ in the equations \eqref{upup}, so that $\Upsilon_b(x)$ has no poles and is analytic on ${\mathbb{C}}$. 
@@ -3187,83 +3173,60 @@ However, it turns out that the OPE $V_{\alpha_1}V_{\alpha_2}$ \eqref{vvi} does n
 To see this, let us plot the poles of the OPE coefficient $C_{\alpha_1,\alpha_2}^\alpha = C_{\alpha_1,\alpha_2,Q-\alpha}$, viewed as a function of $\alpha$.
 Assuming $b>0$, these poles lie on lines, which we draw in the fashion of eq. \eqref{lines}, together with the line $\alpha\in \frac{Q}{2}+i{\mathbb{R}}$ of integration of the OPE, 
 \begin{align}
- \psset{unit=.6cm}
- \pspicture[shift=-6](-10,-6)(10,6)
-\psline[linewidth=.02]{->}(-10,0)(10,0)
-\psline[linewidth=.02](-2,-6)(-2,6)
-\rput[b](10,.2){$\alpha$}
-\psline[linewidth=.07](0,-6)(0,6)
-\rput[br](-.2,.2){$\tfrac{Q}{2}$}
-\rput[br](-2.2,.2){$0$}
-\psline[linestyle=dashed,linewidth=.07](2,2)(10,2)
-\psline[linestyle=dashed,linewidth=.07](-2,2)(-10,2)
-\psline[linestyle=dashed,linewidth=.07](2,5)(10,5)
-\psline[linestyle=dashed,linewidth=.07](-2,5)(-10,5)
-\psline[linestyle=dashed,linewidth=.07](2,-2)(10,-2)
-\psline[linestyle=dashed,linewidth=.07](-2,-2)(-10,-2)
-\psline[linestyle=dashed,linewidth=.07](2,-5)(10,-5)
-\psline[linestyle=dashed,linewidth=.07](-2,-5)(-10,-5)
-\psdots(2,2)(-2,2)(2,5)(-2,5)(2,-2)(-2,-2)(2,-5)(-2,-5)
-\rput[br](-2,-1.8){$\alpha_2-\alpha_1$}
-\rput[bl](2,-1.8){$Q+\alpha_2-\alpha_1$}
-\rput[br](-2,5.2){$\alpha_1+\alpha_2-Q$}
-\rput[bl](2,5.2){$\alpha_1+\alpha_2$}
-\rput[br](-2,2.2){$\alpha_1-\alpha_2$}
-\rput[bl](2,2.2){$Q+\alpha_1-\alpha_2$}
-\rput[br](-2,-4.8){$Q-\alpha_1-\alpha_2$}
-\rput[bl](2,-4.8){$2Q-\alpha_1-\alpha_2$}
-\endpspicture
+ \newcommand{\polewedge}[3]{
+\begin{scope}[#1]
+\node[blue, draw,circle,inner sep=1pt,fill] at (0, 0) {};
+\node[#3] at (0,0) {#2};
+\filldraw[opacity = .1, blue] (0,0) -- (5, -2.5) -- (5, 2.5) -- cycle;
+\end{scope}
+}
+ \begin{tikzpicture}[baseline=(current  bounding  box.center)]
+  \draw[-latex] (-5,0) -- (0, 0) node[above left] {$0$} -- (6,0) node [above] {$\alpha$};
+  \draw (0, -4.5) -- (0, 4.5);
+  \draw[ultra thick, red] (.5, -4.5) -- (.5, 4.5);
+  \polewedge{shift = {(0, .7)}, rotate = 180}{$\alpha_1-\alpha_2$}{above left};
+  \polewedge{shift = {(0, -.7)}, rotate = 180}{$\alpha_2-\alpha_1$}{above left};
+  \polewedge{shift = {(0, 1.8)}, rotate = 180}{$\alpha_1+\alpha_2-Q$}{above left};
+  \polewedge{shift = {(0, -1.8)}, rotate = 180}{$Q-\alpha_1-\alpha_2$}{above left};
+  \polewedge{shift = {(1, .8)}}{$Q+\alpha_1-\alpha_2$}{above right};
+  \polewedge{shift = {(1, -.6)}}{$Q+\alpha_2-\alpha_1$}{above right};
+  \polewedge{shift = {(1, 1.9)}}{$\alpha_1+\alpha_2$}{above right};
+  \polewedge{shift = {(1, -1.7)}}{$2Q-\alpha_1-\alpha_2$}{above right};
+ \end{tikzpicture}
 \end{align}
 In this picture, we have assumed $\alpha_1,\alpha_2\in \frac{Q}{2}+i{\mathbb{R}}$, so that the corresponding representations belong to the spectrum.
 If we now analytically continue the OPE to a value $\alpha_2=\alpha_{\langle r,s \rangle}$, then poles from different sides of the line of integration must coincide.
-If we do not allow poles to cross the line of integration, then that line is squeezed between coinciding poles,
-\begin{align}
-\psset{unit=.6cm}
- \pspicture[shift=-6](-10,-6)(10,6)
-\psline[linewidth=.02]{->}(-10,0)(10,0)
-\psline[linewidth=.02](-2,-6)(-2,6)
-\rput[b](10,.2){$\alpha$}
-\rput[br](-2.2,.2){$0$}
-\psline[linestyle=dashed,linewidth=.07](5,2.6)(10,2.6)
-\psline[linestyle=dashed,linewidth=.07](1,2.6)(-10,2.6)
-\psline[linestyle=dashed,linewidth=.07](-1,3)(10,3)
-\psline[linestyle=dashed,linewidth=.07](-5,3)(-10,3)
-\psline[linestyle=dashed,linewidth=.07](5,-3)(10,-3)
-\psline[linestyle=dashed,linewidth=.07](1,-3)(-10,-3)
-\psline[linestyle=dashed,linewidth=.07](-1,-2.6)(10,-2.6)
-\psline[linestyle=dashed,linewidth=.07](-5,-2.6)(-10,-2.6)
-\psdots(5,2.6)(1,2.6)(-1,3)(-5,3)(5,-3)(1,-3)(-1,-2.6)(-5,-2.6)
-\rput[bl](-1,3.2){$\alpha_1+\alpha_{\langle r,s \rangle}$}
-\rput[tr](1,2.4){$\alpha_1-\alpha_{\langle r,s \rangle}$}
-\rput[bl](-1,-2.4){$Q-\alpha_1+\alpha_{\langle r,s \rangle}$}
-\rput[tr](1,-3.2){$Q-\alpha_1-\alpha_{\langle r,s \rangle}$}
-\pscurve[linewidth=.07](0,6)(-1.5,3.1)(1.5,2.5)(-1.5,-2.5)(1.5,-3.1)(0,-6)
-\endpspicture
-\end{align}
 The approach of converging poles on the two sides of the line of integration makes the integral divergent at $\alpha_2=\alpha_{\langle r,s \rangle}$. 
 The divergences can be eliminated 
 by straightening the line of integration, at the price of picking the residues of a number of poles.
-Let us draw these poles only, together with the straightened line of integration,
 \begin{align}
- \psset{unit=.6cm}
- \pspicture[shift=-6](-10,-6)(10,6)
-\psline[linewidth=.02]{->}(-10,0)(10,0)
-\psline[linewidth=.02](-2,-6)(-2,6)
-\rput[b](10,.2){$\alpha$}
-\rput[br](-2.2,.2){$0$}
-\psline[linestyle=dashed,linewidth=.07](-1,3)(1,3)
-\psline[linestyle=dashed,linewidth=.07](1,-3)(-1,-3)
-\psdots(-1,3)(1,3)(1,-3)(-1,-3)
-\psline[linewidth=.07](1,6)(1,3.2)
-\psline[linewidth=.07](1,-2.8)(1,2.8)
-\psline[linewidth=.07](1,-6)(1,-3.2)
-\psarc[linewidth=.07](1,3){.2}{-90}{90}
-\psarc[linewidth=.07](1,-3){.2}{-90}{90}
-\rput[br](-1,3.2){$\alpha_1+\alpha_{\langle r,s \rangle}$}
-\rput[tl](1.1,2.8){$\alpha_1-\alpha_{\langle r,s \rangle}$}
-\rput[br](-1,-2.8){$Q-\alpha_1+\alpha_{\langle r,s \rangle}$}
-\rput[tl](1.1,-3.2){$Q-\alpha_1-\alpha_{\langle r,s \rangle}$}
-\endpspicture
+ % \alpha_2 = \alpha_{\langle 3, 4\rangle}
+\newcommand{\polewedge}[4]{
+\begin{scope}[#1]
+\node[blue, draw,circle,inner sep=1pt,fill] at (0, 0) {};
+\node[#3] at (0,0) {#2};
+\filldraw[opacity = .1, blue] (0,0) -- (8, -4) -- (8, 4) -- cycle;
+\end{scope}
+}
+ \begin{tikzpicture}[baseline=(current  bounding  box.center)]
+  \draw[-latex] (-5,0) -- (0, 0) node[above left] {$0$} -- (6,0) node [above] {$\alpha$};
+  \draw (0, -4.5) -- (0, 4.5);
+ \clip (-5, -4.5) -- (-5, 4.5) -- (6, 4.5) -- (6, -4.5) -- cycle;
+  \polewedge{shift = {(1.7, 2)}, rotate = 180}{$\alpha_1-\alpha_2$}{below right};
+  \polewedge{shift = {(-1.7, -2)}, rotate = 180}{$\alpha_2-\alpha_1$}{below left};
+  \polewedge{shift = {(-1.7, 1.9)}, rotate = 180}{$\alpha_1+\alpha_2-Q$}{below left};
+  \polewedge{shift = {(1.7, -1.9)}, rotate = 180}{$Q-\alpha_1-\alpha_2$}{below right};
+  \polewedge{shift = {(2.7, 2.1)}}{$Q+\alpha_1-\alpha_2$}{above right};
+  \polewedge{shift = {(-.7, -1.9)}}{$Q+\alpha_2-\alpha_1$}{above left};
+  \polewedge{shift = {(-.7, 2)}}{$\alpha_1+\alpha_2$}{above left};
+  \polewedge{shift = {(2.7, -1.8)}}{$2Q-\alpha_1-\alpha_2$}{above right};
+  \foreach \x in {0, ..., 2}{
+  \foreach \y in {0, ..., 3}{
+  \node[red, draw, circle,inner sep = 1.5pt, fill] at (-.7 + .6*\x + .4*\y, 2 + .3*\x -.2*\y) {};
+  \node[red, draw, circle,inner sep = 1.5pt, fill] at (-.7 + .6*\x + .4*\y, -1.9 + .3*\x -.2*\y) {};
+  }}
+  \draw[ultra thick, red, rounded corners = 6] (.5, -4.5) -- (.5, -2.7) -- (2.1, -1.9) -- (.5, -1.1) -- (.5, 1.2) -- (2.1, 2) -- (.5, 2.8) -- (.5, 4.5);
+ \end{tikzpicture}
 \end{align}
 The integral along the straightened line of integration now remains convergent, and goes to zero as $\alpha_2\rightarrow \alpha_{\langle r,s \rangle}$.
 The residues however have finite limits, and we obtain an OPE of the type of eq. \eqref{vrsv}, with 
@@ -3590,7 +3553,6 @@ Then $\tilde{C}_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3
 
 % 3pt function essentially agrees with Dotsenko-Fateev result, as transcribed in hep-th/9112029 eq. (15). 
 
-
 \subsection{Examples of A-series minimal models}
 
 \paragraph{Trivial model $(p,q)=(3,2) \Rightarrow c = 0$\ .}
@@ -3602,40 +3564,28 @@ The fusion rule $I\times I = I$ and three-point structure constant $\tilde{C}_{I
 
 This minimal model has two independent fields, whose names and conformal dimensions $\Delta_{\langle r,s\rangle}$ are 
 \begin{align}
- \psset{unit=.35cm}
-\pspicture[shift=-3](-2,-2)(10,4)
-\psline{->}(-2,0)(10,0)
-\psline{->}(0,-2)(0,4)
-\psline(-2,2)(8,2)(8,-2)
-\rput(9,-1){$r$}
-\rput(7,-1){$4$}
-\rput(5,-1){$3$}
-\rput(3,-1){$2$}
-\rput(1,-1){$1$}
-\rput(-1,1){$1$}
-\rput(-1,3){$s$}
-\rput(1,1){$I$}
-\rput(3,1){$\phi$}
-\rput(5,1){$\phi$}
-\rput(7,1){$I$}
-\endpspicture
-\hspace{2cm}
-\pspicture[shift=-3](-2,-2)(10,4)
-\psline{->}(-2,0)(10,0)
-\psline{->}(0,-2)(0,4)
-\psline(-2,2)(8,2)(8,-2)
-\rput(9,-1){$r$}
-\rput(7,-1){$4$}
-\rput(5,-1){$3$}
-\rput(3,-1){$2$}
-\rput(1,-1){$1$}
-\rput(-1,1){$1$}
-\rput(-1,3){$s$}
-\rput(1,1){$0$}
-\rput(3,1){$-\frac15$}
-\rput(5,1){$-\frac15$}
-\rput(7,1){$0$}
-\endpspicture
+ \begin{tikzpicture}[scale = .5, baseline=(current  bounding  box.center)]
+  \draw[thick] (-1,-1) -- (-1, 1) -- (7, 1) -- (7, -1) -- cycle;
+  \foreach \x in {1, ..., 4}{
+  \node at ({2*(\x-1)}, 0) {$\langle \x,1\rangle $};
+  }
+ \end{tikzpicture}
+ \ \ 
+ \begin{tikzpicture}[scale = .5, baseline=(current  bounding  box.center)]
+  \draw[thick] (-1,-1) -- (-1, 1) -- (7, 1) -- (7, -1) -- cycle;
+  \node at (0, 0) {$I$};
+  \node at (2, 0) {$\phi$};
+  \node at (4, 0) {$\phi$};
+  \node at (6, 0) {$I$};
+  \end{tikzpicture}
+  \ \ 
+  \begin{tikzpicture}[scale = .5, baseline=(current  bounding  box.center)]
+  \draw[thick] (-1,-1) -- (-1, 1) -- (7, 1) -- (7, -1) -- cycle;
+  \node at (0, 0) {$0$};
+  \node at (2, 0) {$-\frac15$};
+  \node at (4, 0) {$-\frac15$};
+  \node at (6, 0) {$0$};
+  \end{tikzpicture}
 \end{align}
 Since the model is diagonal, we can use the symbols $I$ and $\phi$ not only for fields, but also for the corresponding representations of the Virasoro algebra.
 The fusion rules are 
@@ -3657,44 +3607,33 @@ The only three-point structure constant not involving the identity field is
 
 This unitary minimal model has three independent fields, 
 \begin{align}
- \psset{unit=.35cm}
-\pspicture[shift=-4](-2,-2)(8,6)
-\psline{->}(-2,0)(8,0)
-\psline{->}(0,-2)(0,6)
-\psline(-2,4)(6,4)(6,-2)
-\rput(7,-1){$r$}
-\rput(5,-1){$3$}
-\rput(3,-1){$2$}
-\rput(1,-1){$1$}
-\rput(-1,1){$1$}
-\rput(-1,3){$2$}
-\rput(-1,5){$s$}
-\rput(1,1){$I$}
-\rput(1,3){$\epsilon$}
-\rput(3,1){$\sigma$}
-\rput(3,3){$\sigma$}
-\rput(5,1){$\epsilon$}
-\rput(5,3){$I$}
-\endpspicture
-\hspace{2cm}
-\pspicture[shift=-4](-2,-2)(8,6)
-\psline{->}(-2,0)(8,0)
-\psline{->}(0,-2)(0,6)
-\psline(-2,4)(6,4)(6,-2)
-\rput(7,-1){$r$}
-\rput(5,-1){$3$}
-\rput(3,-1){$2$}
-\rput(1,-1){$1$}
-\rput(-1,1){$1$}
-\rput(-1,3){$2$}
-\rput(-1,5){$s$}
-\rput(1,1){$0$}
-\rput(1,3){$\frac12$}
-\rput(3,1){$\frac{1}{16}$}
-\rput(3,3){$\frac{1}{16}$}
-\rput(5,1){$\frac12$}
-\rput(5,3){$0$}
-\endpspicture
+ \begin{tikzpicture}[scale = .5, baseline=(current  bounding  box.center)]
+  \draw[thick] (-1,-1) -- (-1, 3) -- (5, 3) -- (5, -1) -- cycle;
+  \foreach \x in {1, ..., 3}{
+  \foreach \y in {1, 2}{
+  \node at ({2*(\x-1)}, {2*(\y-1)}) {$\langle \x,\y\rangle $};
+  }}
+ \end{tikzpicture}
+ \ \ 
+ \begin{tikzpicture}[scale = .5, baseline=(current  bounding  box.center)]
+  \draw[thick] (-1,-1) -- (-1, 3) -- (5, 3) -- (5, -1) -- cycle;
+  \node at (0, 0) {$I$};
+  \node at (2, 0) {$\sigma$};
+  \node at (4, 0) {$\epsilon$};
+  \node at (0, 2) {$\epsilon$};
+  \node at (2, 2) {$\sigma$};
+  \node at (4, 2) {$I$};
+ \end{tikzpicture}
+ \ \ 
+ \begin{tikzpicture}[scale = .5, baseline=(current  bounding  box.center)]
+  \draw[thick] (-1,-1) -- (-1, 3) -- (5, 3) -- (5, -1) -- cycle;
+  \node at (0, 0) {$0$};
+  \node at (2, 0) {$\frac{1}{16}$};
+  \node at (4, 0) {$\frac12$};
+  \node at (0, 2) {$\frac12$};
+  \node at (2, 2) {$\frac{1}{16}$};
+  \node at (4, 2) {$0$};
+ \end{tikzpicture}
 \end{align}
 The fusion rules are 
 \begin{align}
@@ -4824,19 +4763,14 @@ where we used the momentums $\alpha_i$ \eqref{aj}, the Liouville theory structur
 $s$-channel Virasoro conformal blocks  
 $
  \mathcal{F}^{(s)}_\pm(x)  =  
-\psset{unit=.2cm}
-\pspicture[shift=-3.5](-8,-4)(8,4)
- \psline(-5,3)(-2,0)(2,0)(5,3)
-\psline[linestyle=dashed](-5,-3)(-2,0)
-\psline(2,0)(5,-3)
-\rput[r](-5.5,-3){$\langle 2,1 \rangle$}
-\rput[r](-5.5,3){$\alpha_1$}
-\rput[l](5.5,3){$\alpha_2$}
-\rput[l](5.5,-3){$\alpha_3$}
-\rput[b](-.1,.8){$\alpha_1\mp \frac{b}{2}$}
-\endpspicture
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
+\draw (-1,2) node [left] {$\alpha_1$} -- (0,0) -- node [above] {$\alpha_1\mp \frac{b}{2}$} (4,0) -- (5,2) node [right] {$\alpha_2$};
+\draw[dashed] (-1,-2) node [left] {$\langle 2,1 \rangle$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$\alpha_3$};
+\end{tikzpicture}
 $
 by eq. \eqref{fgs}. 
+
 
 However, the three-point function is simpler in the $x$-basis, see eq. \eqref{xxx}.
 Assuming correlation functions are single-valued as functions of the isospin variables, we must have
@@ -5136,32 +5070,27 @@ J\in \frac12{\mathbb{N}} \quad \Rightarrow \quad \left\{\begin{array}{ccl} \Phi^
 Let us now consider the OPE $\Phi^{j_1}_{x_1,\bar{x}_1}\Phi^{j_2}_{x_2,\bar{x}_2}$ \eqref{xope} where we initially assume $j_1,j_2\in -\frac12+i{\mathbb{R}}$ and $k<-2$.
 The positions of the line of integration $j\in -\frac12+i{\mathbb{R}}$ and the eight half-lines of poles of the OPE coefficient are
 \begin{align}
- \psset{unit=.6cm}
- \pspicture[shift=-6](-10,-6)(10,6)
-\psline[linewidth=.02]{->}(-10,0)(10,0)
-\psline[linewidth=.02](2,-6)(2,6)
-\rput[b](10,.2){$j$}
-\psline[linewidth=.07](0,-6)(0,6)
-\rput[br](-.2,.2){$-\tfrac12$}
-\rput[br](1.8,.2){$0$}
-\psline[linestyle=dashed,linewidth=.07](3,2)(10,2)
-\psline[linestyle=dashed,linewidth=.07](-2,2)(-10,2)
-\psline[linestyle=dashed,linewidth=.07](3,5)(10,5)
-\psline[linestyle=dashed,linewidth=.07](-2,5)(-10,5)
-\psline[linestyle=dashed,linewidth=.07](3,-2)(10,-2)
-\psline[linestyle=dashed,linewidth=.07](-2,-2)(-10,-2)
-\psline[linestyle=dashed,linewidth=.07](2,-5)(10,-5)
-\psline[linestyle=dashed,linewidth=.07](-3,-5)(-10,-5)
-\psdots(3,2)(-2,2)(3,5)(-2,5)(3,-2)(-2,-2)(2,-5)(-3,-5)
-\rput[br](-2,-1.8){$j_1-j_2-1$}
-\rput[bl](3,-1.8){$j_1-j_2-k-2$}
-\rput[br](-2,5.2){$j_1+j_2$}
-\rput[bl](3,5.2){$j_1+j_2-k-1$}
-\rput[br](-2,2.2){$j_2-j_1-1$}
-\rput[bl](3,2.2){$j_2-j_1-k-2$}
-\rput[br](-3,-4.8){$-j_1-j_2-k$}
-\rput[bl](2,-4.8){$-j_1-j_2-1$}
-\endpspicture
+\newcommand{\polewedge}[3]{
+\begin{scope}[#1]
+\node[blue, draw,circle,inner sep=1pt,fill] at (0, 0) {};
+\node[#3] at (0,0) {#2};
+\filldraw[opacity = .1, blue] (0,0) -- (6, -2) -- (6, 2) -- cycle;
+\end{scope}
+}
+ \begin{tikzpicture}[baseline=(current  bounding  box.center)]
+  \draw[-latex] (-5,0) -- (.8, 0) node[above right] {$0$} -- (6,0) node [above] {$j$};
+  \draw (.8, -3.5) -- (.8, 3.5);
+  \draw[ultra thick, red] (.4, -3.5) -- (.4, 3.5);
+  \clip (-5, -3.5) -- (-5, 3.5) -- (6, 3.5) -- (6, -3.5) -- cycle;
+  \polewedge{shift = {(0, .7)}, rotate = 180}{$j_1-j_2-1$}{above left};
+  \polewedge{shift = {(0, -.7)}, rotate = 180}{$j_2-j_1-1$}{above left};
+  \polewedge{shift = {(0, 1.8)}, rotate = 180}{$j_1+j_2$}{above left};
+  \polewedge{shift = {(-.2, -1.8)}, rotate = 180}{$-j_1-j_2-k$}{above left};
+  \polewedge{shift = {(1, .8)}}{$j_1-j_2-k-2$}{above right};
+  \polewedge{shift = {(1, -.6)}}{$j_2-j_1-k-2$}{above right};
+  \polewedge{shift = {(1, 1.9)}}{$j_1+j_2-k-1$}{above right};
+  \polewedge{shift = {(.8, -1.7)}}{$-j_1-j_2-1$}{above right};
+ \end{tikzpicture}
 \end{align}
 Taking the limit $j\rightarrow J$ or $j\rightarrow J-1-\frac{k}{2}$, the OPE coefficient vanishes, and the only surviving contributions are from pairs of poles which pinch the line of integration. (See Section \ref{sectpf} for more explanations.) The resulting OPEs are schematically written as 
 \begin{align}
@@ -5610,9 +5539,6 @@ Compute the commutator of the left-hand side using $[\hat{T}(\hat{y}_j),\hat{J}^
 Compute the commutator of the 
 right-hand side using the formula \eqref{djm} for $\hat{J}^-(y)$, and conclude.
 \end{exo}
-
-
-\fi
 
 \printindex
 
