@@ -90,7 +90,7 @@ It would be interesting to investigate how this affects the set of possible mode
 It is however mainly for the sake of generality and simplicity that
 we will lift these assumptions.
 We will indeed be studying not only rational, but also non-rational theories such as Liouville theory.
-Non-rational theories do not necessarily have a vacuum state, and assuming their consistency on the torus is of little help for determining their spectrums. 
+Non-rational theories do not necessarily have a vacuum state, and assuming their consistency on the torus is of little help for determining their spectrums \cite{rib14}. 
 
 By definition, rational conformal field theories are have spectrums made of finitely many representations.
 However, in order to ensure closure under fusion, these representations must have complicated structures.
@@ -219,21 +219,21 @@ For this purpose:
 \begin{itemize}
  \item This text is in the public domain, in order to eliminate legal restrictions to its reuse. 
 \item This article is distributed not only using Arxiv, but also using \href{https://github.com/ribault/CFT-Review}{GitHub}, so that it can be collaboratively modified. 
-\item In the Latex file, there are no user-defined macros.
+\item In the Latex file, there are no user-defined global macros.
 This makes it easier to reuse excerpts of that file. 
 \end{itemize}
 
-I have tried to follow some stylistic good practices, such as: numbering all equations, providing a clickable table of contents, not clogging the bibliography with superfluous information such as journal data, and avoiding Latin plurals when regular plurals are available.
-% Also, having a linebreak at the end of each sentence. 
+I have tried to follow some stylistic good practices, such as: providing a clickable table of contents, not clogging the bibliography with superfluous information such as journal data, avoiding Latin plurals when regular plurals are available, and numbering all equations while boxing the important ones. 
+% Also, having a linebreak at the end of each sentence, in order to facilitate version control.
 
 
 \section{Acknowledgements}
 
-I am grateful to my colleagues at IPhT Saclay, and in particular to Antoine Duval, Riccardo Guida, Vincent Pasquier and Pierre Ronceray, for the opportunity to give lectures on this subject. I am also grateful to the organizers and participants to the 10th APCTP Focus Program on Liouville, Integrability and Branes, and in particular to Soojong Rey, for including my lectures in an otherwise very advanced workshop. 
+I am grateful to my colleagues at IPhT Saclay, and in particular to Antoine Duval, Riccardo Guida, Santiago Migliaccio, Vincent Pasquier, and Pierre Ronceray, for the opportunity to give lectures on this subject. I am also grateful to the organizers and participants to the 10th APCTP Focus Program on Liouville, Integrability and Branes, and in particular to Soojong Rey, for including my lectures in an otherwise very advanced workshop. 
 
-I wish to thank Philippe Di Francesco, Matthias Gaberdiel, Christoph Keller, Slava Rychkov and G\'erard Watts for useful discussions and correspondence.
+I wish to thank Philippe Di Francesco, Matthias Gaberdiel, Christoph Keller, Slava Rychkov, and G\'erard Watts, for useful discussions and correspondence.
 
-I am grateful to Fran\c{c}ois David, Quang-Dien Duong and Raoul Santachiara for helpful comments on this text.
+I am grateful to Connor Behan, Fran\c{c}ois David, Quang-Dien Duong, Bruno Le Floch, and Raoul Santachiara, for helpful comments on this text.
 
 \chapter{Introduction \label{secintr}}
 
@@ -247,7 +247,7 @@ A \textbf{\boldmath theory}\index{theory} can be either a general framework such
 The standard model is formulated in the framework of quantum field theory, so we can call it a model of quantum field theory or simply a quantum field theory.
 Similarly, Liouville theory is a conformal field theory.
 A model need not be directly related to a \textbf{\boldmath physical system}\index{physical system}: a given physical system can be described by several models, and a given model can describe a number (possibly zero) of physical systems.
-This holds not only for physical systems, but also for what can be called theoretical systems, such as quantum gravity in $d$ dimensions.
+This holds not only for physical systems, but also for what could be called theoretical systems, such as quantum gravity in $d$ dimensions.
 These notions are illustrated by the following examples:
 \begin{align}
  \begin{tikzpicture}[scale = .5]
@@ -335,7 +335,7 @@ If the scalar product is positive definite, then the spectrum is a Hilbert space
 This is a necessary condition for the theory to have a direct probabilistic interpretation.
 
 Now, in quantum field theory, to each state $|\sigma\rangle$ and each point $x$ in space we associate a linear operator on the spectrum $V_\sigma(x)$, and the collection of these operators when $x$ varies is a field. 
-The map 
+The linear map 
 \begin{align}
  |\sigma \rangle  \ \mapsto \ V_\sigma(x)\ ,
 \end{align}
@@ -1572,12 +1572,13 @@ We assume that the same equation applies to $L_n^{(z_0)}$,
  {\frac{\partial}{\partial z_0}} L_{n}^{(z_0)} = -(n+1) L_{n-1}^{(z_0)}\ .
 \label{pll}
 \end{align}
-This is equivalent to $\frac{\partial}{\partial z_0} T(y) = 0$, where we define $T(y)$ as 
+This is equivalent to $\frac{\partial}{\partial z_0} T(y) = 0$, where we define the \textbf{\boldmath Virasoro field}\index{Virasoro field} $T(y)$ as 
 \begin{align}
  \boxed{T(y) = \sum_{n\in{\mathbb{Z}}} \frac{L_n^{(z_0)}}{(y-z_0)^{n+2}}}\ .
 \label{tsl}
 \end{align}
-This is called the \textbf{\boldmath Virasoro field}\index{Virasoro field}: a field which encodes the action of the Virasoro algebra at all points. 
+(The series is supposed to converge for $y$ in some neighbourhood of $z_0$.)
+The Virasoro field encodes the action of the Virasoro algebra at all points $z_0$. 
 From $T(y)$, we can indeed recover the Virasoro generators at any point,
 \begin{align}
 \boxed{ L_n^{(z_0)} = \frac{1}{2\pi i}\oint_{z_0} dy (y-z_0)^{n+1} T(y)} \ .
@@ -1595,7 +1596,6 @@ This OPE simplifies if $V_\sigma(z_0)$ is a primary field,
 \label{tvp}
 \end{align}
 The field $T(y)$ is a \textbf{\boldmath symmetry field}\index{symmetry field}: a field which encode the action of symmetry transformations, but does not necessarily correspond to a state in the spectrum. 
-
 The $T(y)V_\sigma(z_0)$ OPE determines  the behaviour of $T(y)$ near a field $V_\sigma(z_0)$.
 On the other hand, $T(y)$ is assumed to be holomorphic at any point where no field is present.
 Since our field theory lives on the Riemann sphere, we expect $T(y)$ to be holomorphic at $y=\infty$ as well.
@@ -2300,7 +2300,7 @@ which uses the following elliptic variable $q$ and elliptic function $\theta_3(q
 \begin{align}
  q = \exp -\pi \frac{F(\frac12,\frac12,1,1-x)}{F(\frac12,\frac12,1,x)}  \quad , \quad \theta_3(q) = \sum_{n\in{\mathbb{Z}}} q^{n^2}\ ,
 \end{align}
-where $F(\frac12,\frac12,1,x)$ is a special case of the hypergeometric function \eqref{fsn}.
+where $F(\frac12,\frac12,1,x)$ is a special case of the hypergeometric function \eqref{fsn}, and $|q|<1$ for any $x\in\mathbb{C}$.
 The nontrivial factor is the function
 \begin{align}
  H_{\Delta_s}(\Delta_i|q) = \sum_{k=0}^\infty \prod_{j=1}^k \sum_{m_j,n_j=1}^\infty \frac{(16q)^{m_jn_j}R_{m_j,n_j}}{\Delta_{\langle m_{j-1},-n_{j-1} \rangle}-\Delta_{\langle m_j,n_j\rangle}}
@@ -2792,7 +2792,7 @@ The unitarity condition $c\geq 1$ implies that
 $b$ belongs to the real line or the unit circle.
 Each generic value of $c$ corresponds to four values of $b$, and we can assume $Q=b+\frac{1}{b}\geq 0$ without loss of generality.
 
-The set of values of $\alpha$ which obey the unitarity condition $\Delta(\alpha)\geq 0$ is the union of the segment $\alpha\in(0,Q)$ and the line $\alpha \in \frac{Q}{2}+i{\mathbb{R}}$:
+The set of values of $\alpha$ which obey the unitarity condition $\Delta(\alpha)\geq 0$ is the union of the segment $\alpha\in]0,Q[$ and the line $\alpha \in \frac{Q}{2}+i{\mathbb{R}}$:
 \begin{align}
  \begin{tikzpicture}[scale = .8, baseline=(current  bounding  box.center)]
   \draw[-latex, very thin] (-1, 0) -- (0, 0) node[below right] {$0$} -- (2, 0) node[below right] {$\frac{Q}{2}$} -- (4, 0) node [below] {$Q$} -- (5, 0) node[above] {$\alpha$};
@@ -2802,7 +2802,7 @@ The set of values of $\alpha$ which obey the unitarity condition $\Delta(\alpha)
  \end{tikzpicture}
 \end{align}
 We interpret our analyticity assumptions as implying that the set of values of $\alpha$ which appear in the spectrum has no endpoints. 
-We must then leave the segment $(0,Q)$ out, and build the spectrum from the line
+We must then leave the segment $]0,Q[$ out, and build the spectrum from the line
 \begin{align}
  \alpha \in \frac{Q}{2}+i{\mathbb{R}} \quad \Leftrightarrow \quad \Delta \in \left(\frac{c-1}{24},\infty\right)\ .
 \label{aqd}
@@ -3684,14 +3684,14 @@ Conclude that these equations do have a solution.
 
 \begin{exo}[Fusion rules of all unitary representations if $c>1$]
  ~\label{exoaur}
-Compute the analytic continuation of the Liouville OPE to momentums $\beta\in (0,Q)$, which correspond to unitary representation that do not belong to the spectrum \eqref{sad}. 
-Show that this leads to the following conjecture for the fusion rules, where we assume $\beta_1,\beta_2\in (0,\frac{Q}{2})$:
+Compute the analytic continuation of the Liouville OPE to momentums $\beta\in ]0,Q[$, which correspond to unitary representation that do not belong to the spectrum \eqref{sad}. 
+Show that this leads to the following conjecture for the fusion rules, where we assume $\beta_1,\beta_2\in ]0,\frac{Q}{2}[$:
 \begin{align}
  \mathcal{V}_\beta \times \mathcal{V}_\alpha  
 &= \frac12 \int_{\frac{Q}{2}+i\mathbb{R}} d\alpha'\ \mathcal{V}_{\alpha'}\ ,
 \\
  \mathcal{V}_{\beta_1} \times \mathcal{V}_{\beta_2} 
-&= \sum_{\beta'\in (0,\frac{Q}{2})\cap \beta_1+\beta_2 + b\mathbb{N}+b^{-1}\mathbb{N}} \mathcal{V}_{\beta'}  
+&= \sum_{\beta'\in \left]0,\frac{Q}{2}\right[\cap \left(\beta_1+\beta_2 + b\mathbb{N}+b^{-1}\mathbb{N}\right)} \mathcal{V}_{\beta'}  
 + \frac12 \int_{\frac{Q}{2}+i\mathbb{R}} d\alpha'\ \mathcal{V}_{\alpha'}\ .
 \end{align}
 In particular, determine a lower bound on the conformal dimension $\Delta$, such that $\mathcal{V}_\Delta \times \mathcal{V}_\Delta$ belongs to the Liouville spectrum.
@@ -3712,7 +3712,7 @@ Conclude that the theory is equivalent to $m$ independent copies of Liouville th
 Derive the fusion rules \eqref{rrmm} of doubly degenerate representations.
 To do this, write the degenerate fusion rule \eqref{rrsr} as 
 \begin{align}
-[r_3,s_3]\in\ ]|r_1-r_2|,r_1+r_2[ \times ]|s_1-s_2|,s_1+s_2[ \ .
+\langle r_3, s_3\rangle\in\ ]|r_1-r_2|,r_1+r_2[ \times ]|s_1-s_2|,s_1+s_2[ \ .
 \end{align}
 Using the symmetry of the Kac table,
 \begin{align}
@@ -3721,7 +3721,7 @@ Using the symmetry of the Kac table,
 \end{align}
 show that the doubly degenerate fusion rules are
 \begin{align}
-[r_3,s_3]& \in \bigcap_{\epsilon_1,\epsilon_2 = 0,1}\ \bigcup_{\epsilon=0,1} \ \sigma_1^{\epsilon_1} \sigma_2^{\epsilon_2} \sigma^{\epsilon}
+\langle r_3, s_3\rangle& \in \bigcap_{\epsilon_1,\epsilon_2 = 0,1}\ \bigcup_{\epsilon=0,1} \ \sigma_1^{\epsilon_1} \sigma_2^{\epsilon_2} \sigma^{\epsilon}
 \Big( \big]|r_1-r_2|,r_1+r_2\big[ \times \big]|s_1-s_2|,s_1+s_2\big[  \Big)\ ,
 \\
 & = \bigcup_{\epsilon:\{0,1\}^2 \rightarrow \{0,1\} }\ \bigcap_{\epsilon_1,\epsilon_2=0,1} \ \sigma_1^{\epsilon_1} \sigma_2^{\epsilon_2} \sigma^{\epsilon(\epsilon_1,\epsilon_2)} \Big( \big]|r_1-r_2|,r_1+r_2\big[ \times \big]|s_1-s_2|,s_1+s_2\big[  \Big)\ ,
@@ -3729,7 +3729,7 @@ show that the doubly degenerate fusion rules are
 where $\sigma_i$ acts on $\langle r_i,s_i\rangle$ as in eq. \eqref{srs}, while $\sigma$ acts on a rectangle as $\sigma\big(]a,b[\times]c,d[\big) = ]p-b,p-a[\times ]q-d,q-c[$.
 Show that each one of the $16$ rectangles parametrized by the function $\epsilon:\{0,1\}^2 \rightarrow \{0,1\} $ is a subset of one of the two rectangles which correspond to the two functions $\epsilon(\epsilon_1,\epsilon_2)=\pm (\epsilon_1+\epsilon_2) \mod 2$, so that 
 \begin{multline}
- [r_3,s_3]  \in\  \big]|r_1-r_2|,p-|r_1+r_2-p|\big[\times \big]|s_1-s_2|,q-|s_1+s_2-q|\big[ 
+ \langle r_3, s_3\rangle  \in\  \big]|r_1-r_2|,p-|r_1+r_2-p|\big[\times \big]|s_1-s_2|,q-|s_1+s_2-q|\big[ 
 \\
  \bigcup\ \big]|r_1+r_2-p|,p-|r_1-r_2|\big[\times \big]|s_1+s_2-q|,q-|s_1-s_2|\big[\ .
 \end{multline}
@@ -3747,7 +3747,7 @@ If $b^2$ is irrational, show that this occurs for infinitely many choices of $\l
 Deduce that the corresponding generalized minimal model is not unitary. 
 In the minimal model case $b^2 = -\frac{q}{p}$, show that 
 \begin{align}
- \bigcup_{r=1}^{p-1}\bigcup_{s=1}^{q-1} \left( \frac{r-1}{s-1} , \frac{r+1}{s+1} \right)  = \left(0, \frac{p}{p+1}\right) \ .
+ \bigcup_{r=1}^{p-1}\bigcup_{s=1}^{q-1} \left] \frac{r-1}{s-1} , \frac{r+1}{s+1} \right[  = \left]0, \frac{p}{p+1}\right[ \ .
 \end{align}
 (Pay special attention to the case $s=r+1$.) Deduce that if $|q-p|>1$, then the corresponding minimal model is not unitary.
 Assuming that the fusion product of two representations is unitary if and only if both representations are unitary, show that in non-unitary (generalized) minimal models, at least some of the representations with positive conformal dimensions are non-unitary.
@@ -3908,7 +3908,7 @@ To summarize,
  Existence of scalar product & $Q\in {\mathbb{R}} \cup i{\mathbb{R}} $ & $Q\in {\mathbb{R}}$ 
 \\
 \hline
- Unitarity of $\mathcal{V}_\alpha$ & $\alpha\in \frac{Q}{2}+i{\mathbb{R}} \cup (0,Q) $ & $\alpha \in \frac{Q}{2}+i{\mathbb{R}}$
+ Unitarity of $\mathcal{V}_\alpha$ & $\alpha\in \frac{Q}{2}+i{\mathbb{R}} \cup ]0,Q[ $ & $\alpha \in \frac{Q}{2}+i{\mathbb{R}}$
 \\
 \hline 
  Reflection relation  & $\mathcal{V}_\alpha = \mathcal{V}_{Q-\alpha} $ & $\mathcal{V}_\alpha \neq \mathcal{V}_{Q-\alpha} $ 
@@ -5200,9 +5200,9 @@ Representation & Parameter values & Eigenvalues of $J_0^0$
 \hline 
 $C^j_\alpha$  & $j\in -\tfrac12+i{\mathbb{R}}_+,\ \alpha\in{\mathbb{R}}\ \text{mod}\ {\mathbb{Z}}$ &  $\alpha + {\mathbb{Z}}$ 
 \\
-$D^{j,+}$ & $j\in(-\tfrac12,\infty)$ & $j+1+{\mathbb{N}}$
+$D^{j,+}$ & $j\in]-\tfrac12,\infty[$ & $j+1+{\mathbb{N}}$
 \\
-$D^{j,-}$ & $j\in(-\tfrac12,\infty)$ & $-(j+1+{\mathbb{N}})$
+$D^{j,-}$ & $j\in]-\tfrac12,\infty[$ & $-(j+1+{\mathbb{N}})$
 \\
 \hline 
  \end{tabular}
@@ -5216,7 +5216,7 @@ Given a representation $R$, let $R^*$ be the dual representation, that is the re
 \end{align}
 So, according to \cite{rib09} and references therein, we have
 \begin{align}
- \mathcal{F}(\widetilde{SL}_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{(0,1)} d\alpha\ C^j_\alpha \otimes \bar{C}^j_{\alpha} \oplus \bigoplus_\pm \int^\oplus_{(-\frac12,\infty)} dj\ D^{j,\pm}\otimes \bar{D}^{j,\pm} \ ,
+ \mathcal{F}(\widetilde{SL}_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ C^j_\alpha \otimes \bar{C}^j_{\alpha} \oplus \bigoplus_\pm \int^\oplus_{]-\frac12, \infty[} dj\ D^{j,\pm}\otimes \bar{D}^{j,\pm} \ ,
 \label{fst}
 \\
  \mathcal{F}(SL_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} C^j_\alpha \otimes \bar{C}^j_{\alpha} \oplus \bigoplus_\pm \bigoplus_{j=-\frac12, 0,\frac12 \cdots} D^{j,\pm}\otimes \bar{D}^{j,\pm} \ ,
@@ -5242,7 +5242,7 @@ N_{C^{j_1}_{\alpha_1},C^{j_2}_{\alpha_2},C^{j_3}_{\alpha_3}} &= 2 \quad \text{if
 For example, the tensor product of two principal series representations is
 \begin{align}
  C^{j_1}_{\alpha_1}\otimes C^{j_2}_{\alpha_2} &= 2\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj\ C^j_{\alpha_1+\alpha_2} 
-\oplus \bigoplus_\pm \bigoplus_{\substack{j\in \pm\alpha_1\pm\alpha_2+{\mathbb{Z}}\\ j\in(-\frac12,\infty)}} D^{j,\pm} \ ,
+\oplus \bigoplus_\pm \bigoplus_{\substack{j\in \pm\alpha_1\pm\alpha_2+{\mathbb{Z}}\\ j\in]-\frac12, \infty[}} D^{j,\pm} \ ,
 \label{coc}
 \end{align}
 where the factor of $2$ is the tensor product multiplicity which we already encountered in Section \ref{secwikz}.
@@ -5339,17 +5339,17 @@ Then it is natural to assume that the spectral flow actually leaves the spectrum
 But what are the allowed values of the spin $j$ of $\hat{D}^{j,w}$? We still impose the constraint $j>-\frac12$ which comes from the representation $D^{j,\pm}$ of $\mathfrak{sl}_2$.
 If this applies to both spins in the relation \eqref{rdd}, we must then have 
 \begin{align}
- j\in \left(-\frac12, -\frac{k+3}{2}\right)\ .
+ j\in \left]-\frac12, -\frac{k+3}{2}\right[\ .
 \label{jimm}
 \end{align}
 The condition for this interval to be non-empty is
 \begin{align}
- \boxed{k\in(-\infty,-2)}\ .
+ \boxed{k\in]-\infty,-2[}\ .
 \end{align}
 (Compare with the condition \eqref{kito} for the $H_3^+$ model.) The natural conjectures for the spectrums of the $\widetilde{SL}_2(\mathbb{R})$ and $SL_2(\mathbb{R})$ WZW models is then
 \begin{align}
- \tilde{S} &= \bigoplus_{w\in{\mathbb{Z}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{(0,1)} d\alpha\ \hat{C}^{j,w}_\alpha \otimes \bar{\hat{C}}^{j,w}_{\alpha} 
-\oplus \bigoplus_{w\in\frac12+{\mathbb{Z}}}\int^\oplus_{(-\frac12,-\frac{k+3}{2})} dj\ \hat{D}^{j,w}\otimes \bar{\hat{D}}^{j,w} \ ,
+ \tilde{S} &= \bigoplus_{w\in{\mathbb{Z}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ \hat{C}^{j,w}_\alpha \otimes \bar{\hat{C}}^{j,w}_{\alpha} 
+\oplus \bigoplus_{w\in\frac12+{\mathbb{Z}}}\int^\oplus_{]-\frac12,-\frac{k+3}{2}[} dj\ \hat{D}^{j,w}\otimes \bar{\hat{D}}^{j,w} \ ,
 \\
  S &= \bigoplus_{\substack{w_L,w_R\in{\mathbb{Z}}\\ w_L-w_R\in 2{\mathbb{Z}}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} \hat{C}^{j,w_L}_\alpha \otimes \bar{\hat{C}}^{j,w_R}_{\alpha} \oplus  \bigoplus_{\substack{w_L,w_R\in\frac12+{\mathbb{Z}}\\ w_L-w_R\in 2{\mathbb{Z}}}}\ \bigoplus_{\substack{j= -\frac12, 0,\frac12,\cdots \\ j<-\frac{k+3}{2}}} \hat{D}^{j,w_L}\otimes \bar{\hat{D}}^{j,w_R} \ .
 \end{align}
@@ -5392,15 +5392,15 @@ This leads to the following fusion rules:
 \begin{align}
 \hat{D}^{j_1,w_1}\times \hat{D}^{j_2,w_2} &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj\ \hat{C}^{w_1+w_2}_{j_1+j_2+\frac{k}{2}} 
 \nonumber \\ & \oplus 
-\bigoplus_{\substack{j\in j_1+j_2+1+{\mathbb{N}} \\ j\in (-\frac12,-\frac{k+3}{2})}} \hat{D}^{j,w_1+w_2-\frac12} \oplus 
-\bigoplus_{\substack{j\in j_1+j_2+1+\frac{k}{2}-{\mathbb{N}} \\ j\in (-\frac12,-\frac{k+3}{2})}} \hat{D}^{j,w_1+w_2+\frac12}\ ,
+\bigoplus_{\substack{j\in j_1+j_2+1+{\mathbb{N}} \\ j\in ]-\frac12, -\frac{k+3}{2}[}} \hat{D}^{j,w_1+w_2-\frac12} \oplus 
+\bigoplus_{\substack{j\in j_1+j_2+1+\frac{k}{2}-{\mathbb{N}} \\ j\in ]-\frac12, -\frac{k+3}{2}[}} \hat{D}^{j,w_1+w_2+\frac12}\ ,
 \\
- \hat{C}^{j_1,w_1}_{\alpha_1}\times \hat{D}^{j_2,w_2} &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj\left( \hat{C}^{j,w_1+w_2-\frac12}_{\alpha_1+j_2} \oplus \hat{C}^{j,w_1+w_2+\frac12}_{\alpha_1+j_2+\frac{k}{2}}\right) \oplus \bigoplus_{\substack{j\in \alpha_1+j_2+{\mathbb{Z}} \\ j\in (-\frac12,-\frac{k+3}{2})}} \hat{D}^{j,w_1+w_2}\ ,
+ \hat{C}^{j_1,w_1}_{\alpha_1}\times \hat{D}^{j_2,w_2} &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj\left( \hat{C}^{j,w_1+w_2-\frac12}_{\alpha_1+j_2} \oplus \hat{C}^{j,w_1+w_2+\frac12}_{\alpha_1+j_2+\frac{k}{2}}\right) \oplus \bigoplus_{\substack{j\in \alpha_1+j_2+{\mathbb{Z}} \\ j\in ]-\frac12, -\frac{k+3}{2}[}} \hat{D}^{j,w_1+w_2}\ ,
 \\
  \hat{C}^{j_1,w_1}_{\alpha_1}\times \hat{C}^{j_2,w_2}_{\alpha_2} &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \left(\hat{C}^{j,w_1+w_2-1}_{\alpha_1+\alpha_2-\frac{k}{2}} \oplus 2\, \hat{C}^{w_1+w_2}_{\alpha_1+\alpha_2} \oplus \hat{C}^{w_1+w_2+1}_{\alpha_1+\alpha_2+\frac{k}{2}}\right) 
 \nonumber \\
-&\oplus \bigoplus_{\substack{j\in \alpha_1+\alpha_2-\frac{k}{2}+{\mathbb{Z}} \\ j\in(-\frac12,-\frac{k+3}{2})}} \hat{D}^{j,w_1+w_2-\frac12} 
-\oplus \bigoplus_{\substack{j\in \alpha_1+\alpha_2+{\mathbb{Z}} \\ j\in(-\frac12,-\frac{k+3}{2})}} \hat{D}^{j,w_1+w_2+\frac12} \ .
+&\oplus \bigoplus_{\substack{j\in \alpha_1+\alpha_2-\frac{k}{2}+{\mathbb{Z}} \\ j\in]-\frac12, -\frac{k+3}{2}[}} \hat{D}^{j,w_1+w_2-\frac12} 
+\oplus \bigoplus_{\substack{j\in \alpha_1+\alpha_2+{\mathbb{Z}} \\ j\in]-\frac12, -\frac{k+3}{2}[}} \hat{D}^{j,w_1+w_2+\frac12} \ .
 \end{align}
 So, while the spectral flow number $w$ is not conserved, fusion violates it by at most one unit.
 This can alternatively be shown at the level of correlation functions by studying how spectral flow affects the Ward identities and Knizhnik-Zamolodchikov equations \cite{rib05}.
