@@ -334,7 +334,7 @@ The \textbf{\boldmath Hermitian conjugate}\index{Hermitian conjugate} $A^\dagger
 If the scalar product is positive definite, then the spectrum is a Hilbert space.
 This is a necessary condition for the theory to have a direct probabilistic interpretation.
 
-Now, in quantum field theory, to each state $|\sigma\rangle$ and each point $x$ in space we associate a linear operator on the spectrum $V_\sigma(x)$, and the collection of these operators when $x$ varies is a field. 
+Now, in certain quantum field theories (including conformal field theories), to each state $|\sigma\rangle$ and each point $x$ in space we associate a linear operator on the spectrum $V_\sigma(x)$, and the collection of these operators when $x$ varies is a field. 
 The linear map 
 \begin{align}
  |\sigma \rangle  \ \mapsto \ V_\sigma(x)\ ,
@@ -347,6 +347,8 @@ Then, a \textbf{\boldmath correlation function}\index{correlation function}, her
 \label{pva}
 \end{align}
 is the probability amplitude for the interaction of $N$ particles of types $\sigma_1,\cdots \sigma_N$, located at points $x_1,\cdots x_N$. 
+For the moment, an $N$-point function is a mere notation for a number that linearly depends on $N$ fields. 
+Correlation functions will be defined by the equations that they obey, which will be deduced from the assumptions of the bootstrap approach.
 
 To construct a model of quantum field theory is therefore to give principles which uniquely determine a spectrum and a set of correlation functions.
 To \textbf{\boldmath solve a model}\index{solve (model)} is to actually compute the spectrum and correlation functions. 
@@ -450,7 +452,8 @@ Together with commutativity, this implies that the ordering of fields in correla
 \label{ope}
 \end{align}
 where the \textbf{\boldmath OPE coefficient}\index{OPE coefficient} $C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2)$ is a function (i.e.
-not a field), and the sum runs over a basis of the spectrum $S$.
+not a field), and the sum runs over a basis of the spectrum $S$. 
+The sum is supposed to converge if $x_1$ and $x_2$ are sufficiently close. 
 Since the spectrum $S$ is in general much smaller than the space of linear operators on $S$, the assumption that the operator $V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)$ is a linear combination of $(V_{\sigma}(x_2))_{\sigma\in S}$ (or more generally $(V_{\sigma}(x))_{\sigma\in S}$) is a nontrivial assumption, which does not follow from the state-field correspondence.
 \end{enumerate}
 Our assumptions do not include the existence of a vacuum state, a frequently encountered axiom of quantum field theory in flat space.
@@ -988,9 +991,10 @@ Liouville theory can be analytically continued to complex values of $c$, but is 
 \item \textbf{\boldmath A-series minimal models}\index{A-series minimal model} are characterized as diagonal, rational models.
 Such a model exists only if the central charge is of the type 
 \begin{align}
- c = 1 - 6 \frac{(p-q)^2}{pq}  \quad \text{with} \quad \left\{\begin{array}{l}  p,q \ \text{coprime \ integers} \\ 2\leq p<q \end{array}\right.  
+ c = 1 - 6 \frac{(p-q)^2}{pq}  \quad \text{with} \quad \left\{\begin{array}{l}  p,q \ \text{coprime  integers}\ , \\ 2\leq p<q\ , \end{array}\right.  
 \label{cpq}
 \end{align}
+so that $0\leq c <1$.
 There are $\frac{(p-1)(q-1)}{2}$ distinct representations in the spectrum.
 The model is unitary if and only if $q=p+1$.
 Then the central charge is $c=1-\frac{6}{p(p+1)}=0,\frac12,\frac{7}{10},\cdots$.
@@ -1017,8 +1021,7 @@ The difference with Liouville theory is that the symmetry algebra is larger than
  \item 
 (Virasoro) \textbf{\boldmath minimal models}\index{minimal model} are by definition rational models, and beyond the A-series there exist two other series, called the 
 D- and E-series, which are not diagonal.
-Central charges of minimal models obey 
-$0\leq c<1$.
+The corresponding values of the central charge are still of the type of eq. \eqref{cpq}.
 \end{itemize}
 Therefore,
 the properties of conformal field theories, starting with their very existence, crucially depend on the value of the central charge $c$ of the underlying Virasoro algebra.
@@ -1542,7 +1545,7 @@ where $L_{\langle r,s \rangle}$ is defined in eq. \eqref{lrs}.
 This field differs from the field $V_{\Delta_{\langle r,s \rangle}}(z_0)$, which corresponds to the highest-weight state of the Verma module $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$, and obeys no such equation.
 
 Assuming that we know the spectrum of a model, and that this spectrum is made of highest-weight representations, the observables which we should compute in order to solve the model are the correlation functions of primary and descendent fields.
-An $N$-point function of primary fields $\left\langle \prod_{i=1}^N V_{\Delta_i}(z_i) \right\rangle$ is function of their positions and conformal dimensions.
+An $N$-point function of primary fields $\left\langle \prod_{i=1}^N V_{\Delta_i}(z_i) \right\rangle$ is a function of their positions and conformal dimensions.
 The $N$-point functions of the corresponding descendent fields are of the type $\left\langle \prod_{i=1}^N \left(\left(\prod_{j=1}^{p_i} L_{-n_{i,j}}\right)V_{\Delta_i}(z_i)\right) \right\rangle$, with $p_i\geq 0$ and $n_{i,j}\geq 1$. 
 In order to derive the equations which constrain and relate these correlation functions, we must first explain how the action of the Virasoro symmetry is encoded in a field, the Virasoro field.
 
@@ -1595,7 +1598,9 @@ This OPE simplifies if $V_\sigma(z_0)$ is a primary field,
  T(y) V_\Delta(z_0) = \frac{\Delta V_\Delta(z_0)}{(y-z_0)^2} + \frac{L_{-1} V_\Delta(z_0)}{y-z_0} + \sum_{n=0}^\infty (y-z_0)^n L_{-n-2}V_\Delta(z_0)\ .
 \label{tvp}
 \end{align}
-The field $T(y)$ is a \textbf{\boldmath symmetry field}\index{symmetry field}: a field which encode the action of symmetry transformations, but does not necessarily correspond to a state in the spectrum. 
+The field $T(y)$ is a \textbf{\boldmath symmetry field}\index{symmetry field}: a field which encodes the action of symmetry transformations, but does not necessarily correspond to a state in the spectrum. 
+That field nevertheless obeys the same assumptions of commutativity, associativity, and existence of an OPE, as the fields $V_\sigma(z_0)$.
+
 The $T(y)V_\sigma(z_0)$ OPE determines  the behaviour of $T(y)$ near a field $V_\sigma(z_0)$.
 On the other hand, $T(y)$ is assumed to be holomorphic at any point where no field is present.
 Since our field theory lives on the Riemann sphere, we expect $T(y)$ to be holomorphic at $y=\infty$ as well.
@@ -1613,7 +1618,7 @@ Now the commutation relations \eqref{vir} of the Virasoro algebra are equivalent
 \end{align}
 The proof of this equivalence is sketched in Exercise \ref{exott}. 
 The regular terms of this OPE, which involve $L_{n\leq -2} T(z)$, do not appear in that proof, and are therefore omitted. 
-Regular terms are generally omitted when writing OPEs of $T(y)$, because that field is holomorphic and is therefore completely determined by its singularities. 
+Regular terms are generally omitted when writing OPEs of $T(y)$, because that field is locally holomorphic and is therefore completely determined by its singularities. 
 
 Notice also that the term $\frac{c}{2}$ should be understood as $\frac{c}{2}I$ where $I$ is the \textbf{\boldmath identity field}\index{identity field}, a field whose presence does not affect correlation functions, and which is in particular $z$-independent,
 \begin{align}
@@ -1919,6 +1924,7 @@ The fusion product of two degenerate representations must of course obey the fus
 \label{rrsr}
 \end{align}
 where a superscript $\overset{2}{=}$ indicates that the corresponding sums run by increments of $2$.
+So the fusion product $R_{\langle r_1,s_1 \rangle} \times R_{\langle r_2,s_2 \rangle}$ is a sum of $\min(r_1,r_2)\min(s_1,s_2)$ degenerate representations.
 This can be rewritten as 
 \begin{align}
 R_{\langle r_1,s_1 \rangle} \times R_{\langle r_2,s_2 \rangle} = \sum_{r_3,s_3=1}^\infty f_{r_1,r_2,r_3} f_{s_1,s_2,s_3}\ R_{\langle r_3,s_3 \rangle}\ ,
@@ -1941,7 +1947,7 @@ f_{r_1,r_2,r_3} = \left\{\begin{array}{l}  1 \quad \text{if} \quad
 \section{Consequences of conformal symmetry \label{secem}}
 
 In Section \ref{seclin}, we have studied the linear equations which are associated to a Virasoro symmetry algebra.
-We now further assume that this Virasoro algebra corresponds to conformal transformations.
+We now further assume that this Virasoro algebra corresponds to conformal transformations, rather than internal symmetries.
 The associated 
 Virasoro field will then be called the \textbf{\boldmath energy-momentum tensor}\index{energy-momentum tensor}. 
 
@@ -2021,10 +2027,9 @@ M(t^-) & = \left(\begin{smallmatrix} 0 & 0 \\ 1 & 0 \end{smallmatrix} \right) \ 
 In the case $j=0$, the differential operators \eqref{ddz} correspond to the generators $(\ell_{-1},\ell_0,\ell_1)$ \eqref{elln} of global conformal transformations.
 This shows that, as their names suggest, global Ward identities correspond to global conformal transformations.
 In this correspondence, the holomorphic function $\epsilon(z)\in\{1,z,z^2\}$ which appears in the derivation \eqref{oiz} of the global Ward identities, corresponds to the function $\epsilon(z)$ which parametrizes an infinitesimal conformal transformation \eqref{sen}. 
-This provides a justification for the assumption \eqref{tyi} on the behaviour of $T(z)$ at $z=\infty$, as it is this assumption which determines the allowed values of $\epsilon(z)$ in the derivation of the global Ward identities. 
 
-So $\mathfrak{sl}_2$ matrices $M(t^a)$ correspond to infinitesimal global conformal transformations, and to the global Ward identities \eqref{spz}.
-Then $SL_2({\mathbb{C}})$ matrices correspond to global conformal transformations \eqref{gisl}, and to the following macroscopic version of the global Ward identities,
+So $\mathfrak{sl}_2$ matrices $M(t^a)$ correspond to infinitesimal global conformal transformations, and to the infinitesimal global Ward identities \eqref{spz}.
+Then $SL_2({\mathbb{C}})$ matrices correspond to finite global conformal transformations \eqref{gisl}, and the finite global Ward identities are
 \begin{align}
 \left\langle \prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle  = \left\langle \prod_{i=1}^N T_g V_{\Delta_i}(z_i) \right\rangle \ , 
 \label{vtv}
@@ -2037,17 +2042,19 @@ where we define the image $T_gV_\Delta(z)$ of a quasi-primary field as
 (See Exercise \ref{exoqp} for an interpretation in terms of representations of $\mathfrak{sl}_2$.)
 This involves the expression $(cz+d)^{-2\Delta}$, which is a multivalued function of $z$ unless $2\Delta\in {\mathbb{Z}}$.
 Correlation functions  are however supposed to be single-valued when their dependence on $\bar{z}$ is taken into account.
-A necessary condition for the single-valuedness of correlation functions involving a field $V_{\Delta,\bar{\Delta}}(z,\bar{z})$ is therefore
+Since $T_g V_{\Delta,\bar{\Delta}}(z,\bar{z})= (cz+d)^{-2\Delta}(\bar c\bar z+\bar d)^{-2\bar\Delta} V_\Delta\left(\frac{az+b}{cz+d}, \frac{\bar a\bar z+ \bar b}{\bar c \bar z + \bar d}\right) $,
+a necessary condition for the single-valuedness of correlation functions involving $V_{\Delta,\bar{\Delta}}(z,\bar{z})$ is
 \begin{align}
  \boxed{\Delta-\bar{\Delta} \in \frac12 {\mathbb{Z}}}\ .
 \label{dbd}
 \end{align}
+The number $\Delta-\bar{\Delta}$ is called the \textbf{conformal spin}\index{spin (conformal)} of the field $V_{\Delta,\bar\Delta}(z,\bar z)$, as it controls how that field behaves under rotations, $T_{\left(\begin{smallmatrix} e^{i\theta} & 0 \\ 0 & e^{-i\theta} \end{smallmatrix}\right)} V_{\Delta,\bar{\Delta}}(z,\bar{z}) = e^{2i\theta(\Delta-\bar\Delta)} V_{\Delta,\bar{\Delta}}(e^{2i\theta} z,e^{-2i\theta}\bar{z})$.
 Then $V_{\Delta,\bar{\Delta}}(z,\bar{z})$ is called a fermionic field if $\Delta-\bar{\Delta}\in \frac12 +{\mathbb{Z}}$, and a \textbf{bosonic field}\index{bosonic field} if 
 \begin{align}
  \Delta-\bar{\Delta} \in {\mathbb{Z}}\ .
 \label{dbdz}
 \end{align}
-We will only encounter bosonic fields in the following.
+In the following, we will only study models whose fields are all bosonic. 
 
 We can now determine the behaviour of a quasi-primary fields $V_\Delta(z)$ at $z=\infty$.
 By covariance, this is the same as the behaviour of $T_{\left(\begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix}\right)}V_\Delta(z)= (-z)^{-2\Delta}V_\Delta(-\frac{1}{z})$.
@@ -2237,15 +2244,17 @@ F_{\bar{\Delta}_s,\bar{\Delta}_t}\begin{bmatrix} \bar{\Delta}_2 & \bar{\Delta}_3
 =  C_{23t}C_{t41}\ .
 \end{align}
 This can be further simplified if the theory is diagonal.
-In this case, we have $\Delta_i=\bar{\Delta}_i$ for $i=1,2,3,4$, and the sum runs over $\{\Delta_s=\bar{\Delta}_s\}$ -- but $\Delta_t$ and $\bar{\Delta}_t$ are still independent in the above formula.
+In this case, we have $\Delta_i=\bar{\Delta}_i$ for $i=1,2,3,4$, and we should insert factors $\delta_{\Delta_s,\bar\Delta_s}$ (left) and $\delta_{\Delta_t,\bar\Delta_t}$ (right) in the above formula.
 Using the inverse fusing matrix, we obtain 
 \begin{align}
  C_{12s} C_{s34}
 F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}
 = C_{23t}C_{t41} 
 F^{-1}_{\Delta_t,\Delta_s}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}
+\ .
 \end{align}
 This can be useful, because the fusing matrix is usually a simpler object than the conformal blocks, as we will see in a special case in Section \ref{sechcb}.
+% F^{-1} is related to F by a permutation of the arguments.
 Explicit formulas for $F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}$ with generic values of $\Delta_i$ can be found in \cite{tv12}.
 
 Let us sketch how conformal blocks can be computed. 
@@ -2278,7 +2287,7 @@ Explicitly, using eqs. \eqref{flfo}-\eqref{fo} for $f_{\Delta_1,\Delta_2}^{\Delt
 \begin{bmatrix} (\Delta_s+\Delta_4-\Delta_3)_2 \\ \Delta_s+2\Delta_4-\Delta_3 \end{bmatrix}
  x^2 + O(x^3)\Bigg\}\ ,
 \end{multline}
-where the level-$2$ determinant $D_2(\Delta_s)$ was defined in eq. \eqref{dud}. 
+where the level-$2$ determinant $D_2(\Delta_s)$ was defined in eq. \eqref{dud}, and $(x)_2 = x(x+1)$.
 Once $s$-channel blocks are known, $t$-channel blocks can be obtained by a permutation of the arguments, as suggested by the diagrammatic notations,
 \begin{align}
  \mathcal{F}^{(t)}_{\Delta_t}(\Delta_1,\Delta_2,\Delta_3,\Delta_4|z_1,z_2,z_3,z_4) = \mathcal{F}^{(s)}_{\Delta_t}(\Delta_2,\Delta_3,\Delta_4,\Delta_1|z_2,z_3,z_4,z_1)\ . 
@@ -2365,7 +2374,7 @@ In particular, a BPZ equation for a four-point function boils down to an ordinar
 Let us derive the ordinary differential equation for $\left\langle V_{\langle 2,1 \rangle}(x)\prod_{i=1}^3 V_{\Delta_i}(z_i)\right\rangle$.
 Inserting the identity $\oint_\infty dz\ \epsilon(z) T(z) =0$ with $\epsilon(z) = \frac{(z-z_1)(z-z_2)(z-z_3)}{z-x}$, and using eq. \eqref{lrsv}, we obtain a differential equation with derivatives only with respect to $x$, 
 \begin{multline}
-  \left\{ (x-z_1)(x-z_2)(x-z_3)\left(\frac{\partial^2}{\partial x^2} +\left[\frac{1}{x-z_1}+\frac{1}{x-z_2}+\frac{1}{x-z_3}\right] {\frac{\partial}{\partial x}} \right) \right.
+  \left\{ (x-z_1)(x-z_2)(x-z_3)\left(-\frac{1}{b^2}\frac{\partial^2}{\partial x^2} +\left[\frac{1}{x-z_1}+\frac{1}{x-z_2}+\frac{1}{x-z_3}\right] {\frac{\partial}{\partial x}} \right) \right.
 \\ 
 \left. + (3x-z_1-z_2-z_3)\Delta_{\langle 2,1 \rangle} +\frac{z_{12}z_{13}}{z_1-x}\Delta_1 + \frac{z_{21}z_{23}}{z_2-x}\Delta_2+\frac{z_{31}z_{32}}{z_3-x}\Delta_3\right\} 
 \\
