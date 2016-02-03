@@ -231,7 +231,7 @@ I have tried to follow some stylistic good practices, such as: providing a click
 
 I am grateful to my colleagues at IPhT Saclay, and in particular to Antoine Duval, Riccardo Guida, Santiago Migliaccio, Vincent Pasquier, and Pierre Ronceray, for the opportunity to give lectures on this subject. I am also grateful to the organizers and participants to the 10th APCTP Focus Program on Liouville, Integrability and Branes, and in particular to Soojong Rey, for including my lectures in an otherwise very advanced workshop. 
 
-I wish to thank Philippe Di Francesco, Matthias Gaberdiel, Christoph Keller, Slava Rychkov, and G\'erard Watts, for useful discussions and correspondence.
+I wish to thank Philippe Di Francesco, Matthias Gaberdiel, Christoph Keller, Slava Rychkov, Vincent Vargas, and G\'erard Watts, for useful discussions and correspondence.
 
 I am grateful to Connor Behan, Fran\c{c}ois David, Quang-Dien Duong, Bruno Le Floch, and Raoul Santachiara, for helpful comments on this text.
 
@@ -2374,17 +2374,21 @@ In particular, a BPZ equation for a four-point function boils down to an ordinar
 Let us derive the ordinary differential equation for $\left\langle V_{\langle 2,1 \rangle}(x)\prod_{i=1}^3 V_{\Delta_i}(z_i)\right\rangle$.
 Inserting the identity $\oint_\infty dz\ \epsilon(z) T(z) =0$ with $\epsilon(z) = \frac{(z-z_1)(z-z_2)(z-z_3)}{z-x}$, and using eq. \eqref{lrsv}, we obtain a differential equation with derivatives only with respect to $x$, 
 \begin{multline}
-  \left\{ (x-z_1)(x-z_2)(x-z_3)\left(-\frac{1}{b^2}\frac{\partial^2}{\partial x^2} +\left[\frac{1}{x-z_1}+\frac{1}{x-z_2}+\frac{1}{x-z_3}\right] {\frac{\partial}{\partial x}} \right) \right.
-\\ 
-\left. + (3x-z_1-z_2-z_3)\Delta_{\langle 2,1 \rangle} +\frac{z_{12}z_{13}}{z_1-x}\Delta_1 + \frac{z_{21}z_{23}}{z_2-x}\Delta_2+\frac{z_{31}z_{32}}{z_3-x}\Delta_3\right\} 
-\\
+  \left\{ \prod_{i=1}^3(x-z_i)\left(-\frac{1}{b^2}\frac{\partial^2}{\partial x^2} +\sum_{i=1}^3 \frac{1}{x-z_i} {\frac{\partial}{\partial x}} \right) + (3x-z_1-z_2-z_3)\Delta_{\langle 2,1 \rangle} \right.
+  \\
+\left.  +\frac{z_{12}z_{13}}{z_1-x}\Delta_1 + \frac{z_{21}z_{23}}{z_2-x}\Delta_2+\frac{z_{31}z_{32}}{z_3-x}\Delta_3\right\} 
 \left\langle V_{\langle 2,1 \rangle}(x)\prod_{i=1}^3 V_{\Delta_i}(z_i)\right\rangle  = 0\ . 
 \end{multline}
-Setting $(z_1,z_2,z_3)=(0,\infty,1)$, we find that $\left\langle V_{\langle 2,1 \rangle}(x)V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle$ must be a solution of the equation
+Setting $(z_1,z_2,z_3)=(0,\infty,1)$, this amounts to the equation 
 \begin{align}
-  \left\{ \frac{x(1-x)}{b^2}\frac{\partial^2}{\partial x^2} + (2x-1){\frac{\partial}{\partial x}} +\Delta_{\langle 2,1 \rangle} +\frac{\Delta_1}{x}-\Delta_2 + \frac{\Delta_3}{1-x}\right\} \mathcal{F}(x)=0\ .
+  \left\{ \frac{x(1-x)}{b^2}\frac{\partial^2}{\partial x^2} + (2x-1){\frac{\partial}{\partial x}} +\Delta_{\langle 2,1 \rangle} +\frac{\Delta_1}{x}-\Delta_2 + \frac{\Delta_3}{1-x}\right\} \mathcal{F}(x)=0\ ,
 \label{sode}
 \end{align}
+for 
+\begin{align}
+ \mathcal{F}(x) = \left\langle V_{\langle 2,1 \rangle}(x)V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle\ .
+\label{fxv}
+ \end{align}
 (The $s$-th order differential equation for $\left\langle V_{\langle s,1 \rangle}(x)V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle $ can be found in \cite{flno09}.)
 
 Before solving our second-order differential equation, let us discuss its qualitative properties.
@@ -2410,7 +2414,7 @@ where for a given momentum $\alpha$ we define
 \label{apm}
 \end{align}
 In conformal field theory, singularities of a correlation function correspond to coincidences of fields, and characteristic exponents are constrained by the corresponding OPEs.
-In the case of our four-point function $\left\langle V_{\langle 2,1 \rangle}(x)V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle$ at $x=0$, the fusion rule \eqref{rot} leads to an OPE of the type
+In the case of our four-point function \eqref{fxv} at $x=0$, the fusion rule \eqref{rot} leads to an OPE of the type
 \begin{align}
  V_{\langle 2,1 \rangle}(x)V_{\alpha}(0) = \sum_\pm C_\pm(\alpha) x^{\Delta\left(\alpha\mp \frac{b}{2}\right) -\Delta(\alpha) - \Delta_{\langle 2,1 \rangle}} \left(V_{\alpha\mp\frac{b}{2}}(0) + O(x)\right)\ ,
 \end{align}
@@ -2463,7 +2467,7 @@ The characteristic exponents of the hypergeometric equation at the regular singu
  F(A,B,C,x) = \sum_{n=0}^\infty \frac{(A)_n(B)_n}{n!(C)_n}x^n\ ,
 \label{fsn}
 \end{align}
-where the notation $(A)_n = \frac{\Gamma(A+n)}{\Gamma(A)}$ was introduced in eq. \eqref{xn}.
+where $(A)_n = \frac{\Gamma(A+n)}{\Gamma(A)}$.
 The solution with the characteristic exponent $\lambda=1-C$ is $x^{1-C}F(A-C+1,B-C+1,2-C,x)$.
 The hypergeometric function obeys the identities 
 \begin{align}
@@ -2534,13 +2538,13 @@ whose diagrammatic representations are
 \ \ .
 \label{tpic}
 \end{align}
-The relation between our two bases of solutions follows from the formula
+In order to find the relation between our two bases of solutions, we need the formula
 \begin{multline}
  F(A,B,C,x) = \frac{\Gamma(C)\Gamma(C-A-B)}{\Gamma(C-A)\Gamma(C-B)} F(A,B,A+B-C+1,1-x) 
 \\
  + \frac{\Gamma(C)\Gamma(A+B-C)}{\Gamma(A)\Gamma(B)} (1-x)^{C-A-B}F(C-A,C-B,C-A-B+1,1-x)\ .
 \end{multline}
-This implies 
+Together with eq. \eqref{fff}, this implies 
 \begin{align}
  \mathcal{F}^{(s)}_i(x) = \sum_{j=\pm} F_{ij} \mathcal{F}^{(t)}_j(x)\ ,
 \label{gfg}
@@ -2625,6 +2629,7 @@ For which levels do we obtain a basis? Explain the observed results by studying 
 In particular, show that the Virasoro commutation relations \eqref{vir} imply a relation of the type
 \begin{align}
  [L_{-1},[L_{-1},[L_{-1},L_{-2}]]] \propto [L_{-2},[L_{-1},L_{-2}]]\ .
+ \label{llll}
 \end{align}
 \end{exo}
 
@@ -2632,10 +2637,14 @@ In particular, show that the Virasoro commutation relations \eqref{vir} imply a 
 ~\label{exolf}
  Compute the singular vectors at the level $N=4$, and write the results in a table analogous to \eqref{lot}.
 In particular, show that the five coefficients of the singular vectors obey five linear equations, and that the determinant of the system is a polynomial of degree three in the conformal dimension $\Delta$. 
+If $\Delta_{\langle 2,2 \rangle} = \Delta_{\langle 4, 1\rangle}$, do the corresponding singular vectors coincide?
+% Answer: yes.
 \end{exo}
 
 \begin{exo}[Singular vectors at higher levels]
 ~\label{exohl}
+ For a null vector $|\chi\rangle$ at level $N$ with $p(N)$ coefficients, how many equations do the constraints $L_1|\chi\rangle = L_2|\chi\rangle = 0$ provide? Count the excess equations using the pentagonal number theorem, and explain their existence using eq. \eqref{llll}.
+ 
  Write a computer program for computing singular vectors at arbitrary levels, and check that at level $N$ the number of Verma modules which have a singular vector is the number of factorizations of $N$ into two positive integers.
 The program should preferably be written using free, open-source software.
 \end{exo}
@@ -2657,17 +2666,18 @@ Which ones are of the type $|\chi_{\langle r',s' \rangle}\rangle$? In particular
 \begin{exo}[Unitarity of Virasoro representations]
 ~\label{exoun}
 Show that the Gram matrix $M^{(N)}$ of the level-$N$ subspace of the Verma module $\mathcal{V}_\Delta$ is positive definite in the limit $c\rightarrow \infty$, provided  $\Delta >0$. 
-To do this, notice that when computing the behaviour of the eigenvalues of $M^{(N)}$ in this limit, the Virasoro algebra \eqref{vir} effectively reduces to a sum of commuting finite-dimensional subalgebras, 
+To do this, show that in this limit the diagonal elements of $M^{(N)}$ coincide with its eigenvalues, provided $M^{(N)}$ is written in a basis of creation operators of the type $(\prod_i L_{-n_i}) L_{-1}^p$ with $n_i\geq 2$.
+In other words, the Virasoro algebra \eqref{vir} effectively reduces to a sum of commuting finite-dimensional subalgebras, 
 \begin{align}
  \underset{c\rightarrow \infty}{\lim} \mathfrak{V}  
-=  \operatorname{Span}(L_{-1},L_0,L_1) \oplus \bigoplus_{n=1}^\infty \operatorname{Span} (L_{-n}, L_n)\ .
+=  \operatorname{Span}(L_{-1},L_0,L_1) \oplus \bigoplus_{n=2}^\infty \operatorname{Span} (L_{-n}, L_n)\ .
 \end{align}
 \end{exo}
 
 
 \begin{exo}[Virasoro algebra and OPE] 
 ~\label{exott}
-Show that the $T(y)T(z)$ OPE \eqref{tt}, and the expansion \eqref{tsl} of $T(y)$ into modes $L_n^{(z_0)}$, imply that such modes obey the Virasoro commutation relations \eqref{vir} for any choice of $z_0$.
+Show that the $T(y)T(z)$ OPE \eqref{tt}, the commutativity axiom $T(y)T(z) = T(z)T(y)$, and the expansion \eqref{tsl} of $T(y)$ into modes $L_n^{(z_0)}$, imply that such modes obey the Virasoro commutation relations \eqref{vir} for any choice of $z_0$.
 To do this, write 
 \begin{align}
  [L_n^{(z_0)},L_m^{(z_0)}] = -\frac{1}{4\pi^2} \left(\oint_{z_0} dy \oint_{z_0} dz - \oint_{z_0} dz \oint_{z_0} dy\right) (y-z_0)^{n+1}(z-z_0)^{m+1} T(y)T(z)\ ,
@@ -2713,7 +2723,7 @@ Compute the OPE coefficients $f^{\Delta,L}_{\Delta_1,\Delta_2}$ at the level $|L
 Compare your results with the available literature.
 Write the equations for the OPE coefficients at the level $|L|=3$. 
 More generally, show that $f^{\Delta,L}_{\Delta_1,\Delta_2}$ is uniquely determined, 
-by counting the equations and unknowns in eq. \eqref{sll} up to a given order $z_{12}^k$.
+by counting the equations and unknowns in eq. \eqref{sll} up to a given order $z_{12}^k$, as in Exercise \ref{exohl}.
 \end{exo}
 
 \begin{exo}[Fusion rules from OPEs]
@@ -2742,7 +2752,8 @@ Assume that $R$ is indecomposable but reducible: what does this mean for the act
 \begin{align}
  {\frac{\partial}{\partial z_i}} \left\langle z_{12}^{L_0^{(1)}+L_0^{(2)}-L_0^{(3)}} z_{23}^{L_0^{(2)}+L_0^{(3)}-L_0^{(1)}} z_{13}^{L_0^{(1)}+L_0^{(3)}-L_0^{(2)}} \prod_{i=1}^3 V_{v_i}(z_i)\right\rangle = 0\ .
 \end{align}
-In the simplest example when $E$ is two-dimensional, show that correlation functions involve not only powers of $z_{ij}$, but also logarithms.
+Compare the three-point function $\left\langle  \prod_{i=1}^3 V_{v_i}(z_i)\right\rangle$ with the three-point function \eqref{fzzz} of primary fields.
+In the simplest example when $E$ is two-dimensional, show that the three-point function involves not only powers of $z_{ij}$, but also logarithms.
 Finally, cite an example of a reducible Verma module, and conclude that 
 a conformal field theory can involve indecomposable, reducible representations without being logarithmic. 
 \end{exo}
@@ -2750,7 +2761,7 @@ a conformal field theory can involve indecomposable, reducible representations w
 
 \begin{exo}[Dependence of OPE structure constants on $z_i$]
  ~\label{exoopz}
-Rederive the dependence \eqref{ccz} of OPE structure constants on $z_i$, by combining the Virasoro symmetry constraint eq. \eqref{zot} with the assumption \eqref{lvpv}.  
+Rederive the dependence of OPE structure functions on $z_i$, by combining the Virasoro symmetry constraint eq. \eqref{zot} with the assumption \eqref{lvpv}.  
 \end{exo}
 
 \begin{exo}[Third-order BPZ equation]
