@@ -2799,20 +2799,21 @@ In this chapter we introduce and solve Liouville theory, generalized minimal mod
 
 We assume 
 \begin{itemize}
- \item that Liouville theory is a family of conformal field theories, parametrized by the central charge $c$;
+ \item that Liouville theory is a family of conformal field theories, parametrized by the central charge $c\in\mathbb{C}$;
 \item that each theory has a continuous spectrum, where representations of the symmetry algebra $\mathfrak{V}\times\overline{\mathfrak{V}}$ have multiplicities zero or one;
-\item that each theory is unitary;
+\item that Liouville theory with $c>1$ is unitary;
 \item and that correlation functions are smooth as functions of $c$ and of the conformal dimensions of the fields, in a sense which we will make more precise.
 \end{itemize}
-Since the spectrum is continuous, it must involve Verma modules -- the other type of highest-weight representations, degenerate representations, form a discrete set. From Section \ref{secuni}, we know that unitary Verma modules exist only if $c\geq 1$, and their conformal dimensions obey $\Delta \geq 0$. So we assume $c\geq 1$. 
+Since the spectrum is continuous, it must involve Verma modules -- the other type of highest-weight representations, degenerate representations, form a discrete set. 
+From Section \ref{secuni}, we know that unitary Verma modules exist only if $c\geq 1$. 
+So we can assume unitarity only if $c\geq 1$, and to avoid subtleties due to the existence of degenerate representations with positive dimensions for $c=1$, we actually assume unitarity only if $c>1$. 
 
 When deriving the fusion rules \eqref{rtv} involving degenerate fields, we have seen that the natural parameters are not the conformal dimension $\Delta$ and the central charge $c$ -- rather, the momentum $\alpha$ \eqref{daq} and the Liouville coupling constant $b$ \eqref{cqb}.
 We assume that correlation functions are analytic as functions of $\alpha$ and $b$, with possibly poles, but no branch cuts. 
-The unitarity condition $c\geq 1$ implies that 
-$b$ belongs to the real line or the unit circle.
-Each generic value of $c$ corresponds to four values of $b$, and we can assume $Q=b+\frac{1}{b}\geq 0$ without loss of generality.
+We will however see that analyticity in $b$ breaks down on the $c\leq 1$ line.
 
-The set of values of $\alpha$ which obey the unitarity condition $\Delta(\alpha)\geq 0$ is the union of the segment $\alpha\in]0,Q[$ and the line $\alpha \in \frac{Q}{2}+i{\mathbb{R}}$:
+Let us assume $c>1$ for a moment, and determine the spectrum from the unitarity and analyticity assumptions. 
+The set of values of $\alpha$ which obey the unitarity condition $\Delta(\alpha)> 0$ is the union of the segment $\alpha\in]0,Q[$ and the line $\alpha \in \frac{Q}{2}+i{\mathbb{R}}$:
 \begin{align}
  \begin{tikzpicture}[scale = .8, baseline=(current  bounding  box.center)]
   \draw[-latex, very thin] (-1, 0) -- (0, 0) node[below right] {$0$} -- (2, 0) node[below right] {$\frac{Q}{2}$} -- (4, 0) node [below] {$Q$} -- (5, 0) node[above] {$\alpha$};
@@ -2824,13 +2825,13 @@ The set of values of $\alpha$ which obey the unitarity condition $\Delta(\alpha)
 We interpret our analyticity assumptions as implying that the set of values of $\alpha$ which appear in the spectrum has no endpoints. 
 We must then leave the segment $]0,Q[$ out, and build the spectrum from the line
 \begin{align}
- \alpha \in \frac{Q}{2}+i{\mathbb{R}} \quad \Leftrightarrow \quad \Delta \in \left(\frac{c-1}{24},\infty\right)\ .
+ \alpha \in \frac{Q}{2}+i{\mathbb{R}} \quad \Leftrightarrow \quad \Delta \in \left[\frac{c-1}{24},\infty\right[\ .
 \label{aqd}
 \end{align}
 The representation $\mathcal{V}_\Delta\otimes \overline{\mathcal{V}}_{\bar{\Delta}}$ can appear in the spectrum only if both 
 $\Delta$ and $\bar{\Delta}$ obey this condition. 
 Moreover, single-valuedness of correlation functions requires $\Delta-\bar{\Delta}\in\frac12 {\mathbb{Z}} $, see eq. \eqref{dbd}.
-By continuity, $\Delta-\bar{\Delta}$ must be a constant, and this constant must be zero for both $\Delta$ and $\bar{\Delta}$ to span the whole half-line $\left(\frac{c-1}{24},\infty\right)$.
+By continuity, $\Delta-\bar{\Delta}$ must be a constant, and this constant must be zero for both $\Delta$ and $\bar{\Delta}$ to span the whole half-line $\left[\frac{c-1}{24},\infty\right[$.
 Therefore, the spectrum must be diagonal,
 \begin{align}
  \boxed{ S= \frac12\int_{\frac{Q}{2}+i{\mathbb{R}}} d\alpha\ \mathcal{V}_\alpha \otimes \overline{\mathcal{V}}_\alpha = \int_{\frac{c-1}{24}}^\infty d\Delta\ \mathcal{V}_\Delta\otimes \overline{\mathcal{V}}_\Delta} \ ,
@@ -2838,9 +2839,20 @@ Therefore, the spectrum must be diagonal,
 \end{align}
 where the $\frac12$ factor in front of the integral over $\alpha$ is meant to eliminate the redundancy which comes from the reflection relation $\mathcal{V}_\alpha=\mathcal{V}_{Q-\alpha}$. 
 
-This spectrum does not contain any degenerate representation -- and anyway, unitarity would have allowed only the simplest degenerate representation $R_{\langle 1,1\rangle}$. 
+We assume that the spectrum \eqref{sad} that we obtained for $c>1$ also holds for any $c\in\mathbb{C}$ by analyticity in $\alpha$. 
+(If $c\notin\mathbb{R}$  this gives us $\Delta \in \frac{c-1}{24} + \mathbb{R}_+$ as the correct interpretation of $\Delta \in \left[\frac{c-1}{24},\infty\right[$.)
+A subtlety occurs if the line $\alpha \in \frac{Q}{2}+i\mathbb{R}$ contains degenerate values $\alpha_{\langle r, s\rangle}$, which happens if and only if $c\leq 1$. 
+These degenerate values would lead to singularities in the decomposition \eqref{fsd} of four-point functions into conformal blocks, as the conformal block $\mathcal{F}_{\Delta_s}^{(s)}(s_i|z_i)$ has poles at $\Delta_s = \Delta_{\langle r, s\rangle}$. 
+The solution is simply to replace the line $\alpha \in \frac{Q}{2} + i\mathbb{R} = i\mathbb{R}$ with the slightly shifted line 
+\begin{align}
+ (c\leq 1) \qquad \alpha \in i\mathbb{R} + \epsilon\ ,
+\end{align}
+and the four-point function will turn out to be independent of the value of the regularizing parameter $\epsilon \in \mathbb{R}^*$. 
+This subtlety with the spectrum is a first hint that something special happens if $c\leq 1$ -- we will find subtleties with the three-point structure constants too. 
+
+So the spectrum of Liouville theory does not contain any degenerate representation. 
 Nevertheless, we make the crucial assumption that degenerate fields exist, and in particular obey the axioms of associativity of OPEs, and single-valuedness of correlation functions.
-We will find that degenerate fields can be considered as analytic continuations of the physical fields -- the fields which do correspond to states in the spectrum.
+This assumption will allow us to consider four-point functions that obey BPZ differential equations, and lead to simple crossing symmetry equations.
 
 \subsection{The reflection relation and its consequences}
 
@@ -2866,7 +2878,7 @@ which actually implies $V_{\frac{Q}{2}}=0$.
 
 By the reflection relation, commutativity \eqref{comm}, and conformal symmetry \eqref{fzz}, a two-point function must be of the type 
 \begin{align}
- \left\langle V_{\alpha_1}(z_1,\bar{z}_1) V_{\alpha_2}(z_2,\bar{z}_2)\right\rangle = c(\alpha_1) \left\{ \delta(Q-\alpha_1-\alpha_2) + R(\alpha_1)\delta(\alpha_1-\alpha_2)\right\} |z_{12}|^{-4\Delta(\alpha_1)}\ , 
+ \left\langle V_{\alpha_1}(z_1,\bar{z}_1) V_{\alpha_2}(z_2,\bar{z}_2)\right\rangle = c(\alpha_1) \Big\{ \delta(Q-\alpha_1-\alpha_2) + R(\alpha_1)\delta(\alpha_1-\alpha_2)\Big\} |z_{12}|^{-4\Delta(\alpha_1)}\ , 
 \label{vvc}
 \end{align}
 where the coefficient $c(\alpha)$ must obey $c(\alpha)=c(Q-\alpha)$, and is otherwise undetermined.
@@ -2906,7 +2918,7 @@ The three-point structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$ is constrain
  C_{\alpha_1,\alpha_2,\alpha_3} = R(\alpha_1) C_{Q-\alpha_1,\alpha_2,\alpha_3}\ .
 \label{crc}
 \end{align}
-Adapting eq. \eqref{vvs} and eq. \eqref{ccz}, the OPE is  
+Adapting eq. \eqref{vvs} and eq. \eqref{ccz}, the OPE is in our notations
 \begin{multline}
  V_{\alpha_1}(z_1,\bar{z}_1) V_{\alpha_2}(z_2,\bar{z}_2) = \frac12 \int_{\frac{Q}{2}+i{\mathbb{R}}} d\alpha\ C_{\alpha_1,\alpha_2}^\alpha |z_{12}|^{2(\Delta-\Delta_1-\Delta_2)} 
 \\ \times 
@@ -2938,7 +2950,7 @@ We then obtain
 Let us discuss OPEs involving degenerate fields of the type $V_{\langle r,s \rangle}$.
 Remembering the fusion rules \eqref{rtv}, an OPE involving $V_{\langle r,s \rangle}$ must be of the type
 \begin{align}
- \boxed{V_{\langle r,s \rangle} V_\alpha \sim \sum_{i=0}^{s-1}\sum_{j=0}^{r-1} C_{i,j}^{\langle r,s \rangle}(\alpha) V_{\alpha+\alpha_{\langle r,s \rangle}+ib+jb^{-1}}}\ .
+ \boxed{V_{\langle r,s \rangle} V_\alpha \sim \sum_{i=0}^{r-1}\sum_{j=0}^{s-1} C_{i,j}^{\langle r,s \rangle}(\alpha) V_{\alpha+\alpha_{\langle r,s \rangle}+ib+jb^{-1}}}\ .
 \label{vrsv}
 \end{align}
 In analogy with eq. \eqref{cec}, the OPE coefficient $C_{i,j}^{\langle r,s \rangle}(\alpha)$ is related to a three-point structure constant  as 
