@@ -3129,18 +3129,18 @@ If $b>0$, the compatible equations that result from inserting the missing factor
   \boxed{\frac{\Upsilon_b(x+b)}{\Upsilon_b(x)} = b^{1-2bx} \gamma(bx)}\quad \text{and} \quad \boxed{\frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)} = b^{\frac{2x}{b}-1} \gamma(\tfrac{x}{b})}\ ,
 \label{upup}
 \end{align}
-These equations define a unique (up to a constant factor) function $\Upsilon_b(x)$, which will turn out to have an analytic continuation to the domain $\{\Re b > 0 \}$. 
+These equations define a unique (up to a constant factor) function $\Upsilon_b(x)$, which will turn out to be defined for any $b$ such that $\Re b > 0$ by analytic continuation. 
 On the other hand, if $ib>0$, the compatible equations are 
 \begin{align}
  \frac{\hat{\Upsilon}_b(x+b)}{\hat{\Upsilon}_b(x)} = (ib)^{1-2bx} \gamma(bx)\quad \text{and} \quad \frac{\hat{\Upsilon}_b(x+\frac{1}{b})}{\hat{\Upsilon}_b(x)} = (ib)^{\frac{2x}{b}-1} \gamma(\tfrac{x}{b})\ .
 \end{align}
-The solution $\hat\Upsilon_b(x)$ of these equations can actually be constructed from the function $\Upsilon_b(x)$ as
+The solution $\hat\Upsilon_b(x)$ of these equations can actually be constructed from the function $\Upsilon_b(x)$,
 \begin{align}
  \boxed{ \hat{\Upsilon}_b(x) = \frac{1}{\Upsilon_{ib}(-ix+ib)} }\ ,
 \label{tub}
 \end{align}
-and this function therefore has an analytic continuation to the domain $\{\Im b < 0 \}$. 
-For generic values of the central charge $c$, we can choose $\Re b>0$ and $\Im b<0$, and both functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$ exist. 
+which is therefore defined for $\Im b < 0$. 
+For any $c\notin ]-\infty, 1] \cup [25,\infty[$, there is a choice of $b$ such that $\Re b>0$ and $\Im b<0$, and both functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$ exist. 
 Since they obey essentially identical shift equations, their ratio is essentially an elliptic function \cite{zam05}. 
 
 Let us discuss the properties of $\Upsilon_b(x)$. 
@@ -3149,9 +3149,9 @@ We first notice that the function $\Upsilon_b(Q-x)$ obeys the same equations as 
  \boxed{\Upsilon_b(x) = \Upsilon_b(Q-x)}\ .
 \label{upq}
 \end{align}
-Second, the equations \eqref{upup} constrain the poles and zeros of  $\Upsilon_b(x)$, knowing that $\gamma(x)$ has simple poles for $x\in -{\mathbb{N}}$ and zeros for $x\in 1+{\mathbb{N}}$.
-Both $\frac{\Upsilon_b(x+b)}{\Upsilon_b(x)}$ and $\frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)}$ have a pole at $x=0$, which suggests that $\Upsilon_b(x)$ has either simple poles at $x=b$ and $x=\frac{1}{b}$, or a simple zero at $x=0$.
-Adopting the latter alternative, the equations imply that 
+Second, the shift equations \eqref{upup} constrain the poles and zeros of  $\Upsilon_b(x)$, knowing that $\gamma(x)$ has simple poles for $x\in -{\mathbb{N}}$ and zeros for $x\in 1+{\mathbb{N}}$.
+Both $\frac{\Upsilon_b(x+b)}{\Upsilon_b(x)}$ and $\frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)}$ have a pole at $x=0$, which suggests that $\Upsilon_b(x)$ has a simple zero at $x=0$.
+Then the shift equations imply that 
 \begin{align}
  \boxed{\Upsilon_b(x)\ \ \text{has simple zeros for}\ \ x\in  \left(-b{\mathbb{N}} -\tfrac{1}{b}{\mathbb{N}} \right) \cup \left( Q+b{\mathbb{N}} + \tfrac{1}{b}{\mathbb{N}}\right)} \ .
 \label{xbn}
@@ -3183,8 +3183,7 @@ These zeros lie in two infinite cones with tips at $x=0$ and $x=Q$, which we rep
 \end{align}
 It turns out that these zeros account for all the poles and zeros of $\frac{\Upsilon_b(x+b)}{\Upsilon_b(x)}$ and $\frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)}$ in the equations \eqref{upup}, so that $\Upsilon_b(x)$ has no poles and is analytic on ${\mathbb{C}}$. 
 
-We now know all the needed properties of the function $\Upsilon_b(x)$, except one: its existence.
-The existence of $\Upsilon_b(x)$ is demonstrated by the following integral expression, which converges for $x$ in the strip $0<\Re x<Q$, 
+There is an explicit expression for the function $\Upsilon_b(x)$ in the strip $0<\Re x<\Re Q$, 
 \begin{align}
  \log\Upsilon_b(x) = \int_0^\infty \frac{dt}{t} \left[\left(\tfrac{Q}{2}-x\right)^2 e^{-2t} -\frac{\sinh^2\left(\left(\frac{Q}{2}-x\right)\!t\right)}{\sinh (bt)\sinh\left(\frac{t}{b}\right)}\right]\ .
 \label{lup}
@@ -3197,20 +3196,28 @@ An alternative formula for $\Upsilon_b(x)$, which makes the zeros manifest, is
 where $\lambda_b$ is an unimportant $b$-dependent constant.
 This product formula is valid for all values of $x$, but it does not converge very fast.
 
-Using the function $\Upsilon_b(x)$, we can write a solution of eq. \eqref{fcc},
+Using the functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$, we can write solutions $C$ and $\hat C$ of the shift equations \eqref{fcc} for three-point structure constants, that are respectively valid for $c\notin ]-\infty, 1]$ and $c\notin [25,\infty[$,
 \begin{align}
- \boxed{C_{\alpha_1,\alpha_2,\alpha_3} =  \frac{\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-\alpha_1-\alpha_2-\alpha_3}\Upsilon_b'(0) \Upsilon_b(2\alpha_1) \Upsilon_b(2\alpha_2) \Upsilon_b(2\alpha_3)}{\Upsilon_b(\alpha_1+\alpha_2+\alpha_3-Q) \Upsilon_b(\alpha_1+\alpha_2-\alpha_3)\Upsilon_b(\alpha_2+\alpha_3-\alpha_1)\Upsilon_b(\alpha_3+\alpha_1-\alpha_2)}} \ .
+ \boxed{C_{\alpha_1,\alpha_2,\alpha_3} =  \frac{\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-\alpha_1-\alpha_2-\alpha_3}\Upsilon_b'(0) \Upsilon_b(2\alpha_1) \Upsilon_b(2\alpha_2) \Upsilon_b(2\alpha_3)}{\Upsilon_b(\alpha_1+\alpha_2+\alpha_3-Q) \Upsilon_b(\alpha_1+\alpha_2-\alpha_3)\Upsilon_b(\alpha_2+\alpha_3-\alpha_1)\Upsilon_b(\alpha_3+\alpha_1-\alpha_2)}} \ ,
 \label{caaa}
 \end{align}
-This expression is called the \textbf{\boldmath DOZZ formula}\index{DOZZ formula} for Dorn, Otto, A.
-Zamolodchikov and Al.
-Zamolodchikov, and it has the following basic properties:
-\begin{itemize}
- \item $C_{\alpha_1,\alpha_2,\alpha_3}$ is symmetric under permutations of $\{\alpha_1,\alpha_2,\alpha_3\}$, 
-\item it is invariant under $b\rightarrow \frac{1}{b}$, as follows from the invariance of $\Upsilon_b(x)$,
-\item it obeys the the reflection relation \eqref{crc}, as follows from the identities \eqref{upq} and 
 \begin{align}
- R(\alpha)=\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-2\alpha}\frac{\Upsilon_b(2\alpha)}{\Upsilon_b(2\alpha-Q)}\ .
+\boxed{\hat{C}_{\alpha_1,\alpha_2,\alpha_3} =  \frac{\left[(ib)^{\frac{2}{b}-2b}\mu\right]^{Q-\alpha_1-\alpha_2-\alpha_3}\hat{\Upsilon}_b(2b) \hat{\Upsilon}_b(2\alpha_1) \hat{\Upsilon}_b(2\alpha_2) \hat{\Upsilon}_b(2\alpha_3)}{\hat{\Upsilon}_b(\alpha_1+\alpha_2+\alpha_3-Q) \hat{\Upsilon}_b(\alpha_1+\alpha_2-\alpha_3)\hat{\Upsilon}_b(\alpha_2+\alpha_3-\alpha_1)\hat{\Upsilon}_b(\alpha_3+\alpha_1-\alpha_2)}} \ .
+\label{hc}
+\end{align}
+The expression for $C$ is called the \textbf{\boldmath DOZZ formula}\index{DOZZ formula} for Dorn, Otto, A.
+Zamolodchikov and Al.
+Zamolodchikov. 
+Both $C$ and $\hat C$
+\begin{itemize}
+ \item are symmetric under permutations of $\{\alpha_1,\alpha_2,\alpha_3\}$, 
+\item are invariant under $b\rightarrow \frac{1}{b}$, as follows from the invariance of $\Upsilon_b(x)$,
+\item obey the the reflection relation \eqref{crc}, as follows from the identities \eqref{upq} and 
+\begin{align}
+ R(\alpha)
+=\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-2\alpha}\frac{\Upsilon_b(2\alpha)}{\Upsilon_b(2\alpha-Q)}
+=
+\left[(ib)^{\frac{2}{b}-2b}\mu\right]^{Q-2\alpha}\frac{\hat{\Upsilon}_b(2\alpha)}{\hat{\Upsilon}_b(2\alpha-Q)}\ .
 \end{align}
 \end{itemize}
 Let us now study the behaviour of the three-point structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$ when $\alpha_2 \rightarrow \alpha_{\langle r,s \rangle}$, where the degenerate field momentum $\alpha_{\langle r,s \rangle}$ is given in eq. \eqref{ars}.
