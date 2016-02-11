@@ -3220,6 +3220,40 @@ Both $C$ and $\hat C$
 \left[(ib)^{\frac{2}{b}-2b}\mu\right]^{Q-2\alpha}\frac{\hat{\Upsilon}_b(2\alpha)}{\hat{\Upsilon}_b(2\alpha-Q)}\ .
 \end{align}
 \end{itemize}
+However, the sets of poles and zeros of $C$ and $\hat C$ are very different from one another.
+We will see how this affects the properties of correlation functions under analytic continuation of momentums or the central charge.
+
+
+\subsection{Existence and uniqueness of Liouville theory}
+
+We derived the three-point structure constants $C$ and $\hat C$ by solving the equation \eqref{fcc} and its dual equation under $b\rightarrow \frac{1}{b}$, which are consequences of crossing symmetry of four-point functions involving degenerate fields. 
+For Liouville theory to exist, we need generic four-point functions to be crossing symmetric. 
+This issue has been explored numerically \cite{rs15}. 
+It turns out that four-point functions based on $C$ or $\hat C$ are crossing symmetric, depending on the value of the central charge $c\in\mathbb{C}$:
+\begin{align}
+\renewcommand{\arraystretch}{1.3}
+ \begin{tabular}{|l||c|c|}
+  \hline
+  central charge &  $c\in ]-\infty, 1]$ & $c\notin ]-\infty, 1]$
+  \\
+  \hline
+  structure constant & $\hat C$  & $C$ 
+  \\
+  \hline 
+ \end{tabular}
+\end{align}
+In addition, there is a proposed proof \cite{tes03b} of crossing symmetry for $c\notin ]-\infty, 1]$ (with the DOZZ structure constant $C$).
+But this proof has not received the attention and thorough checking it deserves.
+
+difference between $C$ and $\hat C$ from analytic properties of integrand of 4pt function...
+
+Actually, Liouville theory with $c> 25$ is known to be consistent also on the torus \cite{hjs09}, although its partition function is infinite. 
+
+In any region where $b^2\notin{\mathbb{R}}$, we can find alternative solutions of the equations \eqref{upup}, by multiplying $\Upsilon_b(x)$ with elliptic functions -- meromorphic functions $\theta(x)$ such that $\theta(x+b)=\theta(x+\frac{1}{b}) = \theta(x)$.
+
+Finally, let us mention that nothing new can be obtained by relaxing our assumption that the multiplicities of representations in the spectrum do not exceed one, and allowing finite multiplicities. (See Exercise \ref{exomul}.)
+
+
 Let us now study the behaviour of the three-point structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$ when $\alpha_2 \rightarrow \alpha_{\langle r,s \rangle}$, where the degenerate field momentum $\alpha_{\langle r,s \rangle}$ is given in eq. \eqref{ars}.
 At first sight, $C_{\alpha_1,\alpha_2,\alpha_3}$ vanishes due to the identity 
 \begin{align}
@@ -3316,70 +3350,7 @@ In the special case $i=j=0$, we find
 In the cases $\langle r,s \rangle \in \{\langle 1,1 \rangle , \langle 1,2 \rangle, \langle 2,1 \rangle\}$, 
 this agrees with eqs. \eqref{cza} and \eqref{cco}.  
 
-\subsection{Existence and uniqueness of Liouville theory}
 
-We derived the three-point structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$ by solving the equation \eqref{fcc} and its dual equation under $b\rightarrow \frac{1}{b}$, which are consequences of the associativity of certain OPEs which involved degenerate fields.
-But is this solution unique? and is the resulting OPE associative in general, when degenerate fields are not necessarily involved? These are the questions of the uniqueness and existence of Liouville theory, as defined by the axioms of Section \ref{secspe}.
-
-In our analysis, associativity of OPEs involving the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ boiled down to the two equations 
-\eqref{upup} for $\Upsilon_b(x)$.
-Consider these equations 
-in the case $b>0$.
-Due to continuity in $b$, we can assume $b^2$ to be irrational without loss of generality.
-Our two equations then determine how $\Upsilon_b(x)$ behaves under the incommensurable real shifts of $x$ by $b$ and $\frac{1}{b}$, which uniquely determines $\Upsilon_b(x)$ up to a constant factor.
-Therefore, Liouville theory is unique in the domain $b>0$, that is 
-\begin{align}
- c \in [25,\infty[ \ .
-\end{align}
-Analyticity in $b$ then determines Liouville theory in the whole domain where the definition \eqref{lup} of the function $\Upsilon_b(x)$ makes sense, that is whenever $\Re b>0$.
-This corresponds to the complex values of the central charge such that $c\notin ]-\infty,1]$.
-Actually, Liouville theory has an unambiguous $c\rightarrow 1$ limit \cite{sch03}, so that we obtain a unique definition of Liouville theory for
-\begin{align}
- c\notin ]-\infty,1[ \ ,
-\label{cnot}
-\end{align}
-which includes the whole domain $c\in [1,\infty[$ permitted by unitarity.
-On the other hand, the $c\rightarrow c_0\in ]-\infty,-1[$ limit is ill-defined \cite{zam05}. 
-
-There is little doubt that Liouville theory exists for $c\geq 25$, in view of the uniqueness of the three-point structure constant, and of the relevance of Liouville theory to two-dimensional quantum gravity (reviewed in \cite{zam05}). Actually, Liouville theory with $c> 25$ is known to be consistent also on the torus \cite{hjs09}, although its partition function is infinite. 
-Then analyticity in $b$ suggests that the theory exists in the domain \eqref{cnot}.
-In particular, the associativity of the OPE has been tested numerically for $c=1$ \cite{rw01} and $c=13$ \cite{zz95}, and more extensive numerical tests are doable.
-In addition, there is a proposed proof \cite{tes03b} of the existence of Liouville theory for $c>25$, which may actually hold for more general values of $c$ by analytic continuation.
-But this proof has not received the attention and thorough checking it deserves.
-
-In any region where $b^2\notin{\mathbb{R}}$, we can find alternative solutions of the equations \eqref{upup}, by multiplying $\Upsilon_b(x)$ with elliptic functions -- meromorphic functions $\theta(x)$ such that $\theta(x+b)=\theta(x+\frac{1}{b}) = \theta(x)$.
-The particular solution $\Upsilon_b(x)$ is characterized by having a finite limit for $b\in {\mathbb{R}}$. 
-There is another particular solution, characterized by having a finite limit for $b\in i{\mathbb{R}}$ (and being defined whenever $b\notin{\mathbb{R}}$): the function 
-\begin{align}
- \hat{\Upsilon}_b(x) = \frac{1}{\Upsilon_{ib}(-ix+ib)}\ ,
-\label{tub}
-\end{align}
-which satisfies the slightly modified identities
- \begin{align}
- \frac{\hat{\Upsilon}_b(x+b)}{\hat{\Upsilon}_b(x)} = (ib)^{1-2bx} \gamma(bx)\quad \text{and} \quad \frac{\hat{\Upsilon}_b(x+\frac{1}{b})}{\hat{\Upsilon}_b(x)} = (ib)^{\frac{2x}{b}-1} \gamma(\tfrac{x}{b})\ .
-\end{align}
-(The function $\frac{\hat{\Upsilon}_b(x)}{\Upsilon_b(x)}$, which is elliptic up to simple factors, is studied in \cite{zam05}.)
-Using the function $\hat{\Upsilon}_b(x)$, we can build the three-point structure constant
-\begin{align}
- \hat{C}_{\alpha_1,\alpha_2,\alpha_3} =  \frac{\left[(ib)^{\frac{2}{b}-2b}\mu\right]^{Q-\alpha_1-\alpha_2-\alpha_3}\hat{\Upsilon}_b(2b) \hat{\Upsilon}_b(2\alpha_1) \hat{\Upsilon}_b(2\alpha_2) \hat{\Upsilon}_b(2\alpha_3)}{\hat{\Upsilon}_b(\alpha_1+\alpha_2+\alpha_3-Q) \hat{\Upsilon}_b(\alpha_1+\alpha_2-\alpha_3)\hat{\Upsilon}_b(\alpha_2+\alpha_3-\alpha_1)\hat{\Upsilon}_b(\alpha_3+\alpha_1-\alpha_2)} \ .
-\label{hc}
-\end{align}
-This is a solution of eq. \eqref{fcc}, which moreover obeys 
-the reflection relation \eqref{crc}, as follows from the identity
-\begin{align}
- R(\alpha)=\left[(ib)^{\frac{2}{b}-2b}\mu\right]^{Q-2\alpha}\frac{\hat{\Upsilon}_b(2\alpha)}{\hat{\Upsilon}_b(2\alpha-Q)}\ .
-\end{align}
-The function $\hat{C}_{\alpha_1,\alpha_2,\alpha_3}$ provides a natural analytic continuation of the three-point function of generalized minimal models \eqref{crisi}, and of certain Coulomb gas integrals \eqref{mint}.
-But is it the three-point structure constant of a consistent conformal field theory? Probably not in the $b^2\notin{\mathbb{R}}$ domain: even if we have several solutions of eq. \eqref{fcc} and its 
-$b\rightarrow \frac{1}{b}$ dual, it is unlikely that we have more than one solution of the infinitely many extra equations of OPE associativity, and Liouville theory already provides one solution.
-However, for $b\in i{\mathbb{R}}$ i.e. $c<1$, there is no Liouville theory, and it is natural to conjecture that $\hat{C}_{\alpha_1,\alpha_2,\alpha_3}$ is the three-point function of a consistent theory.
-It is however not obvious what the spectrum of that theory is supposed to be.
-The natural guess is that the spectrum is given by eq. \eqref{aqd}, just like the spectrum of Liouville theory.
-Integrating on this spectrum for computing a four-point function as in eq. \eqref{fsd}, we meet singularities of the structure constants and conformal blocks, so the integral must somehow be regularized.
-Such issues with singularities are inevitable: if they were absent, we could analytically continue the theory to the whole $b\notin {\mathbb{R}}$ 
-domain, which would contradict our considerations on uniqueness.
-
-Finally, let us mention that nothing new can be obtained by relaxing our assumption that the multiplicities of representations in the spectrum do not exceed one, and allowing finite multiplicities. (See Exercise \ref{exomul}.)
 
 \section{Minimal models \label{secvmm}}
 
