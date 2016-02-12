@@ -3196,7 +3196,7 @@ An alternative formula for $\Upsilon_b(x)$, which makes the zeros manifest, is
 where $\lambda_b$ is an unimportant $b$-dependent constant.
 This product formula is valid for all values of $x$, but it does not converge very fast.
 
-Using the functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$, we can write solutions $C$ and $\hat C$ of the shift equations \eqref{fcc} for three-point structure constants, that are respectively valid for $c\notin ]-\infty, 1]$ and $c\notin [25,\infty[$,
+Using the functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$, we can write solutions $C$ and $\hat C$ of the shift equations \eqref{fcc} for three-point structure constants, that are respectively defined for $c\notin ]-\infty, 1]$ and $c\notin [25,\infty[$,
 \begin{align}
  \boxed{C_{\alpha_1,\alpha_2,\alpha_3} =  \frac{\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-\alpha_1-\alpha_2-\alpha_3}\Upsilon_b'(0) \Upsilon_b(2\alpha_1) \Upsilon_b(2\alpha_2) \Upsilon_b(2\alpha_3)}{\Upsilon_b(\alpha_1+\alpha_2+\alpha_3-Q) \Upsilon_b(\alpha_1+\alpha_2-\alpha_3)\Upsilon_b(\alpha_2+\alpha_3-\alpha_1)\Upsilon_b(\alpha_3+\alpha_1-\alpha_2)}} \ ,
 \label{caaa}
@@ -3220,8 +3220,6 @@ Both $C$ and $\hat C$
 \left[(ib)^{\frac{2}{b}-2b}\mu\right]^{Q-2\alpha}\frac{\hat{\Upsilon}_b(2\alpha)}{\hat{\Upsilon}_b(2\alpha-Q)}\ .
 \end{align}
 \end{itemize}
-However, the sets of poles and zeros of $C$ and $\hat C$ are very different from one another.
-We will see how this affects the properties of correlation functions under analytic continuation of momentums or the central charge.
 
 
 \subsection{Existence and uniqueness of Liouville theory}
@@ -3229,7 +3227,7 @@ We will see how this affects the properties of correlation functions under analy
 We derived the three-point structure constants $C$ and $\hat C$ by solving the equation \eqref{fcc} and its dual equation under $b\rightarrow \frac{1}{b}$, which are consequences of crossing symmetry of four-point functions involving degenerate fields. 
 For Liouville theory to exist, we need generic four-point functions to be crossing symmetric. 
 This issue has been explored numerically \cite{rs15}. 
-It turns out that four-point functions based on $C$ or $\hat C$ are crossing symmetric, depending on the value of the central charge $c\in\mathbb{C}$:
+It turns out that for each value of the central charge $c\in\mathbb{C}$, either $C$ or $\hat C$ leads to crossing symmetric four-point functions, and is therefore the three-point structure constant of Liouville theory:
 \begin{align}
 \renewcommand{\arraystretch}{1.3}
  \begin{tabular}{|l||c|c|}
@@ -3243,11 +3241,75 @@ It turns out that four-point functions based on $C$ or $\hat C$ are crossing sym
  \end{tabular}
 \end{align}
 In addition, there is a proposed proof \cite{tes03b} of crossing symmetry for $c\notin ]-\infty, 1]$ (with the DOZZ structure constant $C$).
-But this proof has not received the attention and thorough checking it deserves.
+Let us also mention that Liouville theory is consistent on the torus \cite{hjs09, rs15}, although its partition function is infinite. 
 
-difference between $C$ and $\hat C$ from analytic properties of integrand of 4pt function...
+So $C$ is a valid structure constant wherever it is defined, whereas $\hat C$ is valid only for $c\in ]-\infty, 1]$ although it is defined for $c\notin [25,\infty[$.
+To understand this, let us study the analytic properties of the corresponding four-point functions,
+\begin{align}
+ \left< \prod_{i=1}^4 V_{\alpha_i}\right> = 
+ \left\{\begin{array}{ll} 
+         \frac12 \int_{\frac{Q}{2}+i\mathbb{R}} d\alpha_s\ C_{\alpha_1,\alpha_2,Q-\alpha_s} C_{\alpha_s,\alpha_3, \alpha_4} \left|\mathcal{F}_{\alpha_s}^{(s)} \right|^2 \quad & \text{if } c\notin ]-\infty, 1]\ ,
+         \\
+         \frac12 \int_{i\mathbb{R}+\epsilon} d\alpha_s\ \hat C_{\alpha_1,\alpha_2,Q-\alpha_s} \hat C_{\alpha_s,\alpha_3, \alpha_4} \left|\mathcal{F}_{\alpha_s}^{(s)} \right|^2 \quad & \text{if } c\in ]-\infty, 1]\ .
+        \end{array}
+ \right.
+\end{align}
+Although the structure constants $C$ and $\hat C$ have rather different analytic properties, what matters is the behaviour of the poles of the $s$-channel conformal blocks $\mathcal{F}_{\alpha_s}^{(s)}$. 
+These poles correspond to degenerate values of the momentum $\alpha_s$, and are therefore found in two cones with tips at $\alpha_s= 0$ and $\alpha_s = Q$. 
+Consider the relative positions of these cones, and of the integration line for $\alpha_s$, depending on the value of the central charge $c$:
+\begin{align}
+ \newcommand{\polewedge}[3]{
+\begin{scope}[#1]
+\node[blue, draw,circle,inner sep=1pt,fill] at (0, 0) {};
+\node[#3] at (0,0) {#2};
+\filldraw[opacity = .1, blue] (0,0) -- (4, -4) -- (4, 4) -- cycle;
+\end{scope}
+}
+\begin{array}{ccc}
+\begin{tikzpicture}[scale = .4, baseline=(current  bounding  box.center)]
+  \draw[-latex] (-3,0) -- (0, 0) node[above left] {$0$} -- (4,0) node [above] {$\alpha_s$};
+  \draw[ultra thick, blue, opacity = .3] (0, -4.5) -- (0, 4.5);
+  \draw (0, -4.5) -- (0, 4.5);
+  \draw[ultra thick, red] (.5, -4.5) -- (.5, 4.5);
+  \node[blue, draw,circle,inner sep=1pt,fill] at (0, 0) {};
+\node[above left] at (0,0) {$0$};
+\node[blue, draw,circle,inner sep=1pt,fill] at (0, 1.5) {};
+\node[above left] at (0,1.5) {$Q$};
+ \end{tikzpicture}
+ & 
+ \begin{tikzpicture}[scale = .4, baseline=(current  bounding  box.center)]
+  \draw[-latex] (-4,0) -- (0, 0) node[above left] {$0$} -- (6,0) node [above] {$\alpha_s$};
+  \draw (0, -4.5) -- (0, 4.5);
+  \draw[ultra thick, red] (1, -4.5) -- (1, 4.5);
+  \polewedge{rotate = 180}{$0$}{above left};
+  \polewedge{shift = {(2, .3)}}{$Q$}{above right};
+ \end{tikzpicture}
+ &
+ \begin{tikzpicture}[scale = .4, baseline=(current  bounding  box.center)]
+ \draw[ultra thick, blue, opacity = .3] (0,0) -- (-4,0);
+ \draw[ultra thick, blue, opacity = .3] (2,0) -- (6,0);
+  \draw[-latex] (-4,0) -- (0, 0) node[above left] {$0$} -- (6,0) node [above] {$\alpha_s$};
+  \draw (0, -4.5) -- (0, 4.5);
+  \draw[ultra thick, red] (1, -4.5) -- (1, 4.5);
+  \node[blue, draw,circle,inner sep=1pt,fill] at (0, 0) {};
+\node[above left] at (0,0) {$0$};
+\node[blue, draw,circle,inner sep=1pt,fill] at (2, 0) {};
+\node[above right] at (2,0) {$Q$};
+ \end{tikzpicture}
+ \vspace{5mm}
+ \\
+ c\in ]-\infty, 1] & c\notin ]-\infty, 1] \cup [25,\infty[ & c\in [25,\infty[
+\end{array}
+\end{align}
+For any $c\notin ]-\infty, 1]$, the poles of the conformal blocks stay safely away from the integration line, and actually the poles of the structures constants behave similarly. 
+So the four-point function is analytic as a function of $c$ in that domain. 
+In particular, crossing symmetry for $c\in [25,\infty[$ implies crossing symmetry for $c\notin ]-\infty, 1]$ by analyticity of both $s$- and $t$-channel expressions for the four-point function. 
+In contrast, when
+$c$ approaches the half-line $]-\infty, 1]$, a whole cone of poles crosses the integration line before collapsing into the imaginary axis. 
+This makes it impossible to get a four-point function for $c\in ]-\infty, 1]$ by taking a limit from the rest of the complex plane, or conversely to continue the four-point function from $c\in ]-\infty, 1]$ to a larger region.
 
-Actually, Liouville theory with $c> 25$ is known to be consistent also on the torus \cite{hjs09}, although its partition function is infinite. 
+
+Small discussion of uniqueness here!
 
 In any region where $b^2\notin{\mathbb{R}}$, we can find alternative solutions of the equations \eqref{upup}, by multiplying $\Upsilon_b(x)$ with elliptic functions -- meromorphic functions $\theta(x)$ such that $\theta(x+b)=\theta(x+\frac{1}{b}) = \theta(x)$.
 
