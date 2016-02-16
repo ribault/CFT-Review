@@ -3306,7 +3306,7 @@ So the four-point function is analytic as a function of $c$ in that domain.
 In particular, crossing symmetry for $c\in [25,\infty[$ implies crossing symmetry for $c\notin ]-\infty, 1]$ by analyticity of both $s$- and $t$-channel expressions for the four-point function. 
 In contrast, when
 $c$ approaches the half-line $]-\infty, 1]$, a whole cone of poles crosses the integration line before collapsing into the imaginary axis. 
-This makes it impossible to get a four-point function for $c\in ]-\infty, 1]$ by taking a limit from the rest of the complex plane, or conversely to continue the four-point function from $c\in ]-\infty, 1]$ to a larger region.
+So we cannot continue the four-point function from $c\in ]-\infty, 1]$ to a larger region (or vice-versa).
 
 Let us now discuss the uniqueness of Liouville theory, as defined by our assumptions in Section \ref{secspe}. 
 We saw that three-point structures constants are uniquely determined by shift equations if $c\in ]-\infty, 1] \cup [25,\infty[$, so that Liouville theory is unique for these values of $c$. 
@@ -3327,7 +3327,7 @@ If on the other hand $c\notin ]-\infty, 1]$, we use the structure constant $C_{\
 \end{align}
 However, it turns out that the OPE $V_{\alpha_1}V_{\alpha_2}$ does not vanish, in other words $C_{\alpha_1,\alpha_2,\alpha_3}$ does not vanish when considered as a distribution.
 To see this, let us plot the poles of the OPE coefficient $C_{\alpha_1,\alpha_2}^\alpha = C_{\alpha_1,\alpha_2,Q-\alpha}$, viewed as a function of $\alpha$.
-These poles lie on cones, which we draw in the fashion of eq. \eqref{lines}, together with the line $\alpha\in \frac{Q}{2}+i{\mathbb{R}}$ of integration of the OPE, 
+These poles lie on cones, which we draw in the fashion of eq. \eqref{lines}, together with the line  of integration $\alpha\in \frac{Q}{2}+i{\mathbb{R}}$, 
 \begin{align}
  \newcommand{\polewedge}[3]{
 \begin{scope}[#1]
@@ -3338,6 +3338,7 @@ These poles lie on cones, which we draw in the fashion of eq. \eqref{lines}, tog
 }
  \begin{tikzpicture}[baseline=(current  bounding  box.center)]
   \draw[-latex] (-5,0) -- (0, 0) node[above left] {$0$} -- (6,0) node [above] {$\alpha$};
+  \clip (-5, -4) -- (-5, 4) -- (6, 4) -- (6, -4) -- cycle;
   \draw (0, -4.5) -- (0, 4.5);
   \draw[ultra thick, red] (.5, -4.5) -- (.5, 4.5);
   \polewedge{shift = {(0, .7)}, rotate = 180}{$\alpha_1-\alpha_2$}{above left};
@@ -3365,8 +3366,8 @@ To avoid the divergences, we deform the integration line to the right, while pic
 }
  \begin{tikzpicture}[baseline=(current  bounding  box.center)]
   \draw[-latex] (-5,0) -- (0, 0) node[above left] {$0$} -- (6,0) node [above] {$\alpha$};
-  \draw (0, -4.5) -- (0, 4.5);
- \clip (-5, -4.5) -- (-5, 4.5) -- (6, 4.5) -- (6, -4.5) -- cycle;
+  \draw (0, -4) -- (0, 4);
+ \clip (-5, -4) -- (-5, 4) -- (6, 4) -- (6, -4) -- cycle;
   \polewedge{shift = {(1.7, 2)}, rotate = 180}{$\alpha_1-\alpha_2$}{below right};
   \polewedge{shift = {(-1.7, -2)}, rotate = 180}{$\alpha_2-\alpha_1$}{below left};
   \polewedge{shift = {(-1.7, 1.9)}, rotate = 180}{$\alpha_1+\alpha_2-Q$}{below left};
@@ -3401,12 +3402,11 @@ To summarize,
          }
 \label{vla}
 \end{align}
-The behaviour for $c\notin ]-\infty, 1]$ is quite violent from a representation-theoretic point of view, as it suggests that the limit of a Verma module is a degenerate representation. 
-Nevertheless, that behaviour is natural in the functional integral approach to Liouville theory, to the point that the milder limit that is observed for $c\in ]-\infty, 1]$ has sometimes been considered puzzling or problematic \cite{rs15}. 
-
-
-The present calculation can then be interpreted as a derivation of the fusion rules \eqref{rtv}.
-It is actually tempting to use a similar calculation for deriving the fusion rules of the unitary Verma modules which do not belong to the spectrum. (See Exercise \ref{exoaur}.)
+So, for $c\notin ]-\infty, 1]$, we obtain degenerate fields as limits of non-degenerate fields. 
+The reason for this behaviour is not clear.
+Nevertheless, this behaviour can be used for deriving the fusion rules \eqref{rtv} from the Liouville OPE. 
+It is tempting to use a similar calculation for deriving the fusion rules of the unitary Verma modules which do not belong to the spectrum. 
+(See Exercise \ref{exoaur}.)
 
 Let us finish the computation of the degenerate OPE coefficient $C_{i,j}^{\langle r,s \rangle}(\alpha)$.
 Using eq. \eqref{caaa}, we obtain 
@@ -3472,24 +3472,24 @@ For any value of the central charge $c$, we define a generalized minimal model b
 We could obtain other consistent models by using subsets of the degenerate representations, provided these subsets were closed under fusion, for instance $S=R_{\langle 1,1 \rangle}\otimes \bar{R}_{\langle 1,1 \rangle}$, $S=\bigoplus_{r=1}^\infty R_{\langle r,1 \rangle}\otimes \bar{R}_{\langle r,1 \rangle}$ or $S=\bigoplus_{r,s=1}^{\infty} R_{\langle 2r+1,2s+1 \rangle}\otimes \bar{R}_{\langle 2r+1,2s+1 \rangle}$.
 Solving the generalized minimal model will provide a solution of each of these submodels. 
 
-Correlation functions of generalized minimal models can be deduced from the correlation functions of Liouville theory, which obey similar conformal bootstrap equations.
-To do this, we identify the generalized minimal model field $V_{\langle r,s \rangle}$ with the degenerate Liouville field of the same name \eqref{vla}. 
-Correlation functions of Liouville theory can be singular at $\alpha = \alpha_{\langle r,s \rangle}$, and need to be regularized.
-The natural regularization of the two-point function \eqref{vvss} is
+Correlation functions of generalized minimal models can be deduced from the correlation functions of Liouville theory, which obey the same conformal bootstrap equations.
+To begin with, the two-point function can be deduced from the Liouville two-point function \eqref{vvss} by changing a Dirac delta function into a Kronecker delta function, 
 \begin{align}
  \boxed{\left\langle V_{\langle r_1,s_1 \rangle} V_{\langle r_2,s_2 \rangle} \right\rangle = R(\alpha_{\langle r_1,s_1 \rangle}) \delta_{r_1,r_2} \delta_{s_1,s_2}}\ .
 \label{vvdd}
 \end{align}
-The natural regularization of the three-point structure constant \eqref{caaa} is suggested by the observation that the degenerate OPE coefficient $C_{i,j}^{\langle r,s \rangle}(\alpha_1)$ \eqref{crs} is perfectly finite, and has a well-defined limit when $\alpha_1\to \alpha_{\langle r_1,s_1 \rangle}$.
-This suggests that the three-point structure constant of a generalized minimal model is 
+The three-point structure constant can similarly be obtained from both expressions $C$ \eqref{caaa} and $\hat C$ \eqref{hc} for the Liouville structure constant, since both obey the same shift equations. 
+There is a subtlety with the expression $C$, which is singular when momentums take degenerate values. 
+But we already found the correct regularization when we expressed degenerate OPE coefficients $C_{i,j}^{\langle r,s \rangle}(\alpha_1)$ in terms of $C$ \eqref{crs}, after sending one momentum to a degenerate value. 
+The degenerate OPE coefficient then has a finite limit when $\alpha_1\to \alpha_{\langle r_1,s_1 \rangle}$, and we have
 \begin{align}
- C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} = \underset{\alpha_1\to \alpha_{\langle r_1,s_1 \rangle}}{\lim}\ 
+ C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} 
+ &= \hat{C}_{\alpha_{\langle r_1,s_1 \rangle}, \alpha_{\langle r_2,s_2 \rangle} ,\alpha_{\langle r_3,s_3 \rangle} } \ ,
+ \\
+& = \underset{\alpha_1\to \alpha_{\langle r_1,s_1 \rangle}}{\lim}\ 
 \underset{\alpha_2\to \alpha_{\langle r_2,s_2 \rangle}}{\lim}\ 
-\underset{\sum_i \alpha_i = \sum_i \alpha_{\langle r_i,s_i \rangle} }{\operatorname{ Res}} C_{\alpha_1,\alpha_2,\alpha_3}\ ,
+\underset{\sum_i \alpha_i = \sum_i \alpha_{\langle r_i,s_i \rangle} }{\operatorname{ Res}} C_{\alpha_1,\alpha_2,\alpha_3}\ .
 \end{align}
-which does not depend on the order of the limits, and is actually symmetric under permutations. 
-Alternatively, we have $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} = \hat{C}_{\alpha_{\langle r_1,s_1 \rangle}, \alpha_{\langle r_2,s_2 \rangle},\alpha_{\langle r_3,s_3 \rangle}}$, where $\hat{C}_{\alpha_1,\alpha_2,\alpha_3}$ \eqref{hc} is
-the alternative solution of the conformal bootstrap equations, which is regular at $\alpha_i=\alpha_{\langle r_i,s_i \rangle}$ \cite{zam05}.
 Explicitly,
 \begin{multline}
 C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =  
