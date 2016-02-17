@@ -3498,14 +3498,13 @@ C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =
 \label{crisi}
 \end{multline}
 where we use the notation $\alpha_i = \alpha_{\langle r_i,s_i \rangle}$ for short.
-This is the Liouville three-point structure constant, where all $\Upsilon_b$ factors are replaced with their derivatives at some of their zeros.
+This is the Liouville structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$, where all $\Upsilon_b$ factors are replaced with their derivatives at some of their zeros.
 These $\Upsilon_b$ factors indeed have zeros whenever
 the fields are degenerate and the degenerate fusion rules \eqref{rrrsss} are obeyed, due to $\Upsilon_b(-b{\mathbb{N}}-\frac{1}{b}{\mathbb{N}})=0$ (from eq. \eqref{xbn}) which implies 
 \begin{align}
  \forall i\neq j\neq k\ , \quad \Upsilon_b(\alpha_i+\alpha_j-\alpha_k) = 0\ .
 \end{align}
-Notice however that $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ can be nonzero in some cases when the degenerate fusion rules are violated, due to the vanishing of $\Upsilon_b(x)$ for $x\in Q+b{\mathbb{N}}+\frac{1}{b}{\mathbb{N}}$: for instance, in the case of $C_{\langle 1,1\rangle , \langle 1,1 \rangle,\langle 3,3 \rangle}$, which corresponds to $(\alpha_1,\alpha_2,\alpha_3)=(0,0,-Q)$.
-The formula \eqref{crisi} should only be used when the fusion rules are obeyed, and has no meaning otherwise.
+Notice that $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ can be nonzero in some cases when the degenerate fusion rules are violated, due to the vanishing of $\Upsilon_b(x)$ for $x\in Q+b{\mathbb{N}}+\frac{1}{b}{\mathbb{N}}$: for instance, in the case of $C_{\langle 1,1\rangle , \langle 1,1 \rangle,\langle 3,3 \rangle}$, which corresponds to $(\alpha_1,\alpha_2,\alpha_3)=(0,0,-Q)$.
 The three-point function is therefore 
 \begin{multline}
  \left\langle \prod_{i=1}^3 V_{\langle r_i,s_i \rangle}(z_i,\bar{z}_i) \right\rangle = C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}  
@@ -3513,7 +3512,11 @@ The three-point function is therefore
 f_{r_1,r_2,r_3} f_{s_1,s_2,s_3}\ |z_{12}|^{2(\Delta_3-\Delta_1-\Delta_2)} |z_{23}|^{2(\Delta_1-\Delta_2-\Delta_3)} |z_{31}|^{2(\Delta_2-\Delta_3-\Delta_1)}\ ,
 \end{multline}
 where 
-the model-dependent data are $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$, and the universal data are the $z_i$-dependent factor as well as the factor $f_{r_1,r_2,r_3} f_{s_1,s_2,s_3}$, which appears in the fusion rules eq. \eqref{rrrsss}. 
+the model-dependent data are $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$, and the universal data are the $z_i$-dependent factor as well as the factor $f_{r_1,r_2,r_3} f_{s_1,s_2,s_3}$ \eqref{frrr}, which enforces the degenerate fusion rules. 
+Due to this factor, the three-point function is not quite the limit of the Liouville three-point function. 
+This makes it difficult to deduce crossing symmetry in generalized minimal models from crossing symmetry in Liouville theory. 
+Instead, crossing symmetry in generalized minimal models can be checked numerically \cite{rs15}, and this shows that generalized minimal models are consistent on the sphere. 
+On the other hand, nothing guarantees that generalized minimal models are consistent on the torus. Actually, correlation functions involving only the identity field reduce to the partition function, and are therefore infinite. And there is no reason for the other correlation functions to be better behaved.  
 
 The three-point structure constant can be rewritten in terms of Gamma functions, using the following consequence of eq. \eqref{upup},
 \begin{align}
@@ -3533,11 +3536,7 @@ where we introduce the notations
  r_0 = \frac{r_1+r_2+r_3-1}{2} \quad , \quad s_0=\frac{s_1+s_2+s_3-1}{2}\ .
 \end{align}
 This shows that the three-point function of a generalized minimal model is meromorphic as a function of $b\in {\mathbb{C}}^*$.
-This contrasts with the three-point function of Liouville theory, which is singular if $b^2 < 0$ i.e. $c\in ]-\infty, 1[$. 
-
-Finally, let us warn that crossing symmetry in Liouville theory does not directly imply crossing symmetry in generalized minimal models.
-While many four-point functions of generalized minimal models are limits of Liouville theory four-point functions and are therefore crossing-symmetric, there are cases when the $\alpha_i\to \alpha_{\langle r_i,s_i\rangle}$ limit of the Liouville four-point function yields spurious terms in addition to the four-point function of the generalized minimal model, due to the non-vanishing of $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ in cases when the degenerate fusion rules are violated.
-Of course we expect that these spurious terms cancel with one another in the crossing symmetry equations. On the other hand, nothing guarantees that generalized minimal models are consistent on the torus. Actually, correlation functions involving only the identity field reduce to the partition function, and are therefore infinite. And there is no reason for the other correlation functions to be better behaved.  
+This contrasts with the three-point function of Liouville theory, which is singular if $b^2 < 0$ i.e. $c\in ]-\infty, 1]$. 
 
 
 \subsection{A-series minimal models \label{secamm}}
