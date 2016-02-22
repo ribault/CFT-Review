@@ -2864,17 +2864,10 @@ We must therefore have a \textbf{\boldmath reflection relation}\index{reflection
 \end{align}
 where $R(\alpha)$ is the \textbf{\boldmath reflection coefficient}\index{reflection coefficient}, which must obey 
 \begin{align}
- R(\alpha)R(Q-\alpha)=1\ .
+ R(\alpha)R(Q-\alpha)=1\ ,
 \label{rrr}
 \end{align}
-In particular we have $R(\frac{Q}{2})=\pm 1$.
-We anticipate that the correct choice is 
-\begin{align}
- R(\tfrac{Q}{2}) = -1\ ,
-\label{rqt}
-\end{align}
-which actually implies $V_{\frac{Q}{2}}=0$. 
-
+which in particular implies $R(\frac{Q}{2})\in\{1, -1\}$.
 By the reflection relation, commutativity \eqref{comm}, and conformal symmetry \eqref{fzz}, a two-point function must be of the type 
 \begin{align}
  \left\langle V_{\alpha_1}(z_1,\bar{z}_1) V_{\alpha_2}(z_2,\bar{z}_2)\right\rangle = c(\alpha_1) \Big\{ \delta(Q-\alpha_1-\alpha_2) + R(\alpha_1)\delta(\alpha_1-\alpha_2)\Big\} |z_{12}|^{-4\Delta(\alpha_1)}\ , 
@@ -3066,12 +3059,13 @@ Let us now find $R(\alpha)$ by solving eq. \eqref{crg} with $C_+(\alpha)=1$, tog
 \begin{align}
   \frac{R(\alpha-\tfrac{1}{2b})R(0)}{R(\alpha)R(-\tfrac{1}{2b})} = \frac{\gamma(\frac{2Q}{b})}{\gamma(\frac{Q}{b})} \frac{\gamma(\frac{1}{b}(Q-2\alpha))}{\gamma(\frac{1}{b}(2Q-2\alpha))}\ .
 \end{align}
-The general solution of these equations, together with the requirements \eqref{rrr} and \eqref{rqt}, is
+The general solution of these equations, together with \eqref{rrr}, is
 \begin{align}
- \boxed{R(\alpha) = -\mu^{Q-2\alpha} \frac{\Gamma(b(2\alpha-Q))\Gamma(\frac{1}{b}(2\alpha-Q))}{\Gamma(b(Q-2\alpha))\Gamma(\frac{1}{b}(Q-2\alpha))}}\ ,
+ \boxed{R(\alpha) = R(\tfrac{Q}{2})\mu^{Q-2\alpha} \frac{\Gamma(b(2\alpha-Q))\Gamma(\frac{1}{b}(2\alpha-Q))}{\Gamma(b(Q-2\alpha))\Gamma(\frac{1}{b}(Q-2\alpha))}} \quad \text{with} \quad R(\tfrac{Q}{2})\in \{1, -1\}  \ ,
 \label{ram}
 \end{align}
-where $\mu$ is an arbitrary parameter called the \textbf{\boldmath cosmological constant}\index{cosmological constant}.
+where $\mu$ is an arbitrary parameter called the \textbf{\boldmath cosmological constant}\index{cosmological constant},
+and the sign $R(\frac{Q}{2})$ will be determined in eq. \eqref{ccr}.
 Using eq. \eqref{cmcp}, this determines in particular $C_-(\alpha)$, so that we have
 \begin{align}
  C_+(\alpha)=1 \quad , \quad C_-(\alpha) = \mu^b b^4 \frac{\gamma(b(2\alpha-Q))}{\gamma(2b\alpha)}\ .
@@ -3212,15 +3206,20 @@ Both $C$ and $\hat C$
 \begin{itemize}
  \item are symmetric under permutations of $\{\alpha_1,\alpha_2,\alpha_3\}$, 
 \item are invariant under $b\to \frac{1}{b}$, as follows from the invariance of $\Upsilon_b(x)$,
-\item obey the the reflection relation \eqref{crc}, as follows from the identities \eqref{upq} and 
+\item obey the the reflection relation \eqref{crc} with the coefficient $R(\alpha)$ \eqref{ram}, as follows from the identities \eqref{upq} and 
 \begin{align}
  R(\alpha)
-=\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-2\alpha}\frac{\Upsilon_b(2\alpha)}{\Upsilon_b(2\alpha-Q)}
 =
-\left[(ib)^{\frac{2}{b}-2b}\mu\right]^{Q-2\alpha}\frac{\hat{\Upsilon}_b(2\alpha)}{\hat{\Upsilon}_b(2\alpha-Q)}\ .
+\left\{\begin{array}{ll}
+\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-2\alpha}\frac{\Upsilon_b(2\alpha)}{\Upsilon_b(2\alpha-Q)}
+& \quad \text{with} \quad R(\tfrac{Q}{2}) = -1 \ ,
+\\
+\left[(ib)^{\frac{2}{b}-2b}\mu\right]^{Q-2\alpha}\frac{\hat{\Upsilon}_b(2\alpha)}{\hat{\Upsilon}_b(2\alpha-Q)}
+& \quad \text{with} \quad R(\tfrac{Q}{2}) = 1 \ .
+\end{array}\right.
 \end{align}
 \end{itemize}
-
+Notice that $R(\frac{Q}{2})=-1$ implies $V_\frac{Q}{2}=0$, which is consistent with $C_{\frac{Q}{2},\alpha_2,\alpha_3}=0$.
 
 \subsection{Existence and uniqueness of Liouville theory}
 
@@ -3238,7 +3237,11 @@ It turns out that for each value of the central charge $c\in\mathbb{C}$, either 
   structure constant & $\hat C$  & $C$ 
   \\
   \hline 
+  $R(\tfrac{Q}{2})$ & $1$ & $-1$
+  \\
+  \hline
  \end{tabular}
+ \label{ccr}
 \end{align}
 In addition, there is a proposed proof \cite{tes03b} of crossing symmetry for $c\notin ]-\infty, 1]$ (with the DOZZ structure constant $C$).
 Let us also mention that Liouville theory is consistent on the torus \cite{hjs09, rs15}, although its partition function is infinite. 
