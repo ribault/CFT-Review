@@ -179,12 +179,12 @@ Moreover, our exclusive use of the bootstrap approach means that we need not ass
 The prerequisites for this text are limited to 
 elementary complex analysis, and some familiarity with Lie algebras and their representations.
 
-While no new results are found in this review article, the following aspects might be original:
+While this review article mostly presents already known results, the following aspects may be original:
 \begin{itemize}
 \item in Section \ref{secaco}, the formulation of Al. Zamolodchikov's recursion representation of conformal blocks as an explicit formula,
 \item in Section \ref{secliou}, a complete and correct solution of Liouville theory, using only the bootstrap approach, 
 \item in Section \ref{secvmm}, the logical sequence ``Liouville theory $\rightarrow$ generalized minimal models $\rightarrow$ minimal models'',
-\item in Section \ref{secsacf}, the remark that compactified free bosons exist if $c\in 1+6{\mathbb{Z}}$ and not just if $c=1$,
+\item in Section \ref{secsacf}, the remark that compactified free bosons exist for any value of $c$ and not just if $c=1$,
 \item in Section \ref{seclld}, the derivation of the light and heavy asymptotic limits of Liouville theory, without using the Lagrangian definition,
 \item in Section \ref{secsu}, the definition of the generalized $SU_2$ WZW model,
 \item in Section \ref{secslr}, a concise derivation of the spectrum and fusion rules of the $\widetilde{SL}_2(\mathbb{R})$ WZW model.
@@ -3196,7 +3196,7 @@ Using the functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$, we can write soluti
 \label{caaa}
 \end{align}
 \begin{align}
-\boxed{\hat{C}_{\alpha_1,\alpha_2,\alpha_3} =  \frac{\left[(ib)^{\frac{2}{b}-2b}\mu\right]^{Q-\alpha_1-\alpha_2-\alpha_3}\hat{\Upsilon}_b(2b) \hat{\Upsilon}_b(2\alpha_1) \hat{\Upsilon}_b(2\alpha_2) \hat{\Upsilon}_b(2\alpha_3)}{\hat{\Upsilon}_b(\alpha_1+\alpha_2+\alpha_3-Q) \hat{\Upsilon}_b(\alpha_1+\alpha_2-\alpha_3)\hat{\Upsilon}_b(\alpha_2+\alpha_3-\alpha_1)\hat{\Upsilon}_b(\alpha_3+\alpha_1-\alpha_2)}} \ .
+\boxed{\hat{C}_{\alpha_1,\alpha_2,\alpha_3} =  \frac{\left[(ib)^{\frac{2}{b}-2b}\mu\right]^{Q-\alpha_1-\alpha_2-\alpha_3}\hat{\Upsilon}_b(0) \hat{\Upsilon}_b(2\alpha_1) \hat{\Upsilon}_b(2\alpha_2) \hat{\Upsilon}_b(2\alpha_3)}{\hat{\Upsilon}_b(\alpha_1+\alpha_2+\alpha_3-Q) \hat{\Upsilon}_b(\alpha_1+\alpha_2-\alpha_3)\hat{\Upsilon}_b(\alpha_2+\alpha_3-\alpha_1)\hat{\Upsilon}_b(\alpha_3+\alpha_1-\alpha_2)}} \ .
 \label{hc}
 \end{align}
 The expression for $C$ is called the \textbf{\boldmath DOZZ formula}\index{DOZZ formula} for Dorn, Otto, A.
@@ -3488,10 +3488,12 @@ The degenerate OPE coefficient then has a finite limit when $\alpha_1\to \alpha_
 \begin{align}
  C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} 
  &= \hat{C}_{\alpha_{\langle r_1,s_1 \rangle}, \alpha_{\langle r_2,s_2 \rangle} ,\alpha_{\langle r_3,s_3 \rangle} } \ ,
+ \nonumber
  \\
 & = \underset{\alpha_1\to \alpha_{\langle r_1,s_1 \rangle}}{\lim}\ 
 \underset{\alpha_2\to \alpha_{\langle r_2,s_2 \rangle}}{\lim}\ 
 \underset{\sum_i \alpha_i = \sum_i \alpha_{\langle r_i,s_i \rangle} }{\operatorname{ Res}} C_{\alpha_1,\alpha_2,\alpha_3}\ .
+\label{chclc}
 \end{align}
 Explicitly,
 \begin{multline}
@@ -4211,18 +4213,8 @@ Assuming the spectrum is still $S_R$ \eqref{sr}, the condition \eqref{dbdz} is n
 \begin{align}
  iQR\in {\mathbb{Z}} \ .
 \end{align}
-Moreover, the global Ward identity \eqref{saq} for momentums in the spectrum $S_R$ suggests that we assume $i\frac{Q}{R}\in \frac12 {\mathbb{Z}}$, and for the sake of symmetry we make the slightly stronger assumption
-\begin{align}
- i\frac{Q}{R}\in {\mathbb{Z}} \ .
-\end{align}
-Therefore, the compactified free boson exists in the presence of a nonzero background charge, provided the compactification radius 
-and the background charge take related, quantized values.
-In particular, we must have $Q^2\in {\mathbb{Z}}$ and therefore 
-\begin{align}
- c\in 1+6{\mathbb{Z}}\ .
-\end{align}
-The theory can then be shown to be consistent not only on the sphere, but also on the torus.
-
+Actually, this condition allows the term $\frac{Q}{2}$ in $\Delta(\alpha)=\frac{Q^2}{4}-(\alpha-\frac{Q}{2})^2$ to be absorbed in a shift $n\to n-1$, which can be used to show that the theory is consistent not only on the sphere, but also on the torus. 
+Therefore, compactified free bosons exist for any value of the central charge, provided the compactification radius is quantized in units of $\frac{i}{Q}=\sqrt{\frac{6}{1-c}}$. 
 
 \subsection{Free bosons and Liouville theory \label{seclld}}
 
@@ -4362,14 +4354,21 @@ In the case $N=3$, this agrees with the three-point function \eqref{caaa}. (See 
 So
 the light asymptotic limit of Liouville theory is a unitary, two-dimensional global conformal field theory.
 
-To conclude our discussion of the use of free boson techniques in Liouville theory, let us point out that there is a relation between Liouville and linear dilaton correlation functions \cite{zz95},
+To conclude our discussion of the use of free boson techniques in Liouville theory, let us point out 
+that there is a relation between certain Liouville correlation functions, and linear dilaton correlation functions \cite{zz95}.
+The relevant Liouville correlation functions are $N$-point functions $\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Liouville}}$ at $\sum\alpha_i = Q-bm$ where $m\in \mathbb{N}$.  
+For the Liouville three-point structure constants $C$ and $\hat C$, the limit $\sum\alpha_i = Q-bm$ is similar to the degenerate field limit \eqref{chclc}, in that $\hat C$ is smooth while $C$ has a simple pole, and
 \begin{align}
- \underset{\sum \alpha_i = Q-bm}{\operatorname{Res}} \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Liouville}} = \underset{\sum\alpha_i = Q-bm}{\operatorname{Res}} \left\langle e^{-\frac{\mu^b}{\pi\gamma(b^2)}\int_{\mathbb{C}} V_b(z)d^2z}\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Linear\ Dilaton}}\ , 
+ \lim_{\sum\alpha_i \to Q-bm} \hat C_{\alpha_1,\alpha_2,\alpha_3} 
+ \propto \underset{\sum \alpha_i = Q-bm}{\operatorname{Res}}  C_{\alpha_1,\alpha_2,\alpha_3}\ ,
+\end{align}
+where we neglect $b$-dependent prefactors. 
+For $c\notin ]-\infty,1]$, our Liouville $N$-point function still has a simple pole at $\sum\alpha_i = Q-bm$, with the residue
+\begin{align}
+ \underset{\sum \alpha_i = Q-bm}{\operatorname{Res}} \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Liouville}} = \underset{\sum\alpha_i = Q-bm}{\operatorname{Res}} \left\langle e^{-\frac{\mu^b}{\pi\gamma(b^2)}\int_{\mathbb{C}} V_b(z)d^2z}\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Linear\ Dilaton}}\ .
 \label{lild}
 \end{align}
-for any integer $m\in {\mathbb{N}}$.
-In this relation the Residues denote the finite factors of the correlation functions, which are singular at $\sum \alpha_i = Q-bm$: the Liouville correlation function has a pole, as can be 
-seen in the $N=3$ case \eqref{caaa}, and the linear dilaton correlation function \eqref{dpzz} has a delta-function singularity, so that 
+On the linear dilaton side, taking the Residue of a correlation function \eqref{dpzz} means stripping out a delta function, and 
 \begin{multline}
  \underset{\sum\alpha_i = Q-bm}{\operatorname{Res}} \left\langle e^{-\frac{\mu^b}{\pi\gamma(b^2)}\int_{\mathbb{C}} V_b(z)d^2z}\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Linear\ Dilaton}}
 \\
@@ -4382,10 +4381,8 @@ The perturbing operator, here $V_b$, is chosen so that its conformal dimension i
 This example is rather pathological, as Liouville theory does not have a smooth $\mu\to 0$ limit where we could recover the linear dilaton theory, and the linear dilaton theory does not allow us to compute Liouville theory correlation functions, but only their residues at certain poles. 
 
 The integral \eqref{mint} is called a \textbf{\boldmath Coulomb gas integral}\index{Coulomb gas integral}.
-The relation \eqref{lild} with Liouville theory suggests a natural analytic continuation of this integral to non-integer values of $m=b^{-1}(Q-\sum\alpha_i)$.
-This can be made explicit in the case $N=3$, where the integral factorizes into a simple dependence on $z_i$, times a $z_i$-independent structure constant.
-The analytic continuation of this structure constant is not quite the Liouville theory structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$, which has poles at $m\in{\mathbb{N}}$, but rather the alternative solution $\hat{C}_{\alpha_1,\alpha_2,\alpha_3}$ \eqref{hc} of the conformal bootstrap equations, which exists provided $b\notin {\mathbb{R}}$, and is smooth at $m\in{\mathbb{N}}$ \cite{zam05}. 
-Moreover, the Coulomb gas integral coincides with the partition functions of a certain matrix model.
+If $N=3$ and $b\notin \mathbb{R}$, the relation \eqref{lild} with Liouville theory shows that the integral can be analytically continued to non-integer values of $m=b^{-1}(Q-\sum\alpha_i)$, using the Liouville structure constant $\hat C$. 
+Moreover, Coulomb gas integrals coincides with partition functions of certain matrix models.
 This is a manifestation of the
 relation between Liouville theory and matrix models:
 \begin{align}
@@ -4433,9 +4430,9 @@ The commutation relations are assumed to obey two axioms:
 For example, we already encountered the Lie algebra $\mathfrak{sl}_2$ \eqref{ttpm} in our study of global conformal symmetry.
 Let us define the \textbf{\boldmath Killing form}\index{Killing form} 
 \begin{align}
- K^{ab} = \frac{1}{2g} \operatorname{Tr} \left(\operatorname{ad}_{t^a}\operatorname{ad}_{t^b}\right) =\frac{1}{2g} f^{ac}_d f^{bd}_c\ ,
+ K^{ab} = \frac{1}{2g} \operatorname{Tr} \left(\operatorname{ad}_{t^a}\operatorname{ad}_{t^b}\right) =\frac{1}{2g} f^{ac}_d f^{bd}_c \overset{\mathfrak{sl}_n}{=}\operatorname{Tr}_f t^at^b\ ,
 \end{align}
-where  $\operatorname{ad}_t(t') = [t,t']$ is the adjoint action, and $g$ is the dual Coxeter number of the Lie algebra $\mathfrak{g}$, in particular $g\overset{\mathfrak{sl}_n}{=}n$.
+where  $\operatorname{ad}_t(t') = [t,t']$ is the adjoint action, $f$ is the $n$-dimensional fundamental representation of $\mathfrak{sl}_n$, and $g$ is the dual Coxeter number of the Lie algebra $\mathfrak{g}$, in particular $g\overset{\mathfrak{sl}_n}{=}n$.
 The normalization factor $\frac{1}{2g}$ is included so that the level, which we will shortly define in eq. \eqref{jajb}, takes integer values in rational models.
 We assume that the Killing form is non-degenerate, which is equivalent to $\mathfrak{g}$ being semi-simple. 
 Using the Killing form to raise indices, we define
@@ -4450,7 +4447,7 @@ The total antisymmetry of $f^{abc}$ implies that the \textbf{\boldmath quadratic
 \end{align}
 is a central element of the universal enveloping algebra $U(\mathfrak{g})$, that is $[C_2,t^a]=0$.
 
-After these quick reminders on Lie algebras, we are ready to use a Lie algebra $\mathfrak{g}$ in conformal field theory. 
+After these quick reminders on Lie algebras, we are ready to build conformal field theories based on a Lie algebra $\mathfrak{g}$. 
 We introduce a number $\dim \mathfrak{g}$ of holomorphic \textbf{\boldmath $\hat{\mathfrak{g}}$ currents}\index{g currents@$\hat{\mathfrak{g}}$ current} $J^a(y)$ characterized by the OPEs 
 \begin{align}
  \boxed{ J^a(y) J^b(z) = \frac{k K^{ab}}{(y-z)^2} +  \frac{ f^{ab}_c J^c(z)}{y-z}  + O(1)} \ ,
@@ -4525,18 +4522,20 @@ L_{-1}\Phi^R = -\frac{K_{ab}t^a(J^b\Phi^R)}{k+g} \ .
 \end{align}
 (See Exercise \ref{exoapf}.)
 
-States in a representation $R$ of $\mathfrak{g}$ can be represented as functions of an \textbf{\boldmath isospin variable}\index{isospin variable} $X$, so that affine primary fields become functions $\Phi^R_X(z_0)$ of $X$, on which $t^a$ acts as a differential operator $D_X^R(t^a)$, 
+States in a representation $R$ of $\mathfrak{g}$ can be represented as functions of an \textbf{\boldmath isospin variable}\index{isospin variable} $X$. 
+Affine primary fields become functions $\Phi^R_X(z_0)$ of $X$, on which $t^a$ acts as a differential operator $D_X^R(t^a)$, 
+and we have
 \begin{align}
- t^a \Phi^R_X(z_0) = D_X^R(t^a) \Phi^R_X(z_0) \qquad \text{where} \qquad [D_X^R(t^a),D_X^R(t^b)] = f^{ab}_c D_X^R(t^c)\ ,
-\label{tpdp}
-\end{align}
-so that 
-\begin{align}
- J^a(y)\Phi^R_X(z_0) = \frac{-D^R_X(t^a)\Phi^R_X(z_0)}{y-z_0}+O(1)\ .
+ J^a(y)\Phi^R_X(z_0) = \frac{-D^R_X(t^a)\Phi^R_X(z_0)}{y-z_0}+O(1)\quad \text{with} \quad t^a \Phi^R_X(z_0) = D_X^R(t^a) \Phi^R_X(z_0)\ .
 \label{jprx}
 \end{align}
+The differential operators $D_X^R(t^a)$ obey the commutation relations of $\mathfrak{g}$, and their quadratic invariant combination is $C_2(R)$,
+\begin{align}
+[D_X^R(t^a),D_X^R(t^b)] = f^{ab}_c D_X^R(t^c)\ , \qquad K_{ab} D_X^R(t^a)D_X^R(t^b) = C_2(R)\ .
+\label{dta}
+\end{align}
 The isospin variable $X$ is a collection of as many complex variables as $\mathfrak{g}$ has positive roots.
-In particular, an $\mathfrak{g}=\mathfrak{sl}_n$ isospin variable has $\frac{n(n-1)}{2}$ components, and an $\mathfrak{g}=\mathfrak{sl}_2$ isospin variable has one components.
+In particular, an $\mathfrak{g}=\mathfrak{sl}_n$ isospin variable has $\frac{n(n-1)}{2}$ components, and an $\mathfrak{g}=\mathfrak{sl}_2$ isospin variable has one component.
 We already know differential operators $D^j_x(t^a)$ \eqref{ddz} which 
 obey the $\mathfrak{sl}_2$ commutation relations \eqref{ttpm} for any choice of the 
 \textbf{\boldmath spin}\index{spin ($\mathfrak{sl}_2$)} $j$.
@@ -4603,7 +4602,7 @@ Finally, let us point out that the maximum multiplicity $m_{R_1,R_2}^{R_3}$ in a
 We indeed have a set of $\dim \mathfrak{sl}_n=n^2-1$ equations, for a function $C^{R_1,R_2}_{R_3}(X_1,X_2|X_3)$ of $3\frac{n(n-1)}{2}$ variables -- the components of $X_1,X_2$ and $X_3$.
 If $n=2$ there are three equations and three variables, and this can actually be reduced to one second-order differential equation for a function of one variable. (See eq. \eqref{pmf}.)
 If $n\geq 3$ there are more variables than equations, so that $C^{R_1,R_2}_{R_3}(X_1,X_2|X_3)$ has an arbitrary dependence on a number of variables.
-In the case of finite dimensional representations of $\mathfrak{sl}_{n\geq 3}$, the multiplicities are of course finite, but they can take arbitrarily high values, depending on the involved representations.
+In the case of finite-dimensional representations of $\mathfrak{sl}_{n\geq 3}$, the multiplicities are of course finite, but they can take arbitrarily high values, depending on the involved representations.
 
 \subsection{Ward identities and Knizhnik-Zamolodchikov equations \label{secwikz}}
 
@@ -4667,6 +4666,7 @@ Inserting the equation \eqref{lmp} in an $N$-point function of affine primary fi
 \end{align}
 These are first-order differential equations in $z_i$, and like the analogous equations \eqref{kzl} for free boson correlation functions, they determine the dependence on $z_i$ of correlation functions of primary fields.
 However, unlike the free boson equations, the KZ equations do not have simple solutions in general. 
+It can be checked that the KZ equations imply the conformal global Ward identities. (See Exercise \ref{exokz}.)
 
 The KZ equations can be rewritten as 
 \begin{align}
@@ -5633,6 +5633,13 @@ Choosing the coefficient of proportionality such that
 \end{align}
 write the OPEs $J^a(y)\Phi^j_\mu(z)$ in terms of differential operators as in eq. \eqref{jprx}, and conclude that $\Phi^j_\mu(z)$ is a $\mu$-basis affine primary field.
 \end{exo}
+
+\begin{exo}[Conformal global Ward identities from KZ equations]
+ ~\label{exokz}
+ Prove that the KZ equations imply the global Ward identities of conformal symmetry \eqref{spz}.
+ Use the global Ward identities of the affine symmetry \eqref{drxt}, the Casimir relation for the isospin differential operators \eqref{dta}, and the conformal dimensions of affine primary fields \eqref{dr}. 
+\end{exo}
+
 
 \begin{exo}[Proof of the identity \eqref{dtyj}]
  ~\label{exoktk}
