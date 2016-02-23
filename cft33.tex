@@ -4811,7 +4811,25 @@ This leads to Feigin, Frenkel and Stoyanovsky's \textbf{\boldmath KZ-BPZ relatio
 \label{dyy}
 \end{align}
 This equation means that the differential equations obeyed by both sides are related by Sklyanin's separation of variables. 
-Solutions of the KZ equations, which are called \textbf{\boldmath $\widehat{\mathfrak{sl}}_2$ conformal blocks}\index{sl2hat conformal blocks@$\widehat{\mathfrak{sl}}_2$ conformal block}, are therefore related to certain Virasoro $2N-2$-point conformal blocks: the relation between individual blocks can be obtained by studying their behaviours in the $z_i\to z_{i'}$ limits.
+Solutions of the KZ equations, which are called \textbf{\boldmath $\widehat{\mathfrak{sl}}_2$ conformal blocks}\index{sl2hat conformal blocks@$\widehat{\mathfrak{sl}}_2$ conformal block}, are therefore related to certain Virasoro $2N-2$-point conformal blocks. 
+In the diagrammatic representation of conformal blocks as trees, the relevant Virasoro block is obtained from an $\widehat{\mathfrak{sl}}_2$ conformal block by adding a degenerate field near each node, and identifying the two fusion channels of that degenerate field with $\widehat{\mathfrak{sl}}_2$ fusion multiplicities:
+\begin{align}
+\begin{tikzpicture}[baseline={(0,0)}, very thick, scale = .6]
+\draw (-1,2) node [left] {$j_1$} -- (0,0) node[below right] {$\epsilon$} -- node [above] {$j_s$} (4,0) node[below left] {$\sigma$} -- (5,2) node [right] {$j_4$};
+\draw (-1,-2) node [left] {$j_2$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$j_3$};
+\end{tikzpicture}
+\quad \rightarrow \quad  
+\begin{tikzpicture}[baseline={(0,0)}, very thick, scale = .6]
+\draw (-1,2) node [left] {$\alpha(j_1)$} -- (0,0) -- (1,0) -- node [above] {$\alpha(j_s)$} (5,0) -- (6.3,2.6) node [right] {$\alpha(j_4)$};
+\draw (-1,-2) node [left] {$\alpha(j_2)$} -- (0,0);
+\draw (5,0) -- (6,-2) node [right] {$\alpha(j_3)$};
+\draw[dashed] (1,0) -- (1,2.2) node[above] {$\left<2,1\right>$};
+\draw[dashed] (5.3, .6) -- (4.3, 2.6) node[above] {$\left<2,1\right>$};
+\node[right] at (5.15, .2) {$\alpha(j_4)+\sigma \frac{b}{2}$};
+\draw[thin, latex-] (.5, -.2) to[out = -90, in = 180] (1,-1) node [right] {$\alpha(j_s) + \epsilon \frac{b}{2}$};
+\end{tikzpicture}
+\end{align}
 The separation of variables $\mathcal{K}$ is in general an integral transformation, but in the case of the $\mu$-basis \eqref{mub} of isospin variables, we have 
 \begin{align}
 \renewcommand{\arraystretch}{1.5}
@@ -4921,6 +4939,7 @@ Using eqs. \eqref{cpm} and \eqref{caaa} for $C_{\pm}(\alpha_1)$ and $C_{\alpha_1
 \label{chp}
 \end{align}
 where the parameter $b$ is given by eq. \eqref{bk}, and the cosmological constant $\mu$ is inherited from Liouville theory.
+(We would have a different formula in the case $b\in i\mathbb{R}$, based on the alternative Liouville structure constant \eqref{hc}.)
 
 The $x$-basis two-point function can be obtained from the $\mu$-basis two-point function with the help of the formula 
 \begin{align}
@@ -4937,23 +4956,29 @@ Using the same formula, we also obtain the $x$-basis reflection relation from th
  \Phi^j_{x,\bar{x}} = \frac{b^2}{\pi}\mu^{\frac{2j+1}{b}}\gamma(1-\tfrac{2j+1}{b^2})\int_{{\mathbb{C}}}d^2x'\ |x-x'|^{4j}\Phi^{-j-1}_{x',\bar{x}'}\ .
 \end{align}
 
-Finally, let us sketch the OPEs of affine primary fields:
+The OPEs of affine primary fields are
 \begin{align}
- \Phi^{j_1}_{x_1,\bar{x}_1}\Phi^{j_2}_{x_2,\bar{x}_2} &\sim \frac12 \int_{-\frac12 + i\mathbb{R}} \frac{(2j+1)^2 dj}{-\pi^2b}\int_{{\mathbb{C}}}d^2x \left\langle \Phi^{j_1}_{x_1,\bar{x}_1}\Phi^{j_2}_{x_2,\bar{x}_2} \Phi^{-j-1}_{x,\bar{x}} \right\rangle \Phi^j_{x,\bar{x}}\ ,
+ \Phi^{j_1}_{x_1,\bar{x}_1}\Phi^{j_2}_{x_2,\bar{x}_2} &\sim \frac12 \int_{-\frac12 + ib\mathbb{R}} \frac{(2j+1)^2 dj}{-\pi^2b}\int_{{\mathbb{C}}}d^2x \left\langle \Phi^{j_1}_{x_1,\bar{x}_1}\Phi^{j_2}_{x_2,\bar{x}_2} \Phi^{-j-1}_{x,\bar{x}} \right\rangle \Phi^j_{x,\bar{x}}\ ,
 \label{xope}
 \\
-\Phi^{j_1}_{\mu_1,\bar{\mu}_1}\Phi^{j_2}_{\mu_2,\bar{\mu}_2} &\sim \frac12 \int_{-\frac12 + i\mathbb{R}} dj\int_{{\mathbb{C}}}\frac{d^2\mu}{b|\mu|^2} \left\langle \Phi^{j_1}_{\mu_1,\bar{\mu}_1}\Phi^{j_2}_{\mu_2,\bar{\mu}_2} \Phi^{-j-1}_{-\mu,-\bar{\mu}} \right\rangle \Phi^j_{\mu,\bar{\mu}}\ .
+\Phi^{j_1}_{\mu_1,\bar{\mu}_1}\Phi^{j_2}_{\mu_2,\bar{\mu}_2} &\sim \frac12 \int_{-\frac12 + ib\mathbb{R}} dj\int_{{\mathbb{C}}}\frac{d^2\mu}{b|\mu|^2} \left\langle \Phi^{j_1}_{\mu_1,\bar{\mu}_1}\Phi^{j_2}_{\mu_2,\bar{\mu}_2} \Phi^{-j-1}_{-\mu,-\bar{\mu}} \right\rangle \Phi^j_{\mu,\bar{\mu}}\ .
 \label{mope}
 \end{align}
 Notice that the measures of integration on the spin and isospin variables are dictated by the $\delta(j_1+j_2+1)$ term in the two-point function.
 These equations are analogous to eq. \eqref{vvi} for the OPE in Liouville theory.
 The values of the spin $j$,
 \begin{align}
- \boxed{j\in -\frac12 + i\mathbb{R}}\ , 
+ \boxed{j\in -\frac12 + ib\mathbb{R}}\ , 
 \end{align}
- are deduced from Liouville theory via the relation \eqref{aj}.
+are deduced from Liouville theory via the relation \eqref{aj}.
 These values are the same for the left- and right-moving $\widehat{\mathfrak{sl}}_2$ algebras -- the spectrum is diagonal.
 
+Our treatment of the $H_3^+$ model is valid for levels $k\neq -2$. 
+If $k=-2$, the Sugawara construction breaks down, and the limit of the model is no longer a conformal field theory.
+The central charges of the $H_3^+$ model \eqref{ckg} and of the corresponding Liouville theory \eqref{bk} take the values
+\begin{align}
+ \boxed{c^{H_3^+} = \frac{3k}{k+2} \in \mathbb{C}-\{3\}} \ , \quad c^{\text{Liouville}} = 1-6k-\frac{6}{k+2}\in \mathbb{C}\ .
+\end{align} 
 
 \subsection{Large level limit and geometrical interpretation}
 
@@ -4969,7 +4994,7 @@ This corresponds to an $SL_2({\mathbb{C}})$ symmetry group, which acts on a fiel
 \label{ugp}
 \end{align}
 (This action is formally identical to the action \eqref{tgv} of global conformal transformations on quasi-primary fields.)
-Now we notice that the transformation $U_g$ also describes the action of $SL_2({\mathbb{C}})$ on functions on the space $H_3^+$ of matrices of size two and determinant one.
+Now we notice that the transformation $U_g$ also describes the action of $SL_2({\mathbb{C}})$ on functions on the space \textbf{\boldmath $H_3^+$}\index{H3+@$H_3^+$} of Hermitian matrices of size two and determinant one.
 Consider indeed the function
 \begin{align}
  \Phi^j_{x,\bar{x}}(h) = \left(\begin{bmatrix}
@@ -5052,33 +5077,9 @@ Given a primary state $|v\rangle$, the norm square of some of the level one desc
 \end{align}
 This cannot be positive for all values of $\lambda$,  
 so the theory cannot be unitary -- except of course in the large level limit, where descendent modes disappear. 
-The values of the level $k$ which we will accept will be dictated by the requirement \eqref{kir}, which is weaker than unitarity, together with the assumption that the corresponding Liouville theory exists.
-As functions of $k$, the central charges of our model \eqref{ckg} and of the corresponding Liouville theory (see eq. \eqref{bk}) are
-\begin{align}
- c = \frac{3k}{k+2} \quad , \quad c^{\text{Liouville}} = 1-6k-\frac{6}{k+2}\ ,
-\end{align} 
-which behave as follows:
-\begin{align}
-\renewcommand{\arraystretch}{1.1}
- \begin{array}{|c|ccccccccc|}
-  \hline 
-k & -\infty & & -3 & & -2 & & -1 & & \infty 
-\\ \hline  
-c^{\text{Liouville}} & \infty & \searrow & 25 & \nearrow & \pm \infty & \nearrow & 1 & \searrow & -\infty
-\\ \hline
-c & 3 & \nearrow & 9 & \nearrow & \pm \infty & \nearrow & -3 & \nearrow & 3
-\\ \hline 
- \end{array}
-\end{align}
-The requirement $c^{\text{Liouville}}\notin ]-\infty,1[$ leads to 
-\begin{align}
- \boxed{k\in\ ]-\infty,-2[\ \cup\ \{-1\}}\ .
-\label{kito}
-\end{align}
 
 
 \section{WZW models}
-
 
 \subsection{Definition and general properties}
 
@@ -5119,9 +5120,10 @@ We identify the corresponding infinitesimal symmetry algebra $\mathfrak{g}\times
 That is, $\mathfrak{g}$ and its generators $t^a$ are identified with the horizontal subalgebra of $\hat{\mathfrak{g}}$ and its generators $J^a_0$.
 The natural scalar product on $\mathcal{F}(G)$ is 
 \begin{align}
- \langle f|f'\rangle = \int_G dh\ \overline{f(h)} f'(h)\ .
+ \langle f|f'\rangle = \int_G dh\ \overline{f(h)} f'(h)\ ,
 \label{gbg}
 \end{align}
+where $dh$ is the Haar measure, which is invariant under the left and right actions of $G$ on itself.
 As in the case of the $H_3^+$ model, the generators of the symmetry algebra are antihermitian for this scalar product, which now implies
 \begin{align}
  (J^a_0)^\dagger = -J^a_0\  . 
@@ -5141,7 +5143,7 @@ If $G$ is compact, then the space $\mathcal{F}(G)$ of functions on $G$ can be de
 where $\mathcal{R}$ is the set of irreducible unitary representations of $G$, which coincides with the set of irreducible finite-dimensional representations of $G$.
 Since the scalar product \eqref{gbg} is positive definite, it is obvious that only unitary representations can appear.
 The nontrivial statement is that all unitary irreducible representations do appear, and that they couple diagonally. 
-It turns out that the spectrum is still diagonal for all positive integer values of $k$, \cite{fms97}
+It turns out that the spectrum of the WZW model is still diagonal for all positive integer values of $k$, \cite{fms97}
 \begin{align}
  S = \bigoplus_{R\in \mathcal{R}_k} \hat{R}\otimes \bar{\hat{R}}\ ,
 \end{align}
@@ -5450,7 +5452,7 @@ The condition for this interval to be non-empty is
 \begin{align}
  \boxed{k\in]-\infty,-2[}\ .
 \end{align}
-(Compare with the condition \eqref{kito} for the $H_3^+$ model.) The natural conjectures for the spectrums of the $\widetilde{SL}_2(\mathbb{R})$ and $SL_2(\mathbb{R})$ WZW models is then
+The natural conjectures for the spectrums of the $\widetilde{SL}_2(\mathbb{R})$ and $SL_2(\mathbb{R})$ WZW models is then
 \begin{align}
  \tilde{S} &= \bigoplus_{w\in{\mathbb{Z}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ \hat{C}^{j,w}_\alpha \otimes \bar{\hat{C}}^{j,w}_{\alpha} 
 \oplus \bigoplus_{w\in\frac12+{\mathbb{Z}}}\int^\oplus_{]-\frac12,-\frac{k+3}{2}[} dj\ \hat{D}^{j,w}\otimes \bar{\hat{D}}^{j,w} \ ,
