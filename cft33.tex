@@ -326,7 +326,7 @@ This product satisfies
 \\
 \langle \tau|\sigma \rangle &= \overline{\langle \sigma|\tau\rangle}\ .
 \end{align}
-The \textbf{\boldmath Hermitian conjugate}\index{Hermitian conjugate} $A^\dagger$ of a linear operator $A$ is then defined by
+The \textbf{\boldmath hermitian conjugate}\index{hermitian conjugate} $A^\dagger$ of a linear operator $A$ is then defined by
 \begin{align}
  \langle \tau | A \sigma\rangle = \langle A^\dagger \tau | \sigma\rangle\ .
 \label{lld}
@@ -806,7 +806,7 @@ There are two similar-looking axioms, which should not be adopted:
 \item Closure under tensor product, instead of fusion, would not make sense, as the tensor product of two representations of $\mathfrak{V}_c$ is a representation of $\mathfrak{V}_{2c}$ -- central charges behave additively in a tensor product. 
 \end{itemize}
 
-In order to characterize the action of the symmetry algebra on the spectrum, we need not only decompose the spectrum into representations of that algebra, but also know how the symmetry generators $L_n$ behave under the scalar product, in other words what are their Hermitian conjugates $L_n^\dagger$.
+In order to characterize the action of the symmetry algebra on the spectrum, we need not only decompose the spectrum into representations of that algebra, but also know how the symmetry generators $L_n$ behave under the scalar product, in other words what are their hermitian conjugates $L_n^\dagger$.
 Let us first consider the case of the generators $\ell_n$ \eqref{elln} of the Witt algebra.  
 As a differential operator, $\ell_n$ acts on the space of analytic functions on ${\mathbb{C}}-\{0\}$, whose basis is $\{z^p\}_{p\in{\mathbb{Z}}}$.
 The natural scalar product on this space is 
@@ -814,7 +814,7 @@ The natural scalar product on this space is
  \langle f|g\rangle = -\frac{1}{2\pi i}\int_0^{2\pi}d\theta\  \overline{f(e^{i\theta})} {\frac{\partial}{\partial \theta}} g(e^{i\theta}) \quad \Rightarrow \quad \langle z^p| z^q \rangle = -p\delta_{p,q}\ .
 \label{fgd}
 \end{align}
-This scalar product, which is a fixed radius integral, comes from the idea of \textbf{\boldmath radial quantization}\index{radial quantization}: the radial direction is considered as the time direction, and the dilatation operator $\ell_0$ as the Hamiltonian, which is Hermitian i.e. $\ell_0^\dagger = \ell_0$.
+This scalar product, which is a fixed radius integral, comes from the idea of \textbf{\boldmath radial quantization}\index{radial quantization}: the radial direction is considered as the time direction, and the dilatation operator $\ell_0$ as the Hamiltonian, which is hermitian i.e. $\ell_0^\dagger = \ell_0$.
 We also have $\ell_n^\dagger = \ell_{-n}$ (see Exercise \ref{exolnd}), and we therefore assume
 \begin{align}
  \boxed{L^\dagger_n = L_{-n}} \ .
@@ -3221,7 +3221,7 @@ Both $C$ and $\hat C$
 \end{itemize}
 Notice that $R(\frac{Q}{2})=-1$ implies $V_\frac{Q}{2}=0$, which is consistent with $C_{\frac{Q}{2},\alpha_2,\alpha_3}=0$.
 
-\subsection{Existence and uniqueness of Liouville theory}
+\subsection{Existence and uniqueness of Liouville theory}\label{seceul}
 
 We derived the three-point structure constants $C$ and $\hat C$ by solving the equation \eqref{fcc} and its dual equation under $b\to \frac{1}{b}$, which are consequences of crossing symmetry of four-point functions involving degenerate fields. 
 For Liouville theory to exist, we need generic four-point functions to be crossing symmetric. 
@@ -3969,7 +3969,7 @@ and the $TJ$ OPE \eqref{tqj} is equivalent to
 \begin{align}
  [L_m,J_n] = -nJ_{m+n} -\frac{Q}{2}m(m+1)\ \delta_{m+n,0} \ . 
 \end{align}
-The behaviour \eqref{ldn} of $L_n$ under Hermitian conjugation suggests 
+The behaviour \eqref{ldn} of $L_n$ under hermitian conjugation suggests 
 \begin{align}
  J_n^\dagger = Q\delta_{n,0}-J_{-n}\ .
 \label{jdq}
@@ -4349,7 +4349,7 @@ Now how do we choose $h$? Global conformal symmetry \eqref{vtv} suggests that we
 \left\langle\prod_{i=1}^N V_{\alpha_i}(z_i,\bar{z}_i)\right\rangle\ \underset{\text{light\ asymptotic\ limit}}{\propto}\ \int_{H^+_3} dh\ \prod_{i=1}^N \left( \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right]^\dagger h \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right] \right)^{-2\eta_i}\ ,
 \label{zih}
 \end{align}
-where the integral is over the set \textbf{\boldmath $H_3^+$}\index{H3+@$H_3^+$} of Hermitian matrices of size two and determinant one, with a measure $dh$ which we assume to be invariant under $h\mapsto g^\dagger hg$ for $g\in SL_2({\mathbb{C}})$.
+where the integral is over the set \textbf{\boldmath $H_3^+$}\index{H3+@$H_3^+$} of hermitian matrices of size two and determinant one, with a measure $dh$ which we assume to be invariant under $h\mapsto g^\dagger hg$ for $g\in SL_2({\mathbb{C}})$.
 In the case $N=3$, this agrees with the three-point function \eqref{caaa}. (See \cite{zz95}.) In the light asymptotic limit, the spectrum of Liouville theory reduces to the space of functions on $H_3^+$, and the symmetry algebra reduces to the algebra of the global conformal transformations.
 So
 the light asymptotic limit of Liouville theory is a unitary, two-dimensional global conformal field theory.
@@ -4584,7 +4584,7 @@ Inserting $\oint dz\ J^a(z)$ on both sides, and using the linear independence of
  \left(D_{X_1}^{R_1}(t^a)+D_{X_2}^{R_2}(t^a)-\left(D_{X_3}^{R_3}(t^a)\right)^\dagger\right) C^{R_1,R_2}_{R_3}(X_1,X_2|X_3) = 0\ ,
 \label{dddc}
 \end{align}
-where the dagger denotes the Hermitian conjugate for $X_3$-differential operators, such that for any functions $f,g$ we have 
+where the dagger denotes the hermitian conjugate for $X_3$-differential operators, such that for any functions $f,g$ we have 
 $\int fDg =\int g D^\dagger f$.
 This equation characterizes $C^{R_1,R_2}_{R_3}(X_1,X_2|X_3)$ as an intertwiner between the representations $R_1\otimes R_2$ and $R_3$ of the Lie algebra $\mathfrak{g}$.
 This shows that the fusion multiplicities of affine highest-weight representations of $\hat{\mathfrak{g}}$ are bounded by the tensor product multiplicities of the underlying representations of $\mathfrak{g}$, 
@@ -4994,7 +4994,7 @@ This corresponds to an $SL_2({\mathbb{C}})$ symmetry group, which acts on a fiel
 \label{ugp}
 \end{align}
 (This action is formally identical to the action \eqref{tgv} of global conformal transformations on quasi-primary fields.)
-Now we notice that the transformation $U_g$ also describes the action of $SL_2({\mathbb{C}})$ on functions on the space \textbf{\boldmath $H_3^+$}\index{H3+@$H_3^+$} of Hermitian matrices of size two and determinant one.
+Now we notice that the transformation $U_g$ also describes the action of $SL_2({\mathbb{C}})$ on functions on the space \textbf{\boldmath $H_3^+$}\index{H3+@$H_3^+$} of hermitian matrices of size two and determinant one.
 Consider indeed the function
 \begin{align}
  \Phi^j_{x,\bar{x}}(h) = \left(\begin{bmatrix}
@@ -5143,7 +5143,7 @@ If $G$ is compact, then the space $\mathcal{F}(G)$ of functions on $G$ can be de
 where $\mathcal{R}$ is the set of irreducible unitary representations of $G$, which coincides with the set of irreducible finite-dimensional representations of $G$.
 Since the scalar product \eqref{gbg} is positive definite, it is obvious that only unitary representations can appear.
 The nontrivial statement is that all unitary irreducible representations do appear, and that they couple diagonally. 
-It turns out that the spectrum of the WZW model is still diagonal for all positive integer values of $k$, \cite{fms97}
+If $G$ is simply connected, then the spectrum of the WZW model is still diagonal for all positive integer values of $k$, \cite{fms97}
 \begin{align}
  S = \bigoplus_{R\in \mathcal{R}_k} \hat{R}\otimes \bar{\hat{R}}\ ,
 \end{align}
@@ -5173,8 +5173,8 @@ Let us introduce notations for the limits of $H_3^+$ field when the spin takes s
 \begin{align}
 J\in \frac12{\mathbb{N}} \quad \Rightarrow \quad \left\{\begin{array}{ccl} \Phi^J  & = &\underset{j\to J}{\lim}\ \Phi^j \ , \\ \Phi^{(J,1)} &=& \underset{j\to J-1-\frac{k}{2}}{\lim} \Phi^j \ . \end{array}\right.
 \end{align}
-Let us now consider the OPE $\Phi^{j_1}_{x_1,\bar{x}_1}\Phi^{j_2}_{x_2,\bar{x}_2}$ \eqref{xope} where we initially assume $j_1,j_2\in -\frac12+i{\mathbb{R}}$ and $k<-2$.
-The positions of the line of integration $j\in -\frac12+i{\mathbb{R}}$ and the eight half-lines of poles of the OPE coefficient are
+Let us now consider the OPE $\Phi^{j_1}_{x_1,\bar{x}_1}\Phi^{j_2}_{x_2,\bar{x}_2}$ \eqref{xope} where we initially assume $j_1,j_2\in -\frac12+ib{\mathbb{R}}$.
+The positions of the line of integration $j\in -\frac12+ib{\mathbb{R}}$ and the eight cones of poles of the OPE coefficient are
 \begin{align}
 \newcommand{\polewedge}[3]{
 \begin{scope}[#1]
@@ -5183,11 +5183,12 @@ The positions of the line of integration $j\in -\frac12+i{\mathbb{R}}$ and the e
 \filldraw[opacity = .1, blue] (0,0) -- (6, -2) -- (6, 2) -- cycle;
 \end{scope}
 }
- \begin{tikzpicture}[baseline=(current  bounding  box.center)]
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = 1.2]
   \draw[-latex] (-5,0) -- (.8, 0) node[above right] {$0$} -- (6,0) node [above] {$j$};
+  \clip (-5, -3) -- (-5, 3) -- (6, 3) -- (6, -3) -- cycle;
   \draw (.8, -3.5) -- (.8, 3.5);
-  \draw[ultra thick, red] (.4, -3.5) -- (.4, 3.5);
-  \clip (-5, -3.5) -- (-5, 3.5) -- (6, 3.5) -- (6, -3.5) -- cycle;
+  \begin{scope}[rotate around = {-18.43:(.4,0)}]
+  \draw[ultra thick, red] (.4, -4.5) -- (.4, 4.5);
   \polewedge{shift = {(0, .7)}, rotate = 180}{$j_1-j_2-1$}{above left};
   \polewedge{shift = {(0, -.7)}, rotate = 180}{$j_2-j_1-1$}{above left};
   \polewedge{shift = {(0, 1.8)}, rotate = 180}{$j_1+j_2$}{above left};
@@ -5196,9 +5197,10 @@ The positions of the line of integration $j\in -\frac12+i{\mathbb{R}}$ and the e
   \polewedge{shift = {(1, -.6)}}{$j_2-j_1-k-2$}{above right};
   \polewedge{shift = {(1, 1.9)}}{$j_1+j_2-k-1$}{above right};
   \polewedge{shift = {(.8, -1.7)}}{$-j_1-j_2-1$}{above right};
+  \end{scope}
  \end{tikzpicture}
 \end{align}
-Taking the limit $j\to J$ or $j\to J-1-\frac{k}{2}$, the OPE coefficient vanishes, and the only surviving contributions are from pairs of poles which pinch the line of integration. (See Section \ref{sectpf} for more explanations.) The resulting OPEs are schematically written as 
+Taking the limit $j\to J$ or $j\to J-1-\frac{k}{2}$, the OPE coefficient vanishes, and the only surviving contributions are from poles that cross the line of integration. (See Section \ref{seceul} for more explanations.) The resulting OPEs are schematically written as 
 \begin{align}
  \Phi^J \Phi^{j_2} & \sim \sum_{j=j_2-J}^{j_2+J} \Phi^j \ ,
 \label{pjp}
@@ -5266,6 +5268,7 @@ $SU_2$ WZW models & diagonal minimal models
  \end{tabular}
 \end{align}
 In addition, for both symmetry algebras, there exist rational, non-diagonal models, which in both cases fit in an A-D-E classification \cite{fms97}. 
+Non-diagonal models with $\widehat{\mathfrak{sl}}_2$ symmetry include the $SO_3$ WZW models, where $SO_3 = \frac{SU_2}{\mathbb{Z}_2}$ is not simply connected.
 
 
 \subsection{The \texorpdfstring{$\widetilde{SL}_2(\mathbb{R})$}{SL2(R)} WZW model \label{secslr}}
@@ -5281,8 +5284,9 @@ The group $SL_2({\mathbb{R}})$ is not simply-connected, as the matrices of the t
 So $\widetilde{SL}_2(\mathbb{R})$ is obtained from $SL_2({\mathbb{R}})$ by decompactifying the $\tau$ direction, and we have $SL_2({\mathbb{R}}) = \widetilde{SL}_2(\mathbb{R})/{\mathbb{Z}}$.
 
 Let us study the space $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ of functions on $\widetilde{SL}_2(\mathbb{R})$, which is assumed to be the large level limit of the spectrum of our model. 
-For the natural scalar product \eqref{gbg}, symmetry generators must be antihermitian.
-We however perform a complex change of basis in $\mathfrak{sl}_2$, such that the conjugation rule becomes
+In this limit, a basis of symmetry generators is $(J^a_0)$, and the elements of this basis are antihermitian for the natural scalar product \eqref{gbg}.
+We will however work with a basis that includes a hermitian generator, whose eigenvalues are therefore real in unitary representations.
+We still call this basis $(J^a_0)$, although it is obtained from the original basis by a complex change of bases, such that the conjugation rule becomes
 \begin{align}
  \left\{\begin{array}{l} (J_0^0)^\dagger = J_0^0\ , \\
          (J_0^\pm)^\dagger = -J_0^\mp \ .
@@ -5290,13 +5294,10 @@ We however perform a complex change of basis in $\mathfrak{sl}_2$, such that the
 \right.
 \label{jtdj}
 \end{align}
-This corresponds to applying the $\mathfrak{su}_{1,1}$ conjugation rule $M^\dagger = \left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right) \bar{M}^T \left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right)$ to matrices $M(t^a)$ from the matrix representation \eqref{mta} of $\mathfrak{sl}_2$. (The matrices which satisfy $M^\dagger =-M$ for the $\mathfrak{su}_{1,1}$ conjugation rule are by definition the elements of $\mathfrak{su}_{1,1}$ itself). 
-For our conjugation rule, $J_0^0$ is self-adjoint and therefore must have real eigenvalues in unitary representations.
-Moreover, our conjugation rule is related to the conjugation rule \eqref{ldn} for generators of 
-global conformal transformations by the simple map $(J_0^0,J_0^+,J_0^-)\mapsto(L_0,iL_{-1},iL_1)$.
+In the matrix representation \eqref{mta} of $\mathfrak{sl}_2$, this corresponds to the $\mathfrak{su}_{1,1}$ conjugation rule $M^\dagger = \left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right) \bar{M}^T \left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right)$. (The matrices which satisfy $M^\dagger =-M$ for the $\mathfrak{su}_{1,1}$ conjugation rule are by definition the elements of $\mathfrak{su}_{1,1}$ itself). 
 
 The decomposition of $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ into irreducible unitary representations of the global symmetry algebra $\mathfrak{sl}_2\times \overline{\mathfrak{sl}}_2$ involves two types of representations: the \textbf{\boldmath principal series representation of $\mathfrak{sl}_2$}\index{principal series representation of $\mathfrak{sl}_2$} $C^j_\alpha$ and the \textbf{\boldmath discrete series representation of $\mathfrak{sl}_2$}\index{discrete series representation of $\mathfrak{sl}_2$} $D^{j,\pm}$, where $j$ is the spin. 
-These representations can be characterized by the eigenvalues of a Hermitian generator such as $J_0^0$,
+These representations can be characterized by the eigenvalues of the hermitian generator $J_0^0$,
 \begin{align} 
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{|l|l|l|}
@@ -5327,7 +5328,7 @@ So, according to \cite{rib09} and references therein, we have
 \\
  \mathcal{F}(SL_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} C^j_\alpha \otimes \bar{C}^j_{\alpha} \oplus \bigoplus_\pm \bigoplus_{j=-\frac12, 0,\frac12 \cdots} D^{j,\pm}\otimes \bar{D}^{j,\pm} \ ,
 \end{align}
-where the identification of $\mathcal{F}(SL_2(\mathbb{R}))$ with the space of $\tau$-periodic functions on $\widetilde{SL}_2(\mathbb{R})$ amounts to restricting the eigenvalues of our Hermitian generator to be half-integers.
+where the identification of $\mathcal{F}(SL_2(\mathbb{R}))$ with the space of $\tau$-periodic functions on $\widetilde{SL}_2(\mathbb{R})$ amounts to restricting the eigenvalues of our hermitian generator to be half-integers.
 Tensor products of principal and discrete series representations can be written as 
 \begin{align}
  R_1\otimes R_2 = \bigoplus_{R_3} N_{R_1,R_2,R_3^*} R_3\ ,
@@ -5386,12 +5387,16 @@ According to eqs. \eqref{ljj} and \eqref{lzjj}, this implies
  \rho_w(L_n)  = L_n + wJ^0_n +\frac14 kw^2 \delta_{n,0}\ .
 \end{align}
 Given a representation $R$ of $\widehat{\mathfrak{sl}}_2$, that is an action of the generators $J^a_n$ on some vectors $|v\rangle$, we define the \textbf{\boldmath spectrally flowed representation}\index{spectrally flowed representation} $\rho_w(R)$ by the action $\rho_{-w}(J^a_n)|v\rangle$.  
-It is believed that this action of spectral flow on representations commutes with fusion, in the sense that \cite{gab01b}
+It follows from this definition that 
+\begin{align}
+ \rho_w(R)^* = \rho_{-w}(R^*)\ .
+\end{align}
+Moreover, it is believed that the action of spectral flow commutes with fusion, in the sense that \cite{gab01b}
 \begin{align}
  \rho_{w}(R)\times \rho_{w'}(R') = \rho_{w+w'}(R\times R')\ .
 \label{rwr}
 \end{align}
-We also assume that fusion products of representations of $\widehat{\mathfrak{sl}}_2$ have the form 
+We assume that fusion products of representations of $\widehat{\mathfrak{sl}}_2$ have the form 
 \begin{align}
  R_1\times R_2 = \bigoplus_{R_3} N_{R_1,R_2,R_3^*} R_3\ ,
 \end{align}
@@ -5445,14 +5450,15 @@ Then it is natural to assume that the spectral flow actually leaves the spectrum
 But what are the allowed values of the spin $j$ of $\hat{D}^{j,w}$? We still impose the constraint $j>-\frac12$ which comes from the representation $D^{j,\pm}$ of $\mathfrak{sl}_2$.
 If this applies to both spins in the relation \eqref{rdd}, we must then have 
 \begin{align}
- j\in \left]-\frac12, -\frac{k+3}{2}\right[\ .
+ -\frac12 <j < -\frac{k+3}{2}\ .
 \label{jimm}
 \end{align}
-The condition for this interval to be non-empty is
+This defines a non-empty interval provided
 \begin{align}
  \boxed{k\in]-\infty,-2[}\ .
 \end{align}
-The natural conjectures for the spectrums of the $\widetilde{SL}_2(\mathbb{R})$ and $SL_2(\mathbb{R})$ WZW models is then
+(Nevertheless, the model surely exists for $k\in \mathbb{C}-\{2\}$.)
+The natural conjectures for the spectrums of the $\widetilde{SL}_2(\mathbb{R})$ and $SL_2(\mathbb{R})$ WZW models are then
 \begin{align}
  \tilde{S} &= \bigoplus_{w\in{\mathbb{Z}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ \hat{C}^{j,w}_\alpha \otimes \bar{\hat{C}}^{j,w}_{\alpha} 
 \oplus \bigoplus_{w\in\frac12+{\mathbb{Z}}}\int^\oplus_{]-\frac12,-\frac{k+3}{2}[} dj\ \hat{D}^{j,w}\otimes \bar{\hat{D}}^{j,w} \ ,
@@ -5495,19 +5501,21 @@ Keeping the condition \eqref{jimm} on spins of discrete series representations i
 N_{\hat{C}^{j_1,w_1}_{\alpha_1},\hat{C}^{j_2,w_2}_{\alpha_2},\hat{C}^{j_3,w_3}_{\alpha_3}} & = \delta_{\sum w_i,1}\delta_{\sum\alpha_i-\frac{k}{2},{\mathbb{Z}}} + 2\, \delta_{\sum w_i,0}\delta_{\sum \alpha_i,{\mathbb{Z}}} + \delta_{\sum w_i,-1}\delta_{\sum\alpha_i+\frac{k}{2},{\mathbb{Z}}}\ .
 \end{align}
 This leads to the following fusion rules:
-\begin{align}
-\hat{D}^{j_1,w_1}\times \hat{D}^{j_2,w_2} &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj\ \hat{C}^{w_1+w_2}_{j_1+j_2+\frac{k}{2}} 
-\nonumber \\ & \oplus 
+\begin{multline}
+\hat{D}^{j_1,w_1}\times \hat{D}^{j_2,w_2} = \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj\ \hat{C}^{j,w_1+w_2}_{j_1+j_2+\frac{k}{2}} 
+\\ \oplus 
 \bigoplus_{\substack{j\in j_1+j_2+1+{\mathbb{N}} \\ j\in ]-\frac12, -\frac{k+3}{2}[}} \hat{D}^{j,w_1+w_2-\frac12} \oplus 
 \bigoplus_{\substack{j\in j_1+j_2+1+\frac{k}{2}-{\mathbb{N}} \\ j\in ]-\frac12, -\frac{k+3}{2}[}} \hat{D}^{j,w_1+w_2+\frac12}\ ,
-\\
+\end{multline}
+\begin{align}
  \hat{C}^{j_1,w_1}_{\alpha_1}\times \hat{D}^{j_2,w_2} &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj\left( \hat{C}^{j,w_1+w_2-\frac12}_{\alpha_1+j_2} \oplus \hat{C}^{j,w_1+w_2+\frac12}_{\alpha_1+j_2+\frac{k}{2}}\right) \oplus \bigoplus_{\substack{j\in \alpha_1+j_2+{\mathbb{Z}} \\ j\in ]-\frac12, -\frac{k+3}{2}[}} \hat{D}^{j,w_1+w_2}\ ,
-\\
- \hat{C}^{j_1,w_1}_{\alpha_1}\times \hat{C}^{j_2,w_2}_{\alpha_2} &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \left(\hat{C}^{j,w_1+w_2-1}_{\alpha_1+\alpha_2-\frac{k}{2}} \oplus 2\, \hat{C}^{w_1+w_2}_{\alpha_1+\alpha_2} \oplus \hat{C}^{w_1+w_2+1}_{\alpha_1+\alpha_2+\frac{k}{2}}\right) 
-\nonumber \\
-&\oplus \bigoplus_{\substack{j\in \alpha_1+\alpha_2-\frac{k}{2}+{\mathbb{Z}} \\ j\in]-\frac12, -\frac{k+3}{2}[}} \hat{D}^{j,w_1+w_2-\frac12} 
-\oplus \bigoplus_{\substack{j\in \alpha_1+\alpha_2+{\mathbb{Z}} \\ j\in]-\frac12, -\frac{k+3}{2}[}} \hat{D}^{j,w_1+w_2+\frac12} \ .
 \end{align}
+\begin{multline}
+ \hat{C}^{j_1,w_1}_{\alpha_1}\times \hat{C}^{j_2,w_2}_{\alpha_2} = \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \left(\hat{C}^{j,w_1+w_2-1}_{\alpha_1+\alpha_2-\frac{k}{2}} \oplus 2\, \hat{C}^{j,w_1+w_2}_{\alpha_1+\alpha_2} \oplus \hat{C}^{j,w_1+w_2+1}_{\alpha_1+\alpha_2+\frac{k}{2}}\right) 
+\\
+\oplus \bigoplus_{\substack{j\in \alpha_1+\alpha_2-\frac{k}{2}+{\mathbb{Z}} \\ j\in]-\frac12, -\frac{k+3}{2}[}} \hat{D}^{j,w_1+w_2-\frac12} 
+\oplus \bigoplus_{\substack{j\in \alpha_1+\alpha_2+{\mathbb{Z}} \\ j\in]-\frac12, -\frac{k+3}{2}[}} \hat{D}^{j,w_1+w_2+\frac12} \ .
+\end{multline}
 So, while the spectral flow number $w$ is not conserved, fusion violates it by at most one unit.
 This can alternatively be shown at the level of correlation functions by studying how spectral flow affects the Ward identities and Knizhnik-Zamolodchikov equations \cite{rib05}.
 
