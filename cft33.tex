@@ -2790,11 +2790,11 @@ Show that the choice $\lambda=b\alpha_1,\ \mu=b\alpha_3$ leads to the values of 
 
 \chapter{Liouville theory and minimal models \label{seccbm}}
 
-In this chapter we introduce and solve Liouville theory, generalized minimal models, and A-series minimal models, which are the simplest nontrivial families of two-dimensional conformal field theories. 
+In this Chapter we introduce and solve Liouville theory, generalized minimal models, and A-series minimal models, which are the simplest nontrivial families of two-dimensional conformal field theories. 
 
 \section{Liouville theory \label{secliou}}
 
-\subsection{Spectrum \label{secspe}}
+\subsection{Definition and spectrum \label{secspe}}
 
 We assume 
 \begin{itemize}
@@ -2838,9 +2838,9 @@ Therefore, the spectrum must be diagonal,
 \end{align}
 where the $\frac12$ factor in front of the integral over $\alpha$ is meant to eliminate the redundancy which comes from the reflection relation $\mathcal{V}_\alpha=\mathcal{V}_{Q-\alpha}$. 
 
-We assume that the spectrum \eqref{sad} that we obtained for $c>1$ also holds for any $c\in\mathbb{C}$ by analyticity in $\alpha$. 
+We assume that the spectrum \eqref{sad} that we obtained for $c>1$ also holds for any $c\in\mathbb{C}$ by analyticity. 
 (If $c\notin\mathbb{R}$  this gives us $\Delta \in \frac{c-1}{24} + \mathbb{R}_+$ as the correct interpretation of $\Delta \in \left[\frac{c-1}{24},\infty\right[$.)
-A subtlety occurs if the line $\alpha \in \frac{Q}{2}+i\mathbb{R}$ contains degenerate values $\alpha_{\langle r, s\rangle}$, which happens if and only if $c\leq 1$. 
+A subtlety occurs if the line $\alpha \in \frac{Q}{2}+i\mathbb{R}$ contains degenerate values $\alpha_{\langle r, s\rangle}$, which happens if and only if $c\leq 1$ i.e. $Q\in i\mathbb{R}$. 
 These degenerate values would lead to singularities in the decomposition \eqref{fsd} of four-point functions into conformal blocks, as the conformal block $\mathcal{F}_{\Delta_s}^{(s)}(s_i|z_i)$ has poles at $\Delta_s = \Delta_{\langle r, s\rangle}$. 
 The solution is simply to replace the line $\alpha \in \frac{Q}{2} + i\mathbb{R} = i\mathbb{R}$ with the slightly shifted line 
 \begin{align}
@@ -2850,7 +2850,10 @@ and the four-point function will turn out to be independent of the value of the 
 This subtlety with the spectrum is a first hint that something special happens if $c\leq 1$ -- we will find subtleties with the three-point structure constants too. 
 
 So the spectrum of Liouville theory does not contain any degenerate representation. 
-Nevertheless, we make the crucial assumption that degenerate fields exist, and in particular obey the axioms of associativity of OPEs, and single-valuedness of correlation functions.
+Nevertheless, we make the crucial assumption 
+\begin{itemize}
+ \item that degenerate fields exist, and in particular obey the axioms of associativity of OPEs, and single-valuedness of correlation functions.
+\end{itemize}
 This assumption will allow us to consider four-point functions that obey BPZ differential equations, and lead to simple crossing symmetry equations.
 
 \subsection{The reflection relation and its consequences}
@@ -2867,10 +2870,10 @@ where $R(\alpha)$ is the \textbf{\boldmath reflection coefficient}\index{reflect
  R(\alpha)R(Q-\alpha)=1\ ,
 \label{rrr}
 \end{align}
-which in particular implies $R(\frac{Q}{2})\in\{1, -1\}$.
+so that in particular $R(\frac{Q}{2})\in\{1, -1\}$.
 By the reflection relation, commutativity \eqref{comm}, and conformal symmetry \eqref{fzz}, a two-point function must be of the type 
 \begin{align}
- \left\langle V_{\alpha_1}(z_1,\bar{z}_1) V_{\alpha_2}(z_2,\bar{z}_2)\right\rangle = c(\alpha_1) \Big\{ \delta(Q-\alpha_1-\alpha_2) + R(\alpha_1)\delta(\alpha_1-\alpha_2)\Big\} |z_{12}|^{-4\Delta(\alpha_1)}\ , 
+ \Big\langle V_{\alpha_1}(z_1,\bar{z}_1) V_{\alpha_2}(z_2,\bar{z}_2)\Big\rangle = c(\alpha_1) \Big\{ \delta(Q-\alpha_1-\alpha_2) + R(\alpha_1)\delta(\alpha_1-\alpha_2)\Big\} |z_{12}|^{-4\Delta(\alpha_1)}\ , 
 \label{vvc}
 \end{align}
 where the coefficient $c(\alpha)$ must obey $c(\alpha)=c(Q-\alpha)$, and is otherwise undetermined.
@@ -3005,7 +3008,7 @@ relations between the structure constants of the $V_{\langle 2,1 \rangle}V_\alph
 \end{align}
 Consider now the four-point function
 \begin{align}
- \left\langle V_{\langle 2,1 \rangle}(x) V_\alpha(0) V_{Q-\alpha}(\infty) V_{\langle 2,1 \rangle}(1)\right\rangle\ .
+ \Big\langle V_{\langle 2,1 \rangle}(x) V_\alpha(0) V_{Q-\alpha}(\infty) V_{\langle 2,1 \rangle}(1)\Big\rangle\ .
 \label{zvv}
 \end{align}
 The decompositions \eqref{zsc} of this four-point function involve the conformal blocks
@@ -3133,9 +3136,9 @@ The solution $\hat\Upsilon_b(x)$ of these equations can actually be constructed 
  \boxed{ \hat{\Upsilon}_b(x) = \frac{1}{\Upsilon_{ib}(-ix+ib)} }\ ,
 \label{tub}
 \end{align}
-which is therefore defined for $\Im b < 0$. 
-For any $c\notin ]-\infty, 1] \cup [25,\infty[$, there is a choice of $b$ such that $\Re b>0$ and $\Im b<0$, and both functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$ exist. 
-Since they obey essentially identical shift equations, their ratio is essentially an elliptic function \cite{zam05}. 
+which exists for $\Im b < 0$. 
+For any $c\notin ]-\infty, 1] \cup [25,\infty[$, there is a choice of $b$ such that $\Re b>0$ and $\Im b<0$. 
+Both functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$ exist and obey shift equations that are essentially the same, so their ratio is essentially an elliptic function \cite{zam05}. 
 
 Let us discuss the properties of $\Upsilon_b(x)$. 
 We first notice that the function $\Upsilon_b(Q-x)$ obeys the same equations as $\Upsilon_b(x)$, which suggests 
@@ -3243,7 +3246,7 @@ It turns out that for each value of the central charge $c\in\mathbb{C}$, either 
  \end{tabular}
  \label{ccr}
 \end{align}
-In addition, there is a proposed proof \cite{tes03b} of crossing symmetry for $c\notin ]-\infty, 1]$ (with the DOZZ structure constant $C$).
+In addition, there is a proposed proof \cite{tes03b} of crossing symmetry for $c\notin ]-\infty, 1]$.
 Let us also mention that Liouville theory is consistent on the torus \cite{hjs09, rs15}, although its partition function is infinite. 
 
 So $C$ is a valid structure constant wherever it is defined, whereas $\hat C$ is valid only for $c\in ]-\infty, 1]$ although it is defined for $c\notin [25,\infty[$.
@@ -3299,7 +3302,7 @@ Consider the relative positions of these cones, and of the integration line for 
 \node[blue, draw,circle,inner sep=1pt,fill] at (2, 0) {};
 \node[above right] at (2,0) {$Q$};
  \end{tikzpicture}
- \vspace{5mm}
+ \vspace{3mm}
  \\
  c\in ]-\infty, 1] & c\notin ]-\infty, 1] \cup [25,\infty[ & c\in [25,\infty[
 \end{array}
@@ -3313,9 +3316,9 @@ So we cannot continue the four-point function from $c\in ]-\infty, 1]$ to a larg
 
 Let us now discuss the uniqueness of Liouville theory, as defined by our assumptions in Section \ref{secspe}. 
 We saw that three-point structures constants are uniquely determined by shift equations if $c\in ]-\infty, 1] \cup [25,\infty[$, so that Liouville theory is unique for these values of $c$. 
-For the other values of $c$, we have $b^2\notin\mathbb{R}$, and we can find alternative solutions of the equations \eqref{upup}, by multiplying $\Upsilon_b(x)$ with elliptic functions -- meromorphic functions $\theta(x)$ such that $\theta(x+b)=\theta(x+\frac{1}{b}) = \theta(x)$.
-This leads to alternative solutions of the shift equations.
-But these alternative structure constants have no reason to lead to crossing symmetric four-point functions, and it seems likely that Liouville theory is unique for any $c\in\mathbb{C}$, although this would be difficult to prove. 
+For the other values of $c$, we have $b^2\notin\mathbb{R}$, and we can find alternative solutions of the equations \eqref{upup} for $\Upsilon_b(x)$, by multiplying $\Upsilon_b(x)$ with elliptic functions -- meromorphic functions $\theta(x)$ such that $\theta(x+b)=\theta(x+\frac{1}{b}) = \theta(x)$.
+This leads to alternative solutions of the shift equations for structure constants.
+But the resulting alternative structure constants have no reason to lead to crossing symmetric four-point functions, and it seems likely that Liouville theory is unique for any $c\in\mathbb{C}$, although this would be difficult to prove. 
 It would also be interesting to investigate whether Liouville theory could be generalized by relaxing some of our defining assumptions. 
 For example, it turns out that nothing new can be obtained by relaxing our assumption that the multiplicities of representations in the spectrum do not exceed one, and allowing finite multiplicities. (See Exercise \ref{exomul}.)
 
@@ -3330,7 +3333,7 @@ If on the other hand $c\notin ]-\infty, 1]$, we use the structure constant $C_{\
 \end{align}
 However, it turns out that the OPE $V_{\alpha_1}V_{\alpha_2}$ does not vanish, in other words $C_{\alpha_1,\alpha_2,\alpha_3}$ does not vanish when considered as a distribution.
 To see this, let us plot the poles of the OPE coefficient $C_{\alpha_1,\alpha_2}^\alpha = C_{\alpha_1,\alpha_2,Q-\alpha}$, viewed as a function of $\alpha$.
-These poles lie on cones, which we draw in the fashion of eq. \eqref{lines}, together with the line  of integration $\alpha\in \frac{Q}{2}+i{\mathbb{R}}$, 
+These poles lie on cones, which we draw in the fashion of eq. \eqref{lines}, together with the line  of integration $\alpha\in \frac{Q}{2}+i{\mathbb{R}}$:
 \begin{align}
  \newcommand{\polewedge}[3]{
 \begin{scope}[#1]
@@ -3341,7 +3344,7 @@ These poles lie on cones, which we draw in the fashion of eq. \eqref{lines}, tog
 }
  \begin{tikzpicture}[baseline=(current  bounding  box.center)]
   \draw[-latex] (-5,0) -- (0, 0) node[above left] {$0$} -- (6,0) node [above] {$\alpha$};
-  \clip (-5, -4) -- (-5, 4) -- (6, 4) -- (6, -4) -- cycle;
+  \clip (-5, -3.5) -- (-5, 3.5) -- (6, 3.5) -- (6, -3.5) -- cycle;
   \draw (0, -4.5) -- (0, 4.5);
   \draw[ultra thick, red] (.5, -4.5) -- (.5, 4.5);
   \polewedge{shift = {(0, .7)}, rotate = 180}{$\alpha_1-\alpha_2$}{above left};
@@ -3355,9 +3358,9 @@ These poles lie on cones, which we draw in the fashion of eq. \eqref{lines}, tog
  \end{tikzpicture}
 \end{align}
 In this picture, we have assumed $\alpha_1,\alpha_2\in \frac{Q}{2}+i{\mathbb{R}}$, so that the corresponding representations belong to the spectrum.
-If we now analytically continue the OPE to a value $\alpha_2=\alpha_{\langle r,s \rangle}$, then poles from different sides of the line of integration must coincide.
-The approach of converging poles on the two sides of the line of integration makes the integral divergent at $\alpha_2=\alpha_{\langle r,s \rangle}$. 
-To avoid the divergences, we deform the integration line to the right, while picking residues at poles that cross the line,
+If we analytically continue the OPE to a value $\alpha_2=\alpha_{\langle r,s \rangle}$, then poles from different sides of the line of integration must coincide, so some poles have to cross the line. 
+Let us deform the integration line to the right, so that poles cross it from right to left only.
+We now draw the deformed line, and the poles that have crossed it:
 \begin{align}
  % \alpha_2 = \alpha_{\langle 3, 4\rangle}
 \newcommand{\polewedge}[4]{
@@ -3387,8 +3390,8 @@ To avoid the divergences, we deform the integration line to the right, while pic
   \draw[ultra thick, red, rounded corners = 6] (.5, -4.5) -- (.5, -2.7) -- (2.1, -1.9) -- (.5, -1.1) -- (.5, 1.2) -- (2.1, 2) -- (.5, 2.8) -- (.5, 4.5);
  \end{tikzpicture}
 \end{align}
-The integral along the deformed line of integration now remains convergent, and goes to zero as $\alpha_2\to \alpha_{\langle r,s \rangle}$.
-The residues however have finite limits, and we obtain an OPE of the type of eq. \eqref{vrsv}, with 
+The integral along the deformed line goes to zero as $\alpha_2\to \alpha_{\langle r,s \rangle}$, while the residues of the poles have finite limits.
+We obtain an OPE of the type of eq. \eqref{vrsv}, with 
 \begin{align}
  \boxed{C_{i,j}^{\langle r,s \rangle}(\alpha_1) = \underset{\alpha_2\to \alpha_{\langle r,s \rangle}}{\lim}\ \underset{\alpha=\alpha_1+\alpha_2+ib+jb^{-1}}{\operatorname{ Res}}\ C_{\alpha_1,\alpha_2,Q-\alpha}}\ .
 \label{crs}
