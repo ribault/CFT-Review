@@ -1,5 +1,7 @@
 
-\documentclass[12pt,a4paper,notitlepage]{report}
+\documentclass[12pt, a4paper, notitlepage, twoside]{report}
+
+\raggedbottom
 
 \RequirePackage[l2tabu, orthodox]{nag}
 
@@ -2814,7 +2816,7 @@ We will however see that analyticity in $b$ breaks down on the $c\leq 1$ line.
 Let us assume $c>1$ for a moment, and determine the spectrum from the unitarity and analyticity assumptions. 
 The set of values of $\alpha$ which obey the unitarity condition $\Delta(\alpha)> 0$ is the union of the segment $\alpha\in]0,Q[$ and the line $\alpha \in \frac{Q}{2}+i{\mathbb{R}}$:
 \begin{align}
- \begin{tikzpicture}[scale = .8, baseline=(current  bounding  box.center)]
+ \begin{tikzpicture}[scale = .7, baseline=(current  bounding  box.center)]
   \draw[-latex, very thin] (-1, 0) -- (0, 0) node[below right] {$0$} -- (2, 0) node[below right] {$\frac{Q}{2}$} -- (4, 0) node [below] {$Q$} -- (5, 0) node[above] {$\alpha$};
   \draw[red, ultra thick, dashed] (0, 0) -- (4, 0);
   \draw[red, ultra thick] (2, -3) -- (2, 3);
