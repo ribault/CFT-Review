@@ -14,6 +14,7 @@
 \usepackage{multirow}
 
 \usepackage{underbracket}
+% Depending on which version of underbracket.sty is used, the command \cunderbracket can cause an error when its arguments include raised or lowered text, as in \cunderbracket{J^a}{(z)K_{bc}}{(J^bJ^c)}(y) .
 
 \usepackage{pgf}
 \usepackage{tikz}
@@ -584,7 +585,7 @@ The classical theory consists in the dynamics of the fundamental field, subject 
  \frac{\delta }{\delta \phi(x')} \int dx L[\phi](x) = 0 \ ,
 \end{align}
  where $\frac{\delta}{\delta\phi(x') } $ is a functional derivative.
-The integration measure then contains the additional information which is necessary for building a quantum theory form the classical theory. 
+The integration measure then contains the additional information which is necessary for building a quantum theory from the classical theory. 
 
 This contrasts with the bootstrap approach, which does not assume a classical theory to exist.
 Models constructed with the bootstrap approach may nevertheless have one or several classical limits. (See Section \ref{seclld} for the case of Liouville theory.)
@@ -623,10 +624,9 @@ Firstly, some particular systems are invariant under scale transformations, for 
 Secondly, by rescaling a quantum field theory to very small or large scales in a controlled way, one often reaches a scale-invariant theory (called a fixed point of the renormalization group flow).
 That new theory can be nontrivial, and helpful for the understanding of the original theory.
 
-It may seem reasonable to study quantum field theories which are invariant under translations, rotations and dilatations. 
-But in order to have access to the powerful methods and results which are the subject of this review, we actually need much more symmetry assumptions.
-The surprising fact is that many interesting systems do obey these further assumptions, which follow neither from the invariances under translations, rotations and dilatations, nor in many cases from physically compelling reasons.
-We will mostly justify these further assumptions by formal considerations, which are not physically or mathematically unavoidable. 
+It may seem reasonable to study quantum field theories that are invariant under translations, rotations and dilatations. 
+Surprisingly, many interesting systems have much more symmetry, which makes them accessible to the powerful methods that are the subject of this review.
+In the absence of physically compelling reasons for these further symmetries, we will try to provide formal justifications.
 
 A first formal consideration is that translations, rotations and dilatations are all \textbf{\boldmath conformal transformations}\index{conformal transformation}, that is transformations which preserve angles, and therefore which rescale the metric by a real factor.
 But they are not the only conformal transformations: another one is the inversion
@@ -5525,7 +5525,6 @@ This leads to the following fusion rules:
 So, while the spectral flow number $w$ is not conserved, fusion violates it by at most one unit.
 This can alternatively be shown at the level of correlation functions by studying how spectral flow affects the Ward identities and Knizhnik-Zamolodchikov equations \cite{rib05}.
 
-
 \section{Exercises}
 
 \begin{exo}[Normalization of OPE coefficients in free bosonic theories]
@@ -5558,9 +5557,12 @@ Prove eq. \eqref{clll} by showing that both sides have the same value at $\alpha
 
 \begin{exo}[Sugawara construction of a Virasoro field]
  ~\label{exosug}
-Compute the $TJ^a$ OPE \eqref{tja}, by applying Wick's theorem to $\cunderbracket{J^a}{(z) K_{bc}}{(J^bJ^c)}(y)$, going through the following intermediate steps:
+Compute the $TJ^a$ OPE \eqref{tja}, by applying Wick's theorem to 
+$\cunderbracket{J^a}{(z)K_{bc}}{(J^bJ^c)}(y)$, 
+going through the following intermediate steps:
 \begin{align}
- \cunderbracket{J^a}{(z)}{(J^bJ_b)}(y) &= \frac{1}{2\pi i}\oint_y\frac{dx}{x-y}\left(\frac{kJ^a(y)}{(x-z)^2} + \frac{f^{ab}_{c}J^c(x)J_b(y)}{z-x} + \frac{kJ^a(x)}{(y-z)^2} - \frac{f^{ab}_{c}J^c(x)J_b(y)}{z-y}\right)  ,
+ \cunderbracket{J^a}{(z)}{(J^bJ_b)}(y) 
+ &= \frac{1}{2\pi i}\oint_y\frac{dx}{x-y}\left(\frac{kJ^a(y)}{(x-z)^2} + \frac{f^{ab}_{c}J^c(x)J_b(y)}{z-x} + \frac{kJ^a(x)}{(y-z)^2} - \frac{f^{ab}_{c}J^c(x)J_b(y)}{z-y}\right)  ,
 \\
 & = \frac{2kJ^a(y)}{(y-z)^2} + \frac{f^{ab}_c f^{dc}_b J_d(y)}{(y-z)^2} 
  = 2(k+g) {\frac{\partial}{\partial z}} \frac{J^a(z)}{y-z} + O(1)\ .
