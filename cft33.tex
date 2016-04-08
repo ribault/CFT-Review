@@ -2598,8 +2598,8 @@ where the coefficients $c^{(s)}_\pm$ and $c^{(t)}_\pm$ obey the relations
 = \frac{\gamma(A)\gamma(B)}{\gamma(C)\gamma(A+B-C)}\ ,
 \label{csp}
 \\
- \frac{c^{(s)}_-}{c^{(t)}_-} &= \frac{F_{++}}{F_{--}} \frac{1}{\det F}
-= \frac{\gamma(C-1)\gamma(C-A-B+1)}{\gamma(C-A)\gamma(C-B)}\ , 
+ \frac{c^{(s)}_+}{c^{(t)}_+} &= \frac{F_{--}}{F_{++}} \frac{1}{\det F}
+= \frac{\gamma(C-A)\gamma(C-B)}{\gamma(C)\gamma(C-A-B)}\ , 
 \label{csm}
 \\
  \frac{c^{(s)}_+}{c^{(s)}_-} & = -\frac{F_{-+}F_{--}}{F_{++}F_{+-}}
@@ -3000,15 +3000,30 @@ is an $\alpha$-independent constant, which we choose to be one,
 \end{align}
 This amounts to assuming that $V_{\langle 1,1 \rangle}$ is the identity field. 
 
-Consider now the associativity of the double OPE
-$V_{\langle 2,1 \rangle}V_{\langle 1,2 \rangle}V_\alpha$.
-Depending on which OPE $V_{\langle 2,1 \rangle}V_\alpha$ or $V_{\langle 1,2 \rangle}V_\alpha$ we perform first, we obtain two different expressions for the result.
-This leads to 
-relations between the structure constants of the $V_{\langle 2,1 \rangle}V_\alpha$ and $V_{\langle 1,2 \rangle}V_\alpha$ OPEs, in particular
+Let us consider the four-point function 
+\begin{align}
+ \Big\langle V_{\langle 2,1\rangle}(x) V_\alpha(0) V_{\langle 1, 2\rangle}(\infty) V_{\frac{3Q}{2}-\alpha}(1)\Big\rangle\ .
+\end{align}
+The $s$- and $t$-channel decompositions \eqref{zsc} of this four-point function each involve only one term $c_+^{(s)}\left|\mathcal{F}_+^{(s)}\right|^2 = c_+^{(t)}\left|\mathcal{F}_+^{(t)}\right|^2$, as dictated by the fusion rules of the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1, 2\rangle}$. 
+The coefficients $c_+^{(s)}$ and $c_+^{(t)}$ can be expressed as OPE structure constants,
+\begin{align}
+ c_+^{(s)} &= C_+(\alpha)\tilde{C}_+(\alpha-\tfrac{b}{2}) \ ,
+ \\
+ c_+^{(t)} &= \tilde{C}_+(\alpha)C_+(\alpha-\tfrac{1}{2b})\ .
+\end{align}
+The ratio of these coefficients is given by eq. \eqref{csm}, which boils down to $1$ in our case (due to $A=0$). 
+We therefore obtain 
 \begin{align}
  C_+(\alpha)\tilde{C}_+(\alpha-\tfrac{b}{2}) = \tilde{C}_+(\alpha)C_+(\alpha-\tfrac{1}{2b})\ .
 \label{ctc}
 \end{align}
+As shown in Exercise \ref{exonorm}, this implies that there is a field normalization such that 
+\begin{align}
+ \boxed{C_+(\alpha) = \tilde{C}_+(\alpha) = 1}\ ,
+\label{cco}
+\end{align}
+and we adopt this normalization. 
+
 Consider now the four-point function
 \begin{align}
  \Big\langle V_{\langle 2,1 \rangle}(x) V_\alpha(0) V_{Q-\alpha}(\infty) V_{\langle 2,1 \rangle}(1)\Big\rangle\ .
@@ -3038,11 +3053,11 @@ The decompositions \eqref{zsc} of this four-point function involve the conformal
 \end{align}
 The coefficients $c^{(s)}_\pm,c^{(t)}_\pm$ of the decompositions of the four-point function can now be expressed in terms of OPE structure constants, with each triangle in the above diagrams corresponding to one structure constant, so that 
 \begin{align}
- c^{(s)}_+ &= C_-(\alpha-\tfrac{b}{2})C_+(\alpha) = C_+(\alpha)^2 \frac{R(\alpha-\tfrac{b}{2})}{R(\alpha)}\ ,
+ c^{(s)}_+ &= C_-(\alpha-\tfrac{b}{2})C_+(\alpha) = \frac{R(\alpha-\tfrac{b}{2})}{R(\alpha)}\ ,
 \\
-c^{(t)}_- & = C_-(-\tfrac{b}{2}) C_0(\alpha)= C_+(0)\frac{R(-\tfrac{b}{2})}{R(0)}\ ,
+c^{(t)}_- & = C_-(-\tfrac{b}{2}) C_0(\alpha)= \frac{R(-\tfrac{b}{2})}{R(0)}\ ,
 \end{align}
-where we used the equations \eqref{cmcp} and \eqref{cza}.
+where we used the equations \eqref{cmcp}, \eqref{cza} and \eqref{cco}.
 The coefficients $c^{(s)}_+$ and $c^{(t)}_-$ are however related by eq. \eqref{csp}, with
 \begin{align}
  \left\{\begin{array}{l}  \alpha_1 = \alpha \\ \alpha_2 = Q-\alpha \\ \alpha_3 = -\frac{b}{2} \end{array}\right. \quad \Rightarrow \quad \left\{\begin{array}{l}  A = 1-bQ \\ B = 1+b(2\alpha-2Q) \\ C=1+b(2\alpha-Q) \end{array}\right.  \ ,
@@ -3050,18 +3065,11 @@ The coefficients $c^{(s)}_+$ and $c^{(t)}_-$ are however related by eq. \eqref{c
 so that $C-1=B-A$.
 We thus obtain
 \begin{align}
- \frac{C_+(\alpha)^2}{C_+(0)} \frac{R(\alpha-\tfrac{b}{2})R(0)}{R(\alpha)R(-\tfrac{b}{2})} = 
+ \frac{R(\alpha-\tfrac{b}{2})R(0)}{R(\alpha)R(-\tfrac{b}{2})} = 
 \frac{\gamma(2bQ)}{\gamma(bQ)} \frac{\gamma(b(Q-2\alpha))}{\gamma(b(2Q-2\alpha))}\ .
 \label{crg}
 \end{align}
-Using a field renormalization for setting $R(\alpha)=1$ would therefore lead to $C_+(\alpha)$ having branch cuts, due to $\gamma(x)$ having simple poles and zeros.
-We will rather work with a field normalization such that  
-\begin{align}
- \boxed{C_+(\alpha) = \tilde{C}_+(\alpha) = 1}\ . 
-\label{cco}
-\end{align}
-The existence of such a normalization follows from eq. \eqref{ctc}, see Exercise \ref{exonorm}.
-Let us now find $R(\alpha)$ by solving eq. \eqref{crg} with $C_+(\alpha)=1$, together with the analogous equation which would follow from studying $ \left\langle V_{\langle 1,2 \rangle}(x) V_\alpha(0) V_{Q-\alpha}(\infty) V_{\langle 1,2 \rangle}(1)\right\rangle$ instead of $\left\langle V_{\langle 2,1 \rangle}(x) V_\alpha(0) V_{Q-\alpha}(\infty) V_{\langle 2,1 \rangle}(1)\right\rangle$, 
+Similarly, studying a four-point function with the degenerate field $V_{\langle 1,2 \rangle}$ instead of $V_{\langle 2,1 \rangle}$ would lead to the dual equation
 \begin{align}
   \frac{R(\alpha-\tfrac{1}{2b})R(0)}{R(\alpha)R(-\tfrac{1}{2b})} = \frac{\gamma(\frac{2Q}{b})}{\gamma(\frac{Q}{b})} \frac{\gamma(\frac{1}{b}(Q-2\alpha))}{\gamma(\frac{1}{b}(2Q-2\alpha))}\ .
 \end{align}
@@ -5626,7 +5634,7 @@ Consider fields $(J,\beta,\gamma)$ such that
 \begin{align}
  J(y)J(z) = \frac{-\frac12}{(y-z)^2} + O(1) \quad , \quad \beta(y)\gamma(z) = \frac{-1}{y-z} + O(1)\ ,
 \end{align}
-and the OPEs $J\beta,J\gamma,\beta\beta,\beta\gamma$ have no singular terms.
+and the OPEs $J\beta,J\gamma,\beta\beta,\gamma\gamma$ have no singular terms.
 Consider the fields 
 \begin{align}
  J^- = -\beta \quad , \quad J^0 = -(\beta\gamma) - bJ \quad , \quad J^+ = (\beta\gamma^2)+2b(\gamma J)+k\partial\gamma\ ,
