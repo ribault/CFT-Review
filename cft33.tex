@@ -2306,7 +2306,7 @@ Zamolodchikov's recursion representation \cite{zz90}
  \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) 
 =  (16q)^{\Delta_s -\frac{Q^2}{4}} x^{\frac{Q^2}{4}-\Delta_1-\Delta_2} (1-x)^{\frac{Q^2}{4}-\Delta_1-\Delta_4} \theta_3(q)^{3Q^2-4(\Delta_1+\Delta_2+\Delta_3+\Delta_4)} H_{\Delta_s}(\Delta_i|q)\ ,
 \end{align}
-which uses the following elliptic variable $q$ and elliptic function $\theta_3(q)$,
+which uses the \textbf{elliptic nome}\index{elliptic nome} $q$ and elliptic function $\theta_3(q)$,
 \begin{align}
  q = \exp -\pi \frac{F(\frac12,\frac12,1,1-x)}{F(\frac12,\frac12,1,x)}  \quad , \quad \theta_3(q) = \sum_{n\in{\mathbb{Z}}} q^{n^2}\ ,
 \end{align}
@@ -2332,7 +2332,7 @@ The recursion representation owes its name to the original definition of the fun
 The recursion representation has the following properties:
 \begin{itemize}
  \item it converges very fast,
-\item it uses an elliptic variable $q$ instead of the natural variable $x$,
+\item it uses the elliptic nome $q$ instead of the natural variable $x$,
 \item it manifestly has the correct poles as a function of $\Delta_s$, namely $\Delta_s \in \{\Delta_{\langle r,s\rangle}\}_{r,s\in {\mathbb{N}}^*}$,
 \item it is manifestly invariant under reflections of all momentums,
 \item it has no known interpretation as a sum over descendents in some basis.
@@ -3935,8 +3935,10 @@ In the case of $(JJ)(z)$, this definition amounts to
 If we furthermore call $\cunderbracket{A}{(y)}{B}(z)$ the singular part of the OPE $A(y)B(z)$, we have
 \begin{align}
  A(y)B(z) = \cunderbracket{A}{(y)}{B}(z) + (AB)(z) + O(y-z)\ .
+ \label{abope}
 \end{align}
-In general $\cunderbracket{A}{(y)}{B}(z) \neq \cunderbracket{B}{(z)}{A}(y)$ although $A(y)B(z)=B(z)A(y)$.
+In general $\cunderbracket{A}{(y)}{B}(z) \neq \cunderbracket{B}{(z)}{A}(y)$ and $(AB)\neq (BA)$ although $A(y)B(z)=B(z)A(y)$.
+(See exercise \ref{exoabba} for the computation of $(AB)-(BA)$.)
 OPEs of normal-ordered products can be computed using \textbf{\boldmath Wick's theorem}\index{Wick's theorem},
 \begin{align}
  \cunderbracket{A}{(z)}{(BC)}(y) = \frac{1}{2\pi i}\oint_y \frac{dx}{x-y}\left(\cunderbracket{A}{(z)}{B}(x)C(y) + B(x)\cunderbracket{A}{(z)}{C}(y)\right)\ .
@@ -5535,6 +5537,21 @@ This can alternatively be shown at the level of correlation functions by studyin
 
 \section{Exercises}
 
+\begin{exo}[Normal-ordered commutator]
+~\label{exoabba}
+Let us consider holomorphic fields $A,B$ such that 
+\begin{align}
+ A(y)B(z) = \sum_{n=0}^N \frac{C_n(z)}{(y-z)^n} + O(y-z)\ ,
+\end{align}
+which is of the type of eq. \eqref{abope} with $C_0 = (AB)$. 
+Compute the expansion of $A(y)B(z)$ near $z=y$ (rather than $y=z$), and deduce the operator product expansion of $B(y)A(z)$. 
+In particular, show that 
+\begin{align}
+ (AB)-(BA) = \sum_{n=1}^N \frac{(-1)^{n+1}}{n!} C_n^{(n)} = C_1'-\frac12 C_2'' + \frac16 C_3''' -\cdots \ .
+\end{align}
+(It is recommended to begin with the cases $N=0$ and $N=1$.)
+\end{exo}
+
 \begin{exo}[Normalization of OPE coefficients in free bosonic theories]
  ~\label{exoone}
 The aim of this exercise is to show that the OPE coefficient in the OPE of $\hat{\mathfrak{u}}_1$-primary fields \eqref{vvoo} can be set to one by renormalizing the fields.
@@ -5589,10 +5606,8 @@ Conclude that the field $T$ satisfies the Virasoro field OPE \eqref{tt} with the
 \begin{exo}[Modified Sugawara construction]
  ~\label{exotqpj}
 Compute the $\hat{T}\hat{T}$ OPE for the modified Sugawara field $\hat{T} = T + Q_a\partial J^a$.
-Show that $\hat{T}$ is not a Virasoro field.
-Then, relax the assumption that $\mathfrak{g}$ be semi-simple.
-The Killing $K^{ab}$ form being degenerate, replace it with a non-degenerate, invariant symmetric tensor $C^{ab}$ in the $J^aJ^b$ OPE \eqref{jajb} and in the definition of $T$ \eqref{tjj}.
-What are now the conditions for $\hat{T}$ to be a Virasoro field? 
+Show that $\hat{T}$ is a Virasoro field, and compute the central charge. 
+Compute the $\hat{T}J^a$ OPE: under which conditions are $J^a$ primary fields with integer dimensions?
 \end{exo}
 
 \begin{exo}[Associativity of the $J^aJ^b\Phi^R$ OPE]
