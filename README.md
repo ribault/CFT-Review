@@ -1,7 +1,7 @@
 CFT-Review
 ==========
 
-A review article on conformal field theory
+A review article on conformal field theory 'cft33.tex', with also a much briefer version 'minimal.tex'. 
 
 
 Why would a review article on theoretical physics end up on GitHub, and not just on [Arxiv](http://arxiv.org/abs/1406.4290)? 
