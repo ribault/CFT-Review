@@ -7,7 +7,7 @@
 
 \usepackage[top=20mm,bottom=20mm,left=25mm,right=25mm]{geometry}
 
-%\usepackage{showkeys}
+\usepackage{showkeys}
 
 \usepackage{amsmath,amssymb,amsfonts}
 
@@ -33,6 +33,7 @@
 \newtheoremstyle{break}{9pt}{9pt}{\itshape}{}{\bfseries}{}{\newline}{}
 \theoremstyle{break}    
 \newtheorem{exo}{Exercise}[chapter]
+\newtheorem{hyp}[exo]{Axiom}
 
 % urlcolor is set to black because unwanted url links appear in the bibliography
 \usepackage[colorlinks=true,linktoc=all,linkcolor=black,citecolor=red,urlcolor=blue]{hyperref}
@@ -95,7 +96,7 @@ we will lift these assumptions.
 We will indeed be studying not only rational, but also non-rational theories such as Liouville theory.
 Non-rational theories do not necessarily have a vacuum state, and assuming their consistency on the torus is of little help for determining their spectrums \cite{rib14c}. 
 
-By definition, rational conformal field theories are have spectrums made of finitely many representations.
+By definition, rational conformal field theories have spectrums made of finitely many representations.
 However, in order to ensure closure under fusion, these representations must have complicated structures.
 In Liouville theory, the spectrum is made of a continuum of representations, but these representations are merely Verma modules, so we will study this theory first.
 Then we will study minimal models, which are rational and therefore less generic and more complicated.
@@ -115,8 +116,8 @@ We take some care to distinguish Virasoro symmetry (Section \ref{seclin}), which
 Virasoro symmetry is encoded in a Virasoro field, while conformal symmetry is encoded in an energy-momentum tensor -- a Virasoro field which obeys the additional assumption \eqref{lvpv}.
 Virasoro symmetry is enough for deriving fusion rules, and even the non-trivial factors in conformal blocks, although for convenience we study conformal blocks only under the assumption of conformal symmetry. 
 
-In Chapter \ref{seccbm}, we introduce and solve the simplest non-trivial two-dimensional conformal field theories: Liouville theory, generalized minimal models, and A-series minimal models, in that order.
-We define these theories by a few simple assumptions on their spectrums and correlation functions, which uniquely determine these quantities.
+In Chapter \ref{seccbm}, we introduce and solve the simplest non-trivial two-dimensional conformal field theories: Liouville theory, generalized minimal models, and A-series minimal models.
+We define these theories by a few simple assumptions on their spectrums and correlation functions.
 We pay particular attention to the three-point structure constants, whose explicit expressions we derive. 
 
 In Chapter \ref{secaff}, we introduce extended symmetry algebras, starting with the affine $\hat{\mathfrak{u}}_1$ algebra.
@@ -126,7 +127,7 @@ We deduce the definition and solution of the $H_3^+$ model from the KZ-BPZ relat
 We then consider WZW models, and in particular the $SU_2$ and $\widetilde{SL}_2(\mathbb{R})$ WZW models. 
 
 In each Chapter, the last Section is devoted to exercises.
-Some exercises are intended to test and improve one's comprehension of the material, but such exercises become scarcer in later Chapters.
+Some exercises are intended to test and improve one's comprehension of the material; such exercises become scarcer in later Chapters.
 Some exercises sketch proofs of results from the main text, in cases when hints and guidance seem warranted.
 And some exercises provide supplementary material about: 
 \begin{itemize}
@@ -182,6 +183,7 @@ In contrast to these texts, we will treat both rational and non-rational theorie
 Moreover, our exclusive use of the bootstrap approach means that we need not assume any previous knowledge of quantum field theory.
 The prerequisites for this text are limited to 
 elementary complex analysis, and some familiarity with Lie algebras and their representations.
+A much abridged version is also available \cite{rib16}.
 
 While this review article mostly presents already known results, the following aspects may be original:
 \begin{itemize}
@@ -233,11 +235,11 @@ I have tried to follow some stylistic good practices, such as: providing a click
 
 \section{Acknowledgements}
 
-I am grateful to my colleagues at IPhT Saclay, and in particular to Antoine Duval, Riccardo Guida, Santiago Migliaccio, Vincent Pasquier, and Pierre Ronceray, for the opportunity to give lectures on this subject. I am also grateful to the organizers and participants to the 10th APCTP Focus Program on Liouville, Integrability and Branes, and in particular to Soojong Rey, for including my lectures in an otherwise very advanced workshop. 
+I am grateful to my colleagues at IPhT Saclay, and in particular to Antoine Duval, Riccardo Guida, Santiago Migliaccio, Vincent Pasquier, and Pierre Ronceray, for the opportunity to give lectures on this subject. I am also grateful to the organizers and participants to the 10th APCTP Focus Program on Liouville, Integrability and Branes, and in particular to Soojong Rey, for including my lectures in an otherwise very advanced workshop. Moreover, I am grateful to the organizers and participants to the 2016 Carg\`ese school on Quantum integrable systems, conformal field theory and stochastic processes, for challenging me to introduce the subject in about four hours. (See \cite{rib16}.) 
 
-I wish to thank Philippe Di Francesco, Matthias Gaberdiel, Christoph Keller, Slava Rychkov, Vincent Vargas, and G\'erard Watts, for useful discussions and correspondence.
+I wish to thank Philippe Di Francesco, Sheer El-Showk, Matthias Gaberdiel, Christoph Keller, Miguel Paulos, Slava Rychkov, Vincent Vargas, and G\'erard Watts, for useful discussions and correspondence.
 
-I am grateful to Connor Behan, Fran\c{c}ois David, Quang-Dien Duong, Bruno Le Floch, and Raoul Santachiara, for helpful comments on this text.
+I am grateful to Connor Behan, Fran\c{c}ois David, Quang-Dien Duong, Bruno Le Floch, Omar Foda, and Raoul Santachiara, for helpful comments on this text.
 
 \chapter{Introduction \label{secintr}}
 
@@ -298,7 +300,7 @@ A field can in some respects be thought of as an infinite collection of elementa
 Field theory constrains how these objects behave in relation with the underlying space, for instance by requiring interactions to be local.
 
 So, quantum field theory is particularly well-suited to predicting the outcomes of collisions of particles, whether in the cosmos or in a particle accelerator.
-Such collisions can indeed create or destroy particles, so we need a field theory, and repeating the same collision can produce various outcomes, so we need a probabilistic theory. 
+Such collisions can indeed create or destroy particles, so we need a field theory, and repeating the same collision can produce different outcomes, so we need a probabilistic theory. 
 
 \subsection{Observables}
 
@@ -323,27 +325,18 @@ A vector $\sigma$ and the action $A(\sigma)$ of an operator $A$ on $\sigma$ may 
  \sigma = |\sigma\rangle\ , \\ A(\sigma) = A|\sigma\rangle = |A\sigma\rangle\ .
 \end{array}\right. 
 \end{align}
-Moreover, the spectrum has a sesquilinear \textbf{\boldmath scalar product}\index{scalar product}, so that the product $\langle \tau|\sigma \rangle$ of two states can be interpreted as a probability amplitude.
-This product satisfies
-\begin{align}
-\langle \tau| \lambda_1\sigma_1+\lambda_2\sigma_2\rangle &= \lambda_1 \langle \tau|\sigma_1\rangle + \lambda_2\langle \tau|\sigma_2\rangle\ ,
-\\
-\langle \tau|\sigma \rangle &= \overline{\langle \sigma|\tau\rangle}\ .
-\end{align}
-The \textbf{\boldmath hermitian conjugate}\index{hermitian conjugate} $A^\dagger$ of a linear operator $A$ is then defined by
-\begin{align}
- \langle \tau | A \sigma\rangle = \langle A^\dagger \tau | \sigma\rangle\ .
-\label{lld}
-\end{align}
-If the scalar product is positive definite, then the spectrum is a Hilbert space.
-This is a necessary condition for the theory to have a direct probabilistic interpretation.
+For the theory to have a probabilistic interpretation, we should assume the spectrum to be a Hilbert space, i.e. to have a positive definite Hermitian form. We do not make this assumption, which would exclude many interesting models.
 
-Now, in certain quantum field theories (including conformal field theories), to each state $|\sigma\rangle$ and each point $x$ in space we associate a linear operator on the spectrum $V_\sigma(x)$, and the collection of these operators when $x$ varies is a field. 
-The linear map 
-\begin{align}
- |\sigma \rangle  \ \mapsto \ V_\sigma(x)\ ,
+In quantum field theory, states are supposed to live on constant-time slices of space-time. If space-time is Euclidean, we can take such slices to be spheres surrounding any point $x$. If the theory is invariant under dilatations, such spheres can contract to infinitesimal sizes without loss of information. Therefore, to each state $|\sigma\rangle$ and each point $x$ we associate an object $V_\sigma(x)$, and the collection of these objects when $x$ varies is a field. 
+
+\begin{hyp}[\textbf{\boldmath State-field correspondence}\index{state-field correspondence} or state-operator correspondence]
+~\label{ax:sfc}
+ There is an injective linear map from the spectrum to the space of fields,
+ \begin{align}
+ |\sigma \rangle  \ \mapsto \ V_\sigma(x)\ .
 \end{align}
-is called the \textbf{\boldmath state-field correspondence}\index{state-field correspondence} or state-operator correspondence.
+\end{hyp}
+
 Thinking of the state as a type of particles, the field $V_\sigma(x)$ can be thought of as measuring the presence of such particles at point $x$.
 Then, a \textbf{\boldmath correlation function}\index{correlation function}, here an \textbf{\boldmath $N$-point function}\index{N-point function@$N$-point function}
 \begin{align}
@@ -351,7 +344,11 @@ Then, a \textbf{\boldmath correlation function}\index{correlation function}, her
 \label{pva}
 \end{align}
 is the probability amplitude for the interaction of $N$ particles of types $\sigma_1,\cdots \sigma_N$, located at points $x_1,\cdots x_N$. 
-For the moment, an $N$-point function is a mere notation for a number that linearly depends on $N$ fields. 
+Correlation functions are numbers that linearly depend on fields, in particular 
+\begin{align}
+ \frac{\partial}{\partial x} \left\langle \prod_{i=1}^N V_{\sigma_i}(x_i)\right\rangle = \left\langle \frac{\partial}{\partial x} \prod_{i=1}^N V_{\sigma_i}(x_i)\right\rangle\ ,
+\end{align}
+for any component $x$ of a coordinate $x_i$. 
 Correlation functions will be defined by the equations that they obey, which will be deduced from the assumptions of the bootstrap approach.
 
 To construct a model of quantum field theory is therefore to give principles which uniquely determine a spectrum and a set of correlation functions.
@@ -418,9 +415,9 @@ We will study these data
 in Chapter \ref{seccbm}.  
 \end{itemize}
 Which data are  universal or model-dependent depends on the choice of a symmetry algebra.
-If a model's symmetry algebra $\mathcal{A}$ is actually a subalgebra of a larger symmetry algebra $\mathcal{A}'$, then the representations of $\mathcal{A}$ which appear in the spectrum
-must combine into representations of the larger algebra $\mathcal{A}'$.
-Which combinations can appear is universal data of $\mathcal{A}'$, but model-dependent data from the point of view of the smaller algebra $\mathcal{A}$. 
+If a model's symmetry algebra $\mathfrak{A}$ is actually a subalgebra of a larger symmetry algebra $\mathfrak{A}'$, then the representations of $\mathfrak{A}$ which appear in the spectrum
+must combine into representations of the larger algebra $\mathfrak{A}'$.
+Which combinations can appear is universal data of $\mathfrak{A}'$, but model-dependent data from the point of view of the smaller algebra $\mathfrak{A}$. 
 
 Since a field theory is defined on some space, we can distinguish two types of symmetries: 
 \begin{itemize}
@@ -433,34 +430,38 @@ The distinction between space-time and internal symmetries depends on the choice
 
 \subsection{Consistency conditions \label{seccc}}
 
-The consistency conditions on the correlation functions $\left\langle\prod_{i=1}^n V_{\sigma_i}(x_i)\right\rangle$ are derived from assumptions on the fields $V_{\sigma_i}(x_i)$.
-These assumptions are:
-\begin{enumerate}
- \item \textbf{Commutativity}\index{commutativity} or locality: 
+The consistency conditions on the correlation functions $\left\langle\prod_{i=1}^n V_{\sigma_i}(x_i)\right\rangle$ are derived from axioms on the fields $V_{\sigma_i}(x_i)$:
+
+\begin{hyp}[\textbf{Commutativity}\index{commutativity} or locality]
+\label{ax:col}
 \begin{align}
  \boxed{V_{\sigma_1}(x_1)V_{\sigma_2}(x_2) = V_{\sigma_2}(x_2) V_{\sigma_1}(x_1)}\ ,
 \label{comm}
 \end{align}
-is supposed to hold provided $(x_1,x_2)$ obey some condition.
+provided $(x_1,x_2)$ obey some condition.
 In Minkowski space for instance, $x_1-x_2$ is supposed to be space-like.
 In the two-dimensional Euclidean space, the condition is $x_1\neq x_2$.
-\item \textbf{Associativity}\index{associativity}: 
+\end{hyp}
+\begin{hyp}[\textbf{Associativity}\index{associativity}]
+\label{ax:ass}
 \begin{align}
  \boxed{\left(V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)\right) V_{\sigma_3}(x_3) = V_{\sigma_1}(x_1)  \left(V_{\sigma_2}(x_2) V_{\sigma_3}(x_3)\right)}\ .
 \label{asso}
 \end{align}
+\end{hyp}
 Together with commutativity, this implies that the ordering of fields in correlation functions is indifferent.
-\item Existence of an \textbf{\boldmath OPE}\index{OPE} (operator product expansion):
-\begin{align}
+\begin{hyp}[Existence of an \textbf{\boldmath OPE}\index{OPE} (operator product expansion)]
+ \label{ax:ope}
+ \begin{align}
  \boxed{V_{\sigma_1}(x_1)V_{\sigma_2}(x_2) = \sum_{\sigma\in S} C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2) V_{\sigma}(x_2)}\ ,
 \label{ope}
 \end{align}
 where the \textbf{\boldmath OPE coefficient}\index{OPE coefficient} $C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2)$ is a function (i.e.
 not a field), and the sum runs over a basis of the spectrum $S$. 
 The sum is supposed to converge if $x_1$ and $x_2$ are sufficiently close. 
-Since the spectrum $S$ is in general much smaller than the space of linear operators on $S$, the assumption that the operator $V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)$ is a linear combination of $(V_{\sigma}(x_2))_{\sigma\in S}$ (or more generally $(V_{\sigma}(x))_{\sigma\in S}$) is a nontrivial assumption, which does not follow from the state-field correspondence.
-\end{enumerate}
-Our assumptions do not include the existence of a vacuum state, a frequently encountered axiom of quantum field theory in flat space.
+\end{hyp}
+
+Our axioms do not include the existence of a vacuum state, a frequently encountered axiom of quantum field theory in flat space.
 In Liouville theory this axiom is not satisfied, and in minimal models we can do without it. 
 
 Let us now study how these assumptions constrain the correlation functions.
@@ -518,15 +519,20 @@ Therefore, an OPE coefficient can be decomposed into universal and model-depende
 where $C_{R_1,R_2}^{R_3,\lambda}(x_1,x_2)$ is a model-dependent \textbf{\boldmath structure function}\index{structure function}, and 
 the universal quantity $f_{R_1,R_2}^{R_3,\lambda}(v_i|x_j)$ is a solution of the symmetry equations, which for given values of $R_i$ should be understood as equations on the space of functions of $(v_i,x_j)$.
 The index $\lambda$ labels elements of a basis of solutions of the symmetry equations.
-The number $N_{R_1R_2}^{R_3}\in {\mathbb{N}} \cup \{\infty\}$ of independent solutions is the \textbf{\boldmath fusion multiplicity}\index{fusion multiplicity}, which can be encoded in the \textbf{\boldmath fusion rule}\index{fusion rule}
-\begin{align}
+The number $N_{R_1R_2}^{R_3}\in {\mathbb{N}} \cup \{\infty\}$ of independent solutions is the \textbf{\boldmath fusion multiplicity}\index{fusion multiplicity}. 
+In particular, the field $V_{\sigma_3}$ can appear in a $V_{\sigma_1}V_{\sigma_2}$ OPE only if $N_{R_1R_2}^{R_3}\neq 0$.
+
+\begin{hyp}[\textbf{\boldmath fusion product}\index{fusion product} or \textbf{\boldmath fusion rules}\index{fusion rules}]
+ ~\label{ax:fp}
+ There is a bilinear, commutative, associative product of representations, such that the decomposition of $R_1\times R_2$ into indecomposable representations is 
+ \begin{align}
  R_1 \times R_2  = \sum_{R_3} N_{R_1R_2}^{R_3} R_3 \ . 
 \label{rrnr}
 \end{align}
-The fusion rule is a representation-theoretic notion which encodes some of the universal properties of the OPE.
-In particular, the field $V_{\sigma_3}$ can appear in a $V_{\sigma_1}V_{\sigma_2}$ OPE only if $N_{R_1R_2}^{R_3}\neq 0$.
+\end{hyp}
 
-It is actually possible to define an associative product of representations, called the \textbf{\boldmath fusion product}\index{fusion product}, such that eq. \eqref{rrnr} is the decomposition of the representation $R_1\times R_2$ into indecomposable representations. (See \cite{gab99} for the case of two-dimensional conformal field theory.) 
+In some cases, the fusion product can be constructed explicitly \cite{gab99}. However, all we will need is that it is commutative and associative. 
+
 The fusion product $R_1\times R_2$ is said to have nontrivial multiplicities if $N_{R_1R_2}^{R_3}\geq 2$ for some $R_3$, and trivial multiplicities if $N_{R_1R_2}^{R_3}\in \{0,1\}$, in which case the sum over $\lambda$ in eq. \eqref{clcf} can be omitted.
 A field is called a \textbf{\boldmath simple current}\index{simple current} if the corresponding representation $R$ is such that $R\times R'$ is indecomposable for any $R'$, so that $\sum_{R''} N_{RR'}^{R''} =1$. 
 The fusion product may seem quite similar to a tensor product, but there is an essential difference: while the tensor product is a purely algebraic notion, the definition of the fusion product involves the state-field correspondence, and therefore the space on which the field theory lives. 
@@ -549,7 +555,7 @@ With the help of symmetry, these numbers can be reduced to the number of represe
 \subsection{So what is the Lagrangian of your model? \label{seclagr}}
 
 In order to construct and to solve conformal field theories, we will only use the bootstrap approach.
-In quantum field theory, this method is much less widely used than the Lagrangian method, which is based on functional integrals over spaces of fields.
+In quantum field theory, this method is less widely used than the Lagrangian method, which is based on functional integrals over spaces of fields.
 In two-dimensional conformal field theory, however, the bootstrap approach is particularly effective, while the Lagrangian method is often needlessly complicated, lacking in rigor, or downright not applicable. 
 There are nevertheless cases when the Lagrangian method is useful, in particular for 
 \begin{enumerate}
@@ -660,7 +666,7 @@ Actually, any holomorphic function $h(z)$ defines a conformal transformation,
 which transforms the metric into $dfd\bar{f} = |h'(z)|^2 dzd\bar{z}$, and is therefore angle-preserving.
 One may object that the only holomorphic functions on the sphere are the functions $f_g$ \eqref{gisl} which encode the global conformal transformations.
 And indeed, any further conformal transformation must have singularities, and cannot be one-to-one.
-We could be content with considering transformations which would be defined only on some region.
+We could consider transformations that would be defined only on some subset of the Riemann sphere, where there would be no singularities.
 We will adopt a different point of view, and interpret a singularity of $h(z)$ at $z=z_0$ as meaning that a field $V_\sigma(z_0)$ transforms non-trivially.
 This makes sense not only with a correlation function $\left\langle V_{\sigma}(z_0)\cdots \right\rangle $ which manifestly involves a field at $z=z_0$, 
 but also with arbitrary correlation functions.
@@ -718,7 +724,7 @@ Another example is the long-range Ising model.
 
 In a quantum field theory with conformal symmetry, the spectrum is not a representation of the Witt algebra, but of 
 its central extension, called the \textbf{\boldmath Virasoro algebra}\index{Virasoro algebra} $\mathfrak{V}$.
-This is a general phenomenon in quantum theories: since states are defined up to scalar factors, the action of a symmetry group on space, which obeys $g\cdot(g'\cdot x) = (gg')\cdot x$, need only translate into a projective action on states, which obeys $g\cdot(g'\cdot|\sigma\rangle) = \lambda(g,g') (gg')\cdot |\sigma\rangle$ for some scalar factor $\lambda(g,g')$. 
+This is a general phenomenon in quantum theories: since states are defined up to scalar factors, the action of a symmetry group on space, which obeys $g\cdot(g'\cdot x) = (gg')\cdot x$, needs only translate into a projective action on states, which obeys $g\cdot(g'\cdot|\sigma\rangle) = \lambda(g,g') (gg')\cdot |\sigma\rangle$ for some scalar factor $\lambda(g,g')$. 
 And a projective action of a symmetry algebra is equivalent to an action of the corresponding centrally-extended algebra. 
 So, the Virasoro algebra is defined by the generators $(L_n)_{n\in {\mathbb{Z}}}$, which correspond to the generators $(\ell_n)_{n\in \mathbb{Z}}$ of the Witt algebra, and the centrally-extended commutation relations
 \begin{align}
@@ -762,17 +768,15 @@ $\mathfrak{V}\times \overline{\mathfrak{V}}$ & full & $(L_n,\bar{L}_m)$ & $(c,c)
 \end{align}
 Considering $z$ and $\bar{z}$ as independent amounts to complexifying our two-dimensional real space ${\mathbb{C}}={\mathbb{R}}^2$ into the two-dimensional complex space ${\mathbb{C}}^2$.
 We must however insist that the correlation functions, which are the $z$-dependent observables of the theory, do live on the original space and not on ${\mathbb{C}}^2$.
-Functions such as $z^\frac12$ may appear at intermediate steps of calculations, but correlation functions can only involve single-valued functions such as $|z|$.
+Functions such as $\sqrt{z}$ may appear at intermediate steps of calculations, but correlation functions can only involve single-valued functions such as $|z|$.
 So, although the space ${\mathbb{C}}^2$ and the symmetry algebra $\mathfrak{V}\times \overline{\mathfrak{V}}$  have factorized forms, the theory itself is not the mere juxtaposition of two independent theories. 
-We thus reach a definition of 
-\begin{center}
-\fbox{
-\begin{minipage}{0.9\textwidth}
-Two-dimensional \textbf{\boldmath conformal field theory}\index{conformal field theory}: the study of two-dimensional quantum field theories which possess a $\mathfrak{V}\times \overline{\mathfrak{V}}$ symmetry algebra such that $L_n$ and $\bar{L}_n$ generate conformal transformations. 
-\end{minipage}
-}
-\end{center}
-The assumption about the geometrical interpretation of $L_n$ and $\bar{L}_n$ is very important, as it is the only link between the symmetry algebra and the two-dimensional space.
+
+\begin{hyp}[Symmetry algebra of two-dimensional conformal field theory]
+ ~\label{ax:sa}
+ We have a $\mathfrak{V}\times \overline{\mathfrak{V}}$ symmetry algebra, such that $L_n$ and $\bar{L}_n$ generate conformal transformations. 
+\end{hyp}
+
+The assumption about the geometrical interpretation of $L_n$ and $\bar{L}_n$ is important, as it is the only link between the symmetry algebra and the two-dimensional space.
 Some conformal field theories have several Virasoro symmetry algebras, only one of which corresponds to conformal symmetry.
 In the free boson theory, it is even possible to find Virasoro algebras with all possible values of the central charge. (See Section \ref{secaua}.)
 
@@ -828,7 +832,6 @@ Conjugates of product operators $\prod_i L_{n_i}$ can then be deduced using the 
  (AB)^\dagger = B^\dagger A^\dagger\ , 
 \label{abba}
 \end{align}
-which follows from the definition \eqref{lld} of the hermitian conjugate.
 At the level of the commutator $[A,B]=AB-BA$, this implies
 the rule $[A,B]^\dagger = -[A^\dagger,B^\dagger]$. 
 Using this rule, it is possible to check that eq. \eqref{ldn} is compatible with the commutation relations \eqref{vir} provided
