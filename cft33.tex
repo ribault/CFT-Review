@@ -685,7 +685,8 @@ This space is an infinite-dimensional Lie group, which must include $PSL_2({\mat
 For technical simplicity, we will instead describe the associated Lie algebra of infinitesimal transformations.
 The structure of this algebra is worked out by considering transformations close to the identity, 
 \begin{align}
- f_{\epsilon}(z) = z + \epsilon(z) \quad \text{with} \quad \epsilon(z) = \sum_{n\in{\mathbb{Z}}} \epsilon_n z^{n+1}\ .
+ f_{\epsilon}(z) = z + \epsilon(z) \quad \text{with} \quad \epsilon(z) = \sum_{n\in{\mathbb{Z}}} \epsilon_n z^{n+1} \quad 
+ \text{where} \quad \epsilon_n\in\mathbb{C}\ .
 \label{sen}
 \end{align}
 To each transformation $f_\epsilon$ we associate an infinitesimal differential operator $D_\epsilon$ such that for any function $F(z,\bar{z})$ we have 
@@ -698,11 +699,16 @@ and we find
  D_\epsilon = \sum_{n\in {\mathbb{Z}}} \epsilon_n\ell_n  \quad \text{where} \quad \boxed{\ell_n= -z^{n+1}{\frac{\partial}{\partial z}}} \ .
 \label{elln}
 \end{align}
-The algebra of local conformal transformations, called the \textbf{\boldmath Witt algebra}\index{Witt algebra}, has the generators $(\ell_n)_{n\in {\mathbb{Z}}}$ and the commutation relations 
+The differential operators $(\ell_n)_{n\in {\mathbb{Z}}}$ generate the \textbf{\boldmath Witt algebra}\index{Witt algebra}, whose commutation relations are
 \begin{align}
  \boxed{[\ell_n,\ell_m]=(n-m)\ell_{n+m}}\ .
 \end{align}
-The generators $(\ell_{-1},\ell_0,\ell_1)$ correspond to global transformations, and the rest to local transformations. (See Exercise \ref{exomoz}.)
+Differential operators $D_\epsilon +\overline{D_\epsilon}$ that correspond to local conformal transformations are linear combinations (with real coefficients) of the operators
+\begin{align}
+ \ell_n + \bar\ell_n \quad , \quad i(\ell_n-\bar\ell_n) \ .
+ \label{ilml}
+\end{align}
+Generators with $n\in\{-1,0,1\}$ correspond to global transformations, and the rest to local transformations. (See Exercise \ref{exomoz}.) 
 
 The assumption of local conformal symmetry drastically restricts the dependence of the theory on the metric.
 Let us restrict our attention to theories on compact \textbf{\boldmath Riemann surfaces}\index{Riemann surface}, where a Riemann surface is a two-dimensional orientable smooth manifold.
@@ -1075,7 +1081,7 @@ Show that the group of global conformal transformations of the sphere is isomorp
 
 \begin{exo}[Algebra of infinitesimal global conformal transformations]
  ~\label{exomoz}
-Show that the generators $(\ell_{-1},\ell_0,\ell_1)$ of conformal transformations defined in eq. \eqref{elln} correspond to infinitesimal global conformal transformations.
+Show that the generators \eqref{ilml} with $n\in\{-1,0,1\}$ correspond to infinitesimal global conformal transformations.
 To do this, expand the map $f_g$ of eq. \eqref{gisl} near the identity, following eq. \eqref{sen}.
 \end{exo}
 
