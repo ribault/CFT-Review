@@ -33,7 +33,7 @@
 \newtheoremstyle{break}{9pt}{9pt}{\itshape}{}{\bfseries}{}{\newline}{}
 \theoremstyle{break}    
 \newtheorem{exo}{Exercise}[chapter]
-\newtheorem{hyp}[exo]{Axiom}
+\newtheorem{hyp}{Axiom}[chapter]
 
 % urlcolor is set to black because unwanted url links appear in the bibliography
 \usepackage[colorlinks=true,linktoc=all,linkcolor=black,citecolor=red,urlcolor=blue]{hyperref}
@@ -818,44 +818,8 @@ There are two similar-looking axioms, which should not be adopted:
 \item Closure under tensor product, instead of fusion, would not make sense, as the tensor product of two representations of $\mathfrak{V}_c$ is a representation of $\mathfrak{V}_{2c}$ -- central charges behave additively in a tensor product. 
 \end{itemize}
 
-In order to characterize the action of the symmetry algebra on the spectrum, we need not only decompose the spectrum into representations of that algebra, but also know how the symmetry generators $L_n$ behave under the scalar product, in other words what are their hermitian conjugates $L_n^\dagger$.
-Let us first consider the case of the generators $\ell_n$ \eqref{elln} of the Witt algebra.  
-As a differential operator, $\ell_n$ acts on the space of analytic functions on ${\mathbb{C}}-\{0\}$, whose basis is $\{z^p\}_{p\in{\mathbb{Z}}}$.
-The natural scalar product on this space is 
-\begin{align}
- \langle f|g\rangle = -\frac{1}{2\pi i}\int_0^{2\pi}d\theta\  \overline{f(e^{i\theta})} {\frac{\partial}{\partial \theta}} g(e^{i\theta}) \quad \Rightarrow \quad \langle z^p| z^q \rangle = -p\delta_{p,q}\ .
-\label{fgd}
-\end{align}
-This scalar product, which is a fixed radius integral, comes from the idea of \textbf{\boldmath radial quantization}\index{radial quantization}: the radial direction is considered as the time direction, and the dilatation operator $\ell_0$ as the Hamiltonian, which is hermitian i.e. $\ell_0^\dagger = \ell_0$.
-We also have $\ell_n^\dagger = \ell_{-n}$ (see Exercise \ref{exolnd}), and we therefore assume
-\begin{align}
- \boxed{L^\dagger_n = L_{-n}} \ .
-\label{ldn}
-\end{align}
-Conjugates of product operators $\prod_i L_{n_i}$ can then be deduced using the formula
-\begin{align}
- (AB)^\dagger = B^\dagger A^\dagger\ , 
-\label{abba}
-\end{align}
-At the level of the commutator $[A,B]=AB-BA$, this implies
-the rule $[A,B]^\dagger = -[A^\dagger,B^\dagger]$. 
-Using this rule, it is possible to check that eq. \eqref{ldn} is compatible with the commutation relations \eqref{vir} provided
-\begin{align}
- c\in {\mathbb{R}}\ .
-\label{cir}
-\end{align}
-
-The decomposition of the spectrum $S$ as a sum of $\mathfrak{V}\times \overline{\mathfrak{V}}$ representations respects the scalar product, and two different irreducible representations belonging to the spectrum must be orthogonal to each other.
-So the question of the positivity of the scalar product can be examined within each representation.
-A representation is called \textbf{\boldmath unitary}\index{unitary} if it has a positive definite scalar product such that 
-$L^\dagger_n = L_{-n}$, and a model whose spectrum is unitary is itself called unitary. 
-
-The interpretation of $L_0$ as a Hamiltonian in radial quantization suggests that we study the eigenvalues of $L_0$ when acting on the spectrum  $S$ of the model.
-The $L_0$-eigenvalue of an $L_0$-eigenvector is called its \textbf{\boldmath conformal dimension}\index{conformal dimension} or conformal weight. 
-Interpreting conformal dimensions as energies of states suggests that they
-must be bounded from below.
-Moreover, in any indecomposable representation of the Virasoro algebra, all conformal dimensions differ by integers. (See Exercise \ref{exodiffint}.) This follows from the fact that if 
-two basis states $v_1$ and $v_2$ are related by the action of Virasoro generators,
+Let us now discuss the roles of the operators $L_0$ and $\bar L_0$. Their eigenvalues are called \textbf{\boldmath conformal dimensions}\index{conformal dimension} or conformal weights. If 
+two states $v_1$ and $v_2$ are related by the action of Virasoro generators,
 \begin{align}
  v_2 = \left(\prod_i L_{n_i}\right) v_1\ ,
 \label{vovt}
@@ -865,7 +829,28 @@ and if $v_1$ is an $L_0$-eigenstate with conformal dimension $\Delta_1$, then $v
  \Delta_2 = \Delta_1 - \sum_i n_i\ ,
 \label{ddsn}
 \end{align}
-as a consequence of the Virasoro algebra's commutation relations \eqref{vir}. 
+as a consequence of the Virasoro algebra's commutation relations \eqref{vir}. Therefore, in any indecomposable representation of the Virasoro algebra, all conformal dimensions differ by integers. (See Exercise \ref{exodiffint}.)
+Furthermore, if we take the radial coordinate $|z|$ as the Euclidean time, then the dilatation generator $L_0 + \bar L_0$ can be considered as the Hamiltonian. This motivates the following axiom:
+
+\begin{hyp}[Bound on conformal dimensions]
+ ~\label{ax:bocd}
+ The total conformal dimensions, i.e. the eigenvalues of $L_0+\bar L_0$ when acting on the spectrum, are bounded from below. 
+\end{hyp}
+
+If the spectrum has a Hermitian form, it is natural to assume that $L_0 + \bar L_0$ is self-adjoint. We actually assume that both $L_0$ and $\bar L_0$ are self-adjoint, and that $L_n^\dagger$ belongs to the Virasoro algebra. This implies 
+\begin{align}
+ L^\dagger_n = L_{-n} \ ,
+\label{ldn}
+\end{align}
+(see Exercise \ref{exolnd}), and it follows that
+\begin{align}
+ c\in {\mathbb{R}}\ .
+\label{cir}
+\end{align}
+It also follows that the Hermitian form is compatible with the decomposition \eqref{sorr} of the spectrum as a sum of $\mathfrak{V}\times \overline{\mathfrak{V}}$ representations, in the sense that two different irreducible representations must be orthogonal to each other.
+So the the positivity of the Hermitian form can be examined within each representation.
+A representation of the Virasoro algebra is called \textbf{\boldmath unitary}\index{unitary} if it has a positive definite Hermitian form such that 
+$L^\dagger_0 = L_0$, and a model whose spectrum is unitary is itself called unitary. 
 
 Finally, let us illustrate the power of local conformal symmetry by thinking of a model in terms of global conformal symmetry only. 
 We then decompose each Virasoro representation $R$ into representations of the $\mathfrak{sl}_2$ algebra of global conformal transformations with generators $(L_0,L_1,L_{-1})$,
@@ -1101,17 +1086,16 @@ for some constant $\lambda$ and function $g(n)$.
 Observe that the second term can be absorbed by the redefinition $L_n\mapsto L_n-g(n)C$.
 \end{exo}
 
-\begin{exo}[Hermitian conjugates of conformal transformations]
- ~\label{exolnd}
-Show that the generators $\ell_n$ \eqref{elln} of infinitesimal conformal transformations satisfy $\ell_n^\dagger =\ell_{-n}$ with respect to the scalar product \eqref{fgd}.
-Show that the states $z^{p>0}$ have negative norms and also negative energies ($\ell_0$-eigenvalues). 
-\end{exo}
-
 \begin{exo}[Spectrum of $L_0$ in an indecomposable representation]
  ~\label{exodiffint}
 Show that the eigenvalues of $L_0$ in an indecomposable representation $R$ of the Virasoro algebra differ by integers.
 To do this, use the decomposition $R=\oplus_\Delta R_\Delta$ where $R_\Delta$ is the generalized eigenspace associated to the eigenvalue $\Delta$.
 Given any value of $\Delta$, show that  $\oplus_{n\in{\mathbb{Z}}} R_{\Delta+n}$ is a subrepresentation, and conclude. 
+\end{exo}
+
+\begin{exo}[Hermitian conjugates of Virasoro generators]
+ ~\label{exolnd}
+Assuming that there is a Hermitian form such that $L_0^\dagger = L_0$, and that $L_n^\dagger$ belongs to the Virasoro algebra, show that $L_n^\dagger = L_{-n}$. To do this, use the Virasoro commutation relations \eqref{vir}, and the identity $[A,B]^\dagger = -[A^\dagger, B^\dagger]$. Show that $L_n^\dagger = \lambda_n L_{-n}$ for some coefficients $\lambda_n$, and that there is a simple redefinition of $L_n$ such that $\lambda_n=1$.
 \end{exo}
 
 \begin{exo}[Comparing Virasoro and $\mathfrak{sl}_2$ representations]
