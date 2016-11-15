@@ -728,11 +728,18 @@ Another example is the long-range Ising model.
 
 \subsection{The Virasoro algebra \label{secvir}}
 
-In a quantum field theory with conformal symmetry, the spectrum is not a representation of the Witt algebra, but of 
-its central extension, called the \textbf{\boldmath Virasoro algebra}\index{Virasoro algebra} $\mathfrak{V}$.
-This is a general phenomenon in quantum theories: since states are defined up to scalar factors, the action of a symmetry group on space, which obeys $g\cdot(g'\cdot x) = (gg')\cdot x$, needs only translate into a projective action on states, which obeys $g\cdot(g'\cdot|\sigma\rangle) = \lambda(g,g') (gg')\cdot |\sigma\rangle$ for some scalar factor $\lambda(g,g')$. 
-And a projective action of a symmetry algebra is equivalent to an action of the corresponding centrally-extended algebra. 
-So, the Virasoro algebra is defined by the generators $(L_n)_{n\in {\mathbb{Z}}}$, which correspond to the generators $(\ell_n)_{n\in \mathbb{Z}}$ of the Witt algebra, and the centrally-extended commutation relations
+We have studied the algebra of local conformal transformations, which acts on the geometry. 
+We will now complexify and centrally extend that algebra, in order to obtain the symmetry algebra of conformal field theory, which acts on the spectrum. 
+In quantum theories, symmetry algebras should be complex because spectrums are complex vector spaces. And symmetry algebras should have central extensions, because the action of a symmetry group on space, which obeys $g\cdot(g'\cdot x) = (gg')\cdot x$, needs only translate into a projective action on states, which obeys $g\cdot(g'\cdot|\sigma\rangle) = \lambda(g,g') (gg')\cdot |\sigma\rangle$ for some scalar factor $\lambda(g,g')$. 
+But a projective action of a symmetry algebra is equivalent to an action of the corresponding centrally-extended algebra. 
+
+Complexifying the algebra of local conformal transformations amounts to taking complex linear combinations of the generators \eqref{ilml}. So the complexified algebra has the complex basis $(\ell_n,\bar\ell_n)_{n\in\mathbb{Z}}$, and is the product of two commuting Witt algebras. Elements of the complexified algebras do not act on our complex plane $\mathbb{C}=\mathbb{R}^2$, where $z$ and $\bar z$ are conjugates of one another, but on the complexified complex plane ${\mathbb{C}}^2$, where $z$ and $\bar z$ are independent coordinates. 
+We must however insist that the correlation functions, which are the $z$-dependent observables of the theory, do live on $\mathbb{C}$ and not on ${\mathbb{C}}^2$.
+Differential operators such as $\frac{\partial}{\partial z}$, that act on functions on ${\mathbb{C}}^2$, will appear at intermediate steps of calculations, but correlation functions only involve functions such as $|z|$, that are well-defined on $\mathbb{C}$. 
+
+The central extension of the Witt algebra is the 
+\textbf{\boldmath Virasoro algebra}\index{Virasoro algebra} $\mathfrak{V}$.
+Its generators are $(L_n)_{n\in {\mathbb{Z}}}$, and its commutation relations are 
 \begin{align}
  \boxed{[L_n,L_m]=(n-m)L_{n+m} + \frac{c}{12} (n-1)n(n+1) \delta_{n+m,0}}\ .
 \label{vir}
@@ -740,11 +747,7 @@ So, the Virasoro algebra is defined by the generators $(L_n)_{n\in {\mathbb{Z}}}
 The parameter $c$ is called the \textbf{\boldmath central charge}\index{central charge}, and the central term $\frac{c}{12} (n-1)n(n+1) \delta_{n+m,0}$ should be understood as the coefficient of an extra generator, which commutes with all $L_n$.
 It can be checked that these commutation relations define a Lie algebra, and that the Virasoro algebra is the only central extension of the Witt algebra. (See Exercise \ref{exovir}.) Notice that the presence of the central term does not affect the generators $L_{-1},L_0,L_1$ of global conformal transformations. 
 
-We will still make one further symmetry assumption.
-Until now, the coordinates $z$ and $\bar{z}$ of our two-dimensional space were complex conjugates, so that any transformation which acted on $z$ automatically acted in a conjugate way on $\bar{z}$.
-Now it is possible to consider $z$ and $\bar{z}$ as independent coordinates, and allow transformations to act separately on $z$ and $\bar{z}$.
-At the level of the conformal transformations \eqref{ffe}, this means considering the generators $\ell_n$ and their complex conjugates $\bar{\ell}_n$ as independent.
-Generalizing to a nonzero central charge, we therefore assume that the symmetry algebra has 
+Therefore, the symmetry algebra of conformal field theory is made of two commuting copies of the Virasoro algebra. It has
 \begin{itemize}
  \item \textbf{\boldmath left-moving}\index{left-moving}, chiral or holomorphic
 generators $L_n$,  and
@@ -752,8 +755,7 @@ generators $L_n$,  and
 \end{itemize}
  with
 $[L_n,\bar{L}_m]=0$.
-The generators $(L_n)_{n\in{\mathbb{Z}}}$ and $(\bar{L}_n)_{n\in{\mathbb{Z}}}$ are supposed to span two distinct Virasoro algebras, which we assume have the same central charge, called the central charge of the model. 
-We recapitulate these symmetry algebras in the following table:
+We assume for simplicity that both Virasoro algebras have the same central charge, which is then called the central charge of the model:
 \begin{align}
 \renewcommand{\arraystretch}{1.3}
  \begin{tabular}{|c|c|c|c|}
@@ -772,10 +774,6 @@ $\mathfrak{V}\times \overline{\mathfrak{V}}$ & full & $(L_n,\bar{L}_m)$ & $(c,c)
 \hline
  \end{tabular}
 \end{align}
-Considering $z$ and $\bar{z}$ as independent amounts to complexifying our two-dimensional real space ${\mathbb{C}}={\mathbb{R}}^2$ into the two-dimensional complex space ${\mathbb{C}}^2$.
-We must however insist that the correlation functions, which are the $z$-dependent observables of the theory, do live on the original space and not on ${\mathbb{C}}^2$.
-Functions such as $\sqrt{z}$ may appear at intermediate steps of calculations, but correlation functions can only involve single-valued functions such as $|z|$.
-So, although the space ${\mathbb{C}}^2$ and the symmetry algebra $\mathfrak{V}\times \overline{\mathfrak{V}}$  have factorized forms, the theory itself is not the mere juxtaposition of two independent theories. 
 
 \begin{hyp}[Symmetry algebra of two-dimensional conformal field theory]
  ~\label{ax:sa}
@@ -791,27 +789,28 @@ In the free boson theory, it is even possible to find Virasoro algebras with all
 
 \subsection{Structure of the spectrum \label{secsots}}
 
-We know that the spectrum $S$ must be a representation of the 
-$\mathfrak{V}\times \overline{\mathfrak{V}}$ symmetry algebra, and let us further assume that $S$ is a combination of factorized representations of the type $R\otimes \bar{R'}$, where $R$ and $R'$ are representations of $\mathfrak{V}$, and the bar in $\overline{\mathfrak{V}}$ and $\bar{R'}$ is only meant to distinguish right-moving from left-moving objects. Then the decomposition \eqref{somr} takes the form
+We know that the spectrum $S$ is a representation of the 
+$\mathfrak{V}\times \overline{\mathfrak{V}}$ symmetry algebra
+Let us further assume that $S$ is a combination of factorized representations of the type $R\otimes \bar{R'}$, where $R$ and $R'$ are representations of $\mathfrak{V}$, and the bar in $\overline{\mathfrak{V}}$ and $\bar{R'}$ distinguishes right-moving from left-moving objects. 
+Then the decomposition \eqref{somr} takes the form
 \begin{align}
- \boxed{S = \bigoplus_{(R,R')\in Rep(\mathfrak{V})^2} m_{R,R'} R\otimes \bar{R'}}\ ,
+ \boxed{S = \bigoplus_{(R,R')\in \text{Rep}(\mathfrak{V})^2} m_{R,R'} R\otimes \bar{R'}}\ ,
 \label{sorr}
 \end{align}
-where $Rep(\mathfrak{V})$ is some set of indecomposable representations of the Virasoro algebra.
+where $\text{Rep}(\mathfrak{V})$ is some set of indecomposable representations of the Virasoro algebra.
+% Many, but not all interesting spectrums are of this type: for example, the spectrum of the $GL_{1|1}$ WZW model involves indecomposable, non-factorizable representations \cite{ss05}. -- This example involves an extended symmetry algebra.
 We introduce two important special cases:
 \begin{itemize}
 \item \textbf{\boldmath rational models}\index{rational model}, where that sum involves only finitely many nonvanishing terms,
- \item \textbf{\boldmath diagonal models}\index{diagonal model}, where $m_{R,R'}\neq 0 \Rightarrow R=R'$, so that $S=\bigoplus_{R\in Rep(\mathfrak{V})} m_R R\otimes \bar{R}$.
+ \item \textbf{\boldmath diagonal models}\index{diagonal model}, where $m_{R,R'}\neq 0 \Rightarrow R=R'$, so that $S=\bigoplus_{R\in \text{Rep}(\mathfrak{V})} m_R R\otimes \bar{R}$.
 \end{itemize}
-Let us say that the indecomposable representation $R$ of $\mathfrak{V}$ appears in the spectrum if there is some $R'$ such that $m_{R,R'} \neq 0$.
-We introduce the important axiom of 
-\begin{center}
-\fbox{
-\begin{minipage}{0.9\textwidth}
-\textbf{\boldmath closure under fusion}\index{closure under fusion}: if the representations $R_1$ and $R_2$ appear in the spectrum, then any representation $R_3$ with a non-vanishing fusion multiplicity $N_{R_1R_2}^{R_3}\neq 0$ also appears in the spectrum. 
-\end{minipage}
-}
-\end{center}
+We say that the indecomposable representation $R$ of $\mathfrak{V}$ appears in the spectrum if there is some $R'$ such that $m_{R,R'} \neq 0$.
+
+\begin{hyp}[Closure under fusion]
+~\label{ax:cuf}
+If the representations $R_1$ and $R_2$ appear in the spectrum, then any representation $R_3$ with a non-vanishing fusion multiplicity $N_{R_1R_2}^{R_3}\neq 0$ also appears in the spectrum. 
+\end{hyp}
+
 In other words, we assume that if Virasoro symmetry allows a representation of $\mathfrak{V}$ to appear in an OPE, then that representation does appear.
 There are two similar-looking axioms, which should not be adopted:
 \begin{itemize}
