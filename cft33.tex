@@ -871,13 +871,13 @@ $\mathfrak{sl}_2$ representations, whose lowest $L_0$-eigenvalues differ by inte
 
 The application of the bootstrap approach to conformal field theories, called the \textbf{conformal bootstrap}\index{conformal bootstrap}, 
 is particularly powerful in two dimensions.
-This is because the algebra of conformal transformations is infinite dimensional, 
+This is because the algebra of conformal transformations is infinite-dimensional, 
 so that the spectrum can be decomposed into a small number of large representations.
 Moreover, the factorization of the symmetry algebra into two copies of the Virasoro algebra 
 implies that symmetry equations factorize into $z$-dependent equations from the left-moving Virasoro algebra, and $\bar{z}$-dependent equations from the right-moving Virasoro algebra.
 It follows that all universal quantities, for example $f_{R_1,R_2}^{R_3,\lambda}(v_i|x_j)$ from \eqref{clcf}, can be factorized into $z$-dependent and $\bar{z}$-dependent functions. 
 This is called \textbf{\boldmath holomorphic factorization}\index{holomorphic factorization}, where the term ``holomorphic''
-should be understood as \textbf{\boldmath locally holomorphic}\index{locally holomorphic}: the $z$-dependent factors are supposed to be $\bar{z}$-independent, but they can have singularities such as poles and branch cuts.
+should be understood as \textbf{\boldmath locally holomorphic}\index{locally holomorphic}: the $z$-dependent factors are supposed to be $\bar{z}$-independent, but they can have singularities such as poles and branch cuts, like the function $\sqrt{z}$.
 We will see in more detail in Section \ref{secaco} how holomorphic factorization simplifies the condition \eqref{cccc} of OPE associativity.
 
 In two-dimensional conformal field theory, the assumption of the existence of an OPE has a natural generalization: the assumption that on any closed contour $C$, one can insert a decomposition of the identity operator,
@@ -970,44 +970,46 @@ In the case of a topologically trivial contour $C$, this equality amounts to usi
 If on the other hand $C$ is a non-contractible cycle, then this equality is nontrivial even in the absence of fields.
 If we studied a model on a torus with complex modulus $\tau$, then we could obtain a nontrivial constraint on the spectrum by applying eq. \eqref{cscc} to the partition function (the zero-point function) using two topologically inequivalent contours.
 The study of constraints of this type is called the \textbf{\boldmath modular bootstrap}\index{modular bootstrap}. 
-We will however only consider topologically trivial spaces (that is, surfaces of genus $g=0$), without assuming our models to be defined on spaces of nonzero genus.
-For our purposes, 
-the axiom of the existence of the OPE will therefore be general enough. 
+
+We will only consider conformal field theories on the sphere, which are consistent if they have commutative, associative OPEs. For consistency on arbitrary Riemann surfaces, we would need to impose the further condition that torus one-point functions are invariant under modular transformations \cite{ms89b}.
+
 
 \subsection{Sketching the space of simple models \label{secmomo}}
 
-After discussing the general properties of two-dimensional conformal field theory, we will now describe some models which are known to satisfy the consistency conditions of the conformal bootstrap, and which are simple in the sense that their spectrums decompose into reasonable numbers of representations.
+After discussing the general properties of two-dimensional conformal field theory, we will now describe some simple models which are known to satisfy the consistency conditions of the conformal bootstrap.
 These simple models also turn out to be the most commonly encountered in applications.  
 
-We introduce the following models, in whose spectrums representations of $\mathfrak{V}\times \overline{\mathfrak{V}}$ appear with multiplicities no higher than one:
+We first introduce diagonal models, where representations of $\mathfrak{V}\times \overline{\mathfrak{V}}$ have multiplicities no higher than one:
 \begin{itemize}
- \item For any value $c\geq 1$ of the central charge, \textbf{\boldmath Liouville theory}\index{Liouville theory} is characterized as a model whose spectrum is diagonal and made of a continuum of unitary representations.
-Under certain assumptions, this model can be shown to be unique.
-Liouville theory can be analytically continued to complex values of $c$, but is then no longer unitary.
-\item \textbf{\boldmath A-series minimal models}\index{A-series minimal model} are characterized as diagonal, rational models.
-Such a model exists only if the central charge is of the type 
+ \item For any value $c\in\mathbb{C}$ of the central charge, \textbf{\boldmath Liouville theory}\index{Liouville theory} 
+has a diagonal spectrum that is made of a continuum of representations.
+Liouville theory is unitary if $c\geq 1$. 
+\item For any $c\in\mathbb{C}$, the \textbf{\boldmath generalized minimal model}\index{generalized minimal model} has a diagonal spectrum that is made of a discrete infinity of representations.
+\item \textbf{\boldmath A-series minimal models}\index{A-series minimal model} are diagonal, rational models that exist for central charges of the type
 \begin{align}
  c = 1 - 6 \frac{(p-q)^2}{pq}  \quad \text{with} \quad \left\{\begin{array}{l}  p,q \ \text{coprime  integers}\ , \\ 2\leq p<q\ , \end{array}\right.  
 \label{cpq}
 \end{align}
-so that $0\leq c <1$.
+in particular $c <1$.
 There are $\frac{(p-1)(q-1)}{2}$ distinct representations in the spectrum.
-The model is unitary if and only if $q=p+1$.
-Then the central charge is $c=1-\frac{6}{p(p+1)}=0,\frac12,\frac{7}{10},\cdots$.
-The unitary minimal model with $c=\frac12$ is called the \textbf{\boldmath Ising model}\index{Ising model}.
+The model is unitary if $q=p+1$, then $c=1-\frac{6}{p(p+1)}=0,\frac12,\frac{7}{10},\cdots$.
 \end{itemize}
-On the $c\in{\mathbb{R}}$ line, the unitary diagonal models are therefore located as follows:
+Let us locate these models in the $c$-complex plane, with unitary models signalled by more intense colors:
 \begin{align}
  \begin{tikzpicture}[scale = 4.5, baseline=(current  bounding  box.center)]
- \draw[-latex] (-.15, 0) -- (2.4, 0) node [below right] {$c$};
- \node[below] at (.5, -.05) {Minimal models};
- \node[below] at (1.7, -.05) {Liouville theory};
+ \filldraw [blue!50!red, opacity = .15] (2.15, -.3) -- (2.15, .75) -- (-.6, .75) -- (-.6, -.3) -- cycle;
+ \node [draw = red, fill = red!15, right] at (-.5, .65) {Liouville theory};
+ \node [draw = blue, fill = blue!15, right] at (-.5, .49) {Generalized minimal models};
+ \node[draw = green!70!black, fill = green!16!black!7, right] at (-.5, .12) {Minimal models};
+ %\node[below] at (1.6, -.05) {Liouville theory};
+  \filldraw [red] (.98, -.02) -- (.98, .02) -- (2.15, .02) -- (2.15, -.02) -- cycle;
+  \filldraw [green!70!black, opacity = .15] (-.6, -.02) -- (-.6, .02) -- (.98, .02) -- (.98, -.02) -- cycle;
  \foreach \p in {2,...,20}
   {
-  \draw [thick] ({1-6/(\p*(\p+1))}, -.03) -- ({1-6/(\p*(\p+1))}, .03);
+  \draw [green!70!black, thick] ({1-6/(\p*(\p+1))}, -.03) -- ({1-6/(\p*(\p+1))}, .03);
   }
-  \filldraw [opacity = .2] (.98, -.03) -- (.98, .03) -- (2.35, .03) -- (2.35, -.03) -- cycle;
   \node [below] at (0, -.02) {$0$};  \node [below] at (.99, -.02) {$1$};
+  \draw[-latex] (-.6, 0) -- (2.2, 0) node [below right] {$c$};
 \end{tikzpicture}
 \end{align}
 Other simple models include:
@@ -1038,9 +1040,9 @@ It can be checked that Cardy's formula is compatible with the additivity of the 
 
 \begin{exo}[Irreducible and indecomposable representations] 
 ~\label{exoirr}
-Consider the algebra with one generator $a$ such that $a^2 = 0$.
-Consider a two-dimensional representation $R$ with a basis $(v_1,v_2)$ such that $av_1=v_2$.
-Write the matrix of size two which corresponds to $a$ in the basis $(v_1,v_2)$.
+Consider the algebra with one generator $A$ such that $A^2 = 0$.
+Consider a two-dimensional representation $R$ with a basis $(v_1,v_2)$ such that $Av_1=v_2$.
+Write the matrix of $A$ in the basis $(v_1,v_2)$.
 Show that $R$ is indecomposable, but not irreducible. 
 \end{exo}
 
