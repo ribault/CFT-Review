@@ -325,7 +325,6 @@ A vector $\sigma$ and the action $A(\sigma)$ of an operator $A$ on $\sigma$ may 
  \sigma = |\sigma\rangle\ , \\ A(\sigma) = A|\sigma\rangle = |A\sigma\rangle\ .
 \end{array}\right. 
 \end{align}
-For the theory to have a probabilistic interpretation, we should assume the spectrum to be a Hilbert space, i.e. to have a positive definite Hermitian form. We do not make this assumption, which would exclude many interesting models.
 
 In quantum field theory, states are supposed to live on constant-time slices of space-time. If space-time is Euclidean, we can take such slices to be spheres surrounding any point $x$. If the theory is invariant under dilatations, such spheres can contract to infinitesimal sizes without loss of information. Therefore, to each state $|\sigma\rangle$ and each point $x$ we associate an object $V_\sigma(x)$, and the collection of these objects when $x$ varies is a field. 
 
@@ -789,26 +788,44 @@ In the free boson theory, it is even possible to find Virasoro algebras with all
 
 \subsection{Structure of the spectrum \label{secsots}}
 
-We know that the spectrum $S$ is a representation of the 
-$\mathfrak{V}\times \overline{\mathfrak{V}}$ symmetry algebra
-Let us further assume that $S$ is a combination of factorized representations of the type $R\otimes \bar{R'}$, where $R$ and $R'$ are representations of $\mathfrak{V}$, and the bar in $\overline{\mathfrak{V}}$ and $\bar{R'}$ distinguishes right-moving from left-moving objects. 
+We know that the spectrum is a representation of the 
+$\mathfrak{V}\times \overline{\mathfrak{V}}$ symmetry algebra.
+Let us make further assumptions on its structure.
+
+\begin{hyp}[Structure of the spectrum]
+ ~\label{ax:sots}
+ The spectrum decomposes into irreducible, factorizable representations of $\mathfrak{V}\times \overline{\mathfrak{V}}$, where $L_0+\bar L_0$ is bounded from below.
+\end{hyp}
+
+Let us comment on the three parts of this axiom:
+\begin{itemize}
+ \item 
+ Factorizable representations are of the type $R\otimes \bar{R'}$, where $R$ and $R'$ are representations of $\mathfrak{V}$, and the bar in $\overline{\mathfrak{V}}$ and $\bar{R'}$ distinguishes right-moving from left-moving objects. 
 Then the decomposition \eqref{somr} takes the form
 \begin{align}
  \boxed{S = \bigoplus_{(R,R')\in \text{Rep}(\mathfrak{V})^2} m_{R,R'} R\otimes \bar{R'}}\ ,
 \label{sorr}
 \end{align}
-where $\text{Rep}(\mathfrak{V})$ is some set of indecomposable representations of the Virasoro algebra.
+where $\text{Rep}(\mathfrak{V})$ is some set of irreducible representations of the Virasoro algebra.
 % Many, but not all interesting spectrums are of this type: for example, the spectrum of the $GL_{1|1}$ WZW model involves indecomposable, non-factorizable representations \cite{ss05}. -- This example involves an extended symmetry algebra.
-We introduce two important special cases:
-\begin{itemize}
-\item \textbf{\boldmath rational models}\index{rational model}, where that sum involves only finitely many nonvanishing terms,
- \item \textbf{\boldmath diagonal models}\index{diagonal model}, where $m_{R,R'}\neq 0 \Rightarrow R=R'$, so that $S=\bigoplus_{R\in \text{Rep}(\mathfrak{V})} m_R R\otimes \bar{R}$.
+\item
+The assumption that the spectrum decomposes into irreducible representations excludes indecomposable, reducible representations. 
+There exist \textbf{\boldmath logarithmic conformal field theories}\index{logarithmic conformal field theory} whose spectrums involve such representations, where moreover $L_0$ is not diagonalizable. 
+But we will not consider such theories (except in Exercise \ref{exolog}).
+\item 
+By $L_0+\bar L_0$ being bounded from below, we mean that the real parts of its eigenvalues are bounded from below, which implies that the real parts of the eigenvalues of $L_0$ are bounded from below in each $R\in\text{Rep}(\mathfrak{V})$. 
+This is motivated by the interpretation of the dilatation generator $L_0+\bar L_0$ as the Hamiltonian, if we consider the radial coordinate $|z|$ as the Euclidean time. 
 \end{itemize}
-We say that the indecomposable representation $R$ of $\mathfrak{V}$ appears in the spectrum if there is some $R'$ such that $m_{R,R'} \neq 0$.
+
+Two important special cases are
+\begin{itemize}
+\item \textbf{\boldmath rational models}\index{rational model}, where the spectrum involves only finitely many irreducible representations,
+ \item \textbf{\boldmath diagonal models}\index{diagonal model}, where the spectrum is of the type $S=\bigoplus_{R\in \text{Rep}(\mathfrak{V})} m_R R\otimes \bar{R}$, i.e. $m_{R,R'}\neq 0 \Rightarrow R=R'$ in eq. \eqref{sorr}.
+\end{itemize}
 
 \begin{hyp}[Closure under fusion]
 ~\label{ax:cuf}
-If the representations $R_1$ and $R_2$ appear in the spectrum, then any representation $R_3$ with a non-vanishing fusion multiplicity $N_{R_1R_2}^{R_3}\neq 0$ also appears in the spectrum. 
+If the irreducible representations $R_1$ and $R_2$ of $\mathfrak{V}$ appear in the spectrum, then any representation $R_3$ with a non-vanishing fusion multiplicity $N_{R_1R_2}^{R_3}\neq 0$ also appears in the spectrum. 
 \end{hyp}
 
 In other words, we assume that if Virasoro symmetry allows a representation of $\mathfrak{V}$ to appear in an OPE, then that representation does appear.
@@ -818,7 +835,7 @@ There are two similar-looking axioms, which should not be adopted:
 \item Closure under tensor product, instead of fusion, would not make sense, as the tensor product of two representations of $\mathfrak{V}_c$ is a representation of $\mathfrak{V}_{2c}$ -- central charges behave additively in a tensor product. 
 \end{itemize}
 
-Let us now discuss the roles of the operators $L_0$ and $\bar L_0$. Their eigenvalues are called \textbf{\boldmath conformal dimensions}\index{conformal dimension} or conformal weights. If 
+Let us further discuss the roles of the operators $L_0$ and $\bar L_0$. Their eigenvalues are called \textbf{\boldmath conformal dimensions}\index{conformal dimension} or conformal weights. If 
 two states $v_1$ and $v_2$ are related by the action of Virasoro generators,
 \begin{align}
  v_2 = \left(\prod_i L_{n_i}\right) v_1\ ,
@@ -830,16 +847,14 @@ and if $v_1$ is an $L_0$-eigenstate with conformal dimension $\Delta_1$, then $v
 \label{ddsn}
 \end{align}
 as a consequence of the Virasoro algebra's commutation relations \eqref{vir}. Therefore, in any indecomposable representation of the Virasoro algebra, all conformal dimensions differ by integers. (See Exercise \ref{exodiffint}.)
-Furthermore, if we take the radial coordinate $|z|$ as the Euclidean time, then the dilatation generator $L_0 + \bar L_0$ can be considered as the Hamiltonian. This motivates the following axiom:
 
-\begin{hyp}[Bound on conformal dimensions]
- ~\label{ax:bocd}
- The total conformal dimensions, i.e. the eigenvalues of $L_0+\bar L_0$ when acting on the spectrum, are bounded from below. 
-\end{hyp}
-
-If the spectrum has a Hermitian form, it is natural to assume that $L_0 + \bar L_0$ is self-adjoint. We actually assume that both $L_0$ and $\bar L_0$ are self-adjoint, and that $L_n^\dagger$ belongs to the Virasoro algebra. This implies 
+For a quantum field theory to have a probabilistic interpretation, 
+we should assume the spectrum to be a Hilbert space, i.e. to have a positive definite Hermitian form. 
+In conformal field theory, we are only interested in Hermitian forms that are compatible with the action of the symmetry algebra, in the sense that Hermitian conjugation acts linearly on $\mathfrak{V}$ and $\overline{\mathfrak{V}}$. 
+Interpreting the dilatation generator $L_0+\bar L_0$ as the Hamiltonian, we assume that it is self-adjoint.
+This implies 
 \begin{align}
- L^\dagger_n = L_{-n} \ ,
+ L^\dagger_n = L_{-n} \quad , \quad \bar L_n^\dagger = \bar L_{-n}\ ,
 \label{ldn}
 \end{align}
 (see Exercise \ref{exolnd}), and it follows that
@@ -850,7 +865,7 @@ If the spectrum has a Hermitian form, it is natural to assume that $L_0 + \bar L
 It also follows that the Hermitian form is compatible with the decomposition \eqref{sorr} of the spectrum as a sum of $\mathfrak{V}\times \overline{\mathfrak{V}}$ representations, in the sense that two different irreducible representations must be orthogonal to each other.
 So the the positivity of the Hermitian form can be examined within each representation.
 A representation of the Virasoro algebra is called \textbf{\boldmath unitary}\index{unitary} if it has a positive definite Hermitian form such that 
-$L^\dagger_0 = L_0$, and a model whose spectrum is unitary is itself called unitary. 
+$L^\dagger_n = L_{-n}$, and a model whose spectrum is unitary is itself called unitary. 
 
 Finally, let us illustrate the power of local conformal symmetry by thinking of a model in terms of global conformal symmetry only. 
 We then decompose each Virasoro representation $R$ into representations of the $\mathfrak{sl}_2$ algebra of global conformal transformations with generators $(L_0,L_1,L_{-1})$,
@@ -1150,9 +1165,6 @@ If $|\Delta\rangle$ is a primary state, it is enough to consider the algebra $U(
 (See Exercise \ref{exospan}.)
 A state of $R$ of the type $U|\Delta\rangle$ with $U\in U(\mathfrak{V}^+)$ is called a \textbf{\boldmath descendent state}\index{descendent state} if it is linearly independent from $|\Delta\rangle$.
 
-We assume that the spectrum can be decomposed into such highest-weight representations.
-This assumption in particular implies that $L_0$ is diagonalizable, whereas in principle $L_0$ could have nontrivial Jordan cells.
-There exist theories called \textbf{\boldmath logarithmic conformal field theories}\index{logarithmic conformal field theory}, where the action of $L_0$ on the spectrum is not diagonalizable, but we will not consider such theories (except in Exercise \ref{exolog}).
 
 Let us explore the structure of a highest-weight representation $R$.
 By definition, such a representation comes with a natural surjective map
