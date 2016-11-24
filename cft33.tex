@@ -1502,7 +1502,7 @@ $R_{\langle r,s\rangle}$ unitary? & see eqs. \eqref{cpp} and \eqref{srp} &  yes 
 
 \section{Fields and correlation functions \label{secfcf}}
 
-Using the state-field correspondence, the action of the Virasoro algebra on states gives rise to a natural action of the Virasoro algebra on fields at any given point $z_0$. We introduce two notations for this action:
+Using the state-field correspondence, the action of the Virasoro algebra on states gives rise to a natural action of the Virasoro algebra on fields at any given point $z$. We denote the action of a Virasoro generator as $L_n^{(z)}$ or $L_n$, so that 
 \begin{align}
  L_nV_\sigma(z) = L_n^{(z)}V_\sigma(z) = V_{L_n\sigma}(z)\ .
 \label{lnzv}
@@ -1532,15 +1532,14 @@ In order to derive equations that constrain and relate these correlation functio
 
 \begin{hyp}[Dependence of fields on the position]
  ~\label{ax:dvz}
- For any field $V_\sigma(z)$, we have
+ For any field $V_\sigma(z)$,
  \begin{align}
  \boxed{{\frac{\partial}{\partial z} V_\sigma(z)} = L_{-1} V_\sigma (z) }  \ .
 \label{lvpv}
 \end{align}
 \end{hyp}
 \noindent
-Determining $\frac{\partial}{\partial z} V_\sigma(z)$ promotes the position $z$ from a mere label, to a geometrical quantity. 
-The value of $\frac{\partial}{\partial z} V_\sigma(z)$ in our axiom is suggested by the interpretation of $L_{-1}$ as a generator of translations.
+The value of $\frac{\partial}{\partial z} V_\sigma(z)$ is suggested by the interpretation of $L_{-1}$ as a generator of translations.
 
 From this axiom we can immediately deduce how $L_n^{(z)}$ depends on $z$. Applying the axiom to the two fields $V_\sigma(z)$ and $L_n^{(z)}V_\sigma(z)$, we find 
 \begin{align}
@@ -1554,7 +1553,9 @@ Now this relation is equivalent to $\frac{\partial}{\partial z} T(y) = 0$, where
  \boxed{T(y) = \sum_{n\in{\mathbb{Z}}} \frac{L_n^{(z)}}{(y-z)^{n+2}}}\ .
 \label{tsl}
 \end{align}
-(The series is supposed to converge if $y$ is close enough to $z$.)
+(The series is supposed to converge if $y$ is close enough to $z$.) Calling $T(y)$ a tensor is an abuse of terminology: strictly speaking, the energy-momentum tensor is actually 
+$\left(\begin{smallmatrix} T_{yy} = T(y) & T_{y\bar y} \\ T_{\bar y y} & T_{\bar y \bar y} = \bar T(\bar y) \end{smallmatrix}\right)$.
+
 The energy-momentum tensor encodes the action of the Virasoro algebra at all points $z$. 
 From $T(y)$, we can indeed recover the Virasoro generators at any point,
 \begin{align}
@@ -1585,44 +1586,45 @@ Since our field theory lives on the Riemann sphere, $T(y)$ should be holomorphic
 \end{hyp} 
 \noindent
 
-
-
-The field $T(y)$ is a \textbf{\boldmath symmetry field}\index{symmetry field}: a field which encodes the action of symmetry transformations, but does not necessarily correspond to a state in the spectrum. 
+The field $T(y)$ is a \textbf{\boldmath symmetry field}\index{symmetry field}: a field that encodes the action of symmetry transformations, but does not necessarily correspond to a state in the spectrum. 
 That field nevertheless obeys the same assumptions of commutativity, associativity, and existence of an OPE, as the fields $V_\sigma(z)$.
-
-
-Now the commutation relations \eqref{vir} of the Virasoro algebra are equivalent to the following OPE of the field $T(y)$ with itself,
+The commutation relations \eqref{vir} of the Virasoro algebra are equivalent to the following OPE of the field $T(y)$ with itself,
 \begin{align}
  \boxed{T(y)T(z) = \frac{\frac{c}{2}}{(y-z)^4} + \frac{2T(z)}{(y-z)^2} + \frac{\partial T(z)}{y-z} + O(1)}\ .
 \label{tt}
 \end{align}
 The proof of this equivalence is sketched in Exercise \ref{exott}. 
-The regular terms of this OPE, which involve $L_{n\leq -2} T(z)$, do not appear in that proof, and are therefore omitted. 
-Regular terms are generally omitted when writing OPEs of $T(y)$, because that field is locally holomorphic and is therefore completely determined by its singularities. 
-
-Notice also that the term $\frac{c}{2}$ should be understood as $\frac{c}{2}I$ where $I$ is the \textbf{\boldmath identity field}\index{identity field}, a field whose presence does not affect correlation functions, and which is in particular $z$-independent,
+The term $\frac{c}{2}$ should be understood as $\frac{c}{2}I$ where $I$ is the
+central generator of the Virasoro algebra.
+We are now considering this generator as a field called the 
+\textbf{\boldmath identity field}\index{identity field}, whose presence does not affect correlation functions, and which is in particular $z$-independent,
 \begin{align}
  \left\langle I \cdots \right\rangle = \left\langle \cdots \right\rangle \ .
 \label{ivac}
 \end{align}
-This field $I$ corresponds to the central generator of the Virasoro algebra, the generator which is implicitly present in the central term of the commutation relations \eqref{vir}, and which acts as the identity in any representation.
 The energy-momentum tensor itself can be seen as a descendent of the identity field. (See Exercise \ref{exoit}.)
+
+Let a \textbf{Virasoro field}\index{Virasoro field} be a locally holomorphic field $T(y)$ that obeys the OPE \eqref{tt}. 
+From such a field, we can deduce a Virasoro symmetry algebra via eq. \eqref{lit}, so $T(y)$ is a symmetry field. However, that Virasoro symmetry is a priori unrelated to conformal symmetry, and in particular does not obey Axiom \ref{ax:dvz}. 
+Most results in Section \ref{secccs} will hold for Virasoro fields and non-conformal Virasoro symmetries, including: Ward identities, nontrivial factors of conformal blocks, and fusion rules. We will however work under Axiom \ref{ax:dvz}, as this simplifies some calculations.
+% The right place for dealing with Virasoro fields would be a part on W algebras.
 
 Finally, notice that all our formulas are consistent with dimensional analysis, if we adopt the following dimensions:
 \begin{align}
- \boxed{[z]=-1,\quad [T]=2, \quad [L_n]=-n}\ .
+ \boxed{[z]=-1,\quad [T]=2, \quad [L_n]=-n, \quad [V_\Delta]=\Delta}\ .
 \label{zaz}
 \end{align}
+Here we anticipate that the dimension of $V_\Delta$ is given by the eigenvalue of $L_0$ when acting on that primary field.
 
 
 \subsection{Ward identities \label{secswi}}
 
-We now derive linear equations for correlation functions, which are called the \textbf{\boldmath Ward identities}\index{Ward identity} associated to the Virasoro symmetry.
+We now derive linear equations for correlation functions of primary and/or descendent fields $V_{\sigma_i}(z_i)$, called the Virasoro \textbf{\boldmath Ward identities}\index{Ward identity} or conformal Ward identities.
 These identities follow from the properties of the energy-momentum tensor $T(z)$, which translate into the following properties of the correlation function $\left\langle T(z)\prod_{i=1}^N V_{\sigma_i}(z_i) \right\rangle$ as a function of $z$:
 \begin{itemize}
  \item it is holomorphic on ${\mathbb{C}}-\{z_1,\cdots z_N\}$,
 \item its behaviour at $z=z_i$ is controlled by the OPE \eqref{tv},
-\item its behaviour at $z=\infty$ is controlled by the assumption \eqref{tyi}.
+\item its behaviour at $z=\infty$ is controlled by Axiom \ref{ax:hti}.
 \end{itemize}
 For any meromorphic function $\epsilon(z)$, with no poles outside $\{z_1,\cdots z_N\}$, we therefore have
 \begin{align}
@@ -1637,10 +1639,38 @@ We will distinguish two types of symmetry equations:
 \end{itemize}
 All symmetry equations can be obtained as linear combinations of such local and global Ward identities.
 
-The three global Ward identities are obtained by taking $\epsilon(z)\in \{1,z,z^2\}$ in eq. \eqref{oiz}.
+
+Let us first write the local Ward identities.
+A spanning set of these identities can be obtained by taking $\epsilon(z) = \frac{1}{(z-z_i)^{n-1}}$ with $n\geq 2$ and $i=1, \cdots N$ in eq. \eqref{oiz}. 
 Since the integrand has singularities only at $z_1,\cdots z_N$, we have $\oint_\infty=\sum_{i=1}^N \oint_{z_i}$.
 Using the 
-$T(y)V_\sigma(z)$ OPE \eqref{tv}, we obtain 
+$TV_\sigma$ OPE \eqref{tv}, we obtain
+\begin{align}
+ \left\langle \left( L_{-n}^{(z_i)} + (-1)^{n+1}\sum_{j\neq i}\sum_{p=-1}^\infty \frac{\binom{p+n-1}{p+1}}{(z_i-z_j)^{n+p}} L_p^{(z_j)}\right)  \prod_{j=1}^N V_{\sigma_j}(z_j) \right\rangle = 0\ ,
+\label{lwi}
+\end{align}
+where $\binom{p+n-1}{p+1}$ is a binomial coefficient.
+The sum over $p$ has finitely many nonzero terms, because $L_p^{(z_j)}V_{\sigma_j}(z_j)=0$ if $p$ exceeds the level $N_j$ of the descendent state $\sigma_j$. 
+Using eq. \eqref{lvpv}, and the fact that $\sigma_j$ is an $L_0$-eigenstate, the terms with $p=-1,0$ involve differential operators, whereas the terms with $p\geq 1$ involve annihilation operators. 
+Therefore, the local Ward identity amounts to writing $\left\langle  L_{-n}^{(z_i)} \prod_{j=1}^N V_{\sigma_j}(z_j) \right\rangle$, whose total level is $n+\sum_j N_j$, in terms of correlation functions whose total level does not exceed $\sum_jN_j$. By induction on the total level,
+\begin{quote}
+ the repeated use of local Ward identities yields an expression for any $N$-point function of descendent fields, as a differential operator of the corresponding $N$-point function of primary fields.
+\end{quote}
+In particular, if the fields with indices $j\neq i$ are primary, the local Ward identity simplifies to
+\begin{align}
+ \boxed{\left\langle L_{-n}^{(z_i)}V_{\sigma_i}(z_i)\prod_{j\neq i} V_{\Delta_j}(z_j) \right\rangle =
+\sum_{j\neq i} \left(-\frac{1}{z_{ji}^{n-1}} {\frac{\partial}{\partial z_j}}  + \frac{n-1}{z_{ji}^n} \Delta_j\right)
+\left\langle V_{\sigma_i}(z_i)\prod_{j\neq i} V_{\Delta_j}(z_j) \right\rangle} \ ,
+\label{lmn}
+\end{align}
+where we assume $n\geq 1$, and we use the notation $z_{ji}=z_j-z_i$. (See Exercise \ref{exodma}.) Actually, inserting $T(z)$ in an $N$-point function of primary fields also amounts to acting with a differential operator. This operator is uniquely determined by its poles and residues, which are given by the $TV_\Delta$ OPE \eqref{tvp}, and we find
+\begin{align}
+ \boxed{\left\langle T(z) \prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle = \sum_{i=1}^N \left(\frac{\Delta_i}{(z-z_i)^2} + \frac{1}{z-z_i}{\frac{\partial}{\partial z_i}}\right)\left\langle  \prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle }\ .
+\label{dtz}
+\end{align}
+
+Let us now write
+the three global Ward identities. Taking $\epsilon(z)\in \{1,z,z^2\}$ in eq. \eqref{oiz}, we find 
 \begin{align}
 \left\langle \sum_{i=1}^N L_{-1}^{(z_i)} \prod_{i=1}^N V_{\sigma_i}(z_i) \right\rangle &= 0 \ ,
 \label{slz}
@@ -1651,6 +1681,10 @@ $T(y)V_\sigma(z)$ OPE \eqref{tv}, we obtain
 \left\langle \sum_{i=1}^N \left( L_1^{(z_i)} + 2z_i L_0^{(z_i)} + z_i^2 L_{-1}^{(z_i)}\right) \prod_{i=1}^N V_{\sigma_i}(z_i) \right\rangle & = 0\ .
 \label{slllz}
 \end{align}
+These equations express the global conformal invariance of correlation functions.
+
+\subsection{Global conformal symmetry}
+
 These equations simplify if the fields are primary, so that $L_1^{(z_i)}=0$ and $L_0^{(z_i)}=\Delta_i$. 
 These conditions are necessary but not sufficient for fields to be primary, which suggests that we define a
 \textbf{\boldmath quasi-primary field}\index{quasi-primary field} with conformal dimension $\Delta$ as a field $V_\Delta(z)$ such that 
@@ -1663,18 +1697,6 @@ L_0 V_\Delta(z) = \Delta V_\Delta(z) \ .
 \end{align}
 We have already met a quasi-primary field which is not primary: the energy-momentum tensor $T(z)$ itself, which is quasi-primary with conformal dimension two. (See Exercise \eqref{exoit}.) 
 
-Let us now write the local Ward identities.
-A spanning set of these identities can be obtained by taking $\epsilon(z) = \frac{1}{(z-z_i)^{n-1}}$ with $n\geq 2$ and $i=1, \cdots N$ in eq. \eqref{oiz}, leading to
-\begin{align}
- \left\langle \left( L_{-n}^{(z_i)} + (-1)^{n+1}\sum_{j\neq i}\sum_{p=-1}^\infty \frac{\binom{p+n-1}{p+1}}{(z_i-z_j)^{n+p}} L_p^{(z_j)}\right)  \prod_{j=1}^N V_{\sigma_j}(z_j) \right\rangle = 0\ ,
-\label{lwi}
-\end{align}
-where $\binom{p+n-1}{p+1}$ is a binomial coefficient.
-This simplifies if the fields with indices $j\neq i$ are primary:
-\begin{align}
- \left\langle \left( L_{-n}^{(z_i)} + \sum_{j\neq i} \left(\frac{1}{(z_j-z_i)^{n-1}} L_{-1}^{(z_j)}  + \frac{1-n}{(z_j-z_i)^n} \Delta_j\right)\right) V_{\sigma_i}(z_i)\prod_{j\neq i} V_{\Delta_j}(z_j) \right\rangle =0\ .
-\label{lwp}
-\end{align}
 
 Let us discuss the solution of the Ward identities for an $N$-point function of primary fields
 $
@@ -1934,35 +1956,6 @@ The degenerate field that corresponds to the highest-weight state of the degener
 \end{align}
 where $L_{\langle r,s \rangle}$ is defined in eq. \eqref{lrs}.
 This field differs from the field $V_{\Delta_{\langle r,s \rangle}}(z)$, which corresponds to the highest-weight state of the Verma module $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$, and obeys no such equation.
-
-\subsection{The energy-momentum tensor}
-
-
-Since $L_{-1}^{(z)}$ does depend on $z$, the assumption \eqref{lvpv} entails infinitely many identifications of symmetry generators with differential operators.
-This can lead to a representation of generators $L_n^{(z)}$ as differential operators, depending however on the correlation function where such generators are inserted.
-For example, the local Ward identity \eqref{lwp} for an $N$-point function involving $N-1$ primary fields becomes
-\begin{align}
- \boxed{\left\langle L_{-n}^{(z_i)}V_{\sigma_i}(z_i)\prod_{j\neq i} V_{\Delta_j}(z_j) \right\rangle =
-\sum_{j\neq i} \left(-\frac{1}{z_{ji}^{n-1}} {\frac{\partial}{\partial z_j}}  + \frac{n-1}{z_{ji}^n} \Delta_j\right)
-\left\langle V_{\sigma_i}(z_i)\prod_{j\neq i} V_{\Delta_j}(z_j) \right\rangle} \ ,
-\label{lmn}
-\end{align}
-where we assume $n\geq 1$, and we use the notation $z_{ji}=z_j-z_i$. (See Exercise \ref{exodma}.)
-Now let us insert the energy-momentum tensor itself into an $N$-point function of primary fields, obtaining the $N+1$-point function $
-\left\langle T(z) \prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle$.
-This $N+1$-point function is locally holomorphic as a function of $z$, with a double pole at $z=z_i$ as dictated by the OPE \eqref{tvp}, and a behaviour at $z=\infty$ dictated by the assumption \eqref{tyi}.
-Together with our assumption \eqref{lvpv}, this implies 
-\begin{align}
- \boxed{\left\langle T(z) \prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle = \sum_{i=1}^N \left(\frac{\Delta_i}{(z-z_i)^2} + \frac{1}{z-z_i}{\frac{\partial}{\partial z_i}}\right)\left\langle  \prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle }\ .
-\label{dtz}
-\end{align}
-In more general correlation functions, where fields are not necessarily primary, insertions of $T(z)$ or creation operators are represented as combinations of differential operators and annihilation operators.
-Consider then the vector space generated by an $N$-point function of descendent fields $\left\langle \prod_{i=1}^NV_{\sigma_i}(z_i)\right\rangle$, and the $N$-point functions obtained by repeatedly acting with all possible annihilation operators $L_n^{(z_i)}$ with $n>0$.
-This space is finite-dimensional, and in this space insertions of $T(z)$ or 
-any generator $L_n^{(z_i)}$ with $n\in {\mathbb{Z}}$ can be represented as matrix differential operators. 
-
-As a consequence, all Ward identities and null vector equations will become differential equations if only primary fields are involved, and matrix differential equations if descendent fields are involved.
-Let us show this explicitly in the case of the global Ward identities.
 
 \subsection{Global conformal symmetry \label{secgcs}}
 
