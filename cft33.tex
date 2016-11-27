@@ -1685,9 +1685,7 @@ These equations express the global conformal invariance of correlation functions
 
 \subsection{Global conformal symmetry}
 
-These equations simplify if the fields are primary, so that $L_1^{(z_i)}=0$ and $L_0^{(z_i)}=\Delta_i$. 
-These conditions are necessary but not sufficient for fields to be primary, which suggests that we define a
-\textbf{\boldmath quasi-primary field}\index{quasi-primary field} with conformal dimension $\Delta$ as a field $V_\Delta(z)$ such that 
+We will now study the consequences of the global Ward identities, under the assumption that the fields $V_{\sigma_i}(z_i)$ are primary fields. Since however $L_{n\geq 2}$ do not appear in the global Ward identities, the results will also be valid if the fields $V_{\sigma_i}(z_i)$ are quasi-primary fields, where we define a \textbf{\boldmath quasi-primary field}\index{quasi-primary field} or $\mathfrak{sl}_2$-primary field with conformal dimension $\Delta$ as a field $V_\Delta(z)$ such that 
 \begin{align}
  \left\{\begin{array}{l}  L_1 V_\Delta(z) = 0 \ , 
 \\
@@ -1695,7 +1693,83 @@ L_0 V_\Delta(z) = \Delta V_\Delta(z) \ .
 \end{array}\right. 
 \label{lolz}
 \end{align}
-We have already met a quasi-primary field which is not primary: the energy-momentum tensor $T(z)$ itself, which is quasi-primary with conformal dimension two. (See Exercise \eqref{exoit}.) 
+For example, the energy-momentum tensor $T(z)$ is a quasi-primary field with conformal dimension two, but not a primary field. (See Exercise \eqref{exoit}.) 
+
+Using Axiom \eqref{ax:dvz}, the global Ward identities for an $N$-point function $\left\langle \prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle$ of quasi-primary fields reduce to a system of three differential equations, 
+\begin{align}
+\forall a \in \{0,+,-\}\quad , \quad 
+ \left(\sum_{i=1}^N D_{z_i}^{-\Delta_i}(t^a)\right) \left\langle \prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle & = 0\ ,
+\label{spz}
+\end{align}
+where we define the differential operators
+\begin{align}
+\renewcommand{\arraystretch}{1.3}
+ \left\{ \begin{array}{rl} D_x^{j}(t^-) & = -{\frac{\partial}{\partial x}}\ ,
+\\
+D_x^{j}(t^0) &  = x{\frac{\partial}{\partial x}} -j\ ,
+\\
+D_x^{j}(t^+) & = x^2{\frac{\partial}{\partial x}} - 2j x \ .
+\end{array}\right. 
+\label{ddz}
+\end{align}
+These operators form a representation of the Lie algebra \textbf{\boldmath $\mathfrak{sl}_2$} \index{sl2@$\mathfrak{sl}_2$} with the generators $(t^0,t^+,t^-)$ and commutation relations 
+\begin{align}
+ [t^0,t^\pm ] =\pm t^\pm \quad , \quad [t^+,t^-]=2t^0\ .
+\label{ttpm}
+\end{align}
+The algebra $\mathfrak{sl}_2$ also has a representation in terms of traceless matrices of size two,
+\begin{align}
+\renewcommand{\arraystretch}{1.3}
+\left\{ \begin{array}{rl}
+ M(t^+)& = \left(\begin{smallmatrix} 0 & 1 \\ 0& 0 \end{smallmatrix} \right) \ , 
+\\
+ M(t^0) &= \frac12\left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right)\ ,
+\\
+M(t^-) & = \left(\begin{smallmatrix} 0 & 0 \\ 1 & 0 \end{smallmatrix} \right) \ .
+\end{array} \right.
+\label{mta}
+\end{align}
+In the case $j=0$, the differential operators $D^j_x(t^a)$ correspond to the generators $(\ell_{-1},\ell_0,\ell_1)$ \eqref{elln} of global conformal transformations.
+This shows that global Ward identities correspond to infinitesimal global conformal transformations.
+The global Ward identities for 
+finite global conformal transformations \eqref{gisl} are found by exponentiating the $\mathfrak{sl}_2$ matrices $M(t^a)$ into elements of the Lie group $SL_2({\mathbb{C}})$,
+\begin{align}
+\left\langle \prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle  = \left\langle \prod_{i=1}^N T_g V_{\Delta_i}(z_i) \right\rangle \ , 
+\label{vtv}
+\end{align}
+where we define the image $T_gV_\Delta(z)$ of a quasi-primary field as
+\begin{align}
+ \boxed{T_g V_\Delta(z) = (cz+d)^{-2\Delta} V_\Delta\left(\frac{az+b}{cz+d}\right)} \quad \text{with} \quad g = \left(\begin{array}{cc} a & b \\ c & d \end{array}\right) \in SL_2({\mathbb{C}})\ .
+\label{tgv}
+\end{align}
+(See Exercise \ref{exoqp} for an interpretation in terms of representations of $\mathfrak{sl}_2$.)
+
+We can now determine the behaviour of a quasi-primary fields $V_\Delta(z)$ at $z=\infty$.
+By covariance, this is the same as the behaviour of $T_{\left(\begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix}\right)}V_\Delta(z)= (-z)^{-2\Delta}V_\Delta(-\frac{1}{z})$.
+But $V_\Delta(-\frac{1}{z})$ is smooth at $z=\infty$, and we obtain
+\begin{align}
+ \boxed{V_\Delta(z) \underset{z\to \infty}{=} O\left(z^{-2\Delta}\right)}\ .
+\label{vdz}
+\end{align}
+This is consistent with the assumed behaviour \eqref{tyi} of the energy-momentum tensor, which is a quasi-primary field of dimension $\Delta=2$.
+Moreover, this suggests that we may define a field at $z=\infty$ by 
+\begin{align}
+ V_\Delta(\infty) = \underset{z\to \infty}{\lim} z^{2\Delta} V_\Delta(z)\ . 
+\end{align}
+Of course, the behaviour \eqref{vdz} of $V_\Delta(z)$ at $z=\infty$ holds only provided no other field is present at $z=\infty$.
+To determine the behaviour of a correlation function $\left\langle V_\Delta(z) V_{\Delta'}(\infty)\cdots \right\rangle$ at $z=\infty$, we would need to know the OPE $V_\Delta(z) V_{\Delta'}(\infty)$.
+
+One may then wonder whether local Ward identities are infinitesimal expressions of the covariance of correlation functions under local conformal transformations \eqref{flc}.
+For any holomorphic function $h(z)$, which we interpret as a local conformal transformation, we can define the image $T_hV_\Delta(z)$ of a primary field as 
+\begin{align}
+ \boxed{T_h V_\Delta(z) = (h'(z))^{\Delta} V_\Delta(h(z))}\ ,
+\label{thv}
+\end{align}
+which generalizes the image of a quasi-primary field under a global conformal transformation \eqref{tgv}.
+However, unlike a global transformation, a local transformation $h(z)$ must have a singularity at some point $z_0$, in which case our formula for $T_hV_\Delta(z_0)$ does not make sense.
+But we know from Section \ref{secloc} that local transformations modify fields, in addition to moving them around.
+This is manifest in the local Ward identities, which involve not only $V_\Delta(z_0)$ and its derivatives, but also its $L_{n\leq -2}$ descendents. 
+Therefore, a covariance equation of the type of eq. \eqref{vtv} holds for correlation functions of primary fields, provided we take $T_h V_\Delta(z_0)$ to involve $L_{n\leq -2}$ descendents whenever $h(z)$ is singular at $z=z_0$. 
 
 
 Let us discuss the solution of the Ward identities for an $N$-point function of primary fields
@@ -1959,56 +2033,6 @@ This field differs from the field $V_{\Delta_{\langle r,s \rangle}}(z)$, which c
 
 \subsection{Global conformal symmetry \label{secgcs}}
 
-This Section is devoted to solving the global Ward identities \eqref{slz}-\eqref{slllz} for an $N$-point function $\left\langle \prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle$ of quasi-primary fields, in the case when $L_{-1}$ is the generator of translations and obeys eq. \eqref{lvpv}. 
-In this case, the global Ward identities reduce to a system of three differential equations, 
-\begin{align}
-\forall a \in \{0,+,-\}\quad , \quad 
- \left(\sum_{i=1}^N D_{z_i}^{-\Delta_i}(t^a)\right) \left\langle \prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle & = 0\ ,
-\label{spz}
-\end{align}
-where we define the differential operators
-\begin{align}
- \left\{ \begin{array}{rl} D_x^{j}(t^-) & = -{\frac{\partial}{\partial x}}\ ,
-\\
-D_x^{j}(t^0) &  = x{\frac{\partial}{\partial x}} -j\ ,
-\\
-D_x^{j}(t^+) & = x^2{\frac{\partial}{\partial x}} - 2j x \ .
-\end{array}\right. 
-\label{ddz}
-\end{align}
-These operators form a representation of the Lie algebra \textbf{\boldmath $\mathfrak{sl}_2$} \index{sl2@$\mathfrak{sl}_2$} with the generators $(t^0,t^+,t^-)$ and commutation relations 
-\begin{align}
- [t^0,t^\pm ] =\pm t^\pm \quad , \quad [t^+,t^-]=2t^0\ .
-\label{ttpm}
-\end{align}
-The algebra $\mathfrak{sl}_2$ also has a representation in terms of traceless matrices of size two,
-\begin{align}
-\renewcommand{\arraystretch}{1.3}
-\left\{ \begin{array}{rl}
- M(t^+)& = \left(\begin{smallmatrix} 0 & 1 \\ 0& 0 \end{smallmatrix} \right) \ , 
-\\
- M(t^0) &= \frac12\left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right)\ ,
-\\
-M(t^-) & = \left(\begin{smallmatrix} 0 & 0 \\ 1 & 0 \end{smallmatrix} \right) \ .
-\end{array} \right.
-\label{mta}
-\end{align}
-In the case $j=0$, the differential operators \eqref{ddz} correspond to the generators $(\ell_{-1},\ell_0,\ell_1)$ \eqref{elln} of global conformal transformations.
-This shows that, as their names suggest, global Ward identities correspond to global conformal transformations.
-In this correspondence, the holomorphic function $\epsilon(z)\in\{1,z,z^2\}$ which appears in the derivation \eqref{oiz} of the global Ward identities, corresponds to the function $\epsilon(z)$ which parametrizes an infinitesimal conformal transformation \eqref{sen}. 
-
-So $\mathfrak{sl}_2$ matrices $M(t^a)$ correspond to infinitesimal global conformal transformations, and to the infinitesimal global Ward identities \eqref{spz}.
-Then $SL_2({\mathbb{C}})$ matrices correspond to finite global conformal transformations \eqref{gisl}, and the finite global Ward identities are
-\begin{align}
-\left\langle \prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle  = \left\langle \prod_{i=1}^N T_g V_{\Delta_i}(z_i) \right\rangle \ , 
-\label{vtv}
-\end{align}
-where we define the image $T_gV_\Delta(z)$ of a quasi-primary field as
-\begin{align}
- \boxed{T_g V_\Delta(z) = (cz+d)^{-2\Delta} V_\Delta\left(\frac{az+b}{cz+d}\right)} \quad \text{with} \quad g = \left(\begin{array}{cc} a & b \\ c & d \end{array}\right) \in SL_2({\mathbb{C}})\ .
-\label{tgv}
-\end{align}
-(See Exercise \ref{exoqp} for an interpretation in terms of representations of $\mathfrak{sl}_2$.)
 This involves the expression $(cz+d)^{-2\Delta}$, which is a multivalued function of $z$ unless $2\Delta\in {\mathbb{Z}}$.
 Correlation functions  are however supposed to be single-valued when their dependence on $\bar{z}$ is taken into account.
 Since $T_g V_{\Delta,\bar{\Delta}}(z,\bar{z})= (cz+d)^{-2\Delta}(\bar c\bar z+\bar d)^{-2\bar\Delta} V_\Delta\left(\frac{az+b}{cz+d}, \frac{\bar a\bar z+ \bar b}{\bar c \bar z + \bar d}\right) $,
@@ -2025,32 +2049,6 @@ Then $V_{\Delta,\bar{\Delta}}(z,\bar{z})$ is called a fermionic field if $\Delta
 \end{align}
 In the following, we will only study models whose fields are all bosonic. 
 
-We can now determine the behaviour of a quasi-primary fields $V_\Delta(z)$ at $z=\infty$.
-By covariance, this is the same as the behaviour of $T_{\left(\begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix}\right)}V_\Delta(z)= (-z)^{-2\Delta}V_\Delta(-\frac{1}{z})$.
-But $V_\Delta(-\frac{1}{z})$ is smooth at $z=\infty$, and we obtain
-\begin{align}
- \boxed{V_\Delta(z) \underset{z\to \infty}{=} O\left(z^{-2\Delta}\right)}\ .
-\label{vdz}
-\end{align}
-This is consistent with the assumed behaviour \eqref{tyi} of the energy-momentum tensor, which is a quasi-primary field of dimension $\Delta=2$.
-Moreover, this suggests that we may define a field at $z=\infty$ by 
-\begin{align}
- V_\Delta(\infty) = \underset{z\to \infty}{\lim} z^{2\Delta} V_\Delta(z)\ . 
-\end{align}
-Of course, the behaviour \eqref{vdz} of $V_\Delta(z)$ at $z=\infty$ holds only provided no other field is present at $z=\infty$.
-To determine the behaviour of a correlation function $\left\langle V_\Delta(z) V_{\Delta'}(\infty)\cdots \right\rangle$ at $z=\infty$, we would need to know the OPE $V_\Delta(z) V_{\Delta'}(\infty)$.
-
-One may then wonder whether local Ward identities are infinitesimal expressions of the covariance of correlation functions under local conformal transformations \eqref{flc}.
-For any holomorphic function $h(z)$, which we interpret as a local conformal transformation, we can define the image $T_hV_\Delta(z)$ of a primary field as 
-\begin{align}
- \boxed{T_h V_\Delta(z) = (h'(z))^{\Delta} V_\Delta(h(z))}\ ,
-\label{thv}
-\end{align}
-which generalizes the image of a quasi-primary field under a global conformal transformation \eqref{tgv}.
-However, unlike a global transformation, a local transformation $h(z)$ must have a singularity at some point $z_0$, in which case our formula for $T_hV_\Delta(z_0)$ does not make sense.
-But we know from Section \ref{secloc} that local transformations modify fields, in addition to moving them around.
-This is manifest in the local Ward identities, which involve not only $V_\Delta(z_0)$ and its derivatives, but also its $L_{n\leq -2}$ descendents. 
-Therefore, a covariance equation of the type of eq. \eqref{vtv} holds for correlation functions of primary fields, provided we take $T_h V_\Delta(z_0)$ to involve $L_{n\leq -2}$ descendents whenever $h(z)$ is singular at $z=z_0$. 
 
 Let us now solve the differential equations \eqref{spz}.
 As we already saw in Section \ref{secswi}, solving the three global Ward identities for an $N$-point function crucially depends on the value of $N$:
