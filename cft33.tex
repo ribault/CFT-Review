@@ -344,6 +344,8 @@ Correlation functions will be defined by the equations that they obey, which wil
 To construct a model of quantum field theory is therefore to give principles which uniquely determine a spectrum and a set of correlation functions.
 To \textbf{\boldmath solve a model}\index{solve (model)} is to actually compute the spectrum and correlation functions. 
 
+% NB: do we want an axiom that correlation functions are single-valued? Or should it be part of the definition? An axiom would is better as it can be relaxed!
+
 \section{The bootstrap approach}
 
 \subsection{Principles \label{secprin}}
@@ -1502,6 +1504,8 @@ $R_{\langle r,s\rangle}$ unitary? & see eqs. \eqref{cpp} and \eqref{srp} &  yes 
 
 \section{Fields and correlation functions \label{secfcf}}
 
+% NB: also mention right primaries, introduce V_{\Delta, \bar \Delta}
+
 Using the state-field correspondence, the action of the Virasoro algebra on states gives rise to a natural action of the Virasoro algebra on fields at any given point $z$. We denote the action of a Virasoro generator as $L_n^{(z)}$ or $L_n$, so that 
 \begin{align}
  L_nV_\sigma(z) = L_n^{(z)}V_\sigma(z) = V_{L_n\sigma}(z)\ .
@@ -1772,36 +1776,43 @@ This is manifest in the local Ward identities, which involve not only $V_\Delta(
 Therefore, a covariance equation of the type of eq. \eqref{vtv} holds for correlation functions of primary fields, provided we take $T_h V_\Delta(z_0)$ to involve $L_{n\leq -2}$ descendents whenever $h(z)$ is singular at $z=z_0$. 
 
 
-Let us discuss the solution of the Ward identities for an $N$-point function of primary fields
+Let us discuss the solutions of the global Ward identities \eqref{spz} for an $N$-point function of primary fields
 $
-\left\langle \prod_{i=1}^N V_{\Delta_i}(z_i) \right\rangle ,
+\left\langle \prod_{i=1}^N V_{\Delta_i}(z_i) \right\rangle\ .
 $
-together with the $N$-point functions of the corresponding descendent fields.
-Such descendent fields are in principle obtained by acting with operators $L_{-n}^{(z_i)}$ with $n\geq 1$, but due to the local Ward identities \eqref{lwi} we can eliminate the operators $L_{-n}^{(z_i)}$ with $n\geq 2$.
-So we restrict our attention to the global Ward identities \eqref{slllz}, which involve only $L_{-1}^{(z_i)}$-descendents.
-There are three global Ward identities for $N$ ``unknowns'' $L_{-1}^{(z_i)}$, and the situation crucially depends on the value of $N$:
+Viewing the derivatives $\frac{\partial}{\partial z_i}\left\langle \prod_{i=1}^N V_{\Delta_i}(z_i) \right\rangle$ as $N$ unknowns, the properties of the system depend a lot on whether $N<3, N=3$ or $N>3$:
 \begin{itemize}
  \item $\boxed{N=0}$\ : the global Ward identities are trivial ($0=0$).
 The zero-point function, which may be called the sphere partition function, is actually a number rather than a function, and carries no useful information.
-\item $\boxed{N=1}$\ :  the global Ward identities amount to $\left\langle L_{-1}V_{\Delta_1}(z_1)\right\rangle  =\Delta_1 \left\langle V_{\Delta_1}(z_1)\right\rangle =0$.
-This implies $\left\langle V_{\Delta_1}(z_1)\right\rangle=0$ or $\Delta_1=0$.
-In any case, the one-point functions of $L_{-1}V_{\Delta_1}(z_1)$ and of all other descendent fields must vanish. 
-\item $\boxed{N=2}$\ : we still have more Ward identities than unknowns, and we can obtain a condition on $\Delta_i$ by eliminating $L_{-1}^{(z_i)}$ from the Ward identities.
+\item $\boxed{N=1}$\ :  the global Ward identities amount to $\frac{\partial}{\partial z_1}\left\langle V_{\Delta_1}(z_1)\right\rangle  =\Delta_1 \left\langle V_{\Delta_1}(z_1)\right\rangle =0$.
+This implies $\left\langle V_{\Delta_1}(z_1)\right\rangle$ is constant, and that this constant vanishes unless $\Delta_1=0$.
+\item $\boxed{N=2}$\ : we still have more Ward identities than unknowns, and we can obtain a condition on $\Delta_i$ by eliminating the derivatives from the Ward identities.
 The elegant way to do this is to use $\epsilon(z)=(z-z_1)(z-z_2)$ in eq. \eqref{oiz}, which leads to 
 \begin{align}
  (z_1-z_2)(\Delta_1-\Delta_2)\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle =0\ .
 \end{align}
-Assuming $\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle\neq 0$ and $z_1\neq z_2$, we must have 
+Assuming $\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle\neq 0$, we must have 
 \begin{align}
  \Delta_1 = \Delta_2 \ . 
 \label{ded}
 \end{align}
-The Ward identities then allow us to compute correlation functions involving arbitrary descendent fields, for instance 
+The remaining Ward identities then amount to 
 \begin{align}
-  \left\langle L_{-1}^{(z_1)}V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle= -\frac{2\Delta_1}{z_1-z_2}\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle \ .
-\label{lzfz}
+ \frac{\partial}{\partial z_1}\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle = - \frac{\partial}{\partial z_2}\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle = -\frac{2\Delta_1}{z_1-z_2} \left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle\ .
 \end{align}
-If $\Delta_1\neq \Delta_2$ then not only $\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle$ but also the correlation functions of all corresponding descendent fields vanish. 
+Up to a $z_i$-independent factor, the solution is 
+\begin{align}
+ \mathcal{F}^{(2)}(\Delta_1|z_1,z_2) = z_{12}^{-2\Delta_1}\ .
+\label{fzz}
+\end{align}
+The $z_i$-independent factor can be set to one by a choice of normalization of the fields $V_{\Delta,\bar{\Delta}}(z,\bar{z})$, so that 
+\begin{align}
+ \boxed{ \left\langle V_{\Delta_1,\bar{\Delta}_1}(z_1,\bar{z}_1) V_{\Delta_2,\bar{\Delta}_2}(z_2,\bar{z}_2)\right\rangle = \delta_{\Delta_1,\Delta_2}\delta_{\bar{\Delta}_1,\bar{\Delta}_2} z_{12}^{-2\Delta_1}\bar z_{12}^{-2\bar \Delta_1} }\ ,
+\end{align}
+where the symbol $\delta_{\Delta_1,\Delta_2}$ is a Kronecker delta or a Dirac delta function, depending on whether the conformal dimensions take discrete or continuous values.
+
+and we use the modulus square notation in the sense $|f(\Delta,z)|^2 = f(\Delta,z)f(\bar{\Delta},\bar{z})$.
+
 \item $\boxed{N=3}$\ : we have as many Ward identities as unknowns.
 So, while the Ward identities do not lead to constraints on $\Delta_i$, they allow us to deduce three-point functions involving arbitrary descendent fields, if we know the three-point function of primary fields.
 In particular, for any creation operator $L\in U(\mathfrak{V}^+)$, there exists a universal, $c$-independent function
@@ -1828,6 +1839,50 @@ where we use the notation
 \label{xn}
 \end{align}
 \item $\boxed{N\geq 4}$\ : the Ward identities constrain the correlation functions of descendents, but do not determine them completely.
+\end{itemize}
+
+
+\begin{itemize}
+\item $\boxed{N=3}$\ : the equation \eqref{lzgz} with $L=L_{-1}$ becomes a linear differential equation for our three-point function, whose solution is 
+\begin{align}
+ \boxed{\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3) = z_{12}^{\Delta_3-\Delta_1-\Delta_2} z_{23}^{\Delta_1-\Delta_2-\Delta_3} z_{31}^{\Delta_2-\Delta_3-\Delta_1}}\ .
+\label{fzzz}
+\end{align}
+(See Exercise \ref{exolog} for the generalization to logarithmic conformal field theory.) 
+So, the dependence of the three-point function of quasi-primary fields on $z_i$ is fully determined by global conformal symmetry, and we have 
+\begin{align}
+ \left\langle \prod_{i=1}^3 V_{\Delta_i,\bar{\Delta}_i}(z_i,\bar{z}_i) \right\rangle = C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2,\Delta_3,\bar{\Delta}_3}
+ \left|\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)\right|^2\ ,
+\label{cff}
+\end{align}
+where $C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2,\Delta_3,\bar{\Delta}_3}$ is called the \textbf{\boldmath three-point structure constant}\index{three-point structure constant}.
+\item $\boxed{N\geq 4}$\ : the three differential equations are not enough for controlling the dependence of an $N$-point function on the $N\geq 4$ variables $z_i$.
+Omitting the dependence on $\bar{z}_i$, the general solution can be written as 
+\begin{align}
+ \left\langle\prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle = \prod_{i<j} z_{ij}^{\delta_{ij}}\ F(x_1,x_2,\cdots x_{N-3}) \quad \text{with} \ \ 
+\renewcommand{\arraystretch}{1.5}
+\left\{\begin{array}{l}  \sum_{j< i} \delta_{ji} +\sum_{i<j}\delta_{ij} = -2\Delta_i\ ,
+\\ x_i = \frac{(z_i-z_{N-2})(z_{N-1}-z_N)}{(z_i-z_{N-1})(z_{N-2}-z_N)}\ , \end{array}\right. 
+\label{xfxn}
+\end{align}
+where $F(x_1,x_2,\cdots x_{N-3})$ is an arbitrary function of the \textbf{\boldmath cross-ratios}\index{cross-ratio} $x_i$, which is therefore invariant under the global conformal transformations \eqref{gisl}.
+This function can be interpreted as an $N$-point function with $(z_{N-2},z_{N-1},z_N)=(0,\infty,1)$, as we now illustrate in the case $N=4$.
+\item $\boxed{N=4}$\ : in this case there is only one cross-ratio 
+\begin{align}
+ x=\frac{z_{12}z_{34}}{z_{13}z_{24}}\ ,
+\label{xe}
+\end{align}
+and the general solution can be written as 
+\begin{align}
+ \left\langle\prod_{i=1}^4 V_{\Delta_i}(z_i)\right\rangle = \mathcal{F}^{(3)}(\Delta_1,\Delta_2,0|z_1,z_2,z_3) \mathcal{F}^{(3)}(\Delta_3,\Delta_4,0|z_3,z_4,z_2)\ F(x)\ ,
+\label{zgg}
+\end{align}
+where we built the prefactor as a combination of three-point functions, such that each variable $z_i$ has the correct total exponent $-2\Delta_i$.
+With this choice of prefactor, we notice that $F(x)$ is related to a four-point function with $(z_2,z_3,z_4)=(0,\infty,1)$ as
+\begin{align}
+ F(x) =x^{\Delta_1+\Delta_2} \left\langle V_{\Delta_1}(x)V_{\Delta_2}(0)V_{\Delta_3}(\infty) V_{\Delta_4}(1)\right\rangle \ .
+\label{fx}
+\end{align}
 \end{itemize}
 
 \subsection{Virasoro-symmetric OPEs \label{secope}}
@@ -2016,11 +2071,6 @@ f_{r_1,r_2,r_3} = \left\{\begin{array}{l}  1 \quad \text{if} \quad
 
 \section{Consequences of conformal symmetry}
 
-We now further assume that this Virasoro algebra corresponds to conformal transformations, rather than internal symmetries.
-The associated 
-energy-momentum tensor will then be called the . 
-
-
 And a primary field that has a vanishing descendent is called a \textbf{\boldmath degenerate field}\index{degenerate field}.
 In other words, a degenerate field corresponds to the highest-weight state of a degenerate representation.
 The degenerate field that corresponds to the highest-weight state of the degenerate representation $R_{\langle r,s \rangle}$ will be denoted $V_{\langle r,s\rangle}(z)$, and obeys the equation 
@@ -2050,62 +2100,6 @@ Then $V_{\Delta,\bar{\Delta}}(z,\bar{z})$ is called a fermionic field if $\Delta
 In the following, we will only study models whose fields are all bosonic. 
 
 
-Let us now solve the differential equations \eqref{spz}.
-As we already saw in Section \ref{secswi}, solving the three global Ward identities for an $N$-point function crucially depends on the value of $N$:
-\begin{itemize}
- \item $\boxed{N=1}$\ : we already know that the one-point function $\left\langle V_\Delta(z)\right\rangle$ is non-vanishing only if $V_\Delta(z)$ is a degenerate field, with a vanishing descendent at level one.
-The null vector equation $L_{-1}V_\Delta(z)=0$ now implies that $\langle V_\Delta(z)\rangle$ is $z$-independent.
-\item $\boxed{N=2}$\ : the equation \eqref{lzfz} becomes a linear differential equation for our two-point function, whose solution is 
-\begin{align}
- \boxed{\mathcal{F}^{(2)}(\Delta_1|z_1,z_2) = z_{12}^{-2\Delta_1}}\ .
-\label{fzz}
-\end{align}
-The $z_i$-independent constant in a two-point function can be set to one by a choice of normalization of the fields $V_{\Delta,\bar{\Delta}}(z,\bar{z})$, so that 
-\begin{align}
- \left\langle V_{\Delta_1,\bar{\Delta}_1}(z_1,\bar{z}_1) V_{\Delta_2,\bar{\Delta}_2}(z_2,\bar{z}_2)\right\rangle = \delta_{\Delta_1,\Delta_2}\delta_{\bar{\Delta}_1,\bar{\Delta}_2} \left|\mathcal{F}^{(2)}(\Delta_1|z_1,z_2)\right|^2\ ,
-\end{align}
-where the symbol $\delta_{\Delta_1,\Delta_2}$ is a Kronecker delta or a Dirac delta function, depending on whether the conformal dimensions take discrete or continuous values, and we use the modulus square notation in the sense $|f(\Delta,z)|^2 = f(\Delta,z)f(\bar{\Delta},\bar{z})$.
-\item $\boxed{N=3}$\ : the equation \eqref{lzgz} with $L=L_{-1}$ becomes a linear differential equation for our three-point function, whose solution is 
-\begin{align}
- \boxed{\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3) = z_{12}^{\Delta_3-\Delta_1-\Delta_2} z_{23}^{\Delta_1-\Delta_2-\Delta_3} z_{31}^{\Delta_2-\Delta_3-\Delta_1}}\ .
-\label{fzzz}
-\end{align}
-(See Exercise \ref{exolog} for the generalization to logarithmic conformal field theory.) 
-So, the dependence of the three-point function of quasi-primary fields on $z_i$ is fully determined by global conformal symmetry, and we have 
-\begin{align}
- \left\langle \prod_{i=1}^3 V_{\Delta_i,\bar{\Delta}_i}(z_i,\bar{z}_i) \right\rangle = C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2,\Delta_3,\bar{\Delta}_3}
- \left|\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)\right|^2\ ,
-\label{cff}
-\end{align}
-where $C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2,\Delta_3,\bar{\Delta}_3}$ is called the \textbf{\boldmath three-point structure constant}\index{three-point structure constant}.
-\item $\boxed{N\geq 4}$\ : the three differential equations are not enough for controlling the dependence of an $N$-point function on the $N\geq 4$ variables $z_i$.
-Omitting the dependence on $\bar{z}_i$, the general solution can be written as 
-\begin{align}
- \left\langle\prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle = \prod_{i<j} z_{ij}^{\delta_{ij}}\ F(x_1,x_2,\cdots x_{N-3}) \quad \text{with} \ \ 
-\renewcommand{\arraystretch}{1.5}
-\left\{\begin{array}{l}  \sum_{j< i} \delta_{ji} +\sum_{i<j}\delta_{ij} = -2\Delta_i\ ,
-\\ x_i = \frac{(z_i-z_{N-2})(z_{N-1}-z_N)}{(z_i-z_{N-1})(z_{N-2}-z_N)}\ , \end{array}\right. 
-\label{xfxn}
-\end{align}
-where $F(x_1,x_2,\cdots x_{N-3})$ is an arbitrary function of the \textbf{\boldmath cross-ratios}\index{cross-ratio} $x_i$, which is therefore invariant under the global conformal transformations \eqref{gisl}.
-This function can be interpreted as an $N$-point function with $(z_{N-2},z_{N-1},z_N)=(0,\infty,1)$, as we now illustrate in the case $N=4$.
-\item $\boxed{N=4}$\ : in this case there is only one cross-ratio 
-\begin{align}
- x=\frac{z_{12}z_{34}}{z_{13}z_{24}}\ ,
-\label{xe}
-\end{align}
-and the general solution can be written as 
-\begin{align}
- \left\langle\prod_{i=1}^4 V_{\Delta_i}(z_i)\right\rangle = \mathcal{F}^{(3)}(\Delta_1,\Delta_2,0|z_1,z_2,z_3) \mathcal{F}^{(3)}(\Delta_3,\Delta_4,0|z_3,z_4,z_2)\ F(x)\ ,
-\label{zgg}
-\end{align}
-where we built the prefactor as a combination of three-point functions, such that each variable $z_i$ has the correct total exponent $-2\Delta_i$.
-With this choice of prefactor, we notice that $F(x)$ is related to a four-point function with $(z_2,z_3,z_4)=(0,\infty,1)$ as
-\begin{align}
- F(x) =x^{\Delta_1+\Delta_2} \left\langle V_{\Delta_1}(x)V_{\Delta_2}(0)V_{\Delta_3}(\infty) V_{\Delta_4}(1)\right\rangle \ .
-\label{fx}
-\end{align}
-\end{itemize}
 Knowing the $z_i$-dependences of the two- and three-point functions, we can find the $z_i$-dependence of the OPE structure functions.
 Using eq. \eqref{cftt}, we find 
 \begin{align}
