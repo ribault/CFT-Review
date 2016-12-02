@@ -1526,9 +1526,11 @@ L_0 V_\Delta(z) = \Delta V_\Delta(z) \ .
 \end{align}
 Fields such as  $\left(\prod_{i=1}^p L_{-n_i}\right) V_\Delta(z)$ that correspond to descendents of a primary state are then called  \textbf{descendent fields}\index{descendent field}.
 
+Having two Virasoro symmetry algebras $\mathfrak{V}$ and $\overline{\mathfrak{V}}$, we will consider fields $V_{\Delta,\bar\Delta}(z)$ that are primary with respect to both algebras. Then $\Delta$ and $\bar\Delta$ are respectively called the left and right conformal dimensions of $V_{\Delta,\bar\Delta}(z)$. Depending on the context, the notation $V_\Delta(z)$ will denote either a $\mathfrak{V}$-primary field, or more specifically a \textbf{diagonal primary field}\index{diagonal primary field} $V_\Delta(z)= V_{\Delta,\Delta}(z)$. 
+
 In order to solve a model whose spectrum is known, we should compute the correlation functions of primary and descendent fields.
-An $N$-point function of primary fields $\left\langle \prod_{i=1}^N V_{\Delta_i}(z_i) \right\rangle$ is a function of their positions and conformal dimensions.
-$N$-point functions of the descendent fields are of the type $\left\langle \prod_{i=1}^N \left(\left(\prod_{j=1}^{p_i} L_{-n_{i,j}}\right)V_{\Delta_i}(z_i)\right) \right\rangle$, with $p_i\geq 0$ and $n_{i,j}\geq 1$. 
+An $N$-point function of primary fields $\left\langle \prod_{i=1}^N V_{\Delta_i,\bar\Delta_i}(z_i) \right\rangle$ is a function of their positions and conformal dimensions.
+$N$-point functions of descendent fields are of the type $\left\langle \prod_{i=1}^N \left(\left(\prod_{j=1}^{p_i} L_{-n_{i,j}}\prod_{\bar j=1}^{\bar p_i} \bar L_{-\bar n_{i,\bar j}}\right)V_{\Delta_i,\bar\Delta_i}(z_i)\right) \right\rangle$, with $p_i,\bar p_i\geq 0$ and $n_{i,j},\bar n{i,\bar j}\geq 1$. 
 In order to derive equations that constrain and relate these correlation functions, we will now explain how the action of conformal symmetry is encoded in a field, the energy-momentum tensor.
 
 
@@ -1538,7 +1540,7 @@ In order to derive equations that constrain and relate these correlation functio
  ~\label{ax:dvz}
  For any field $V_\sigma(z)$,
  \begin{align}
- \boxed{{\frac{\partial}{\partial z} V_\sigma(z)} = L_{-1} V_\sigma (z) }  \ .
+ \boxed{{\frac{\partial}{\partial z} V_\sigma(z)} = L_{-1} V_\sigma (z) }  \quad \text{and} \quad {\frac{\partial}{\partial \bar z} V_\sigma(z)} = \bar L_{-1} V_\sigma (z)\ .
 \label{lvpv}
 \end{align}
 \end{hyp}
@@ -1782,11 +1784,13 @@ $
 $
 Viewing the derivatives $\frac{\partial}{\partial z_i}\left\langle \prod_{i=1}^N V_{\Delta_i}(z_i) \right\rangle$ as $N$ unknowns, the properties of the system depend a lot on whether $N<3, N=3$ or $N>3$:
 \begin{itemize}
- \item $\boxed{N=0}$\ : the global Ward identities are trivial ($0=0$).
+ \item $\boxed{N=0}$\ : The global Ward identities are trivial ($0=0$).
 The zero-point function, which may be called the sphere partition function, is actually a number rather than a function, and carries no useful information.
-\item $\boxed{N=1}$\ :  the global Ward identities amount to $\frac{\partial}{\partial z_1}\left\langle V_{\Delta_1}(z_1)\right\rangle  =\Delta_1 \left\langle V_{\Delta_1}(z_1)\right\rangle =0$.
+
+\item $\boxed{N=1}$\ :  The global Ward identities amount to $\frac{\partial}{\partial z_1}\left\langle V_{\Delta_1}(z_1)\right\rangle  =\Delta_1 \left\langle V_{\Delta_1}(z_1)\right\rangle =0$.
 This implies $\left\langle V_{\Delta_1}(z_1)\right\rangle$ is constant, and that this constant vanishes unless $\Delta_1=0$.
-\item $\boxed{N=2}$\ : we still have more Ward identities than unknowns, and we can obtain a condition on $\Delta_i$ by eliminating the derivatives from the Ward identities.
+
+\item $\boxed{N=2}$\ : We still have more Ward identities than unknowns, and we can obtain a condition on $\Delta_i$ by eliminating the derivatives from the Ward identities.
 The elegant way to do this is to use $\epsilon(z)=(z-z_1)(z-z_2)$ in eq. \eqref{oiz}, which leads to 
 \begin{align}
  (z_1-z_2)(\Delta_1-\Delta_2)\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle =0\ .
@@ -1798,65 +1802,41 @@ Assuming $\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle\neq 0$, w
 \end{align}
 The remaining Ward identities then amount to 
 \begin{align}
- \frac{\partial}{\partial z_1}\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle = - \frac{\partial}{\partial z_2}\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle = -\frac{2\Delta_1}{z_1-z_2} \left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle\ .
+ \frac{\partial}{\partial z_1}\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle = - \frac{\partial}{\partial z_2}\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle = -\frac{2\Delta_1}{z_1-z_2} \left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle\ ,
 \end{align}
-Up to a $z_i$-independent factor, the solution is 
+whose solution is 
 \begin{align}
- \mathcal{F}^{(2)}(\Delta_1|z_1,z_2) = z_{12}^{-2\Delta_1}\ .
-\label{fzz}
+ \left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle \propto z_{12}^{-2\Delta_1}\ .
+ \label{fzz}
 \end{align}
-The $z_i$-independent factor can be set to one by a choice of normalization of the fields $V_{\Delta,\bar{\Delta}}(z,\bar{z})$, so that 
+Setting
+the $z_i$-independent factor to one by a choice of normalization of the fields, and
+restoring the dependence on the right conformal dimensions, we find
 \begin{align}
  \boxed{ \left\langle V_{\Delta_1,\bar{\Delta}_1}(z_1,\bar{z}_1) V_{\Delta_2,\bar{\Delta}_2}(z_2,\bar{z}_2)\right\rangle = \delta_{\Delta_1,\Delta_2}\delta_{\bar{\Delta}_1,\bar{\Delta}_2} z_{12}^{-2\Delta_1}\bar z_{12}^{-2\bar \Delta_1} }\ ,
 \end{align}
 where the symbol $\delta_{\Delta_1,\Delta_2}$ is a Kronecker delta or a Dirac delta function, depending on whether the conformal dimensions take discrete or continuous values.
 
-and we use the modulus square notation in the sense $|f(\Delta,z)|^2 = f(\Delta,z)f(\bar{\Delta},\bar{z})$.
-
-\item $\boxed{N=3}$\ : we have as many Ward identities as unknowns.
-So, while the Ward identities do not lead to constraints on $\Delta_i$, they allow us to deduce three-point functions involving arbitrary descendent fields, if we know the three-point function of primary fields.
-In particular, for any creation operator $L\in U(\mathfrak{V}^+)$, there exists a universal, $c$-independent function
+\item $\boxed{N=3}$\ : The three global Ward identities determine the dependence of three-point functions on the three coordinates $z_i$, without constraining the conformal dimensions $\Delta_i$. Using $\epsilon(z)= (z-z_2)(z-z_3)$ in eq. \eqref{oiz}, we indeed obtain
 \begin{align}
- g^{L}_{\Delta_1,\Delta_2,\Delta_3}(z_1,z_2,z_3) = \frac{\left\langle L^{(z_1)} V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)V_{\Delta_3}(z_3)\right\rangle}{\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)V_{\Delta_3}(z_3)\right\rangle } \ .
-\label{lzgz}
+  \left(  \frac{\partial}{\partial z_1} + \frac{\Delta_1+\Delta_2-\Delta_3}{z_1-z_2} +\frac{\Delta_1-\Delta_2+\Delta_3}{z_1-z_3} \right) \left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)V_{\Delta_3}(z_3)\right\rangle= 0\ .
 \end{align}
-For example, using $\epsilon(z)=(z-z_2)(z-z_3)$ in eq. \eqref{oiz} we obtain 
-\begin{align}
- g^{L_{-1}}_{\Delta_1,\Delta_2,\Delta_3}(z_1,z_2,z_3) = \frac{\Delta_3-\Delta_1-\Delta_2}{z_1-z_2} +\frac{\Delta_2-\Delta_1-\Delta_3}{z_1-z_3}\ .
-\label{glp}
-\end{align}
-The next examples are 
-\begin{align}
- g^{L_{-1}^2} &= \frac{(\Delta_1+\Delta_2-\Delta_3)_2}{(z_1-z_2)^2} + 2\frac{(\Delta_1+\Delta_2-\Delta_3)}{(z_1-z_2)}\frac{(\Delta_1+\Delta_3-\Delta_2)}{(z_1-z_3)} + \frac{(\Delta_1+\Delta_3-\Delta_2)_2}{(z_1-z_3)^2}\ ,
-\label{gloo}
-\\
- g^{L_{-2}} & = \frac{\Delta_1+2\Delta_2-\Delta_3}{(z_1-z_2)^2} +\frac{\Delta_1-\Delta_2-\Delta_3}{(z_1-z_2)(z_1-z_3)} + \frac{\Delta_1+2\Delta_3-\Delta_2}{(z_1-z_3)^2}\ ,
-\label{glt}
-\end{align}
-where we use the notation
-\begin{align}
- (x)_n = \frac{\Gamma(x+n)}{\Gamma(x)} = \prod_{i=0}^{n-1}(x+i)\ .
-\label{xn}
-\end{align}
-\item $\boxed{N\geq 4}$\ : the Ward identities constrain the correlation functions of descendents, but do not determine them completely.
-\end{itemize}
-
-
-\begin{itemize}
-\item $\boxed{N=3}$\ : the equation \eqref{lzgz} with $L=L_{-1}$ becomes a linear differential equation for our three-point function, whose solution is 
+A solution of this equation, and of the analogous equations for the dependences on $z_2$ and $z_3$, is 
 \begin{align}
  \boxed{\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3) = z_{12}^{\Delta_3-\Delta_1-\Delta_2} z_{23}^{\Delta_1-\Delta_2-\Delta_3} z_{31}^{\Delta_2-\Delta_3-\Delta_1}}\ .
 \label{fzzz}
 \end{align}
-(See Exercise \ref{exolog} for the generalization to logarithmic conformal field theory.) 
-So, the dependence of the three-point function of quasi-primary fields on $z_i$ is fully determined by global conformal symmetry, and we have 
+(See Exercise \ref{exolog} for the generalization to logarithmic conformal field theory.)
+Restoring the dependence on the right conformal dimensions, we therefore have 
 \begin{align}
- \left\langle \prod_{i=1}^3 V_{\Delta_i,\bar{\Delta}_i}(z_i,\bar{z}_i) \right\rangle = C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2,\Delta_3,\bar{\Delta}_3}
+ \left\langle \prod_{i=1}^3 V_{\Delta_i,\bar{\Delta}_i}(z_i) \right\rangle = C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2,\Delta_3,\bar{\Delta}_3}
  \left|\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)\right|^2\ ,
 \label{cff}
 \end{align}
-where $C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2,\Delta_3,\bar{\Delta}_3}$ is called the \textbf{\boldmath three-point structure constant}\index{three-point structure constant}.
-\item $\boxed{N\geq 4}$\ : the three differential equations are not enough for controlling the dependence of an $N$-point function on the $N\geq 4$ variables $z_i$.
+where the modulus square notation means $|f(\Delta,z)|^2 = f(\Delta,z)f(\bar{\Delta},\bar{z})$, and the factor
+$C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2,\Delta_3,\bar{\Delta}_3}$ is called the \textbf{\boldmath three-point structure constant}\index{three-point structure constant}.
+
+\item $\boxed{N\geq 4}$\ : The three differential equations are not enough for controlling the dependence of an $N$-point function on the $N\geq 4$ variables $z_i$.
 Omitting the dependence on $\bar{z}_i$, the general solution can be written as 
 \begin{align}
  \left\langle\prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle = \prod_{i<j} z_{ij}^{\delta_{ij}}\ F(x_1,x_2,\cdots x_{N-3}) \quad \text{with} \ \ 
@@ -1867,7 +1847,8 @@ Omitting the dependence on $\bar{z}_i$, the general solution can be written as
 \end{align}
 where $F(x_1,x_2,\cdots x_{N-3})$ is an arbitrary function of the \textbf{\boldmath cross-ratios}\index{cross-ratio} $x_i$, which is therefore invariant under the global conformal transformations \eqref{gisl}.
 This function can be interpreted as an $N$-point function with $(z_{N-2},z_{N-1},z_N)=(0,\infty,1)$, as we now illustrate in the case $N=4$.
-\item $\boxed{N=4}$\ : in this case there is only one cross-ratio 
+
+\item $\boxed{N=4}$\ : In this case there is only one cross-ratio 
 \begin{align}
  x=\frac{z_{12}z_{34}}{z_{13}z_{24}}\ ,
 \label{xe}
@@ -1884,6 +1865,17 @@ With this choice of prefactor, we notice that $F(x)$ is related to a four-point 
 \label{fx}
 \end{align}
 \end{itemize}
+Axiom on single-valuedness / absence of monodromy?
+
+Correlation functions  are however supposed to be single-valued when their dependence on $\bar{z}$ is taken into account.
+
+a necessary condition for the single-valuedness of correlation functions involving $V_{\Delta,\bar{\Delta}}(z,\bar{z})$ is
+\begin{align}
+ \boxed{\Delta-\bar{\Delta} \in {\mathbb{Z}}}\ .
+\label{dbdz}
+\end{align}
+The number $\Delta-\bar{\Delta}$ is called the \textbf{conformal spin}\index{spin (conformal)} of the field $V_{\Delta,\bar\Delta}(z,\bar z)$, as it controls how that field behaves under rotations, $T_{\left(\begin{smallmatrix} e^{i\theta} & 0 \\ 0 & e^{-i\theta} \end{smallmatrix}\right)} V_{\Delta,\bar{\Delta}}(z,\bar{z}) = e^{2i\theta(\Delta-\bar\Delta)} V_{\Delta,\bar{\Delta}}(e^{2i\theta} z,e^{-2i\theta}\bar{z})$.
+
 
 \subsection{Virasoro-symmetric OPEs \label{secope}}
 
@@ -2083,21 +2075,7 @@ This field differs from the field $V_{\Delta_{\langle r,s \rangle}}(z)$, which c
 
 \subsection{Global conformal symmetry \label{secgcs}}
 
-This involves the expression $(cz+d)^{-2\Delta}$, which is a multivalued function of $z$ unless $2\Delta\in {\mathbb{Z}}$.
-Correlation functions  are however supposed to be single-valued when their dependence on $\bar{z}$ is taken into account.
-Since $T_g V_{\Delta,\bar{\Delta}}(z,\bar{z})= (cz+d)^{-2\Delta}(\bar c\bar z+\bar d)^{-2\bar\Delta} V_\Delta\left(\frac{az+b}{cz+d}, \frac{\bar a\bar z+ \bar b}{\bar c \bar z + \bar d}\right) $,
-a necessary condition for the single-valuedness of correlation functions involving $V_{\Delta,\bar{\Delta}}(z,\bar{z})$ is
-\begin{align}
- \boxed{\Delta-\bar{\Delta} \in \frac12 {\mathbb{Z}}}\ .
-\label{dbd}
-\end{align}
-The number $\Delta-\bar{\Delta}$ is called the \textbf{conformal spin}\index{spin (conformal)} of the field $V_{\Delta,\bar\Delta}(z,\bar z)$, as it controls how that field behaves under rotations, $T_{\left(\begin{smallmatrix} e^{i\theta} & 0 \\ 0 & e^{-i\theta} \end{smallmatrix}\right)} V_{\Delta,\bar{\Delta}}(z,\bar{z}) = e^{2i\theta(\Delta-\bar\Delta)} V_{\Delta,\bar{\Delta}}(e^{2i\theta} z,e^{-2i\theta}\bar{z})$.
-Then $V_{\Delta,\bar{\Delta}}(z,\bar{z})$ is called a fermionic field if $\Delta-\bar{\Delta}\in \frac12 +{\mathbb{Z}}$, and a \textbf{bosonic field}\index{bosonic field} if 
-\begin{align}
- \Delta-\bar{\Delta} \in {\mathbb{Z}}\ .
-\label{dbdz}
-\end{align}
-In the following, we will only study models whose fields are all bosonic. 
+
 
 
 Knowing the $z_i$-dependences of the two- and three-point functions, we can find the $z_i$-dependence of the OPE structure functions.
@@ -2112,9 +2090,33 @@ Alternatively, the $z_i$-dependence of the OPE structure functions can be derive
 
 \subsection{Conformal blocks \label{secaco}}
 
+
+\begin{align}
+ g^{L}_{\Delta_1,\Delta_2,\Delta_3}(z_1,z_2,z_3) = \frac{\left\langle L^{(z_1)} V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)V_{\Delta_3}(z_3)\right\rangle}{\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)V_{\Delta_3}(z_3)\right\rangle } \ .
+\label{lzgz}
+\end{align}
+For example, using $\epsilon(z)=(z-z_2)(z-z_3)$ in eq. \eqref{oiz} we obtain 
+\begin{align}
+ g^{L_{-1}}_{\Delta_1,\Delta_2,\Delta_3}(z_1,z_2,z_3) = \frac{\Delta_3-\Delta_1-\Delta_2}{z_1-z_2} +\frac{\Delta_2-\Delta_1-\Delta_3}{z_1-z_3}\ .
+\label{glp}
+\end{align}
+The next examples are 
+\begin{align}
+ g^{L_{-1}^2} &= \frac{(\Delta_1+\Delta_2-\Delta_3)_2}{(z_1-z_2)^2} + 2\frac{(\Delta_1+\Delta_2-\Delta_3)}{(z_1-z_2)}\frac{(\Delta_1+\Delta_3-\Delta_2)}{(z_1-z_3)} + \frac{(\Delta_1+\Delta_3-\Delta_2)_2}{(z_1-z_3)^2}\ ,
+\label{gloo}
+\\
+ g^{L_{-2}} & = \frac{\Delta_1+2\Delta_2-\Delta_3}{(z_1-z_2)^2} +\frac{\Delta_1-\Delta_2-\Delta_3}{(z_1-z_2)(z_1-z_3)} + \frac{\Delta_1+2\Delta_3-\Delta_2}{(z_1-z_3)^2}\ ,
+\label{glt}
+\end{align}
+where we use the notation
+\begin{align}
+ (x)_n = \frac{\Gamma(x+n)}{\Gamma(x)} = \prod_{i=0}^{n-1}(x+i)\ .
+\label{xn}
+\end{align}
+
 We will now define \textbf{\boldmath conformal blocks}\index{conformal block} as the universal constituents of correlation functions. 
 We want correlation functions to be decomposable as combinations of the model-dependent three-point structure constant, and conformal blocks.
-In this sense, we already encountered simple examples of conformal blocks: two-point blocks $\mathcal{F}^{(2)}(\Delta_1|z_1,z_2)$ \eqref{fzz}, and three-point blocks $\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)$ \eqref{fzzz}. (On the torus, there exist nontrivial zero-point blocks, which are also known as the characters of representations.)
+In this sense, a simple example of a conformal block is the three-point block $\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)$ \eqref{fzzz}. (On the torus, there exist nontrivial zero-point blocks, which are also known as the characters of representations.)
 
 Using the OPE \eqref{vvs}, together with the results of Section \ref{secgcs}, a four-point function of descendent fields of the type $V_{s,\bar{s}}(z,\bar{z})$ where $s=(\Delta,L)$ can be decomposed as 
 \begin{align}
@@ -2836,7 +2838,7 @@ We must then leave the segment $]0,Q[$ out, and build the spectrum from the line
 \end{align}
 The representation $\mathcal{V}_\Delta\otimes \overline{\mathcal{V}}_{\bar{\Delta}}$ can appear in the spectrum only if both 
 $\Delta$ and $\bar{\Delta}$ obey this condition. 
-Moreover, single-valuedness of correlation functions requires $\Delta-\bar{\Delta}\in\frac12 {\mathbb{Z}} $, see eq. \eqref{dbd}.
+Moreover, single-valuedness of correlation functions requires $\Delta-\bar{\Delta}\in {\mathbb{Z}} $, see eq. \eqref{dbdz}.
 By continuity, $\Delta-\bar{\Delta}$ must be a constant, and this constant must be zero for both $\Delta$ and $\bar{\Delta}$ to span the whole half-line $\left[\frac{c-1}{24},\infty\right[$.
 Therefore, the spectrum must be diagonal,
 \begin{align}
