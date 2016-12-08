@@ -682,9 +682,9 @@ The structure of this algebra is worked out by considering transformations close
  \text{where} \quad \epsilon_n\in\mathbb{C}\ .
 \label{sen}
 \end{align}
-To each transformation $f_\epsilon$ we associate an infinitesimal differential operator $D_\epsilon$ such that for any function $F(z,\bar{z})$ we have 
+To each transformation $f_\epsilon$ we associate an infinitesimal differential operator $D_\epsilon$ such that for any function $F(z)$ we have 
 \begin{align}
- F(f_\epsilon(z),\overline{f_\epsilon(z)}) = \left(1- D_\epsilon -\overline{D_\epsilon} \right)F(z,\bar{z}) + O(\epsilon^2)\ ,
+ F(f_\epsilon(z)) = \left(1- D_\epsilon -\overline{D_\epsilon} \right)F(z) + O(\epsilon^2)\ ,
 \label{ffe}
 \end{align}
 and we find
@@ -1549,27 +1549,29 @@ In order to derive equations that constrain the correlation functions, we will n
  ~\label{ax:dvz}
  For any field $V_\sigma(z)$,
  \begin{align}
- \boxed{{\frac{\partial}{\partial z} V_\sigma(z)} = L_{-1} V_\sigma (z) }  \quad \text{and} \quad {\frac{\partial}{\partial \bar z} V_\sigma(z)} = \bar L_{-1} V_\sigma (z)\ .
+ \boxed{{\frac{\partial}{\partial z} V_\sigma(z)} = L_{-1} V_\sigma (z) }  \quad \text{and} \quad {\frac{\partial}{\partial \bar z} V_\sigma(z)} = \bar L_{-1} V_\sigma (z)\ ,
 \label{lvpv}
 \end{align}
+consistently with the interpretation of $L_{-1},\bar L_{-1}$ as generators of translations. 
 \end{hyp}
 \noindent
-The value of $\frac{\partial}{\partial z} V_\sigma(z)$ is suggested by the interpretation of $L_{-1}$ as a generator of translations. 
+The action of the left-moving Virasoro algebra will therefore give rise to holomorphic derivatives $\frac{\partial}{\partial z}$, and the solutions of the corresponding differential equations will be locally holomorphic functions of $z$. The analogous results for the right-moving Virasoro algebra are obtained by $z\to \bar z$ and $\frac{\partial}{\partial z} \to \frac{\partial}{\partial \bar z}$. 
 
-From Axiom \ref{ax:dvz} we can immediately deduce how $L_n^{(z)}$ depends on $z$. Applying the axiom to the two fields $V_\sigma(z)$ and $L_n^{(z)}V_\sigma(z)$, we find 
+From Axiom \ref{ax:dvz} we can immediately deduce how $L_n^{(z)}$ depends on $z$. Applying the axiom to the two fields $V_\sigma(z)$ and $L_n^{(z)}V_\sigma(z)$, we find $\frac{\partial}{\partial \bar z} L_n^{(z)}=0$ and 
 \begin{align}
  \frac{\partial}{\partial z} L_n^{(z)} = [L_{-1},L_n^{(z)}] = -(n+1)L_{n-1}^{(z)}\ .
  \label{pll}
 \end{align}
 (See Exercise \ref{exowitt} for the corresponding Witt algebra identity.)
 This shows that the Virasoro generators at different points $(L_n^{(z_1)})_{n\in \mathbb{Z}}$ and $(L_n^{(z_2)})_{n\in \mathbb{Z}}$ are linearly related, and should be understood of two bases of the same space of symmetry generators.
-Now this relation is equivalent to $\frac{\partial}{\partial z} T(y) = 0$, where we define the \textbf{\boldmath energy-momentum tensor}\index{energy-momentum tensor} $T(y)$ as 
+Now this relation is equivalent to $\frac{\partial}{\partial z} T(y) = \frac{\partial}{\partial \bar z} T(y) = 0$, where we define the \textbf{\boldmath energy-momentum tensor}\index{energy-momentum tensor} $T(y)$ as 
 \begin{align}
  \boxed{T(y) = \sum_{n\in{\mathbb{Z}}} \frac{L_n^{(z)}}{(y-z)^{n+2}}}\ .
 \label{tsl}
 \end{align}
 (The series is supposed to converge if $y$ is close enough to $z$.) Calling $T(y)$ a tensor is an abuse of terminology: strictly speaking, the energy-momentum tensor is actually 
-$\left(\begin{smallmatrix} T_{yy} = T(y) & T_{y\bar y} \\ T_{\bar y y} & T_{\bar y \bar y} = \bar T(\bar y) \end{smallmatrix}\right)$, where in particular $\bar T(\bar y)= \sum_{n\in{\mathbb{Z}}} \frac{\bar L_n^{(z)}}{(\bar y-\bar z)^{n+2}}$. 
+$\left(\begin{smallmatrix} T_{yy} = T(y) & T_{y\bar y} \\ T_{\bar y y} & T_{\bar y \bar y} = \bar T(y) \end{smallmatrix}\right)$, where in particular $\bar T(y)= \sum_{n\in{\mathbb{Z}}} \frac{\bar L_n^{(z)}}{(\bar y-\bar z)^{n+2}}$. 
+(We refrain from using the notation $\bar T(\bar y)$ for a locally antiholomorphic field and reserving $T(y)$ for a locally holomorphic field, while fields that are neither holomorphic nor antiholomorphic would have to be written as $V_\sigma(z,\bar z)$.)
 
 The energy-momentum tensor encodes the action of the Virasoro algebra at all points $z$. 
 From $T(y)$, we can indeed recover the Virasoro generators at any point,
