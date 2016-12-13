@@ -1159,7 +1159,6 @@ Since $|\Delta\rangle$ is a primary state, it is enough to consider the algebra 
 Representations of this type are called \textbf{\boldmath highest-weight representations}\index{highest-weight representation}.
 A state of $R$ of the type $U|\Delta\rangle$ with $U\in U(\mathfrak{V}^+)$ is called a \textbf{\boldmath descendent state}\index{descendent state} if it is linearly independent from $|\Delta\rangle$.
 
-
 The highest-weight representation $R$
 comes with a natural surjective map
 \begin{align}
@@ -1886,7 +1885,19 @@ The number $\Delta-\bar{\Delta}$ is called the \textbf{conformal spin}\index{spi
 
 \subsection{Operator product expansions \label{secope}}
 
-We make the fundamental assumption that the OPE of primary or descendent fields only involves primary and descendent fields -- in other words, that the set of highest-weight representations is closed under fusion. This assumption is not as innocent as it may seem: we will see in Section \ref{secslr} that the set of affine highest-weight representations is not closed under fusion. The fields which appear in OPEs will then be denoted as $V_{s,\bar{s}}(z,\bar{z}) = L\bar{L} V_{\Delta,\bar{\Delta}}(z,\bar{z})$, where $s=(\Delta,L)$ is made of a conformal dimension $\Delta$, and an element $L$ of the basis $\mathcal{L}$ \eqref{lels} of $U(\mathfrak{V}^+)$.
+Let us study how local conformal symmetry constrain OPEs. We start with a generic OPE of the type $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_\sigma C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) V_\sigma(z_2)$. Let us insert $\oint_C dz (z-z_2)^{n+1} T(z)$ on both sides of the OPE, where the contour $C$ encircles both $z_1$ and $z_2$. Assuming $n\geq -1$, this yields the identity
+\begin{align}
+ \left(L_n^{(z_2)}+\sum_{m=-1}^{n}\binom{m+1}{n+1} z_{12}^{n-m}L_{m}^{(z_1)}\right)V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_\sigma C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) L_n V_\sigma(z_2)\ .
+\end{align}
+In the case $n=-1$, using Axiom \ref{ax:dvz}, this identity becomes $\left(\frac{\partial}{\partial z_1} +\frac{\partial}{\partial z_2}\right) V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_\sigma C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) \frac{\partial}{\partial z_2} V_\sigma(z_2)$. Using the OPE again, this implies $\left(\frac{\partial}{\partial z_1} +\frac{\partial}{\partial z_2}\right) C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2)=0$ -- translation invariance of the OPE coefficients. 
+Similarly, in the case $n=0$, our identity determines the behaviour of the OPE coefficients under dilatations. Taken together the $n=0$ and $n=-1$ cases determine the dependence of the OPE coefficients on $z_1,z_2$.
+Assuming the fields $V_{\sigma_1}, V_{\sigma_2}$ and $V_\sigma$ are  $L_0$-eigenvalues with the respective dimensions $\Delta_{\sigma_1}, \Delta_{\sigma_2}$ and $\Delta_\sigma$, this dependence is 
+\begin{align}
+ C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) \propto (z_1-z_2)^{\Delta_{\sigma}-\Delta_{\sigma_1}-\Delta_{\sigma_2}} \ .
+\end{align}
+
+
+The fields which appear in OPEs will then be denoted as $V_{s,\bar{s}}(z,\bar{z}) = L\bar{L} V_{\Delta,\bar{\Delta}}(z,\bar{z})$, where $s=(\Delta,L)$ is made of a conformal dimension $\Delta$, and an element $L$ of the basis $\mathcal{L}$ \eqref{lels} of $U(\mathfrak{V}^+)$.
 
 We already know the general form \eqref{ope} of OPEs, and we will now see how Virasoro symmetry constrains OPE coefficients. First, we anticipate that fusion multiplicities are trivial, as we will check below. Then the OPE's universal parts, like the Ward identities, should respect holomorphic factorization, invariance under translations, and dimensional analysis \eqref{zaz}. This leads to
 \begin{multline}
@@ -1902,7 +1913,7 @@ where $f_{s_1,s_2}^s$ is a universal, $z_i$-independent coefficient. In order to
  V_{s_1}(z_1)V_{s_2}(z_2) \sim \sum_{L\in \mathcal{L}} f_{s_1,s_2}^{\Delta,L} (z_1-z_2)^{|L|-|L_1|-|L_2|} LV_\Delta(z_2)\ .
 \label{vvlv}
 \end{align}
-Constraints from Virasoro symmetry can be obtained by inserting $\oint_C dz\ (z-z_2)^{n+1} T(z)$ on both sides of the OPE, where the contour $C$ encircles both $z_1$ and $z_2$.
+Constraints from Virasoro symmetry can be obtained by inserting 
 If $n\geq -1$, the resulting constraint is 
 \begin{align}
  \left(L_n^{(z_2)}+\sum_{m=-1}^{n}\binom{m+1}{n+1} z_{12}^{n-m}L_{m}^{(z_1)}\right) V_{s_1}(z_1)V_{s_2}(z_2) \sim  L_n\sum_{L\in \mathcal{L}} f_{s_1,s_2}^{\Delta,L} z_{12}^{|L|-|L_1|-|L_2|}  LV_\Delta(z_2)\ ,
