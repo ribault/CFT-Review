@@ -1885,16 +1885,30 @@ The number $\Delta-\bar{\Delta}$ is called the \textbf{conformal spin}\index{spi
 
 \subsection{Operator product expansions \label{secope}}
 
-Let us study how local conformal symmetry constrain OPEs. We start with a generic OPE of the type $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_\sigma C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) V_\sigma(z_2)$. Let us insert $\oint_C dz (z-z_2)^{n+1} T(z)$ on both sides of the OPE, where the contour $C$ encircles both $z_1$ and $z_2$. Assuming $n\geq -1$, this yields the identity
+Let us study how local conformal symmetry constrain OPEs. We start with a generic OPE of the type $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_\sigma C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) V_\sigma(z_2)$. Let us insert $\oint_C dz (z-z_2)^{n+1} T(z)$ on both sides of the OPE, where the contour $C$ encircles both $z_1$ and $z_2$. Assuming $n\geq -1$, this yields the \textbf{OPE Ward identity}\index{Ward identity!---for OPEs}
 \begin{align}
  \left(L_n^{(z_2)}+\sum_{m=-1}^{n}\binom{m+1}{n+1} z_{12}^{n-m}L_{m}^{(z_1)}\right)V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_\sigma C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) L_n V_\sigma(z_2)\ .
 \end{align}
-In the case $n=-1$, using Axiom \ref{ax:dvz}, this identity becomes $\left(\frac{\partial}{\partial z_1} +\frac{\partial}{\partial z_2}\right) V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_\sigma C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) \frac{\partial}{\partial z_2} V_\sigma(z_2)$. Using the OPE again, this implies $\left(\frac{\partial}{\partial z_1} +\frac{\partial}{\partial z_2}\right) C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2)=0$ -- translation invariance of the OPE coefficients. 
-Similarly, in the case $n=0$, our identity determines the behaviour of the OPE coefficients under dilatations. Taken together the $n=0$ and $n=-1$ cases determine the dependence of the OPE coefficients on $z_1,z_2$.
-Assuming the fields $V_{\sigma_1}, V_{\sigma_2}$ and $V_\sigma$ are  $L_0$-eigenvalues with the respective dimensions $\Delta_{\sigma_1}, \Delta_{\sigma_2}$ and $\Delta_\sigma$, this dependence is 
+Let us call the $n=-1,0$ identities global Ward identities, and show that they determine the dependence of the OPE coefficients $C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2)$ on $z_1,z_2$:
+\begin{itemize}
+ \item Using Axiom \ref{ax:dvz}, the $n=-1$ identity becomes 
+ \begin{align}
+  \left(\frac{\partial}{\partial z_1} +\frac{\partial}{\partial z_2}\right) V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_\sigma C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) \frac{\partial}{\partial z_2} V_\sigma(z_2)\ .
+ \end{align}
+Using the OPE again on the left-hand side, this implies $\left(\frac{\partial}{\partial z_1} +\frac{\partial}{\partial z_2}\right) C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2)=0$ -- translation invariance of the OPE coefficients. 
+ \item Similarly, the $n=0$ identity determines the behaviour of the OPE coefficients under dilatations. 
+\end{itemize}
+Assuming the fields $V_{\sigma_1}, V_{\sigma_2}$ and $V_\sigma$ are  $L_0$-eigenvalues with the respective dimensions $\Delta_{\sigma_1}, \Delta_{\sigma_2}$ and $\Delta_\sigma$, the solution of the global Ward identities is 
 \begin{align}
  C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) \propto (z_1-z_2)^{\Delta_{\sigma}-\Delta_{\sigma_1}-\Delta_{\sigma_2}} \ .
 \end{align}
+
+The $n\geq 1$ Ward identities are local Ward identities, and they determine the coefficients of descendent fields $V_\sigma$ in terms of the coefficients of the corresponding primary fields.
+Before illustrating this property of local Ward identities in the case of low level descendent fields, let us see how it affects the structure of the OPEs. Taking for simplicity $V_{\sigma_1}$ and $V_{\sigma_2}$ to be primary fields, the OPE reads
+
+
+This property implies that fusion multiplicities are trivial in fusion products of highest-weight representations. If Ward identities determined $f^L$ in terms of say $f^1$ and $f^{L_{-1}}$, then the fusion multiplicity would be two. 
+
 
 
 The fields which appear in OPEs will then be denoted as $V_{s,\bar{s}}(z,\bar{z}) = L\bar{L} V_{\Delta,\bar{\Delta}}(z,\bar{z})$, where $s=(\Delta,L)$ is made of a conformal dimension $\Delta$, and an element $L$ of the basis $\mathcal{L}$ \eqref{lels} of $U(\mathfrak{V}^+)$.
@@ -4662,7 +4676,7 @@ In the case of an $N$-point function where the fields with indices $j\neq i$ are
 \left\langle\left(J^a_{-n}\right)^{(z_i)}\Phi^{\sigma_i}(z_i)\prod_{j\neq i} \Phi^{R_j}_{X_j}(z_j)\right\rangle &=\sum_{j\neq i} \frac{D_{X_j}^{R_j}(t^a)}{(z_j-z_i)^n} \left\langle \Phi^{\sigma_i}(z_i)\prod_{j\neq i} \Phi^{R_j}_{X_j}(z_j)\right\rangle\ . 
 \label{jmnz}
 \end{align}
-In the case of an $N$-point function of affine primary fields, the global Ward identites become
+In the case of an $N$-point function of affine primary fields, the global Ward identities become
 \begin{align}
  \sum_{i=1}^N D_{X_i}^{R_i}(t^a)\ \left\langle \prod_{i=1}^N \Phi^{R_i}_{X_i}(z_i)\right\rangle   = 0 \ .
 \label{drxt}
@@ -5041,7 +5055,7 @@ then we have
 \begin{align}
  g\cdot \Phi^j_{x,\bar{x}}(h) = U_g \Phi^j_{x,\bar{x}}(h)\ .
 \end{align}
-This suggests that we identitfy the large level limit of the field $\Phi^j_{x,\bar{x}}$ with the function $\Phi^j_{x,\bar{x}}(h)$. 
+This suggests that we identify the large level limit of the field $\Phi^j_{x,\bar{x}}$ with the function $\Phi^j_{x,\bar{x}}(h)$. 
 We can then define a scalar product on the large level limit of the spectrum, using the natural, positive definite scalar product on $\mathcal{F}(H_3^+)$, 
 \begin{align}
  \left\langle f \middle| f' \right\rangle = \int_{H_3^+} dh\ \overline{f(h)} f'(h)\ ,
