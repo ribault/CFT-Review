@@ -515,7 +515,7 @@ The index $\lambda$ labels elements of a basis of solutions of the symmetry equa
 The number $N_{R_1R_2}^{R_3}\in {\mathbb{N}} \cup \{\infty\}$ of independent solutions is the \textbf{\boldmath fusion multiplicity}\index{fusion multiplicity}. 
 In particular, the field $V_{\sigma_3}$ can appear in a $V_{\sigma_1}V_{\sigma_2}$ OPE only if $N_{R_1R_2}^{R_3}\neq 0$.
 
-\begin{hyp}[\textbf{\boldmath fusion product}\index{fusion product} or \textbf{\boldmath fusion rules}\index{fusion rules}]
+\begin{hyp}[\textbf{\boldmath Fusion product}\index{fusion product} or \textbf{\boldmath fusion rules}\index{fusion rules}]
  ~\label{ax:fp}
  There is a bilinear, commutative, associative product of representations, such that the decomposition of $R_1\times R_2$ into indecomposable representations is 
  \begin{align}
@@ -882,8 +882,8 @@ The application of the bootstrap approach to conformal field theories, called th
 is particularly powerful in two dimensions.
 This is because the algebra of conformal transformations is infinite-dimensional, 
 so that the spectrum can be decomposed into a small number of large representations.
-Moreover, the factorization of the symmetry algebra into two copies of the Virasoro algebra 
-implies that symmetry equations factorize into $z$-dependent equations from the left-moving Virasoro algebra, and $\bar{z}$-dependent equations from the right-moving Virasoro algebra.
+Moreover, the factorization of the symmetry algebra into two copies of the Virasoro algebra, and the decomposition of the spectrum into factorizable representations,
+imply that symmetry equations factorize into $z$-dependent equations from the left-moving Virasoro algebra, and $\bar{z}$-dependent equations from the right-moving Virasoro algebra.
 It follows that all universal quantities, for example $f_{R_1,R_2}^{R_3,\lambda}(v_i|x_j)$ from \eqref{clcf}, can be factorized into $z$-dependent and $\bar{z}$-dependent functions. 
 This is called \textbf{\boldmath holomorphic factorization}\index{holomorphic factorization}, where the term ``holomorphic''
 should be understood as \textbf{\boldmath locally holomorphic}\index{locally holomorphic}: the $z$-dependent factors are supposed to be $\bar{z}$-independent, but they can have singularities such as poles and branch cuts, like the function $\sqrt{z}$.
@@ -1563,14 +1563,14 @@ From Axiom \ref{ax:dvz} we can immediately deduce how $L_n^{(z)}$ depends on $z$
 \end{align}
 (See Exercise \ref{exowitt} for the corresponding Witt algebra identity.)
 This shows that the Virasoro generators at different points $(L_n^{(z_1)})_{n\in \mathbb{Z}}$ and $(L_n^{(z_2)})_{n\in \mathbb{Z}}$ are linearly related, and should be understood of two bases of the same space of symmetry generators.
-Now this relation is equivalent to $\frac{\partial}{\partial z} T(y) = \frac{\partial}{\partial \bar z} T(y) = 0$, where we define the \textbf{\boldmath energy-momentum tensor}\index{energy-momentum tensor} $T(y)$ as 
+And this is equivalent to $\frac{\partial}{\partial z} T(y) = \frac{\partial}{\partial \bar z} T(y) = 0$, where we define the \textbf{\boldmath energy-momentum tensor}\index{energy-momentum tensor} $T(y)$ as 
 \begin{align}
  \boxed{T(y) = \sum_{n\in{\mathbb{Z}}} \frac{L_n^{(z)}}{(y-z)^{n+2}}}\ .
 \label{tsl}
 \end{align}
 (The series is supposed to converge if $y$ is close enough to $z$.) Calling $T(y)$ a tensor is an abuse of terminology: strictly speaking, the energy-momentum tensor is actually 
 $\left(\begin{smallmatrix} T_{yy} = T(y) & T_{y\bar y} \\ T_{\bar y y} & T_{\bar y \bar y} = \bar T(y) \end{smallmatrix}\right)$, where in particular $\bar T(y)= \sum_{n\in{\mathbb{Z}}} \frac{\bar L_n^{(z)}}{(\bar y-\bar z)^{n+2}}$. 
-(We refrain from using the notation $\bar T(\bar y)$ for a locally antiholomorphic field and reserving $T(y)$ for a locally holomorphic field, while fields that are neither holomorphic nor antiholomorphic would have to be written as $V_\sigma(z,\bar z)$.)
+%(We refrain from using the notation $\bar T(\bar y)$ for a locally antiholomorphic field and reserving $T(y)$ for a locally holomorphic field, while fields that are neither holomorphic nor antiholomorphic would have to be written as $V_\sigma(z,\bar z)$.)
 
 The energy-momentum tensor encodes the action of the Virasoro algebra at all points $z$. 
 From $T(y)$, we can indeed recover the Virasoro generators at any point,
@@ -1812,9 +1812,9 @@ Assuming $\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle\neq 0$, w
 \end{align}
 The remaining Ward identities then amount to 
 \begin{align}
- \frac{\partial}{\partial z_1}\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle = - \frac{\partial}{\partial z_2}\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle = -\frac{2\Delta_1}{z_1-z_2} \left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle\ ,
+ \frac{\partial}{\partial z_1}\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle = - \frac{\partial}{\partial z_2}\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle = -\frac{2\Delta_1}{z_1-z_2} \left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle\ .
 \end{align}
-whose solution is 
+Using the notation $z_{12}=z_1-z_2$, the solution is
 \begin{align}
  \left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle \propto z_{12}^{-2\Delta_1}\ .
  \label{fzz}
@@ -1868,7 +1868,7 @@ and the general solution can be written as
  \left\langle\prod_{i=1}^4 V_{\Delta_i}(z_i)\right\rangle = \mathcal{F}^{(3)}(\Delta_1,\Delta_2,0|z_1,z_2,z_3) \mathcal{F}^{(3)}(\Delta_3,\Delta_4,0|z_3,z_4,z_2)\ F(x)\ ,
 \label{zgg}
 \end{align}
-where we built the prefactor as a combination of three-point functions, such that each variable $z_i$ has the correct total exponent $-2\Delta_i$.
+where we built the prefactor as a combination of three-point functions, such that each variable $z_i$ has the total exponent $-2\Delta_i$.
 With this choice of prefactor, we notice that $F(x)$ is related to a four-point function with $(z_2,z_3,z_4)=(0,\infty,1)$ as
 \begin{align}
  F(x) =x^{\Delta_1+\Delta_2} \left\langle V_{\Delta_1}(x)V_{\Delta_2}(0)V_{\Delta_3}(\infty) V_{\Delta_4}(1)\right\rangle \ .
@@ -1889,22 +1889,58 @@ Let us study how local conformal symmetry constrain OPEs. We start with a generi
 \begin{align}
  \left(L_n^{(z_2)}+\sum_{m=-1}^{n}\binom{m+1}{n+1} z_{12}^{n-m}L_{m}^{(z_1)}\right)V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_\sigma C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) L_n V_\sigma(z_2)\ .
 \end{align}
-Let us call the $n=-1,0$ identities global Ward identities, and show that they determine the dependence of the OPE coefficients $C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2)$ on $z_1,z_2$:
-\begin{itemize}
- \item Using Axiom \ref{ax:dvz}, the $n=-1$ identity becomes 
+
+\subsubsection{Global Ward identities $n\in\{-1,0\}$}
+
+Using Axiom \ref{ax:dvz}, the $n=-1$ identity becomes 
  \begin{align}
   \left(\frac{\partial}{\partial z_1} +\frac{\partial}{\partial z_2}\right) V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_\sigma C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) \frac{\partial}{\partial z_2} V_\sigma(z_2)\ .
  \end{align}
 Using the OPE again on the left-hand side, this implies $\left(\frac{\partial}{\partial z_1} +\frac{\partial}{\partial z_2}\right) C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2)=0$ -- translation invariance of the OPE coefficients. 
- \item Similarly, the $n=0$ identity determines the behaviour of the OPE coefficients under dilatations. 
-\end{itemize}
-Assuming the fields $V_{\sigma_1}, V_{\sigma_2}$ and $V_\sigma$ are  $L_0$-eigenvalues with the respective dimensions $\Delta_{\sigma_1}, \Delta_{\sigma_2}$ and $\Delta_\sigma$, the solution of the global Ward identities is 
+Assuming the fields $V_{\sigma_1}, V_{\sigma_2}$ and $V_\sigma$ are  $L_0$-eigenvectors with the respective dimensions $\Delta_{\sigma_1}, \Delta_{\sigma_2}$ and $\Delta_\sigma$, the $n=0$ identity becomes 
 \begin{align}
- C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) \propto (z_1-z_2)^{\Delta_{\sigma}-\Delta_{\sigma_1}-\Delta_{\sigma_2}} \ .
+ \left(z_{12}\frac{\partial}{\partial z_1} + \Delta_{\sigma_1}+\Delta_{\sigma_2}\right) V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_\sigma C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) \Delta_\sigma V_\sigma(z_2)\ .
 \end{align}
+This determines how OPE coefficients behave under dilatations. 
+Therefore, the two global Ward identities determine the dependence of OPE coefficients on $z_1,z_2$,
+\begin{align}
+ C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) = C_{\sigma_1,\sigma_2}^\sigma 
+ z_{12}^{\Delta_{\sigma}-\Delta_{\sigma_1}-\Delta_{\sigma_2}}
+ \bar z_{12}^{\bar\Delta_{\sigma}-\bar\Delta_{\sigma_1}-\bar\Delta_{\sigma_2}}
+ \ ,
+\end{align}
+in agreement with dimensional analysis eq. \eqref{zaz}.
 
-The $n\geq 1$ Ward identities are local Ward identities, and they determine the coefficients of descendent fields $V_\sigma$ in terms of the coefficients of the corresponding primary fields.
-Before illustrating this property of local Ward identities in the case of low level descendent fields, let us see how it affects the structure of the OPEs. Taking for simplicity $V_{\sigma_1}$ and $V_{\sigma_2}$ to be primary fields, the OPE reads
+\subsubsection{Local Ward identities $n\geq 1$}
+
+Let us for simplicity specialize to an OPE of two primary fields $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$. Omitting the dependence on right-moving quantities $\bar z_i,\bar \Delta_i$, the local Ward identities read 
+\begin{align}
+ \sum_\sigma C^\sigma_{\Delta_1,\Delta_2}(\Delta_\sigma + n\Delta_1-\Delta_2) z_{12}^{\Delta_{\sigma}-\Delta_1-\Delta_2}z_{12}^n V_\sigma(z_2) = \sum_\sigma C^\sigma_{\Delta_1,\Delta_2} z_{12}^{\Delta_{\sigma}-\Delta_1-\Delta_2}  L_nV_\sigma(z_2)\ .
+\end{align}
+Focussing on the right-hand side terms that come from descendents $V_\sigma= LV_\Delta$ of a given primary field at a level $|L|=N$, we find the identities of elements of $U(\mathfrak{V}^+)$ 
+\begin{align}
+ \sum_{|L|=N-n} C^{(\Delta,L)}_{\Delta_1,\Delta_2}(\Delta+N-n+n\Delta_1-\Delta_2)L = \sum_{|L|=N} C^{(\Delta,L)}_{\Delta_1,\Delta_2}[L_n, L]\ .
+ \label{eq:lwo}
+\end{align}
+This system of linear equations determines the coefficients $C^{(\Delta,L)}_{\Delta_1,\Delta_2}$ of descendent fields in terms of the coefficient $C^{(\Delta,1)}_{\Delta_1,\Delta_2}$ of the primary field,
+\begin{align}
+ C^{(\Delta,L)}_{\Delta_1,\Delta_2} = C^{(\Delta,1)}_{\Delta_1,\Delta_2} f^{\Delta,L}_{\Delta_1,\Delta_2}\ ,
+\end{align}
+where  $f^{\Delta,L}_{\Delta_1,\Delta_2}$ are universal coefficients such that $f^{\Delta,1}_{\Delta_1,\Delta_2} =1$.
+Let us determine these coefficients for $|L|\leq 2$, temporarily abbreviating them as $f^L$. The cases $(N,n)=(1,1),(2,2),(2,1)$ of \eqref{eq:lwo} respectively yield 
+\begin{align}
+ f^1(\Delta + \Delta_1-\Delta_2) & = 2\Delta f^{L_{-1}} \ ,
+ \\
+ f^1(\Delta+ 2\Delta_1-\Delta_2) & = 6\Delta f^{L_{-1}^2} + (4\Delta+\tfrac{c}{2})f^{L_{-2}}\ ,
+ \\
+ (\Delta+1+\Delta_1-\Delta_2) f^{L_{-1}}L_{-1} & = \left[2(2\Delta+1) f^{L_{-1}^2} + 3 f^{L_{-2}}\right] L_{-1}\ .   
+\end{align}
+In the case
+
+Further assuming that the fields $V_\sigma$  $V_\sigma = LV_\Delta$ with $L\in U(\mathfrak{V}^+)$ is a descendent field, 
+
+Local Ward identities determine the OPE coefficients of descendent fields $V_\sigma$ in terms of the coefficients of the corresponding primary fields.
+Before showing this in the case of low level descendent fields, let us see how it affects the structure of the OPEs. Taking for simplicity $V_{\sigma_1}$ and $V_{\sigma_2}$ to be primary fields, the OPE reads
 
 
 This property implies that fusion multiplicities are trivial in fusion products of highest-weight representations. If Ward identities determined $f^L$ in terms of say $f^1$ and $f^{L_{-1}}$, then the fusion multiplicity would be two. 
