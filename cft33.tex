@@ -1824,6 +1824,7 @@ the $z_i$-independent factor to one by a choice of normalization of the fields, 
 restoring the dependence on the right conformal dimensions, we find
 \begin{align}
  \boxed{ \left\langle V_{\Delta_1,\bar{\Delta}_1}(z_1,\bar{z}_1) V_{\Delta_2,\bar{\Delta}_2}(z_2,\bar{z}_2)\right\rangle = \delta_{\Delta_1,\Delta_2}\delta_{\bar{\Delta}_1,\bar{\Delta}_2} z_{12}^{-2\Delta_1}\bar z_{12}^{-2\bar \Delta_1} }\ ,
+ \label{eq:2pt}
 \end{align}
 where the symbol $\delta_{\Delta_1,\Delta_2}$ is a Kronecker delta or a Dirac delta function, depending on whether the conformal dimensions take discrete or continuous values.
 
@@ -1908,16 +1909,18 @@ Therefore, the two global Ward identities determine the dependence of OPE coeffi
  z_{12}^{\Delta_{\sigma}-\Delta_{\sigma_1}-\Delta_{\sigma_2}}
  \bar z_{12}^{\bar\Delta_{\sigma}-\bar\Delta_{\sigma_1}-\bar\Delta_{\sigma_2}}
  \ ,
+ \label{eq:coz}
 \end{align}
 in agreement with dimensional analysis eq. \eqref{zaz}.
 
 \subsubsection{Local Ward identities $n\geq 1$}
 
-Let us for simplicity specialize to an OPE of two primary fields $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$. Omitting the dependence on right-moving quantities $\bar z_i,\bar \Delta_i$, the local Ward identities read 
+Let us for simplicity specialize to an OPE of two primary fields $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$. Using the form \eqref{eq:coz} of the OPE coefficients, and
+omitting the dependence on right-moving quantities $\bar z_i,\bar \Delta_i$, the local Ward identities read 
 \begin{align}
  \sum_\sigma C^\sigma_{\Delta_1,\Delta_2}(\Delta_\sigma + n\Delta_1-\Delta_2) z_{12}^{\Delta_{\sigma}-\Delta_1-\Delta_2}z_{12}^n V_\sigma(z_2) = \sum_\sigma C^\sigma_{\Delta_1,\Delta_2} z_{12}^{\Delta_{\sigma}-\Delta_1-\Delta_2}  L_nV_\sigma(z_2)\ .
 \end{align}
-Focussing on the right-hand side terms that come from descendents $V_\sigma= LV_\Delta$ of a given primary field at a level $|L|=N$, we find the identities of elements of $U(\mathfrak{V}^+)$ 
+Focussing on the right-hand side terms that come from descendents $V_\sigma= LV_\Delta$ of a given primary field at a level $|L|=N\geq n$, we find the identities of elements of $U(\mathfrak{V}^+)$ 
 \begin{align}
  \sum_{|L|=N-n} C^{(\Delta,L)}_{\Delta_1,\Delta_2}(\Delta+N-n+n\Delta_1-\Delta_2)L = \sum_{|L|=N} C^{(\Delta,L)}_{\Delta_1,\Delta_2}[L_n, L]\ .
  \label{eq:lwo}
@@ -1927,117 +1930,49 @@ This system of linear equations determines the coefficients $C^{(\Delta,L)}_{\De
  C^{(\Delta,L)}_{\Delta_1,\Delta_2} = C^{(\Delta,1)}_{\Delta_1,\Delta_2} f^{\Delta,L}_{\Delta_1,\Delta_2}\ ,
 \end{align}
 where  $f^{\Delta,L}_{\Delta_1,\Delta_2}$ are universal coefficients such that $f^{\Delta,1}_{\Delta_1,\Delta_2} =1$.
-Let us determine these coefficients for $|L|\leq 2$, temporarily abbreviating them as $f^L$. The cases $(N,n)=(1,1),(2,2),(2,1)$ of \eqref{eq:lwo} respectively yield 
+Let us show this for $|L|\leq 2$. The cases $(N,n)=(1,1),(2,2),(2,1)$ of \eqref{eq:lwo} respectively yield 
 \begin{align}
- f^1(\Delta + \Delta_1-\Delta_2) & = 2\Delta f^{L_{-1}} \ ,
+ \Delta + \Delta_1-\Delta_2 & = 2\Delta f^{L_{-1}} \ ,
+ \label{flfo}
  \\
- f^1(\Delta+ 2\Delta_1-\Delta_2) & = 6\Delta f^{L_{-1}^2} + (4\Delta+\tfrac{c}{2})f^{L_{-2}}\ ,
+ \Delta+ 2\Delta_1-\Delta_2 & = 6\Delta f^{L_{-1}^2} + (4\Delta+\tfrac{c}{2})f^{L_{-2}}\ ,
  \\
- (\Delta+1+\Delta_1-\Delta_2) f^{L_{-1}}L_{-1} & = \left[2(2\Delta+1) f^{L_{-1}^2} + 3 f^{L_{-2}}\right] L_{-1}\ .   
+ (\Delta+1+\Delta_1-\Delta_2) f^{L_{-1}} & = 2(2\Delta+1) f^{L_{-1}^2} + 3 f^{L_{-2}}\ ,
 \end{align}
-In the case
-
-Further assuming that the fields $V_\sigma$  $V_\sigma = LV_\Delta$ with $L\in U(\mathfrak{V}^+)$ is a descendent field, 
-
-Local Ward identities determine the OPE coefficients of descendent fields $V_\sigma$ in terms of the coefficients of the corresponding primary fields.
-Before showing this in the case of low level descendent fields, let us see how it affects the structure of the OPEs. Taking for simplicity $V_{\sigma_1}$ and $V_{\sigma_2}$ to be primary fields, the OPE reads
+where we temporarily use the notation $f^L=f^{\Delta,L}_{\Delta_1,\Delta_2}$.
+The first equation determines $f^{L_{-1}}$, unless $\Delta=0$. The next two equations determine
+$f^{L_{-1}^2}$ and $f^{L_{-2}}$, unless $\Delta \in \{\Delta_{\langle 1,2 \rangle}, \Delta_{\langle 2,1 \rangle}\}$.
+More generally, given a value of the level $N\geq 2$, the equations with $n=1,2$ determine $\{f^L\}_{|L|=N}$, unless $\Delta\in\{\Delta_{\langle r,s \rangle}\}_{rs=N}$. (See Exercise \ref{exohf}.) If $\Delta=\Delta_{\langle r,s \rangle}=$, then for generic values of $\Delta_1,\Delta_2$ there is no solution for $\{f^L\}$, which means that $V_\Delta$ cannot appear in the OPE $V_{\Delta_1}V_{\Delta_2}$.
 
 
-This property implies that fusion multiplicities are trivial in fusion products of highest-weight representations. If Ward identities determined $f^L$ in terms of say $f^1$ and $f^{L_{-1}}$, then the fusion multiplicity would be two. 
+\subsubsection{Structure of the OPE}
 
-
-
-The fields which appear in OPEs will then be denoted as $V_{s,\bar{s}}(z,\bar{z}) = L\bar{L} V_{\Delta,\bar{\Delta}}(z,\bar{z})$, where $s=(\Delta,L)$ is made of a conformal dimension $\Delta$, and an element $L$ of the basis $\mathcal{L}$ \eqref{lels} of $U(\mathfrak{V}^+)$.
-
-We already know the general form \eqref{ope} of OPEs, and we will now see how Virasoro symmetry constrains OPE coefficients. First, we anticipate that fusion multiplicities are trivial, as we will check below. Then the OPE's universal parts, like the Ward identities, should respect holomorphic factorization, invariance under translations, and dimensional analysis \eqref{zaz}. This leads to
-\begin{multline}
- V_{s_1,\bar{s}_1}(z_1,\bar{z}_1)V_{s_2,\bar{s}_2}(z_2,\bar{z}_2) = \sum_{\Delta,\bar{\Delta}}\sum_{L,\bar{L}\in \mathcal{L}} 
- C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2}^{\Delta,\bar{\Delta}}(z_1,\bar{z}_1,z_2,\bar{z}_2)
-\\ \times
- f_{s_1,s_2}^{s} f_{\bar{s}_1,\bar{s}_2}^{\bar{s}} (z_1-z_2)^{|L|-|L_1|-|L_2|} (\bar{z}_1-\bar{z}_2)^{|\bar{L}|-|\bar{L}_1|-|\bar{L}_2|}
- L\bar{L} V_{\Delta,\bar{\Delta}}(z_2,\bar{z}_2) \ ,
-\label{vvs}
-\end{multline}
-where $f_{s_1,s_2}^s$ is a universal, $z_i$-independent coefficient. In order to study this coefficient, we will focus on the contributions of the left-moving descendents of $V_\Delta(z_2)$ for a given $\Delta$, which we schematically write as
+Still omitting right-moving quantities, our OPE of two primary fields can now be written as 
 \begin{align}
- V_{s_1}(z_1)V_{s_2}(z_2) \sim \sum_{L\in \mathcal{L}} f_{s_1,s_2}^{\Delta,L} (z_1-z_2)^{|L|-|L_1|-|L_2|} LV_\Delta(z_2)\ .
-\label{vvlv}
+ V_{\Delta_1}(z_1) V_{\Delta_2}(z_2) = \sum_\Delta C^{(\Delta, 1)}_{\Delta_1,\Delta_2} 
+ z_{12}^{\Delta-\Delta_1-\Delta_2} \Big( V_\Delta(z_2) + O(z_1-z_2)\Big)\ .
 \end{align}
-Constraints from Virasoro symmetry can be obtained by inserting 
-If $n\geq -1$, the resulting constraint is 
+Inserting this in a three-point function, and using the two-point function \eqref{eq:2pt}, this leads to
 \begin{align}
- \left(L_n^{(z_2)}+\sum_{m=-1}^{n}\binom{m+1}{n+1} z_{12}^{n-m}L_{m}^{(z_1)}\right) V_{s_1}(z_1)V_{s_2}(z_2) \sim  L_n\sum_{L\in \mathcal{L}} f_{s_1,s_2}^{\Delta,L} z_{12}^{|L|-|L_1|-|L_2|}  LV_\Delta(z_2)\ ,
-\label{zlzd}
+ \left<  V_{\Delta_1}(z_1) V_{\Delta_2}(z_2) V_{\Delta_3}(z_3) \right> = C^{(\Delta_3,1)}_{\Delta_1,\Delta_2} z_{12}^{\Delta_3-\Delta_1-\Delta_2} \Big( z_{23}^{-2\Delta_3} + O(z_1-z_2) \Big)\ .
 \end{align}
-where we use the notation $z_{12}=z_1-z_2$.
+Comparing this with the expression \eqref{cff} for the three-point function, we find that our OPE coefficient coincides with the three-point structure constant, 
+\begin{align}
+ C^{(\Delta_3,1)}_{\Delta_1,\Delta_2} = C_{\Delta_1,\Delta_2,\Delta_3}\ .
+ \label{cftt}
+\end{align}
+Let us now restore the dependence on right-moving quantities, and write the complete expression of the OPE of two primary fields:
+\begin{align}
+ \boxed{ V_{\Delta_1,\bar\Delta_1}(z_1) V_{\Delta_2,\bar\Delta_2}(z_2) = \sum_{\Delta,\bar\Delta} C_{\Delta_1,\bar\Delta_1,\Delta_2,\bar\Delta_2,\Delta,\bar\Delta} \left| z_{12}^{\Delta-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} z_{12}^Lf^{\Delta,L}_{\Delta_1,\Delta_2} L \right|^2 V_{\Delta,\bar\Delta}(z_2)
+ }\ ,
+ \label{vvs}
+\end{align}
+where $\mathcal{L}$ is a basis of the space of creation operators $U(\mathfrak{V}^+)$, and the modulus square notation means a product of left-moving $z,\Delta,L$ and right-moving $\bar z, \bar \Delta, \bar L$ quantities.
 
-We will now compute the universal coefficients $f_{\Delta_1,\Delta_2}^{\Delta,L}$ in 
-the case when $V_{s_1}(z_1)=V_{\Delta_1}(z_1)$ and $V_{s_2}(z_2)=V_{\Delta_2}(z_2)$ are primary fields.
-The case $n=0$ of eq. \eqref{zlzd} leads to
-\begin{align}
- z_{12}L_{-1}V_{\Delta_1}(z_1) V_{\Delta_2}(z_2) \sim \sum_{L\in \mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta,L} z_{12}^{|L|} 
-(\Delta+|L|-\Delta_1-\Delta_2) LV_\Delta(z_2)\ .
-\label{zot}
-\end{align}
-In the case $n\geq 1$, the contribution of $L_n^{(z_2)}$ on the left-hand side of eq. \eqref{zlzd} vanishes, and the contribution of $L_{-1}^{(z_1)}$ can be eliminated with the help of the $n=0$ case, leading to
-\begin{align}
- \sum_{L\in \mathcal{L}}f_{\Delta_1,\Delta_2}^{\Delta,L} z_{12}^{|L|} \big(L_n-z_{12}^n(\Delta+|L|+n\Delta_1-\Delta_2)\big) LV_\Delta(z_2) = 0\ , \quad (n\geq 1)\ .
-\label{sll}
-\end{align}
-Since the descendent fields $LV_\Delta(z_2)$ are all linearly independent, this amounts to a system of linear equations for $f_{\Delta_1,\Delta_2}^{\Delta,L}$, which determines them all in terms of the first coefficient $f_{\Delta_1,\Delta_2}^{\Delta,1}$.
-Let us demonstrate this by writing these linear equations for low values of $n$ and $|L|$.
-Up to the order $z_{12}^2$, the $n=1$ equation reads 
-\begin{multline}
- \Big\{f^1 z_{12}(\Delta_2-\Delta-\Delta_1) +f^{L_{-1}} z_{12}\left(L_1-z_{12}(\Delta+1+\Delta_1-\Delta_2)\right)L_{-1}  
-\\ 
-+ f^{L_{-1}^2}z_{12}^2 L_1L_{-1}^2 +  f^{L_{-2}}z_{12}^2 L_1L_{-2}\Big\} V_{\Delta}(z_2) = 0\ ,
-\end{multline}
-where we use the simplified notation $f^L $ for  $f_{\Delta_1,\Delta_2}^{\Delta,L}$.
-With the help of the Virasoro commutation relations \eqref{vir}, we obtain 
-\begin{align}
- 2\Delta f^{L_{-1}} &= (\Delta+\Delta_1-\Delta_2) f^1 \ ,
-\label{flfo}
-\\
- 2(2\Delta+1) f^{L_{-1}^2} + 3 f^{L_{-2}} & = (\Delta+1+\Delta_1-\Delta_2) f^{L_{-1}}\ .
-\end{align}
-Similarly, using the $n=2$ equation up to the order $z_{12}^2$ leads to 
-\begin{align}
- 6\Delta f^{L_{-1}^2} + (4\Delta+\tfrac{c}{2})f^{L_{-2}} = (\Delta+2\Delta_1-\Delta_2) f^1\ .
-\end{align}
-Let us discuss the solutions of these equations, assuming the normalization condition 
-\begin{align}
- f^{\Delta,1}_{\Delta_1,\Delta_2} = 1\ .
-\label{fo}
-\end{align}
-The first equation \eqref{flfo} has a unique solution $f^{L_{-1}}$, unless $\Delta=0$, in which case it has no solution.
-If $\Delta \neq 0$, the equations for $f^{L_{-1}^2}$ and $f^{L_{-2}}$ have a unique solution, unless $\Delta \in \{\Delta_{\langle 1,2 \rangle}, \Delta_{\langle 2,1 \rangle}\}$, in which case they have no solution.
-More generally, eq. \eqref{sll} has a unique solution $\{ f^{\Delta,L}_{\Delta_1,\Delta_2} \}_{L\in\mathcal{L}}$, unless $\Delta\in\{\Delta_{\langle r,s \rangle}\}_{r,s\in {\mathbb{N}}^*}$. 
-(See Exercise \ref{exohf}.) This means that fusion multiplicities are trivial -- they do not exceed one. 
-This is equivalent to the statement in Section \ref{secswi}, that a three-point function of primary fields uniquely determines the three-point functions of the corresponding descendent fields. 
-
-Finally, let us show that the structure function $C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2}^{\Delta,\bar{\Delta}}(z_1,\bar{z}_1,z_2,\bar{z}_2)$, which appears in the OPE \eqref{vvs}, is directly related to the three-point function of primary fields.
-Inserting the OPE inside the three-point function, we have 
-\begin{multline}
- \left\langle \prod_{i=1}^3 V_{\Delta_i,\bar{\Delta}_i}(z_i,\bar{z}_i) \right\rangle = \sum_{\Delta,\bar{\Delta}}\sum_{L,\bar{L}\in \mathcal{L}} 
- C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2}^{\Delta,\bar{\Delta}}(z_1,\bar{z}_1,z_2,\bar{z}_2)
-\\ \times
- f_{\Delta_1,\Delta_2}^{\Delta,L} f_{\bar{\Delta}_1,\bar{\Delta}_2}^{\bar{\Delta},\bar{L}} (z_1-z_2)^{|L|} (\bar{z}_1-\bar{z}_2)^{|\bar{L}|}
- \left\langle L\bar{L} V_{\Delta,\bar{\Delta}}(z_2,\bar{z}_2) V_{\Delta_3,\bar{\Delta}_3}(z_3,\bar{z}_3)\right\rangle\ .
-\end{multline}
-But we know that the two-point function $\left\langle L\bar{L} V_{\Delta,\bar{\Delta}}(z_2,\bar{z}_2) V_{\Delta_3,\bar{\Delta}_3}(z_3,\bar{z}_3)\right\rangle$ vanishes unless $\Delta=\Delta_3$ and $\bar{\Delta}=\bar{\Delta}_3$.
-Moreover, dimensional analysis \eqref{zaz} implies 
-\begin{align}
- \frac{\left\langle L\bar{L} V_{\Delta,\bar{\Delta}}(z_2,\bar{z}_2) V_{\Delta_3,\bar{\Delta}_3}(z_3,\bar{z}_3)\right\rangle }{\left\langle V_{\Delta,\bar{\Delta}}(z_2,\bar{z}_2) V_{\Delta_3,\bar{\Delta}_3}(z_3,\bar{z}_3)\right\rangle } \underset{z_3\to \infty}{=} O\left(z_3^{-|L|}\bar{z}_3^{-|\bar{L}|}\right)\ .
-\end{align}
-Sending $z_3$ to infinity therefore reduces the sum over descendents to the first term $(L,\bar{L})=(1,1)$, and we obtain
-\begin{align}
-C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2}^{\Delta_3,\bar{\Delta}_3}(z_1,\bar{z}_1,z_2,\bar{z}_2) =\underset{z_3\to \infty}{\lim} \frac{\left\langle V_{\Delta_1,\bar{\Delta}_1}(z_1,\bar{z}_1) V_{\Delta_2,\bar{\Delta}_2}(z_2,\bar{z}_2)  V_{\Delta_3,\bar{\Delta}_3}(z_3,\bar{z}_3)\right\rangle}{\left\langle V_{\Delta_3,\bar{\Delta}_3}(z_2,\bar{z}_2)  V_{\Delta_3,\bar{\Delta}_3}(z_3,\bar{z}_3)\right\rangle}\ .
-\label{cftt}
-\end{align}
+That OPE Ward identities uniquely determine the contributions of the descendents of a given primary field, means that fusion multiplicities are trivial in fusion products of highest-weight representations of the Virasoro algebra. By definition, the multiplicity of the Verma module $\mathcal{V}_\Delta$ in the fusion product $\mathcal{V}_{\Delta_1}\times \mathcal{V}_{\Delta_2}$ indeed coincides with the dimension of the space of solutions of the OPE Ward identities, and that dimension is one or zero.
 
 
 \subsection{Conformal blocks \label{secaco}}
-
 
 \begin{align}
  g^{L}_{\Delta_1,\Delta_2,\Delta_3}(z_1,z_2,z_3) = \frac{\left\langle L^{(z_1)} V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)V_{\Delta_3}(z_3)\right\rangle}{\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)V_{\Delta_3}(z_3)\right\rangle } \ .
@@ -2290,7 +2225,7 @@ We thus have
  g^{L_{\langle r,s \rangle}}_{\Delta_{\langle r,s \rangle},\Delta_2,\Delta_3}(z_1,z_2,z_3) = 0 \ .
 \end{align}
 This must hold for any values of the positions $z_i$, which leads to constraints on $\Delta_2$ and $\Delta_3$.
-These constraints can be interpreted as the fusion rules of the degenerate representation $R_{\langle r,s \rangle}$, using the relation \eqref{cftt} between OPE structure functions and three-point functions.
+These constraints can be interpreted as the fusion rules of the degenerate representation $R_{\langle r,s \rangle}$, using the relation between OPE structure functions and three-point functions.
 
 For example, let us consider the case $\langle r,s \rangle = \langle 1,1 \rangle$.
 Using eq. \eqref{lot} for $\Delta_{\langle 1,1 \rangle}$ and $L_{\langle 1,1 \rangle}$, we obtain
@@ -2787,17 +2722,18 @@ L_{-2}^{(z)}I & = T(z)\ ,
 
 \begin{exo}[Computing OPE coefficients]
  ~\label{exohf}
-Compute the OPE coefficients $f^{\Delta,L}_{\Delta_1,\Delta_2}$ at the level $|L|= 2$ by solving the linear equations \eqref{sll}.
+Compute the OPE coefficients $f^{\Delta,L}_{\Delta_1,\Delta_2}$ at the level $|L|= 2$ by solving the linear equations \eqref{eq:lwo}.
 Compare your results with the available literature.
 Write the equations for the OPE coefficients at the level $|L|=3$. 
-More generally, show that $f^{\Delta,L}_{\Delta_1,\Delta_2}$ is uniquely determined, 
-by counting the equations and unknowns in eq. \eqref{sll} up to a given order $z_{12}^k$, as in Exercise \ref{exohl}.
+More generally, show that $f^{\Delta,L}_{\Delta_1,\Delta_2}$ is uniquely determined for generic values of $\Delta$, 
+by counting the equations and unknowns in eq. \eqref{eq:lwo}, as in Exercise \ref{exohl}.
+Discuss how the presence of a null vector affects the equations for $f^{\Delta,L}_{\Delta_1,\Delta_2}$, starting with the case $\Delta=0$. 
 \end{exo}
 
 \begin{exo}[Fusion rules from OPEs]
  ~\label{exooit}
 Rederive the fusion rule \eqref{rot} by analyzing the corresponding OPE.
-To do this, write the OPE $V_{\Delta_1}(z_1)V_{\langle 2,1 \rangle}(z_2)$ as in eq. \eqref{vvlv}.
+% NB: include this in main text!?
 If $C$ is a contour around both $z_1$ and $z_2$, insert $\oint_C dz\ T(z)$ and $\oint_C dz\ \frac{1}{z-z_2}T(z)$ on both sides of that OPE, and compute the leading terms of the OPEs $V_{\Delta_1}(z_1) LV_{\langle 2,1 \rangle}(z_2)$ with $L\in\{L_{-1},L_{-1}^2,L_{-2}\}$, before using $L_{\langle 2,1 \rangle} V_{\langle 2,1 \rangle} (z_2) =0$. 
 \end{exo}
 
