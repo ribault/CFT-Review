@@ -1711,7 +1711,7 @@ L_0 V_\Delta(z) = \Delta V_\Delta(z) \ .
 \end{align}
 For example, the energy-momentum tensor $T(z)$ is a quasi-primary field with conformal dimension two, but not a primary field. (See Exercise \eqref{exoit}.) 
 
-Using Axiom \eqref{ax:dvz}, the global Ward identities for an $N$-point function $\left\langle \prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle$ of quasi-primary fields reduce to a system of three differential equations, 
+Using Axiom \ref{ax:dvz}, the global Ward identities for an $N$-point function $\left\langle \prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle$ of quasi-primary fields reduce to a system of three differential equations, 
 \begin{align}
 \forall a \in \{0,+,-\}\quad , \quad 
  \left(\sum_{i=1}^N D_{z_i}^{-\Delta_i}(t^a)\right) \left\langle \prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle & = 0\ ,
@@ -1876,12 +1876,29 @@ With this choice of prefactor, we notice that $F(x)$ is related to a four-point 
 \label{fx}
 \end{align}
 \end{itemize}
-In order for the three-point function \eqref{cff} to be single-valued as required by Axiom \ref{ax:svcf}, we need $\Delta_i-\bar\Delta_i \in\mathbb{Z}$. Therefore, any primary field $V_{\Delta,\bar{\Delta}}(z,\bar{z})$ must obey
+
+\subsubsection{Conformal spins and single-valuedness}
+
+Let us define the \textbf{conformal spin}\index{spin (conformal)} of the field $V_{\Delta,\bar\Delta}(z,\bar z)$ to be the number $s=\Delta-\bar\Delta$. This number determines how that field behaves under rotations, 
 \begin{align}
- \boxed{\Delta-\bar{\Delta} \in {\mathbb{Z}}}\ .
+ T_{\left(\begin{smallmatrix} e^{i\theta} & 0 \\ 0 & e^{-i\theta} \end{smallmatrix}\right)} V_{\Delta,\bar{\Delta}}(z,\bar{z}) = e^{2i\theta(\Delta-\bar\Delta)} V_{\Delta,\bar{\Delta}}(e^{2i\theta} z,e^{-2i\theta}\bar{z})\ .
+\end{align}
+A primary field is diagonal if and only if its conformal spin is zero.
+
+In order for the three-point function \eqref{cff} to be single-valued as required by Axiom \ref{ax:svcf}, we need $s_1\pm s_2\pm s_3 \in\mathbb{Z}$, equivalently
+\begin{align}
+ \boxed{s_i \in \frac12{\mathbb{Z}} \qquad \text{and} \qquad s_1+s_2+s_3\in\mathbb{Z}}\ .
 \label{dbdz}
 \end{align}
-The number $\Delta-\bar{\Delta}$ is called the \textbf{conformal spin}\index{spin (conformal)} of the field $V_{\Delta,\bar\Delta}(z,\bar z)$, as it controls how that field behaves under rotations, $T_{\left(\begin{smallmatrix} e^{i\theta} & 0 \\ 0 & e^{-i\theta} \end{smallmatrix}\right)} V_{\Delta,\bar{\Delta}}(z,\bar{z}) = e^{2i\theta(\Delta-\bar\Delta)} V_{\Delta,\bar{\Delta}}(e^{2i\theta} z,e^{-2i\theta}\bar{z})$. A primary field is diagonal if and only if its conformal spin is zero.
+The conformal spin then controls how three-point structure constants behave under permutations. For $\sigma$ a permutation of $(1,2,3)$, we indeed have 
+\begin{align}
+ \left|\mathcal{F}^{(3)}(\Delta_{\sigma(1)},\Delta_{\sigma(2)},\Delta_{\sigma(3)}|z_{\sigma(1)},z_{\sigma(2)},z_{\sigma(3)})\right|^2 = \operatorname{sgn}(\sigma)^{s_1+s_2+s_3} \left|\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)\right|^2\ .
+\end{align}
+Since the three-point function is invariant under permutations of the fields, the structure constant must therefore behave as 
+\begin{align}
+ C_{\sigma(1)\sigma(2)\sigma(3)} = \operatorname{sgn}(\sigma)^{s_1+s_2+s_3} C_{123}\ .
+\end{align}
+
 
 
 \subsection{Operator product expansions \label{secope}}
