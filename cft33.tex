@@ -744,7 +744,7 @@ Therefore, the symmetry algebra of conformal field theory is made of two commuti
 \begin{itemize}
  \item \textbf{\boldmath left-moving}\index{left-moving}, chiral or holomorphic
 generators $L_n$,  and
-\item  \textbf{\boldmath right-moving}\index{right-moving}, anti-chiral or anti-holomorphic generators $\bar{L}_n$,
+\item  \textbf{\boldmath right-moving}\index{right-moving}, anti-chiral or antiholomorphic generators $\bar{L}_n$,
 \end{itemize}
  with
 $[L_n,\bar{L}_m]=0$.
@@ -1757,15 +1757,15 @@ finite global conformal transformations \eqref{gisl} are found by exponentiating
 \left\langle \prod_{i=1}^N V_{\Delta_i,\bar\Delta_i}(z_i)\right\rangle  = \left\langle \prod_{i=1}^N T_g V_{\Delta_i,\bar\Delta_i}(z_i) \right\rangle \ , 
 \label{vtv}
 \end{align}
-where we define the image $T_gV_{\Delta,\bar\Delta}(z)$ of a quasi-primary field as
+where we define the image $T_gV_{\Delta,\bar\Delta}(z)$ of a quasi-primary field by
 \begin{align}
  \boxed{T_g V_{\Delta,\bar\Delta}(z) = (cz+d)^{-2\Delta} (\bar c\bar z+\bar d)^{-2\bar\Delta}V_{\Delta,\bar\Delta}\left(\frac{az+b}{cz+d}\right)} \quad \text{with} \quad g = \left(\begin{smallmatrix} a & b \\ c & d \end{smallmatrix}\right) \in SL_2({\mathbb{C}})\ .
 \label{tgv}
 \end{align}
-(See Exercise \ref{exoqp} for an interpretation in terms of representations of $\mathfrak{sl}_2$.) Writing this equation for a left and right quasi-primary field $V_{\Delta,\bar\Delta}(z)$ instead of a left quasi-primary field $V_\Delta(z)$ allows us to specify the locally anti-holomorphic factor $(\bar c\bar z+\bar d)^{-2\bar\Delta}$, instead of leaving it undetermined.
+(See Exercise \ref{exoqp} for an interpretation in terms of representations of $\mathfrak{sl}_2$.) Writing this equation for a left and right quasi-primary field $V_{\Delta,\bar\Delta}(z)$ instead of a left quasi-primary field $V_\Delta(z)$ allows us to specify the locally antiholomorphic factor $(\bar c\bar z+\bar d)^{-2\bar\Delta}$, instead of leaving it undetermined.
 
 We can now determine the behaviour of a quasi-primary field $V_{\Delta,\bar\Delta}(z)$ at $z=\infty$, as this is the same as the behaviour of $T_{\left(\begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix}\right)}V_{\Delta,\bar\Delta}(z)= (-z)^{-2\Delta}(-\bar z)^{-2\bar\Delta}V_{\Delta,\bar\Delta}(-\frac{1}{z})$.
-But $V_{\Delta,\bar\Delta}(-\frac{1}{z})$ is smooth at $z=\infty$, and we obtain
+Since $V_{\Delta,\bar\Delta}(-\frac{1}{z})$ is smooth at $z=\infty$, we obtain
 \begin{align}
  \boxed{V_{\Delta,\bar\Delta}(z) \underset{z\to \infty}{=} O\left(z^{-2\Delta}\bar z^{-2\bar\Delta}\right)}\ .
 \label{vdz}
@@ -1779,20 +1779,19 @@ The behaviour \eqref{vdz} of $V_{\Delta,\bar\Delta}(z)$ at $z=\infty$ holds prov
 To determine the behaviour of a correlation function $\left\langle V_{\Delta,\bar\Delta}(z) V_\sigma(\infty)\cdots \right\rangle$ at $z=\infty$, we would need to know the OPE $V_{\Delta,\bar\Delta}(z) V_{\sigma}(\infty)$.
 
 One may then wonder whether local Ward identities are infinitesimal expressions of the covariance of correlation functions under local conformal transformations \eqref{flc}.
-For any holomorphic function $h(z)$, which we interpret as a local conformal transformation, we can define the image $T_hV_\Delta(z)$ of a primary field as 
+For any holomorphic function $h(z)$, we can define the image of a primary field by
 \begin{align}
- \boxed{T_h V_\Delta(z) = (h'(z))^{\Delta} V_\Delta(h(z))}\ ,
+ T_h V_{\Delta,\bar\Delta}(z) = h'(z)^{\Delta}\overline{h'(z)}^{\bar \Delta}V_{\Delta,\bar\Delta}(h(z))\ ,
 \label{thv}
 \end{align}
 which generalizes the image of a quasi-primary field under a global conformal transformation \eqref{tgv}.
-However, unlike a global transformation, a local transformation $h(z)$ must have a singularity at some point $z_0$, in which case our formula for $T_hV_\Delta(z_0)$ does not make sense.
-But we know from Section \ref{secloc} that local transformations modify fields, in addition to moving them around.
-This is manifest in the local Ward identities, which involve not only $V_\Delta(z_0)$ and its derivatives, but also its $L_{n\leq -2}$ descendents. 
-Therefore, a covariance equation of the type of eq. \eqref{vtv} holds for correlation functions of primary fields, provided we take $T_h V_\Delta(z_0)$ to involve $L_{n\leq -2}$ descendents whenever $h(z)$ is singular at $z=z_0$. 
+However, unlike a global transformation, a local transformation $h(z)$ must have a singularity at some point $z_0$, in which case our formula for $T_hV_{\Delta,\bar\Delta}(z_0)$ does not make sense. And local Ward identities involve not only $V_{\Delta,\bar\Delta}(z_0)$ and its derivatives, but also its $L_{n\leq -2}$ descendents.
+So a covariance equation for the transformation $h(z)$ would have to involve creation operators at the singularities of $h(z)$, and would be more complicated than eq. \eqref{vtv}.
+
 
 \subsubsection{Solving global Ward identities}
 
-Let us discuss the solutions of the global Ward identities \eqref{spz} for an $N$-point function of primary fields
+Let us discuss the solutions of the three global Ward identities \eqref{spz} for an $N$-point function of primary fields
 $
 \left\langle \prod_{i=1}^N V_{\Delta_i}(z_i) \right\rangle\ .
 $
@@ -1802,7 +1801,7 @@ Viewing the derivatives $\frac{\partial}{\partial z_i}\left\langle \prod_{i=1}^N
 The zero-point function, which may be called the sphere partition function, is actually a number rather than a function, and carries no useful information.
 
 \item $\boxed{N=1}$\ :  The global Ward identities amount to $\frac{\partial}{\partial z_1}\left\langle V_{\Delta_1}(z_1)\right\rangle  =\Delta_1 \left\langle V_{\Delta_1}(z_1)\right\rangle =0$.
-This implies $\left\langle V_{\Delta_1}(z_1)\right\rangle$ is constant, and that this constant vanishes unless $\Delta_1=0$.
+This implies $\left\langle V_{\Delta_1,\bar\Delta_1}(z_1)\right\rangle$ is constant, and that this constant vanishes unless $\Delta_1=\bar\Delta_1=0$.
 
 \item $\boxed{N=2}$\ : We still have more Ward identities than unknowns, and we can obtain a condition on $\Delta_i$ by eliminating the derivatives from the Ward identities.
 The elegant way to do this is to use $\epsilon(z)=(z-z_1)(z-z_2)$ in eq. \eqref{oiz}, which leads to 
@@ -1820,17 +1819,15 @@ The remaining Ward identities then amount to
 \end{align}
 Using the notation $z_{12}=z_1-z_2$, the solution is
 \begin{align}
- \left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle \propto z_{12}^{-2\Delta_1}\ .
+ \left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)\right\rangle \propto z_{12}^{-2\Delta_1}\ ,
  \label{fzz}
 \end{align}
-Setting
-the $z_i$-independent factor to one by a choice of normalization of the fields, and
-restoring the dependence on the right-moving variables $\bar z,\bar \Delta$, we find
+where the proportionality factor is an arbitrary antiholomorphic function. We determine this function by assuming that our fields are not only left primaries but also right primaries, and find
 \begin{align}
- \boxed{ \left\langle V_{\Delta_1,\bar{\Delta}_1}(z_1) V_{\Delta_2,\bar{\Delta}_2}(z_2)\right\rangle = \delta_{\Delta_1,\Delta_2}\delta_{\bar{\Delta}_1,\bar{\Delta}_2} z_{12}^{-2\Delta_1}\bar z_{12}^{-2\bar \Delta_1} }\ ,
+ \boxed{ \left\langle V_{\Delta_1,\bar{\Delta}_1}(z_1) V_{\Delta_2,\bar{\Delta}_2}(z_2)\right\rangle = \delta_{\Delta_1,\Delta_2}\delta_{\bar{\Delta}_1,\bar{\Delta}_2} z_{12}^{-2\Delta_1}\bar z_{12}^{-2\bar \Delta_1} }\ .
  \label{eq:2pt}
 \end{align}
-where the symbol $\delta_{\Delta_1,\Delta_2}$ is a Kronecker delta or a Dirac delta function, depending on whether the conformal dimensions take discrete or continuous values.
+Here the symbol $\delta_{\Delta_1,\Delta_2}$ is a Kronecker delta or a Dirac delta function, depending on whether the conformal dimensions take discrete or continuous values, and we have set the overall $z_i$-independent prefactor to one by a field renormalization.
 
 \item $\boxed{N=3}$\ : The three global Ward identities determine the dependence of three-point functions on the three coordinates $z_i$, without constraining the conformal dimensions $\Delta_i$. Using $\epsilon(z)= (z-z_2)(z-z_3)$ in eq. \eqref{oiz}, we indeed obtain
 \begin{align}
