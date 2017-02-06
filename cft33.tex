@@ -1503,8 +1503,6 @@ $R_{\langle r,s\rangle}$ unitary? & see eqs. \eqref{cpp} and \eqref{srp} &  yes 
 
 \section{Fields and correlation functions \label{secfcf}}
 
-% NB: also mention right primaries, introduce V_{\Delta, \bar \Delta}
-
 Using the state-field correspondence, the action of the Virasoro algebra on states gives rise to a natural action of the Virasoro algebra on fields at any given point $z$. We denote the action of a Virasoro generator as $L_n^{(z)}$ or $L_n$, so that 
 \begin{align}
  L_nV_\sigma(z) = L_n^{(z)}V_\sigma(z) = V_{L_n\sigma}(z)\ .
@@ -1525,7 +1523,7 @@ L_0 V_\Delta(z) = \Delta V_\Delta(z) \ .
 \end{align}
 Fields such as  $\left(\prod_{i=1}^p L_{-n_i}\right) V_\Delta(z)$ that correspond to descendents of a primary state are then called  \textbf{descendent fields}\index{descendent field}.
 
-Having two Virasoro symmetry algebras $\mathfrak{V}$ and $\overline{\mathfrak{V}}$, we will consider fields $V_{\Delta,\bar\Delta}(z)$ that are primary with respect to both algebras. Then $\Delta$ and $\bar\Delta$ are respectively called the left and right conformal dimensions of $V_{\Delta,\bar\Delta}(z)$. Depending on the context, the notation $V_\Delta(z)$ will denote either a $\mathfrak{V}$-primary field, or more specifically a \textbf{diagonal primary field}\index{diagonal primary field} $V_\Delta(z)= V_{\Delta,\Delta}(z)$. 
+Having two Virasoro symmetry algebras $\mathfrak{V}$ and $\overline{\mathfrak{V}}$, we also introduce left and right primary fields $V_{\Delta,\bar\Delta}(z)$, that are primary with respect to both algebras. Then $\Delta$ and $\bar\Delta$ are respectively called the left and right conformal dimensions of $V_{\Delta,\bar\Delta}(z)$. A \textbf{diagonal primary field}\index{diagonal primary field} $V_{\Delta,\Delta}(z)$ is a primary field whose left and right dimensions coincide.
 
 In order to solve a model whose spectrum is known, we should compute the correlation functions of primary and descendent fields.
 An $N$-point function of primary fields $\left\langle \prod_{i=1}^N V_{\Delta_i,\bar\Delta_i}(z_i) \right\rangle$ is a function of their positions and conformal dimensions.
@@ -1655,9 +1653,9 @@ We will distinguish two types of symmetry equations:
 \end{itemize}
 All symmetry equations can be obtained as linear combinations of such local and global Ward identities.
 
+\subsubsection{Local Ward identities}
 
-Let us first write the local Ward identities.
-A spanning set of these identities can be obtained by taking $\epsilon(z) = \frac{1}{(z-z_i)^{n-1}}$ with $n\geq 2$ and $i=1, \cdots N$ in eq. \eqref{oiz}. 
+A spanning set of local Ward identities can be obtained by taking $\epsilon(z) = \frac{1}{(z-z_i)^{n-1}}$ with $n\geq 2$ and $i=1, \cdots N$ in eq. \eqref{oiz}. 
 Since the integrand has singularities only at $z_1,\cdots z_N$, we have $\oint_\infty=\sum_{i=1}^N \oint_{z_i}$.
 Using the 
 $TV_\sigma$ OPE \eqref{tv}, we obtain
@@ -1685,8 +1683,9 @@ where we assume $n\geq 1$, and we use the notation $z_{ji}=z_j-z_i$. (See Exerci
 \label{dtz}
 \end{align}
 
-Let us now write
-the three global Ward identities. Taking $\epsilon(z)\in \{1,z,z^2\}$ in eq. \eqref{oiz}, we find 
+\subsubsection{Global Ward identities}
+
+Taking $\epsilon(z)\in \{1,z,z^2\}$ in eq. \eqref{oiz}, we find 
 \begin{align}
 \left\langle \sum_{i=1}^N L_{-1}^{(z_i)} \prod_{i=1}^N V_{\sigma_i}(z_i) \right\rangle &= 0 \ ,
 \label{slz}
@@ -1697,9 +1696,10 @@ the three global Ward identities. Taking $\epsilon(z)\in \{1,z,z^2\}$ in eq. \eq
 \left\langle \sum_{i=1}^N \left( L_1^{(z_i)} + 2z_i L_0^{(z_i)} + z_i^2 L_{-1}^{(z_i)}\right) \prod_{i=1}^N V_{\sigma_i}(z_i) \right\rangle & = 0\ .
 \label{slllz}
 \end{align}
-These equations express the global conformal invariance of correlation functions.
 
 \subsection{Global conformal symmetry}\label{secgcs}
+
+\subsubsection{Infinitesimal global conformal transformations}
 
 We will now study the consequences of the global Ward identities, under the assumption that the fields $V_{\sigma_i}(z_i)$ are primary fields. Since however $L_{n\geq 2}$ do not appear in the global Ward identities, the results will also be valid if the fields $V_{\sigma_i}(z_i)$ are quasi-primary fields, where we define a \textbf{\boldmath quasi-primary field}\index{quasi-primary field} or $\mathfrak{sl}_2$-primary field with conformal dimension $\Delta$ as a field $V_\Delta(z)$ such that 
 \begin{align}
@@ -1747,33 +1747,36 @@ M(t^-) & = \left(\begin{smallmatrix} 0 & 0 \\ 1 & 0 \end{smallmatrix} \right) \ 
 \end{align}
 In the case $j=0$, the differential operators $D^j_x(t^a)$ correspond to the generators $(\ell_{-1},\ell_0,\ell_1)$ \eqref{elln} of global conformal transformations.
 This shows that global Ward identities correspond to infinitesimal global conformal transformations.
+
+
+\subsubsection{Finite global conformal transformations}
+
 The global Ward identities for 
 finite global conformal transformations \eqref{gisl} are found by exponentiating the $\mathfrak{sl}_2$ matrices $M(t^a)$ into elements of the Lie group $SL_2({\mathbb{C}})$,
 \begin{align}
-\left\langle \prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle  = \left\langle \prod_{i=1}^N T_g V_{\Delta_i}(z_i) \right\rangle \ , 
+\left\langle \prod_{i=1}^N V_{\Delta_i,\bar\Delta_i}(z_i)\right\rangle  = \left\langle \prod_{i=1}^N T_g V_{\Delta_i,\bar\Delta_i}(z_i) \right\rangle \ , 
 \label{vtv}
 \end{align}
-where we define the image $T_gV_\Delta(z)$ of a quasi-primary field as
+where we define the image $T_gV_{\Delta,\bar\Delta}(z)$ of a quasi-primary field as
 \begin{align}
- \boxed{T_g V_\Delta(z) = (cz+d)^{-2\Delta} V_\Delta\left(\frac{az+b}{cz+d}\right)} \quad \text{with} \quad g = \left(\begin{array}{cc} a & b \\ c & d \end{array}\right) \in SL_2({\mathbb{C}})\ .
+ \boxed{T_g V_{\Delta,\bar\Delta}(z) = (cz+d)^{-2\Delta} (\bar c\bar z+\bar d)^{-2\bar\Delta}V_{\Delta,\bar\Delta}\left(\frac{az+b}{cz+d}\right)} \quad \text{with} \quad g = \left(\begin{smallmatrix} a & b \\ c & d \end{smallmatrix}\right) \in SL_2({\mathbb{C}})\ .
 \label{tgv}
 \end{align}
-(See Exercise \ref{exoqp} for an interpretation in terms of representations of $\mathfrak{sl}_2$.)
+(See Exercise \ref{exoqp} for an interpretation in terms of representations of $\mathfrak{sl}_2$.) Writing this equation for a left and right quasi-primary field $V_{\Delta,\bar\Delta}(z)$ instead of a left quasi-primary field $V_\Delta(z)$ allows us to specify the locally anti-holomorphic factor $(\bar c\bar z+\bar d)^{-2\bar\Delta}$, instead of leaving it undetermined.
 
-We can now determine the behaviour of a quasi-primary fields $V_\Delta(z)$ at $z=\infty$.
-By covariance, this is the same as the behaviour of $T_{\left(\begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix}\right)}V_\Delta(z)= (-z)^{-2\Delta}V_\Delta(-\frac{1}{z})$.
-But $V_\Delta(-\frac{1}{z})$ is smooth at $z=\infty$, and we obtain
+We can now determine the behaviour of a quasi-primary field $V_{\Delta,\bar\Delta}(z)$ at $z=\infty$, as this is the same as the behaviour of $T_{\left(\begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix}\right)}V_{\Delta,\bar\Delta}(z)= (-z)^{-2\Delta}(-\bar z)^{-2\bar\Delta}V_{\Delta,\bar\Delta}(-\frac{1}{z})$.
+But $V_{\Delta,\bar\Delta}(-\frac{1}{z})$ is smooth at $z=\infty$, and we obtain
 \begin{align}
- \boxed{V_\Delta(z) \underset{z\to \infty}{=} O\left(z^{-2\Delta}\right)}\ .
+ \boxed{V_{\Delta,\bar\Delta}(z) \underset{z\to \infty}{=} O\left(z^{-2\Delta}\bar z^{-2\bar\Delta}\right)}\ .
 \label{vdz}
 \end{align}
 This is consistent with the assumed behaviour \eqref{tyi} of the energy-momentum tensor, which is a quasi-primary field of dimension $\Delta=2$.
 Moreover, this suggests that we may define a field at $z=\infty$ by 
 \begin{align}
- V_\Delta(\infty) = \underset{z\to \infty}{\lim} z^{2\Delta} V_\Delta(z)\ . 
+ V_{\Delta,\bar\Delta}(\infty) = \underset{z\to \infty}{\lim} z^{2\Delta}\bar z^{2\bar\Delta} V_{\Delta,\bar\Delta}(z)\ . 
 \end{align}
-Of course, the behaviour \eqref{vdz} of $V_\Delta(z)$ at $z=\infty$ holds only provided no other field is present at $z=\infty$.
-To determine the behaviour of a correlation function $\left\langle V_\Delta(z) V_{\Delta'}(\infty)\cdots \right\rangle$ at $z=\infty$, we would need to know the OPE $V_\Delta(z) V_{\Delta'}(\infty)$.
+The behaviour \eqref{vdz} of $V_{\Delta,\bar\Delta}(z)$ at $z=\infty$ holds provided no other field is present at $z=\infty$.
+To determine the behaviour of a correlation function $\left\langle V_{\Delta,\bar\Delta}(z) V_\sigma(\infty)\cdots \right\rangle$ at $z=\infty$, we would need to know the OPE $V_{\Delta,\bar\Delta}(z) V_{\sigma}(\infty)$.
 
 One may then wonder whether local Ward identities are infinitesimal expressions of the covariance of correlation functions under local conformal transformations \eqref{flc}.
 For any holomorphic function $h(z)$, which we interpret as a local conformal transformation, we can define the image $T_hV_\Delta(z)$ of a primary field as 
@@ -1787,6 +1790,7 @@ But we know from Section \ref{secloc} that local transformations modify fields, 
 This is manifest in the local Ward identities, which involve not only $V_\Delta(z_0)$ and its derivatives, but also its $L_{n\leq -2}$ descendents. 
 Therefore, a covariance equation of the type of eq. \eqref{vtv} holds for correlation functions of primary fields, provided we take $T_h V_\Delta(z_0)$ to involve $L_{n\leq -2}$ descendents whenever $h(z)$ is singular at $z=z_0$. 
 
+\subsubsection{Solving global Ward identities}
 
 Let us discuss the solutions of the global Ward identities \eqref{spz} for an $N$-point function of primary fields
 $
@@ -2546,7 +2550,7 @@ F_{ij} =
 \label{fpic}
 \end{align}
 
-Now how can the single-valued four-point function $\left\langle V_{\langle 2,1 \rangle}(x,\bar{x})V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle$ be decomposed as a combination of our solutions? We assume that we are dealing with a model whose spectrum is diagonal, so that the four-point function obeys not only the BPZ equation \eqref{sode}, but also the complex conjugate equation, and must be of the type 
+Now how can the single-valued four-point function $\left\langle V_{\langle 2,1 \rangle}(x,\bar{x})V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle$ be decomposed as a combination of our solutions? We assume that we are dealing with a diagonal model, so that the four-point function obeys not only the BPZ equation \eqref{sode}, but also the complex conjugate equation, and must be of the type 
 \begin{align}
  \left\langle V_{\langle 2,1 \rangle}(x,\bar{x})V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle = \sum_{i,j=\pm} c^{(s)}_{ij} \mathcal{F}_i^{(s)}(x) \mathcal{F}_j^{(s)}(\bar{x}) = \sum_{i,j=\pm} c^{(t)}_{ij} \mathcal{F}_i^{(t)}(x) \mathcal{F}_j^{(t)}(\bar{x})\ ,
 \end{align}
@@ -2788,7 +2792,7 @@ In the case $N=3$, rederive the relevant fusion rule.
 
 \begin{exo}[Third-order BPZ equation for a four-point function]
  ~\label{exotbf}
- Write the third-order BPZ ordinary differential equation for the four-point function $\left\langle V_{\langle 1,3 \rangle}(x)V_{\Delta_1}(0)V_{\Delta_2}(1)V_{\Delta_3}(\infty)\right\rangle $.
+ Write the third-order BPZ ordinary differential equation for the four-point function $\left\langle V_{\langle 3,1 \rangle}(x)V_{\Delta_1}(0)V_{\Delta_2}(1)V_{\Delta_3}(\infty)\right\rangle $.
 Check that the characteristic exponents at $x=0,1,\infty$ are consistent with the fusion rules. 
 \end{exo}
 
