@@ -1535,7 +1535,7 @@ $N$-point functions of descendent fields are of the type $\left\langle \prod_{i=
 \end{hyp}
 \noindent
 This axiom is important enough that it deserves an explicit statement, although strictly speaking it follows from our definition of correlation functions.
-Relaxing this axiom can be fruitful, in particular by allowing the existence of fermionic and parafermionic fields.
+Relaxing this axiom can be fruitful, in particular by allowing the existence of parafermionic fields.
 
 
 \subsection{The energy-momentum tensor \label{secem}}
@@ -1839,41 +1839,46 @@ A solution of this equation, and of the analogous equations for the dependences 
 \label{fzzz}
 \end{align}
 (See Exercise \ref{exolog} for the generalization to logarithmic conformal field theory.)
-Restoring the dependence on the right conformal dimensions, we therefore have 
+A three-point function of left and right primary fields is therefore of the type
 \begin{align}
- \left\langle \prod_{i=1}^3 V_{\Delta_i,\bar{\Delta}_i}(z_i) \right\rangle = C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2,\Delta_3,\bar{\Delta}_3}
+ \left\langle \prod_{i=1}^3 V_{\Delta_i,\bar{\Delta}_i}(z_i) \right\rangle = C_{123}
  \left|\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)\right|^2\ ,
 \label{cff}
 \end{align}
-where the modulus square notation means $|f(\Delta,z)|^2 = f(\Delta,z)f(\bar{\Delta},\bar{z})$, and the factor
-$C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2,\Delta_3,\bar{\Delta}_3}$ is called the \textbf{\boldmath three-point structure constant}\index{three-point structure constant}.
+where the modulus square notation means $|f(\Delta,z)|^2 = f(\Delta,z)f(\bar{\Delta},\bar{z})$, and the $z_i$-independent factor
+$C_{123}$ is called a \textbf{\boldmath three-point structure constant}\index{three-point structure constant}.
 
-\item $\boxed{N\geq 4}$\ : The three differential equations are not enough for controlling the dependence of an $N$-point function on the $N\geq 4$ variables $z_i$.
-Omitting the dependence on $\bar{z}_i$, the general solution can be written as 
+\item $\boxed{N\geq 4}$\ : The three differential equations are not enough for controlling the dependence on the $N\geq 4$ variables $z_i$, and their general solution is 
 \begin{align}
- \left\langle\prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle = \prod_{i<j} z_{ij}^{\delta_{ij}}\ F(x_1,x_2,\cdots x_{N-3}) \quad \text{with} \ \ 
-\renewcommand{\arraystretch}{1.5}
-\left\{\begin{array}{l}  \sum_{j< i} \delta_{ji} +\sum_{i<j}\delta_{ij} = -2\Delta_i\ ,
-\\ x_i = \frac{(z_i-z_{N-2})(z_{N-1}-z_N)}{(z_i-z_{N-1})(z_{N-2}-z_N)}\ , \end{array}\right. 
+ \left\langle\prod_{i=1}^N V_{\Delta_i,\bar\Delta_i}(z_i)\right\rangle = \left|\prod_{i<j} z_{ij}^{\delta_{ij}}\right|^2 F(x_1,x_2,\cdots x_{N-3}) \ ,
 \label{xfxn}
 \end{align}
-where $F(x_1,x_2,\cdots x_{N-3})$ is an arbitrary function of the \textbf{\boldmath cross-ratios}\index{cross-ratio} $x_i$, which is therefore invariant under the global conformal transformations \eqref{gisl}.
-This function can be interpreted as an $N$-point function with $(z_{N-2},z_{N-1},z_N)=(0,\infty,1)$, as we now illustrate in the case $N=4$.
+where the exponents $\delta_{ij}$ are numbers such that 
+\begin{align}
+ \sum_{j< i} \delta_{ji} +\sum_{i<j}\delta_{ij} = -2\Delta_i\ ,
+ \label{sdd}
+\end{align}
+and $F(x_1,x_2,\cdots x_{N-3})$ is an arbitrary function of the \textbf{\boldmath cross-ratios}\index{cross-ratio}
+\begin{align}
+ x_i = \frac{(z_i-z_{N-2})(z_{N-1}-z_N)}{(z_i-z_{N-1})(z_{N-2}-z_N)}\ ,
+\end{align}
+which are invariant under the global conformal transformations \eqref{gisl}.
+The function $F(x_1,x_2,\cdots x_{N-3})$ is related to an $N$-point function with $(z_{N-2},z_{N-1},z_N)=(0,\infty,1)$, as we now illustrate in the case $N=4$.
 
 \item $\boxed{N=4}$\ : In this case there is only one cross-ratio 
 \begin{align}
  x=\frac{z_{12}z_{34}}{z_{13}z_{24}}\ ,
 \label{xe}
 \end{align}
-and the general solution can be written as 
+and the general solution is 
 \begin{align}
- \left\langle\prod_{i=1}^4 V_{\Delta_i}(z_i)\right\rangle = \mathcal{F}^{(3)}(\Delta_1,\Delta_2,0|z_1,z_2,z_3) \mathcal{F}^{(3)}(\Delta_3,\Delta_4,0|z_3,z_4,z_2)\ F(x)\ ,
+ \left\langle\prod_{i=1}^4 V_{\Delta_i,\bar\Delta_i}(z_i)\right\rangle = \left|\mathcal{F}^{(3)}(\Delta_1,\Delta_2,0|z_1,z_2,z_3) \mathcal{F}^{(3)}(\Delta_3,\Delta_4,0|z_3,z_4,z_2)\right|^2 F(x)\ ,
 \label{zgg}
 \end{align}
-where we built the prefactor as a combination of three-point functions, such that each variable $z_i$ has the total exponent $-2\Delta_i$.
-With this choice of prefactor, we notice that $F(x)$ is related to a four-point function with $(z_2,z_3,z_4)=(0,\infty,1)$ as
+where we built the prefactor as a combination of three-point functions, so as to satisfy eq. \eqref{sdd}.
+With this choice of prefactor, $F(x)$ is related to a four-point function with $(z_2,z_3,z_4)=(0,\infty,1)$ by
 \begin{align}
- F(x) =x^{\Delta_1+\Delta_2} \left\langle V_{\Delta_1}(x)V_{\Delta_2}(0)V_{\Delta_3}(\infty) V_{\Delta_4}(1)\right\rangle \ .
+ F(x) =\left| x^{\Delta_1+\Delta_2} \right|^2 \left\langle V_{\Delta_1,\bar\Delta_1}(x)V_{\Delta_2,\bar\Delta_2}(0)V_{\Delta_3,\bar\Delta_3}(\infty) V_{\Delta_4,\bar\Delta_4}(1)\right\rangle \ .
 \label{fx}
 \end{align}
 \end{itemize}
@@ -1882,7 +1887,7 @@ With this choice of prefactor, we notice that $F(x)$ is related to a four-point 
 
 Let us define the \textbf{conformal spin}\index{spin (conformal)} of the field $V_{\Delta,\bar\Delta}(z,\bar z)$ to be the number $s=\Delta-\bar\Delta$. This number determines how that field behaves under rotations, 
 \begin{align}
- T_{\left(\begin{smallmatrix} e^{i\theta} & 0 \\ 0 & e^{-i\theta} \end{smallmatrix}\right)} V_{\Delta,\bar{\Delta}}(z,\bar{z}) = e^{2i\theta(\Delta-\bar\Delta)} V_{\Delta,\bar{\Delta}}(e^{2i\theta} z,e^{-2i\theta}\bar{z})\ .
+ T_{\left(\begin{smallmatrix} e^{i\theta} & 0 \\ 0 & e^{-i\theta} \end{smallmatrix}\right)} V_{\Delta,\bar{\Delta}}(z) = e^{2i\theta(\Delta-\bar\Delta)} V_{\Delta,\bar{\Delta}}(e^{2i\theta} z)\ .
 \end{align}
 A primary field is diagonal if and only if its conformal spin is zero.
 
@@ -1891,6 +1896,9 @@ In order for the three-point function \eqref{cff} to be single-valued as require
  \boxed{s_i \in \frac12{\mathbb{Z}} \qquad \text{and} \qquad s_1+s_2+s_3\in\mathbb{Z}}\ .
 \label{dbdz}
 \end{align}
+Primary fields with spins $s\in\frac12+\mathbb{Z}$ are called fermionic. Allowing fermionic fields would require us to modify our commutativity Axiom \ref{ax:col}, as fermions anticommute. Considering indeed a two-point function \eqref{eq:2pt} of a fermionic field with itself, we have $\left< V(z_1)V(z_2)\right> = -\left<V(z_2)V(z_1)\right>$, which suggests $\{V(z_1),V(z_2)\}=0$.
+It is actually possible to relax the single-valuedness axiom, and have fields with spins $s\notin \frac12\mathbb{Z}$, such as parafermionic fields. But we will only consider bosonic fields with spins $s\in\mathbb{Z}$.
+
 The conformal spin then controls how three-point structure constants behave under permutations. For $\sigma$ a permutation of $(1,2,3)$, we indeed have 
 \begin{align}
  \left|\mathcal{F}^{(3)}(\Delta_{\sigma(1)},\Delta_{\sigma(2)},\Delta_{\sigma(3)}|z_{\sigma(1)},z_{\sigma(2)},z_{\sigma(3)})\right|^2 = \operatorname{sgn}(\sigma)^{s_1+s_2+s_3} \left|\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)\right|^2\ .
@@ -1899,7 +1907,7 @@ Since the three-point function is invariant under permutations of the fields, th
 \begin{align}
  C_{\sigma(1)\sigma(2)\sigma(3)} = \operatorname{sgn}(\sigma)^{s_1+s_2+s_3} C_{123}\ .
 \end{align}
-
+For example, if fields $1$ and $2$ are identical, then $C_{123}=C_{213}$, and the three-point function can only be nonzero if the third field has even spin $s_3\in 2\mathbb{Z}$.
 
 
 \subsection{Operator product expansions \label{secope}}
@@ -1924,8 +1932,7 @@ This determines how OPE coefficients behave under dilatations.
 Therefore, the two global Ward identities determine the dependence of OPE coefficients on $z_1,z_2$,
 \begin{align}
  C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) = C_{\sigma_1,\sigma_2}^\sigma 
- z_{12}^{\Delta_{\sigma}-\Delta_{\sigma_1}-\Delta_{\sigma_2}}
- \bar z_{12}^{\bar\Delta_{\sigma}-\bar\Delta_{\sigma_1}-\bar\Delta_{\sigma_2}}
+ \left| z_{12}^{\Delta_{\sigma}-\Delta_{\sigma_1}-\Delta_{\sigma_2}} \right|^2 
  \ ,
  \label{eq:coz}
 \end{align}
