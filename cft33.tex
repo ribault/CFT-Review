@@ -1972,6 +1972,7 @@ Let us show this for $|L|\leq 2$. The cases $(N,n)=(1,1),(2,2),(2,1)$ of \eqref{
  \Delta_3+ 2\Delta_1-\Delta_2 & = 6\Delta_3 f^{L_{-1}^2} + (4\Delta_3+\tfrac{c}{2})f^{L_{-2}}\ ,
  \\
  (\Delta_3+1+\Delta_1-\Delta_2) f^{L_{-1}} & = 2(2\Delta_3+1) f^{L_{-1}^2} + 3 f^{L_{-2}}\ ,
+ \label{flff}
 \end{align}
 where we temporarily use the notation $f^L=f^{\Delta_3,L}_{\Delta_1,\Delta_2}$.
 The first equation determines $f^{L_{-1}}$, unless $\Delta_3=0$. The next two equations determine
@@ -2014,42 +2015,22 @@ That OPE Ward identities uniquely determine the contributions of the descendents
 
 \subsection{Conformal blocks \label{secaco}}
 
-\begin{align}
- g^{L}_{\Delta_1,\Delta_2,\Delta_3}(z_1,z_2,z_3) = \frac{\left\langle L^{(z_1)} V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)V_{\Delta_3}(z_3)\right\rangle}{\left\langle V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)V_{\Delta_3}(z_3)\right\rangle } \ .
-\label{lzgz}
-\end{align}
-For example, using $\epsilon(z)=(z-z_2)(z-z_3)$ in eq. \eqref{oiz} we obtain 
-\begin{align}
- g^{L_{-1}}_{\Delta_1,\Delta_2,\Delta_3}(z_1,z_2,z_3) = \frac{\Delta_3-\Delta_1-\Delta_2}{z_1-z_2} +\frac{\Delta_2-\Delta_1-\Delta_3}{z_1-z_3}\ .
-\label{glp}
-\end{align}
-The next examples are 
-\begin{align}
- g^{L_{-1}^2} &= \frac{(\Delta_1+\Delta_2-\Delta_3)_2}{(z_1-z_2)^2} + 2\frac{(\Delta_1+\Delta_2-\Delta_3)}{(z_1-z_2)}\frac{(\Delta_1+\Delta_3-\Delta_2)}{(z_1-z_3)} + \frac{(\Delta_1+\Delta_3-\Delta_2)_2}{(z_1-z_3)^2}\ ,
-\label{gloo}
-\\
- g^{L_{-2}} & = \frac{\Delta_1+2\Delta_2-\Delta_3}{(z_1-z_2)^2} +\frac{\Delta_1-\Delta_2-\Delta_3}{(z_1-z_2)(z_1-z_3)} + \frac{\Delta_1+2\Delta_3-\Delta_2}{(z_1-z_3)^2}\ ,
-\label{glt}
-\end{align}
-where we use the notation
-\begin{align}
- (x)_n = \frac{\Gamma(x+n)}{\Gamma(x)} = \prod_{i=0}^{n-1}(x+i)\ .
-\label{xn}
-\end{align}
-
 We will now define \textbf{\boldmath conformal blocks}\index{conformal block} as the universal constituents of correlation functions. 
 We want correlation functions to be decomposable as combinations of the model-dependent three-point structure constant, and conformal blocks.
 In this sense, a simple example of a conformal block is the three-point block $\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)$ \eqref{fzzz}. (On the torus, there exist nontrivial zero-point blocks, which are also known as the characters of representations.)
 
-Using the OPE \eqref{vvs}, together with the results of Section \ref{secgcs}, a four-point function of descendent fields of the type $V_{s,\bar{s}}(z,\bar{z})$ where $s=(\Delta,L)$ can be decomposed as 
+Using the OPE of $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2)$ and Ward identities, any four-point function of descendent fields can be decomposed as 
 \begin{align}
- \left\langle \prod_{i=1}^4 V_{s_i,\bar{s}_i}(z_i,\bar{z}_i)\right\rangle = \sum_{\Delta_s,\bar{\Delta}_s} C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2,\Delta_s,\bar{\Delta}_s} C_{\Delta_s,\bar{\Delta}_s,\Delta_3,\bar{\Delta}_3,\Delta_4,\bar{\Delta}_4} \left| \mathcal{F}^{(s)}_{\Delta_s}(s_i|z_i)\right|^2\ ,
+ \left\langle \prod_{i=1}^4 V_{\sigma_i}(z_i)\right\rangle 
+ = \sum_{\Delta_s,\bar{\Delta}_s} C_{12s} C_{s34} \left| \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)\right|^2\ ,
 \label{fsd}
 \end{align}
-where all quantities which are not three-point structure constants have been combined into the \textbf{\boldmath $s$-channel}\index{s-channel@$s$-channel} four-point conformal block $\mathcal{F}^{(s)}_{\Delta_s}(s_i|z_i)$.
-The appearance of the factorized quantity $\left| \mathcal{F}^{(s)}_{\Delta_s}(s_i|z_i)\right|^2$ is a manifestation of holomophic factorization, and the conformal block $\mathcal{F}^{(s)}_{\Delta_s}(s_i|z_i)$ is a locally holomorphic function of $z_i$. 
+where all quantities which are not three-point structure constants have been combined into the \textbf{\boldmath $s$-channel}\index{s-channel@$s$-channel} four-point conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)$.
+The appearance of the factorized quantity $\left| \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)\right|^2$ is a manifestation of holomophic factorization, and the conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)$ is a locally holomorphic function of $z_i$. 
 
-Our decomposition of the four-point function followed from the $V_1V_2$ OPE: what if we used the $V_2V_3$ OPE instead? We would then obtain a decomposition involving \textbf{\boldmath $t$-channel}\index{t-channel@$t$-channel} four-point conformal blocks  $\mathcal{F}^{(t)}_{\Delta_t}(s_i|z_i)$.
+\subsubsection{Crossing symmetry}
+
+Our decomposition of the four-point function followed from the OPE of $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2)$: what if we used the OPE of $V_{\sigma_2}(z_2)V_{\sigma_3}(z_3)$ instead? We would then obtain a decomposition involving \textbf{\boldmath $t$-channel}\index{t-channel@$t$-channel} four-point conformal blocks  $\mathcal{F}^{(t)}_{\Delta_t}(\sigma_i|z_i)$.
 The equality of the two decompositions is called the \textbf{\boldmath crossing symmetry}\index{crossing symmetry} of the four-point function.
 Introducing two diagrammatic notations for conformal blocks, 
 \begin{align}
@@ -2102,13 +2083,13 @@ Then
 $s$-channel and $t$-channel four-point blocks each provide a basis of solutions of these equations, whose elements are respectively parametrized by $\Delta_s$ and $\Delta_t$.
 So there must exist a linear, invertible fusing relation between the two bases, 
 \begin{align}
- \mathcal{F}^{(s)}_{\Delta_s}(s_i|z_i) = \sum_{\Delta_t}\ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}\ \mathcal{F}^{(t)}_{\Delta_t}(s_i|z_i)\ ,
+ \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i) = \sum_{\Delta_t}\ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}\ \mathcal{F}^{(t)}_{\Delta_t}(\sigma_i|z_i)\ ,
 \end{align}
 whose $z_i$-independent kernel $F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}$ is called the \textbf{\boldmath fusing matrix}\index{fusing matrix} of the Virasoro algebra.
 The parameters of the fusing matrix are in principle representations of the Virasoro algebra: the conformal dimensions which we wrote stand for the corresponding Verma modules.
 A diagrammatic notation for the fusing matrix is 
 \begin{align}
- F_{s,t}\begin{bmatrix} 2 & 3 \\ 1 & 4 \end{bmatrix} = \ \ 
+ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix} = \ \ 
 \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .55]
 \draw (0, -2) -- node [below left] {$1$} (-2, 0) -- node [above left] {$2$} (0, 2) -- node [above right] {$3$} (2, 0) -- node [below right] {$4$} (0, -2) -- (0, 2);
 \draw (-2, 0) -- (-.2, 0) node [below left] {$t$}; \draw (.2, 0) -- (2, 0);
@@ -2137,25 +2118,52 @@ This can be useful, because the fusing matrix is usually a simpler object than t
 % F^{-1} is related to F by a permutation of the arguments.
 Explicit formulas for $F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}$ with generic values of $\Delta_i$ can be found in \cite{tv12}.
 
+
+\subsubsection{Pedestrian computation of conformal blocks}
+
 Let us sketch how conformal blocks can be computed. 
-To begin with, let us show how an $s$-channel conformal block can be expressed in terms of previously introduced universal quantities.
 For simplicity, we assume that our four fields are primary.
-Using the OPE \eqref{vvs} together with eq. \eqref{ccz}, the expression \eqref{lzgz} for three-point functions of descendent fields in terms of three-point functions of primary fields, and the expression \eqref{cff} for three-point functions of primary fields, we obtain
-\begin{align}
- \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i) = \sum_{L_s\in\mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta_s,L_s} g^{L_s}_{\Delta_s,\Delta_3,\Delta_4}(z_2,z_3,z_4)z_{12}^{|L_s|+\Delta_s-\Delta_1-\Delta_2}\mathcal{F}^{(3)}(\Delta_s,\Delta_3,\Delta_4|z_2,z_3,z_4)\ .
-\end{align}
-Thanks to global conformal symmetry, we can restrict our attention to 
+Thanks to global conformal symmetry, we furthermore restrict our attention to the case $(z_1,z_2,z_3,z_4)=(x,0,\infty, 1)$. 
+We therefore want to compute the conformal blocks 
 \begin{align}
  \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x)=\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x,0,\infty,1)\ ,
 \end{align}
-from which $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$ can be reconstructed using eqs. \eqref{zgg} and \eqref{fx}.
-This simplifies the computation of the conformal block:
+from which $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$ can be recovered  using eqs. \eqref{zgg} and \eqref{fx}.
+Inserting the OPE \eqref{vvs} in our four-point function, we obtain
+\begin{multline}
+ \Big< V_{\Delta_1,\bar\Delta_1}(x) V_{\Delta_2,\bar\Delta_2}(0)V_{\Delta_3,\bar\Delta_3}(\infty)V_{\Delta_4,\bar\Delta_4}(1)\Big>
+ \\
+ = 
+ \sum_{\Delta_s,\bar\Delta_s} C_{12s} 
+ \left| x^{\Delta_s-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} x^Lf^{\Delta_s,L}_{\Delta_1,\Delta_2} \right|^2
+ \Big< L\bar L V_{\Delta_s,\bar\Delta_s}(0) V_{\Delta_3,\bar\Delta_3}(\infty) V_{\Delta_4,\bar\Delta_4}(1) \Big>\ .
+ \label{4ope}
+\end{multline}
+Then, using Ward identities, we write three-point functions of descendent fields as three-point functions of primary fields, times the universal factors
 \begin{align}
- \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) = \sum_{L_s\in\mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta_s,L_s} g^{L_s}_{\Delta_s,\Delta_3,\Delta_4}x^{|L_s|+\Delta_s-\Delta_1-\Delta_2}\ ,
+g^{L}_{\Delta_1,\Delta_2,\Delta_3} = 
+ \frac{ \left< L V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right> }{  \left<  V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right>}\ .
+\end{align}
+In the case of $L_{-1}^n$ descendents, this only involves taking derivatives of three-point conformal blocks, 
+\begin{align}
+ g^{L_{-1}^n}_{\Delta_1,\Delta_2,\Delta_3} & =\left. \frac{\frac{\partial^n}{\partial z_1^n} \mathcal{F}^{(3)}(\Delta_i|z_i)}{\mathcal{F}^{(3)}(\Delta_i|z_i)}\right|_{(z_1,z_2,z_3)=(0,\infty,1)} =(\Delta_1-\Delta_2+\Delta_3)_n \ ,
+\end{align}
+where we use the notation
+\begin{align}
+ (x)_n = \frac{\Gamma(x+n)}{\Gamma(x)} = \prod_{i=0}^{n-1}(x+i)\ .
+\label{xn}
+\end{align}
+For more general descendents, we use local Ward identities \eqref{lmn}. For example,
+\begin{align}
+ g^{L_{-2}}_{\Delta_1,\Delta_2,\Delta_3}
+ = \Delta_1-\Delta_2+2\Delta_3\ .
+\end{align}
+Using the universal factors $g^L_{\Delta_s,\Delta_3,\Delta_4}$, the expression \eqref{4ope} of our four-point function can be written as a conformal block decomposition \eqref{fsd}, where the blocks are 
+\begin{align}
+ \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) = \sum_{L\in\mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta_s,L} g^{L}_{\Delta_s,\Delta_3,\Delta_4}x^{|L|+\Delta_s-\Delta_1-\Delta_2}\ .
 \label{gsd}
 \end{align}
-where we defined $g^{L_s}_{\Delta_s,\Delta_3,\Delta_4} = g^{L_s}_{\Delta_s,\Delta_3,\Delta_4}(0,\infty,1)$.
-Explicitly, using eqs. \eqref{flfo}-\eqref{fo} for $f_{\Delta_1,\Delta_2}^{\Delta_s,L_s}$ and eqs. \eqref{glp}-\eqref{glt} for $g^{L_s}_{\Delta_s,\Delta_3,\Delta_4}$, we find 
+Explicitly, using eqs. \eqref{flfo}-\eqref{flff} for $f_{\Delta_1,\Delta_2}^{\Delta_s,L}$, we find 
 \begin{multline}
  \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) 
 = x^{\Delta_s - \Delta_1 - \Delta_2}\Bigg\{ 1 
@@ -2167,7 +2175,7 @@ Explicitly, using eqs. \eqref{flfo}-\eqref{fo} for $f_{\Delta_1,\Delta_2}^{\Delt
 \begin{bmatrix} (\Delta_s+\Delta_4-\Delta_3)_2 \\ \Delta_s+2\Delta_4-\Delta_3 \end{bmatrix}
  x^2 + O(x^3)\Bigg\}\ ,
 \end{multline}
-where the level-$2$ determinant $D_2(\Delta_s)$ was defined in eq. \eqref{dud}, and $(x)_2 = x(x+1)$.
+where the level-$2$ determinant $D_2(\Delta_s)$ was defined in eq. \eqref{dud}.
 Once $s$-channel blocks are known, $t$-channel blocks can be obtained by a permutation of the arguments, as suggested by the diagrammatic notations,
 \begin{align}
  \mathcal{F}^{(t)}_{\Delta_t}(\Delta_1,\Delta_2,\Delta_3,\Delta_4|z_1,z_2,z_3,z_4) = \mathcal{F}^{(s)}_{\Delta_t}(\Delta_2,\Delta_3,\Delta_4,\Delta_1|z_2,z_3,z_4,z_1)\ . 
@@ -2177,6 +2185,8 @@ Taking global conformal symmetry into account, this becomes
 \begin{align}
  \mathcal{F}^{(t)}_{\Delta_t}(\Delta_1,\Delta_2,\Delta_3,\Delta_4|x) = (1-x)^{\Delta_2+\Delta_3-\Delta_1-\Delta_4}\mathcal{F}^{(s)}_{\Delta_t}(\Delta_2,\Delta_3,\Delta_4,\Delta_1|1-x)\ .
 \end{align}
+
+\subsubsection{Zamolodchikov's recursion}
 
 For practical computations of conformal blocks, the formula \eqref{gsd} is not very efficient: the number of terms grows quickly with the level $|L_s|$, and the cofficients $f_{\Delta_1,\Delta_2}^{\Delta_s,L_s} g^{L_s}_{\Delta_s,\Delta_3,\Delta_4}$ are not known explicitly.
 Fortunately, there is also Al.
@@ -2218,6 +2228,8 @@ The recursion representation has the following properties:
 \item it has no known interpretation as a sum over descendents in some basis.
 \end{itemize}
 Alternatively, conformal blocks have a combinatorial representation which follows from the AGT relation \cite{aflt10}, and which has the opposite properties. 
+
+\subsubsection{Degenerate fields and momentums}
 
 The general crossing symmetry equation \eqref{csd}, while it may in principle determine the three-point structure constant, is in practice often intractable, because
 \begin{enumerate}
@@ -2881,7 +2893,7 @@ where the $\frac12$ factor in front of the integral over $\alpha$ is meant to el
 We assume that the spectrum \eqref{sad} that we obtained for $c>1$ also holds for any $c\in\mathbb{C}$ by analyticity. 
 (If $c\notin\mathbb{R}$  this gives us $\Delta \in \frac{c-1}{24} + \mathbb{R}_+$ as the correct interpretation of $\Delta \in \left[\frac{c-1}{24},\infty\right[$.)
 A subtlety occurs if the line $\alpha \in \frac{Q}{2}+i\mathbb{R}$ contains degenerate values $\alpha_{\langle r, s\rangle}$, which happens if and only if $c\leq 1$ i.e. $Q\in i\mathbb{R}$. 
-These degenerate values would lead to singularities in the decomposition \eqref{fsd} of four-point functions into conformal blocks, as the conformal block $\mathcal{F}_{\Delta_s}^{(s)}(s_i|z_i)$ has poles at $\Delta_s = \Delta_{\langle r, s\rangle}$. 
+These degenerate values would lead to singularities in the decomposition \eqref{fsd} of four-point functions into conformal blocks, as the conformal block $\mathcal{F}_{\Delta_s}^{(s)}(\sigma_i|z_i)$ has poles at $\Delta_s = \Delta_{\langle r, s\rangle}$. 
 The solution is simply to replace the line $\alpha \in \frac{Q}{2} + i\mathbb{R} = i\mathbb{R}$ with the slightly shifted line 
 \begin{align}
  (c\leq 1) \qquad \alpha \in i\mathbb{R} + \epsilon\ ,
