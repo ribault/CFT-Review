@@ -1949,14 +1949,13 @@ the local Ward identities read
  \sum_{\sigma_3} C^{\sigma_3}_{12} 
  \left| z_{12}^{\Delta_{{\sigma_3}}-\Delta_1-\Delta_2} \right|^2 L_nV_{\sigma_3}(z_2)\ .
 \end{align}
-Focussing on the right-hand side terms that come from descendents $V_{\sigma_3}= V_{L|\Delta_3\rangle}= LV_{\Delta_3}$ of a given primary field at a level $|L|=N\geq n$, we find the identities of elements of $U(\mathfrak{V}^+)$ 
+Focussing on the right-hand side terms that come from descendents $V_{\sigma_3}= V_{L|\Delta_3\rangle}= LV_{\Delta_3}$ of a given primary field at a level $|L|=N\geq n$, we find
 \begin{align}
- \sum_{|L|=N-n} C^{L|\Delta_3\rangle}_{12}(\Delta_3+N-n+n\Delta_1-\Delta_2)L 
+ \sum_{|L|=N-n} C^{L|\Delta_3\rangle}_{12}(\Delta_3+N-n+n\Delta_1-\Delta_2)L V_{\Delta_3}(z_2)
  = 
- \sum_{|L|=N} C^{L|\Delta_3\rangle}_{12}(L_nL)_-\ ,
+ \sum_{|L|=N} C^{L|\Delta_3\rangle}_{12}L_nL V_{\Delta_3}(z_2)\ .
  \label{eq:lwo}
 \end{align}
-where $(L_nL)_-$ is the element of $U(\mathfrak{V}^+)$ such that $L_nL-(L_nL)_-\in U(\mathfrak{V})\text{Span}(L_m)_{m>0}$, for instance $(L_nL_m)_- = [L_n, L_m]$ if $1\leq n\leq -m$.
 This system of linear equations determines the coefficients $C^{L|\Delta_3\rangle}_{12}$ of descendent fields in terms of the coefficient $C^{|\Delta_3\rangle}_{12}=C^3_{12}$ of the primary field,
 \begin{align}
  C^{L|\Delta_3\rangle}_{12} 
@@ -2143,10 +2142,12 @@ Then, using Ward identities, we write three-point functions of descendent fields
 \begin{align}
 g^{L}_{\Delta_1,\Delta_2,\Delta_3} = 
  \frac{ \left< L V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right> }{  \left<  V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right>}\ .
+ \label{glvv}
 \end{align}
 In the case of $L_{-1}^n$ descendents, this only involves taking derivatives of three-point conformal blocks, 
 \begin{align}
  g^{L_{-1}^n}_{\Delta_1,\Delta_2,\Delta_3} & =\left. \frac{\frac{\partial^n}{\partial z_1^n} \mathcal{F}^{(3)}(\Delta_i|z_i)}{\mathcal{F}^{(3)}(\Delta_i|z_i)}\right|_{(z_1,z_2,z_3)=(0,\infty,1)} =(\Delta_1-\Delta_2+\Delta_3)_n \ ,
+ \label{gln}
 \end{align}
 where we use the notation
 \begin{align}
@@ -2157,6 +2158,7 @@ For more general descendents, we use local Ward identities \eqref{lmn}. For exam
 \begin{align}
  g^{L_{-2}}_{\Delta_1,\Delta_2,\Delta_3}
  = \Delta_1-\Delta_2+2\Delta_3\ .
+ \label{glt}
 \end{align}
 Using the universal factors $g^L_{\Delta_s,\Delta_3,\Delta_4}$, the expression \eqref{4ope} of our four-point function can be written as a conformal block decomposition \eqref{fsd}, where the blocks are 
 \begin{align}
@@ -2229,23 +2231,6 @@ The recursion representation has the following properties:
 \end{itemize}
 Alternatively, conformal blocks have a combinatorial representation which follows from the AGT relation \cite{aflt10}, and which has the opposite properties. 
 
-\subsubsection{Degenerate fields and momentums}
-
-The general crossing symmetry equation \eqref{csd}, while it may in principle determine the three-point structure constant, is in practice often intractable, because
-\begin{enumerate}
- \item it can involve sums over large sets of possible conformal dimensions in the $s$- and $t$-channels, 
- \item the general conformal blocks are rather complicated. 
-\end{enumerate}
-So, while the general crossing equation is useful for testing the consistency of proposals for the spectrum and three-point structure constant, it is often useless for deriving specific proposals in the first place. However, it is possible to restrict the $s$- and $t$-channels conformal dimensions to finite sets, and to simplify the conformal blocks, by taking one of the four fields to be degenerate. If the other three fields remain generic, this still leads to constraints on the generic three-point structure constant. 
-
-We will study conformal blocks which involve degenerate fields, and therefore obey differential equations. 
-Notice however that the conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$ is a smooth function of $\Delta_i$, which has a finite value for $\Delta_1 = \Delta_{\langle r,s\rangle}$ -- irrespective of the values of $\Delta_2,\Delta_3,\Delta_4,\Delta_s$. 
-If however $\Delta_2$ and $\Delta_s$ happen to be related as dictated by the fusion rule of the degenerate field $V_{\langle r,s\rangle}$, then this value obeys a differential equation of order $rs$.
-In other words, a conformal block involving a degenerate representation coincides with the conformal block involving the corresponding Verma module.
-The degenerate representation manifests itself in the decompositions of correlation functions, where fusion rules dictate which conformal blocks contribute.
-On the other hand, conformal blocks involving a degenerate representation in the $s$-channel are not mere limits of $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$, which is actually singular at $\Delta_s = \Delta_{\langle r,s\rangle}$.
-The sum over descendents in eq. \eqref{gsd} is valid only if the $s$-channel representation is a Verma module, and must be modified otherwise. 
-
 
 \section{Degenerate fields}
 
@@ -2259,30 +2244,25 @@ The degenerate field that corresponds to the highest-weight state of the degener
 where $L_{\langle r,s \rangle}$ is defined in eq. \eqref{lrs}.
 This field differs from the field $V_{\Delta_{\langle r,s \rangle}}(z)$, which corresponds to the highest-weight state of the Verma module $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$, and obeys no such equation.
 
-\begin{align}
- \boxed{C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2}^{\Delta_3,\bar{\Delta}_3}(z_1,\bar{z}_1,z_2,\bar{z}_2) = C_{\Delta_1,\bar{\Delta}_1,\Delta_2,\bar{\Delta}_2,\Delta_3,\bar{\Delta}_3}\ z_{12}^{\Delta_3-\Delta_1-\Delta_2}  \bar{z}_{12}^{\bar{\Delta}_3-\bar{\Delta}_1-\bar{\Delta}_2}}\ ,
-\label{ccz}
-\end{align}
-
 
 \subsection{Fusion rules}\label{secfr}
 
 The Ward identities are the only linear equations which are obeyed by general correlation functions.
-However, more equations appear if a correlation function involves degenerate fields, as a consequence of $L_{\langle r,s \rangle} V_{\langle r,s \rangle} = 0$ eq. \eqref{lrsv}.
-Inserting this into correlation functions, we obtain linear equations called \textbf{\boldmath null vector equations}\index{null vector equation}. 
+However, more equations appear if a correlation function involves degenerate fields.
+Inserting $L_{\langle r,s \rangle} V_{\langle r,s \rangle} = 0$ into correlation functions, we obtain linear equations called \textbf{\boldmath null vector equations}\index{null vector equation}. 
 
-In the case of three-point functions, correlation functions of descendent fields are related to correlation functions of primary fields by universal ratios, such as the function $g^{L}_{\Delta_1,\Delta_2,\Delta_3}(z_1,z_2,z_3)$ of eq. \eqref{lzgz}.
-We thus have 
+In the case of three-point functions, correlation functions of descendent fields are related to correlation functions of primary fields by universal ratios \eqref{glvv}. The null vector equation $\left< L_{\langle r,s \rangle} V_{\langle r,s \rangle} V_{\Delta_2}V_{\Delta_3}\right>=0$ leads to
 \begin{align}
- g^{L_{\langle r,s \rangle}}_{\Delta_{\langle r,s \rangle},\Delta_2,\Delta_3}(z_1,z_2,z_3) = 0 \ .
+ \left< V_{\langle r,s \rangle} V_{\Delta_2}V_{\Delta_3}\right>\neq 0 \quad \Rightarrow \quad g^{L_{\langle r,s \rangle}}_{\Delta_{\langle r,s \rangle},\Delta_2,\Delta_3} = 0 \ .
 \end{align}
-This must hold for any values of the positions $z_i$, which leads to constraints on $\Delta_2$ and $\Delta_3$.
-These constraints can be interpreted as the fusion rules of the degenerate representation $R_{\langle r,s \rangle}$, using the relation between OPE structure functions and three-point functions.
+This constraint on $\Delta_2$ and $\Delta_3$ can be interpreted as the fusion rule of the degenerate representation $R_{\langle r,s \rangle}$, using the relation between OPEs and three-point functions.
+
+\subsubsection{Simplest degenerate fields}
 
 For example, let us consider the case $\langle r,s \rangle = \langle 1,1 \rangle$.
 Using eq. \eqref{lot} for $\Delta_{\langle 1,1 \rangle}$ and $L_{\langle 1,1 \rangle}$, we obtain
 $g^{L_{-1}}_{0,\Delta_2,\Delta_3} = 0$.
-Using eq. \eqref{glp} for $g^{L_{-1}}$, this implies 
+Using eq. \eqref{gln} for $g^{L_{-1}}$, this implies 
 $
  \Delta_2=\Delta_3
 $,
@@ -2293,7 +2273,7 @@ which is equivalent to the fusion rule
 Next, let us consider the case $\langle r,s \rangle = \langle 2,1 \rangle$.
 Using eq. \eqref{lot}, we obtain 
 $g^{L_{-2} +\frac{1}{b^2} L_{-1}^2 }_{-\frac12 -\frac34 b^2,\Delta_2,\Delta_3} = 0$.
-Using eqs. \eqref{gloo} and \eqref{glt} for $g^{L_{-1}^2}$ and $g^{L_{-2}}$, this implies
+Using eqs. \eqref{gln} and \eqref{glt} for $g^{L_{-1}^2}$ and $g^{L_{-2}}$, this implies
 \begin{align}
  2(\Delta_2-\Delta_3)^2 + b^2 (\Delta_2+\Delta_3) - \frac12 - b^2 -\frac38 b^4= 0\ .
 \end{align}
@@ -2314,6 +2294,8 @@ The resulting fusion rules are
 \label{rot}
 \end{align}
 These fusion rules could be derived by directly analyzing OPEs, instead of three-point functions. (See Exercise \ref{exooit}.) 
+
+\subsubsection{Higher degenerate fields}
 
 We now assume that the fusion rules are associative, and proceed to deduce $R_{\langle r,s \rangle}\times \mathcal{V}_\alpha$.
 Due to null vector equations, we expect this product to be a sum of a finite number of Verma modules.
@@ -2353,9 +2335,22 @@ f_{r_1,r_2,r_3} = \left\{\begin{array}{l}  1 \quad \text{if} \quad
 \label{frrr}
 \end{align}
 
-\vspace{2mm} 
- 
-\textit{We could already derive the spectrums and fusion rules of minimal models, and readers who are impatient to learn about particular models may proceed to Section \ref{secvmm}, where they will however have to skip the bits about correlation functions.} 
+
+\subsubsection{Fusion rules and conformal blocks}
+
+The general crossing symmetry equation \eqref{csd}, while it may in principle determine the three-point structure constant, is in practice often intractable, because
+\begin{enumerate}
+ \item it can involve sums over large sets of possible conformal dimensions in the $s$- and $t$-channels, 
+ \item the general conformal blocks are rather complicated. 
+\end{enumerate}
+So, while the general crossing equation is useful for testing the consistency of proposals for the spectrum and three-point structure constant, it is often useless for deriving specific proposals in the first place. However, it is possible to restrict the $s$- and $t$-channels conformal dimensions to finite sets, and to simplify the conformal blocks, by taking one of the four fields to be degenerate. If the other three fields remain generic, this still leads to constraints on the generic three-point structure constant. 
+
+We will study conformal blocks which involve degenerate fields, and therefore obey differential equations. 
+Notice however that the conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$ is a smooth function of $\Delta_i$, which has a finite value for $\Delta_1 = \Delta_{\langle r,s\rangle}$ -- irrespective of the values of $\Delta_2,\Delta_3,\Delta_4,\Delta_s$. 
+If however $\Delta_2$ and $\Delta_s$ happen to be related as dictated by the fusion rule of the degenerate field $V_{\langle r,s\rangle}$, then this value obeys a differential equation of order $rs$.
+In other words, a conformal block involving a degenerate representation coincides with the conformal block involving the corresponding Verma module.
+The degenerate representation manifests itself in the decompositions of correlation functions, where fusion rules dictate which conformal blocks contribute.
+On the other hand, conformal blocks in general have poles when the $s$-channel momentum takes degenerate values... residues vanish when?
 
 
 \subsection{BPZ differential equations \label{secbpz}}
