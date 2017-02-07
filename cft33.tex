@@ -1912,27 +1912,27 @@ For example, if fields $1$ and $2$ are identical, then $C_{123}=C_{213}$, and th
 
 \subsection{Operator product expansions \label{secope}}
 
-Let us study how local conformal symmetry constrain OPEs. We start with a generic OPE of the type $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_\sigma C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) V_\sigma(z_2)$. Let us insert $\oint_C dz (z-z_2)^{n+1} T(z)$ on both sides of the OPE, where the contour $C$ encircles both $z_1$ and $z_2$. Assuming $n\geq -1$, this yields the \textbf{OPE Ward identity}\index{Ward identity!---for OPEs}
+Let us study how local conformal symmetry constrain OPEs. We start with a generic OPE of the type $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_{\sigma_3} C_{\sigma_1,\sigma_2}^{\sigma_3}(z_1,z_2) V_{\sigma_3}(z_2)$. Let us insert $\oint_C dz (z-z_2)^{n+1} T(z)$ on both sides of the OPE, where the contour $C$ encircles both $z_1$ and $z_2$. Assuming $n\geq -1$, this yields the \textbf{OPE Ward identity}\index{Ward identity!---for OPEs}
 \begin{align}
- \left(L_n^{(z_2)}+\sum_{m=-1}^{n}\binom{m+1}{n+1} z_{12}^{n-m}L_{m}^{(z_1)}\right)V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_\sigma C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) L_n V_\sigma(z_2)\ .
+ \left(L_n^{(z_2)}+\sum_{m=-1}^{n}\binom{m+1}{n+1} z_{12}^{n-m}L_{m}^{(z_1)}\right)V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_{\sigma_3} C_{\sigma_1,\sigma_2}^{\sigma_3}(z_1,z_2) L_n V_{\sigma_3}(z_2)\ .
 \end{align}
 
 \subsubsection{Global Ward identities $n\in\{-1,0\}$}
 
 Using Axiom \ref{ax:dvz}, the $n=-1$ identity becomes 
  \begin{align}
-  \left(\frac{\partial}{\partial z_1} +\frac{\partial}{\partial z_2}\right) V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_\sigma C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) \frac{\partial}{\partial z_2} V_\sigma(z_2)\ .
+  \left(\frac{\partial}{\partial z_1} +\frac{\partial}{\partial z_2}\right) V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_{\sigma_3} C_{\sigma_1,\sigma_2}^{\sigma_3}(z_1,z_2) \frac{\partial}{\partial z_2} V_{\sigma_3}(z_2)\ .
  \end{align}
-Using the OPE again on the left-hand side, this implies $\left(\frac{\partial}{\partial z_1} +\frac{\partial}{\partial z_2}\right) C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2)=0$ -- translation invariance of the OPE coefficients. 
-Assuming the fields $V_{\sigma_1}, V_{\sigma_2}$ and $V_\sigma$ are  $L_0$-eigenvectors with the respective dimensions $\Delta_{\sigma_1}, \Delta_{\sigma_2}$ and $\Delta_\sigma$, the $n=0$ identity becomes 
+Using the OPE again on the left-hand side, this implies $\left(\frac{\partial}{\partial z_1} +\frac{\partial}{\partial z_2}\right) C_{\sigma_1,\sigma_2}^{\sigma_3}(z_1,z_2)=0$ -- translation invariance of the OPE coefficients. 
+Assuming the fields $V_{\sigma_1}, V_{\sigma_2}$ and $V_{\sigma_3}$ are  $L_0,\bar L_0$-eigenvectors with the left dimensions $\Delta_{\sigma_1}, \Delta_{\sigma_2}$ and $\Delta_{\sigma_3}$, the $n=0$ identity becomes 
 \begin{align}
- \left(z_{12}\frac{\partial}{\partial z_1} + \Delta_{\sigma_1}+\Delta_{\sigma_2}\right) V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_\sigma C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) \Delta_\sigma V_\sigma(z_2)\ .
+ \left(z_{12}\frac{\partial}{\partial z_1} + \Delta_{\sigma_1}+\Delta_{\sigma_2}\right) V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_{\sigma_3} C_{\sigma_1,\sigma_2}^{\sigma_3}(z_1,z_2) \Delta_{\sigma_3} V_{\sigma_3}(z_2)\ .
 \end{align}
 This determines how OPE coefficients behave under dilatations. 
 Therefore, the two global Ward identities determine the dependence of OPE coefficients on $z_1,z_2$,
 \begin{align}
- C_{\sigma_1,\sigma_2}^\sigma(z_1,z_2) = C_{\sigma_1,\sigma_2}^\sigma 
- \left| z_{12}^{\Delta_{\sigma}-\Delta_{\sigma_1}-\Delta_{\sigma_2}} \right|^2 
+ C_{\sigma_1,\sigma_2}^{\sigma_3}(z_1,z_2) = C_{\sigma_1,\sigma_2}^{\sigma_3} 
+ \left| z_{12}^{\Delta_{{\sigma_3}}-\Delta_{\sigma_1}-\Delta_{\sigma_2}} \right|^2 
  \ ,
  \label{eq:coz}
 \end{align}
@@ -1940,19 +1940,27 @@ in agreement with dimensional analysis eq. \eqref{zaz}.
 
 \subsubsection{Local Ward identities $n\geq 1$}
 
-Let us for simplicity specialize to an OPE of two primary fields $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$. Using the form \eqref{eq:coz} of the OPE coefficients, and
-omitting the dependence on right-moving quantities $\bar z_i,\bar \Delta_i$, the local Ward identities read 
+Let us for simplicity specialize to an OPE of two primary fields $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$. Using the form \eqref{eq:coz} of the OPE coefficients, where we now write $C^{\sigma_3}_{\sigma_1,\sigma_2}=C^{\sigma_3}_{12}$,
+the local Ward identities read 
 \begin{align}
- \sum_\sigma C^\sigma_{\Delta_1,\Delta_2}(\Delta_\sigma + n\Delta_1-\Delta_2) z_{12}^{\Delta_{\sigma}-\Delta_1-\Delta_2}z_{12}^n V_\sigma(z_2) = \sum_\sigma C^\sigma_{\Delta_1,\Delta_2} z_{12}^{\Delta_{\sigma}-\Delta_1-\Delta_2}  L_nV_\sigma(z_2)\ .
+ \sum_{\sigma_3} C^{\sigma_3}_{12}(\Delta_{\sigma_3} + n\Delta_1-\Delta_2) 
+ \left| z_{12}^{\Delta_{{\sigma_3}}-\Delta_1-\Delta_2}\right|^2 z_{12}^n V_{\sigma_3}(z_2) 
+ = 
+ \sum_{\sigma_3} C^{\sigma_3}_{12} 
+ \left| z_{12}^{\Delta_{{\sigma_3}}-\Delta_1-\Delta_2} \right|^2 L_nV_{\sigma_3}(z_2)\ .
 \end{align}
-Focussing on the right-hand side terms that come from descendents $V_\sigma= LV_\Delta$ of a given primary field at a level $|L|=N\geq n$, we find the identities of elements of $U(\mathfrak{V}^+)$ 
+Focussing on the right-hand side terms that come from descendents $V_{\sigma_3}= V_{L|\Delta_3\rangle}= LV_{\Delta_3}$ of a given primary field at a level $|L|=N\geq n$, we find the identities of elements of $U(\mathfrak{V}^+)$ 
 \begin{align}
- \sum_{|L|=N-n} C^{(\Delta,L)}_{\Delta_1,\Delta_2}(\Delta+N-n+n\Delta_1-\Delta_2)L = \sum_{|L|=N} C^{(\Delta,L)}_{\Delta_1,\Delta_2}[L_n, L]\ .
+ \sum_{|L|=N-n} C^{L|\Delta_3\rangle}_{12}(\Delta_3+N-n+n\Delta_1-\Delta_2)L 
+ = 
+ \sum_{|L|=N} C^{L|\Delta_3\rangle}_{12}[L_n, L]\ .
  \label{eq:lwo}
 \end{align}
-This system of linear equations determines the coefficients $C^{(\Delta,L)}_{\Delta_1,\Delta_2}$ of descendent fields in terms of the coefficient $C^{(\Delta,1)}_{\Delta_1,\Delta_2}$ of the primary field,
+This system of linear equations determines the coefficients $C^{L|\Delta_3\rangle}_{12}$ of descendent fields in terms of the coefficient $C^{|\Delta_3\rangle}_{12}=C^3_{12}$ of the primary field,
 \begin{align}
- C^{(\Delta,L)}_{\Delta_1,\Delta_2} = C^{(\Delta,1)}_{\Delta_1,\Delta_2} f^{\Delta,L}_{\Delta_1,\Delta_2}\ ,
+ C^{L|\Delta_3\rangle}_{12} 
+ = 
+ C^{3}_{12} f^{\Delta,L}_{\Delta_1,\Delta_2}\ ,
 \end{align}
 where  $f^{\Delta,L}_{\Delta_1,\Delta_2}$ are universal coefficients such that $f^{\Delta,1}_{\Delta_1,\Delta_2} =1$.
 Let us show this for $|L|\leq 2$. The cases $(N,n)=(1,1),(2,2),(2,1)$ of \eqref{eq:lwo} respectively yield 
@@ -1972,23 +1980,29 @@ More generally, given a value of the level $N\geq 2$, the equations with $n=1,2$
 
 \subsubsection{Structure of the OPE}
 
-Still omitting right-moving quantities, our OPE of two primary fields can now be written as 
+Let us write the OPE of two left and right primary fields, while neglecting the contributions of descendent fields:
 \begin{align}
- V_{\Delta_1}(z_1) V_{\Delta_2}(z_2) = \sum_\Delta C^{(\Delta, 1)}_{\Delta_1,\Delta_2} 
- z_{12}^{\Delta-\Delta_1-\Delta_2} \Big( V_\Delta(z_2) + O(z_1-z_2)\Big)\ .
+ V_{\Delta_1,\bar\Delta_1}(z_1) V_{\Delta_2,\bar\Delta_2}(z_2) 
+ = 
+ \sum_{\Delta_3,\bar\Delta_3} C^{3}_{12}
+ \left| z_{12}^{\Delta_3-\Delta_1-\Delta_2}\right|^2 \Big( V_{\Delta_3,\bar\Delta_3}(z_2) + O(z_1-z_2)\Big)\ .
 \end{align}
 Inserting this in a three-point function, and using the two-point function \eqref{eq:2pt}, this leads to
 \begin{align}
- \left<  V_{\Delta_1}(z_1) V_{\Delta_2}(z_2) V_{\Delta_3}(z_3) \right> = C^{(\Delta_3,1)}_{\Delta_1,\Delta_2} z_{12}^{\Delta_3-\Delta_1-\Delta_2} \Big( z_{23}^{-2\Delta_3} + O(z_1-z_2) \Big)\ .
+ \left<  \prod_{i=1}^3 V_{\Delta_i,\bar\Delta_i}(z_i) \right> 
+ = 
+ C^3_{12} \left| z_{12}^{\Delta_3-\Delta_1-\Delta_2} \Big( z_{23}^{-2\Delta_3} + O(z_1-z_2) \Big) \right|^2\ .
 \end{align}
 Comparing this with the expression \eqref{cff} for the three-point function, we find that our OPE coefficient coincides with the three-point structure constant, 
 \begin{align}
- C^{(\Delta_3,1)}_{\Delta_1,\Delta_2} = C_{\Delta_1,\Delta_2,\Delta_3}\ .
+ C^3_{12}= C_{123}\ .
  \label{cftt}
 \end{align}
-Let us now restore the dependence on right-moving quantities, and write the complete expression of the OPE of two primary fields:
+Let us now write the complete expression of the OPE of two primary fields:
 \begin{align}
- \boxed{ V_{\Delta_1,\bar\Delta_1}(z_1) V_{\Delta_2,\bar\Delta_2}(z_2) = \sum_{\Delta,\bar\Delta} C_{\Delta_1,\bar\Delta_1,\Delta_2,\bar\Delta_2,\Delta,\bar\Delta} \left| z_{12}^{\Delta-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} z_{12}^Lf^{\Delta,L}_{\Delta_1,\Delta_2} L \right|^2 V_{\Delta,\bar\Delta}(z_2)
+ \boxed{ V_{\Delta_1,\bar\Delta_1}(z_1) V_{\Delta_2,\bar\Delta_2}(z_2) 
+ = 
+ \sum_{\Delta_3,\bar\Delta_3} C_{123} \left| z_{12}^{\Delta_3-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} z_{12}^Lf^{\Delta_3,L}_{\Delta_1,\Delta_2} L \right|^2 V_{\Delta_3,\bar\Delta_3}(z_2)
  }\ ,
  \label{vvs}
 \end{align}
