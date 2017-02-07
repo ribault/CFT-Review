@@ -1953,29 +1953,30 @@ Focussing on the right-hand side terms that come from descendents $V_{\sigma_3}=
 \begin{align}
  \sum_{|L|=N-n} C^{L|\Delta_3\rangle}_{12}(\Delta_3+N-n+n\Delta_1-\Delta_2)L 
  = 
- \sum_{|L|=N} C^{L|\Delta_3\rangle}_{12}[L_n, L]\ .
+ \sum_{|L|=N} C^{L|\Delta_3\rangle}_{12}(L_nL)_-\ ,
  \label{eq:lwo}
 \end{align}
+where $(L_nL)_-$ is the element of $U(\mathfrak{V}^+)$ such that $L_nL-(L_nL)_-\in U(\mathfrak{V})\text{Span}(L_m)_{m>0}$, for instance $(L_nL_m)_- = [L_n, L_m]$ if $1\leq n\leq -m$.
 This system of linear equations determines the coefficients $C^{L|\Delta_3\rangle}_{12}$ of descendent fields in terms of the coefficient $C^{|\Delta_3\rangle}_{12}=C^3_{12}$ of the primary field,
 \begin{align}
  C^{L|\Delta_3\rangle}_{12} 
  = 
- C^{3}_{12} f^{\Delta,L}_{\Delta_1,\Delta_2}\ ,
+ C^{3}_{12} f^{\Delta_3,L}_{\Delta_1,\Delta_2}\ ,
 \end{align}
-where  $f^{\Delta,L}_{\Delta_1,\Delta_2}$ are universal coefficients such that $f^{\Delta,1}_{\Delta_1,\Delta_2} =1$.
+where  $f^{\Delta_3,L}_{\Delta_1,\Delta_2}$ are universal coefficients such that $f^{\Delta_3,1}_{\Delta_1,\Delta_2} =1$.
 Let us show this for $|L|\leq 2$. The cases $(N,n)=(1,1),(2,2),(2,1)$ of \eqref{eq:lwo} respectively yield 
 \begin{align}
- \Delta + \Delta_1-\Delta_2 & = 2\Delta f^{L_{-1}} \ ,
+ \Delta_3 + \Delta_1-\Delta_2 & = 2\Delta_3 f^{L_{-1}} \ ,
  \label{flfo}
  \\
- \Delta+ 2\Delta_1-\Delta_2 & = 6\Delta f^{L_{-1}^2} + (4\Delta+\tfrac{c}{2})f^{L_{-2}}\ ,
+ \Delta_3+ 2\Delta_1-\Delta_2 & = 6\Delta_3 f^{L_{-1}^2} + (4\Delta_3+\tfrac{c}{2})f^{L_{-2}}\ ,
  \\
- (\Delta+1+\Delta_1-\Delta_2) f^{L_{-1}} & = 2(2\Delta+1) f^{L_{-1}^2} + 3 f^{L_{-2}}\ ,
+ (\Delta_3+1+\Delta_1-\Delta_2) f^{L_{-1}} & = 2(2\Delta_3+1) f^{L_{-1}^2} + 3 f^{L_{-2}}\ ,
 \end{align}
-where we temporarily use the notation $f^L=f^{\Delta,L}_{\Delta_1,\Delta_2}$.
-The first equation determines $f^{L_{-1}}$, unless $\Delta=0$. The next two equations determine
-$f^{L_{-1}^2}$ and $f^{L_{-2}}$, unless $\Delta \in \{\Delta_{\langle 1,2 \rangle}, \Delta_{\langle 2,1 \rangle}\}$.
-More generally, given a value of the level $N\geq 2$, the equations with $n=1,2$ determine $\{f^L\}_{|L|=N}$, unless $\Delta\in\{\Delta_{\langle r,s \rangle}\}_{rs=N}$. (See Exercise \ref{exohf}.) If $\Delta=\Delta_{\langle r,s \rangle}=$, then for generic values of $\Delta_1,\Delta_2$ there is no solution for $\{f^L\}$, which means that $V_\Delta$ cannot appear in the OPE $V_{\Delta_1}V_{\Delta_2}$.
+where we temporarily use the notation $f^L=f^{\Delta_3,L}_{\Delta_1,\Delta_2}$.
+The first equation determines $f^{L_{-1}}$, unless $\Delta_3=0$. The next two equations determine
+$f^{L_{-1}^2}$ and $f^{L_{-2}}$, unless $\Delta_3 \in \{\Delta_{\langle 1,2 \rangle}, \Delta_{\langle 2,1 \rangle}\}$.
+More generally, given a value of the level $N\geq 2$, the equations with $n=1,2$ determine $\{f^L\}_{|L|=N}$, unless $\Delta_3\in\{\Delta_{\langle r,s \rangle}\}_{rs=N}$. (See Exercise \ref{exohf}.) If $\Delta_3=\Delta_{\langle r,s \rangle}=$, then for generic values of $\Delta_1,\Delta_2$ there is no solution for $\{f^L\}$, which means that $V_{\Delta_3}$ cannot appear in the OPE $V_{\Delta_1}V_{\Delta_2}$.
 
 
 \subsubsection{Structure of the OPE}
@@ -2008,7 +2009,7 @@ Let us now write the complete expression of the OPE of two primary fields:
 \end{align}
 where $\mathcal{L}$ is a basis of the space of creation operators $U(\mathfrak{V}^+)$, and the modulus square notation means a product of left-moving $z,\Delta,L$ and right-moving $\bar z, \bar \Delta, \bar L$ quantities.
 
-That OPE Ward identities uniquely determine the contributions of the descendents of a given primary field, means that fusion multiplicities are trivial in fusion products of highest-weight representations of the Virasoro algebra. By definition, the multiplicity of the Verma module $\mathcal{V}_\Delta$ in the fusion product $\mathcal{V}_{\Delta_1}\times \mathcal{V}_{\Delta_2}$ indeed coincides with the dimension of the space of solutions of the OPE Ward identities, and that dimension is one or zero.
+That OPE Ward identities uniquely determine the contributions of the descendents of a given primary field, means that fusion multiplicities are trivial in fusion products of highest-weight representations of the Virasoro algebra. By definition, the multiplicity of the Verma module $\mathcal{V}_{\Delta_3}$ in the fusion product $\mathcal{V}_{\Delta_1}\times \mathcal{V}_{\Delta_2}$ indeed coincides with the dimension of the space of solutions of the OPE Ward identities, and that dimension is one or zero.
 
 
 \subsection{Conformal blocks \label{secaco}}
