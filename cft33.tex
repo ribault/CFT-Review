@@ -1897,7 +1897,7 @@ In order for the three-point function \eqref{cff} to be single-valued as require
 \label{dbdz}
 \end{align}
 Primary fields with spins $s\in\frac12+\mathbb{Z}$ are called fermionic. Allowing fermionic fields would require us to modify our commutativity Axiom \ref{ax:col}, as fermions anticommute. Considering indeed a two-point function \eqref{eq:2pt} of a fermionic field with itself, we have $\left< V(z_1)V(z_2)\right> = -\left<V(z_2)V(z_1)\right>$, which suggests $\{V(z_1),V(z_2)\}=0$.
-It is actually possible to relax the single-valuedness axiom, and have fields with spins $s\notin \frac12\mathbb{Z}$, such as parafermionic fields. But we will only consider bosonic fields with spins $s\in\mathbb{Z}$.
+It is actually possible to relax the single-valuedness axiom, and have fields with spins $s\notin \frac12\mathbb{Z}$, such as parafermionic fields. But we will only consider \textbf{bosonic fields}\index{bosonic field} with spins $s\in\mathbb{Z}$.
 
 The conformal spin then controls how three-point structure constants behave under permutations. For $\sigma$ a permutation of $(1,2,3)$, we indeed have 
 \begin{align}
@@ -1905,7 +1905,8 @@ The conformal spin then controls how three-point structure constants behave unde
 \end{align}
 Since the three-point function is invariant under permutations of the fields, the structure constant must therefore behave as 
 \begin{align}
- C_{\sigma(1)\sigma(2)\sigma(3)} = \operatorname{sgn}(\sigma)^{s_1+s_2+s_3} C_{123}\ .
+ \boxed{ C_{\sigma(1)\sigma(2)\sigma(3)} = \operatorname{sgn}(\sigma)^{s_1+s_2+s_3} C_{123} }\ .
+ \label{css}
 \end{align}
 For example, if fields $1$ and $2$ are identical, then $C_{123}=C_{213}$, and the three-point function can only be nonzero if the third field has even spin $s_3\in 2\mathbb{Z}$.
 
@@ -2074,7 +2075,15 @@ we can write crossing symmetry of the four-point function as the equation
 \label{csd}
 \end{align}
 Assuming the conformal blocks to be known, this is a quadratic equation for the three-point structure constant.
-This equation is equivalent to the associativity of the OPE \eqref{cccc}. $N$-point functions on the sphere can similarly be decomposed into three-point structure constants and $N$-point conformal blocks, but the cases $N\geq 5$ do not yield more equations for the three-point structure constant. 
+This equation is equivalent to the associativity Axiom \ref{ax:ass}. In order to show that the theory is consistent, it suffices to moreover check the commutativity Axiom \ref{ax:col}, equivalently the behaviour \eqref{css} of the three-point structure constant under permutations. 
+$N$-point functions on the sphere can similarly be decomposed into three-point structure constants and $N$-point conformal blocks, but the cases $N\geq 5$ do not yield more equations for the three-point structure constant. 
+
+The general crossing symmetry equation \eqref{csd}, while it may in principle determine the three-point structure constant, is in practice often intractable, because
+\begin{enumerate}
+ \item it can involve sums over large sets of possible conformal dimensions in the $s$- and $t$-channels, 
+ \item the general conformal blocks are rather complicated. 
+\end{enumerate}
+So, while the general crossing equation is useful for testing the consistency of proposals for the spectrum and three-point structure constant, it is often useless for deriving specific proposals in the first place. However, it is possible to restrict the $s$- and $t$-channels conformal dimensions to finite sets, and to simplify the conformal blocks, by taking one of the four fields to be degenerate. (See Section \ref{sec:degf}.) If the other three fields remain generic, this still leads to constraints on the generic three-point structure constant. 
 
 Conformal blocks obey the same local and global Ward identities as the corresponding correlation functions.
 In particular, given a four-point function of primary fields, the holomorphic global Ward identities \eqref{spz} are linear differential equations for locally holomorphic functions of $(z_1,z_2,z_3,z_4)$.
@@ -2220,6 +2229,7 @@ In this formula $P$ is yet another notation for the momentum, which is related t
 The recursion representation owes its name to the original definition of the function $H_{\Delta_s}(\Delta_i|q)$ \eqref{hdq} by a recursive formula,
 \begin{align}
  H_{\Delta_s}(\Delta_i|q) = 1 + \sum_{m,n=1}^\infty \frac{(16q)^{mn}}{\Delta_s-\Delta_{\langle m,n\rangle}} R_{m,n} H_{\Delta_{\langle m,-n\rangle}}(\Delta_i|q)\ .
+ \label{hrec}
 \end{align}
 The recursion representation has the following properties:
 \begin{itemize}
@@ -2232,7 +2242,7 @@ The recursion representation has the following properties:
 Alternatively, conformal blocks have a combinatorial representation which follows from the AGT relation \cite{aflt10}, and which has the opposite properties. 
 
 
-\section{Degenerate fields}
+\section{Degenerate fields}\label{sec:degf}
 
 And a primary field that has a vanishing descendent is called a \textbf{\boldmath degenerate field}\index{degenerate field}.
 In other words, a degenerate field corresponds to the highest-weight state of a degenerate representation.
@@ -2247,7 +2257,7 @@ This field differs from the field $V_{\Delta_{\langle r,s \rangle}}(z)$, which c
 
 \subsection{Fusion rules}\label{secfr}
 
-The Ward identities are the only linear equations which are obeyed by general correlation functions.
+The Ward identities are the only linear equations that are obeyed by general correlation functions.
 However, more equations appear if a correlation function involves degenerate fields.
 Inserting $L_{\langle r,s \rangle} V_{\langle r,s \rangle} = 0$ into correlation functions, we obtain linear equations called \textbf{\boldmath null vector equations}\index{null vector equation}. 
 
@@ -2321,7 +2331,7 @@ The fusion product of two degenerate representations must of course obey the fus
 \label{rrsr}
 \end{align}
 where a superscript $\overset{2}{=}$ indicates that the corresponding sums run by increments of $2$.
-So the fusion product $R_{\langle r_1,s_1 \rangle} \times R_{\langle r_2,s_2 \rangle}$ is a sum of $\min(r_1,r_2)\min(s_1,s_2)$ degenerate representations.
+So the fusion product $R_{\langle r_1,s_1 \rangle} \times R_{\langle r_2,s_2 \rangle}$ is a sum of $\min(r_1,r_2)\times \min(s_1,s_2)$ degenerate representations.
 This can be rewritten as 
 \begin{align}
 R_{\langle r_1,s_1 \rangle} \times R_{\langle r_2,s_2 \rangle} = \sum_{r_3,s_3=1}^\infty f_{r_1,r_2,r_3} f_{s_1,s_2,s_3}\ R_{\langle r_3,s_3 \rangle}\ ,
@@ -2335,22 +2345,18 @@ f_{r_1,r_2,r_3} = \left\{\begin{array}{l}  1 \quad \text{if} \quad
 \label{frrr}
 \end{align}
 
-
 \subsubsection{Fusion rules and conformal blocks}
 
-The general crossing symmetry equation \eqref{csd}, while it may in principle determine the three-point structure constant, is in practice often intractable, because
-\begin{enumerate}
- \item it can involve sums over large sets of possible conformal dimensions in the $s$- and $t$-channels, 
- \item the general conformal blocks are rather complicated. 
-\end{enumerate}
-So, while the general crossing equation is useful for testing the consistency of proposals for the spectrum and three-point structure constant, it is often useless for deriving specific proposals in the first place. However, it is possible to restrict the $s$- and $t$-channels conformal dimensions to finite sets, and to simplify the conformal blocks, by taking one of the four fields to be degenerate. If the other three fields remain generic, this still leads to constraints on the generic three-point structure constant. 
-
-We will study conformal blocks which involve degenerate fields, and therefore obey differential equations. 
-Notice however that the conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$ is a smooth function of $\Delta_i$, which has a finite value for $\Delta_1 = \Delta_{\langle r,s\rangle}$ -- irrespective of the values of $\Delta_2,\Delta_3,\Delta_4,\Delta_s$. 
-If however $\Delta_2$ and $\Delta_s$ happen to be related as dictated by the fusion rule of the degenerate field $V_{\langle r,s\rangle}$, then this value obeys a differential equation of order $rs$.
+Conformal blocks which involve degenerate fields obey differential equations, as we will see in Section \ref{secbpz}.
+Nevertheless, the conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$ is a smooth function of $\Delta_i$, which has a finite value for $\Delta_1 = \Delta_{\langle r,s\rangle}$. 
+If $\Delta_2$ and $\Delta_s$ happen to be related as dictated by the fusion rule of the degenerate field $V_{\langle r,s\rangle}$, then this value obeys a differential equation of order $rs$.
 In other words, a conformal block involving a degenerate representation coincides with the conformal block involving the corresponding Verma module.
-The degenerate representation manifests itself in the decompositions of correlation functions, where fusion rules dictate which conformal blocks contribute.
-On the other hand, conformal blocks in general have poles when the $s$-channel momentum takes degenerate values... residues vanish when?
+The degenerate representation manifests itself in the decompositions of correlation functions, where fusion rules dictate which conformal blocks can contribute.
+
+On the other hand, conformal blocks in general has a pole when the $s$-channel momentum takes a degenerate value $\Delta_s=\Delta_{\langle r,s\rangle}$, as is manifest in Zamolodchikov's recursion representation \eqref{hrec}.
+This means that a field with this conformal dimension cannot appear in the OPEs of $V_{\Delta_1}V_{\Delta_2}$ and $V_{\Delta_3}V_{\Delta_4}$, unless the residue of the conformal block's pole vanishes, which happens if
+the fusion rules allow $R_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_1}\to \mathcal{V}_{\Delta_2}$ and $R_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_3}\to \mathcal{V}_{\Delta_4}$.
+
 
 
 \subsection{BPZ differential equations \label{secbpz}}
@@ -2418,7 +2424,7 @@ In the case of our four-point function \eqref{fxv} at $x=0$, the fusion rule \eq
 \begin{align}
  V_{\langle 2,1 \rangle}(x)V_{\alpha}(0) = \sum_\pm C_\pm(\alpha) x^{\Delta\left(\alpha\mp \frac{b}{2}\right) -\Delta(\alpha) - \Delta_{\langle 2,1 \rangle}} \left(V_{\alpha\mp\frac{b}{2}}(0) + O(x)\right)\ ,
 \end{align}
-where $C_\pm(\alpha)$ are some constants, and the powers of $x$ are dictated by eq. \eqref{ccz}. 
+where $C_\pm(\alpha)$ are some constants, and the powers of $x$ are dictated by eq. \eqref{eq:coz}. 
 Computing these powers,
 \begin{align}
  \Delta\left(\alpha\mp \frac{b}{2}\right) -\Delta(\alpha) - \Delta_{\langle 2,1 \rangle}  = b \alpha^{\pm}\ ,
@@ -2961,7 +2967,7 @@ The three-point structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$ is constrain
  C_{\alpha_1,\alpha_2,\alpha_3} = R(\alpha_1) C_{Q-\alpha_1,\alpha_2,\alpha_3}\ .
 \label{crc}
 \end{align}
-Adapting eq. \eqref{vvs} and eq. \eqref{ccz}, the OPE is in our notations
+Adapting eq. \eqref{vvs}, the OPE is in our notations
 \begin{multline}
  V_{\alpha_1}(z_1,\bar{z}_1) V_{\alpha_2}(z_2,\bar{z}_2) = \frac12 \int_{\frac{Q}{2}+i{\mathbb{R}}} d\alpha\ C_{\alpha_1,\alpha_2}^\alpha |z_{12}|^{2(\Delta-\Delta_1-\Delta_2)} 
 \\ \times 
