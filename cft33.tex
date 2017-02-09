@@ -2377,6 +2377,8 @@ In the case of a three-point function ($N=3$), the dependence on $z_i$ is alread
 The BPZ equation therefore leads to constraints on the conformal dimensions $\Delta_1$ and $\Delta_2$ -- that is, to the fusion rules. (See Exercise \ref{exotob}.) If $N\geq 4$, taking the global conformal symmetry into account as in eq. \eqref{xfxn}, it is possible to rewrite a BPZ equation as a differential equation for a function of $N-3$ variables.
 In particular, a BPZ equation for a four-point function boils down to an ordinary differential equation -- a differential equation for a function of a single variable.  
 
+\subsubsection{Case of a four-point function with the field $V_{\langle 2,1 \rangle}$}
+
 Let us derive the ordinary differential equation for $\left\langle V_{\langle 2,1 \rangle}(x)\prod_{i=1}^3 V_{\Delta_i}(z_i)\right\rangle$.
 Inserting the identity $\oint_\infty dz\ \epsilon(z) T(z) =0$ with $\epsilon(z) = \frac{(z-z_1)(z-z_2)(z-z_3)}{z-x}$, and using eq. \eqref{lrsv}, we obtain a differential equation with derivatives only with respect to $x$, 
 \begin{multline}
@@ -2395,10 +2397,11 @@ for
  \mathcal{F}(x) = \left\langle V_{\langle 2,1 \rangle}(x)V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle\ .
 \label{fxv}
  \end{align}
-(The $s$-th order differential equation for $\left\langle V_{\langle s,1 \rangle}(x)V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle $ can be found in \cite{flno09}.)
+(The $r$-th order differential equation for $\left\langle V_{\langle r,1 \rangle}(x)V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle $ can be found in \cite{flno09}.)
 
-Before solving our second-order differential equation, let us discuss its qualitative properties.
-The coefficients of the equation diverge, and the solutions can therefore be non-analytic, at the singularities $x=0,1,\infty$.
+\subsubsection{Qualitative properties}
+
+The coefficients of our equation \eqref{sode} diverge, and the solutions can therefore be non-analytic, at the singularities $x=0,1,\infty$.
 These singularities are regular singular points, where a \textbf{regular singular point}\index{regular singular point} $x_0$ is characterized by the existence of a basis of solutions of the type  
 \begin{align}
  \mathcal{F}(x)=(x-x_0)^\lambda\left(1+\sum_{n=0}^\infty c_n (x-x_0)^n\right)\ ,
@@ -2452,6 +2455,8 @@ These degenerate conformal blocks are special cases of the more general conforma
 
 \subsection{Hypergeometric conformal blocks \label{sechcb}}
 
+\subsubsection{Hypergeometric equation, hypergeometric function}
+
  Let us define the \textbf{\boldmath hypergeometric equation}\index{hypergeometric equation} with parameters $A,B,C$, 
 \begin{align}
  \left\{ x(1-x) \frac{\partial^2}{\partial x^2} +\left[C-(A+B+1)x\right]{\frac{\partial}{\partial x}} - AB \right\} \mathcal{G}(x)= 0\ .
@@ -2480,6 +2485,8 @@ The hypergeometric function obeys the identities
  F(A,B,C,x) = F(B,A,C,x) = (1-x)^{C-A-B} F(C-A,C-B,C,x)\ .
 \label{fff}
 \end{align}
+
+\subsubsection{Solving a hypergeometric BPZ equation}
 
 In the case of four-point functions, we have the following equivalences of differential equations:
 \begin{align}
@@ -2518,6 +2525,8 @@ The corresponding solutions of the twisted equation \eqref{hj} are
 \end{array}\right. 
 \label{fpm}
 \end{align}
+
+\subsubsection{Fusing matrix}
 
 We can also define the \textbf{\boldmath $t$-channel}\index{t-channel@$t$-channel} basis of solutions, whose elements are associated to the characteristic exponents at the regular singular point $x=1$.
 Such solutions are obtained from the $s$-channel solutions by the exchange $\left\{\begin{smallmatrix} 1\leftrightarrow 3\\ x\leftrightarrow 1-x \end{smallmatrix}\right.$, and we find 
@@ -2582,11 +2591,13 @@ F_{ij} =
 \label{fpic}
 \end{align}
 
-Now how can the single-valued four-point function $\left\langle V_{\langle 2,1 \rangle}(x,\bar{x})V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle$ be decomposed as a combination of our solutions? We assume that we are dealing with a diagonal model, so that the four-point function obeys not only the BPZ equation \eqref{sode}, but also the complex conjugate equation, and must be of the type 
+\subsubsection{Single-valued solutions}
+
+How can the single-valued four-point function $\left\langle V_{\langle 2,1 \rangle}(x)V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle$ be decomposed as a combination of our solutions? We assume that we are dealing with a diagonal model, so that the four-point function obeys not only the BPZ equation \eqref{sode}, but also the complex conjugate equation, and must be of the type 
 \begin{align}
- \left\langle V_{\langle 2,1 \rangle}(x,\bar{x})V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle = \sum_{i,j=\pm} c^{(s)}_{ij} \mathcal{F}_i^{(s)}(x) \mathcal{F}_j^{(s)}(\bar{x}) = \sum_{i,j=\pm} c^{(t)}_{ij} \mathcal{F}_i^{(t)}(x) \mathcal{F}_j^{(t)}(\bar{x})\ ,
+ \left\langle V_{\langle 2,1 \rangle}(x)V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle = \sum_{i,j=\pm} c^{(s)}_{ij} \mathcal{F}_i^{(s)}(x) \mathcal{F}_j^{(s)}(\bar{x}) = \sum_{i,j=\pm} c^{(t)}_{ij} \mathcal{F}_i^{(t)}(x) \mathcal{F}_j^{(t)}(\bar{x})\ ,
 \end{align}
-where $c^{(s)}_{ij}$ and $c^{(t)}_{ij}$ are $x,\bar{x}$-independent coefficients.
+where $c^{(s)}_{ij}$ and $c^{(t)}_{ij}$ are $x$-independent coefficients.
 These two sets of coefficients are related by the change of basis \eqref{gfg},
 \begin{align}
  \sum_{i,j=\pm} c^{(s)}_{ij} F_{ii'} F_{jj'} = c^{(t)}_{i'j'}\ .
@@ -2594,7 +2605,7 @@ These two sets of coefficients are related by the change of basis \eqref{gfg},
 Now, single-valuedness near $x=0$ implies $c^{(s)}_{+-}=c^{(s)}_{-+}=0$, and single-valuedness near $x=1$ similarly implies $c^{(t)}_{+-}=c^{(t)}_{-+}=0$.
 Thus we can write
 \begin{align}
- \left\langle V_{\langle 2,1 \rangle}(x,\bar{x})V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle = \sum_{i=\pm} c^{(s)}_i \mathcal{F}_i^{(s)}(x) \mathcal{F}_i^{(s)}(\bar{x}) = \sum_{i=\pm} c^{(t)}_i \mathcal{F}^{(t)}_i(x) \mathcal{F}^{(t)}_i(\bar{x})\ ,
+ \left\langle V_{\langle 2,1 \rangle}(x)V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle = \sum_{i=\pm} c^{(s)}_i \mathcal{F}_i^{(s)}(x) \mathcal{F}_i^{(s)}(\bar{x}) = \sum_{i=\pm} c^{(t)}_i \mathcal{F}^{(t)}_i(x) \mathcal{F}^{(t)}_i(\bar{x})\ ,
 \label{zsc}
 \end{align}
 where the coefficients $c^{(s)}_\pm$ and $c^{(t)}_\pm$ obey the relations 
@@ -2616,7 +2627,7 @@ where we introduce the function
  \gamma(x) = \frac{\Gamma(x)}{\Gamma(1-x)}\ .
 \label{gx}
 \end{align}
-This determines $\left\langle V_{\langle 2,1 \rangle}(x,\bar{x})V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle$ up to an $x,\bar{x}$-independent factor. 
+This determines $\left\langle V_{\langle 2,1 \rangle}(x)V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle$ up to an $x$-independent factor. 
 
 
 \section{Exercises}
@@ -2787,7 +2798,7 @@ Discuss how the presence of a null vector affects the equations for $f^{\Delta,L
  ~\label{exooit}
 Rederive the fusion rule \eqref{rot} by analyzing the corresponding OPE.
 % NB: include this in main text!?
-If $C$ is a contour around both $z_1$ and $z_2$, insert $\oint_C dz\ T(z)$ and $\oint_C dz\ \frac{1}{z-z_2}T(z)$ on both sides of that OPE, and compute the leading terms of the OPEs $V_{\Delta_1}(z_1) LV_{\langle 2,1 \rangle}(z_2)$ with $L\in\{L_{-1},L_{-1}^2,L_{-2}\}$, before using $L_{\langle 2,1 \rangle} V_{\langle 2,1 \rangle} (z_2) =0$. 
+If $C$ is a contour around both $z_1$ and $z_2$, insert $\oint_C dz\, T(z)$ and $\oint_C dz \frac{1}{z-z_2}T(z)$ on both sides of that OPE, and compute the leading terms of the OPEs $V_{\Delta_1}(z_1) LV_{\langle 2,1 \rangle}(z_2)$ with $L\in\{L_{-1},L_{-1}^2,L_{-2}\}$, before using $L_{\langle 2,1 \rangle} V_{\langle 2,1 \rangle} (z_2) =0$. 
 \end{exo}
 
 \begin{exo}[Creation operators as differential operators]
