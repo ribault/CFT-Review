@@ -1542,6 +1542,8 @@ Relaxing this axiom can be fruitful, in particular by allowing the existence of 
 
 In order to derive equations that constrain the correlation functions, we will now explain how the action of conformal symmetry is encoded in a field, the energy-momentum tensor.
 
+\subsubsection{Definition}
+
 \begin{hyp}[Dependence of fields on the position]
  ~\label{ax:dvz}
  For any field $V_\sigma(z)$,
@@ -1569,6 +1571,8 @@ And this is equivalent to $\frac{\partial}{\partial z} T(y) = \frac{\partial}{\p
 (The series is supposed to converge if $y$ is close enough to $z$.) Calling $T(y)$ a tensor is an abuse of terminology: strictly speaking, the energy-momentum tensor is actually 
 $\left(\begin{smallmatrix} T_{yy} = T(y) & T_{y\bar y} \\ T_{\bar y y} & T_{\bar y \bar y} = \bar T(y) \end{smallmatrix}\right)$, where in particular $\bar T(y)= \sum_{n\in{\mathbb{Z}}} \frac{\bar L_n^{(z)}}{(\bar y-\bar z)^{n+2}}$. 
 %(We refrain from using the notation $\bar T(\bar y)$ for a locally antiholomorphic field and reserving $T(y)$ for a locally holomorphic field, while fields that are neither holomorphic nor antiholomorphic would have to be written as $V_\sigma(z,\bar z)$.)
+
+\subsubsection{Analytic properties}
 
 The energy-momentum tensor encodes the action of the Virasoro algebra at all points $z$. 
 From $T(y)$, we can indeed recover the Virasoro generators at any point,
@@ -1600,8 +1604,8 @@ Since our field theory lives on the Riemann sphere, $T(y)$ should be holomorphic
 \end{hyp} 
 \noindent
 
-The field $T(y)$ is a \textbf{\boldmath symmetry field}\index{symmetry field}: a field that encodes the action of symmetry transformations, but does not necessarily correspond to a state in the spectrum. 
-That field nevertheless obeys the same assumptions of commutativity, associativity, and existence of an OPE, as the fields $V_\sigma(z)$.
+\subsubsection{Interpretation}
+
 The commutation relations \eqref{vir} of the Virasoro algebra are equivalent to the following OPE of the field $T(y)$ with itself,
 \begin{align}
  \boxed{T(y)T(z) = \frac{\frac{c}{2}}{(y-z)^4} + \frac{2T(z)}{(y-z)^2} + \frac{\partial T(z)}{y-z} + O(1)}\ .
@@ -1618,7 +1622,9 @@ We are now considering this generator as a field called the
 \end{align}
 The energy-momentum tensor itself can be seen as a descendent of the identity field. (See Exercise \ref{exoit}.)
 
-Let a \textbf{Virasoro field}\index{Virasoro field} be a locally holomorphic field $T(y)$ that obeys the OPE \eqref{tt}. 
+The energy-momentum tensor is a \textbf{\boldmath symmetry field}\index{symmetry field}: a field that encodes the action of symmetry transformations, but does not necessarily correspond to a state in the spectrum. 
+That field nevertheless obeys the same assumptions of commutativity, associativity, and existence of an OPE, as the fields $V_\sigma(z)$.
+More generally, let a \textbf{Virasoro field}\index{Virasoro field} be a locally holomorphic field $T(y)$ that obeys the OPE \eqref{tt}. 
 From such a field, we can deduce a Virasoro symmetry algebra via eq. \eqref{lit}, so $T(y)$ is a symmetry field. However, that Virasoro symmetry is a priori unrelated to conformal symmetry, and in particular does not obey Axiom \ref{ax:dvz}. 
 Most results in Section \ref{secccs} will hold for Virasoro fields and non-conformal Virasoro symmetries, including: Ward identities, nontrivial factors of conformal blocks, and fusion rules. We will however work under Axiom \ref{ax:dvz}, as this simplifies some calculations.
 % The right place for dealing with Virasoro fields would be a part on W algebras.
