@@ -2025,7 +2025,7 @@ We will now define \textbf{\boldmath conformal blocks}\index{conformal block} as
 We want correlation functions to be decomposable as combinations of the model-dependent three-point structure constant, and conformal blocks.
 In this sense, a simple example of a conformal block is the three-point block $\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)$ \eqref{fzzz}. (On the torus, there exist nontrivial zero-point blocks, which are also known as the characters of representations.)
 
-Using the OPE of $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2)$ and Ward identities, any four-point function of descendent fields can be decomposed as 
+Using the OPE of $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2)$ and Ward identities, any four-point function of primary or descendent fields can be decomposed as 
 \begin{align}
  \left\langle \prod_{i=1}^4 V_{\sigma_i}(z_i)\right\rangle 
  = \sum_{\Delta_s,\bar{\Delta}_s} C_{12s} C_{s34} \left| \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)\right|^2\ ,
@@ -2899,7 +2899,7 @@ We must then leave the segment $]0,Q[$ out, and build the spectrum from the line
 \end{align}
 The representation $\mathcal{V}_\Delta\otimes \overline{\mathcal{V}}_{\bar{\Delta}}$ can appear in the spectrum only if both 
 $\Delta$ and $\bar{\Delta}$ obey this condition. 
-Moreover, single-valuedness of correlation functions requires $\Delta-\bar{\Delta}\in {\mathbb{Z}} $, see eq. \eqref{dbdz}.
+Moreover, single-valuedness of correlation functions requires $\Delta-\bar{\Delta}\in {\frac12\mathbb{Z}} $, see eq. \eqref{dbdz}.
 By continuity, $\Delta-\bar{\Delta}$ must be a constant, and this constant must be zero for both $\Delta$ and $\bar{\Delta}$ to span the whole half-line $\left[\frac{c-1}{24},\infty\right[$.
 Therefore, the spectrum must be diagonal,
 \begin{align}
@@ -4248,8 +4248,8 @@ The simplest discrete diagonal spectrum which can be written is
 \end{align}
 where $R$ is an arbitrary real parameter.
 Let us extend this spectrum by allowing non-diagonal terms, while accepting only bosonic fields.
-Then eq. \eqref{dbdz} leads to $(\alpha-\bar{\alpha})(\alpha+\bar{\alpha})\in {\mathbb{Z}}$.
-In the spectrum $S_R^0$ which we wish to extend, we have $\alpha+\bar{\alpha}\in\frac{i}{R}{\mathbb{Z}}$, so that the largest possible extension is obtained by assuming $\alpha-\bar{\alpha}\in iR{\mathbb{Z}}$.
+This means that conformal spins must be integer, which leads to $(\alpha-\bar{\alpha})(\alpha+\bar{\alpha})\in {\mathbb{Z}}$.
+In the spectrum $S_R^0$ that we wish to extend, we have $\alpha+\bar{\alpha}\in\frac{i}{R}{\mathbb{Z}}$, so that the largest possible extension is obtained by assuming $\alpha-\bar{\alpha}\in iR{\mathbb{Z}}$.
 This leads to the spectrum
 \begin{align}
  \boxed{S_R = \sum_{n,w\in {\mathbb{Z}}} \mathcal{V}_{\frac{i}{2}\left(\frac{n}{R} + Rw\right)} \otimes \bar{\mathcal{V}}_{\frac{i}{2}\left(\frac{n}{R} - Rw\right)} }\ .
@@ -4293,7 +4293,7 @@ This simple algebraic observation has important consequences in string theory, w
 
 Alternatively, we could look for non-unitary free bosonic theories with discrete spectrums.
 Relaxing the unitarity assumption allows $Q$ to be nonzero.
-Assuming the spectrum is still $S_R$ \eqref{sr}, the condition \eqref{dbdz} is now obeyed provided 
+Assuming the spectrum is still $S_R$ \eqref{sr}, the fields are bosonic (i.e. have integer conformal spins) provided 
 \begin{align}
  iQR\in {\mathbb{Z}} \ .
 \end{align}
