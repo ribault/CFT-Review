@@ -113,7 +113,7 @@ We then give a preview of some of the simplest models.
 In Chapter \ref{secccs}, we work out the technical consequences of these ideas for the spectrum and correlation functions.
 We study the highest-weight representations of the Virasoro algebra, the fields that correspond to states in these representations, and the correlation functions of these fields. 
 
-In Chapter \ref{seccbm}, we introduce and solve the simplest non-trivial two-dimensional conformal field theories: Liouville theory, generalized minimal models, and A-series minimal models.
+In Chapter \ref{seccbm}, we introduce and solve the simplest nontrivial two-dimensional conformal field theories: Liouville theory, generalized minimal models, and A-series minimal models.
 We define these theories by a few simple assumptions on their spectrums and correlation functions.
 We pay particular attention to the three-point structure constants, whose explicit expressions we derive. 
 
@@ -660,10 +660,10 @@ which transforms the metric into $dfd\bar{f} = |h'(z)|^2 dzd\bar{z}$, and is the
 One may object that the only holomorphic functions on the sphere are the functions $f_g$ \eqref{gisl} which encode the global conformal transformations.
 And indeed, any further conformal transformation must have singularities, and cannot be one-to-one.
 We could consider transformations that would be defined only on some subset of the Riemann sphere, where there would be no singularities.
-We will adopt a different point of view, and interpret a singularity of $h(z)$ at $z=z_0$ as meaning that a field $V_\sigma(z_0)$ transforms non-trivially.
+We will adopt a different point of view, and interpret a singularity of $h(z)$ at $z=z_0$ as meaning that a field $V_\sigma(z_0)$ transforms nontrivially.
 This makes sense not only with a correlation function $\left\langle V_{\sigma}(z_0)\cdots \right\rangle $ which manifestly involves a field at $z=z_0$, 
 but also with arbitrary correlation functions.
-We can indeed always assume the presence at $z_0$ of a trivial field, called the identity field, which can however become non-trivial after a conformal transformation is performed.
+We can indeed always assume the presence at $z_0$ of a trivial field, called the identity field, which can however become nontrivial after a conformal transformation is performed.
 To summarize,
 \begin{center}
 \fbox{
@@ -825,7 +825,7 @@ If the irreducible representations $R_1$ and $R_2$ of $\mathfrak{V}$ appear in t
 In other words, we assume that if Virasoro symmetry allows a representation of $\mathfrak{V}$ to appear in an OPE, then that representation does appear.
 There are two similar-looking axioms, which should not be adopted:
 \begin{itemize}
- \item Closure under fusion of $\mathfrak{V}\times \overline{\mathfrak{V}}$ representations, instead of $\mathfrak{V}$ representations, would rule out most non-trivial models, and in particular diagonal models. 
+ \item Closure under fusion of $\mathfrak{V}\times \overline{\mathfrak{V}}$ representations, instead of $\mathfrak{V}$ representations, would rule out most nontrivial models, and in particular diagonal models. 
 \item Closure under tensor product, instead of fusion, would not make sense, as the tensor product of two representations of $\mathfrak{V}_c$ is a representation of $\mathfrak{V}_{2c}$ -- central charges behave additively in a tensor product. 
 \end{itemize}
 
@@ -2866,33 +2866,21 @@ In this Chapter we introduce and solve Liouville theory, generalized minimal mod
 
 \subsection{Definition and spectrum \label{secspe}}
 
-We assume 
+We want to define Liouville theory as the simplest possible nontrivial theory with a continuous spectrum. More specifically, we assume
 \begin{enumerate}
  \item that Liouville theory is a family of conformal field theories, parametrized by the central charge $c\in\mathbb{C}$;
 \item that each theory has a continuous spectrum, where representations of the symmetry algebra $\mathfrak{V}\times\overline{\mathfrak{V}}$ have multiplicities zero or one;
-\item that Liouville theory with $c>1$ is unitary;
-\item and that correlation functions are smooth as functions of $c$ and of the conformal dimensions of the fields, in a sense which we will make more precise.
+\item that conformal dimensions are real if the central charge is real;
+\item and that correlation functions are meromorphic functions of the Liouville coupling constant and of the fields' momentums.
 \end{enumerate}
+Let us show that these assumptions determine the spectrum of Liouville theory.
 Since the spectrum is continuous, it must involve Verma modules -- the other type of highest-weight representations, degenerate representations, form a discrete set. 
-From Section \ref{secuni}, we know that unitary Verma modules exist only if $c\geq 1$. 
-So we can assume unitarity only if $c\geq 1$, and to avoid subtleties due to the existence of degenerate representations with positive dimensions for $c=1$, we actually assume unitarity only if $c>1$. 
+Let us 
 
-When deriving the fusion rules \eqref{rtv} involving degenerate fields, we have seen that the natural parameters are not the conformal dimension $\Delta$ and the central charge $c$ -- rather, the momentum $\alpha$ \eqref{daq} and the Liouville coupling constant $b$ \eqref{cqb}.
-We assume that correlation functions are analytic as functions of $\alpha$ and $b$, with possibly poles, but no branch cuts. 
+Exploit reality assumption. Look for lower bound on dimensions: like meromorphicity, use natural variable (for fusion rules) i.e. momentum not dimension, then use critical point $\Delta'(\alpha)=0$ function. Do we still need diagram of allowed $\alpha$? yes probably.
+
 We will however see that analyticity in $b$ breaks down on the $c\leq 1$ line.
 
-Let us assume $c>1$ for a moment, and determine the spectrum from the unitarity and analyticity assumptions. 
-The set of values of $\alpha$ which obey the unitarity condition $\Delta(\alpha)> 0$ is the union of the segment $\alpha\in]0,Q[$ and the line $\alpha \in \frac{Q}{2}+i{\mathbb{R}}$:
-\begin{align}
- \begin{tikzpicture}[scale = .7, baseline=(current  bounding  box.center)]
-  \draw[-latex, very thin] (-1, 0) -- (0, 0) node[below right] {$0$} -- (2, 0) node[below right] {$\frac{Q}{2}$} -- (4, 0) node [below] {$Q$} -- (5, 0) node[above] {$\alpha$};
-  \draw[red, ultra thick, dashed] (0, 0) -- (4, 0);
-  \draw[red, ultra thick] (2, -3) -- (2, 3);
-  \draw[very thin] (0, -3) -- (0, 3);
- \end{tikzpicture}
-\end{align}
-We interpret our analyticity assumptions as implying that the set of values of $\alpha$ which appear in the spectrum has no endpoints. 
-We must then leave the segment $]0,Q[$ out, and build the spectrum from the line
 \begin{align}
  \alpha \in \frac{Q}{2}+i{\mathbb{R}} \quad \Leftrightarrow \quad \Delta \in \left[\frac{c-1}{24},\infty\right[\ .
 \label{aqd}
@@ -3943,7 +3931,7 @@ Assuming that the fusion product of two representations is unitary if and only i
 
 \begin{exo}[Structure constant of the $(5,2)$ minimal model]
  ~\label{exocppp}
-Using eq. \eqref{tcc}, write the non-trivial structure constant of the $(5,2)$ minimal model as 
+Using eq. \eqref{tcc}, write the nontrivial structure constant of the $(5,2)$ minimal model as 
 \begin{align}
  \tilde{C}_{\phi\phi\phi} = \sqrt{\frac{R(\alpha_{\langle 1,1 \rangle})}{R(\alpha_{\langle 2,1 \rangle})^3}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 2,1 \rangle}\ .
 \end{align}
@@ -3957,7 +3945,7 @@ and deduce the explicit formula \eqref{cppp} for $\tilde{C}_{\phi\phi\phi}$.
 
 \begin{exo}[Structure constant of the $(4,3)$ minimal model]
  ~\label{exocsse}
-Write the non-trivial structure constant of the $(4,3)$ minimal model as
+Write the nontrivial structure constant of the $(4,3)$ minimal model as
 \begin{align}
  \tilde{C}_{\sigma\sigma\epsilon} = \frac{1}{R(\alpha_{\langle 2,1 \rangle})}\sqrt{\frac{R(\alpha_{\langle 1,1 \rangle})}{R(\alpha_{\langle 1,2 \rangle})}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 1,2 \rangle}\ .
 \end{align}
