@@ -2870,19 +2870,16 @@ We want to define Liouville theory as the simplest possible nontrivial theory wi
 \begin{enumerate}
  \item that Liouville theory is a family of conformal field theories, parametrized by the central charge $c\in\mathbb{C}$;
 \item that each theory has a continuous spectrum, where representations of the symmetry algebra $\mathfrak{V}\times\overline{\mathfrak{V}}$ have multiplicities zero or one;
-\item that conformal dimensions are real if the central charge is real;
 \item and that correlation functions are meromorphic functions of the Liouville coupling constant and of the fields' momentums.
 \end{enumerate}
-Let us show that these assumptions determine the spectrum of Liouville theory.
+Let us first show that these assumptions determine the spectrum of Liouville theory.
+
+\subsubsection{Spectrum}
+
 Since the spectrum is continuous, it must involve Verma modules -- the other type of highest-weight representations, degenerate representations, form a discrete set. 
-Let us 
-
-Exploit reality assumption. Look for lower bound on dimensions: like meromorphicity, use natural variable (for fusion rules) i.e. momentum not dimension, then use critical point $\Delta'(\alpha)=0$ function. Do we still need diagram of allowed $\alpha$? yes probably.
-
-We will however see that analyticity in $b$ breaks down on the $c\leq 1$ line.
-
+According to Axiom \ref{ax:sots}, real parts of conformal dimensions are bounded from below, let us guess their lower bound. Remember that fusion rules of degenerate fields are analytic if expressed in terms of momentums rather than conformal dimensions: this is why we use momentums in our meromorphicity assumption. The relation \eqref{daq} between momentums and dimensions has a unique critical point $\alpha=\frac{Q}{2}$ such that $\Delta'(\alpha)=0$: this provides a natural lower bound, and leads to the following values for the momentums and dimensions:
 \begin{align}
- \alpha \in \frac{Q}{2}+i{\mathbb{R}} \quad \Leftrightarrow \quad \Delta \in \left[\frac{c-1}{24},\infty\right[\ .
+ \alpha \in \frac{Q}{2}+i{\mathbb{R}} \quad \Leftrightarrow \quad \Delta \in \frac{c-1}{24}+\mathbb{R}_+\ .
 \label{aqd}
 \end{align}
 The representation $\mathcal{V}_\Delta\otimes \overline{\mathcal{V}}_{\bar{\Delta}}$ can appear in the spectrum only if both 
@@ -2894,12 +2891,10 @@ Therefore, the spectrum must be diagonal,
  \boxed{ S= \frac12\int_{\frac{Q}{2}+i{\mathbb{R}}} d\alpha\ \mathcal{V}_\alpha \otimes \overline{\mathcal{V}}_\alpha = \int_{\frac{c-1}{24}}^\infty d\Delta\ \mathcal{V}_\Delta\otimes \overline{\mathcal{V}}_\Delta} \ ,
 \label{sad}
 \end{align}
-where the $\frac12$ factor in front of the integral over $\alpha$ is meant to eliminate the redundancy which comes from the reflection relation $\mathcal{V}_\alpha=\mathcal{V}_{Q-\alpha}$. 
+where the  factor $\frac12$ eliminates the redundancy that comes from the reflection relation $\mathcal{V}_\alpha=\mathcal{V}_{Q-\alpha}$. This spectrum is unitary if $c>1$.
 
-We assume that the spectrum \eqref{sad} that we obtained for $c>1$ also holds for any $c\in\mathbb{C}$ by analyticity. 
-(If $c\notin\mathbb{R}$  this gives us $\Delta \in \frac{c-1}{24} + \mathbb{R}_+$ as the correct interpretation of $\Delta \in \left[\frac{c-1}{24},\infty\right[$.)
-A subtlety occurs if the line $\alpha \in \frac{Q}{2}+i\mathbb{R}$ contains degenerate values $\alpha_{\langle r, s\rangle}$, which happens if and only if $c\leq 1$ i.e. $Q\in i\mathbb{R}$. 
-These degenerate values would lead to singularities in the decomposition \eqref{fsd} of four-point functions into conformal blocks, as the conformal block $\mathcal{F}_{\Delta_s}^{(s)}(\sigma_i|z_i)$ has poles at $\Delta_s = \Delta_{\langle r, s\rangle}$. 
+A subtlety occurs if our spectrum involves representations with dimensions $\Delta_{\langle r, s\rangle}$, which happens if and only if $c\leq 1$ i.e. $Q\in i\mathbb{R}$. 
+We would then have singularities in the decomposition \eqref{fsd} of four-point functions into conformal blocks, as the conformal block $\mathcal{F}_{\Delta_s}^{(s)}(\sigma_i|z_i)$ has a pole at $\Delta_s = \Delta_{\langle r, s\rangle}$. 
 The solution is simply to replace the line $\alpha \in \frac{Q}{2} + i\mathbb{R} = i\mathbb{R}$ with the slightly shifted line 
 \begin{align}
  (c\leq 1) \qquad \alpha \in i\mathbb{R} + \epsilon\ ,
@@ -2907,21 +2902,14 @@ The solution is simply to replace the line $\alpha \in \frac{Q}{2} + i\mathbb{R}
 and the four-point function will turn out to be independent of the value of the regularizing parameter $\epsilon \in \mathbb{R}^*$. 
 This subtlety with the spectrum is a first hint that something special happens if $c\leq 1$ -- we will find subtleties with the three-point structure constants too. 
 
-So the spectrum of Liouville theory does not contain any degenerate representation. 
-Nevertheless, we make the crucial assumption 
-\begin{enumerate}
-\setcounter{enumi}{4}
- \item that degenerate fields exist, and in particular obey the axioms of associativity of OPEs, and single-valuedness of correlation functions.
-\end{enumerate}
-This assumption will allow us to consider four-point functions that obey BPZ differential equations, and lead to simple crossing symmetry equations.
 
-\subsection{The reflection relation and its consequences}
+\subsubsection{Fields and correlation functions}
 
 Since we
-use the momentum $\alpha$ instead of the conformal dimension $\Delta$ for parametrizing representations, we a priori have two notations $V_\alpha(z,\bar{z})$ and $V_{Q-\alpha}(z,\bar{z})$ for the primary field which corresponds to the representation $\mathcal{V}_\alpha \otimes \overline{\mathcal{V}}_\alpha$.
+use the momentum $\alpha$ instead of the conformal dimension $\Delta$ for parametrizing representations, we a priori have two notations $V_\alpha(z)$ and $V_{Q-\alpha}(z)$ for the primary field that corresponds to the representation $\mathcal{V}_\alpha \otimes \overline{\mathcal{V}}_\alpha$.
 We must therefore have a \textbf{\boldmath reflection relation}\index{reflection relation}
 \begin{align}
- \boxed{V_\alpha(z,\bar{z})= R(\alpha) V_{Q-\alpha}(z,\bar{z})}\ ,
+ \boxed{V_\alpha(z)= R(\alpha) V_{Q-\alpha}(z)}\ ,
 \label{vrv}
 \end{align}
 where $R(\alpha)$ is the \textbf{\boldmath reflection coefficient}\index{reflection coefficient}, which must obey 
@@ -2930,15 +2918,15 @@ where $R(\alpha)$ is the \textbf{\boldmath reflection coefficient}\index{reflect
 \label{rrr}
 \end{align}
 so that in particular $R(\frac{Q}{2})\in\{1, -1\}$.
-By the reflection relation, commutativity \eqref{comm}, and conformal symmetry \eqref{fzz}, a two-point function must be of the type 
+By the reflection relation, commutativity \eqref{comm}, and conformal symmetry \eqref{fzz}, the two-point function must be of the type 
 \begin{align}
- \Big\langle V_{\alpha_1}(z_1,\bar{z}_1) V_{\alpha_2}(z_2,\bar{z}_2)\Big\rangle = c(\alpha_1) \Big\{ \delta(Q-\alpha_1-\alpha_2) + R(\alpha_1)\delta(\alpha_1-\alpha_2)\Big\} |z_{12}|^{-4\Delta(\alpha_1)}\ , 
+ \Big\langle V_{\alpha_1}(z_1) V_{\alpha_2}(z_2)\Big\rangle = c(\alpha_1) \Big\{ \delta(Q-\alpha_1-\alpha_2) + R(\alpha_1)\delta(\alpha_1-\alpha_2)\Big\} |z_{12}|^{-4\Delta(\alpha_1)}\ , 
 \label{vvc}
 \end{align}
 where the coefficient $c(\alpha)$ must obey $c(\alpha)=c(Q-\alpha)$, and is otherwise undetermined.
 Since both $c(\alpha)$ and $R(\alpha)$ can be absorbed in a field renormalization, 
 \begin{align}
- V_\alpha(z,\bar{z}) \to \lambda(\alpha)  V_\alpha(z,\bar{z}) \ ,
+ V_\alpha(z) \to \lambda(\alpha)  V_\alpha(z) \ ,
 \label{vlv}
 \end{align}
 we are free to assume
@@ -2958,7 +2946,7 @@ Omitting the dependence on $z_i$, we schematically rewrite the two-point functio
 \end{align}
 According to eq. \eqref{cff}, the three-point function takes the form
 \begin{align}
-\left\langle \prod_{i=1}^3 V_{\alpha_i}(z_i,\bar{z}_i)\right\rangle = C_{\alpha_1,\alpha_2,\alpha_3}\ |z_{12}|^{2(\Delta_3-\Delta_1-\Delta_2)} |z_{23}|^{2(\Delta_1-\Delta_2-\Delta_3)} |z_{31}|^{2(\Delta_3-\Delta_2-\Delta_1)}\ ,
+\left\langle \prod_{i=1}^3 V_{\alpha_i}(z_i)\right\rangle = C_{\alpha_1,\alpha_2,\alpha_3}\ |z_{12}|^{2(\Delta_3-\Delta_1-\Delta_2)} |z_{23}|^{2(\Delta_1-\Delta_2-\Delta_3)} |z_{31}|^{2(\Delta_3-\Delta_2-\Delta_1)}\ ,
 \label{vvv}
 \end{align}
 where $\Delta_i = \Delta(\alpha_i)$ is given in eq. \eqref{daq}.
@@ -2974,10 +2962,9 @@ The three-point structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$ is constrain
 \end{align}
 Adapting eq. \eqref{vvs}, the OPE is in our notations
 \begin{multline}
- V_{\alpha_1}(z_1,\bar{z}_1) V_{\alpha_2}(z_2,\bar{z}_2) = \frac12 \int_{\frac{Q}{2}+i{\mathbb{R}}} d\alpha\ C_{\alpha_1,\alpha_2}^\alpha |z_{12}|^{2(\Delta-\Delta_1-\Delta_2)} 
-\\ \times 
-\sum_{L,\bar{L}\in \mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta,L} f_{\Delta_1,\Delta_2}^{\Delta,\bar{L}}z_{12}^{|L|} \bar{z}_{12}^{|\bar{L}|} L\bar{L} V_{\alpha}(z_2,\bar{z}_2) \ , 
-\label{vvh}
+ V_{\alpha_1}(z_1) V_{\alpha_2}(z_2) = \frac12 \int_{\frac{Q}{2}+i{\mathbb{R}}} d\alpha\ C_{\alpha_1,\alpha_2}^\alpha |z_{12}|^{2(\Delta-\Delta_1-\Delta_2)} 
+\left|
+\sum_{L\in \mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta,L} z_{12}^{|L|}  L\right|^2 V_{\alpha}(z_2) \ , 
 \end{multline}
 for some coefficient $C_{\alpha_1,\alpha_2}^\alpha$.
 Schematically,
@@ -2994,14 +2981,22 @@ Inserting this OPE in the three-point function \eqref{vvvs}, and using the two-p
 (Compare with eq. \eqref{cftt}.) 
 This equation does not fully determine $C_{\alpha_1,\alpha_2}^{\alpha_3}$.
 Actually, the very definition of $C_{\alpha_1,\alpha_2}^{\alpha_3}$ as the coefficient of $V_{\alpha_3}$ in an OPE is ambiguous, because $V_{\alpha_3}$ is related to $V_{Q-\alpha_3}$ by the reflection relation.
-We  resolve this ambiguity by assuming $C_{\alpha_1,\alpha_2}^{Q-\alpha_3}=R(\alpha_3)C_{\alpha_1,\alpha_2}^{\alpha_3}$.
-We then obtain
+We  resolve this ambiguity by assuming $C_{\alpha_1,\alpha_2}^{Q-\alpha_3}=R(\alpha_3)C_{\alpha_1,\alpha_2}^{\alpha_3}$, and we obtain
 \begin{align}
  \boxed{C_{\alpha_1,\alpha_2}^{\alpha_3} = C_{\alpha_1,\alpha_2,Q-\alpha_3}}\ .
 \label{cec}
 \end{align}
 
-Let us discuss OPEs involving degenerate fields of the type $V_{\langle r,s \rangle}$.
+\subsubsection{Degenerate fields}
+
+Although degenerate representations do not appear in the spectrum of Liouville theory, assuming  that they exist is crucial for analytically solving the theory using the conformal bootstrap method.
+
+\begin{hyp}[Existence of degenerate fields]
+ ~\label{ax:edf}
+There exist diagonal degenerate fields $V_{\langle r,s \rangle}$ for $r,s\in\mathbb{N}^*$.
+\end{hyp}
+\noindent
+Let us discuss OPEs and correlation functions of degenerate fields. 
 Remembering the fusion rules \eqref{rtv}, an OPE involving $V_{\langle r,s \rangle}$ must be of the type
 \begin{align}
  \boxed{V_{\langle r,s \rangle} V_\alpha \sim \sum_{i=0}^{r-1}\sum_{j=0}^{s-1} C_{i,j}^{\langle r,s \rangle}(\alpha) V_{\alpha+\alpha_{\langle r,s \rangle}+ib+jb^{-1}}}\ .
@@ -3032,10 +3027,6 @@ the OPE of the degenerate field $V_{\langle 1,2 \rangle}$,
  \label{vto}
 \end{align}
 and relations involving the coefficients $\tilde{C}_+(\alpha)$ and $\tilde{C}_-(\alpha)$. 
-
-Finally, we use the same notations for the reflection relation \eqref{vrv} and OPE \eqref{vrsv} of a degenerate field $V_{\langle r',s'\rangle}$ as for a non-degenerate field $V_{\alpha}$, with the reflection coefficient $R(\alpha_{\langle r',s'\rangle})$ and OPE coefficients $C_{i,j}^{\langle r,s \rangle}(\alpha_{\langle r',s'\rangle})$. 
-Our notations suggest that these coefficients are related to $R(\alpha)$ and $C_{i,j}^{\langle r,s \rangle}(\alpha)$ by analytic continuation. 
-This will turn out to be true, although we do not assume it. 
 
 
 \subsection{Conformal bootstrap equations \label{seccbe}}
@@ -3582,7 +3573,7 @@ the fields are degenerate and the degenerate fusion rules \eqref{rrrsss} are obe
 Notice that $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ can be nonzero in some cases when the degenerate fusion rules are violated, due to the vanishing of $\Upsilon_b(x)$ for $x\in Q+b{\mathbb{N}}+\frac{1}{b}{\mathbb{N}}$: for instance, in the case of $C_{\langle 1,1\rangle , \langle 1,1 \rangle,\langle 3,3 \rangle}$, which corresponds to $(\alpha_1,\alpha_2,\alpha_3)=(0,0,-Q)$.
 The three-point function is therefore 
 \begin{multline}
- \left\langle \prod_{i=1}^3 V_{\langle r_i,s_i \rangle}(z_i,\bar{z}_i) \right\rangle = C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}  
+ \left\langle \prod_{i=1}^3 V_{\langle r_i,s_i \rangle}(z_i) \right\rangle = C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}  
 \\ \times 
 f_{r_1,r_2,r_3} f_{s_1,s_2,s_3}\ |z_{12}|^{2(\Delta_3-\Delta_1-\Delta_2)} |z_{23}|^{2(\Delta_1-\Delta_2-\Delta_3)} |z_{31}|^{2(\Delta_2-\Delta_3-\Delta_1)}\ ,
 \end{multline}
@@ -4104,15 +4095,15 @@ inserting $\oint_\infty J(z)dz$ in the OPE of two primary fields, and we find
 so that the momentum $\alpha$ is conserved.
 The OPE then reads 
 \begin{align}
-\boxed{V_{\alpha_1}(z_1,\bar{z}_1)V_{\alpha_2}(z_2,\bar{z}_2) 
+\boxed{V_{\alpha_1}(z_1)V_{\alpha_2}(z_2) 
 = 
-|z_1-z_2|^{-4\alpha_1\alpha_2} \big( V_{\alpha_1+\alpha_2}(z_2,\bar{z}_2) + O(z_1-z_2)\big)}\ ,
+|z_1-z_2|^{-4\alpha_1\alpha_2} \big( V_{\alpha_1+\alpha_2}(z_2) + O(z_1-z_2)\big)}\ ,
 \label{vvoo}
 \end{align}
 where we have normalized the fields $V_\alpha$ so that the OPE coefficient is one. (See Exercise \ref{exoone}.)
 It is actually possible to write all the descendents explicitly,
 \begin{align}
- V_{\alpha_1}(z_1,\bar{z}_1)V_{\alpha_2}(z_2,\bar{z}_2) = |z_1-z_2|^{-4\alpha_1\alpha_2}\exp\left(-\sum_{p=1}^\infty \frac{2}{p}\alpha_1 \left(z_{12}^pJ_{-p}+\bar{z}_{12}^p \bar{J}_{-p}\right) \right) V_{\alpha_1+\alpha_2}(z_2,\bar{z}_2) \ .
+ V_{\alpha_1}(z_1)V_{\alpha_2}(z_2) = |z_1-z_2|^{-4\alpha_1\alpha_2}\exp\left(-\sum_{p=1}^\infty \frac{2}{p}\alpha_1 \left(z_{12}^pJ_{-p}+\bar{z}_{12}^p \bar{J}_{-p}\right) \right) V_{\alpha_1+\alpha_2}(z_2) \ .
 \end{align}
 
 
@@ -4211,7 +4202,7 @@ First consider the diagonal, continuous spectrum
 If $Q\in {\mathbb{R}}$, this theory is unitary, as $\alpha$ obeys the unitarity condition \eqref{aif}.
 The correlation functions are 
 \begin{align}
- \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i,\bar{z}_i)\right\rangle = \delta\left({\textstyle \sum}_{i=1}^N\alpha_i-Q\right)\ \prod_{i<j} |z_i-z_j|^{-4\alpha_i\alpha_j} \ .
+ \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle = \delta\left({\textstyle \sum}_{i=1}^N\alpha_i-Q\right)\ \prod_{i<j} |z_i-z_j|^{-4\alpha_i\alpha_j} \ .
 \label{dpzz}
 \end{align}
 This spectrum and these correlation functions define the \textbf{\boldmath linear dilaton theory}\index{linear dilaton theory}. 
@@ -4245,7 +4236,7 @@ This leads to the spectrum
 \end{align}
 The correlation functions of the corresponding fields are 
 \begin{align}
- \left\langle \prod_{i=1}^N V_{n_i,w_i}(z_i,\bar{z}_i) \right\rangle = \delta_{\sum_{i=1}^N n_i,0}\ \delta_{\sum_{i=1}^N w_i,0}\ \prod_{i<j} (z_i-z_j)^{-2\alpha_i\alpha_j}(\bar{z}_i-\bar{z}_j)^{-2\bar{\alpha}_i\bar{\alpha}_j}\ , 
+ \left\langle \prod_{i=1}^N V_{n_i,w_i}(z_i) \right\rangle = \delta_{\sum_{i=1}^N n_i,0}\ \delta_{\sum_{i=1}^N w_i,0}\ \prod_{i<j} (z_i-z_j)^{-2\alpha_i\alpha_j}(\bar{z}_i-\bar{z}_j)^{-2\bar{\alpha}_i\bar{\alpha}_j}\ , 
 \end{align}
 where we defined
 \begin{align}
@@ -4354,7 +4345,7 @@ where we defined the \textbf{\boldmath accessory parameters}\index{accessory par
 The condition $t(z) \underset{z\to \infty}{=} O(\frac{1}{z^4})$, which follows from eq. \eqref{tyi}, amounts to three constraints on the accessory parameters, which are thereby uniquely determined if $N\leq 3$. 
 
 Let us use these constructions, first of all to provide a geometrical interpretation of Liouville theory.
-Let us relax the assumption that $J(z)$ (and therefore $W_1^{(0)}(z)$) be locally holomorphic, and assume there is a function $\phi(z,\bar{z})$ such that 
+Let us relax the assumption that $J(z)$ (and therefore $W_1^{(0)}(z)$) be locally holomorphic, and assume there is a function $\phi(z)$ such that 
 \begin{align}
  W_1^{(0)} = - \partial \phi \quad , \quad \bar{W}_1^{(0)} = -\bar{\partial} \phi \ .
 \end{align}
@@ -4415,10 +4406,10 @@ Using the Seiberg-Witten equation \eqref{pefo}, we obtain
 \end{align}
 If we want to compute the light asymptotic limit of the actual, single-valued $N$-point function, we have to restore the dependence on $\bar{z}_i$.
 To do this, let us consider the real, single-valued solutions of $\partial^2 \psi = \bar{\partial}^2\psi=0$.
-We write these solutions as $\psi(z,\bar{z}) = \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right]^\dagger h \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right]$, where $h$ is a constant matrix such that $h=h^\dagger$.
+We write these solutions as $\psi(z) = \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right]^\dagger h \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right]$, where $h$ is a constant matrix such that $h=h^\dagger$.
 Now how do we choose $h$? Global conformal symmetry \eqref{vtv} suggests that we should integrate over $h$, so that
 \begin{align}
-\left\langle\prod_{i=1}^N V_{\alpha_i}(z_i,\bar{z}_i)\right\rangle\ \underset{\text{light\ asymptotic\ limit}}{\propto}\ \int_{H^+_3} dh\ \prod_{i=1}^N \left( \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right]^\dagger h \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right] \right)^{-2\eta_i}\ ,
+\left\langle\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle\ \underset{\text{light\ asymptotic\ limit}}{\propto}\ \int_{H^+_3} dh\ \prod_{i=1}^N \left( \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right]^\dagger h \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right] \right)^{-2\eta_i}\ ,
 \label{zih}
 \end{align}
 where the integral is over the set \textbf{\boldmath $H_3^+$}\index{H3+@$H_3^+$} of hermitian matrices of size two and determinant one, with a measure $dh$ which we assume to be invariant under $h\mapsto g^\dagger hg$ for $g\in SL_2({\mathbb{C}})$.
@@ -4879,7 +4870,7 @@ The BPZ equations only constrain the dependence on $y_j$, but we already determi
 $\mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle$ on the variables $Y_1$ and $Y_2$.
 This leads to Feigin, Frenkel and Stoyanovsky's \textbf{\boldmath KZ-BPZ relation}\index{KZ-BPZ relation},
 \begin{align}
- \boxed{ \mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i,\bar{X}_i}(z_i,\bar{z}_i)\right\rangle = \delta^{(2)}(Y_1) |Y_2|^2 |\Theta|^{b^2} \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i,\bar{z}_i)\prod_{j=1}^{N-2}V_{\langle 2,1\rangle}(y_j,\bar{y}_j)\right\rangle}\ .
+ \boxed{ \mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i,\bar{X}_i}(z_i)\right\rangle = \delta^{(2)}(Y_1) |Y_2|^2 |\Theta|^{b^2} \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\prod_{j=1}^{N-2}V_{\langle 2,1\rangle}(y_j,\bar{y}_j)\right\rangle}\ .
 \label{dyy}
 \end{align}
 This equation means that the differential equations obeyed by both sides are related by Sklyanin's separation of variables. 
@@ -5119,11 +5110,11 @@ Calling $C^j$ the \textbf{\boldmath principal series representation of $\mathfra
 (For a more rigorous definition of $\mathcal{F}(H_3^+)$, and proof of its decomposition into representations of $\mathfrak{sl}_2({\mathbb{C}})$, see \cite{tes97b}.)
 Furthermore, the identification of the limit of the OPE with the product of functions suggests
 \begin{align}
- \underset{k\to \infty}{\lim} \left\langle \prod_{i=1}^N \Phi^{j_i}_{x_i,\bar{x}_i}(z_i,\bar{z}_i)\right\rangle \propto \int_{H_3^+} dh\ \prod_{i=1}^N \Phi^{j_i}_{x_i,\bar{x}_i}(h)\ , 
+ \underset{k\to \infty}{\lim} \left\langle \prod_{i=1}^N \Phi^{j_i}_{x_i,\bar{x}_i}(z_i)\right\rangle \propto \int_{H_3^+} dh\ \prod_{i=1}^N \Phi^{j_i}_{x_i,\bar{x}_i}(h)\ , 
 \end{align}
 where the unknown proportionality factor is an $x,\bar{x}$-independent field normalization.
 Both sides of this equation can be computed explicitly in the case $N=3$, and are found to agree \cite{tes97b}.
-Notice that the large level limit of the $H_3^+$ $N$-point function is formally identical to the light asymptotic limit of the Liouville $N$-point function \eqref{zih}, whose interpretation is however quite different as it depends on positions $z,\bar{z}$ instead of isospin variables $x,\bar{x}$.
+Notice that the large level limit of the $H_3^+$ $N$-point function is formally identical to the light asymptotic limit of the Liouville $N$-point function \eqref{zih}, whose interpretation is however quite different as it depends on positions $z$ instead of isospin variables $x,\bar{x}$.
 So the large level limit of our two-dimensional conformal field theory is the quantum mechanics of a point particle on the space $H_3^+$, which justifies naming the theory the \textbf{\boldmath $H_3^+$ model}\index{h3+ model@$H_3^+$ model}.
 Other names for the same theory include the $H_3^+$ WZW model and the $SL_2({\mathbb{C}})/SU_2$ WZW model; the latter name comes from the realization of the space $H_3^+$ as a coset.
 
