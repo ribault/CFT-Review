@@ -3163,10 +3163,11 @@ The two equations prescribe how the three-point structure constant $C_{\alpha_1,
 Next, we will discuss their solutions.
 
 
-\subsection{The three-point function \label{sectpf}}
+\subsection{The three-point structure constant \label{sectpf}}
 
-Equation \eqref{fcc} and its dual equation determine how three-point structure constants behave when momentums are shifted by $b$ and $\frac{1}{b}$. 
-Under our assumption that structure constants are smooth as functions of momentums and of $b$, this uniquely determines the structure constants (up to a momentum-independent factor) if $b^2\in \mathbb{R}$.
+For $b^2\in \mathbb{R}$, the shift equation \eqref{fcc} and its dual under $b\to \frac{1}{b}$ 
+determine the three-point structure constant up to a momentum-independent factor. 
+This is because any smooth function with two incommensurable periods must be constant, and we assumed the three-point structure constant to be a smooth function of the momentums and of $b$.
 So we will distinguish three cases:
 \begin{equation}
  \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .6]
@@ -3179,6 +3180,9 @@ So we will distinguish three cases:
 \node at (11, -1.5){$\begin{array}{c} b\in \mathbb{R} \\ c\geq 25 \end{array}$};
  \end{tikzpicture}
 \end{equation}
+
+\subsubsection{The special function that we need}
+
 In all cases, in order to solve eq. \eqref{fcc} together with the dual equation, we need a function $\Upsilon_b(x)$ such that 
 \begin{align}
  \frac{\Upsilon_b(x+b)}{\Upsilon_b(x)} \sim \gamma(bx)\quad \text{and} \quad \frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)} \sim \gamma(\tfrac{x}{b})\ ,
@@ -3211,7 +3215,8 @@ which exists for $\Im b < 0$.
 For any $c\notin ]-\infty, 1] \cup [25,\infty[$, there is a choice of $b$ such that $\Re b>0$ and $\Im b<0$. 
 Both functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$ exist and obey shift equations that are essentially the same, so their ratio is essentially an elliptic function \cite{zam05}. 
 
-Let us discuss the properties of $\Upsilon_b(x)$. 
+\subsubsection{Properties of the function $\Upsilon_b(x)$}
+
 We first notice that the function $\Upsilon_b(Q-x)$ obeys the same equations as $\Upsilon_b(x)$, which suggests 
 \begin{align}
  \boxed{\Upsilon_b(x) = \Upsilon_b(Q-x)}\ .
@@ -3264,7 +3269,9 @@ An alternative formula for $\Upsilon_b(x)$, which makes the zeros manifest, is
 where $\lambda_b$ is an unimportant $b$-dependent constant.
 This product formula is valid for all values of $x$, but it does not converge very fast.
 
-Using the functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$, we can write solutions $C$ and $\hat C$ of the shift equations \eqref{fcc} for three-point structure constants, that are respectively defined for $c\notin ]-\infty, 1]$ and $c\notin [25,\infty[$,
+\subsubsection{Expression of the three-point structure constant}
+
+Using the functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$, we can write solutions $C$ and $\hat C$ of the shift equations \eqref{fcc} for the three-point structure constant, that are respectively defined for $c\notin ]-\infty, 1]$ and $c\notin [25,\infty[$,
 \begin{align}
  \boxed{C_{\alpha_1,\alpha_2,\alpha_3} =  \frac{\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-\alpha_1-\alpha_2-\alpha_3}\Upsilon_b'(0) \Upsilon_b(2\alpha_1) \Upsilon_b(2\alpha_2) \Upsilon_b(2\alpha_3)}{\Upsilon_b(\alpha_1+\alpha_2+\alpha_3-Q) \Upsilon_b(\alpha_1+\alpha_2-\alpha_3)\Upsilon_b(\alpha_2+\alpha_3-\alpha_1)\Upsilon_b(\alpha_3+\alpha_1-\alpha_2)}} \ ,
 \label{caaa}
@@ -3297,6 +3304,8 @@ Notice that $R(\frac{Q}{2})=-1$ implies $V_\frac{Q}{2}=0$, which is consistent w
 
 \subsection{Existence and uniqueness of Liouville theory}\label{seceul}
 
+\subsubsection{Existence}
+
 We derived the three-point structure constants $C$ and $\hat C$ by solving the equation \eqref{fcc} and its dual equation under $b\to \frac{1}{b}$, which are consequences of crossing symmetry of four-point functions involving degenerate fields. 
 For Liouville theory to exist, we need generic four-point functions to be crossing symmetric. 
 This issue has been explored numerically \cite{rs15}. 
@@ -3318,7 +3327,7 @@ It turns out that for each value of the central charge $c\in\mathbb{C}$, either 
  \label{ccr}
 \end{align}
 In addition, there is a proposed proof \cite{tes03b} of crossing symmetry for $c\notin ]-\infty, 1]$.
-Let us also mention that Liouville theory is consistent on the torus \cite{hjs09, rs15}, although its partition function is infinite. 
+Let us also mention that Liouville theory is consistent on the torus \cite{hjs09, rs15}. 
 
 So $C$ is a valid structure constant wherever it is defined, whereas $\hat C$ is valid only for $c\in ]-\infty, 1]$ although it is defined for $c\notin [25,\infty[$.
 To understand this, let us study the analytic properties of the corresponding four-point functions,
@@ -3385,6 +3394,8 @@ In contrast, when
 $c$ approaches the half-line $]-\infty, 1]$, a whole cone of poles crosses the integration line before collapsing into the imaginary axis. 
 So we cannot continue the four-point function from $c\in ]-\infty, 1]$ to a larger region (or vice-versa).
 
+\subsubsection{Uniqueness}
+
 Let us now discuss the uniqueness of Liouville theory, as defined by our assumptions in Section \ref{secspe}. 
 We saw that three-point structures constants are uniquely determined by shift equations if $c\in ]-\infty, 1] \cup [25,\infty[$, so that Liouville theory is unique for these values of $c$. 
 For the other values of $c$, we have $b^2\notin\mathbb{R}$, and we can find alternative solutions of the equations \eqref{upup} for $\Upsilon_b(x)$, by multiplying $\Upsilon_b(x)$ with elliptic functions -- meromorphic functions $\theta(x)$ such that $\theta(x+b)=\theta(x+\frac{1}{b}) = \theta(x)$.
@@ -3392,6 +3403,8 @@ This leads to alternative solutions of the shift equations for structure constan
 But the resulting alternative structure constants have no reason to lead to crossing symmetric four-point functions, and it seems likely that Liouville theory is unique for any $c\in\mathbb{C}$, although this would be difficult to prove. 
 It would also be interesting to investigate whether Liouville theory could be generalized by relaxing some of our defining assumptions. 
 For example, it turns out that nothing new can be obtained by relaxing our assumption that the multiplicities of representations in the spectrum do not exceed one, and allowing finite multiplicities. (See Exercise \ref{exomul}.)
+
+\subsubsection{Degenerate values of momentums}
 
 Finally, let us study the behaviour of the Liouville OPE $V_{\alpha_1}V_{\alpha_2}$ \eqref{vvi} when $\alpha_2 \to \alpha_{\langle r,s \rangle}$, where the degenerate field momentum $\alpha_{\langle r,s \rangle}$ is given in eq. \eqref{ars}.
 This behaviour depends on the value of the central charge $c$, because the structure constants $C$ and $\hat C$ have very different analytical properties. 
