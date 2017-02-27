@@ -3522,24 +3522,18 @@ this agrees with eq \eqref{cco}.
 
 We define an \textbf{A-series minimal model}\index{A-series minimal model} as a conformal field theory such that
 \begin{itemize}
- \item the theory is diagonal;
-\item each representation of the algebra $\mathfrak{V}\times \overline{\mathfrak{V}}$ has multiplicity zero or one;
 \item the theory is rational, i.e.
-the spectrum is made of finitely many representations.
+the spectrum is made of finitely many representations;
+\item each representation of the algebra $\mathfrak{V}\times \overline{\mathfrak{V}}$ has multiplicity zero or one;
+\item the theory is diagonal.
 \end{itemize}
-Let us briefly discuss these assumptions, and compare them with our definition of Liouville theory in Section \ref{secspe}.
-Firstly, remember that the diagonality of Liouville theory was a consequence of other assumptions, which included the continuous nature of the spectrum.
-In minimal models, diagonality is a simplifying assumption.
-Relaxing this assumption, we would find not only the A-series minimal models, but also the so-called D- and E-series minimal models \cite{fms97}.
-Secondly, the assumption that multiplicities do not exceed one is another simplifying assumption.
-It is however not well-known what we would find if we would allow higher multiplicities. 
-
+Diagonality is a simplifying assumption, which excludes the non-diagonal D- and E-series minimal models \cite{fms97}.
+That multiplicities do not exceed one is another simplifying assumption, but it is not well-known what we would find by relaxing it. 
 Rationality is the crucial axiom here -- and at first sight it seems difficult for rational theories to exist.
-After all, we may view a rational theory as a theory with a continuous spectrum, where correlation functions vanish unless all involved fields belong to some particular finite subset of the spectrum.
-But we have seen in Liouville theory how the associativity of the OPE and the single-valuedness of correlation functions, together with other milder assumptions, uniquely determined the theory.
-It may seem impossible to require the vanishing of almost all correlation functions on top of that. 
+Rationality can indeed be understood as the assumption that correlation functions vanish unless all involved fields belong to some finite set.
+It is not obvious that we can satisfy this assumption, on top of the conformal bootstrap equations.
 
-This would however not be a problem, if this vanishing of almost all correlation functions was not a set of additional constraints, but instead a consequence of the fusion rules.
+This would however not be a problem, if the vanishing of almost all correlation functions was not an additional constraint, but rather a consequence of the fusion rules.
 This can happen provided the spectrum only contains degenerate representations, whose fusion products \eqref{rrsr} involve finite sums instead of the generic integrals. 
 However, in general, no nontrivial finite set of degenerate representations of the Virasoro algebra is closed under fusion.
 Starting with the degenerate representation $R_{\langle 1,2 \rangle}$ for instance, the multiple fusion products $R_{\langle 1,2 \rangle}\times R_{\langle 1,2 \rangle}\times \cdots \times R_{\langle 1,2 \rangle}$ span the infinite set of representations $\{R_{\langle 1,s \rangle}\}_{s\in{\mathbb{N}}^*}$.
@@ -3555,14 +3549,16 @@ Therefore, minimal models exist only for certain discrete values of the central 
 
 \subsection{Generalized minimal models}
 
-For any value of the central charge $c$, we define a generalized minimal model by its spectrum,
+For any complex value of the central charge $c$, we define a generalized minimal model by its spectrum,
 \begin{align}
  \boxed{S = \bigoplus_{r,s=1}^\infty R_{\langle r,s \rangle}\otimes \bar{R}_{\langle r,s \rangle}}\ .
 \end{align}
 We could obtain other consistent models by using subsets of the degenerate representations, provided these subsets were closed under fusion, for instance $S=R_{\langle 1,1 \rangle}\otimes \bar{R}_{\langle 1,1 \rangle}$, $S=\bigoplus_{r=1}^\infty R_{\langle r,1 \rangle}\otimes \bar{R}_{\langle r,1 \rangle}$ or $S=\bigoplus_{r,s=1}^{\infty} R_{\langle 2r+1,2s+1 \rangle}\otimes \bar{R}_{\langle 2r+1,2s+1 \rangle}$.
 Solving the generalized minimal model will provide a solution of each of these submodels. 
 
-Correlation functions of generalized minimal models can be deduced from the correlation functions of Liouville theory, which obey the same conformal bootstrap equations.
+\subsubsection{Relation with Liouville theory}
+
+Correlation functions of generalized minimal models can be deduced from correlation functions of Liouville theory, because they obey the same conformal bootstrap equations.
 To begin with, the two-point function can be deduced from the Liouville two-point function \eqref{vvss} by changing a Dirac delta function into a Kronecker delta function, 
 \begin{align}
  \boxed{\left\langle V_{\langle r_1,s_1 \rangle} V_{\langle r_2,s_2 \rangle} \right\rangle = R(\alpha_{\langle r_1,s_1 \rangle}) \delta_{r_1,r_2} \delta_{s_1,s_2}}\ .
@@ -3575,28 +3571,16 @@ The degenerate OPE coefficient then has a finite limit when $\alpha_1\to \alpha_
 \begin{align}
  C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} 
  &= \hat{C}_{\alpha_{\langle r_1,s_1 \rangle}, \alpha_{\langle r_2,s_2 \rangle} ,\alpha_{\langle r_3,s_3 \rangle} } \ ,
- \nonumber
+ \label{chc}
  \\
 & = \underset{\alpha_1\to \alpha_{\langle r_1,s_1 \rangle}}{\lim}\ 
 \underset{\alpha_2\to \alpha_{\langle r_2,s_2 \rangle}}{\lim}\ 
 \underset{\sum_i \alpha_i = \sum_i \alpha_{\langle r_i,s_i \rangle} }{\operatorname{ Res}} C_{\alpha_1,\alpha_2,\alpha_3}\ .
-\label{chclc}
+\label{clc}
 \end{align}
-Explicitly,
-\begin{multline}
-C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =  
-\\
-\frac{\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-\alpha_1-\alpha_2-\alpha_3}\Upsilon_b'(0) \Upsilon_b'(2\alpha_1) \Upsilon_b'(2\alpha_2) \Upsilon_b'(2\alpha_3)}{\Upsilon_b'(\alpha_1+\alpha_2+\alpha_3-Q) \Upsilon_b'(\alpha_1+\alpha_2-\alpha_3)\Upsilon_b'(\alpha_2+\alpha_3-\alpha_1)\Upsilon_b'(\alpha_3+\alpha_1-\alpha_2)}\ ,
-\label{crisi}
-\end{multline}
-where we use the notation $\alpha_i = \alpha_{\langle r_i,s_i \rangle}$ for short.
-This is the Liouville structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$, where all $\Upsilon_b$ factors are replaced with their derivatives at some of their zeros.
-These $\Upsilon_b$ factors indeed have zeros whenever
-the fields are degenerate and the degenerate fusion rules \eqref{rrrsss} are obeyed, due to $\Upsilon_b(-b{\mathbb{N}}-\frac{1}{b}{\mathbb{N}})=0$ (from eq. \eqref{xbn}) which implies 
-\begin{align}
- \forall i\neq j\neq k\ , \quad \Upsilon_b(\alpha_i+\alpha_j-\alpha_k) = 0\ .
-\end{align}
-Notice that $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ can be nonzero in some cases when the degenerate fusion rules are violated, due to the vanishing of $\Upsilon_b(x)$ for $x\in Q+b{\mathbb{N}}+\frac{1}{b}{\mathbb{N}}$: for instance, in the case of $C_{\langle 1,1\rangle , \langle 1,1 \rangle,\langle 3,3 \rangle}$, which corresponds to $(\alpha_1,\alpha_2,\alpha_3)=(0,0,-Q)$.
+These equalities hold only provided the degenerate fusion rules \eqref{rrrsss} are obeyed.
+In particular, the expressions on the right do not necessarily vanish if the fusion rules are violated.
+For example, neither expression vanishes in the case of $C_{\langle 1,1\rangle , \langle 1,1 \rangle,\langle 3,3 \rangle}$, i.e. $(\alpha_1,\alpha_2,\alpha_3)=(0,0,-Q)$.
 The three-point function is therefore 
 \begin{multline}
  \left\langle \prod_{i=1}^3 V_{\langle r_i,s_i \rangle}(z_i) \right\rangle = C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}  
@@ -3610,6 +3594,24 @@ This makes it difficult to deduce crossing symmetry in generalized minimal model
 Instead, crossing symmetry in generalized minimal models can be checked numerically \cite{rs15}, and this shows that generalized minimal models are consistent on the sphere. 
 On the other hand, nothing guarantees that generalized minimal models are consistent on the torus. Actually, correlation functions involving only the identity field reduce to the partition function, and are therefore infinite. And there is no reason for the other correlation functions to be better behaved.  
 
+\subsubsection{Three-point structure constant}
+
+Evaluating the expression \eqref{clc} for the three-point structure constant, we obtain
+\begin{multline}
+C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =  
+\\
+\frac{\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-\alpha_1-\alpha_2-\alpha_3}\Upsilon_b'(0) \Upsilon_b'(2\alpha_1) \Upsilon_b'(2\alpha_2) \Upsilon_b'(2\alpha_3)}{\Upsilon_b'(\alpha_1+\alpha_2+\alpha_3-Q) \Upsilon_b'(\alpha_1+\alpha_2-\alpha_3)\Upsilon_b'(\alpha_2+\alpha_3-\alpha_1)\Upsilon_b'(\alpha_3+\alpha_1-\alpha_2)}\ ,
+\label{crisi}
+\end{multline}
+where we use the notation $\alpha_i = \alpha_{\langle r_i,s_i \rangle}$ for short.
+This is the Liouville structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$, where all $\Upsilon_b$ factors are replaced with their derivatives at some of their zeros.
+These $\Upsilon_b$ factors indeed have zeros whenever
+the momentums are degenerate and the degenerate fusion rules \eqref{rrrsss} are obeyed, due to $\Upsilon_b(-b{\mathbb{N}}-\frac{1}{b}{\mathbb{N}})=0$ (from eq. \eqref{xbn}) which implies 
+\begin{align}
+ \forall i\neq j\neq k\ , \quad \Upsilon_b(\alpha_i+\alpha_j-\alpha_k) = 0\ .
+\end{align}
+But $\Upsilon_b(x)$ also has zeros for $x\in Q+b{\mathbb{N}}+\frac{1}{b}{\mathbb{N}}$, and these additional zeros are responsible for the expression \eqref{clc} being nonzero in cases when fusion rules are violated.
+
 The three-point structure constant can be rewritten in terms of Gamma functions, using the following consequence of eq. \eqref{upup},
 \begin{align}
  \frac{\Upsilon_b'(-rb-sb^{-1})}{\Upsilon_b'(0)} = (-1)^{rs} b^{s-r} b^{s(s+1)b^{-2}-r(r+1)b^2} P_r(b^2)P_s(b^{-2}) Q_{r,s}(b)\ ,
@@ -3618,7 +3620,7 @@ where we defined
 \begin{align}
  P_r(x) = \prod_{i=1}^r \gamma(1+ix) \quad \text{and} \quad Q_{r,s}(b) = \prod_{i=1}^r \prod_{j=1}^s (ib+jb^{-1})^2\ .
 \end{align}
-The three-point structure constant \eqref{crisi} of a generalized minimal model is then
+We then find
 \begin{align}
  C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =  \frac{-(-b^2)^{r_0-s_0}\mu^{br_0 + b^{-1}s_0}}{P_{r_0}(b^2)P_{s_0}(b^{-2})Q_{r_0,s_0}(b)} \prod_{i=1}^3 \frac{P_{r_i-1}(b^2)P_{s_i-1}(b^{-2}) Q_{r_i-1,s_i-1}(b)}{P_{r_0-r_i}(b^2)P_{s_0-s_i}(b^{-2}) Q_{r_0-r_i,s_0-s_i}(b)} \ ,
 \label{cpqb}
@@ -3627,11 +3629,14 @@ where we introduce the notations
 \begin{align}
  r_0 = \frac{r_1+r_2+r_3-1}{2} \quad , \quad s_0=\frac{s_1+s_2+s_3-1}{2}\ .
 \end{align}
-This shows that the three-point function of a generalized minimal model is meromorphic as a function of $b\in {\mathbb{C}}^*$.
-This contrasts with the three-point function of Liouville theory, which is singular if $b^2 < 0$ i.e. $c\in ]-\infty, 1]$. 
+This shows that the three-point function of a generalized minimal model is meromorphic as a function of $b^2\in {\mathbb{C}}^*$.
+This contrasts with the three-point function of Liouville theory, which is
+meromorphic only for $b^2\in \mathbb{C}-]-\infty, 1]$. 
 
 
 \subsection{A-series minimal models \label{secamm}}
+
+\subsubsection{Central charge}
 
 Let us assume that the spectrum of a conformal field theory contains a doubly degenerate representation 
 \begin{align}
@@ -3652,6 +3657,8 @@ which we assume to be coprime, we have
  \boxed{b^2 = - \frac{q}{p}} \ ,
 \end{align}
 and the central charge obeys $c\in ]-\infty, 1[$ and is given by eq. \eqref{cpq}.
+
+\subsubsection{Fusion rules and spectrum}
 
 Let us investigate the fusion rules involving such a doubly degenerate field.
 According to eq. \eqref{rtv}, the representation $\mathcal{V}_{\alpha'} $ can appear in the fusion product $R\times \mathcal{V}_\alpha$ only if there are integers $(i,j,i',j')\in [0,r-1]\times [0,s-1]\times [0,r'-1]\times [0,s'-1]$ such that 
@@ -3677,7 +3684,7 @@ And due to the identity
  \alpha_{\langle r'',s'' \rangle}+\alpha_{\langle p-r'',q-s'' \rangle}=Q\ ,
 \end{align}
 the corresponding degenerate representations $R_{\langle r'', s'' \rangle}$ are actually doubly degenerate. 
-We already encountered these doubly degenerate representations in the case $|p-q|=1$ when they are unitary, see eq. \eqref{rrs}. 
+We already encountered these doubly degenerate representations in the case $|p-q|=1$ when they are unitary, see Section \ref{secuni}. 
 
 The fusion rules of doubly degenerate representations can be deduced from the fusion rules \eqref{rrsr} of degenerate representations, 
 \begin{align}
@@ -3709,7 +3716,8 @@ As in the case of generalized minimal models, we could define submodels whose sp
 However, the minimal models have the distinction of being consistent not only on the sphere, but also on all other Riemann surfaces \cite{fms97}.
 It is easy to see that minimal models with $|p-q|>1$, and generalized minimal models, cannot be unitary, due to the presence of fields with negative conformal dimensions in their spectrums. (See Exercise \ref{exoneg}.)
 
-Finally, let us discuss the correlation functions of the A-series minimal models.
+\subsubsection{Correlation functions}
+
 The three-point structure constants are given by the same formula \eqref{cpqb} as in generalized minimal models, where the rationality of $b^2$ does not bring noteworthy simplifications. 
 Some of the minimal model structure constants however correspond to values of $\langle r_i,s_i\rangle$ which violate the fusion rules of the generalized minimal models -- for instance, $C_{\langle 1,1\rangle,\langle 1,1\rangle,\langle p-1,q-1\rangle}$. 
 The difference between generalized minimal models and minimal models is more apparent in universal quantities which reflect the nature of the involved representations: degenerate in the former case, doubly degenerate in the latter case.
@@ -3748,12 +3756,12 @@ Then $\tilde{C}_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3
 
 \subsection{Examples of A-series minimal models}
 
-\paragraph{Trivial model $(p,q)=(3,2) \Rightarrow c = 0$\ .}
+\subsubsection{Trivial model $(p,q)=(3,2) \Rightarrow c = 0$}
 
 This unitary minimal model has only one field -- the identity $I=\tilde{V}_{\langle 1,1 \rangle}=\tilde{V}_{\langle 2,1 \rangle}$.
 The fusion rule $I\times I = I$ and three-point structure constant $\tilde{C}_{III} = 1$ are trivial.
 
-\paragraph{Model $(p,q)=(5,2) \Rightarrow c=-\tfrac{22}{5}$\ of the Yang-Lee singularity.}
+\subsubsection{Model $(p,q)=(5,2) \Rightarrow c=-\tfrac{22}{5}$\ of the Yang-Lee singularity}
 
 This minimal model has two independent fields, whose names and conformal dimensions $\Delta_{\langle r,s\rangle}$ are 
 \begin{align}
@@ -3796,7 +3804,7 @@ The only three-point structure constant not involving the identity field is
 \end{align}
 (See Exercise \ref{exocppp}.)
 
-\paragraph{\textbf{\boldmath Ising model}\index{Ising model} $(p,q)=(4,3) \Rightarrow c=\tfrac12$\ .}
+\subsubsection{\textbf{\boldmath Ising model}\index{Ising model} $(p,q)=(4,3) \Rightarrow c=\tfrac12$}
 
 This unitary minimal model has three independent fields, 
 \begin{align}
@@ -3842,7 +3850,7 @@ The fusion rules are
 \\ \sigma \times \sigma = I + \epsilon\ .
 \end{array}
 \end{align}
-We notice that there are two simple currents, as defined in Section \ref{seccc}: the identity field $I$, and the field $\epsilon$.
+We notice that there are two simple currents: the identity field $I$, and the field $\epsilon$.
 Similarly, any A-series minimal model with $p,q>2$ has two simple currents $\tilde{V}_{\langle 1,1 \rangle}$ and $\tilde{V}_{\langle 1,q-1 \rangle}=\tilde{V}_{\langle p-1,1 \rangle}$. 
 
 The only three-point structure constant not involving the identity field is 
@@ -4446,7 +4454,7 @@ the light asymptotic limit of Liouville theory is a unitary, two-dimensional glo
 To conclude our discussion of the use of free boson techniques in Liouville theory, let us point out 
 that there is a relation between certain Liouville correlation functions, and linear dilaton correlation functions \cite{zz95}.
 The relevant Liouville correlation functions are $N$-point functions $\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Liouville}}$ at $\sum\alpha_i = Q-bm$ where $m\in \mathbb{N}$.  
-For the Liouville three-point structure constants $C$ and $\hat C$, the limit $\sum\alpha_i = Q-bm$ is similar to the degenerate field limit \eqref{chclc}, in that $\hat C$ is smooth while $C$ has a simple pole, and
+For the Liouville three-point structure constants $C$ and $\hat C$, the limit $\sum\alpha_i = Q-bm$ is similar to the degenerate field limit \eqref{chc}-\eqref{clc}, in that $\hat C$ is smooth while $C$ has a simple pole, and
 \begin{align}
  \lim_{\sum\alpha_i \to Q-bm} \hat C_{\alpha_1,\alpha_2,\alpha_3} 
  \propto \underset{\sum \alpha_i = Q-bm}{\operatorname{Res}}  C_{\alpha_1,\alpha_2,\alpha_3}\ ,
