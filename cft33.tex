@@ -230,7 +230,7 @@ I am grateful to my colleagues at IPhT Saclay, and in particular to Antoine Duva
 
 I wish to thank Philippe Di Francesco, Sheer El-Showk, Matthias Gaberdiel, Christoph Keller, Miguel Paulos, Slava Rychkov, Vincent Vargas, and G\'erard Watts, for useful discussions and correspondence.
 
-I am grateful to Connor Behan, Fran\c{c}ois David, Quang-Dien Duong, Bruno Le Floch, Omar Foda, and Raoul Santachiara, for helpful comments on this text.
+I am grateful to Connor Behan, Fran\c{c}ois David, Quang-Dien Duong, Bruno Le Floch, Omar Foda, Raoul Santachiara, and Vincent Vargas, for helpful comments on this text.
 
 \chapter{Introduction \label{secintr}}
 
@@ -3134,6 +3134,10 @@ Using eq. \eqref{cmcp}, this determines in particular $C_-(\alpha)$, so that we 
  C_+(\alpha)=1 \quad , \quad C_-(\alpha) = \mu^b b^4 \frac{\gamma(b(2\alpha-Q))}{\gamma(2b\alpha)}\ .
 \label{cpm}
 \end{align}
+We will need these OPE coefficients for in order to determine the three-point structure constant. 
+However, we would not need these OPE coefficients 
+if we only wanted to determine the $\alpha_s$-dependence of the combination $C_{\alpha_1,\alpha_2,Q-\alpha_s}C_{\alpha_s,\alpha_3,\alpha_4}$. (See Exercise \ref{exocas}.)
+
 
 \subsubsection{What we learn from $\left\langle V_{\langle 2,1 \rangle}(x)V_{\alpha_1}(0)V_{\alpha_2}(\infty)V_{\alpha_3}(1)\right\rangle$}
 
@@ -3343,6 +3347,7 @@ To understand this, let us study the analytic properties of the corresponding fo
          \frac12 \int_{i\mathbb{R}+\epsilon} d\alpha_s\ \hat C_{\alpha_1,\alpha_2,Q-\alpha_s} \hat C_{\alpha_s,\alpha_3, \alpha_4} \left|\mathcal{F}_{\alpha_s}^{(s)} \right|^2 \quad & \text{if } c\in ]-\infty, 1]\ .
         \end{array}
  \right.
+ \label{vfcch}
 \end{align}
 Although the structure constants $C$ and $\hat C$ have rather different analytic properties, what matters is the behaviour of the poles of the $s$-channel conformal blocks $\mathcal{F}_{\alpha_s}^{(s)}$. 
 These poles correspond to degenerate values of the momentum $\alpha_s$, and are therefore found in two cones with tips at $\alpha_s= 0$ and $\alpha_s = Q$. 
@@ -3886,6 +3891,18 @@ To do this, study how $C_+(\alpha)$ and $\tilde{C}_+(\alpha)$ behave under field
 Use eq. \eqref{ctc} for showing that these equations for $\lambda(\alpha)$ are compatible with each other, and eq. \eqref{cpcp} for showing that they are compatible with the  assumed behaviour of $\lambda(\alpha)$ under reflections eq. \eqref{llo}.
 Conclude that these equations do have a solution.
 \end{exo}
+
+\begin{exo}[Shift equations for a combination of three-point structure constants]
+ ~\label{exocas}
+ Let us consider the combination $C_{\alpha_1,\alpha_2,Q-\alpha_s}C_{\alpha_s,\alpha_3,\alpha_4}$
+ that appears in the $s$-channel decomposition \eqref{vfcch} of the four-point function $\left<\prod_{i=1}^4 V_{\alpha_i}(z_i)\right>$.
+ \begin{enumerate}
+  \item Using the four-point functions $\left<V_{\langle 2, 1\rangle} V_{Q-\alpha_s} V_{\alpha_1}V_{\alpha_2}\right>$ and $\left<V_{\langle 2, 1\rangle} V_{\alpha_s} V_{\alpha_3}V_{\alpha_4}\right>$, write a shift equation for the $\alpha_s$-dependence of $C_{\alpha_1,\alpha_2,Q-\alpha_s}C_{\alpha_s,\alpha_3,\alpha_4}$.
+  \item Which combination of the OPE coefficients $C_\pm(\alpha_s)$ appears in this shift equation? Show that this combination can be determined by studying the four-point function $\left<V_{\langle 2, 1\rangle} V_{\alpha_s} V_{\langle 2, 1\rangle} V_{Q-\alpha_s}\right>$, without computing $C_\pm(\alpha_s)$ itself.
+  \item Discuss how the relevant (combinations of) structure constants and OPE coefficients behave under field renormalizations \eqref{vlv}, and how Liouville theory can be solved in a normalization-independent way. 
+ \end{enumerate}
+\end{exo}
+
 
 \begin{exo}[Allowing finite multiplicities in Liouville theory]
  ~\label{exomul}
