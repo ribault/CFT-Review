@@ -3225,7 +3225,8 @@ Both functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$ exist and obey shift equa
 
 \subsubsection{Properties of the function $\Upsilon_b(x)$}
 
-We first notice that the function $\Upsilon_b(Q-x)$ obeys the same equations as $\Upsilon_b(x)$, which suggests 
+The equations \eqref{upup} that determine how $\Upsilon_b(x)$ behaves under shifts by $x\to x+b$ and $x\to x+\frac{1}{b}$, also determine how $\Upsilon_b(Q-x)$ behaves under the same shifts.
+The resulting shift equations for $\Upsilon_b(Q-x)$ turn out to be identical to the shift equations for $\Upsilon_b(x)$, which suggests 
 \begin{align}
  \boxed{\Upsilon_b(x) = \Upsilon_b(Q-x)}\ .
 \label{upq}
@@ -3307,8 +3308,11 @@ Both $C$ and $\hat C$
 & \quad \text{with} \quad R(\tfrac{Q}{2}) = 1 \ .
 \end{array}\right.
 \end{align}
+(Notice that $R(\frac{Q}{2})=-1$ implies $V_\frac{Q}{2}=0$, which is consistent with $C_{\frac{Q}{2},\alpha_2,\alpha_3}=0$. )
 \end{itemize}
-Notice that $R(\frac{Q}{2})=-1$ implies $V_\frac{Q}{2}=0$, which is consistent with $C_{\frac{Q}{2},\alpha_2,\alpha_3}=0$.
+The shift equations define the structure constants $C$ and $\hat C$ up to $\alpha_i$-independent normalization factors. 
+We have chosen these factors so that the later equations \eqref{crs} and \eqref{clc} will hold.
+
 
 \subsection{Existence and uniqueness of Liouville theory}\label{seceul}
 
@@ -3340,6 +3344,7 @@ Let us also mention that Liouville theory is consistent on the torus \cite{hjs09
 So $C$ is a valid structure constant wherever it is defined, whereas $\hat C$ is valid only for $c\in ]-\infty, 1]$ although it is defined for $c\notin [25,\infty[$.
 To understand this, let us study the analytic properties of the corresponding four-point functions,
 \begin{align}
+\renewcommand{\arraystretch}{2}
  \left< \prod_{i=1}^4 V_{\alpha_i}\right> = 
  \left\{\begin{array}{ll} 
          \frac12 \int_{\frac{Q}{2}+i\mathbb{R}} d\alpha_s\ C_{\alpha_1,\alpha_2,Q-\alpha_s} C_{\alpha_s,\alpha_3, \alpha_4} \left|\mathcal{F}_{\alpha_s}^{(s)} \right|^2 \quad & \text{if } c\notin ]-\infty, 1]\ ,
@@ -3349,7 +3354,7 @@ To understand this, let us study the analytic properties of the corresponding fo
  \right.
  \label{vfcch}
 \end{align}
-Although the structure constants $C$ and $\hat C$ have rather different analytic properties, what matters is the behaviour of the poles of the $s$-channel conformal blocks $\mathcal{F}_{\alpha_s}^{(s)}$. 
+Although the structure constants $C$ and $\hat C$ have rather different analytic properties (see Exercise \ref{exo4a}), what matters is the behaviour of the poles of the $s$-channel conformal blocks $\mathcal{F}_{\alpha_s}^{(s)}$. 
 These poles correspond to degenerate values of the momentum $\alpha_s$, and are therefore found in two cones with tips at $\alpha_s= 0$ and $\alpha_s = Q$. 
 Consider the relative positions of these cones, and of the integration line for $\alpha_s$, depending on the value of the central charge $c$:
 \begin{align}
@@ -3415,7 +3420,7 @@ For example, it turns out that nothing new can be obtained by relaxing our assum
 
 \subsubsection{Degenerate values of momentums}
 
-Finally, let us study the behaviour of the Liouville OPE $V_{\alpha_1}V_{\alpha_2}$ \eqref{vvi} when $\alpha_2 \to \alpha_{\langle r,s \rangle}$, where the degenerate field momentum $\alpha_{\langle r,s \rangle}$ is given in eq. \eqref{ars}.
+Let us study the behaviour of the Liouville OPE $V_{\alpha_1}V_{\alpha_2}$ \eqref{vvi} when $\alpha_2 \to \alpha_{\langle r,s \rangle}$, where the degenerate field momentum $\alpha_{\langle r,s \rangle}$ is given in eq. \eqref{ars}.
 This behaviour depends on the value of the central charge $c$, because the structure constants $C$ and $\hat C$ have very different analytical properties. 
 If $c\in ]-\infty, 1]$, we use the structure constant $\hat C_{\alpha_1,\alpha_2,\alpha_3}$, which has a finite limit when $\alpha_2 \to \alpha_{\langle r,s \rangle}$.
 So the OPE remaining an integral over the Liouville spectrum, and nothing particular happens. 
@@ -3912,6 +3917,26 @@ Requiring these quantities to be analytic functions of the momentum, show that t
 Conclude that the theory is equivalent to $m$ independent copies of Liouville theory. 
 \end{exo}
 
+\begin{exo}[Behaviour of Liouville four-point functions at coinciding points]
+~\label{exo4a} 
+We want to determine how the Liouville four-point function $\left<\prod_{i=1}^4 V_{\alpha_i}(z_i)\right>$ behaves in the limit $z_1\to z_2$, using the $s$-channel decomposition \eqref{vfcch}.
+\begin{enumerate}
+ \item Show that for $z_1\to z_2$, the integral over $s$-channel momentums localizes near $\alpha_s=\frac{Q}{2}$. Show that the three-point structure constants $C$ and $\hat C$ behave differently near this value of the momentum.
+ \item Show that 
+ \begin{align}
+  \left<\prod_{i=1}^4 V_{\alpha_i}(z_i)\right> \underset{z_1\to z_2}{\sim} \left\{
+  \begin{array}{ll} 
+  |z_{12}|^{\frac{Q^2}{2} -2\Delta_{\alpha_1}-2\Delta_{\alpha_2}} \left|\log|z_{12}|\right|^{-\frac32} &\quad \text{if \ } c\notin ]-\infty,1]\ ,
+  \\
+  |z_{12}|^{\frac{Q^2}{2} -2\Delta_{\alpha_1}-2\Delta_{\alpha_2}} \left|\log|z_{12}|\right|^{-\frac12} &\quad \text{if \ } c\in ]-\infty,1]\ .
+  \end{array}\right.
+ \end{align}
+How does the first subleading correction behave?
+\item Compare with the behaviour of a four-point function in a rational theory. 
+For an interpretation of these different behaviours in random energy models, see \cite{clrs16}.
+\end{enumerate}
+\end{exo}
+
 
 \begin{exo}[Fusion rules of all unitary representations if $c>1$]
  ~\label{exoaur}
@@ -3928,6 +3953,7 @@ Show that this leads to the following conjecture for the fusion rules, where we 
 In particular, determine a lower bound on the conformal dimension $\Delta$, such that $\mathcal{V}_\Delta \times \mathcal{V}_\Delta$ belongs to the Liouville spectrum.
 What are the consequences of these results for possible extensions of Liouville theory?
 \end{exo}
+
 
 \begin{exo}[Fusion rules of doubly degenerate representations]
  ~\label{exofus}
