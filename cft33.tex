@@ -844,9 +844,11 @@ as a consequence of the Virasoro algebra's commutation relations \eqref{vir}. Th
 
 For a quantum field theory to have a probabilistic interpretation, 
 we should assume the spectrum to be a Hilbert space, i.e. to have a positive definite Hermitian form. 
-In conformal field theory, we are only interested in Hermitian forms that are compatible with the action of the symmetry algebra, in the sense that Hermitian conjugation acts linearly on $\mathfrak{V}$ and $\overline{\mathfrak{V}}$. 
-Interpreting the dilatation generator $L_0+\bar L_0$ as the Hamiltonian, we assume that it is self-adjoint.
-This implies 
+In conformal field theory, we are only interested in Hermitian forms that are compatible with the action of the symmetry algebra.
+This means that the \textbf{Hermitian conjugation}\index{Hermitian conjugation} on $\mathfrak{V}\times\overline{\mathfrak{V}}$ that is induced by the Hermitian form, is an antilinear involution $A\to A^\dagger$ such that $[A,B]^\dagger = -[A^\dagger, B^\dagger]$.
+Interpreting the dilatation generator $L_0+\bar L_0$ as the Hamiltonian, we assume that it is self-adjoint, and that
+both $L_0$ and $\bar L_0$ are actually self-adjoint.
+This implies
 \begin{align}
  L^\dagger_n = L_{-n} \quad , \quad \bar L_n^\dagger = \bar L_{-n}\ ,
 \label{ldn}
@@ -1911,11 +1913,11 @@ It is actually possible to relax the single-valuedness axiom, and have fields wi
 
 The conformal spin then controls how three-point structure constants behave under permutations. For $\sigma$ a permutation of $(1,2,3)$, we indeed have 
 \begin{align}
- \left|\mathcal{F}^{(3)}(\Delta_{\sigma(1)},\Delta_{\sigma(2)},\Delta_{\sigma(3)}|z_{\sigma(1)},z_{\sigma(2)},z_{\sigma(3)})\right|^2 = \operatorname{sgn}(\sigma)^{s_1+s_2+s_3} \left|\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)\right|^2\ .
+ \left|\mathcal{F}^{(3)}(\Delta_{\sigma(1)},\Delta_{\sigma(2)},\Delta_{\sigma(3)}|z_{\sigma(1)},z_{\sigma(2)},z_{\sigma(3)})\right|^2 = \operatorname{sign}(\sigma)^{s_1+s_2+s_3} \left|\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)\right|^2\, .
 \end{align}
 Since the three-point function is invariant under permutations of the fields, the structure constant must therefore behave as 
 \begin{align}
- \boxed{ C_{\sigma(1)\sigma(2)\sigma(3)} = \operatorname{sgn}(\sigma)^{s_1+s_2+s_3} C_{123} }\ .
+ \boxed{ C_{\sigma(1)\sigma(2)\sigma(3)} = \operatorname{sign}(\sigma)^{s_1+s_2+s_3} C_{123} }\ .
  \label{css}
 \end{align}
 For example, if fields $1$ and $2$ are identical, then $C_{123}=C_{213}$, and the three-point function can only be nonzero if the third field has even spin $s_3\in 2\mathbb{Z}$.
@@ -4038,6 +4040,8 @@ In order to study theories based on these algebras, we will follow the same step
 
 \subsection{Symmetry algebra and representations \label{secaua}}
 
+\subsubsection{The \boldmath $\hat{\mathfrak{u}}_1$ current and the energy-momentum tensor}
+
 In Section \ref{secem}, we showed how the Virasoro symmetry algebra is encoded in the energy-momentum tensor $T(y)$.
 Similarly, we now introduce the holomorphic \textbf{\boldmath $\hat{\mathfrak{u}}_1$ current}\index{u1 current@$\hat{\mathfrak{u}}_1$ current} $J(y)$, the symmetry field which encodes the symmetry algebra of free bosonic theories.
 This field is characterized by the OPE
@@ -4056,14 +4060,17 @@ Here $(JJ)(z)$ is an instance of the \textbf{\boldmath normal-ordered product}\i
  (AB)(z) = \frac{1}{2\pi i} \oint_z \frac{dy}{y-z} A(y)B(z)\ .
 \label{abz}
 \end{align}
-In the case of $(JJ)(z)$, this definition amounts to
+Equivalently, if $\cunderbracket{A}{(y)}{B}(z)$ is the singular part of the OPE $A(y)B(z)$,
+we have
+\begin{align}
+(AB)(z) &= \underset{y\to z}{\lim} \left(A(y)B(z)-\cunderbracket{A}{(y)}{B}(z)\right)\ ,
+\\
+ A(y)B(z) &= \cunderbracket{A}{(y)}{B}(z) + (AB)(z) + O(y-z)\ .
+ \label{abope}
+\end{align}
+In our example, this amounts to
 \begin{align}
  (JJ)(z) = \underset{y\to z}{\lim} \left( J(y)J(z) + \frac{\frac12}{(y-z)^2}\right)\ .
-\end{align}
-If we furthermore call $\cunderbracket{A}{(y)}{B}(z)$ the singular part of the OPE $A(y)B(z)$, we have
-\begin{align}
- A(y)B(z) = \cunderbracket{A}{(y)}{B}(z) + (AB)(z) + O(y-z)\ .
- \label{abope}
 \end{align}
 In general $\cunderbracket{A}{(y)}{B}(z) \neq \cunderbracket{B}{(z)}{A}(y)$ and $(AB)\neq (BA)$ although $A(y)B(z)=B(z)A(y)$.
 (See exercise \ref{exoabba} for the computation of $(AB)-(BA)$.)
@@ -4085,6 +4092,8 @@ Then we can compute the OPE $T(y)T(z)$, and we find nothing but the Virasoro fie
 So $T(z)$ is a Virasoro field as announced. 
 In order to build conformal field theories from the current $J(z)$, we choose a value of $Q$ and identify the corresponding Virasoro field with the energy-momentum tensor -- the Virasoro fields with $Q'\neq Q$ will henceforth play no role.
 
+\subsubsection{The affine Lie algebra \boldmath $\hat{\mathfrak{u}}_1$}
+
 The OPE of $J(y)$ with a generic field $V_\sigma(z_0,\bar{z}_0)$ is 
 \begin{align}
  \boxed{J(y) V_\sigma(z_0,\bar{z}_0) = \sum_{n\in {\mathbb{Z}}} \frac{J_n V_\sigma(z_0,\bar{z}_0)}{(y-z_0)^{n+1}}}\ .
@@ -4093,7 +4102,7 @@ The OPE of $J(y)$ with a generic field $V_\sigma(z_0,\bar{z}_0)$ is
 This OPE is consistent with dimensional analysis, if in addition to the known dimensions \eqref{zaz} we assume $[J]=1$ and $[J_n]=-n$.
 The $J(y)J(z)$ OPE \eqref{jj} is equivalent to the commutation relations
 \begin{align}
- \boxed{ [J_m,J_n] =  \frac12 n\ \delta_{m+n,0}}\ ,
+ \boxed{ [J_m,J_n] =  \frac12 n \delta_{m+n,0}}\ ,
 \label{jmjn}
 \end{align}
 which define the  \textbf{\boldmath affine Lie algebra $\hat{\mathfrak{u}}_1$}\index{affine Lie algebra $\hat{\mathfrak{u}}_1$}.
@@ -4111,19 +4120,18 @@ L_0 &=-2\sum_{m=1}^\infty J_{-m}J_m -J_0^2+QJ_0 \ ,
 \end{align}
 and the $TJ$ OPE \eqref{tqj} is equivalent to 
 \begin{align}
- [L_m,J_n] = -nJ_{m+n} -\frac{Q}{2}m(m+1)\ \delta_{m+n,0} \ . 
+ [L_m,J_n] = -nJ_{m+n} -\frac{Q}{2}m(m+1) \delta_{m+n,0} \ . 
 \end{align}
-The behaviour \eqref{ldn} of $L_n$ under hermitian conjugation suggests 
+
+Let us now discuss how $\hat{\mathfrak{u}}_1$ generators can behave under Hermitian conjugation.
+It turns out that a conjugation of $\hat{\mathfrak{u}}_1$ that is compatible with the conjugation \eqref{ldn} of Virasoro algebra  can exist only if $Q^2\in\mathbb{R}$ (see Exercise \ref{exocuo}). 
+The conjugation is then 
 \begin{align}
- J_n^\dagger = Q\delta_{n,0}-J_{-n}\ .
+ J_n^\dagger = \operatorname{sign}(Q^2)\big( Q\delta_{n,0}-J_{-n} \big)\ ,\qquad (Q^2\in\mathbb{R}) \ .
 \label{jdq}
 \end{align}
-This makes sense only provided $J_n^{\dagger \dagger} =J_n$, which requires 
-\begin{align}
- Q \in {\mathbb{R}} \ .
-\label{qir}
-\end{align}
-This restriction on $Q$ is a necessary condition for the construction of a $\hat{\mathfrak{u}}_1$-symmetric scalar product on representations of the $\hat{\mathfrak{u}}_1$ algebra, in the same way as the condition $c\in {\mathbb{R}}$ was necessary in the case of the Virasoro algebra. (See Section \ref{secsots}.)
+
+\subsubsection{Primary fields}
 
 We define a \textbf{\boldmath $\hat{\mathfrak{u}}_1$-primary field}\index{u1-primary field@$\hat{\mathfrak{u}}_1$-primary field} $V_{\alpha}(z_0,\bar{z}_0)$ with the \textbf{\boldmath momentum}\index{momentum} $\alpha$ by its OPE with $J(y)$,
 \begin{align}
@@ -4138,9 +4146,15 @@ The states in $\mathcal{V}_\alpha$ correspond to $V_\alpha(z_0)$ and its $\hat{\
  \left(J_0 - \alpha\right) V_\sigma(z_0) = 0
 \label{jma}
 \end{align}
-A natural scalar product can be defined in $\mathcal{V}_\alpha$ using eq. \eqref{jdq}, and $\mathcal{V}_\alpha$ is unitary provided
+
+For $Q^2\in\mathbb{R}$, 
+a natural scalar product can be defined in $\mathcal{V}_\alpha$ using eq. \eqref{jdq}.
+Then, if $|\alpha\rangle$ is the $\hat{\mathfrak{u}}_1$-primary state of $\mathcal{V}_\alpha$, we find $\left< J_{-1}\alpha\middle|J_{-1}\alpha\right> = \frac12 \operatorname{sign}(Q^2) \langle \alpha|\alpha\rangle$.
+So, for the scalar product to be positive definite, we need $Q\in \mathbb{R}$.
+Then $J_0$ is an operator such that $J_0^\dagger = Q-J_0$, with the eigenvalue $\alpha$. This implies $\bar\alpha = Q-\alpha$. 
+Therefore, $\mathcal{V}_\alpha$ is unitary if and only if
 \begin{align}
- \alpha \in \frac{Q}{2} + i{\mathbb{R}}\ .
+ Q\in\mathbb{R} \qquad \text{and} \qquad \alpha \in \frac{Q}{2} + i{\mathbb{R}}\ .
 \label{aif}
 \end{align}
 
@@ -4165,26 +4179,6 @@ To summarize,
 \\
 \hline
  \end{tabular}
-\end{align}
-
-Finally, the $\hat{\mathfrak{u}}_1$ fusion rules can be derived by 
-inserting $\oint_\infty J(z)dz$ in the OPE of two primary fields, and we find 
-\begin{align}
- \boxed{\mathcal{V}_{\alpha_1}\times \mathcal{V}_{\alpha_2} = \mathcal{V}_{\alpha_1+\alpha_2}}\ ,
-\label{vvp}
-\end{align}
-so that the momentum $\alpha$ is conserved.
-The OPE then reads 
-\begin{align}
-\boxed{V_{\alpha_1}(z_1)V_{\alpha_2}(z_2) 
-= 
-|z_1-z_2|^{-4\alpha_1\alpha_2} \big( V_{\alpha_1+\alpha_2}(z_2) + O(z_1-z_2)\big)}\ ,
-\label{vvoo}
-\end{align}
-where we have normalized the fields $V_\alpha$ so that the OPE coefficient is one. (See Exercise \ref{exoone}.)
-It is actually possible to write all the descendents explicitly,
-\begin{align}
- V_{\alpha_1}(z_1)V_{\alpha_2}(z_2) = |z_1-z_2|^{-4\alpha_1\alpha_2}\exp\left(-\sum_{p=1}^\infty \frac{2}{p}\alpha_1 \left(z_{12}^pJ_{-p}+\bar{z}_{12}^p \bar{J}_{-p}\right) \right) V_{\alpha_1+\alpha_2}(z_2) \ .
 \end{align}
 
 
@@ -4222,6 +4216,26 @@ If all fields are primary, we actually have
 \begin{align}
  \boxed{\left\langle J(y) \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle = \sum_{i=1}^N \frac{\alpha_i}{y-z_i} \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle  }\ .
 \label{jsa}
+\end{align}
+
+The $\hat{\mathfrak{u}}_1$ fusion rules can be derived by 
+inserting $\oint_\infty J(z)dz$ in the OPE of two primary fields, and we find 
+\begin{align}
+ \boxed{\mathcal{V}_{\alpha_1}\times \mathcal{V}_{\alpha_2} = \mathcal{V}_{\alpha_1+\alpha_2}}\ ,
+\label{vvp}
+\end{align}
+so that the momentum $\alpha$ is conserved.
+The OPE then reads 
+\begin{align}
+\boxed{V_{\alpha_1}(z_1)V_{\alpha_2}(z_2) 
+= 
+|z_1-z_2|^{-4\alpha_1\alpha_2} \big( V_{\alpha_1+\alpha_2}(z_2) + O(z_1-z_2)\big)}\ ,
+\label{vvoo}
+\end{align}
+where we have normalized the fields $V_\alpha$ so that the OPE coefficient is one. (See Exercise \ref{exoone}.)
+It is actually possible to write all the descendents explicitly,
+\begin{align}
+ V_{\alpha_1}(z_1)V_{\alpha_2}(z_2) = |z_1-z_2|^{-4\alpha_1\alpha_2}\exp\left(-\sum_{p=1}^\infty \frac{2}{p}\alpha_1 \left(z_{12}^pJ_{-p}+\bar{z}_{12}^p \bar{J}_{-p}\right) \right) V_{\alpha_1+\alpha_2}(z_2) \ .
 \end{align}
 
 Let us now derive differential equations for correlation functions.
@@ -4493,7 +4507,7 @@ Now how do we choose $h$? Global conformal symmetry \eqref{vtv} suggests that we
 \left\langle\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle\ \underset{\text{light\ asymptotic\ limit}}{\propto}\ \int_{H^+_3} dh\ \prod_{i=1}^N \left( \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right]^\dagger h \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right] \right)^{-2\eta_i}\ ,
 \label{zih}
 \end{align}
-where the integral is over the set \textbf{\boldmath $H_3^+$}\index{H3+@$H_3^+$} of hermitian matrices of size two and determinant one, with a measure $dh$ which we assume to be invariant under $h\mapsto g^\dagger hg$ for $g\in SL_2({\mathbb{C}})$.
+where the integral is over the set \textbf{\boldmath $H_3^+$}\index{H3+@$H_3^+$} of Hermitian matrices of size two and determinant one, with a measure $dh$ which we assume to be invariant under $h\mapsto g^\dagger hg$ for $g\in SL_2({\mathbb{C}})$.
 In the case $N=3$, this agrees with the three-point function \eqref{caaa}. (See \cite{zz95}.) In the light asymptotic limit, the spectrum of Liouville theory reduces to the space of functions on $H_3^+$, and the symmetry algebra reduces to the algebra of the global conformal transformations.
 So
 the light asymptotic limit of Liouville theory is a unitary, two-dimensional global conformal field theory.
@@ -4728,7 +4742,7 @@ Inserting $\oint dz\ J^a(z)$ on both sides, and using the linear independence of
  \left(D_{X_1}^{R_1}(t^a)+D_{X_2}^{R_2}(t^a)-\left(D_{X_3}^{R_3}(t^a)\right)^\dagger\right) C^{R_1,R_2}_{R_3}(X_1,X_2|X_3) = 0\ ,
 \label{dddc}
 \end{align}
-where the dagger denotes the hermitian conjugate for $X_3$-differential operators, such that for any functions $f,g$ we have 
+where the dagger denotes the Hermitian conjugate for $X_3$-differential operators, such that for any functions $f,g$ we have 
 $\int fDg =\int g D^\dagger f$.
 This equation characterizes $C^{R_1,R_2}_{R_3}(X_1,X_2|X_3)$ as an intertwiner between the representations $R_1\otimes R_2$ and $R_3$ of the Lie algebra $\mathfrak{g}$.
 This shows that the fusion multiplicities of affine highest-weight representations of $\hat{\mathfrak{g}}$ are bounded by the tensor product multiplicities of the underlying representations of $\mathfrak{g}$, 
@@ -5138,7 +5152,7 @@ This corresponds to an $SL_2({\mathbb{C}})$ symmetry group, which acts on a fiel
 \label{ugp}
 \end{align}
 (This action is formally identical to the action \eqref{tgv} of global conformal transformations on quasi-primary fields.)
-Now we notice that the transformation $U_g$ also describes the action of $SL_2({\mathbb{C}})$ on functions on the space \textbf{\boldmath $H_3^+$}\index{H3+@$H_3^+$} of hermitian matrices of size two and determinant one.
+Now we notice that the transformation $U_g$ also describes the action of $SL_2({\mathbb{C}})$ on functions on the space \textbf{\boldmath $H_3^+$}\index{H3+@$H_3^+$} of Hermitian matrices of size two and determinant one.
 Consider indeed the function
 \begin{align}
  \Phi^j_{x,\bar{x}}(h) = \left(\begin{bmatrix}
@@ -5173,7 +5187,7 @@ The Lie algebra $\mathfrak{sl}_2({\mathbb{C}})$ of the symmetry group $SL_2({\ma
  \left\{\begin{array}{lcl} t^a & \mapsto & J_0^a + \bar{J}_0^a \ ,  \\ it^a & \mapsto & i(J^a_0 - \bar{J}^a_0)\ . \end{array}\right. 
 \end{align}
 (The minus sign in the image of $it^a$ comes from the complex conjugation of the elements of $g$ in $U_g\Phi^j_{x,\bar{x}}$ \eqref{ugp}.)
-Our scalar product is such that $t^a$ and $it^a$ are antihermitian, which is equivalent to
+Our scalar product is such that $t^a$ and $it^a$ are antiHermitian, which is equivalent to
 \begin{align}
  (J^a_0)^\dagger = -\bar{J}^a_0\ .
 \label{jzd}
@@ -5268,7 +5282,7 @@ The natural scalar product on $\mathcal{F}(G)$ is
 \label{gbg}
 \end{align}
 where $dh$ is the Haar measure, which is invariant under the left and right actions of $G$ on itself.
-As in the case of the $H_3^+$ model, the generators of the symmetry algebra are antihermitian for this scalar product, which now implies
+As in the case of the $H_3^+$ model, the generators of the symmetry algebra are antiHermitian for this scalar product, which now implies
 \begin{align}
  (J^a_0)^\dagger = -J^a_0\  . 
 \label{jzdj}
@@ -5428,8 +5442,8 @@ The group $SL_2({\mathbb{R}})$ is not simply-connected, as the matrices of the t
 So $\widetilde{SL}_2(\mathbb{R})$ is obtained from $SL_2({\mathbb{R}})$ by decompactifying the $\tau$ direction, and we have $SL_2({\mathbb{R}}) = \widetilde{SL}_2(\mathbb{R})/{\mathbb{Z}}$.
 
 Let us study the space $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ of functions on $\widetilde{SL}_2(\mathbb{R})$, which is assumed to be the large level limit of the spectrum of our model. 
-In this limit, a basis of symmetry generators is $(J^a_0)$, and the elements of this basis are antihermitian for the natural scalar product \eqref{gbg}.
-We will however work with a basis that includes a hermitian generator, whose eigenvalues are therefore real in unitary representations.
+In this limit, a basis of symmetry generators is $(J^a_0)$, and the elements of this basis are antiHermitian for the natural scalar product \eqref{gbg}.
+We will however work with a basis that includes a Hermitian generator, whose eigenvalues are therefore real in unitary representations.
 We still call this basis $(J^a_0)$, although it is obtained from the original basis by a complex change of bases, such that the conjugation rule becomes
 \begin{align}
  \left\{\begin{array}{l} (J_0^0)^\dagger = J_0^0\ , \\
@@ -5441,7 +5455,7 @@ We still call this basis $(J^a_0)$, although it is obtained from the original ba
 In the matrix representation \eqref{mta} of $\mathfrak{sl}_2$, this corresponds to the $\mathfrak{su}_{1,1}$ conjugation rule $M^\dagger = \left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right) \bar{M}^T \left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right)$. (The matrices which satisfy $M^\dagger =-M$ for the $\mathfrak{su}_{1,1}$ conjugation rule are by definition the elements of $\mathfrak{su}_{1,1}$ itself). 
 
 The decomposition of $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ into irreducible unitary representations of the global symmetry algebra $\mathfrak{sl}_2\times \overline{\mathfrak{sl}}_2$ involves two types of representations: the \textbf{\boldmath principal series representation of $\mathfrak{sl}_2$}\index{principal series representation of $\mathfrak{sl}_2$} $C^j_\alpha$ and the \textbf{\boldmath discrete series representation of $\mathfrak{sl}_2$}\index{discrete series representation of $\mathfrak{sl}_2$} $D^{j,\pm}$, where $j$ is the spin. 
-These representations can be characterized by the eigenvalues of the hermitian generator $J_0^0$,
+These representations can be characterized by the eigenvalues of the Hermitian generator $J_0^0$,
 \begin{align} 
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{|l|l|l|}
@@ -5472,7 +5486,7 @@ So, according to \cite{rib09} and references therein, we have
 \\
  \mathcal{F}(SL_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} C^j_\alpha \otimes \bar{C}^j_{\alpha} \oplus \bigoplus_\pm \bigoplus_{j=-\frac12, 0,\frac12 \cdots} D^{j,\pm}\otimes \bar{D}^{j,\pm} \ ,
 \end{align}
-where the identification of $\mathcal{F}(SL_2(\mathbb{R}))$ with the space of $\tau$-periodic functions on $\widetilde{SL}_2(\mathbb{R})$ amounts to restricting the eigenvalues of our hermitian generator to be half-integers.
+where the identification of $\mathcal{F}(SL_2(\mathbb{R}))$ with the space of $\tau$-periodic functions on $\widetilde{SL}_2(\mathbb{R})$ amounts to restricting the eigenvalues of our Hermitian generator to be half-integers.
 Tensor products of principal and discrete series representations can be written as 
 \begin{align}
  R_1\otimes R_2 = \bigoplus_{R_3} N_{R_1,R_2,R_3^*} R_3\ ,
@@ -5679,6 +5693,22 @@ In particular, show that
 \end{align}
 (It is recommended to begin with the cases $N=0$ and $N=1$.)
 \end{exo}
+
+\begin{exo}[Hermitian conjugation in the affine Lie algebra $\hat{\mathfrak{u}}_1$]
+~\label{exocuo}
+Let us look for a Hermitian conjugation $J_n\mapsto J_n^\dagger$ in $\hat{\mathfrak{u}}_1$ that is compatible with the conjugation \eqref{ldn} of Virasoro algebra.
+\begin{enumerate}
+ \item Using the commutation relation $[L_0,J_n]=-nJ_n$, show that 
+ \begin{align}
+  J_n^\dagger =\lambda_n J_{-n} + c\delta_{n,0}\ .
+ \end{align}
+Using the more general commutator $[L_m,J_n]$, determine the coefficients $\lambda_n,c$ in terms of $Q$. 
+\item 
+Using the relation \eqref{lnj}-\eqref{lzj} of the algebra $\hat{\mathfrak{u}}_1$ with the Virasoro algebra, show that $Q^2\in\mathbb{R}$, and deduce that $J_n^\dagger$ is given by eq. \eqref{jdq}. For $Q=0$, show that both signs $J_n^\dagger = \pm J_{-n}$ are possible.
+\end{enumerate}
+
+\end{exo}
+
 
 \begin{exo}[Normalization of OPE coefficients in free bosonic theories]
  ~\label{exoone}
