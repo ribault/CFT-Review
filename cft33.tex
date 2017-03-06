@@ -860,7 +860,7 @@ This implies
 \end{align}
 It also follows that the Hermitian form is compatible with the decomposition \eqref{sorr} of the spectrum as a sum of $\mathfrak{V}\times \overline{\mathfrak{V}}$ representations, in the sense that two different irreducible representations must be orthogonal to each other.
 So the the positivity of the Hermitian form can be examined within each representation.
-A representation of the Virasoro algebra is called \textbf{\boldmath unitary}\index{unitary} if it has a positive definite Hermitian form such that 
+A representation of the Virasoro algebra is called \textbf{\boldmath unitary}\index{unitarity} if it has a positive definite Hermitian form such that 
 $L^\dagger_n = L_{-n}$, and a model whose spectrum is unitary is itself called unitary. 
 
 Finally, let us illustrate the power of local conformal symmetry by thinking of a model in terms of global conformal symmetry only. 
@@ -1999,13 +1999,13 @@ Let us write the OPE of two left and right primary fields, while neglecting the 
  V_{\Delta_1,\bar\Delta_1}(z_1) V_{\Delta_2,\bar\Delta_2}(z_2) 
  = 
  \sum_{\Delta_3,\bar\Delta_3} C^{3}_{12}
- \left| z_{12}^{\Delta_3-\Delta_1-\Delta_2}\right|^2 \Big( V_{\Delta_3,\bar\Delta_3}(z_2) + O(z_1-z_2)\Big)\ .
+ \left| z_{12}^{\Delta_3-\Delta_1-\Delta_2}\right|^2 \Big( V_{\Delta_3,\bar\Delta_3}(z_2) + O(z_{12})\Big)\ .
 \end{align}
 Inserting this in a three-point function, and using the two-point function \eqref{eq:2pt}, this leads to
 \begin{align}
  \left<  \prod_{i=1}^3 V_{\Delta_i,\bar\Delta_i}(z_i) \right> 
  = 
- C^3_{12} \left| z_{12}^{\Delta_3-\Delta_1-\Delta_2} \Big( z_{23}^{-2\Delta_3} + O(z_1-z_2) \Big) \right|^2\ .
+ C^3_{12} \left| z_{12}^{\Delta_3-\Delta_1-\Delta_2} \Big( z_{23}^{-2\Delta_3} + O(z_{12}) \Big) \right|^2\ .
 \end{align}
 Comparing this with the expression \eqref{cff} for the three-point function, we find that our OPE coefficient coincides with the three-point structure constant, 
 \begin{align}
@@ -4149,9 +4149,9 @@ The states in $\mathcal{V}_\alpha$ correspond to $V_\alpha(z_0)$ and its $\hat{\
 
 For $Q^2\in\mathbb{R}$, 
 a natural scalar product can be defined in $\mathcal{V}_\alpha$ using eq. \eqref{jdq}.
-Then, if $|\alpha\rangle$ is the $\hat{\mathfrak{u}}_1$-primary state of $\mathcal{V}_\alpha$, we find $\left< J_{-1}\alpha\middle|J_{-1}\alpha\right> = \frac12 \operatorname{sign}(Q^2) \langle \alpha|\alpha\rangle$.
+Then, if $|\alpha\rangle$ is the $\hat{\mathfrak{u}}_1$-primary state of $\mathcal{V}_\alpha$, we have $\left< J_{-1}\alpha\middle|J_{-1}\alpha\right> = \frac12 \operatorname{sign}(Q^2) \langle \alpha|\alpha\rangle$.
 So, for the scalar product to be positive definite, we need $Q\in \mathbb{R}$.
-Then $J_0$ is an operator such that $J_0^\dagger = Q-J_0$, with the eigenvalue $\alpha$. This implies $\bar\alpha = Q-\alpha$. 
+Moreover, since $J_0$ obeys $J_0^\dagger = Q-J_0$ and has the eigenvalue $\alpha$, we must have $\bar\alpha = Q-\alpha$, where $\bar \alpha$ is the complex conjugate of $\alpha$.
 Therefore, $\mathcal{V}_\alpha$ is unitary if and only if
 \begin{align}
  Q\in\mathbb{R} \qquad \text{and} \qquad \alpha \in \frac{Q}{2} + i{\mathbb{R}}\ .
@@ -4169,10 +4169,10 @@ To summarize,
  Symmetry algebra  & $\mathfrak{V}$ & $\hat{\mathfrak{u}}_1 $
 \\
 \hline\hline
- Existence of scalar product & $Q\in {\mathbb{R}} \cup i{\mathbb{R}} $ & $Q\in {\mathbb{R}}$ 
+ Existence of scalar product & $Q\in {\mathbb{R}} \cup i{\mathbb{R}} $ & $Q\in {\mathbb{R}} \cup i{\mathbb{R}}$ 
 \\
 \hline
- Unitarity of $\mathcal{V}_\alpha$ & $\alpha\in \frac{Q}{2}+i{\mathbb{R}} \cup ]0,Q[ $ & $\alpha \in \frac{Q}{2}+i{\mathbb{R}}$
+ Unitarity of $\mathcal{V}_\alpha$ & $Q\in\mathbb{R}$ and $\alpha\in \frac{Q}{2}+i{\mathbb{R}} \cup ]0,Q[ $ &  $Q\in\mathbb{R}$ and $\alpha \in \frac{Q}{2}+i{\mathbb{R}}$
 \\
 \hline 
  Reflection relation  & $\mathcal{V}_\alpha = \mathcal{V}_{Q-\alpha} $ & $\mathcal{V}_\alpha \neq \mathcal{V}_{Q-\alpha} $ 
@@ -4183,10 +4183,11 @@ To summarize,
 
 
 
-\subsection{Ward identities and Seiberg-Witten equations}
+\subsection{Ward identities and Seiberg--Witten equations}
 
-Let us study the $\hat{\mathfrak{u}}_1$ Ward identities for correlation functions.
-To do this, we need to know how the current $J(y)$ behaves as $y\to \infty$.
+\subsubsection{Ward identities}
+
+In order to derive $\hat{\mathfrak{u}}_1$ Ward identities, we need to know how the current $J(y)$ behaves as $y\to \infty$.
 The relation \eqref{tqz} with the energy-momentum tensor $T(y)$, and the behaviour \eqref{tyi} of $T(y)$, suggest
 \begin{align}
  \boxed{J(y) \underset{y\to \infty}{=} \frac{Q}{y} + O\left(\frac{1}{y^2}\right)}\ .
@@ -4218,27 +4219,37 @@ If all fields are primary, we actually have
 \label{jsa}
 \end{align}
 
-The $\hat{\mathfrak{u}}_1$ fusion rules can be derived by 
-inserting $\oint_\infty J(z)dz$ in the OPE of two primary fields, and we find 
+\subsubsection{OPEs and fusion rule}
+
+Since $\hat{\mathfrak{u}}_1$-primary fields are also Virasoro-primary, their OPEs must be of the type 
+\begin{align}
+ V_{\alpha_1,\bar\alpha_1}(z_1) V_{\alpha_2\bar\alpha_2}(z_2) = \sum_{\alpha_3,\bar\alpha_3} C_{12}^3 \left| z_{12}^{\Delta(\alpha_3)-\Delta(\alpha_1)-\Delta(\alpha_2)}\right|^2 \Big(V_{\alpha_3,\bar\alpha_3}(z_2) + O(z_{12}) \Big)\ .
+\end{align}
+Inserting $\oint_\infty J(z)dz$ on both sides of this OPE, we obtain a factor $\alpha_1+\alpha_2$ on the left, and a factor $\alpha_3$ on the right.
+This leads to $(\alpha_3-\alpha_1-\alpha_2)C_{12}^3=0$, so that $V_{\alpha_3,\bar\alpha_3}$ can appear only if $\alpha_3=\alpha_1+\alpha_2$. 
+In other words, we have the $\hat{\mathfrak{u}}_1$ fusion rule
 \begin{align}
  \boxed{\mathcal{V}_{\alpha_1}\times \mathcal{V}_{\alpha_2} = \mathcal{V}_{\alpha_1+\alpha_2}}\ ,
 \label{vvp}
 \end{align}
-so that the momentum $\alpha$ is conserved.
+i.e. the momentum $\alpha$ is conserved.
 The OPE then reads 
 \begin{align}
-\boxed{V_{\alpha_1}(z_1)V_{\alpha_2}(z_2) 
+\boxed{V_{\alpha_1,\bar\alpha_1}(z_1)V_{\alpha_2,\bar\alpha_2}(z_2) 
 = 
-|z_1-z_2|^{-4\alpha_1\alpha_2} \big( V_{\alpha_1+\alpha_2}(z_2) + O(z_1-z_2)\big)}\ ,
+\left| z_{12}^{-2\alpha_1\alpha_2}\right|^2 \big( V_{\alpha_1+\alpha_2,\bar\alpha_1+\bar\alpha_2}(z_2) + O(z_{12})\big)}\ ,
 \label{vvoo}
 \end{align}
-where we have normalized the fields $V_\alpha$ so that the OPE coefficient is one. (See Exercise \ref{exoone}.)
+where we have normalized the fields so that the OPE coefficient is one. (See Exercise \ref{exoone}.)
 It is actually possible to write all the descendents explicitly,
 \begin{align}
- V_{\alpha_1}(z_1)V_{\alpha_2}(z_2) = |z_1-z_2|^{-4\alpha_1\alpha_2}\exp\left(-\sum_{p=1}^\infty \frac{2}{p}\alpha_1 \left(z_{12}^pJ_{-p}+\bar{z}_{12}^p \bar{J}_{-p}\right) \right) V_{\alpha_1+\alpha_2}(z_2) \ .
+ V_{\alpha_1,\bar\alpha_1}(z_1)V_{\alpha_2,\bar\alpha_2}(z_2) 
+= 
+\left| z_{12}^{-2\alpha_1\alpha_2} \exp\left(-\sum_{p=1}^\infty \frac{2}{p}\alpha_1 z_{12}^pJ_{-p} \right)\right|^2 V_{\alpha_1+\alpha_2,\bar\alpha_1+\bar\alpha_2}(z_2) \ .
 \end{align}
 
-Let us now derive differential equations for correlation functions.
+\subsubsection{Differential equations}
+
 The conformal symmetry equations \eqref{spz} of course still hold in theories with the $\hat{\mathfrak{u}}_1$ symmetry algebra.
 But the construction \eqref{tqz} of $T(z)$ from the $\hat{\mathfrak{u}}_1$ current $J(z)$ leads to additional differential equations.
 In order to derive them, let us consider 
@@ -4266,6 +4277,8 @@ which determines the correlation functions of $\hat{\mathfrak{u}}_1$-primary fie
 In particular, the field $V_0(z)$ must be $z$-independent.
 In the normalization of eq. \eqref{vvoo}, $V_0(z)$ is actually the identity field, and the proportionality factor in eq. \eqref{pzz} is not only $z_i$-independent, but also $\alpha_i$-independent.
 
+\subsubsection{Seiberg--Witten equations}
+
 Equation \eqref{pvaj} has further interesting consequences.
 If $\nabla_z={\frac{\partial}{\partial z}} +2\alpha J(z)$, then we have $\nabla_z V_\alpha(z)=0$, neglecting the issue of regularizing the product $J(z)V_\alpha(z)$.
 If we then define $\nabla_\alpha = {\frac{\partial}{\partial \alpha}}+2\int^z dyJ(y)$ so that $[\nabla_z,\nabla_\alpha]=0$, then $\nabla_\alpha V_\alpha(z)$ is annihilated by $\nabla_z$, and must be proportional to $V_\alpha(z)$.
@@ -4283,7 +4296,7 @@ From the $JV_\alpha$ OPE \eqref{jva}, we also have the equation
 \label{swa}
 \end{align}
 Equations \eqref{swp} and \eqref{swa} show that the actions of ${\frac{\partial}{\partial \alpha}}$ and $\alpha$ on $V_\alpha(z)$ can be obtained by integrating the one-form $J(y)dy$ along particular contours.
-By analogy with supersymmetric gauge theory, these equations may be called \textbf{\boldmath Seiberg-Witten equations}\index{Seiberg-Witten equation}. 
+By analogy with supersymmetric gauge theory, these equations may be called \textbf{\boldmath Seiberg--Witten equations}\index{Seiberg--Witten equation}. 
 
 
 \subsection{Spectrum and correlation functions \label{secsacf}}
@@ -4294,7 +4307,7 @@ First consider the diagonal, continuous spectrum
  \boxed{S = \int_{\frac{Q}{2}+i{\mathbb{R}}} d\alpha \ \mathcal{V}_\alpha \otimes \bar{\mathcal{V}}_\alpha}\ .
 \label{sz}
 \end{align}
-If $Q\in {\mathbb{R}}$, this theory is unitary, as $\alpha$ obeys the unitarity condition \eqref{aif}.
+This theory is unitary for $Q\in {\mathbb{R}}$, see eq. \eqref{aif}.
 The correlation functions are 
 \begin{align}
  \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle = \delta\left({\textstyle \sum}_{i=1}^N\alpha_i-Q\right)\ \prod_{i<j} |z_i-z_j|^{-4\alpha_i\alpha_j} \ .
@@ -4312,7 +4325,7 @@ We can now characterize
 the representations which do appear as being unitary as $\hat{\mathfrak{u}}_1$ representations.
 
 Let us now look for unitary free bosonic theories with discrete spectrums, while insisting that the spectrum closes under fusion \eqref{vvp}.
-Given the unitarity condition $\alpha\in \frac{Q}{2}+i{\mathbb{R}}$ \eqref{aif} with $Q\in {\mathbb{R}}$, this leads to $Q=0$ so that the central charge is 
+Given the unitarity condition \eqref{aif}, we need $Q=0$ so that the central charge is 
 \begin{align}
  c=1\ .
 \end{align}
@@ -4383,7 +4396,7 @@ Nevertheless, we will argue that correlation functions involving $J(z)$ are usef
 Let us discuss the properties of $J(z)$.
 The field $J(z)$, being a root of a quadratic differential equation, is in general not a unique, single-valued, meromorphic function of $z$: rather, there can be several determinations of $J(z)$, which can moreover have branch cuts. 
 A particular determination of $J(z)$ can be defined by requiring that the 
-OPE $JV_\alpha$ \eqref{jva} holds; with this determination, the Seiberg-Witten equations \eqref{swp} and \eqref{swa} then hold.  
+OPE $JV_\alpha$ \eqref{jva} holds; with this determination, the Seiberg--Witten equations \eqref{swp} and \eqref{swa} then hold.  
 (The reflection relation $V_\alpha \propto V_{Q-\alpha}$ \eqref{vrv} would bring us to another particular determination.)
 On the other hand, since $J(z)$ is not meromorphic, $\hat{\mathfrak{u}}_1$ Ward identities do not hold in Liouville theory.
 
@@ -4393,7 +4406,7 @@ Given an $N$-point function $\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right
  \boxed{F= \log \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle} \quad , \quad \boxed{W_1(y) = \frac{\left\langle J(y)\prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle}{\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle}} \ ,
 \end{align}
 where $F$ is called the \textbf{\boldmath free energy}\index{free energy}. 
-In terms of these objects, the Seiberg-Witten equation \eqref{swp} becomes 
+In terms of these objects, the Seiberg--Witten equation \eqref{swp} becomes 
 \begin{align}
  {\frac{\partial}{\partial \alpha_i}} F = -2 \int^{z_i} dy \ W_1(y)\ . 
 \label{daf}
@@ -4469,7 +4482,7 @@ In the case $N=3$, the function $t(z)$ \eqref{tzs} is
  t(z) = \frac{1}{\prod_{i=1}^3(z-z_i)} \sum_{i=1}^3 \eta_i(1-\eta_i)\frac{\prod_{j\neq i} z_{ij}}{z-z_i}\ ,
 \end{align}
 and the linear differential equation \eqref{dtp} is equivalent to the hypergeometric equation.
-Solving this equation yields $W_1^{(0)}$, from which we can deduce the leading term $F^{(0)}$ of the free energy $F$, with the help of the heavy asymptotic limit of the Seiberg-Witten equation \eqref{daf}, 
+Solving this equation yields $W_1^{(0)}$, from which we can deduce the leading term $F^{(0)}$ of the free energy $F$, with the help of the heavy asymptotic limit of the Seiberg--Witten equation \eqref{daf}, 
 \begin{align}
  {\frac{\partial}{\partial \eta_i}} F^{(0)} = -2\int^{z_i} dy\ W_1^{(0)}(y)\ .
 \end{align}
@@ -4482,7 +4495,7 @@ This limit is the
 \begin{align}
  \textbf{\boldmath light\ asymptotic\ limit}\index{light\ asymptotic\ limit}: \quad \left\{\begin{array}{l}  Q \to \infty \ ,\\ \eta_i=Q\alpha_i\ \text{fixed}\ .\end{array}\right.  
 \end{align}
- The Seiberg-Witten equation \eqref{daf} now implies 
+ The Seiberg--Witten equation \eqref{daf} now implies 
 \begin{align}
  {\frac{\partial}{\partial \eta_i}} F^{(0)} & = 0 \ ,
 \\ 
@@ -4495,7 +4508,7 @@ So $F^{(0)}$ is not affected by the presence of the fields $V_{\alpha_i}(z_i)$, 
 The first interesting term of $F$ is thus $F^{(1)}$.
 To compute $F^{(1)}$, let us solve the linear differential equation \eqref{dtp}, which is now simply $\partial^2 \psi=0$.
 The solutions are $\psi(z) = \sigma z + \rho$, where $\sigma$ and $\rho$ are arbitrary parameters.
-Using the Seiberg-Witten equation \eqref{pefo}, we obtain
+Using the Seiberg--Witten equation \eqref{pefo}, we obtain
 \begin{align}
  e^{F^{(1)}} \propto \prod_{i=1}^N (\sigma z_i + \rho)^{-2\eta_i} \ .
 \end{align}
