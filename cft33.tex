@@ -4221,9 +4221,10 @@ If all fields are primary, we actually have
 
 \subsubsection{OPEs and fusion rule}
 
-Since $\hat{\mathfrak{u}}_1$-primary fields are also Virasoro-primary, their OPEs must be of the type 
+Since $\hat{\mathfrak{u}}_1$-primary fields are also Virasoro-primary, the OPE of two left and right 
+$\hat{\mathfrak{u}}_1$-primary fields must be of the type 
 \begin{align}
- V_{\alpha_1,\bar\alpha_1}(z_1) V_{\alpha_2\bar\alpha_2}(z_2) = \sum_{\alpha_3,\bar\alpha_3} C_{12}^3 \left| z_{12}^{\Delta(\alpha_3)-\Delta(\alpha_1)-\Delta(\alpha_2)}\right|^2 \Big(V_{\alpha_3,\bar\alpha_3}(z_2) + O(z_{12}) \Big)\ .
+ V_{\alpha_1,\bar\alpha_1}(z_1) V_{\alpha_2,\bar\alpha_2}(z_2) = \sum_{\alpha_3,\bar\alpha_3} C_{12}^3 \left| z_{12}^{\Delta(\alpha_3)-\Delta(\alpha_1)-\Delta(\alpha_2)}\right|^2 \Big(V_{\alpha_3,\bar\alpha_3}(z_2) + O(z_{12}) \Big)\ .
 \end{align}
 Inserting $\oint_\infty J(z)dz$ on both sides of this OPE, we obtain a factor $\alpha_1+\alpha_2$ on the left, and a factor $\alpha_3$ on the right.
 This leads to $(\alpha_3-\alpha_1-\alpha_2)C_{12}^3=0$, so that $V_{\alpha_3,\bar\alpha_3}$ can appear only if $\alpha_3=\alpha_1+\alpha_2$. 
@@ -4266,16 +4267,17 @@ Applying this to a field $V_{\alpha_i}(z_i)$ in an
 $N$-point function of $\hat{\mathfrak{u}}_1$-primary fields, and using 
 the local Ward identity \eqref{jnz} for $J_{-1}^{(z_i)}$, we obtain 
 \begin{align}
-\left( {\frac{\partial}{\partial z_i}} +\sum_{j\neq i} \frac{2\alpha_i\alpha_j}{z_i-z_j} \right) \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle = 0 \ ,
+\left( {\frac{\partial}{\partial z_i}} +\sum_{j\neq i} \frac{2\alpha_i\alpha_j}{z_i-z_j} \right) \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle = 0 \ .
 \label{kzl}
 \end{align}
-which determines the correlation functions of $\hat{\mathfrak{u}}_1$-primary fields up to $z_i$-independent factors, 
+This implies 
 \begin{align}
- \boxed{\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle  \propto \prod_{i<j} (z_i-z_j)^{-2\alpha_i\alpha_j}}\ .
+ \boxed{\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle  \propto \prod_{i<j} (z_i-z_j)^{-2\alpha_i\alpha_j}}\ ,
 \label{pzz}
 \end{align}
-In particular, the field $V_0(z)$ must be $z$-independent.
-In the normalization of eq. \eqref{vvoo}, $V_0(z)$ is actually the identity field, and the proportionality factor in eq. \eqref{pzz} is not only $z_i$-independent, but also $\alpha_i$-independent.
+where the proportionality factor is an arbitrary antiholomorphic function of the positions.
+In particular, the left and right $\hat{\mathfrak{u}}_1$-primary field $V_{0,0}(z)$ must be $z$-independent.
+In the normalization of eq. \eqref{vvoo}, $V_{0,0}(z)$ is actually the identity field.
 
 \subsubsection{Seiberg--Witten equations}
 
@@ -4285,14 +4287,14 @@ If we then define $\nabla_\alpha = {\frac{\partial}{\partial \alpha}}+2\int^z dy
 The proportionality constant can be set to zero by renormalizing the field $V_\alpha(z)$, and this normalization coincides with the normalization which we adopted in eq. \eqref{vvoo}.
 We thus obtain
 \begin{align}
- {\frac{\partial}{\partial \alpha}} V_\alpha(z) = -2 \int^z dy\ J(y)V_\alpha(z)\ ,
+ {\frac{\partial}{\partial \alpha}} V_\alpha(z) = -2 \int^z dy\, J(y)V_\alpha(z)\ ,
 \label{swp}
 \end{align}
 where the right-hand side denotes the regularized value at $z$ of a particular primitive of the integrand.
 It can be checked that this equation holds when inserted into correlation functions of primary fields, using eqs. \eqref{pzz} and \eqref{jsa}, provided we use the primitive $\int^z \frac{dy}{y-z_i} = \log(z-z_i)$.
 From the $JV_\alpha$ OPE \eqref{jva}, we also have the equation
 \begin{align}
- \alpha\, V_\alpha(z) = \frac{1}{2\pi i} \oint_{z} dy\ J(y)V_\alpha(z)\ .
+ \alpha V_\alpha(z) = \frac{1}{2\pi i} \oint_{z} dy\, J(y)V_\alpha(z)\ .
 \label{swa}
 \end{align}
 Equations \eqref{swp} and \eqref{swa} show that the actions of ${\frac{\partial}{\partial \alpha}}$ and $\alpha$ on $V_\alpha(z)$ can be obtained by integrating the one-form $J(y)dy$ along particular contours.
