@@ -4180,7 +4180,8 @@ To summarize,
 \hline
  \end{tabular}
 \end{align}
-
+Curiously, 
+whenever Liouville theory is unitary i.e. $Q\in\mathbb{R}^*$, its spectrum \eqref{sad} contains only representations that are unitary as $\hat{\mathfrak{u}}_1$ representations, leaving out the representations with $\alpha\in ]0, Q[$ although they are unitary as Virasoro representations.
 
 
 \subsection{Ward identities and Seiberg--Witten equations}
@@ -4304,12 +4305,16 @@ By analogy with supersymmetric gauge theory, these equations may be called \text
 \subsection{Spectrum and correlation functions \label{secsacf}}
 
 We define a \textbf{\boldmath free bosonic theory}\index{free bosonic theory} as a conformal field theory with $\hat{\mathfrak{u}}_1$ symmetry, such that each representation of the $\hat{\mathfrak{u}}_1 \times \bar{\hat{\mathfrak{u}}}_1$ symmetry algebra appears at most once in the spectrum.
-First consider the diagonal, continuous spectrum 
+
+\subsubsection{Linear dilaton theory}
+
+We first consider the diagonal, continuous spectrum
 \begin{align}
  \boxed{S = \int_{\frac{Q}{2}+i{\mathbb{R}}} d\alpha \ \mathcal{V}_\alpha \otimes \bar{\mathcal{V}}_\alpha}\ .
 \label{sz}
 \end{align}
-This theory is unitary for $Q\in {\mathbb{R}}$, see eq. \eqref{aif}.
+This spectrum is obtained from the Liouville spectrum \eqref{sad} by doubling each Virasoro representation $\mathcal{V}_\alpha\otimes \bar{\mathcal{V}}_\alpha$ (except for $\alpha=\frac{Q}{2}$), i.e. replacing it with a sum $\mathcal{V}_\alpha\otimes \bar{\mathcal{V}}_\alpha \oplus \mathcal{V}_{Q-\alpha}\otimes \bar{\mathcal{V}}_{Q-\alpha}$ of two $\hat{\mathfrak{u}}_1 \times \bar{\hat{\mathfrak{u}}}_1$ representations that are equivalent as Virasoro representations. 
+
 The correlation functions are 
 \begin{align}
  \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle = \delta\left({\textstyle \sum}_{i=1}^N\alpha_i-Q\right)\ \prod_{i<j} |z_i-z_j|^{-4\alpha_i\alpha_j} \ .
@@ -4320,24 +4325,19 @@ If $Q\notin i{\mathbb{R}}$, this theory has two related pathologies: the spectru
 However, correlation functions have natural continuations to momentums $\alpha_i$ outside the spectrum, and these continuations are used in the main application of the linear dilaton theory: 
 as a tool for studying more complicated theories, such as Liouville theory. (See Section \ref{seclld}.) 
 
-It is instructive to consider the spectrum \eqref{sz} from the point of view of the Virasoro algebra (instead of the $\hat{\mathfrak{u}}_1$ algebra), and to compare it with the spectrum \eqref{sad} of Liouville theory.
-Since $\mathcal{V}_\alpha$ and $\mathcal{V}_{Q-\alpha}$ are identical as Virasoro representations, each Virasoro representation (except $\mathcal{V}_{\frac{Q}{2}}\otimes \bar{\mathcal{V}}_{\frac{Q}{2}}$) appears twice in the linear dilaton spectrum, which is therefore twice larger than the Liouville spectrum.
-Remember also that not all unitary Virasoro representations appear in the Liouville spectrum.
-We can now characterize
-the representations which do appear as being unitary as $\hat{\mathfrak{u}}_1$ representations.
+\subsubsection{Compactified free bosons}
 
-Let us now look for unitary free bosonic theories with discrete spectrums, while insisting that the spectrum closes under fusion \eqref{vvp}.
-Given the unitarity condition \eqref{aif}, we need $Q=0$ so that the central charge is 
+Let us look for free bosonic theories with discrete spectrums and trivial multiplicities, while insisting that the spectrum closes under fusion \eqref{vvp}, and allowing only bosonic fields.
+In terms of the left and right momentums $\alpha$ and $\bar \alpha$, the condition that the conformal spin is integer reads 
 \begin{align}
- c=1\ .
+ (\alpha-\bar\alpha)(\alpha+\bar\alpha-Q)\in\mathbb{Z}\ . 
 \end{align}
-The simplest discrete diagonal spectrum which can be written is 
-\begin{align}
- S_R^0=\sum_{n\in{\mathbb{Z}}} \mathcal{V}_{\frac{in}{2R}}\otimes \bar{\mathcal{V}}_{\frac{in}{2R}}\ ,
-\end{align}
-where $R$ is an arbitrary real parameter.
-Let us extend this spectrum by allowing non-diagonal terms, while accepting only bosonic fields.
-This means that conformal spins must be integer, which leads to $(\alpha-\bar{\alpha})(\alpha+\bar{\alpha})\in {\mathbb{Z}}$.
+By closure under fusion, the vector $(\alpha,\bar\alpha)$ must take values in a set that is closed under addition. For $Q-\alpha-\bar\alpha$ to take nonzero values, 
+the values of $\alpha-\bar\alpha$ 
+
+Let $R$ be the smallest number (in modulus) such that $\alpha-\bar\alpha\in \frac{i}{R}\mathbb{Z}$, then we must have $\alpha+\bar\alpha-Q\in iR\mathbb{Z}$. 
+
+
 In the spectrum $S_R^0$ that we wish to extend, we have $\alpha+\bar{\alpha}\in\frac{i}{R}{\mathbb{Z}}$, so that the largest possible extension is obtained by assuming $\alpha-\bar{\alpha}\in iR{\mathbb{Z}}$.
 This leads to the spectrum
 \begin{align}
