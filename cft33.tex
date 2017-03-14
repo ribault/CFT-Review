@@ -4332,28 +4332,21 @@ In terms of the left and right momentums $\alpha$ and $\bar \alpha$, the conditi
 \begin{align}
  (\alpha-\bar\alpha)(\alpha+\bar\alpha-Q)\in\mathbb{Z}\ . 
 \end{align}
-By closure under fusion, the vector $(\alpha,\bar\alpha)$ must take values in a set that is closed under addition. For $Q-\alpha-\bar\alpha$ to take nonzero values, 
-the values of $\alpha-\bar\alpha$ 
+Moreover, by closure under fusion, the vector $\vec\alpha = (\alpha,\bar\alpha)$ must take values in a set that is closed under addition.
 
-Let $R$ be the smallest number (in modulus) such that $\alpha-\bar\alpha\in \frac{i}{R}\mathbb{Z}$, then we must have $\alpha+\bar\alpha-Q\in iR\mathbb{Z}$. 
+Let us first deal with the case $Q=0$. If two vectors $\vec\alpha_1$ and $\vec\alpha_2$ belong to the spectrum, then $\vec\alpha_1,\vec\alpha_2$ and $\vec\alpha_1+\vec\alpha_2$ must have integer spins.
+It follows that all vectors in $\mathbb{Z}\vec\alpha_1 + \mathbb{Z}\vec\alpha_2$ have integer spins, and this set can be assumed to be part of the spectrum without loss of generality. 
+So let us consider spectrums of the type $\sum_{i=1}^N \mathbb{Z}\vec \alpha_i$. 
+These spectrums have $2N$ complex parameters (the components of $\vec\alpha_i$), subject to the $\frac12 N(N+1)$ constraints that $\vec\alpha_i$ and $\vec\alpha_i+\vec\alpha_j$ have integer spins. 
+This leaves us with a free continuous parameter if $N=1,2$. But any spectrum with $N=1$ generator can be extended by adding a second generator, so generic maximal spectrums have $N=2$ generators.
 
-
-In the spectrum $S_R^0$ that we wish to extend, we have $\alpha+\bar{\alpha}\in\frac{i}{R}{\mathbb{Z}}$, so that the largest possible extension is obtained by assuming $\alpha-\bar{\alpha}\in iR{\mathbb{Z}}$.
-This leads to the spectrum
+Let us focus on generic maximal spectrums that contain diagonal states. 
+Let us parametrize a diagonal generator as  $\vec\alpha_1=(\frac{i}{2R},\frac{i}{2R})$. By integrality of the spins, the second generator $\vec\alpha_2$ must obey $\frac{i}{R}(\alpha_2-\bar\alpha_2)\in\mathbb{Z}$, and without loss of generality we assume $\alpha_2-\bar\alpha_2=iR$. This implies $\alpha_2+\bar\alpha_2 \in \frac{i}{R}\mathbb{Z}$, and we can always assume $\alpha_2+\bar\alpha_2=0$ by doing a redefinition $\vec\alpha_2\to \vec\alpha_2+n\vec\alpha_1$ with $n\in\mathbb{Z}$. To summarize, generic maximal spectrums are of the type 
 \begin{align}
  \boxed{S_R = \sum_{n,w\in {\mathbb{Z}}} \mathcal{V}_{\frac{i}{2}\left(\frac{n}{R} + Rw\right)} \otimes \bar{\mathcal{V}}_{\frac{i}{2}\left(\frac{n}{R} - Rw\right)} }\ .
 \label{sr}
 \end{align}
-The correlation functions of the corresponding fields are 
-\begin{align}
- \left\langle \prod_{i=1}^N V_{n_i,w_i}(z_i) \right\rangle = \delta_{\sum_{i=1}^N n_i,0}\ \delta_{\sum_{i=1}^N w_i,0}\ \prod_{i<j} (z_i-z_j)^{-2\alpha_i\alpha_j}(\bar{z}_i-\bar{z}_j)^{-2\bar{\alpha}_i\bar{\alpha}_j}\ , 
-\end{align}
-where we defined
-\begin{align}
-\renewcommand{\arraystretch}{1.3}
-\left\{\begin{array}{l}  \alpha_i = \frac{i}{2}\left(\frac{n_i}{R} + Rw_i \right)\ , \\ \bar{\alpha}_i = \frac{i}{2}\left(\frac{n_i}{R} - Rw_i \right) \ . \end{array}\right. 
-\end{align}
-The corresponding theory is called the \textbf{\boldmath compactified free boson}\index{compactified free boson} theory, whose parameter $R$ is  the compactification radius.
+The corresponding theory is called the \textbf{\boldmath compactified free boson}\index{free boson!compactified---} theory, whose parameter $R$ is  the compactification radius.
 The integers $n$ and $w$ are respectively called the momentum and winding number.
 In the $R\to \infty$ limit, we recover the linear dilaton theory, which in the case $Q=0$ is simply called the (uncompactified) \textbf{\boldmath free boson}\index{free boson} theory. 
 The free boson theory, compactified or not, is consistent not only on the sphere, but actually on all Riemann surfaces.
@@ -4363,7 +4356,25 @@ The eponymous boson is actually the field $\phi$ such that
  J = -\partial \phi \qquad \text{and} \qquad V_\alpha = e^{2\alpha\phi}\ ,
 \label{jpf}
 \end{align}
-where the definition of the exponential of a field involves the normal-ordered product \eqref{abz}. 
+where the definition of the exponential of a field involves the normal-ordered product \eqref{abz}.
+
+For $Q\neq 0$ it turns out that compactified free bosons still exist, and are actually the most general free bosonic theories with discrete spectrums and trivial multiplicities. 
+The condition that $\vec\alpha$ and $2\vec\alpha$ have integer spins indeed implies 
+\begin{align}
+ \alpha-\bar\alpha\in \frac{1}{2Q}\mathbb{Z}\ .
+\end{align}
+
+
+The correlation functions of the corresponding fields are 
+\begin{align}
+ \left\langle \prod_{i=1}^N V_{n_i,w_i}(z_i) \right\rangle = \delta_{\sum_{i=1}^N n_i,0}\ \delta_{\sum_{i=1}^N w_i,0}\ \prod_{i<j} (z_i-z_j)^{-2\alpha_i\alpha_j}(\bar{z}_i-\bar{z}_j)^{-2\bar{\alpha}_i\bar{\alpha}_j}\ , 
+\end{align}
+where we defined
+\begin{align}
+\renewcommand{\arraystretch}{1.3}
+\left\{\begin{array}{l}  \alpha_i = \frac{i}{2}\left(\frac{n_i}{R} + Rw_i \right)\ , \\ \bar{\alpha}_i = \frac{i}{2}\left(\frac{n_i}{R} - Rw_i \right) \ . \end{array}\right. 
+\end{align}
+ 
 
 More free bosonic theories could be found by relaxing some of our assumptions.
 For instance, we made the implicit assumption that both the holomorphic and the antiholomorphic Virasoro fields are built in eq. \eqref{tqz} using the same background charge $Q$, whereas we could have two different background charges $Q$ and $\bar{Q}$.
