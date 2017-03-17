@@ -4328,6 +4328,17 @@ The corresponding theory is called the \textbf{\boldmath compactified free boson
 The integers $n$ and $w$ are respectively called the momentum and winding number.
 Free bosons are essential building blocks of string theory, which is at the origin of the names for $R$, $n$ and $w$.
 
+The $\hat{\mathfrak{u}}_1$ algebra has the automorphism
+\begin{align}
+ \omega(J_n) = -J_n \ ,
+\end{align}
+which preserves the Virasoro generators \eqref{lnj}-\eqref{lzj}. (For $Q\neq 0$ we would have to assume $\omega(Q)=-Q$.)
+This automorphism acts on representations of $\hat{\mathfrak{u}}_1 \times \bar{\hat{\mathfrak{u}}}_1$ as $\omega(\mathcal{V}_\alpha \otimes \bar{\mathcal{V}}_{\bar{\alpha}}) =  \mathcal{V}_{-\alpha} \otimes \bar{\mathcal{V}}_{\bar{\alpha}}$, and on the spectrum of a compactified free boson as 
+\begin{align}
+ \omega(S_R) = S_{\frac{1}{R}}\ .
+\end{align}
+This shows that two compactified free bosons are equivalent if their radiuses are inverses of one another. In string theory, this is called T-duality.
+
 Relaxing the assumption that we have diagonal states, generic maximal spectrums are built from any two vectors $\vec\alpha_1,\vec\alpha_2$ that have integer spins $s_1,s_2$, and are such that $\vec\alpha_1+\vec\alpha_2$ also has an integer spin $s$. The resulting theory describes a compactified free boson if and only if there are integers $n_1,n_2,w_1,w_2$ such that
 \begin{align}
  s_1=n_1w_1 \quad , \quad s_2=n_2w_2 \quad ,\quad s = (n_1+n_2)(w_1+w_2)\ .
@@ -4377,52 +4388,15 @@ With this spectrum, the global Ward identity \eqref{saq} is satisfied for some v
 The resulting theory is called the (uncompactified) \textbf{\boldmath free boson}\index{free boson} theory if $Q=0$ and momentums are pure imaginary. It might be called the \textbf{\boldmath linear dilaton theory}\index{linear dilaton theory} if $Q\neq 0$, although that term is usually applied to a Lagrangian, not to a specific spectrum. 
 The correlation functions are 
 \begin{align}
- \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle = \delta\left({\textstyle \sum}_{i=1}^N\alpha_i-Q\right)\ \prod_{i<j} |z_i-z_j|^{-4\alpha_i\alpha_j} \ .
+ \left\langle \prod_{i=1}^N V_{\alpha_i,\alpha_i}(z_i)\right\rangle = \delta\left({\textstyle \sum}_{i=1}^N\alpha_i-Q\right)\ \prod_{i<j} |z_i-z_j|^{-4\alpha_i\alpha_j} \ .
 \label{dpzz}
 \end{align}
+Having a consistent spectrum is not always necessary: in the application to Liouville theory (Section \ref{seclld}), we will use free bosonic correlation functions whose momentums $\alpha_i$ do not belong to the spectrum of any consistent theory, although they obey $\sum_i\alpha_i=Q$.
 
+\subsubsection{Unitarity}
 
+The only unitary free bosonic theories are the compactified free boson at $Q=0$ with a real compactification radius, and the uncompactified free boson that is obtained as its infinite radius limit. For $Q\neq 0$, free bosonic theories cannot be unitary, because the set $U=\frac{Q}{2}+i\mathbb{R}$ of unitary momentums is not closed under fusion, i.e. $(U+U)\cap U = \emptyset$ if $Q\in \mathbb{R}^*$.
 
-The free boson theory, compactified or not, is consistent not only on the sphere, but actually on all Riemann surfaces.
- 
-More free bosonic theories could be found by relaxing some of our assumptions.
-For instance, we made the implicit assumption that both the holomorphic and the antiholomorphic Virasoro fields are built in eq. \eqref{tqz} using the same background charge $Q$, whereas we could have two different background charges $Q$ and $\bar{Q}$.
-This would lead to $c\neq \bar{c}$, unless $Q=- \bar{Q}$. 
-The case $Q=-\bar{Q}$ is however nothing new, because it is related to the case $Q=\bar{Q}$ by an automorphism of the $\hat{\mathfrak{u}}_1$ algebra,
-\begin{align}
- \omega(J_n) = -J_n \ ,
-\end{align}
-which preserves the Virasoro algebra (assuming $\omega(Q)=-Q$).
-This automorphism acts on representations of $\hat{\mathfrak{u}}_1 \times \bar{\hat{\mathfrak{u}}}_1$ as $\omega(\mathcal{V}_\alpha \otimes \bar{\mathcal{V}}_{\bar{\alpha}}) =  \mathcal{V}_{-\alpha} \otimes \bar{\mathcal{V}}_{\bar{\alpha}}$, and on the spectrum of a compactified free boson as 
-\begin{align}
- \omega(S_R) = S_{\frac{1}{R}}\ .
-\end{align}
-This shows that two compactified free bosons are equivalent if their radiuses are inverses of one another.
-This simple algebraic observation has important consequences in string theory, where it is called \textbf{\boldmath T-duality}\index{T-duality}. 
-
-Alternatively, we could look for non-unitary free bosonic theories with discrete spectrums.
-Relaxing the unitarity assumption allows $Q$ to be nonzero.
-Assuming the spectrum is still $S_R$ \eqref{sr}, the fields are bosonic (i.e. have integer conformal spins) provided 
-\begin{align}
- iQR\in {\mathbb{Z}} \ .
-\end{align}
-Actually, this condition allows the term $\frac{Q}{2}$ in $\Delta(\alpha)=\frac{Q^2}{4}-(\alpha-\frac{Q}{2})^2$ to be absorbed in a shift $n\to n-1$, which can be used to show that the theory is consistent not only on the sphere, but also on the torus. 
-
-
-\subsubsection{Linear dilaton theory}
-
-We first consider the diagonal, continuous spectrum
-\begin{align}
- \boxed{S = \int_{\frac{Q}{2}+i{\mathbb{R}}} d\alpha \ \mathcal{V}_\alpha \otimes \bar{\mathcal{V}}_\alpha}\ .
-\label{sz}
-\end{align}
-This spectrum is obtained from the Liouville spectrum \eqref{sad} by doubling each Virasoro representation $\mathcal{V}_\alpha\otimes \bar{\mathcal{V}}_\alpha$ (except for $\alpha=\frac{Q}{2}$), i.e. replacing it with a sum $\mathcal{V}_\alpha\otimes \bar{\mathcal{V}}_\alpha \oplus \mathcal{V}_{Q-\alpha}\otimes \bar{\mathcal{V}}_{Q-\alpha}$ of two $\hat{\mathfrak{u}}_1 \times \bar{\hat{\mathfrak{u}}}_1$ representations that are equivalent as Virasoro representations. 
-
-
-This spectrum and these correlation functions define the \textbf{\boldmath linear dilaton theory}\index{linear dilaton theory}. 
-If $Q\notin i{\mathbb{R}}$, this theory has two related pathologies: the spectrum is not closed under fusion, and for any $N\neq 2$ all $N$-point functions of fields in the spectrum vanish.
-However, correlation functions have natural continuations to momentums $\alpha_i$ outside the spectrum, and these continuations are used in the main application of the linear dilaton theory: 
-as a tool for studying more complicated theories, such as Liouville theory. (See Section \ref{seclld}.) 
 
 \subsection{Free bosons and Liouville theory \label{seclld}}
 
@@ -5323,7 +5297,7 @@ Instead of a proper definition of WZW models, we will limit ourselves to giving 
 \item The $G$ WZW model is diagonal if and only if $G$ is simply connected. 
 \end{enumerate}
 The relation between the simple connectedness of $G$ and the diagonality of the associated model is already manifest in the case of abelian groups.
-The free bosonic theory whose spectrum was given in eq. \eqref{sz} (with $Q=0$) may be called the ${\mathbb{R}}$ WZW model, and it is diagonal.
+The uncompactified free boson may be called the ${\mathbb{R}}$ WZW model, and it is diagonal.
 The compactified free boson, whose spectrum was given in eq. \eqref{sr}, may be called the $U(1)$ WZW model, and it is not diagonal. 
 
 Let us study the consequences of the axiom \eqref{lsfg}.
