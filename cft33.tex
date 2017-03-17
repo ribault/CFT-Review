@@ -4310,7 +4310,6 @@ We define a \textbf{\boldmath free bosonic theory}\index{free bosonic theory} as
 \end{align}
 Moreover, by closure under fusion \eqref{vvp}, the vector $\vec\alpha = (\alpha,\bar\alpha)$ must take values in a set that is closed under addition.
 
-
 \subsubsection{Discrete spectrums at $Q=0$}
 
 If two vectors $\vec\alpha_1$ and $\vec\alpha_2$ belong to the spectrum, then $\vec\alpha_1,\vec\alpha_2$ and $\vec\alpha_1+\vec\alpha_2$ must have integer spins.
@@ -4322,39 +4321,68 @@ This leaves us with a continuous parameter if $N=1,2$. But any spectrum with $N=
 Let us focus on generic maximal spectrums that contain diagonal states. 
 Let us parametrize a diagonal generator as  $\vec\alpha_1=(\frac{i}{2R},\frac{i}{2R})$. By integrality of the spins, the second generator $\vec\alpha_2$ must obey $\frac{i}{R}(\alpha_2-\bar\alpha_2)\in\mathbb{Z}$, and without loss of generality we assume $\alpha_2-\bar\alpha_2=iR$. This implies $\alpha_2+\bar\alpha_2 \in \frac{i}{R}\mathbb{Z}$, and we can always assume $\alpha_2+\bar\alpha_2=0$ by doing a redefinition $\vec\alpha_2\to \vec\alpha_2+k\vec\alpha_1$ with $k\in\mathbb{Z}$. This leads to the spectrum
 \begin{align}
- \boxed{S_R = \sum_{n,w\in {\mathbb{Z}}} \mathcal{V}_{\frac{i}{2}\left(\frac{n}{R} + Rw\right)} \otimes \bar{\mathcal{V}}_{\frac{i}{2}\left(\frac{n}{R} - Rw\right)} }\ .
+ \boxed{S_R = \bigoplus_{(n,w)\in {\mathbb{Z}^2}} \mathcal{V}_{\frac{i}{2}\left(\frac{n}{R} + Rw\right)} \otimes \bar{\mathcal{V}}_{\frac{i}{2}\left(\frac{n}{R} - Rw\right)} }\ .
 \label{sr}
 \end{align}
 The corresponding theory is called the \textbf{\boldmath compactified free boson}\index{free boson!compactified---} theory, whose parameter $R$ is  the compactification radius.
 The integers $n$ and $w$ are respectively called the momentum and winding number.
 Free bosons are essential building blocks of string theory, which is at the origin of the names for $R$, $n$ and $w$.
 
-Relaxing the assumption that we have diagonal states, generic maximal spectrums are built from any two vectors $\vec\alpha_1,\vec\alpha_2$ that have integer spins $s_1,s_2$, and are such that $\alpha_1+\alpha_2$ also has an integer spin $s$. The resulting theory describes a compactified free boson if and only if there are integers $n_1,n_2,w_1,w_2$ such that
+Relaxing the assumption that we have diagonal states, generic maximal spectrums are built from any two vectors $\vec\alpha_1,\vec\alpha_2$ that have integer spins $s_1,s_2$, and are such that $\vec\alpha_1+\vec\alpha_2$ also has an integer spin $s$. The resulting theory describes a compactified free boson if and only if there are integers $n_1,n_2,w_1,w_2$ such that
 \begin{align}
  s_1=n_1w_1 \quad , \quad s_2=n_2w_2 \quad ,\quad s = (n_1+n_2)(w_1+w_2)\ .
+ \label{snw}
 \end{align}
+The combination $x=\frac{\alpha_1-\bar{\alpha}_1}{\alpha_2-\bar{\alpha}_2}$ indeed obeys the quadratic equation 
+$
+ s_2x+s_1x^{-1} = s-s_1-s_2 
+$. If the spins $s_1,s_2$ and $s$ are factorized as in eq. \eqref{snw}, then the two solutions are $x=\frac{n_1}{n_2}$ and $x=\frac{w_1}{w_2}$. Since these are rational numbers, there is a vector $\vec \alpha = (\alpha,\bar\alpha)\in \mathbb{Z}\vec\alpha_1 + \mathbb{Z}\vec\alpha_2$ such that $\bar\alpha =\alpha$, i.e. $\vec\alpha$ is diagonal.
 
 
 \subsubsection{Discrete spectrums at $Q\neq 0$}
 
-For $Q\neq 0$ it turns out that compactified free bosons still exist, and are actually the most general free bosonic theories with discrete spectrums and trivial multiplicities. 
-The condition that $\vec\alpha$ and $2\vec\alpha$ have integer spins indeed implies 
+For $Q\neq 0$, the condition that $\vec\alpha$ and $2\vec\alpha$ have integer spins implies 
 \begin{align}
  \alpha-\bar\alpha\in \frac{1}{2Q}\mathbb{Z}\ .
+ \label{amba}
+\end{align}
+Since any two vectors $\vec\alpha_1,\vec\alpha_2$ in the spectrum obey this condition, they must have a combination in $\mathbb{Z}\vec\alpha_1 + \mathbb{Z}\vec\alpha_2$ that is diagonal. And actually, the compactified free boson spectrum $S_R$ \eqref{sr} is made of states with integer spins provided
+\begin{align}
+ R \in \frac{1}{iQ}\mathbb{Z}\ .
+ \label{riqz}
+\end{align}
+In this spectrum however, we have $\alpha-\bar\alpha\in\frac{1}{Q}\mathbb{Z}$. 
+If we insisted that the constraint \eqref{amba} be saturated, then we would find the alternative spectrum
+\begin{align}
+ S'_R = \bigoplus_{n\in \mathbb{Z}} \bigoplus_{w\in \frac{n}{2}+\mathbb{Z}} \mathcal{V}_{\frac{i}{2}\left(\frac{n}{R} + Rw\right)} \otimes \bar{\mathcal{V}}_{\frac{i}{2}\left(\frac{n}{R} - Rw\right)} \qquad \text{with}\qquad R \in \frac{1}{iQ}(2\mathbb{Z}+1)\ .
+\end{align}
+Whether $Q=0$ or not, the correlation functions of our free bosonic theories with discrete spectrums have the form
+\begin{align}
+ \left\langle \prod_{i=1}^N V_{\alpha_i,\bar\alpha_i}(z_i) \right\rangle = 
+ \delta_{\sum_i \alpha_i-Q} \delta_{\sum_i\bar\alpha_i-Q} 
+ \prod_{i<j} (z_i-z_j)^{-2\alpha_i\alpha_j}(\bar{z}_i-\bar{z}_j)^{-2\bar{\alpha}_i\bar{\alpha}_j}\ , 
+\end{align}
+where the two Kronecker deltas constrain the two discrete coordinates of $(\sum_i\alpha_i,\sum_i\bar\alpha_i)\in \mathbb{Z}\vec\alpha_1 + \mathbb{Z}\vec\alpha_2$.
+
+\subsubsection{Continuous spectrums}
+
+We will obtain a continuous, diagonal spectrum by taking 
+the large $R$ limit of the compactified free boson spectrum \eqref{sr}.
+If $Q\neq 0$, the compactification radius $R$ must obey the condition \eqref{riqz}, and therefore go to infinity in a particular, $Q$-dependent direction. We find the spectrum 
+\begin{align}
+ \boxed{ S = \int_{Q\mathbb{R}} d\alpha\ \mathcal{V}_\alpha\otimes \bar{\mathcal{V}}_\alpha}\ ,
+\end{align}
+where for $Q=0$ we take $Q\mathbb{R}$ to be a straight line in an arbitrary direction.  
+With this spectrum, the global Ward identity \eqref{saq} is satisfied for some values of the momentums. 
+The resulting theory is called the (uncompactified) \textbf{\boldmath free boson}\index{free boson} theory if $Q=0$ and momentums are pure imaginary. It might be called the \textbf{\boldmath linear dilaton theory}\index{linear dilaton theory} if $Q\neq 0$, although that term is usually applied to a Lagrangian, not to a specific spectrum. 
+The correlation functions are 
+\begin{align}
+ \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle = \delta\left({\textstyle \sum}_{i=1}^N\alpha_i-Q\right)\ \prod_{i<j} |z_i-z_j|^{-4\alpha_i\alpha_j} \ .
+\label{dpzz}
 \end{align}
 
 
-The correlation functions of the corresponding fields are 
-\begin{align}
- \left\langle \prod_{i=1}^N V_{n_i,w_i}(z_i) \right\rangle = \delta_{\sum_{i=1}^N n_i,0}\ \delta_{\sum_{i=1}^N w_i,0}\ \prod_{i<j} (z_i-z_j)^{-2\alpha_i\alpha_j}(\bar{z}_i-\bar{z}_j)^{-2\bar{\alpha}_i\bar{\alpha}_j}\ , 
-\end{align}
-where we defined
-\begin{align}
-\renewcommand{\arraystretch}{1.3}
-\left\{\begin{array}{l}  \alpha_i = \frac{i}{2}\left(\frac{n_i}{R} + Rw_i \right)\ , \\ \bar{\alpha}_i = \frac{i}{2}\left(\frac{n_i}{R} - Rw_i \right) \ . \end{array}\right. 
-\end{align}
- 
-In the $R\to \infty$ limit, we recover the linear dilaton theory, which in the case $Q=0$ is simply called the (uncompactified) \textbf{\boldmath free boson}\index{free boson} theory. 
+
 The free boson theory, compactified or not, is consistent not only on the sphere, but actually on all Riemann surfaces.
  
 More free bosonic theories could be found by relaxing some of our assumptions.
@@ -4379,7 +4407,7 @@ Assuming the spectrum is still $S_R$ \eqref{sr}, the fields are bosonic (i.e. ha
  iQR\in {\mathbb{Z}} \ .
 \end{align}
 Actually, this condition allows the term $\frac{Q}{2}$ in $\Delta(\alpha)=\frac{Q^2}{4}-(\alpha-\frac{Q}{2})^2$ to be absorbed in a shift $n\to n-1$, which can be used to show that the theory is consistent not only on the sphere, but also on the torus. 
-Therefore, compactified free bosons exist for any value of the central charge, provided the compactification radius is quantized in units of $\frac{i}{Q}=\sqrt{\frac{6}{1-c}}$. 
+
 
 \subsubsection{Linear dilaton theory}
 
@@ -4390,11 +4418,7 @@ We first consider the diagonal, continuous spectrum
 \end{align}
 This spectrum is obtained from the Liouville spectrum \eqref{sad} by doubling each Virasoro representation $\mathcal{V}_\alpha\otimes \bar{\mathcal{V}}_\alpha$ (except for $\alpha=\frac{Q}{2}$), i.e. replacing it with a sum $\mathcal{V}_\alpha\otimes \bar{\mathcal{V}}_\alpha \oplus \mathcal{V}_{Q-\alpha}\otimes \bar{\mathcal{V}}_{Q-\alpha}$ of two $\hat{\mathfrak{u}}_1 \times \bar{\hat{\mathfrak{u}}}_1$ representations that are equivalent as Virasoro representations. 
 
-The correlation functions are 
-\begin{align}
- \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle = \delta\left({\textstyle \sum}_{i=1}^N\alpha_i-Q\right)\ \prod_{i<j} |z_i-z_j|^{-4\alpha_i\alpha_j} \ .
-\label{dpzz}
-\end{align}
+
 This spectrum and these correlation functions define the \textbf{\boldmath linear dilaton theory}\index{linear dilaton theory}. 
 If $Q\notin i{\mathbb{R}}$, this theory has two related pathologies: the spectrum is not closed under fusion, and for any $N\neq 2$ all $N$-point functions of fields in the spectrum vanish.
 However, correlation functions have natural continuations to momentums $\alpha_i$ outside the spectrum, and these continuations are used in the main application of the linear dilaton theory: 
