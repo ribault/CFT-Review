@@ -4310,12 +4310,6 @@ We define a \textbf{\boldmath free bosonic theory}\index{free bosonic theory} as
 \end{align}
 Moreover, by closure under fusion \eqref{vvp}, the vector $\vec\alpha = (\alpha,\bar\alpha)$ must take values in a set that is closed under addition.
 
-The eponymous boson is actually the field $\phi$ such that 
-\begin{align}
- J = -\partial \phi \qquad \text{and} \qquad V_\alpha = e^{2\alpha\phi}\ ,
-\label{jpf}
-\end{align}
-where the definition of the exponential of a field involves the normal-ordered product \eqref{abz}.
 
 \subsubsection{Discrete spectrums at $Q=0$}
 
@@ -4334,6 +4328,12 @@ Let us parametrize a diagonal generator as  $\vec\alpha_1=(\frac{i}{2R},\frac{i}
 The corresponding theory is called the \textbf{\boldmath compactified free boson}\index{free boson!compactified---} theory, whose parameter $R$ is  the compactification radius.
 The integers $n$ and $w$ are respectively called the momentum and winding number.
 Free bosons are essential building blocks of string theory, which is at the origin of the names for $R$, $n$ and $w$.
+
+Relaxing the assumption that we have diagonal states, generic maximal spectrums are built from any two vectors $\vec\alpha_1,\vec\alpha_2$ that have integer spins $s_1,s_2$, and are such that $\alpha_1+\alpha_2$ also has an integer spin $s$. The resulting theory describes a compactified free boson if and only if there are integers $n_1,n_2,w_1,w_2$ such that
+\begin{align}
+ s_1=n_1w_1 \quad , \quad s_2=n_2w_2 \quad ,\quad s = (n_1+n_2)(w_1+w_2)\ .
+\end{align}
+
 
 \subsubsection{Discrete spectrums at $Q\neq 0$}
 
@@ -4483,6 +4483,14 @@ This equation is equivalent to the condition that the two-dimensional metric
 \end{align}
 has a constant scalar curvature.
 Since all two-dimensional metrics can be brought to this form by a change of coordinates, Liouville theory can be interpreted as a quantum theory of two-dimensional gravity, whose classical equation of motion is the Liouville equation.
+
+The eponymous boson is actually the field $\phi$ such that 
+\begin{align}
+ J = -\partial \phi \qquad \text{and} \qquad V_\alpha = e^{2\alpha\phi}\ ,
+\label{jpf}
+\end{align}
+where the definition of the exponential of a field involves the normal-ordered product \eqref{abz}.
+
 
 We will now explain how to compute the behaviour of Liouville theory correlation functions in the limit $Q\to \infty$.
 Since $\alpha_i=O(Q)$ it is natural to consider the 
