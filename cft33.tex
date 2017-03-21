@@ -4282,23 +4282,27 @@ In the normalization of eq. \eqref{vvoo}, $V_{0,0}(z)$ is actually the identity 
 
 \subsubsection{Seiberg--Witten equations}
 
-Equation \eqref{pvaj} has further interesting consequences.
-If $\nabla_z={\frac{\partial}{\partial z}} +2\alpha J(z)$, then we have $\nabla_z V_\alpha(z)=0$, neglecting the issue of regularizing the product $J(z)V_\alpha(z)$.
-If we then define $\nabla_\alpha = {\frac{\partial}{\partial \alpha}}+2\int^z dyJ(y)$ so that $[\nabla_z,\nabla_\alpha]=0$, then $\nabla_\alpha V_\alpha(z)$ is annihilated by $\nabla_z$, and must be proportional to $V_\alpha(z)$.
-The proportionality constant can be set to zero by renormalizing the field $V_\alpha(z)$, and this normalization coincides with the normalization which we adopted in eq. \eqref{vvoo}.
+Let us use eq. \eqref{pvaj} to find out how primary fields depend on momentums. 
+Since conformal spins take integer values, we cannot vary left and right momentums independently, and we will consider a diagonal primary field $V_{\alpha,\alpha}(z)$. 
+If $\nabla_z={\frac{\partial}{\partial z}} +2\alpha J(z)$ and $\nabla_{\bar z}={\frac{\partial}{\partial \bar z}} +2\alpha \bar J(z)$, then we have $\nabla_z V_{\alpha,\alpha}(z)=\nabla_{\bar z} V_{\alpha,\alpha}(z)=0$, neglecting the issue of regularizing the operator products.
+If we then define $\nabla_\alpha = {\frac{\partial}{\partial \alpha}}+2\int^z dyJ(y)+2\int^{\bar z}d\bar{y} \bar J(y)$ so that $[\nabla_z,\nabla_\alpha]=[\nabla_{\bar z},\nabla_\alpha]=0$, then $\nabla_\alpha V_{\alpha,\alpha}(z)$ is annihilated by $\nabla_z,\nabla_{\bar z}$, and must be proportional to $V_{\alpha,\alpha}(z)$.
+The proportionality constant can be set to zero by renormalizing the field $V_{\alpha,\alpha}(z)$, and this normalization coincides with the normalization which we adopted in eq. \eqref{vvoo}.
 We thus obtain
 \begin{align}
- {\frac{\partial}{\partial \alpha}} V_\alpha(z) = -2 \int^z dy\, J(y)V_\alpha(z)\ ,
+ {\frac{\partial}{\partial \alpha}} V_{\alpha,\alpha}(z) 
+ = -2 \int^z dy\, J(y)V_{\alpha,\alpha}(z)-2 \int^{\bar z} d{\bar y}\, \bar J(y)V_{\alpha,\alpha}(z)\ ,
 \label{swp}
 \end{align}
-where the right-hand side denotes the regularized value at $z$ of a particular primitive of the integrand.
+where the integrals denote the regularize values of particular primitives of the integrands.
 It can be checked that this equation holds when inserted into correlation functions of primary fields, using eqs. \eqref{pzz} and \eqref{jsa}, provided we use the primitive $\int^z \frac{dy}{y-z_i} = \log(z-z_i)$.
-From the $JV_\alpha$ OPE \eqref{jva}, we also have the equation
+From the OPE \eqref{jva}, we also have the equation
 \begin{align}
- \alpha V_\alpha(z) = \frac{1}{2\pi i} \oint_{z} dy\, J(y)V_\alpha(z)\ .
+ \alpha V_{\alpha,\alpha}(z) 
+ = \frac{1}{2\pi i} \oint_{z} dy\, J(y)V_{\alpha,\alpha}(z)
+ = \frac{1}{2\pi i} \oint_{\bar z} d\bar y\, \bar J(y)V_{\alpha,\alpha}(z)\ .
 \label{swa}
 \end{align}
-Equations \eqref{swp} and \eqref{swa} show that the actions of ${\frac{\partial}{\partial \alpha}}$ and $\alpha$ on $V_\alpha(z)$ can be obtained by integrating the one-form $J(y)dy$ along particular contours.
+Equations \eqref{swp} and \eqref{swa} show that the actions of ${\frac{\partial}{\partial \alpha}}$ and $\alpha$ on $V_{\alpha,\alpha}(z)$ can be obtained by integrating the one-form $J(y)dy$ along particular contours.
 By analogy with supersymmetric gauge theory, these equations may be called \textbf{\boldmath Seiberg--Witten equations}\index{Seiberg--Witten equation}. 
 
 
