@@ -4522,9 +4522,8 @@ This defines the
 \end{align}
  The Seiberg--Witten equation \eqref{daf} now implies 
 \begin{align}
- {\frac{\partial}{\partial \eta_i}} F^{(0)} & = 0 \ ,
-\\ 
-{\frac{\partial}{\partial \eta_i}} F^{(1)} & = -2\int^{z_i} \Big( W^{(0)}(y)dy + \bar W^{(0)}(y)d\bar y\Big) \ .
+ {\frac{\partial}{\partial \eta_i}} F^{(0)}  = 0 \qquad ,\qquad 
+{\frac{\partial}{\partial \eta_i}} F^{(1)} & = 2\phi^\text{cl}(z_i) \ .
 \label{pefo}
 \end{align}
 The leading term $F^{(0)}$ of $F$ is therefore $\eta_i$-independent.
@@ -4532,23 +4531,19 @@ It is actually also $z_i$-independent, according to the following argument: sinc
 So $F^{(0)}$ is not affected by the presence of the fields $V_{\alpha_i}(z_i)$, which are then called light fields.
 The first interesting term of $F$ is thus $F^{(1)}$.
 To compute $F^{(1)}$, let us solve the linear differential equation \eqref{dtp}, which is now simply $\partial^2 \psi=0$.
-The solutions are $\psi(z) = \sigma z + \rho$, where $\sigma$ and $\rho$ are arbitrary parameters.
-Using the Seiberg--Witten equation \eqref{pefo}, we obtain
+Together with $\bar\partial^2\psi=0$, this leads to the solutions 
+$\psi_h(z) = \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right]^\dagger h \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right]$, for $h$ a constant matrix such that $h=h^\dagger$ and $\det h = -\mu$, where $\mu$ is the parameter of the Liouville equation.
+
+So the solution for $\psi$ is not unique. And individual solutions are not covariant under global conformal transformations, although of course the space of solutions is invariant.
+Therefore, the function $\psi$ that corresponds to our Liouville $N$-point function is not to be found in our space of solutions, and the corresponding field $J$ does not obey our factorization assumption \eqref{lqfac}. Nevertheless, our $N$-point function can be recovered from the solutions $\psi_h$, by integrating the corresponding correlation functions over $h$. Namely, we have $e^{F^{(1)}} = \int dh\, e^{F^{(1)}_h} = \int dh \prod_{i=1}^N \psi_h(z_i)^{-2\eta_i}$. More explicitly, in the case $\mu=-1$ we have
 \begin{align}
- e^{F^{(1)}} \propto \prod_{i=1}^N (\sigma z_i + \rho)^{-2\eta_i} \ .
-\end{align}
-If we want to compute the light asymptotic limit of the actual, single-valued $N$-point function, we have to restore the dependence on $\bar{z}_i$.
-To do this, let us consider the real, single-valued solutions of $\partial^2 \psi = \bar{\partial}^2\psi=0$.
-We write these solutions as $\psi(z) = \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right]^\dagger h \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right]$, where $h$ is a constant matrix such that $h=h^\dagger$.
-Now how do we choose $h$? Global conformal symmetry \eqref{vtv} suggests that we should integrate over $h$, so that
-\begin{align}
-\left\langle\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle\ \underset{\text{light\ asymptotic\ limit}}{\propto}\ \int_{H^+_3} dh\ \prod_{i=1}^N \left( \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right]^\dagger h \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right] \right)^{-2\eta_i}\ ,
+\left\langle\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle\ \underset{\text{light\ asymptotic\ limit}}{=}\ \int_{H^+_3} dh\ \prod_{i=1}^N \left( \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right]^\dagger h \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right] \right)^{-2\eta_i}\ ,
 \label{zih}
 \end{align}
 where the integral is over the set \textbf{\boldmath $H_3^+$}\index{H3+@$H_3^+$} of Hermitian matrices of size two and determinant one, with a measure $dh$ which we assume to be invariant under $h\mapsto g^\dagger hg$ for $g\in SL_2({\mathbb{C}})$.
 In the case $N=3$, this agrees with the three-point function \eqref{caaa}. (See \cite{zz95}.) In the light asymptotic limit, the spectrum of Liouville theory reduces to the space of functions on $H_3^+$, and the symmetry algebra reduces to the algebra of the global conformal transformations.
 So
-the light asymptotic limit of Liouville theory is a unitary, two-dimensional global conformal field theory.
+the light asymptotic limit of Liouville theory is a two-dimensional global conformal field theory.
 
 \subsubsection{Coulomb gas integrals}
 
