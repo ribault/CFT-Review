@@ -4158,7 +4158,8 @@ Therefore, $\mathcal{V}_\alpha$ is unitary if and only if
 \label{aif}
 \end{align}
 
-Let us compare $\hat{\mathfrak{u}}_1$ and Virasoro highest-weight representations. 
+\subsubsection{Comparing $\hat{\mathfrak{u}}_1$ and Virasoro highest-weight representations}
+
 Under the action of the Virasoro algebra eqs. \eqref{lnj}-\eqref{lzj}, the $\hat{\mathfrak{u}}_1$ highest-weight representation $\mathcal{V}_\alpha$ is a Verma module -- the Verma module $\mathcal{V}_\alpha$ of Section \ref{secvm}.
 However, this Verma module is invariant under reflection of $\alpha$, whereas the $\hat{\mathfrak{u}}_1$ representation is not.
 To summarize,
@@ -4180,8 +4181,11 @@ To summarize,
 \hline
  \end{tabular}
 \end{align}
-Curiously, 
-whenever Liouville theory is unitary i.e. $Q\in\mathbb{R}^*$, its spectrum \eqref{sad} contains only representations that are unitary as $\hat{\mathfrak{u}}_1$ representations, leaving out the representations with $\alpha\in ]0, Q[$ although they are unitary as Virasoro representations.
+Even in theories without $\hat{\mathfrak{u}}_1$ symmetry (and therefore no $\hat{\mathfrak{u}}_1$ Ward identities), 
+it can be useful to think of Virasoro representations as $\hat{\mathfrak{u}}_1$ representations. 
+For example,
+whenever Liouville theory is unitary i.e. $Q\in\mathbb{R}^*$, its spectrum \eqref{sad} contains only representations that are unitary as $\hat{\mathfrak{u}}_1$ representations, leaving out the representations with $\alpha\in ]0, Q[$ although they are unitary as Virasoro representations. 
+For example, the AGT relation leads to an expression for Virasoro conformal blocks as sums over particular descendent states, and these states simplify when written in terms of $\hat{\mathfrak{u}}_1$ creation modes \cite{aflt10}.
 
 
 \subsection{Ward identities and Seiberg--Witten equations}
@@ -4284,25 +4288,25 @@ In the normalization of eq. \eqref{vvoo}, $V_{0,0}(z)$ is actually the identity 
 
 Let us use eq. \eqref{pvaj} to find out how primary fields depend on momentums. 
 Since conformal spins take integer values, we cannot vary left and right momentums independently, and we will consider a diagonal primary field $V_{\alpha,\alpha}(z)$. 
-If $\nabla_z={\frac{\partial}{\partial z}} +2\alpha J(z)$ and $\nabla_{\bar z}={\frac{\partial}{\partial \bar z}} +2\alpha \bar J(z)$, then we have $\nabla_z V_{\alpha,\alpha}(z)=\nabla_{\bar z} V_{\alpha,\alpha}(z)=0$, neglecting the issue of regularizing the operator products.
-If we then define $\nabla_\alpha = {\frac{\partial}{\partial \alpha}}+2\int^z dyJ(y)+2\int^{\bar z}d\bar{y} \bar J(y)$ so that $[\nabla_z,\nabla_\alpha]=[\nabla_{\bar z},\nabla_\alpha]=0$, then $\nabla_\alpha V_{\alpha,\alpha}(z)$ is annihilated by $\nabla_z,\nabla_{\bar z}$, and must be proportional to $V_{\alpha,\alpha}(z)$.
+If $\nabla_z={\frac{\partial}{\partial z}} +2\alpha J(z)$ and $\overline{\nabla}_{z}={\frac{\partial}{\partial \bar z}} +2\alpha \bar J(z)$, then $\nabla_z V_{\alpha,\alpha}(z)=\overline{\nabla}_z V_{\alpha,\alpha}(z)=0$, neglecting the issue of regularizing operator products.
+If we then define $\nabla_\alpha = {\frac{\partial}{\partial \alpha}}+2\int^z (J(y)dy +\bar J(y)d\bar y)$ so that $[\nabla_z,\nabla_\alpha]=[\overline{\nabla}_z,\nabla_\alpha]=0$, then $\nabla_\alpha V_{\alpha,\alpha}(z)$ is annihilated by $\nabla_z,\overline{\nabla}_z$, and must be proportional to $V_{\alpha,\alpha}(z)$.
 The proportionality constant can be set to zero by renormalizing the field $V_{\alpha,\alpha}(z)$, and this normalization coincides with the normalization which we adopted in eq. \eqref{vvoo}.
 We thus obtain
 \begin{align}
  {\frac{\partial}{\partial \alpha}} V_{\alpha,\alpha}(z) 
- = -2 \int^z dy\, J(y)V_{\alpha,\alpha}(z)-2 \int^{\bar z} d{\bar y}\, \bar J(y)V_{\alpha,\alpha}(z)\ ,
+ = -2 \int^z V_{\alpha,\alpha}(z)\Big(J(y)dy+\bar J(y)d\bar y \Big)\ ,
 \label{swp}
 \end{align}
-where the integrals denote the regularize values of particular primitives of the integrands.
+where the integral denotes a regularized value of a primitive of the integrand. (The integrand is a closed one-form because $\bar\partial J = \partial \bar J=0$.)
 It can be checked that this equation holds when inserted into correlation functions of primary fields, using eqs. \eqref{pzz} and \eqref{jsa}, provided we use the primitive $\int^z \frac{dy}{y-z_i} = \log(z-z_i)$.
 From the OPE \eqref{jva}, we also have the equation
 \begin{align}
  \alpha V_{\alpha,\alpha}(z) 
- = \frac{1}{2\pi i} \oint_{z} dy\, J(y)V_{\alpha,\alpha}(z)
- = \frac{1}{2\pi i} \oint_{\bar z} d\bar y\, \bar J(y)V_{\alpha,\alpha}(z)\ .
+ = \frac{1}{2\pi i} \oint_{z} V_{\alpha,\alpha}(z)J(y)dy
+ = \frac{1}{2\pi i} \oint_{z} V_{\alpha,\alpha}(z)\bar J(y)d\bar y\ .
 \label{swa}
 \end{align}
-Equations \eqref{swp} and \eqref{swa} show that the actions of ${\frac{\partial}{\partial \alpha}}$ and $\alpha$ on $V_{\alpha,\alpha}(z)$ can be obtained by integrating the one-form $J(y)dy$ along particular contours.
+Equations \eqref{swp} and \eqref{swa} show that the actions of ${\frac{\partial}{\partial \alpha}}$ and $\alpha$ on $V_{\alpha,\alpha}(z)$ can be obtained by integrating field-valued one-forms along particular contours.
 By analogy with supersymmetric gauge theory, these equations may be called \textbf{\boldmath Seiberg--Witten equations}\index{Seiberg--Witten equation}. 
 
 
@@ -4404,55 +4408,55 @@ The only unitary free bosonic theories are the compactified free boson at $Q=0$ 
 
 \subsection{Free bosons and Liouville theory \label{seclld}}
 
-The construction \eqref{tqz} of the energy-momentum tensor $T(z)$ from the $\hat{\mathfrak{u}}_1$ current $J(z)$ can conversely be interpreted as the definition of a locally holomorphic field $J(z)$ from a Virasoro field $T(z)$.
-So, in any conformal field theory, there exists a $\hat{\mathfrak{u}}_1$ symmetry algebra, but in general the $\hat{\mathfrak{u}}_1$ symmetry is broken, and $J(z)$ is not a symmetry field.
-Nevertheless, we will argue that correlation functions involving $J(z)$ are useful tools for the study and interpretation of Liouville theory. 
+Let us invert the 
+construction \eqref{tqz} of a Virasoro field from a $\hat{\mathfrak{u}}_1$ current, and construct fields $J,\bar J$ from the energy-momentum tensors $T,\bar T$ of an arbitrary conformal field theory. 
+These fields are in general not meromorphic, so they are not symmetry fields.
+Nevertheless, we will use them for computing limits and particular values of correlation functions in Liouville theory.
 
-Let us discuss the properties of $J(z)$.
-The field $J(z)$, being a root of a quadratic differential equation, is in general not a unique, single-valued, meromorphic function of $z$: rather, there can be several determinations of $J(z)$, which can moreover have branch cuts. 
-A particular determination of $J(z)$ can be defined by requiring that the 
-OPE $JV_\alpha$ \eqref{jva} holds; with this determination, the Seiberg--Witten equations \eqref{swp} and \eqref{swa} then hold.  
-(The reflection relation $V_\alpha \propto V_{Q-\alpha}$ \eqref{vrv} would bring us to another particular determination.)
-On the other hand, since $J(z)$ is not meromorphic, $\hat{\mathfrak{u}}_1$ Ward identities do not hold in Liouville theory.
+Equation \eqref{tqz} is not enough for determining $J$. We could add the condition that $J$ be locally holomorphic, but we will add the milder condition $\partial \bar J = \bar\partial J$, 
+% This condition has to be compatible with the relations of J, \bar J with T, \bar T. Two reasons why it is compatible: it is milder than J being locally holomorphic, which is itself compatible because T is locally holomorphic. And the relations with T, \bar T both lead to the same Liouville equation.
+which is sufficient for the Seiberg--Witten equation \eqref{swp} to make sense. This implies that locally there is a field $\phi$ such that 
+\begin{align}
+ J = -\partial \phi \qquad , \qquad \bar J = -\bar\partial \phi \ .
+\end{align}
+This field is called the \textbf{Liouville field}\index{Liouville field}. By formally solving the Seiberg--Witten equation, we can express primary fields in terms of the Liouville field as 
+\begin{align}
+ V_\alpha = e^{2\alpha \phi} \ .
+\end{align}
 
-Let us introduce notations for dealing with correlation functions involving $J(z)$. 
+\subsubsection{The Liouville equation}
+
 Given an $N$-point function $\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle$, we define
 \begin{align}
- \boxed{F= \log \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle} \quad , \quad \boxed{W_1(y) = \frac{\left\langle J(y)\prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle}{\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle}} \ ,
+ \boxed{F= \log \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle} \quad , \quad \boxed{W(y) = \frac{\left\langle J(y)\prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle}{\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle}} \ .
 \end{align}
-where $F$ is called the \textbf{\boldmath free energy}\index{free energy}. 
+By analogy with matrix models, we call $F$ the \textbf{\boldmath free energy}\index{free energy} and $W(y)$ the \textbf{resolvent}\index{resolvent}.
 In terms of these objects, the Seiberg--Witten equation \eqref{swp} becomes 
 \begin{align}
- {\frac{\partial}{\partial \alpha_i}} F = -2 \int^{z_i} dy \ W_1(y)\ . 
+ {\frac{\partial}{\partial \alpha_i}} F = -2 \int^{z_i} \Big(W(y)dy+\bar W(y)d\bar y\Big)\ . 
 \label{daf}
 \end{align}
-
-We will now use these objects for studying Liouville theory in the limit $c\to \infty$ -- equivalently, $Q\to \infty$.
-Equations such as \eqref{jyi} suggest $J=O(Q)$ which leads to $\alpha_i=O(Q)$ and $W_1=O(Q)$.
+We will use these objects for studying Liouville theory in the limit $c\to \infty$ -- equivalently, $Q\to \infty$.
+Equations such as \eqref{jyi} suggest $J=O(Q)$ which leads to $W=O(Q)$.
 Using eq. \eqref{daf}, we deduce $F=O(Q^2)$.
 The natural expansion parameter is $Q^2$ (as in $c=1+6Q^2$) and we write the expansions
 \begin{align}
  F &= Q^2 F^{(0)} + F^{(1)} + O(Q^{-2})\ ,
 \\
-W_1 & = QW_1^{(0)} + O(Q^{-1})\ .
+W & = QW^{(0)} + O(Q^{-1})\ .
 \end{align}
-We now observe that in the $Q\to \infty$ limit, the singular term in the $JJ$ OPE \eqref{jj} is negligible.
-As a function of $y_1$, the correlation function $ \left\langle J(y_1)J(y_2)\prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle$ is supposed to be determined by the behaviour of the locally holomorphic field $J(y_1)$ near its singularities.
-Since there is no singularity at $y_1=y_2$, the dependences on $y_1$ and $y_2$  factorize,    
+Now, in the $Q\to \infty$ limit of the $JJ$ OPE \eqref{jj} (at fixed positions), the singular term becomes negligible. So, in this limit, the correlation function $ \left\langle J(y_1)J(y_2)\prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle$ has no singularity at $y_1=y_2$. If this correlation function was determined by the behaviour of $J$ near its singularities, it would have to factorize,
 \begin{align}
- \frac{\left\langle J(y_1)J(y_2)\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle}{\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle} \underset{Q\to \infty}{=} W_1^{(0)}(y_1)W_1^{(0)}(y_2) + O(1)\ .
+ \frac{\left\langle J(y_1)J(y_2)\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle}{\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle} \underset{Q\to \infty}{=} W^{(0)}(y_1)W^{(0)}(y_2) + O(1)\ .
+ \label{lqfac}
 \end{align}
-To the leading order, inserting the definition \eqref{tqz} of $J(z)$ in $\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle$ therefore yields a nonlinear differential equation for $W_1^{(0)}$,
+However, since $J(y)$ is not a symmetry field, it is not necessarily determined by its singular behaviour. For the moment, we assume that factorization holds.
+Inserting the definition \eqref{tqz} of $J(z)$ in $\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle$ therefore yields a nonlinear differential equation for $W^{(0)}$,
 \begin{align}
- \boxed{\left(W_1^{(0)}\right)^2 + \partial W_1^{(0)} = - t}\ ,
+ \boxed{\left(W^{(0)}\right)^2 + \partial W^{(0)} = - t}\ ,
 \label{wwwt}
 \end{align}
-or equivalently a linear differential equation for a function $\psi$,
-\begin{align}
- \boxed{W_1^{(0)} = \frac{\partial\psi}{\psi} \quad \Rightarrow \quad (\partial^2 + t ) \psi = 0}\ .
-\label{dtp}
-\end{align}
-In these equations we introduced
+where we introduced
 \begin{align}
  t(z) = \underset{Q\to \infty}{\lim} Q^{-2} \frac{\left\langle T(z) \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle}{\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle}\ .
 \end{align}
@@ -4461,56 +4465,55 @@ This can be computed using eq. \eqref{dtz},
  t(z) = \sum_{i=1}^N \left( \frac{\underset{Q\to\infty}{\lim} Q^{-2}\Delta(\alpha_i)}{(z-z_i)^2} + \frac{\beta_i}{z-z_i} \right)\ ,
 \label{tzs}
 \end{align}
-where we defined the \textbf{\boldmath accessory parameters}\index{accessory parameter} 
+where we defined the accessory parameters
 \begin{align}
  \beta_i = {\frac{\partial}{\partial z_i}} F^{(0)}\ .
 \end{align}
-The condition $t(z) \underset{z\to \infty}{=} O(\frac{1}{z^4})$, which follows from eq. \eqref{tyi}, amounts to three constraints on the accessory parameters, which are thereby uniquely determined if $N\leq 3$. 
-
-Let us use these constructions, first of all to provide a geometrical interpretation of Liouville theory.
-Let us relax the assumption that $J(z)$ (and therefore $W_1^{(0)}(z)$) be locally holomorphic, and assume there is a function $\phi(z)$ such that 
+The condition $t(z) \underset{z\to \infty}{=} O(\frac{1}{z^4})$, which follows from eq. \eqref{tyi}, amounts to three constraints on the accessory parameters, which are thereby uniquely determined if $N= 3$. Studying the behaviour of $\prod_{i=1}^3(z-z_i)t(z)$ near $z=z_i$ and $z=\infty$, we find 
 \begin{align}
- W_1^{(0)} = - \partial \phi \quad , \quad \bar{W}_1^{(0)} = -\bar{\partial} \phi \ .
+ t(z) = \frac{1}{\prod_{i=1}^3(z-z_i)} \sum_{i=1}^3 \frac{\prod_{j\neq i} z_{ij}}{z-z_i}\underset{Q\to\infty}{\lim} Q^{-2}\Delta(\alpha_i)\ .
 \end{align}
-Taking the $\bar{z}$-derivative of eq. \eqref{wwwt}, we obtain $\partial\left(\log \partial\bar{\partial}\phi -2\phi\right)=0$, and similarly $\bar{\partial} \left(\log \partial\bar{\partial}\phi -2\phi\right)=0$.
-We therefore have
+Let us reformulate our nonlinear equation for $W^{(0)}$ in terms of the functions $\psi$ and $\phi^\text{cl}$ such that
 \begin{align}
- \partial\bar{\partial}\phi = \mu e^{2\phi}\ ,
+ W^{(0)} = \frac{\partial\psi}{\psi} = -\partial \phi^\text{cl} \qquad , \qquad \bar W^{(0)} = \frac{\bar\partial\psi}{\psi}= -\bar\partial \phi^\text{cl}\ .
+\end{align}
+In terms of $\psi$, we obtain the linear differential equation
+\begin{align}
+ \boxed{ (\partial^2 + t ) \psi = 0 } \ .
+ \label{dtp}
+\end{align}
+In terms of $\phi^\text{cl}$, the $\bar{z}$-derivative of eq. \eqref{wwwt} reads $\partial\left(\log \partial\bar{\partial}\phi^\text{cl} -2\phi^\text{cl}\right)=0$. Together with $\bar{\partial} \left(\log \partial\bar{\partial}\phi^\text{cl} -2\phi^\text{cl}\right)=0$, this leads to 
+\begin{align}
+ \partial\bar{\partial}\phi^\text{cl} = \mu e^{2\phi^\text{cl}}\ ,
 \end{align}
 where the integration constant $\mu$ coincides with the cosmological constant up to a normalization factor.
-This equation for $\phi$ is the \textbf{\boldmath Liouville equation}\index{Liouville equation}, which gives its name to Liouville theory.
+This equation for $\phi^\text{cl}$ is the \textbf{\boldmath Liouville equation}\index{Liouville equation}, which gives its name to Liouville theory.
 This equation is equivalent to the condition that the two-dimensional metric
 \begin{align}
- ds^2 = e^{2\phi} dz d\bar{z}\ ,
+ ds^2 = e^{2\phi^\text{cl}} dz d\bar{z}\ ,
 \end{align}
 has a constant scalar curvature.
 Since all two-dimensional metrics can be brought to this form by a change of coordinates, Liouville theory can be interpreted as a quantum theory of two-dimensional gravity, whose classical equation of motion is the Liouville equation.
 
-The eponymous boson is actually the field $\phi$ such that 
-\begin{align}
- J = -\partial \phi \qquad \text{and} \qquad V_\alpha = e^{2\alpha\phi}\ ,
-\label{jpf}
-\end{align}
-where the definition of the exponential of a field involves the normal-ordered product \eqref{abz}.
+\subsubsection{Heavy asymptotic limit}
 
-
-We will now explain how to compute the behaviour of Liouville theory correlation functions in the limit $Q\to \infty$.
-Since $\alpha_i=O(Q)$ it is natural to consider the 
+In order to define and compute large $c$ limits of correlation functions, we should specify how the momentums behave.
+Since $J=O(Q)$, it is natural to assume $\alpha_i=O(Q)$, i.e. to consider the 
 \begin{align}
  \textbf{\boldmath heavy\ asymptotic\ limit}\index{heavy\ asymptotic\ limit}: \quad \left\{\begin{array}{l}  Q \to \infty \ ,\\ \eta_i=\frac{\alpha_i}{Q}\ \text{fixed}\ .\end{array}\right.  
 \end{align}
 We then have $\underset{Q\to\infty}{\lim} Q^{-2}\Delta(\alpha_i)=\eta_i(1-\eta_i)$.
-In the case $N=3$, the function $t(z)$ \eqref{tzs} is 
+In the case $N=3$, the linear differential equation \eqref{dtp} for $\psi$ is equivalent to the hypergeometric equation.
+This equation has a unique single-valued solution that is compatible with the asymptotic behaviour $W^{(0)}(y)\underset{y\to z_i}{=} \frac{\eta_i}{y-z_i} + O(1)$.
+The uniqueness of the solution provides an a posteriori justification for our factorization hypothesis \eqref{lqfac}.
+We can then deduce the leading term $F^{(0)}$ of the free energy $F$, with the help of the heavy asymptotic limit of the Seiberg--Witten equation \eqref{daf}, 
 \begin{align}
- t(z) = \frac{1}{\prod_{i=1}^3(z-z_i)} \sum_{i=1}^3 \eta_i(1-\eta_i)\frac{\prod_{j\neq i} z_{ij}}{z-z_i}\ ,
+ {\frac{\partial}{\partial \eta_i}} F^{(0)} = -2\int^{z_i}\Big( W^{(0)}(y)dy + \bar W^{(0)}(y)d\bar y\Big) = 2\phi^\text{cl}(z_i)\ .
 \end{align}
-and the linear differential equation \eqref{dtp} is equivalent to the hypergeometric equation.
-Solving this equation yields $W_1^{(0)}$, from which we can deduce the leading term $F^{(0)}$ of the free energy $F$, with the help of the heavy asymptotic limit of the Seiberg--Witten equation \eqref{daf}, 
-\begin{align}
- {\frac{\partial}{\partial \eta_i}} F^{(0)} = -2\int^{z_i} dy\ W_1^{(0)}(y)\ .
-\end{align}
-We do not carry out these calculations here, and instead refer the reader to \cite{cer12}, where the result for $F^{(0)}$ is shown to agree with the leading behaviour of the three-point function \eqref{caaa} in the heavy asymptotic limit.
+We do not carry out these calculations here, and instead refer the reader to \cite{zz95}, where the result for $F^{(0)}$ is shown to agree with the leading behaviour of the three-point function \eqref{caaa} in the heavy asymptotic limit.
 Actually, the agreement does not stop at the leading order: similar techniques can be used for computing the free energy $F$ order by order in $Q^2$ \cite{cer12}.
+
+\subsubsection{Light asymptotic limit}
 
 In the heavy asymptotic limit, conformal dimensions grow as fast as the central charge.
 Another interesting limit of Liouville theory can be defined, such that the conformal dimensions are fixed.
@@ -4522,7 +4525,7 @@ This limit is the
 \begin{align}
  {\frac{\partial}{\partial \eta_i}} F^{(0)} & = 0 \ ,
 \\ 
-{\frac{\partial}{\partial \eta_i}} F^{(1)} & = -2\int^{z_i} dy\  W_1^{(0)}(y) \ .
+{\frac{\partial}{\partial \eta_i}} F^{(1)} & = -2\int^{z_i} dy\  W^{(0)}(y) \ .
 \label{pefo}
 \end{align}
 The leading term $F^{(0)}$ of $F$ is therefore $\eta_i$-independent.
@@ -4547,6 +4550,8 @@ where the integral is over the set \textbf{\boldmath $H_3^+$}\index{H3+@$H_3^+$}
 In the case $N=3$, this agrees with the three-point function \eqref{caaa}. (See \cite{zz95}.) In the light asymptotic limit, the spectrum of Liouville theory reduces to the space of functions on $H_3^+$, and the symmetry algebra reduces to the algebra of the global conformal transformations.
 So
 the light asymptotic limit of Liouville theory is a unitary, two-dimensional global conformal field theory.
+
+\subsubsection{Coulomb gas integrals}
 
 To conclude our discussion of the use of free boson techniques in Liouville theory, let us point out 
 that there is a relation between certain Liouville correlation functions, and linear dilaton correlation functions \cite{zz95}.
@@ -4588,10 +4593,10 @@ Liouville theory & matrix models
 $N$-point function & partition function 
 \\
 \hline
-$W_1(y)$  & resolvent
+$W(y)$  & resolvent
 \\
 \hline
-eq. \eqref{wwwt} for $W_1^{(0)}(y)$ & loop equation 
+eq. \eqref{wwwt} for $W^{(0)}(y)$ & loop equation 
 \\
 \hline
 $y_k$ in eq. \eqref{mint} & matrix eigenvalue
