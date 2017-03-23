@@ -4447,11 +4447,11 @@ W & = QW^{(0)} + O(Q^{-1})\ .
 \end{align}
 Now, in the $Q\to \infty$ limit of the $JJ$ OPE \eqref{jj} (at fixed positions), the singular term becomes negligible. So, in this limit, the correlation function $ \left\langle J(y_1)J(y_2)\prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle$ has no singularity at $y_1=y_2$. If this correlation function was determined by the behaviour of $J$ near its singularities, it would have to factorize,
 \begin{align}
- \frac{\left\langle J(y_1)J(y_2)\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle}{\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle} \underset{Q\to \infty}{=} W^{(0)}(y_1)W^{(0)}(y_2) + O(1)\ .
+ \frac{\left\langle J(y_1)J(y_2)\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle}{\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle} \underset{Q\to \infty}{=} Q^2W^{(0)}(y_1)W^{(0)}(y_2) + O(1)\ .
  \label{lqfac}
 \end{align}
-However, since $J(y)$ is not a symmetry field, it is not necessarily determined by its singular behaviour. For the moment, we assume that factorization holds.
-Inserting the definition \eqref{tqz} of $J(z)$ in $\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle$ therefore yields a nonlinear differential equation for $W^{(0)}$,
+However, since $J(y)$ is not a symmetry field, it is not necessarily determined by its singular behaviour. For the moment, we assume that the factorization holds.
+Inserting the definition \eqref{tqz} of $J(z)$ in $\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle$ then yields a nonlinear differential equation for $W^{(0)}$,
 \begin{align}
  \boxed{\left(W^{(0)}\right)^2 + \partial W^{(0)} = - t}\ ,
 \label{wwwt}
@@ -4515,9 +4515,8 @@ Actually, the agreement does not stop at the leading order: similar techniques c
 
 \subsubsection{Light asymptotic limit}
 
-In the heavy asymptotic limit, conformal dimensions grow as fast as the central charge.
-Another interesting limit of Liouville theory can be defined, such that the conformal dimensions are fixed.
-This limit is the
+Let us now assume that conformal dimensions are fixed as the central charge goes to infinity.
+This defines the 
 \begin{align}
  \textbf{\boldmath light\ asymptotic\ limit}\index{light\ asymptotic\ limit}: \quad \left\{\begin{array}{l}  Q \to \infty \ ,\\ \eta_i=Q\alpha_i\ \text{fixed}\ .\end{array}\right.  
 \end{align}
@@ -4525,7 +4524,7 @@ This limit is the
 \begin{align}
  {\frac{\partial}{\partial \eta_i}} F^{(0)} & = 0 \ ,
 \\ 
-{\frac{\partial}{\partial \eta_i}} F^{(1)} & = -2\int^{z_i} dy\  W^{(0)}(y) \ .
+{\frac{\partial}{\partial \eta_i}} F^{(1)} & = -2\int^{z_i} \Big( W^{(0)}(y)dy + \bar W^{(0)}(y)d\bar y\Big) \ .
 \label{pefo}
 \end{align}
 The leading term $F^{(0)}$ of $F$ is therefore $\eta_i$-independent.
