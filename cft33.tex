@@ -181,7 +181,7 @@ While this review article mostly presents already known results, the following a
 \item in Section \ref{secaco}, the formulation of Al. Zamolodchikov's recursion representation of conformal blocks as an explicit formula,
 \item in Section \ref{secliou}, a complete and correct solution of Liouville theory, using only the bootstrap approach, 
 \item in Section \ref{secvmm}, the logical sequence ``Liouville theory $\rightarrow$ generalized minimal models $\rightarrow$ minimal models'',
-\item in Section \ref{secsacf}, the remark that compactified free bosons exist for any value of $c$ and not just if $c=1$,
+\item in Section \ref{secsacf}, the study of compactified free bosons for any value of $c$ and not just $c=1$,
 \item in Section \ref{seclld}, the derivation of the light and heavy asymptotic limits of Liouville theory, without using the Lagrangian definition,
 \item in Section \ref{secsu}, the definition of the generalized $SU_2$ WZW model,
 \item in Section \ref{secslr}, a concise derivation of the spectrum and fusion rules of the $\widetilde{SL}_2(\mathbb{R})$ WZW model.
@@ -2365,10 +2365,10 @@ If $\Delta_2$ and $\Delta_s$ happen to be related as dictated by the fusion rule
 In other words, a conformal block involving a degenerate representation coincides with the conformal block involving the corresponding Verma module.
 The degenerate representation manifests itself in the decompositions of correlation functions, where fusion rules dictate which conformal blocks can contribute.
 
-On the other hand, conformal blocks in general has a pole when the $s$-channel momentum takes a degenerate value $\Delta_s=\Delta_{\langle r,s\rangle}$, as is manifest in Zamolodchikov's recursion representation \eqref{hrec}.
-This means that a field with this conformal dimension cannot appear in the OPEs of $V_{\Delta_1}V_{\Delta_2}$ and $V_{\Delta_3}V_{\Delta_4}$, unless the residue of the conformal block's pole vanishes, which happens if
-the fusion rules allow $R_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_1}\to \mathcal{V}_{\Delta_2}$ and $R_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_3}\to \mathcal{V}_{\Delta_4}$.
-
+On the other hand, a conformal block in general has a pole when the $s$-channel momentum takes a degenerate value $\Delta_s=\Delta_{\langle r,s\rangle}$, as is manifest in Zamolodchikov's recursion representation \eqref{hrec}.
+This means that a field with this conformal dimension cannot appear in the OPEs of $V_{\Delta_1}V_{\Delta_2}$ and $V_{\Delta_3}V_{\Delta_4}$, unless the residue of the conformal block's pole vanishes. 
+This residue vanishes if the fusion rules allow $R_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_1}\to \mathcal{V}_{\Delta_2}$ or $R_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_3}\to \mathcal{V}_{\Delta_4}$.
+In particular, the conformal blocks that appear in (generalized) minimal models can be computed using Zamolodchikov's recursion representation, although they involve degenerate $s$-channel momentums. 
 
 
 \subsection{BPZ differential equations \label{secbpz}}
@@ -4399,7 +4399,7 @@ The correlation functions are
  \left\langle \prod_{i=1}^N V_{\alpha_i,\alpha_i}(z_i)\right\rangle = \delta\left({\textstyle \sum}_{i=1}^N\alpha_i-Q\right)\ \prod_{i<j} |z_i-z_j|^{-4\alpha_i\alpha_j} \ .
 \label{dpzz}
 \end{align}
-Having a consistent spectrum is not always necessary: in the application to Liouville theory (Section \ref{seclld}), we will use free bosonic correlation functions whose momentums $\alpha_i$ do not belong to the spectrum of any consistent theory, although they obey $\sum_i\alpha_i=Q$.
+Having a consistent spectrum is not always necessary: in the application to Liouville theory (Section \ref{seclld}), we will use free bosonic correlation functions whose momentums $\alpha_i$ do not belong to the spectrum of any consistent theory.
 
 \subsubsection{Unitarity}
 
@@ -4413,6 +4413,8 @@ construction \eqref{tqz} of a Virasoro field from a $\hat{\mathfrak{u}}_1$ curre
 These fields are in general not meromorphic, so they are not symmetry fields.
 Nevertheless, we will use them for computing limits and particular values of correlation functions in Liouville theory.
 
+\subsubsection{The Liouville equation}
+
 Equation \eqref{tqz} is not enough for determining $J$. We could add the condition that $J$ be locally holomorphic, but we will add the milder condition $\partial \bar J = \bar\partial J$, 
 % This condition has to be compatible with the relations of J, \bar J with T, \bar T. Two reasons why it is compatible: it is milder than J being locally holomorphic, which is itself compatible because T is locally holomorphic. And the relations with T, \bar T both lead to the same Liouville equation.
 which is sufficient for the Seiberg--Witten equation \eqref{swp} to make sense. This implies that locally there is a field $\phi$ such that 
@@ -4423,17 +4425,14 @@ This field is called the \textbf{Liouville field}\index{Liouville field}. By for
 \begin{align}
  V_\alpha = e^{2\alpha \phi} \ .
 \end{align}
-
-\subsubsection{The Liouville equation}
-
 Given an $N$-point function $\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle$, we define
 \begin{align}
- \boxed{F= \log \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle} \quad , \quad \boxed{W(y) = \frac{\left\langle J(y)\prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle}{\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle}} \ .
+ \boxed{F= -\log \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle} \quad , \quad \boxed{W(y) = \frac{\left\langle J(y)\prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle}{\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle}} \ .
 \end{align}
 By analogy with matrix models, we call $F$ the \textbf{\boldmath free energy}\index{free energy} and $W(y)$ the \textbf{resolvent}\index{resolvent}.
 In terms of these objects, the Seiberg--Witten equation \eqref{swp} becomes 
 \begin{align}
- {\frac{\partial}{\partial \alpha_i}} F = -2 \int^{z_i} \Big(W(y)dy+\bar W(y)d\bar y\Big)\ . 
+ {\frac{\partial}{\partial \alpha_i}} F = 2 \int^{z_i} \Big(W(y)dy+\bar W(y)d\bar y\Big)\ . 
 \label{daf}
 \end{align}
 We will use these objects for studying Liouville theory in the limit $c\to \infty$ -- equivalently, $Q\to \infty$.
@@ -4467,11 +4466,11 @@ This can be computed using eq. \eqref{dtz},
 \end{align}
 where we defined the accessory parameters
 \begin{align}
- \beta_i = {\frac{\partial}{\partial z_i}} F^{(0)}\ .
+ \beta_i = -{\frac{\partial}{\partial z_i}} F^{(0)}\ .
 \end{align}
 The condition $t(z) \underset{z\to \infty}{=} O(\frac{1}{z^4})$, which follows from eq. \eqref{tyi}, amounts to three constraints on the accessory parameters, which are thereby uniquely determined if $N= 3$. Studying the behaviour of $\prod_{i=1}^3(z-z_i)t(z)$ near $z=z_i$ and $z=\infty$, we find 
 \begin{align}
- t(z) = \frac{1}{\prod_{i=1}^3(z-z_i)} \sum_{i=1}^3 \frac{\prod_{j\neq i} z_{ij}}{z-z_i}\underset{Q\to\infty}{\lim} Q^{-2}\Delta(\alpha_i)\ .
+ t(z) \underset{N=3}{=} \frac{1}{\prod_{i=1}^3(z-z_i)} \sum_{i=1}^3 \frac{\prod_{j\neq i} z_{ij}}{z-z_i}\underset{Q\to\infty}{\lim} Q^{-2}\Delta(\alpha_i)\ .
 \end{align}
 Let us reformulate our nonlinear equation for $W^{(0)}$ in terms of the functions $\psi$ and $\phi^\text{cl}$ such that
 \begin{align}
@@ -4506,9 +4505,9 @@ We then have $\underset{Q\to\infty}{\lim} Q^{-2}\Delta(\alpha_i)=\eta_i(1-\eta_i
 In the case $N=3$, the linear differential equation \eqref{dtp} for $\psi$ is equivalent to the hypergeometric equation.
 This equation has a unique single-valued solution that is compatible with the asymptotic behaviour $W^{(0)}(y)\underset{y\to z_i}{=} \frac{\eta_i}{y-z_i} + O(1)$.
 The uniqueness of the solution provides an a posteriori justification for our factorization hypothesis \eqref{lqfac}.
-We can then deduce the leading term $F^{(0)}$ of the free energy $F$, with the help of the heavy asymptotic limit of the Seiberg--Witten equation \eqref{daf}, 
+We can then deduce the leading term $F^{(0)}$ of the free energy, with the help of the heavy asymptotic limit of the Seiberg--Witten equation \eqref{daf}, 
 \begin{align}
- {\frac{\partial}{\partial \eta_i}} F^{(0)} = -2\int^{z_i}\Big( W^{(0)}(y)dy + \bar W^{(0)}(y)d\bar y\Big) = 2\phi^\text{cl}(z_i)\ .
+ {\frac{\partial}{\partial \eta_i}} F^{(0)} = 2\int^{z_i}\Big( W^{(0)}(y)dy + \bar W^{(0)}(y)d\bar y\Big) = -2\phi^\text{cl}(z_i)\ .
 \end{align}
 We do not carry out these calculations here, and instead refer the reader to \cite{zz95}, where the result for $F^{(0)}$ is shown to agree with the leading behaviour of the three-point function \eqref{caaa} in the heavy asymptotic limit.
 Actually, the agreement does not stop at the leading order: similar techniques can be used for computing the free energy $F$ order by order in $Q^2$ \cite{cer12}.
@@ -4523,11 +4522,11 @@ This defines the
  The Seiberg--Witten equation \eqref{daf} now implies 
 \begin{align}
  {\frac{\partial}{\partial \eta_i}} F^{(0)}  = 0 \qquad ,\qquad 
-{\frac{\partial}{\partial \eta_i}} F^{(1)} & = 2\phi^\text{cl}(z_i) \ .
+{\frac{\partial}{\partial \eta_i}} F^{(1)} & = -2\phi^\text{cl}(z_i) \ .
 \label{pefo}
 \end{align}
-The leading term $F^{(0)}$ of $F$ is therefore $\eta_i$-independent.
-It is actually also $z_i$-independent, according to the following argument: since $\Delta(\alpha_i)=\eta_i + O(Q^{-2})$, its is natural to assume $t(z)=0$ where $t(z)$ is given by eq. \eqref{tzs}, and this implies $\beta_i={\frac{\partial}{\partial z_i}} F^{(0)}=0$.
+So $F^{(0)}$ is $\eta_i$-independent.
+It is actually also $z_i$-independent, according to the following argument: since $\Delta(\alpha_i)=\eta_i + O(Q^{-2})$, its is natural to assume $t(z)=0$ where $t(z)$ is given by eq. \eqref{tzs}, and this implies $\beta_i=-{\frac{\partial}{\partial z_i}} F^{(0)}=0$.
 So $F^{(0)}$ is not affected by the presence of the fields $V_{\alpha_i}(z_i)$, which are then called light fields.
 The first interesting term of $F$ is thus $F^{(1)}$.
 To compute $F^{(1)}$, let us solve the linear differential equation \eqref{dtp}, which is now simply $\partial^2 \psi=0$.
@@ -4535,9 +4534,12 @@ Together with $\bar\partial^2\psi=0$, this leads to the solutions
 $\psi_h(z) = \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right]^\dagger h \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right]$, for $h$ a constant matrix such that $h=h^\dagger$ and $\det h = -\mu$, where $\mu$ is the parameter of the Liouville equation.
 
 So the solution for $\psi$ is not unique. And individual solutions are not covariant under global conformal transformations, although of course the space of solutions is invariant.
-Therefore, the function $\psi$ that corresponds to our Liouville $N$-point function is not to be found in our space of solutions, and the corresponding field $J$ does not obey our factorization assumption \eqref{lqfac}. Nevertheless, our $N$-point function can be recovered from the solutions $\psi_h$, by integrating the corresponding correlation functions over $h$. Namely, we have $e^{F^{(1)}} = \int dh\, e^{F^{(1)}_h} = \int dh \prod_{i=1}^N \psi_h(z_i)^{-2\eta_i}$. More explicitly, in the case $\mu=-1$ we have
+Different solutions $\psi_h$ correspond to different linear forms on tuples of fields $(V_{\alpha_i}(z_i)) \mapsto e^{-F_h} = \langle \prod_i V_{\alpha_i}(z_i)\rangle_h$. 
+Liouville correlation functions correspond to a linear form that is covariant under global conformal transformations, and does not  obey our factorization assumption \eqref{lqfac}. 
+This form can be obtained as a linear combination of the linear forms $\langle \rangle_h$, so that $e^{-F^{(1)}} = \int dh\, e^{-F^{(1)}_h} = \int dh \prod_{i=1}^N \psi_h(z_i)^{-2\eta_i}$. 
+More explicitly, in the case $\mu=-1$ we have
 \begin{align}
-\left\langle\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle\ \underset{\text{light\ asymptotic\ limit}}{=}\ \int_{H^+_3} dh\ \prod_{i=1}^N \left( \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right]^\dagger h \left[\begin{smallmatrix} z \\ 1 \end{smallmatrix}\right] \right)^{-2\eta_i}\ ,
+\left\langle\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle\ \underset{\text{light\ asymptotic\ limit}}{=}\ \int_{H^+_3} dh\ \prod_{i=1}^N \left( \left[\begin{smallmatrix} z_i \\ 1 \end{smallmatrix}\right]^\dagger h \left[\begin{smallmatrix} z_i \\ 1 \end{smallmatrix}\right] \right)^{-2\eta_i}\ ,
 \label{zih}
 \end{align}
 where the integral is over the set \textbf{\boldmath $H_3^+$}\index{H3+@$H_3^+$} of Hermitian matrices of size two and determinant one, with a measure $dh$ which we assume to be invariant under $h\mapsto g^\dagger hg$ for $g\in SL_2({\mathbb{C}})$.
@@ -4547,8 +4549,8 @@ the light asymptotic limit of Liouville theory is a two-dimensional global confo
 
 \subsubsection{Coulomb gas integrals}
 
-To conclude our discussion of the use of free boson techniques in Liouville theory, let us point out 
-that there is a relation between certain Liouville correlation functions, and linear dilaton correlation functions \cite{zz95}.
+To conclude our discussion of the use of free boson techniques in Liouville theory, let us review
+the relation between certain Liouville correlation functions, and free bosonic correlation functions \cite{zz95}.
 The relevant Liouville correlation functions are $N$-point functions $\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Liouville}}$ at $\sum\alpha_i = Q-bm$ where $m\in \mathbb{N}$.  
 For the Liouville three-point structure constants $C$ and $\hat C$, the limit $\sum\alpha_i = Q-bm$ is similar to the degenerate field limit \eqref{chc}-\eqref{clc}, in that $\hat C$ is smooth while $C$ has a simple pole, and
 \begin{align}
@@ -4558,26 +4560,23 @@ For the Liouville three-point structure constants $C$ and $\hat C$, the limit $\
 where we neglect $b$-dependent prefactors. 
 For $c\notin ]-\infty,1]$, our Liouville $N$-point function still has a simple pole at $\sum\alpha_i = Q-bm$, with the residue
 \begin{align}
- \underset{\sum \alpha_i = Q-bm}{\operatorname{Res}} \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Liouville}} = \underset{\sum\alpha_i = Q-bm}{\operatorname{Res}} \left\langle e^{-\frac{\mu^b}{\pi\gamma(b^2)}\int_{\mathbb{C}} V_b(z)d^2z}\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Linear\ Dilaton}}\ .
+ \underset{\sum \alpha_i = Q-bm}{\operatorname{Res}} \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Liouville}} = \underset{\sum\alpha_i = Q-bm}{\operatorname{Res}} \left\langle e^{-\frac{\mu^b}{\pi\gamma(b^2)}\int_{\mathbb{C}} V_b(z)d^2z}\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Free boson}}\ .
 \label{lild}
 \end{align}
-On the linear dilaton side, taking the Residue of a correlation function \eqref{dpzz} means stripping out a delta function, and 
+On the free boson side, taking the residue of a correlation function \eqref{dpzz} means stripping out a delta function, and 
 \begin{multline}
- \underset{\sum\alpha_i = Q-bm}{\operatorname{Res}} \left\langle e^{-\frac{\mu^b}{\pi\gamma(b^2)}\int_{\mathbb{C}} V_b(z)d^2z}\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Linear\ Dilaton}}
+ \underset{\sum\alpha_i = Q-bm}{\operatorname{Res}} \left\langle e^{-\frac{\mu^b}{\pi\gamma(b^2)}\int_{\mathbb{C}} V_b(z)d^2z}\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Free boson}}
 \\
 = \frac{1}{m!}\left[-\frac{\mu^b}{\pi\gamma(b^2)}\right]^m \prod_{i<j} |z_{ij}|^{-4\alpha_i\alpha_j} \int_{{\mathbb{C}}^m} \prod_{k=1}^m d^2y_k\ \prod_{k,i} |y_k-z_i|^{-4b\alpha_i}\prod_{k<\ell} |y_{k\ell}|^{-4b^2}\ .
 \label{mint}
 \end{multline}
-The relation \eqref{lild} implies that Liouville theory can be viewed as a perturbation of the linear dilaton theory.
+The relation \eqref{lild} implies that Liouville theory can be viewed as a perturbation of a free bosonic theory.
 This is an example of \textbf{\boldmath conformal perturbation theory}\index{conformal perturbation theory} -- the definition and study of two-dimensional quantum field theories (conformal or not) as perturbed conformal field theories.
 The perturbing operator, here $V_b$, is chosen so that its conformal dimension is one, a necessary but not sufficient condition for the perturbed theory to still have conformal symmetry.
-This example is rather pathological, as Liouville theory does not have a smooth $\mu\to 0$ limit where we could recover the linear dilaton theory, and the linear dilaton theory does not allow us to compute Liouville theory correlation functions, but only their residues at certain poles. 
+This example is rather pathological, as Liouville theory does not have a smooth $\mu\to 0$ limit where we could recover a free bosonic theory, and we do not compute all Liouville theory correlation functions, but only their residues at certain poles. 
 
-The integral \eqref{mint} is called a \textbf{\boldmath Coulomb gas integral}\index{Coulomb gas integral}.
-If $N=3$ and $b\notin \mathbb{R}$, the relation \eqref{lild} with Liouville theory shows that the integral can be analytically continued to non-integer values of $m=b^{-1}(Q-\sum\alpha_i)$, using the Liouville structure constant $\hat C$. 
-Moreover, Coulomb gas integrals coincides with partition functions of certain matrix models.
-This is a manifestation of the
-relation between Liouville theory and matrix models:
+The integral \eqref{mint} is called a \textbf{\boldmath Coulomb gas integral}\index{Coulomb gas integral}, and 
+coincides with the partition function of a matrix model \cite{ekr15}. Let us give the matrix model interpretation of some Liouville theory quantities:
 \begin{align}
  \begin{tabular}{|l|l|}
   \hline
@@ -4592,13 +4591,14 @@ $W(y)$  & resolvent
 \hline
 eq. \eqref{wwwt} for $W^{(0)}(y)$ & loop equation 
 \\
+\hline $m$ & matrix size
+\\
 \hline
 $y_k$ in eq. \eqref{mint} & matrix eigenvalue
 \\
 \hline
  \end{tabular}
 \end{align}
-
 
 
 \section{Nonabelian affine symmetry}
