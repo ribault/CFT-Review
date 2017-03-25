@@ -4815,42 +4815,42 @@ In the case of finite-dimensional representations of $\mathfrak{sl}_{n\geq 3}$, 
 
 \subsection{Ward identities and Knizhnik--Zamolodchikov equations \label{secwikz}}
 
-Let us study the $\hat{\mathfrak{g}}$ Ward identities for correlation functions.
-To do this, we need to know how the $\hat{\mathfrak{g}}$ currents $J^a(y)$ behave as $y\to \infty$.
-The relation \eqref{tjj} with the energy-momentum tensor $T(y)$, and the behaviour \eqref{tyi} of $T(y)$, suggest
+\subsubsection{Ward identities}
+
+The Sugawara construction of the energy-momentum tensor $T(y)$ from the currents $J^a(y)$, and the behaviour \eqref{tyi} of $T(y)$ near $y=\infty$, suggest
 \begin{align}
  \boxed{J^a(y) \underset{y\to \infty}{=} O\left(\frac{1}{y^2}\right)}\ .
 \label{jayi}
 \end{align}
-For any meromorphic function $\epsilon(z)$, with no poles outside $\{z_1,\cdots z_N\}$, we have 
+For any $N$-uple of fields $(\Phi^{\sigma_i}(z_i))$, and any meromorphic function $\epsilon(z)$, with no poles outside $\{z_1,\cdots z_N\}$, we therefore have 
 \begin{align}
  \oint_\infty dy\ \epsilon(y) \left\langle J^a(y)  \prod_{i=1}^N \Phi^{\sigma_i}(z_i)\right\rangle = 0 \quad \text{provided} \quad \epsilon(y) \underset{y\to\infty}{=} O(1)\ ,
+\end{align}
+In the case $\epsilon(y)=\frac{1}{(y-z_i)^n}$ with $n\geq 1$, we obtain the $\hat{\mathfrak{g}}$ local Ward identities, which are formally identical to the $\hat{\mathfrak{u}}_1$ local Ward identities \eqref{jnjp}. 
+In particular, if all fields are affine primaries except possibly the field at $z_i$, we find 
+\begin{align}
+\left\langle J^a_{-n}\Phi^{\sigma_i}(z_i)\prod_{j\neq i} \Phi^{R_j}_{X_j}(z_j)\right\rangle &=\sum_{j\neq i} \frac{D_{X_j}^{R_j}(t^a)}{(z_j-z_i)^n} \left\langle \Phi^{\sigma_i}(z_i)\prod_{j\neq i} \Phi^{R_j}_{X_j}(z_j)\right\rangle\ . 
+\label{jmnz}
 \end{align}
 In the case $\epsilon(y)=1$, we obtain the $\hat{\mathfrak{g}}$ global Ward identities,
 \begin{align}
  \left\langle \sum_{i=1}^N (J_0^a)^{(z_i)} \prod_{i=1}^N \Phi^{\sigma_i}(z_i)\right\rangle=0\ .
 \end{align}
-In the case $\epsilon(y)=\frac{1}{(y-z_i)^n}$ with $n\geq 1$, we obtain the $\hat{\mathfrak{g}}$ local Ward identities, which are formally identical to the $\hat{\mathfrak{u}}_1$ local Ward identities \eqref{jnjp}. 
-
-Let us specialize to correlation functions involving affine primary fields.
+Let us specialize to correlation functions involving only affine primary fields.
 Knowing the poles \eqref{jpr} of $J^a(y)$ and its behaviour near $y=\infty$, we have
 \begin{align}
- \left\langle J^a(y) \prod_{i=1}^N \Phi^{R_i}_{X_i}(z_i)\right\rangle = - \sum_{i=1}^N \frac{D^{R_i}_{X_i}(t^a)}{y-z_i}\left\langle \prod_{i=1}^N \Phi^{R_i}_{X_i}(z_i)\right\rangle\ .
+ \left\langle J^a(y) \prod_{i=1}^N \Phi^{R_i}_{X_i}(z_i)\right\rangle = - \sum_{i=1}^N \frac{D^{R_i}_{X_i}(t^a)}{y-z_i}\left\langle \prod_{i=1}^N \Phi^{R_i}_{X_i}(z_i)\right\rangle\ ,
 \label{dja}
 \end{align}
-In the case of an $N$-point function where the fields with indices $j\neq i$ are affine primaries, the local Ward identities become
+and the global Ward identities become
 \begin{align}
-\left\langle\left(J^a_{-n}\right)^{(z_i)}\Phi^{\sigma_i}(z_i)\prod_{j\neq i} \Phi^{R_j}_{X_j}(z_j)\right\rangle &=\sum_{j\neq i} \frac{D_{X_j}^{R_j}(t^a)}{(z_j-z_i)^n} \left\langle \Phi^{\sigma_i}(z_i)\prod_{j\neq i} \Phi^{R_j}_{X_j}(z_j)\right\rangle\ . 
-\label{jmnz}
-\end{align}
-In the case of an $N$-point function of affine primary fields, the global Ward identities become
-\begin{align}
- \sum_{i=1}^N D_{X_i}^{R_i}(t^a)\ \left\langle \prod_{i=1}^N \Phi^{R_i}_{X_i}(z_i)\right\rangle   = 0 \ .
+ \sum_{i=1}^N D_{X_i}^{R_i}(t^a) \left\langle \prod_{i=1}^N \Phi^{R_i}_{X_i}(z_i)\right\rangle   = 0 \ .
 \label{drxt}
 \end{align}
-For example, let us solve the $\mathfrak{sl}_2$ global Ward identities for a three-point function.
-In the $x$-basis, these identities are formally identical to the global Ward identities \eqref{spz}, whose solution is eq. \eqref{fzzz}.
-We thus find
+
+\subsubsection{$\widehat{\mathfrak{sl}}_2$ global Ward identities}
+
+In the $x$-basis, the $\widehat{\mathfrak{sl}}_2$ global Ward identities are formally identical to the Virasoro global Ward identities \eqref{spz}. In the case $N=3$, the solution is eq. \eqref{fzzz}, so that 
 \begin{align}
  \left\langle \prod_{i=1}^3 \Phi^{j_i}_{x_i} \right\rangle \propto\ x_{12}^{j_1+j_2-j_3} x_{23}^{j_2+j_3-j_1} x_{31}^{j_3+j_1-j_2}\ ,
 \label{xxx}
@@ -4866,6 +4866,8 @@ It may seem strange that in the $\mu$-basis we obtain a second-order differentia
 The number of solutions of the global Ward identities has the algebraic interpretation of a tensor product multiplicity for $\mathfrak{sl}_2$ representations, and this should not depend on our choice of isospin variable.
 Actually it is the $x$-basis calculation which is misleading: analyticity conditions on the $x_i$-dependence of $\left\langle \prod_{i=1}^3 \Phi^{j_i}_{x_i} \right\rangle$ in general allow the existence of two solutions which differ globally, although they are locally identical \cite{rib09}.
 The tensor product multiplicity for generic $\mathfrak{sl}_2$ representations is two, as correctly suggested by the $\mu$-basis calculation. 
+
+\subsubsection{Knizhnik--Zamolodchikov equations}
 
 Inserting the equation \eqref{lmp} in an $N$-point function of affine primary fields, and applying the local Ward identity \eqref{jmnz} to $J^b_{-1}\Phi^R_X = (J^b\Phi^R_X)$, we obtain the Knizhnik--Zamolodchikov equations or \textbf{\boldmath KZ equations}\index{KZ equations},
 \begin{align}
@@ -4888,6 +4890,8 @@ Techniques developed for studying the $\mathfrak{g}$ Gaudin model can be useful 
 \subsection{\texorpdfstring{$\mathfrak{sl}_2$}{sl2} case: the KZ-BPZ relation} 
 
 We will now show that the $\mathfrak{sl}_2$ KZ equations are equivalent to certain BPZ equations via Sklynanin's separation of variables for the $\mathfrak{sl}_2$ Gaudin model. 
+
+\subsubsection{Reformulation of the KZ equations}
 
 Our derivation of the KZ equations amounted to inserting the Sugawara construction \eqref{tjj}  at the points $z_i$ in the $N$-point function $\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle $ of affine primary fields.
 Inserting the Sugawara construction at an arbitrary point $y$ instead, we obtain the identity
@@ -4917,9 +4921,13 @@ And one can easily show that inserting a normal-ordered product, for instance $(
 Therefore, the identity \eqref{tmjj} amounts to the differential equation
 \begin{align}
  \left(\hat{T}(y) -\frac{1}{2(k+2)}\left[ 2\hat{J}^0(y)\hat{J}^0(y) +\hat{J}^+(y)\hat{J}^-(y)+\hat{J}^-(y)\hat{J}^+(y)\right]\right) \left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle=0\ .
+ \label{refkz}
 \end{align}
-The idea is to simplify this identity by taking $y$ to be one of the zeros $\hat{y}_j$ of $ \hat{J}^-(y)$.
-These zeros are differential operators, and the value of a $y$-dependent differential operator $\hat{O}(y)$ at $y=\hat{y}_j$ is defined by inserting $\hat{y}_j$ from the left, that is $ \hat{O}(\hat{y}_j) = \frac{1}{2\pi i}\oint_{\hat{y}_j} \frac{dy}{y-\hat{y}_j} \hat{O}(y) $.
+
+\subsubsection{Insertion of the zeros of $\hat{J}^-(y)$}
+
+Let us simplify eq. \eqref{refkz} by taking $y$ to be one of the zeros $\hat{y}_j$ of $ \hat{J}^-(y)$.
+These zeros are differential operators, and the value of a $y$-dependent differential operator $\hat{\mathcal{O}}(y)$ at $y=\hat{y}_j$ is defined by inserting $\hat{y}_j$ from the left, that is $ \hat{\mathcal{O}}(\hat{y}_j) = \frac{1}{2\pi i}\oint_{\hat{y}_j} \frac{dy}{y-\hat{y}_j} \hat{\mathcal{O}}(y) $.
 Using eq. \eqref{ddd} for bringing the $\hat{J}^-(y)$ factors to the left, we obtain
 \begin{align}
  \left( \hat{T}(\hat{y}_j) -\frac{1}{k+2}\left[(\hat{J}^0)^2(\hat{y}_j) + \partial \hat{J}^0(\hat{y}_j)\right] \right)  \left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle= 0 \ .
@@ -4949,10 +4957,11 @@ So eq. \eqref{jjpj} becomes
  \boxed{\left(\frac{1}{k+2}\hat{p}_j^2 -\hat{T}(\hat{y}_j)\right) \left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle= 0 }\ .
 \label{ppdz}
 \end{align}
-We have therefore replaced the differential operators $D^{R_i}_{X_i}(t^a)$, which appeared in $\hat{J}^a(y)$ eq. \eqref{jay}, with the operators $\hat{y}_j$ and $\hat{p}_j$.
-Therefore, it is natural to introduce the
+
+\subsubsection{Sklyanin's separation of variables}
+
+Let us define the
 \textbf{\boldmath Sklyanin variables}\index{Sklyanin variable} $y_j$ as the eigenvalues of the mutually commuting operators $\hat{y}_j$. 
-But how many Sklyanin variables do we have? 
 The $\widehat{\mathfrak{sl}}_2$ global Ward identity \eqref{drxt} associated to the current $J^a$ can be written as 
 \begin{align}
  \underset{y\to \infty}{\lim} y \hat{J}^a(y) \left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle = 0\ .
@@ -4998,9 +5007,13 @@ the equation \eqref{pkkz} is equivalent to
  \left\{\frac{1}{k+2}  \frac{\partial^2}{\partial y_j^2} - \sum_i\frac{1}{y_j-z_i}{\frac{\partial}{\partial z_i}} -\sum_{k\neq j}\frac{1}{y_j-y_k} {\frac{\partial}{\partial y_k}}
 \right. \\ \left.
  -\sum_i\frac{\Delta_{j_i}-\frac{k}{4}}{(y_j-z_i)^2}  -\sum_{k\neq j}\frac{\frac{3k}{4}+1}{(y_j-y_k)^2}   \right\} \Theta^{\frac{k+2}{2}}\mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle = 0\ .
+ \label{vskz}
 \end{multline}
+
+\subsubsection{KZ-BPZ relation for conformal blocks}
+
 As an equation for $\Theta^{\frac{k+2}{2}}\mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle$,
-this coincides with the BPZ equation \eqref{pvot} for the correlation function of $\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \prod_{j=1}^{N-2}V_{\langle 2,1\rangle}(y_j)\right\rangle$, provided the parameter $b$ of the Virasoro algebra is given by 
+eq. \eqref{vskz} coincides with the BPZ equation \eqref{pvot} for the correlation function of $\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \prod_{j=1}^{N-2}V_{\langle 2,1\rangle}(y_j)\right\rangle$, provided the parameter $b$ of the Virasoro algebra is given by 
 \begin{align}
  \boxed{ b^2 = -k-2}\ ,
 \label{bk}
@@ -5015,11 +5028,11 @@ The BPZ equations only constrain the dependence on $y_j$, but we already determi
 $\mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle$ on the variables $Y_1$ and $Y_2$.
 This leads to Feigin, Frenkel and Stoyanovsky's \textbf{\boldmath KZ-BPZ relation}\index{KZ-BPZ relation},
 \begin{align}
- \boxed{ \mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i,\bar{X}_i}(z_i)\right\rangle = \delta^{(2)}(Y_1) |Y_2|^2 |\Theta|^{b^2} \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\prod_{j=1}^{N-2}V_{\langle 2,1\rangle}(y_j,\bar{y}_j)\right\rangle}\ .
+ \boxed{ \mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle \sim \delta(Y_1) Y_2 \Theta^{\frac12 b^2} \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\prod_{j=1}^{N-2}V_{\langle 2,1\rangle}(y_j)\right\rangle}\ .
 \label{dyy}
 \end{align}
-This equation means that the differential equations obeyed by both sides are related by Sklyanin's separation of variables. 
-Solutions of the KZ equations, which are called \textbf{\boldmath $\widehat{\mathfrak{sl}}_2$ conformal blocks}\index{sl2hat conformal blocks@$\widehat{\mathfrak{sl}}_2$ conformal block}, are therefore related to certain Virasoro $2N-2$-point conformal blocks. 
+This equation means that the differential equations obeyed by both sides coincide.
+Solutions of the KZ equations, in other words $N$-point \textbf{\boldmath $\widehat{\mathfrak{sl}}_2$ conformal blocks}\index{sl2hat conformal blocks@$\widehat{\mathfrak{sl}}_2$ conformal block}, are therefore related to certain Virasoro $(2N-2)$-point conformal blocks. 
 In the diagrammatic representation of conformal blocks as trees, the relevant Virasoro block is obtained from an $\widehat{\mathfrak{sl}}_2$ conformal block by adding a degenerate field near each node, and identifying the two fusion channels of that degenerate field with $\widehat{\mathfrak{sl}}_2$ fusion multiplicities:
 \begin{align}
 \begin{tikzpicture}[baseline={(0,0)}, very thick, scale = .6]
@@ -5046,7 +5059,7 @@ The separation of variables $\mathcal{K}$ is in general an integral transformati
 \end{align}
 and the variables on both sides of the relation are functions of one another. 
 
-The KZ-BPZ relation plays in important role in the study of $\widehat{\mathfrak{sl}}_2$-symmetric theories such as the $H_3^+$ model, and one may wonder whether the $\mathfrak{g}$ KZ equations are involved in similar relations for more general choices of the Lie algebra $\mathfrak{g}$.
+The KZ-BPZ relation plays an important role in the study of $\widehat{\mathfrak{sl}}_2$-symmetric theories such as the $H_3^+$ model, and one may wonder whether the $\mathfrak{g}$ KZ equations are involved in similar relations for more general choices of the Lie algebra $\mathfrak{g}$.
 While Sklyanin's separation of variables for the $\mathfrak{sl}_3$ Gaudin model exists, writing the $\mathfrak{sl}_3$ KZ equations in Sklyanin variables however does not lead to the expected generalizations of the BPZ equations \cite{rib08b}, and the reason for this discrepancy is not known. 
 Another tentative generalization of the KZ-BPZ relation \eqref{dyy} is to replace the field $V_{\langle 2,1\rangle}$ on the right-hand side with another primary field (degenerate or not).
 Then the resulting expression can be interpreted as an $N$-point function in a theory whose symmetry algebra is a generalization of $\widehat{\mathfrak{sl}}_2$, as argued in \cite{rib08}.
