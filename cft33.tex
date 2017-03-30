@@ -5211,22 +5211,25 @@ In the $\mu$-basis OPE, the integral over $\mu$ reduces to the value $\mu=\mu_1+
 
 \subsection{Large level limit and geometrical interpretation}
 
-Having defined the $H_3^+$ model by its spectrum and correlation functions, we still have to understand these objects and their interpretation.  
+Having defined the $H_3^+$ model by its spectrum and correlation functions, we will now propose a geometrical interpretation of the model, based on the manifold $H_3^+$.
 
-To do this, we will consider the \textbf{\boldmath large level limit}\index{large level limit} $k\to \infty$ of the model, which is sometimes called the minisuperspace limit. 
+\subsubsection{$SL_2({\mathbb{C}})$ symmetry group and functions on $H_3^+$}
+
+Let us consider the \textbf{\boldmath large level limit}\index{large level limit} $k\to \infty$, which is sometimes called the minisuperspace limit. 
 The KZ equations \eqref{kz} imply that correlation functions do not depend on the positions $z_i$ in this limit, and are functions of the sole isospin variables. 
 Moreover, given a generator $J^a_m$, the commutator $[J^a_m,J^b_{-m}]$ \eqref{jam}  tends to infinity for some index $b$, unless $m=0$. 
 So the generators $J^a_{m\neq 0}$, and the descendent states they create, disappear from the theory, and only the horizontal subalgebra of $\widehat{\mathfrak{sl}}_2$ survives.
-This corresponds to an $SL_2({\mathbb{C}})$ symmetry group, which acts on a field of spin $j$ as 
+Since the left and right isospin variables are complex conjugates, the corresponding symmetry group is $SL_2({\mathbb{C}})$, and the action of this group on a field of spin $j$ is 
 \begin{align}
- U_g\Phi^j_{x} = |cx+d|^{4j}\Phi^j_{\frac{ax+b}{cx+d},\frac{\bar{a}\bar{x}+\bar{b}}{\bar{c}\bar{x}+\bar{d}}} \quad \text{with} \quad g = \left(\begin{array}{cc} a & b \\ c & d \end{array}\right) \in SL_2({\mathbb{C}})\ .
+ U_g\Phi^j_{x} = |cx+d|^{4j}\Phi^j_{\frac{ax+b}{cx+d}} \quad \text{with} \quad g = \left(\begin{array}{cc} a & b \\ c & d \end{array}\right) \in SL_2({\mathbb{C}})\ .
 \label{ugp}
 \end{align}
-(This action is formally identical to the action \eqref{tgv} of global conformal transformations on quasi-primary fields.)
-Now we notice that the transformation $U_g$ also describes the action of $SL_2({\mathbb{C}})$ on functions on the space \textbf{\boldmath $H_3^+$}\index{H3+@$H_3^+$} of Hermitian matrices of size two and determinant one.
+(This is formally identical to the action \eqref{tgv} of global conformal transformations on quasi-primary fields.)
+
+Now this action of $SL_2({\mathbb{C}})$ on our fields coincides with the action of $SL_2({\mathbb{C}})$ on functions on $H_3^+$, where \textbf{\boldmath $H_3^+$}\index{H3+@$H_3^+$} is the space of Hermitian matrices of size two and determinant one.
 Consider indeed the function
 \begin{align}
- \Phi^j_{x}(h) = \left(\begin{bmatrix}
+ \phi^j_{x}(h) = \left(\begin{bmatrix}
                                 x \\ 1
                                \end{bmatrix}^\dagger 
 h \begin{bmatrix}
@@ -5240,9 +5243,33 @@ and the natural action of $g\in SL_2({\mathbb{C}})$ on the space $\mathcal{F}(H_
 \end{align}
 then we have 
 \begin{align}
- g\cdot \Phi^j_{x}(h) = U_g \Phi^j_{x}(h)\ .
+ g\cdot \phi^j_{x}(h) = U_g \phi^j_{x}(h)\ .
 \end{align}
-This suggests that we identify the large level limit of the field $\Phi^j_{x}$ with the function $\Phi^j_{x}(h)$. 
+The action $U_g$ is characteristic of the \textbf{\boldmath principal series representation of $\mathfrak{sl}_2({\mathbb{C}})$}\index{principal series representation of $\mathfrak{sl}_2({\mathbb{C}})$} $C^j$. 
+So both $\Phi^j_x$ and $\phi^j_x$ transform in this representation, and 
+\begin{align}
+ \underset{k\to\infty}{\lim} S^{H_3^+} =  \mathcal{F}(H_3^+) = \bigoplus_{j\in -\frac12+i{\mathbb{R}}_+} C^j\ .
+\end{align}
+(For a more rigorous definition of $\mathcal{F}(H_3^+)$, and proof of its decomposition into representations of $\mathfrak{sl}_2({\mathbb{C}})$, see \cite{tes97b}.)
+So, in the large level limit, the spectrum of the $H_3^+$ model coincides with $\mathcal{F}(H_3^+)$ as a representation of the symmetry algebra $\mathfrak{sl}_2({\mathbb{C}})$. 
+
+\subsubsection{Correlation functions}
+
+We will now argue that in the large level limit, correlation functions of the $H_3^+$ model are given in terms of functions on $H_3^+$ by 
+\begin{align}
+ \underset{k\to \infty}{\lim} \left\langle \prod_{i=1}^N \Phi^{j_i}_{x_i}(z_i)\right\rangle \propto \int_{H_3^+} dh\ \prod_{i=1}^N \phi^{j_i}_{x_i}(h)\ , 
+\end{align}
+where the unknown proportionality factor is an $x$-independent field normalization.
+This is because both sides of this equation obey the same symmetry equations $\left<\prod_{i=1}^N U_g \phi^{j_i}_{x_i} \right> = \left<\prod_{i=1}^N \phi^{j_i}_{x_i} \right>$, and the same axioms of associativity and commutativity of the operator product, if we define the operator product in $\mathcal{F}(H_3^+)$ to be the product of functions. 
+An explicit checks of this equation can be done explicitly in the case $N=3$ \cite{tes97b}.
+
+So the large level limit of our two-dimensional conformal field theory is the quantum mechanics of a point particle on the space $H_3^+$, which justifies naming the theory the $H_3^+$ model.
+Other names for the same theory include the $H_3^+$ WZW model and the $SL_2({\mathbb{C}})/SU_2$ WZW model; the latter name comes from the realization of the space $H_3^+$ as a coset.
+The large level limit of the $H_3^+$ $N$-point function is formally identical to the light asymptotic limit of the Liouville $N$-point function \eqref{zih}, whose interpretation is however quite different as it depends on positions $z$ instead of isospin variables $x$.
+
+
+\subsubsection{Scalar product and unitarity}
+
 We can then define a scalar product on the large level limit of the spectrum, using the natural, positive definite scalar product on $\mathcal{F}(H_3^+)$, 
 \begin{align}
  \left\langle f \middle| f' \right\rangle = \int_{H_3^+} dh\ \overline{f(h)} f'(h)\ ,
@@ -5263,26 +5290,6 @@ Our scalar product is such that $t^a$ and $it^a$ are antiHermitian, which is equ
  (J^a_0)^\dagger = -\bar{J}^a_0\ .
 \label{jzd}
 \end{align}
-
-In the large level limit, the OPE of the fields $\Phi^j_{x}$ must remain associative and commutative. 
-The product of functions in $\mathcal{F}(H_3^+)$ has these properties, which suggests that it coincides with the large level limit of the OPE -- given how stringent the condition of associativity is, we do not expect alternative products to exist. 
-Then the large level limit of the spectrum is the subspace of 
-$\mathcal{F}(H_3^+)$ which is spanned by the functions $\Phi^j_{x}$.
-The OPE \eqref{xope} implies that this subspace is closed under multiplication, which suggests that the subspace in question is $\mathcal{F}(H_3^+)$ itself. 
-Calling $C^j$ the \textbf{\boldmath principal series representation of $\mathfrak{sl}_2({\mathbb{C}})$}\index{principal series representation of $\mathfrak{sl}_2({\mathbb{C}})$} of spin $j\in -\frac12 +i{\mathbb{R}}$, which is defined by the action of $\mathfrak{sl}_2({\mathbb{C}})$ on $\Phi^j_{x}$, we obtain
-\begin{align}
- \mathcal{F}(H_3^+) = \bigoplus_{j\in -\frac12+i{\mathbb{R}}_+} C^j\ .
-\end{align}
-(For a more rigorous definition of $\mathcal{F}(H_3^+)$, and proof of its decomposition into representations of $\mathfrak{sl}_2({\mathbb{C}})$, see \cite{tes97b}.)
-Furthermore, the identification of the limit of the OPE with the product of functions suggests
-\begin{align}
- \underset{k\to \infty}{\lim} \left\langle \prod_{i=1}^N \Phi^{j_i}_{x_i}(z_i)\right\rangle \propto \int_{H_3^+} dh\ \prod_{i=1}^N \Phi^{j_i}_{x_i}(h)\ , 
-\end{align}
-where the unknown proportionality factor is an $x$-independent field normalization.
-Both sides of this equation can be computed explicitly in the case $N=3$, and are found to agree \cite{tes97b}.
-Notice that the large level limit of the $H_3^+$ $N$-point function is formally identical to the light asymptotic limit of the Liouville $N$-point function \eqref{zih}, whose interpretation is however quite different as it depends on positions $z$ instead of isospin variables $x$.
-So the large level limit of our two-dimensional conformal field theory is the quantum mechanics of a point particle on the space $H_3^+$, which justifies naming the theory the \textbf{\boldmath $H_3^+$ model}\index{h3+ model@$H_3^+$ model}.
-Other names for the same theory include the $H_3^+$ WZW model and the $SL_2({\mathbb{C}})/SU_2$ WZW model; the latter name comes from the realization of the space $H_3^+$ as a coset.
 
 We can now investigate the unitarity of the $H_3^+$ model, using the conjugation rule \eqref{jzd} for the horizontal subalgebra, which we now extend to the entire affine Lie algebra as 
 \begin{align}
