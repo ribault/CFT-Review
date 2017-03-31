@@ -5270,28 +5270,24 @@ The large level limit of the $H_3^+$ $N$-point function is formally identical to
 
 \subsubsection{Scalar product and unitarity}
 
-We can then define a scalar product on the large level limit of the spectrum, using the natural, positive definite scalar product on $\mathcal{F}(H_3^+)$, 
+There is a natural, positive definite scalar product on $\mathcal{F}(H_3^+)$, 
 \begin{align}
  \left\langle f \middle| f' \right\rangle = \int_{H_3^+} dh\ \overline{f(h)} f'(h)\ ,
 \end{align}
 where $dh$ is the $SL_2({\mathbb{C}})$-invariant measure on $H_3^+$.
-For this scalar product, the action of $g\in SL_2({\mathbb{C}})$ is a unitary tranformation:
-\begin{align}
- \left\langle f \middle| g\cdot f'\right\rangle = \int_{H_3^+}dh\ \overline{f(h)} f'(g^\dagger h g) = \int_{H_3^+}dh\ \overline{f((g^{-1})^\dagger h g^{-1})} f'(h) = \left\langle g^{-1}\cdot f \middle| f'\right\rangle\ .
-\end{align}
+For this scalar product, the action of $g\in SL_2({\mathbb{C}})$ is a unitary tranformation, i.e. $\left\langle g\cdot f \middle| g\cdot f'\right\rangle = \left\langle f \middle| f'\right\rangle $.
 Let us interpret this at the level of the symmetry algebra.
 The Lie algebra $\mathfrak{sl}_2({\mathbb{C}})$ of the symmetry group $SL_2({\mathbb{C}})$ can be viewed as a six-dimensional real space, whose generators are related to $J^a_0, \bar{J}^a_0$ by the ${\mathbb{R}}$-linear map
 \begin{align}
  \left\{\begin{array}{lcl} t^a & \mapsto & J_0^a + \bar{J}_0^a \ ,  \\ it^a & \mapsto & i(J^a_0 - \bar{J}^a_0)\ . \end{array}\right. 
 \end{align}
 (The minus sign in the image of $it^a$ comes from the complex conjugation of the elements of $g$ in $U_g\Phi^j_{x}$ \eqref{ugp}.)
-Our scalar product is such that $t^a$ and $it^a$ are antiHermitian, which is equivalent to
+Our scalar product is such that $t^a$ and $it^a$ are antihermitian, which is equivalent to
 \begin{align}
  (J^a_0)^\dagger = -\bar{J}^a_0\ .
 \label{jzd}
 \end{align}
-
-We can now investigate the unitarity of the $H_3^+$ model, using the conjugation rule \eqref{jzd} for the horizontal subalgebra, which we now extend to the entire affine Lie algebra as 
+This conjugation rule can be extended to the entire affine Lie algebra as 
 \begin{align}
  \boxed{(J^a_n)^\dagger = -\bar{J}^a_{-n}}\ .
 \label{jdj}
@@ -5360,7 +5356,7 @@ The natural scalar product on $\mathcal{F}(G)$ is
 \label{gbg}
 \end{align}
 where $dh$ is the Haar measure, which is invariant under the left and right actions of $G$ on itself.
-As in the case of the $H_3^+$ model, the generators of the symmetry algebra are antiHermitian for this scalar product, which now implies
+As in the case of the $H_3^+$ model, the generators of the symmetry algebra are antihermitian for this scalar product, which now implies
 \begin{align}
  (J^a_0)^\dagger = -J^a_0\  . 
 \label{jzdj}
@@ -5520,7 +5516,7 @@ The group $SL_2({\mathbb{R}})$ is not simply-connected, as the matrices of the t
 So $\widetilde{SL}_2(\mathbb{R})$ is obtained from $SL_2({\mathbb{R}})$ by decompactifying the $\tau$ direction, and we have $SL_2({\mathbb{R}}) = \widetilde{SL}_2(\mathbb{R})/{\mathbb{Z}}$.
 
 Let us study the space $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ of functions on $\widetilde{SL}_2(\mathbb{R})$, which is assumed to be the large level limit of the spectrum of our model. 
-In this limit, a basis of symmetry generators is $(J^a_0)$, and the elements of this basis are antiHermitian for the natural scalar product \eqref{gbg}.
+In this limit, a basis of symmetry generators is $(J^a_0)$, and the elements of this basis are antihermitian for the natural scalar product \eqref{gbg}.
 We will however work with a basis that includes a Hermitian generator, whose eigenvalues are therefore real in unitary representations.
 We still call this basis $(J^a_0)$, although it is obtained from the original basis by a complex change of bases, such that the conjugation rule becomes
 \begin{align}
