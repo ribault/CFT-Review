@@ -5315,21 +5315,23 @@ so the theory cannot be unitary -- except of course in the large level limit, wh
 
 \subsection{Definition and general properties}
 
+\subsubsection{Elements of a definition}
+
 Given a simple Lie group $G$, the $G$ Wess--Zumino--Witten model or $G$ \textbf{\boldmath WZW model}\index{WZW model} is usually defined by a Lagrangian, which depends on a parameter $k$.
 This model can then be shown to be a conformal field theory with a $\hat{\mathfrak{g}}$ symmetry algebra, where $\mathfrak{g}$ is the Lie algebra of $G$.
 The parameter $k$ coincides with the level of $\hat{\mathfrak{g}}$, and may have to be quantized for the model to be consistent, depending on the group $G$.
 In any case, the allowed values of $k$ accumulate near $k=\infty$.
 
-We will of course not use the Lagrangian definition of WZW models, which raises the question of characterizing these models in the conformal bootstrap approach.
+We will not use the Lagrangian definition of WZW models.
+This raises the question of characterizing these models in the conformal bootstrap approach.
 The fundamental axiom is the presence of the symmetry algebra $\hat{\mathfrak{g}}$, and some  authors call all models with this symmetry algebra WZW models.
 Here we will insist that, among models with this symmetry, 
-a WZW model can be unambiguously associated to a Lie group $G$, such that its spectrum $S$ obeys
+a WZW model can be associated to a particular Lie group $G$, such that its spectrum $S$ obeys
 \begin{align}
  \boxed{\underset{k\to \infty}{\lim} S = \mathcal{F}(G)}\ ,
 \label{lsfg}
 \end{align}
 where $\mathcal{F}(G)$ is the space of functions on $G$.
-This property brings the group $G$, and not just the Lie algebra $\mathfrak{g}$, into the definition of a WZW model.
 This property still does not fully characterize WZW models: in particular, nothing forces the level $k$ to be quantized whenever the Lagrangian definition dictates it.
 It is plausible that the spectrum of WZW models can be characterized in terms of functions on a manifold related to the loop group of $G$, but such a characterization is not known.
 Instead of a proper definition of WZW models, we will limit ourselves to giving a few known properties of the spectrum of the $G$ WZW model:
@@ -5342,7 +5344,9 @@ The relation between the simple connectedness of $G$ and the diagonality of the 
 The uncompactified free boson may be called the ${\mathbb{R}}$ WZW model, and it is diagonal.
 The compactified free boson, whose spectrum was given in eq. \eqref{sr}, may be called the $U(1)$ WZW model, and it is not diagonal. 
 
-Let us study the consequences of the axiom \eqref{lsfg}.
+\subsubsection{Features of the spectrum}
+
+Let us start with the large level limit \eqref{lsfg}.
 The space $\mathcal{F}(G)$ of functions on $G$ has a natural action of 
 $G\times \bar{G}$, where the bar is here for distinguishing the two copies of $G$, such that for $f\in \mathcal{F}(G)$ we have 
 \begin{align}
@@ -5350,7 +5354,24 @@ $G\times \bar{G}$, where the bar is here for distinguishing the two copies of $G
 \end{align}
 We identify the corresponding infinitesimal symmetry algebra $\mathfrak{g}\times \bar{\mathfrak{g}}$ with the large level limit of the symmetry algebra $\hat{\mathfrak{g}}\times \bar{\hat{\mathfrak{g}}}$ of the WZW model.
 That is, $\mathfrak{g}$ and its generators $t^a$ are identified with the horizontal subalgebra of $\hat{\mathfrak{g}}$ and its generators $J^a_0$.
-The natural scalar product on $\mathcal{F}(G)$ is 
+
+We now assume that $G$ is compact.
+Then $\mathcal{F}(G)$ can be decomposed into irreducible representations of the symmetry group $G\times \bar{G}$ using the \textbf{\boldmath Peter-Weyl theorem}\index{Peter-Weyl theorem}, 
+\begin{align}
+ \mathcal{F}(G) = \bigoplus_{R\in \mathcal{R}} R\otimes \bar{R}\ ,
+\end{align}
+where $\mathcal{R}$ is the set of irreducible unitary representations of $G$, which coincides with the set of irreducible finite-dimensional representations of $G$.
+If moreover $G$ is simply connected, then the spectrum of the WZW model is still diagonal for all positive integer values of $k$, \cite{fms97}
+\begin{align}
+ S = \bigoplus_{R\in \mathcal{R}_k} \hat{R}\otimes \bar{\hat{R}}\ .
+\end{align}
+Here $\hat{R}$ is the affine highest-weight representation of $\hat{\mathfrak{g}}$ which is built from $R$ by acting with the creation modes and removing the null vectors, and the finite subset $\mathcal{R}_k$ of $\mathcal{R}$ is defined by certain $k$-dependent conditions.
+The resulting representations $\hat{R}$ are called the integrable highest-weight representations of $\hat{\mathfrak{g}}$. 
+We have $\underset{k\to\infty}{\lim} \mathcal{R}_k =\mathcal{R}$ and $\underset{k\to \infty}{\lim} \hat{R} = R$, so that the spectrum $S$ has the desired large level limit \eqref{lsfg}.
+
+\subsubsection{Scalar product}
+
+The natural, positive definite scalar product on $\mathcal{F}(G)$ is 
 \begin{align}
  \langle f|f'\rangle = \int_G dh\ \overline{f(h)} f'(h)\ ,
 \label{gbg}
@@ -5368,26 +5389,11 @@ This conjugation rule is naturally extended to the following conjugation rule on
 This is compatible with the commutation relations \eqref{jam} of the affine Lie algebra $\hat{\mathfrak{g}}$, provided the structure constants $f^{ab}_c$ and level $k$ are real.
 This is also compatible with the conjugation rule \eqref{ldn} for the generators of the Virasoro algebra, via the Sugawara construction \eqref{ljj}.
 
-If $G$ is compact, then the space $\mathcal{F}(G)$ of functions on $G$ can be decomposed into irreducible representations of the symmetry group $G\times \bar{G}$ using the \textbf{\boldmath Peter-Weyl theorem}\index{Peter-Weyl theorem}, 
-\begin{align}
- \mathcal{F}(G) = \bigoplus_{R\in \mathcal{R}} R\otimes \bar{R}\ ,
-\end{align}
-where $\mathcal{R}$ is the set of irreducible unitary representations of $G$, which coincides with the set of irreducible finite-dimensional representations of $G$.
-Since the scalar product \eqref{gbg} is positive definite, it is obvious that only unitary representations can appear.
-The nontrivial statement is that all unitary irreducible representations do appear, and that they couple diagonally. 
-If $G$ is simply connected, then the spectrum of the WZW model is still diagonal for all positive integer values of $k$, \cite{fms97}
-\begin{align}
- S = \bigoplus_{R\in \mathcal{R}_k} \hat{R}\otimes \bar{\hat{R}}\ ,
-\end{align}
-where $\hat{R}$ is the affine highest-weight representation of $\hat{\mathfrak{g}}$ which is built from $R$ by acting with the creation modes and removing the null vectors, and the finite subset $\mathcal{R}_k$ of $\mathcal{R}$ is defined by certain $k$-dependent conditions.
-The resulting representations $\hat{R}$ are called the integrable highest-weight representations of $\hat{\mathfrak{g}}$. 
-We have $\underset{k\to\infty}{\lim} \mathcal{R}_k =\mathcal{R}$ and $\underset{k\to \infty}{\lim} \hat{R} = R$, so that the spectrum $S$ has the desired large level limit \eqref{lsfg}.
-
-These results on the spectrum of the $G$ WZW model when $G$ is compact can be derived by looking for rational models, whose spectrums are be made of multiply degenerate representations -- the logic we followed with Virasoro minimal models.
-We will now do this in the case $G=SU_2$.   
-
 
 \subsection{The \texorpdfstring{$SU_2$}{SU(2)} WZW model \label{secsu}}
+
+These results on the spectrum of the $G$ WZW model when $G$ is compact can be derived by looking for rational models, whose spectrums are be made of multiply degenerate representations -- the logic we followed with Virasoro minimal models.
+We will now do this in the case $G=SU_2$.   -> recover announced spectrum
 
 We want to build theories with the $\widehat{\mathfrak{sl}}_2$ symmetry algebra, whose spectrums are discrete or even rational.
 These spectrums must therefore be made of degenerate representations.
