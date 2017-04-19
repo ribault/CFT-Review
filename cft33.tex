@@ -5000,19 +5000,19 @@ When writing $\mathcal{K} \hat{T}(\hat{y}_j) \mathcal{K}^{-1}$, we have to use $
 (See Exercise \ref{exoktk}.) 
 Introducing the function
 \begin{align}
- \Theta = \frac{\prod_{i<i'}(z_i-z_{i'})\prod_{j<j'}(y_j-y_{j'})}{\prod_{i,j}(z_i-y_j)}\ ,
+ \Theta_N = \frac{\prod_{i<i'\leq N}(z_i-z_{i'})\prod_{j<j'\leq N-2}(y_j-y_{j'})}{\prod_{i=1}^N\prod_{j=1}^{N-2}(z_i-y_j)}\ ,
 \end{align}
 the equation \eqref{pkkz} is equivalent to 
 \begin{multline}
  \left\{\frac{1}{k+2}  \frac{\partial^2}{\partial y_j^2} - \sum_i\frac{1}{y_j-z_i}{\frac{\partial}{\partial z_i}} -\sum_{k\neq j}\frac{1}{y_j-y_k} {\frac{\partial}{\partial y_k}}
 \right. \\ \left.
- -\sum_i\frac{\Delta_{j_i}-\frac{k}{4}}{(y_j-z_i)^2}  -\sum_{k\neq j}\frac{\frac{3k}{4}+1}{(y_j-y_k)^2}   \right\} \Theta^{\frac{k+2}{2}}\mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle = 0\ .
+ -\sum_i\frac{\Delta_{j_i}-\frac{k}{4}}{(y_j-z_i)^2}  -\sum_{k\neq j}\frac{\frac{3k}{4}+1}{(y_j-y_k)^2}   \right\} \Theta_N^{\frac{k+2}{2}}\mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle = 0\ .
  \label{vskz}
 \end{multline}
 
 \subsubsection{KZ-BPZ relation for conformal blocks}
 
-As an equation for $\Theta^{\frac{k+2}{2}}\mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle$,
+As an equation for $\Theta_N^{\frac{k+2}{2}}\mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle$,
 eq. \eqref{vskz} coincides with the BPZ equation \eqref{pvot} for the correlation function of $\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \prod_{j=1}^{N-2}V_{\langle 2,1\rangle}(y_j)\right\rangle$, provided the parameter $b$ of the Virasoro algebra is given by 
 \begin{align}
  \boxed{ b^2 = -k-2}\ ,
@@ -5028,7 +5028,7 @@ The BPZ equations only constrain the dependence on $y_j$, but we already determi
 $\mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle$ on the variables $Y_1$ and $Y_2$.
 This leads to Feigin, Frenkel and Stoyanovsky's \textbf{\boldmath KZ-BPZ relation}\index{KZ-BPZ relation},
 \begin{align}
- \boxed{ \mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle \sim \delta(Y_1) Y_2 \Theta^{\frac12 b^2} \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\prod_{j=1}^{N-2}V_{\langle 2,1\rangle}(y_j)\right\rangle}\ .
+ \boxed{ \mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle \sim \delta(Y_1) Y_2 \Theta_N^{\frac12 b^2} \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\prod_{j=1}^{N-2}V_{\langle 2,1\rangle}(y_j)\right\rangle}\ .
 \label{dyy}
 \end{align}
 This equation means that the differential equations obeyed by both sides coincide.
@@ -5091,7 +5091,7 @@ are deduced from Liouville theory via the relation \eqref{aj}. The relation \eqr
 \begin{align}
  \boxed{ \left\langle \prod_{i=1}^N \Phi^{j_i}_{\mu_i}(z_i)\right\rangle 
  = \delta^{(2)}\left({\textstyle\sum_{i=1}^N \mu_i}\right) 
- \left|{\textstyle\sum_{i=1}^N\mu_iz_i}\right|^2 |\Theta|^{-k-2} 
+ \left|{\textstyle\sum_{i=1}^N\mu_iz_i}\right|^2 |\Theta_N|^{-k-2} 
  \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\prod_{j=1}^{N-2}V_{\langle 2,1\rangle}(y_j)\right\rangle}\ .
 \label{dyym} 
 \end{align}
