@@ -5065,12 +5065,39 @@ Another tentative generalization of the KZ-BPZ relation \eqref{dyy} is to replac
 Then the resulting expression can be interpreted as an $N$-point function in a theory whose symmetry algebra is a generalization of $\widehat{\mathfrak{sl}}_2$, as argued in \cite{rib08}.
 
 
+\subsubsection{\texorpdfstring{$\widehat{\mathfrak{sl}}_2$}{sl2} degenerate representations and fusion rules}
+
+Let us use the KZ-BPZ relation for deriving $\widehat{\mathfrak{sl}}_2$ degenerate representations and fusion rules. 
+The idea is that OPE of two $\widehat{\mathfrak{sl}}_2$-primary fields $\Phi^{j_1}\Phi^{j_2}$ is equivalent an OPE of three Virasoro-primary fields $V_{\langle 2, 1\rangle}V_{\alpha_1}V_{\alpha_2}$, with momentums given by eq. \eqref{aj}.
+Defining $\Phi^{j_1}$ as degenerate if the OPE $\Phi^{j_1}\Phi^{j_2}$ contains only finitely many $\widehat{\mathfrak{sl}}_2$-primary fields, the corresponding Virasoro-primary field $V_{\alpha_1}$ must therefore itself be degenerate, $V_{\alpha_1}=V_{\langle r, s\rangle}$ with $r,s\geq 1$. 
+The relevant Virasoro OPE becomes 
+\begin{align}
+ V_{\langle 2, 1\rangle}V_{\langle r, s\rangle}V_{\alpha_2} \sim V_{\langle r+1, s\rangle}V_{\alpha_2}\ .
+\end{align}
+(If $r>1$, the OPE $V_{\langle 2, 1\rangle}V_{\langle r, s\rangle}\sim V_{\langle r-1, s\rangle}+ V_{\langle r+1, s\rangle}$ actually has two terms, but the first term's contributions are included in the second term's.)
+We actually only assume $r\geq 0,s\geq 1$ rather than $r,s\geq 1$, as this is enough for $V_{\langle r+1, s\rangle}$ to be degenerate.
+This suggests that there are degenerate fields $\Phi^{\langle r,s\rangle}$ with spins
+\begin{align}
+ j_{\langle r,s\rangle} = -\frac12 +\frac12 s -\frac{k+2}{2} r \ , \quad \text{for} \quad \left\{\begin{array}{l} r\geq 0\ , \\ s\geq 1\ , \end{array}\right.
+\end{align}
+obtained by applying the relation \eqref{aj} to the degenerate momentums \eqref{ars}.
+
+
+
+This will allow us to build \textbf{\boldmath $\widehat{\mathfrak{sl}}_2$ minimal models}\index{minimal model!$\widehat{\mathfrak{sl}}_2$---}, i.e. models  whose spectrums are made of finitely many irreducible representations of the $\widehat{\mathfrak{sl}}_2$ algebra.
+
+Compare Awata--Yamada
+
+New exercise: direct level 1 NV
+
+Cite exercise: recover from H3+
+
 \section{The \texorpdfstring{$H_3^+$}{H3+} model\label{sechtp}}
 
 The \textbf{\boldmath $H_3^+$ model}\index{h3+ model@$H_3^+$ model} is to the $\widehat{\mathfrak{sl}}_2$ algebra what Liouville theory is to the Virasoro algebra: the simplest model with the given symmetry and a continuous spectrum. 
 
 We could follow the same route as with Liouville theory, of studying the representations of $\widehat{\mathfrak{sl}}_2$, and deducing the three-point function from the associativity of OPEs involving degenerate fields, as was done by Teschner \cite{tes97a}.
-Rather, we will follow the shortcut of assuming that correlation functions of the $H_3^+$ model and Liouville theory are related as suggested by the KZ-BPZ relation \eqref{dyy}. This relation, when applied to correlation functions (instead of differential equations or conformal blocks), is then called the \textbf{\boldmath $H_3^+$-Liouville relation}\index{h3+-Liouville relation@$H_3^+$-Liouville relation}. 
+Rather, we will build the $H_3^+$ model from Liouville theory, by extending the KZ-BPZ relation for conformal blocks \eqref{dyy} to a relation between correlation functions, called the \textbf{\boldmath $H_3^+$-Liouville relation}\index{h3+-Liouville relation@$H_3^+$-Liouville relation}.
 
 Since Liouville theory exists for all complex values of the central charge, we expect that the $H_3^+$ model exists for all values of the level except $k=-2$, when the Sugawara construction breaks down and the model is no longer a conformal field theory.
 According to the relation \eqref{bk}, the central charges of the $H_3^+$ model \eqref{ckg} and of the corresponding Liouville theory then take the values
@@ -5208,6 +5235,7 @@ The OPEs of affine primary fields are
 where the measures of integration on the spin and isospin variables are dictated by the $\delta(j_1+j_2+1)$ term in the two-point function.
 In the $\mu$-basis OPE, the integral over $\mu$ reduces to the value $\mu=\mu_1+\mu_2$, due to the delta-function prefactor of the three-point function. 
 
+% NB: cite exercise about fusion rules from x-basis OPE.
 
 \subsection{Large level limit and geometrical interpretation}
 
@@ -5309,15 +5337,6 @@ Given a primary state $|v\rangle$, the norm square of some of the level one desc
 \end{align}
 This cannot be positive for all values of $\lambda$,  
 so the theory cannot be unitary -- except of course in the large level limit, where descendent modes disappear. 
-
-\subsection{\texorpdfstring{$\widehat{\mathfrak{sl}}_2$}{sl2} fusion rules and minimal models}
-
-In the same way as we recovered the fusion rules of degenerate Virasoro fields from the OPE of Liouville theory in Section \ref{seceul}, we will deduce the fusion rules of degenerate $\widehat{\mathfrak{sl}}_2$ fields from the OPE of the $H_3^+$ model. 
-This will allow us to build \textbf{\boldmath $\widehat{\mathfrak{sl}}_2$ minimal models}\index{minimal model!$\widehat{\mathfrak{sl}}_2$---}, i.e. models  whose spectrums are made of finitely many irreducible representations of the $\widehat{\mathfrak{sl}}_2$ algebra.
-
-\subsubsection{Degenerate fields and fusion rules}
-
-Let us analytically continue the OPE of the $H_3^+$ model \eqref{xope} to values of the spin $j_1$, such that the integral on $j$ reduces to a finite sum. 
 
 
 \section{WZW models}
@@ -5439,7 +5458,7 @@ The positions of the line of integration $j\in -\frac12+ib{\mathbb{R}}$ and the 
   \polewedge{shift = {(0, .7)}, rotate = 180}{$j_1-j_2-1$}{above left};
   \polewedge{shift = {(0, -.7)}, rotate = 180}{$j_2-j_1-1$}{above left};
   \polewedge{shift = {(0, 1.8)}, rotate = 180}{$j_1+j_2$}{above left};
-  \polewedge{shift = {(-.2, -1.8)}, rotate = 180}{$-j_1-j_2-k$}{above left};
+  \polewedge{shift = {(-.2, -1.8)}, rotate = 180}{$-j_1-j_2+k$}{above left};
   \polewedge{shift = {(1, .8)}}{$j_1-j_2-k-2$}{above right};
   \polewedge{shift = {(1, -.6)}}{$j_2-j_1-k-2$}{above right};
   \polewedge{shift = {(1, 1.9)}}{$j_1+j_2-k-1$}{above right};
@@ -5929,6 +5948,40 @@ that both sides have the same commutator with $\mathcal{K}\hat{J}^-(y)\mathcal{K
 Compute the commutator of the left-hand side using $[\hat{T}(\hat{y}_j),\hat{J}^-(y)]={\frac{\partial}{\partial y}}\frac{1}{y-\hat{y}_j}\hat{J}^-(y)$, which is a consequence of eq. \eqref{dtd}.
 Compute the commutator of the 
 right-hand side using the formula \eqref{djm} for $\hat{J}^-(y)$, and conclude.
+\end{exo}
+
+\begin{exo}[$\widehat{\mathfrak{sl}}_2$ degenerate representations and fusion rules from the $H_3^+$ model]
+ ~\label{exodrfrh}
+Consider the OPE $\Phi^{j_1}_{x_1}\Phi^{j_2}_{x_2}$ \eqref{xope} where we initially assume $j_1,j_2\in -\frac12+ib{\mathbb{R}}$.
+The positions of the line of integration $j\in -\frac12+ib{\mathbb{R}}$ and the eight cones of poles of the OPE coefficient are
+\begin{align}
+\newcommand{\polewedge}[3]{
+\begin{scope}[#1]
+\node[blue, draw,circle,inner sep=1pt,fill] at (0, 0) {};
+\node[#3] at (0,0) {#2};
+\filldraw[opacity = .1, blue] (0,0) -- (6, -2) -- (6, 2) -- cycle;
+\end{scope}
+}
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = 1.2]
+  \draw[-latex] (-5,0) -- (.8, 0) node[above right] {$0$} -- (6,0) node [above] {$j$};
+  \clip (-5, -3) -- (-5, 3) -- (6, 3) -- (6, -3) -- cycle;
+  \draw (.8, -3.5) -- (.8, 3.5);
+  \begin{scope}[rotate around = {-18.43:(.4,0)}]
+  \draw[ultra thick, red] (.4, -4.5) -- (.4, 4.5);
+  \polewedge{shift = {(0, .7)}, rotate = 180}{$j_1-j_2-1$}{above left};
+  \polewedge{shift = {(0, -.7)}, rotate = 180}{$j_2-j_1-1$}{above left};
+  \polewedge{shift = {(0, 1.8)}, rotate = 180}{$j_1+j_2$}{above left};
+  \polewedge{shift = {(-.2, -1.8)}, rotate = 180}{$-j_1-j_2+k$}{above left};
+  \polewedge{shift = {(1, .8)}}{$j_1-j_2-k-2$}{above right};
+  \polewedge{shift = {(1, -.6)}}{$j_2-j_1-k-2$}{above right};
+  \polewedge{shift = {(1, 1.9)}}{$j_1+j_2-k-1$}{above right};
+  \polewedge{shift = {(.8, -1.7)}}{$-j_1-j_2-1$}{above right};
+  \end{scope}
+ \end{tikzpicture}
+\end{align}
+Let us analytically continue this OPE to values of the spin $j_1$, such that the integral over $j$ reduces to a finite sum.
+This happens whenever poles from the left of the line of integration, coincide with poles on the right of that line. 
+% NB: exercise to be completed
 \end{exo}
 
 \bibliographystyle{cft}
