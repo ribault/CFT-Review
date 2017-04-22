@@ -5068,7 +5068,7 @@ Then the resulting expression can be interpreted as an $N$-point function in a t
 \subsubsection{\texorpdfstring{$\widehat{\mathfrak{sl}}_2$}{sl2} degenerate representations and fusion rules}
 
 Let us use the KZ-BPZ relation for deriving $\widehat{\mathfrak{sl}}_2$ degenerate representations and fusion rules. 
-The idea is that OPE of two $\widehat{\mathfrak{sl}}_2$-primary fields $\Phi^{j_1}\Phi^{j_2}$ is equivalent an OPE of three Virasoro-primary fields $V_{\langle 2, 1\rangle}V_{\alpha_1}V_{\alpha_2}$, with momentums given by eq. \eqref{aj}.
+The idea is that an OPE of two $\widehat{\mathfrak{sl}}_2$-primary fields $\Phi^{j_1}\Phi^{j_2}$ is equivalent an OPE of three Virasoro-primary fields $V_{\langle 2, 1\rangle}V_{\alpha_1}V_{\alpha_2}$, with momentums given by eq. \eqref{aj}.
 Defining $\Phi^{j_1}$ as degenerate if the OPE $\Phi^{j_1}\Phi^{j_2}$ contains only finitely many $\widehat{\mathfrak{sl}}_2$-primary fields, the corresponding Virasoro-primary field $V_{\alpha_1}$ must therefore itself be degenerate, $V_{\alpha_1}=V_{\langle r, s\rangle}$ with $r,s\geq 1$. 
 The relevant Virasoro OPE becomes 
 \begin{align}
@@ -5080,17 +5080,18 @@ This suggests that there are degenerate fields $\Phi^{\langle r,s\rangle}$ with 
 \begin{align}
  j_{\langle r,s\rangle} = -\frac12 +\frac12 s -\frac{k+2}{2} r \ , \quad \text{for} \quad \left\{\begin{array}{l} r\geq 0\ , \\ s\geq 1\ , \end{array}\right.
 \end{align}
-obtained by applying the relation \eqref{aj} to the degenerate momentums \eqref{ars}.
+obtained by applying the relation \eqref{aj} to the degenerate momentums \eqref{ars}. And the resulting OPEs are
+\begin{align}
+ \Phi^{\langle r, s\rangle}\Phi^j \sim 
+ \sum_{i=0}^r \sum_{\ell=0}^{s-1} \Phi^{j-j_{\langle r,s\rangle}-(k+2)i+\ell}
+ = \Phi^{j-j_{\langle r,s\rangle}} + \cdots + \Phi^{j+j_{\langle r,s\rangle}}\ .
+\end{align}
+These OPEs agree with the fusion rules that can be derived from analyzing singular vectors in affine highest-weight representations \cite{ay92}, with $\Phi^{\langle r, s\rangle}$ having a vanishing descendent at the level $N=rs$. (See Exercise \ref{exolos} for the case $N=1$.) These OPEs can also be derived as limits of the OPE of the $H_3^+$ model. (See Exercise \ref{exodrfrh}.)
 
+It is tempting to speculate that there exist $\widehat{\mathfrak{sl}}_2$ generalized minimal models.
+For any given value of the level, this would be a diagonal model whose spectrum would be made of the representations that correspond to the fields $\Phi^{\langle r, s\rangle}$. For a rational value of the level, there should also exist a diagonal $\widehat{\mathfrak{sl}}_2$ minimal model, whose spectrum would contain finitely many such representations.
+If we restrict ourselves to the set of half-integer spin fields $\Phi^{\langle 0, s\rangle}$, which is closed under OPEs, we actually obtain the (generalized) $SU_2$ WZW models of Section \ref{secsu}.
 
-
-This will allow us to build \textbf{\boldmath $\widehat{\mathfrak{sl}}_2$ minimal models}\index{minimal model!$\widehat{\mathfrak{sl}}_2$---}, i.e. models  whose spectrums are made of finitely many irreducible representations of the $\widehat{\mathfrak{sl}}_2$ algebra.
-
-Compare Awata--Yamada
-
-New exercise: direct level 1 NV
-
-Cite exercise: recover from H3+
 
 \section{The \texorpdfstring{$H_3^+$}{H3+} model\label{sechtp}}
 
@@ -5419,6 +5420,11 @@ This is also compatible with the conjugation rule \eqref{ldn} for the generators
 
 
 \subsection{The \texorpdfstring{$SU_2$}{SU(2)} WZW model \label{secsu}}
+
+In particular, the fields $\Phi^{\langle 0, s\rangle}$ have half-integer spins, and their fusion products are equivalent to tensor products of finite-dimensional representations of $\mathfrak{sl}_2$,
+\begin{align}
+ \Phi^{\langle 0, s\rangle}\Phi^j  = \sum_{\ell=0}^{s-1} \Phi^{j+\frac{1-s}{2}+\ell}\ .
+\end{align}
 
 These results on the spectrum of the $G$ WZW model when $G$ is compact can be derived by looking for rational models, whose spectrums are be made of multiply degenerate representations -- the logic we followed with Virasoro minimal models.
 We will now do this in the case $G=SU_2$.   -> recover announced spectrum
@@ -5949,6 +5955,12 @@ Compute the commutator of the left-hand side using $[\hat{T}(\hat{y}_j),\hat{J}^
 Compute the commutator of the 
 right-hand side using the formula \eqref{djm} for $\hat{J}^-(y)$, and conclude.
 \end{exo}
+
+\begin{exo}[Level one singular vectors in affine highest-weight representations]
+ ~\label{exolos}
+ Let us...
+\end{exo}
+
 
 \begin{exo}[$\widehat{\mathfrak{sl}}_2$ degenerate representations and fusion rules from the $H_3^+$ model]
  ~\label{exodrfrh}
