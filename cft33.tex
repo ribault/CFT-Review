@@ -5423,126 +5423,42 @@ This is also compatible with the conjugation rule \eqref{ldn} for the generators
 
 \subsection{The \texorpdfstring{$SU_2$}{SU(2)} WZW model \label{secsu}}
 
-In particular, the fields $\Phi^{\langle 0, s\rangle}$ have half-integer spins, and their fusion products are equivalent to tensor products of finite-dimensional representations of $\mathfrak{sl}_2$,
+Let us build conformal field theories from the finite-dimensional representations of $SU_2$, which have spins $j\in\{0,\frac12,1,\frac32,\dots\}$.
+
+\subsubsection{Generalized $SU_2$ WZW model}
+
+Since the spins of the finite-dimensional representations of $SU_2$ are of the type $j=j_{\langle 0,s\rangle}$ \eqref{jrs}, the 
+corresponding affine highest-weight representations $\hat R^{\langle 0,s\rangle}$ of $\widehat{\mathfrak{sl}}_2$ are degenerate, with level zero null vectors.
+Their fusion rules are 
 \begin{align}
- \Phi^{\langle 0, s\rangle}\Phi^j  = \sum_{\ell=0}^{s-1} \Phi^{j+\frac{1-s}{2}+\ell}\ .
+ \hat{R}^{\langle 0, s_1\rangle}\times\hat{R}^{\langle 0, s_2\rangle} = \sum_{s\overset{2}{=}|s_1-s_2|+1}^{s_1+s_2-1} \hat{R}^{\langle 0, s\rangle}\ .
+\end{align}
+For any value of the level, we can build a diagonal spectrum from these representations,
+\begin{align}
+ S = \bigoplus_{s=1}^\infty \hat{R}^{\langle 0, s\rangle}\otimes \bar{\hat{R}}^{\langle 0, s\rangle}\ ,
+\end{align}
+thereby defining the \textbf{\boldmath generalized $SU_2$ WZW model}\index{generalized $SU_2$ WZW model}. 
+We will now look for finite sets of such representations that are closed under fusion.
+
+\subsubsection{Spectrum of the $SU_2$ WZW model}
+
+As we did in the case of Virasoro minimal models, let us consider multiply degenerate representations of the type $\hat{R}^{\langle 0, s\rangle}$. 
+The simplest nontrivial assumption is $j_{\langle 0, s\rangle} + j_{\langle 1, s'\rangle} +1=0$ for some $s'\in\mathbb{N}^*$, which implies $s+s'=k+2$. 
+Then the level $k$ must be integer, and the spectrum becomes 
+\begin{align}
+ S = \bigoplus_{s=1}^{k+1} \hat{R}^{\langle 0, s\rangle}\otimes \bar{\hat{R}}^{\langle 0, s\rangle}\ .
+\end{align}
+Fusion is constrained by both null vectors, and becomes 
+\begin{align}
+ \hat{R}^{\langle 0, s_1\rangle}\times\hat{R}^{\langle 0, s_2\rangle} = \sum_{s\overset{2}{=}|s_1-s_2|+1}^{\min(s_1+s_2-1,2k+3-s_1-s_2)} \hat{R}^{\langle 0, s\rangle}\ .
 \end{align}
 
-These results on the spectrum of the $G$ WZW model when $G$ is compact can be derived by looking for rational models, whose spectrums are be made of multiply degenerate representations -- the logic we followed with Virasoro minimal models.
-We will now do this in the case $G=SU_2$.   -> recover announced spectrum
+\subsubsection{Further rational models with an $\widehat{\mathfrak{sl}}_2$ symmetry algebra}
 
-We want to build theories with the $\widehat{\mathfrak{sl}}_2$ symmetry algebra, whose spectrums are discrete or even rational.
-These spectrums must therefore be made of degenerate representations.
-Rather than studying the structure and null vectors of the representations of $\widehat{\mathfrak{sl}}_2$, as we did in Section \ref{secvm} in the case of the Virasoro algebra, 
-we will use a shortcut.
-Remembering that we recovered
-the Virasoro degenerate fields and their fusion rules from the Liouville OPE in Section \ref{sectpf},
-we will use the $H_3^+$ OPE for studying $\widehat{\mathfrak{sl}}_2$ degenerate fields. 
-
-According to our axiom \eqref{lsfg}, and to the Peter-Weyl theorem, the fields which are relevant for the $SU_2$ WZW model correspond to the finite-dimensional representations of $SU_2$.
-We will admit the well-known result that such representations have spins $j\in\{0,\frac12,1,\frac32\cdots \}$ and dimensions $2j+1$.
-We will soon see that the corresponding fields are degenerate, in the sense  that their OPEs with other fields involve finitely many primary fields. 
-Experience with Virasoro minimal models however suggests that we should consider multiply degenerate fields, and it will turn out that we also need fields with spins $j\in \frac12{\mathbb{N}} + \frac12 b^2=\frac12{\mathbb{N}} -1-\frac{k}{2}$, which will also turn out to be degenerate.
-Let us introduce notations for the limits of $H_3^+$ field when the spin takes such particular values,
-\begin{align}
-J\in \frac12{\mathbb{N}} \quad \Rightarrow \quad \left\{\begin{array}{ccl} \Phi^J  & = &\underset{j\to J}{\lim}\ \Phi^j \ , \\ \Phi^{(J,1)} &=& \underset{j\to J-1-\frac{k}{2}}{\lim} \Phi^j \ . \end{array}\right.
-\end{align}
-Let us now consider the OPE $\Phi^{j_1}_{x_1}\Phi^{j_2}_{x_2}$ \eqref{xope} where we initially assume $j_1,j_2\in -\frac12+ib{\mathbb{R}}$.
-The positions of the line of integration $j\in -\frac12+ib{\mathbb{R}}$ and the eight cones of poles of the OPE coefficient are
-\begin{align}
-\newcommand{\polewedge}[3]{
-\begin{scope}[#1]
-\node[blue, draw,circle,inner sep=1pt,fill] at (0, 0) {};
-\node[#3] at (0,0) {#2};
-\filldraw[opacity = .1, blue] (0,0) -- (6, -2) -- (6, 2) -- cycle;
-\end{scope}
-}
- \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = 1.2]
-  \draw[-latex] (-5,0) -- (.8, 0) node[above right] {$0$} -- (6,0) node [above] {$j$};
-  \clip (-5, -3) -- (-5, 3) -- (6, 3) -- (6, -3) -- cycle;
-  \draw (.8, -3.5) -- (.8, 3.5);
-  \begin{scope}[rotate around = {-18.43:(.4,0)}]
-  \draw[ultra thick, red] (.4, -4.5) -- (.4, 4.5);
-  \polewedge{shift = {(0, .7)}, rotate = 180}{$j_1-j_2-1$}{above left};
-  \polewedge{shift = {(0, -.7)}, rotate = 180}{$j_2-j_1-1$}{above left};
-  \polewedge{shift = {(0, 1.8)}, rotate = 180}{$j_1+j_2$}{above left};
-  \polewedge{shift = {(-.2, -1.8)}, rotate = 180}{$-j_1-j_2+k$}{above left};
-  \polewedge{shift = {(1, .8)}}{$j_1-j_2-k-2$}{above right};
-  \polewedge{shift = {(1, -.6)}}{$j_2-j_1-k-2$}{above right};
-  \polewedge{shift = {(1, 1.9)}}{$j_1+j_2-k-1$}{above right};
-  \polewedge{shift = {(.8, -1.7)}}{$-j_1-j_2-1$}{above right};
-  \end{scope}
- \end{tikzpicture}
-\end{align}
-Taking the limit $j\to J$ or $j\to J-1-\frac{k}{2}$, the OPE coefficient vanishes, and the only surviving contributions are from poles that cross the line of integration. (See Section \ref{seceul} for more explanations.) The resulting OPEs are schematically written as 
-\begin{align}
- \Phi^J \Phi^{j_2} & \sim \sum_{j=j_2-J}^{j_2+J} \Phi^j \ ,
-\label{pjp}
-\\
-\Phi^{(J,1)}\Phi^{j_2} & \sim \sum_{j=j_2-1-\frac{k}{2}-J}^{j_2-1-\frac{k}{2}+J} \Phi^j + \sum_{j=j_2+1+\frac{k}{2}-J}^{j_2+1+\frac{k}{2}+J} \Phi^j\ ,
-\label{pjop}
-\end{align}
-where the sums run by increments of $1$, and we have taken the reflection relation $\Phi^j\propto \Phi^{-j-1}$ into account. 
-
-For generic values of the level $k$, the OPE of two fields with half-integer spins is therefore 
-\begin{align}
- \boxed{\Phi^{J_1}\Phi^{J_2} \sim \sum_{J=|J_1-J_2|}^{J_1+J_2} \Phi^J}\ .
-\end{align}
-This suggests that there exists a \textbf{\boldmath generalized $SU_2$ WZW model}\index{generalized $SU_2$ WZW model}, whose spectrum is 
-\begin{align}
- \boxed{S = \bigoplus_{J=0,\frac12,1,\frac32,\cdots} \hat{R}_J \otimes \bar{\hat{R}}_J}\ ,
-\end{align}
-where $\hat{R}_J$ is the affine highest-weight representation of $\widehat{\mathfrak{sl}}_2$ built from the finite-dimensional representation of $\mathfrak{sl}_2$ of spin $J$.
-The two-point function of the generalized $SU_2$ WZW model is obtained from the corresponding $H_3^+$ two-point function, 
-\begin{align}
- \left\langle \Phi^{J_1}_{x_1} \Phi^{J_2}_{x_2} \right\rangle = \frac{\pi}{\sqrt{-k-2}}\mu^{\frac{2J_1+1}{\sqrt{-k-2}}} \gamma(\tfrac{2J_1+1}{k+2})\, \delta_{J_1,J_2}|x_{12}|^{4J_1}\, .
-\label{pjpjd}
-\end{align}
-In complete analogy with the case of the generalized minimal models, the three-point function of a generalized $SU_2$ WZW model is obtained from the three-point function \eqref{chp} of the $H_3^+$ model by sending the spins to their half-integer values, and replacing the (vanishing) $\Upsilon_b$ functions with their derivatives. 
-
-Let us now look for rational WZW models, by considering doubly degenerate fields.
-We restrict our attention to the case when $\Phi^{J}$ and $\Phi^{(J',1)}$ are related by reflection, so that $J+J'=\frac{k}{2}$.
-This restricts the level $k$ to integer values,  
-\begin{align}
- \boxed{k\in {\mathbb{N}}}\ ,
-\end{align}
-and the spin $J$ to the finite set 
-\begin{align}
- J\in \left\{0,\frac12,\cdots \frac{k}{2}\right\}\ .
-\label{jin}
-\end{align}
-The OPE of the doubly degenerate field $\Phi^J \propto \Phi^{(\frac{k}{2}-J,1)}$ with $\Phi^{j_2}$ is constrained by both equations \eqref{pjp} and \eqref{pjop}.
-Taking the reflection relation $\Phi^j\propto \Phi^{-j-1}$ into account, we find that the OPE is nonvanishing only if $j_2$ itself belongs to the set \eqref{jin}.
-In this case, we have 
-\begin{align}
-\boxed{\Phi^{J_1}\Phi^{J_2} = \sum_{J=|J_1-J_2|}^{\operatorname{min}(J_1+J_2,k-J_1-J_2)} \Phi^J}\ .
-\end{align}
-This suggests that the set of our doubly degenerate fields is closed under fusion, and that there exists a rational model whose spectrum is
-\begin{align}
- \boxed{S = \bigoplus_{J=0,\frac12,\cdots \frac{k}{2}} \hat{R}_J \otimes \bar{\hat{R}}_J}\ .
-\end{align}
-This model, which exists for any positive integer value of $k$, is the \textbf{\boldmath $SU_2$ WZW model}\index{su2 WZW model@$SU_2$ WZW model}.
-The two- and three-point functions of this model are special cases of corresponding correlation functions of the generalized $SU_2$ WZW model. 
-
-The space of models with the $\widehat{\mathfrak{sl}}_2$ symmetry algebra is therefore similar to the space of models with Virasoro symmetry algebra, according to the following table:
-\begin{align}
-\renewcommand{\arraystretch}{1.3}
- \begin{tabular}{|l|l|}
-  \hline
- $\widehat{\mathfrak{sl}}_2$  & Virasoro 
-\\
-\hline
-$H_3^+$ model & Liouville theory 
-\\
-generalized $SU_2$ WZW models & generalized minimal models
-\\
-$SU_2$ WZW models & diagonal minimal models
-\\
-\hline
- \end{tabular}
-\end{align}
-In addition, for both symmetry algebras, there exist rational, non-diagonal models, which in both cases fit in an A-D-E classification \cite{fms97}. 
-Non-diagonal models with $\widehat{\mathfrak{sl}}_2$ symmetry include the $SO_3$ WZW models, where $SO_3 = \frac{SU_2}{\mathbb{Z}_2}$ is not simply connected.
+Among rational models with an $\widehat{\mathfrak{sl}}_2$ symmetry algebra,
+the $SU_2$ WZW model has the peculiarities of being diagonal, and of having level zero null vectors. 
+Relaxing these assumptions, further rational models can be found.
+These include the $SO_3$ WZW model, which is non-diagonal as $SO_3 = \frac{SU_2}{\mathbb{Z}_2}$ is not simply connected.
 
 
 \subsection{The \texorpdfstring{$\widetilde{SL}_2(\mathbb{R})$}{SL2(R)} WZW model \label{secslr}}
