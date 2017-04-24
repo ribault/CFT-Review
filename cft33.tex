@@ -4765,7 +4765,7 @@ and the conformal dimension of the corresponding field is
  \Delta_j =\frac{j(j+1)}{k+2}\ .
 \label{dj}
 \end{align}
-Another triplet of $\mathfrak{sl}_2$ differential operators is given by 
+Another triple of $\mathfrak{sl}_2$ differential operators is given by 
 \begin{align}
 \renewcommand{\arraystretch}{1.3}
 \left\{\begin{array}{l}  
@@ -5079,12 +5079,14 @@ We actually only assume $r\geq 0,s\geq 1$ rather than $r,s\geq 1$, as this is en
 This suggests that there are degenerate fields $\Phi^{\langle r,s\rangle}$ with spins
 \begin{align}
  j_{\langle r,s\rangle} = -\frac12 +\frac12 s -\frac{k+2}{2} r \ , \quad \text{for} \quad \left\{\begin{array}{l} r\geq 0\ , \\ s\geq 1\ , \end{array}\right.
+ \label{jrs}
 \end{align}
 obtained by applying the relation \eqref{aj} to the degenerate momentums \eqref{ars}. And the resulting OPEs are
 \begin{align}
  \Phi^{\langle r, s\rangle}\Phi^j \sim 
  \sum_{i=0}^r \sum_{\ell=0}^{s-1} \Phi^{j-j_{\langle r,s\rangle}-(k+2)i+\ell}
  = \Phi^{j-j_{\langle r,s\rangle}} + \cdots + \Phi^{j+j_{\langle r,s\rangle}}\ .
+ \label{prspj}
 \end{align}
 These OPEs agree with the fusion rules that can be derived from analyzing singular vectors in affine highest-weight representations \cite{ay92}, with $\Phi^{\langle r, s\rangle}$ having a vanishing descendent at the level $N=rs$. (See Exercise \ref{exolos} for the case $N=1$.) These OPEs can also be derived as limits of the OPE of the $H_3^+$ model. (See Exercise \ref{exodrfrh}.)
 
@@ -5956,16 +5958,28 @@ Compute the commutator of the
 right-hand side using the formula \eqref{djm} for $\hat{J}^-(y)$, and conclude.
 \end{exo}
 
-\begin{exo}[Level one singular vectors in affine highest-weight representations]
+\begin{exo}[Level one null vectors in affine highest-weight representations]
  ~\label{exolos}
- Let us...
+ Let $(|v_i\rangle)$ be a basis of a representation $R_j$ of $\mathfrak{sl}_2$, with a spin $j\in\mathbb{C}$. For $c_a^i$ some coefficients, let $|\chi\rangle =  c_a^i J_{-1}^a|v_i\rangle$ be a level one vector in the corresponding highest-weight representation of $\widehat{\mathfrak{sl}}_2$.
+ \begin{enumerate}
+  \item Show that $|\chi \rangle $ is an affine null vector if an only if 
+  \begin{align}
+    c_a^i f^{ab}_c t^c|v_i\rangle + k K^{ab} c_a^i |v_i\rangle = 0\ .
+  \end{align}
+  \item Let $|w^a\rangle$ a basis of the adjoint representation $R_1$ of $\mathfrak{sl}_2$, with $t^a|w^b\rangle = f^{ab}_c|w^c\rangle$. Show that our affine null vector condition is equivalent to $c_a^i|w^a\rangle\otimes |v_i\rangle\in R_1\otimes R_j$ being an eigenvector of the operator $Q=K_{ab}t^a\otimes t^b$, with the eigenvalue $k$.
+  % NB: Actually I find the eigenvalue -k, there must be a sign mistake.
+  \item Write the operator $Q$ in terms of the quadratic Casimir operators of the representations $R_1, R_j$ and $R_1\otimes R_j$, and show that its eigenvalues are $-2, 2j$ and $-2j-2$. 
+  Compute these eigenvalues in the case $j=j_{\langle 1,1\rangle}$ \eqref{jrs}, and conclude.
+ \end{enumerate}
 \end{exo}
 
 
 \begin{exo}[$\widehat{\mathfrak{sl}}_2$ degenerate representations and fusion rules from the $H_3^+$ model]
  ~\label{exodrfrh}
 Consider the OPE $\Phi^{j_1}_{x_1}\Phi^{j_2}_{x_2}$ \eqref{xope} where we initially assume $j_1,j_2\in -\frac12+ib{\mathbb{R}}$.
-The positions of the line of integration $j\in -\frac12+ib{\mathbb{R}}$ and the eight cones of poles of the OPE coefficient are
+\begin{enumerate}
+ \item 
+Check that the line of integration $j\in -\frac12+ib{\mathbb{R}}$ and the eight cones of poles of the OPE coefficient look as follows:
 \begin{align}
 \newcommand{\polewedge}[3]{
 \begin{scope}[#1]
@@ -5974,8 +5988,8 @@ The positions of the line of integration $j\in -\frac12+ib{\mathbb{R}}$ and the 
 \filldraw[opacity = .1, blue] (0,0) -- (6, -2) -- (6, 2) -- cycle;
 \end{scope}
 }
- \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = 1.2]
-  \draw[-latex] (-5,0) -- (.8, 0) node[above right] {$0$} -- (6,0) node [above] {$j$};
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = 1]
+  \draw[-latex] (-5,0) -- (.8, 0) -- (6,0) node [above] {$j$};
   \clip (-5, -3) -- (-5, 3) -- (6, 3) -- (6, -3) -- cycle;
   \draw (.8, -3.5) -- (.8, 3.5);
   \begin{scope}[rotate around = {-18.43:(.4,0)}]
@@ -5991,9 +6005,13 @@ The positions of the line of integration $j\in -\frac12+ib{\mathbb{R}}$ and the 
   \end{scope}
  \end{tikzpicture}
 \end{align}
-Let us analytically continue this OPE to values of the spin $j_1$, such that the integral over $j$ reduces to a finite sum.
-This happens whenever poles from the left of the line of integration, coincide with poles on the right of that line. 
-% NB: exercise to be completed
+
+\item
+We want to analytically continue our OPE to degenerate values of the spin $j_1$, i.e. values such that the integral over $j$ reduces to a finite sum. This happens whenever poles from the left of the line of integration, coincide with poles on the right of that line. (In principle we also need $j_1$ to be a zero of the OPE coefficient, but this can always be achieved by a field renormalization.) Compute the degenerate spins, and compare them with eq. \eqref{jrs}.
+
+\item 
+Compute the limit of the OPE when $j_1$ takes degenerate values, and compare with eq. \eqref{prspj}.
+\end{enumerate}
 \end{exo}
 
 \bibliographystyle{cft}
