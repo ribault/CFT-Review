@@ -5475,25 +5475,15 @@ The model has not been fully solved: the three-point function is known only part
 We will limit ourselves to working out the fusion rules, and deriving Maldacena and Ooguri's widely believed and well-tested conjecture for the spectrum of the model.
 This spectrum is more complicated than the spectrum of the $H_3^+$ model, which is why solving the $\widetilde{SL}_2(\mathbb{R})$ WZW model is more difficult.
 
+\subsubsection{Large level limit}
+
 The Lie group \textbf{\boldmath $\widetilde{SL}_2(\mathbb{R})$}\index{sl2tilder@$\widetilde{SL}_2(\mathbb{R})$} is defined as the universal covering group of the group $SL_2({\mathbb{R}})$ of matrices of size two with real coefficients and determinant one.
 The group $SL_2({\mathbb{R}})$ is not simply-connected, as the matrices of the type $\left(\begin{smallmatrix} \cos \tau & \sin\tau \\ -\sin\tau & \cos \tau \end{smallmatrix}\right)$ form a non-contractible loop, and the first homotopy group of $SL_2({\mathbb{R}})$ is ${\mathbb{Z}}$.
 So $\widetilde{SL}_2(\mathbb{R})$ is obtained from $SL_2({\mathbb{R}})$ by decompactifying the $\tau$ direction, and we have $SL_2({\mathbb{R}}) = \widetilde{SL}_2(\mathbb{R})/{\mathbb{Z}}$.
 
 Let us study the space $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ of functions on $\widetilde{SL}_2(\mathbb{R})$, which is assumed to be the large level limit of the spectrum of our model. 
-In this limit, a basis of symmetry generators is $(J^a_0)$, and the elements of this basis are antihermitian for the natural scalar product \eqref{gbg}.
-We will however work with a basis that includes a Hermitian generator, whose eigenvalues are therefore real in unitary representations.
-We still call this basis $(J^a_0)$, although it is obtained from the original basis by a complex change of bases, such that the conjugation rule becomes
-\begin{align}
- \left\{\begin{array}{l} (J_0^0)^\dagger = J_0^0\ , \\
-         (J_0^\pm)^\dagger = -J_0^\mp \ .
-        \end{array}
-\right.
-\label{jtdj}
-\end{align}
-In the matrix representation \eqref{mta} of $\mathfrak{sl}_2$, this corresponds to the $\mathfrak{su}_{1,1}$ conjugation rule $M^\dagger = \left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right) \bar{M}^T \left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right)$. (The matrices which satisfy $M^\dagger =-M$ for the $\mathfrak{su}_{1,1}$ conjugation rule are by definition the elements of $\mathfrak{su}_{1,1}$ itself). 
-
-The decomposition of $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ into irreducible unitary representations of the global symmetry algebra $\mathfrak{sl}_2\times \overline{\mathfrak{sl}}_2$ involves two types of representations: the \textbf{\boldmath principal series representation of $\mathfrak{sl}_2$}\index{principal series representation of $\mathfrak{sl}_2$} $C^j_\alpha$ and the \textbf{\boldmath discrete series representation of $\mathfrak{sl}_2$}\index{discrete series representation of $\mathfrak{sl}_2$} $D^{j,\pm}$, where $j$ is the spin. 
-These representations can be characterized by the eigenvalues of the Hermitian generator $J_0^0$,
+The decomposition of $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ into irreducible representations of the global symmetry algebra $\mathfrak{sl}_2\times \overline{\mathfrak{sl}}_2$ involves two types of representations: the \textbf{\boldmath principal series representation of $\mathfrak{sl}_2$}\index{principal series representation of $\mathfrak{sl}_2$} $C^j_\alpha$ and the \textbf{\boldmath discrete series representation of $\mathfrak{sl}_2$}\index{discrete series representation of $\mathfrak{sl}_2$} $D^{j,\pm}$, where $j$ is the spin. 
+These representations can be characterized by the eigenvalues of the generator $J_0^0$,
 \begin{align} 
 \renewcommand{\arraystretch}{1.3}
 \begin{tabular}{|l|l|l|}
@@ -5517,7 +5507,7 @@ Given a representation $R$, let $R^*$ be the dual representation, that is the re
 \\
  (D^{j,\pm})^* &= D^{j,\mp}\ ,
 \end{align}
-So, according to \cite{rib09} and references therein, we have
+According to \cite{rib09} and references therein, we have
 \begin{align}
  \mathcal{F}(\widetilde{SL}_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ C^j_\alpha \otimes \bar{C}^j_{\alpha} \oplus \bigoplus_\pm \int^\oplus_{]-\frac12, \infty[} dj\ D^{j,\pm}\otimes \bar{D}^{j,\pm} \ ,
 \label{fst}
@@ -5557,21 +5547,12 @@ Actually, all the values of $N_{R_1,R_2,R_3}$ can be deduced from the values of 
 This identification apparently predicts a nonzero value for $N_{C^j_\alpha,D^{j_2,+},D^{j_3,+}}$.
 That value should be discarded, because it depends on $\alpha$ whereas $C^j_\alpha$ only depends on $\alpha\ \text{mod}\ {\mathbb{Z}}$.
 
-After these reminders on $\widetilde{SL}_2(\mathbb{R})$ and its representations, we are ready to consider the associated WZW model. 
-The natural extension of the conjugation rule \eqref{jtdj} to the symmetry algebra $\widehat{\mathfrak{sl}}_2$ is
-\begin{align}
- \left\{\begin{array}{l} (J_n^0)^\dagger = J_{-n}^0\ , \\
-         (J_n^\pm)^\dagger = -J_{-n}^\mp \ ,
-        \end{array}
-\right.
-\end{align}
-which is compatible with the commutation relations \eqref{jam} provided the level $k$ is real.
-The principal and discrete series representations of $\mathfrak{sl}_2$ are naturally extended to affine highest-weight representations of $\widehat{\mathfrak{sl}}_2$: the principal series representations $\hat{C}^j_\alpha$ and discrete series representations $\hat{D}^{j,\pm}$.
-By computing the norms of level one states, it is easy to see that such representations are not unitary.
-But the $\widetilde{SL}_2(\mathbb{R})$ WZW model is not expected to be unitary, as the metric on the underlying group has a mixed signature. (What matters for applications to string theory is not unitarity, but another property called the no-ghost theorem.) 
+\subsubsection{Spectral flow}
 
-So, can we build the spectrum of the model from such affine highest-weight representations?
-The answer turns out to be no, as this would be incompatible with an algebraic feature of $\widehat{\mathfrak{sl}}_2$ called the \textbf{\boldmath spectral flow}\index{spectral flow} \cite{mo00a}.
+After these reminders on $\widetilde{SL}_2(\mathbb{R})$ and its representations, we are ready to consider the spectrum the associated WZW model.
+The principal and discrete series representations of $\mathfrak{sl}_2$ are naturally extended to affine highest-weight representations of $\widehat{\mathfrak{sl}}_2$: the principal series representations $\hat{C}^j_\alpha$ and discrete series representations $\hat{D}^{j,\pm}$.
+However, it turns out that we cannot build this spectrum from these representations.
+This can be understood in terms of an algebraic feature of $\widehat{\mathfrak{sl}}_2$ called the \textbf{\boldmath spectral flow}\index{spectral flow} \cite{mo00a}.
 The spectral flow is a family $(\rho_w)_{w\in{\mathbb{Z}}}$ of automorphisms of $\widehat{\mathfrak{sl}}_2$, which obey $\rho_w\rho_{w'}=\rho_{w+w'}$ and act as 
 \begin{align}
  \rho_w(J^0_n)&=  J^0_n + \frac12 kw \delta_{n,0}   \ ,
@@ -5632,7 +5613,9 @@ And the dual representations of our spectrally flowed representations are
 \label{djwd}
 \end{align}
 This concludes our discussion of spectral flow.
-We will now be able to argue that spectrally flowed representations must appear in the spectrum. 
+We will now argue that spectrally flowed representations must appear in the spectrum. 
+
+\subsubsection{Spectrum}
 
 By our definition of WZW models, the large level limit of the spectrum $\tilde{S}$ of the $\widetilde{SL}_2(\mathbb{R})$ WZW model is $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ \eqref{fst}, and we therefore expect $\tilde{S}$ to contain affine discrete representations of both series $\hat{D}^{j,\pm}$.
 Let us show that $\tilde{S}$ cannot contain only affine highest-weight representations.
@@ -5653,7 +5636,7 @@ This defines a non-empty interval provided
 \begin{align}
  \boxed{k\in]-\infty,-2[}\ .
 \end{align}
-(Nevertheless, the model surely exists for $k\in \mathbb{C}-\{2\}$.)
+(Nevertheless, the model surely exists for $k\in \mathbb{C}-\{2\}$ by analytic continuation.)
 The natural conjectures for the spectrums of the $\widetilde{SL}_2(\mathbb{R})$ and $SL_2(\mathbb{R})$ WZW models are then
 \begin{align}
  \tilde{S} &= \bigoplus_{w\in{\mathbb{Z}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ \hat{C}^{j,w}_\alpha \otimes \bar{\hat{C}}^{j,w}_{\alpha} 
@@ -5670,7 +5653,9 @@ For our WZW models, the relevant homotopy groups are
 $ \pi_1(\frac{\widetilde{SL}_2(\mathbb{R})\times \overline{\widetilde{SL}_2(\mathbb{R})}}{{\mathbb{Z}}}) = {\mathbb{Z}}$ and $\pi_1(\frac{SL_2({\mathbb{R}})\times \overline{SL_2({\mathbb{R}})}}{{\mathbb{Z}}_2}) = \frac{{\mathbb{Z}}\times \overline{{\mathbb{Z}}}}{{\mathbb{Z}}_2}$.
 The rule also applies to the case $G=U(1)$ of the compactified free boson, if we consider the winding number as a spectral flow number. 
 
-Finally, let us check that we can find fusion rules for the representations of $\widehat{\mathfrak{sl}}_2$, such that
+\subsubsection{Fusion rules}
+
+Let us check that we can find fusion rules for the representations of $\widehat{\mathfrak{sl}}_2$, such that
 \begin{enumerate}
  \item the rule \eqref{nrrr} is obeyed,
 \item in the large level limit $k\to -\infty$, the fusion rules reduce to the tensor product rules for representations of $\mathfrak{sl}_2$,
@@ -5715,6 +5700,31 @@ This leads to the following fusion rules:
 So, while the spectral flow number $w$ is not conserved, fusion violates it by at most one unit.
 This can alternatively be shown at the level of correlation functions by studying how spectral flow affects the Ward identities and Knizhnik--Zamolodchikov equations \cite{rib05}.
 
+\subsubsection{Scalar product}
+
+In the large level limit, a basis of symmetry generators is $(J^a_0,\bar J^a_0)$, and such generators are antihermitian for the natural scalar product \eqref{gbg}.
+However, $J^0_0$ has real eigenvalues when acting on $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$, and unitarity requires $J^0_0$ to be Hermitian. 
+This can be achieved by changing the conjugation rule, or equivalently performing a complex change of bases, so that 
+\begin{align}
+ \left\{\begin{array}{l} (J_0^0)^\dagger = J_0^0\ , \\
+         (J_0^\pm)^\dagger = -J_0^\mp \ .
+        \end{array}
+\right.
+\label{jtdj}
+\end{align}
+In the matrix representation \eqref{mta} of $\mathfrak{sl}_2$, this corresponds to the $\mathfrak{su}_{1,1}$ conjugation rule $M^\dagger = \left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right) \bar{M}^T \left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right)$. (The matrices which satisfy $M^\dagger =-M$ for the $\mathfrak{su}_{1,1}$ conjugation rule are by definition the elements of $\mathfrak{su}_{1,1}$ itself). With this conjugation rule, the representations $C^j_\alpha,D^{j,\pm}$, and the large level spectrum $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$, are unitary.
+
+The natural extension of this conjugation rule to the symmetry algebra $\widehat{\mathfrak{sl}}_2$ is
+\begin{align}
+ \left\{\begin{array}{l} (J_n^0)^\dagger = J_{-n}^0\ , \\
+         (J_n^\pm)^\dagger = -J_{-n}^\mp \ ,
+        \end{array}
+\right.
+\end{align}
+which is compatible with the commutation relations \eqref{jam} provided the level $k$ is real.
+However, by computing the norms of level one states, it is easy to see that the affine highest-weight representations $\hat{C}^j_\alpha, \hat{D}^{j,\pm}$  are not unitary.
+But the $\widetilde{SL}_2(\mathbb{R})$ WZW model is not expected to be unitary, as the metric on the underlying group has a mixed signature. (What matters for applications to string theory is not unitarity, but another property called the no-ghost theorem.) 
+
 \section{Exercises}
 
 \begin{exo}[Normal-ordered commutator]
@@ -5756,14 +5766,16 @@ In other words, calling this coefficient $C_{\alpha_1,\alpha_2}$, we want to sho
  C_{\alpha_1,\alpha_2} = \frac{\lambda(\alpha_1+\alpha_2)}{\lambda(\alpha_1)\lambda(\alpha_2)}\ .
 \label{clll}
 \end{align}
-To begin with, 
-use commutativity \eqref{comm} and associativity \eqref{asso} of the OPE, and show that 
+
+\begin{enumerate}
+ \item Use commutativity \eqref{comm} and associativity \eqref{asso} of the OPE, and show that 
 \begin{align}
 C_{\alpha_1,\alpha_2} &= C_{\alpha_2,\alpha_1}\ ,
 \\
  C_{\alpha_1,\alpha_2}C_{\alpha_1+\alpha_2,\alpha_3} &= C_{\alpha_1,\alpha_2+\alpha_3}C_{\alpha_2,\alpha_3}\ .
 \end{align}
-Then consider the ansatz
+
+\item Consider the ansatz
 \begin{align}
   \lambda(\alpha) = \frac{1}{C_{\alpha,0}} \exp \int_0^{\alpha} \varphi \ , \quad \text{where}\quad  
  \varphi(\alpha)&=\left.{\frac{\partial}{\partial \alpha_2}}\log C_{\alpha,\alpha_2}\right|_{\alpha_2=0}\ .
@@ -5772,23 +5784,32 @@ Show that $C_{\alpha,0}$ is actually an $\alpha$-independent constant, and that 
 \begin{align}
  {\frac{\partial}{\partial \alpha_2}} \log C_{\alpha_1,\alpha_2}  = \varphi(\alpha_1+\alpha_2)-\varphi(\alpha_2)\ . 
 \end{align}
+
+\item
 Prove eq. \eqref{clll} by showing that both sides have the same value at $\alpha_2=0$, and the same logarithmic derivative wrt $\alpha_2$. 
 (If the spectrum is discrete, a similar proof can be done using finite differences instead of derivatives.) 
+\end{enumerate}
 \end{exo}
 
-\begin{exo}[Sugawara construction of a Virasoro field]
+\begin{exo}[Sugawara construction]
  ~\label{exosug}
+ Let us check that the Sugawara construction does produce a Virasoro field.
+ \begin{enumerate}
+  \item 
 Compute the $TJ^a$ OPE \eqref{tja}, by applying Wick's theorem to 
 $\cunderbracket{J^a}{(z)K_{bc}}{(J^bJ^c)}(y)$, 
 going through the following intermediate steps:
 \begin{align}
- \cunderbracket{J^a}{(z)}{(J^bJ_b)}(y) 
- &= \frac{1}{2\pi i}\oint_y\frac{dx}{x-y}\left(\frac{kJ^a(y)}{(x-z)^2} + \frac{f^{ab}_{c}J^c(x)J_b(y)}{z-x} + \frac{kJ^a(x)}{(y-z)^2} - \frac{f^{ab}_{c}J^c(x)J_b(y)}{z-y}\right)  ,
+ \cunderbracket{J^a}{(z)}{(J^bJ_b)}(y) \hspace{-2cm} &
+ \nonumber
+ \\
+ &\ = \frac{1}{2\pi i}\oint_y\frac{dx}{x-y}\left(\frac{kJ^a(y)}{(x-z)^2} + \frac{f^{ab}_{c}J^c(x)J_b(y)}{z-x} + \frac{kJ^a(x)}{(y-z)^2} - \frac{f^{ab}_{c}J^c(x)J_b(y)}{z-y}\right)  ,
 \\
-& = \frac{2kJ^a(y)}{(y-z)^2} + \frac{f^{ab}_c f^{dc}_b J_d(y)}{(y-z)^2} 
+ &\ = \frac{2kJ^a(y)}{(y-z)^2} + \frac{f^{ab}_c f^{dc}_b J_d(y)}{(y-z)^2} 
  = 2(k+g) {\frac{\partial}{\partial z}} \frac{J^a(z)}{y-z} + O(1)\ .
 \end{align}
-Then apply Wick's theorem to $\cunderbracket{T}{(y) K_{ab}}{(J^aJ^b)}(z)$, and check the following identities:
+\item
+Apply Wick's theorem to $\cunderbracket{T}{(y) K_{ab}}{(J^aJ^b)}(z)$, and check the following identities:
 \begin{align}
  \cunderbracket{T}{(y)}{(J^aJ_a)}(z) & = \frac{1}{2\pi i} \oint_z \frac{dx}{x-z}\left({\frac{\partial}{\partial x}}\frac{J^a(x)J_a(z)}{y-x} + {\frac{\partial}{\partial z}} \frac{J^a(x)J_a(z)}{y-z}\right) \ ,
 \\
@@ -5796,7 +5817,10 @@ Then apply Wick's theorem to $\cunderbracket{T}{(y) K_{ab}}{(J^aJ^b)}(z)$, and c
 \\
 &= \frac{k\dim \mathfrak{g}}{(y-z)^4} + \frac{(J^aJ_a)(z)}{(y-z)^2} + {\frac{\partial}{\partial z}}\frac{(J^aJ_a)(z)}{y-z}\ .
 \end{align}
+
+\item
 Conclude that the field $T$ satisfies the Virasoro field OPE \eqref{tt} with the central charge \eqref{ckg}.
+\end{enumerate}
 \end{exo}
 
 \begin{exo}[Modified Sugawara construction]
@@ -5808,26 +5832,30 @@ Compute the $\hat{T}J^a$ OPE: under which conditions are $J^a$ primary fields wi
 
 \begin{exo}[Associativity of the $J^aJ^b\Phi^R$ OPE]
  ~\label{exojjp}
-Check the associativity of the $J^aJ^b\Phi^R$ OPE, by performing two different computations of the behaviour near $y_2=z_0$ of 
+Let us check the associativity of the $J^aJ^b\Phi^R$ OPE, by performing two different computations of the behaviour near $y_2=z_0$ of 
 \begin{align}
 \mathcal{O}= \frac{1}{2\pi i} \oint_{y_2}dy_1\ J^a(y_1)J^b(y_2)\Phi^R(z_0)\ .
 \end{align}
+\begin{enumerate}
+ \item 
 Firstly, use the $J^aJ^b$ OPE \eqref{jajb}, and check that
 \begin{align}
  \mathcal{O}= f_c^{ab}J^c(y_2)\Phi^R(z_0) = \frac{-f_c^{ab}t^c\Phi^R(z_0)}{y_2-z_0} + O(1)\ .
+ \label{oftp}
 \end{align}
+
+\item
 Secondly, split the integration contour in two terms, $\oint_{y_2} = \oint_{y_2,z_0} - \oint_{z_0}$.
 In the first term, use the $J^b(y_2)\Phi^R(z_0)$ OPE, as no integration contour runs between these two operators.
-In the second term, use the $J^a(y_1)\Phi^R(z_0)$ OPE.
-Check that you obtain the following intermediate steps:
+In the second term, use the $J^a(y_1)\Phi^R(z_0)$ OPE, and show that
 \begin{align}
- \mathcal{O}& =\frac{1}{2\pi i} \oint_{y_2,z_0}dy_1 J^a(y_1)\frac{-t^b\Phi^R(z_0)}{y_2-z_0} - \frac{1}{2\pi i} \oint_{z_0}dy_1 J^b(y_2)\frac{-t^a\Phi^R(z_0)}{y_1-z_0} +O(1)\ ,
-\\
-& = \frac{-t^b}{y_2-z_0} \frac{1}{2\pi i} \oint_{y_2,z_0}dy_1 J^a(y_1)\Phi^R(z_0) + t^a J^b(y_2)\Phi^R(z_0) + O(1)\ ,
-\\
-& = \frac{(t^bt^a-t^at^b)\Phi^R(z_0)}{y_2-z_0} + O(1) =  \frac{-f_c^{ab}t^c\Phi^R(z_0)}{y_2-z_0} + O(1)\ .
+ \mathcal{O}& =\frac{1}{2\pi i} \oint_{y_2,z_0}dy_1 J^a(y_1)\frac{-t^b\Phi^R(z_0)}{y_2-z_0} - \frac{1}{2\pi i} \oint_{z_0}dy_1 J^b(y_2)\frac{-t^a\Phi^R(z_0)}{y_1-z_0} +O(1)\ .
 \end{align}
+
+\item
+Use $J^a(y_1) t^b \Phi^R(z_0) =t^b J^a(y_1)  \Phi^R(z_0)$, and check that you recover eq. \eqref{oftp}.
 Notice that this explains the minus sign in the $J^a\Phi^R$ OPE eq. \eqref{jpr}.
+\end{enumerate}
 \end{exo}
 
 
@@ -5843,24 +5871,33 @@ Consider the fields
  J^- = -\beta \quad , \quad J^0 = -(\beta\gamma) - bJ \quad , \quad J^+ = (\beta\gamma^2)+2b(\gamma J)+k\partial\gamma\ ,
 \end{align}
 where the brackets are normal-ordered products, and the parameters $b$ and $k$ obey the relation \eqref{bk}.
+
+\begin{enumerate}
+ \item 
 Show that the fields $(J^-,J^0,J^+)$ obey the OPEs \eqref{jjjj}, and are therefore $\widehat{\mathfrak{sl}}_2$ currents. 
+\item
 Show that the Sugawara construction yields the Virasoro field
 \begin{align}
  T = -\beta \partial\gamma - J^2 +b^{-1}\partial J\ ,
 \end{align}
 and rederive the central charge from this formula.
-Then define the field $\Phi^j_\mu(z)$ by 
+
+\item
+Defining the field $\Phi^j_\mu(z)$ by 
 \begin{align}
  & \beta(y)\Phi^j_\mu(z) = \frac{-\mu}{y-z}\Phi^j_\mu(z)+ O(1) \quad , \quad \gamma(y)\Phi^j_\mu(z)=O(1)\ , 
 \\
- & J(y)\Phi^j_\mu(z) = \frac{-b^{-1}(j+1)}{y-z}\Phi^j_\mu(z)+ O(1)\ .
+ & J(y)\Phi^j_\mu(z) = \frac{-b^{-1}(j+1)}{y-z}\Phi^j_\mu(z)+ O(1)\ ,
 \end{align}
-Show that the field $\left({\frac{\partial}{\partial \mu}}-\gamma(z)\right)\Phi^j_\mu(z)$ satisfies the same relations, and is therefore proportional to $\Phi^j_\mu(z)$.
+show that the field $\left({\frac{\partial}{\partial \mu}}-\gamma(z)\right)\Phi^j_\mu(z)$ satisfies the same relations, and is therefore proportional to $\Phi^j_\mu(z)$.
+
+\item
 Choosing the coefficient of proportionality such that
 \begin{align}
  {\frac{\partial}{\partial \mu}}\Phi^j_\mu(z) =\left(\frac{j+1}{\mu}+\gamma(z)\right)\Phi^j_\mu(z)\ ,
 \end{align}
 write the OPEs $J^a(y)\Phi^j_\mu(z)$ in terms of differential operators as in eq. \eqref{jprx}, and conclude that $\Phi^j_\mu(z)$ is a $\mu$-basis affine primary field.
+\end{enumerate}
 \end{exo}
 
 \begin{exo}[Conformal global Ward identities from KZ equations]
