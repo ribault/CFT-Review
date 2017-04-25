@@ -44,7 +44,7 @@
 \\
 {\normalsize CEA Saclay, Institut de Physique Th\'eorique}
  \\
- {\footnotesize \ttfamily sylvain.ribault@cea.fr }
+ {\footnotesize \ttfamily sylvain.ribault@ipht.fr }
 }
 
 
@@ -5145,7 +5145,7 @@ We assume that the left- and right-moving isospins $x$ and $\bar x$ are complex 
  \Phi^j_{x} = \gamma(2j+1)\int_{{\mathbb{C}}} d^2\mu\ |\mu|^{-2j-2} e^{\mu x -\bar{\mu}\bar{x}}\Phi^j_{\mu}\ .
 \end{align}
 In this single-valued version of the Fourier transformation \eqref{emx}, 
-we introduced a prefactor $\gamma(2j+1)$, which will be needed in Section \ref{secsu} for ensuring that the $H_3^+$ OPE has a finite limit when the spin becomes half-integer.
+we introduced a prefactor $\gamma(2j+1)$, which ensures that the $H_3^+$ OPE has a finite limit when the spin becomes half-integer.
 Moreover, we flipped the sign of the second term of the exponent of $e^{\mu x -\bar{\mu}\bar{x}}$, as compared to the expected $e^{\mu x +\bar{\mu}\bar{x}}$, in order to ensure the convergence of the integral when $x$ and $\bar{x}$ are complex conjugates.
 This affects the relation between the differential operators $\bar{D}^j_{\bar{x}}(t^a)$ and $\bar{D}^j_{\bar{\mu}}(t^a)$, which we define in terms of their holomorphic counterparts $D^j_x(t^a), D^j_\mu(t^a)$ as 
 \begin{align}
@@ -5452,6 +5452,12 @@ Fusion is constrained by both null vectors, and becomes
 \begin{align}
  \hat{R}^{\langle 0, s_1\rangle}\times\hat{R}^{\langle 0, s_2\rangle} = \sum_{s\overset{2}{=}|s_1-s_2|+1}^{\min(s_1+s_2-1,2k+3-s_1-s_2)} \hat{R}^{\langle 0, s\rangle}\ .
 \end{align}
+
+\subsubsection{Correlation functions}
+
+Like the $H_3^+$ model, the (generalized) $SU_2$ WZW model has a diagonal spectrum that is made of highest-weight representations.
+Therefore, it is natural to conjecture that correlation functions of the (generalized) $SU_2$ WZW model can be deduced from $H_3^+$ correlation functions by analytically continuing the spins (and the level) to discrete values, in the same way as (generalized) minimal model two- and three-point functions are deduced from Liouville theory. 
+For the first step of recovering degenerate fusion rules from the $H_3^+$ OPE, see Exercise \ref{exodrfrh}.
 
 \subsubsection{Further rational models with an $\widehat{\mathfrak{sl}}_2$ symmetry algebra}
 
