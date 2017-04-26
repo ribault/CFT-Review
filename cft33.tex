@@ -103,7 +103,7 @@ Then we will study minimal models, which are rational and therefore less generic
 Even later will come free theories: since we do not do use a perturbative approach, they do not play any fundamental role. 
 
 
-\section{Plan of the article \label{secplan}}
+\section{Plan of the text \label{secplan}}
 
 We will do a systematic exposition of the ideas and techniques of the conformal bootstrap approach in Chapters \ref{secintr} and \ref{secccs}, before studying particular models in Chapters \ref{seccbm} and \ref{secaff}.
 
@@ -131,22 +131,24 @@ And some exercises provide supplementary material about:
  \item singular vectors of Verma modules (Exercise \ref{exosv}),
  \item characters of Virasoro representations (Exercise \ref{exochar}),
 \item logarithmic conformal field theory (Exercise \ref{exolog}), 
-\item fusion rules of unitary Verma modules (Exercise \ref{exoaur}), 
 \item Liouville theory with finite multiplicities (Exercise \ref{exomul}),
+\item the behaviour of Liouville four-point functions at coinciding points (Exercise \ref{exo4a}),
+\item fusion rules of unitary Verma modules (Exercise \ref{exoaur}), 
 \item generalization of the Sugawara construction (Exercise \ref{exotqpj}),
-\item the Wakimoto free-field representation of $\widehat{\mathfrak{sl}}_2$ (Exercise \ref{exowaki}).
+\item the Wakimoto free-field representation of $\widehat{\mathfrak{sl}}_2$ (Exercise \ref{exowaki}),
+\item level one null vectors of affine highest-weight representations of $\widehat{\mathfrak{sl}}_2$ (Exercise \ref{exolos}).
 \end{itemize}
 
 This text comes with an index, which points to the one or two places in the text where each term is defined.
 At these places, the terms in question appear in bold. 
 
 
-\section{Why one more review on conformal field theory?}
+\section{Why one more text on conformal field theory?}
 
-Let us argue that this review article fills an available ecological niche, by considering which neighbouring niches are already filled: 
+Let us argue that this text fills an available ecological niche, by considering which neighbouring niches are already filled: 
 \begin{itemize}
 \item 
-The book \cite{zz90} by A. and Al. Zamoldochikov is in spirit quite close to this article.
+The book \cite{zz90} by A. and Al. Zamoldochikov is in spirit quite close to the present text.
 That book is a concise exposition of conformal field theory, from the basic principles to advanced results, mostly in the conformal bootstrap approach.
 However, the depth and breadth of the ideas may be too much for beginning students.
 Non-rational theories such as Liouville theory are not covered.
@@ -168,21 +170,22 @@ Motivations and applications are mostly absent from the present text.
 On the statistical mechanics side, they are given in Cardy's lecture notes \cite{car08}, which also provide a concise introduction to the formalism.
 \item 
 $W$-symmetry is reviewed in depth in Bouwknegt and Schoutens's article \cite{bs92}, where $W$-symmetric conformal field theories are however not solved systematically.
-An exposition of the $W$-symmetric minimal models and conformal Toda theories would be a natural extension of the present article, although these theories have not been fully solved so far. 
+An exposition of the $W$-symmetric minimal models and conformal Toda theories would be a natural extension of the present text, although these theories have not been fully solved so far. 
 \end{itemize}
 In contrast to these texts, we will treat both rational and non-rational theories.
 Moreover, our exclusive use of the bootstrap approach means that we need not assume any previous knowledge of quantum field theory.
-The prerequisites for this text are limited to 
+The prerequisites are limited to 
 elementary complex analysis, and some familiarity with Lie algebras and their representations.
 A much abridged version is also available \cite{rib16}.
 
-While this review article mostly presents already known results, the following aspects may be original:
+While we mostly present already known results, the following aspects may be original:
 \begin{itemize}
 \item in Section \ref{secaco}, the formulation of Al. Zamolodchikov's recursion representation of conformal blocks as an explicit formula,
 \item in Section \ref{secliou}, a complete and correct solution of Liouville theory, using only the bootstrap approach, 
 \item in Section \ref{secvmm}, the logical sequence ``Liouville theory $\rightarrow$ generalized minimal models $\rightarrow$ minimal models'',
 \item in Section \ref{secsacf}, the study of compactified free bosons for any value of $c$ and not just $c=1$,
 \item in Section \ref{seclld}, the derivation of the light and heavy asymptotic limits of Liouville theory, without using the Lagrangian definition,
+\item in Section \ref{seckzbpz}, the derivation of $\widehat{\mathfrak{sl}}_2$ degenerate representations and fusion rules from the KZ-BPZ relation,
 \item in Section \ref{secsu}, the definition of the generalized $SU_2$ WZW model,
 \item in Section \ref{secslr}, a concise derivation of the spectrum and fusion rules of the $\widetilde{SL}_2(\mathbb{R})$ WZW model.
 \end{itemize}
@@ -190,7 +193,7 @@ While this review article mostly presents already known results, the following a
 
 \section{User's manual}
 
-This review article is intended as a tool for learning, and as a collection of technical results.
+This text is intended as a tool for learning, and as a collection of technical results.
 It provides neither a history of the subject, nor a guide to the literature.
 Accordingly, citations to the existing literature are not meant to distribute credit to researchers in the field.
 Citations are solely meant to be 
@@ -1143,6 +1146,8 @@ Such equations depend on the action of the symmetry algebra on the fields -- in 
 
 \subsection{Highest-weight representations}
 
+\subsubsection{Definition}
+
 According to Axiom \ref{ax:sots}, the spectrum can be decomposed into irreducible Virasoro representations, where $L_0$ is bounded from below. 
 Let us study the structure of a representation $R$ of this type. 
 Let $|\Delta\rangle$ be an $L_0$-eigenstate for the lowest $L_0$-eigenvalue $\Delta$ in $R$.
@@ -1160,6 +1165,9 @@ Since $|\Delta\rangle$ is a primary state, it is enough to consider the algebra 
 (See Exercise \ref{exospan}.)
 Representations of this type are called \textbf{\boldmath highest-weight representations}\index{highest-weight representation}.
 A state of $R$ of the type $U|\Delta\rangle$ with $U\in U(\mathfrak{V}^+)$ is called a \textbf{\boldmath descendent state}\index{descendent state} if it is linearly independent from $|\Delta\rangle$.
+
+
+\subsubsection{Structure}
 
 The highest-weight representation $R$
 comes with a natural surjective map
@@ -1242,6 +1250,8 @@ While this set does span $U(\mathfrak{V}^+)$, it however does not provide a basi
 
 \subsection{Verma modules and degenerate representations \label{secvm}}
 
+\subsubsection{Definition}
+
 We define the \textbf{\boldmath Verma module}\index{Verma module} $\mathcal{V}_\Delta$ with conformal dimension $\Delta$ as the highest-weight representation which contains a primary state $|\Delta\rangle$ with conformal dimension $\Delta$, and which is linearly isomorphic to $U(\mathfrak{V}^+)$ via the map $\varphi_{\mathcal{V}_\Delta}$ of eq. \eqref{pur}.
 In other words, $\mathcal{V}_\Delta$ is the representation whose basis is given by the states  $\left\{ L_{-n_1} \cdots L_{-n_p}|\Delta\rangle\right\}_{1\leq n_1\leq n_2\leq \cdots n_p}$.
 Therefore, $\mathcal{V}_\Delta$ is the largest possible highest-weight representation with lowest conformal dimension $\Delta$. 
@@ -1264,7 +1274,8 @@ While a highest-weight representation is by construction always indecomposable, 
 Coming back to our Verma module $\mathcal{V}_\Delta$, and assuming that it has a singular vector $|\chi\rangle$, we can define the degenerate representation $R = \frac{\mathcal{V}_\Delta}{U(\mathfrak{V}^+)|\chi\rangle}$, which is a coset of two Verma modules.
 If a Verma module has several singular vectors, then it also has several corresponding subrepresentations, and therefore a number of possible cosets, depending on which combination of these subrepresentations is chosen as the denominator representation $R'$ in eq. \eqref{rvrp}.
 
-Let us look for singular vectors in Verma modules.
+\subsubsection{Looking for singular vectors at low levels}
+
 We start at the level $N=1$: is $|\chi\rangle=L_{-1}|\Delta\rangle$ a singular vector? The states $L_n|\chi\rangle$ with $n\geq 2$ automatically vanish because they have negative levels, and we are left with computing
 \begin{align}
  L_1|\chi\rangle = L_1 L_{-1}|\Delta\rangle = [L_1,L_{-1}]|\Delta\rangle = 2L_0 |\Delta\rangle = 2\Delta|\Delta\rangle\ .
@@ -1312,6 +1323,8 @@ Singular vectors at the level $N=3$ exist if and only if
  D_3(\Delta) = 0 \quad \Leftrightarrow \quad \Delta = \frac{7-c\pm\sqrt{(c-25)(c-1)}}{6}\ .
 \end{align}
 
+\subsubsection{Liouville notations}
+
 Let us simplify these formulas by introducing Liouville notations for $c$ and $\Delta$.
 We introduce two new notations for the central charge $c$: the \textbf{\boldmath background charge}\index{background charge} $Q$ and the \textbf{\boldmath Liouville coupling constant}\index{Liouville coupling constant} $b$,
 \begin{align}
@@ -1353,6 +1366,8 @@ which is defined up to the \textbf{\boldmath reflection}\index{reflection}
 \label{arqa}
 \end{align}
 so that $\mathcal{V}_\alpha = \mathcal{V}_{Q-\alpha}$.
+
+\subsubsection{Singular vectors at all levels}
 
 In terms of the Liouville notations, the singular vectors at the levels $N=1,2,3$, and the corresponding conformal dimensions $\Delta$ and momentums $\alpha$, are 
 \begin{align}
@@ -1418,6 +1433,8 @@ For particular values of $c$ such that $\mathcal{V}_{\Delta_{\langle r,s \rangle
 
 \subsection{Unitarity}\label{secuni}
 
+\subsubsection{Unitarity and singular vectors}
+
 Let us discuss which highest-weight representations of the Virasoro algebra are unitary, starting with the Verma module $\mathcal V_\Delta$ that is generated by a primary state $|\Delta\rangle$. Let us assume there is a Hermitian form (also called a scalar product) such that $L_n^\dagger = L_{-n}$ eq. \eqref{ldn}.
 This conjugation rules allows us to deduce scalar products of descendent states, from the square norm of the primary state, which we normalize to $1$ and write  $\langle \Delta|\Delta\rangle =1$. 
 For example,
@@ -1442,6 +1459,8 @@ Knowing the zeros $\Delta_{\langle r,s \rangle}$ of $\det M^{(N)}$ as a function
 \end{align}
 where the constant of proportionality is a $\Delta,c$-independent positive number, and $p(N')$ is the number of partitions of $N'$.
 The multiplicity of the zero $\Delta_{\langle r,s \rangle}$ is $p(N-rs)$ because this is the number of linearly independent descendents at the level $N$ of a singular vector at the level $rs$.  
+
+\subsubsection{Unitarity of Verma modules and degenerate representations}
 
 According to eq. \eqref{levo}, the positivity of $M^{(1)}$ implies $\Delta >0$. 
 The unitarity of $\mathcal{V}_\Delta$ will now depend on the value of the central charge $c$, which must be real 
@@ -4887,7 +4906,7 @@ where $H_i$ are the mutually commuting Gaudin Hamiltonians, the Hamiltonians of 
 Techniques developed for studying the $\mathfrak{g}$ Gaudin model can be useful for solving the $\mathfrak{g}$ KZ equations, as we will now see in the case $\mathfrak{g} = \mathfrak{sl}_2$. 
 
 
-\subsection{\texorpdfstring{$\mathfrak{sl}_2$}{sl2} case: the KZ-BPZ relation} 
+\subsection{\texorpdfstring{$\mathfrak{sl}_2$}{sl2} case: the KZ-BPZ relation} \label{seckzbpz}
 
 We will now show that the $\mathfrak{sl}_2$ KZ equations are equivalent to certain BPZ equations via Sklynanin's separation of variables for the $\mathfrak{sl}_2$ Gaudin model. 
 
