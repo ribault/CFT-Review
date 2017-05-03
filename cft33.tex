@@ -55,7 +55,7 @@
 \begin{abstract}
 We provide an introduction to conformal field theory on the plane in the conformal bootstrap approach.
 We introduce the main ideas of the bootstrap approach to quantum field theory, and how they apply to two-dimensional theories with local conformal symmetry.
-We describe the mathematical structures which appear in such theories, from the Virasoro algebra and its representations, to the BPZ equations and their solutions.
+We describe the mathematical structures that appear in such theories, from the Virasoro algebra and its representations, to the BPZ equations and their solutions.
 As examples, we study a number of models: Liouville theory, (generalized) minimal models, free bosonic theories, the $H_3^+$ model, and the $SU_2$ and $\widetilde{SL}_2(\mathbb{R})$ WZW models. 
 \end{abstract}
 \vspace{1cm}
@@ -85,7 +85,7 @@ While this approach is widely recognized as very powerful, most of the literatur
 Renouncing Lagrangians however has the advantages of simplicity and consistency, and we will try to show that we do not lose much in terms of heuristics and computational power -- we will only have to deplore the loss of a simple definition for WZW models.
 
 Another advantage of the bootstrap approach is that by making assumptions explicit, we can better understand them, and if necessary lift them.
-For example, results such as the C-theorem, and the fact that scale invariance implies conformal invariance in two-dimensional unitary quantum field theories, rely on the strong assumption that there exists an energy-momentum tensor -- a conserved field with spin two and conformal dimension two, which generates conformal transformations.
+For example, results such as the C-theorem, and the fact that scale invariance implies conformal invariance in two-dimensional unitary quantum field theories, rely on the strong assumption that there exists an energy-momentum tensor -- a conserved field with spin two and conformal dimension two that generates conformal transformations.
 We will not lift this assumption, as we will study theories with local (i.e.
 not just global) conformal invariance, which therefore always have an energy-momentum tensor.
 
@@ -118,7 +118,7 @@ We define these theories by a few simple assumptions on their spectrums and corr
 We pay particular attention to the three-point structure constants, whose explicit expressions we derive. 
 
 In Chapter \ref{secaff}, we introduce extended symmetry algebras, starting with the affine $\hat{\mathfrak{u}}_1$ algebra.
-This not only allows us to study free bosonic theories, but also provides alternative perspectives on Liouville theory -- perspectives which were originally obtained using the Lagrangian approach.
+This not only allows us to study free bosonic theories, but also provides alternative perspectives on Liouville theory.
 We then consider nonabelian affine symmetry algebras, and in particular $\widehat{\mathfrak{sl}}_2$.
 We deduce the definition and solution of the $H_3^+$ model from the KZ-BPZ relation between differential equations satisfied by $\widehat{\mathfrak{sl}}_2$-symmetric and Virasoro-symmetric correlation functions.
 We then consider WZW models, and in particular the $SU_2$ and $\widetilde{SL}_2(\mathbb{R})$ WZW models. 
@@ -298,7 +298,7 @@ Such collisions can indeed create or destroy particles, so we need a field theor
 
 \subsection{Observables}
 
-In a model, the \textbf{\boldmath observables}\index{observable} are the quantities which can in principle be measured.
+In a model, the \textbf{\boldmath observables}\index{observable} are the quantities that can in principle be measured.
 The nature of the observables is in general dictated by the theory.
 For example, in the theory of general relativity, the observables are light signals and motions of objects, and do not include the space-time metric. 
 Which observables are relevant may depend on the physical system.
@@ -344,7 +344,7 @@ Correlation functions are numbers that linearly depend on fields, in particular
 for any component $x$ of a coordinate $x_i$. 
 Correlation functions will be defined by the equations that they obey, which will be deduced from the assumptions of the bootstrap approach.
 
-To construct a model of quantum field theory is therefore to give principles which uniquely determine a spectrum and a set of correlation functions.
+To construct a model of quantum field theory is therefore to give principles that uniquely determine a spectrum and a set of correlation functions.
 To \textbf{\boldmath solve a model}\index{solve (a model)} is to actually compute the spectrum and correlation functions. 
 
 \section{The bootstrap approach}
@@ -359,7 +359,7 @@ The \textbf{\boldmath bootstrap approach}\index{bootstrap approach} is a method 
 For example, the symmetry assumption of general covariance is the basis of the theory of general relativity, and the further symmetry assumptions of homogeneity and isotropy of the universe are used in constructing models of cosmology.
 In quantum theories, an essential consistency condition is the condition that the sum of the probabilities of all possible events is one. 
 
-Given a set of assumptions, there may exist any number of models which obey them:
+Given a set of assumptions, there may exist any number of models that obey them:
 \begin{itemize}
  \item no model at all, if the assumptions are too restrictive,
 \item one model, in which case we may be able to solve it,
@@ -386,7 +386,7 @@ $V_\sigma(x)= V_{(R,v)}(x)$. For example, for any spin $j\in \frac12 \mathbb{N}$
 
 The idea is now that the dependence of a correlation function $\left\langle \prod_{i=1}^n V_{(R_i,v_i)}(x_i)\right\rangle$ on $v_i$ is determined by symmetry considerations, whereas the dependence on $R_i$ is constrained by consistency conditions.
 This idea however comes with a number of technical assumptions.
-In particular, for the dependence on $v_i$ to be completely determined by symmetry, $R_i$ must be an \textbf{\boldmath indecomposable representation}\index{indecomposable representation}, which cannot be written as a direct sum of smaller representations.
+In particular, for the dependence on $v_i$ to be completely determined by symmetry, $R_i$ must be an \textbf{\boldmath indecomposable representation}\index{indecomposable representation}, i.e. a representation that cannot be written as a direct sum of smaller representations.
 \begin{align}
  R \ \ \text{indecomposable} \quad \Leftrightarrow \quad \nexists R',R'' \neq 0 \quad | \quad R = R'\oplus R''\ .
 \end{align}
@@ -394,7 +394,7 @@ In particular, any \textbf{\boldmath irreducible representation}\index{irreducib
 \begin{align}
  R \ \ \text{irreducible} \quad \Leftrightarrow \quad \nexists R' \neq 0,R \quad | \quad R'\subset R\ .
 \end{align}
-(See Exercise \ref{exoirr} for an example of an indecomposable representation which is not irreducible.)
+(See Exercise \ref{exoirr} for an example of an indecomposable representation that is not irreducible.)
 
 We will therefore distinguish two types of data:
 \begin{itemize}
@@ -408,7 +408,7 @@ We will study these data
 in Chapter \ref{seccbm}.  
 \end{itemize}
 Which data are  universal or model-dependent depends on the choice of a symmetry algebra.
-If a model's symmetry algebra $\mathfrak{A}$ is actually a subalgebra of a larger symmetry algebra $\mathfrak{A}'$, then the representations of $\mathfrak{A}$ which appear in the spectrum
+If a model's symmetry algebra $\mathfrak{A}$ is actually a subalgebra of a larger symmetry algebra $\mathfrak{A}'$, then the representations of $\mathfrak{A}$ that appear in the spectrum
 must combine into representations of the larger algebra $\mathfrak{A}'$.
 Which combinations can appear is universal data of $\mathfrak{A}'$, but model-dependent data from the point of view of the smaller algebra $\mathfrak{A}$. 
 
@@ -568,7 +568,7 @@ where
 \item the functional $\tilde{V}_{\sigma_i}[\phi](x_i)$ of $\phi(x)$ corresponds to the field $ V_{\sigma_i}(x_i)$,
 \item the integration measure $D\phi$ is usually characterized by axioms on functional integrals. 
 \end{itemize}
-An important advantage of the Lagrangian method is the existence of the Lagrangian itself, a relatively simple object which is not tied to any specific correlation function and encodes much information about the model.
+An important advantage of the Lagrangian method is the existence of the Lagrangian itself, a relatively simple object that is not tied to any specific correlation function and encodes much information about the model.
 The Lagrangian is the most common, but not the only object of this type: in certain integrable models or supersymmetric quantum field theories, much information is encoded in the geometry of a spectral curve.
 
 In the Lagrangian method, we are thus in principle given all the correlation functions of a specific model from the start.
@@ -579,14 +579,14 @@ Axioms requiring functional integrals to behave as ordinary integrals often leav
 it can happen that a transformation leaves the Lagrangian invariant, but changes the integration measure.
 This transformation is then called anomalous, and is not a symmetry of the model.
 
-Such an anomaly can also be described as a symmetry of the classical theory, which is not present in the corresponding quantum theory.
-This is because the Lagrangian method can be interpreted as the quantization of the classical theory which is defined by the Lagrangian.
+Such an anomaly can also be described as a symmetry of the classical theory, that is not present in the corresponding quantum theory.
+This is because the Lagrangian method can be interpreted as the quantization of the classical theory that is defined by the Lagrangian.
 The classical theory consists in the dynamics of the fundamental field, subject to the equations of motion associated with the Lagrangian, 
 \begin{align}
  \frac{\delta }{\delta \phi(x')} \int dx L[\phi](x) = 0 \ ,
 \end{align}
  where $\frac{\delta}{\delta\phi(x') } $ is a functional derivative.
-The integration measure then contains the additional information which is necessary for building a quantum theory from the classical theory. 
+The integration measure then contains the additional information that is necessary for building a quantum theory from the classical theory. 
 
 This contrasts with the bootstrap approach, which does not assume a classical theory to exist.
 Models constructed with the bootstrap approach may nevertheless have one or several classical limits. (See Section \ref{seclld} for the case of Liouville theory.)
@@ -614,7 +614,7 @@ f_\text{translation}(z) &= z+b \ ,
 f_\text{rotation}(z) &=a z \ , \ |a|=1\ ,
 \end{align}
 where $a$ and $b$ are complex constants.
-Moreover, if we lift the restriction $|a|=1$ in rotations, we obtain transformations which do not leave the metric invariant, but rescale it by a factor of $|a|^2$.
+Moreover, if we lift the restriction $|a|=1$ in rotations, we obtain transformations that do not leave the metric invariant, but rescale it by a factor of $|a|^2$.
 For $a\in{\mathbb{R}}$, these transformations are called \textbf{\boldmath dilatations}\index{dilatation} or scale transformations,
 \begin{align}
  f_\text{dilatation}(z) &= a z\ , \ a\in {\mathbb{R}}\ .
@@ -626,10 +626,10 @@ Secondly, by rescaling a quantum field theory to very small or large scales in a
 That new theory can be nontrivial, and helpful for the understanding of the original theory.
 
 It may seem reasonable to study quantum field theories that are invariant under translations, rotations and dilatations. 
-Surprisingly, many interesting systems have much more symmetry, which makes them accessible to the powerful methods that are the subject of this review.
+Surprisingly, many interesting systems have much more symmetry, which makes them accessible to the powerful methods that are the subject of this text.
 In the absence of physically compelling reasons for these further symmetries, we will try to provide formal justifications.
 
-A first formal consideration is that translations, rotations and dilatations are all \textbf{\boldmath conformal transformations}\index{conformal transformation}, that is transformations which preserve angles, and therefore which rescale the metric by a real factor.
+A first formal consideration is that translations, rotations and dilatations are all \textbf{\boldmath conformal transformations}\index{conformal transformation}, i.e. transformations that preserve angles, and therefore that rescale the metric by a real factor.
 But they are not the only conformal transformations: another one is the inversion
 \begin{align}
  f_\text{inversion}(z) = \frac{1}{z}\ .
@@ -658,11 +658,11 @@ Actually, any holomorphic function $h(z)$ defines a conformal transformation,
 \label{flc}
 \end{align}
 which transforms the metric into $dfd\bar{f} = |h'(z)|^2 dzd\bar{z}$, and is therefore angle-preserving.
-One may object that the only holomorphic functions on the sphere are the functions $f_g$ \eqref{gisl} which encode the global conformal transformations.
+One may object that the only holomorphic functions on the sphere are the functions $f_g$ \eqref{gisl} that encode the global conformal transformations.
 And indeed, any further conformal transformation must have singularities, and cannot be one-to-one.
 We could consider transformations that would be defined only on some subset of the Riemann sphere, where there would be no singularities.
 We will adopt a different point of view, and interpret a singularity of $h(z)$ at $z=z_0$ as meaning that a field $V_\sigma(z_0)$ transforms nontrivially.
-This makes sense not only with a correlation function $\left\langle V_{\sigma}(z_0)\cdots \right\rangle $ which manifestly involves a field at $z=z_0$, 
+This makes sense not only with a correlation function $\left\langle V_{\sigma}(z_0)\cdots \right\rangle $ that manifestly involves a field at $z=z_0$, 
 but also with arbitrary correlation functions.
 We can indeed always assume the presence at $z_0$ of a trivial field, called the identity field, which can however become nontrivial after a conformal transformation is performed.
 To summarize,
@@ -675,7 +675,7 @@ Global conformal transformations only move fields around, while local conformal 
 \end{center}
 So, we assume that the symmetries include the infinitely many independent \textbf{\boldmath local conformal transformations}\index{conformal transformation!local---}, in addition to the global conformal transformations, which are parametrized by the six real coordinates of $PSL_2({\mathbb{C}})$.
 Let us now describe the mathematical structure of the resulting space of all conformal transformations.
-This space is an infinite-dimensional Lie group, which must include $PSL_2({\mathbb{C}})$.
+This space is an infinite-dimensional Lie group that includes $PSL_2({\mathbb{C}})$.
 For technical simplicity, we will instead describe the associated Lie algebra of infinitesimal transformations.
 The structure of this algebra is worked out by considering transformations close to the identity, 
 \begin{align}
@@ -738,7 +738,7 @@ Its generators are $(L_n)_{n\in {\mathbb{Z}}}$, and its commutation relations ar
  \boxed{[L_n,L_m]=(n-m)L_{n+m} + \frac{c}{12} (n-1)n(n+1) \delta_{n+m,0}}\ .
 \label{vir}
 \end{align}
-The parameter $c$ is called the \textbf{\boldmath central charge}\index{central charge}, and the central term $\frac{c}{12} (n-1)n(n+1) \delta_{n+m,0}$ should be understood as the coefficient of an extra generator, which commutes with all $L_n$.
+The parameter $c$ is called the \textbf{\boldmath central charge}\index{central charge}, and the central term $\frac{c}{12} (n-1)n(n+1) \delta_{n+m,0}$ should be understood as the coefficient of an extra generator that commutes with all $L_n$.
 It can be checked that these commutation relations define a Lie algebra, and that the Virasoro algebra is the only central extension of the Witt algebra. (See Exercise \ref{exovir}.) Notice that the presence of the central term does not affect the generators $L_{-1},L_0,L_1$ of global conformal transformations. 
 
 Therefore, the symmetry algebra of conformal field theory is made of two commuting copies of the Virasoro algebra. It has
@@ -824,7 +824,7 @@ If the irreducible representations $R_1$ and $R_2$ of $\mathfrak{V}$ appear in t
 \end{hyp} 
 \noindent
 In other words, we assume that if Virasoro symmetry allows a representation of $\mathfrak{V}$ to appear in an OPE, then that representation does appear.
-There are two similar-looking axioms, which should not be adopted:
+There are two similar-looking axioms that should not be adopted:
 \begin{itemize}
  \item Closure under fusion of $\mathfrak{V}\times \overline{\mathfrak{V}}$ representations, instead of $\mathfrak{V}$ representations, would rule out most nontrivial models, and in particular diagonal models. 
 \item Closure under tensor product, instead of fusion, would not make sense, as the tensor product of two representations of $\mathfrak{V}_c$ is a representation of $\mathfrak{V}_{2c}$ -- central charges behave additively in a tensor product. 
@@ -988,7 +988,7 @@ We will only consider conformal field theories on the sphere, which are consiste
 
 \subsection{Sketching the space of simple models \label{secmomo}}
 
-After discussing the general properties of two-dimensional conformal field theory, we will now describe some simple models which are known to satisfy the consistency conditions of the conformal bootstrap.
+After discussing the general properties of two-dimensional conformal field theory, we will now describe some simple models that are known to satisfy the consistency conditions of the conformal bootstrap.
 These simple models also turn out to be the most commonly encountered in applications.  
 
 We first introduce diagonal models, where representations of $\mathfrak{V}\times \overline{\mathfrak{V}}$ have multiplicities no higher than one:
@@ -1037,7 +1037,7 @@ Therefore,
 the properties of conformal field theories, starting with their very existence, crucially depend on the value of the central charge $c$ of the underlying Virasoro algebra.
 In the case of unitary theories, we observe that the size of the spectrum (as measured by the number of representations) increases with $c$, from the $c=0$ minimal model whose spectrum contains only one representation, to $c\geq 1$ Liouville theory whose spectrum contains infinitely many.
 The central charge is actually additive: given two theories with spectrums $S$ and $S'$ and central charges $c$ and $c'$, there is a natural product theory with central charge $c+c'$ and spectrum $S\otimes S'$.
-Moreover, for any rational theory which is consistent on a torus, 
+Moreover, for any rational theory that is consistent on a torus, 
 the behaviour of the number $N(\Delta)$ of states with conformal dimension $\Delta$ is given by 
 \begin{align}
 \text{Cardy's formula:} \qquad \log N(\Delta) \underset{\Delta\to \infty}{\propto} \sqrt{c \Delta} \ ,
@@ -1185,7 +1185,7 @@ comes with a natural surjective map
 \end{array}
 \label{pur}
 \end{align}
-Let us introduce a basis $\mathcal{L}$ of $U(\mathfrak{V}^+)$, which is parametrized by the ordered $p$-uples $(-n_1,\cdots -n_p)$ of decreasing, strictly negative integers:
+Let us introduce a basis $\mathcal{L}$ of $U(\mathfrak{V}^+)$, that is parametrized by ordered $p$-uples $(-n_1,\cdots -n_p)$ of decreasing, strictly negative integers:
 \begin{align}
 \mathcal{L} =   \left\{ L_{-n_1} \cdots L_{-n_p}  \right\}_{1\leq n_1\leq n_2\leq \cdots n_p} \ .
 \label{lels}
@@ -1258,7 +1258,7 @@ While this set does span $U(\mathfrak{V}^+)$, it however does not provide a basi
 
 \subsubsection{Definition}
 
-We define the \textbf{\boldmath Verma module}\index{Verma module} $\mathcal{V}_\Delta$ with conformal dimension $\Delta$ as the highest-weight representation which contains a primary state $|\Delta\rangle$ with conformal dimension $\Delta$, and which is linearly isomorphic to $U(\mathfrak{V}^+)$ via the map $\varphi_{\mathcal{V}_\Delta}$ of eq. \eqref{pur}.
+We define the \textbf{\boldmath Verma module}\index{Verma module} $\mathcal{V}_\Delta$ with conformal dimension $\Delta$ as the highest-weight representation that contains a primary state $|\Delta\rangle$ with conformal dimension $\Delta$, and that is linearly isomorphic to $U(\mathfrak{V}^+)$ via the map $\varphi_{\mathcal{V}_\Delta}$ of eq. \eqref{pur}.
 In other words, $\mathcal{V}_\Delta$ is the representation whose basis is given by the states  $\left\{ L_{-n_1} \cdots L_{-n_p}|\Delta\rangle\right\}_{1\leq n_1\leq n_2\leq \cdots n_p}$.
 Therefore, $\mathcal{V}_\Delta$ is the largest possible highest-weight representation with lowest conformal dimension $\Delta$. 
 
@@ -2062,7 +2062,7 @@ Using the OPE of $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2)$ and Ward identities, any f
  = \sum_{\Delta_s,\bar{\Delta}_s} C_{12s} C_{s34} \left| \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)\right|^2\ ,
 \label{fsd}
 \end{align}
-where all quantities which are not three-point structure constants have been combined into the \textbf{\boldmath $s$-channel}\index{s-channel@$s$-channel} four-point conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)$.
+where all quantities that are not three-point structure constants have been combined into the \textbf{\boldmath $s$-channel}\index{s-channel@$s$-channel} four-point conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)$.
 The appearance of the factorized quantity $\left| \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)\right|^2$ (which involves the modulus square notation \eqref{eq:msn}) is a manifestation of holomophic factorization, and the conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)$ is a locally holomorphic function of $z_i$. 
 
 \subsubsection{Crossing symmetry}
@@ -2131,7 +2131,7 @@ So there must exist a linear, invertible fusing relation between the two bases,
  \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i) = \sum_{\Delta_t}\ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}\ \mathcal{F}^{(t)}_{\Delta_t}(\sigma_i|z_i)\ ,
 \end{align}
 whose $z_i$-independent kernel $F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}$ is called the \textbf{\boldmath fusing matrix}\index{fusing matrix} of the Virasoro algebra.
-The parameters of the fusing matrix are in principle representations of the Virasoro algebra: the conformal dimensions which we wrote stand for the corresponding Verma modules.
+The parameters of the fusing matrix are in principle representations of the Virasoro algebra: the conformal dimensions that we wrote stand for the corresponding Verma modules.
 A diagrammatic notation for the fusing matrix is 
 \begin{align}
  F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix} = \ \ 
@@ -2276,7 +2276,7 @@ The recursion representation has the following properties:
 \item it is manifestly invariant under reflections of all momentums,
 \item it has no known interpretation as a sum over descendents in some basis.
 \end{itemize}
-Alternatively, conformal blocks have a combinatorial representation which follows from the AGT relation \cite{aflt10}, and which has the opposite properties. 
+Alternatively, conformal blocks have a combinatorial representation that follows from the AGT relation \cite{aflt10}, which has the opposite properties. 
 
 
 \section{Degenerate fields}\label{sec:degf}
@@ -2384,8 +2384,8 @@ f_{r_1,r_2,r_3} = \left\{\begin{array}{l}  1 \quad \text{if} \quad
 
 \subsubsection{Fusion rules and conformal blocks}
 
-Conformal blocks which involve degenerate fields obey differential equations, as we will see in Section \ref{secbpz}.
-Nevertheless, the conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$ is a smooth function of $\Delta_i$, which has a finite value for $\Delta_1 = \Delta_{\langle r,s\rangle}$. 
+Conformal blocks that involve degenerate fields obey differential equations, as we will see in Section \ref{secbpz}.
+Nevertheless, the conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$ is a smooth function of $\Delta_i$, and has a finite value for $\Delta_1 = \Delta_{\langle r,s\rangle}$. 
 If $\Delta_2$ and $\Delta_s$ happen to be related as dictated by the fusion rule of the degenerate field $V_{\langle r,s\rangle}$, then this value obeys a differential equation of order $rs$.
 In other words, a conformal block involving a degenerate representation coincides with the conformal block involving the corresponding Verma module.
 The degenerate representation manifests itself in the decompositions of correlation functions, where fusion rules dictate which conformal blocks can contribute.
@@ -2509,7 +2509,7 @@ the hypergeometric equation is equivalent to the twisted hypergeometric equation
  \left\{ x(1-x) \frac{\partial^2}{\partial x^2}  -\frac{j_1(j_1+1)}{x}+ j_2(j_2+1)+\frac{j_3(j_3+1)}{x-1}\right\} \mathcal{H}(x) = 0\ .
 \label{hj}
 \end{align}
-The characteristic exponents of the hypergeometric equation at the regular singular point $x=0$ are $\lambda\in \{0,1-C\}$, and the solution $\mathcal{G}(x)$ which corresponds to $\lambda=0$
+The characteristic exponents of the hypergeometric equation at the regular singular point $x=0$ are $\lambda\in \{0,1-C\}$, and the solution $\mathcal{G}(x)$ that corresponds to $\lambda=0$
  is the \textbf{\boldmath hypergeometric function}\index{hypergeometric function}
 \begin{align}
  F(A,B,C,x) = \sum_{n=0}^\infty \frac{(A)_n(B)_n}{n!(C)_n}x^n\ ,
@@ -2545,7 +2545,7 @@ provided the parameters are related as
 \end{align}
 or equivalently $\alpha_i = -b^{-1}j_i +\frac{b}{2}$.
 (See Exercise \ref{exohge}.) 
-Therefore, the solutions of the equation \eqref{sode} which correspond to the characteristic exponents $\lambda_\pm$ \eqref{lpm} at $x=0$ are 
+Therefore, the solutions of the equation \eqref{sode} that correspond to the characteristic exponents $\lambda_\pm$ \eqref{lpm} at $x=0$ are 
 \begin{align}
 \left\{\begin{array}{l}  \mathcal{F}^{(s)}_+(x) = x^{b\alpha_1} (1-x)^{b\alpha_3} F(A,B,C,x)\ ,
 \\ \mathcal{F}^{(s)}_-(x)  =x^{b(Q-\alpha_1)} (1-x)^{b\alpha_3} F(A-C+1,B-C+1,2-C,x)= \left. \mathcal{F}^{(s)}_+(x) \right|_{\alpha_1\to Q-\alpha_1} \ ,
@@ -2702,7 +2702,7 @@ a null vector in the $p(N)$-dimensional level-$N$ subspace of a Verma module.
 \begin{enumerate}
  \item How many equations do the constraints $L_1|\chi\rangle = L_2|\chi\rangle = 0$ provide? Count the excess equations using the pentagonal number theorem, and explain their existence using eq. \eqref{llll}.
  \item
- Write a computer program for computing singular vectors at arbitrary levels, and check that at level $N$ the number of Verma modules which have a singular vector is the number of factorizations of $N$ into two positive integers.
+ Write a computer program for computing singular vectors at arbitrary levels, and check that at level $N$ the number of Verma modules that have a singular vector is the number of factorizations of $N$ into two positive integers.
 \end{enumerate}
 \end{exo}
 
@@ -2717,7 +2717,7 @@ Prove the identities
 \end{align}
 Under suitable assumptions on $r$ and $s$, show that $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$ has two singular vectors $|\chi_{\langle r,s \rangle}\rangle$ and $|\chi_{\langle p-r,q-s \rangle}\rangle$.
 \item
-Show that each one of the two states  $|\chi_{\langle r,s \rangle}\rangle$ and $|\chi_{\langle p-r,q-s \rangle}\rangle$ has a descendent which is itself a singular vector at the level $pq+qr-ps$ in $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$.
+Show that each one of the two states  $|\chi_{\langle r,s \rangle}\rangle$ and $|\chi_{\langle p-r,q-s \rangle}\rangle$ has a descendent that is itself a singular vector at the level $pq+qr-ps$ in $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$.
 Assuming that these two singular vectors, which live at the same level $pq+qr-ps$, are in fact identical, enumerate all the singular vectors of $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$.
 \item
 Which ones of these singular vectors are of the type $|\chi_{\langle r',s' \rangle}\rangle$? Show that the singular vector at the level $pq+qr-ps$ is not of this type in $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$, although it is of this type when considered as a singular vector of the Verma modules generated by $|\chi_{\langle r,s \rangle}\rangle$ and $|\chi_{\langle p-r,q-s \rangle}\rangle$.
@@ -2878,7 +2878,7 @@ Consider a finite-dimensional vector space $E$ with a linear action of $L_0$, an
  \item 
 Assume that $R$ is indecomposable but reducible: what does this mean for the action of $L_0$ on $E$, and the corresponding matrix? 
 \item
-Let $V_v(z)$ be the field which corresponds to a vector $v\in E$: write the global Ward identities for correlation functions of such fields, and prove 
+Let $V_v(z)$ be the field that corresponds to a vector $v\in E$: write the global Ward identities for correlation functions of such fields, and prove 
 \begin{align}
  {\frac{\partial}{\partial z_i}} \left\langle z_{12}^{L_0^{(1)}+L_0^{(2)}-L_0^{(3)}} z_{23}^{L_0^{(2)}+L_0^{(3)}-L_0^{(1)}} z_{13}^{L_0^{(1)}+L_0^{(3)}-L_0^{(2)}} \prod_{i=1}^3 V_{v_i}(z_i)\right\rangle = 0\ .
 \end{align}
@@ -3564,7 +3564,7 @@ To summarize,
 So, for $c\notin ]-\infty, 1]$, we obtain degenerate fields as limits of non-degenerate fields. 
 The reason for this behaviour is not clear.
 Nevertheless, this behaviour can be used for deriving the fusion rules \eqref{rtv} from the Liouville OPE. 
-It is tempting to use a similar calculation for deriving the fusion rules of the unitary Verma modules which do not belong to the spectrum. 
+It is tempting to use a similar calculation for deriving the fusion rules of the unitary Verma modules that do not belong to the spectrum. 
 (See Exercise \ref{exoaur}.)
 
 Let us finish the computation of the degenerate OPE coefficient $C_{i,j}^{\langle r,s \rangle}(\alpha)$.
@@ -3610,7 +3610,7 @@ Our task would be easier if we would weaken our assumptions and replace the rati
 We would obtain \textbf{\boldmath generalized minimal models}\index{minimal model!generalized---}, whose spectrums contain all degenerate representations, and which exist for arbitrary values of the central charge $c$. 
 
 What if we insist on the original assumption of rationality? We will see that there are finite sets 
-of degenerate representations which close under fusion.
+of degenerate representations that close under fusion.
 Such sets are made of
 \textbf{\boldmath doubly degenerate representations}\index{degenerate representation!doubly---}, that is maximally degenerate representations of the type $R_{\langle r,s \rangle}=R_{\langle r',s' \rangle}$ with $\langle r,s \rangle\neq \langle r',s' \rangle$.
 The ensuing equality of conformal dimensions $\Delta_{\langle r,s \rangle}=\Delta_{\langle r',s' \rangle}$ leads to a constraint on the central charge $c$.
@@ -3788,8 +3788,8 @@ It is easy to see that minimal models with $|p-q|>1$, and generalized minimal mo
 \subsubsection{Correlation functions}
 
 The three-point structure constants are given by the same formula \eqref{cpqb} as in generalized minimal models, where the rationality of $b^2$ does not bring noteworthy simplifications. 
-Some of the minimal model structure constants however correspond to values of $\langle r_i,s_i\rangle$ which violate the fusion rules of the generalized minimal models -- for instance, $C_{\langle 1,1\rangle,\langle 1,1\rangle,\langle p-1,q-1\rangle}$. 
-The difference between generalized minimal models and minimal models is more apparent in universal quantities which reflect the nature of the involved representations: degenerate in the former case, doubly degenerate in the latter case.
+Some of the minimal model structure constants however correspond to values of $\langle r_i,s_i\rangle$ that violate the fusion rules of the generalized minimal models -- for instance, $C_{\langle 1,1\rangle,\langle 1,1\rangle,\langle p-1,q-1\rangle}$. 
+The difference between generalized minimal models and minimal models is more apparent in universal quantities that reflect the nature of the involved representations: degenerate in the former case, doubly degenerate in the latter case.
 For instance, the two-point function of a minimal model is 
 \begin{align}
  \left\langle V_{\langle r_1,s_1 \rangle} V_{\langle r_2,s_2 \rangle} \right\rangle = \delta_{r_1,p-r_2}\delta_{s_1,q-s_2} + R(\alpha_{\langle r_1,s_1 \rangle}) \delta_{r_1,r_2} \delta_{s_1,s_2} \ .
@@ -4039,7 +4039,7 @@ and the symmetry of the Kac table,
 \end{multline}
 where $\sigma_i$ acts on $\langle r_i,s_i\rangle$ as in eq. \eqref{srs}, while $\sigma$ acts as $\sigma\big(]a,b[\times]c,d[\big) = ]p-b,p-a[\times ]q-d,q-c[$.
 \item
-Show that each one of the $16$ rectangles parametrized by the function $\epsilon:\{0,1\}^2 \to \{0,1\} $ is a subset of one of the two rectangles which correspond to the two functions $\epsilon(\epsilon_1,\epsilon_2)=\pm (\epsilon_1+\epsilon_2) \mod 2$, so that 
+Show that each one of the $16$ rectangles parametrized by the function $\epsilon:\{0,1\}^2 \to \{0,1\} $ is a subset of one of the two rectangles that correspond to the two functions $\epsilon(\epsilon_1,\epsilon_2)=\pm (\epsilon_1+\epsilon_2) \mod 2$, so that 
 \begin{multline}
  \langle r_3, s_3\rangle  \in\  \big]|r_1-r_2|,p-|r_1+r_2-p|\big[\times \big]|s_1-s_2|,q-|s_1+s_2-q|\big[ 
 \\
@@ -4112,7 +4112,7 @@ In order to study theories based on these algebras, we will follow the same step
 \subsubsection{The \boldmath $\hat{\mathfrak{u}}_1$ current and the energy-momentum tensor}
 
 In Section \ref{secem}, we showed how the Virasoro symmetry algebra is encoded in the energy-momentum tensor $T(y)$.
-Similarly, we now introduce the holomorphic \textbf{\boldmath $\hat{\mathfrak{u}}_1$ current}\index{current!u1@$\hat{\mathfrak{u}}_1$---} $J(y)$, the symmetry field which encodes the symmetry algebra of free bosonic theories.
+Similarly, we now introduce the holomorphic \textbf{\boldmath $\hat{\mathfrak{u}}_1$ current}\index{current!u1@$\hat{\mathfrak{u}}_1$---} $J(y)$, the symmetry field that encodes the symmetry algebra of free bosonic theories.
 This field is characterized by the OPE
 \begin{align}
  \boxed{J(y)J(z) = \frac{-\frac12}{(y-z)^2} + O(1)}\ .
@@ -4359,7 +4359,7 @@ Let us use eq. \eqref{pvaj} to find out how primary fields depend on momentums.
 Since conformal spins take integer values, we cannot vary left and right momentums independently, and we will consider a diagonal primary field $V_{\alpha,\alpha}(z)$. 
 If $\nabla_z={\frac{\partial}{\partial z}} +2\alpha J(z)$ and $\overline{\nabla}_{z}={\frac{\partial}{\partial \bar z}} +2\alpha \bar J(z)$, then $\nabla_z V_{\alpha,\alpha}(z)=\overline{\nabla}_z V_{\alpha,\alpha}(z)=0$, neglecting the issue of regularizing operator products.
 If we then define $\nabla_\alpha = {\frac{\partial}{\partial \alpha}}+2\int^z (J(y)dy +\bar J(y)d\bar y)$ so that $[\nabla_z,\nabla_\alpha]=[\overline{\nabla}_z,\nabla_\alpha]=0$, then $\nabla_\alpha V_{\alpha,\alpha}(z)$ is annihilated by $\nabla_z,\overline{\nabla}_z$, and must be proportional to $V_{\alpha,\alpha}(z)$.
-The proportionality constant can be set to zero by renormalizing the field $V_{\alpha,\alpha}(z)$, and this normalization coincides with the normalization which we adopted in eq. \eqref{vvoo}.
+The proportionality constant can be set to zero by renormalizing the field $V_{\alpha,\alpha}(z)$, and this normalization coincides with the normalization that we adopted in eq. \eqref{vvoo}.
 We thus obtain
 \begin{align}
  {\frac{\partial}{\partial \alpha}} V_{\alpha,\alpha}(z) 
@@ -4611,7 +4611,7 @@ More explicitly, in the case $\mu=-1$ we have
 \left\langle\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle\ \underset{\text{light\ asymptotic\ limit}}{=}\ \int_{H^+_3} dh\ \prod_{i=1}^N \left( \left[\begin{smallmatrix} z_i \\ 1 \end{smallmatrix}\right]^\dagger h \left[\begin{smallmatrix} z_i \\ 1 \end{smallmatrix}\right] \right)^{-2\eta_i}\ ,
 \label{zih}
 \end{align}
-where the integral is over the space \textbf{\boldmath $H_3^+$}\index{H3+@$H_3^+$ (space)} of Hermitian matrices of size two and determinant one, with a measure $dh$ which we assume to be invariant under $h\mapsto g^\dagger hg$ for $g\in SL_2({\mathbb{C}})$.
+where the integral is over the space \textbf{\boldmath $H_3^+$}\index{H3+@$H_3^+$ (space)} of Hermitian matrices of size two and determinant one, with a measure $dh$ that we assume to be invariant under $h\mapsto g^\dagger hg$ for $g\in SL_2({\mathbb{C}})$.
 In the case $N=3$, this agrees with the three-point function \eqref{caaa}. (See \cite{zz95}.) In the light asymptotic limit, the spectrum of Liouville theory reduces to the space of functions on $H_3^+$, and the symmetry algebra reduces to the algebra of the global conformal transformations.
 So
 the light asymptotic limit of Liouville theory is a two-dimensional global conformal field theory.
@@ -4794,7 +4794,7 @@ where $C_2(R)$ is the eigenvalue of the quadratic Casimir operator $C_2$ \eqref{
 \partial\Phi^R = -\frac{K_{ab}t^a(J^b\Phi^R)}{k+g} \ .
 \label{lmp}
 \end{align}
-Let us now consider the states $|v^R\rangle$ which correspond to the $R$-valued field $\Phi^R(z_0)$ by the state-field correspondence.
+Let us now consider the states $|v^R\rangle$ that correspond to the $R$-valued field $\Phi^R(z_0)$ by the state-field correspondence.
 The definition \eqref{jpr} of $\Phi^R(z_0)$ is equivalent to 
 \begin{align}
 \renewcommand{\arraystretch}{1.3}
@@ -4822,7 +4822,7 @@ The differential operators $D_X^R(t^a)$ obey the commutation relations of $\math
 \end{align}
 The isospin variable $X$ is a collection of as many complex variables as $\mathfrak{g}$ has positive roots.
 In particular, an $\mathfrak{g}=\mathfrak{sl}_n$ isospin variable has $\frac{n(n-1)}{2}$ components, and an $\mathfrak{g}=\mathfrak{sl}_2$ isospin variable has one component.
-We already know differential operators $D^j_x(t^a)$ \eqref{ddz} which 
+We already know differential operators $D^j_x(t^a)$ \eqref{ddz} that 
 obey the $\mathfrak{sl}_2$ commutation relations \eqref{ttpm} for any choice of the 
 \textbf{\boldmath spin}\index{spin ($\mathfrak{sl}_2$)} $j$.
 The eigenvalue of the quadratic Casimir operator in the corresponding representation of $\mathfrak{sl}_2$ is
@@ -4933,7 +4933,7 @@ In the $\mu$-basis, we find
 where the function $\mathcal{H}(x)$, which parametrizes the general solution of the $t^-$ and $t^0$ equations, is constrained by the $t^+$ equation to obey the twisted hypergeometric differential equation \eqref{hj}.
 It may seem strange that in the $\mu$-basis we obtain a second-order differential equation, whereas in the $x$-basis the solution appeared to be unique.
 The number of solutions of the global Ward identities has the algebraic interpretation of a tensor product multiplicity for $\mathfrak{sl}_2$ representations, and this should not depend on our choice of isospin variable.
-Actually it is the $x$-basis calculation which is misleading: analyticity conditions on the $x_i$-dependence of $\left\langle \prod_{i=1}^3 \Phi^{j_i}_{x_i} \right\rangle$ in general allow the existence of two solutions which differ globally, although they are locally identical \cite{rib09}.
+Actually it is the $x$-basis calculation which is misleading: analyticity conditions on the $x_i$-dependence of $\left\langle \prod_{i=1}^3 \Phi^{j_i}_{x_i} \right\rangle$ in general allow the existence of two solutions that differ globally, although they are locally identical \cite{rib09}.
 The tensor product multiplicity for generic $\mathfrak{sl}_2$ representations is two, as correctly suggested by the $\mu$-basis calculation. 
 
 \subsubsection{Knizhnik--Zamolodchikov equations}
@@ -5043,8 +5043,8 @@ Let us define two more variables as the eigenvalues $Y_1$ and $Y_2$ of the opera
 We can now define Sklyanin's \textbf{\boldmath separation of variables}\index{separation of variables} for the $\mathfrak{sl}_2$ Gaudin model as the linear 
 map $\mathcal{K}$ from functions of $(X_1,\cdots X_N)$ to functions of $(Y_1,Y_2,y_1,\cdots y_{N-2})$, which diagonalizes the operators $(\hat{Y}_1,\hat{Y}_2,\hat{y}_1,\cdots \hat{y}_{N-2})$, so that in particular $\mathcal{K} \hat{y}_j f(X_1,\cdots X_N) = y_j \mathcal{K} f(X_1,\cdots X_N)$.
 We actually only define this map on 
-functions which obey the global Ward identity associated with $J^-$ i.e.
-which are killed by $\hat{Y}_1$, whose images therefore have a $\delta(Y_1)$ prefactor.
+functions that obey the global Ward identity associated with $J^-$ i.e.
+that are killed by $\hat{Y}_1$, whose images therefore have a $\delta(Y_1)$ prefactor.
 Using in addition the global Ward identity associated to $J^0$, we find that the combined dependence of $\mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle$ on $Y_1$ and $Y_2$ is a $\delta(Y_1)Y_2$ prefactor.
 (This is done with the help of eq. \eqref{ddd}, which implies $[\underset{y\to \infty}{\lim} y \hat{J}^0(y),\hat{J}^-(z)]=-\hat{J}^-(z)$.)
 
@@ -5216,7 +5216,7 @@ We assume that the left- and right-moving isospins $x$ and $\bar x$ are complex 
 In this single-valued version of the Fourier transformation \eqref{emx}, 
 we introduced a prefactor $\gamma(2j+1)$, which ensures that the $H_3^+$ OPE has a finite limit when the spin becomes half-integer.
 Moreover, we flipped the sign of the second term of the exponent of $e^{\mu x -\bar{\mu}\bar{x}}$, as compared to the expected $e^{\mu x +\bar{\mu}\bar{x}}$, in order to ensure the convergence of the integral when $x$ and $\bar{x}$ are complex conjugates.
-This affects the relation between the differential operators $\bar{D}^j_{\bar{x}}(t^a)$ and $\bar{D}^j_{\bar{\mu}}(t^a)$, which we define in terms of their holomorphic counterparts $D^j_x(t^a), D^j_\mu(t^a)$ as 
+This affects the relation between the differential operators 
 \begin{align}
  \bar{D}^j_{\bar{x}}(t^a) = D^j_{\bar{x}}(t^a)  \quad , \quad \bar{D}^j_{\bar{\mu}}(t^a) = D^j_{-\bar{\mu}}(t^a)\ . 
 \end{align}
@@ -5395,7 +5395,7 @@ This is compatible with the structure \eqref{jam} of the affine Lie algebra $\ha
  k\in\mathbb{R}\ .
 \label{kir}
 \end{align}
-Via the Sugawara construction \eqref{ljj}, the conjugation rule for $J^a_n$ implies $L_n^\dagger = \bar{L}_{-n}$, which differs from the conjugation rule \eqref{ldn} which we previously assumed. 
+Via the Sugawara construction \eqref{ljj}, the conjugation rule for $J^a_n$ implies $L_n^\dagger = \bar{L}_{-n}$, which differs from the conjugation rule \eqref{ldn} that we previously assumed. 
 We refrain from discussing how this affects the geometrical interpretation of conformal transformations.
 Let us rather investigate the unitarity of the theory. 
 Given a primary state $|v\rangle$, the norm square of some of the level one descendents of $|v\rangle$ is
@@ -5463,7 +5463,7 @@ If moreover $G$ is simply connected, then the spectrum of the WZW model is still
 \begin{align}
  S = \bigoplus_{R\in \mathcal{R}_k} \hat{R}\otimes \bar{\hat{R}}\ .
 \end{align}
-Here $\hat{R}$ is the affine highest-weight representation of $\hat{\mathfrak{g}}$ which is built from $R$ by acting with the creation modes and removing the null vectors, and the finite subset $\mathcal{R}_k$ of $\mathcal{R}$ is defined by certain $k$-dependent conditions.
+Here $\hat{R}$ is the affine highest-weight representation of $\hat{\mathfrak{g}}$ that is built from $R$ by acting with the creation modes and removing the null vectors, and the finite subset $\mathcal{R}_k$ of $\mathcal{R}$ is defined by certain $k$-dependent conditions.
 The resulting representations $\hat{R}$ are called the integrable highest-weight representations of $\hat{\mathfrak{g}}$. 
 We have $\underset{k\to\infty}{\lim} \mathcal{R}_k =\mathcal{R}$ and $\underset{k\to \infty}{\lim} \hat{R} = R$, so that the spectrum $S$ has the desired large level limit \eqref{lsfg}.
 
@@ -5587,7 +5587,7 @@ Tensor products of principal and discrete series representations can be written 
  R_1\otimes R_2 = \bigoplus_{R_3} N_{R_1,R_2,R_3^*} R_3\ ,
 \label{ror}
 \end{align}
-where $N_{R_1,R_2,R_3}$ is an integer-valued function, which obeys $N_{R_1^*,R_2^*,R_3^*}=N_{R_1,R_2,R_3}$ and is symmetric under permutations.
+where $N_{R_1,R_2,R_3}$ is an integer-valued function that obeys $N_{R_1^*,R_2^*,R_3^*}=N_{R_1,R_2,R_3}$ and is symmetric under permutations.
 Modulo these symmetries, the only nonzero values of $N_{R_1,R_2,R_3}$ are
 \begin{align}
 N_{D^{j_1,+},D^{j_2,+},D^{j_3,-}} &= 1 \quad \text{if}\ j_3\in j_1+j_2+1+{\mathbb{N}}\ ,
@@ -5605,7 +5605,7 @@ For example, the tensor product of two principal series representations is
 \oplus \bigoplus_\pm \bigoplus_{\substack{j\in \pm\alpha_1\pm\alpha_2+{\mathbb{Z}}\\ j\in]-\frac12, \infty[}} D^{j,\pm} \ ,
 \label{coc}
 \end{align}
-where the factor of $2$ is the tensor product multiplicity which we already encountered in Section \ref{secwikz}.
+where the factor of $2$ is the tensor product multiplicity that we already encountered in Section \ref{secwikz}.
 Actually, all the values of $N_{R_1,R_2,R_3}$ can be deduced from the values of $N_{D^{j_1,+},D^{j_2,+},D^{j_3,-}}$, using the remark that as far as the eigenvalues \eqref{rpe} of $J^0_0$ are concerned, we have the identification
 \begin{align}
  C^j_\alpha \sim D^{\alpha-1,+} \oplus D^{-\alpha,-}\ .
@@ -5620,7 +5620,7 @@ After these reminders on $\widetilde{SL}_2(\mathbb{R})$ and its representations,
 The principal and discrete series representations of $\mathfrak{sl}_2$ are naturally extended to affine highest-weight representations of $\widehat{\mathfrak{sl}}_2$: the principal series representations $\hat{C}^j_\alpha$ and discrete series representations $\hat{D}^{j,\pm}$.
 However, it turns out that we cannot build this spectrum from these representations.
 This can be understood in terms of an algebraic feature of $\widehat{\mathfrak{sl}}_2$ called the \textbf{\boldmath spectral flow}\index{spectral flow} \cite{mo00a}.
-The spectral flow is a family $(\rho_w)_{w\in{\mathbb{Z}}}$ of automorphisms of $\widehat{\mathfrak{sl}}_2$, which obey $\rho_w\rho_{w'}=\rho_{w+w'}$ and act as 
+The spectral flow is a family $(\rho_w)_{w\in{\mathbb{Z}}}$ of automorphisms of $\widehat{\mathfrak{sl}}_2$ that obey $\rho_w\rho_{w'}=\rho_{w+w'}$ and act as 
 \begin{align}
  \rho_w(J^0_n)&=  J^0_n + \frac12 kw \delta_{n,0}   \ ,
 \\
@@ -5693,7 +5693,7 @@ So the fusion product $\hat{D}^{j_1,-\frac12}\times \hat{D}^{j_2,-\frac12}$ cont
 Generalizing this argument, the spectrum must in fact contain 
 representations of the type $\hat{D}^{j,w}$ for all values of $w\in \frac12+{\mathbb{Z}}$.
 Then it is natural to assume that the spectral flow actually leaves the spectrum invariant.
-But what are the allowed values of the spin $j$ of $\hat{D}^{j,w}$? We still impose the constraint $j>-\frac12$ which comes from the representation $D^{j,\pm}$ of $\mathfrak{sl}_2$.
+But what are the allowed values of the spin $j$ of $\hat{D}^{j,w}$? We still impose the constraint $j>-\frac12$ that comes from the representation $D^{j,\pm}$ of $\mathfrak{sl}_2$.
 If this applies to both spins in the relation \eqref{rdd}, we must then have 
 \begin{align}
  -\frac12 <j < -\frac{k+3}{2}\ .
@@ -5779,7 +5779,7 @@ This can be achieved by changing the conjugation rule, or equivalently performin
 \right.
 \label{jtdj}
 \end{align}
-In the matrix representation \eqref{mta} of $\mathfrak{sl}_2$, this corresponds to the $\mathfrak{su}_{1,1}$ conjugation rule $M^\dagger = \left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right) \bar{M}^T \left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right)$. (The matrices which satisfy $M^\dagger =-M$ for the $\mathfrak{su}_{1,1}$ conjugation rule are by definition the elements of $\mathfrak{su}_{1,1}$ itself). With this conjugation rule, the representations $C^j_\alpha,D^{j,\pm}$, and the large level spectrum $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$, are unitary.
+In the matrix representation \eqref{mta} of $\mathfrak{sl}_2$, this corresponds to the $\mathfrak{su}_{1,1}$ conjugation rule $M^\dagger = \left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right) \bar{M}^T \left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right)$. (The matrices that satisfy $M^\dagger =-M$ for the $\mathfrak{su}_{1,1}$ conjugation rule are by definition the elements of $\mathfrak{su}_{1,1}$ itself). With this conjugation rule, the representations $C^j_\alpha,D^{j,\pm}$, and the large level spectrum $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$, are unitary.
 
 The natural extension of this conjugation rule to the symmetry algebra $\widehat{\mathfrak{sl}}_2$ is
 \begin{align}
