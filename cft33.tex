@@ -224,7 +224,7 @@ This makes it easier to reuse excerpts of that file.
 \end{itemize}
 
 I have tried to follow some stylistic good practices, such as: providing a clickable table of contents, not clogging the bibliography with superfluous information such as journal data, avoiding Latin plurals when regular plurals are available, and numbering all equations while boxing the important ones. 
-% Also, having a linebreak at the end of each sentence, in order to facilitate version control.
+% NB: Also, having a linebreak at the end of each sentence, in order to facilitate version control.
 
 
 \section{Acknowledgements}
@@ -246,7 +246,7 @@ Conformal field theory is a special type of \textbf{\boldmath quantum field theo
 A \textbf{\boldmath theory}\index{theory} can be either a general framework such as quantum field theory or general relativity, or a more specific \textbf{\boldmath model}\index{model} such as the standard model of particle physics or Liouville theory.
 The standard model is formulated in the framework of quantum field theory, so we can call it a model of quantum field theory or simply a quantum field theory.
 Similarly, Liouville theory is a conformal field theory.
-A model need not be directly related to a \textbf{\boldmath physical system}\index{physical system}: a given physical system can be described by several models, and a given model can describe a number (possibly zero) of physical systems.
+A model need not be directly related to a physical system: a given physical system can be described by several models, and a given model can describe a number (possibly zero) of physical systems.
 This holds not only for physical systems, but also for what could be called theoretical systems, such as quantum gravity in $d$ dimensions.
 These notions are illustrated by the following examples:
 \begin{align}
@@ -508,7 +508,7 @@ OPE coefficients as
  C_{\sigma_1,\sigma_2}^{\sigma_3}(x_1,x_2) = \sum_{\lambda=1}^{N_{R_1R_2}^{R_3}} C_{R_1,R_2}^{R_3,\lambda}(x_1,x_2) f_{R_1,R_2}^{R_3,\lambda}(v_1,v_2,v_3|x_1,x_2)\ ,
 \label{clcf}
 \end{align}
-where $C_{R_1,R_2}^{R_3,\lambda}(x_1,x_2)$ is a model-dependent \textbf{\boldmath structure function}\index{structure function}, and 
+where $C_{R_1,R_2}^{R_3,\lambda}(x_1,x_2)$ is a model-dependent structure function, and 
 the universal quantity $f_{R_1,R_2}^{R_3,\lambda}(v_i|x_j)$ is a solution of the symmetry equations, which for given values of $R_i$ should be understood as equations on the space of functions of $(v_i,x_j)$.
 The index $\lambda$ labels elements of a basis of solutions of the symmetry equations.
 The number $N_{R_1R_2}^{R_3}\in {\mathbb{N}} \cup \{\infty\}$ of independent solutions is the \textbf{\boldmath fusion multiplicity}\index{fusion multiplicity}. 
@@ -793,7 +793,7 @@ Then the decomposition \eqref{somr} takes the form
 \label{sorr}
 \end{align}
 where $\text{Rep}(\mathfrak{V})$ is some set of irreducible representations of the Virasoro algebra.
-% Many, but not all interesting spectrums are of this type: for example, the spectrum of the $GL_{1|1}$ WZW model involves indecomposable, non-factorizable representations \cite{ss05}. -- This example involves an extended symmetry algebra.
+% NB: Many, but not all interesting spectrums are of this type: for example, the spectrum of the $GL_{1|1}$ WZW model involves indecomposable, non-factorizable representations \cite{ss05}. -- This example involves an extended symmetry algebra.
 \item
 The assumption that the spectrum decomposes into irreducible representations excludes indecomposable, reducible representations. 
 There exist \textbf{\boldmath logarithmic conformal field theories}\index{conformal field theory!logarithmic---} whose spectrums involve such representations, where moreover $L_0$ is not diagonalizable. 
@@ -805,7 +805,7 @@ This is motivated by the interpretation of the dilatation generator $L_0+\bar L_
 
 Two important special cases are
 \begin{itemize}
-\item \textbf{\boldmath rational models}\index{rational model}, where the spectrum involves only finitely many irreducible representations,
+\item \textbf{\boldmath rational models}\index{rational model}, where the spectrum involves finitely many irreducible representations,
  \item \textbf{\boldmath diagonal models}\index{diagonal model}, where the spectrum is of the type $S=\bigoplus_{R\in \text{Rep}(\mathfrak{V})} m_R R\otimes \bar{R}$, i.e. $m_{R,R'}\neq 0 \Rightarrow R=R'$ in eq. \eqref{sorr}.
 \end{itemize}
 
@@ -1032,7 +1032,7 @@ Moreover, for any rational theory that is consistent on a torus,
 the behaviour of the number $N(\Delta)$ of states with conformal dimension $\Delta$ is given by 
 \begin{align}
 \text{Cardy's formula:} \qquad \log N(\Delta) \underset{\Delta\to \infty}{\propto} \sqrt{c \Delta} \ ,
-% Reference: see Wikipedia
+% NB: Reference: see Wikipedia
 \label{nds}
 \end{align}
 which quantitatively shows how the central charge $c$ controls the size of the spectrum.
@@ -1094,7 +1094,7 @@ Observe that the second term can be absorbed by the redefinition $L_n\mapsto L_n
 \begin{exo}[Spectrum of $L_0$ in an indecomposable representation]
  ~\label{exodiffint}
 Show that the eigenvalues of $L_0$ in an indecomposable representation $R$ of the Virasoro algebra differ by integers.
-To do this, use the decomposition $R=\oplus_\Delta R_\Delta$ where $R_\Delta$ is the generalized eigenspace associated to the eigenvalue $\Delta$.
+To do this, use the decomposition $R=\oplus_\Delta R_\Delta$ where $R_\Delta$ is the generalized eigenspace associated with the eigenvalue $\Delta$.
 Given any value of $\Delta$, show that  $\oplus_{n\in{\mathbb{Z}}} R_{\Delta+n}$ is a subrepresentation, and conclude. 
 \end{exo}
 
@@ -1263,7 +1263,7 @@ Therefore, $R$ is a coset of $\mathcal{V}_\Delta$ by some subrepresentation $R'$
  R = \frac{\mathcal{V}_\Delta}{R'}\ .
 \label{rvrp}
 \end{align}
-In other words, a degenerate representation is associated to a nontrivial subrepresentation of a Verma module.
+In other words, a degenerate representation is associated with a nontrivial subrepresentation of a Verma module.
 Now, in any nontrivial subrepresentation of a highest-weight representation, the $L_0$ eigenvalues are bounded from below, and there is therefore a primary state $|\chi\rangle$.
 This primary state $|\chi\rangle$ is also a descendent -- it is then called a \textbf{\boldmath singular vector}\index{singular vector} or \textbf{\boldmath null vector}\index{null vector} of the highest-weight representation.
 While a highest-weight representation is by construction always indecomposable, it is irreducible if and only if it has no singular vectors.
@@ -1588,7 +1588,7 @@ And this is equivalent to $\frac{\partial}{\partial z} T(y) = \frac{\partial}{\p
 \end{align}
 (The series is supposed to converge if $y$ is close enough to $z$.) Calling $T(y)$ a tensor is an abuse of terminology: strictly speaking, the energy-momentum tensor is actually 
 $\left(\begin{smallmatrix} T_{yy} = T(y) & T_{y\bar y} \\ T_{\bar y y} & T_{\bar y \bar y} = \bar T(y) \end{smallmatrix}\right)$, where in particular $\bar T(y)= \sum_{n\in{\mathbb{Z}}} \frac{\bar L_n^{(z)}}{(\bar y-\bar z)^{n+2}}$. 
-%(We refrain from using the notation $\bar T(\bar y)$ for a locally antiholomorphic field and reserving $T(y)$ for a locally holomorphic field, while fields that are neither holomorphic nor antiholomorphic would have to be written as $V_\sigma(z,\bar z)$.)
+% (We refrain from using the notation $\bar T(\bar y)$ for a locally antiholomorphic field and reserving $T(y)$ for a locally holomorphic field, while fields that are neither holomorphic nor antiholomorphic would have to be written as $V_\sigma(z,\bar z)$.)
 
 \subsubsection{Analytic properties}
 
@@ -1646,7 +1646,7 @@ That field nevertheless obeys the same assumptions of commutativity, associativi
 More generally, let a \textbf{Virasoro field}\index{Virasoro field} be a locally holomorphic field $T(y)$ that obeys the OPE \eqref{tt}. 
 From such a field, we can deduce a Virasoro symmetry algebra via eq. \eqref{lit}, so $T(y)$ is a symmetry field. However, that Virasoro symmetry is a priori unrelated to conformal symmetry, and in particular does not obey Axiom \ref{ax:dvz}. 
 Most results in Section \ref{secccs} will hold for Virasoro fields and non-conformal Virasoro symmetries, including: Ward identities, nontrivial factors of conformal blocks, and fusion rules. We will however work under Axiom \ref{ax:dvz}, as this simplifies some calculations.
-% The right place for dealing with Virasoro fields would be a part on W algebras.
+% NB: The right place for dealing with Virasoro fields would be a part on W algebras.
 
 Finally, notice that all our formulas are consistent with dimensional analysis, if we adopt the following dimensions:
 \begin{align}
@@ -2154,7 +2154,7 @@ F^{-1}_{\Delta_t,\Delta_s}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Del
 \label{ffm}
 \end{align}
 This formulation of crossing symmetry can be useful, because the fusing matrix is usually a simpler object than the conformal blocks, as we will see in a special case in Section \ref{sechcb}.
-% F^{-1} is related to F by a permutation of the arguments.
+% NB: F^{-1} is related to F by a permutation of the arguments.
 
 
 
@@ -2673,7 +2673,7 @@ In particular, show that the Virasoro commutation relations \eqref{vir} imply a 
  Compute the singular vectors at the level $N=4$, and write the results in a table analogous to \eqref{lot}.
 In particular, show that the five coefficients of the singular vectors obey five linear equations, and that the determinant of the system is a polynomial of degree three in the conformal dimension $\Delta$. 
 If $\Delta_{\langle 2,2 \rangle} = \Delta_{\langle 4, 1\rangle}$, do the corresponding singular vectors coincide?
-% Answer: yes.
+% NB: Answer: yes.
 \end{exo}
 
 \begin{exo}[Singular vectors at higher levels]
@@ -2894,7 +2894,7 @@ Show that the choice $\lambda=b\alpha_1,\ \mu=b\alpha_3$ leads to the values of 
 \end{exo}
 
 
-% Ensuring the coming Chapter begins on an odd-numbered page, in case we want to print the document in two halves.
+% NB: Ensuring the coming Chapter begins on an odd-numbered page, in case we want to print the document in two halves.
 
 \cleardoublepage
 
@@ -2963,7 +2963,7 @@ By the reflection relation, commutativity \eqref{comm}, and conformal symmetry \
  \Big\langle V_{\alpha_1}(z_1) V_{\alpha_2}(z_2)\Big\rangle = c(\alpha_1) \Big\{ \delta(Q-\alpha_1-\alpha_2) + R(\alpha_1)\delta(\alpha_1-\alpha_2)\Big\} |z_{12}|^{-4\Delta(\alpha_1)}\ , 
 \label{vvc}
 \end{align}
-where the coefficient $c(\alpha)$ must obey $c(\alpha)=c(Q-\alpha)$, and is otherwise undetermined.
+where the coefficient $c(\alpha)$ must obey $c(\alpha)=c(Q-\alpha)$.
 Since both $c(\alpha)$ and $R(\alpha)$ can be absorbed in a field renormalization, 
 \begin{align}
  V_\alpha(z) \to \lambda(\alpha)  V_\alpha(z) \ ,
@@ -3006,7 +3006,7 @@ Adapting eq. \eqref{vvs}, the OPE is in our notations
 \left|
 \sum_{L\in \mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta,L} z_{12}^{|L|}  L\right|^2 V_{\alpha}(z_2) \ , 
 \end{multline}
-for some coefficient $C_{\alpha_1,\alpha_2}^\alpha$.
+for some OPE coefficient $C_{\alpha_1,\alpha_2}^\alpha$.
 Schematically,
 \begin{align}
  \boxed{V_{\alpha_1}V_{\alpha_2} \sim \frac12\int_{\frac{Q}{2}+i{\mathbb{R}}} d\alpha\ C_{\alpha_1,\alpha_2}^{\alpha} V_\alpha}\ .
@@ -3170,7 +3170,7 @@ Using eq. \eqref{cmcp}, this determines in particular $C_-(\alpha)$, so that we 
  C_+(\alpha)=1 \quad , \quad C_-(\alpha) = \mu^b b^4 \frac{\gamma(b(2\alpha-Q))}{\gamma(2b\alpha)}\ .
 \label{cpm}
 \end{align}
-We will need these OPE coefficients for in order to determine the three-point structure constant. 
+We will need these OPE coefficients in order to determine the three-point structure constant. 
 However, we would not need these OPE coefficients 
 if we only wanted to determine the $\alpha_s$-dependence of the combination $C_{\alpha_1,\alpha_2,Q-\alpha_s}C_{\alpha_s,\alpha_3,\alpha_4}$. (See Exercise \ref{exocas}.)
 
@@ -3261,13 +3261,13 @@ Both functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$ exist and obey shift equa
 
 \subsubsection{Properties of the function $\Upsilon_b(x)$}
 
-The equations \eqref{upup} that determine how $\Upsilon_b(x)$ behaves under shifts by $x\to x+b$ and $x\to x+\frac{1}{b}$, also determine how $\Upsilon_b(Q-x)$ behaves under the same shifts.
+The equations \eqref{upup} that determine how $\Upsilon_b(x)$ behaves under shifts $x\to x+b$ and $x\to x+\frac{1}{b}$, also determine how $\Upsilon_b(Q-x)$ behaves under the same shifts.
 The resulting shift equations for $\Upsilon_b(Q-x)$ turn out to be identical to the shift equations for $\Upsilon_b(x)$, which suggests 
 \begin{align}
  \boxed{\Upsilon_b(x) = \Upsilon_b(Q-x)}\ .
 \label{upq}
 \end{align}
-Second, the shift equations \eqref{upup} constrain the poles and zeros of  $\Upsilon_b(x)$, knowing that $\gamma(x)$ has simple poles for $x\in -{\mathbb{N}}$ and zeros for $x\in 1+{\mathbb{N}}$.
+Given that $\gamma(x)$ has simple poles for $x\in -{\mathbb{N}}$ and zeros for $x\in 1+{\mathbb{N}}$, the shift equations \eqref{upup} constrain the poles and zeros of  $\Upsilon_b(x)$.
 Both $\frac{\Upsilon_b(x+b)}{\Upsilon_b(x)}$ and $\frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)}$ have a pole at $x=0$, which suggests that $\Upsilon_b(x)$ has a simple zero at $x=0$.
 Then the shift equations imply that 
 \begin{align}
@@ -3446,7 +3446,7 @@ So we cannot continue the four-point function from $c\in ]-\infty, 1]$ to a larg
 
 \subsubsection{Uniqueness}
 
-Let us now discuss the uniqueness of Liouville theory, as defined by our assumptions in Section \ref{secspe}. 
+Let us discuss the uniqueness of Liouville theory, as defined by our assumptions in Section \ref{secspe}. 
 We saw that three-point structures constants are uniquely determined by shift equations if $c\in ]-\infty, 1] \cup [25,\infty[$, so that Liouville theory is unique for these values of $c$. 
 For the other values of $c$, we have $b^2\notin\mathbb{R}$, and we can find alternative solutions of the equations \eqref{upup} for $\Upsilon_b(x)$, by multiplying $\Upsilon_b(x)$ with elliptic functions -- meromorphic functions $\theta(x)$ such that $\theta(x+b)=\theta(x+\frac{1}{b}) = \theta(x)$.
 This leads to alternative solutions of the shift equations for structure constants.
@@ -3457,9 +3457,9 @@ For example, it turns out that nothing new can be obtained by relaxing our assum
 \subsubsection{Degenerate values of momentums}
 
 Let us study the behaviour of the Liouville OPE $V_{\alpha_1}V_{\alpha_2}$ \eqref{vvi} when $\alpha_2 \to \alpha_{\langle r,s \rangle}$, where the degenerate field momentum $\alpha_{\langle r,s \rangle}$ is given in eq. \eqref{ars}.
-This behaviour depends on the value of the central charge $c$, because the structure constants $C$ and $\hat C$ have very different analytical properties. 
+This behaviour depends on the value of the central charge $c$, because the structure constants $C$ and $\hat C$ have very different analytic properties. 
 If $c\in ]-\infty, 1]$, we use the structure constant $\hat C_{\alpha_1,\alpha_2,\alpha_3}$, which has a finite limit when $\alpha_2 \to \alpha_{\langle r,s \rangle}$.
-So the OPE remaining an integral over the Liouville spectrum, and nothing particular happens. 
+So the OPE remains an integral over the Liouville spectrum, and nothing particular happens. 
 If on the other hand $c\notin ]-\infty, 1]$, we use the structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$, which apparently vanishes due to the identity 
 \begin{align}
  \Upsilon_b(2\alpha_{\langle r,s \rangle})=0\ .
@@ -3584,7 +3584,7 @@ Rationality can indeed be understood as the assumption that correlation function
 It is not obvious that we can satisfy this assumption, on top of the conformal bootstrap equations.
 
 This would however not be a problem, if the vanishing of almost all correlation functions was not an additional constraint, but rather a consequence of the fusion rules.
-This can happen provided the spectrum only contains degenerate representations, whose fusion products \eqref{rrsr} involve finite sums instead of the generic integrals. 
+This can happen provided the spectrum only contains degenerate representations, whose fusion products \eqref{rrsr} involve finite sums. 
 However, in general, no nontrivial finite set of degenerate representations of the Virasoro algebra is closed under fusion.
 Starting with the degenerate representation $R_{\langle 1,2 \rangle}$ for instance, the multiple fusion products $R_{\langle 1,2 \rangle}\times R_{\langle 1,2 \rangle}\times \cdots \times R_{\langle 1,2 \rangle}$ span the infinite set of representations $\{R_{\langle 1,s \rangle}\}_{s\in{\mathbb{N}}^*}$.
 Our task would be easier if we would weaken our assumptions and replace the rationality of the theory with the discreteness of the spectrum, allowing the number of representations to be countable instead of finite.
@@ -3604,7 +3604,7 @@ For any complex value of the central charge $c$, we define a generalized minimal
  \boxed{S = \bigoplus_{r,s=1}^\infty R_{\langle r,s \rangle}\otimes \bar{R}_{\langle r,s \rangle}}\ .
 \end{align}
 We could obtain other consistent models by using subsets of the degenerate representations, provided these subsets were closed under fusion, for instance $S=R_{\langle 1,1 \rangle}\otimes \bar{R}_{\langle 1,1 \rangle}$, $S=\bigoplus_{r=1}^\infty R_{\langle r,1 \rangle}\otimes \bar{R}_{\langle r,1 \rangle}$ or $S=\bigoplus_{r,s=1}^{\infty} R_{\langle 2r+1,2s+1 \rangle}\otimes \bar{R}_{\langle 2r+1,2s+1 \rangle}$.
-Solving the generalized minimal model will provide a solution of each of these submodels. 
+Solving the generalized minimal model will provide a solution of all these submodels. 
 
 \subsubsection{Relation with Liouville theory}
 
@@ -3616,7 +3616,7 @@ To begin with, the two-point function can be deduced from the Liouville two-poin
 \end{align}
 The three-point structure constant can similarly be obtained from both expressions $C$ \eqref{caaa} and $\hat C$ \eqref{hc} for the Liouville structure constant, since both obey the same shift equations. 
 There is a subtlety with the expression $C$, which is singular when momentums take degenerate values. 
-But we already found the correct regularization when we expressed degenerate OPE coefficients $C_{i,j}^{\langle r,s \rangle}(\alpha_1)$ in terms of $C$ \eqref{crs}, after sending one momentum to a degenerate value. 
+But we already found the correct regularization when we expressed degenerate OPE coefficients in terms of $C$ \eqref{crs}, after sending one momentum to a degenerate value. 
 The degenerate OPE coefficient then has a finite limit when $\alpha_1\to \alpha_{\langle r_1,s_1 \rangle}$, and we have
 \begin{align}
  C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} 
@@ -3628,14 +3628,14 @@ The degenerate OPE coefficient then has a finite limit when $\alpha_1\to \alpha_
 \underset{\sum_i \alpha_i = \sum_i \alpha_{\langle r_i,s_i \rangle} }{\operatorname{ Res}} C_{\alpha_1,\alpha_2,\alpha_3}\ .
 \label{clc}
 \end{align}
-These equalities hold only provided the degenerate fusion rules \eqref{rrrsss} are obeyed.
+For these equalities to hold, we need the three degenerate fields to obey the fusion rules \eqref{rrrsss}.
 In particular, the expressions on the right do not necessarily vanish if the fusion rules are violated.
 For example, neither expression vanishes in the case of $C_{\langle 1,1\rangle , \langle 1,1 \rangle,\langle 3,3 \rangle}$, i.e. $(\alpha_1,\alpha_2,\alpha_3)=(0,0,-Q)$.
 The three-point function is therefore 
 \begin{multline}
  \left\langle \prod_{i=1}^3 V_{\langle r_i,s_i \rangle}(z_i) \right\rangle = C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}  
 \\ \times 
-f_{r_1,r_2,r_3} f_{s_1,s_2,s_3}\ |z_{12}|^{2(\Delta_3-\Delta_1-\Delta_2)} |z_{23}|^{2(\Delta_1-\Delta_2-\Delta_3)} |z_{31}|^{2(\Delta_2-\Delta_3-\Delta_1)}\ ,
+f_{r_1,r_2,r_3} f_{s_1,s_2,s_3} |z_{12}|^{2(\Delta_3-\Delta_1-\Delta_2)} |z_{23}|^{2(\Delta_1-\Delta_2-\Delta_3)} |z_{31}|^{2(\Delta_2-\Delta_3-\Delta_1)}\ ,
 \end{multline}
 where 
 the model-dependent data are $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$, and the universal data are the $z_i$-dependent factor as well as the factor $f_{r_1,r_2,r_3} f_{s_1,s_2,s_3}$ \eqref{frrr}, which enforces the degenerate fusion rules. 
@@ -3668,14 +3668,14 @@ The three-point structure constant can be rewritten in terms of Gamma functions,
 \end{align}
 where we defined
 \begin{align}
- P_r(x) = \prod_{i=1}^r \gamma(1+ix) \quad \text{and} \quad Q_{r,s}(b) = \prod_{i=1}^r \prod_{j=1}^s (ib+jb^{-1})^2\ .
+ P_r(x) = \prod_{i=1}^r \gamma(1+ix) \qquad \text{and} \qquad Q_{r,s}(b) = \prod_{i=1}^r \prod_{j=1}^s (ib+jb^{-1})^2\ .
 \end{align}
 We then find
 \begin{align}
  C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =  \frac{-(-b^2)^{r_0-s_0}\mu^{br_0 + b^{-1}s_0}}{P_{r_0}(b^2)P_{s_0}(b^{-2})Q_{r_0,s_0}(b)} \prod_{i=1}^3 \frac{P_{r_i-1}(b^2)P_{s_i-1}(b^{-2}) Q_{r_i-1,s_i-1}(b)}{P_{r_0-r_i}(b^2)P_{s_0-s_i}(b^{-2}) Q_{r_0-r_i,s_0-s_i}(b)} \ ,
 \label{cpqb}
 \end{align}
-where we introduce the notations 
+where we introduce the integers
 \begin{align}
  r_0 = \frac{r_1+r_2+r_3-1}{2} \quad , \quad s_0=\frac{s_1+s_2+s_3-1}{2}\ .
 \end{align}
@@ -3734,7 +3734,6 @@ And due to the identity
  \alpha_{\langle r'',s'' \rangle}+\alpha_{\langle p-r'',q-s'' \rangle}=Q\ ,
 \end{align}
 the corresponding degenerate representations $R_{\langle r'', s'' \rangle}$ are actually doubly degenerate. 
-We already encountered these doubly degenerate representations in the case $|p-q|=1$ when they are unitary, see Section \ref{secuni}. 
 
 The fusion rules of doubly degenerate representations can be deduced from the fusion rules \eqref{rrsr} of degenerate representations, 
 \begin{align}
@@ -3764,14 +3763,16 @@ This set can therefore be used to build the spectrum of an A-series minimal mode
 where the factor $\frac12$ is here to avoid counting each representation $R_{\langle r,s \rangle}=R_{\langle p-r,q-s \rangle}$ twice.
 As in the case of generalized minimal models, we could define submodels whose spectrums would be based on smaller sets of representations, provided these smaller sets were closed under fusion.
 However, the minimal models have the distinction of being consistent not only on the sphere, but also on all other Riemann surfaces \cite{fms97}.
+
 It is easy to see that minimal models with $|p-q|>1$, and generalized minimal models, cannot be unitary, due to the presence of fields with negative conformal dimensions in their spectrums. (See Exercise \ref{exoneg}.)
+On the other hand, minimal models with $|p-q|=1$ are unitary, see eq. \eqref{srp}.
 
 \subsubsection{Correlation functions}
 
 The three-point structure constants are given by the same formula \eqref{cpqb} as in generalized minimal models, where the rationality of $b^2$ does not bring noteworthy simplifications. 
 Some of the minimal model structure constants however correspond to values of $\langle r_i,s_i\rangle$ that violate the fusion rules of the generalized minimal models -- for instance, $C_{\langle 1,1\rangle,\langle 1,1\rangle,\langle p-1,q-1\rangle}$. 
-The difference between generalized minimal models and minimal models is more apparent in universal quantities that reflect the nature of the involved representations: degenerate in the former case, doubly degenerate in the latter case.
-For instance, the two-point function of a minimal model is 
+
+The two-point function of a minimal model is 
 \begin{align}
  \left\langle V_{\langle r_1,s_1 \rangle} V_{\langle r_2,s_2 \rangle} \right\rangle = \delta_{r_1,p-r_2}\delta_{s_1,q-s_2} + R(\alpha_{\langle r_1,s_1 \rangle}) \delta_{r_1,r_2} \delta_{s_1,s_2} \ .
 \label{vvddp}
@@ -3791,7 +3792,7 @@ Correlation functions are modified accordingly, and in particular the two-point 
 \begin{align}
  \boxed{\left\langle \tilde{V}_{\langle r_1,s_1 \rangle} \tilde{V}_{\langle r_2,s_2 \rangle} \right\rangle = \delta_{r_1,p-r_2}\delta_{s_1,q-s_2} + \delta_{r_1,r_2} \delta_{s_1,s_2}} \ .
 \end{align}
-There is an additional subtlety in the case of the three-point function: if we want $\tilde{V}_{\langle 1,1 \rangle}$ to be the identity field like $V_{\langle 1,1 \rangle}$, we need to renormalize the three-point structure constant with a factor $\sqrt{R(\alpha_{\langle 1,1 \rangle})}$ on top of the factors coming from the field renormalizations, so that 
+There is an additional subtlety in the case of the three-point function: if we want $\tilde{V}_{\langle 1,1 \rangle}$ to be the identity field, we need to renormalize the three-point structure constant with a factor $\sqrt{R(\alpha_{\langle 1,1 \rangle})}$ on top of the factors coming from the field renormalizations, so that 
 \begin{align}
  \tilde{C}_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} = \sqrt{\frac{R(\alpha_{\langle 1,1 \rangle})}{\prod_{i=1}^3 R(\alpha_{\langle r_i,s_i \rangle})}}  C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}\ ,
 \label{tcc}
@@ -3802,7 +3803,7 @@ Then $\tilde{C}_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3
 \boxed{ \tilde{C}_{\langle 1,1\rangle , \langle r,s \rangle,\langle r,s \rangle}=1}\ .
 \end{align}
 
-% 3pt function essentially agrees with Dotsenko-Fateev result, as transcribed in hep-th/9112029 eq. (15). 
+% NB: 3pt function essentially agrees with Dotsenko-Fateev result, as transcribed in hep-th/9112029 eq. (15). 
 
 \subsection{Examples of A-series minimal models}
 
@@ -3909,12 +3910,13 @@ The only three-point structure constant not involving the identity field is
 \label{csse}
 \end{align}
 (See Exercise \ref{exocsse}.)
-% agrees with the ZZ book
+% NB: agrees with the ZZ book
 
 Finally, let us comment on the interpretation of this minimal model in terms of statistical physics.
 The Ising model of statistical physics describes two-state spins on a lattice.
 Our field $\sigma$ describes these spins, while the field $\epsilon$ describes the energy.
 Flipping spins is a symmetry of the model, and this symmetry manifests itself as the invariance of the fusion rules under $\sigma\to -\sigma$. 
+
 
 \section{Exercises}
 
@@ -4083,7 +4085,7 @@ and deduce the explicit formula \eqref{csse} for $\tilde{C}_{\sigma\sigma\epsilo
 
 \chapter{Affine symmetry \label{secaff}}
 
-Affine Lie algebras are infinite-dimensional Lie algebras, whose relevance to conformal field theory comes from the fact that they contain the Virasoro algebra.
+Affine Lie algebras are infinite-dimensional Lie algebras that contain the Virasoro algebra, and are therefore relevant to conformal field theory.
 In order to study theories based on these algebras, we will follow the same steps as in the case of the Virasoro algebra: study the algebras and their representations, deduce Ward identities and differential equations for correlation functions, and write spectrums and correlation functions for particular models. 
 
 \section{Free bosons}
@@ -4104,7 +4106,7 @@ Using such a $\hat{\mathfrak{u}}_1$ current, it is possible to build a family of
  \boxed{T(z) = -(JJ)(z) - Q\partial J(z)}\ ,
 \label{tqz}
 \end{align}
-which depend on a parameter $Q$ called the \textbf{\boldmath $\hat{\mathfrak{u}}_1$ background charge}\index{background charge!u1@$\hat{\mathfrak{u}}_1$---}. 
+where the parameter $Q$ is called the \textbf{\boldmath $\hat{\mathfrak{u}}_1$ background charge}\index{background charge!u1@$\hat{\mathfrak{u}}_1$---}. 
 Here $(JJ)(z)$ is an instance of the \textbf{\boldmath normal-ordered product}\index{normal-ordered product}, 
 \begin{align}
  (AB)(z) = \frac{1}{2\pi i} \oint_z \frac{dy}{y-z} A(y)B(z)\ .
@@ -4144,13 +4146,13 @@ In order to build conformal field theories from the current $J(z)$, we choose a 
 
 \subsubsection{The affine Lie algebra \boldmath $\hat{\mathfrak{u}}_1$}
 
-The OPE of $J(y)$ with a generic field $V_\sigma(z_0,\bar{z}_0)$ is 
+The OPE of $J(y)$ with a generic field $V_\sigma(z_0)$ is 
 \begin{align}
- \boxed{J(y) V_\sigma(z_0,\bar{z}_0) = \sum_{n\in {\mathbb{Z}}} \frac{J_n V_\sigma(z_0,\bar{z}_0)}{(y-z_0)^{n+1}}}\ .
+ \boxed{J(y) V_\sigma(z_0) = \sum_{n\in {\mathbb{Z}}} \frac{J_n V_\sigma(z_0)}{(y-z_0)^{n+1}}}\ .
 \label{jvn}
 \end{align}
 This OPE is consistent with dimensional analysis, if in addition to the known dimensions \eqref{zaz} we assume $[J]=1$ and $[J_n]=-n$.
-The $J(y)J(z)$ OPE \eqref{jj} is equivalent to the commutation relations
+The $JJ$ OPE \eqref{jj} is equivalent to the commutation relations
 \begin{align}
  \boxed{ [J_m,J_n] =  \frac12 n \delta_{m+n,0}}\ ,
 \label{jmjn}
@@ -4183,14 +4185,13 @@ The conjugation is then
 
 \subsubsection{Primary fields}
 
-We define a \textbf{\boldmath $\hat{\mathfrak{u}}_1$-primary field}\index{primary field!u1@$\hat{\mathfrak{u}}_1$---} $V_{\alpha}(z_0,\bar{z}_0)$ with the \textbf{\boldmath $\hat{\mathfrak{u}}_1$ momentum}\index{momentum!u1@$\hat{\mathfrak{u}}_1$---} $\alpha$ by its OPE with $J(y)$,
+We define a \textbf{\boldmath $\hat{\mathfrak{u}}_1$-primary field}\index{primary field!u1@$\hat{\mathfrak{u}}_1$---} $V_{\alpha}(z_0)$ with the \textbf{\boldmath $\hat{\mathfrak{u}}_1$ momentum}\index{momentum!u1@$\hat{\mathfrak{u}}_1$---} $\alpha$ by its OPE with $J(y)$,
 \begin{align}
- \boxed{J(y) V_\alpha(z_0) = \frac{\alpha}{y-z_0} V_\alpha(z_0) + O(1)}\ ,
+ \boxed{J(y) V_\alpha(z_0) = \frac{\alpha}{y-z_0} V_\alpha(z_0) + O(1)}\ .
 \label{jva}
 \end{align}
-where the $\bar{z}_0$-dependence of $V_\alpha(z_0)$ is left implicit. 
 Any $\hat{\mathfrak{u}}_1$-primary field is also a primary field, whose OPE $T(y)V_\alpha(z_0)$ is given by eq. \eqref{tvp}, with the conformal dimension $\Delta(\alpha) = \alpha(Q-\alpha)$ (repeating eq. \eqref{daq}).
-To a $\hat{\mathfrak{u}}_1$-primary field $V_\alpha(z_0)$ we associate a highest-weight representation $\mathcal{V}_\alpha$ of the $\hat{\mathfrak{u}}_1$ affine Lie algebra.
+To a $\hat{\mathfrak{u}}_1$-primary field $V_\alpha(z_0)$ we associate a highest-weight representation $\mathcal{V}_\alpha$ of the  affine Lie algebra $\hat{\mathfrak{u}}_1$.
 The states in $\mathcal{V}_\alpha$ correspond to $V_\alpha(z_0)$ and its $\hat{\mathfrak{u}}_1$-descendent fields $V_\sigma(z_0)=\left(\prod_i J_{-n_i}\right) V_\alpha(z_0)$ with $n_i\geq 1$, which obey 
 \begin{align}
  \left(J_0 - \alpha\right) V_\sigma(z_0) = 0
@@ -4386,7 +4387,7 @@ The corresponding theory is called the \textbf{\boldmath compactified free boson
 The integers $n$ and $w$ are respectively called the momentum and winding number.
 Free bosons are essential building blocks of string theory, which is at the origin of the names for $R$, $n$ and $w$.
 
-The $\hat{\mathfrak{u}}_1$ algebra has the automorphism
+The  algebra $\hat{\mathfrak{u}}_1$ has the automorphism
 \begin{align}
  \omega(J_n) = -J_n \ ,
 \end{align}
@@ -4415,7 +4416,7 @@ For $Q\neq 0$, the condition that $\vec\alpha$ and $2\vec\alpha$ have integer sp
  \alpha-\bar\alpha\in \frac{1}{2Q}\mathbb{Z}\ .
  \label{amba}
 \end{align}
-Since any two vectors $\vec\alpha_1,\vec\alpha_2$ in the spectrum obey this condition, they must have a combination in $\mathbb{Z}\vec\alpha_1 + \mathbb{Z}\vec\alpha_2$ that is diagonal. And actually, the compactified free boson spectrum $S_R$ \eqref{sr} is made of states with integer spins provided
+Since any two vectors $\vec\alpha_1,\vec\alpha_2$ in the spectrum obey this condition, there must be an element of $\mathbb{Z}\vec\alpha_1 + \mathbb{Z}\vec\alpha_2$ that is diagonal. And actually, the compactified free boson spectrum $S_R$ \eqref{sr} is made of states with integer spins provided
 \begin{align}
  R \in \frac{1}{iQ}\mathbb{Z}\ .
  \label{riqz}
@@ -4442,7 +4443,6 @@ If $Q\neq 0$, the compactification radius $R$ must obey the condition \eqref{riq
  \boxed{ S = \int_{Q\mathbb{R}} d\alpha\ \mathcal{V}_\alpha\otimes \bar{\mathcal{V}}_\alpha}\ ,
 \end{align}
 where for $Q=0$ we take $Q\mathbb{R}$ to be a straight line in an arbitrary direction.  
-With this spectrum, the global Ward identity \eqref{saq} is satisfied for some values of the momentums. 
 The resulting theory is called the (uncompactified) \textbf{\boldmath free boson}\index{free boson} theory if $Q=0$ and momentums are pure imaginary. It might be called the \textbf{\boldmath linear dilaton theory}\index{linear dilaton theory} if $Q\neq 0$, although that term is usually applied to a Lagrangian, not to a specific spectrum. 
 The correlation functions are 
 \begin{align}
@@ -4518,7 +4518,7 @@ where we defined the accessory parameters
 \begin{align}
  \beta_i = -{\frac{\partial}{\partial z_i}} F^{(0)}\ .
 \end{align}
-The condition $t(z) \underset{z\to \infty}{=} O(\frac{1}{z^4})$, which follows from eq. \eqref{tyi}, amounts to three constraints on the accessory parameters, which are thereby uniquely determined if $N= 3$. Studying the behaviour of $\prod_{i=1}^3(z-z_i)t(z)$ near $z=z_i$ and $z=\infty$, we find 
+The condition $t(z) \underset{z\to \infty}{=} O(\frac{1}{z^4})$, which follows from eq. \eqref{tyi}, amounts to three constraints on the accessory parameters, which are thereby uniquely determined if $N= 3$. Studying the behaviour of $t(z)\prod_{i=1}^3(z-z_i)$ near $z=z_i$ and $z=\infty$, we find 
 \begin{align}
  t(z) \underset{N=3}{=} \frac{1}{\prod_{i=1}^3(z-z_i)} \sum_{i=1}^3 \frac{\prod_{j\neq i} z_{ij}}{z-z_i}\underset{Q\to\infty}{\lim} Q^{-2}\Delta(\alpha_i)\ .
 \end{align}
@@ -4542,7 +4542,7 @@ This equation is equivalent to the condition that the two-dimensional metric
  ds^2 = e^{2\phi^\text{cl}} dz d\bar{z}\ ,
 \end{align}
 has a constant scalar curvature.
-Since all two-dimensional metrics can be brought to this form by a change of coordinates, Liouville theory can be interpreted as a quantum theory of two-dimensional gravity, whose classical equation of motion is the Liouville equation.
+Since all two-dimensional metrics can be brought to this form by changes of coordinates, Liouville theory can be interpreted as a quantum theory of two-dimensional gravity, whose classical equation of motion is the Liouville equation.
 
 \subsubsection{Heavy asymptotic limit}
 
@@ -4551,9 +4551,10 @@ Since $J=O(Q)$, it is natural to assume $\alpha_i=O(Q)$, i.e. to consider the
 \begin{align}
  \textbf{\boldmath heavy\ asymptotic\ limit}\index{heavy\ asymptotic\ limit}: \quad \left\{\begin{array}{l}  Q \to \infty \ ,\\ \eta_i=\frac{\alpha_i}{Q}\ \text{fixed}\ .\end{array}\right.  
 \end{align}
-We then have $\underset{Q\to\infty}{\lim} Q^{-2}\Delta(\alpha_i)=\eta_i(1-\eta_i)$.
+We then have $\underset{Q\to\infty}{\lim} Q^{-2}\Delta(\alpha_i)=\eta_i(1-\eta_i)$, and eq. \eqref{wwwt} allows two possible asymptotic behaviours $W^{(0)}(y)\underset{y\to z_1}{=} \frac{\eta_1}{y-z_1} + O(1)$ and 
+$W^{(0)}(y)\underset{y\to z_1}{=} \frac{1-\eta_1}{y-z_1} + O(1)$.
 In the case $N=3$, the linear differential equation \eqref{dtp} for $\psi$ is equivalent to the hypergeometric equation.
-This equation has a unique single-valued solution that is compatible with the asymptotic behaviour $W^{(0)}(y)\underset{y\to z_i}{=} \frac{\eta_i}{y-z_i} + O(1)$.
+Choosing an asymptotic behaviour near $y=z_1$ determines a unique single-valued solution.
 The uniqueness of the solution provides an a posteriori justification for our factorization hypothesis \eqref{lqfac}.
 We can then deduce the leading term $F^{(0)}$ of the free energy, with the help of the heavy asymptotic limit of the Seiberg--Witten equation \eqref{daf}, 
 \begin{align}
@@ -4630,7 +4631,7 @@ coincides with the partition function of a matrix model \cite{ekr15}. Let us giv
 \begin{align}
  \begin{tabular}{|l|l|}
   \hline
-Liouville theory & matrix models
+Liouville theory & matrix model
 \\
 \hline \hline
 $N$-point function & partition function 
@@ -4653,7 +4654,7 @@ $y_k$ in eq. \eqref{mint} & matrix eigenvalue
 
 \section{Nonabelian affine symmetry}
 
-We will now associate an affine Lie algebra $\hat{\mathfrak{g}}$ to any simple Lie algebra $\mathfrak{g}$, in the same way as the  affine Lie algebra $\hat{\mathfrak{u}}_1$ is associated to the abelian Lie algebra $\mathfrak{u}_1$.
+We will now build an affine Lie algebra $\hat{\mathfrak{g}}$ from any simple Lie algebra $\mathfrak{g}$, in the same way as the  affine Lie algebra $\hat{\mathfrak{u}}_1$ is built from the abelian Lie algebra $\mathfrak{u}_1$.
 We will use the smallest simple Lie algebra $\mathfrak{g}=\mathfrak{sl}_2$ as the main example.
 
 \subsection{Symmetry algebra}
@@ -4726,9 +4727,7 @@ such that $J^a$ is a primary field of conformal dimension one,
 \end{align}
 (See Exercise \ref{exosug}.)
 We identify $T$ with the energy-momentum tensor.
-
-We may be tempted to generalize $T$ to $\hat{T} = T + Q_a\partial J^a$, in analogy with the case of the free boson \eqref{tqz}. 
-But then $\hat{T}$ would not be Virasoro field, unless we would relax our assumption that $\mathfrak{g}$ be semi-simple. (See Exercise \ref{exotqpj}.)
+(See Exercise \ref{exotqpj} for the generalized energy-momentum tensor $\hat{T} = T + Q_a\partial J^a$.)
 
 \subsubsection{Affine Lie algebra}
 
@@ -4802,10 +4801,10 @@ The differential operators $D_X^R(t^a)$ obey the commutation relations of $\math
 \label{dta}
 \end{align}
 The isospin variable $X$ is a collection of as many complex variables as $\mathfrak{g}$ has positive roots.
-In particular, an $\mathfrak{g}=\mathfrak{sl}_n$ isospin variable has $\frac{n(n-1)}{2}$ components, and an $\mathfrak{g}=\mathfrak{sl}_2$ isospin variable has one component.
+In particular, an $\mathfrak{sl}_n$ isospin variable has $\frac{n(n-1)}{2}$ components, and an $\mathfrak{sl}_2$ isospin variable has one component.
 We already know differential operators $D^j_x(t^a)$ \eqref{ddz} that 
 obey the $\mathfrak{sl}_2$ commutation relations \eqref{ttpm} for any choice of the 
-\textbf{\boldmath spin}\index{spin ($\mathfrak{sl}_2$)} $j$.
+\textbf{\boldmath spin}\index{spin (sl2)@spin ($\mathfrak{sl}_2$)} $j$.
 The eigenvalue of the quadratic Casimir operator in the corresponding representation of $\mathfrak{sl}_2$ is
 \begin{align}
  C_2(j) =  K_{ab}D_x^j(t^a)D_x^j(t^b) = 2j(j+1)\ ,
@@ -4827,7 +4826,7 @@ The \textbf{\boldmath $x$-basis field}\index{x-basis field@$x$-basis field} $\Ph
  \Phi_x^j(z_0) = \int d\mu\ \mu^{-j-1}e^{\mu x} \Phi_\mu^j(z_0)\ .
 \label{emx}
 \end{align}
-The $\widehat{\mathfrak{sl}}_2$ currents and $\mu$-basis fields can be represented in terms of free fields, in the same way as the Virasoro algebra and primary fields were represented in terms of the $\hat{\mathfrak{u}}_1$ current in Section \ref{secaua}.
+The $\widehat{\mathfrak{sl}}_2$ currents and $\mu$-basis fields can be represented in terms of free fields.
 This \textbf{Wakimoto free-field representation}\index{Wakimoto free-field representation} of $\widehat{\mathfrak{sl}}_2$ is described in Exercise \ref{exowaki}.
 
 \subsubsection{OPEs and fusion rules}
@@ -4836,7 +4835,7 @@ Let us study the fusion rules of affine highest-weight representations, equivale
 To write such OPEs, we will omit the dependences on the positions $z_i$ of the fields, which are dictated by conformal symmetry since affine primary fields are also primary fields.
 We will also omit the affine descendent fields because, as in the cases of the Virasoro and $\hat{\mathfrak{u}}_1$ algebras, the contributions of affine descendent fields are determined by the contributions of the affine primary fields. (This would however not be true in the case of a $W$ algebra.) So we write a generic OPE as 
 \begin{align}
- \Phi^{R_1}_{X_1}\Phi^{R_2}_{X_2} \sim \sum_{R_3} \int dX_3\ C^{R_1,R_2}_{R_3}(X_1,X_2|X_3)\ \Phi^{R_3}_{X_3}\ .
+ \Phi^{R_1}_{X_1}\Phi^{R_2}_{X_2} \sim \sum_{R_3} \int dX_3\ C^{R_1,R_2}_{R_3}(X_1,X_2|X_3) \Phi^{R_3}_{X_3}\ .
 \end{align}
 Inserting $\oint dz\, J^a(z)$ on both sides, and using the linear independence of the operators $\Phi^{R_3}_{X_3}$, we obtain an equation for the structure function $C^{R_1,R_2}_{R_3}(X_1,X_2|X_3)$,
 \begin{align}
@@ -4854,7 +4853,7 @@ The presence of null vectors in the representations $\hat{R}_i$ can lead to extr
 And nothing guarantees that only highest-weight representations appear in the fusion product of two highest-weight representations. 
 In the case of the $\widetilde{SL}_2(\mathbb{R})$ WZW model, other types of representations do appear. (See Section \ref{secslr}.) 
 
-Finally, let us point out that the maximum multiplicity $m_{R_1,R_2}^{R_3}$ in a fusion rule -- that is, the number of linearly independent solutions of eq. \eqref{dddc} in the absence of further constraints, is 
+For generic representations $R_i$, the multiplicity $m_{R_1,R_2}^{R_3}$ is the number of linearly independent solutions of eq. \eqref{dddc} in the absence of further constraints, namely
 \begin{align}
  m_{\mathrm{max}} = \left\{\begin{array}{l}  2 \quad \text{if}\ \mathfrak{g}=\mathfrak{sl}_2\ , \\ \infty \quad \text{if}\ \mathfrak{g}=\mathfrak{sl}_{n\geq 3}\ . \end{array}\right. 
 \end{align}
@@ -4908,13 +4907,13 @@ In the $x$-basis, the $\widehat{\mathfrak{sl}}_2$ global Ward identities are for
 where we omitted the dependence on $z_i$.
 In the $\mu$-basis, we find 
 \begin{align}
- \left\langle \prod_{i=1}^3\Phi^{j_i}_{\mu_i}\right\rangle \propto\ \mu_2\delta(\mu_1+\mu_2+\mu_3)\ \mathcal{H}\left(-\frac{\mu_1}{\mu_2}\right)\ ,
+ \left\langle \prod_{i=1}^3\Phi^{j_i}_{\mu_i}\right\rangle \propto\ \mu_2\delta(\mu_1+\mu_2+\mu_3) \mathcal{H}\left(-\frac{\mu_1}{\mu_2}\right)\ ,
 \label{pmf}
 \end{align}
 where the function $\mathcal{H}(x)$, which parametrizes the general solution of the $t^-$ and $t^0$ equations, is constrained by the $t^+$ equation to obey the twisted hypergeometric differential equation \eqref{hj}.
 It may seem strange that in the $\mu$-basis we obtain a second-order differential equation, whereas in the $x$-basis the solution appeared to be unique.
 The number of solutions of the global Ward identities has the algebraic interpretation of a tensor product multiplicity for $\mathfrak{sl}_2$ representations, and this should not depend on our choice of isospin variable.
-Actually it is the $x$-basis calculation which is misleading: analyticity conditions on the $x_i$-dependence of $\left\langle \prod_{i=1}^3 \Phi^{j_i}_{x_i} \right\rangle$ in general allow the existence of two solutions that differ globally, although they are locally identical \cite{rib09}.
+Actually it is the $x$-basis calculation that is misleading: analyticity conditions on the $x_i$-dependence of $\left\langle \prod_{i=1}^3 \Phi^{j_i}_{x_i} \right\rangle$ in general allow the existence of two solutions that differ globally, although they are locally identical \cite{rib09}.
 The tensor product multiplicity for generic $\mathfrak{sl}_2$ representations is two, as correctly suggested by the $\mu$-basis calculation. 
 
 \subsubsection{Knizhnik--Zamolodchikov equations}
@@ -4933,7 +4932,7 @@ The KZ equations can be rewritten as
  \left\{(k+g){\frac{\partial}{\partial z_i}} + H_i \right\}\left\langle \prod_{i=1}^N \Phi^{R_i}_{X_i}(z_i)\right\rangle   = 0 \ ,
 \label{phz}
 \end{align}
-where $H_i$ are the mutually commuting Gaudin Hamiltonians, the Hamiltonians of the \textbf{\boldmath Gaudin model}\index{Gaudin model} -- an integrable model associated to the Lie algebra $\mathfrak{g}$.
+where $H_i$ are the mutually commuting Gaudin Hamiltonians, the Hamiltonians of the \textbf{\boldmath Gaudin model}\index{Gaudin model} -- an integrable model associated with the Lie algebra $\mathfrak{g}$.
 Techniques developed for studying the $\mathfrak{g}$ Gaudin model can be useful for solving the $\mathfrak{g}$ KZ equations, as we will now see in the case $\mathfrak{g} = \mathfrak{sl}_2$. 
 
 
@@ -5012,21 +5011,21 @@ So eq. \eqref{jjpj} becomes
 
 Let us define the
 \textbf{\boldmath Sklyanin variables}\index{Sklyanin variable} $y_j$ as the eigenvalues of the mutually commuting operators $\hat{y}_j$. 
-The $\widehat{\mathfrak{sl}}_2$ global Ward identity \eqref{drxt} associated to the current $J^a$ can be written as 
+The $\widehat{\mathfrak{sl}}_2$ global Ward identity \eqref{drxt} associated with the current $J^a$ can be written as 
 \begin{align}
  \underset{y\to \infty}{\lim} y \hat{J}^a(y) \left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle = 0\ .
 \end{align}
-When combined with the definition \eqref{djm} of $\hat{y}_j$, the identity associated to $J^-$ suggests that we have $N-2$ Sklyanin variables $y_j$.
+When combined with the definition \eqref{djm} of $\hat{y}_j$, the Ward identity associated with $J^-$ suggests that we have $N-2$ Sklyanin variables $y_j$.
 Let us define two more variables as the eigenvalues $Y_1$ and $Y_2$ of the operators $\hat{Y}_1$ and $\hat{Y}_2$, where we define
 \begin{align}
  \hat{Y}_1 = \underset{y\to \infty}{\lim} y \hat{J}^-(y)\ .
 \end{align}
 We can now define Sklyanin's \textbf{\boldmath separation of variables}\index{separation of variables} for the $\mathfrak{sl}_2$ Gaudin model as the linear 
-map $\mathcal{K}$ from functions of $(X_1,\cdots X_N)$ to functions of $(Y_1,Y_2,y_1,\cdots y_{N-2})$, which diagonalizes the operators $(\hat{Y}_1,\hat{Y}_2,\hat{y}_1,\cdots \hat{y}_{N-2})$, so that in particular $\mathcal{K} \hat{y}_j f(X_1,\cdots X_N) = y_j \mathcal{K} f(X_1,\cdots X_N)$.
+map $\mathcal{K}$ from functions of $(X_1,\cdots X_N)$ to functions of $(Y_1,Y_2,y_1,\cdots y_{N-2})$ that diagonalizes the operators $(\hat{Y}_1,\hat{Y}_2,\hat{y}_1,\cdots \hat{y}_{N-2})$, so that in particular $\mathcal{K} \hat{y}_j f(X_1,\cdots X_N) = y_j \mathcal{K} f(X_1,\cdots X_N)$.
 We actually only define this map on 
 functions that obey the global Ward identity associated with $J^-$ i.e.
 that are killed by $\hat{Y}_1$, whose images therefore have a $\delta(Y_1)$ prefactor.
-Using in addition the global Ward identity associated to $J^0$, we find that the combined dependence of $\mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle$ on $Y_1$ and $Y_2$ is a $\delta(Y_1)Y_2$ prefactor.
+Using in addition the global Ward identity associated with $J^0$, we find that the combined dependence of $\mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle$ on $Y_1$ and $Y_2$ is a $\delta(Y_1)Y_2$ prefactor.
 (This is done with the help of eq. \eqref{ddd}, which implies $[\underset{y\to \infty}{\lim} y \hat{J}^0(y),\hat{J}^-(z)]=-\hat{J}^-(z)$.)
 
 Let us rewrite our equation \eqref{ppdz} in terms of Sklyanin variables.
@@ -5112,14 +5111,14 @@ and the variables on both sides of the relation are functions of one another.
 The KZ-BPZ relation plays an important role in the study of $\widehat{\mathfrak{sl}}_2$-symmetric theories such as the $H_3^+$ model, and one may wonder whether the $\mathfrak{g}$ KZ equations are involved in similar relations for more general choices of the Lie algebra $\mathfrak{g}$.
 While Sklyanin's separation of variables for the $\mathfrak{sl}_3$ Gaudin model exists, writing the $\mathfrak{sl}_3$ KZ equations in Sklyanin variables however does not lead to the expected generalizations of the BPZ equations \cite{rib08b}, and the reason for this discrepancy is not known. 
 Another tentative generalization of the KZ-BPZ relation \eqref{dyy} is to replace the field $V_{\langle 2,1\rangle}$ on the right-hand side with another primary field (degenerate or not).
-Then the resulting expression can be interpreted as an $N$-point function in a theory whose symmetry algebra is a generalization of $\widehat{\mathfrak{sl}}_2$, as argued in \cite{rib08}.
+Then the resulting expression can be interpreted as an $N$-point function in a theory whose symmetry algebra is a generalization of $\widehat{\mathfrak{sl}}_2$ \cite{rib08}.
 
 
 \subsubsection{\texorpdfstring{$\widehat{\mathfrak{sl}}_2$}{sl2} degenerate representations and fusion rules}
 
 Let us use the KZ-BPZ relation for deriving $\widehat{\mathfrak{sl}}_2$ degenerate representations and fusion rules. 
 The idea is that an OPE of two $\widehat{\mathfrak{sl}}_2$-primary fields $\Phi^{j_1}\Phi^{j_2}$ is equivalent an OPE of three Virasoro-primary fields $V_{\langle 2, 1\rangle}V_{\alpha_1}V_{\alpha_2}$, with momentums given by eq. \eqref{aj}.
-Defining $\Phi^{j_1}$ as degenerate if the OPE $\Phi^{j_1}\Phi^{j_2}$ contains only finitely many $\widehat{\mathfrak{sl}}_2$-primary fields, the corresponding Virasoro-primary field $V_{\alpha_1}$ must therefore itself be degenerate, $V_{\alpha_1}=V_{\langle r, s\rangle}$ with $r,s\geq 1$. 
+Defining $\Phi^{j_1}$ as degenerate if the OPE $\Phi^{j_1}\Phi^{j_2}$ contains finitely many $\widehat{\mathfrak{sl}}_2$-primary fields, the corresponding Virasoro-primary field $V_{\alpha_1}$ must therefore itself be degenerate, $V_{\alpha_1}=V_{\langle r, s\rangle}$ with $r,s\geq 1$. 
 The relevant Virasoro OPE becomes 
 \begin{align}
  V_{\langle 2, 1\rangle}V_{\langle r, s\rangle}V_{\alpha_2} \sim V_{\langle r+1, s\rangle}V_{\alpha_2}\ .
@@ -5167,7 +5166,7 @@ The values of the spin $j$,
 \begin{align}
  \boxed{j\in -\frac12 + ib\mathbb{R}}\ , 
 \end{align}
-are deduced from Liouville theory via the relation \eqref{aj}. The relation \eqref{my} between $\widehat{\mathfrak{sl}}_2$ isospin variables and positions of Liouville fields suggests that the left- and right-moving isospins $\mu$ and $\bar\mu$ are complex conjugates. Let us write $\Phi^j_\mu(z)$ an affine primary field of the $H_3^+$ model with left- and right-moving isospins $\mu$ and $\bar\mu$. In terms of these fields, the $H_3^+$-Liouville relation reads 
+are deduced from Liouville theory via the relation \eqref{aj}. The relation \eqref{my} between $\widehat{\mathfrak{sl}}_2$ isospin variables and positions of Liouville fields suggests that the left- and right-moving isospins $\mu$ and $\bar\mu$ are complex conjugates. Let us write $\Phi^j_\mu(z)$ an affine primary field of the $H_3^+$ model with isospins $\mu$ and $\bar\mu$. In terms of such fields, the $H_3^+$-Liouville relation reads 
 \begin{align}
  \boxed{ \left\langle \prod_{i=1}^N \Phi^{j_i}_{\mu_i}(z_i)\right\rangle 
  = \delta^{(2)}\left({\textstyle\sum_{i=1}^N \mu_i}\right) 
@@ -5230,7 +5229,7 @@ The relation \eqref{dyym} then reads
  \left\langle \prod_{i=1}^3\Phi^{j_i}_{\mu_i} \right\rangle = \delta^{(2)}(\textstyle{\sum}_{i=1}^3\mu_i) |\mu_2|^2 \sum_\pm C_\pm(\alpha_1)C_{\alpha_1\mp\frac{b}{2},\alpha_2,\alpha_3} \left|\mathcal{H}^{(s)}_\pm(-\tfrac{\mu_1}{\mu_2})  \right|^2\ , 
 \label{sfpm}
 \end{align}
-where we used the momentums $\alpha_i$ \eqref{aj}, the Liouville theory structure constants $C_\pm(\alpha)$ and $C_{\alpha_1,\alpha_2,\alpha_3}$, and the functions $\mathcal{H}^{(s)}_\pm(x)$, which are related to the 
+where we used the momentums $\alpha_i$ \eqref{aj}, the Liouville theory structure constants $C_\pm(\alpha)$ and $C_{\alpha_1,\alpha_2,\alpha_3}$, and the functions $\mathcal{H}^{(s)}_\pm(x)$ that are related to the 
 $s$-channel Virasoro conformal blocks  
 $
  \mathcal{F}^{(s)}_\pm(x)  =  
@@ -5274,7 +5273,7 @@ Using eqs. \eqref{cpm} and \eqref{caaa} for $C_{\pm}(\alpha_1)$ and $C_{\alpha_1
 \label{chp}
 \end{align}
 where the parameter $b$ is given by eq. \eqref{bk}, and the cosmological constant $\mu$ is inherited from Liouville theory.
-(We would have a different formula in the case $b\in i\mathbb{R}$, based on the alternative Liouville structure constant \eqref{hc}.)
+(We would have a different formula in the case $b\in i\mathbb{R}$ i.e. $k>-2$, based on the alternative Liouville structure constant \eqref{hc}.)
 
 The OPEs of affine primary fields are
 \begin{align}
@@ -5340,7 +5339,7 @@ We will now argue that in the large level limit, correlation functions of the $H
 \end{align}
 where the unknown proportionality factor is an $x$-independent field normalization.
 This is because both sides of this equation obey the same symmetry equations $\left<\prod_{i=1}^N U_g \phi^{j_i}_{x_i} \right> = \left<\prod_{i=1}^N \phi^{j_i}_{x_i} \right>$, and the same axioms of associativity and commutativity of the operator product, if we define the operator product in $\mathcal{F}(H_3^+)$ to be the product of functions. 
-An explicit checks of this equation can be done explicitly in the case $N=3$ \cite{tes97b}.
+An explicit checks of this equation can be done in the case $N=3$ \cite{tes97b}.
 
 So the large level limit of our two-dimensional conformal field theory is the quantum mechanics of a point particle on the space $H_3^+$, which justifies naming the theory the $H_3^+$ model.
 Other names for the same theory include the $H_3^+$ WZW model and the $SL_2({\mathbb{C}})/SU_2$ WZW model; the latter name comes from the realization of the space $H_3^+$ as a coset.
@@ -5360,7 +5359,7 @@ The Lie algebra $\mathfrak{sl}_2({\mathbb{C}})$ of the symmetry group $SL_2({\ma
 \begin{align}
  \left\{\begin{array}{lcl} t^a & \mapsto & J_0^a + \bar{J}_0^a \ ,  \\ it^a & \mapsto & i(J^a_0 - \bar{J}^a_0)\ . \end{array}\right. 
 \end{align}
-(The minus sign in the image of $it^a$ comes from the complex conjugation of the elements of $g$ in $U_g\Phi^j_{x}$ \eqref{ugp}.)
+(The minus sign in the image of $it^a$ comes from the complex conjugation of the matrix elements of $g$ in $U_g\Phi^j_{x}$ \eqref{ugp}.)
 Our scalar product is such that $t^a$ and $it^a$ are antihermitian, which is equivalent to
 \begin{align}
  (J^a_0)^\dagger = -\bar{J}^a_0\ .
@@ -5399,13 +5398,12 @@ so the theory cannot be unitary -- except of course in the large level limit, wh
 Given a simple Lie group $G$, the $G$ Wess--Zumino--Witten model or $G$ \textbf{\boldmath WZW model}\index{WZW model} is usually defined by a Lagrangian, which depends on a parameter $k$.
 This model can then be shown to be a conformal field theory with a $\hat{\mathfrak{g}}$ symmetry algebra, where $\mathfrak{g}$ is the Lie algebra of $G$.
 The parameter $k$ coincides with the level of $\hat{\mathfrak{g}}$, and may have to be quantized for the model to be consistent, depending on the group $G$.
-In any case, the allowed values of $k$ accumulate near $k=\infty$.
 
 We will not use the Lagrangian definition of WZW models.
 This raises the question of characterizing these models in the conformal bootstrap approach.
 The fundamental axiom is the presence of the symmetry algebra $\hat{\mathfrak{g}}$, and some  authors call all models with this symmetry algebra WZW models.
 Here we will insist that, among models with this symmetry, 
-a WZW model can be associated to a particular Lie group $G$, such that its spectrum $S$ obeys
+a WZW model can be associated with a particular Lie group $G$, such that its spectrum $S$ obeys
 \begin{align}
  \boxed{\underset{k\to \infty}{\lim} S = \mathcal{F}(G)}\ ,
 \label{lsfg}
@@ -5420,8 +5418,8 @@ Instead of a proper definition of WZW models, we will limit ourselves to giving 
 \item The $G$ WZW model is diagonal if and only if $G$ is simply connected. 
 \end{enumerate}
 The relation between the simple connectedness of $G$ and the diagonality of the associated model is already manifest in the case of abelian groups.
-The uncompactified free boson may be called the ${\mathbb{R}}$ WZW model, and it is diagonal.
-The compactified free boson, whose spectrum was given in eq. \eqref{sr}, may be called the $U(1)$ WZW model, and it is not diagonal. 
+The uncompactified free boson coincides with the ${\mathbb{R}}$ WZW model, and it is diagonal.
+The compactified free boson, whose spectrum was given in eq. \eqref{sr}, coincides with the $U(1)$ WZW model, and it is not diagonal. 
 
 \subsubsection{Features of the spectrum}
 
@@ -5435,18 +5433,18 @@ We identify the corresponding infinitesimal symmetry algebra $\mathfrak{g}\times
 That is, $\mathfrak{g}$ and its generators $t^a$ are identified with the horizontal subalgebra of $\hat{\mathfrak{g}}$ and its generators $J^a_0$.
 
 We now assume that $G$ is compact.
-Then $\mathcal{F}(G)$ can be decomposed into irreducible representations of the symmetry group $G\times \bar{G}$ using the \textbf{\boldmath Peter-Weyl theorem}\index{Peter-Weyl theorem}, 
+Then $\mathcal{F}(G)$ can be decomposed into irreducible representations of the symmetry group $G\times \bar{G}$ using the \textbf{\boldmath Peter--Weyl theorem}\index{Peter--Weyl theorem}, 
 \begin{align}
  \mathcal{F}(G) = \bigoplus_{R\in \mathcal{R}} R\otimes \bar{R}\ ,
 \end{align}
 where $\mathcal{R}$ is the set of irreducible unitary representations of $G$, which coincides with the set of irreducible finite-dimensional representations of $G$.
-If moreover $G$ is simply connected, then the spectrum of the WZW model is still diagonal for all positive integer values of $k$, \cite{fms97}
+If moreover $G$ is simply connected, then the spectrum of the WZW model is diagonal for all positive integer values of $k$, \cite{fms97}
 \begin{align}
  S = \bigoplus_{R\in \mathcal{R}_k} \hat{R}\otimes \bar{\hat{R}}\ .
 \end{align}
 Here $\hat{R}$ is the affine highest-weight representation of $\hat{\mathfrak{g}}$ that is built from $R$ by acting with the creation modes and removing the null vectors, and the finite subset $\mathcal{R}_k$ of $\mathcal{R}$ is defined by certain $k$-dependent conditions.
 The resulting representations $\hat{R}$ are called the integrable highest-weight representations of $\hat{\mathfrak{g}}$. 
-We have $\underset{k\to\infty}{\lim} \mathcal{R}_k =\mathcal{R}$ and $\underset{k\to \infty}{\lim} \hat{R} = R$, so that the spectrum $S$ has the desired large level limit \eqref{lsfg}.
+We have $\underset{k\to\infty}{\lim} \mathcal{R}_k =\mathcal{R}$ and $\underset{k\to \infty}{\lim} \hat{R} = R$, so that the spectrum $S$ has the desired large level limit $\mathcal{F}(G)$.
 
 \subsubsection{Scalar product}
 
@@ -5481,7 +5479,7 @@ Their fusion rules are
 \begin{align}
  \hat{R}^{\langle 0, s_1\rangle}\times\hat{R}^{\langle 0, s_2\rangle} = \sum_{s\overset{2}{=}|s_1-s_2|+1}^{s_1+s_2-1} \hat{R}^{\langle 0, s\rangle}\ .
 \end{align}
-For any value of the level, we can build a diagonal spectrum from these representations,
+For any value of the level $k\in\mathbb{C}-\{-2\}$, we can build a diagonal spectrum from these representations,
 \begin{align}
  S = \bigoplus_{s=1}^\infty \hat{R}^{\langle 0, s\rangle}\otimes \bar{\hat{R}}^{\langle 0, s\rangle}\ ,
 \end{align}
@@ -5504,8 +5502,8 @@ Fusion is constrained by both null vectors, and becomes
 \subsubsection{Correlation functions}
 
 Like the $H_3^+$ model, the (generalized) $SU_2$ WZW model has a diagonal spectrum that is made of highest-weight representations.
-Therefore, it is natural to conjecture that correlation functions of the (generalized) $SU_2$ WZW model can be deduced from $H_3^+$ correlation functions by analytically continuing the spins (and the level) to discrete values, in the same way as (generalized) minimal model two- and three-point functions are deduced from Liouville theory. 
-For the first step of recovering degenerate fusion rules from the $H_3^+$ OPE, see Exercise \ref{exodrfrh}.
+Therefore, it is natural to conjecture that correlation functions of the (generalized) $SU_2$ WZW model can be deduced from $H_3^+$ correlation functions by analytically continuing the spins and the level to discrete values, in the same way as two- and three-point functions of (generalized) minimal models  are deduced from Liouville theory. 
+In particular, degenerate fusion rules can be deduced from the $H_3^+$ OPE, see Exercise \ref{exodrfrh}.
 
 \subsubsection{Further rational models with an $\widehat{\mathfrak{sl}}_2$ symmetry algebra}
 
@@ -5517,10 +5515,9 @@ These include the $SO_3$ WZW model, which is non-diagonal as $SO_3 = \frac{SU_2}
 
 \subsection{The \texorpdfstring{$\widetilde{SL}_2(\mathbb{R})$}{SL2(R)} WZW model \label{secslr}}
 
-After the $H_3^+$ model, the \textbf{$\widetilde{SL}_2(\mathbb{R})$ WZW model}\index{WZW model!sl2tilder@$\widetilde{SL}_2(\mathbb{R})$---} is our second example of a non-rational model with an $\widehat{\mathfrak{sl}}_2$ symmetry algebra.
 Work on the $\widetilde{SL}_2(\mathbb{R})$ WZW model has been motivated by its relevance to string theory in $AdS_3$.
 The model has not been fully solved: the three-point function is known only partially, and crossing symmetry has not been proved.
-We will limit ourselves to working out the fusion rules, and deriving Maldacena and Ooguri's widely believed and well-tested conjecture for the spectrum of the model.
+We will limit ourselves to working out the fusion rules, and deriving Maldacena and Ooguri's widely believed and well-tested conjecture for the spectrum.
 This spectrum is more complicated than the spectrum of the $H_3^+$ model, which is why solving the $\widetilde{SL}_2(\mathbb{R})$ WZW model is more difficult.
 
 \subsubsection{Large level limit}
@@ -5530,7 +5527,7 @@ The group $SL_2({\mathbb{R}})$ is not simply-connected, as the matrices of the t
 So $\widetilde{SL}_2(\mathbb{R})$ is obtained from $SL_2({\mathbb{R}})$ by decompactifying the $\tau$ direction, and we have $SL_2({\mathbb{R}}) = \widetilde{SL}_2(\mathbb{R})/{\mathbb{Z}}$.
 
 Let us study the space $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ of functions on $\widetilde{SL}_2(\mathbb{R})$, which is assumed to be the large level limit of the spectrum of our model. 
-The decomposition of $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ into irreducible representations of the global symmetry algebra $\mathfrak{sl}_2\times \overline{\mathfrak{sl}}_2$ involves two types of representations of $\mathfrak{sl}_2$: the \textbf{\boldmath principal series representation}\index{principal series representation!of sl2@---of $\mathfrak{sl}_2$} $C^j_\alpha$ and the \textbf{\boldmath discrete series representation}\index{discrete series representation of $\mathfrak{sl}_2$} $D^{j,\pm}$, where $j$ is the spin. 
+The decomposition of $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ into irreducible representations of the global symmetry algebra $\mathfrak{sl}_2\times \overline{\mathfrak{sl}}_2$ involves two types of representations of $\mathfrak{sl}_2$: the \textbf{\boldmath principal series representation}\index{principal series representation!of sl2@---of $\mathfrak{sl}_2$} $C^j_\alpha$ and the \textbf{\boldmath discrete series representation}\index{discrete series representation (of $\mathfrak{sl}_2$)} $D^{j,\pm}$, where $j$ is the spin. 
 These representations can be characterized by the eigenvalues of the generator $J_0^0$,
 \begin{align} 
 \renewcommand{\arraystretch}{1.3}
@@ -5553,7 +5550,7 @@ Given a representation $R$, let $R^*$ be the dual representation, that is the re
 \begin{align}
  (C^j_\alpha)^* &= C^j_{-\alpha} \ , 
 \\
- (D^{j,\pm})^* &= D^{j,\mp}\ ,
+ (D^{j,\pm})^* &= D^{j,\mp}\ .
 \end{align}
 According to \cite{rib09} and references therein, we have
 \begin{align}
@@ -5611,7 +5608,7 @@ According to eqs. \eqref{ljj} and \eqref{lzjj}, this implies
 \begin{align}
  \rho_w(L_n)  = L_n + wJ^0_n +\frac14 kw^2 \delta_{n,0}\ .
 \end{align}
-Given a representation $R$ of $\widehat{\mathfrak{sl}}_2$, that is an action of the generators $J^a_n$ on some vectors $|v\rangle$, we define the \textbf{\boldmath spectrally flowed representation}\index{spectrally flowed representation} $\rho_w(R)$ by the action $\rho_{-w}(J^a_n)|v\rangle$.  
+Given a representation $R$ of $\widehat{\mathfrak{sl}}_2$, i.e. an action of the generators $J^a_n$ on some vectors $|v\rangle$, we define the \textbf{\boldmath spectrally flowed representation}\index{spectrally flowed representation} $\rho_w(R)$ by the action $\rho_{-w}(J^a_n)|v\rangle$.  
 It follows from this definition that 
 \begin{align}
  \rho_w(R)^* = \rho_{-w}(R^*)\ .
@@ -5625,7 +5622,7 @@ We assume that fusion products of representations of $\widehat{\mathfrak{sl}}_2$
 \begin{align}
  R_1\times R_2 = \bigoplus_{R_3} N_{R_1,R_2,R_3^*} R_3\ ,
 \end{align}
-where the $N_{R_1,R_2,R_3}$ are a permutation-symmetric, integer-valued fusion multiplicities such that $N_{R_1^*,R_2^*,R_3^*}=N_{R_1,R_2,R_3}$.
+where the coefficients $N_{R_1,R_2,R_3}$ are a permutation-symmetric, integer-valued fusion multiplicities such that $N_{R_1^*,R_2^*,R_3^*}=N_{R_1,R_2,R_3}$.
 From eq. \eqref{rwr}, we must then have 
 \begin{align}
 w_1+w_2+w_3=0 \quad \Rightarrow \quad N_{\rho_{w_1}(R_1),\rho_{w_2}(R_2),\rho_{w_3}(R_3)}=N_{R_1,R_2,R_3}\ .
@@ -5717,7 +5714,7 @@ Then we generalize the relation \eqref{cjdd} between $\mathfrak{sl}_2$ represent
  \hat{C}^{j,w}_\alpha \sim \hat{D}^{\alpha-1,w+\frac12} \oplus \hat{D}^{\alpha-2-\frac{k}{2},w-\frac12} \ .
 \end{align}
 This enables us to compute fusion multiplicities involving representations of the type $\hat{C}^{j,w}_\alpha$.
-The only subtlety is that we obtain aberrant terms in $N_{\hat{C}^{j_1,w_1}_{\alpha_1},\hat{D}^{j_2,w_2},\hat{D}^{j_3,w_3}}$, which depend on $\alpha_1$ instead of $\alpha_1\ \text{mod}\ {\mathbb{Z}}$, and must be discarded.
+The only subtlety is that we obtain terms in $N_{\hat{C}^{j_1,w_1}_{\alpha_1},\hat{D}^{j_2,w_2},\hat{D}^{j_3,w_3}}$ that depend on $\alpha_1$ instead of $\alpha_1\ \text{mod}\ {\mathbb{Z}}$, and must be discarded.
 Keeping the condition \eqref{jimm} on spins of discrete series representations implicit, the results are 
 \begin{align}
  N_{\hat{D}^{j_1,w_1},\hat{D}^{j_2,w_2},\hat{D}^{j_3,w_3}} 
@@ -5796,9 +5793,9 @@ Let us look for a Hermitian conjugation $J_n\mapsto J_n^\dagger$ in $\hat{\mathf
 \begin{enumerate}
  \item Using the commutation relation $[L_0,J_n]=-nJ_n$, show that 
  \begin{align}
-  J_n^\dagger =\lambda_n J_{-n} + c\delta_{n,0}\ .
+  J_n^\dagger =\lambda_n J_{-n} + \nu\delta_{n,0}\ .
  \end{align}
-Using the more general commutator $[L_m,J_n]$, determine the coefficients $\lambda_n,c$ in terms of $Q$. 
+Using the more general commutator $[L_m,J_n]$, determine the coefficients $\lambda_n,\nu$ in terms of $Q$. 
 \item 
 Using the relation \eqref{lnj}-\eqref{lzj} of the algebra $\hat{\mathfrak{u}}_1$ with the Virasoro algebra, show that $Q^2\in\mathbb{R}$, and deduce that $J_n^\dagger$ is given by eq. \eqref{jdq}. For $Q=0$, show that both signs $J_n^\dagger = \pm J_{-n}$ are possible.
 \end{enumerate}
@@ -5873,10 +5870,14 @@ Conclude that the field $T$ satisfies the Virasoro field OPE \eqref{tt} with the
 
 \begin{exo}[Modified Sugawara construction]
  ~\label{exotqpj}
-Compute the $\hat{T}\hat{T}$ OPE for the modified Sugawara field $\hat{T} = T + Q_a\partial J^a$.
-Show that $\hat{T}$ is a Virasoro field, and compute the central charge. 
-Compute the $\hat{T}J^a$ OPE: under which conditions are $J^a$ primary fields with integer dimensions?
+In analogy with the $\hat{\mathfrak u}_1$ case \eqref{tqz}, let us modify the Sugawara construction \eqref{tjj} and introduce the field $\hat{T} = T + Q_a\partial J^a$.
+\begin{enumerate}
+ \item Show that $\hat{T}$ is a Virasoro field, and compute the central charge. 
+ \item Compute the OPE $\hat{T}J^a$: under which conditions are $J^a$ primary fields with integer dimensions?
+ \item Discuss the asymptotic behaviour of $J^a$, and the resulting Ward identities.
+\end{enumerate}
 \end{exo}
+% NB: See diary10.tex
 
 \begin{exo}[Associativity of the $J^aJ^b\Phi^R$ OPE]
  ~\label{exojjp}
@@ -5976,7 +5977,7 @@ right-hand side using the formula \eqref{djm} for $\hat{J}^-(y)$, and conclude.
   \item Let $|w^a\rangle$ a basis of the adjoint representation $R_1$ of $\mathfrak{sl}_2$, with $t^a|w^b\rangle = f^{ab}_c|w^c\rangle$. Show that our affine null vector condition is equivalent to $c_a^i|w^a\rangle\otimes |v_i\rangle\in R_1\otimes R_j$ being an eigenvector of the operator $Q=K_{ab}t^a\otimes t^b$, with the eigenvalue $k$.
   % NB: Actually I find the eigenvalue -k, there must be a sign mistake.
   \item Write the operator $Q$ in terms of the quadratic Casimir operators of the representations $R_1, R_j$ and $R_1\otimes R_j$, and show that its eigenvalues are $-2, 2j$ and $-2j-2$. 
-  Compute these eigenvalues in the case $j=j_{\langle 1,1\rangle}$ \eqref{jrs}, and conclude.
+  Compute these eigenvalues in the case $j=j_{\langle 1,1\rangle}$ \eqref{jrs}, and compare with the fusion rule \eqref{prspj}.
  \end{enumerate}
 \end{exo}
 
