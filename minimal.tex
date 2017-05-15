@@ -10,7 +10,7 @@
 
 \usepackage[top=20mm,bottom=20mm,left=25mm,right=25mm]{geometry}
 
-% \usepackage{showkeys}
+\usepackage{showkeys}
 
 \usepackage{amsfonts, amsmath}
 
@@ -70,7 +70,7 @@ three- and four-point functions, and discuss their existence and uniqueness.
 \section{Introduction}
 
 Since the time of Euclid, mathematical objects are defined by axioms. 
-Axiomatic definitions focus on the basic structure of the defined objects, thereby avoiding alternative constructions that may be less fundamental.
+Axiomatic definitions focus on the basic features of the defined objects, thereby avoiding alternative constructions that may be less fundamental.
 For example, in conformal field theory, the axiomatic approach (also called the conformal bootstrap approach) makes functional integrals unnecessary.
 We will define Liouville theory and minimal models by a sequence of axioms, starting with local conformal symmetry. 
 Our axioms are necessary conditions. 
@@ -525,14 +525,15 @@ This suggests that we need anti-holomorphic Ward identities as well, and therefo
  The generators of conformal transformations are the diagonal combinations $L_n+\bar L_n$.
 \end{hyp}
 
-Let us now consider a left- and right-primary field $V_{\Delta,\bar\Delta}(z)$, whose left and right conformal dimensions $\Delta,\bar\Delta$ are a priori independent from one another. 
-Under the global conformal transformations $z\mapsto \frac{az+b}{cz+d}$, whose infinitesimal generators are $L_n+\bar L_n$ with $n\in\{-1, 0, 1\}$, we have, according to eq. \eqref{eq:zgc},
+Let us now consider left- and right-primary fields $V_{\Delta_i,\bar\Delta_i}(z_i)$. According to eq. \eqref{eq:3pt}, the three-point function is 
 \begin{align}
- \left< \prod_{i=1}^N  V_{\Delta_i,\bar \Delta_i}\left(\frac{az_i+b}{cz_i+d}\right) \right>
- = \prod_{i=1}^N (cz_i +d)^{2\Delta_i}(\bar cz_i +\bar d)^{2\bar \Delta_i} \left< \prod_{i=1}^N V_{\Delta_i,\bar \Delta_i}(z_i) \right>\ .
- \label{eq:vdd}
+ \left<\prod_{i=1}^3V_{\Delta_i,\bar\Delta_i}(z_i) \right> \propto (z_1-z_2)^{\Delta_3-\Delta_1-\Delta_2} (\bar z_1-\bar z_2)^{\bar\Delta_3-\bar\Delta_1-\bar\Delta_2} \times \cdots\ .
 \end{align}
-Single-valuedness as a function of $z_i$ therefore constrains the spins $\Delta_i-\bar \Delta_i$,
+Single-valuedness as a function of $z_i$ constrains the spins $s_i=\Delta_i-\bar\Delta_i$, 
+\begin{align}
+ s_i+s_j-s_k \in \mathbb{Z}\ .
+\end{align}
+This implies in particular $2s_i\in\mathbb{Z}$. In other words, any primary field $V_{\Delta,\bar\Delta}(z)$ must obey
 \begin{align}
  \Delta -\bar \Delta \in \frac12\mathbb{Z}\ .
 \end{align} 
@@ -564,7 +565,7 @@ If the spectrum is made of diagonal primary states and their descendent states, 
  \label{eq:ope}
 \end{align}
 where the subleading terms are contributions of descendents fields. 
-In particular, the $z_1,z_2$-dependence of the coefficients is dictated by global conformal invariance eq. \eqref{eq:vdd}, leaving a $z_i$-independent unknown factor $C_{\Delta_1,\Delta_2,\Delta}$.
+In particular, the $z_1,z_2$-dependence of the coefficients is dictated by global conformal invariance eq. \eqref{eq:zgc}, leaving a $z_i$-independent unknown factor $C_{\Delta_1,\Delta_2,\Delta}$.
 Then, as in correlation functions, contributions of descendents are deduced from contributions of primaries via local Ward identitites.
 
 \begin{exo}[Computing the OPE of primary fields]
@@ -591,6 +592,8 @@ Let us now insert the OPE in a four-point function of primary fields:
 \begin{align}
  \Big<V_{\Delta_1}(z)V_{\Delta_2}(0)V_{\Delta_3}(\infty)V_{\Delta_4}(1)\Big>
  &= \sum_{\Delta\in S} C_{\Delta_1,\Delta_2,\Delta} |z|^{2(\Delta-\Delta_1-\Delta_2)}
+ \nonumber
+\\ & \qquad \qquad \times 
  \left(\Big< V_\Delta(0)V_{\Delta_3}(\infty)V_{\Delta_4}(1)\Big> + O(z)\right) \ ,
  \\
  &=  \sum_{\Delta\in S} C_{\Delta_1,\Delta_2,\Delta} C_{\Delta,\Delta_3,\Delta_4}
