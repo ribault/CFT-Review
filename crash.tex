@@ -24,14 +24,14 @@
 \usepackage{amsthm}
 \newtheoremstyle{break}{9pt}{9pt}{\itshape}{}{\bfseries}{}{\newline}{}
 \theoremstyle{break}    
-\newtheorem{exo}{Exercise}[section]
+\newtheorem{exo}{Exercise}
 \newtheorem{hyp}[exo]{Axiom}
 \newtheorem{res}[exo]{Result}
 \newtheorem{defn}[exo]{Definition}
 
 \usepackage[colorlinks=true,linktoc=all,linkcolor=black,citecolor=red,urlcolor=blue]{hyperref}
 
-\title{\bfseries Crash course on two-dimensional \\ conformal field theory}
+\title{\bfseries A crash course on two-dimensional \\ conformal field theory}
 
 \author{Sylvain Ribault \vspace{2mm}
 \\
@@ -47,43 +47,27 @@
 
 
 \begin{abstract}
-We provide a brief but self-contained review of conformal field theory on the Riemann sphere. We first introduce general axioms such as local conformal invariance, and derive Ward identities and BPZ equations. We then define Liouville theory by specific axioms on its spectrum and degenerate fields. We solve the theory and study its four-point functions.
+We provide a brief but self-contained introduction to conformal field theory on the Riemann sphere. We first introduce general axioms such as local conformal invariance, and derive Ward identities and BPZ equations. We then define Liouville theory by specific axioms on its spectrum and degenerate fields. We solve the theory and study its four-point functions.
 \end{abstract}
-
-
-\clearpage
 
 \tableofcontents
 
+\clearpage
+
 \hypersetup{linkcolor=blue}
 
-\numberwithin{equation}{section}
-\setcounter{section}{-1}
+%\numberwithin{equation}{section}
 
-\section{Introduction}
-
-Since the time of Euclid, mathematical objects are defined by axioms. 
-In conformal field theory, the axiomatic approach is also called the conformal bootstrap approach. 
-
-In the first three sections, we will introduce the axioms of two-dimensional conformal field theories.
-These axioms specify in particular how the Virasoro symmetry algebra acts on fields, and the existence and properties of the operator product expansion. 
-They allow us to deduce important properties of the spectrums and correlation functions.
-Next, we introduce additional axioms that single out Liouville theory. We then compute and study its three- and four-point functions.
 
 This text was written with brevity as the main concern, so as to be the basis for about 100 minutes' worth of lectures. For more details, see the longer lecture notes \cite{rib16} and the full review article \cite{rib14}.
 
+\section{Conformal field theory}
 
-\section{The Virasoro algebra and its representations}
+\subsection{The Virasoro algebra and its representations}
 
-\subsection{Algebra}
-
-\begin{hyp}[Local conformal symmetry]
- ~\label{hyp:loc}
- Liouville theory has two-dimensional local conformal symmetry.
-\end{hyp}
 By definition, conformal transformations are transformations that preserve angles. 
-In two dimensions with a complex coordinate $z$, any holomorphic transformation preserves angles.
-Infinitesimal conformal transformations are holomorphic functions close to the identity function, 
+In two dimensions with a complex coordinate $z$, any holomorphic map preserves angles.
+Infinitesimal conformal transformations are
 \begin{align}
  z \mapsto z + \epsilon z^{n+1}\qquad (n\in\mathbb{Z}\ , \ \epsilon\ll 1) \ .
 \end{align}
@@ -95,17 +79,6 @@ and these operators generate the Witt algebra, with commutation relations
 \begin{align}
  [\ell_n,\ell_m ] = (n-m)\ell_{m+n}\ .
 \end{align}
-The generators $(\ell_{-1},\ell_0,\ell_1)$ generate an $s\ell_2$ subalgebra, called the algebra of infinitesimal global conformal transformations.  The corresponding Lie group is the group of conformal transformations of 
-the Riemann sphere $\mathbb{C}\cup \{\infty\}$,
-\begin{align}
- z \mapsto \frac{az+b}{cz+d}\ .
-\end{align}
-
-\begin{exo}[Global conformal group of the sphere]
- ~\label{exo:sphere}
-Show that the global conformal group of the sphere is $PSL_2(\mathbb{C})$, and includes translations, rotations, and dilatations. 
-\end{exo}
-
 In a quantum theory, symmetry transformations act projectively on states. 
 Projective representations of an algebra are equivalent to representations of a centrally extended algebra. 
 This is why we always look for central extensions of symmetry algebras.
@@ -117,31 +90,15 @@ This is why we always look for central extensions of symmetry algebras.
   [\mathbf 1, L_n] = 0 \quad , \quad [L_n,L_m] = (n-m)L_{n+m} +\frac{c}{12}(n-1)n(n+1)\delta_{n+m,0}\mathbf 1 \ ,
   \label{eq:vir}
  \end{align}
- where the number $c$ is called the central charge. (The notation $c\mathbf 1$ stands for a central generator that always has the same eigenvalue $c$ in a given conformal field theory.)
+ where the number $c$ is called the central charge. 
 \end{defn}
 
-\begin{exo}[Uniqueness of the Virasoro algebra]
- ~\label{exo:vir}
- Show that the Virasoro algebra is the unique central extension of the Witt algebra.
-\end{exo}
-
-
-\subsection{Representations}
-
-The spectrum, i.e. the space of states, must be a representation of the Virasoro algebra. Let us now make assumptions on what type of representation it can be.
-
-\begin{hyp}[Representations that can appear in the spectrum]
- ~\label{hyp:rep}
- The spectrum is a direct sum of irreducible representations. In the spectrum, $L_0$ is diagonalizable, and the real part of its eigenvalues is bounded from below.
-\end{hyp}
-
-Why this special role for $L_0$? Because we want to interpret it as the energy operator. Since the corresponding Witt algebra generator $\ell_0$ generates dilatations, considering it as the energy operator amounts to consider the radial coordinate as the time. We however do not assume that $L_0$ eigenvalues are real or that the spectrum is a Hilbert space, as this would restrict the central charge to be real. The $L_0$ eigenvalue of an $L_0$ eigenvector is called its conformal dimension.
-
-Let us consider an irreducible representation that is allowed by our axiom. There must be an $L_0$ eigenvector $|v\rangle$ with the smallest eigenvalue $\Delta$. Then $L_n|v\rangle$ is also an $L_0$ eigenvector,
+The spectrum, i.e. the space of states, must be a representation of the Virasoro algebra.
+We want to interpret $L_0$ as the energy operator, so its eigenvalues, called conformal dimensions, must be bounded from below. But 
 \begin{align}
- L_0 L_n|v\rangle = L_nL_0|v\rangle + [L_0, L_n] |v\rangle  = (\Delta-n)L_n|v\rangle \ .
+ L_0 |v\rangle = \Delta |v\rangle  \qquad \Rightarrow \qquad L_0 L_n|v\rangle =  (\Delta-n)L_n|v\rangle \ .
 \end{align}
-If $n>0$ we must have $L_n|v\rangle =0$, and $|v\rangle $ is called a primary state.
+So $L_{n>0}$ decrease conformal dimensions, and must therefore the state whose dimension is lowest. 
 
 \begin{defn}[Primary and descendent states, level, Verma module]
  ~\label{def:prim}
@@ -149,65 +106,49 @@ If $n>0$ we must have $L_n|v\rangle =0$, and $|v\rangle $ is called a primary st
  \begin{align}
   L_0 |v\rangle = \Delta |v\rangle \quad , \quad L_{n>0} |v\rangle = 0\ .
  \end{align}
-A descendent of $|v\rangle$ is a linear combination of states of the type $|w\rangle = \prod_{i=1}^k L_{-n_i} |v\rangle$ with $k>0$ and $0<n_1\leq n_2 \leq \dots \leq n_k$. 
+A descendent of $|v\rangle$ is a linear combination of states of the type $|w\rangle = \prod_{i=1}^k L_{-n_i} |v\rangle$ with $0<n_i$. 
 The level of such a state is the number $N=\sum_{i=1}^k n_i$ such that $L_0|w\rangle = (\Delta + N)|w\rangle$. The Verma module $\mathcal V_\Delta$ is the representation whose basis is made of the states $|w\rangle = \prod_{i=1}^k L_{-n_i} |v\rangle$ with $k\geq 0$ and $0<n_1\leq n_2 \leq \dots \leq n_k$.
 \end{defn}
-Let us plot a basis of primary and descendent states up to the level $3$:
+Let us plot a basis of primary and descendent states up to the level $2$:
 \begin{align}
  \begin{tikzpicture}[scale = .25, baseline=(current  bounding  box.center)]
-  \draw[-latex, very thick] (20, 0) -- (20, -21) node [right] {$N$};
-  \foreach \x in {0, ..., 3}
+  \draw[-latex, very thick] (20, 0) -- (20, -14) node [right] {$N$};
+  \foreach \x in {0, ..., 2}
   {
   \draw [dotted] (-20, {-6*\x}) -- (20, {-6*\x}) node [right] {${\x}$};
   }
   \node[fill = white] at (0, 0) (0) {$|v\rangle$};
   \node[fill = white] at (-4,-6) (1) {$L_{-1}|v\rangle$};
   \node[fill = white] at (-8, -12) (11) {$L_{-1}^2|v\rangle$};
-  \node[fill = white] at (-12, -18) (111) {$L_{-1}^3|v\rangle$};
-  \node[fill = white] at (0,-12) (2) {$L_{-2}|v\rangle$};
-  \node[fill = white] at (0,-18) (12) {$L_{-1}L_{-2}|v\rangle$};
-  \node[fill = white] at (8,-18) (3) {$L_{-3}|v\rangle$};
+  \node[fill = white] at (4,-12) (2) {$L_{-2}|v\rangle$};
   \draw[-latex] (0) -- (1);
   \draw[-latex] (1) -- (11);
-  \draw[-latex] (11) -- (111);
   \draw[-latex] (0) -- (2);
-  \draw[-latex] (0) -- (3);
-  \draw[-latex] (2) -- (12);
  \end{tikzpicture}
 \end{align}
-We need not include the state $L_{-2}L_{-1}|v\rangle$, due to $L_{-2}L_{-1} = L_{-1}L_{-2} - L_{-3}$.
-
-Are Verma module irreducible representations? i.e. do they have nontrivial subrepresentations? In any subrepresentation of a Verma module, $L_0$ is again diagonalizable and bounded from below, so there must be a primary state $|\chi\rangle$. If the subrepresentation differs from the Verma module, that primary state must differ from $|v\rangle$, and therefore be a descendent of $|v\rangle$.
-
-\subsection{Null vectors and degenerate representations}\label{sec:nv}
+If a Verma module is not irreducible, i.e. if it has a nontrivial subrepresentation, then the state with the lowest conformal dimension in that subrepresentation must again be a primary state, while also being a descendent state.
 
 \begin{defn}[Null vectors]
  ~\label{def:nv}
  A descendent state that is also primary is called a null vector or singular vector.
 \end{defn}
 
-In the Verma module $\mathcal V_\Delta$, let us look for null vectors at the level $N=1$. For $n\geq 1$ we have 
+In the Verma module $\mathcal V_\Delta$, let us find out whether $L_{-1}|v\rangle$ is a null vector:
 \begin{align}
-L_n L_{-1}|v\rangle = [L_n, L_{-1}] |v\rangle = (n+1) L_{n-1}|v\rangle = 
+L_n L_{-1}|v\rangle \underset{n\geq 1}{=} [L_n, L_{-1}] |v\rangle = (n+1) L_{n-1}|v\rangle = 
 \left\{\begin{array}{ll} 0 &  \quad \text{if } n\geq 2 \\ 2\Delta |v\rangle & \quad \text{if } n = 1 \end{array}\right. 
 \end{align}
 So $L_{-1}|v\rangle$ is a null vector if and only if $\Delta=0$, and the Verma module $\mathcal V_0$ is reducible.
-Let us now look for null vectors at the level $N=2$. Let $|\chi\rangle = (L_{-1}^2 + a L_{-2})|v\rangle$, then $L_{n\geq 3} |\chi \rangle =0$. 
-
-\begin{exo}
- ~\label{exo:level2}
- Compute  $L_1|\chi\rangle$ and $L_2|\chi\rangle$, and find 
+Let us now look for null vectors at the level $N=2$. Let $|\chi\rangle = (L_{-1}^2 + a L_{-2})|v\rangle$, then $L_{n\geq 3} |\chi \rangle =0$ and 
  \begin{align}
   L_1 |\chi\rangle = \left((4\Delta+2) + 3a\right) L_{-1}|v\rangle
   \quad , \quad L_2 |\chi\rangle= \left(6\Delta + (4\Delta +\tfrac12 c)a\right) |v\rangle\ .
  \end{align}
- Requiring that $L_1|\chi\rangle$ and $L_2|\chi\rangle$ vanish, find the coefficient $a$, and show that
+ There exists a value of $a$ such that $L_1|\chi\rangle = L_2|\chi\rangle =0$ if and only if 
  \begin{align}
  \Delta = \frac{1}{16}\left( 5-c\pm\sqrt{(c-1)(c-25)} \right) \ .
  \label{eq:dpm}
 \end{align}
-\end{exo}
-
 In order to simplify this formula, let us introduce other notations for $c$ and $\Delta$. We define
 \begin{align}
  \text{the background charge } Q \ , & \quad c = 1+6Q^2\ , \quad \text{up to } Q \to -Q\ ,
@@ -220,7 +161,7 @@ The condition \eqref{eq:dpm} for the existence of a level two singular vector be
 \begin{align}
  \alpha = -\frac12 b^{\pm 1}\ .
 \end{align}
-To summarize, singular vectors at levels $1$ and $2$ occur for particular values of $\Delta$. The singular vectors at levels $N\leq 2$ can be written as $L_{\langle r,s\rangle}|v\rangle$ where $r,s$ are strictly positive integers such that $rs=N$,
+The singular vectors at levels $N\leq 2$ can be written as $L_{\langle r,s\rangle}|v\rangle$ where $r,s$ are strictly positive integers such that $rs=N$,
 \begin{align}
 \renewcommand{\arraystretch}{1.3}
 \begin{array}{|c|c|c|c|c|}
@@ -241,33 +182,17 @@ N & \langle r,s\rangle & \Delta_{\langle r,s\rangle} & \alpha_{\langle r,s\rangl
 \end{array}
 \label{lot}
 \end{align}
-The pattern goes on at higher levels: singular vectors occur at level $N$ for finitely many dimensions $\Delta_{\langle r,s\rangle}$, with
+The pattern goes on at higher levels: null vectors occur at level $N$ for finitely many dimensions $\Delta_{\langle r,s\rangle}$, with
 \begin{align}
   \alpha_{\langle r,s\rangle} = \frac{Q}{2} - \frac12(rb+sb^{-1})\ .
   \label{eq:ars}
  \end{align}
- (See Exercise \ref{exo:hdr} for a derivation.)
-If $\Delta\notin\{\Delta_{\langle r,s\rangle}\}_{r,s\in\mathbb{N}^*}$, then $\mathcal V_\Delta$ is irreducible. If $\Delta = \Delta_{\langle r,s\rangle}$, then $\mathcal V_\Delta$ contains a nontrivial submodule, generated by the singular vector and its descendent states. For generic values of the central charge $c$, this submodule is the Verma module $\mathcal V_{\Delta_{\langle r,s\rangle}+rs}$.
-
-\begin{defn}[Degenerate representation]
- ~\label{def:deg}
-The coset of the reducible Verma module $V_{\Delta_{\langle r,s\rangle}}$, by its Verma submodule $V_{\Delta_{\langle r,s\rangle}+rs}$, is an irreducible module $\mathcal{R}_{\langle r,s\rangle}$, that is called a degenerate representation:
-\begin{align}
- \mathcal{R}_{\langle r,s\rangle} = \frac{\mathcal V_{\Delta_{\langle r,s\rangle}}}{\mathcal V_{\Delta_{\langle r,s\rangle}+rs}}
-\end{align}
-In this representation, the null vector vanishes,
-\begin{align}
- L_{\langle r,s\rangle}|v\rangle = 0\ .
-\end{align}
-\end{defn}
-The vanishing of null vectors will be crucial for solving Liouville theory and minimal models.
+A null vector at level $rs$ generates a submodule $\mathcal V_{\Delta_{\langle r,s\rangle} +rs}\subset \mathcal V_{\Delta_{\langle r,s\rangle}}$. The coset $\frac{ \mathcal V_{\Delta_{\langle r,s\rangle}} }{ \mathcal V_{\Delta_{\langle r,s\rangle} +rs} }$ is an irreducible representation, where the null vector vanishes.
 
 
-\section{Conformal field theory}
+\subsection{Fields and correlation functions}
 
-Now that we understand the algebraic structure of conformal symmetry in two dimensions, let us study how the Virasoro algebra acts on objects that live on the Riemann sphere -- the fields of conformal field theory. (Technically, fields are sections of vector bundles over the sphere.)
-
-\subsection{Fields}
+Let us study how the Virasoro algebra acts on objects that live on the Riemann sphere $\mathbb{C}\cup\{\infty\}$ -- the fields of conformal field theory. 
 
 \begin{hyp}[State-field correspondence]
  ~\label{hyp:sfc}
@@ -284,13 +209,11 @@ We define the primary field $V_\Delta(z)=V_{|v\rangle}(z)$. This field obeys
 \begin{align}
  L_{n\geq 0} V_\Delta(z) = 0 \quad , \quad L_0 V_\Delta(z) = \Delta V_\Delta(z)\ .
 \end{align}
-Similarly, descendent fields correspond to descendent states. And the degenerate field $V_{\langle r,s\rangle}(z)$ corresponds to the primary state of the degenerate representation $\mathcal{R}_{\langle r,s\rangle}$, and therefore obeys 
+Similarly, descendent fields correspond to descendent states. And the degenerate field $V_{\langle r,s\rangle}(z)$ corresponds to the primary state of the coset representation $\frac{ \mathcal V_{\Delta_{\langle r,s\rangle}} }{ \mathcal V_{\Delta_{\langle r,s\rangle} +rs} }$, and therefore obeys 
 \begin{align}
  L_{\langle r, s\rangle} V_{\langle r,s\rangle}(z) = 0\qquad \text{-- for example, \ } L_{-1}V_{\langle 1,1\rangle}(z) = 0\ .
 \end{align}
 \end{defn}
-
-Now let us specify how fields depend on $z$. 
 
 \begin{hyp}[Dependence of fields on $z$]
  ~\label{hyp:geom}
@@ -301,15 +224,7 @@ Now let us specify how fields depend on $z$.
  \end{align}
 \end{hyp}
 
-Let us derive consequences of this axiom, starting with the $z$-dependence of the action $L_n^{(z)}$ of Virasoro generators on fields. On the one hand,
-\begin{align}
- \frac{\partial}{\partial z} \left( L_n^{(z)} V(z) \right) = \left(\frac{\partial}{\partial z} L_n^{(z)}\right) V(z) + L_n^{(z)} \frac{\partial}{\partial z} V(z)\ .
-\end{align}
-On the other hand, using our axiom, we find 
-\begin{align}
- \frac{\partial}{\partial z} \left( L_n^{(z)} V(z) \right) = L_{-1}^{(z)} L_n^{(z)} V(z) = -(n+1)L_{n-1}^{(z)} V(z) + L_n^{(z)} L_{-1}^{(z)} V(z)\ .
-\end{align}
-This implies 
+Using this axiom for both $V(z)$ and $L_n^{(z)}V(z)$, we find 
 \begin{align}
  \frac{\partial}{\partial z} L_n^{(z)} = -(n+1)L_{n-1}^{(z)}\ ,\qquad (\forall n\in\mathbb{Z})\ .
 \end{align}
@@ -347,18 +262,12 @@ The energy-momentum tensor $T(y)$ is locally holomorphic as a function of $y$, a
 \end{align}
 \end{hyp}
 
-To motivate this axiom, let us do some dimensional analysis. If $z$ has dimension $-1$, then according to eq. \eqref{pvlv} $L_{-1}$ has dimension $1$, and $T(y)$ has dimension $2$. The dimensionless quantity that should be holomorphic at infinity is therefore the differential $T(y)dy^2$. 
-
-
-\subsection{Correlation functions and Ward identities}
-
 \begin{defn}[Correlation function]
 ~\label{def:cor}
  To $N$ fields $V_1(z_1), \dots ,V_N(z_N)$, we associate a number called their correlation function or $N$-point function, and denoted as 
  \begin{align}
   \Big< V_1(z_1) \cdots V_N(z_N) \Big>\ .
  \end{align}
-For example, $\left< \prod_{i=1}^N V_{\Delta_i}(z_i) \right>$ is a function of $\{z_i\}, \{\Delta_i\}$ and $c$.
 Correlation functions depend linearly on fields, and in particular $\frac{\partial}{\partial z_1} \left< V_1(z_1) \cdots V_N(z_N) \right> = \left< \frac{\partial}{\partial z_1}V_1(z_1) \cdots V_N(z_N) \right>$.
 \end{defn}
 
@@ -369,6 +278,8 @@ Correlation functions depend linearly on fields, and in particular $\frac{\parti
   V_1(z_1) V_2(z_2) = V_2(z_2)V_1(z_1)\ , \qquad (z_1\neq z_2)\ .
  \end{align}
 \end{hyp}
+
+\subsection{Ward identities and BPZ equations}
 
 Let us work out the consequences of conformal symmetry for correlation functions.
 In order to study an $N$-point function $Z$ of primary fields, we introduce an auxiliary $(N+1)$-point function $Z(y)$ where we insert the energy-momentum tensor,
@@ -395,13 +306,12 @@ These three equations are called global Ward identities. They determine how $Z$ 
 \end{align}
 Let us solve the global Ward identities in the cases of one, two, three and four-point functions. For a one-point function, we have 
 \begin{align}
-\partial_z \Big< V_\Delta(z)\Big> = 0 \quad , \quad \Delta \Big< V_\Delta(z)\Big> = 0\ .
+\partial_z \Big< V_\Delta(z)\Big> = 0 \ , \quad \Delta \Big< V_\Delta(z)\Big> = 0\ , \quad \Rightarrow \quad \Big< V_\Delta(z)\Big> \propto \delta_{\Delta, 0}\ .
 \end{align}
-So one-point functions are constant, and non-vanishing only if $\Delta=0$. Similarly, two-point functions must obey
+In the case of two-point functions, we find 
 \begin{align}
- \Big< V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \Big> \propto (z_1-z_2)^{-4\Delta_1} \quad , \quad (\Delta_1-\Delta_2)\Big< V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \Big>  = 0\ .
+ \Big< V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \Big> \propto \delta_{\Delta_1,\Delta_2} (z_1-z_2)^{-4\Delta_1} \ .
 \end{align}
-So a two-point function can be non-vanishing only if the two fields have the same dimension.
 For three-point functions, there are as many equations \eqref{eq:gward} as unknowns $z_1,z_2,z_3$, and therefore a unique solution with no constraints on $\Delta_i$,
 \begin{align}
  \left< \prod_{i=1}^3 V_{\Delta_i}(z_i) \right> \propto (z_1-z_2)^{\Delta_3-\Delta_1-\Delta_2} (z_1-z_3)^{\Delta_2-\Delta_1-\Delta_3} (z_2-z_3)^{\Delta_1-\Delta_2-\Delta_3}\ ,
@@ -413,17 +323,13 @@ For four-point functions, the general solution is
  \left< \prod_{i=1}^4 V_{\Delta_i}(z_i) \right> = \prod_{i<j}(z_i-z_j)^{\delta_{ij}}\ G\left(\frac{(z_1-z_2)(z_3-z_4)}{(z_1-z_3)(z_2-z_4)}\right)\ ,
 \end{align}
 where $\sum_{j\neq i} \delta_{ij} = -2\Delta_i$ (with by definition $\delta_{ij}\underset{i>j}{=}\delta_{ji}$), and $G$ is an arbitrary function.
-In other words, the three global Ward identities effectively reduces the four-point function to a function of one variable $G$ -- equivalently, we can set $z_2,z_3,z_4$ to fixed values, and recover the four-point function from its dependence on $z_1$ alone. 
-
-\begin{exo}[Conformal symmetry of four-point functions]
-~\label{exo:4pt}
- Show that $V_\Delta(\infty) = \lim_{z\to\infty} z^{2\Delta}V_\Delta(z) $ is finite, and that there is a (unique) choice of $\delta_{ij}$ such that 
+In other words, the three global Ward identities effectively reduces the four-point function to a function of one variable $G$. Using $V_\Delta(\infty) = \lim_{z\to\infty} z^{2\Delta}V_\Delta(z) $, this function is
  \begin{align}
-  G(z) = \Big< V_{\Delta_1}(z) V_{\Delta_2}(0)V_{\Delta_3}(\infty)V_{\Delta_4}(1) \Big>\ .
+  G(z) = \Big< V_{\Delta_1}(z) V_{\Delta_2}(0)V_{\Delta_3}(\infty)V_{\Delta_4}(1) \Big>\ ,
  \end{align}
-\end{exo}
+for some choice of $\delta_{ij}$.
 
-We have been studying global conformal invariance of correlation functions of primary fields, rather than more general fields. This was not only for making things simpler, but also because correlation functions of descendents can be deduced from correlation functions of primaries. For example,
+Correlation functions of descendents can be deduced from correlation functions of primaries. For example,
 \begin{align}
  \Big< L_{-2}V_{\Delta_1}(z_1) V_{\Delta_2}(z_2)\cdots \Big>
   = \frac{1}{2\pi i}\oint_{z_1} \frac{dy}{y-z_1} Z(y)
@@ -433,59 +339,21 @@ We have been studying global conformal invariance of correlation functions of pr
 where we used first eq. \eqref{eq:lvtv} for $L_{-2}V_{\Delta_1}(z_1)$, and then eq. \eqref{eq:zy} for $Z(y)$.
 This can be generalized to any correlation function of descendent fields. The resulting equations are called local Ward identities.
 
-
-\subsection{Belavin--Polyakov--Zamolodchikov equations}
-
-Local and global Ward identities are all we can deduce from conformal symmetry. But correlation functions that involve degenerate fields obey additional equations. 
-
-For example, let us replace $V_{\Delta_1}(z_1)$ with the degenerate primary field $V_{\langle 1, 1 \rangle}(z_1)$
-in our $N$-point function $Z$. Since $\frac{\partial}{\partial z_1} V_{\langle 1, 1 \rangle}(z_1) = L_{-1} V_{\langle 1, 1 \rangle}(z_1) =0$,
-we obtain $\frac{\partial}{\partial z_1} Z =0$. 
-In the case $N=3$, having $\Delta_1=\Delta_{\langle 1,1\rangle}=0$ in the three-point function \eqref{eq:3pt} leads to
-\begin{align}
- \left< V_{\langle 1, 1 \rangle}(z_1) V_{\Delta_2}(z_2) V_{\Delta_3}(z_3) \right> \propto (z_1-z_2)^{\Delta_3-\Delta_2} (z_1-z_3)^{\Delta_2-\Delta_3} (z_2-z_3)^{-\Delta_2-\Delta_3}\ , 
-\end{align}
-and further imposing $z_1$-independence leads to 
-\begin{align}
- \left< V_{\langle 1, 1 \rangle}(z_1) V_{\Delta_2}(z_2) V_{\Delta_3}(z_3) \right> \neq 0 \quad \Rightarrow \quad \Delta_2=\Delta_3\ .
-\end{align}
-
-In the case of $V_{\langle 2, 1 \rangle}(z_1)$, we have  
+Correlation functions that involve degenerate fields obey additional equations. In particular, 
 \begin{align}
 \left(L_{-1}^2 + b^2 L_{-2}\right) V_{\langle 2, 1 \rangle}(z_1)  = 0\qquad \text{so that} \qquad L_{-2}V_{\langle 2, 1 \rangle}(z_1) = -\frac{1}{b^2}\frac{\partial^2}{\partial z_1^2} V_{\langle 2, 1 \rangle}(z_1)\ .
 \end{align}
-Using the local Ward identity \eqref{eq:ltv},
+Together with the local Ward identity \eqref{eq:ltv},
 this leads to the second-order Belavin--Polyakov--Zamolodchikov partial differential equation
 \begin{align}
  \left( \frac{1}{b^2}\frac{\partial^2}{\partial z_1^2} + \sum_{i=2}^N\left(\frac{1}{z_1-z_i}\frac{\partial}{\partial z_i} +\frac{\Delta_i}{(z_1-z_i)^2}\right) \right)\left< V_{\langle 2, 1 \rangle}(z_1) \prod_{i=2}^N V_{\Delta_i}(z_i) \right>  = 0\ .
  \label{eq:bpz}
 \end{align}
-More generally, a correlation function with the degenerate field $V_{\langle r,s\rangle}$ obeys a partial differential equation of order $rs$. 
-
-\begin{exo}[Second-order BPZ equation for a three-point function]
- ~\label{exo:bpz3pt}
- Show that 
-\begin{align}
- \left< V_{\langle 2, 1 \rangle} V_{\Delta_2} V_{\Delta_3} \right> \neq 0 \quad \Rightarrow \quad 
- 2(\Delta_2-\Delta_3)^2 +b^2(\Delta_2+\Delta_3) -2\Delta_{\langle 2, 1 \rangle}^2 -b^2\Delta_{\langle 2, 1 \rangle} = 0\ .
- \end{align}
- Up to reflections of momentums, show that this is equivalent to
+In the case of a four-point function $N=4$, the BPZ equation amounts to a differential equation for the function of one variable $G(z)=\Big< V_{\langle 2, 1 \rangle}(z) V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1) \Big>$,
  \begin{align}
- \alpha_2 = \alpha_3 \pm \frac{b}{2}\ .
- \label{eq:alpm}
-\end{align}
-\end{exo}
-
-In the case of a four-point function, the BPZ equation amounts to a differential equation for the function of one variable $G(z)$, which therefore belongs to a finite-dimensional space of solutions.
-
-\begin{exo}[BPZ second-order differential equation]
- ~\label{exo:bpz}
- Show that the second-order BPZ equation for $G(z)=\Big< V_{\langle 2, 1 \rangle}(z) V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1) \Big>$ is
- \begin{align}
-  \left\{ \frac{z(1-z)}{b^2}\frac{\partial^2}{\partial z^2} + (2z-1){\frac{\partial}{\partial z}} +\Delta_{\langle 2,1 \rangle} +\frac{\Delta_1}{z}-\Delta_2 + \frac{\Delta_3}{1-z}\right\} G(z)=0\ ,
+  \left\{ \frac{z(1-z)}{b^2}\frac{\partial^2}{\partial z^2} + (2z-1){\frac{\partial}{\partial z}} +\Delta_{\langle 2,1 \rangle} +\frac{\Delta_1}{z}-\Delta_2 + \frac{\Delta_3}{1-z}\right\} G(z)=0\ .
 \label{eq:ode}
  \end{align}
-\end{exo}
 
 
 \section{Conformal bootstrap}
@@ -506,7 +374,7 @@ This suggests that we need anti-holomorphic Ward identities as well, and therefo
 
 \begin{hyp}[Left and right Virasoro algebras]
  ~\label{hyp:lr}
- Liouville theory has two mutually commuting Virasoro symmetry algebras with the same central charge, called left-moving or holomorphic, and right-moving or anti-holomorphic. Their generators are written $L_n,\bar L_n$, with in particular
+ We have two mutually commuting Virasoro symmetry algebras with the same central charge, called left-moving or holomorphic, and right-moving or anti-holomorphic. Their generators are written $L_n,\bar L_n$, with in particular
  \begin{align}
   \frac{\partial}{\partial z} V(z) = L_{-1}V(z)   \quad , \quad \frac{\partial}{\partial \bar z} V(z)= \bar L_{-1} V(z)   \ .
  \end{align}
@@ -531,7 +399,7 @@ The simplest case is $\Delta=\bar\Delta$, which leads to the definition
  ~\label{def:diag}
  A primary state or field is called diagonal if it has the same left and right conformal dimensions. A spectrum is called diagonal if all primary states are diagonal.
 \end{defn}
-From now on we will use the notation $V_\Delta(z)$ for the diagonal field $V_{\Delta,\Delta}(z)$.
+From now on we will assume that all fields are diagonal, and write  $V_\Delta(z) = V_{\Delta,\Delta}(z)$.
 
 \subsection{Operator product expansion and crossing symmetry}
 
@@ -554,40 +422,17 @@ If the spectrum is made of diagonal primary states and their descendent states, 
 \end{align}
 where the subleading terms are contributions of descendents fields. 
 In particular, the $z_1,z_2$-dependence of the coefficients is dictated by global conformal invariance eq. \eqref{eq:zgc}, leaving a $z_i$-independent unknown factor $C_{\Delta_1,\Delta_2,\Delta}$.
-Then, as in correlation functions, contributions of descendents are deduced from contributions of primaries via local Ward identitites.
-
-\begin{exo}[Computing the OPE of primary fields]
-~\label{exo:ope}
- Compute the first subleading term in the OPE \eqref{eq:ope}, and find
- \begin{align}
+Then, as in correlation functions, contributions of descendents are deduced from contributions of primaries via local Ward identitites, for example
+\begin{align}
   O(z_1-z_2) = \frac{\Delta+\Delta_1-\Delta_2}{2\Delta} \Big( (z_1-z_2)L_{-1}+(\bar z_1-\bar z_2)\bar L_{-1}\Big) V_{\Delta}(z_2) + O((z_1-z_2)^2)\ .
  \end{align}
-\end{exo}
+Using the OPE, we can reduce a three-point function to a combination of two-point functions. Assuming that the two-point function is normalized as $\left< V_{\Delta}(z_1)V_{\Delta}(z_2) \right> = |z_1-z_2|^{-4\Delta}$, we find 
+\begin{align}
+ \left<\prod_{i=1}^3 V_{\Delta_i}(z_i) \right> = C_{\Delta_1,\Delta_2,\Delta_3} |z_1-z_2|^{2(\Delta_3-\Delta_1-\Delta_2)} |z_1-z_3|^{2(\Delta_2-\Delta_1-\Delta_3)} |z_2-z_3|^{2(\Delta_1-\Delta_2-\Delta_3)}\ ,
+\end{align}
+so that the OPE coefficient $C$ coincides with the three-point structure constant.
 
-Inserting the OPE in a three-point function of primary fields, we find 
-\begin{align}
- \left<\prod_{i=1}^3 V_{\Delta_i}(z_i) \right> & = \sum_{\Delta\in S}C_{\Delta_1,\Delta_2,\Delta} |z_1-z_2|^{2(\Delta-\Delta_1-\Delta_2)}
- \Big(\left< V_{\Delta}(z_2) V_{\Delta_3}(z_3) \right> +O(z_1-z_2)\Big) \ ,
- \\
-& =  C_{\Delta_1,\Delta_2,\Delta_3} |z_1-z_2|^{2(\Delta_3-\Delta_1-\Delta_2)} \Big( |z_2-z_3|^{-4\Delta_3} + O(z_1-z_2)\Big)\ ,
-\end{align}
-assuming the two-point function is normalized as $\left< V_{\Delta}(z_1)V_{\Delta}(z_2) \right> = |z_1-z_2|^{-4\Delta}$.
-Therefore $C_{\Delta_1,\Delta_2,\Delta_3}$ coincides with the undertermined constant prefactor of the three-point function \eqref{eq:3pt}. This factor is called the three-point structure constant, and we have
-\begin{align}
- \left<\prod_{i=1}^3 V_{\Delta_i}(z_i) \right> = C_{\Delta_1,\Delta_2,\Delta_3} |z_1-z_2|^{2(\Delta_3-\Delta_1-\Delta_2)} |z_1-z_3|^{2(\Delta_2-\Delta_1-\Delta_3)} |z_2-z_3|^{2(\Delta_1-\Delta_2-\Delta_3)}\ .
-\end{align}
-Let us now insert the OPE in a four-point function of primary fields:
-\begin{align}
- \Big<V_{\Delta_1}(z)V_{\Delta_2}(0)V_{\Delta_3}(\infty)V_{\Delta_4}(1)\Big>
- &= \sum_{\Delta\in S} C_{\Delta_1,\Delta_2,\Delta} |z|^{2(\Delta-\Delta_1-\Delta_2)}
- \nonumber
-\\ & \qquad \qquad \times 
- \left(\Big< V_\Delta(0)V_{\Delta_3}(\infty)V_{\Delta_4}(1)\Big> + O(z)\right) \ ,
- \\
- &=  \sum_{\Delta\in S} C_{\Delta_1,\Delta_2,\Delta} C_{\Delta,\Delta_3,\Delta_4}
-|z|^{2(\Delta-\Delta_1-\Delta_2)} \Big(1 +O(z) \Big)\ .
-\end{align}
-The contributions of descendent factorize into those of left-moving descendents, generated by the operators $L_{n<0}$, and right-moving descendents, generated by $\bar L_{n<0}$. So the last factor has a holomorphic factorization such that 
+Inserting the OPE in a four-point function of primary fields, we find
 \begin{align}
 \Big<V_{\Delta_1}(z)V_{\Delta_2}(0)V_{\Delta_3}(\infty)V_{\Delta_4}(1)\Big>
  =\sum_{\Delta\in S} C_{\Delta_1,\Delta_2,\Delta} C_{\Delta,\Delta_3,\Delta_4}  \mathcal{F}^{(s)}_\Delta(z) \mathcal{F}^{(s)}_\Delta(\bar z)\ .
@@ -601,18 +446,9 @@ The contributions of descendent factorize into those of left-moving descendents,
   \mathcal{F}^{(s)}_\Delta(z) = z^{\Delta-\Delta_1-\Delta_2}\Big( 1 + O(z) \Big)\ ,
   \label{eq:gsd}
  \end{align}
-is the normalized contribution of the Verma module $\mathcal V_\Delta$ to a four-point function, obtained by summing over left-moving descendents. Its dependence on $c,\Delta_1,\Delta_2,\Delta_3,\Delta_4$ are kept implicit. The label $(s)$ stands for for $s$-channel, we will soon see what this means.
+is the normalized contribution of the Verma module $\mathcal V_\Delta$ to a four-point function, obtained by summing over left-moving descendents. It is a locally holomorphic function of $z$. Its dependence on $c,\Delta_1,\Delta_2,\Delta_3,\Delta_4$ are kept implicit. The label $(s)$ stands for for $s$-channel, we will soon see what this means.
 \end{defn}
 Conformal blocks are in principle known, as they are universal functions, entirely determined by conformal symmetry. This is analogous to characters of representations, also known as zero-point conformal blocks on the torus.
-
-\begin{exo}[Computing conformal blocks]
- ~\label{exo:block}
- Compute the conformal block $ \mathcal{F}^{(s)}_\Delta(z)$ up to the order $O(z)$, and find
- \begin{align}
-  \mathcal{F}^{(s)}_\Delta(z) = z^{\Delta-\Delta_1-\Delta_2}\left( 1 + \frac{(\Delta+\Delta_1-\Delta_2)(\Delta+\Delta_4-\Delta_3)}{2\Delta}z + O(z^2) \right)\ .
- \end{align}
- Discuss the pole at $\Delta=0$, and its disappearance for certain values of $\Delta_i$.
-\end{exo}
 
 Our axiom \ref{hyp:ass} on the commutativity of fields implies that the OPE is associative, and that we can use the OPE of any two fields in a four-point function. In particular, using the OPE of the first and fourth fields, we obtain 
 \begin{align}
@@ -638,27 +474,25 @@ The equality of our two decompositions \eqref{sdec} and \eqref{tdec} of the four
 \ .
 \label{csd}
 \end{align}
-This equation holds if the sums on both sides converge, that is if $z$ is sufficiently close to both $0$ and $1$,
-\begin{align}
-\begin{tikzpicture}[scale = 1.4, baseline=(current  bounding  box.center)]
- \filldraw[blue, opacity = .15] (0, 0) circle [radius = 1];
- \filldraw[red, opacity = .15] (1, 0) circle [radius = 1];
- \filldraw (0, 0) circle [radius = 1pt] node [below] {$0$};
- \filldraw (1, 0) circle [radius = 1pt] node [below] {$1$};
- \filldraw (4, 0) circle [radius = 1pt] node [below] {$\infty$};
- \node[below, blue] at (-.5, -1) {$s$-channel};
- \node[below, red] at (1.5, -1) {$t$-channel};
-\end{tikzpicture}
-\end{align}
 Given the spectrum $S$, crossing symmetry is a system of quadratic equations for the structure constant $C_{\Delta_1,\Delta_2,\Delta_3}$. Requiring that this system has solutions is a strong constraint on the spectrum. 
 
+\begin{defn}[Conformal field theory]
+~\label{def:cft}
+A (model of) conformal field theory on the Riemann sphere is a spectrum $S$ and a set of correlation functions $\left<\prod_{i=1}^N V_{|w_i\rangle}(z_i)\right>$ with $|w_i\rangle\in S$ that obey all our axioms, in particular crossing symmetry. 
+\end{defn}
 
-\subsection{Degenerate fields and the fusion product}
+\begin{defn}[Defining and solving]
+ ~\label{def:def}
+ To define a conformal field theory is to give principles that uniquely determine its spectrum and correlation functions.
+ To solve a conformal field theory is to actually compute them.
+\end{defn}
+
+\subsection{Hypergeometric four-point functions}
 
 Crossing symmetry equations are powerful, but typically involve infinite sums, which makes them difficult to solve.
 However, if at least one field is degenerate, then the four-point function belongs to the finite-dimensional space of solutions of a BPZ equation, and is therefore a combination of finitely many conformal blocks. 
 For example,
-$\Big< V_{\langle 2, 1 \rangle}(z) V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1) \Big>$ is a combination of only two holomorphic $s$-channel conformal blocks.
+$G(z)= \Big< V_{\langle 2, 1 \rangle}(z) V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1) \Big>$ is a combination of only two holomorphic $s$-channel conformal blocks.
 These blocks are a particular basis of solutions of the BPZ equation \eqref{eq:ode}, characterized by their asymptotic behaviour near $z=0$ \eqref{eq:gsd}, 
 \begin{align}
 \mathcal{F}^{(s)}_{\alpha_1-\frac{b}{2}}(z) = z^{b\alpha_1} (1-z)^{b\alpha_3} F(A,B,C,z)\quad , \quad 
@@ -680,147 +514,25 @@ Similarly, the two relevant $t$-channel blocks are
  \nonumber \\
  \mathcal{F}^{(t)}_{\alpha_3+\frac{b}{2}}(z) &= \left. \mathcal{F}^{(t)}_{\alpha_3-\frac{b}{2}}(z) \right|_{\alpha_3\to Q-\alpha_3} \ .
 \end{align}
-The presence of only two $s$-channel fields with momentums $\alpha_1\pm \frac{b}{2}$, and the constraint \eqref{eq:alpm} on momentums in the three-point function $\left<V_{\langle 2,1\rangle}V_{\alpha_2}V_{\alpha_3}\right>$, both mean that the operator product expansion $V_{\langle 2, 1 \rangle}(z) V_{\alpha_1}(0)$ involves only two primary fields $V_{\alpha_1\pm \frac{b}{2}}(0)$. 
-
-\begin{hyp}[Fusion product]
- ~\label{hyp:fus}
- There is a bilinear, associative product of representations of the Virasoro algebra, that encodes the constraints on OPEs from Virasoro symmetry and null vectors. In particular,
- \begin{align}
-  \mathcal{R}_{\langle 1,1\rangle}\times \mathcal V_\alpha = \mathcal V_\alpha \quad , \quad 
-  \mathcal{R}_{\langle 2,1\rangle}\times \mathcal V_\alpha = \sum_\pm \mathcal V_{\alpha\pm \frac{b}{2}}\quad , \quad  
-  \mathcal{R}_{\langle 1,2\rangle}\times \mathcal V_\alpha = \sum_\pm \mathcal V_{\alpha\pm \frac{1}{2b}}\ .
-  \label{eq:rv}
- \end{align}
-\end{hyp}
-The fusion product can be defined algebraically: the fusion product of two representations coincides with their tensor product as a vector space, where however the Virasoro algebra does not act as it would in the tensor product. (In the tensor product, central charges add.) 
-
-Using the associativity of the fusion product, we have 
+Let us build single-valued four-point functions as linear combinations of such blocks. Single-valuedness near $z=0$ forbids terms such as $\mathcal{F}^{(s)}_{\alpha_1-\frac{b}{2}}(z) \mathcal{F}^{(s)}_{\alpha_1+\frac{b}{2}}(\bar z)$, and we must have 
 \begin{align}
- \mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle 2,1\rangle}  \times \mathcal V_\alpha  =
-\mathcal{R}_{\langle 2,1\rangle}\times  \left(\sum_\pm \mathcal V_{\alpha\pm \frac{b}{2}}\right) =
-\mathcal V_{\alpha - b} + 2\cdot \mathcal V_\alpha + \mathcal V_{\alpha + b} \ .
+ G(z) = \sum_{i=\pm} c^{(s)}_{i} \mathcal{F}^{(s)}_{\alpha_1-i\frac{b}{2}}(z) \mathcal{F}^{(s)}_{\alpha_1-i\frac{b}{2}}(\bar z) = \sum_{j=\pm} c^{(t)}_{i} \mathcal{F}^{(t)}_{\alpha_3-j\frac{b}{2}}(z) \mathcal{F}^{(t)}_{\alpha_3-j\frac{b}{2}}(\bar z)\ .
 \end{align}
-Since the fusion product of $\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle 2,1\rangle} $ with $\mathcal V_\alpha$ has finitely many terms, $\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle 2,1\rangle} $
-must be a degenerate representation. 
-On the other hand, eq. \eqref{eq:rv} implies that $\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle 2,1\rangle} $ is made of representations with momentums $\alpha_{\langle 2,1\rangle} \pm \frac{b}{2} = 0,-b$. The degenerate representation with momentum $0$ is $\mathcal{R}_{\langle 1,1\rangle}$. Calling $\mathcal{R}_{\langle 3,1\rangle}$ the degenerate representation with momentum $-b$, we just found
+The $s$- and $t$-channel blocks are two bases of the same space of solutions of the BPZ equation, and they are linearly related,
 \begin{align}
- \mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle 2,1\rangle} = \mathcal{R}_{\langle 1,1\rangle} + \mathcal{R}_{\langle 3,1\rangle} \quad , \quad \mathcal{R}_{\langle 3,1\rangle} \times \mathcal V_\alpha = \mathcal V_{\alpha - b} + \mathcal V_\alpha + \mathcal V_{\alpha + b}\ .
+ \mathcal{F}^{(s)}_{\alpha_1-i\frac{b}{2}}(z) = \sum_{j=\pm} F_{ij} \mathcal{F}^{(t)}_{\alpha_1-j\frac{b}{2}}(z)\ .
 \end{align}
-It can be checked that $\mathcal{R}_{\langle 3,1\rangle}$ has a vanishing null vector at level $3$, so that our definition of $\mathcal{R}_{\langle 3,1\rangle}$ from fusion agrees with the definition from representation theory in Section \ref{sec:nv}.
-
-\begin{exo}[Higher degenerate representations]
-~\label{exo:hdr}
- Show that there exist degenerate representations $\mathcal{R}_{\langle r,s \rangle}$ (for $r, s \in \mathbb{N}^*$) with momentums $\alpha_{\langle r,s \rangle}$ \eqref{eq:ars},
-such that 
- \begin{align}
- \mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_\alpha &= \sum_{i=0}^{r-1} \sum_{j=0}^{s-1} \mathcal{V}_{\alpha + \alpha_{\langle r,s \rangle}+ ib+jb^{-1}}\ ,
-\label{rtv}
- \\
- \mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle} &= \sum_{r_3\overset{2}{=}|r_1-r_2|+1}^{r_1+r_2-1}\ \sum_{s_3\overset{2}{=}|s_1-s_2|+1}^{s_1+s_2-1} \mathcal{R}_{\langle r_3,s_3 \rangle}\ ,
-\label{rrsr}
-\end{align}
-where the superscript in $\overset{2}{=}$ indicates that the corresponding sum runs by increments of $2$. 
-\end{exo}
-
-
-\section{Liouville theory and minimal models}
-
-Let us start the investigation of specific conformal field theories. 
-
-\begin{defn}[Conformal field theory]
-~\label{def:cft}
-A (model of) conformal field theory on the Riemann sphere is a spectrum $S$ and a set of correlation functions $\left<\prod_{i=1}^N V_{|w_i\rangle}(z_i)\right>$ with $|w_i\rangle\in S$ that obey all our axioms, in particular crossing symmetry. 
-\end{defn}
-
-\begin{defn}[Defining and solving]
- ~\label{def:def}
- To define a conformal field theory is to give principles that uniquely determine its spectrum and correlation functions.
- To solve a conformal field theory is to actually compute them.
-\end{defn}
-
-In this Section we will define Liouville theory and minimal models. In Section \ref{sec:4pt} we will solve them.
-
-
-\subsection{Diagonal minimal models}
-
-\begin{defn}[Minimal model]
- ~\label{def:mm}
- A minimal model is a conformal field theory whose spectrum is made of finitely many irreducible representations of the product of the left and the right Virasoro algebras.
-\end{defn}
-
-Although there exist non-diagonal minimal models, we focus on diagonal minimal models, whose spectrums are of the type
+In particular, this implies 
 \begin{align}
- S = \bigoplus_\mathcal{R} \mathcal{R}\otimes  \mathcal{\bar R}\ ,
+ \frac{c_{+}^{(s)}}{c_{-}^{(s)}} = -\frac{F_{-+}F_{--}}{F_{++}F_{+-}} 
+ = \frac{\gamma(A)\gamma(B)\gamma(C-A)\gamma(C-B)}{\gamma(C)\gamma(C-1)}\quad \text{with} \quad \gamma(x) =\frac{\Gamma(x)}{\Gamma(1-x)}\ .
+ \label{eq:coc}
 \end{align}
-where $\mathcal{R}$ and $ \mathcal{\bar R}$ denote the same Virasoro representation, viewed as a representation of the left- or right-moving Virasoro algebra respectively.
+Then we will express $c_\pm^{(s)}$ in terms of three-point structure constants, and obtain equations for these structure constants.
 
-\begin{hyp}[Degenerate spectrum]
- ~\label{hyp:deg}
- All representations that appear in the spectrum of a minimal model are degenerate.
-\end{hyp}
+\section{Liouville theory}
 
-It is natural to use degenerate representations, because in an OPE of degenerate fields, only finitely many representations can appear. Conversely, we now assume that all representations that are allowed by fusion do appear in the spectrum, in other words
-
-\begin{hyp}[Closure under fusion]
- ~\label{hyp:stab}
- The spectrum is closed under fusion. 
-\end{hyp}
-
-Let us assume that the spectrum contains a nontrivial degenerate representation such as $\mathcal{R}_{\langle 2,1\rangle}$. Fusing it with itself, we get $\mathcal{R}_{\langle 1, 1\rangle}$ and $\mathcal{R}_{\langle 3,1\rangle}$. Fusing multiple times, we get $(\mathcal{R}_{\langle r, 1\rangle})_{r\in\mathbb{N}^*}$ due to $\mathcal{R}_{\langle 2,1\rangle} \times \mathcal{R}_{\langle r,1\rangle} = \mathcal{R}_{\langle r-1,1\rangle}  + \mathcal{R}_{\langle r+1,1\rangle}$. If the spectrum moreover contains $\mathcal{R}_{\langle 1,2\rangle}$, then it must contain all degenerate representations. 
-
-\begin{defn}[Generalized minimal model]
- ~\label{def:gmm}
- For any value of the central charge $c$, the generalized minimal model is the conformal field theory whose spectrum is
- \begin{align}
-  S^\mathrm{GMM} = \bigoplus_{r=1}^\infty \bigoplus_{s=1}^\infty \mathcal{R}_{\langle r,s \rangle}\otimes  \mathcal{\bar R}_{\langle r,s \rangle} \ ,
- \end{align}
- assuming it exists and is unique.
-\end{defn}
-
-So, using only degenerate representations is not sufficient for building minimal models.
-In order to have even fewer fields in fusion products, let us consider representations that are multiply degenerate. For example, if $\mathcal{R}_{\langle 2, 1\rangle} = \mathcal{R}_{\langle 1, 3\rangle}$ has two vanishing null vectors, then $\mathcal{R}_{\langle 2, 1\rangle} \times \mathcal{R}_{\langle 2, 1\rangle} = \mathcal{R}_{\langle 1,1\rangle}$ has only one term, as the term $\mathcal{R}_{\langle 3, 1\rangle}$ is not allowed by the fusion rules of $\mathcal{R}_{\langle 1, 3\rangle}$.
-
-In order for a representation to have two null vectors, we however need a coincidence of the type $\Delta_{\langle r,s \rangle} = \Delta_{\langle r',s' \rangle}$. A sufficient condition for this is 
-\begin{align}
- \alpha_{\langle r,s \rangle} + \alpha_{\langle r',s' \rangle} = Q\ .
-\end{align}
-Defining the natural integers 
-\begin{align}
- p = r+r' \quad , \quad q = s+s'\ ,
-\end{align}
-which we assume to be coprime, we have 
-\begin{align} 
- b^2 = - \frac{q}{p} \quad \text{i.e.} \quad c = 1-6\frac{(q-p)^2}{pq}\ .
-\end{align}
-and the central charge belongs to a discrete set of values. 
-Moreover, for any integers $r,s$, we have 
-\begin{align}
- \Delta_{\langle r,s \rangle} = \Delta_{\langle p-r, q-s\rangle}\ .
-\end{align}
-For $1\leq r\leq p-1$ and $1\leq s\leq q-1$, there exists a doubly degenerate representation $\mathcal{R}_{\langle r, s\rangle} = \mathcal{R}_{\langle p-r, q-s\rangle}$. The diagonal spectrum built from representations of this type is 
-\begin{align}
- S_{p, q} = \frac12 \bigoplus_{r=1}^{p-1} \bigoplus_{s=1}^{q-1} \mathcal{R}_{\langle r,s \rangle}\otimes \mathcal{\bar{R}}_{\langle r,s \rangle}\ ,
-\end{align}
-where the factor $\frac12$ is here to avoid counting the same representation twice. For example, the minimal model with the central charge $c=\frac12$ has the spectrum $S_{4,3}$, 
-\begin{align}
-\renewcommand{\arraystretch}{1.3}
- \left\{\begin{array}{l} \Delta_{\langle 1,1\rangle}=\Delta_{\langle 3,2\rangle} = 0 \ , \\ \Delta_{\langle 1,2\rangle} =\Delta_{\langle 3,1\rangle} = \frac12 \ , \\ \Delta_{\langle 2,1\rangle} =\Delta_{\langle 2,2\rangle} = \frac{1}{16} \ .\end{array}\right. 
- \qquad \Leftrightarrow \quad \text{the Kac table} \quad 
- \begin{array}{c|ccc} 2 & \frac{1}{2} & \frac{1}{16} & 0 \\ 1 & 0 & \frac{1}{16} & \frac{1}{2} \\  \hline & 1 & 2 & 3 \end{array} 
-\end{align}
-
-\begin{exo}[Closure of minimal model spectrums under fusion]
- ~\label{exo:cmm}
- Show that $S_{p,q}$ is closed under fusion. If you are brave, compute the fusion products of the representations that appear in $S_{p,q}$.
-\end{exo}
-
-\begin{defn}[Diagonal minimal model]
- ~\label{def:dmm}
- For $2\leq p,q$ coprime integers, the $(p,q)$ minimal model is the conformal field theory whose spectrum is $S_{p, q}$, assuming it exists and is unique.
-\end{defn}
-
-
-\subsection{Liouville theory}
+\subsection{Definition}
 
 \begin{defn}[Liouville theory]
  ~\label{def:liou}
@@ -832,28 +544,16 @@ where the factor $\frac12$ is here to avoid counting the same representation twi
  \end{align}
 and whose correlation functions are smooth functions of $b$ and $\alpha$, assuming it exists and its unique.
 \end{defn}
-Let us give some justification for this definition. We are looking for a diagonal theory whose spectrum is a continuum of representations of the Virasoro algebra. For real values of $c$ it is natural to require that $\Delta$ is real. Let us write this condition in terms of the momentum $\alpha$,
-\begin{align}
- \Delta \in \mathbb{R} \Leftrightarrow \alpha\in \mathbb{R} \cup \left(\frac{Q}{2} + i\mathbb{R}\right)\ ,
-  \qquad
-   \begin{tikzpicture}[scale = .4, baseline=(current  bounding  box.center)]
-  \draw[-latex, very thin] (-2, 0) -- (0, 0) node[below right] {$0$} -- (2, 0) node[below right] {$\frac{Q}{2}$} -- (4, 0)  -- (6, 0) node[above] {$\alpha$};
-  \draw[red, ultra thick] (-1.6, 0) -- (5.5, 0);
-  \draw[red, ultra thick] (2, -3) -- (2, 3);
-  \draw[very thin] (0, -3) -- (0, 3);
- \end{tikzpicture}
-\end{align}
-We also need $\Delta$ to be bounded from below, and the natural bound is $\Delta(\alpha=\frac{Q}{2}) = \frac{Q^2}{4}=\frac{c-1}{24}$. The resulting set $\alpha \in \frac{Q}{2}+i\mathbb{R}$ is then analytically continued to $c\notin \mathbb{R}$.
+Let us give some justification for this definition. We are looking for a diagonal theory whose spectrum is a continuum of representations of the Virasoro algebra. If $c$ is real it is natural to assume that $\Delta$ is real. But $\Delta$ must also be bounded from below, and the natural bound is the critical value where $\Delta'(\alpha)=0$, i.e. $\Delta(\alpha=\frac{Q}{2}) = \frac{Q^2}{4}=\frac{c-1}{24}$. The resulting set $\alpha \in \frac{Q}{2}+i\mathbb{R}$ is then analytically continued to $c\notin \mathbb{R}$.
 
 The integral is actually over the half-line $\frac{Q}{2}+i\mathbb{R}_+$ so as not to count representations twice. 
-It is however convenient to have fields $V_\alpha(z)$ with $\alpha \in \frac{Q}{2}+i\mathbb{R}$. 
-Then the fields $V_\alpha(z)$ and $V_{Q-\alpha}(z)$ correspond to the same primary state, and they must be proportional, 
+The fields $V_\alpha(z)$ and $V_{Q-\alpha}(z)$ indeed correspond to the same primary state, and we must have a reflection relation, 
 \begin{align}
  V_\alpha(z) = R(\alpha) V_{Q-\alpha}(z)\ ,
 \end{align}
 where the function $R(\alpha)$ is called the reflection coefficient.
 Under a change of field normalization $V_\alpha(z) \to \lambda(\alpha)V_\alpha(z)$, we have $R(\alpha) \to \frac{\lambda(\alpha)}{\lambda(Q-\alpha)} R(\alpha)$, and we could set $R(\alpha)=1$. 
-This choice of field normalization would however prevent correlation functions to be analytic in $\alpha$.
+This choice of field normalization would however prevent correlation functions from being analytic in $\alpha$.
 
 Let us schematically write two- and three-point functions in Liouville theory, as well as OPEs:
 \begin{align}
@@ -866,67 +566,37 @@ Let us schematically write two- and three-point functions in Liouville theory, a
  \label{eq:v1v2}
 \end{align}
 
-In order to have reasonably simple crossing symmetry equations, we need degenerate fields. 
+In order to have reasonably simple crossing symmetry equations, we need degenerate fields. But the spectrum is made of Verma modules, and the corresponding fields are not degenerate. So we need a special axiom.
+
 \begin{hyp}[Degenerate fields in Liouville theory]
  ~\label{hyp:degl}
- The degenerate fields $V_{\langle r, s\rangle}$, and their correlation functions, exist. 
+ The degenerate fields $V_{\langle 2, 1\rangle}$ and $V_{\langle 1, 2\rangle}$, and their correlation functions, exist. 
 \end{hyp}
-Degenerate fields do not correspond to states in the spectrum, as the spectrum is made of Verma modules (not degenerate representations). 
-On top of that, 
-OPEs $V_{\langle r, s\rangle}V_\alpha$ then produce more fields outside the spectrum, for instance 
-$V_{\langle 2, 1\rangle} V_\alpha \sim V_{\alpha-\frac{b}{2}} + V_{\alpha+\frac{b}{2}}$ with in general $\alpha\pm\frac{b}{2}\notin \frac{Q}{2}+i\mathbb{R}$. We assume that correlation functions involving $V_{\alpha\pm\frac{b}{2}}$ make sense by analytic continuation in $\alpha$. So, let us introduce notations for OPE coefficients of $V_{\langle 2, 1\rangle}$:
+
+Let us introduce notations for OPE coefficients of $V_{\langle 2, 1\rangle}$:
 \begin{align}
- % V_{\langle 1,1\rangle} V_\alpha \sim C_0(\alpha) V_\alpha \quad ,\quad 
  V_{\langle 2, 1\rangle} V_\alpha \sim C_+(\alpha) V_{\alpha-\frac{b}{2}} + C_-(\alpha)V_{\alpha +\frac{b}{2}}\ .
 \end{align}
-% One can show that $C_0(\alpha)$ is constant, and we normalize $V_{\langle 1,1\rangle}$ so that $C_0(\alpha)= 1$. 
-
-\begin{exo}[Degenerate OPE coefficients]
- ~\label{exo:doc}
- Show that there exists a field normalization that is compatible with the two-point function \eqref{eq:vv}, and such that
+These OPE coefficients are constrained by the reflection relation, and by the symmetry of $\left< V_{\langle 2, 1\rangle} V_{\alpha_1} V_{\alpha_2}\right>$ under permutations $\alpha_1\leftrightarrow \alpha_2$. 
+This enables us to find a field normalization that is compatible with the two-point function \eqref{eq:vv}, and such that
  \begin{align}
-  C_+(\alpha) = 1\ .
+  C_+(\alpha) = 1\quad , \quad C_-(\alpha) = \frac{R(\alpha)}{R(\alpha+\frac{b}{2})}\ .
  \end{align}
- In this normalization, show that 
- \begin{align}
-  C_-(\alpha) = \frac{R(\alpha)}{R(\alpha+\frac{b}{2})}\ .
- \end{align}
-\end{exo}
 
-\section{Four-point functions}\label{sec:4pt}
 
-Let us determine the three-point structure constant by solving crossing symmetry equations. We begin with the equations that come from four-point functions with degenerate fields. These equations are enough for uniquely determining the three-point structure constant.
+\subsection{Three-point structure constants}
 
-\subsection{Single-valued four-point functions}
-
-The four-point function $G(z) = \Big< V_{\langle 2, 1 \rangle}(z) V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1) \Big>$ obeys second-order BPZ equations in $z$ and $\bar z$, and the most general solution is
+In Liouville theory, the coefficients $c^{(s)}_\pm$ that appear in hypergeometric four-point functions are 
 \begin{align}
- G(z) = \sum_{i,j=\pm} c^{(s)}_{ij} \mathcal{F}^{(s)}_{\alpha_1-i\frac{b}{2}}(z) \mathcal{F}^{(s)}_{\alpha_1-j\frac{b}{2}}(\bar z)\ .
-\end{align}
-Conformal blocks behave as powers of $z$ near $z=0$ \eqref{eq:gsd}, and single-valuedness requires that we have the same power on the left and on the right. This implies $c^{(s)}_{+-} = c^{(s)}_{-+}=0$. By the same reasoning, single-valuedness near $z=1$ requires $c^{(t)}_{+-}=c^{(t)}_{-+}=0$. Now $c^{(t)}_{ij}$ and $c^{(s)}_{ij}$ are the coefficients of $G(z)$ in two different bases of solutions of the BPZ equation, and are related by a change of basis:
-\begin{align}
- \mathcal{F}^{(s)}_{\alpha_1-i\frac{b}{2}}(z) = \sum_{j=\pm} F_{ij} \mathcal{F}^{(t)}_{\alpha_1-j\frac{b}{2}}(z) \quad \Rightarrow \quad \sum_{i,j=\pm} c^{(s)}_{ij} F_{ii'} F_{jj'} = c^{(t)}_{i'j'}\ .
-\end{align}
-In particular we have $0 = c^{(t)}_{+-}= c_{++}^{(s)} F_{++}F_{+-} + c_{--}^{(s)} F_{-+}F_{--}$, so that
-\begin{align}
- \frac{c_{++}^{(s)}}{c_{--}^{(s)}} = -\frac{F_{-+}F_{--}}{F_{++}F_{+-}} 
- = \frac{\gamma(A)\gamma(B)\gamma(C-A)\gamma(C-B)}{\gamma(C)\gamma(C-1)}\quad \text{with} \quad \gamma(x) =\frac{\Gamma(x)}{\Gamma(1-x)}\ ,
- \label{eq:coc}
-\end{align}
-where the combinations $A,B,C$ of the momentums $\alpha_1,\alpha_2,\alpha_3$ are given in eq. \eqref{abc}.
-
-This concludes the mathematical exercise of finding single-valued solutions of the hypergeometric equation. 
-Now, in conformal field theory, the coefficients $c^{(s)}_{ij}$ are further constrained to be combinations of OPE coefficients and three-point structure constants, 
-\begin{align}
- c_{++}^{(s)} = C_+(\alpha_1) C_{\alpha_1-\frac{b}{2},\alpha_2,\alpha_3} 
+ c_{+}^{(s)} = C_+(\alpha_1) C_{\alpha_1-\frac{b}{2},\alpha_2,\alpha_3} 
 \quad , \quad 
-c_{--}^{(s)}  = C_-(\alpha_1) C_{\alpha_1+\frac{b}{2},\alpha_2,\alpha_3}\ .
+c_{-}^{(s)}  = C_-(\alpha_1) C_{\alpha_1+\frac{b}{2},\alpha_2,\alpha_3}\ .
 \label{cs}
 \end{align}
-To get an equation for the three-point structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$, we must first determine the degenerate OPE coefficients $C_\pm(\alpha)$. To do this, we consider the special case where the last field is degenerate too, i.e. the four-point function $\Big\langle V_{\langle 2,1 \rangle}(z) V_\alpha(0) V_{Q-\alpha}(\infty) V_{\langle 2,1 \rangle}(1)\Big\rangle$.
+To get an equation for the three-point structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$, we must first determine the  coefficients $C_\pm(\alpha)$. To do this, we consider the special case where the last field is degenerate too, i.e. the four-point function $\Big\langle V_{\langle 2,1 \rangle}(z) V_\alpha(0) V_{Q-\alpha}(\infty) V_{\langle 2,1 \rangle}(1)\Big\rangle$.
 In this case, we have
 \begin{align}
- c_{++}^{(s)} = C_+(\alpha)C_-(\alpha-\tfrac{b}{2}) = \frac{R(\alpha-\frac{b}{2})}{R(\alpha)} \quad , \quad c_{--}^{(s)} = C_-(\alpha)C_+(\alpha+\tfrac{b}{2}) = \frac{R(\alpha)}{R(\alpha+\frac{b}{2})}\ ,
+ c_{+}^{(s)} = C_+(\alpha)C_-(\alpha-\tfrac{b}{2}) = \frac{R(\alpha-\frac{b}{2})}{R(\alpha)} \quad , \quad c_{-}^{(s)} = C_-(\alpha)C_+(\alpha+\tfrac{b}{2}) = \frac{R(\alpha)}{R(\alpha+\frac{b}{2})}\ ,
 \end{align}
 and eq. \eqref{eq:coc} boils down to 
 \begin{align}
@@ -943,26 +613,21 @@ This also determines $C_\pm(\alpha)$, and we can deduce a shift equation for thr
  \frac{C_{\alpha_1+b,\alpha_2,\alpha_3}}{C_{\alpha_1,\alpha_2,\alpha_3}} = \mu^{-b} b^{-4}\frac{\gamma(2b\alpha_1)\gamma(2b\alpha_1+b^2)}{\prod_{\pm,\pm} \gamma\left(b\alpha_1\pm b(\alpha_2-\frac{Q}{2})\pm b(\alpha_3-\frac{Q}{2})\right)}\ .
 \label{fcc}
 \end{align}
-Again, the equation with $b\to \frac{1}{b}$ should hold too. We will now solve these equations.
+Again, the equation with $b\to \frac{1}{b}$ should hold too. In order to solve these equations, we need a function that produces Gamma functions when its argument is shifted by $b$ or $\frac{1}{b}$. 
 
-
-\subsection{Determining three-point structure constants}
-
-In contrast to the shift equations for $R(\alpha)$, the shift equations for $C_{\alpha_1,\alpha_2,\alpha_3}$ cannot be solved using Gamma functions. Rather, we need a function that produces Gamma functions when its argument is shifted by $b$ or $\frac{1}{b}$. 
-
-\begin{exo}[Upsilon function]
-~\label{exo:upsilon}
- For $b>0$, show that there is a unique (up to a constant factor) holomorphic function $\Upsilon_b(x)$ that obeys the shift equations
+\begin{defn}[Upsilon function]
+~\label{def:upsilon}
+ For $b>0$, let $\Upsilon_b(x)$ be the unique (up to a constant factor) holomorphic function that obeys the shift equations
  \begin{align}
-  \frac{\Upsilon_b(x+b)}{\Upsilon_b(x)} = b^{1-2bx} \gamma(bx)\qquad \text{and} \qquad \frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)} = b^{\frac{2x}{b}-1} \gamma(\tfrac{x}{b})\ ,
+  \frac{\Upsilon_b(x+b)}{\Upsilon_b(x)} = b^{1-2bx} \gamma(bx)\qquad \text{and} \qquad \frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)} = b^{\frac{2x}{b}-1} \gamma(\tfrac{x}{b})\ .
 \label{upup}
 \end{align}
-For $ib>0$, show that the meromorphic function 
+For $ib>0$, the meromorphic function 
 \begin{align}
  \hat{\Upsilon}_b(x) = \frac{1}{\Upsilon_{ib}(-ix+ib)}\ ,
 \end{align}
-obeys shift equations that differ from eq. \eqref{upup} by $b^{\cdots} \to (ib)^{\cdots}$.
-\end{exo}
+then obeys shift equations that differ from eq. \eqref{upup} by $b^{\cdots} \to (ib)^{\cdots}$.
+\end{defn}
 The functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$ can respectively be defined for $\Re b>0$ and $\Re ib>0$ by analytic continuation. And we have 
 \begin{align}
  \Upsilon_b(x) = \lambda_b^{(\frac{Q}{2}-x)^2}\prod_{m,n=0}^\infty f\left(\frac{\frac{Q}{2}-x}{\frac{Q}{2}+mb+nb^{-1}}\right) \quad \text{with} \quad f(x)=(1-x^2)e^{x^2}\ ,
@@ -978,9 +643,7 @@ Zamolodchikov and Al. Zamolodchikov. It holds if
 $c\notin ]-\infty, 1]$ i.e. $b\notin i\mathbb{R}$. 
 On the other hand, doing the replacements $\Upsilon_b\to \hat\Upsilon_b$ and $b^{\cdots} \to (ib)^{\cdots}$, we obtain a solution $\hat C$ that holds if  $c\notin [25,\infty[$ i.e. $b\notin \mathbb{R}$.
 
-In the case of (generalized) minimal models, the momentums $\alpha_{\langle r,s\rangle}$ belong to a lattice with periods $b$ and $\frac{1}{b}$, so they are uniquely determined by the shift equations. The solution is given by $C$ or $\hat C$, which coincide. (Actually $C$ has poles when $\alpha_i$ take degenerate values, one should take the residues.)
-
-In the case of Liouville theory, the solution is unique if $b$ and $b^{-1}$ are aligned, i.e. if $b^2\in\mathbb{R}$:
+The solution is unique if $b$ and $b^{-1}$ are aligned, i.e. if $b^2\in\mathbb{R}$:
 \begin{equation}
  \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .6]
 \draw (0, 2) node[left]{$i$} -- (0, 1) node[below left] {$0$} -- (1, 1) node[below] {$1$};
@@ -995,9 +658,7 @@ In the case of Liouville theory, the solution is unique if $b$ and $b^{-1}$ are 
 However, for general values of $c$, both $C$ and $\hat C$ are solutions, and there are actually infinitely many other solutions. In order to prove the existence and uniqueness of Liouville theory, we have to determine which solutions lead to crossing-symmetric four-point functions.
 
 
-\subsection{Crossing symmetry}
-
-We have found that (generalized) minimal models are unique for all values of $c$, while Liouville theory is unique at least if $b^2\in\mathbb{R}$. We will now address the question of their existence. 
+\subsection{Four-point functions}
 
 The $s$-channel decomposition of a Liouville four-point function reads 
 \begin{align}
@@ -1053,32 +714,14 @@ The four-point function built from $C$ is analytic on $c\notin ]-\infty,1]$. So 
 On the other hand, the limit $c\to ]-\infty, 1]$ is singular. Actually, for $c\in ]-\infty, 1]$, the integration line has to be slightly shifted in order to avoid the poles. So the structure constant $\hat C$ is expected to be valid only for $c\in ]-\infty, 1]$.
 
 That is how far we can easily get with analytic considerations. 
-Let us now seek input from numerical tests of crossing symmetry. (See the associated \href{https://github.com/ribault/bootstrap-2d-Python/blob/master/Liouville_demo_2.ipynb}{Jupyter notebook}.)
-We find that Liouville theory exists for all values of $c$, with the three-point structure constants $C$ for $c\notin ]-\infty,1]$, and $\hat C$ for $c\in ]-\infty, 1]$. 
-We also find that generalized minimal models exist for all values of $c$, and minimal models exist at the discrete values of $c$ where they are defined. 
+Numerical tests of crossing symmetry confirm that Liouville theory exists for all values of $c$, with the three-point structure constants $C$ for $c\notin ]-\infty,1]$, and $\hat C$ for $c\in ]-\infty, 1]$ \cite{rs15}.
 And we can numerically compute correlation functions with a good precision.
 
-\section*{Acknowledgements}
+% \section*{Acknowledgements}
 
-I am grateful to the organizers of the Carg\`ese school, for challenging me to explain Liouville theory in about four hours.
-I with to thank Bertrand Eynard, Riccardo Guida and Andr\'e Voros for helpful suggestions and comments.
-And I am grateful to the participants of the Carg\`ese school, for their stimulating participation in the lectures.
+\bibliographystyle{cft}
+\bibliography{cft}
 
-\begin{thebibliography}{1}
-\expandafter\ifx\csname url\endcsname\relax
-  \def\url#1{\texttt{#1}}\fi
-\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
-\providecommand{\eprint}[2][]{\url{#2}}
-
-\bibitem{rib14}
-\href{http://arxiv.org/abs/1406.4290}{S.~Ribault} (2014) [1406.4290]\\ {\em
-  {Conformal field theory on the plane}\/}
-  
-\bibitem{rib16}
-\href{http://arxiv.org/abs/1609.09523}{S.~Ribault} (2016) [1609.09523]\\
-  {\em {Minimal lectures on two-dimensional conformal field theory}\/}
-
-\end{thebibliography}
 
 \end{document}
 
