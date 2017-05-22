@@ -98,7 +98,7 @@ We want to interpret $L_0$ as the energy operator, so its eigenvalues, called co
 \begin{align}
  L_0 |v\rangle = \Delta |v\rangle  \qquad \Rightarrow \qquad L_0 L_n|v\rangle =  (\Delta-n)L_n|v\rangle \ .
 \end{align}
-So $L_{n>0}$ decrease conformal dimensions, and must therefore the state whose dimension is lowest. 
+So $L_{n>0}$ decrease conformal dimensions, and must therefore kill the state with the lowest dimension. 
 
 \begin{defn}[Primary and descendent states, level, Verma module]
  ~\label{def:prim}
@@ -126,7 +126,7 @@ Let us plot a basis of primary and descendent states up to the level $2$:
   \draw[-latex] (0) -- (2);
  \end{tikzpicture}
 \end{align}
-If a Verma module is not irreducible, i.e. if it has a nontrivial subrepresentation, then the state with the lowest conformal dimension in that subrepresentation must again be a primary state, while also being a descendent state.
+If a Verma module is not irreducible, i.e. if it has a nontrivial submodule, then the state with the lowest conformal dimension in that submodule must again be a primary state, while also being a descendent state.
 
 \begin{defn}[Null vectors]
  ~\label{def:nv}
@@ -164,19 +164,19 @@ The condition \eqref{eq:dpm} for the existence of a level two singular vector be
 The singular vectors at levels $N\leq 2$ can be written as $L_{\langle r,s\rangle}|v\rangle$ where $r,s$ are strictly positive integers such that $rs=N$,
 \begin{align}
 \renewcommand{\arraystretch}{1.3}
-\begin{array}{|c|c|c|c|c|}
+\begin{array}{|c|c|c|c|}
 \hline 
-N & \langle r,s\rangle & \Delta_{\langle r,s\rangle} & \alpha_{\langle r,s\rangle} & L_{\langle r,s\rangle} 
+N & \langle r,s\rangle  & \alpha_{\langle r,s\rangle} & L_{\langle r,s\rangle} 
 \\
 \hline\hline
-1 & \langle 1,1\rangle & 0 & 0 & L_{-1}
+1 & \langle 1,1\rangle &  0 & L_{-1}
 \\
 \hline
 \multirow{2}{*}{2} & 
-\langle 2,1\rangle & -\frac12 -\frac{3}{4} b^2 & -\frac{b}{2} & L_{-1}^2 + b^2 L_{-2}
+\langle 2,1\rangle &  -\frac{b}{2} & L_{-1}^2 + b^2 L_{-2}
 \\
-\cline{2-5}
-& \langle 1,2\rangle & -\frac12 - \frac{3}{4b^2} &  -\frac{1}{2b} & L_{-1}^2 + b^{-2} L_{-2} 
+\cline{2-4}
+& \langle 1,2\rangle &   -\frac{1}{2b} & L_{-1}^2 + b^{-2} L_{-2} 
 \\
 \hline
 \end{array}
@@ -241,7 +241,7 @@ These infinitely many equations can be encoded into one functional equation,
  \end{align}
 In other words, for any field $V(z)$, we have 
 \begin{align}
- T(y)V(z) = \sum_{n\in\mathbb{Z}} \frac{L_n V(z)}{(y-z)^{n+2}}\quad , \quad L_n V(z) = \frac{1}{2\pi i} \oint_{z}dy\ (y-z)^{n+1} T(y)V(z)\ .
+ T(y)V(z) = \sum_{n\in\mathbb{Z}} \frac{L_n V(z)}{(y-z)^{n+2}}\ .
  \label{eq:lvtv}
 \end{align}
 \end{defn}
@@ -286,14 +286,13 @@ In order to study an $N$-point function $Z$ of primary fields, we introduce an a
 \begin{align}
  Z = \left< \prod_{i=1}^N V_{\Delta_i}(z_i) \right> \quad , \quad Z(y) = \left< T(y) \prod_{i=1}^N V_{\Delta_i}(z_i) \right> \ .
 \end{align}
-$Z(y)$ is a meromorphic function of $y$, with poles at $y=z_i$, whose residues are given by eq. \eqref{eq:tvd} (using the commutativity of fields).
-Moreover $T(y)$, and therefore also $Z(y)$, are bounded for $y\to \infty$. So $Z(y)$ is completely determined by its poles and residues,
+$Z(y)$ is a meromorphic function of $y$, with poles at $y=z_i$, whose residues are given by eq. \eqref{eq:tvd} (using the commutativity of fields). This implies 
 \begin{align}
  Z(y) = \sum_{i=1}^N \left(\frac{\Delta_i}{(y-z_i)^2} +\frac{1}{y-z_i}\frac{\partial}{\partial z_i}\right) Z\ .
  \label{eq:zy}
 \end{align}
-But $T(y)$ is not just bounded for $y\to \infty$, it behaves as $O(\frac{1}{y^4})$.
-So the coefficients of $y^{-1}, y^{-2}, y^{-3}$ in the large $y$ expansion of $Z(y)$ must vanish, 
+Moreover, the behaviour \eqref{eq:tinf} of $T(y)$ implies that 
+the coefficients of $y^{-1}, y^{-2}, y^{-3}$ in the large $y$ expansion of $Z(y)$ must vanish, 
 \begin{align}
  \sum_{i=1}^N \partial_{z_i} Z = \sum_{i=1}^N \left(z_i \partial_{z_i} + \Delta_i\right) Z = \sum_{i=1}^N \left(z_i^2 \partial_{z_i} + 2\Delta_iz_i\right) Z = 0\ .
  \label{eq:gward}
@@ -399,7 +398,7 @@ The simplest case is $\Delta=\bar\Delta$, which leads to the definition
  ~\label{def:diag}
  A primary state or field is called diagonal if it has the same left and right conformal dimensions. A spectrum is called diagonal if all primary states are diagonal.
 \end{defn}
-From now on we will assume that all fields are diagonal, and write  $V_\Delta(z) = V_{\Delta,\Delta}(z)$.
+From now on we assume that all fields are diagonal, and write  $V_\Delta(z) = V_{\Delta,\Delta}(z)$.
 
 \subsection{Operator product expansion and crossing symmetry}
 
@@ -410,19 +409,16 @@ From now on we will assume that all fields are diagonal, and write  $V_\Delta(z)
  \begin{align}
   V_1(z_1)V_2(z_2) = \sum_i C^i_{12}(z_1,z_2) V_{|w_i\rangle}(z_2)\ .
  \end{align}
- In a correlation functions,
- this sum converges for $z_1$ sufficiently close to $z_2$.
 \end{hyp}
-If the spectrum is made of diagonal primary states and their descendent states, the OPE of two primary fields is
+If the spectrum is made of diagonal primary states and their descendent states, the OPE of two primary fields must be of the type
 \begin{align}
  V_{\Delta_1}(z_1) V_{\Delta_2}(z_2) 
  = \sum_{\Delta\in S} C_{\Delta_1,\Delta_2,\Delta} |z_1-z_2|^{2(\Delta-\Delta_1-\Delta_2)}
  \Big(V_{\Delta}(z_2) + O(z_1-z_2) \Big)\ ,
  \label{eq:ope}
 \end{align}
-where the subleading terms are contributions of descendents fields. 
-In particular, the $z_1,z_2$-dependence of the coefficients is dictated by global conformal invariance eq. \eqref{eq:zgc}, leaving a $z_i$-independent unknown factor $C_{\Delta_1,\Delta_2,\Delta}$.
-Then, as in correlation functions, contributions of descendents are deduced from contributions of primaries via local Ward identitites, for example
+where $C_{\Delta_1,\Delta_2,\Delta}$ is a $z_i$-independent unknown factor. 
+$O(z_1-z_2)$ denotes the contributions of descendents fields, which are deduced from contributions of primaries via local Ward identitites, for example
 \begin{align}
   O(z_1-z_2) = \frac{\Delta+\Delta_1-\Delta_2}{2\Delta} \Big( (z_1-z_2)L_{-1}+(\bar z_1-\bar z_2)\bar L_{-1}\Big) V_{\Delta}(z_2) + O((z_1-z_2)^2)\ .
  \end{align}
@@ -446,7 +442,7 @@ Inserting the OPE in a four-point function of primary fields, we find
   \mathcal{F}^{(s)}_\Delta(z) = z^{\Delta-\Delta_1-\Delta_2}\Big( 1 + O(z) \Big)\ ,
   \label{eq:gsd}
  \end{align}
-is the normalized contribution of the Verma module $\mathcal V_\Delta$ to a four-point function, obtained by summing over left-moving descendents. It is a locally holomorphic function of $z$. Its dependence on $c,\Delta_1,\Delta_2,\Delta_3,\Delta_4$ are kept implicit. The label $(s)$ stands for for $s$-channel, we will soon see what this means.
+is the normalized contribution of the Verma module $\mathcal V_\Delta$ to a four-point function, obtained by summing over left-moving descendents. It is a locally holomorphic function of $z$. Its dependence on $c,\Delta_1,\Delta_2,\Delta_3,\Delta_4$ are kept implicit. The label $(s)$ stands for for $s$-channel.
 \end{defn}
 Conformal blocks are in principle known, as they are universal functions, entirely determined by conformal symmetry. This is analogous to characters of representations, also known as zero-point conformal blocks on the torus.
 
@@ -492,7 +488,7 @@ A (model of) conformal field theory on the Riemann sphere is a spectrum $S$ and 
 Crossing symmetry equations are powerful, but typically involve infinite sums, which makes them difficult to solve.
 However, if at least one field is degenerate, then the four-point function belongs to the finite-dimensional space of solutions of a BPZ equation, and is therefore a combination of finitely many conformal blocks. 
 For example,
-$G(z)= \Big< V_{\langle 2, 1 \rangle}(z) V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1) \Big>$ is a combination of only two holomorphic $s$-channel conformal blocks.
+$G(z)= \Big< V_{\langle 2, 1 \rangle}(z) V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1) \Big>$ is a combination of only two $s$-channel conformal blocks.
 These blocks are a particular basis of solutions of the BPZ equation \eqref{eq:ode}, characterized by their asymptotic behaviour near $z=0$ \eqref{eq:gsd}, 
 \begin{align}
 \mathcal{F}^{(s)}_{\alpha_1-\frac{b}{2}}(z) = z^{b\alpha_1} (1-z)^{b\alpha_3} F(A,B,C,z)\quad , \quad 
@@ -544,7 +540,7 @@ Then we will express $c_\pm^{(s)}$ in terms of three-point structure constants, 
  \end{align}
 and whose correlation functions are smooth functions of $b$ and $\alpha$, assuming it exists and its unique.
 \end{defn}
-Let us give some justification for this definition. We are looking for a diagonal theory whose spectrum is a continuum of representations of the Virasoro algebra. If $c$ is real it is natural to assume that $\Delta$ is real. But $\Delta$ must also be bounded from below, and the natural bound is the critical value where $\Delta'(\alpha)=0$, i.e. $\Delta(\alpha=\frac{Q}{2}) = \frac{Q^2}{4}=\frac{c-1}{24}$. The resulting set $\alpha \in \frac{Q}{2}+i\mathbb{R}$ is then analytically continued to $c\notin \mathbb{R}$.
+Why these values of $\alpha$? If $c\in \mathbb{R}$ we want $\Delta\in\mathbb{R}$ i.e. $\alpha\in \frac{Q}{2}+i\mathbb{R}_+ \cup \mathbb{R}$. But we also want $\Delta$ to be bounded from below, and the natural lower bound is  $\Delta(\alpha=\frac{Q}{2}) =\frac{c-1}{24}$. 
 
 The integral is actually over the half-line $\frac{Q}{2}+i\mathbb{R}_+$ so as not to count representations twice. 
 The fields $V_\alpha(z)$ and $V_{Q-\alpha}(z)$ indeed correspond to the same primary state, and we must have a reflection relation, 
@@ -552,9 +548,6 @@ The fields $V_\alpha(z)$ and $V_{Q-\alpha}(z)$ indeed correspond to the same pri
  V_\alpha(z) = R(\alpha) V_{Q-\alpha}(z)\ ,
 \end{align}
 where the function $R(\alpha)$ is called the reflection coefficient.
-Under a change of field normalization $V_\alpha(z) \to \lambda(\alpha)V_\alpha(z)$, we have $R(\alpha) \to \frac{\lambda(\alpha)}{\lambda(Q-\alpha)} R(\alpha)$, and we could set $R(\alpha)=1$. 
-This choice of field normalization would however prevent correlation functions from being analytic in $\alpha$.
-
 Let us schematically write two- and three-point functions in Liouville theory, as well as OPEs:
 \begin{align}
  \Big< V_{\alpha_1}V_{\alpha_2} \Big>  &=  \delta(Q-\alpha_1-\alpha_2) + R(\alpha_1)\delta(\alpha_1-\alpha_2)\ ,
@@ -578,7 +571,7 @@ Let us introduce notations for OPE coefficients of $V_{\langle 2, 1\rangle}$:
  V_{\langle 2, 1\rangle} V_\alpha \sim C_+(\alpha) V_{\alpha-\frac{b}{2}} + C_-(\alpha)V_{\alpha +\frac{b}{2}}\ .
 \end{align}
 These OPE coefficients are constrained by the reflection relation, and by the symmetry of $\left< V_{\langle 2, 1\rangle} V_{\alpha_1} V_{\alpha_2}\right>$ under permutations $\alpha_1\leftrightarrow \alpha_2$. 
-This enables us to find a field normalization that is compatible with the two-point function \eqref{eq:vv}, and such that
+It can be shown that there exists a field renormalization $V_\alpha(z) \to \lambda(\alpha)V_\alpha(z)$ that preserves the two-point function \eqref{eq:vv}, and is such that
  \begin{align}
   C_+(\alpha) = 1\quad , \quad C_-(\alpha) = \frac{R(\alpha)}{R(\alpha+\frac{b}{2})}\ .
  \end{align}
@@ -663,6 +656,7 @@ However, for general values of $c$, both $C$ and $\hat C$ are solutions, and the
 The $s$-channel decomposition of a Liouville four-point function reads 
 \begin{align}
  \Big< V_{\alpha_1}(z) V_{\alpha_2}(0) V_{\alpha_3}(\infty) V_{\alpha_4}(1)\Big> = \frac12 \int_{\frac{Q}{2}+i\mathbb{R}} d\alpha\ C_{\alpha_1,\alpha_2,Q-\alpha} C_{\alpha,\alpha_3, \alpha_4} \mathcal{F}_{\alpha}^{(s)}(z) \mathcal{F}_{\alpha}^{(s)}(\bar z)\ ,
+ \label{eq:ccff}
 \end{align}
 where the structure can be $C$ or $\hat C$. Let us accept that the conformal blocks $\mathcal{F}_{\alpha}^{(s)}(z)$ have poles when $\alpha = \alpha_{\langle r, s\rangle} $ \eqref{eq:ars}, the momentums for which the $s$-channel representation becomes reducible.
 We now plot the positions of these poles (blue regions) relative to the integration line (red), depending on the central charge:
@@ -716,6 +710,15 @@ On the other hand, the limit $c\to ]-\infty, 1]$ is singular. Actually, for $c\i
 That is how far we can easily get with analytic considerations. 
 Numerical tests of crossing symmetry confirm that Liouville theory exists for all values of $c$, with the three-point structure constants $C$ for $c\notin ]-\infty,1]$, and $\hat C$ for $c\in ]-\infty, 1]$ \cite{rs15}.
 And we can numerically compute correlation functions with a good precision.
+
+Raoul Santachiara will talk about the application of Liouville theory to Random Energy Models. For this application we need to determine the behaviour of four-point functions in the limit $z\to 0$ for $c\geq 25$. This is a priori dominated by the state with the lowest conformal dimension $\Delta(\alpha=\frac{Q}{2})$. At this point each structure constants in eq. \eqref{eq:ccff} has a simple zero, and 
+\begin{align}
+ \Big< V_{\alpha_1}(z) V_{\alpha_2}(0) V_{\alpha_3}(\infty) V_{\alpha_4}(1)\Big>  & \underset{z\to 0}{\sim} \int_{\frac{Q}{2}+i\mathbb{R}} d\alpha\ (\alpha-\tfrac{Q}{2})^2 |z|^{2\Delta(\alpha)-2\Delta(\alpha_1)-2\Delta(\alpha_2)} \ ,
+ \\
+& \sim \frac{ |z|^{2\Delta(\frac{Q}{2})-2\Delta(\alpha_1)-2\Delta(\alpha_2)} }{ |\log |z||^\frac32 }\ .
+\end{align}
+This however assumes that the four fields $V_{\alpha_i}$ belong to the spectrum. If the momentums $\alpha_i$ move away from the line $\frac{Q}{2}+i\mathbb{R}$, they can approach the poles of the structure constants. If such poles cancel the zeros of the structure constants, the exponent of $\log|z|$ becomes $\frac12$ instead of $\frac32$. 
+It can also happen that poles give rise to discrete terms in the OPE in addition to the continuum. If the four-point function is dominated by such a discrete term, then we lose the logarithmic factor altogether.
 
 % \section*{Acknowledgements}
 
