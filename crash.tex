@@ -71,7 +71,7 @@ I am grateful to Samuel Belliard, Rouven Frassek, and Beno\^it Vallet for valuab
 
 This text was written with brevity as the main concern, so as to be the basis for about 100 minutes' worth of lectures. For more details, see the ``Minimal lectures on 2d CFT'' \cite{rib16} (20 pages) and the full review article \cite{rib14} (120 pages), both on arXiv.
 
-The first two sections are about the main ideas of 2d CFT, as developed in the 1980s. Then we will focus on the particular case of Liouville theory, a CFT that was mostly solved in the 1990s, with however some subtleties understood only in 2015. This CFT was created as a model of 2d gravity, and later applied to string theory. More recently, it has been related to statistical systems such as Conformal Loop Ensembles (Ikhlef--Jacobsen--Saleur) or Random Energy Models (Raoul Santachiara's talks in this school).
+The first two sections are about the main ideas of 2d CFT, as developed in the 1980s. Then we will focus on the particular case of Liouville theory, a CFT that was mostly solved in the 1990s, with however some subtleties understood only in 2015. Liouville theory was introduced by Polyakov as a model of 2d gravity, and later applied to string theory. More recently, it has been related to statistical systems such as Conformal Loop Ensembles (Ikhlef--Jacobsen--Saleur) or Random Energy Models (Raoul Santachiara's talks in this school).
 
 \section{Conformal field theory}
 
@@ -83,7 +83,7 @@ infinitesimal conformal transformations have the generators
 \begin{align}
  \ell_n = -z^{n+1}\frac{\partial}{\partial z}\qquad (n\in\mathbb{Z})\ ,
 \end{align}
-including $\ell_{-1}=\frac{\partial}{\partial z}$ for translations.
+including $\ell_{-1}=-\frac{\partial}{\partial z}$ for translations.
 The  commutation relations are
 \begin{align}
  [\ell_n,\ell_m ] = (n-m)\ell_{m+n}\ ,
@@ -103,7 +103,7 @@ Projective representations of an algebra are equivalent to representations of a 
 \end{defn}
 
 The spectrum, i.e. the space of states, must be a representation of the Virasoro algebra.
-We want to interpret $L_0$ as the energy operator, so its eigenvalues, called conformal dimensions, must be bounded from below. But 
+We want to interpret $L_0$ as the energy operator, so its eigenvalues must be bounded from below. But 
 \begin{align}
  L_0 |v\rangle = \Delta |v\rangle  \qquad \Rightarrow \qquad L_0 L_n|v\rangle =  (\Delta-n)L_n|v\rangle \ .
 \end{align}
@@ -115,8 +115,11 @@ So $L_{n>0}$ decrease conformal dimensions, and must therefore kill the state wi
  \begin{align}
   L_0 |v\rangle = \Delta |v\rangle \quad , \quad L_{n>0} |v\rangle = 0\ .
  \end{align}
- The Verma module $\mathcal V_\Delta$ is the representation whose basis is made of the states $|w\rangle = \prod_{i=1}^k L_{-n_i} |v\rangle$ with $k\geq 0$ and $0<n_1\leq n_2 \leq \dots \leq n_k$. 
-The level of such a state is the positive integer $N=\sum_{i=1}^k n_i$ such that $L_0|w\rangle = (\Delta + N)|w\rangle$. A state of level $N\geq 1$ is called a descendent state.
+ The Verma module $\mathcal V_\Delta$ is the representation whose basis is 
+ $
+ \left\{ \prod_{i=1}^k L_{-n_i} |v\rangle\right\}_{ 0<n_1\leq \dots \leq n_k}
+ $.
+The level of the state $\prod_{i=1}^k L_{-n_i} |v\rangle $ is $N=\sum_{i=1}^k n_i\geq 0$. A state of level $N\geq 1$ is called a descendent state.
 \end{defn}
 Let us plot a basis of a Verma module up to the level $N=2$:
 \begin{align}
@@ -148,12 +151,7 @@ L_n L_{-1}|v\rangle \underset{n\geq 1}{=} [L_n, L_{-1}] |v\rangle = (n+1) L_{n-1
 \left\{\begin{array}{ll} 0 &  \quad \text{if } n\geq 2 \\ 2\Delta |v\rangle & \quad \text{if } n = 1 \end{array}\right. 
 \end{align}
 So $L_{-1}|v\rangle$ is a null vector if and only if $\Delta=0$, and the Verma module $\mathcal V_0$ is reducible.
-Let us now look for null vectors at the level $N=2$. Let $|\chi\rangle = (L_{-1}^2 + a L_{-2})|v\rangle$, then $L_{n\geq 3} |\chi \rangle =0$ and 
- \begin{align}
-  L_1 |\chi\rangle = \left((4\Delta+2) + 3a\right) L_{-1}|v\rangle
-  \quad , \quad L_2 |\chi\rangle= \left(6\Delta + (4\Delta +\tfrac12 c)a\right) |v\rangle\ .
- \end{align}
- There exists a value of $a$ such that $L_1|\chi\rangle = L_2|\chi\rangle =0$ if and only if 
+Similarly, there exists a level two null vector if and only if 
  \begin{align}
  \Delta = \frac{1}{16}\left( 5-c\pm\sqrt{(c-1)(c-25)} \right) \ .
  \label{eq:dpm}
@@ -170,33 +168,34 @@ The condition \eqref{eq:dpm} for the existence of a level two singular vector be
 \begin{align}
  \alpha = -\frac12 b^{\pm 1}\ .
 \end{align}
-The singular vectors at levels $N\leq 2$ can be written as $L_{\langle r,s\rangle}|v\rangle$ where $r,s$ are strictly positive integers such that $rs=N$,
+To summarize, the null vectors $L|v\rangle$ at levels $N\leq 2$ and the conditions on $\alpha$ for their existence are 
 \begin{align}
 \renewcommand{\arraystretch}{1.3}
 \begin{array}{|c|c|c|c|}
 \hline 
-N & \langle r,s\rangle  & \alpha_{\langle r,s\rangle} & L_{\langle r,s\rangle} 
+N   & \alpha_{\langle r,s\rangle} & L_{\langle r,s\rangle} & \langle r,s\rangle
 \\
 \hline\hline
-1 & \langle 1,1\rangle &  0 & L_{-1}
+1  &  0 & L_{-1} & \langle 1,1\rangle
 \\
 \hline
-\multirow{2}{*}{2} & 
-\langle 2,1\rangle &  -\frac{b}{2} & L_{-1}^2 + b^2 L_{-2}
+\multirow{2}{*}{2}  &  -\frac{b}{2} & L_{-1}^2 + b^2 L_{-2} & 
+\langle 2,1\rangle
 \\
 \cline{2-4}
-& \langle 1,2\rangle &   -\frac{1}{2b} & L_{-1}^2 + b^{-2} L_{-2} 
+&   -\frac{1}{2b} & L_{-1}^2 + b^{-2} L_{-2} & \langle 1,2\rangle 
 \\
 \hline
 \end{array}
 \label{lot}
 \end{align}
-The pattern goes on at higher levels: a Verma module has a null vector at level $N$ if its momentum is of the type 
+The general pattern is that null vectors at a level $N$ are parametrized by pairs $r,s$ of strictly positive integers such that $rs=N$. 
+For a null vector to exist, the momentum must be of the type
 \begin{align}
   \alpha_{\langle r,s\rangle} = \frac{Q}{2} - \frac12(rb+sb^{-1})\qquad \text{with} \qquad N=rs\ .
   \label{eq:ars}
  \end{align}
-A null vector at level $rs$ generates a submodule $\mathcal V_{\Delta_{\langle r,s\rangle} +rs}\subset \mathcal V_{\Delta_{\langle r,s\rangle}}$. The coset $\frac{ \mathcal V_{\Delta_{\langle r,s\rangle}} }{ \mathcal V_{\Delta_{\langle r,s\rangle} +rs} }$ is an irreducible representation, where the null vector vanishes.
+ For generic $c$, the submodule generated by a null vector is the Verma module $\mathcal V_{\Delta_{\langle r,s\rangle} +rs}\subset \mathcal V_{\Delta_{\langle r,s\rangle}}$. Then the coset $\frac{ \mathcal V_{\Delta_{\langle r,s\rangle}} }{ \mathcal V_{\Delta_{\langle r,s\rangle} +rs} }$ is an irreducible representation, where the null vector vanishes.
 
 
 \subsection{Fields and correlation functions}
@@ -413,8 +412,8 @@ If the spectrum is made of diagonal primary states and their descendent states, 
  \Big(V_{\Delta}(z_2) + O(z_1-z_2) \Big)\ ,
  \label{eq:ope}
 \end{align}
-where $C_{\Delta_1,\Delta_2,\Delta}$ is a $z_i$-independent unknown factor. 
-$O(z_1-z_2)$ denotes the contributions of descendents fields, which are determined by conformal symmetry.
+where $C_{\Delta_1,\Delta_2,\Delta}$ is the $z_i$-independent OPE coefficient. 
+$O(z_1-z_2)$ denotes the contributions of descendents fields, which are determined by conformal Ward identities.
 Using the OPE, we can reduce a three-point function to a combination of two-point functions, and we find 
 \begin{align}
  \left<\prod_{i=1}^3 V_{\Delta_i}(z_i) \right> = C_{\Delta_1,\Delta_2,\Delta_3} |z_1-z_2|^{2(\Delta_3-\Delta_1-\Delta_2)} |z_1-z_3|^{2(\Delta_2-\Delta_1-\Delta_3)} |z_2-z_3|^{2(\Delta_1-\Delta_2-\Delta_3)}\ ,
@@ -569,15 +568,7 @@ Then, using the reflection relation, we can deduce
 
 \subsection{Three-point structure constants}
 
-In Liouville theory, the coefficients $c^{(s)}_\pm$ that appear in hypergeometric four-point functions are 
-\begin{align}
- c_{+}^{(s)} = C_+(\alpha_1) C_{\alpha_1-\frac{b}{2},\alpha_2,\alpha_3} 
-\quad , \quad 
-c_{-}^{(s)}  = C_-(\alpha_1) C_{\alpha_1+\frac{b}{2},\alpha_2,\alpha_3}\ .
-\label{cs}
-\end{align}
-To get an equation for the three-point structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$, we must first determine the  coefficients $C_\pm(\alpha)$. To do this, we consider the special case where the last field is degenerate too, i.e. the four-point function $\Big\langle V_{\langle 2,1 \rangle}(z) V_\alpha(0) V_{Q-\alpha}(\infty) V_{\langle 2,1 \rangle}(1)\Big\rangle$.
-In this case, we have
+In the case of the four-point function $\Big\langle V_{\langle 2,1 \rangle}(z) V_\alpha(0) V_{Q-\alpha}(\infty) V_{\langle 2,1 \rangle}(1)\Big\rangle$, we have
 \begin{align}
  c_{+}^{(s)} = C_+(\alpha)C_-(\alpha-\tfrac{b}{2}) = \frac{R(\alpha-\frac{b}{2})}{R(\alpha)} \quad , \quad c_{-}^{(s)} = C_-(\alpha)C_+(\alpha+\tfrac{b}{2}) = \frac{R(\alpha)}{R(\alpha+\frac{b}{2})}\ ,
 \end{align}
@@ -586,11 +577,18 @@ and eq. \eqref{eq:coc} boils down to
  \frac{R(\alpha-\frac{b}{2})R(\alpha+\frac{b}{2})}{R(\alpha)^2} 
  = \frac{\gamma(2b\alpha)\gamma(b(Q-2\alpha))}{\gamma(b(2Q-2\alpha))\gamma(b(2\alpha-Q))}\ .
 \end{align}
-We could get the same equation with $b\to \frac{1}{b}$ by having $V_{\langle 1,2\rangle}$ instead of $V_{\langle 2,1\rangle}$ in the four-point function. The solution of these equations is
+We could get the same equation with $b\to \frac{1}{b}$ by having $V_{\langle 1,2\rangle}$ instead of $V_{\langle 2,1\rangle}$ in the four-point function. The analytic solution of these equations is
 \begin{align}
  R(\alpha) = -b^2  \frac{\gamma(b(2\alpha-Q))}{\gamma(\frac{1}{b}(Q-2\alpha))}\ .
 \end{align}
-This also determines $C_\pm(\alpha)$, and we can deduce a shift equation for three-point structure constants from eq. \eqref{eq:coc} and \eqref{cs},
+This also determines $C_\pm(\alpha)$. 
+
+In a more general hypergeometric four-point function the coefficients $c^{(s)}_\pm$ are 
+\begin{align}
+ c_{\pm}^{(s)} = C_\pm(\alpha_1) C_{\alpha_1\mp\frac{b}{2},\alpha_2,\alpha_3} \ .
+\label{cs}
+\end{align}
+Using eq. \eqref{eq:coc}, we obtain the shift equation
 \begin{align}
  \frac{C_{\alpha_1+b,\alpha_2,\alpha_3}}{C_{\alpha_1,\alpha_2,\alpha_3}} = b^{-4}\frac{\gamma(2b\alpha_1)\gamma(2b\alpha_1+b^2)}{\prod_{\pm,\pm} \gamma\left(b\alpha_1\pm b(\alpha_2-\frac{Q}{2})\pm b(\alpha_3-\frac{Q}{2})\right)}\ .
 \label{fcc}
@@ -637,7 +635,7 @@ the solution is unique if $b$ and $b^{-1}$ are aligned, i.e. if $b^2\in\mathbb{R
 \node at (11, -1.5){$\begin{array}{c} b\in i\mathbb{R} \\ c\leq 1 \end{array}$};
  \end{tikzpicture}
 \end{equation}
-However, for general values of $c$, both $C$ and $\hat C$ are solutions, and there are actually infinitely many other solutions. In order to prove the existence and uniqueness of Liouville theory, we have to determine which solutions lead to crossing-symmetric four-point functions.
+However, for general values of $c$, both $C$ and $\hat C$ are solutions. In order to prove the existence and uniqueness of Liouville theory, we have to determine which solutions lead to crossing-symmetric four-point functions.
 
 
 \subsection{Four-point functions}
