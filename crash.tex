@@ -1,5 +1,7 @@
 
-% Let us try to further condense the 'minimal lectures'.
+% Let us try to further condense the 'minimal lectures' in order to give a 2h course at Cargèse 2017.
+
+% I managed to do Section 1 in one hour, but the rest did not fit in one hour.
 
 \documentclass[12pt, a4paper]{article}
 
@@ -65,7 +67,7 @@ I am grateful to Samuel Belliard, Rouven Frassek, and Beno\^it Vallet for valuab
 %\numberwithin{equation}{section}
 
 
-This text was written with brevity as the main concern, so as to be the basis for about 100 minutes' worth of lectures. For more details, see the ``Minimal lectures on 2d CFT'' \cite{rib16} (20 pages) and the full review article \cite{rib14} (120 pages), both on arXiv.
+This text was written with brevity as the main concern, so as to be the basis for about 100 minutes' worth of lectures. For more details, see the ``Minimal lectures on 2d CFT'' \cite{rib16} (20 pages) and the full review article \cite{rib14} (120 pages), both on arXiv. For fewer details, see the Wikipedia articles on ''Two-dimensional conformal field theory'' and ''Liouville theory'', that I mostly wrote. 
 
 The first two sections are about the main ideas of 2d CFT, as developed in the 1980s. Then we will focus on the particular case of Liouville theory, a CFT that was mostly solved in the 1990s, with however some subtleties understood only in 2015. Liouville theory was introduced by Polyakov as a model of 2d gravity, and later applied to string theory. More recently, it has been related to statistical systems such as Conformal Loop Ensembles (Ikhlef--Jacobsen--Saleur) or Random Energy Models (Raoul Santachiara's talks in this school).
 
@@ -268,7 +270,7 @@ The energy-momentum tensor $T(y)$ is locally holomorphic as a function of $y$, a
 
 \begin{defn}[Correlation function]
 ~\label{def:cor}
- To $N$ fields $V_1(z_1), \dots ,V_N(z_N)$, we associate a number called their correlation function or $N$-point function, and denoted as 
+ To $N$ fields $V_1(z_1), \dots ,V_N(z_N)$ with $z_i\neq z_j$, we associate a number called their correlation function or $N$-point function, and denoted as 
  \begin{align}
   \Big< V_1(z_1) \cdots V_N(z_N) \Big>\ .
  \end{align}
@@ -279,7 +281,7 @@ Correlation functions depend linearly on fields.
  ~\label{hyp:ass}
  Correlation functions do not depend on the order of the fields,
  \begin{align}
-  V_1(z_1) V_2(z_2) = V_2(z_2)V_1(z_1)\ , \qquad (z_1\neq z_2)\ .
+  V_1(z_1) V_2(z_2) = V_2(z_2)V_1(z_1)\ .
  \end{align}
 \end{hyp}
 
@@ -389,7 +391,7 @@ The simplest case is $\Delta=\bar\Delta$, which leads to the definition
  ~\label{def:diag}
  A primary state or field is called diagonal if it has the same left and right conformal dimensions. A spectrum is called diagonal if all primary states are diagonal.
 \end{defn}
-From now on we assume that all fields are diagonal, and write  $V_\Delta(z) = V_{\Delta,\Delta}(z)$.
+From now on we assume that all primary fields are diagonal, and write  $V_\Delta(z) = V_{\Delta,\Delta}(z)$.
 
 \subsection{Operator product expansion and crossing symmetry}
 
