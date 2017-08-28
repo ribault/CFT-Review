@@ -10,7 +10,7 @@
 
 \usepackage[top=20mm,bottom=20mm,left=25mm,right=25mm]{geometry}
 
-%\usepackage{showkeys}
+\usepackage{showkeys}
 
 \usepackage{amsfonts, amsmath}
 
@@ -223,7 +223,8 @@ In order to simplify this formula, let us introduce other notations for $c$ and 
  \text{the coupling constant } b \ , & \quad Q = b+\frac{1}{b} \ , \quad \text{up to } b\to \pm b^{\pm 1}\ ,
  \\
  \text{the momentum } \alpha\  , &\quad \Delta = \alpha(Q-\alpha)\ , \quad \text{up to reflections } \alpha \to Q-\alpha\ .
-\end{align}
+\label{eq:refm}
+ \end{align}
 The condition \eqref{eq:dpm} for the existence of a level two singular vector becomes 
 \begin{align}
  \alpha = -\frac12 b^{\pm 1}\ .
@@ -840,7 +841,7 @@ where the factor $\frac12$ is here to avoid counting the same representation twi
  \end{align}
 and whose correlation functions are smooth functions of $b$ and $\alpha$, assuming it exists and its unique.
 \end{defn}
-Let us give some justification for this definition. We are looking for a diagonal theory whose spectrum is a continuum of representations of the Virasoro algebra. For real values of $c$ it is natural to require that $\Delta$ is real. Let us write this condition in terms of the momentum $\alpha$,
+Let us give some justification for this definition. We are looking for a diagonal theory whose spectrum is a continuum of representations of the Virasoro algebra. For $c\in \mathbb{R}$ it is natural to assume $\Delta\in \mathbb{R}$. Let us write this condition in terms of the momentum $\alpha$,
 \begin{align}
  \Delta \in \mathbb{R} \Leftrightarrow \alpha\in \mathbb{R} \cup \left(\frac{Q}{2} + i\mathbb{R}\right)\ ,
   \qquad
@@ -851,26 +852,16 @@ Let us give some justification for this definition. We are looking for a diagona
   \draw[very thin] (0, -3) -- (0, 3);
  \end{tikzpicture}
 \end{align}
-We also need $\Delta$ to be bounded from below, and the natural bound is $\Delta(\alpha=\frac{Q}{2}) = \frac{Q^2}{4}=\frac{c-1}{24}$. The resulting set $\alpha \in \frac{Q}{2}+i\mathbb{R}$ is then analytically continued to $c\notin \mathbb{R}$.
-
-The integral is actually over the half-line $\frac{Q}{2}+i\mathbb{R}_+$ so as not to count representations twice. 
-It is however convenient to have fields $V_\alpha(z)$ with $\alpha \in \frac{Q}{2}+i\mathbb{R}$. 
-Then the fields $V_\alpha(z)$ and $V_{Q-\alpha}(z)$ correspond to the same primary state, and they must be proportional, 
-\begin{align}
- V_\alpha(z) = R(\alpha) V_{Q-\alpha}(z)\ ,
-\end{align}
-where the function $R(\alpha)$ is called the reflection coefficient.
-Under a change of field normalization $V_\alpha(z) \to \lambda(\alpha)V_\alpha(z)$, we have $R(\alpha) \to \frac{\lambda(\alpha)}{\lambda(Q-\alpha)} R(\alpha)$, and we could set $R(\alpha)=1$. 
-This choice of field normalization would however prevent correlation functions from being analytic in $\alpha$.
+We also need $\Delta$ to be bounded from below, and the natural bound is $\Delta(\alpha=\frac{Q}{2}) = \frac{Q^2}{4}=\frac{c-1}{24}$. This leads to $\alpha \in \frac{Q}{2}+i\mathbb{R}$, or rather $\alpha \in \frac{Q}{2}+i\mathbb{R}_+$ due to the reflection symmetry \eqref{eq:refm}. This is our guess for the spectrum for $c\in\mathbb{R}$, and we take it to hold for $c\in\mathbb{C}$ by analyticity.
 
 Let us schematically write two- and three-point functions in Liouville theory, as well as OPEs:
 \begin{align}
- \Big< V_{\alpha_1}V_{\alpha_2} \Big>  &=  \delta(Q-\alpha_1-\alpha_2) + R(\alpha_1)\delta(\alpha_1-\alpha_2)\ ,
+ \Big< V_{\alpha_1}V_{\alpha_2} \Big>  &=  B(\alpha_1)\delta(\alpha_1-\alpha_2)\ ,
  \label{eq:vv}
  \\
- \Big< V_{\alpha_1}V_{\alpha_2}V_{\alpha_3} \Big> & = C_{\alpha_1,\alpha_2,\alpha_3} \quad \text{with} \quad C_{\alpha_1,\alpha_2,\alpha_3} = R(\alpha_1) C_{Q-\alpha_1,\alpha_2,\alpha_3}\ ,
+ \Big< V_{\alpha_1}V_{\alpha_2}V_{\alpha_3} \Big> & = C_{\alpha_1,\alpha_2,\alpha_3} \ ,
  \\
- V_{\alpha_1}V_{\alpha_2} &= \int_{\frac{Q}{2}+i\mathbb{R}_+} d\alpha\ C_{\alpha_1,\alpha_2,Q-\alpha} \Big( V_\alpha + \cdots\Big)\ .
+ V_{\alpha_1}V_{\alpha_2} &= \int_{\frac{Q}{2}+i\mathbb{R}_+} d\alpha \frac{C_{\alpha_1,\alpha_2,\alpha}}{B(\alpha)} \Big( V_\alpha + \cdots\Big)\ .
  \label{eq:v1v2}
 \end{align}
 
@@ -882,24 +873,11 @@ In order to have reasonably simple crossing symmetry equations, we need degenera
 Degenerate fields do not correspond to states in the spectrum, as the spectrum is made of Verma modules (not degenerate representations). 
 On top of that, 
 OPEs $V_{\langle r, s\rangle}V_\alpha$ then produce more fields outside the spectrum, for instance 
-$V_{\langle 2, 1\rangle} V_\alpha \sim V_{\alpha-\frac{b}{2}} + V_{\alpha+\frac{b}{2}}$ with in general $\alpha\pm\frac{b}{2}\notin \frac{Q}{2}+i\mathbb{R}$. We assume that correlation functions involving $V_{\alpha\pm\frac{b}{2}}$ make sense by analytic continuation in $\alpha$. So, let us introduce notations for OPE coefficients of $V_{\langle 2, 1\rangle}$:
+$V_{\langle 2, 1\rangle} V_\alpha \sim V_{\alpha-\frac{b}{2}} + V_{\alpha+\frac{b}{2}}$ with in general $\alpha\pm\frac{b}{2}\notin \frac{Q}{2}+i\mathbb{R}_+$. We assume that correlation functions involving $V_{\alpha\pm\frac{b}{2}}$ make sense by analytic continuation in $\alpha$. So, let us introduce notations for OPE coefficients of $V_{\langle 2, 1\rangle}$:
 \begin{align}
- % V_{\langle 1,1\rangle} V_\alpha \sim C_0(\alpha) V_\alpha \quad ,\quad 
  V_{\langle 2, 1\rangle} V_\alpha \sim C_+(\alpha) V_{\alpha-\frac{b}{2}} + C_-(\alpha)V_{\alpha +\frac{b}{2}}\ .
 \end{align}
-% One can show that $C_0(\alpha)$ is constant, and we normalize $V_{\langle 1,1\rangle}$ so that $C_0(\alpha)= 1$. 
 
-\begin{exo}[Degenerate OPE coefficients]
- ~\label{exo:doc}
- Show that there exists a field normalization that is compatible with the two-point function \eqref{eq:vv}, and such that
- \begin{align}
-  C_+(\alpha) = 1\ .
- \end{align}
- In this normalization, show that 
- \begin{align}
-  C_-(\alpha) = \frac{R(\alpha)}{R(\alpha+\frac{b}{2})}\ .
- \end{align}
-\end{exo}
 
 \section{Four-point functions}\label{sec:4pt}
 
@@ -928,35 +906,32 @@ Now, in conformal field theory, the coefficients $c^{(s)}_{ij}$ are further cons
 \begin{align}
  c_{++}^{(s)} = C_+(\alpha_1) C_{\alpha_1-\frac{b}{2},\alpha_2,\alpha_3} 
 \quad , \quad 
-c_{--}^{(s)}  = C_-(\alpha_1) C_{\alpha_1+\frac{b}{2},\alpha_2,\alpha_3}\ .
+c_{--}^{(s)}  = C_-(\alpha_1) C_{\alpha_1+\frac{b}{2},\alpha_2,\alpha_3}\ ,
 \label{cs}
 \end{align}
-To get an equation for the three-point structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$, we must first determine the degenerate OPE coefficients $C_\pm(\alpha)$. To do this, we consider the special case where the last field is degenerate too, i.e. the four-point function $\Big\langle V_{\langle 2,1 \rangle}(z) V_\alpha(0) V_{Q-\alpha}(\infty) V_{\langle 2,1 \rangle}(1)\Big\rangle$.
+and eq. \eqref{eq:coc} becomes a shift equation for the dependence of $C_{\alpha_1,\alpha_2,\alpha_3}$ on $\alpha_1$,
+\begin{align}
+ \frac{C_+(\alpha_1) C_{\alpha_1-\frac{b}{2},\alpha_2,\alpha_3} }{C_-(\alpha_1) C_{\alpha_1+\frac{b}{2},\alpha_2,\alpha_3}} = \frac{\prod_{\pm,\pm} \gamma(\frac12 +b(\alpha_1-\frac{Q}{2}) \pm b(\alpha_2-\frac{Q}{2}) \pm b(\alpha_3-\frac{Q}{2}))}{\gamma(b(2\alpha_1-Q)) \gamma(1+b(2\alpha_1-Q))}\ .
+ \label{eq:shift}
+\end{align}
+In order to find the three-point structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$, we need to constrain the degenerate OPE coefficients $C_\pm(\alpha)$. To do this, we consider the special case where the last field is degenerate too, i.e. the four-point function $\Big\langle V_{\langle 2,1 \rangle}(z) V_\alpha(0) V_{\alpha}(\infty) V_{\langle 2,1 \rangle}(1)\Big\rangle$.
 In this case, we have
 \begin{align}
- c_{++}^{(s)} = C_+(\alpha)C_-(\alpha-\tfrac{b}{2}) = \frac{R(\alpha-\frac{b}{2})}{R(\alpha)} \quad , \quad c_{--}^{(s)} = C_-(\alpha)C_+(\alpha+\tfrac{b}{2}) = \frac{R(\alpha)}{R(\alpha+\frac{b}{2})}\ ,
+ c_{++}^{(s)} = C_+(\alpha)^2 B(\alpha-\tfrac{b}{2}) \quad , \quad c_{--}^{(s)} = C_-(\alpha)^2B(\alpha+\tfrac{b}{2}) \ ,
 \end{align}
 and eq. \eqref{eq:coc} boils down to 
 \begin{align}
- \frac{R(\alpha-\frac{b}{2})R(\alpha+\frac{b}{2})}{R(\alpha)^2} 
- = \frac{\gamma(2b\alpha)\gamma(b(Q-2\alpha))}{\gamma(b(2Q-2\alpha))\gamma(b(2\alpha-Q))}\ .
+ \frac{C_+(\alpha)^2 B(\alpha-\tfrac{b}{2})}{C_-(\alpha)^2B(\alpha+\tfrac{b}{2})} 
+ =  \frac{\gamma(-b(2\alpha-Q))}{\gamma(b(2\alpha-Q))} 
+ \frac{\gamma(-b^2+b(2\alpha-Q))}{\gamma(-b^2-b(2\alpha-Q))} \ .
+ \label{eq:shiftd}
 \end{align}
-We could get the same equation with $b\to \frac{1}{b}$ by having $V_{\langle 1,2\rangle}$ instead of $V_{\langle 2,1\rangle}$ in the four-point function. Moreover, we must have $R(\alpha)R(Q-\alpha)=1$. The solution of these equations is
-\begin{align}
- R(\alpha) = b^2 R(\tfrac{Q}{2}) \mu^{Q-2\alpha} \frac{\gamma(b(2\alpha-Q))}{\gamma(\frac{1}{b}(Q-2\alpha))}\quad \text{with}\quad R(\tfrac{Q}{2}) \in \{1, -1\}\ ,
-\end{align}
-where the new parameter $\mu$ is called the cosmological constant. 
-This also determines $C_\pm(\alpha)$, and we can deduce a shift equation for three-point structure constants from eq. \eqref{eq:coc} and \eqref{cs},
-\begin{align}
- \frac{C_{\alpha_1+b,\alpha_2,\alpha_3}}{C_{\alpha_1,\alpha_2,\alpha_3}} = \mu^{-b} b^{-4}\frac{\gamma(2b\alpha_1)\gamma(2b\alpha_1+b^2)}{\prod_{\pm,\pm} \gamma\left(b\alpha_1\pm b(\alpha_2-\frac{Q}{2})\pm b(\alpha_3-\frac{Q}{2})\right)}\ .
-\label{fcc}
-\end{align}
-Again, the equation with $b\to \frac{1}{b}$ should hold too. We will now solve these equations.
+Moreover, we could get the equations \eqref{eq:shift} and \eqref{eq:shiftd} with $b\to \frac{1}{b}$ by having $V_{\langle 1,2\rangle}$ instead of $V_{\langle 2,1\rangle}$ in our four-point functions. Next we will solve these equations. 
 
 
 \subsection{Determining three-point structure constants}
 
-In contrast to the shift equations for $R(\alpha)$, the shift equations for $C_{\alpha_1,\alpha_2,\alpha_3}$ cannot be solved using Gamma functions. Rather, we need a function that produces Gamma functions when its argument is shifted by $b$ or $\frac{1}{b}$. 
+In order to solve the shift equations for $C_{\alpha_1,\alpha_2,\alpha_3}$, we need a function that produces Gamma functions when its argument is shifted by $b$ or $\frac{1}{b}$. 
 
 \begin{exo}[Upsilon function]
 ~\label{exo:upsilon}
@@ -976,13 +951,36 @@ The functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$ can respectively be define
  \Upsilon_b(x) = \lambda_b^{(\frac{Q}{2}-x)^2}\prod_{m,n=0}^\infty f\left(\frac{\frac{Q}{2}-x}{\frac{Q}{2}+mb+nb^{-1}}\right) \quad \text{with} \quad f(x)=(1-x^2)e^{x^2}\ ,
 \end{align}
 where $\lambda_b$ is an unimportant $b$-dependent constant.
-Using the functions $\Upsilon_b(x)$, we can write a solution $C$ of the shift equations \eqref{fcc} for three-point structure constants,
+Using the functions $\Upsilon_b(x)$, let us write the ansatz
 \begin{align}
- C_{\alpha_1,\alpha_2,\alpha_3} =  \frac{\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-\alpha_1-\alpha_2-\alpha_3} \Upsilon_b(2\alpha_1) \Upsilon_b(2\alpha_2) \Upsilon_b(2\alpha_3)}{\Upsilon_b(\alpha_1+\alpha_2+\alpha_3-Q) \Upsilon_b(\alpha_1+\alpha_2-\alpha_3)\Upsilon_b(\alpha_2+\alpha_3-\alpha_1)\Upsilon_b(\alpha_3+\alpha_1-\alpha_2)} \ .
+ C_{\alpha_1,\alpha_2,\alpha_3} =  \frac{N_0 \prod_{i=1}^3 N(\alpha_i)}{\Upsilon_b(\alpha_1+\alpha_2+\alpha_3-Q) \Upsilon_b(\alpha_1+\alpha_2-\alpha_3)\Upsilon_b(\alpha_2+\alpha_3-\alpha_1)\Upsilon_b(\alpha_3+\alpha_1-\alpha_2)} \ ,
+\end{align}
+where $N_0$ is a function of $b$, and $N(\alpha)$ is a function of $b$ and $\alpha$. 
+Then the shift equation \eqref{eq:shift} reduces to an equation that involves the dependence on $\alpha_1$ only, and that we write as
+\begin{align}
+ \frac{C_+(\alpha)N(\alpha-\frac{b}{2})}{C_-(\alpha)N(\alpha+\frac{b}{2})} = \frac{b^{4b(2\alpha-Q)}}{ \gamma(b(2\alpha-Q)) \gamma(1+b(2\alpha-Q))}\ .
+\end{align}
+Combining this equation with the shift equation \eqref{eq:shiftd}, we can eliminate the unknown degenerate OPE coefficients $C_\pm(\alpha)$, and we obtain
+\begin{align}
+ \frac{\left(N^2B^{-1}\right)(\alpha-\frac{b}{2})}{\left(N^2B^{-1}\right)(\alpha+\frac{b}{2})} = b^{8b(2\alpha-Q)} \frac{\gamma(-b(2\alpha-Q))}{\gamma(b(2\alpha-Q))} \frac{\gamma(-b^2-b(2\alpha-Q))}{\gamma(-b^2+b(2\alpha-Q))}\ .
+\end{align}
+Together with its image under $b\to b^{-1}$, this equation has the solution
+\begin{align}
+ \left(N^2B^{-1}\right)(\alpha) = \Upsilon_b(2\alpha)\Upsilon_b(2\alpha-Q)\ .
+\end{align}
+Therefore, we can only compute the combination $N^2B^{-1}$, and not the individual functions $B$ and $N$ that appear in the 
+two- and three-point functions. This is because we still have the freedom of performing changes of field normalization $V_\alpha(z) \to \lambda(\alpha)V_\alpha(z)$. Under such changes, we have $B\to \lambda^2B$ and $N\to \lambda N$, while
+the combination $N^2B^{-1}$ is invariant.
+
+We now adopt the field normalization $N(\alpha)=\Upsilon_b(2\alpha)$, and we also choose $N_0=1$. 
+% Field normalization such that C_+ = 1, and B(\alpha)B(Q-\alpha)=1.
+We obtain the DOZZ formula (for Dorn, Otto, A.
+Zamolodchikov and Al. Zamolodchikov),
+\begin{align}
+ C_{\alpha_1,\alpha_2,\alpha_3} =  \frac{\Upsilon_b(2\alpha_1) \Upsilon_b(2\alpha_2) \Upsilon_b(2\alpha_3)}{\Upsilon_b(\alpha_1+\alpha_2+\alpha_3-Q) \Upsilon_b(\alpha_1+\alpha_2-\alpha_3)\Upsilon_b(\alpha_2+\alpha_3-\alpha_1)\Upsilon_b(\alpha_3+\alpha_1-\alpha_2)} \ .
 \label{caaa}
 \end{align}
-This solution is called the DOZZ formula for Dorn, Otto, A.
-Zamolodchikov and Al. Zamolodchikov. It holds if
+This formula holds if
 $c\notin ]-\infty, 1]$ i.e. $b\notin i\mathbb{R}$. 
 On the other hand, doing the replacements $\Upsilon_b\to \hat\Upsilon_b$ and $b^{\cdots} \to (ib)^{\cdots}$, we obtain a solution $\hat C$ that holds if  $c\notin [25,\infty[$ i.e. $b\notin \mathbb{R}$.
 
@@ -1009,7 +1007,7 @@ We have found that (generalized) minimal models are unique for all values of $c$
 
 The $s$-channel decomposition of a Liouville four-point function reads 
 \begin{align}
- \Big< V_{\alpha_1}(z) V_{\alpha_2}(0) V_{\alpha_3}(\infty) V_{\alpha_4}(1)\Big> = \frac12 \int_{\frac{Q}{2}+i\mathbb{R}} d\alpha\ C_{\alpha_1,\alpha_2,Q-\alpha} C_{\alpha,\alpha_3, \alpha_4} \mathcal{F}_{\alpha}^{(s)}(z) \mathcal{F}_{\alpha}^{(s)}(\bar z)\ ,
+ \Big< V_{\alpha_1}(z) V_{\alpha_2}(0) V_{\alpha_3}(\infty) V_{\alpha_4}(1)\Big> = \int_{\frac{Q}{2}+i\mathbb{R}_+} d\alpha\ \frac{C_{\alpha_1,\alpha_2,\alpha} C_{\alpha,\alpha_3, \alpha_4}}{B(\alpha)} \mathcal{F}_{\alpha}^{(s)}(z) \mathcal{F}_{\alpha}^{(s)}(\bar z)\ ,
 \end{align}
 where the structure can be $C$ or $\hat C$. Let us accept that the conformal blocks $\mathcal{F}_{\alpha}^{(s)}(z)$ have poles when $\alpha = \alpha_{\langle r, s\rangle} $ \eqref{eq:ars}, the momentums for which the $s$-channel representation becomes reducible.
 We now plot the positions of these poles (blue regions) relative to the integration line (red), depending on the central charge:
