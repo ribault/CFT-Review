@@ -80,6 +80,11 @@ KZ equations, KZ-BPZ relation, $H_3^+$ model, WZW models
 
 \section{Context and approach}
 
+Just like free field theories, conformal field theories are simpler and more tractable approximations of generic field theories, and can serve as starting points for perturbative computations in generic field theories. However, conformal field theories are more complicated than free field theories, and also more often of independent interest, for example when they describe critical points of condensed matter systems. Therefore, it is worthwhile to study conformal field theories in their own right, leaving aside the applications to non-conformal field theories.
+
+In two dimensions, unlike in higher dimensions, the algebra of conformal transformations is infinite-dimensional. As a result, it has been possible to exactly solve certain non-trivial two-dimensional conformal field theories. Therefore, the subject of two-dimensional conformal field theory deserves a separate treatment. Nevertheless, the two-dimensional case may hold valuable lessons for
+the higher-dimensional case, for example that unitarity only plays a minor role in the structure and classification of conformal field theories.
+
 As an introduction to two-dimensional conformal field theory, this text has the particularity of using exclusively the bootstrap approach, which consists in systematically exploiting symmetry and consistency assumptions.
 While this approach is widely recognized as very powerful, most of the literature uses it alongside the Lagrangian approach, which can be quite useful for heuristics and for some computations.
 Renouncing Lagrangians however has the advantages of simplicity and consistency, and we will try to show that we do not lose much in terms of heuristics and computational power -- we will only have to deplore the loss of a simple definition for WZW models.
@@ -100,7 +105,7 @@ By definition, rational conformal field theories have spectrums made of finitely
 However, in order to ensure closure under fusion, these representations must have complicated structures.
 In Liouville theory, the spectrum is made of a continuum of representations, but these representations are merely Verma modules, so we will study this theory first.
 Then we will study minimal models, which are rational and therefore less generic and more complicated.
-Even later will come free theories: since we do not do use a perturbative approach, they do not play any fundamental role. 
+Even later will come free theories, which do not play any fundamental role in the bootstrap approach.
 
 
 \section{Plan of the text \label{secplan}}
@@ -154,6 +159,8 @@ However, the depth and breadth of the ideas may be too much for beginning studen
 Non-rational theories such as Liouville theory are not covered.
 And misprints are frequent.
 \item
+Again in the spirit of the present text, the review article \cite{tes17} is both more concise and more advanced, and provides a guide to the literature.
+\item
 Non-rational theories are covered in a review by Schomerus \cite{sch05}.
 That article uses multiple approaches, and pays particular attention to boundary conformal field theory, with applications to string theory in mind. 
 \item
@@ -172,11 +179,11 @@ On the statistical mechanics side, they are given in Cardy's lecture notes \cite
 $W$-symmetry is reviewed in depth in Bouwknegt and Schoutens's article \cite{bs92}, where $W$-symmetric conformal field theories are however not solved systematically.
 An exposition of the $W$-symmetric minimal models and conformal Toda theories would be a natural extension of the present text, although these theories have not been fully solved so far. 
 \end{itemize}
-In contrast to these texts, we will treat both rational and non-rational theories.
+In contrast to most of these texts, we will treat both rational and non-rational theories.
 Moreover, our exclusive use of the bootstrap approach means that we need not assume any previous knowledge of quantum field theory.
 The prerequisites are limited to 
 elementary complex analysis, and some familiarity with Lie algebras and their representations.
-A much abridged version is also available \cite{rib16}.
+A much abridged version is also available \cite{rib16}. With its two articles on \href{https://en.wikipedia.org/wiki/Two-dimensional_conformal_field_theory}{Two-dimensional conformal field theory} and \href{https://en.wikipedia.org/wiki/Liouville_field_theory}{Liouville theory}, Wikipedia provides an even briefer summary.
 
 While we mostly present known results, the following aspects may be original:
 \begin{itemize}
