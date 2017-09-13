@@ -23,6 +23,12 @@
 \usepackage{tikz}
 
 \usepackage{amsthm}
+
+\makeatletter
+% \def\@endtheorem{\endtrivlist\@endpefalse }% OLD
+\def\@endtheorem{\endtrivlist}% NEW
+\makeatother
+
 \newtheoremstyle{break}{9pt}{9pt}{\itshape}{}{\bfseries}{}{\newline}{}
 \theoremstyle{break}    
 \newtheorem{exo}{Exercise}[section]
@@ -48,7 +54,7 @@
 
 
 \begin{abstract}
-We provide a brief but self-contained review of conformal field theory on the Riemann sphere. We first introduce general axioms such as local conformal invariance, and derive Ward identities and BPZ equations. We then define Liouville theory and minimal models by specific axioms on their spectrums and degenerate fields. We solve these theories by computing 
+We provide a brief but self-contained review of conformal field theory on the Riemann sphere. We first introduce general axioms such as local conformal invariance, and derive Ward identities and BPZ equations. We then define minimal models and  Liouville theory by specific axioms on their spectrums and degenerate fields. We solve these theories by computing 
 three- and four-point functions, and discuss their existence and uniqueness. 
 \end{abstract}
 
@@ -82,7 +88,8 @@ Next, we introduce additional axioms that single out either Liouville theory, or
 In particular, these axioms determine the three-point functions. 
 Finally we check that these uniquely defined theories do exist, by studying their four-point functions.
 
-This text was written with brevity as the main concern, so as to be the basis for about four hours' worth of lectures. For more details, see the review article \cite{rib14}.
+This text was written with brevity as the main concern, so as to be the basis for about four hours' worth of lectures. For more details along these lines, see the review article \cite{rib14}. For a wider and more advanced review in a similar spirit, see Teschner's recent text \cite{tes17}. 
+The Bible of rational conformal field theory is of course the epic textbook \cite{fms97}. And Cardy's lecture notes \cite{car08} provide an introduction to the statistical physics applications of conformal field theory.
 
 
 \section{The Virasoro algebra and its representations}
@@ -142,7 +149,6 @@ The spectrum, i.e. the space of states, must be a representation of the Virasoro
  ~\label{hyp:rep}
  The spectrum is a direct sum of irreducible representations. In the spectrum, $L_0$ is diagonalizable, and the real part of its eigenvalues is bounded from below.
 \end{hyp}
-
 Why this special role for $L_0$? Because we want to interpret it as the energy operator. Since the corresponding Witt algebra generator $\ell_0$ generates dilatations, considering it as the energy operator amounts to consider the radial coordinate as the time. We however do not assume that $L_0$ eigenvalues are real or that the spectrum is a Hilbert space, as this would restrict the central charge to be real. The $L_0$ eigenvalue of an $L_0$ eigenvector is called its conformal dimension.
 
 Let us consider an irreducible representation that is allowed by our axiom. There must be an $L_0$ eigenvector $|v\rangle$ with the smallest eigenvalue $\Delta$. Then $L_n|v\rangle$ is also an $L_0$ eigenvector,
@@ -157,8 +163,11 @@ If $n>0$ we must have $L_n|v\rangle =0$, and $|v\rangle $ is called a primary st
  \begin{align}
   L_0 |v\rangle = \Delta |v\rangle \quad , \quad L_{n>0} |v\rangle = 0\ .
  \end{align}
-A descendent of $|v\rangle$ is a linear combination of states of the type $|w\rangle = \prod_{i=1}^k L_{-n_i} |v\rangle$ with $k>0$ and $0<n_1\leq n_2 \leq \dots \leq n_k$. 
-The level of such a state is the number $N=\sum_{i=1}^k n_i$ such that $L_0|w\rangle = (\Delta + N)|w\rangle$. The Verma module $\mathcal V_\Delta$ is the representation whose basis is made of the states $|w\rangle = \prod_{i=1}^k L_{-n_i} |v\rangle$ with $k\geq 0$ and $0<n_1\leq n_2 \leq \dots \leq n_k$.
+The Verma module $\mathcal V_\Delta$ is the representation whose basis is 
+ $
+ \left\{ \prod_{i=1}^k L_{-n_i} |v\rangle\right\}_{ 0<n_1\leq \dots \leq n_k}
+ $.
+The level of the state $\prod_{i=1}^k L_{-n_i} |v\rangle $ is $N=\sum_{i=1}^k n_i\geq 0$. A state of level $N\geq 1$ is called a descendent state.
 \end{defn}
 Let us plot a basis of primary and descendent states up to the level $3$:
 \begin{align}
@@ -193,7 +202,6 @@ Are Verma module irreducible representations? i.e. do they have nontrivial subre
  ~\label{def:nv}
  A descendent state that is also primary is called a null vector or singular vector.
 \end{defn}
-
 In the Verma module $\mathcal V_\Delta$, let us look for null vectors at the level $N=1$. For $n\geq 1$ we have 
 \begin{align}
 L_n L_{-1}|v\rangle = [L_n, L_{-1}] |v\rangle = (n+1) L_{n-1}|v\rangle = 
@@ -215,7 +223,6 @@ Let us now look for null vectors at the level $N=2$. Let $|\chi\rangle = (L_{-1}
  \label{eq:dpm}
 \end{align}
 \end{exo}
-
 In order to simplify this formula, let us introduce other notations for $c$ and $\Delta$. We define
 \begin{align}
  \text{the background charge } Q \ , & \quad c = 1+6Q^2\ , \quad \text{up to } Q \to -Q\ ,
@@ -225,11 +232,11 @@ In order to simplify this formula, let us introduce other notations for $c$ and 
  \text{the momentum } \alpha\  , &\quad \Delta = \alpha(Q-\alpha)\ , \quad \text{up to reflections } \alpha \to Q-\alpha\ .
 \label{eq:refm}
  \end{align}
-The condition \eqref{eq:dpm} for the existence of a level two singular vector becomes 
+The condition \eqref{eq:dpm} for the existence of a level two null vector becomes 
 \begin{align}
  \alpha = -\frac12 b^{\pm 1}\ .
 \end{align}
-To summarize, singular vectors at levels $1$ and $2$ occur for particular values of $\Delta$. The singular vectors at levels $N\leq 2$ can be written as $L_{\langle r,s\rangle}|v\rangle$ where $r,s$ are strictly positive integers such that $rs=N$,
+To summarize, null vectors at levels $1$ and $2$ occur for particular values of $\Delta$. The null vectors at levels $N\leq 2$ can be written as $L_{\langle r,s\rangle}|v\rangle$ where $r,s$ are strictly positive integers such that $rs=N$,
 \begin{align}
 \renewcommand{\arraystretch}{1.3}
 \begin{array}{|c|c|c|c|c|}
@@ -250,13 +257,13 @@ N & \langle r,s\rangle & \Delta_{\langle r,s\rangle} & \alpha_{\langle r,s\rangl
 \end{array}
 \label{lot}
 \end{align}
-The pattern goes on at higher levels: singular vectors occur at level $N$ for finitely many dimensions $\Delta_{\langle r,s\rangle}$, with
+The pattern goes on at higher levels \cite{fms97}: null vectors occur at level $N$ for finitely many dimensions $\Delta_{\langle r,s\rangle}$, with
 \begin{align}
   \alpha_{\langle r,s\rangle} = \frac{Q}{2} - \frac12(rb+sb^{-1})\ .
   \label{eq:ars}
  \end{align}
  (See Exercise \ref{exo:hdr} for a derivation.)
-If $\Delta\notin\{\Delta_{\langle r,s\rangle}\}_{r,s\in\mathbb{N}^*}$, then $\mathcal V_\Delta$ is irreducible. If $\Delta = \Delta_{\langle r,s\rangle}$, then $\mathcal V_\Delta$ contains a nontrivial submodule, generated by the singular vector and its descendent states. For generic values of the central charge $c$, this submodule is the Verma module $\mathcal V_{\Delta_{\langle r,s\rangle}+rs}$.
+If $\Delta\notin\{\Delta_{\langle r,s\rangle}\}_{r,s\in\mathbb{N}^*}$, then $\mathcal V_\Delta$ is irreducible. If $\Delta = \Delta_{\langle r,s\rangle}$, then $\mathcal V_\Delta$ contains a nontrivial submodule, generated by the null vector and its descendent states. For generic values of the central charge $c$, this submodule is the Verma module $\mathcal V_{\Delta_{\langle r,s\rangle}+rs}$.
 
 \begin{defn}[Degenerate representation]
  ~\label{def:deg}
@@ -272,7 +279,7 @@ In this representation, the null vector vanishes,
 The vanishing of null vectors will be crucial for solving Liouville theory and minimal models.
 
 
-\section{Conformal field theory}
+\section{Conformal field theory}\label{sec:cft}
 
 Now that we understand the algebraic structure of conformal symmetry in two dimensions, let us study how the Virasoro algebra acts on objects that live on the Riemann sphere -- the fields of conformal field theory. (Technically, fields are sections of vector bundles over the sphere.)
 
@@ -309,6 +316,7 @@ Now let us specify how fields depend on $z$.
   \label{pvlv}
  \end{align}
 \end{hyp}
+Moreover, in this Section \ref{sec:cft} we tacitly assume that all our fields are locally holomorphic i.e. $\frac{\partial}{\partial \bar z} V(z) = 0$. The dependence on $\bar z$ will be reintroduced and studied in Section \ref{sec:sv}.
 
 Let us derive consequences of this axiom, starting with the $z$-dependence of the action $L_n^{(z)}$ of Virasoro generators on fields. On the one hand,
 \begin{align}
@@ -339,7 +347,7 @@ In other words, for any field $V(z)$, we have
  \label{eq:lvtv}
 \end{align}
 \end{defn}
-In particular, for a primary field $V_\Delta(z)$, we find 
+In the case of a primary field $V_\Delta(z)$, using eq. \eqref{pvlv} and writing regular terms as $O(1)$, this definition reduces to
 \begin{align}
  T(y)V_\Delta(z) = \frac{\Delta}{(y-z)^2} V_\Delta(z) + \frac{1}{y-z} \frac{\partial}{\partial z} V_\Delta(z) + O(1)\ . 
  \label{eq:tvd}
@@ -355,15 +363,14 @@ The energy-momentum tensor $T(y)$ is locally holomorphic as a function of $y$, a
  \label{eq:tinf}
 \end{align}
 \end{hyp}
-
-To motivate this axiom, let us do some dimensional analysis. If $z$ has dimension $-1$, then according to eq. \eqref{pvlv} $L_{-1}$ has dimension $1$, and $T(y)$ has dimension $2$. The dimensionless quantity that should be holomorphic at infinity is therefore the differential $T(y)dy^2$. 
+To motivate this axiom, let us do some dimensional analysis. If $z$ has dimension $-1$, then according to eq. \eqref{pvlv} $L_{-1}$ has dimension $1$, and $T(y)$ has dimension $2$. The dimensionless quantity that should be holomorphic at infinity is therefore the differential $T(y)dy^2$. At infinity a holomorphic coordinate is $\frac{1}{y}$ and a holomorphic differential is $d(\frac{1}{y}) = -\frac{dy}{y^2}$, so our axiom amounts to $T(y)dy^2= O(\frac{dy^2}{y^4})$ being holomorphic.
 
 
 \subsection{Correlation functions and Ward identities}
 
 \begin{defn}[Correlation function]
 ~\label{def:cor}
- To $N$ fields $V_1(z_1), \dots ,V_N(z_N)$, we associate a number called their correlation function or $N$-point function, and denoted as 
+ To $N$ fields $V_1(z_1), \dots ,V_N(z_N)$ with $i\neq j\Rightarrow z_i\neq z_j$, we associate a number called their correlation function or $N$-point function, and denoted as 
  \begin{align}
   \Big< V_1(z_1) \cdots V_N(z_N) \Big>\ .
  \end{align}
@@ -375,7 +382,7 @@ Correlation functions depend linearly on fields, and in particular $\frac{\parti
  ~\label{hyp:ass}
  Correlation functions do not depend on the order of the fields,
  \begin{align}
-  V_1(z_1) V_2(z_2) = V_2(z_2)V_1(z_1)\ , \qquad (z_1\neq z_2)\ .
+  V_1(z_1) V_2(z_2) = V_2(z_2)V_1(z_1)\ .
  \end{align}
 \end{hyp}
 
@@ -385,7 +392,7 @@ In order to study an $N$-point function $Z$ of primary fields, we introduce an a
  Z = \left< \prod_{i=1}^N V_{\Delta_i}(z_i) \right> \quad , \quad Z(y) = \left< T(y) \prod_{i=1}^N V_{\Delta_i}(z_i) \right> \ .
 \end{align}
 $Z(y)$ is a meromorphic function of $y$, with poles at $y=z_i$, whose residues are given by eq. \eqref{eq:tvd} (using the commutativity of fields).
-Moreover $T(y)$, and therefore also $Z(y)$, are bounded for $y\to \infty$. So $Z(y)$ is completely determined by its poles and residues,
+Moreover $T(y)$, and therefore also $Z(y)$, vanish in the limit $y\to \infty$. So $Z(y)$ is completely determined by its poles and residues,
 \begin{align}
  Z(y) = \sum_{i=1}^N \left(\frac{\Delta_i}{(y-z_i)^2} +\frac{1}{y-z_i}\frac{\partial}{\partial z_i}\right) Z\ .
  \label{eq:zy}
@@ -408,7 +415,8 @@ Let us solve the global Ward identities in the cases of one, two, three and four
 \end{align}
 So one-point functions are constant, and non-vanishing only if $\Delta=0$. Similarly, two-point functions must obey
 \begin{align}
- \Big< V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \Big> \propto (z_1-z_2)^{-4\Delta_1} \quad , \quad (\Delta_1-\Delta_2)\Big< V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \Big>  = 0\ .
+ \Big< V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \Big> \propto (z_1-z_2)^{-2\Delta_1} \quad , \quad (\Delta_1-\Delta_2)\Big< V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \Big>  = 0\ .
+ \label{eq:2pt}
 \end{align}
 So a two-point function can be non-vanishing only if the two fields have the same dimension.
 For three-point functions, there are as many equations \eqref{eq:gward} as unknowns $z_1,z_2,z_3$, and therefore a unique solution with no constraints on $\Delta_i$,
@@ -419,14 +427,16 @@ For three-point functions, there are as many equations \eqref{eq:gward} as unkno
 with an unknown proportionality coefficient that does not depend on $z_i$.
 For four-point functions, the general solution is
 \begin{align}
- \left< \prod_{i=1}^4 V_{\Delta_i}(z_i) \right> = \prod_{i<j}(z_i-z_j)^{\delta_{ij}}\ G\left(\frac{(z_1-z_2)(z_3-z_4)}{(z_1-z_3)(z_2-z_4)}\right)\ ,
+ \left< \prod_{i=1}^4 V_{\Delta_i}(z_i) \right> = \left(\prod_{i<j}(z_i-z_j)^{\delta_{ij}}\right) G\left(\frac{(z_1-z_2)(z_3-z_4)}{(z_1-z_3)(z_2-z_4)}\right)\ ,
 \end{align}
-where $\sum_{j\neq i} \delta_{ij} = -2\Delta_i$ (with by definition $\delta_{ij}\underset{i>j}{=}\delta_{ji}$), and $G$ is an arbitrary function.
+where $G$ is an arbitrary function, and $\delta_{ij}$ are such that $\sum_{j\neq i} \delta_{ij} = -2\Delta_i$, where $\delta_{ij}\underset{i>j}{=}\delta_{ji}$. The six numbers $\delta_{ij}$ with $i<j$ are subject to only four equations, leaving two undetermined combinations. Changing these combinations amounts to a redefinition $G(z)\to z^\lambda (1-z)^\mu G(z)$.
+
 In other words, the three global Ward identities effectively reduces the four-point function to a function of one variable $G$ -- equivalently, we can set $z_2,z_3,z_4$ to fixed values, and recover the four-point function from its dependence on $z_1$ alone. 
 
 \begin{exo}[Conformal symmetry of four-point functions]
 ~\label{exo:4pt}
- Show that $V_\Delta(\infty) = \lim_{z\to\infty} z^{2\Delta}V_\Delta(z) $ is finite, and that there is a (unique) choice of $\delta_{ij}$ such that 
+ Let us define $V_\Delta(\infty) = \lim_{z\to\infty} z^{2\Delta}V_\Delta(z) $. Check that this is finite when inserted into a two- or three-point function. More generally, show that this is finite using the behaviour \eqref{eq:zgc} of correlation functions under $z\to -\frac{1}{z}$. 
+ Show that there is a (unique) choice of $\delta_{ij}$ such that 
  \begin{align}
   G(z) = \Big< V_{\Delta_1}(z) V_{\Delta_2}(0)V_{\Delta_3}(\infty)V_{\Delta_4}(1) \Big>\ .
  \end{align}
@@ -458,6 +468,7 @@ and further imposing $z_1$-independence leads to
 \begin{align}
  \left< V_{\langle 1, 1 \rangle}(z_1) V_{\Delta_2}(z_2) V_{\Delta_3}(z_3) \right> \neq 0 \quad \Rightarrow \quad \Delta_2=\Delta_3\ .
 \end{align}
+This coincides with the condition \eqref{eq:2pt} that the two-point function $\left<V_{\Delta_2}(z_2)V_{\Delta_3}(z_3)\right>$ does not vanish. Actually, the field $V_{\langle 1,1\rangle}$ is an identity field, i.e. a field whose presence does not affect correlation functions. (See Exercise \ref{exo:id}.)
 
 In the case of $V_{\langle 2, 1 \rangle}(z_1)$, we have  
 \begin{align}
@@ -503,7 +514,7 @@ We have seen how conformal symmetry leads to linear equations for correlation fu
 In order to fully determine correlation functions, we need additional, nonlinear equations, and therefore additional axioms: single-valuedness of correlation functions, and existence of operator product expansions. 
 Using these axioms for studying conformal field theories is called the conformal bootstrap method. 
 
-\subsection{Single-valuedness}
+\subsection{Single-valuedness}\label{sec:sv}
 
 \begin{hyp}[Single-valuedness]
  ~\label{hyp:sv}
@@ -572,6 +583,16 @@ Then, as in correlation functions, contributions of descendents are deduced from
   O(z_1-z_2) = \frac{\Delta+\Delta_1-\Delta_2}{2\Delta} \Big( (z_1-z_2)L_{-1}+(\bar z_1-\bar z_2)\bar L_{-1}\Big) V_{\Delta}(z_2) + O((z_1-z_2)^2)\ .
  \end{align}
 \end{exo}
+
+\begin{exo}[$V_{\langle 1,1\rangle}$ as an identity field]
+~\label{exo:id}
+Using $\frac{\partial}{\partial z_1} V_{\langle 1,1\rangle}(z_1)=0$, show that the OPE of $V_{\langle 1,1\rangle}$ with another primary field is of the form 
+\begin{align}
+ V_{\langle 1,1\rangle}(z_1)V_\Delta(z_2) = C_\Delta V_\Delta(z_2)\ ,
+\end{align}
+where the subleading terms vanish. Inserting this OPE in a correlation function, show that the constant $C_\Delta$ actually does not depend on $\Delta$. Deduce that, up to a factor $C=C_\Delta$, the field $V_{\langle 1,1\rangle}$ is an identity field.
+\end{exo}
+
 
 Inserting the OPE in a three-point function of primary fields, we find 
 \begin{align}
@@ -1070,17 +1091,10 @@ I am grateful to the organizers of the Carg\`ese school, for challenging me to e
 I with to thank Bertrand Eynard, Riccardo Guida and Andr\'e Voros for helpful suggestions and comments.
 And I am grateful to the participants of the Carg\`ese school, for their stimulating participation in the lectures.
 
-\begin{thebibliography}{1}
-\expandafter\ifx\csname url\endcsname\relax
-  \def\url#1{\texttt{#1}}\fi
-\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
-\providecommand{\eprint}[2][]{\url{#2}}
+\bibliographystyle{cft}
+\bibliography{cft}
 
-\bibitem{rib14}
-\href{http://arxiv.org/abs/1406.4290}{S.~Ribault} (2014) [1406.4290]\\ {\em
-  {Conformal field theory on the plane}\/}
-
-\end{thebibliography}
+%\input{refs.tex}
 
 \end{document}
 
