@@ -22,6 +22,27 @@
 \usepackage{pgf}
 \usepackage{tikz}
 
+\usepackage{xcolor}
+
+% Syntax: \colorboxed[<color model>]{<color specification>}{<math formula>}
+\newcommand*{\colorboxed}{}
+\def\colorboxed#1#{%
+  \colorboxedAux{#1}%
+}
+\newcommand*{\colorboxedAux}[3]{%
+  % #1: optional argument for color model
+  % #2: color specification
+  % #3: formula
+  \begingroup
+    \colorlet{cb@saved}{.}%
+    \color#1{#2}%
+    \boxed{%
+      \color{cb@saved}%
+      #3%
+    }%
+  \endgroup
+}
+
 \usepackage{amsthm}
 
 \makeatletter
@@ -716,6 +737,7 @@ Another basis of solutions of the same BPZ equation is given by two $t$-channel 
  \nonumber \\
  \mathcal{F}^{(t)}_{\alpha_3+\frac{b}{2}}(z) &= \left. \mathcal{F}^{(t)}_{\alpha_3-\frac{b}{2}}(z) \right|_{\alpha_3\to Q-\alpha_3} \ .
 \end{align}
+
 The presence of only two $s$-channel fields with momentums $\alpha_1\pm \frac{b}{2}$, and the constraint \eqref{eq:alpm} on momentums in the three-point function $\left<V_{\langle 2,1\rangle}V_{\alpha_2}V_{\alpha_3}\right>$, both mean that the operator product expansion $V_{\langle 2, 1 \rangle}(z) V_{\alpha_1}(0)$ involves only two primary fields $V_{\alpha_1\pm \frac{b}{2}}(0)$. 
 
 \begin{hyp}[Fusion product]
@@ -857,6 +879,7 @@ For example, the minimal model with the central charge $c=\frac12$ has the spect
   S^\mathrm{Liouville} 
 = \int_{\frac{Q}{2}+i\mathbb{R}_+}  d\alpha\ \mathcal V_\alpha \otimes 
    \bar{\mathcal V}_\alpha\ , 
+   \label{eq:sl}
  \end{align}
 and whose correlation functions are smooth functions of $b$ and $\alpha$, assuming it exists and its unique.
 \end{defn}
@@ -871,7 +894,10 @@ Let us give some justification for this definition. We are looking for a diagona
   \draw[very thin] (0, -3) -- (0, 3);
  \end{tikzpicture}
 \end{align}
-We also need $\Delta$ to be bounded from below, and the natural bound is $\Delta(\alpha=\frac{Q}{2}) = \frac{Q^2}{4}=\frac{c-1}{24}$. This leads to $\alpha \in \frac{Q}{2}+i\mathbb{R}$, or rather $\alpha \in \frac{Q}{2}+i\mathbb{R}_+$ due to the reflection symmetry \eqref{eq:refm}. This is our guess for the spectrum for $c\in\mathbb{R}$, and we take it to hold for $c\in\mathbb{C}$ by analyticity.
+We also need $\Delta$ to be bounded from below, and the natural bound is $\Delta(\alpha=\frac{Q}{2}) = \frac{Q^2}{4}=\frac{c-1}{24}$. This leads to $\alpha \in \frac{Q}{2}+i\mathbb{R}$, or rather $\alpha \in \frac{Q}{2}+i\mathbb{R}_+$ due to the reflection symmetry \eqref{eq:refm}. This leads
+to our guess \eqref{eq:sl} for the spectrum, equivalently $S^\mathrm{Liouville} 
+= \int_{\frac{c-1}{24}}^\infty d\Delta\ \mathcal V_{\Delta}\otimes \bar{\mathcal{V}}_\Delta $.
+We take this guess to hold not only for $c\in\mathbb{R}$, but also for $c\in\mathbb{C}$ by analyticity.
 
 Let us schematically write two- and three-point functions in Liouville theory, as well as OPEs:
 \begin{align}
@@ -879,22 +905,24 @@ Let us schematically write two- and three-point functions in Liouville theory, a
  \label{eq:vv}
  \\
  \Big< V_{\alpha_1}V_{\alpha_2}V_{\alpha_3} \Big> & = C_{\alpha_1,\alpha_2,\alpha_3} \ ,
+ \label{eq:vvv}
  \\
- V_{\alpha_1}V_{\alpha_2} &= \int_{\frac{Q}{2}+i\mathbb{R}_+} d\alpha \frac{C_{\alpha_1,\alpha_2,\alpha}}{B(\alpha)} \Big( V_\alpha + \cdots\Big)\ .
+ V_{\alpha_1}V_{\alpha_2} &= \int_{\frac{Q}{2}+i\mathbb{R}_+} d\alpha\, \frac{C_{\alpha_1,\alpha_2,\alpha}}{B(\alpha)} \Big( V_\alpha + \cdots\Big)\ ,
  \label{eq:v1v2}
 \end{align}
+where the expression for the OPE coefficient $\frac{C_{\alpha_1,\alpha_2,\alpha}}{B(\alpha)}$ in terms of two- and three-point structure constants is obtained by inserting the OPE into a three-point function.
 
 In order to have reasonably simple crossing symmetry equations, we need degenerate fields. 
+But degenerate fields do not correspond to states in the spectrum, as the spectrum is made of Verma modules (not degenerate representations). So we need a special axiom:
+
 \begin{hyp}[Degenerate fields in Liouville theory]
  ~\label{hyp:degl}
  The degenerate fields $V_{\langle r, s\rangle}$, and their correlation functions, exist. 
 \end{hyp}
-Degenerate fields do not correspond to states in the spectrum, as the spectrum is made of Verma modules (not degenerate representations). 
-On top of that, 
-OPEs $V_{\langle r, s\rangle}V_\alpha$ then produce more fields outside the spectrum, for instance 
-$V_{\langle 2, 1\rangle} V_\alpha \sim V_{\alpha-\frac{b}{2}} + V_{\alpha+\frac{b}{2}}$ with in general $\alpha\pm\frac{b}{2}\notin \frac{Q}{2}+i\mathbb{R}_+$. We assume that correlation functions involving $V_{\alpha\pm\frac{b}{2}}$ make sense by analytic continuation in $\alpha$. So, let us introduce notations for OPE coefficients of $V_{\langle 2, 1\rangle}$:
+Then let us introduce notations for OPE coefficients of $V_{\langle 2, 1\rangle}$:
 \begin{align}
- V_{\langle 2, 1\rangle} V_\alpha \sim C_+(\alpha) V_{\alpha-\frac{b}{2}} + C_-(\alpha)V_{\alpha +\frac{b}{2}}\ .
+ V_{\langle 2, 1\rangle} V_\alpha \sim C_-(\alpha) V_{\alpha-\frac{b}{2}} + C_+(\alpha)V_{\alpha +\frac{b}{2}}\ .
+ \label{degope}
 \end{align}
 
 
@@ -906,46 +934,95 @@ Let us determine the three-point structure constant by solving crossing symmetry
 
 The four-point function $G(z) = \Big< V_{\langle 2, 1 \rangle}(z) V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1) \Big>$ obeys second-order BPZ equations in $z$ and $\bar z$, and the most general solution is
 \begin{align}
- G(z) = \sum_{i,j=\pm} c^{(s)}_{ij} \mathcal{F}^{(s)}_{\alpha_1-i\frac{b}{2}}(z) \mathcal{F}^{(s)}_{\alpha_1-j\frac{b}{2}}(\bar z)\ .
+ G(z) = \sum_{i,j=\pm} c^{(s)}_{ij} \mathcal{F}^{(s)}_{\alpha_1+i\frac{b}{2}}(z) \mathcal{F}^{(s)}_{\alpha_1+j\frac{b}{2}}(\bar z)\ .
+ \label{gzs}
 \end{align}
-Conformal blocks behave as powers of $z$ near $z=0$ \eqref{eq:gsd}, and single-valuedness requires that we have the same power on the left and on the right. This implies $c^{(s)}_{+-} = c^{(s)}_{-+}=0$. By the same reasoning, single-valuedness near $z=1$ requires $c^{(t)}_{+-}=c^{(t)}_{-+}=0$. Now $c^{(t)}_{ij}$ and $c^{(s)}_{ij}$ are the coefficients of $G(z)$ in two different bases of solutions of the BPZ equation, and are related by a change of basis:
+Let us first require that $G(z)$ be single-valued in the limit $z\to 0$. 
+In this limit, each one of the two $s$-channel conformal blocks $\mathcal{F}^{(s)}_{\alpha_1\pm\frac{b}{2}}(z)$ behaves as a power of $z$ \eqref{eq:gsd}, with its own exponent. For a generic value of $\alpha_1$, the difference of their two exponents is not integer, and $\mathcal{F}^{(s)}_{\alpha_1-\frac{b}{2}}(z) \mathcal{F}^{(s)}_{\alpha_1+\frac{b}{2}}(\bar z)$ is not single-valued near $z=0$. On the other hand, the two terms $\mathcal{F}^{(s)}_{\alpha_1\pm\frac{b}{2}}(z) \mathcal{F}^{(s)}_{\alpha_1\pm\frac{b}{2}}(\bar z)$ are single-valued. We conclude that $c^{(s)}_{+-} = c^{(s)}_{-+}=0$. Similarly, if we decompose the same four-point function in the $t$-channel basis of conformal blocks,
 \begin{align}
- \mathcal{F}^{(s)}_{\alpha_1-i\frac{b}{2}}(z) = \sum_{j=\pm} F_{ij} \mathcal{F}^{(t)}_{\alpha_1-j\frac{b}{2}}(z) \quad \Rightarrow \quad \sum_{i,j=\pm} c^{(s)}_{ij} F_{ii'} F_{jj'} = c^{(t)}_{i'j'}\ .
+ G(z) = \sum_{i,j=\pm} c^{(t)}_{ij} \mathcal{F}^{(t)}_{\alpha_1+i\frac{b}{2}}(z) \mathcal{F}^{(t)}_{\alpha_1+j\frac{b}{2}}(\bar z)\ ,
 \end{align}
-In particular we have $0 = c^{(t)}_{+-}= c_{++}^{(s)} F_{++}F_{+-} + c_{--}^{(s)} F_{-+}F_{--}$, so that
+then single-valuedness near $z=1$ requires $c^{(t)}_{+-}=c^{(t)}_{-+}=0$. 
+Now the $s$- and $t$-channel bases of solutions of the BPZ equation must be related by a change of basis,
 \begin{align}
- \frac{c_{++}^{(s)}}{c_{--}^{(s)}} = -\frac{F_{-+}F_{--}}{F_{++}F_{+-}} 
+ \mathcal{F}^{(s)}_{\alpha_1+i\frac{b}{2}}(z) = \sum_{j=\pm} F_{ij} \mathcal{F}^{(t)}_{\alpha_1+j\frac{b}{2}}(z) \ ,
+\end{align}
+for some matrix $F_{ij}$ that is well-known in the case of our hypergeometric conformal blocks \eqref{gpm}.
+Inserting this change of basis in our $s$-channel decomposition \eqref{gzs} of $G(z)$, we find a $t$-channel decomposition, with the coefficients
+\begin{align}
+ c^{(t)}_{i'j'}= \sum_{i,j=\pm} c^{(s)}_{ij} F_{ii'} F_{jj'} \ .
+\end{align}
+Inserting our single-valuedness conditions $c^{(t)}_{+-}=0$ and $c^{(s)}_{-+}=c^{(s)}_{+-}=0$ in this relation, we deduce
+\begin{align}
+ \frac{c_{++}^{(s)}}{c_{--}^{(s)}} = -\frac{F_{-+}F_{--}}{F_{++}F_{+-}} \ .
+\end{align}
+Using the known formula for $F_{ij}$, this is explicitly
+\begin{align}
+ \frac{c_{--}^{(s)}}{c_{++}^{(s)}} 
  = \frac{\gamma(A)\gamma(B)\gamma(C-A)\gamma(C-B)}{\gamma(C)\gamma(C-1)}\quad \text{with} \quad \gamma(x) =\frac{\Gamma(x)}{\Gamma(1-x)}\ ,
  \label{eq:coc}
 \end{align}
 where the combinations $A,B,C$ of the momentums $\alpha_1,\alpha_2,\alpha_3$ are given in eq. \eqref{abc}.
 
 This concludes the mathematical exercise of finding single-valued solutions of the hypergeometric equation. 
-Now, in conformal field theory, the coefficients $c^{(s)}_{ij}$ are further constrained to be combinations of OPE coefficients and three-point structure constants, 
+Now, in the case of Liouville theory, let us determine the coefficients $c^{(s)}_{ij}$.
+To do this, we deduce the $z\to 0$ behaviour of our four-point function $G(z)$ from the degenerate OPE \eqref{degope} and the three-point function \eqref{eq:vvv}, and find
 \begin{align}
- c_{++}^{(s)} = C_+(\alpha_1) C_{\alpha_1-\frac{b}{2},\alpha_2,\alpha_3} 
-\quad , \quad 
-c_{--}^{(s)}  = C_-(\alpha_1) C_{\alpha_1+\frac{b}{2},\alpha_2,\alpha_3}\ ,
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .6]
+\draw (-1,2) node [left] {$\alpha_1$} -- (0,0) -- node [above] {$\alpha_1-\frac{b}{2}$} (4,0) -- (5,2) node [right] {$\alpha_2$};
+\draw (-1,-2) node [left] {$\langle 2,1\rangle$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$\alpha_3$};
+\node at (1.5, -4) {$c_{--}^{(s)} = \colorboxed{red}{C_-(\alpha_1)}\, \colorboxed{red}{C_{\alpha_1-\frac{b}{2},\alpha_2,\alpha_3}}  $};
+\draw[dashed, ->, red] (.7,-3.2) to [out=90, in=-70] (.2, -.3);
+\draw[dashed, ->, red] (3.5,-3.2) to [out=90, in=-110] (3.8, -.3);
+\end{tikzpicture} 
+\qquad\qquad
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .6]
+\draw (-1,2) node [left] {$\alpha_1$} -- (0,0) -- node [above] {$\alpha_1+\frac{b}{2}$} (4,0) -- (5,2) node [right] {$\alpha_2$};
+\draw (-1,-2) node [left] {$\langle 2,1\rangle$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$\alpha_3$};
+\node at (1.5, -4) {$c_{++}^{(s)} = \colorboxed{red}{C_+(\alpha_1)}\, \colorboxed{red}{C_{\alpha_1+\frac{b}{2},\alpha_2,\alpha_3}}  $};
+\draw[dashed, ->, red] (.7,-3.2) to [out=90, in=-70] (.2, -.3);
+\draw[dashed, ->, red] (3.5,-3.2) to [out=90, in=-110] (3.8, -.3);
+\end{tikzpicture} 
 \label{cs}
 \end{align}
-and eq. \eqref{eq:coc} becomes a shift equation for the dependence of $C_{\alpha_1,\alpha_2,\alpha_3}$ on $\alpha_1$,
+Then eq. \eqref{eq:coc} becomes a shift equation for the dependence of $C_{\alpha_1,\alpha_2,\alpha_3}$ on $\alpha_1$,
 \begin{align}
- \frac{C_+(\alpha_1) C_{\alpha_1-\frac{b}{2},\alpha_2,\alpha_3} }{C_-(\alpha_1) C_{\alpha_1+\frac{b}{2},\alpha_2,\alpha_3}} = \frac{\prod_{\pm,\pm} \gamma(\frac12 +b(\alpha_1-\frac{Q}{2}) \pm b(\alpha_2-\frac{Q}{2}) \pm b(\alpha_3-\frac{Q}{2}))}{\gamma(b(2\alpha_1-Q)) \gamma(1+b(2\alpha_1-Q))}\ .
+ \frac{C_-(\alpha_1) C_{\alpha_1-\frac{b}{2},\alpha_2,\alpha_3} }{C_+(\alpha_1) C_{\alpha_1+\frac{b}{2},\alpha_2,\alpha_3}} = \frac{\prod_{\pm,\pm} \gamma(\frac12 +b(\alpha_1-\frac{Q}{2}) \pm b(\alpha_2-\frac{Q}{2}) \pm b(\alpha_3-\frac{Q}{2}))}{\gamma(b(2\alpha_1-Q)) \gamma(1+b(2\alpha_1-Q))}\ .
  \label{eq:shift}
 \end{align}
 In order to find the three-point structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$, we need to constrain the degenerate OPE coefficients $C_\pm(\alpha)$. To do this, we consider the special case where the last field is degenerate too, i.e. the four-point function $\Big\langle V_{\langle 2,1 \rangle}(z) V_\alpha(0) V_{\alpha}(\infty) V_{\langle 2,1 \rangle}(1)\Big\rangle$.
-In this case, we have
+In this case, using the degenerate OPE \eqref{degope} twice, and the two-point function \eqref{eq:vv}, we find
 \begin{align}
- c_{++}^{(s)} = C_+(\alpha)^2 B(\alpha-\tfrac{b}{2}) \quad , \quad c_{--}^{(s)} = C_-(\alpha)^2B(\alpha+\tfrac{b}{2}) \ ,
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .6]
+\draw (-1,2) node [left] {$\alpha$} -- (0,0) -- node [above] {$\alpha-\frac{b}{2}$} (4,0) -- (5,2) node [right] {$\alpha$};
+\draw (-1,-2) node [left] {$\langle 2,1\rangle$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$\langle 2,1\rangle$};
+\node at (1, -4) {$c_{--}^{(s)} = \colorboxed{red}{C_-(\alpha)}\, \colorboxed{red}{B(\alpha-\tfrac{b}{2})}\, \colorboxed{red}{C_-(\alpha)} $};
+\draw[dashed, ->, red] (-.7,-3.2) to [out=90, in=-70] (.2, -.3);
+\draw[dashed, ->, red] (4.6,-3.2) to [out=90, in=-110] (3.8, -.3);
+\draw[dashed, ->, red] (1.9,-3.2) to [out=90, in=-110] (2, -.3);
+\end{tikzpicture} 
+\qquad\quad
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .6]
+\draw (-1,2) node [left] {$\alpha$} -- (0,0) -- node [above] {$\alpha-\frac{b}{2}$} (4,0) -- (5,2) node [right] {$\alpha$};
+\draw (-1,-2) node [left] {$\langle 2,1\rangle$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$\langle 2,1\rangle$};
+\node at (1, -4) {$c_{++}^{(s)} = \colorboxed{red}{C_+(\alpha)}\, \colorboxed{red}{B(\alpha+\tfrac{b}{2})}\, \colorboxed{red}{C_+(\alpha)} $};
+\draw[dashed, ->, red] (-.7,-3.2) to [out=90, in=-70] (.2, -.3);
+\draw[dashed, ->, red] (4.6,-3.2) to [out=90, in=-110] (3.8, -.3);
+\draw[dashed, ->, red] (1.9,-3.2) to [out=90, in=-110] (2, -.3);
+\end{tikzpicture} 
 \end{align}
-and eq. \eqref{eq:coc} boils down to 
+Then eq. \eqref{eq:coc} boils down to 
 \begin{align}
- \frac{C_+(\alpha)^2 B(\alpha-\tfrac{b}{2})}{C_-(\alpha)^2B(\alpha+\tfrac{b}{2})} 
+ \frac{C_-(\alpha)^2 B(\alpha-\tfrac{b}{2})}{C_+(\alpha)^2B(\alpha+\tfrac{b}{2})} 
  =  \frac{\gamma(-b(2\alpha-Q))}{\gamma(b(2\alpha-Q))} 
  \frac{\gamma(-b^2+b(2\alpha-Q))}{\gamma(-b^2-b(2\alpha-Q))} \ .
  \label{eq:shiftd}
 \end{align}
-Moreover, we could get the equations \eqref{eq:shift} and \eqref{eq:shiftd} with $b\to \frac{1}{b}$ by having $V_{\langle 1,2\rangle}$ instead of $V_{\langle 2,1\rangle}$ in our four-point functions. Next we will solve these equations. 
+Moreover, if we had the degenerate field $V_{\langle 1,2\rangle}$ instead of $V_{\langle 2,1\rangle}$ in our four-point functions, we would obtain the equations \eqref{eq:shift} and \eqref{eq:shiftd} with $b\to \frac{1}{b}$. Next, we will solve these equations. 
 
 
 \subsection{Determining three-point structure constants}
@@ -977,7 +1054,7 @@ Using the functions $\Upsilon_b(x)$, let us write the ansatz
 where $N_0$ is a function of $b$, and $N(\alpha)$ is a function of $b$ and $\alpha$. 
 Then the shift equation \eqref{eq:shift} reduces to an equation that involves the dependence on $\alpha_1$ only, and that we write as
 \begin{align}
- \frac{C_+(\alpha)N(\alpha-\frac{b}{2})}{C_-(\alpha)N(\alpha+\frac{b}{2})} = \frac{b^{4b(2\alpha-Q)}}{ \gamma(b(2\alpha-Q)) \gamma(1+b(2\alpha-Q))}\ .
+ \frac{C_-(\alpha)N(\alpha-\frac{b}{2})}{C_+(\alpha)N(\alpha+\frac{b}{2})} = \frac{b^{4b(2\alpha-Q)}}{ \gamma(b(2\alpha-Q)) \gamma(1+b(2\alpha-Q))}\ .
 \end{align}
 Combining this equation with the shift equation \eqref{eq:shiftd}, we can eliminate the unknown degenerate OPE coefficients $C_\pm(\alpha)$, and we obtain
 \begin{align}
