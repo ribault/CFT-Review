@@ -958,8 +958,8 @@ Inserting our single-valuedness conditions $c^{(t)}_{+-}=0$ and $c^{(s)}_{-+}=c^
 \end{align}
 Using the known formula for $F_{ij}$, this is explicitly
 \begin{align}
- \frac{c_{--}^{(s)}}{c_{++}^{(s)}} 
- = \frac{\gamma(A)\gamma(B)\gamma(C-A)\gamma(C-B)}{\gamma(C)\gamma(C-1)}\quad \text{with} \quad \gamma(x) =\frac{\Gamma(x)}{\Gamma(1-x)}\ ,
+ \frac{c_{++}^{(s)}} {c_{--}^{(s)}}
+ = \frac{\gamma(C)\gamma(C-1)}{\gamma(A)\gamma(B)\gamma(C-A)\gamma(C-B)}\quad \text{with} \quad \gamma(x) =\frac{\Gamma(x)}{\Gamma(1-x)}\ ,
  \label{eq:coc}
 \end{align}
 where the combinations $A,B,C$ of the momentums $\alpha_1,\alpha_2,\alpha_3$ are given in eq. \eqref{abc}.
@@ -989,7 +989,8 @@ To do this, we deduce the $z\to 0$ behaviour of our four-point function $G(z)$ f
 \end{align}
 Then eq. \eqref{eq:coc} becomes a shift equation for the dependence of $C_{\alpha_1,\alpha_2,\alpha_3}$ on $\alpha_1$,
 \begin{align}
- \frac{C_-(\alpha_1) C_{\alpha_1-\frac{b}{2},\alpha_2,\alpha_3} }{C_+(\alpha_1) C_{\alpha_1+\frac{b}{2},\alpha_2,\alpha_3}} = \frac{\prod_{\pm,\pm} \gamma(\frac12 +b(\alpha_1-\frac{Q}{2}) \pm b(\alpha_2-\frac{Q}{2}) \pm b(\alpha_3-\frac{Q}{2}))}{\gamma(b(2\alpha_1-Q)) \gamma(1+b(2\alpha_1-Q))}\ .
+ \frac{C_+(\alpha_1) C_{\alpha_1+\frac{b}{2},\alpha_2,\alpha_3}}{C_-(\alpha_1) C_{\alpha_1-\frac{b}{2},\alpha_2,\alpha_3} } 
+ = \frac{\gamma(b(2\alpha_1-Q)) \gamma(1+b(2\alpha_1-Q))}{\prod_{\pm,\pm} \gamma(\frac12 +b(\alpha_1-\frac{Q}{2}) \pm b(\alpha_2-\frac{Q}{2}) \pm b(\alpha_3-\frac{Q}{2}))}\ .
  \label{eq:shift}
 \end{align}
 In order to find the three-point structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$, we need to constrain the degenerate OPE coefficients $C_\pm(\alpha)$. To do this, we consider the special case where the last field is degenerate too, i.e. the four-point function $\Big\langle V_{\langle 2,1 \rangle}(z) V_\alpha(0) V_{\alpha}(\infty) V_{\langle 2,1 \rangle}(1)\Big\rangle$.
@@ -1017,9 +1018,9 @@ In this case, using the degenerate OPE \eqref{degope} twice, and the two-point f
 \end{align}
 Then eq. \eqref{eq:coc} boils down to 
 \begin{align}
- \frac{C_-(\alpha)^2 B(\alpha-\tfrac{b}{2})}{C_+(\alpha)^2B(\alpha+\tfrac{b}{2})} 
- =  \frac{\gamma(-b(2\alpha-Q))}{\gamma(b(2\alpha-Q))} 
- \frac{\gamma(-b^2+b(2\alpha-Q))}{\gamma(-b^2-b(2\alpha-Q))} \ .
+ \frac{C_+(\alpha)^2B(\alpha+\tfrac{b}{2})}{C_-(\alpha)^2 B(\alpha-\tfrac{b}{2})}
+ =  \frac{\gamma(b(2\alpha-Q))}{\gamma(-b(2\alpha-Q))}
+ \frac{\gamma(-b^2-b(2\alpha-Q))}{\gamma(-b^2+b(2\alpha-Q))} \ .
  \label{eq:shiftd}
 \end{align}
 Moreover, if we had the degenerate field $V_{\langle 1,2\rangle}$ instead of $V_{\langle 2,1\rangle}$ in our four-point functions, we would obtain the equations \eqref{eq:shift} and \eqref{eq:shiftd} with $b\to \frac{1}{b}$. Next, we will solve these equations. 
@@ -1042,21 +1043,36 @@ For $ib>0$, show that the meromorphic function
 \end{align}
 obeys shift equations that differ from eq. \eqref{upup} by $b^{\cdots} \to (ib)^{\cdots}$.
 \end{exo}
-The functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$ can respectively be defined for $\Re b>0$ and $\Re ib>0$ by analytic continuation. And we have 
+The function that solves the exercise can be written as 
 \begin{align}
  \Upsilon_b(x) = \lambda_b^{(\frac{Q}{2}-x)^2}\prod_{m,n=0}^\infty f\left(\frac{\frac{Q}{2}-x}{\frac{Q}{2}+mb+nb^{-1}}\right) \quad \text{with} \quad f(x)=(1-x^2)e^{x^2}\ ,
+ \label{eq:up}
 \end{align}
 where $\lambda_b$ is an unimportant $b$-dependent constant.
-Using the functions $\Upsilon_b(x)$, let us write the ansatz
+The solution is unique for $b>0$, because the ratio of two solutions would be a continuous function with aligned periods $b$ and $\frac{1}{b}$, and such a function must be constant if $b^2\notin \mathbb{Q}$. In the complex plane, the periods $b$ and $\frac{1}{b}$ indeed look as follows:
+\begin{equation}
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .6]
+\draw (0, 2) node[left]{$i$} -- (0, 1) node[below left] {$0$} -- (1, 1) node[below] {$1$};
+\draw [red, thick, latex-latex] (11,3) -- (11,1) node[fill, circle, minimum size = 1mm, inner sep = 0]{} -- (11,-.3);
+\draw [red, thick, latex-latex] (8,3) -- (7,1) node[fill, circle, minimum size = 1mm, inner sep = 0]{}-- (7.6,-.2);
+\draw [red, thick, latex-latex] (5,1) -- (3,1) node[fill, circle, minimum size = 1mm, inner sep = 0]{} -- (4.3,1) ;
+\node at (4, -1.5){$\begin{array}{c} b>0 \\ c\geq 25 \end{array}$};
+\node at (7.5, -1.5){$\begin{array}{c} b\in \mathbb{C} \\ c\in\mathbb{C} \end{array}$};
+\node at (11, -1.5){$\begin{array}{c} ib>0 \\ c\leq 1 \end{array}$};
+ \end{tikzpicture}
+\end{equation}
+The formula \eqref{eq:up} for $\Upsilon_b(x)$ actually makes sense not only for $b>0$, but for $\Re b>0$. This defines the functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$  for $\Re b>0$ and $\Re ib>0$ respectively, such that they are analytic in $b$. 
+
+Let us now solve the shift equation \eqref{eq:shift} using the function $\Upsilon_b$. We write the ansatz
 \begin{align}
  C_{\alpha_1,\alpha_2,\alpha_3} =  \frac{N_0 \prod_{i=1}^3 N(\alpha_i)}{\Upsilon_b(\alpha_1+\alpha_2+\alpha_3-Q) \Upsilon_b(\alpha_1+\alpha_2-\alpha_3)\Upsilon_b(\alpha_2+\alpha_3-\alpha_1)\Upsilon_b(\alpha_3+\alpha_1-\alpha_2)} \ ,
 \end{align}
 where $N_0$ is a function of $b$, and $N(\alpha)$ is a function of $b$ and $\alpha$. 
-Then the shift equation \eqref{eq:shift} reduces to an equation that involves the dependence on $\alpha_1$ only, and that we write as
+The denominator of this ansatz takes care of the denominator of the shift equation, and we are left with an equation that involves the dependence on $\alpha_1$ only, 
 \begin{align}
- \frac{C_-(\alpha)N(\alpha-\frac{b}{2})}{C_+(\alpha)N(\alpha+\frac{b}{2})} = \frac{b^{4b(2\alpha-Q)}}{ \gamma(b(2\alpha-Q)) \gamma(1+b(2\alpha-Q))}\ .
+ \frac{C_-(\alpha_1)N(\alpha_1-\frac{b}{2})}{C_+(\alpha_1)N(\alpha_1+\frac{b}{2})} = \frac{b^{4b(2\alpha_1-Q)}}{ \gamma(b(2\alpha_1-Q)) \gamma(1+b(2\alpha_1-Q))}\ .
 \end{align}
-Combining this equation with the shift equation \eqref{eq:shiftd}, we can eliminate the unknown degenerate OPE coefficients $C_\pm(\alpha)$, and we obtain
+Combining this equation with the shift equation for $B(\alpha)$ \eqref{eq:shiftd}, we can eliminate the unknown degenerate OPE coefficients $C_\pm(\alpha)$, and we obtain
 \begin{align}
  \frac{\left(N^2B^{-1}\right)(\alpha-\frac{b}{2})}{\left(N^2B^{-1}\right)(\alpha+\frac{b}{2})} = b^{8b(2\alpha-Q)} \frac{\gamma(-b(2\alpha-Q))}{\gamma(b(2\alpha-Q))} \frac{\gamma(-b^2-b(2\alpha-Q))}{\gamma(-b^2+b(2\alpha-Q))}\ .
 \end{align}
@@ -1064,11 +1080,11 @@ Together with its image under $b\to b^{-1}$, this equation has the solution
 \begin{align}
  \left(N^2B^{-1}\right)(\alpha) = \Upsilon_b(2\alpha)\Upsilon_b(2\alpha-Q)\ .
 \end{align}
-Therefore, we can only compute the combination $N^2B^{-1}$, and not the individual functions $B$ and $N$ that appear in the 
+Therefore, we have only determined the combination $N^2B^{-1}$, and not the individual functions $B$ and $N$ that appear in the 
 two- and three-point functions. This is because we still have the freedom of performing changes of field normalization $V_\alpha(z) \to \lambda(\alpha)V_\alpha(z)$. Under such changes, we have $B\to \lambda^2B$ and $N\to \lambda N$, while
-the combination $N^2B^{-1}$ is invariant.
+the combination $N^2B^{-1}$ is invariant. Invariant quantities are the only ones that we can determine before fixing the normalization, and also the only ones that matter physically.
 
-We now adopt the field normalization $N(\alpha)=\Upsilon_b(2\alpha)$, and we also choose $N_0=1$. 
+We now adopt the field normalization such that $N(\alpha)=\Upsilon_b(2\alpha)$, and we also choose $N_0=1$. 
 % Field normalization such that C_+ = 1, and B(\alpha)B(Q-\alpha)=1.
 We obtain the DOZZ formula (for Dorn, Otto, A.
 Zamolodchikov and Al. Zamolodchikov),
@@ -1076,36 +1092,38 @@ Zamolodchikov and Al. Zamolodchikov),
  C_{\alpha_1,\alpha_2,\alpha_3} =  \frac{\Upsilon_b(2\alpha_1) \Upsilon_b(2\alpha_2) \Upsilon_b(2\alpha_3)}{\Upsilon_b(\alpha_1+\alpha_2+\alpha_3-Q) \Upsilon_b(\alpha_1+\alpha_2-\alpha_3)\Upsilon_b(\alpha_2+\alpha_3-\alpha_1)\Upsilon_b(\alpha_3+\alpha_1-\alpha_2)} \ .
 \label{caaa}
 \end{align}
-This formula holds if
-$c\notin ]-\infty, 1]$ i.e. $b\notin i\mathbb{R}$. 
-On the other hand, doing the replacements $\Upsilon_b\to \hat\Upsilon_b$ and $b^{\cdots} \to (ib)^{\cdots}$, we obtain a solution $\hat C$ that holds if  $c\notin [25,\infty[$ i.e. $b\notin \mathbb{R}$.
+For the original derivation of this formula from the Lagrangian formulation of Liouville theory, and the discussion of the formula in various limits, see \cite{zz95}.
 
-In the case of (generalized) minimal models, the momentums $\alpha_{\langle r,s\rangle}$ belong to a lattice with periods $b$ and $\frac{1}{b}$, so they are uniquely determined by the shift equations. The solution is given by $C$ or $\hat C$, which coincide. (Actually $C$ has poles when $\alpha_i$ take degenerate values, one should take the residues.)
+The DOZZ formula holds if
+$c\notin ]-\infty, 1]$ i.e. $\Re b>0$. 
+On the other hand, doing the replacements $\Upsilon_b\to \hat\Upsilon_b$ and $b^{\cdots} \to (ib)^{\cdots}$, we obtain a solution $\hat C$ that holds if  $c\notin [25,\infty[$ i.e. $\Re ib>0$.
+The solution of the shift equations is unique if $b$ and $b^{-1}$ are aligned, i.e. if $b^2\in\mathbb{R}$. Therefore, for generic values of the central charge, both $C$ and $\hat C$ are solutions, and there are actually infinitely many other solutions. In order to prove the existence and uniqueness of Liouville theory, we have to determine which solutions lead to crossing-symmetric four-point functions.
 
-In the case of Liouville theory, the solution is unique if $b$ and $b^{-1}$ are aligned, i.e. if $b^2\in\mathbb{R}$:
-\begin{equation}
- \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .6]
-\draw (0, 2) node[left]{$i$} -- (0, 1) node[below left] {$0$} -- (1, 1) node[below] {$1$};
-\draw [thick, latex-latex] (11,3) -- (11,1) node[fill, circle, minimum size = 1mm, inner sep = 0]{} -- (11,-.3);
-\draw [thick, latex-latex] (8,3) -- (7,1) node[fill, circle, minimum size = 1mm, inner sep = 0]{}-- (7.6,-.2);
-\draw [thick, latex-latex] (5,1) -- (3,1) node[fill, circle, minimum size = 1mm, inner sep = 0]{} -- (4.3,1) ;
-\node at (4, -1.5){$\begin{array}{c} b\in \mathbb{R} \\ c\geq 25 \end{array}$};
-\node at (7.5, -1.5){$\begin{array}{c} b\in \mathbb{C} \\ c\in\mathbb{C} \end{array}$};
-\node at (11, -1.5){$\begin{array}{c} b\in i\mathbb{R} \\ c\leq 1 \end{array}$};
- \end{tikzpicture}
-\end{equation}
-However, for general values of $c$, both $C$ and $\hat C$ are solutions, and there are actually infinitely many other solutions. In order to prove the existence and uniqueness of Liouville theory, we have to determine which solutions lead to crossing-symmetric four-point functions.
+Our shift equations for three-point structure constants, and their solutions, are valid not only for Liouville theory, but also for (generalized) minimal models. In such models, the momentums $\alpha_{\langle r,s\rangle}$ belong to a lattice with periods $b$ and $\frac{1}{b}$, so they are uniquely determined by the shift equations. The solution is given by $C$ or $\hat C$, which coincide. (Actually $C$ has poles when $\alpha_i$ take degenerate values, one should take the residues.) This shows that (generalized) minimal models are unique, but not yet that they exist.
 
 
 \subsection{Crossing symmetry}
 
 We have found that (generalized) minimal models are unique for all values of $c$, while Liouville theory is unique at least if $b^2\in\mathbb{R}$. We will now address the question of their existence. 
 
-The $s$-channel decomposition of a Liouville four-point function reads 
+Using the $V_{\alpha_1}V_{\alpha_2}$ OPE \eqref{eq:v1v2}, let us write
+the $s$-channel decomposition of a Liouville four-point function,
 \begin{align}
- \Big< V_{\alpha_1}(z) V_{\alpha_2}(0) V_{\alpha_3}(\infty) V_{\alpha_4}(1)\Big> = \int_{\frac{Q}{2}+i\mathbb{R}_+} d\alpha\ \frac{C_{\alpha_1,\alpha_2,\alpha} C_{\alpha,\alpha_3, \alpha_4}}{B(\alpha)} \mathcal{F}_{\alpha}^{(s)}(z) \mathcal{F}_{\alpha}^{(s)}(\bar z)\ ,
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .6]
+\draw (-1,2) node [left] {$\alpha_2$} -- (0,0) -- node [above] {$\alpha$} (4,0) -- (5,2) node [right] {$\alpha_3$};
+\draw (-1,-2) node [left] {$\alpha_1$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$\alpha_4$};
+\node at (-2.5, -4) {$\Big< V_{\alpha_1}(z) V_{\alpha_2}(0) V_{\alpha_3}(\infty) V_{\alpha_4}(1)\Big> = \int_{\frac{Q}{2}+i\mathbb{R}_+} d\alpha\ \colorboxed{red}{\frac{C_{\alpha_1,\alpha_2,\alpha}}{B(\alpha)}}\, \colorboxed{red}{ C_{\alpha,\alpha_3, \alpha_4}}\, \mathcal{F}_{\alpha}^{(s)}(z) \mathcal{F}_{\alpha}^{(s)}(\bar z)$};
+\draw[dashed, ->, red] (.6,-2.8) to [out=90, in=-70] (.2, -.3);
+\draw[dashed, ->, red] (3.4,-3.2) to [out=90, in=-110] (3.8, -.3);
+\end{tikzpicture} 
 \end{align}
-where the structure can be $C$ or $\hat C$. Let us accept that the conformal blocks $\mathcal{F}_{\alpha}^{(s)}(z)$ have poles when $\alpha = \alpha_{\langle r, s\rangle} $ \eqref{eq:ars}, the momentums for which the $s$-channel representation becomes reducible.
+where the structure is either $C$ or $\hat C$. Let us accept for a moment that Liouville theory is crossing-symmetric if the central charge is such that the shift equations have unique solutions $C$ or $\hat C$, i.e. for $c\geq 25$ or $c\leq 1$ respectively. 
+The integrand of our $s$-channel decomposition is well-defined, and analytic as a function of $b$, for $c\notin]-\infty,1]$ and $c\notin [25,\infty[$ respectively. 
+If the integral itself was analytic as well, then crossing symmetry would hold in these regions by analyticity. 
+
+In order to investigate the analytic properties of the integral, let us study the singularities of the integrand.
+We accept that the conformal blocks $\mathcal{F}_{\alpha}^{(s)}(z)$ have poles when $\alpha = \alpha_{\langle r, s\rangle} $ \eqref{eq:ars}, the momentums for which the $s$-channel representation becomes reducible.
 We now plot the positions of these poles (blue regions) relative to the integration line (red), depending on the central charge:
 \begin{align}
  \newcommand{\polewedge}[3]{
@@ -1148,23 +1166,30 @@ We now plot the positions of these poles (blue regions) relative to the integrat
  \end{tikzpicture}
  \vspace{3mm}
  \\
- c\in [25,\infty[ & c\notin ]-\infty, 1] \cup [25,\infty[ &  c\in ]-\infty, 1]
+ c\geq 25 & c\notin ]-\infty, 1] \cup [25,\infty[ &  c\leq 1
 \end{array}
 \end{align}
-The four-point function built from $C$ is analytic on $c\notin ]-\infty,1]$. So if Liouville theory exists for $c\in [25,\infty[$, then it also exists for $c\notin ]-\infty,1]$, with the same structure constant $C$. 
-On the other hand, the limit $c\to ]-\infty, 1]$ is singular. Actually, for $c\in ]-\infty, 1]$, the integration line has to be slightly shifted in order to avoid the poles. So the structure constant $\hat C$ is expected to be valid only for $c\in ]-\infty, 1]$.
+When $c$ varies in the region $c\notin ]-\infty,1]$, the poles never cross the integration line.
+Therefore, 
+the four-point function built from $C$ is analytic on $c\notin ]-\infty,1]$. 
+So if Liouville theory exists for $c\geq 25$, then it also exists for $c\notin ]-\infty,1]$, with the same structure constant $C$. 
+On the other hand, if $c\leq 1$, then the poles are on the integration line, and actually the line
+has to be slightly shifted in order to avoid the poles. 
+We cannot analytically continue the four-point function from the region $c\leq 1$ to complex values of $c$, because this would make infinitely many poles cross the integration line.
+So the structure constant $\hat C$ is expected to be valid for $c\leq 1$ only.
 
 That is how far we can easily get with analytic considerations. 
-Let us now seek input from numerical tests of crossing symmetry. (See the associated \href{https://github.com/ribault/bootstrap-2d-Python/blob/master/Liouville_demo_2.ipynb}{Jupyter notebook}.)
-We find that Liouville theory exists for all values of $c$, with the three-point structure constants $C$ for $c\notin ]-\infty,1]$, and $\hat C$ for $c\in ]-\infty, 1]$. 
-We also find that generalized minimal models exist for all values of $c$, and minimal models exist at the discrete values of $c$ where they are defined. 
+Let us now seek input from numerical tests of crossing symmetry. (See the associated \href{https://github.com/ribault/bootstrap-2d-Python/blob/master/Liouville_demo_2.ipynb}{Jupyter notebook}, and the article \cite{rs15}.)
+We find that Liouville theory exists for all values of $c\in\mathbb{C}$, with the three-point structure constants $\hat C$ for $c\leq 1$, and $C$ otherwise.
+We also find that generalized minimal models exist for all values of $c$, and minimal models exist at the discrete values \eqref{eq:bcmin} of $c\leq 1$ where they are defined. 
 And we can numerically compute correlation functions with a good precision.
 
 \section*{Acknowledgements}
 
 I am grateful to the organizers of the Carg\`ese school, for challenging me to explain Liouville theory in about four hours.
 I with to thank Bertrand Eynard, Riccardo Guida and Andr\'e Voros for helpful suggestions and comments.
-And I am grateful to the participants of the Carg\`ese school, for their stimulating participation in the lectures.
+I am grateful to the participants of the Carg\`ese school, for their stimulating participation in the lectures.
+I wish to thank the SciPost editor and reviewers for their feedback and suggestions, which I hope helped make this text accessible to readers who did not attend the lectures.
 
 \bibliographystyle{cft}
 \bibliography{cft}
