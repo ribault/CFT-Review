@@ -922,7 +922,7 @@ Let us schematically write two- and three-point functions in Liouville theory, a
  V_{\alpha_1}V_{\alpha_2} &= \int_{\frac{Q}{2}+i\mathbb{R}_+} d\alpha\, \frac{C_{\alpha_1,\alpha_2,\alpha}}{B(\alpha)} \Big( V_\alpha + \cdots\Big)\ ,
  \label{eq:v1v2}
 \end{align}
-where the expression for the OPE coefficient $\frac{C_{\alpha_1,\alpha_2,\alpha}}{B(\alpha)}$ in terms of two- and three-point structure constants is obtained by inserting the OPE into a three-point function.
+where the expression for the OPE coefficient $\frac{C_{\alpha_1,\alpha_2,\alpha}}{B(\alpha)}$ in terms of two- and three-point structure constants is obtained by inserting the OPE into a three-point function. It would be possible to set $B(\alpha)=1$ by renormalizing the primary fields $V_{\alpha}$, but this would prevent $C_{\alpha_1,\alpha_2,\alpha_3}$ from being a meromorphic function of the momentums, as we will see in Section \ref{sec:sol}.
 
 In order to have reasonably simple crossing symmetry equations, we need degenerate fields. 
 But degenerate fields do not correspond to states in the spectrum, as the spectrum is made of Verma modules (not degenerate representations). So we need a special axiom:
@@ -1038,7 +1038,7 @@ Then eq. \eqref{eq:coc} boils down to
 Moreover, if we had the degenerate field $V_{\langle 1,2\rangle}$ instead of $V_{\langle 2,1\rangle}$ in our four-point functions, we would obtain the equations \eqref{eq:shift} and \eqref{eq:shiftd} with $b\to \frac{1}{b}$. Next, we will solve these equations. 
 
 
-\subsection{Determining three-point structure constants}
+\subsection{Determining three-point structure constants}\label{sec:sol}
 
 In order to solve the shift equations for $C_{\alpha_1,\alpha_2,\alpha_3}$, we need a function that produces Gamma functions when its argument is shifted by $b$ or $\frac{1}{b}$. 
 
@@ -1096,9 +1096,13 @@ Therefore, we have only determined the combination $N^2B^{-1}$, and not the indi
 two- and three-point functions. This is because we still have the freedom of performing changes of field normalization $V_\alpha(z) \to \lambda(\alpha)V_\alpha(z)$. Under such changes, we have $B\to \lambda^2B$ and $N\to \lambda N$, while
 the combination $N^2B^{-1}$ is invariant. Invariant quantities are the only ones that we can determine before fixing the normalization, and also the only ones that matter physically.
 
-We now adopt the field normalization such that $N(\alpha)=\Upsilon_b(2\alpha)$, and we also choose $N_0=1$. 
+Nevertheless, if we had to choose a field normalization, we would choose it so that the structure constants would have nice properties. 
+For example, we would not choose 
+the normalization such that $B(\alpha)=1$, which would cause $N(\alpha)$ (and therefore $C_{\alpha_1,\alpha_2,\alpha_3}$) to have square-root branch cuts.
+We would rather adopt the field normalization such that $N(\alpha)=\Upsilon_b(2\alpha)$, which makes the three-point structure constant meromorphic as a function of the momentums.
+We also choose $N_0=1$, and  
 % Field normalization such that C_+ = 1, and B(\alpha)B(Q-\alpha)=1.
-We obtain the DOZZ formula (for Dorn, Otto, A.
+we obtain the DOZZ formula (for Dorn, Otto, A.
 Zamolodchikov and Al. Zamolodchikov),
 \begin{align}
  C_{\alpha_1,\alpha_2,\alpha_3} =  \frac{\Upsilon_b(2\alpha_1) \Upsilon_b(2\alpha_2) \Upsilon_b(2\alpha_3)}{\Upsilon_b(\alpha_1+\alpha_2+\alpha_3-Q) \Upsilon_b(\alpha_1+\alpha_2-\alpha_3)\Upsilon_b(\alpha_2+\alpha_3-\alpha_1)\Upsilon_b(\alpha_3+\alpha_1-\alpha_2)} \ .
