@@ -110,11 +110,11 @@ In particular, these axioms determine the three-point functions.
 Finally we check that these uniquely defined theories do exist, by studying their four-point functions.
 It is the success of such checks, much more than a priori considerations, that justifies our choices of axioms. 
 
-This text was written with brevity as the main concern, so as to be the basis for about four hours' worth of lectures. 
-It aims to be self-contained, except at the very end when we will refer to \cite{zz90} for the properties of generic conformal blocks.
-For a more detailed text in the same spirit, see the review article \cite{rib14}. For a wider and more advanced review, see Teschner's recent text \cite{tes17}. 
+This text  aims to be self-contained, except at the very end when we will refer to \cite{zz90} for the properties of generic conformal blocks.
+For a more detailed text in the same spirit, see the review article \cite{rib14}. For a wider and more advanced review, and a guide to the recent literature, see Teschner's text \cite{tes17}. 
 The Bible of rational conformal field theory is of course the epic textbook \cite{fms97}. And Cardy's lecture notes \cite{car08} provide an introduction to the statistical physics applications of conformal field theory.
 
+That these lectures are minimal does not just mean that they are relatively brief. This also means that they omit many concepts and assumptions that are usually introduced in two-dimensional conformal field theory, but that are not necessary for our purposes. Among these concepts and assumptions, let us mention the existence of a vacuum state, the notion of unitarity, the construction of fields as operators on the space of states, radial quantization, and consistency on Riemann surfaces other than the sphere.
 
 \section{The Virasoro algebra and its representations}
 
@@ -858,9 +858,10 @@ In particular, for $1\leq r\leq p-1$ and $1\leq s\leq q-1$, there exists a doubl
 \end{align}
 where the factor $\frac12$ is here to avoid counting the same representation twice. This spectrum is not empty provided the coprime integers $p,q$ are both greater than $2$,
 \begin{align}
- p,q \geq 2 \ .
+ p,q \geq 2 \ ,
  \label{eq:pqmin}
 \end{align}
+which implies in particular $b,Q\in i\mathbb{R}$ and $c<1$.
 For other values of $p,q$, it turns out that no minimal models exist.
 
 \begin{exo}[Closure of minimal model spectrums under fusion]
@@ -1207,6 +1208,52 @@ I wish to thank the SciPost editor and reviewers for their feedback and \href{ht
 \bibliography{cft}
 
 %\input{refs.tex}
+
+\pagebreak
+
+\appendix
+
+\section*{Reply to the SciPost reviewers}
+
+I am grateful to the reviewers and editor for their work. I have made many changes, especially in Sections 4 and 5, mainly in order to add or improve explanations. As a result, the revised version is about 3 pages longer than the submitted version, while keeping the same plan. Let me comment on some of the most important changes, before addressing the reviewers' specific concerns:
+\begin{enumerate}
+ \item In Sections 4 and 5, I have made the technical simplification of eliminating the reflection relation and the associated reflection coefficient. Instead, I have introduced a two-point structure constant $B(\alpha)$ in eq. (4.10). 
+ I hope that this makes the bootstrap analysis of Section 5 simpler, both conceptually and technically. 
+ \item I have added 8 references, including some general references that are cited in the Introduction. These general references can serve as guides to the original literature, a role that the present notes do not strive to fulfill. Most references are textbooks or review articles. They do not detract from the self-contained nature of these notes, with the exception of ref. [1] as is now made clear in the Introduction.
+\end{enumerate}
+Reply to Reviewer 1:
+\begin{enumerate}
+ \item Eq. (2.11) is indeed a specialization of eq. (2.10), as is now stated explicitly.
+ \item The absence of antiholomorphic dependence in Section 2 is now stated explicitly after Axiom 2.3. Moreover, the role of $\bar z$ is now explained in more detail after Axiom 3.2.
+ \item Actually, contour deformations are not needed for deriving (2.16). We only need to know the poles and residues of $Z(y)$.
+ \item The mistaken exponent in (2.20) is now corrected.
+ \item I have added a comment after (2.26) on its relation with (2.20), plus the Exercise 3.6 on the same subject.
+ \item The reason for this choice of ordering can be understood graphically in eq. (3.18): it allows the $s$- and $t$-channels to correspond to the limits $z\to 0$ and $z\to 1$ respectively. On the other hand, radial ordering and radial quantization play no role in this text.
+ \item Section 4.1 has been partly rewritten, I hope this answers some of the concerns about minimal models. In particular, there is now a comment on the values of $b, Q$ and $c$ after eq. (4.6). On the other hand I have refrained from commenting on unitarity, which plays no role in classifying and solving minimal models and Liouville theory. This concept would be superfluous in a minimal approach, and is already overemphasized in the existing literature, including in some of the cited references. 
+ \item In my terminology, generalized minimal models are models that exist for all values of $c$, and reduce to minimal models when $c$ takes appropriate discrete values. Therefore, generalized minimal models have much to do with minimal models, and little to do with Liouville theory, as is obvious from their spectrums. 
+ \item The values of $\Delta$ are real for states in the spectrum if $1<c<25$. The conformal dimensions of degenerate representations do become complex for these values of $c$, but this plays no role in the argument. I have followed the suggestion to give the figure (5.14) earlier in the text, and rewritten much of Section 5.
+\end{enumerate}
+Reply to Reviewer 2: I have done a major revision and expansion of Sections 4 and 5 in the hope of clarifying them, while also improving the rest of the text in a more perturbative fashion. Let me now address the 'minimal set of comments': 
+\begin{enumerate}
+ \item I have added more details in the derivation of (2.12).
+ \item I now state that indeed there is an ambiguity in the choice of $\delta_{ij}$, and that this corresponds to different possible definitions of the function $G(z)$. 
+ \item In Exercise 2.8, I have given more justification of the definition of $V_\Delta(\infty)$. This notation is standard and unambiguous, so I am reluctant to change it.
+ \item In what is now Exercise 3.8, I have given more precise guidance and questions. 
+ \item Right. I have reordered the title of Section 4. 
+\end{enumerate}
+Reply to Reviewer 3: I would argue that this text is indeed self-contained, up to a small exception that is now stated explicitly in the Introduction. This text provides unambiguous definitions and solutions of Liouville theory and minimal models, that should be understandable without reference to the literature. 
+
+Admittedly there is relatively little discussion of the choices of axioms, but in the spirit of the axiomatico-deductive methods, axioms are justified a posteriori by the results that can be deduced from them (as I now recall in the Introduction). Admittedly there is also little discussion of the 'state of the art': this discussion is now delegated to ref. [3]. 
+
+Let me address some specific concerns:
+\begin{enumerate}
+ \item The condition for degeneracy in Section 4.1 has been rewritten. The condition (4.3) in the old version was actually not necessary. Doubly degenerate fields do not exist in minimal models only: they can exist whenever $b^2\in\mathbb{Q}$. This is now stated more explicitly, see also Exercise 4.7.
+ \item The reflection relation has been eliminated. Moreover, in Section 4.2 I now explicitly assume that ``each allowed representation appears only once in the spectrum''. 
+ \item Yes a conformal dimension can be shared by two primary states, one of them in the spectrum and the other not. This actually happens in Liouville theory with $c\leq 1$. This issue plays no role in solving the theory, so I would rather not discuss it in the text.
+ \item I would be happy to plug any gaps in the argument, but I do not see any, so long I am allowed to choose my axioms. There are certainly gaps in referring to concepts and assumptions that are present in much of the literature, but not needed in the present argument. (See the Introduction.) Again, I hope that ref. [3] will help the curious reader. 
+\end{enumerate}
+
+
 
 \end{document}
 
