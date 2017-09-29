@@ -10,7 +10,7 @@
 
 \usepackage[top=20mm,bottom=20mm,left=25mm,right=25mm]{geometry}
 
-\usepackage{showkeys}
+%\usepackage{showkeys}
 
 \usepackage{amsfonts, amsmath}
 
@@ -108,8 +108,11 @@ These axioms specify in particular how the Virasoro symmetry algebra acts on fie
 Next, we introduce additional axioms that single out either Liouville theory, or minimal models.
 In particular, these axioms determine the three-point functions. 
 Finally we check that these uniquely defined theories do exist, by studying their four-point functions.
+It is the success of such checks, much more than a priori considerations, that justifies our choices of axioms. 
 
-This text was written with brevity as the main concern, so as to be the basis for about four hours' worth of lectures. For more details along these lines, see the review article \cite{rib14}. For a wider and more advanced review in a similar spirit, see Teschner's recent text \cite{tes17}. 
+This text was written with brevity as the main concern, so as to be the basis for about four hours' worth of lectures. 
+It aims to be self-contained, except at the very end when we will refer to \cite{zz90} for the properties of generic conformal blocks.
+For a more detailed text in the same spirit, see the review article \cite{rib14}. For a wider and more advanced review, see Teschner's recent text \cite{tes17}. 
 The Bible of rational conformal field theory is of course the epic textbook \cite{fms97}. And Cardy's lecture notes \cite{car08} provide an introduction to the statistical physics applications of conformal field theory.
 
 
@@ -153,7 +156,7 @@ This is why we always look for central extensions of symmetry algebras.
   [\mathbf 1, L_n] = 0 \quad , \quad [L_n,L_m] = (n-m)L_{n+m} +\frac{c}{12}(n-1)n(n+1)\delta_{n+m,0}\mathbf 1 \ ,
   \label{eq:vir}
  \end{align}
- where the number $c$ is called the central charge. (The notation $c\mathbf 1$ stands for a central generator that always has the same eigenvalue $c$ in a given conformal field theory.)
+ where the number $c$ is called the central charge. (The notation $c\mathbf 1$ stands for a central generator that always has the same eigenvalue $c$ within a given conformal field theory.)
 \end{defn}
 
 \begin{exo}[Uniqueness of the Virasoro algebra]
@@ -226,7 +229,7 @@ Are Verma module irreducible representations? i.e. do they have nontrivial subre
 In the Verma module $\mathcal V_\Delta$, let us look for null vectors at the level $N=1$. For $n\geq 1$ we have 
 \begin{align}
 L_n L_{-1}|v\rangle = [L_n, L_{-1}] |v\rangle = (n+1) L_{n-1}|v\rangle = 
-\left\{\begin{array}{ll} 0 &  \quad \text{if } n\geq 2 \\ 2\Delta |v\rangle & \quad \text{if } n = 1 \end{array}\right. 
+\left\{\begin{array}{ll} 0 &  \quad \text{if } n\geq 2\ , \\ 2\Delta |v\rangle & \quad \text{if } n = 1\ . \end{array}\right. 
 \end{align}
 So $L_{-1}|v\rangle$ is a null vector if and only if $\Delta=0$, and the Verma module $\mathcal V_0$ is reducible.
 Let us now look for null vectors at the level $N=2$. Let $|\chi\rangle = (L_{-1}^2 + a L_{-2})|v\rangle$, then $L_{n\geq 3} |\chi \rangle =0$. 
@@ -290,7 +293,7 @@ If $\Delta\notin\{\Delta_{\langle r,s\rangle}\}_{r,s\in\mathbb{N}^*}$, then $\ma
  ~\label{def:deg}
 The coset of the reducible Verma module $\mathcal V_{\Delta_{\langle r,s\rangle}}$, by its Verma submodule $\mathcal V_{\Delta_{\langle r,s\rangle}+rs}$, is an irreducible module $\mathcal{R}_{\langle r,s\rangle}$, that is called a degenerate representation:
 \begin{align}
- \mathcal{R}_{\langle r,s\rangle} = \frac{\mathcal V_{\Delta_{\langle r,s\rangle}}}{\mathcal V_{\Delta_{\langle r,s\rangle}+rs}}
+ \mathcal{R}_{\langle r,s\rangle} = \frac{\mathcal V_{\Delta_{\langle r,s\rangle}}}{\mathcal V_{\Delta_{\langle r,s\rangle}+rs}}\ .
 \end{align}
 In this representation, the null vector vanishes,
 \begin{align}
@@ -308,7 +311,7 @@ Now that we understand the algebraic structure of conformal symmetry in two dime
 
 \begin{hyp}[State-field correspondence]
  ~\label{hyp:sfc}
-For any state $|w\rangle$ in the spectrum, there is an associated field $V_{|w\rangle}(z)$. The map $|w\rangle \mapsto V_{|w\rangle}(z)$ is linear. We define the action of the Virasoro algebra on such fields as 
+For any state $|w\rangle$ in the spectrum, there is an associated field $V_{|w\rangle}(z)$. The map $|w\rangle \mapsto V_{|w\rangle}(z)$ is linear and injective. We define the action of the Virasoro algebra on such fields as 
 \begin{align}
  L_n V_{|w\rangle}(z) =  L_n^{(z)} V_{|w\rangle}(z) = V_{L_n|w\rangle}(z)\ .
 \end{align}
@@ -418,7 +421,7 @@ Moreover $T(y)$, and therefore also $Z(y)$, vanish in the limit $y\to \infty$. S
  Z(y) = \sum_{i=1}^N \left(\frac{\Delta_i}{(y-z_i)^2} +\frac{1}{y-z_i}\frac{\partial}{\partial z_i}\right) Z\ .
  \label{eq:zy}
 \end{align}
-But $T(y)$ is not just bounded for $y\to \infty$, it behaves as $O(\frac{1}{y^4})$.
+But $T(y)$ does not just vanish for $y\to \infty$, it behaves as $O(\frac{1}{y^4})$.
 So the coefficients of $y^{-1}, y^{-2}, y^{-3}$ in the large $y$ expansion of $Z(y)$ must vanish, 
 \begin{align}
  \sum_{i=1}^N \partial_{z_i} Z = \sum_{i=1}^N \left(z_i \partial_{z_i} + \Delta_i\right) Z = \sum_{i=1}^N \left(z_i^2 \partial_{z_i} + 2\Delta_iz_i\right) Z = 0\ .
@@ -450,9 +453,9 @@ For four-point functions, the general solution is
 \begin{align}
  \left< \prod_{i=1}^4 V_{\Delta_i}(z_i) \right> = \left(\prod_{i<j}(z_i-z_j)^{\delta_{ij}}\right) G\left(\frac{(z_1-z_2)(z_3-z_4)}{(z_1-z_3)(z_2-z_4)}\right)\ ,
 \end{align}
-where $G$ is an arbitrary function, and $\delta_{ij}$ are such that $\sum_{j\neq i} \delta_{ij} = -2\Delta_i$, where $\delta_{ij}\underset{i>j}{=}\delta_{ji}$. The six numbers $\delta_{ij}$ with $i<j$ are subject to only four equations, leaving two undetermined combinations. Changing these combinations amounts to a redefinition $G(z)\to z^\lambda (1-z)^\mu G(z)$.
+where $G$ is an arbitrary function, and $\delta_{ij}$ are such that $\sum_{j\neq i} \delta_{ij} = -2\Delta_i$, where $\delta_{ij}\underset{i>j}{=}\delta_{ji}$. The six numbers $(\delta_{ij})_{i<j}$ are subject to only four equations, leaving two undetermined combinations. Changing these combinations amounts to a redefinition $G(z)\to z^\lambda (1-z)^\mu G(z)$.
 
-In other words, the three global Ward identities effectively reduces the four-point function to a function of one variable $G$ -- equivalently, we can set $z_2,z_3,z_4$ to fixed values, and recover the four-point function from its dependence on $z_1$ alone. 
+So the three global Ward identities effectively reduce the four-point function to a function of one variable $G$ -- equivalently, we can set $z_2,z_3,z_4$ to fixed values, and recover the four-point function from its dependence on $z_1$ alone. 
 
 \begin{exo}[Conformal symmetry of four-point functions]
 ~\label{exo:4pt}
@@ -544,25 +547,26 @@ Using these axioms for studying conformal field theories is called the conformal
 \end{hyp}
 Our two-point function \eqref{eq:2pt} however has nontrivial monodromy unless $\Delta_1\in \frac12\mathbb{Z}$, as a  result of solving holomorphic Ward identities. 
 We would rather have a single-valued function of the type $|z_1-z_2|^{-4\Delta_1} = (z_1-z_2)^{-2\Delta_1} (\bar z_1-\bar z_2)^{-2\Delta_1}$.
-This suggests that we need anti-holomorphic Ward identities as well, and therefore a second copy of the Virasoro algebra.
+This suggests that we need antiholomorphic Ward identities as well, and therefore a second copy of the Virasoro algebra.
 
 \begin{hyp}[Left and right Virasoro algebras]
  ~\label{hyp:lr}
- We have two mutually commuting Virasoro symmetry algebras with the same central charge, called left-moving or holomorphic, and right-moving or anti-holomorphic. Their generators are written $L_n,\bar L_n$, with in particular
+ We have two mutually commuting Virasoro symmetry algebras with the same central charge, called left-moving or holomorphic, and right-moving or antiholomorphic. Their generators are written $L_n,\bar L_n$, with in particular
  \begin{align}
   \frac{\partial}{\partial z} V(z) = L_{-1}V(z)   \quad , \quad \frac{\partial}{\partial \bar z} V(z)= \bar L_{-1} V(z)   \ .
  \end{align}
  The generators of conformal transformations are the diagonal combinations $L_n+\bar L_n$.
 \end{hyp}
-Let us point out that we do not use the widespread notation $f(z,\bar z)$ for a generic function, and $f(z)$ for a locally holomorphic function (i.e. $\frac{\partial}{\partial \bar z}f(z)=0$). This notation comes from a complexification of the Riemann sphere that makes $z$ and $\bar z$ independent. For us, $\bar z$ is always the complex conjugate of $z$, so the notation $f(z,\bar z)$ would be redundant. 
+Let us point out that we do not use the widespread notation $f(z,\bar z)$ for a generic function, and $f(z)$ for a locally holomorphic function (i.e. a function such that $\frac{\partial}{\partial \bar z}f(z)=0$). This notation comes from a complexification of the Riemann sphere that makes $z$ and $\bar z$ independent. For us, $\bar z$ is always the complex conjugate of $z$, so the notation $f(z,\bar z)$ would be redundant. 
 
-Let us now consider left- and right-primary fields $V_{\Delta_i,\bar\Delta_i}(z_i)$. According to eq. \eqref{eq:3pt}, the three-point function is 
+Let us now consider left- and right-primary fields $V_{\Delta_i,\bar\Delta_i}(z_i)$. According to eq. \eqref{eq:3pt}, the three-point function of such fields is 
 \begin{align}
  \left<\prod_{i=1}^3V_{\Delta_i,\bar\Delta_i}(z_i) \right> \propto (z_1-z_2)^{\Delta_3-\Delta_1-\Delta_2} (\bar z_1-\bar z_2)^{\bar\Delta_3-\bar\Delta_1-\bar\Delta_2} \times \cdots\ .
+ \label{eq:sv3}
 \end{align}
 Single-valuedness as a function of $z_i$ constrains the spins $s_i=\Delta_i-\bar\Delta_i$, 
 \begin{align}
- s_i+s_j-s_k \in \mathbb{Z}\ .
+ s_i+s_j-s_k \in \mathbb{Z}\ , \qquad (i\neq j\neq k)\ .
 \end{align}
 This implies in particular $2s_i\in\mathbb{Z}$. In other words, any primary field $V_{\Delta,\bar\Delta}(z)$ must obey
 \begin{align}
@@ -625,7 +629,7 @@ Inserting the OPE in a three-point function of primary fields, we find
 & =  C_{\Delta_1,\Delta_2,\Delta_3} |z_1-z_2|^{2(\Delta_3-\Delta_1-\Delta_2)} \Big( |z_2-z_3|^{-4\Delta_3} + O(z_1-z_2)\Big)\ ,
 \end{align}
 assuming the two-point function is normalized as $\left< V_{\Delta}(z_1)V_{\Delta}(z_2) \right> = |z_1-z_2|^{-4\Delta}$.
-It follows that $C_{\Delta_1,\Delta_2,\Delta_3}$ coincides with the undertermined constant prefactor of the three-point function \eqref{eq:3pt}. This factor is called the three-point structure constant, and we have
+It follows that $C_{\Delta_1,\Delta_2,\Delta_3}$ coincides with the undertermined constant prefactor of the three-point function \eqref{eq:sv3}. This factor is called the three-point structure constant, and we have
 \begin{align}
  \left<\prod_{i=1}^3 V_{\Delta_i}(z_i) \right> = C_{\Delta_1,\Delta_2,\Delta_3} |z_1-z_2|^{2(\Delta_3-\Delta_1-\Delta_2)} |z_1-z_3|^{2(\Delta_2-\Delta_1-\Delta_3)} |z_2-z_3|^{2(\Delta_1-\Delta_2-\Delta_3)}\ .
 \end{align}
@@ -664,7 +668,7 @@ Conformal blocks are in principle known, as they are universal functions, entire
  \begin{align}
   \mathcal{F}^{(s)}_\Delta(z) = z^{\Delta-\Delta_1-\Delta_2}\left( 1 + \frac{(\Delta+\Delta_1-\Delta_2)(\Delta+\Delta_4-\Delta_3)}{2\Delta}z + O(z^2) \right)\ .
  \end{align}
- Show that the first order term has a pole when the Verma module $\mathcal{V}_\Delta$ has a null vector at level one.
+ Show that the first-order term has a pole when the Verma module $\mathcal{V}_\Delta$ has a null vector at level one.
  Compute the residue of this pole. Compare the condition that this residue vanishes with the condition \eqref{eq:vvvnz} that three-point functions involving $V_{\langle 1,1\rangle}$ exist.
 \end{exo}
 
@@ -714,8 +718,8 @@ Crossing symmetry equations are powerful, but typically involve infinite sums, w
 However, if at least one field is degenerate, then the four-point function belongs to the finite-dimensional space of solutions of a BPZ equation, and is therefore a combination of finitely many conformal blocks. 
 For example,
 $\Big< V_{\langle 2, 1 \rangle}(z) V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1) \Big>$ is a combination of only two holomorphic $s$-channel conformal blocks.
-These blocks are a particular basis of solutions of the BPZ equation \eqref{eq:ode}.
-These two solutions are fully characterized by their asymptotic behaviour near $z=0$ \eqref{eq:gsd}, where the BPZ equation allows only two values of $\Delta$, namely $\Delta\in\{\Delta(\alpha_1-\frac{b}{2}),\Delta(\alpha_1+\frac{b}{2})\}$.
+These two blocks are a particular basis of solutions of the BPZ equation \eqref{eq:ode}.
+They are fully characterized by their asymptotic behaviour near $z=0$ \eqref{eq:gsd}, where the BPZ equation allows only two values of $\Delta$, namely $\Delta\in\{\Delta(\alpha_1-\frac{b}{2}),\Delta(\alpha_1+\frac{b}{2})\}$.
 The explicit expressions of these blocks are
 \begin{align}
 \mathcal{F}^{(s)}_{\alpha_1-\frac{b}{2}}(z) = z^{b\alpha_1} (1-z)^{b\alpha_3} F(A,B,C,z)\quad , \quad 
@@ -837,13 +841,14 @@ In order to have even fewer fields in fusion products, let us consider represent
 
 In order for a representation to have two null vectors, we however need a coincidence of 
 the type $\Delta_{\langle r,s \rangle} = \Delta_{\langle r',s' \rangle}$. 
-This can only occur if the central charge takes particular, discrete values. 
-Given two coprime integers $p,q\geq 2$, let us focus on the case 
+This is equivalent to $\alpha_{\langle r,s \rangle} \in \{ \alpha_{\langle r',s' \rangle}, Q-\alpha_{\langle r',s' \rangle}\}$, and it follows that
+$b^2$ is rational,
 \begin{align} 
- b^2 = - \frac{q}{p} \qquad \text{i.e.} \qquad c = 1-6\frac{(q-p)^2}{pq}\ .
+ b^2 = - \frac{q}{p} \qquad \text{with} \qquad \left\{\begin{array}{l} (p,q)\in \mathbb{N}^*\times \mathbb{Z}^* \\ p\wedge q = 1 \end{array} \right. 
+ \qquad \text{i.e.} \qquad c = 1-6\frac{(q-p)^2}{pq}\ .
  \label{eq:bcmin}
 \end{align}
-For any integers $r,s$, this implies the coincidence 
+For any integers $r,s$, we then have the coincidence 
 \begin{align}
  \Delta_{\langle r,s \rangle} = \Delta_{\langle p-r, q-s\rangle}\ .
 \end{align}
@@ -851,11 +856,16 @@ In particular, for $1\leq r\leq p-1$ and $1\leq s\leq q-1$, there exists a doubl
 \begin{align}
  S_{p, q} = \frac12 \bigoplus_{r=1}^{p-1} \bigoplus_{s=1}^{q-1} \mathcal{R}_{\langle r,s \rangle}\otimes \mathcal{\bar{R}}_{\langle r,s \rangle}\ ,
 \end{align}
-where the factor $\frac12$ is here to avoid counting the same representation twice. 
+where the factor $\frac12$ is here to avoid counting the same representation twice. This spectrum is not empty provided the coprime integers $p,q$ are both greater than $2$,
+\begin{align}
+ p,q \geq 2 \ .
+ \label{eq:pqmin}
+\end{align}
+For other values of $p,q$, it turns out that no minimal models exist.
 
 \begin{exo}[Closure of minimal model spectrums under fusion]
  ~\label{exo:cmm}
- Show that $S_{p,q}$ is closed under fusion. If you are brave, compute the fusion products of the representations that appear in $S_{p,q}$.
+ Show that $S_{p,q}$ is closed under fusion. If you are brave, compute the fusion products of the representations that appear in $S_{p,q}$. If you are very brave, show that $p,q\geq 2$ is a necessary condition for the existence of a finite, nontrivial set of multiply degenerate representations that closes under fusion.
 \end{exo}
 
 \begin{defn}[Diagonal minimal model]
@@ -894,8 +904,9 @@ Let us give some justification for this definition. We are looking for a diagona
   \draw[very thin] (0, -3) -- (0, 3);
  \end{tikzpicture}
 \end{align}
-We also need $\Delta$ to be bounded from below, and the natural bound is $\Delta(\alpha=\frac{Q}{2}) = \frac{Q^2}{4}=\frac{c-1}{24}$. This leads to $\alpha \in \frac{Q}{2}+i\mathbb{R}$, or rather $\alpha \in \frac{Q}{2}+i\mathbb{R}_+$ due to the reflection symmetry \eqref{eq:refm}. This leads
-to our guess \eqref{eq:sl} for the spectrum, equivalently $S^\mathrm{Liouville} 
+From Axiom \ref{hyp:rep}, 
+we need $\Delta$ to be bounded from below, and the natural bound is $\Delta(\alpha=\frac{Q}{2}) = \frac{Q^2}{4}=\frac{c-1}{24}$. This leads to $\alpha \in \frac{Q}{2}+i\mathbb{R}$. Assuming that each allowed representation appears only once in the spectrum, we actually restrict the momentums to $\alpha \in \frac{Q}{2}+i\mathbb{R}_+$, due to the reflection symmetry \eqref{eq:refm}.
+We then obtain our guess \eqref{eq:sl} for the spectrum, equivalently $S^\mathrm{Liouville} 
 = \int_{\frac{c-1}{24}}^\infty d\Delta\ \mathcal V_{\Delta}\otimes \bar{\mathcal{V}}_\Delta $.
 We take this guess to hold not only for $c\in\mathbb{R}$, but also for $c\in\mathbb{C}$ by analyticity.
 
@@ -1068,7 +1079,7 @@ Let us now solve the shift equation \eqref{eq:shift} using the function $\Upsilo
  C_{\alpha_1,\alpha_2,\alpha_3} =  \frac{N_0 \prod_{i=1}^3 N(\alpha_i)}{\Upsilon_b(\alpha_1+\alpha_2+\alpha_3-Q) \Upsilon_b(\alpha_1+\alpha_2-\alpha_3)\Upsilon_b(\alpha_2+\alpha_3-\alpha_1)\Upsilon_b(\alpha_3+\alpha_1-\alpha_2)} \ ,
 \end{align}
 where $N_0$ is a function of $b$, and $N(\alpha)$ is a function of $b$ and $\alpha$. 
-The denominator of this ansatz takes care of the denominator of the shift equation, and we are left with an equation that involves the dependence on $\alpha_1$ only, 
+The denominator of this ansatz takes care of the denominator of the shift equation, which therefore reduces to an equation that involves the dependence on $\alpha_1$ only, 
 \begin{align}
  \frac{C_-(\alpha_1)N(\alpha_1-\frac{b}{2})}{C_+(\alpha_1)N(\alpha_1+\frac{b}{2})} = \frac{b^{4b(2\alpha_1-Q)}}{ \gamma(b(2\alpha_1-Q)) \gamma(1+b(2\alpha_1-Q))}\ .
 \end{align}
@@ -1096,15 +1107,15 @@ For the original derivation of this formula from the Lagrangian formulation of L
 
 The DOZZ formula holds if
 $c\notin ]-\infty, 1]$ i.e. $\Re b>0$. 
-On the other hand, doing the replacements $\Upsilon_b\to \hat\Upsilon_b$ and $b^{\cdots} \to (ib)^{\cdots}$, we obtain a solution $\hat C$ that holds if  $c\notin [25,\infty[$ i.e. $\Re ib>0$.
-The solution of the shift equations is unique if $b$ and $b^{-1}$ are aligned, i.e. if $b^2\in\mathbb{R}$. Therefore, for generic values of the central charge, both $C$ and $\hat C$ are solutions, and there are actually infinitely many other solutions. In order to prove the existence and uniqueness of Liouville theory, we have to determine which solutions lead to crossing-symmetric four-point functions.
+On the other hand, doing the replacement $\Upsilon_b\to \hat\Upsilon_b$, we obtain a solution $\hat C$ that holds if  $c\notin [25,\infty[$ i.e. $\Re ib>0$, together with the corresponding functions $\hat B$ and $\hat N$.
+The solution of the shift equations is unique if $b$ and $b^{-1}$ are aligned, i.e. if $b^2\in\mathbb{R}$. Therefore, for generic values of the central charge, both $C$ and $\hat C$ are solutions, and there are actually infinitely many other solutions. In order to prove the existence and uniqueness of Liouville theory, we will have to determine which solutions lead to crossing-symmetric four-point functions.
 
 Our shift equations for three-point structure constants, and their solutions, are valid not only for Liouville theory, but also for (generalized) minimal models. In such models, the momentums $\alpha_{\langle r,s\rangle}$ belong to a lattice with periods $b$ and $\frac{1}{b}$, so they are uniquely determined by the shift equations. The solution is given by $C$ or $\hat C$, which coincide. (Actually $C$ has poles when $\alpha_i$ take degenerate values, one should take the residues.) This shows that (generalized) minimal models are unique, but not yet that they exist.
 
 
 \subsection{Crossing symmetry}
 
-We have found that (generalized) minimal models are unique for all values of $c$, while Liouville theory is unique at least if $b^2\in\mathbb{R}$. We will now address the question of their existence. 
+We have found that (generalized) minimal models are unique, while Liouville theory is unique at least if $b^2\in\mathbb{R}$. We will now address the question of their existence. 
 
 Using the $V_{\alpha_1}V_{\alpha_2}$ OPE \eqref{eq:v1v2}, let us write
 the $s$-channel decomposition of a Liouville four-point function,
@@ -1113,17 +1124,18 @@ the $s$-channel decomposition of a Liouville four-point function,
 \draw (-1,2) node [left] {$\alpha_2$} -- (0,0) -- node [above] {$\alpha$} (4,0) -- (5,2) node [right] {$\alpha_3$};
 \draw (-1,-2) node [left] {$\alpha_1$} -- (0,0);
 \draw (4,0) -- (5,-2) node [right] {$\alpha_4$};
-\node at (-2.5, -4) {$\Big< V_{\alpha_1}(z) V_{\alpha_2}(0) V_{\alpha_3}(\infty) V_{\alpha_4}(1)\Big> = \int_{\frac{Q}{2}+i\mathbb{R}_+} d\alpha\ \colorboxed{red}{\frac{C_{\alpha_1,\alpha_2,\alpha}}{B(\alpha)}}\, \colorboxed{red}{ C_{\alpha,\alpha_3, \alpha_4}}\, \mathcal{F}_{\alpha}^{(s)}(z) \mathcal{F}_{\alpha}^{(s)}(\bar z)$};
+\node at (-2.5, -4) {$\Big< V_{\alpha_1}(z) V_{\alpha_2}(0) V_{\alpha_3}(\infty) V_{\alpha_4}(1)\Big> = {\displaystyle\int_{\frac{Q}{2}+i\mathbb{R}_+}} d\alpha\ \colorboxed{red}{\frac{C_{\alpha_1,\alpha_2,\alpha}}{B(\alpha)}}\, \colorboxed{red}{ C_{\alpha,\alpha_3, \alpha_4}}\, \mathcal{F}_{\alpha}^{(s)}(z) \mathcal{F}_{\alpha}^{(s)}(\bar z)$};
 \draw[dashed, ->, red] (.6,-2.8) to [out=90, in=-70] (.2, -.3);
 \draw[dashed, ->, red] (3.4,-3.2) to [out=90, in=-110] (3.8, -.3);
 \end{tikzpicture} 
 \end{align}
-where the structure is either $C$ or $\hat C$. Let us accept for a moment that Liouville theory is crossing-symmetric if the central charge is such that the shift equations have unique solutions $C$ or $\hat C$, i.e. for $c\geq 25$ or $c\leq 1$ respectively. 
-The integrand of our $s$-channel decomposition is well-defined, and analytic as a function of $b$, for $c\notin]-\infty,1]$ and $c\notin [25,\infty[$ respectively. 
+(We have a similar expression with $B,C \to \hat B,\hat C$ whenever the solutions $\hat B, \hat C$ exist.)
+Let us accept for a moment that Liouville theory is crossing-symmetric if the central charge is such that the shift equations have unique solutions $C$ or $\hat C$, i.e. for $c\geq 25$ or $c\leq 1$ respectively. 
+The integrand of our $s$-channel decomposition is well-defined, and analytic as a function of $b$, in the much larger regions $c\notin]-\infty,1]$ and $c\notin [25,\infty[$ respectively. 
 If the integral itself was analytic as well, then crossing symmetry would hold in these regions by analyticity. 
 
 In order to investigate the analytic properties of the integral, let us study the singularities of the integrand.
-We accept that the conformal blocks $\mathcal{F}_{\alpha}^{(s)}(z)$ have poles when $\alpha = \alpha_{\langle r, s\rangle} $ \eqref{eq:ars}, the momentums for which the $s$-channel representation becomes reducible.
+We accept that the conformal blocks $\mathcal{F}_{\alpha}^{(s)}(z)$ have poles when $\alpha = \alpha_{\langle r, s\rangle} $ \eqref{eq:ars}, the momentums for which the $s$-channel representation becomes reducible \cite{zz90}.
 We now plot the positions of these poles (blue regions) relative to the integration line (red), depending on the central charge:
 \begin{align}
  \newcommand{\polewedge}[3]{
@@ -1179,7 +1191,7 @@ We cannot analytically continue the four-point function from the region $c\leq 1
 So the structure constant $\hat C$ is expected to be valid for $c\leq 1$ only.
 
 That is how far we can easily get with analytic considerations. 
-Let us now seek input from numerical tests of crossing symmetry. (See the associated \href{https://github.com/ribault/bootstrap-2d-Python/blob/master/Liouville_demo_2.ipynb}{Jupyter notebook}, and the article \cite{rs15}.)
+Let us now seek input from numerical tests of crossing symmetry, using Al. Zamolodchikov's recursive formula for computing conformal blocks \cite{zz90}. (See the associated \href{https://github.com/ribault/bootstrap-2d-Python/blob/master/Liouville_demo_2.ipynb}{Jupyter notebook}, and the article \cite{rs15}.)
 We find that Liouville theory exists for all values of $c\in\mathbb{C}$, with the three-point structure constants $\hat C$ for $c\leq 1$, and $C$ otherwise.
 We also find that generalized minimal models exist for all values of $c$, and minimal models exist at the discrete values \eqref{eq:bcmin} of $c\leq 1$ where they are defined. 
 And we can numerically compute correlation functions with a good precision.
@@ -1189,7 +1201,7 @@ And we can numerically compute correlation functions with a good precision.
 I am grateful to the organizers of the Carg\`ese school, for challenging me to explain Liouville theory in about four hours.
 I with to thank Bertrand Eynard, Riccardo Guida and Andr\'e Voros for helpful suggestions and comments.
 I am grateful to the participants of the Carg\`ese school, for their stimulating participation in the lectures.
-I wish to thank the SciPost editor and reviewers for their feedback and suggestions, which I hope helped make this text accessible to readers who did not attend the lectures.
+I wish to thank the SciPost editor and reviewers for their feedback and \href{https://scipost.org/submission/1609.09523v2/}{suggestions}, which led to many improvements, both perturbative and non-perturbative.
 
 \bibliographystyle{cft}
 \bibliography{cft}
