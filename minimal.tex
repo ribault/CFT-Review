@@ -592,7 +592,13 @@ From now on we will use the notation $V_\Delta(z)$ for the diagonal field $V_{\D
  In a correlation functions,
  this sum converges for $z_1$ sufficiently close to $z_2$.
 \end{hyp}
-If the spectrum is made of diagonal primary states and their descendent states, the OPE of two primary fields is
+While the linear equations of Section \ref{sec:cft} relate $N$-point functions to other $N$-point function, OPEs allow us to reduce $N$-point functions to $(N-1)$-point functions. 
+The price to pay for this reduction is the introduction of OPE coefficients. 
+Using OPEs iteratively, we can actually reduce any correlation function to a combination of OPE coefficients, and two-point functions. (We stop at two-point functions because they are simple enough for being considered as known quantities.) 
+
+Let us study some properties of OPE coefficients. 
+Assuming that
+the spectrum is made of diagonal primary states and their descendent states, the OPE of two primary fields is
 \begin{align}
  V_{\Delta_1}(z_1) V_{\Delta_2}(z_2) 
  = \sum_{\Delta\in S} C_{\Delta_1,\Delta_2,\Delta} |z_1-z_2|^{2(\Delta-\Delta_1-\Delta_2)}
@@ -600,7 +606,8 @@ If the spectrum is made of diagonal primary states and their descendent states, 
  \label{eq:ope}
 \end{align}
 where the subleading terms are contributions of descendents fields. 
-In particular, the $z_1,z_2$-dependence of the coefficients is dictated by global conformal invariance eq. \eqref{eq:zgc}, leaving a $z_i$-independent unknown factor $C_{\Delta_1,\Delta_2,\Delta}$.
+In particular, the $z_1,z_2$-dependence of the coefficients is dictated by the behaviour \eqref{eq:zgc}
+of correlation functions under translations $z_i\to z_i+c$ and dilatations $z_i\to\lambda z_i$, leaving a $z_i$-independent unknown factor $C_{\Delta_1,\Delta_2,\Delta}$.
 Then, as in correlation functions, contributions of descendents are deduced from contributions of primaries via local Ward identitites.
 
 \begin{exo}[Computing the OPE of primary fields]
@@ -620,7 +627,7 @@ Using $\frac{\partial}{\partial z_1} V_{\langle 1,1\rangle}(z_1)=0$, show that t
 where the subleading terms vanish. Inserting this OPE in a correlation function, show that the constant $C_\Delta$ actually does not depend on $\Delta$. Deduce that, up to a factor $C=C_\Delta$, the field $V_{\langle 1,1\rangle}$ is an identity field.
 \end{exo}
 
-
+We will now express three- and four-point functions in terms of OPE coefficients, and deduce constraints on these coefficients.
 Inserting the OPE in a three-point function of primary fields, we find 
 \begin{align}
  \left<\prod_{i=1}^3 V_{\Delta_i}(z_i) \right> & = \sum_{\Delta\in S}C_{\Delta_1,\Delta_2,\Delta} |z_1-z_2|^{2(\Delta-\Delta_1-\Delta_2)}
@@ -712,7 +719,7 @@ Given the spectrum $S$, crossing symmetry is a system of quadratic equations for
 In diagonal theories, crossing symmetry implies the existence of arbitrary correlation functions on the sphere \cite{ms89b}, and not just of four-point functions.
 
 
-\subsection{Degenerate fields and the fusion product}
+\subsection{Degenerate fields and the fusion product}\label{sec:dffp}
 
 Crossing symmetry equations are powerful, but typically involve infinite sums, which makes them difficult to solve.
 However, if at least one field is degenerate, then the four-point function belongs to the finite-dimensional space of solutions of a BPZ equation, and is therefore a combination of finitely many conformal blocks. 
@@ -783,7 +790,7 @@ such that
 \end{align}
 where the superscript in $\overset{2}{=}$ indicates that the corresponding sum runs by increments of $2$. 
 \end{exo}
-
+The knowledge of such fusion products will be crucial for defining and studying minimal models, whose spectrums are made of degenerate representations. 
 
 \section{Minimal models and Liouville theory}
 
@@ -799,7 +806,7 @@ A (model of) conformal field theory on the Riemann sphere is a spectrum $S$ and 
  To define a conformal field theory is to give principles that uniquely determine its spectrum and correlation functions.
  To solve a conformal field theory is to actually compute them.
 \end{defn}
-In this Section we will define Liouville theory and minimal models. In Section \ref{sec:4pt} we will solve them.
+In this Section we will define minimal models and Liouville theory. In Section \ref{sec:4pt} we will solve them.
 
 
 \subsection{Diagonal minimal models}
@@ -829,7 +836,7 @@ Let us assume that the spectrum contains a nontrivial degenerate representation 
 
 \begin{defn}[Generalized minimal model]
  ~\label{def:gmm}
- For any value of the central charge $c$, the generalized minimal model is the conformal field theory whose spectrum is
+ For any value of the central charge $c\in\mathbb{C}$, the generalized minimal model is the conformal field theory whose spectrum is
  \begin{align}
   S^\mathrm{GMM} = \bigoplus_{r=1}^\infty \bigoplus_{s=1}^\infty \mathcal{R}_{\langle r,s \rangle}\otimes  \mathcal{\bar R}_{\langle r,s \rangle} \ ,
  \end{align}
@@ -925,7 +932,8 @@ Let us schematically write two- and three-point functions in Liouville theory, a
 where the expression for the OPE coefficient $\frac{C_{\alpha_1,\alpha_2,\alpha}}{B(\alpha)}$ in terms of two- and three-point structure constants is obtained by inserting the OPE into a three-point function. It would be possible to set $B(\alpha)=1$ by renormalizing the primary fields $V_{\alpha}$, but this would prevent $C_{\alpha_1,\alpha_2,\alpha_3}$ from being a meromorphic function of the momentums, as we will see in Section \ref{sec:sol}.
 
 In order to have reasonably simple crossing symmetry equations, we need degenerate fields. 
-But degenerate fields do not correspond to states in the spectrum, as the spectrum is made of Verma modules (not degenerate representations). So we need a special axiom:
+But the spectrum of Liouville theory is made of Verma modules, and does not involve any degenerate representations.
+In order to have degenerate fields, we need a special axiom:
 
 \begin{hyp}[Degenerate fields in Liouville theory]
  ~\label{hyp:degl}
@@ -944,13 +952,14 @@ Let us determine the three-point structure constant by solving crossing symmetry
 
 \subsection{Single-valued four-point functions}
 
-The four-point function $G(z) = \Big< V_{\langle 2, 1 \rangle}(z) V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1) \Big>$ obeys second-order BPZ equations in $z$ and $\bar z$, and the most general solution is
+The four-point function $G(z) = \Big< V_{\langle 2, 1 \rangle}(z) V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1) \Big>$ obeys second-order BPZ equations in $z$ and $\bar z$. The most general solution of these two equations can be written in terms of the $s$-channel conformal blocks $\mathcal{F}^{(s)}_{\alpha_1\pm\frac{b}{2}}$ of Section \ref{sec:dffp} as
 \begin{align}
  G(z) = \sum_{i,j=\pm} c^{(s)}_{ij} \mathcal{F}^{(s)}_{\alpha_1+i\frac{b}{2}}(z) \mathcal{F}^{(s)}_{\alpha_1+j\frac{b}{2}}(\bar z)\ .
  \label{gzs}
 \end{align}
-Let us first require that $G(z)$ be single-valued in the limit $z\to 0$. 
-In this limit, each one of the two $s$-channel conformal blocks $\mathcal{F}^{(s)}_{\alpha_1\pm\frac{b}{2}}(z)$ behaves as a power of $z$ \eqref{eq:gsd}, with its own exponent. For a generic value of $\alpha_1$, the difference of their two exponents is not integer, and $\mathcal{F}^{(s)}_{\alpha_1-\frac{b}{2}}(z) \mathcal{F}^{(s)}_{\alpha_1+\frac{b}{2}}(\bar z)$ is not single-valued near $z=0$. On the other hand, the two terms $\mathcal{F}^{(s)}_{\alpha_1\pm\frac{b}{2}}(z) \mathcal{F}^{(s)}_{\alpha_1\pm\frac{b}{2}}(\bar z)$ are single-valued. We conclude that $c^{(s)}_{+-} = c^{(s)}_{-+}=0$. Similarly, if we decompose the same four-point function in the $t$-channel basis of conformal blocks,
+Let us determine how single-valuedness constrains the coefficients $c^{(s)}_{ij}$. 
+Our conformal blocks have singularities at $z=0,1,\infty$, and single-valuedness is equivalent to $G(z)$ having trivial monodromy around $z=0,1$. 
+Our $s$-channel decomposition is convenient for studying the monodromy around $z=0$: near this point, each one of the two $s$-channel conformal blocks $\mathcal{F}^{(s)}_{\alpha_1\pm\frac{b}{2}}(z)$ behaves as a power of $z$ \eqref{eq:gsd}, with its own exponent. For a generic value of $\alpha_1$, the difference of their two exponents is not integer, and $\mathcal{F}^{(s)}_{\alpha_1-\frac{b}{2}}(z) \mathcal{F}^{(s)}_{\alpha_1+\frac{b}{2}}(\bar z)$ is not single-valued near $z=0$. On the other hand, the two terms $\mathcal{F}^{(s)}_{\alpha_1\pm\frac{b}{2}}(z) \mathcal{F}^{(s)}_{\alpha_1\pm\frac{b}{2}}(\bar z)$ are single-valued. We conclude that $c^{(s)}_{+-} = c^{(s)}_{-+}=0$. Similarly, if we decompose the same four-point function in the $t$-channel basis of conformal blocks,
 \begin{align}
  G(z) = \sum_{i,j=\pm} c^{(t)}_{ij} \mathcal{F}^{(t)}_{\alpha_1+i\frac{b}{2}}(z) \mathcal{F}^{(t)}_{\alpha_1+j\frac{b}{2}}(\bar z)\ ,
 \end{align}
@@ -977,8 +986,7 @@ Using the known formula for $F_{ij}$, this is explicitly
 where the combinations $A,B,C$ of the momentums $\alpha_1,\alpha_2,\alpha_3$ are given in eq. \eqref{abc}.
 
 This concludes the mathematical exercise of finding single-valued solutions of the hypergeometric equation. 
-Now, in the case of Liouville theory, let us determine the coefficients $c^{(s)}_{ij}$.
-To do this, we deduce the $z\to 0$ behaviour of our four-point function $G(z)$ from the degenerate OPE \eqref{degope} and the three-point function \eqref{eq:vvv}, and find
+Now, in the case of Liouville theory, let us determine the coefficients $c^{(s)}_{ij}$ in terms of OPE coefficients and three-point structure constants. Using the degenerate OPE \eqref{degope} and the three-point function \eqref{eq:vvv}, we find
 \begin{align}
  \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .6]
 \draw (-1,2) node [left] {$\alpha_1$} -- (0,0) -- node [above] {$\alpha_1-\frac{b}{2}$} (4,0) -- (5,2) node [right] {$\alpha_2$};
@@ -1091,6 +1099,7 @@ Combining this equation with the shift equation for $B(\alpha)$ \eqref{eq:shiftd
 Together with its image under $b\to b^{-1}$, this equation has the solution
 \begin{align}
  \left(N^2B^{-1}\right)(\alpha) = \Upsilon_b(2\alpha)\Upsilon_b(2\alpha-Q)\ .
+ \label{eq:ntbm}
 \end{align}
 Therefore, we have only determined the combination $N^2B^{-1}$, and not the individual functions $B$ and $N$ that appear in the 
 two- and three-point functions. This is because we still have the freedom of performing changes of field normalization $V_\alpha(z) \to \lambda(\alpha)V_\alpha(z)$. Under such changes, we have $B\to \lambda^2B$ and $N\to \lambda N$, while
@@ -1139,7 +1148,8 @@ Let us accept for a moment that Liouville theory is crossing-symmetric if the ce
 The integrand of our $s$-channel decomposition is well-defined, and analytic as a function of $b$, in the much larger regions $c\notin]-\infty,1]$ and $c\notin [25,\infty[$ respectively. 
 If the integral itself was analytic as well, then crossing symmetry would hold in these regions by analyticity. 
 
-In order to investigate the analytic properties of the integral, let us study the singularities of the integrand.
+In order to investigate the analytic properties of the integral, let us first extend the integration half-line to a line, $\int_{\frac{Q}{2}+i\mathbb{R}_+} \to \frac12 \int_{\frac{Q}{2}+i\mathbb{R}}$. This is possible because the integrand is invariant under $\alpha \to Q-\alpha$: the conformal blocks are invariant because they are functions of the conformal dimension \eqref{eq:refm}, and the combination $B(\alpha)^{-1}C_{\alpha_1,\alpha_2,\alpha}C_{\alpha,\alpha_3, \alpha_4}$ of structure constants is invariant as a consequence of $\Upsilon_b(\alpha)=\Upsilon_b(Q-\alpha)$. 
+Let us then study the singularities of the integrand.
 We accept that the conformal blocks $\mathcal{F}_{\alpha}^{(s)}(z)$ have poles when $\alpha = \alpha_{\langle r, s\rangle} $ \eqref{eq:ars}, the momentums for which the $s$-channel representation becomes reducible \cite{zz90}.
 We now plot the positions of these poles (blue regions) relative to the integration line (red), depending on the central charge:
 \begin{align}
@@ -1213,17 +1223,19 @@ I wish to thank the SciPost editor and reviewers for their feedback and \href{ht
 
 %\input{refs.tex}
 
+\end{document}
+
 \pagebreak
 
 \appendix
 
 \section*{Reply to the SciPost reviewers}
 
-I am grateful to the reviewers and editor for their work. I have made many changes, especially in Sections 4 and 5, mainly in order to add or improve explanations. As a result, the revised version is about 3 pages longer than the submitted version, while keeping the same plan. Let me comment on some of the most important changes, before addressing the reviewers' specific concerns:
+I am grateful to the reviewers and editor for their work. I have made many changes, especially in Sections 4 and 5, mainly in order to add or improve explanations. As a result, the revised version is more than 3 pages longer than the submitted version, while keeping the same plan. Let me comment on some of the most important changes, before addressing the reviewers' specific concerns:
 \begin{enumerate}
  \item In Sections 4 and 5, I have made the technical simplification of eliminating the reflection relation and the associated reflection coefficient. Instead, I have introduced a two-point structure constant $B(\alpha)$ in eq. (4.10). 
  I hope that this makes the bootstrap analysis of Section 5 simpler, both conceptually and technically. 
- \item I have added 8 references, including some general references that are cited in the Introduction. These general references can serve as guides to the original literature, a role that the present notes do not strive to fulfill. Most references are textbooks or review articles. They do not detract from the self-contained nature of these notes, with the exception of ref. [1] as is now made clear in the Introduction.
+ \item I have added 8 references, including some general references that are cited in the Introduction. These general references can serve as guides to the original literature, a role that the present notes do not strive to fulfill. Most references are textbooks or review articles. They do not detract from the self-contained nature of these notes, up to one exception which is pointed out in the Introduction.
 \end{enumerate}
 Reply to Reviewer 1:
 \begin{enumerate}
@@ -1237,7 +1249,7 @@ Reply to Reviewer 1:
  \item In my terminology, generalized minimal models are models that exist for all values of $c$, and reduce to minimal models when $c$ takes appropriate discrete values. Therefore, generalized minimal models have much to do with minimal models, and little to do with Liouville theory, as is obvious from their spectrums. 
  \item The values of $\Delta$ are real for states in the spectrum if $1<c<25$. The conformal dimensions of degenerate representations do become complex for these values of $c$, but this plays no role in the argument. I have followed the suggestion to give the figure (5.14) earlier in the text, and rewritten much of Section 5.
 \end{enumerate}
-Reply to Reviewer 2: I have done a major revision and expansion of Sections 4 and 5 in the hope of clarifying them, while also improving the rest of the text in a more perturbative fashion. Let me now address the 'minimal set of comments': 
+Reply to Reviewer 2: I have done a major revision and expansion of Sections 4 and 5 in the hope of clarifying them, while also improving the rest of the text in a more perturbative fashion. There are also some more explanations in Section 3, in particular at the beginning of Section 3.2. Let me now address the 'minimal set of comments': 
 \begin{enumerate}
  \item I have added more details in the derivation of (2.12).
  \item I now state that indeed there is an ambiguity in the choice of $\delta_{ij}$, and that this corresponds to different possible definitions of the function $G(z)$. 
