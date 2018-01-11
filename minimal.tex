@@ -586,12 +586,12 @@ From now on we will use the notation $V_\Delta(z)$ for the diagonal field $V_{\D
 
 \begin{hyp}[Operator product expansion]
  ~\label{hyp:ope}
- Let $V_1(z_1)$ and $V_2(z_2)$ be two fields, and $|w_i\rangle$ be a basis of the spectrum.
+ Let $(|w_i\rangle)$ be a basis of the spectrum.
  There exist coefficients $C^i_{12}(z_1,z_2)$ such that we have the operator product expansion (OPE) 
  \begin{align}
-  V_1(z_1)V_2(z_2) = \sum_i C^i_{12}(z_1,z_2) V_{|w_i\rangle}(z_2)\ .
+  V_{|w_1\rangle}(z_1)V_{|w_2\rangle}(z_2) = \sum_i C^i_{12}(z_1,z_2) V_{|w_i\rangle}(z_2)\ .
  \end{align}
- In a correlation functions,
+ In a correlation function,
  this sum converges for $z_1$ sufficiently close to $z_2$.
 \end{hyp}
 While the linear equations of Section \ref{sec:cft} relate $N$-point functions to other $N$-point function, OPEs allow us to reduce $N$-point functions to $(N-1)$-point functions. 
@@ -1295,7 +1295,7 @@ Reply to Reviewer 1: The typo after (3.15) is now corrected.
 
 Reply to Reviewer 3:
 \begin{enumerate}
- \item Strictly speaking, the OPE of degenerate fields is not covered by Axiom 3.4, because the degenerate fields do not belong to the spectrum. So I have taken this issue as a gap to be filled, rather than a contradiction to be resolved. After Axiom 4.10 on the existence of degenerate fields, I have therefore discussed how Axiom 3.4 should be generalized to the OPE in question. The generalization is dictated by the fusion rules.
+ \item There was indeed a contradition because Axiom 3.4 was formulated too strongly. I have modified that Axiom so that it applies only to fields that correspond to states in the spectrum. Then OPEs of degenerate fields are not covered, and should be discussed separately. I have added such a discussion after Axiom 4.10. 
  \item I have added a paragraph at the very end of Section 5, in order to make contact with the original definition (and naming) of Liouville theory, and to refer the reader to ref. [3] for more details.
  \item I have added  a paragraph between eqs. (4.10) and (4.11) in order to further discuss the guess for the lower bound, and to mention the alternative guess that the lower bound could be zero.
  \item Between eqs. (5.18) and (5.19), I have amended the discussion of invariance under field renormalization: it is now stated that invariant quantities are sufficient for checking crossing symmetry, and explained why we may want to choose a normalization.
