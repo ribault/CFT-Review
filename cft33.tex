@@ -396,11 +396,11 @@ The idea is now that the dependence of a correlation function $\left\langle \pro
 This idea however comes with a number of technical assumptions.
 In particular, for the dependence on $v_i$ to be completely determined by symmetry, $R_i$ must be an \textbf{\boldmath indecomposable representation}\index{indecomposable representation}, i.e. a representation that cannot be written as a direct sum of smaller representations.
 \begin{align}
- R \ \ \text{indecomposable} \quad \Leftrightarrow \quad \nexists R',R'' \neq 0 \quad | \quad R = R'\oplus R''\ .
+ R \ \ \text{indecomposable} \quad \iff \quad \nexists R',R'' \neq 0 \quad | \quad R = R'\oplus R''\ .
 \end{align}
 In particular, any \textbf{\boldmath irreducible representation}\index{irreducible representation}, which by definition does not have a nontrivial subrepresentation, is indecomposable,
 \begin{align}
- R \ \ \text{irreducible} \quad \Leftrightarrow \quad \nexists R' \neq 0,R \quad | \quad R'\subset R\ .
+ R \ \ \text{irreducible} \quad \iff \quad \nexists R' \neq 0,R \quad | \quad R'\subset R\ .
 \end{align}
 (See Exercise \ref{exoirr} for an example of an indecomposable representation that is not irreducible.)
 
@@ -813,7 +813,7 @@ This is motivated by the interpretation of the dilatation generator $L_0+\bar L_
 Two important special cases are
 \begin{itemize}
 \item \textbf{\boldmath rational models}\index{rational model}, where the spectrum involves finitely many irreducible representations,
- \item \textbf{\boldmath diagonal models}\index{diagonal model}, where the spectrum is of the type $S=\bigoplus_{R\in \text{Rep}(\mathfrak{V})} m_R R\otimes \bar{R}$, i.e. $m_{R,R'}\neq 0 \Rightarrow R=R'$ in eq. \eqref{sorr}.
+ \item \textbf{\boldmath diagonal models}\index{diagonal model}, where the spectrum is of the type $S=\bigoplus_{R\in \text{Rep}(\mathfrak{V})} m_R R\otimes \bar{R}$, i.e. $m_{R,R'}\neq 0 \implies R=R'$ in eq. \eqref{sorr}.
 \end{itemize}
 
 \begin{hyp}[Closure under fusion]
@@ -1305,7 +1305,7 @@ The vanishing of these two vectors leads to a system of two linear equations for
 \end{align}
 Singular vectors at the level $N=2$ exist if and only if
 \begin{align}
-D_2(\Delta)=0 \quad \Leftrightarrow \quad \Delta = \frac{5-c\pm \sqrt{(c-25)(c-1)}}{16}\ .
+D_2(\Delta)=0 \quad \iff \quad \Delta = \frac{5-c\pm \sqrt{(c-25)(c-1)}}{16}\ .
 \label{dcscc}
 \end{align}
 As our last explicit example, we look for a singular vector at the level $N=3$,
@@ -1325,7 +1325,7 @@ This leads to a system of three linear equations for the three unknowns $(a_{1,1
 \end{align}
 Singular vectors at the level $N=3$ exist if and only if 
 \begin{align}
- D_3(\Delta) = 0 \quad \Leftrightarrow \quad \Delta = \frac{7-c\pm\sqrt{(c-25)(c-1)}}{6}\ .
+ D_3(\Delta) = 0 \quad \iff \quad \Delta = \frac{7-c\pm\sqrt{(c-25)(c-1)}}{6}\ .
 \end{align}
 
 \subsubsection{Liouville notations}
@@ -1901,7 +1901,7 @@ and $F(x_1,x_2,\cdots x_{N-3})$ is an arbitrary function of the \textbf{\boldmat
 \end{align}
 which are invariant under the global conformal transformations \eqref{gisl}.
 
-The function $F(x_1,x_2,\cdots x_{N-3})$ is related to an $N$-point function with $(z_{N-2},z_{N-1},z_N)=(0,\infty,1)$, as we now illustrate in the case $N=4$.
+Then $F(x_1,x_2,\cdots x_{N-3})$ is related to an $N$-point function with $(z_{N-2},z_{N-1},z_N)=(0,\infty,1)$, as we now illustrate in the case $N=4$.
 
 \item $\boxed{N=4}$\ : In this case there is only one cross-ratio 
 \begin{align}
@@ -2301,7 +2301,7 @@ Let us focus on null vector equations for three-point functions.
 Using eq. \eqref{glvv},
 the null vector equation $\left< L_{\langle r,s \rangle} V_{\langle r,s \rangle} V_{\Delta_2}V_{\Delta_3}\right>=0$ leads to
 \begin{align}
- \left< V_{\langle r,s \rangle} V_{\Delta_2}V_{\Delta_3}\right>\neq 0 \quad \Rightarrow \quad g^{L_{\langle r,s \rangle}}_{\Delta_{\langle r,s \rangle},\Delta_2,\Delta_3} = 0 \ .
+ \left< V_{\langle r,s \rangle} V_{\Delta_2}V_{\Delta_3}\right>\neq 0 \quad \implies \quad g^{L_{\langle r,s \rangle}}_{\Delta_{\langle r,s \rangle},\Delta_2,\Delta_3} = 0 \ .
 \end{align}
 This constraint on $\Delta_2$ and $\Delta_3$ can be interpreted as the fusion rule of the degenerate representation $R_{\langle r,s \rangle}$, using the relation between OPEs and three-point functions.
 
@@ -2529,9 +2529,9 @@ In the case of four-point functions, we have the following equivalences of diffe
 \begin{align}
   \text{BPZ equation \eqref{sode} for}\quad  & \mathcal{F}(x)
 \\ 
-\Leftrightarrow\quad  \text{hypergeometric\ equation\ for\quad }&  \mathcal{G}(x)= x^{-b\alpha_1}(1-x)^{-b\alpha_3}\mathcal{F}(x) 
+\iff\quad  \text{hypergeometric\ equation\ for\quad }&  \mathcal{G}(x)= x^{-b\alpha_1}(1-x)^{-b\alpha_3}\mathcal{F}(x) 
 \\
-\Leftrightarrow\quad  \text{twisted\ hypergeometric\ equation\ for\quad }& \mathcal{H}(x)=(x(1-x))^{-\frac{b^2}{2}}\mathcal{F}(x) \ ,
+\iff\quad  \text{twisted\ hypergeometric\ equation\ for\quad }& \mathcal{H}(x)=(x(1-x))^{-\frac{b^2}{2}}\mathcal{F}(x) \ ,
 \label{fgs}
 \end{align}
 provided the parameters are related as
@@ -2928,7 +2928,7 @@ Let us first show that these assumptions determine the spectrum of Liouville the
 Since the spectrum is continuous, it must involve Verma modules -- the other type of highest-weight representations, degenerate representations, form a discrete set. 
 According to Axiom \ref{ax:sots}, real parts of conformal dimensions are bounded from below, let us guess their lower bound. Remember that fusion rules of degenerate fields are analytic if expressed in terms of momentums rather than conformal dimensions: this is why we use momentums in our meromorphicity assumption. The relation \eqref{daq} between momentums and dimensions has a unique critical point $\alpha=\frac{Q}{2}$ such that $\Delta'(\alpha)=0$: this provides a natural lower bound, and leads to the following values for the momentums and dimensions:
 \begin{align}
- \alpha \in \frac{Q}{2}+i{\mathbb{R}} \quad \Leftrightarrow \quad \Delta \in \frac{c-1}{24}+\mathbb{R}_+\ .
+ \alpha \in \frac{Q}{2}+i{\mathbb{R}} \quad \iff \quad \Delta \in \frac{c-1}{24}+\mathbb{R}_+\ .
 \label{aqd}
 \end{align}
 The representation $\mathcal{V}_\Delta\otimes \overline{\mathcal{V}}_{\bar{\Delta}}$ can appear in the spectrum only if both 
@@ -3155,7 +3155,7 @@ c^{(s)}_- & = C_-(\alpha)C_+(\alpha+\tfrac{b}{2}) = \frac{R(\alpha)}{R(\alpha+\t
 where we used the equations \eqref{cmcp} and \eqref{cco}.
 The coefficients $c^{(s)}_+$ and $c^{(s)}_-$ are related by eq. \eqref{spsm}, with
 \begin{align}
- \left\{\begin{array}{l}  \alpha_1 = \alpha \\ \alpha_2 = -\frac{b}{2} \\ \alpha_3 = Q-\alpha \end{array}\right. \quad \Rightarrow \quad \left\{\begin{array}{l}  A = 1-bQ \\ B = bQ \\ C=1+b(2\alpha-Q) \end{array}\right.  \ ,
+ \left\{\begin{array}{l}  \alpha_1 = \alpha \\ \alpha_2 = -\frac{b}{2} \\ \alpha_3 = Q-\alpha \end{array}\right. \quad \implies \quad \left\{\begin{array}{l}  A = 1-bQ \\ B = bQ \\ C=1+b(2\alpha-Q) \end{array}\right.  \ ,
 \end{align}
 so that $A+B=1$. We thus obtain
 \begin{align}
@@ -3816,12 +3816,12 @@ Then $\tilde{C}_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3
 
 \subsection{Examples of A-series minimal models}
 
-\subsubsection{Trivial model $(p,q)=(3,2) \Rightarrow c = 0$}
+\subsubsection{Trivial model $(p,q)=(3,2) \implies c = 0$}
 
 This unitary minimal model has only one field -- the identity $I=\tilde{V}_{\langle 1,1 \rangle}=\tilde{V}_{\langle 2,1 \rangle}$.
 The fusion rule $I\times I = I$ and three-point structure constant $\tilde{C}_{III} = 1$ are trivial.
 
-\subsubsection{Model $(p,q)=(5,2) \Rightarrow c=-\tfrac{22}{5}$\ of the Yang-Lee singularity}
+\subsubsection{Model $(p,q)=(5,2) \implies c=-\tfrac{22}{5}$\ of the Yang-Lee singularity}
 
 This minimal model has two independent fields, whose names and conformal dimensions $\Delta_{\langle r,s\rangle}$ are 
 \begin{align}
@@ -3864,7 +3864,7 @@ The only three-point structure constant not involving the identity field is
 \end{align}
 (See Exercise \ref{exocppp}.)
 
-\subsubsection{\textbf{\boldmath Ising model}\index{Ising model} $(p,q)=(4,3) \Rightarrow c=\tfrac12$}
+\subsubsection{\textbf{\boldmath Ising model}\index{Ising model} $(p,q)=(4,3) \implies c=\tfrac12$}
 
 This unitary minimal model has three independent fields, 
 \begin{align}
@@ -4048,7 +4048,7 @@ From Section \ref{secuni} on unitarity, assume we only remember that highest-wei
  \item 
 Assuming $b^2 < -1$, show that the condition for the conformal dimension $\Delta_{\langle r,s \rangle}$ \eqref{drs} of a degenerate representation to be negative is 
 \begin{align}
- \Delta_{\langle r,s \rangle} < 0 \quad \Leftrightarrow \quad \frac{r-1}{s-1} < -\frac{1}{b^2} < \frac{r+1}{s+1} \ .
+ \Delta_{\langle r,s \rangle} < 0 \quad \iff \quad \frac{r-1}{s-1} < -\frac{1}{b^2} < \frac{r+1}{s+1} \ .
 \end{align}
 \item
 If $b^2$ is irrational, show that this occurs for infinitely many choices of $\langle r,s \rangle$, by applying the Dirichlet approximation theorem to $-\frac{1}{b^2}$. 
@@ -5078,7 +5078,7 @@ eq. \eqref{vskz} coincides with the BPZ equation \eqref{pvot} for the correlatio
 \end{align}
 and the momentums $\alpha_i$ are given in terms of the spins $j_i$ by 
 \begin{align}
- \boxed{\alpha = -b^{-1}j+\frac{b}{2}}\quad \Rightarrow \quad \boxed{\Delta(\alpha(j)) = \Delta_j-\frac{k}{4}}\ ,
+ \boxed{\alpha = -b^{-1}j+\frac{b}{2}}\quad \implies \quad \boxed{\Delta(\alpha(j)) = \Delta_j-\frac{k}{4}}\ ,
 \label{aj}
 \end{align}
 where $\Delta(\alpha)$ is given by eq. \eqref{daq}.
@@ -5112,7 +5112,7 @@ In the diagrammatic representation of conformal blocks as trees, the relevant Vi
 The separation of variables $\mathcal{K}$ is in general an integral transformation, but in the case of the $\mu$-basis \eqref{mub} of isospin variables, we have 
 \begin{align}
 \renewcommand{\arraystretch}{1.5}
- \hat{J}^-(y) = \sum_{i=1}^N \frac{\mu_i}{y-z_i} \quad \Rightarrow \quad \left\{\begin{array}{l}  Y_1 =\sum_{i=1}^N \mu_i\ , \\ Y_2 = \sum_{i=1}^N \mu_i z_i\ , \\ \mu_i = Y_2\frac{\prod_{j=1}^{N-2}(z_i-y_j)}{\prod_{i'\neq i}(z_i-z_{i'})}\ ,\end{array}\right. 
+ \hat{J}^-(y) = \sum_{i=1}^N \frac{\mu_i}{y-z_i} \quad \implies \quad \left\{\begin{array}{l}  Y_1 =\sum_{i=1}^N \mu_i\ , \\ Y_2 = \sum_{i=1}^N \mu_i z_i\ , \\ \mu_i = Y_2\frac{\prod_{j=1}^{N-2}(z_i-y_j)}{\prod_{i'\neq i}(z_i-z_{i'})}\ ,\end{array}\right. 
 \label{my}
 \end{align}
 and the variables on both sides of the relation are functions of one another. 
@@ -5231,7 +5231,7 @@ This formula can also be used for deducing the $x$-basis two-point function,
 
 In this case there is one Sklyanin variables $y_1$, and we have
 \begin{align}
- N=3 \quad \Rightarrow \quad  \left\{\begin{array}{l} y_1 = -\frac{\mu_1z_2z_3+\mu_2z_3z_1+\mu_3z_1z_2}{\sum_{i=1}^3\mu_iz_i}\ , \\ \frac{(y_1-z_1)(z_2-z_3)}{(y_1-z_2)(z_1-z_3)} = -\frac{\mu_1}{\mu_2}\ . \end{array}\right.
+ N=3 \quad \implies \quad  \left\{\begin{array}{l} y_1 = -\frac{\mu_1z_2z_3+\mu_2z_3z_1+\mu_3z_1z_2}{\sum_{i=1}^3\mu_iz_i}\ , \\ \frac{(y_1-z_1)(z_2-z_3)}{(y_1-z_2)(z_1-z_3)} = -\frac{\mu_1}{\mu_2}\ . \end{array}\right.
 \end{align}
 The relation \eqref{dyym} then reads 
 \begin{align}
@@ -5634,7 +5634,7 @@ We assume that fusion products of representations of $\widehat{\mathfrak{sl}}_2$
 where the coefficients $N_{R_1,R_2,R_3}$ are a permutation-symmetric, integer-valued fusion multiplicities such that $N_{R_1^*,R_2^*,R_3^*}=N_{R_1,R_2,R_3}$.
 From eq. \eqref{rwr}, we must then have 
 \begin{align}
-w_1+w_2+w_3=0 \quad \Rightarrow \quad N_{\rho_{w_1}(R_1),\rho_{w_2}(R_2),\rho_{w_3}(R_3)}=N_{R_1,R_2,R_3}\ .
+w_1+w_2+w_3=0 \quad \implies \quad N_{\rho_{w_1}(R_1),\rho_{w_2}(R_2),\rho_{w_3}(R_3)}=N_{R_1,R_2,R_3}\ .
 \label{nrrr} 
 \end{align}
 Let us consider the action of spectral flow on our affine highest-weight representations. 
@@ -5651,7 +5651,7 @@ The representation $\hat{D}^{j,\pm}$ can be characterized by the existence of a 
 J^\mp_{n\geq 0}|v^{j,\pm}\rangle = J^0_{n>0}|v^{j,\pm}\rangle =  J^\pm_{n>0}|v^{j,\pm}\rangle = (J^0_0\mp(j+1))|v^{j,\pm}\rangle = 0\ .
 \end{align}
 So we can characterize $\rho_w(\hat{D}^{j,\pm})$ by the action of $\rho_{-w}(J^a_n)$ on $|v^{j,\pm}\rangle$.
-In particular, we notice that $\rho_1(J^a_n)|v^{j,+}\rangle = 0 \ \Leftrightarrow \ J^a_n|v^{-j-2-\frac{k}{2},-}\rangle=0$, which leads to 
+In particular, we notice that $\rho_1(J^a_n)|v^{j,+}\rangle = 0 \ \iff \ J^a_n|v^{-j-2-\frac{k}{2},-}\rangle=0$, which leads to 
 \begin{align}
  \rho_{-1}(\hat{D}^{j,+}) = \hat{D}^{-j-2-\frac{k}{2},-} \ .
 \label{rdd}
