@@ -20,6 +20,7 @@
 \usepackage{tikz}
 \usetikzlibrary{calc}
 \usetikzlibrary{arrows}
+\usetikzlibrary{decorations.markings}
 
 \numberwithin{equation}{section}
 
@@ -80,14 +81,31 @@ KZ equations, KZ-BPZ relation, $H_3^+$ model, WZW models
 
 \section{Context and approach}
 
-Just like free field theories, conformal field theories are simpler and more tractable approximations of generic field theories, and can serve as starting points for perturbative computations in generic field theories. However, conformal field theories are more complicated than free field theories, and also more often of independent interest, for example when they describe critical points of condensed matter systems. Therefore, it is worthwhile to study conformal field theories in their own right, leaving aside the applications to non-conformal field theories.
+Just like free field theories, conformal field theories are relatively simple and tractable quantum field theories, and can serve as starting points for perturbative computations in more generic quantum field theories. However, conformal field theories are more complicated than free field theories, and often better approximations of realistic quantum field theories:
+\begin{align}
+ \begin{tikzpicture}[scale = .8, thick,decoration={
+    markings,
+    mark=at position 0.5 with {\arrow{>}}}
+    ] 
+  \draw (-3, .6) node[draw, fill = red!5] (f) {Free QFT};
+  \draw (0, -.6) node[draw, fill = red!15] (c) {CFT};
+  \draw (4, 0) node[draw, fill = red!25] (r) {Realistic QFT};
+  \draw[postaction={decorate}] (f.east) to (r.west);
+  \draw[postaction={decorate}] (c.east) to (r.west);
+  \draw[->] (-4,-1.3) node[below right]{Trivial} -- (5.5,-1.3) node[below left]{Difficult};
+ \end{tikzpicture}
+\end{align}
+Many conformal field theories
+are also of independent interest, in particular for describing critical points of condensed matter systems. In this text we will study conformal field theories in their own right, with little thought about applications.
 
 In two dimensions, unlike in higher dimensions, the algebra of conformal transformations is infinite-dimensional. As a result, it has been possible to exactly solve certain non-trivial two-dimensional conformal field theories. Therefore, the subject of two-dimensional conformal field theory deserves a separate treatment. Nevertheless, the two-dimensional case may hold valuable lessons for
 the higher-dimensional case, for example that unitarity only plays a minor role in the structure and classification of conformal field theories.
 
 As an introduction to two-dimensional conformal field theory, this text has the particularity of using exclusively the bootstrap approach, which consists in systematically exploiting symmetry and consistency assumptions.
-While this approach is widely recognized as very powerful, most of the literature uses it alongside the Lagrangian approach, which can be quite useful for heuristics and for some computations.
-Renouncing Lagrangians however has the advantages of simplicity and consistency, and we will try to show that we do not lose much in terms of heuristics and computational power -- we will only have to deplore the loss of a simple definition for WZW models.
+While this approach is widely recognized as very powerful, much of the literature uses it alongside the Lagrangian approach, which can be quite useful for heuristics and for some computations.
+Renouncing Lagrangians however has the advantages of simplicity and consistency, and we will try to show that we do not lose much in terms of heuristics and computational power -- we will mainly have to deplore the loss of a simple definition for WZW models. Moreover, we need not assume any previous knowledge of quantum field theory:
+the prerequisites are limited to 
+elementary complex analysis, and some familiarity with Lie algebras and their representations.
 
 Another advantage of the bootstrap approach is that by making assumptions explicit, we can better understand them, and if necessary lift them.
 For example, results such as the C-theorem, and the fact that scale invariance implies conformal invariance in two-dimensional unitary quantum field theories, rely on the strong assumption that there exists an energy-momentum tensor -- a conserved field with spin two and conformal dimension two that generates conformal transformations.
@@ -105,7 +123,7 @@ By definition, rational conformal field theories have spectrums made of finitely
 However, in order to ensure closure under fusion, these representations must have complicated structures.
 In Liouville theory, the spectrum is made of a continuum of representations, but these representations are merely Verma modules, so we will study this theory first.
 Then we will study minimal models, which are rational and therefore less generic and more complicated.
-Even later will come free theories, which do not play any fundamental role in the bootstrap approach.
+Even later will come free bosonic theories, which do not play any fundamental role in the bootstrap approach.
 
 
 \section{Plan of the text \label{secplan}}
@@ -150,7 +168,7 @@ These terms appear in bold where they are defined.
 
 \section{Why one more text on conformal field theory?}
 
-Let us argue that this text fills an available ecological niche, by considering which neighbouring niches are already filled: 
+Let us argue that this text fills an available niche, by considering which neighbouring niches are already filled: 
 \begin{itemize}
 \item 
 The book \cite{zz90} by A. and Al. Zamoldochikov is in spirit quite close to the present text.
@@ -179,11 +197,7 @@ On the statistical mechanics side, they are given in Cardy's lecture notes \cite
 $W$-symmetry is reviewed in depth in Bouwknegt and Schoutens's article \cite{bs92}, where $W$-symmetric conformal field theories are however not solved systematically.
 An exposition of the $W$-symmetric minimal models and conformal Toda theories would be a natural extension of the present text, although these theories have not been fully solved so far. 
 \end{itemize}
-In contrast to most of these texts, we will treat both rational and non-rational theories.
-Moreover, our exclusive use of the bootstrap approach means that we need not assume any previous knowledge of quantum field theory.
-The prerequisites are limited to 
-elementary complex analysis, and some familiarity with Lie algebras and their representations.
-A much abridged version is also available \cite{rib16}. With its two articles on \href{https://en.wikipedia.org/wiki/Two-dimensional_conformal_field_theory}{Two-dimensional conformal field theory} and \href{https://en.wikipedia.org/wiki/Liouville_field_theory}{Liouville theory}, Wikipedia provides an even briefer summary.
+A much abridged version is also available \cite{rib16}. An even briefer treatment is found in Wikipedia, with in particular the articles on \href{https://en.wikipedia.org/wiki/Two-dimensional_conformal_field_theory}{Two-dimensional conformal field theory} and \href{https://en.wikipedia.org/wiki/Liouville_field_theory}{Liouville theory}.
 
 While we mostly present known results, the following aspects may be original:
 \begin{itemize}
@@ -230,7 +244,7 @@ For this purpose:
 This makes it easier to reuse excerpts of that file. 
 \end{itemize}
 
-I have tried to follow some stylistic good practices, such as: providing a clickable table of contents, not clogging the bibliography with superfluous information such as journal data, avoiding Latin plurals when regular plurals are available, and numbering all equations while boxing the important ones. 
+I have tried to follow some stylistic good practices, such as: providing a clickable table of contents, not clogging the bibliography with superfluous information such as journal data, \href{http://researchpracticesandtools.blogspot.fr/2018/01/will-no-one-rid-me-of-these-tiresome.html}{avoiding Latin plurals} when regular plurals are available, and numbering all equations while boxing the important ones. 
 % NB: Also, having a linebreak at the end of each sentence, in order to facilitate version control.
 
 
@@ -338,13 +352,12 @@ In quantum field theory, states are supposed to live on constant-time slices of 
 \end{hyp} 
 \noindent
 Thinking of the state as a type of particles, the field $V_\sigma(x)$ can be thought of as measuring the presence of such particles at point $x$.
-Then, a \textbf{\boldmath correlation function}\index{correlation function}, here an \textbf{\boldmath $N$-point function}\index{N-point function@$N$-point function}
+Then, an $N$-point \textbf{\boldmath correlation function}\index{correlation function} or \textbf{\boldmath $N$-point function}\index{N-point function@$N$-point function} is the probability amplitude for the interaction of $N$ particles of types $\sigma_1,\cdots \sigma_N$, located at points $x_1,\cdots x_N$:
 \begin{align}
-\left\langle \prod_{i=1}^N V_{\sigma_i}(x_i)\right\rangle
+\left\langle \prod_{i=1}^N V_{\sigma_i}(x_i)\right\rangle\in \mathbb{C}\ .
 \label{pva}
 \end{align}
-is the probability amplitude for the interaction of $N$ particles of types $\sigma_1,\cdots \sigma_N$, located at points $x_1,\cdots x_N$. 
-Correlation functions are numbers that linearly depend on fields, in particular 
+Correlation functions depend linearly on fields, in particular 
 \begin{align}
  \frac{\partial}{\partial x} \left\langle \prod_{i=1}^N V_{\sigma_i}(x_i)\right\rangle = \left\langle \frac{\partial}{\partial x} \prod_{i=1}^N V_{\sigma_i}(x_i)\right\rangle\ ,
 \end{align}
@@ -427,7 +440,7 @@ Since a field theory is defined on some space, we can distinguish two types of s
 \end{itemize}
 Space-time symmetries include in particular the invariances under rotations and translations.
 Internal symmetries include gauge invariances.
-The distinction between space-time and internal symmetries depends on the choice of the space: for example, supersymmetry can be an internal or space-time symmetry depending on whether the theory is formulated on an ordinary space or on a superspace.
+The distinction between space-time and internal symmetries may depend on the choice of the space: for example, supersymmetry can be an internal or space-time symmetry depending on whether the theory is formulated on an ordinary space or on a superspace.
 
 \subsection{Consistency conditions \label{seccc}}
 
@@ -458,8 +471,7 @@ Together with commutativity, this implies that correlation functions do not depe
  \boxed{V_{\sigma_1}(x_1)V_{\sigma_2}(x_2) = \sum_{\sigma\in S} C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2) V_{\sigma}(x_2)}\ ,
 \label{ope}
 \end{align}
-where the \textbf{\boldmath OPE coefficient}\index{OPE!---coefficient} $C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2)$ is a function (i.e.
-not a field), and the sum runs over a basis of the spectrum $S$. 
+where the \textbf{\boldmath OPE coefficients}\index{OPE!---coefficient} $C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2)$ are $\mathbb{C}$-valued functions, and the sum runs over a basis of the spectrum $S$. 
 The sum is supposed to converge if $x_1$ and $x_2$ are sufficiently close. 
 \end{hyp} 
 \noindent
@@ -727,7 +739,7 @@ But a projective action of a symmetry algebra is equivalent to an action of the 
 
 Complexifying the algebra of local conformal transformations amounts to taking complex linear combinations of the generators \eqref{ilml}. So the complexified algebra has the complex basis $(\ell_n,\bar\ell_n)_{n\in\mathbb{Z}}$, and is the product of two commuting Witt algebras. Elements of the complexified algebras do not act on our complex plane $\mathbb{C}=\mathbb{R}^2$, where $z$ and $\bar z$ are conjugates of one another, but on the complexified complex plane ${\mathbb{C}}^2$, where $z$ and $\bar z$ are independent coordinates. 
 We must however insist that the correlation functions, which are the $z$-dependent observables of the theory, do live on $\mathbb{C}$ and not on ${\mathbb{C}}^2$.
-Differential operators such as $\frac{\partial}{\partial z}$, that act on functions on ${\mathbb{C}}^2$, will appear at intermediate steps of calculations, whereas correlation functions only involve functions that are well-defined on $\mathbb{C}$, for example $\sqrt{|z|}$ but not $\sqrt{z}$. 
+Differential operators that act on functions on ${\mathbb{C}}^2$, for example $\frac{\partial}{\partial z}$, can appear at intermediate steps of calculations, whereas correlation functions only involve functions that are well-defined on $\mathbb{C}$, for example $\sqrt{|z|}$ but not $\sqrt{z}$. 
 
 The central extension of the Witt algebra is the 
 \textbf{\boldmath Virasoro algebra}\index{Virasoro algebra} $\mathfrak{V}$.
@@ -772,7 +784,7 @@ $\mathfrak{V}\times \overline{\mathfrak{V}}$ & full & $(L_n,\bar{L}_m)$ & $(c,c)
  We have a $\mathfrak{V}\times \overline{\mathfrak{V}}$ symmetry algebra, such that $L_n$ and $\bar{L}_n$ generate conformal transformations. 
 \end{hyp} 
 \noindent
-The assumption about the geometrical interpretation of $L_n$ and $\bar{L}_n$ is important, as it is the only link between the symmetry algebra and the two-dimensional space.
+This axiom is the only link between the symmetry algebra and the two-dimensional space.
 Some conformal field theories have several Virasoro symmetry algebras, only one of which corresponds to conformal symmetry.
 In the free boson theory, it is even possible to find Virasoro algebras with all possible values of the central charge. (See Section \ref{secaua}.)
 
@@ -892,16 +904,17 @@ We will see in more detail in Section \ref{secaco} how holomorphic factorization
 
 In two-dimensional conformal field theory, the assumption of the existence of an OPE has a natural generalization: the assumption that on any closed contour $C$, one can insert a decomposition of the identity operator,
 \begin{align}
- \mathbf{1} = \sum_{\sigma\in S} |\sigma \rangle \langle \sigma| \ ,
+ \mathbf{1} = \sum_{\sigma\in S} |\sigma \rangle \langle \sigma^*| \ ,
 \label{oss}
 \end{align}
-where the sum runs over an orthonormal basis of the spectrum.
+where the sum runs over a basis of the spectrum, and the linear form $\langle \sigma^*|$ is defined by $\langle \sigma^*|\sigma'\rangle = \delta_{\sigma,\sigma'}$.
+% NB: This dual linear form depends on the whole basis, not just on |\sigma\rangle. But to define it we do not need a scalar product.
 Let us schematically explain why this implies the existence of an OPE.
 Considering a contour $C$ around the positions $x_1,x_2$ of two fields $V_{\sigma_1}(x_1),V_{\sigma_2}(x_2)$, and inserting the decomposition of the identity, we obtain
 \begin{align}
-V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)  =  \sum_{\sigma\in S} \left\langle \sigma \left| V_{\sigma_1}(x_1)V_{\sigma_2}(x_2) \right. \right\rangle  V_{\sigma}(x_2) \ ,
+V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)  =  \sum_{\sigma\in S} \Big\langle \sigma^* \Big| V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)  \Big\rangle  V_{\sigma}(x_2) \ .
 \end{align}
-where we used the state-field correspondence in a cavalier way: we replaced the field $V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)$ with the corresponding state $|V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)\rangle$, and the state $|\sigma\rangle$ with the corresponding field $V_{\sigma}(x_2)$.
+Here we slightly abused the state-field correspondence, by replacing the field $V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)$ with the corresponding state $|V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)\rangle$, and the state $|\sigma\rangle$ with the corresponding field $V_{\sigma}(x_2)$.
 This can be drawn as follows:
 \begin{align}
 \newcommand{\myoval}[2]{\draw[dashed] (#1, #2 + 2) to [out = 0, in = 0] (#1, #2 - 2); 
@@ -935,7 +948,7 @@ This can be drawn as follows:
   \filldraw (6.3, 0) circle [radius = 3pt] node [right] {$V_{\sigma}$};
  \end{tikzpicture}
 \end{align}
-We thus obtain an OPE whose coefficient $\left\langle \sigma \left| V_{\sigma_1}(x_1)V_{\sigma_2}(x_2) \right. \right\rangle $ is essentially a three-point function.
+We thus obtain an OPE whose coefficient $\left\langle \sigma^* \left| V_{\sigma_1}(x_1)V_{\sigma_2}(x_2) \right. \right\rangle $ is essentially a three-point function.
 We will see the relation between OPE coefficients and three-point functions in more detail in Section \ref{secope}. 
 
 Inserting the decomposition of the identity \eqref{oss} on a contour $C$ amounts to cutting the space into two pieces, and in each piece replacing the resulting hole with a puncture -- an insertion of a field $V_{\sigma}(x)$ for some $x$.
@@ -978,7 +991,7 @@ If we view the space near the contour $C$ as a cylinder, this can be drawn as fo
 \end{align}
 In the case of a topologically trivial contour $C$, this equality amounts to using OPEs for replacing all fields within $C$ with one field $V_\sigma(x)$.
 If on the other hand $C$ is a non-contractible cycle, then this equality is nontrivial even in the absence of fields.
-If we studied a model on a torus with complex modulus $\tau$, then we could obtain a nontrivial constraint on the spectrum by applying eq. \eqref{cscc} to the partition function (the zero-point function) using two topologically inequivalent contours.
+If we studied a model on a torus, then we could obtain a nontrivial constraint on the spectrum by applying eq. \eqref{cscc} to the partition function (the zero-point function) using two topologically inequivalent contours.
 The study of constraints of this type is called the \textbf{\boldmath modular bootstrap}\index{modular bootstrap}. 
 
 We will only consider conformal field theories on the sphere, which are consistent if they have commutative, associative OPEs. For consistency on arbitrary Riemann surfaces, we would need to impose the further condition that torus one-point functions are invariant under modular transformations \cite{ms89b}.
@@ -987,7 +1000,7 @@ We will only consider conformal field theories on the sphere, which are consiste
 \subsection{Sketching the space of simple models \label{secmomo}}
 
 After discussing the general properties of two-dimensional conformal field theory, we will now describe some simple models that are known to satisfy the consistency conditions of the conformal bootstrap.
-These simple models also turn out to be the most commonly encountered in applications.  
+These simple models are also the most commonly encountered in applications.  
 
 We first introduce diagonal models, where representations of $\mathfrak{V}\times \overline{\mathfrak{V}}$ have multiplicities no higher than one:
 \begin{itemize}
@@ -1002,7 +1015,7 @@ Liouville theory is unitary if $c\geq 1$.
 \end{align}
 in particular $c <1$.
 There are $\frac{(p-1)(q-1)}{2}$ distinct representations in the spectrum.
-The model is unitary if $q=p+1$, then $c=1-\frac{6}{p(p+1)}=0,\frac12,\frac{7}{10},\cdots$.
+The model is unitary if $q=p+1$, then $c=1-\frac{6}{p(p+1)}=0,\frac12,\frac{7}{10},\frac45, \frac67,\cdots$.
 \end{itemize}
 Let us locate these models in the $c$-complex plane, with unitary models signalled by more intense colors:
 \begin{align}
