@@ -341,7 +341,7 @@ A vector $\sigma$ and the action $A(\sigma)$ of an operator $A$ on $\sigma$ may 
 \end{array}\right. 
 \end{align}
 
-In quantum field theory, states are supposed to live on constant-time slices of space-time. If space-time is Euclidean, we can take such slices to be spheres surrounding any point $x$. If the theory is invariant under dilatations, such spheres can contract to infinitesimal sizes without loss of information. Therefore, to each state $|\sigma\rangle$ and each point $x$ we associate an object $V_\sigma(x)$, and the collection of these objects when $x$ varies is a field. 
+In quantum field theory, states are supposed to live on constant-time slices of space-time. If space-time is Euclidean, we can take such slices to be spheres surrounding any point $x$. If the theory is invariant under dilations, such spheres can contract to infinitesimal sizes without loss of information. Therefore, to each state $|\sigma\rangle$ and each point $x$ we associate an object $V_\sigma(x)$, and the collection of these objects when $x$ varies is a field. 
 
 \begin{hyp}[\textbf{\boldmath State-field correspondence}\index{state-field correspondence} or state-operator correspondence]
 ~\label{ax:sfc}
@@ -627,21 +627,21 @@ f_\text{rotation}(z) &=a z \ , \ |a|=1\ ,
 \end{align}
 where $a$ and $b$ are complex constants.
 Moreover, if we lift the restriction $|a|=1$ in rotations, we obtain transformations that do not leave the metric invariant, but rescale it by a factor of $|a|^2$.
-For $a\in{\mathbb{R}}$, these transformations are called \textbf{\boldmath dilatations}\index{dilatation} or scale transformations,
+For $a\in{\mathbb{R}}$, these transformations are called \textbf{\boldmath dilations}\index{dilation} or scale transformations,
 \begin{align}
- f_\text{dilatation}(z) &= a z\ , \ a\in {\mathbb{R}}\ .
+ f_\text{dilation}(z) &= a z\ , \ a\in {\mathbb{R}}\ .
 \end{align}
-While the laws of physics are (mostly) invariant under translations and rotations, they are not invariant under dilatations, and the structures of matter and of the universe are strongly scale-dependent.
+While the laws of physics are (mostly) invariant under translations and rotations, they are not invariant under dilations, and the structures of matter and of the universe are strongly scale-dependent.
 It is nevertheless interesting to study scale-invariant models, for at least two reasons.
 Firstly, some particular systems are invariant under scale transformations, for instance certain materials at critical points.
 Secondly, by rescaling a quantum field theory to very small or large scales in a controlled way, one often reaches a scale-invariant theory (called a fixed point of the renormalization group flow).
 That new theory can be nontrivial, and helpful for the understanding of the original theory.
 
-It may seem reasonable to study quantum field theories that are invariant under translations, rotations and dilatations. 
+It may seem reasonable to study quantum field theories that are invariant under translations, rotations and dilations. 
 Surprisingly, many interesting systems have much more symmetry, which makes them accessible to the powerful methods that are the subject of this text.
 In the absence of physically compelling reasons for these further symmetries, we will try to provide formal justifications.
 
-A first formal consideration is that translations, rotations and dilatations are all \textbf{\boldmath conformal transformations}\index{conformal transformation}, i.e. transformations that preserve angles, and therefore that rescale the metric by a real factor.
+A first formal consideration is that translations, rotations and dilations are all \textbf{\boldmath conformal transformations}\index{conformal transformation}, i.e. transformations that preserve angles, and therefore that rescale the metric by a real factor.
 But they are not the only conformal transformations: another one is the inversion
 \begin{align}
  f_\text{inversion}(z) = \frac{1}{z}\ .
@@ -650,7 +650,7 @@ It may seem unwise to take this transformation as a symmetry, as it is singular 
 This is however not a problem, if we enlarge our space with the addition of a point at $z=\infty$.
 This actually amounts to compactifying the space, and working not on the complex plane but on the \textbf{\boldmath Riemann sphere}\index{Riemann sphere}.
 This does not even prevent us from studying models on the complex plane, as such models are equivalent to models on the sphere, with one field inserted at $z=\infty$.
-Combining the inversion with translations, rotations and dilatations, we obtain the group of the \textbf{\boldmath global conformal transformations}\index{conformal transformation!global---} of the Riemann sphere,
+Combining the inversion with translations, rotations and dilations, we obtain the group of the \textbf{\boldmath global conformal transformations}\index{conformal transformation!global---} of the Riemann sphere,
 \begin{align}
  \boxed{f_\text{global conformal}(z)  = \frac{az+b}{cz+d}}\ ,
 \end{align}
@@ -819,7 +819,7 @@ There exist \textbf{\boldmath logarithmic conformal field theories}\index{confor
 But we will not consider such theories (except in Exercise \ref{exolog}).
 \item 
 By $L_0+\bar L_0$ being bounded from below, we mean that the real parts of its eigenvalues are bounded from below, which implies that the real parts of the eigenvalues of $L_0$ are bounded from below in each $R\in\text{Rep}(\mathfrak{V})$. 
-This is motivated by the interpretation of the dilatation generator $L_0+\bar L_0$ as the Hamiltonian, if we consider the radial coordinate $|z|$ as the Euclidean time. 
+This is motivated by the interpretation of the dilation generator $L_0+\bar L_0$ as the Hamiltonian, if we consider the radial coordinate $|z|$ as the Euclidean time. 
 \end{itemize}
 
 Two important special cases are
@@ -858,7 +858,7 @@ For a quantum field theory to have a probabilistic interpretation,
 we should assume the spectrum to be a Hilbert space, i.e. to have a positive definite Hermitian form. 
 In conformal field theory, we are only interested in Hermitian forms that are compatible with the action of the symmetry algebra.
 This means that the \textbf{Hermitian conjugation}\index{Hermitian conjugation} on $\mathfrak{V}\times\overline{\mathfrak{V}}$ that is induced by the Hermitian form, is an antilinear involution $A\to A^\dagger$ such that $[A,B]^\dagger = -[A^\dagger, B^\dagger]$.
-Interpreting the dilatation generator $L_0+\bar L_0$ as the Hamiltonian, we assume that it is self-adjoint, and actually that both $L_0$ and $\bar L_0$ are self-adjoint.
+Interpreting the dilation generator $L_0+\bar L_0$ as the Hamiltonian, we assume that it is self-adjoint, and actually that both $L_0$ and $\bar L_0$ are self-adjoint.
 This implies
 \begin{align}
  L^\dagger_n = L_{-n} \quad , \quad \bar L_n^\dagger = \bar L_{-n}\ ,
@@ -1953,7 +1953,7 @@ It is actually possible to relax the single-valuedness axiom, and have fields wi
 
 The conformal spin then controls how three-point structure constants behave under permutations. For $\sigma$ a permutation of $(1,2,3)$, we indeed have 
 \begin{align}
- \left|\mathcal{F}^{(3)}(\Delta_{\sigma(1)},\Delta_{\sigma(2)},\Delta_{\sigma(3)}|z_{\sigma(1)},z_{\sigma(2)},z_{\sigma(3)})\right|^2 = \operatorname{sign}(\sigma)^{S_1+S_2+S_3} \left|\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)\right|^2\, .
+ \left|\mathcal{F}^{(3)}(\Delta_{\sigma(1)},\Delta_{\sigma(2)},\Delta_{\sigma(3)}|z_{\sigma(1)},z_{\sigma(2)},z_{\sigma(3)})\right|^2 = \operatorname{sign}(\sigma)^{S_1+S_2+S_3} \left|\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)\right|^2 .
 \end{align}
 Since the three-point function is invariant under permutations of the fields, the structure constant must therefore behave as 
 \begin{align}
@@ -1965,7 +1965,7 @@ For example, if fields $1$ and $2$ are identical, then $C_{123}=C_{213}$, and th
 
 \subsection{Operator product expansions \label{secope}}
 
-Let us study how local conformal symmetry constrain OPEs. We start with a generic OPE of the type $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_{\sigma_3} C_{\sigma_1,\sigma_2}^{\sigma_3}(z_1,z_2) V_{\sigma_3}(z_2)$. Let us insert $\oint_C dz (z-z_2)^{n+1} T(z)$ on both sides of the OPE, where the contour $C$ encircles both $z_1$ and $z_2$. Assuming $n\geq -1$, this yields the \textbf{OPE Ward identity}\index{Ward identity!---for OPEs}
+Let us study how local conformal symmetry constrain OPEs. We start with a generic OPE of the type $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_{\sigma_3} C_{\sigma_1,\sigma_2}^{\sigma_3}(z_1,z_2) V_{\sigma_3}(z_2)$. Let us insert $\oint_C dz (z-z_2)^{n+1} T(z)$ on both sides of the OPE, where the contour $C$ encircles both $z_1$ and $z_2$. Assuming $n\geq -1$, and using the $TV$ OPE \eqref{tv}, this yields the \textbf{OPE Ward identity}\index{Ward identity!---for OPEs}
 \begin{align}
  \left(L_n^{(z_2)}+\sum_{m=-1}^{n}\binom{m+1}{n+1} z_{12}^{n-m}L_{m}^{(z_1)}\right)V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_{\sigma_3} C_{\sigma_1,\sigma_2}^{\sigma_3}(z_1,z_2) L_n V_{\sigma_3}(z_2)\ .
 \end{align}
@@ -1981,7 +1981,8 @@ Assuming the fields $V_{\sigma_i}$ are  $L_0,\bar L_0$-eigenvectors with the dim
 \begin{align}
  \left(z_{12}\frac{\partial}{\partial z_1} + \Delta_{\sigma_1}+\Delta_{\sigma_2}\right) V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_{\sigma_3} C_{\sigma_1,\sigma_2}^{\sigma_3}(z_1,z_2) \Delta_{\sigma_3} V_{\sigma_3}(z_2)\ .
 \end{align}
-This determines how OPE coefficients behave under dilatations. 
+Using the OPE again on the left-hand side, this
+determines how OPE coefficients behave under dilations. 
 Therefore, the two global Ward identities determine the dependence of OPE coefficients on $z_1,z_2$,
 \begin{align}
  C_{\sigma_1,\sigma_2}^{\sigma_3}(z_1,z_2) = C_{\sigma_1,\sigma_2}^{\sigma_3} 
@@ -1993,16 +1994,20 @@ in agreement with dimensional analysis eq. \eqref{zaz}.
 
 \subsubsection{Local Ward identities $n\geq 1$}
 
-For simplicity, let us specialize to an OPE of two primary fields $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$. Using the form \eqref{eq:coz} of the OPE coefficients, where we now write $C^{\sigma_3}_{\sigma_1,\sigma_2}=C^{\sigma_3}_{12}$,
+For simplicity, let us specialize to an OPE of two primary fields $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$. 
+The left-hand side of the OPE Ward identity reduces to the terms with $L_{-1}^{(z_1)}$ and $L_0^{(z_1)}$, and therefore to $\left(z_{12}^{n+1}\frac{\partial}{\partial z_1} + (n+1)\Delta_1z_{12}^n\right) V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$. 
+Inserting the OPE $V_{\Delta_1}V_{\Delta_2}$, with 
+the form \eqref{eq:coz} of the OPE coefficients, 
 the local Ward identities read 
 \begin{align}
  \sum_{\sigma_3} C^{\sigma_3}_{12}(\Delta_{\sigma_3} + n\Delta_1-\Delta_2) 
  \left| z_{12}^{\Delta_{{\sigma_3}}-\Delta_1-\Delta_2}\right|^2 z_{12}^n V_{\sigma_3}(z_2) 
  = 
  \sum_{\sigma_3} C^{\sigma_3}_{12} 
- \left| z_{12}^{\Delta_{{\sigma_3}}-\Delta_1-\Delta_2} \right|^2 L_nV_{\sigma_3}(z_2)\ .
+ \left| z_{12}^{\Delta_{{\sigma_3}}-\Delta_1-\Delta_2} \right|^2 L_nV_{\sigma_3}(z_2)\ ,
 \end{align}
-Focussing on the right-hand side terms that come from descendents $V_{\sigma_3}= V_{L|\Delta_3\rangle}= LV_{\Delta_3}$ of a given primary field at a level $|L|=N\geq n$, we find
+where we now write $C^{\sigma_3}_{\sigma_1,\sigma_2}=C^{\sigma_3}_{12}$.
+Focusing on the right-hand side terms that come from descendents $V_{\sigma_3}= V_{L|\Delta_3\rangle}= LV_{\Delta_3}$ of a given primary field at a level $|L|=N\geq n$, we find
 \begin{align}
  \sum_{|L|=N-n} C^{L|\Delta_3\rangle}_{12}(\Delta_3+N-n+n\Delta_1-\Delta_2)L V_{\Delta_3}(z_2)
  = 
