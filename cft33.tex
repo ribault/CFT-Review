@@ -1375,7 +1375,7 @@ where for each generic value of $c$ we choose among two corresponding values $\p
 The conformal dimension $\Delta$ can be written in terms of a 
 new parameter $P$ called the \textbf{\boldmath Liouville momentum}\index{momentum!Liouville---}, such that 
 \begin{align}
- \boxed{\Delta(P) = \frac{Q^2}{4} + P^2}\ ,
+ \boxed{\Delta(P) = \frac{Q^2}{4} - P^2}\ ,
 \label{daq}
 \end{align}
 which is defined up to the \textbf{\boldmath reflection}\index{reflection}
@@ -2132,9 +2132,9 @@ we can write crossing symmetry of the four-point function as the equation
 \right|^2\ .
 \label{csd}
 \end{align}
-Assuming the conformal blocks to be known, this is a quadratic equation for the three-point structure constant.
+Considering the conformal blocks as known quantities, this is an equation for the spectrum and three-point structure constant, which is quadratic in the structure constant.
 This equation is equivalent to the associativity Axiom \ref{ax:ass}. In order to show that the theory is consistent, it suffices to moreover check the commutativity Axiom \ref{ax:col}, equivalently the behaviour \eqref{css} of the three-point structure constant under permutations. 
-$N$-point functions on the sphere can similarly be decomposed into three-point structure constants and $N$-point conformal blocks, but the cases $N\geq 5$ do not yield more equations for the three-point structure constant. 
+$N$-point functions on the sphere can similarly be decomposed into three-point structure constants and $N$-point conformal blocks, but the cases $N\geq 5$ do not yield more equations. 
 
 The general crossing symmetry equation \eqref{csd}, while it may in principle determine the three-point structure constant, is in practice often intractable, because
 \begin{enumerate}
@@ -2181,7 +2181,7 @@ F^{-1}_{\Delta_t,\Delta_s}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Del
 \ .
 \label{ffm}
 \end{align}
-This formulation of crossing symmetry can be useful, because the fusing matrix is usually a simpler object than the conformal blocks, as we will see in a special case in Section \ref{sechcb}.
+This formulation of crossing symmetry can be useful, because the fusing matrix is a simpler object than the conformal blocks, as we will see in a special case in Section \ref{sechcb}.
 % NB: F^{-1} is related to F by a permutation of the arguments.
 
 
@@ -2229,7 +2229,7 @@ For more general descendents, we use local Ward identities \eqref{lmn}. For exam
 \end{align}
 Using the universal factors $g^L_{\Delta_s,\Delta_3,\Delta_4}$, the expression \eqref{4ope} of our four-point function can be written as a conformal block decomposition \eqref{fsd}, where the blocks are 
 \begin{align}
- \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) = \sum_{L\in\mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta_s,L} g^{L}_{\Delta_s,\Delta_3,\Delta_4}x^{|L|+\Delta_s-\Delta_1-\Delta_2}\ .
+ \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) = x^{\Delta_s-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta_s,L} g^{L}_{\Delta_s,\Delta_3,\Delta_4}x^{|L|}\ .
 \label{gsd}
 \end{align}
 Explicitly, using eqs. \eqref{flfo}-\eqref{flff} for $f_{\Delta_1,\Delta_2}^{\Delta_s,L}$, we find 
@@ -2247,43 +2247,52 @@ Explicitly, using eqs. \eqref{flfo}-\eqref{flff} for $f_{\Delta_1,\Delta_2}^{\De
 where the level-$2$ determinant $D_2(\Delta_s)$ was defined in eq. \eqref{dud}.
 Once $s$-channel blocks are known, $t$-channel blocks can be obtained by a permutation of the arguments, as suggested by the diagrammatic notations \eqref{ftfs},
 \begin{align}
- \mathcal{F}^{(t)}_{\Delta_t}(\Delta_1,\Delta_2,\Delta_3,\Delta_4|z_1,z_2,z_3,z_4) = \mathcal{F}^{(s)}_{\Delta_t}(\Delta_2,\Delta_3,\Delta_4,\Delta_1|z_2,z_3,z_4,z_1)\ . 
+ \mathcal{F}^{(t)}_{\Delta_t}(\Delta_1,\Delta_2,\Delta_3,\Delta_4|z_1,z_2,z_3,z_4) = \mathcal{F}^{(s)}_{\Delta_t}(\Delta_1,\Delta_4,\Delta_3,\Delta_2|z_1,z_4,z_3,z_2)\ . 
 \label{gtgs}
 \end{align}
 Taking global conformal symmetry into account, this becomes
 \begin{align}
- \mathcal{F}^{(t)}_{\Delta_t}(\Delta_1,\Delta_2,\Delta_3,\Delta_4|x) = (1-x)^{\Delta_2+\Delta_3-\Delta_1-\Delta_4}\mathcal{F}^{(s)}_{\Delta_t}(\Delta_2,\Delta_3,\Delta_4,\Delta_1|1-x)\ .
+ \mathcal{F}^{(t)}_{\Delta_t}(\Delta_1,\Delta_2,\Delta_3,\Delta_4|x) = \mathcal{F}^{(s)}_{\Delta_t}(\Delta_1,\Delta_4,\Delta_3,\Delta_2|1-x)\ .
 \end{align}
 
 \subsubsection{Zamolodchikov's recursion}
 
-For practical computations of conformal blocks, the formula \eqref{gsd} is not very efficient: the number of terms grows quickly with the level $|L_s|$, and the cofficients $f_{\Delta_1,\Delta_2}^{\Delta_s,L_s} g^{L_s}_{\Delta_s,\Delta_3,\Delta_4}$ are not known explicitly.
+For practical computations of conformal blocks, the formula \eqref{gsd} is not very efficient: the number of terms grows quickly with the level $|L_s|$, and the cofficients $f_{\Delta_1,\Delta_2}^{\Delta_s,L_s}$ are not known explicitly.
 Fortunately, there is also Al.
-Zamolodchikov's recursion representation \cite{zz90}
+Zamolodchikov's recursion representation \cite{zz90}, which converges faster.
+Instead of a power series in the cross-ratio $x$, this representation is a power series in the \textbf{elliptic nome}\index{elliptic nome}
+\begin{align}
+ q = \exp -\pi \frac{F(\frac12,\frac12,1,1-x)}{F(\frac12,\frac12,1,x)}  \ , 
+\end{align}
+where $F(\frac12,\frac12,1,x)$ is a special case of the hypergeometric function \eqref{fsn}. 
+We have 
+\begin{align}
+ q(x=0)=0 \ \ , \ \ q(x=\tfrac12) = e^{-\pi} \ \ , \ \ q(x=1)=1 \ \ , \ \ q(x)\underset{x\to 0}{=} \frac{x}{16} +O(x^2)\ .
+\end{align}
+The convergence radius of both power series is $1$.
+But since $|q|\leq 1$ for any $x\in\mathbb{C}$, with $|q|=1 \iff x\in (1,\infty)$, Zamolodchikov's recursion representation converges for $x\in \mathbb{C}-(1,\infty)$, whereas the formula \eqref{gsd} only converges for $|x|<1$.
+
+Explicitly, Zamolodchikov's recursion representation reads 
 \begin{align}
  \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) 
-=  (16q)^{\Delta_s -\frac{Q^2}{4}} x^{\frac{Q^2}{4}-\Delta_1-\Delta_2} (1-x)^{\frac{Q^2}{4}-\Delta_1-\Delta_4} \theta_3(q)^{3Q^2-4(\Delta_1+\Delta_2+\Delta_3+\Delta_4)} H_{\Delta_s}(\Delta_i|q)\ ,
+=  (16q)^{\Delta_s -\frac{Q^2}{4}} x^{\frac{Q^2}{4}-\Delta_1-\Delta_2} (1-x)^{\frac{Q^2}{4}-\Delta_1-\Delta_4} \theta_3(q)^{3Q^2-4(\Delta_1+\Delta_2+\Delta_3+\Delta_4)} H_{\Delta_s}(\Delta_i|q)\ .
 \end{align}
-which uses the \textbf{elliptic nome}\index{elliptic nome} $q$ and elliptic function $\theta_3(q)$,
+Here $\theta_3(q)$ is the elliptic function
 \begin{align}
- q = \exp -\pi \frac{F(\frac12,\frac12,1,1-x)}{F(\frac12,\frac12,1,x)}  \quad , \quad \theta_3(q) = \sum_{n\in{\mathbb{Z}}} q^{n^2}\ ,
+ \theta_3(q) = \sum_{n\in{\mathbb{Z}}} q^{n^2}\ ,
 \end{align}
-where $F(\frac12,\frac12,1,x)$ is a special case of the hypergeometric function \eqref{fsn}, and $|q|<1$ for any $x\in\mathbb{C}$.
-The nontrivial factor is the function
+ and the nontrivial factor is the function
 \begin{align}
- H_{\Delta_s}(\Delta_i|q) = \sum_{k=0}^\infty \prod_{j=1}^k \sum_{m_j,n_j=1}^\infty \frac{(16q)^{m_jn_j}R_{m_j,n_j}}{\Delta_{\langle m_{j-1},-n_{j-1} \rangle}-\Delta_{\langle m_j,n_j\rangle}}
+ H_{\Delta_s}(\Delta_i|q) = \sum_{k=0}^\infty \prod_{j=1}^k \sum_{m_j,n_j=1}^\infty \frac{(16q)^{m_jn_j}R_{m_j,n_j}}{\Delta_{\langle m_{j-1},-n_{j-1} \rangle}-\Delta_{\langle m_j,n_j\rangle}}\ ,
 \label{hdq}
 \end{align}
 where by convention $\Delta_{\langle m_0,-n_0\rangle} = \Delta_s$, and we introduce the coefficients
 \begin{align}
- R_{m,n} = \frac{-2P_{\langle 0,0\rangle} P_{\langle m,n\rangle}}{\prod_{r=1-m}^m \prod_{s=1-n}^n 2P_{\langle r,s\rangle}}
+ R_{m,n} = \frac{2P_{\langle 0,0\rangle} P_{\langle m,n\rangle}}{\prod_{r=1-m}^m \prod_{s=1-n}^n 2P_{\langle r,s\rangle}}
 \prod_{r\overset{2}{=}1-m}^{m-1} \prod_{s\overset{2}{=}1-n}^{n-1} \prod_\pm (P_2\pm P_1 + P_{\langle r,s\rangle}) (P_3\pm P_4 +P_{\langle r,s\rangle})\ .
 \end{align}
-In this formula $P$ is yet another notation for the momentum, which is related to the notations $\Delta$ and $\alpha$ by
-\begin{align}
- \Delta = \frac{Q^2}{4} + P^2 \quad \text{and} \quad \alpha = \frac{Q}{2}+iP\ , \quad \text{so that} \quad P_{\langle r,s\rangle} = \frac{i}{2}\left(rb+sb^{-1}\right)\ .
- \label{pdef}
-\end{align}
+(Here $P$ is the Liouville momentum, and $P_{\langle r,s \rangle}$ \eqref{ars} are its values for degenerate representations.)
+
 The recursion representation owes its name to the original definition of the function $H_{\Delta_s}(\Delta_i|q)$ \eqref{hdq} by a recursive formula,
 \begin{align}
  H_{\Delta_s}(\Delta_i|q) = 1 + \sum_{m,n=1}^\infty \frac{(16q)^{mn}}{\Delta_s-\Delta_{\langle m,n\rangle}} R_{m,n} H_{\Delta_{\langle m,-n\rangle}}(\Delta_i|q)\ .
@@ -2743,9 +2752,9 @@ For a representation $R$ of the Virasoro algebra, let us define the character
  \item 
 Show that the character of a Verma module is 
 \begin{align}
- \operatorname{ch}_{\mathcal{V}_P}(y) = \frac{y^{P^2}}{\eta(y)}\ ,
+ \operatorname{ch}_{\mathcal{V}_P}(y) = \frac{y^{-P^2}}{\eta(y)}\ ,
 \end{align}
-where $\eta(y) = y^{\frac{1}{24}}\prod_{n=1}^\infty(1-y^n)$ is the Dedekind eta function, and the notation $P$ for the momentum is defined in eq. \eqref{pdef}. 
+where $\eta(y) = y^{\frac{1}{24}}\prod_{n=1}^\infty(1-y^n)$ is the Dedekind eta function, and $P$ is the Liouville momentum. 
 \item
 Deduce that for generic values of the central charge, the character of a maximally degenerate representation is 
 \begin{align}
