@@ -2270,7 +2270,7 @@ We have
  q(x=0)=0 \ \ , \ \ q(x=\tfrac12) = e^{-\pi} \ \ , \ \ q(x=1)=1 \ \ , \ \ q(x)\underset{x\to 0}{=} \frac{x}{16} +O(x^2)\ .
 \end{align}
 The convergence radius of both power series is $1$.
-But since $|q|\leq 1$ for any $x\in\mathbb{C}$, with $|q|=1 \iff x\in (1,\infty)$, Zamolodchikov's recursion representation converges for $x\in \mathbb{C}-(1,\infty)$, whereas the formula \eqref{gsd} only converges for $|x|<1$.
+But since $|q|\leq 1$ for any $x\in\mathbb{C}$, Zamolodchikov's recursion representation converges for almost all $x\in \mathbb{C}$, whereas the formula \eqref{gsd} only converges for $|x|<1$.
 
 Explicitly, Zamolodchikov's recursion representation reads 
 \begin{align}
@@ -2298,16 +2298,13 @@ The recursion representation owes its name to the original definition of the fun
  H_{\Delta_s}(\Delta_i|q) = 1 + \sum_{m,n=1}^\infty \frac{(16q)^{mn}}{\Delta_s-\Delta_{\langle m,n\rangle}} R_{m,n} H_{\Delta_{\langle m,-n\rangle}}(\Delta_i|q)\ .
  \label{hrec}
 \end{align}
-The recursion representation has the following properties:
-\begin{itemize}
- \item it converges very fast,
-\item it uses the elliptic nome $q$ instead of the natural variable $x$,
-\item it manifestly has the correct poles as a function of $\Delta_s$, namely $\Delta_s \in \{\Delta_{\langle r,s\rangle}\}_{r,s\in {\mathbb{N}}^*}$,
-\item it is manifestly invariant under reflections of all momentums,
-\item it has no known interpretation as a sum over descendents in some basis.
-\end{itemize}
-Alternatively, conformal blocks have a combinatorial representation that follows from the AGT relation \cite{aflt10}, which has the opposite properties. 
+This formula shows that conformal blocks have poles for $\Delta_s \in \{\Delta_{\langle r,s\rangle}\}_{r,s\in {\mathbb{N}}^*}$.
+Moreover, in the reflection representation, conformal blocks are manifestly invariant under reflections of all momentums.
 
+Alternatively, conformal blocks have a combinatorial representation that follows from the AGT relation \cite{aflt10}. 
+This representation is a power series in $x$, and therefore converges more slowly than Zamolodchikov's recursion representation. 
+Moreover, invariance under reflections is not manifest, and individual terms have spurious poles in $\Delta_s$.
+However, an advantage of the combinatorial representation is that it has an interpretation as a sum over descendents in a particular basis.
 
 \section{Degenerate fields}\label{sec:degf}
 
