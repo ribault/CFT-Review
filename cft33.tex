@@ -2301,8 +2301,12 @@ The recursion representation owes its name to the original definition of the fun
 This formula shows that conformal blocks have poles for $\Delta_s \in \{\Delta_{\langle r,s\rangle}\}_{r,s\in {\mathbb{N}}^*}$.
 Moreover, in the reflection representation, conformal blocks are manifestly invariant under reflections of all momentums.
 
-Alternatively, conformal blocks have a combinatorial representation that follows from the AGT relation \cite{aflt10}. 
-This representation is a power series in $x$, and therefore converges more slowly than Zamolodchikov's recursion representation. 
+\subsubsection{Other representations of conformal blocks}
+
+The recursion representation that we described can be understood as a large $\Delta_s$ expansion, that makes $\Delta_s$-poles manifest. Al. Zamolodchikov has derived another recursion representation that is a large $c$ expansion, and makes $c$-poles manifest. That $c$-recursion representation is a power series in the cross-ratio $x$, rather than the elliptic nome $q$. For both recursion representations in the case of $N$-point conformal blocks (and not just $4$-point blocks), see \cite{ccy17}.
+
+Moreover, conformal blocks have a combinatorial representation that follows from the AGT relation \cite{aflt10}. 
+This representation is a power series in $x$, and therefore converges more slowly than the $\Delta_s$-recursion representation. 
 Moreover, invariance under reflections is not manifest, and individual terms have spurious poles in $\Delta_s$.
 However, an advantage of the combinatorial representation is that it has an interpretation as a sum over descendents in a particular basis.
 
@@ -2350,26 +2354,26 @@ Using eqs. \eqref{gln} and \eqref{glt} for $g^{L_{-1}^2}$ and $g^{L_{-2}}$, this
 \begin{align}
  2(\Delta_2-\Delta_3)^2 + b^2 (\Delta_2+\Delta_3) - \frac12 - b^2 -\frac38 b^4= 0\ .
 \end{align}
-In terms the momentums $\alpha_2,\alpha_3$ \eqref{daq} that correspond to the conformal dimensions $\Delta_2,\Delta_3$, this equation becomes
+In terms the momentums $P_2,P_3$ \eqref{daq} that correspond to the conformal dimensions $\Delta_2,\Delta_3$, this equation becomes
 \begin{align}
- \left((\alpha_2-\alpha_3)^2 -\frac14 b^2\right)\left((Q-\alpha_2-\alpha_3)^2 -\frac14 b^2\right) = 0\ .
+\prod_{\pm,\pm} \left(P_2\pm P_3 \pm \frac{b}{2}\right) = 0 \ .
 \end{align}
-Up to reflections of $\alpha_2$ or $\alpha_3$, we must therefore have
+Up to reflections of $P_2$ or $P_3$, we must therefore have
 $
- \alpha_3 = \alpha_2 \pm \frac{b}{2}
+ P_3 = P_2 \pm \frac{b}{2}
 $.
-We would similarly find $\alpha_3 = \alpha_2 \pm \frac{1}{2b}$ if we considered the case $\langle r,s\rangle = \langle 1,2\rangle$. 
+We would similarly find $P_3 = P_2 \pm \frac{1}{2b}$ if we considered the case $\langle r,s\rangle = \langle 1,2\rangle$. 
 The resulting fusion rules are 
 \begin{align}
-\boxed{ R_{\langle 2,1 \rangle}\times \mathcal{V}_\alpha = \sum_\pm \mathcal{V}_{\alpha \pm \frac{b}{2}} }\quad , \quad 
-\boxed{ R_{\langle 1,2 \rangle}\times \mathcal{V}_\alpha = \sum_\pm \mathcal{V}_{\alpha \pm \frac{1}{2b}} }\ .
+\boxed{ R_{\langle 2,1 \rangle}\times \mathcal{V}_P = \sum_\pm \mathcal{V}_{P \pm \frac{b}{2}} }\quad , \quad 
+\boxed{ R_{\langle 1,2 \rangle}\times \mathcal{V}_P = \sum_\pm \mathcal{V}_{P \pm \frac{1}{2b}} }\ .
 \label{rot}
 \end{align}
 These fusion rules could be derived by directly analyzing OPEs, instead of three-point functions. (See Exercise \ref{exooit}.) 
 
 \subsubsection{Higher degenerate fields}
 
-We now assume that the fusion rules are associative, and proceed to deduce $R_{\langle r,s \rangle}\times \mathcal{V}_\alpha$.
+We now assume that the fusion rules are associative, and proceed to deduce $R_{\langle r,s \rangle}\times \mathcal{V}_P$.
 Due to null vector equations, we expect this product to be a sum of a finite number of Verma modules.
 By associativity, this implies that the fusion product of two degenerate representations must itself be a sum of degenerate representations.
 In the case of  
@@ -2378,13 +2382,15 @@ $R_{\langle 2,1\rangle}\times R_{\langle r,s\rangle}$, the conformal dimensions 
 R_{\langle 2,1\rangle}\times R_{\langle r,s\rangle} = R_{\langle r-1,s\rangle} + R_{\langle r+1,s\rangle }\ , \quad (r\geq 1)\ .
 \end{align}
 We could similarly compute $R_{\langle 1,2\rangle}\times R_{\langle r,s\rangle}$.
-Then, using the associativity of the fusion products $R_{\langle 2,1\rangle}\times R_{\langle r,s\rangle}\times \mathcal{V}_\alpha$ and $R_{\langle 1,2\rangle}\times R_{\langle r,s\rangle}\times \mathcal{V}_\alpha$, a recursion on $r$ and $s$ leads to
+Then, using the associativity of the fusion products $R_{\langle 2,1\rangle}\times R_{\langle r,s\rangle}\times \mathcal{V}_P$ and $R_{\langle 1,2\rangle}\times R_{\langle r,s\rangle}\times \mathcal{V}_P$, a recursion on $r$ and $s$ leads to
 \begin{align}
- \boxed{R_{\langle r,s \rangle}\times \mathcal{V}_\alpha = \sum_{i=0}^{r-1} \sum_{j=0}^{s-1} \mathcal{V}_{\alpha + \alpha_{\langle r,s \rangle}+ ib+jb^{-1}}
- = \mathcal{V}_{\alpha + \alpha_{\langle r,s \rangle}} +\cdots + \mathcal{V}_{\alpha - \alpha_{\langle r,s \rangle}}  } \ ,
+ \boxed{R_{\langle r,s \rangle}\times \mathcal{V}_P = \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}} \mathcal{V}_{P + ib+jb^{-1}}}
+ \ ,
 \label{rtv}
 \end{align}
-where the momentum $\alpha_{\langle r,s \rangle}$ is given by eq. \eqref{ars}. 
+where the summation index $i$ takes half-integer values if $r$ is even, and integer values if $r$ is odd. 
+This fusion product therefore yields a sum of 
+$rs$ terms.
 
 The fusion product of two degenerate representations must of course obey the fusion rules of both, and we find
 \begin{align}
@@ -2460,7 +2466,7 @@ for
  \end{align}
 (The $r$-th order differential equation for $\left\langle V_{\langle r,1 \rangle}(x)V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle $ can be found in \cite{flno09}.)
 
-\subsubsection{Qualitative properties}
+\subsubsection{Qualitative properties of the second-order BPZ equation}
 
 Since the equation \eqref{sode} has coefficients that diverge at $x=0,1,\infty$, its solutions can be non-analytic at these points. 
 More precisely, these points are regular singular points.
@@ -2474,39 +2480,34 @@ The characteristic exponents of the equation \eqref{sode} at the regular singula
 \begin{align}
  \lambda^2 - bQ\lambda + b^2 \Delta_1 = 0 \ .
 \end{align}
-The roots of this equation are 
+The roots of this equation have simple expressions in terms of the momentum $P_1$,
 \begin{align}
- \lambda_\pm = b\alpha_1^\pm \ , 
+ \lambda_\pm = b\left(\frac{Q}{2}\mp P_1\right) \ .
 \label{lpm}
-\end{align}
-where for a given momentum $\alpha$ we define 
-\begin{align}
- \alpha^+ = \alpha \quad , \quad \alpha^- = Q-\alpha\ .
-\label{apm}
 \end{align}
 In conformal field theory, singularities of a correlation function correspond to coincidences of fields, and characteristic exponents are constrained by the corresponding OPEs.
 In the case of our four-point function \eqref{fxv} at $x=0$, the fusion rule \eqref{rot} leads to an OPE of the type
 \begin{align}
- V_{\langle 2,1 \rangle}(x)V_{\alpha}(0) = \sum_\pm C_\pm(\alpha) x^{\Delta\left(\alpha\mp \frac{b}{2}\right) -\Delta(\alpha) - \Delta_{\langle 2,1 \rangle}} \left(V_{\alpha\mp\frac{b}{2}}(0) + O(x)\right)\ ,
+ V_{\langle 2,1 \rangle}(x)V_{P}(0) = \sum_\pm C_\pm(P) x^{\Delta\left(P\pm \frac{b}{2}\right) -\Delta(P) - \Delta_{\langle 2,1 \rangle}} \left(V_{P\pm\frac{b}{2}}(0) + O(x)\right)\ ,
 \end{align}
-where $C_\pm(\alpha)$ are some constants, and the powers of $x$ are dictated by eq. \eqref{eq:coz}. 
-Computing these powers,
+where $C_\pm(P)$ are some constants, and the powers of $x$ are dictated by eq. \eqref{eq:coz}. 
+Computing these powers, we recover the characteristic exponents
 \begin{align}
- \Delta\left(\alpha\mp \frac{b}{2}\right) -\Delta(\alpha) - \Delta_{\langle 2,1 \rangle}  = b \alpha^{\pm}\ ,
+ \lambda_\pm = \Delta\left(P\pm \frac{b}{2}\right) -\Delta(P) - \Delta_{\langle 2,1 \rangle} \ ,
 \end{align}
-we recover the characteristic exponents $\lambda_\pm$, so that each characteristic exponent corresponds to a primary field in the OPE.
+so that each characteristic exponent corresponds to a primary field in the OPE.
 (See also Exercise \ref{exotbf}.) The corresponding solutions are called $s$-channel \textbf{degenerate conformal blocks}\index{conformal block!degenerate---}, denoted $\mathcal{F}^{(s)}_\pm(x)$, and depicted as
 \begin{align}
  \mathcal{F}^{(s)}_\pm(x)  =  
  \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
-\draw (-1,2) node [left] {$\alpha_1$} -- (0,0) -- node [above] {$\alpha_1\mp \frac{b}{2}$} (4,0) -- (5,2) node [right] {$\alpha_2$};
+\draw (-1,2) node [left] {$P_1$} -- (0,0) -- node [above] {$P_1\pm \frac{b}{2}$} (4,0) -- (5,2) node [right] {$P_2$};
 \draw[dashed] (-1,-2) node [left] {$\langle 2,1 \rangle$} -- (0,0);
-\draw (4,0) -- (5,-2) node [right] {$\alpha_3$};
+\draw (4,0) -- (5,-2) node [right] {$P_3$};
 \end{tikzpicture}
 \ =\ 
 \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .7]
 \draw[dashed] (0, -2) -- node [below left] {$\langle 2,1 \rangle$} (-2, 0); 
-\draw (-2, 0) -- node [above left] {$\alpha_1$} (0, 2) -- node [above right] {$\alpha_2$} (2, 0) -- node [below right] {$\alpha_3$} (0, -2) -- node [left] {$\alpha_1\mp \frac{b}{2}\! \! $} (0, 2); 
+\draw (-2, 0) -- node [above left] {$P_1$} (0, 2) -- node [above right] {$P_2$} (2, 0) -- node [below right] {$P_3$} (0, -2) -- node [left] {$P_1\pm \frac{b}{2}\! \! $} (0, 2); 
 \end{tikzpicture}
 \  \ ,
 \label{gpic}
@@ -2514,6 +2515,13 @@ we recover the characteristic exponents $\lambda_\pm$, so that each characterist
 where the degenerate field is represented as a dashed line.
 These degenerate conformal blocks are special cases of the more general conformal blocks of Section \ref{secaco}.
 
+\subsubsection{Alternative derivation from fusion rules}
+
+It turns out that the second-order BPZ equation is the only meromorphic second-order differential equation with three regular singular points at $x=0,1,\infty$, and characteristic exponents of the type \eqref{lpm}. So this equation can in principle be derived from the fusion rules, without knowing the level two null vectors. 
+
+rigid Fuchsian system
+
+see blog post 
 
 \subsection{Hypergeometric conformal blocks \label{sechcb}}
 
@@ -2554,7 +2562,7 @@ In the case of four-point functions, we have the following equivalences of diffe
 \begin{align}
   \text{BPZ equation \eqref{sode} for}\quad  & \mathcal{F}(x)
 \\ 
-\iff\quad  \text{hypergeometric\ equation\ for\quad }&  \mathcal{G}(x)= x^{-b\alpha_1}(1-x)^{-b\alpha_3}\mathcal{F}(x) 
+\iff\quad  \text{hypergeometric\ equation\ for\quad }&  \mathcal{G}(x)= x^{-bP_1}(1-x)^{-bP_3}\mathcal{F}(x) 
 \\
 \iff\quad  \text{twisted\ hypergeometric\ equation\ for\quad }& \mathcal{H}(x)=(x(1-x))^{-\frac{b^2}{2}}\mathcal{F}(x) \ ,
 \label{fgs}
@@ -2562,23 +2570,23 @@ In the case of four-point functions, we have the following equivalences of diffe
 provided the parameters are related as
 \begin{align}
 \renewcommand{\arraystretch}{1.3}
-\left\{\begin{array}{l}   A = \frac12 + b(\alpha_1+\alpha_3-Q) + b(\alpha_2-\tfrac{Q}{2}) \ , \\
-      B = \frac12 + b(\alpha_1+\alpha_3-Q) - b(\alpha_2-\tfrac{Q}{2}) \ , \\
-      C = 1 + b(2\alpha_1-Q) \ ,
+\left\{\begin{array}{l}   A = \frac12 + b(P_1+P_3-Q) + b(P_2-\tfrac{Q}{2}) \ , \\
+      B = \frac12 + b(P_1+P_3-Q) - b(P_2-\tfrac{Q}{2}) \ , \\
+      C = 1 + b(2P_1-Q) \ ,
 \end{array}\right. 
 \label{abc}
 \end{align}
-or equivalently $\alpha_i = -b^{-1}j_i +\frac{b}{2}$.
+or equivalently $P_i = -b^{-1}j_i +\frac{b}{2}$.
 (See Exercise \ref{exohge}.) 
 Therefore, the solutions of the equation \eqref{sode} that correspond to the characteristic exponents $\lambda_\pm$ \eqref{lpm} at $x=0$ are 
 \begin{align}
-\left\{\begin{array}{l}  \mathcal{F}^{(s)}_+(x) = x^{b\alpha_1} (1-x)^{b\alpha_3} F(A,B,C,x)\ ,
-\\ \mathcal{F}^{(s)}_-(x)  =x^{b(Q-\alpha_1)} (1-x)^{b\alpha_3} F(A-C+1,B-C+1,2-C,x)= \left. \mathcal{F}^{(s)}_+(x) \right|_{\alpha_1\to Q-\alpha_1} \ ,
+\left\{\begin{array}{l}  \mathcal{F}^{(s)}_+(x) = x^{bP_1} (1-x)^{bP_3} F(A,B,C,x)\ ,
+\\ \mathcal{F}^{(s)}_-(x)  =x^{b(Q-P_1)} (1-x)^{bP_3} F(A-C+1,B-C+1,2-C,x)= \left. \mathcal{F}^{(s)}_+(x) \right|_{P_1\to Q-P_1} \ ,
 \end{array}\right. 
 \label{gpm}
 \end{align}
 where the superscript in $\mathcal{F}^{(s)}_\pm(x)$ stands for the $s$-channel basis of solutions.
-These formulas are consistent with the invariance of the original differential equation \eqref{sode} under reflections of $\alpha_i$: reflection of $\alpha_1$ exchanges the two solutions, and reflections of $\alpha_2$ and $\alpha_3$ leave each solution invariant, as follows from eq. \eqref{fff}.
+These formulas are consistent with the invariance of the original differential equation \eqref{sode} under reflections of $P_i$: reflection of $P_1$ exchanges the two solutions, and reflections of $P_2$ and $P_3$ leave each solution invariant, as follows from eq. \eqref{fff}.
 The corresponding solutions of the twisted equation \eqref{hj} are 
 \begin{align}
 \left\{\begin{array}{l}  \mathcal{H}^{(s)}_+(x)  = x^{-j_1}(1-x)^{-j_3} F(-j_1-j_2-j_3-1,-j_1+j_2-j_3,-2j_1,x)\ ,
@@ -2593,24 +2601,24 @@ The corresponding solutions of the twisted equation \eqref{hj} are
 Let us define the $t$-channel basis of solutions, whose elements are of the type \eqref{zxl} near the regular singular point $x=1$.
 Such solutions are obtained from the $s$-channel solutions by the exchange $\left\{\begin{smallmatrix} 1\leftrightarrow 3\\ x\leftrightarrow 1-x \end{smallmatrix}\right.$, and we find 
 \begin{align}
- \left\{\begin{array}{l}  \mathcal{F}^{(t)}_+(x) = x^{b\alpha_1} (1-x)^{b\alpha_3} F(A,B,A+B-C+1,1-x) \ ,
-\\ \mathcal{F}^{(t)}_-(x) =x^{b\alpha_1} (1-x)^{b(Q-\alpha_3)} F(C-A,C-B,C-A-B+1,1-x)\ ,
+ \left\{\begin{array}{l}  \mathcal{F}^{(t)}_+(x) = x^{bP_1} (1-x)^{bP_3} F(A,B,A+B-C+1,1-x) \ ,
+\\ \mathcal{F}^{(t)}_-(x) =x^{bP_1} (1-x)^{b(Q-P_3)} F(C-A,C-B,C-A-B+1,1-x)\ ,
 \end{array}\right.  
 \end{align}
 whose diagrammatic representations are 
 \begin{align}
  \mathcal{F}^{(t)}_\pm(x)  =  
  \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
- \draw (-2,3) node [left] {$\alpha_1$} -- (0,2) -- node [left] {$\alpha_3\mp \frac{b}{2}$} (0,-2);
+ \draw (-2,3) node [left] {$P_1$} -- (0,2) -- node [left] {$P_3\mp \frac{b}{2}$} (0,-2);
  \draw[dashed] (0, -2) -- (-2, -3) node [left] {$\langle 2,1 \rangle$};
-\draw (0,2) -- (2,3) node [right] {$\alpha_2$};
-\draw (0,-2) -- (2, -3) node [right] {$\alpha_3$};
+\draw (0,2) -- (2,3) node [right] {$P_2$};
+\draw (0,-2) -- (2, -3) node [right] {$P_3$};
 \end{tikzpicture}
 \ =\
 \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .7]
-\draw (-2, 0) -- node [above left] {$\alpha_1$} (0, 2) -- node [above right] {$\alpha_2$} (2, 0) -- node [below right] {$\alpha_3$} (0, -2);
+\draw (-2, 0) -- node [above left] {$P_1$} (0, 2) -- node [above right] {$P_2$} (2, 0) -- node [below right] {$P_3$} (0, -2);
 \draw[dashed] (0, -2) -- node [below left] {$\langle 2,1 \rangle$} (-2, 0);
-\draw (-2, 0) -- node [below] {$\alpha_3\mp \frac{b}{2}$} (2, 0); 
+\draw (-2, 0) -- node [below] {$P_3\mp \frac{b}{2}$} (2, 0); 
 \end{tikzpicture}
 \ \ .
 \label{tpic}
