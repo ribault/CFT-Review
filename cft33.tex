@@ -2981,9 +2981,9 @@ Let us first show that these assumptions determine the spectrum of Liouville the
 \subsubsection{Spectrum}
 
 Since the spectrum is continuous, it must involve Verma modules -- the other type of highest-weight representations, degenerate representations, form a discrete set. 
-According to Axiom \ref{ax:sots}, real parts of conformal dimensions are bounded from below, let us guess their lower bound. Remember that fusion rules of degenerate fields are analytic if expressed in terms of momentums rather than conformal dimensions: this is why we use momentums in our meromorphicity assumption. The relation \eqref{daq} between momentums and dimensions has a unique critical point $\alpha=\frac{Q}{2}$ such that $\Delta'(\alpha)=0$: this provides a natural lower bound, and leads to the following values for the momentums and dimensions:
+According to Axiom \ref{ax:sots}, real parts of conformal dimensions are bounded from below, let us guess their lower bound. Remember that fusion rules of degenerate fields are analytic if expressed in terms of momentums rather than conformal dimensions: this is why we use momentums in our meromorphicity assumption. The relation \eqref{daq} between momentums and dimensions has a unique critical point $P=0$ such that $\Delta'(P)=0$: this provides a natural lower bound, and leads to the following values for the momentums and dimensions:
 \begin{align}
- \alpha \in \frac{Q}{2}+i{\mathbb{R}} \quad \iff \quad \Delta \in \frac{c-1}{24}+\mathbb{R}_+\ .
+ P \in i{\mathbb{R}} \quad \iff \quad \Delta \in \frac{c-1}{24}+\mathbb{R}_+\ .
 \label{aqd}
 \end{align}
 The representation $\mathcal{V}_\Delta\otimes \overline{\mathcal{V}}_{\bar{\Delta}}$ can appear in the spectrum only if both 
@@ -2992,16 +2992,17 @@ Moreover, single-valuedness of correlation functions requires $\Delta-\bar{\Delt
 By continuity, $\Delta-\bar{\Delta}$ must be a constant, and this constant must be zero for both $\Delta$ and $\bar{\Delta}$ to span the whole half-line $\left[\frac{c-1}{24},\infty\right[$.
 Therefore, the spectrum must be diagonal,
 \begin{align}
- \boxed{ S= \frac12\int_{\frac{Q}{2}+i{\mathbb{R}}} d\alpha\ \mathcal{V}_\alpha \otimes \overline{\mathcal{V}}_\alpha = \int_{\frac{c-1}{24}}^\infty d\Delta\ \mathcal{V}_\Delta\otimes \overline{\mathcal{V}}_\Delta} \ ,
+ \boxed{ S= \frac12\int_{i{\mathbb{R}}} dP\ \mathcal{V}_P \otimes \overline{\mathcal{V}}_P =\int_{i{\mathbb{R}_+}} dP\ \mathcal{V}_P \otimes \overline{\mathcal{V}}_P = \int_{\frac{c-1}{24}}^\infty d\Delta\ \mathcal{V}_\Delta\otimes \overline{\mathcal{V}}_\Delta} \ ,
 \label{sad}
 \end{align}
-where the  factor $\frac12$ eliminates the redundancy that comes from the reflection relation $\mathcal{V}_\alpha=\mathcal{V}_{Q-\alpha}$. This spectrum is unitary if $c>1$.
+where the  factor $\frac12$ and the restriction of the integration domain to the half-line $P\in i\mathbb{R}_+$ are two ways of
+eliminating the redundancy that comes from the reflection relation $\mathcal{V}_P=\mathcal{V}_{-P}$. This spectrum is unitary if $c>1$.
 
 A subtlety occurs if our spectrum involves representations with dimensions $\Delta_{\langle r, s\rangle}$, which happens if and only if $c\leq 1$ i.e. $Q\in i\mathbb{R}$. 
 We would then have singularities in the decomposition \eqref{fsd} of four-point functions into conformal blocks, as the conformal block $\mathcal{F}_{\Delta_s}^{(s)}(\sigma_i|z_i)$ has a pole at $\Delta_s = \Delta_{\langle r, s\rangle}$. 
-The solution is simply to replace the line $\alpha \in \frac{Q}{2} + i\mathbb{R} = i\mathbb{R}$ with the slightly shifted line 
+The solution is simply to replace the line $P\in i\mathbb{R}$ with the slightly shifted line 
 \begin{align}
- (c\leq 1) \qquad \alpha \in i\mathbb{R} + \epsilon\ ,
+ (c\leq 1) \qquad P \in i\mathbb{R} + \epsilon\ ,
 \end{align}
 and the four-point function will turn out to be independent of the value of the regularizing parameter $\epsilon \in \mathbb{R}^*$. 
 This subtlety with the spectrum is a first hint that something special happens if $c\leq 1$ -- we will find subtleties with the three-point structure constants too. 
@@ -3009,87 +3010,52 @@ This subtlety with the spectrum is a first hint that something special happens i
 
 \subsubsection{Fields and correlation functions}
 
-Since we
-use the momentum $\alpha$ instead of the conformal dimension $\Delta$ for parametrizing representations, we a priori have two notations $V_\alpha(z)$ and $V_{Q-\alpha}(z)$ for the primary field that corresponds to the representation $\mathcal{V}_\alpha \otimes \overline{\mathcal{V}}_\alpha$.
-We must therefore have a \textbf{\boldmath reflection relation}\index{reflection!---relation}
+We work with momentums on the half-line $P\in i\mathbb{R}_+$, so that $\Delta(P_1)=\Delta(P_2)\iff P_1=P_2$. 
+Then the two-point function takes the form
 \begin{align}
- \boxed{V_\alpha(z)= R(\alpha) V_{Q-\alpha}(z)}\ ,
-\label{vrv}
-\end{align}
-where $R(\alpha)$ is the \textbf{\boldmath reflection coefficient}\index{reflection!---coefficient}, which must obey 
-\begin{align}
- R(\alpha)R(Q-\alpha)=1\ ,
-\label{rrr}
-\end{align}
-so that in particular $R(\frac{Q}{2})\in\{1, -1\}$.
-By the reflection relation, commutativity \eqref{comm}, and conformal symmetry \eqref{fzz}, the two-point function must be of the type 
-\begin{align}
- \Big\langle V_{\alpha_1}(z_1) V_{\alpha_2}(z_2)\Big\rangle = c(\alpha_1) \Big\{ \delta(Q-\alpha_1-\alpha_2) + R(\alpha_1)\delta(\alpha_1-\alpha_2)\Big\} |z_{12}|^{-4\Delta(\alpha_1)}\ , 
+ \Big\langle V_{P_1}(z_1) V_{P_2}(z_2)\Big\rangle = B(P_1)\delta(P_1-P_2) |z_{12}|^{-4\Delta(P_1)}\ , 
 \label{vvc}
 \end{align}
-where the coefficient $c(\alpha)$ must obey $c(\alpha)=c(Q-\alpha)$.
-Since both $c(\alpha)$ and $R(\alpha)$ can be absorbed in a field renormalization, 
+where we introduce a coefficient $B(P)$ called the two-point structure constant. 
+We could set this coefficient to one via a field renormalization,
 \begin{align}
- V_\alpha(z) \to \lambda(\alpha)  V_\alpha(z) \ ,
+ V_P(z) \to \lambda(P)  V_P(z) \ ,
 \label{vlv}
 \end{align}
-we are free to assume
-\begin{align}
- c(\alpha)=1\ .
-\end{align}
-We however keep $R(\alpha)$ undetermined, as this will later be necessary for ensuring the analyticity of correlation functions.
-This leaves us with the freedom to perform a field renormalization, provided the factor $\lambda(\alpha)$ obeys
-\begin{align}
- \lambda(\alpha)\lambda(Q-\alpha) = 1\ .
-\label{llo}
-\end{align}
-Omitting the dependence on $z_i$, we schematically rewrite the two-point function as 
-\begin{align}
- \boxed{\left\langle V_{\alpha_1}V_{\alpha_2} \right\rangle = \delta(Q-\alpha_1-\alpha_2) + R(\alpha_1)\delta(\alpha_1-\alpha_2) }\ .
-\label{vvss}
-\end{align}
+and we would recover a two-point function of the type of eq. \eqref{eq:2pt}. However, we refrain from setting $B(P)=1$, as the resulting three-point structure constant would then have branch cuts as a function of momentums.  
+
 According to eq. \eqref{cff}, the three-point function takes the form
 \begin{align}
-\left\langle \prod_{i=1}^3 V_{\alpha_i}(z_i)\right\rangle = C_{\alpha_1,\alpha_2,\alpha_3}\ |z_{12}|^{2(\Delta_3-\Delta_1-\Delta_2)} |z_{23}|^{2(\Delta_1-\Delta_2-\Delta_3)} |z_{31}|^{2(\Delta_3-\Delta_2-\Delta_1)}\ ,
+\left\langle \prod_{i=1}^3 V_{P_i}(z_i)\right\rangle = C_{P_1,P_2,P_3}\ |z_{12}|^{2(\Delta_3-\Delta_1-\Delta_2)} |z_{23}|^{2(\Delta_1-\Delta_2-\Delta_3)} |z_{31}|^{2(\Delta_3-\Delta_2-\Delta_1)}\ ,
 \label{vvv}
 \end{align}
-where $\Delta_i = \Delta(\alpha_i)$ is given in eq. \eqref{daq}.
-We schematically rewrite this formula as 
-\begin{align}
- \boxed{ \left\langle V_{\alpha_1}V_{\alpha_2}V_{\alpha_3} \right\rangle = C_{\alpha_1,\alpha_2,\alpha_3} }\ .
-\label{vvvs}
-\end{align}
-The three-point structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$ is constrained by the reflection relation, for instance
-\begin{align}
- C_{\alpha_1,\alpha_2,\alpha_3} = R(\alpha_1) C_{Q-\alpha_1,\alpha_2,\alpha_3}\ .
-\label{crc}
-\end{align}
-Adapting eq. \eqref{vvs}, the OPE is in our notations
+where $\Delta_i = \Delta(P_i)$ is given in eq. \eqref{daq}, and $C_{P_1,P_2,P_3}$ is the three-point structure constant. And adapting eq. \eqref{vvs}, the OPE is in our notations
 \begin{multline}
- V_{\alpha_1}(z_1) V_{\alpha_2}(z_2) = \frac12 \int_{\frac{Q}{2}+i{\mathbb{R}}} d\alpha\ C_{\alpha_1,\alpha_2}^\alpha |z_{12}|^{2(\Delta-\Delta_1-\Delta_2)} 
+ V_{P_1}(z_1) V_{P_2}(z_2) = \int_{\frac{Q}{2}+i{\mathbb{R}_+}} dP\ C_{P_1,P_2}^P |z_{12}|^{2(\Delta-\Delta_1-\Delta_2)} 
 \left|
-\sum_{L\in \mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta,L} z_{12}^{|L|}  L\right|^2 V_{\alpha}(z_2) \ , 
+\sum_{L\in \mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta,L} z_{12}^{|L|}  L\right|^2 V_{P}(z_2) \ , 
 \end{multline}
-for some OPE coefficient $C_{\alpha_1,\alpha_2}^\alpha$.
-Schematically,
+for some OPE coefficient $C_{P_1,P_2}^P$. Inserting this OPE in the three-point function, and using the two-point function, we find
 \begin{align}
- \boxed{V_{\alpha_1}V_{\alpha_2} \sim \frac12\int_{\frac{Q}{2}+i{\mathbb{R}}} d\alpha\ C_{\alpha_1,\alpha_2}^{\alpha} V_\alpha}\ .
-\label{vvi}
-\end{align}
-Inserting this OPE in the three-point function \eqref{vvvs}, and using the two-point function \eqref{vvss}, we obtain
-\begin{align}
- \frac12\left(R(\alpha_3)C_{\alpha_1,\alpha_2}^{\alpha_3} + C_{\alpha_1,\alpha_2}^{Q-\alpha_3}\right) = C_{\alpha_1,\alpha_2,\alpha_3}
+ B(P_3)C_{P_1,P_2}^{P_3} = C_{P_1,P_2,P_3}
 \ . 
 \label{hcc}
 \end{align}
 (Compare with eq. \eqref{cftt}.) 
-This equation does not fully determine $C_{\alpha_1,\alpha_2}^{\alpha_3}$.
-Actually, the very definition of $C_{\alpha_1,\alpha_2}^{\alpha_3}$ as the coefficient of $V_{\alpha_3}$ in an OPE is ambiguous, because $V_{\alpha_3}$ is related to $V_{Q-\alpha_3}$ by the reflection relation.
-We  resolve this ambiguity by assuming $C_{\alpha_1,\alpha_2}^{Q-\alpha_3}=R(\alpha_3)C_{\alpha_1,\alpha_2}^{\alpha_3}$, and we obtain
+
+Omitting the dependence on $z_i$, and neglecting the descendent fields, we schematically rewrite the two- and three-point functions, and the OPE, as follows: 
 \begin{align}
- \boxed{C_{\alpha_1,\alpha_2}^{\alpha_3} = C_{\alpha_1,\alpha_2,Q-\alpha_3}}\ .
-\label{cec}
+ &\boxed{\left\langle V_{P_1}V_{P_2} \right\rangle = B(P_1)\delta(P_1-P_2) }\ ,
+\label{vvss}
+\\
+ &\boxed{ \left\langle V_{P_1}V_{P_2}V_{P_3} \right\rangle = C_{P_1,P_2,P_3} }\ ,
+\label{vvvs}
+\\
+ &\boxed{V_{P_1}V_{P_2} \sim \int_{\frac{Q}{2}+i{\mathbb{R}_+}} dP\ \frac{C_{P_1,P_2,P}}{B(P)} V_P}\ .
+\label{vvi}
 \end{align}
+
+
 
 \subsubsection{Degenerate fields}
 
@@ -3100,37 +3066,39 @@ Although degenerate representations do not appear in the spectrum of Liouville t
 There exist diagonal degenerate fields $V_{\langle r,s \rangle}$ for $r,s\in\mathbb{N}^*$.
 \end{hyp}
 \noindent
+Equivalently, we could assume that the two degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ exist, and construct the remaining degenerate fields by repeatedly performing OPEs with these two fields.
+
 Let us discuss OPEs and correlation functions of degenerate fields. 
 Remembering the fusion rules \eqref{rtv}, an OPE involving $V_{\langle r,s \rangle}$ must be of the type
 \begin{align}
- \boxed{V_{\langle r,s \rangle} V_\alpha \sim \sum_{i=0}^{r-1}\sum_{j=0}^{s-1} C_{i,j}^{\langle r,s \rangle}(\alpha) V_{\alpha+\alpha_{\langle r,s \rangle}+ib+jb^{-1}}}\ .
+ \boxed{V_{\langle r,s \rangle} V_P \sim \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}}  C_{i,j}^{\langle r,s \rangle}(P) \mathcal{V}_{P + ib+jb^{-1}}}\ .
 \label{vrsv}
 \end{align}
-In analogy with eq. \eqref{cec}, the OPE coefficient $C_{i,j}^{\langle r,s \rangle}(\alpha)$ is related to a three-point structure constant  as 
+In analogy with eq. \eqref{cec}, the OPE coefficient $C_{i,j}^{\langle r,s \rangle}(P)$ is related to a three-point structure constant  as 
 \begin{align}
- C_{i,j}^{\langle r,s \rangle}(\alpha) = C_{\langle r,s \rangle\, ,\, \alpha\, ,\, Q-\alpha-\alpha_{\langle r,s \rangle}-ib-jb^{-1}}\ , 
+ C_{i,j}^{\langle r,s \rangle}(P) = C_{\langle r,s \rangle\, ,\, P\, ,\, Q-P-P_{\langle r,s \rangle}-ib-jb^{-1}}\ , 
 \end{align}
-where $C_{\langle r,s \rangle, \alpha_2,\alpha_3}$ is invariant under the permutation of $\alpha_2$ and $\alpha_3$, and covariant under reflections of $\alpha_2$ and $\alpha_3$.
+where $C_{\langle r,s \rangle, P_2,P_3}$ is invariant under the permutation of $P_2$ and $P_3$, and covariant under reflections of $P_2$ and $P_3$.
 In the particular case of the OPE of a degenerate field $V_{\langle 2,1 \rangle}$,
 \begin{align}
- \boxed{V_{\langle 2,1 \rangle} V_\alpha \sim C_+(\alpha) V_{\alpha-\frac{b}{2}} + C_-(\alpha) V_{\alpha+\frac{b}{2}}}\ ,
+ \boxed{V_{\langle 2,1 \rangle} V_P \sim C_+(P) V_{P-\frac{b}{2}} + C_-(P) V_{P+\frac{b}{2}}}\ ,
 \label{vot}
 \end{align}
  these invariances imply 
 \begin{align}
- C_+(\alpha) &= C_+(Q-\alpha+\tfrac{b}{2})\ ,
+ C_+(P) &= C_+(Q-P+\tfrac{b}{2})\ ,
 \label{cpcp}
 \\
-C_-(\alpha) & = \frac{R(\alpha)}{R(\alpha+\tfrac{b}{2})} C_+(\alpha+\tfrac{b}{2})\ . 
+C_-(P) & = \frac{R(P)}{R(P+\tfrac{b}{2})} C_+(P+\tfrac{b}{2})\ . 
 \label{cmcp}
 \end{align}
 Performing the substitution $b\to \frac{1}{b}$, we obtain
 the OPE of the degenerate field $V_{\langle 1,2 \rangle}$,
 \begin{align}
-\boxed{V_{\langle 1,2 \rangle} V_\alpha \sim \tilde{C}_+(\alpha) V_{\alpha-\frac{1}{2b}} + \tilde{C}_-(\alpha) V_{\alpha+\frac{1}{2b}}}\ ,
+\boxed{V_{\langle 1,2 \rangle} V_P \sim \tilde{C}_+(P) V_{P-\frac{1}{2b}} + \tilde{C}_-(P) V_{P+\frac{1}{2b}}}\ ,
  \label{vto}
 \end{align}
-and relations involving the coefficients $\tilde{C}_+(\alpha)$ and $\tilde{C}_-(\alpha)$. 
+and relations involving the coefficients $\tilde{C}_+(P)$ and $\tilde{C}_-(P)$. 
 
 
 \subsection{Conformal bootstrap equations \label{seccbe}}
@@ -3380,6 +3348,7 @@ This product formula is valid for all values of $x$, but it does not converge ve
 
 \subsubsection{Expression of the three-point structure constant}
 
+
 Using the functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$, we can write solutions $C$ and $\hat C$ of the shift equations \eqref{fcc} for the three-point structure constant, that are respectively defined for $c\notin ]-\infty, 1]$ and $c\notin [25,\infty[$,
 \begin{align}
  \boxed{C_{\alpha_1,\alpha_2,\alpha_3} =  \frac{\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-\alpha_1-\alpha_2-\alpha_3}\Upsilon_b'(0) \Upsilon_b(2\alpha_1) \Upsilon_b(2\alpha_2) \Upsilon_b(2\alpha_3)}{\Upsilon_b(\alpha_1+\alpha_2+\alpha_3-Q) \Upsilon_b(\alpha_1+\alpha_2-\alpha_3)\Upsilon_b(\alpha_2+\alpha_3-\alpha_1)\Upsilon_b(\alpha_3+\alpha_1-\alpha_2)}} \ ,
@@ -3413,6 +3382,31 @@ Both $C$ and $\hat C$
 The shift equations define the structure constants $C$ and $\hat C$ up to $\alpha_i$-independent normalization factors. 
 We have chosen these factors so that the later equations \eqref{crs} and \eqref{clc} will hold.
 
+\subsubsection{The reflection coefficient}
+
+Since we
+use the momentum $P$ instead of the conformal dimension $\Delta$ for parametrizing representations, we a priori have two notations $V_P(z)$ and $V_{Q-P}(z)$ for the primary field that corresponds to the representation $\mathcal{V}_P \otimes \overline{\mathcal{V}}_P$.
+We must therefore have a \textbf{\boldmath reflection relation}\index{reflection!---relation}
+\begin{align}
+ \boxed{V_P(z)= R(P) V_{Q-P}(z)}\ ,
+\label{vrv}
+\end{align}
+where $R(P)$ is the \textbf{\boldmath reflection coefficient}\index{reflection!---coefficient}, which must obey 
+\begin{align}
+ R(P)R(Q-P)=1\ ,
+\label{rrr}
+\end{align}
+so that in particular $R(\frac{Q}{2})\in\{1, -1\}$.
+By the reflection relation, commutativity \eqref{comm}, and conformal symmetry \eqref{fzz}, the two-point function must be of the type 
+
+where the coefficient $c(P)$ must obey $c(P)=c(Q-P)$.
+Since both $c(P)$ and $R(P)$ can be absorbed in a field renormalization, 
+
+The three-point structure constant $C_{P_1,P_2,P_3}$ is constrained by the reflection relation, for instance
+\begin{align}
+ C_{P_1,P_2,P_3} = R(P_1) C_{Q-P_1,P_2,P_3}\ .
+\label{crc}
+\end{align}
 
 \subsection{Existence and uniqueness of Liouville theory}\label{seceul}
 
