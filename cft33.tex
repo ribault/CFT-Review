@@ -2588,8 +2588,9 @@ or equivalently $P_i = -b^{-1}(j_i +\frac12)$.
 (See Exercise \ref{exohge}.) 
 Therefore, the solutions of the equation \eqref{sode} that correspond to the characteristic exponents $\lambda_\pm$ \eqref{lpm} at $x=0$ are 
 \begin{align}
+\renewcommand{\arraystretch}{1.3}
 \left\{\begin{array}{l}  \mathcal{F}^{(s)}_-(x) = x^{b(\frac{Q}{2}+P_1)} (1-x)^{b(\frac{Q}{2}+P_3)} F(A,B,C,x)\ ,
-\\ \mathcal{F}^{(s)}_+(x)  =\left. \mathcal{F}^{(s)}_-(x) \right|_{P_1\to -P_1} \ ,
+\\ \mathcal{F}^{(s)}_+(x)   = x^{b(\frac{Q}{2}-P_1)} (1-x)^{b(\frac{Q}{2}+P_3)} F(C-A,C-B,2-C,x) \ ,
 \end{array}\right. 
 \label{gpm}
 \end{align}
@@ -2597,6 +2598,7 @@ where the superscript in $\mathcal{F}^{(s)}_\pm(x)$ stands for the $s$-channel b
 These formulas are consistent with the invariance of the original differential equation \eqref{sode} under reflections of $P_i$: reflection of $P_1$ exchanges the two solutions, and reflections of $P_2$ and $P_3$ leave each solution invariant, as follows from eq. \eqref{fff}.
 The corresponding solutions of the twisted equation \eqref{hj} are 
 \begin{align}
+\renewcommand{\arraystretch}{1.3}
 \left\{\begin{array}{l}  \mathcal{H}^{(s)}_-(x)  = x^{-j_1}(1-x)^{-j_3} F(-j_1-j_2-j_3-1,-j_1+j_2-j_3,-2j_1,x)\ ,
 \\
  \mathcal{H}^{(s)}_+(x)  = x^{j_1+1}(1-x)^{-j_3} F(j_1-j_2-j_3,j_1+j_2-j_3+1,2j_1+2,x)\ .
@@ -2609,9 +2611,11 @@ The corresponding solutions of the twisted equation \eqref{hj} are
 Let us define the $t$-channel basis of solutions, whose elements are of the type \eqref{zxl} near the regular singular point $x=1$.
 Such solutions are obtained from the $s$-channel solutions by the exchanges $\left\{\begin{smallmatrix} 1\leftrightarrow 3\\ x\leftrightarrow 1-x \end{smallmatrix}\right.$, and we find 
 \begin{align}
+\renewcommand{\arraystretch}{1.3}
  \left\{\begin{array}{l}  \mathcal{F}^{(t)}_-(x) = x^{b(\frac{Q}{2}+P_1)} (1-x)^{b(\frac{Q}{2}+P_3)} F(A,B,A+B-C+1,1-x) \ ,
 \\ \mathcal{F}^{(t)}_+(x) =x^{b(\frac{Q}{2}+P_1)} (1-x)^{b(\frac{Q}{2}-P_3)} F(C-A,C-B,C-A-B+1,1-x)\ ,
-\end{array}\right.  
+\end{array}\right. 
+\label{tpm}
 \end{align}
 whose diagrammatic representations are 
 \begin{align}
@@ -3086,58 +3090,12 @@ The coefficients $C_+(P)$ and $C_-(P)$ are not independent, and can be deduced f
 
 \subsection{Conformal bootstrap equations \label{seccbe}}
 
-Let us now investigate the consequences of the associativity of the OPE, whose general form was given in eq. \eqref{cccc}. In order to constrain the three-point structure constant, we will study four-point functions that involve one degenerate field $V_{\langle 2,1\rangle}$ or $V_{\langle 1, 2\rangle}$. We will therefore need to determine the OPE coefficients of these degenerate fields. 
+Let us now investigate the consequences of the associativity of the OPE, whose general form was given in eq. \eqref{cccc}. In order to constrain the three-point structure constant, we will study four-point functions that involve one degenerate field $V_{\langle 2,1\rangle}$ or $V_{\langle 1, 2\rangle}$. We will therefore need to constrain the OPE coefficients of these degenerate fields. 
 To do this, we will consider four-point functions that involve two degenerate fields. 
 
-\subsubsection{What we learn from $
- \left\langle V_{\langle 2,1\rangle}(x) V_\alpha(0) V_{\langle 1, 2\rangle}(\infty) V_{\frac{3Q}{2}-\alpha}(1)\right\rangle$}
- 
-According to the fusion rules of the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1, 2\rangle}$,
-the $s$- and $t$-channel decompositions \eqref{zsc} of this four-point function each involve only one 
-conformal block,
-\begin{align}
-\mathcal{F}^{(s)}_+ = 
-\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .8]
-\draw[dashed] (2, 0) -- node [above right] {\!$\langle 1,2 \rangle$} (0, 2);
-\draw[dashed] (-2, 0)
--- node [below left] {$\langle 2,1 \rangle$\!} (0, -2); 
-\draw (-2, 0) -- node [above left] {$\alpha$\!} (0, 2) 
--- node [left] {$\alpha- \frac{b}{2}\!  $} (0, -2)
--- node [below right] {\!$\frac{3Q}{2}-\alpha$} (2, 0);
-\end{tikzpicture}
-\quad , \quad 
-\mathcal{F}^{(t)}_+ = 
-\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .8]
-\draw[dashed] (2, 0) -- node [above right] {\!$\langle 1,2 \rangle$} (0, 2);
-\draw[dashed] (-2, 0)
--- node [below left] {$\langle 2,1 \rangle$\!} (0, -2); 
-\draw (0, 2) -- node [above left] {$\alpha$\!} (-2, 0)
--- node [above] {$\alpha- \frac{1}{2b}  $} (2, 0)
--- node [below right] {\!$\frac{3Q}{2}-\alpha$} (0, -2);
-\end{tikzpicture}
-\ .
-\end{align}
-The coefficients $c_+^{(s)}$ and $c_+^{(t)}$ of the two decompositions can be expressed in terms of OPE structure constants, with each triangle in the above diagrams corresponding to one structure constant:
-\begin{align}
- c_+^{(s)} &= C_+(\alpha)\tilde{C}_+(\alpha-\tfrac{b}{2}) \ ,
- \\
- c_+^{(t)} &= \tilde{C}_+(\alpha)C_+(\alpha-\tfrac{1}{2b})\ .
-\end{align}
-The ratio of these coefficients is given by eq. \eqref{csm}, and boils down to $1$ in our case (due to $A=0$). 
-We therefore obtain 
-\begin{align}
- C_+(\alpha)\tilde{C}_+(\alpha-\tfrac{b}{2}) = \tilde{C}_+(\alpha)C_+(\alpha-\tfrac{1}{2b})\ .
-\label{ctc}
-\end{align}
-As shown in Exercise \ref{exonorm}, this implies that there is a field normalization such that 
-\begin{align}
- \boxed{C_+(\alpha) = \tilde{C}_+(\alpha) = 1}\ ,
-\label{cco}
-\end{align}
-and we adopt this normalization. 
 
 \subsubsection{What we learn from $
- \left\langle V_{\langle 2,1 \rangle}(x) V_\alpha(0) V_{\langle 2,1 \rangle}(\infty) V_{Q-\alpha}(1) \right\rangle$}
+ \left\langle V_{\langle 2,1 \rangle}(x) V_P(0) V_{\langle 2,1 \rangle}(\infty) V_{Q-P}(1) \right\rangle$}
  
 The $s$-channel decomposition of this four-point function involves the conformal blocks
  \begin{align}
@@ -3146,81 +3104,82 @@ The $s$-channel decomposition of this four-point function involves the conformal
 \draw[dashed] (2, 0) -- node [above right] {\!$\langle 2,1 \rangle$} (0, 2);
 \draw[dashed] (-2, 0)
 -- node [below left] {$\langle 2,1 \rangle$\!} (0, -2); 
-\draw (-2, 0) -- node [above left] {$\alpha$\!} (0, 2) 
--- node [left] {$\alpha\mp \frac{b}{2}\!  $} (0, -2)
--- node [below right] {\!$Q-\alpha$} (2, 0);
+\draw (-2, 0) -- node [above left] {$P$\!} (0, 2) 
+-- node [left] {$P\mp \frac{b}{2}\!  $} (0, -2)
+-- node [below right] {\!$Q-P$} (2, 0);
 \end{tikzpicture}
 \ .
 \end{align}
 The coefficients $c^{(s)}_\pm$ of this decomposition can be expressed in terms of the OPE structure constants
 \begin{align}
- c^{(s)}_+ &= C_+(\alpha)C_-(\alpha-\tfrac{b}{2}) = \frac{R(\alpha-\tfrac{b}{2})}{R(\alpha)}\ ,
+ c^{(s)}_+ &= C_+(P)C_-(P-\tfrac{b}{2}) = \frac{R(P-\tfrac{b}{2})}{R(P)}\ ,
 \\
-c^{(s)}_- & = C_-(\alpha)C_+(\alpha+\tfrac{b}{2}) = \frac{R(\alpha)}{R(\alpha+\tfrac{b}{2})}\ ,
+c^{(s)}_- & = C_-(P)C_+(P+\tfrac{b}{2}) = \frac{R(P)}{R(P+\tfrac{b}{2})}\ ,
 \end{align}
 where we used the equations \eqref{cmcp} and \eqref{cco}.
 The coefficients $c^{(s)}_+$ and $c^{(s)}_-$ are related by eq. \eqref{spsm}, with
 \begin{align}
- \left\{\begin{array}{l}  \alpha_1 = \alpha \\ \alpha_2 = -\frac{b}{2} \\ \alpha_3 = Q-\alpha \end{array}\right. \quad \implies \quad \left\{\begin{array}{l}  A = 1-bQ \\ B = bQ \\ C=1+b(2\alpha-Q) \end{array}\right.  \ ,
+ \left\{\begin{array}{l}  P_1 = P \\ P_2 = -\frac{b}{2} \\ P_3 = Q-P \end{array}\right. \quad \implies \quad \left\{\begin{array}{l}  A = 1-bQ \\ B = bQ \\ C=1+b(2P-Q) \end{array}\right.  \ ,
 \end{align}
 so that $A+B=1$. We thus obtain
 \begin{align}
- \frac{R(\alpha-\frac{b}{2})R(\alpha+\frac{b}{2})}{R(\alpha)^2} 
- = \frac{\gamma(2b\alpha)\gamma(b(Q-2\alpha))}{\gamma(b(2Q-2\alpha))\gamma(b(2\alpha-Q))}\ .
+ \frac{R(P-\frac{b}{2})R(P+\frac{b}{2})}{R(P)^2} 
+ = \frac{\gamma(2bP)\gamma(b(Q-2P))}{\gamma(b(2Q-2P))\gamma(b(2P-Q))}\ .
 \end{align}
 Similarly, studying a four-point function with two degenerate fields $V_{\langle 1,2 \rangle}$ instead of $V_{\langle 2,1 \rangle}$ would lead to the dual equation
 \begin{align}
- \frac{R(\alpha-\tfrac{1}{2b})R(\alpha+\tfrac{1}{2b})}{R(\alpha)^2} 
- = \frac{\gamma(\frac{1}{b}2\alpha)\gamma(\frac{1}{b}(Q-2\alpha))}{\gamma(\frac{1}{b}(2Q-2\alpha))\gamma(\frac{1}{b}(2\alpha-Q))}\ .
+ \frac{R(P-\tfrac{1}{2b})R(P+\tfrac{1}{2b})}{R(P)^2} 
+ = \frac{\gamma(\frac{1}{b}2P)\gamma(\frac{1}{b}(Q-2P))}{\gamma(\frac{1}{b}(2Q-2P))\gamma(\frac{1}{b}(2P-Q))}\ .
 \end{align}
 The general solution of these equations, together with \eqref{rrr}, is
 \begin{align}
- \boxed{R(\alpha) = R(\tfrac{Q}{2})\mu^{Q-2\alpha} \frac{\Gamma(b(2\alpha-Q))\Gamma(\frac{1}{b}(2\alpha-Q))}{\Gamma(b(Q-2\alpha))\Gamma(\frac{1}{b}(Q-2\alpha))}} \quad \text{with} \quad R(\tfrac{Q}{2})\in \{1, -1\}  \ ,
+ \boxed{R(P) = R(\tfrac{Q}{2})\mu^{Q-2P} \frac{\Gamma(b(2P-Q))\Gamma(\frac{1}{b}(2P-Q))}{\Gamma(b(Q-2P))\Gamma(\frac{1}{b}(Q-2P))}} \quad \text{with} \quad R(\tfrac{Q}{2})\in \{1, -1\}  \ ,
 \label{ram}
 \end{align}
 where $\mu$ is an arbitrary parameter called the \textbf{\boldmath cosmological constant}\index{cosmological constant},
 and the sign $R(\frac{Q}{2})$ will be determined in eq. \eqref{ccr}.
-Using eq. \eqref{cmcp}, this determines in particular $C_-(\alpha)$, so that we have
+Using eq. \eqref{cmcp}, this determines in particular $C_-(P)$, so that we have
 \begin{align}
- C_+(\alpha)=1 \quad , \quad C_-(\alpha) = \mu^b b^4 \frac{\gamma(b(2\alpha-Q))}{\gamma(2b\alpha)}\ .
+ C_+(P)=1 \quad , \quad C_-(P) = \mu^b b^4 \frac{\gamma(b(2P-Q))}{\gamma(2bP)}\ .
 \label{cpm}
 \end{align}
 We will need these OPE coefficients in order to determine the three-point structure constant. 
 However, we would not need these OPE coefficients 
-if we only wanted to determine the $\alpha_s$-dependence of the combination $C_{\alpha_1,\alpha_2,Q-\alpha_s}C_{\alpha_s,\alpha_3,\alpha_4}$. (See Exercise \ref{exocas}.)
+if we only wanted to determine the $P_s$-dependence of the combination $C_{P_1,P_2,Q-P_s}C_{P_s,P_3,P_4}$. (See Exercise \ref{exocas}.)
 
 
-\subsubsection{What we learn from $\left\langle V_{\langle 2,1 \rangle}(x)V_{\alpha_1}(0)V_{\alpha_2}(\infty)V_{\alpha_3}(1)\right\rangle$}
+\subsubsection{What we learn from $\left\langle V_{\langle 2,1 \rangle}(x)V_{P_1}(0)V_{P_2}(\infty)V_{P_3}(1)\right\rangle$}
 
 The $s$-channel decomposition of this four-point function involves the conformal blocks
  \begin{align}
 \mathcal{F}^{(s)}_\pm = 
 \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .8]
-\draw (2, 0) -- node [above right] {\!$\alpha_2$} (0, 2);
+\draw (2, 0) -- node [above right] {\!$P_2$} (0, 2);
 \draw[dashed] (-2, 0)
 -- node [below left] {$\langle 2,1 \rangle$\!} (0, -2); 
-\draw (-2, 0) -- node [above left] {$\alpha_1$\!} (0, 2) 
--- node [left] {$\alpha_1\mp \frac{b}{2}\!  $} (0, -2)
--- node [below right] {\!$\alpha_3$} (2, 0);
+\draw (-2, 0) -- node [above left] {$P_1$\!} (0, 2) 
+-- node [left] {$P_1\mp \frac{b}{2}\!  $} (0, -2)
+-- node [below right] {\!$P_3$} (2, 0);
 \end{tikzpicture}
 \ .
 \end{align}
 The coefficients $c^{(s)}_\pm$ of this decomposition are now 
 \begin{align}
- c_+^{(s)} & = C_+(\alpha_1) C_{\alpha_1-\frac{b}{2},\alpha_2,\alpha_3} \ ,
+ c_+^{(s)} & = C_+(P_1) C_{P_1-\frac{b}{2},P_2,P_3} \ ,
 \\
-c_-^{(s)} & = C_-(\alpha_1) C_{\alpha_1+\frac{b}{2},\alpha_2,\alpha_3}\ .
+c_-^{(s)} & = C_-(P_1) C_{P_1+\frac{b}{2},P_2,P_3}\ .
 \end{align}
 The ratio of these coefficients is determined by eq. \eqref{spsm}. 
-Using moreover the formulas \eqref{cpm} for the degenerate structure constants $C_\pm(\alpha_1)$, we obtain
+Using moreover the formulas \eqref{cpm} for the degenerate structure constants $C_\pm(P_1)$, we obtain
 \begin{align}
- \frac{C_{\alpha_1+b,\alpha_2,\alpha_3}}{C_{\alpha_1,\alpha_2,\alpha_3}} = \mu^{-b} b^{-4}\frac{\gamma(2b\alpha_1)\gamma(2b\alpha_1+b^2)}{\prod_{\pm,\pm} \gamma\left(b\alpha_1\pm b(\alpha_2-\frac{Q}{2})\pm b(\alpha_3-\frac{Q}{2})\right)}\ .
+ \frac{C_{P_1+b,P_2,P_3}}{C_{P_1,P_2,P_3}} = \mu^{-b} b^{-4}\frac{\gamma(2bP_1)\gamma(2bP_1+b^2)}{\prod_{\pm,\pm} \gamma\left(bP_1\pm b(P_2-\frac{Q}{2})\pm b(P_3-\frac{Q}{2})\right)}\ .
 \label{fcc}
 \end{align}
 Considering a four-point function involving the degenerate field $V_{\langle 1,2 \rangle}$ instead of $V_{\langle 2,1 \rangle}$, we can derive a dual equation, which is obtained from the above equation by the replacement $b\to \frac{1}{b}$. 
-The two equations prescribe how the three-point structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$ behaves under shifts of $\alpha_1$ by $b$ and $\frac{1}{b}$.
+The two equations prescribe how the three-point structure constant $C_{P_1,P_2,P_3}$ behaves under shifts of $P_1$ by $b$ and $\frac{1}{b}$.
 Next, we will discuss their solutions.
 
+Additional crossing symmetry equations: Exercise \ref{exonorm}
 
 \subsection{The three-point structure constant \label{sectpf}}
 
@@ -3973,23 +3932,54 @@ Flipping spins is a symmetry of the model, and this symmetry manifests itself as
  \end{align}
 \end{exo}
 
-
-\begin{exo}[Normalization of degenerate OPE coefficients in Liouville theory]
+\begin{exo}[Constraints on degenerate OPE coefficients from crossing symmetry]
  ~\label{exonorm}
-Starting with an arbitrary field normalization, we want to find a function $\lambda(\alpha)$ such that the field renormalization \eqref{vlv} ensures that eq. \eqref{cco} is obeyed.
-\begin{enumerate}
- \item Study how $C_+(\alpha)$ and $\tilde{C}_+(\alpha)$ behave under field renormalizations, and show that they renormalize to one provided
+Consider the four-point function $
+ \left\langle V_{\langle 2,1\rangle}(x) V_P(0) V_{\langle 1, 2\rangle}(\infty) V_{P-\frac{Q}{2}}(1)\right\rangle$.
+ \begin{enumerate}
+  \item Show that the $s$- and $t$-channel decompositions of this four-point function each involve only one 
+conformal block,
 \begin{align}
-\left\{\begin{array}{l} 
- C_+(\alpha) = \frac{\lambda(\alpha-\frac{b}{2})}{\lambda(\alpha)\lambda(-\frac{b}{2})} \ ,
-\\
-\tilde{C}_+(\alpha) = \frac{\lambda(\alpha-\frac{1}{2b})}{\lambda(\alpha)\lambda(-\frac{1}{2b})} \ .
-\end{array}\right. 
+\mathcal{F}^{(s)}_- = 
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .7]
+\draw[dashed] (2, 0) -- node [above right] {\!$\langle 1,2 \rangle$} (0, 2);
+\draw[dashed] (-2, 0)
+-- node [below left] {$\langle 2,1 \rangle$\!} (0, -2); 
+\draw (-2, 0) -- node [above left] {$P$\!} (0, 2) 
+-- node [left] {$P-\frac{b}{2}\!  $} (0, -2)
+-- node [below right] {\!$P-\frac{Q}{2}$} (2, 0);
+\end{tikzpicture}
+\quad , \quad 
+\mathcal{F}^{(t)}_+ = 
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .7]
+\draw[dashed] (2, 0) -- node [above right] {\!$\langle 1,2 \rangle$} (0, 2);
+\draw[dashed] (-2, 0)
+-- node [below left] {$\langle 2,1 \rangle$\!} (0, -2); 
+\draw (0, 2) -- node [above left] {$P$\!} (-2, 0)
+-- node [above] {$P-\frac{1}{2b}  $} (2, 0)
+-- node [below right] {\!$P-\frac{Q}{2}$} (0, -2);
+\end{tikzpicture}
+\ . 
 \end{align}
-\item
-Use eq. \eqref{ctc} for showing that these equations for $\lambda(\alpha)$ are compatible with each other, and eq. \eqref{cpcp} for showing that they are compatible with the  assumed behaviour of $\lambda(\alpha)$ under reflections eq. \eqref{llo}.
-Conclude that these equations do have a solution.
-\end{enumerate}
+\item Compute these blocks using eqs. \eqref{gpm} and \eqref{tpm}, and show in particular that $\mathcal{F}^{(s)}_- = \mathcal{F}^{(t)}_+$.
+
+\item Show that the coefficients of the two decompositions are expressed in terms of the OPE coefficients of degenerate fields as 
+\begin{align}
+ c_-^{(s)} &= C_-(P)\tilde{C}_-(P-\tfrac{b}{2})B(P-\tfrac{Q}{2}) \ ,
+ \\
+ c_+^{(t)} &= \tilde{C}_-(P)C_-(P-\tfrac{1}{2b})B(P-\tfrac{Q}{2})\ .
+\end{align}
+Argue that $c_-^{(s)}=c_+^{(t)}$, and deduce a relation between $C_-$ and $\tilde{C}_-$.
+\item Study how $C_-(P)$ and $\tilde{C}_-(P)$ behave under a field renormalization \eqref{vlv}, and show that they renormalize to one provided
+\begin{align}
+ C_-(P) = \frac{\lambda(P-\frac{b}{2})}{\lambda(P)} \quad \text{and} \quad 
+\tilde{C}_-(P) = \frac{\lambda(P-\frac{1}{2b})}{\lambda(P)} \ .
+\end{align}
+Using the relation between $C_-$ and $\tilde{C}_-$, show that these two equation for $\lambda(P)$ are compatible, and deduce that there exists a field normalization such that 
+\begin{align}
+ C_-(P) = \tilde{C}_-(P) = 1\ .
+\end{align}
+ \end{enumerate}
 \end{exo}
 
 \begin{exo}[Shift equations for a combination of three-point structure constants]
