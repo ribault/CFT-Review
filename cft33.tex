@@ -3059,46 +3059,29 @@ Omitting the dependence on $z_i$, and neglecting the descendent fields, we schem
 
 \subsubsection{Degenerate fields}
 
-Although degenerate representations do not appear in the spectrum of Liouville theory, assuming  that they exist is crucial for analytically solving the theory using the conformal bootstrap method.
+Although degenerate representations do not appear in the spectrum of Liouville theory, assuming  that they exist is crucial for analytically solving the theory using the conformal bootstrap method. This is because the crossing symmetry equations become much simpler in the presence of degenerate fields, as we explained in Section \ref{secaco}.
 
 \begin{hyp}[Existence of degenerate fields]
  ~\label{ax:edf}
 There exist diagonal degenerate fields $V_{\langle r,s \rangle}$ for $r,s\in\mathbb{N}^*$.
 \end{hyp}
 \noindent
-Equivalently, we could assume that the two degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ exist, and construct the remaining degenerate fields by repeatedly performing OPEs with these two fields.
+Equivalently, we could assume that the two degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ exist, and construct the remaining degenerate fields by repeatedly performing OPEs of these two degenerate fields.
 
-Let us discuss OPEs and correlation functions of degenerate fields. 
 Remembering the fusion rules \eqref{rtv}, an OPE involving $V_{\langle r,s \rangle}$ must be of the type
 \begin{align}
- \boxed{V_{\langle r,s \rangle} V_P \sim \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}}  C_{i,j}^{\langle r,s \rangle}(P) \mathcal{V}_{P + ib+jb^{-1}}}\ .
+ \boxed{V_{\langle r,s \rangle} V_P \sim \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}}  C_{i,j}^{\langle r,s \rangle}(P) V_{P + ib+jb^{-1}}}\ .
 \label{vrsv}
 \end{align}
-In analogy with eq. \eqref{cec}, the OPE coefficient $C_{i,j}^{\langle r,s \rangle}(P)$ is related to a three-point structure constant  as 
+In particular, the OPEs of the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ can be written as 
 \begin{align}
- C_{i,j}^{\langle r,s \rangle}(P) = C_{\langle r,s \rangle\, ,\, P\, ,\, Q-P-P_{\langle r,s \rangle}-ib-jb^{-1}}\ , 
-\end{align}
-where $C_{\langle r,s \rangle, P_2,P_3}$ is invariant under the permutation of $P_2$ and $P_3$, and covariant under reflections of $P_2$ and $P_3$.
-In the particular case of the OPE of a degenerate field $V_{\langle 2,1 \rangle}$,
-\begin{align}
- \boxed{V_{\langle 2,1 \rangle} V_P \sim C_+(P) V_{P-\frac{b}{2}} + C_-(P) V_{P+\frac{b}{2}}}\ ,
+ &\boxed{V_{\langle 2,1 \rangle} V_P \sim C_+(P) V_{P-\frac{b}{2}} + C_-(P) V_{P+\frac{b}{2}}}\ ,
 \label{vot}
-\end{align}
- these invariances imply 
-\begin{align}
- C_+(P) &= C_+(Q-P+\tfrac{b}{2})\ ,
-\label{cpcp}
 \\
-C_-(P) & = \frac{R(P)}{R(P+\tfrac{b}{2})} C_+(P+\tfrac{b}{2})\ . 
-\label{cmcp}
-\end{align}
-Performing the substitution $b\to \frac{1}{b}$, we obtain
-the OPE of the degenerate field $V_{\langle 1,2 \rangle}$,
-\begin{align}
-\boxed{V_{\langle 1,2 \rangle} V_P \sim \tilde{C}_+(P) V_{P-\frac{1}{2b}} + \tilde{C}_-(P) V_{P+\frac{1}{2b}}}\ ,
+& \boxed{V_{\langle 1,2 \rangle} V_P \sim \tilde{C}_+(P) V_{P-\frac{1}{2b}} + \tilde{C}_-(P) V_{P+\frac{1}{2b}}}\ .
  \label{vto}
 \end{align}
-and relations involving the coefficients $\tilde{C}_+(P)$ and $\tilde{C}_-(P)$. 
+The coefficients $C_+(P)$ and $C_-(P)$ are not independent, and can be deduced from one another, see Exercise \ref{exocpcm}.
 
 
 \subsection{Conformal bootstrap equations \label{seccbe}}
@@ -3977,6 +3960,19 @@ Flipping spins is a symmetry of the model, and this symmetry manifests itself as
 
 
 \section{Exercises}
+
+\begin{exo}[OPE coefficients of degenerate fields]
+ ~\label{exocpcm}
+ Write the OPE coefficients $C_\pm(P)$ \eqref{vot} in terms of two- and three-point structure constants. In particular, show that 
+ \begin{align}
+  C_+(P)B(P+\tfrac{b}{2}) = C_{\langle 2,1\rangle, P, P+\frac{b}{2}}\ . 
+ \end{align}
+ Using the invariance of the three-point structure constant $C_{\langle 2,1\rangle, P,P'}$ under permutations of its last two arguments, show that $C_+(P)$ and $C_-(P)$ are related as
+ \begin{align}
+  C_+(P)B(P+\tfrac{b}{2}) = C_-(P+\tfrac{b}{2}) B(P)\ .
+ \end{align}
+\end{exo}
+
 
 \begin{exo}[Normalization of degenerate OPE coefficients in Liouville theory]
  ~\label{exonorm}
