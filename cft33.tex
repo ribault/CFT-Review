@@ -22,6 +22,25 @@
 \usetikzlibrary{arrows}
 \usetikzlibrary{decorations.markings}
 
+% Syntax: \colorboxed[<color model>]{<color specification>}{<math formula>}
+\newcommand*{\colorboxed}{}
+\def\colorboxed#1#{%
+  \colorboxedAux{#1}%
+}
+\newcommand*{\colorboxedAux}[3]{%
+  % #1: optional argument for color model
+  % #2: color specification
+  % #3: formula
+  \begingroup
+    \colorlet{cb@saved}{.}%
+    \color#1{#2}%
+    \boxed{%
+      \color{cb@saved}%
+      #3%
+    }%
+  \endgroup
+}
+
 \numberwithin{equation}{section}
 
 % Beware that page numbers in the index can be wrong by one unit or more.
@@ -1625,7 +1644,7 @@ So, for any field $V_\sigma(z)$, we have
 \label{tv}
 \end{align}
 This is actually a special case of the general OPE \eqref{ope}, where the sum over the spectrum of the theory reduces to a combination of fields of the type of $L_n V_\sigma(z)$, as follows from the definition of $T(y)$ as a combination of symmetry generators.
-This OPE simplifies if $V_\sigma(z)$ is a primary field, 
+This OPE simplifies if $V_\sigma(z)$ is a primary field. Using eqs. \eqref{ldld} and \eqref{lvpv}, we have in this case
 \begin{align}
  \boxed{T(y) V_\Delta(z) = \frac{\Delta V_\Delta(z)}{(y-z)^2} + \frac{\partial V_\Delta(z)}{y-z} + O(1)}\ ,
 \label{tvp}
@@ -2076,7 +2095,7 @@ The case $z_2=\infty$ can be obtained from the case $z_2\in\mathbb{C}$ by a glob
 \end{align}
 In the special case where there is no field at infinity, so that $\Delta_2=0$ and $\Delta_1=\Delta_3$, this is consistent with the behaviour \eqref{vdz} of $V_{\Delta_1,\bar\Delta_1}(z_1)$ near $z_1=\infty$.
 
-\subsection{Conformal blocks \label{secaco}}
+\subsection{Conformal blocks and crossing symmetry \label{secaco}}
 
 We will now define \textbf{\boldmath conformal blocks}\index{conformal block} as the universal constituents of correlation functions. 
 We want correlation functions to be decomposable as combinations of the model-dependent three-point structure constant, and conformal blocks.
@@ -2990,8 +3009,12 @@ According to Axiom \ref{ax:sots}, real parts of conformal dimensions are bounded
  P \in i{\mathbb{R}} \quad \iff \quad \Delta \in \frac{c-1}{24}+\mathbb{R}_+\ .
 \label{aqd}
 \end{align}
+Other guesses for the spectrum might also seem plausible: in particular, for $c>1$, unitarity would allow $\Delta> 0$ rather than $\Delta \geq \frac{c-1}{24}$. 
+The decisive argument in favour of our spectrum will be the consistency of the resulting CFT, i.e. 
+the crossing symmetry of the resulting four-point functions, see Section \ref{seceul}.
+
 The representation $\mathcal{V}_\Delta\otimes \overline{\mathcal{V}}_{\bar{\Delta}}$ can appear in the spectrum only if both 
-$\Delta$ and $\bar{\Delta}$ obey this condition. 
+$\Delta$ and $\bar{\Delta}$ obey the condition \eqref{aqd}. 
 Moreover, single-valuedness of correlation functions requires $\Delta-\bar{\Delta}\in {\frac12\mathbb{Z}} $, see eq. \eqref{dbdz}.
 By continuity, $\Delta-\bar{\Delta}$ must be a constant, and this constant must be zero for both $\Delta$ and $\bar{\Delta}$ to span the whole half-line $\left[\frac{c-1}{24},\infty\right[$.
 Therefore, the spectrum must be diagonal,
@@ -3072,11 +3095,16 @@ There exist diagonal degenerate fields $V_{\langle r,s \rangle}$ for $r,s\in\mat
 \noindent
 Equivalently, we could assume that the two degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ exist, and construct the remaining degenerate fields by repeatedly performing OPEs of these two degenerate fields.
 
-Remembering the fusion rules \eqref{rtv}, an OPE involving $V_{\langle r,s \rangle}$ must be of the type
+Strictly speaking, degenerate fields are not covered by our axioms, such as Axiom \ref{ax:ope} on the existence of an OPE.
+Let us work out the natural extension of this axiom to degenerate fields, and in particular determine which fields appear in the OPE $V_{\langle r,s \rangle} V_P$. First and foremost, these fields must obey by the fusion rules
+\eqref{rtv}. The fusion rules apply independently to left- and right-moving representations, and  a priori they allow non-diagonal fields, for example a field with left momentum $P-\frac{b}{2}$ and right momentum $P+\frac{b}{2}$ could appear in the OPE $V_{\langle 2,1\rangle} V_P$. However, for generic value of $P$, such non-diagonal fields have spins that are not half-integer, and therefore violate the single-valuedness condition on spins eq. \eqref{dbdz}.
+Therefore, our OPE must involve only diagonal fields, and must be of the type
 \begin{align}
  \boxed{V_{\langle r,s \rangle} V_P \sim \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}}  C_{i,j}^{\langle r,s \rangle}(P) V_{P + ib+jb^{-1}}}\ .
 \label{vrsv}
 \end{align}
+For generic values of $b$, we have $P\in i\mathbb{R} \implies P+ib+jb^{-1}\notin i\mathbb{R}$, so we may worry that the field $ V_{P + ib+jb^{-1}}$ may not exist. However, we now resort to our assumption that correlation functions are meromorphic functions of momentums, and intepret $ V_{P + ib+jb^{-1}}$ as an analytic continuation of the fields with imaginary momentums.
+
 In particular, the OPEs of the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ can be written as 
 \begin{align}
  &\boxed{V_{\langle 2,1 \rangle} V_P \sim C_+(P) V_{P-\frac{b}{2}} + C_-(P) V_{P+\frac{b}{2}}}\ ,
@@ -3088,96 +3116,95 @@ In particular, the OPEs of the degenerate fields $V_{\langle 2,1\rangle}$ and $V
 The coefficients $C_+(P)$ and $C_-(P)$ are not independent, and can be deduced from one another, see Exercise \ref{exocpcm}.
 
 
-\subsection{Conformal bootstrap equations \label{seccbe}}
+\subsection{Crossing symmetry equations \label{seccbe}}
 
-Let us now investigate the consequences of the associativity of the OPE, whose general form was given in eq. \eqref{cccc}. In order to constrain the three-point structure constant, we will study four-point functions that involve one degenerate field $V_{\langle 2,1\rangle}$ or $V_{\langle 1, 2\rangle}$. We will therefore need to constrain the OPE coefficients of these degenerate fields. 
+Let us now investigate the consequences of the crossing symmetry of four-point functions, whose general form was given in eq. \eqref{csd}. In order to constrain the three-point structure constant, we will study four-point functions that involve one degenerate field $V_{\langle 2,1\rangle}$ or $V_{\langle 1, 2\rangle}$. We will therefore need to constrain the OPE coefficients of these degenerate fields. 
 To do this, we will consider four-point functions that involve two degenerate fields. 
 
 
 \subsubsection{What we learn from $
- \left\langle V_{\langle 2,1 \rangle}(x) V_P(0) V_{\langle 2,1 \rangle}(\infty) V_{Q-P}(1) \right\rangle$}
+ \left\langle V_{\langle 2,1 \rangle}(x) V_P(0) V_{P}(\infty) V_{\langle 2,1 \rangle}(1) \right\rangle$}
  
-The $s$-channel decomposition of this four-point function involves the conformal blocks
+Using the degenerate OPE \eqref{vot} and the two-point function \eqref{vvss}, we find that this four-point function has an $s$-channel decomposition of the type \eqref{zsc}, with the following conformal blocks and structure constants:
+\begin{align}
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .6]
+\draw (-1,2) node [left] {$P$} -- (0,0) -- node [above] {$P-\frac{b}{2}$} (4,0) -- (5,2) node [right] {$P$};
+\draw (-1,-2) node [left] {$\langle 2,1\rangle$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$\langle 2,1\rangle$};
+\node at (1, -4) {$c_{-}^{(s)} = \colorboxed{red}{C_-(P)}\, \colorboxed{red}{B(P-\tfrac{b}{2})}\, \colorboxed{red}{C_-(P)} $};
+\draw[dashed, ->, red] (-.7,-3.2) to [out=90, in=-70] (.2, -.3);
+\draw[dashed, ->, red] (4.6,-3.2) to [out=90, in=-110] (3.8, -.3);
+\draw[dashed, ->, red] (1.9,-3.2) to [out=90, in=-110] (2, -.3);
+\end{tikzpicture} 
+\qquad\quad
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .6]
+\draw (-1,2) node [left] {$P$} -- (0,0) -- node [above] {$P+\frac{b}{2}$} (4,0) -- (5,2) node [right] {$P$};
+\draw (-1,-2) node [left] {$\langle 2,1\rangle$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$\langle 2,1\rangle$};
+\node at (1, -4) {$c_{+}^{(s)} = \colorboxed{red}{C_+(P)}\, \colorboxed{red}{B(P+\tfrac{b}{2})}\, \colorboxed{red}{C_+(P)} $};
+\draw[dashed, ->, red] (-.7,-3.2) to [out=90, in=-70] (.2, -.3);
+\draw[dashed, ->, red] (4.6,-3.2) to [out=90, in=-110] (3.8, -.3);
+\draw[dashed, ->, red] (1.9,-3.2) to [out=90, in=-110] (2, -.3);
+\end{tikzpicture} 
+\end{align} 
+Crossing symmetry and single-valuedness of the four-point function imply that the two structure constants $c_\pm^{(s)}$ obey eq. \eqref{spsm}. In our case, this equation reduces to 
+\begin{align}
+ \frac{C_+(P)^2B(P+\tfrac{b}{2})}{C_-(P)^2 B(P-\tfrac{b}{2})}
+ =  \frac{\gamma(2bP)}{\gamma(-2bP)}
+ \frac{\gamma(-b^2-2bP)}{\gamma(-b^2+2bP)} \ .
+ \label{eq:shiftd}
+\end{align}
+This is all that we will need to know about the degenerate OPE coefficients $C_\pm(P)$. An analogous equation can be derived for $\tilde{C}_\pm (P)$, using a  four-point function of the type  $
+ \left\langle V_{\langle 1,2 \rangle} V_P V_{P} V_{\langle 1,2 \rangle} \right\rangle$ instead of $
+ \left\langle V_{\langle 2,1 \rangle} V_P V_{P} V_{\langle 2,1 \rangle} \right\rangle$. That analogous equation is
  \begin{align}
-\mathcal{F}^{(s)}_\pm = 
-\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .8]
-\draw[dashed] (2, 0) -- node [above right] {\!$\langle 2,1 \rangle$} (0, 2);
-\draw[dashed] (-2, 0)
--- node [below left] {$\langle 2,1 \rangle$\!} (0, -2); 
-\draw (-2, 0) -- node [above left] {$P$\!} (0, 2) 
--- node [left] {$P\mp \frac{b}{2}\!  $} (0, -2)
--- node [below right] {\!$Q-P$} (2, 0);
-\end{tikzpicture}
-\ .
+ \frac{\tilde{C}_+(P)^2B(P+\tfrac{1}{2b})}{\tilde{C}_-(P)^2 B(P-\tfrac{1}{2b})}
+ =  \frac{\gamma(2b^{-1}P)}{\gamma(-2b^{-1}P)}
+ \frac{\gamma(-b^{-2}-2b^{-1}P)}{\gamma(-b^{-2}+2b^{-1}P)} \ .
 \end{align}
-The coefficients $c^{(s)}_\pm$ of this decomposition can be expressed in terms of the OPE structure constants
-\begin{align}
- c^{(s)}_+ &= C_+(P)C_-(P-\tfrac{b}{2}) = \frac{R(P-\tfrac{b}{2})}{R(P)}\ ,
-\\
-c^{(s)}_- & = C_-(P)C_+(P+\tfrac{b}{2}) = \frac{R(P)}{R(P+\tfrac{b}{2})}\ ,
-\end{align}
-where we used the equations \eqref{cmcp} and \eqref{cco}.
-The coefficients $c^{(s)}_+$ and $c^{(s)}_-$ are related by eq. \eqref{spsm}, with
-\begin{align}
- \left\{\begin{array}{l}  P_1 = P \\ P_2 = -\frac{b}{2} \\ P_3 = Q-P \end{array}\right. \quad \implies \quad \left\{\begin{array}{l}  A = 1-bQ \\ B = bQ \\ C=1+b(2P-Q) \end{array}\right.  \ ,
-\end{align}
-so that $A+B=1$. We thus obtain
-\begin{align}
- \frac{R(P-\frac{b}{2})R(P+\frac{b}{2})}{R(P)^2} 
- = \frac{\gamma(2bP)\gamma(b(Q-2P))}{\gamma(b(2Q-2P))\gamma(b(2P-Q))}\ .
-\end{align}
-Similarly, studying a four-point function with two degenerate fields $V_{\langle 1,2 \rangle}$ instead of $V_{\langle 2,1 \rangle}$ would lead to the dual equation
-\begin{align}
- \frac{R(P-\tfrac{1}{2b})R(P+\tfrac{1}{2b})}{R(P)^2} 
- = \frac{\gamma(\frac{1}{b}2P)\gamma(\frac{1}{b}(Q-2P))}{\gamma(\frac{1}{b}(2Q-2P))\gamma(\frac{1}{b}(2P-Q))}\ .
-\end{align}
-The general solution of these equations, together with \eqref{rrr}, is
-\begin{align}
- \boxed{R(P) = R(\tfrac{Q}{2})\mu^{Q-2P} \frac{\Gamma(b(2P-Q))\Gamma(\frac{1}{b}(2P-Q))}{\Gamma(b(Q-2P))\Gamma(\frac{1}{b}(Q-2P))}} \quad \text{with} \quad R(\tfrac{Q}{2})\in \{1, -1\}  \ ,
-\label{ram}
-\end{align}
-where $\mu$ is an arbitrary parameter called the \textbf{\boldmath cosmological constant}\index{cosmological constant},
-and the sign $R(\frac{Q}{2})$ will be determined in eq. \eqref{ccr}.
-Using eq. \eqref{cmcp}, this determines in particular $C_-(P)$, so that we have
-\begin{align}
- C_+(P)=1 \quad , \quad C_-(P) = \mu^b b^4 \frac{\gamma(b(2P-Q))}{\gamma(2bP)}\ .
-\label{cpm}
-\end{align}
-We will need these OPE coefficients in order to determine the three-point structure constant. 
-However, we would not need these OPE coefficients 
-if we only wanted to determine the $P_s$-dependence of the combination $C_{P_1,P_2,Q-P_s}C_{P_s,P_3,P_4}$. (See Exercise \ref{exocas}.)
+
+
 
 
 \subsubsection{What we learn from $\left\langle V_{\langle 2,1 \rangle}(x)V_{P_1}(0)V_{P_2}(\infty)V_{P_3}(1)\right\rangle$}
 
-The $s$-channel decomposition of this four-point function involves the conformal blocks
- \begin{align}
-\mathcal{F}^{(s)}_\pm = 
-\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .8]
-\draw (2, 0) -- node [above right] {\!$P_2$} (0, 2);
-\draw[dashed] (-2, 0)
--- node [below left] {$\langle 2,1 \rangle$\!} (0, -2); 
-\draw (-2, 0) -- node [above left] {$P_1$\!} (0, 2) 
--- node [left] {$P_1\mp \frac{b}{2}\!  $} (0, -2)
--- node [below right] {\!$P_3$} (2, 0);
-\end{tikzpicture}
-\ .
-\end{align}
-The coefficients $c^{(s)}_\pm$ of this decomposition are now 
+Using the degenerate OPE \eqref{vot} and the three-point function \eqref{vvvs}, we find that this four-point function has an $s$-channel decomposition of the type \eqref{zsc}, with the following conformal blocks and structure constants:
 \begin{align}
- c_+^{(s)} & = C_+(P_1) C_{P_1-\frac{b}{2},P_2,P_3} \ ,
-\\
-c_-^{(s)} & = C_-(P_1) C_{P_1+\frac{b}{2},P_2,P_3}\ .
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .6]
+\draw (-1,2) node [left] {$P_1$} -- (0,0) -- node [above] {$P_1-\frac{b}{2}$} (4,0) -- (5,2) node [right] {$P_2$};
+\draw (-1,-2) node [left] {$\langle 2,1\rangle$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$P_3$};
+\node at (1.5, -4) {$c_{-}^{(s)} = \colorboxed{red}{C_-(P_1)}\, \colorboxed{red}{C_{P_1-\frac{b}{2},P_2,P_3}}  $};
+\draw[dashed, ->, red] (.7,-3.2) to [out=90, in=-70] (.2, -.3);
+\draw[dashed, ->, red] (3.5,-3.2) to [out=90, in=-110] (3.8, -.3);
+\end{tikzpicture} 
+\qquad\qquad
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .6]
+\draw (-1,2) node [left] {$P_1$} -- (0,0) -- node [above] {$P_1+\frac{b}{2}$} (4,0) -- (5,2) node [right] {$P_2$};
+\draw (-1,-2) node [left] {$\langle 2,1\rangle$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$P_3$};
+\node at (1.5, -4) {$c_{+}^{(s)} = \colorboxed{red}{C_+(P_1)}\, \colorboxed{red}{C_{P_1+\frac{b}{2},P_2,P_3}}  $};
+\draw[dashed, ->, red] (.7,-3.2) to [out=90, in=-70] (.2, -.3);
+\draw[dashed, ->, red] (3.5,-3.2) to [out=90, in=-110] (3.8, -.3);
+\end{tikzpicture} 
+\label{cs}
 \end{align}
-The ratio of these coefficients is determined by eq. \eqref{spsm}. 
-Using moreover the formulas \eqref{cpm} for the degenerate structure constants $C_\pm(P_1)$, we obtain
+Crossing symmetry and single-valuedness of the four-point function imply that the two structure constants $c_\pm^{(s)}$ obey eq. \eqref{spsm}. In our case, this equation reads
 \begin{align}
- \frac{C_{P_1+b,P_2,P_3}}{C_{P_1,P_2,P_3}} = \mu^{-b} b^{-4}\frac{\gamma(2bP_1)\gamma(2bP_1+b^2)}{\prod_{\pm,\pm} \gamma\left(bP_1\pm b(P_2-\frac{Q}{2})\pm b(P_3-\frac{Q}{2})\right)}\ .
-\label{fcc}
+ \frac{C_+(P_1) C_{P_1+\frac{b}{2},P_2,P_3}}{C_-(P_1) C_{P_1-\frac{b}{2},P_2,P_3} } 
+ =\gamma(2bP_1) \gamma(1+2bP_1)\prod_{\pm,\pm} \gamma(\tfrac12 -bP_1 \pm bP_2 \pm bP_3)\ .
+ \label{eq:shift}
 \end{align}
-Considering a four-point function involving the degenerate field $V_{\langle 1,2 \rangle}$ instead of $V_{\langle 2,1 \rangle}$, we can derive a dual equation, which is obtained from the above equation by the replacement $b\to \frac{1}{b}$. 
+This equation determines how the three-point structure constant behaves under the shifts $P_1\to P_1+b$. 
+Using a four-point function of the type  $
+ \left\langle V_{\langle 1,2 \rangle} V_{P_1}V_{P_2}V_{P_3}\right\rangle$ instead of $
+ \left\langle V_{\langle 2,1 \rangle} V_{P_1}V_{P_2}V_{P_3} \right\rangle$, we would obtain another equation for the shift $P_1\to P_1+\frac{1}{b}$. That other equation is obtained from the above equation by the substitutions $C_\pm \to \tilde{C}_\pm$ and $b\to \frac{1}{b}$.
+ 
+ 
 The two equations prescribe how the three-point structure constant $C_{P_1,P_2,P_3}$ behaves under shifts of $P_1$ by $b$ and $\frac{1}{b}$.
 Next, we will discuss their solutions.
+
+introduce $N$ factors here, mention 4pt structure constant. Separate equations for $N$, $C'$. Separate solutions in next subsection. Invariance under renormalization.
 
 Additional crossing symmetry equations: Exercise \ref{exonorm}
 
@@ -3349,6 +3376,22 @@ The three-point structure constant $C_{P_1,P_2,P_3}$ is constrained by the refle
  C_{P_1,P_2,P_3} = R(P_1) C_{Q-P_1,P_2,P_3}\ .
 \label{crc}
 \end{align}
+
+
+The general solution of these equations, together with \eqref{rrr}, is
+\begin{align}
+ \boxed{R(P) = R(\tfrac{Q}{2})\mu^{Q-2P} \frac{\Gamma(b(2P-Q))\Gamma(\frac{1}{b}(2P-Q))}{\Gamma(b(Q-2P))\Gamma(\frac{1}{b}(Q-2P))}} \quad \text{with} \quad R(\tfrac{Q}{2})\in \{1, -1\}  \ ,
+\label{ram}
+\end{align}
+where $\mu$ is an arbitrary parameter called the \textbf{\boldmath cosmological constant}\index{cosmological constant},
+and the sign $R(\frac{Q}{2})$ will be determined in eq. \eqref{ccr}.
+
+
+\begin{align}
+ C_+(P)=1 \quad , \quad C_-(P) = \mu^b b^4 \frac{\gamma(b(2P-Q))}{\gamma(2bP)}\ .
+\label{cpm}
+\end{align}
+
 
 \subsection{Existence and uniqueness of Liouville theory}\label{seceul}
 
@@ -3981,18 +4024,6 @@ Using the relation between $C_-$ and $\tilde{C}_-$, show that these two equation
 \end{align}
  \end{enumerate}
 \end{exo}
-
-\begin{exo}[Shift equations for a combination of three-point structure constants]
- ~\label{exocas}
- Let us consider the combination $C_{\alpha_1,\alpha_2,Q-\alpha_s}C_{\alpha_s,\alpha_3,\alpha_4}$
- that appears in the $s$-channel decomposition \eqref{vfcch} of the four-point function $\left<\prod_{i=1}^4 V_{\alpha_i}(z_i)\right>$.
- \begin{enumerate}
-  \item Using the four-point functions $\left<V_{\langle 2, 1\rangle} V_{Q-\alpha_s} V_{\alpha_1}V_{\alpha_2}\right>$ and $\left<V_{\langle 2, 1\rangle} V_{\alpha_s} V_{\alpha_3}V_{\alpha_4}\right>$, write a shift equation for the $\alpha_s$-dependence of $C_{\alpha_1,\alpha_2,Q-\alpha_s}C_{\alpha_s,\alpha_3,\alpha_4}$.
-  \item Which combination of the OPE coefficients $C_\pm(\alpha_s)$ appears in this shift equation? Show that this combination can be determined by studying the four-point function $\left<V_{\langle 2, 1\rangle} V_{\alpha_s} V_{\langle 2, 1\rangle} V_{Q-\alpha_s}\right>$, without computing $C_\pm(\alpha_s)$ itself.
-  \item Discuss how the relevant (combinations of) structure constants and OPE coefficients behave under field renormalizations \eqref{vlv}, and how Liouville theory can be solved in a normalization-independent way. 
- \end{enumerate}
-\end{exo}
-
 
 \begin{exo}[Allowing finite multiplicities in Liouville theory]
  ~\label{exomul}
