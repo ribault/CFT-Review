@@ -3078,7 +3078,7 @@ Omitting the dependence on $z_i$, and neglecting the descendent fields, we schem
  &\boxed{ \left\langle V_{P_1}V_{P_2}V_{P_3} \right\rangle = C_{P_1,P_2,P_3} }\ ,
 \label{vvvs}
 \\
- &\boxed{V_{P_1}V_{P_2} \sim \int_{\frac{Q}{2}+i{\mathbb{R}_+}} dP\ \frac{C_{P_1,P_2,P}}{B(P)} V_P}\ .
+ &\boxed{V_{P_1}V_{P_2} \sim \int_{i{\mathbb{R}_+}} dP\ \frac{C_{P_1,P_2,P}}{B(P)} V_P}\ .
 \label{vvi}
 \end{align}
 
@@ -3154,9 +3154,9 @@ Crossing symmetry and single-valuedness of the four-point function imply that th
  \frac{\gamma(-b^2-2bP)}{\gamma(-b^2+2bP)} \ .
  \label{eq:shiftd}
 \end{align}
-This is all that we will need to know about the degenerate OPE coefficients $C_\pm(P)$. An analogous equation can be derived for $\tilde{C}_\pm (P)$, using a  four-point function of the type  $
+This is all that we will need to know about the degenerate OPE coefficients $C_\pm(P)$. A dual equation can be derived for $\tilde{C}_\pm (P)$, using a  four-point function of the type  $
  \left\langle V_{\langle 1,2 \rangle} V_P V_{P} V_{\langle 1,2 \rangle} \right\rangle$ instead of $
- \left\langle V_{\langle 2,1 \rangle} V_P V_{P} V_{\langle 2,1 \rangle} \right\rangle$. That analogous equation is
+ \left\langle V_{\langle 2,1 \rangle} V_P V_{P} V_{\langle 2,1 \rangle} \right\rangle$. That dual equation is
  \begin{align}
  \frac{\tilde{C}_+(P)^2B(P+\tfrac{1}{2b})}{\tilde{C}_-(P)^2 B(P-\tfrac{1}{2b})}
  =  \frac{\gamma(2b^{-1}P)}{\gamma(-2b^{-1}P)}
@@ -3198,24 +3198,70 @@ Crossing symmetry and single-valuedness of the four-point function imply that th
 This equation determines how the three-point structure constant behaves under the shifts $P_1\to P_1+b$. 
 Using a four-point function of the type  $
  \left\langle V_{\langle 1,2 \rangle} V_{P_1}V_{P_2}V_{P_3}\right\rangle$ instead of $
- \left\langle V_{\langle 2,1 \rangle} V_{P_1}V_{P_2}V_{P_3} \right\rangle$, we would obtain another equation for the shift $P_1\to P_1+\frac{1}{b}$. That other equation is obtained from the above equation by the substitutions $C_\pm \to \tilde{C}_\pm$ and $b\to \frac{1}{b}$.
+ \left\langle V_{\langle 2,1 \rangle} V_{P_1}V_{P_2}V_{P_3} \right\rangle$, we would obtain a dual equation for the shift $P_1\to P_1+\frac{1}{b}$. That dual equation is obtained from the above equation by the substitutions $C_\pm \to \tilde{C}_\pm$ and $b\to \frac{1}{b}$.
  
 
-\subsubsection{Normalization-invariant combinations} 
- 
-It may seem that we can eliminate the degenerate OPE coefficients $C_\pm(P)$ from our shift equation \eqref{eq:shift}, by using  eq. \eqref{eq:shiftd}. However, in order to do this we would need 
-\begin{itemize}
- \item either to take the square-root of the latter equation, thereby introducing branch cuts whereas we want our correlation functions to be meromorphic,
- \item or to take the square of the former equation, thereby losing track of the sign of the three-point structure constant $C_{P_1,P_2,P_3}$. 
-\end{itemize}
-We will evade this dilemma by distinguishing quantities that are invariant under field renormalizations \eqref{vlv} and must be unambiguously determined, from quantities that are not invariant and can therefore be ambiguous and/or ill-behaved.   
+\subsubsection{Normalization-invariant quantities} 
 
-see minimal lectures
+Since they come from crossing symmetry equations, our  shift equations  \eqref{eq:shiftd} and \eqref{eq:shift} are invariant under field renormalizations \eqref{vlv}, and can therefore constrain only quantities that are themselves invariant. The two- and three-point structure constants are not invariant, and transform as 
+\begin{align}
+ B(P) \to \lambda(P)^2 B(P) \quad , \quad C_{P_1,P_2,P_3} \to \lambda(P_1)\lambda(P_2)\lambda(P_3) C_{P_1,P_2,P_3}\ .
+\end{align}
+We could consider the invariant combination $\frac{C_{P_1,P_2,P_3}}{\sqrt{B(P_1)B(P_2)B(P_3)}}$, but the presence of a square root would violate our assumption that correlation functions are meromorphic. Or we could consider the invariant combination $\frac{C_{P_1,P_2,P_3}^2}{B(P_1)B(P_2)B(P_3)}$, but we would lose track of the sign of the three-point structure constant. The way out of this dilemma is to decompose the three-point structure constant as 
+\begin{align}
+ C_{P_1,P_2,P_3} = N(P_1)N(P_2)N(P_3)C'_{P_1,P_2,P_3}\ ,
+\end{align}
+where the function $N(P)$ transforms as $N(P)\to \lambda(P)N(P)$, and the factor $C'_{P_1,P_2,P_3}$ is invariant. Then the invariant quantities that we want to determine are $C'_{P_1,P_2,P_3}$, and the combination $N^2B^{-1}(P)$. As a check that these quantities are all we need, let us write the crossing symmetry equation for a four-point function of the type $\langle V_{P_1}V_{P_2}V_{P_3}V_{P_4}\rangle$. Adapting the crossing symmetry equation \eqref{csd} to the 
+OPE \eqref{vvi}, we find 
+\begin{align}
+ \int_{i\mathbb{R}_+} dP_s\frac{C_{12s} C_{s34}}{B_s} \left| 
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .2]
+\draw (-1,2) node [left] {$2$} -- (0,0) -- node [above] {$s$} (4,0) -- (5,2) node [right] {$3$};
+\draw (-1,-2) node [left] {$1$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$4$};
+\end{tikzpicture} 
+\right|^2 = \int_{i\mathbb{R}_+} dP_t \frac{C_{23t}C_{t41}}{B_t} \left|
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .2]
+ \draw (-2,3) node [left] {$2$} -- (0,2) -- node [left] {$t$} (0,-2) -- (-2, -3) node [left] {$1$};
+\draw (0,2) -- (2,3) node [right] {$3$};
+\draw (0,-2) -- (2, -3) node [right] {$4$};
+\end{tikzpicture}
+\right|^2\ .
+\end{align}
+Inserting our decomposition of the three-point structure constant, and 
+removing a factor $\prod_{i=1}^4 N_i$ on both sides, this becomes
+\begin{align}
+ \int_{i\mathbb{R}_+} dP_s\, C'_{12s}(N^2B^{-1})_s C'_{s34} \left| 
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .2]
+\draw (-1,2) node [left] {$2$} -- (0,0) -- node [above] {$s$} (4,0) -- (5,2) node [right] {$3$};
+\draw (-1,-2) node [left] {$1$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$4$};
+\end{tikzpicture} 
+\right|^2 = \int_{i\mathbb{R}_+} dP_t\, C'_{23t}(N^2B^{-1})_tC'_{t41} \left|
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .2]
+ \draw (-2,3) node [left] {$2$} -- (0,2) -- node [left] {$t$} (0,-2) -- (-2, -3) node [left] {$1$};
+\draw (0,2) -- (2,3) node [right] {$3$};
+\draw (0,-2) -- (2, -3) node [right] {$4$};
+\end{tikzpicture}
+\right|^2\ ,
+\end{align}
+which manifestly depends on invariant quantities only.
 
-introduce $N$ factors here, mention 4pt structure constant. Separate equations for $N$, $C'$. Separate solutions in next subsection. Invariance under renormalization.
+Our decomposition of the three-point structure constant does not completely define $N(P)$ and $C'_{P_1,P_2,P_3}$: we fix this ambiguity by assuming that the shift equation \eqref{eq:shift} splits into the two equations 
+\begin{align}
+\frac{C'_{P_1+\frac{b}{2},P_2,P_3}}{C'_{P_1-\frac{b}{2},P_2,P_3} } 
+ &=b^{8bP_1}\prod_{\pm,\pm} \gamma(\tfrac12 -bP_1 \pm bP_2 \pm bP_3)\ ,
+ \\
+\frac{C_+(P_1) N(P_1+\frac{b}{2})}{C_-(P_1) N(P_1-\frac{b}{2}) } 
+ &=b^{-8bP_1}\gamma(2bP_1) \gamma(1+2bP_1) \ .
+\end{align}
+Combining the second equation with the shift equation \eqref{eq:shiftd}, we obtain a shift equation for the combination $N^2B^{-1}$,
+\begin{align}
+ \frac{\left(N^2B^{-1}\right)(P+\frac{b}{2})}{\left(N^2B^{-1}\right)(P-\frac{b}{2})} = b^{-16bP} \frac{\gamma(2bP)}{\gamma(-2bP)} \frac{\gamma(-b^2+2bP)}{\gamma(-b^2-2bP)}\ .
+\end{align}
 
 
-The two equations prescribe how the three-point structure constant $C_{P_1,P_2,P_3}$ behaves under shifts of $P_1$ by $b$ and $\frac{1}{b}$.
+The shift equations prescribe how the three-point structure constant $C_{P_1,P_2,P_3}$ behaves under shifts of $P_1$ by $b$ and $\frac{1}{b}$.
 Next, we will discuss their solutions.
 
 \subsection{The three-point structure constant \label{sectpf}}
