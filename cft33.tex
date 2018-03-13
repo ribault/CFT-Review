@@ -3201,7 +3201,7 @@ Using a four-point function of the type  $
  \left\langle V_{\langle 2,1 \rangle} V_{P_1}V_{P_2}V_{P_3} \right\rangle$, we would obtain a dual equation for the shift $P_1\to P_1+\frac{1}{b}$. That dual equation is obtained from the above equation by the substitutions $C_\pm \to \tilde{C}_\pm$ and $b\to \frac{1}{b}$.
  
 
-\subsubsection{Normalization-invariant quantities} 
+\subsubsection{Normalization-independent quantities} 
 
 Since they come from crossing symmetry equations, our  shift equations  \eqref{eq:shiftd} and \eqref{eq:shift} are invariant under field renormalizations \eqref{vlv}, and can therefore constrain only quantities that are themselves invariant. The two- and three-point structure constants are not invariant, and transform as 
 \begin{align}
@@ -3211,7 +3211,7 @@ We could consider the invariant combination $\frac{C_{P_1,P_2,P_3}}{\sqrt{B(P_1)
 \begin{align}
  C_{P_1,P_2,P_3} = N(P_1)N(P_2)N(P_3)C'_{P_1,P_2,P_3}\ ,
 \end{align}
-where the function $N(P)$ transforms as $N(P)\to \lambda(P)N(P)$, and the factor $C'_{P_1,P_2,P_3}$ is invariant. Then the invariant quantities that we want to determine are $C'_{P_1,P_2,P_3}$, and the combination $N^2B^{-1}(P)$. As a check that these quantities are all we need, let us write the crossing symmetry equation for a four-point function of the type $\langle V_{P_1}V_{P_2}V_{P_3}V_{P_4}\rangle$. Adapting the crossing symmetry equation \eqref{csd} to the 
+where the function $N(P)$ transforms as $N(P)\to \lambda(P)N(P)$, and the renormalized three-point structure constant $C'_{P_1,P_2,P_3}$ is invariant. Then the invariant quantities that we want to determine are $C'_{P_1,P_2,P_3}$, and the combination $N^2B^{-1}(P)$. As a check that these quantities are all we need, let us write the crossing symmetry equation for a four-point function of the type $\langle V_{P_1}V_{P_2}V_{P_3}V_{P_4}\rangle$. Adapting the crossing symmetry equation \eqref{csd} to the 
 OPE \eqref{vvi}, we find 
 \begin{align}
  \int_{i\mathbb{R}_+} dP_s\frac{C_{12s} C_{s34}}{B_s} \left| 
@@ -3229,7 +3229,7 @@ OPE \eqref{vvi}, we find
 \right|^2\ .
 \end{align}
 Inserting our decomposition of the three-point structure constant, and 
-removing a factor $\prod_{i=1}^4 N_i$ on both sides, this becomes
+removing a factor $\prod_{i=1}^4 N(P_i)$ on both sides, this becomes
 \begin{align}
  \int_{i\mathbb{R}_+} dP_s\, C'_{12s}(N^2B^{-1})_s C'_{s34} \left| 
  \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .2]
@@ -3251,40 +3251,41 @@ Our decomposition of the three-point structure constant does not completely defi
 \begin{align}
 \frac{C'_{P_1+\frac{b}{2},P_2,P_3}}{C'_{P_1-\frac{b}{2},P_2,P_3} } 
  &=b^{8bP_1}\prod_{\pm,\pm} \gamma(\tfrac12 -bP_1 \pm bP_2 \pm bP_3)\ ,
+ \label{cps}
  \\
 \frac{C_+(P_1) N(P_1+\frac{b}{2})}{C_-(P_1) N(P_1-\frac{b}{2}) } 
  &=b^{-8bP_1}\gamma(2bP_1) \gamma(1+2bP_1) \ .
+ \label{cns}
 \end{align}
 Combining the second equation with the shift equation \eqref{eq:shiftd}, we obtain a shift equation for the combination $N^2B^{-1}$,
 \begin{align}
  \frac{\left(N^2B^{-1}\right)(P+\frac{b}{2})}{\left(N^2B^{-1}\right)(P-\frac{b}{2})} = b^{-16bP} \frac{\gamma(2bP)}{\gamma(-2bP)} \frac{\gamma(-b^2+2bP)}{\gamma(-b^2-2bP)}\ .
+ \label{nbs}
 \end{align}
+When splitting the shift equation, we have separated the factors that only depend on $P_1$ from the rest, and added the prefactors $b^{\pm 8bP_1}$. These prefactors are here to ensure that the resulting shift equations are compatible with the dual equations, in other words that the shifts by $b$ and $\frac{1}{b}$ commute. Next we will elaborate on this point, and solve the shift equations.
 
-
-The shift equations prescribe how the three-point structure constant $C_{P_1,P_2,P_3}$ behaves under shifts of $P_1$ by $b$ and $\frac{1}{b}$.
-Next, we will discuss their solutions.
 
 \subsection{The three-point structure constant \label{sectpf}}
 
-For $b^2\in \mathbb{R}$, the shift equation \eqref{fcc} and its dual under $b\to \frac{1}{b}$ 
-determine the three-point structure constant up to a momentum-independent factor. 
+For $b^2\in \mathbb{R}$, the shift equation \eqref{cps} and its dual under $b\to \frac{1}{b}$ 
+determine the renormalized three-point structure constant up to a momentum-independent factor. 
 This is because any smooth function with two incommensurable periods must be constant, and we assumed the three-point structure constant to be a smooth function of the momentums and of $b$.
-So we will distinguish three cases:
+So we will distinguish three cases: two cases with $b^2\in\mathbb{R}$, and the case $b^2\notin\mathbb{R}$. In each case, we plot $b$ and $\frac{1}{b}$ as vectors in the complex plane:
 \begin{equation}
- \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .6]
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .7]
 \draw (0, 2) node[left]{$i$} -- (0, 1) node[below left] {$0$} -- (1, 1) node[below] {$1$};
-\draw [thick, latex-latex] (4,3) -- (4,1) node[fill, circle, minimum size = 1mm, inner sep = 0]{} -- (4,-.3);
-\draw [thick, latex-latex] (8,3) -- (7,1) node[fill, circle, minimum size = 1mm, inner sep = 0]{}-- (7.6,-.2);
-\draw [thick, latex-latex] (12,1) -- (10,1) node[fill, circle, minimum size = 1mm, inner sep = 0]{} -- (11.3,1) ;
+\draw [thick, latex-latex,red] (4,3) -- (4,1) node[fill, circle, minimum size = 1mm, inner sep = 0]{} -- (4,-.3);
+\draw [thick, latex-latex, red] (8,3) -- (7,1) node[fill, circle, minimum size = 1mm, inner sep = 0]{}-- (7.6,-.2);
+\draw [thick, latex-latex, red] (12,1) -- (10,1) node[fill, circle, minimum size = 1mm, inner sep = 0]{} -- (11.3,1) ;
 \node at (4, -1.5){$\begin{array}{c} b\in i\mathbb{R} \\ c\leq 1 \end{array}$};
-\node at (7.5, -1.5){$\begin{array}{c} b\in \mathbb{C} \\ c\in\mathbb{C} \end{array}$};
+\node at (7.5, -1.5){$\begin{array}{c} b^2\notin \mathbb{R} \\ c\in\mathbb{C} \end{array}$};
 \node at (11, -1.5){$\begin{array}{c} b\in \mathbb{R} \\ c\geq 25 \end{array}$};
  \end{tikzpicture}
 \end{equation}
 
 \subsubsection{The special function that we need}
 
-In all cases, in order to solve eq. \eqref{fcc} together with the dual equation, we need a function $\Upsilon_b(x)$ such that 
+In all cases, in order to solve eq. \eqref{cps} together with the dual equation, we need a function $\Upsilon_b(x)$ such that 
 \begin{align}
  \frac{\Upsilon_b(x+b)}{\Upsilon_b(x)} \sim \gamma(bx)\quad \text{and} \quad \frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)} \sim \gamma(\tfrac{x}{b})\ ,
 \end{align}
@@ -3373,41 +3374,59 @@ This product formula is valid for all values of $x$, but it does not converge ve
 
 \subsubsection{Expression of the three-point structure constant}
 
-
-Using the functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$, we can write solutions $C$ and $\hat C$ of the shift equations \eqref{fcc} for the three-point structure constant, that are respectively defined for $c\notin ]-\infty, 1]$ and $c\notin [25,\infty[$,
+Using the functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$, we can write solutions $C'$ and $\hat C'$ of the shift equation \eqref{cps} (and its dual) for the renormalized three-point structure constant, which are respectively defined for $c\notin ]-\infty, 1]$ and $c\notin [25,\infty[$,
 \begin{align}
- \boxed{C_{\alpha_1,\alpha_2,\alpha_3} =  \frac{\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-\alpha_1-\alpha_2-\alpha_3}\Upsilon_b'(0) \Upsilon_b(2\alpha_1) \Upsilon_b(2\alpha_2) \Upsilon_b(2\alpha_3)}{\Upsilon_b(\alpha_1+\alpha_2+\alpha_3-Q) \Upsilon_b(\alpha_1+\alpha_2-\alpha_3)\Upsilon_b(\alpha_2+\alpha_3-\alpha_1)\Upsilon_b(\alpha_3+\alpha_1-\alpha_2)}} \ ,
+ \boxed{C'_{P_1,P_2,P_3} = \prod_{\pm,\pm} \Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)^{-1} }\ ,
+ \\
+ \boxed{\hat C'_{P_1,P_2,P_3} = \prod_{\pm,\pm} \hat\Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)^{-1}}\ .
+\end{align}
+These solutions are 
+\begin{itemize}
+ \item invariant under $b\to \frac{1}{b}$, due to the invariance of $\Upsilon_b(x)$ itself,
+ \item invariant under reflection of each momentum $P_i\to -P_i$, due to eq. \eqref{upq},
+ \item and symmetric under permutations of the momentums.
+\end{itemize}
+Similarly, we can write solutions of the shift equation \eqref{nbs} (and its dual) for the normalization-independent combination $N^2B^{-1}$,
+\begin{align}
+ \boxed{\left(N^2B^{-1}\right)(P) =\prod_\pm \Upsilon_b(\pm 2P)} \quad , \quad \boxed{\left(\hat N^2\hat B^{-1}\right)(P) = \prod_\pm \hat\Upsilon_b(\pm 2P) } \ .
+\end{align}
+This is again invariant under $b\to \frac{1}{b}$, and under the reflection $P\to -P$.
+
+We have determined the normalization-independant combinations of structure constants, and this is enough for solving Liouville theory in the conformal bootstrap approach. However, in order to compare different approaches to Liouville theory, it can be convenient to consider specific a field normalization. 
+Choosing the normalization such that $B(P)=1$ might seem natural, but this would cause $N(P)$ to have square root branch cuts, and would therefore violate our assumption that correlation functions are meromorphic. Rather, let us consider the normalization such that 
+\begin{align}
+ N(P) = \left[b^{\frac{2}{b}-2b}\mu\right]^{-P}\Upsilon_b(-2P)\ ,
+\end{align}
+where $\mu$ is an arbitrary parameter called the cosmological constant.
+The resulting expression for the three-point structure constant is
+\begin{align}
+ C_{P_1,P_2,P_3} =  \frac{\left[b^{\frac{2}{b}-2b}\mu\right]^{-\frac{Q}{2}-P_1-P_2-P_3}\Upsilon_b'(0)\prod_{i=1}^3 \Upsilon_b(Q+2P_i) }{\prod_{\pm,\pm} \Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)} \ ,
 \label{caaa}
 \end{align}
+where we chose not only a field normalization, but also an overall $P_i$-independent normalization factor. 
+This is called the \textbf{\boldmath DOZZ formula}\index{DOZZ formula} for Dorn, Otto, A.
+Zamolodchikov and Al. Zamolodchikov. 
+The DOZZ formula was originally derived using the Lagrangian formulation of Liouville theory \cite{zz95}. 
+That formulation led to normalizations that agree with ours 
+up to a redefinition of the cosmological constant. In addition, our normalizations are such that the later equations \eqref{crs} and \eqref{clc} will hold. -- revise in light of later stuff?
+
+
+
+\subsubsection{The reflection coefficient}
+
 \begin{align}
-\boxed{\hat{C}_{\alpha_1,\alpha_2,\alpha_3} =  \frac{\left[(ib)^{\frac{2}{b}-2b}\mu\right]^{Q-\alpha_1-\alpha_2-\alpha_3}\hat{\Upsilon}_b(0) \hat{\Upsilon}_b(2\alpha_1) \hat{\Upsilon}_b(2\alpha_2) \hat{\Upsilon}_b(2\alpha_3)}{\hat{\Upsilon}_b(\alpha_1+\alpha_2+\alpha_3-Q) \hat{\Upsilon}_b(\alpha_1+\alpha_2-\alpha_3)\hat{\Upsilon}_b(\alpha_2+\alpha_3-\alpha_1)\hat{\Upsilon}_b(\alpha_3+\alpha_1-\alpha_2)}} \ .
-\label{hc}
-\end{align}
-The expression for $C$ is called the \textbf{\boldmath DOZZ formula}\index{DOZZ formula} for Dorn, Otto, A.
-Zamolodchikov and Al.
-Zamolodchikov. 
-Both $C$ and $\hat C$
-\begin{itemize}
- \item are symmetric under permutations of $\{\alpha_1,\alpha_2,\alpha_3\}$, 
-\item are invariant under $b\to \frac{1}{b}$, as follows from the invariance of $\Upsilon_b(x)$,
-\item obey the the reflection relation \eqref{crc} with the coefficient $R(\alpha)$ \eqref{ram}, as follows from the identities \eqref{upq} and 
-\begin{align}
- R(\alpha)
+ R(P)
 =
 \left\{\begin{array}{ll}
-\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-2\alpha}\frac{\Upsilon_b(2\alpha)}{\Upsilon_b(2\alpha-Q)}
+\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-2P}\frac{\Upsilon_b(2P)}{\Upsilon_b(2P-Q)}
 & \quad \text{with} \quad R(\tfrac{Q}{2}) = -1 \ ,
 \\
-\left[(ib)^{\frac{2}{b}-2b}\mu\right]^{Q-2\alpha}\frac{\hat{\Upsilon}_b(2\alpha)}{\hat{\Upsilon}_b(2\alpha-Q)}
+\left[(ib)^{\frac{2}{b}-2b}\mu\right]^{Q-2P}\frac{\hat{\Upsilon}_b(2P)}{\hat{\Upsilon}_b(2P-Q)}
 & \quad \text{with} \quad R(\tfrac{Q}{2}) = 1 \ .
 \end{array}\right.
 \end{align}
-(Notice that $R(\frac{Q}{2})=-1$ implies $V_\frac{Q}{2}=0$, which is consistent with $C_{\frac{Q}{2},\alpha_2,\alpha_3}=0$. )
-\end{itemize}
-The shift equations define the structure constants $C$ and $\hat C$ up to $\alpha_i$-independent normalization factors. 
-We have chosen these factors so that the later equations \eqref{crs} and \eqref{clc} will hold.
+(Notice that $R(\frac{Q}{2})=-1$ implies $V_\frac{Q}{2}=0$, which is consistent with $C_{\frac{Q}{2},P_2,P_3}=0$. )
 
-\subsubsection{The reflection coefficient}
 
 Since we
 use the momentum $P$ instead of the conformal dimension $\Delta$ for parametrizing representations, we a priori have two notations $V_P(z)$ and $V_{Q-P}(z)$ for the primary field that corresponds to the representation $\mathcal{V}_P \otimes \overline{\mathcal{V}}_P$.
@@ -3553,7 +3572,9 @@ But the resulting alternative structure constants have no reason to lead to cros
 It would also be interesting to investigate whether Liouville theory could be generalized by relaxing some of our defining assumptions. 
 For example, it turns out that nothing new can be obtained by relaxing our assumption that the multiplicities of representations in the spectrum do not exceed one, and allowing finite multiplicities. (See Exercise \ref{exomul}.)
 
-\subsubsection{Degenerate values of momentums}
+\subsection{Degenerate fields in Liouville theory}
+
+\subsubsection{Degenerate OPEs}
 
 Let us study the behaviour of the Liouville OPE $V_{\alpha_1}V_{\alpha_2}$ \eqref{vvi} when $\alpha_2 \to \alpha_{\langle r,s \rangle}$, where the degenerate field momentum $\alpha_{\langle r,s \rangle}$ is given in eq. \eqref{ars}.
 This behaviour depends on the value of the central charge $c$, because the structure constants $C$ and $\hat C$ have very different analytic properties. 
@@ -3663,7 +3684,44 @@ In the special case $i=j=0$, we find
 In the cases $\langle r,s \rangle \in \{\langle 1,2 \rangle, \langle 2,1 \rangle\}$, 
 this agrees with eq \eqref{cco}.  
 
+\subsubsection{Three-point structure constant}
 
+Evaluating the expression \eqref{clc} for the three-point structure constant, we obtain
+\begin{multline}
+C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =  
+\\
+\frac{\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-\alpha_1-\alpha_2-\alpha_3}\Upsilon_b'(0) \Upsilon_b'(2\alpha_1) \Upsilon_b'(2\alpha_2) \Upsilon_b'(2\alpha_3)}{\Upsilon_b'(\alpha_1+\alpha_2+\alpha_3-Q) \Upsilon_b'(\alpha_1+\alpha_2-\alpha_3)\Upsilon_b'(\alpha_2+\alpha_3-\alpha_1)\Upsilon_b'(\alpha_3+\alpha_1-\alpha_2)}\ ,
+\label{crisi}
+\end{multline}
+where we use the notation $\alpha_i = \alpha_{\langle r_i,s_i \rangle}$ for short.
+This is the Liouville structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$, where all $\Upsilon_b$ factors are replaced with their derivatives at some of their zeros.
+These $\Upsilon_b$ factors indeed have zeros whenever
+the momentums are degenerate and the degenerate fusion rules \eqref{rrrsss} are obeyed, due to $\Upsilon_b(-b{\mathbb{N}}-\frac{1}{b}{\mathbb{N}})=0$ (from eq. \eqref{xbn}) which implies 
+\begin{align}
+ \forall i\neq j\neq k\ , \quad \Upsilon_b(\alpha_i+\alpha_j-\alpha_k) = 0\ .
+\end{align}
+But $\Upsilon_b(x)$ also has zeros for $x\in Q+b{\mathbb{N}}+\frac{1}{b}{\mathbb{N}}$, and these additional zeros are responsible for the expression \eqref{clc} being nonzero in cases when fusion rules are violated.
+
+The three-point structure constant can be rewritten in terms of Gamma functions, using the following consequence of eq. \eqref{upup},
+\begin{align}
+ \frac{\Upsilon_b'(-rb-sb^{-1})}{\Upsilon_b'(0)} = (-1)^{rs} b^{s-r} b^{s(s+1)b^{-2}-r(r+1)b^2} P_r(b^2)P_s(b^{-2}) Q_{r,s}(b)\ ,
+\end{align}
+where we defined
+\begin{align}
+ P_r(x) = \prod_{i=1}^r \gamma(1+ix) \qquad \text{and} \qquad Q_{r,s}(b) = \prod_{i=1}^r \prod_{j=1}^s (ib+jb^{-1})^2\ .
+\end{align}
+We then find
+\begin{align}
+ C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =  \frac{-(-b^2)^{r_0-s_0}\mu^{br_0 + b^{-1}s_0}}{P_{r_0}(b^2)P_{s_0}(b^{-2})Q_{r_0,s_0}(b)} \prod_{i=1}^3 \frac{P_{r_i-1}(b^2)P_{s_i-1}(b^{-2}) Q_{r_i-1,s_i-1}(b)}{P_{r_0-r_i}(b^2)P_{s_0-s_i}(b^{-2}) Q_{r_0-r_i,s_0-s_i}(b)} \ ,
+\label{cpqb}
+\end{align}
+where we introduce the integers
+\begin{align}
+ r_0 = \frac{r_1+r_2+r_3-1}{2} \quad , \quad s_0=\frac{s_1+s_2+s_3-1}{2}\ .
+\end{align}
+This shows that the three-point function of a generalized minimal model is meromorphic as a function of $b^2\in {\mathbb{C}}^*$.
+This contrasts with the three-point function of Liouville theory, which is
+meromorphic only for $b^2\in \mathbb{C}-]-\infty, 1]$. 
 
 \section{Minimal models \label{secvmm}}
 
@@ -3743,44 +3801,6 @@ This makes it difficult to deduce crossing symmetry in generalized minimal model
 Instead, crossing symmetry in generalized minimal models can be checked numerically \cite{rs15}, and this shows that generalized minimal models are consistent on the sphere. 
 On the other hand, nothing guarantees that generalized minimal models are consistent on the torus. Actually, correlation functions involving only the identity field reduce to the partition function, and are therefore infinite. And there is no reason for the other correlation functions to be better behaved.  
 
-\subsubsection{Three-point structure constant}
-
-Evaluating the expression \eqref{clc} for the three-point structure constant, we obtain
-\begin{multline}
-C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =  
-\\
-\frac{\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-\alpha_1-\alpha_2-\alpha_3}\Upsilon_b'(0) \Upsilon_b'(2\alpha_1) \Upsilon_b'(2\alpha_2) \Upsilon_b'(2\alpha_3)}{\Upsilon_b'(\alpha_1+\alpha_2+\alpha_3-Q) \Upsilon_b'(\alpha_1+\alpha_2-\alpha_3)\Upsilon_b'(\alpha_2+\alpha_3-\alpha_1)\Upsilon_b'(\alpha_3+\alpha_1-\alpha_2)}\ ,
-\label{crisi}
-\end{multline}
-where we use the notation $\alpha_i = \alpha_{\langle r_i,s_i \rangle}$ for short.
-This is the Liouville structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$, where all $\Upsilon_b$ factors are replaced with their derivatives at some of their zeros.
-These $\Upsilon_b$ factors indeed have zeros whenever
-the momentums are degenerate and the degenerate fusion rules \eqref{rrrsss} are obeyed, due to $\Upsilon_b(-b{\mathbb{N}}-\frac{1}{b}{\mathbb{N}})=0$ (from eq. \eqref{xbn}) which implies 
-\begin{align}
- \forall i\neq j\neq k\ , \quad \Upsilon_b(\alpha_i+\alpha_j-\alpha_k) = 0\ .
-\end{align}
-But $\Upsilon_b(x)$ also has zeros for $x\in Q+b{\mathbb{N}}+\frac{1}{b}{\mathbb{N}}$, and these additional zeros are responsible for the expression \eqref{clc} being nonzero in cases when fusion rules are violated.
-
-The three-point structure constant can be rewritten in terms of Gamma functions, using the following consequence of eq. \eqref{upup},
-\begin{align}
- \frac{\Upsilon_b'(-rb-sb^{-1})}{\Upsilon_b'(0)} = (-1)^{rs} b^{s-r} b^{s(s+1)b^{-2}-r(r+1)b^2} P_r(b^2)P_s(b^{-2}) Q_{r,s}(b)\ ,
-\end{align}
-where we defined
-\begin{align}
- P_r(x) = \prod_{i=1}^r \gamma(1+ix) \qquad \text{and} \qquad Q_{r,s}(b) = \prod_{i=1}^r \prod_{j=1}^s (ib+jb^{-1})^2\ .
-\end{align}
-We then find
-\begin{align}
- C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =  \frac{-(-b^2)^{r_0-s_0}\mu^{br_0 + b^{-1}s_0}}{P_{r_0}(b^2)P_{s_0}(b^{-2})Q_{r_0,s_0}(b)} \prod_{i=1}^3 \frac{P_{r_i-1}(b^2)P_{s_i-1}(b^{-2}) Q_{r_i-1,s_i-1}(b)}{P_{r_0-r_i}(b^2)P_{s_0-s_i}(b^{-2}) Q_{r_0-r_i,s_0-s_i}(b)} \ ,
-\label{cpqb}
-\end{align}
-where we introduce the integers
-\begin{align}
- r_0 = \frac{r_1+r_2+r_3-1}{2} \quad , \quad s_0=\frac{s_1+s_2+s_3-1}{2}\ .
-\end{align}
-This shows that the three-point function of a generalized minimal model is meromorphic as a function of $b^2\in {\mathbb{C}}^*$.
-This contrasts with the three-point function of Liouville theory, which is
-meromorphic only for $b^2\in \mathbb{C}-]-\infty, 1]$. 
 
 
 \subsection{A-series minimal models \label{secamm}}
