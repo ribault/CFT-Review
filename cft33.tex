@@ -3392,68 +3392,59 @@ Similarly, we can write solutions of the shift equation \eqref{nbs} (and its dua
 \end{align}
 This is again invariant under $b\to \frac{1}{b}$, and under the reflection $P\to -P$.
 
-We have determined the normalization-independant combinations of structure constants, and this is enough for solving Liouville theory in the conformal bootstrap approach. However, in order to compare different approaches to Liouville theory, it can be convenient to consider specific a field normalization. 
+We have determined the normalization-independant combinations of structure constants, and this is enough for solving Liouville theory in the conformal bootstrap approach. However, in order to compare different approaches to Liouville theory, it can be convenient to consider specific field normalizations. 
 Choosing the normalization such that $B(P)=1$ might seem natural, but this would cause $N(P)$ to have square root branch cuts, and would therefore violate our assumption that correlation functions are meromorphic. Rather, let us consider the normalization such that 
 \begin{align}
- N(P) = \left[b^{\frac{2}{b}-2b}\mu\right]^{-P}\Upsilon_b(-2P)\ ,
+ N(P) = \mu^{-P}\Upsilon_b(-2P)\ ,
+ \label{nop}
 \end{align}
 where $\mu$ is an arbitrary parameter called the cosmological constant.
 The resulting expression for the three-point structure constant is
 \begin{align}
- C_{P_1,P_2,P_3} =  \frac{\left[b^{\frac{2}{b}-2b}\mu\right]^{-\frac{Q}{2}-P_1-P_2-P_3}\Upsilon_b'(0)\prod_{i=1}^3 \Upsilon_b(Q+2P_i) }{\prod_{\pm,\pm} \Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)} \ ,
+ C_{P_1,P_2,P_3} =  \frac{\mu^{-\frac{Q}{2}-P_1-P_2-P_3}\Upsilon_b'(0)\prod_{i=1}^3 \Upsilon_b(-2P_i) }{\prod_{\pm,\pm} \Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)} \ ,
 \label{caaa}
 \end{align}
 where we chose not only a field normalization, but also an overall $P_i$-independent normalization factor. 
 This is called the \textbf{\boldmath DOZZ formula}\index{DOZZ formula} for Dorn, Otto, A.
 Zamolodchikov and Al. Zamolodchikov. 
 The DOZZ formula was originally derived using the Lagrangian formulation of Liouville theory \cite{zz95}. 
-That formulation led to normalizations that agree with ours 
-up to a redefinition of the cosmological constant. In addition, our normalizations are such that the later equations \eqref{crs} and \eqref{clc} will hold. -- revise in light of later stuff?
+That formulation led to normalizations that agree with ours, 
+up to a redefinition of the cosmological constant. These normalizations are such that the later equation \eqref{crs} will hold. 
 
+The DOZZ formula is valid for $c\notin ]-\infty, 1]$. The analogous choice of normalizations for $c\notin [25,\infty[$ leads to the three-point structure constant 
+\begin{align}
+ \hat C_{P_1,P_2,P_3} =  \frac{\mu^{-\frac{Q}{2}-P_1-P_2-P_3}\hat\Upsilon_b(0)\prod_{i=1}^3 \hat\Upsilon_b(-2P_i) }{\prod_{\pm,\pm} \hat\Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)} \ .
+\label{hc}
+\end{align}
+Then $\hat C_{P_1,P_2,P_3}$ has the same behaviour as $C_{P_1,P_2,P_3}$ under the shifts $P_1\to P_1+b$ and $P_1\to P_1+\frac{1}{b}$. Moreover, we have $\hat C_{-\frac{Q}{2},-\frac{Q}{2},\frac{Q}{2}} = 1$.
 
 
 \subsubsection{The reflection coefficient}
 
-\begin{align}
- R(P)
-=
-\left\{\begin{array}{ll}
-\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-2P}\frac{\Upsilon_b(2P)}{\Upsilon_b(2P-Q)}
-& \quad \text{with} \quad R(\tfrac{Q}{2}) = -1 \ ,
-\\
-\left[(ib)^{\frac{2}{b}-2b}\mu\right]^{Q-2P}\frac{\hat{\Upsilon}_b(2P)}{\hat{\Upsilon}_b(2P-Q)}
-& \quad \text{with} \quad R(\tfrac{Q}{2}) = 1 \ .
-\end{array}\right.
-\end{align}
-(Notice that $R(\frac{Q}{2})=-1$ implies $V_\frac{Q}{2}=0$, which is consistent with $C_{\frac{Q}{2},P_2,P_3}=0$. )
+While the representations in Liouville theory's spectrum can be parametrized by momentums $P\in i\mathbb{R}_+$, the analytic properties of correlation functions allow us to consider fields with arbitrary complex momentums. 
+In particular, momentums can reach values that are related by the reflection $P\to -P$. But since multip. one they carry same info.
 
-
-Since we
-use the momentum $P$ instead of the conformal dimension $\Delta$ for parametrizing representations, we a priori have two notations $V_P(z)$ and $V_{Q-P}(z)$ for the primary field that corresponds to the representation $\mathcal{V}_P \otimes \overline{\mathcal{V}}_P$.
-We must therefore have a \textbf{\boldmath reflection relation}\index{reflection!---relation}
+Let us discuss how correlation functions behave under the reflection $P\to -P$. Since the reflection leaves conformal dimensions invariant, normalization-independent quantities must be invariant too. However, the fields $V_P(z)$ and $V_{-P}(z)$ can differ by a normalization-dependent factor $R(P)$ called the \textbf{\boldmath reflection coefficient}\index{reflection!---coefficient}, so that we have the \textbf{\boldmath reflection relation}\index{reflection!---relation}
 \begin{align}
- \boxed{V_P(z)= R(P) V_{Q-P}(z)}\ ,
+V_P(z)= R(P) V_{-P}(z)\ .
 \label{vrv}
 \end{align}
-where $R(P)$ is the \textbf{\boldmath reflection coefficient}\index{reflection!---coefficient}, which must obey 
+The reflection coefficient must obey $R(P)R(-P)=1$, in particular $R(0)\in \{-1,1\}$. Allowing arbitrary complex momentums, and taking the reflection relation into account, the two-point function \eqref{vvss} becomes 
 \begin{align}
- R(P)R(Q-P)=1\ ,
-\label{rrr}
+ \left<V_{P_1}V_{P_2}\right> = B(P_1)\Big[ \delta(P_1-P_2) + R(P_2)\delta(P_1+P_2) \Big]\ ,
 \end{align}
-so that in particular $R(\frac{Q}{2})\in\{1, -1\}$.
-By the reflection relation, commutativity \eqref{comm}, and conformal symmetry \eqref{fzz}, the two-point function must be of the type 
+where $B(P)=R(P)^2B(-P)$. Moreover, we must have $N(P)=R(P)N(-P)$ and $C_{P_1,P_2,P_3} = R(P_1) C_{-P_1,P_2,P_3}$.
 
-where the coefficient $c(P)$ must obey $c(P)=c(Q-P)$.
-Since both $c(P)$ and $R(P)$ can be absorbed in a field renormalization, 
-
-The three-point structure constant $C_{P_1,P_2,P_3}$ is constrained by the reflection relation, for instance
+We now focus on the particular normalization \eqref{nop}, such that the three-point function is given by the DOZZ formula. This normalization obeys $N(P)N(-P) = \left(N^2B^{-1}\right)(P)$, which implies $R(P)=B(P)$. 
+The expressions of the reflection coefficient for $c\notin ]-\infty, 1]$ and $c\notin [25,\infty[$ are respectively
 \begin{align}
- C_{P_1,P_2,P_3} = R(P_1) C_{Q-P_1,P_2,P_3}\ .
-\label{crc}
-\end{align}
+ R(P) = \mu^{-2P}\frac{\Upsilon_b(-2P)}{\Upsilon_b(2P)} \quad , \quad \hat R(P) = \mu^{-2P}\frac{\hat{\Upsilon}_b(-2P)}{\hat{\Upsilon}_b(2P)}\ .
+ \end{align}
+We have  $\hat\Upsilon_b(0)\neq 0$ so that $\hat R(0)=1$. On the other hand, we have $\Upsilon_b(0)=0$, so that $R(0)=-1$. This implies $V_{P=0}(z)=0$, which is consistent with $C_{0,P_2,P_3}=0$.
 
 
-The general solution of these equations, together with \eqref{rrr}, is
+
+
 \begin{align}
  \boxed{R(P) = R(\tfrac{Q}{2})\mu^{Q-2P} \frac{\Gamma(b(2P-Q))\Gamma(\frac{1}{b}(2P-Q))}{\Gamma(b(Q-2P))\Gamma(\frac{1}{b}(Q-2P))}} \quad \text{with} \quad R(\tfrac{Q}{2})\in \{1, -1\}  \ ,
 \label{ram}
