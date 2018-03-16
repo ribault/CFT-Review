@@ -3146,6 +3146,7 @@ Using the degenerate OPE \eqref{vot} and the two-point function \eqref{vvss}, we
 \draw[dashed, ->, red] (4.6,-3.2) to [out=90, in=-110] (3.8, -.3);
 \draw[dashed, ->, red] (1.9,-3.2) to [out=90, in=-110] (2, -.3);
 \end{tikzpicture} 
+\label{eq:ddgg}
 \end{align} 
 Crossing symmetry and single-valuedness of the four-point function imply that the two structure constants $c_\pm^{(s)}$ obey eq. \eqref{spsm}. In our case, this equation reduces to 
 \begin{align}
@@ -4079,18 +4080,38 @@ Argue that $c_-^{(s)}=c_+^{(t)}$, and deduce a relation between $C_-$ and $\tild
 Using the relation between $C_-$ and $\tilde{C}_-$, show that these two equation for $\lambda(P)$ are compatible, and deduce that there exists a field normalization such that 
 \begin{align}
  C_-(P) = \tilde{C}_-(P) = 1\ .
+ \label{cmpo}
 \end{align}
  \end{enumerate}
 \end{exo}
 
 \begin{exo}[Degenerate OPE coefficients in the DOZZ normalization]
  ~\label{exodoc}
+ Let us compute the degenerate OPE coefficients $C_\pm(P)$, assuming that fields are normalized as in eq. \eqref{nop}.
+\begin{enumerate}
+ \item Further studying single-valued solutions of the hypergeometric functions, show that in addition to eq. \eqref{spsm}, we have 
+ \begin{align}
+  \frac{c_-^{(s)}}{c_-^{(t)}} = \frac{1}{\det F}\frac{F_{++}}{F_{--}} = \frac{\gamma(-2bP_1)}{\gamma(-2bP_3)}\prod_\pm \gamma\left(\tfrac12+b(P_1\pm P_2-P_3)\right)\ .
+ \end{align}
+\item Specializing to a four-point function with two degenerate fields,
+show that in addition to eq. \eqref{eq:ddgg} for $c_-^{(s)}$, we have the equation
+$
+ c_-^{(t)} \propto B(P)
+$ for the coefficient of the $t$-channel field $V_{\langle 1,1\rangle}$. 
+(Here and in later equations, 
+we neglect $P$-independent factors.) Deduce that 
 \begin{align}
- C_+(P)=1 \quad , \quad C_-(P) = \mu^b b^4 \frac{\gamma(b(2P-Q))}{\gamma(2bP)}\ .
-\label{cpm}
+ C_-(P)^2 \propto \gamma(-2bP)\gamma(2bP-b^2) \frac{B(P)}{B(P-\frac{b}{2})}\ .
 \end{align}
-\end{exo}
-
+\item Using eq. \eqref{ram} for $B(P)=R(P)$, deduce $C_-(P)\propto 1$, and show that the DOZZ normalization is such that eq. \eqref{cmpo} holds. 
+\item
+Study how the degenerate OPE \eqref{vot} behaves under reflections, and show that $C_+(P) = R(P)R(-P-\frac{b}{2})C_-(-P)$. Using again eq. \eqref{ram} for $R(P)$, deduce
+\begin{align}
+ C_+(P) = \mu^b b^{2bQ} \gamma(2bP)\gamma(-2bP-b^2)\ .
+\end{align}
+\end{enumerate}
+ \end{exo}
+ 
 
 \begin{exo}[Allowing finite multiplicities in Liouville theory]
  ~\label{exomul}
