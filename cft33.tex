@@ -3398,10 +3398,10 @@ Choosing the normalization such that $B(P)=1$ might seem natural, but this would
  N(P) = \mu^{-P}\Upsilon_b(-2P)\ ,
  \label{nop}
 \end{align}
-where $\mu$ is an arbitrary parameter called the cosmological constant.
+where $\mu$ is an arbitrary parameter called the \textbf{\boldmath cosmological constant}\index{cosmological constant}.
 The resulting expression for the three-point structure constant is
 \begin{align}
- C_{P_1,P_2,P_3} =  \frac{\mu^{-\frac{Q}{2}-P_1-P_2-P_3}\Upsilon_b'(0)\prod_{i=1}^3 \Upsilon_b(-2P_i) }{\prod_{\pm,\pm} \Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)} \ ,
+ C_{P_1,P_2,P_3} =  \frac{\mu^{-\frac{Q}{2}}\Upsilon_b'(0)\prod_{i=1}^3 \mu^{-P_i}\Upsilon_b(-2P_i) }{\prod_{\pm,\pm} \Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)} \ ,
 \label{caaa}
 \end{align}
 where we chose not only a field normalization, but also an overall $P_i$-independent normalization factor. 
@@ -3409,7 +3409,7 @@ This is called the \textbf{\boldmath DOZZ formula}\index{DOZZ formula} for Dorn,
 Zamolodchikov and Al. Zamolodchikov. 
 The DOZZ formula was originally derived using the Lagrangian formulation of Liouville theory \cite{zz95}. 
 That formulation led to normalizations that agree with ours, 
-up to a redefinition of the cosmological constant. These normalizations are such that the later equation \eqref{crs} will hold. 
+up to a redefinition of the cosmological constant. These normalizations are such that the later equation \eqref{crs} will hold, and such that $C_-(P)=1$. (See Exercise \ref{exodoc}.)
 
 The DOZZ formula is valid for $c\notin ]-\infty, 1]$. The analogous choice of normalizations for $c\notin [25,\infty[$ leads to the three-point structure constant 
 \begin{align}
@@ -3422,9 +3422,8 @@ Then $\hat C_{P_1,P_2,P_3}$ has the same behaviour as $C_{P_1,P_2,P_3}$ under th
 \subsubsection{The reflection coefficient}
 
 While the representations in Liouville theory's spectrum can be parametrized by momentums $P\in i\mathbb{R}_+$, the analytic properties of correlation functions allow us to consider fields with arbitrary complex momentums. 
-In particular, momentums can reach values that are related by the reflection $P\to -P$. But since multip. one they carry same info.
-
-Let us discuss how correlation functions behave under the reflection $P\to -P$. Since the reflection leaves conformal dimensions invariant, normalization-independent quantities must be invariant too. However, the fields $V_P(z)$ and $V_{-P}(z)$ can differ by a normalization-dependent factor $R(P)$ called the \textbf{\boldmath reflection coefficient}\index{reflection!---coefficient}, so that we have the \textbf{\boldmath reflection relation}\index{reflection!---relation}
+In particular, for a given momentum $P$, it makes sense to consider the reflected momentum $-P$, which corresponds to the same representation of the Virasoro algebra. 
+We interpret our assumption that multiplicities are trivial as applying not only to the spectrum, but also to representations with arbitrary momentums. Then the fields $V_P(z)$ and $V_{-P}(z)$ correspond to the same primary state, and must be the same up to a factor $R(P)$ called the \textbf{\boldmath reflection coefficient}\index{reflection!---coefficient}. In other words, we must have the \textbf{\boldmath reflection relation}\index{reflection!---relation}
 \begin{align}
 V_P(z)= R(P) V_{-P}(z)\ .
 \label{vrv}
@@ -3433,30 +3432,22 @@ The reflection coefficient must obey $R(P)R(-P)=1$, in particular $R(0)\in \{-1,
 \begin{align}
  \left<V_{P_1}V_{P_2}\right> = B(P_1)\Big[ \delta(P_1-P_2) + R(P_2)\delta(P_1+P_2) \Big]\ ,
 \end{align}
-where $B(P)=R(P)^2B(-P)$. Moreover, we must have $N(P)=R(P)N(-P)$ and $C_{P_1,P_2,P_3} = R(P_1) C_{-P_1,P_2,P_3}$.
+where $B(P)=R(P)^2B(-P)$. Moreover, we must have $N(P)=R(P)N(-P)$ and $C_{P_1,P_2,P_3} = R(P_1) C_{-P_1,P_2,P_3}$. On the other hand, normalization-independent quantities are invariant under reflection.
 
-We now focus on the particular normalization \eqref{nop}, such that the three-point function is given by the DOZZ formula. This normalization obeys $N(P)N(-P) = \left(N^2B^{-1}\right)(P)$, which implies $R(P)=B(P)$. 
+Let us now focus on the particular normalization \eqref{nop}, such that the three-point function is given by the DOZZ formula. This normalization obeys $N(P)N(-P) = \left(N^2B^{-1}\right)(P)$, which implies $R(P)=B(P)$. 
 The expressions of the reflection coefficient for $c\notin ]-\infty, 1]$ and $c\notin [25,\infty[$ are respectively
 \begin{align}
  R(P) = \mu^{-2P}\frac{\Upsilon_b(-2P)}{\Upsilon_b(2P)} \quad , \quad \hat R(P) = \mu^{-2P}\frac{\hat{\Upsilon}_b(-2P)}{\hat{\Upsilon}_b(2P)}\ .
  \end{align}
 We have  $\hat\Upsilon_b(0)\neq 0$ so that $\hat R(0)=1$. On the other hand, we have $\Upsilon_b(0)=0$, so that $R(0)=-1$. This implies $V_{P=0}(z)=0$, which is consistent with $C_{0,P_2,P_3}=0$.
-
-
-
-
+Writing $\Upsilon_b(-2P)=\Upsilon_b(2P+Q)$, and using the shift equations \eqref{upup}, we can rewrite the reflection coefficient in terms of Gamma functions, and we find 
 \begin{align}
- \boxed{R(P) = R(\tfrac{Q}{2})\mu^{Q-2P} \frac{\Gamma(b(2P-Q))\Gamma(\frac{1}{b}(2P-Q))}{\Gamma(b(Q-2P))\Gamma(\frac{1}{b}(Q-2P))}} \quad \text{with} \quad R(\tfrac{Q}{2})\in \{1, -1\}  \ ,
-\label{ram}
+ R(P) &= -\left[b^{2b-\frac{2}{b}}\mu\right]^{-2P} \frac{\Gamma(2bP)\Gamma(2b^{-1}P)}{\Gamma(-2bP)\Gamma(-2b^{-1}P)} \ ,
+ \label{ram}
+\\
+ \hat R(P) &= \left[(ib)^{2b-\frac{2}{b}}\mu\right]^{-2P} \frac{\Gamma(2bP)\Gamma(2b^{-1}P)}{\Gamma(-2bP)\Gamma(-2b^{-1}P)} \ .
 \end{align}
-where $\mu$ is an arbitrary parameter called the \textbf{\boldmath cosmological constant}\index{cosmological constant},
-and the sign $R(\frac{Q}{2})$ will be determined in eq. \eqref{ccr}.
 
-
-\begin{align}
- C_+(P)=1 \quad , \quad C_-(P) = \mu^b b^4 \frac{\gamma(b(2P-Q))}{\gamma(2bP)}\ .
-\label{cpm}
-\end{align}
 
 
 \subsection{Existence and uniqueness of Liouville theory}\label{seceul}
@@ -4030,7 +4021,7 @@ Flipping spins is a symmetry of the model, and this symmetry manifests itself as
 
 \section{Exercises}
 
-\begin{exo}[OPE coefficients of degenerate fields]
+\begin{exo}[Degenerate OPE coefficients and the two-point structure constant]
  ~\label{exocpcm}
  Write the OPE coefficients $C_\pm(P)$ \eqref{vot} in terms of two- and three-point structure constants. In particular, show that 
  \begin{align}
@@ -4091,6 +4082,15 @@ Using the relation between $C_-$ and $\tilde{C}_-$, show that these two equation
 \end{align}
  \end{enumerate}
 \end{exo}
+
+\begin{exo}[Degenerate OPE coefficients in the DOZZ normalization]
+ ~\label{exodoc}
+\begin{align}
+ C_+(P)=1 \quad , \quad C_-(P) = \mu^b b^4 \frac{\gamma(b(2P-Q))}{\gamma(2bP)}\ .
+\label{cpm}
+\end{align}
+\end{exo}
+
 
 \begin{exo}[Allowing finite multiplicities in Liouville theory]
  ~\label{exomul}
