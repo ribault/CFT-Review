@@ -3228,6 +3228,7 @@ OPE \eqref{vvi}, we find
 \draw (0,-2) -- (2, -3) node [right] {$4$};
 \end{tikzpicture}
 \right|^2\ .
+\label{gce}
 \end{align}
 Inserting our decomposition of the three-point structure constant, and 
 removing a factor $\prod_{i=1}^4 N(P_i)$ on both sides, this becomes
@@ -3450,13 +3451,12 @@ Writing $\Upsilon_b(-2P)=\Upsilon_b(2P+Q)$, and using the shift equations \eqref
 \end{align}
 
 
-
 \subsection{Existence and uniqueness of Liouville theory}\label{seceul}
 
 \subsubsection{Existence}
 
-We derived the three-point structure constants $C$ and $\hat C$ by solving the equation \eqref{fcc} and its dual equation under $b\to \frac{1}{b}$, which are consequences of crossing symmetry of four-point functions involving degenerate fields. 
-For Liouville theory to exist, we need generic four-point functions to be crossing symmetric. 
+We derived the three-point structure constants $C$ and $\hat C$ by solving crossing symmetry equations for four-point functions involving degenerate fields. 
+For Liouville theory to exist, we need generic four-point functions to be crossing symmetric, i.e. we need the two- and three-point structure constants to obey eq. \eqref{gce}.
 This issue has been explored numerically \cite{rs15}. 
 It turns out that for each value of the central charge $c\in\mathbb{C}$, either $C$ or $\hat C$ leads to crossing symmetric four-point functions, and is therefore the three-point structure constant of Liouville theory:
 \begin{align}
@@ -3467,9 +3467,6 @@ It turns out that for each value of the central charge $c\in\mathbb{C}$, either 
   \\
   \hline
   structure constant & $\hat C$  & $C$ 
-  \\
-  \hline 
-  $R(\tfrac{Q}{2})$ & $1$ & $-1$
   \\
   \hline
  \end{tabular}
@@ -3482,56 +3479,55 @@ So $C$ is a valid structure constant wherever it is defined, whereas $\hat C$ is
 To understand this, let us study the analytic properties of the corresponding four-point functions,
 \begin{align}
 \renewcommand{\arraystretch}{2}
- \left< \prod_{i=1}^4 V_{\alpha_i}\right> = 
+ \left< \prod_{i=1}^4 V_{P_i}\right> = 
  \left\{\begin{array}{ll} 
-         \frac12 \int_{\frac{Q}{2}+i\mathbb{R}} d\alpha_s\ C_{\alpha_1,\alpha_2,Q-\alpha_s} C_{\alpha_s,\alpha_3, \alpha_4} \left|\mathcal{F}_{\alpha_s}^{(s)} \right|^2 \quad & \text{if } c\notin ]-\infty, 1]\ ,
+         \frac12 \int_{i\mathbb{R}} dP_s \frac{C_{12s}C_{s34}}{B_s} \left|\mathcal{F}_{P_s}^{(s)} \right|^2 \quad & \text{if } c\notin ]-\infty, 1]\ ,
          \\
-         \frac12 \int_{i\mathbb{R}+\epsilon} d\alpha_s\ \hat C_{\alpha_1,\alpha_2,Q-\alpha_s} \hat C_{\alpha_s,\alpha_3, \alpha_4} \left|\mathcal{F}_{\alpha_s}^{(s)} \right|^2 \quad & \text{if } c\in ]-\infty, 1]\ .
+         \frac12 \int_{i\mathbb{R}+\epsilon} dP_s \frac{\hat C_{12s}\hat C_{s34}}{\hat B_s} \left|\mathcal{F}_{P_s}^{(s)} \right|^2 \quad & \text{if } c\in ]-\infty, 1]\ .
         \end{array}
  \right.
  \label{vfcch}
 \end{align}
-Although the structure constants $C$ and $\hat C$ have rather different analytic properties (see Exercise \ref{exo4a}), what matters is the behaviour of the poles of the $s$-channel conformal blocks $\mathcal{F}_{\alpha_s}^{(s)}$. 
-These poles correspond to degenerate values of the momentum $\alpha_s$, and are therefore found in two cones with tips at $\alpha_s= 0$ and $\alpha_s = Q$. 
-Consider the relative positions of these cones, and of the integration line for $\alpha_s$, depending on the value of the central charge $c$:
+Although the structure constants $C$ and $\hat C$ have rather different analytic properties (see Exercise \ref{exo4a}), what matters is the behaviour of the poles of the $s$-channel conformal blocks $\mathcal{F}_{P_s}^{(s)}$. 
+These poles correspond to degenerate values of the momentum $P_s$, and are therefore found in two cones with tips at $P_s= \pm\frac{Q}{2}$. 
+Consider the relative positions of these cones (blue), and of the integration line for $P_s$ (red), depending on the value of the central charge $c$:
 \begin{align}
  \newcommand{\polewedge}[3]{
 \begin{scope}[#1]
 \node[blue, draw,circle,inner sep=1pt,fill] at (0, 0) {};
-\node[#3] at (0,0) {#2};
+%\node[#3] at (0,0) {#2};
 \filldraw[opacity = .1, blue] (0,0) -- (4, -4) -- (4, 4) -- cycle;
 \end{scope}
 }
 \begin{array}{ccc}
 \begin{tikzpicture}[scale = .4, baseline=(current  bounding  box.center)]
-  \draw[-latex] (-3,0) -- (0, 0) node[above left] {$0$} -- (4,0) node [above] {$\alpha_s$};
+  \draw[-latex] (-3,0) -- (0, 0) -- (4,0) node [above] {$P_s$};
   \draw[ultra thick, blue, opacity = .3] (0, -4.5) -- (0, 4.5);
   \draw (0, -4.5) -- (0, 4.5);
   \draw[ultra thick, red] (.5, -4.5) -- (.5, 4.5);
-  \node[blue, draw,circle,inner sep=1pt,fill] at (0, 0) {};
-\node[above left] at (0,0) {$0$};
-\node[blue, draw,circle,inner sep=1pt,fill] at (0, 1.5) {};
-\node[above left] at (0,1.5) {$Q$};
+\node[above left] at (.2,-.2) {$0$};
+\node[blue, draw,circle,inner sep=1pt,fill] at (0, 2) {};
+\node[blue, draw,circle,inner sep=1pt,fill] at (0, -2) {};
+%\node[above left] at (0,1.8) {$\frac{Q}{2}$};
+%\node[left] at (0,-2) {$-\frac{Q}{2}$};
  \end{tikzpicture}
  & 
  \begin{tikzpicture}[scale = .4, baseline=(current  bounding  box.center)]
-  \draw[-latex] (-4,0) -- (0, 0) node[above left] {$0$} -- (6,0) node [above] {$\alpha_s$};
-  \draw (0, -4.5) -- (0, 4.5);
-  \draw[ultra thick, red] (1, -4.5) -- (1, 4.5);
-  \polewedge{rotate = 180}{$0$}{above left};
-  \polewedge{shift = {(2, .3)}}{$Q$}{above right};
+  \draw[-latex] (-4,0)  --  (6,0) node [above] {$P_s$};
+  \draw[ultra thick, red] (1, -4.5)  -- (1, 4.5);
+  \node[above left] at (1.2,-.2) {$0$};
+  \polewedge{rotate = 180, shift = {(0,.4)}}{$-\frac{Q}{2}$}{below};
+  \polewedge{shift = {(2, .4)}}{$\frac{Q}{2}$}{above};
  \end{tikzpicture}
  &
  \begin{tikzpicture}[scale = .4, baseline=(current  bounding  box.center)]
  \draw[ultra thick, blue, opacity = .3] (0,0) -- (-4,0);
  \draw[ultra thick, blue, opacity = .3] (2,0) -- (6,0);
-  \draw[-latex] (-4,0) -- (0, 0) node[above left] {$0$} -- (6,0) node [above] {$\alpha_s$};
-  \draw (0, -4.5) -- (0, 4.5);
+  \draw[-latex] (-4,0) -- (6,0) node [above] {$P_s$};
   \draw[ultra thick, red] (1, -4.5) -- (1, 4.5);
   \node[blue, draw,circle,inner sep=1pt,fill] at (0, 0) {};
-\node[above left] at (0,0) {$0$};
+\node[above left] at (1.2,-.2) {$0$};
 \node[blue, draw,circle,inner sep=1pt,fill] at (2, 0) {};
-\node[above right] at (2,0) {$Q$};
  \end{tikzpicture}
  \vspace{3mm}
  \\
@@ -3551,7 +3547,14 @@ Let us discuss the uniqueness of Liouville theory, as defined by our assumptions
 We saw that three-point structures constants are uniquely determined by shift equations if $c\in ]-\infty, 1] \cup [25,\infty[$, so that Liouville theory is unique for these values of $c$. 
 For the other values of $c$, we have $b^2\notin\mathbb{R}$, and we can find alternative solutions of the equations \eqref{upup} for $\Upsilon_b(x)$, by multiplying $\Upsilon_b(x)$ with elliptic functions -- meromorphic functions $\theta(x)$ such that $\theta(x+b)=\theta(x+\frac{1}{b}) = \theta(x)$.
 This leads to alternative solutions of the shift equations for structure constants.
-But the resulting alternative structure constants have no reason to lead to crossing symmetric four-point functions, and it seems likely that Liouville theory is unique for any $c\in\mathbb{C}$, although this would be difficult to prove. 
+But these alternative solutions are excluded by the assumption that correlation functions are meromorphic functions of $b$, as this assumption determines correlation functions for $c\notin ]-\infty, 1]$ from their values for $c\in [25,\infty[$.
+
+This uniqueness statement would however be more powerful, if we could drop the assumption that degenerate fields exist.
+Do not say under which assumptions on $P_i$ and $c$, we use crossing-symmetry equation \eqref{ffm} with no degenerate field.
+
+
+\subsubsection{Non-uniqueness}
+
 It would also be interesting to investigate whether Liouville theory could be generalized by relaxing some of our defining assumptions. 
 For example, it turns out that nothing new can be obtained by relaxing our assumption that the multiplicities of representations in the spectrum do not exceed one, and allowing finite multiplicities. (See Exercise \ref{exomul}.)
 
