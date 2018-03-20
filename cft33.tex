@@ -173,7 +173,6 @@ And some exercises provide supplementary material about:
  \item singular vectors of Verma modules (Exercise \ref{exosv}),
  \item characters of Virasoro representations (Exercise \ref{exochar}),
 \item logarithmic conformal field theory (Exercise \ref{exolog}), 
-\item Liouville theory with finite multiplicities (Exercise \ref{exomul}),
 \item the behaviour of Liouville four-point functions at coinciding points (Exercise \ref{exo4a}),
 \item fusion rules of unitary Verma modules (Exercise \ref{exoaur}), 
 \item generalization of the Sugawara construction (Exercise \ref{exotqpj}),
@@ -2206,9 +2205,8 @@ F^{-1}_{\Delta_t,\Delta_s}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Del
 \ .
 \label{ffm}
 \end{align}
-This formulation of crossing symmetry can be useful, because the fusing matrix is a simpler object than the conformal blocks, as we will see in a special case in Section \ref{sechcb}.
 % NB: F^{-1} is related to F by a permutation of the arguments.
-
+This formulation of crossing symmetry can be useful, because the fusing matrix is a simpler object than the conformal blocks, as we will see in a special case in Section \ref{sechcb}. Moreover, this formulation implies that in a diagonal theory, the structure constant is uniquely determined by crossing symmetry. (See Exercise \ref{exoudt}.)
 
 
 \subsubsection{Pedestrian computation of conformal blocks}
@@ -2875,36 +2873,6 @@ L_{-2}^{(z)}I & = T(z)\ ,
 \end{align}
 \end{exo}
 
-\begin{exo}[Computing OPE coefficients]
- ~\label{exohf}
-The OPE coefficients $f^{\Delta,L}_{\Delta_1,\Delta_2}$ at the level $|L|= 2$ are determined by the linear equations \eqref{eq:lwo}.
-\begin{enumerate}
- \item Compute these coefficients,
-and compare your results with the available literature.
-\item
-Write the equations for the OPE coefficients at the level $|L|=3$. 
-\item
-Show that $f^{\Delta,L}_{\Delta_1,\Delta_2}$ is uniquely determined for generic values of $\Delta$, 
-by counting the equations and unknowns in eq. \eqref{eq:lwo}, as in Exercise \ref{exohl}.
-\item
-Discuss how the presence of a null vector affects the equations for $f^{\Delta,L}_{\Delta_1,\Delta_2}$, starting with the case $\Delta=0$. 
-\end{enumerate}
-\end{exo}
-
-\begin{exo}[$V_{\langle 1,1\rangle}$ is an identity field]
-~\label{exoid}
-Using $\frac{\partial}{\partial z_1} V_{\langle 1,1\rangle}(z_1)=0$, show that the OPE of $V_{\langle 1,1\rangle}$ with another primary field is of the form 
-\begin{align}
- V_{\langle 1,1\rangle}(z_1)V_\Delta(z_2) = C_\Delta V_\Delta(z_2)\ ,
-\end{align}
-where the subleading terms vanish. Using associativity, show that the constant $C_\Delta$ actually does not depend on $\Delta$. Deduce that, up to a factor $C=C_\Delta$, the field $V_{\langle 1,1\rangle}$ is an identity field.
-\end{exo}
-
-\begin{exo}[Fusion rules from OPEs]
- ~\label{exooit}
-Rederive the fusion rule \eqref{rot} by analyzing the corresponding OPE.
-If $C$ is a contour around both $z_1$ and $z_2$, insert $\oint_C dz\, T(z)$ and $\oint_C dz \frac{1}{z-z_2}T(z)$ on both sides of that OPE, and compute the leading terms of the OPEs $V_{\Delta_1}(z_1) LV_{\langle 2,1 \rangle}(z_2)$ with $L\in\{L_{-1},L_{-1}^2,L_{-2}\}$, before using $L_{\langle 2,1 \rangle} V_{\langle 2,1 \rangle} (z_2) =0$. 
-\end{exo}
 
 \begin{exo}[Creation operators as differential operators]
  ~\label{exodma}
@@ -2940,6 +2908,48 @@ In the simplest case where $E$ is two-dimensional, show that the three-point fun
 Cite an example of a reducible Verma module, and conclude that 
 a conformal field theory can involve indecomposable, reducible representations without being logarithmic. 
 \end{enumerate}
+\end{exo}
+
+
+\begin{exo}[Computing OPE coefficients]
+ ~\label{exohf}
+The OPE coefficients $f^{\Delta,L}_{\Delta_1,\Delta_2}$ at the level $|L|= 2$ are determined by the linear equations \eqref{eq:lwo}.
+\begin{enumerate}
+ \item Compute these coefficients,
+and compare your results with the available literature.
+\item
+Write the equations for the OPE coefficients at the level $|L|=3$. 
+\item
+Show that $f^{\Delta,L}_{\Delta_1,\Delta_2}$ is uniquely determined for generic values of $\Delta$, 
+by counting the equations and unknowns in eq. \eqref{eq:lwo}, as in Exercise \ref{exohl}.
+\item
+Discuss how the presence of a null vector affects the equations for $f^{\Delta,L}_{\Delta_1,\Delta_2}$, starting with the case $\Delta=0$. 
+\end{enumerate}
+\end{exo}
+
+\begin{exo}[Uniqueness of the three-point structure constant in diagonal theories]
+ ~\label{exoudt}
+ Let us show that the crossing symmetry equation \eqref{ffm} uniquely determines the three-point structure constant. 
+ \begin{enumerate}
+  \item Show that the ratio $\rho_{123}$ of two structure constants obeys $\rho_{12s}\rho_{s34} = \rho_{23t}\rho_{t41}$.
+  \item Show that $\rho_{12s}^2 = \rho_{12t}^2$, and deduce that $\rho_{123}\in\{-1,1\}$ up to a constant normalization factor.
+  \item Show that $\frac{\rho_{12s}}{\rho_{12s'}} = \frac{\rho_{34s}}{\rho_{34s'}} $, and deduce that our ratio factorizes as $\rho_{123} = \lambda_1\lambda_2\lambda_3$. Conclude.
+ \end{enumerate} 
+\end{exo}
+
+\begin{exo}[$V_{\langle 1,1\rangle}$ is an identity field]
+~\label{exoid}
+Using $\frac{\partial}{\partial z_1} V_{\langle 1,1\rangle}(z_1)=0$, show that the OPE of $V_{\langle 1,1\rangle}$ with another primary field is of the form 
+\begin{align}
+ V_{\langle 1,1\rangle}(z_1)V_\Delta(z_2) = C_\Delta V_\Delta(z_2)\ ,
+\end{align}
+where the subleading terms vanish. Using associativity, show that the constant $C_\Delta$ actually does not depend on $\Delta$. Deduce that, up to a factor $C=C_\Delta$, the field $V_{\langle 1,1\rangle}$ is an identity field.
+\end{exo}
+
+\begin{exo}[Fusion rules from OPEs]
+ ~\label{exooit}
+Rederive the fusion rule \eqref{rot} by analyzing the corresponding OPE.
+If $C$ is a contour around both $z_1$ and $z_2$, insert $\oint_C dz\, T(z)$ and $\oint_C dz \frac{1}{z-z_2}T(z)$ on both sides of that OPE, and compute the leading terms of the OPEs $V_{\Delta_1}(z_1) LV_{\langle 2,1 \rangle}(z_2)$ with $L\in\{L_{-1},L_{-1}^2,L_{-2}\}$, before using $L_{\langle 2,1 \rangle} V_{\langle 2,1 \rangle} (z_2) =0$. 
 \end{exo}
 
 
@@ -3549,16 +3559,17 @@ For the other values of $c$, we have $b^2\notin\mathbb{R}$, and we can find alte
 This leads to alternative solutions of the shift equations for structure constants.
 But these alternative solutions are excluded by the assumption that correlation functions are meromorphic functions of $b$, as this assumption determines correlation functions for $c\notin ]-\infty, 1]$ from their values for $c\in [25,\infty[$.
 
-This uniqueness statement would however be more powerful, if we could drop the assumption that degenerate fields exist.
-Do not say under which assumptions on $P_i$ and $c$, we use crossing-symmetry equation \eqref{ffm} with no degenerate field.
+This uniqueness statement relies on the assumption that degenerate fields exist. We can drop this assumption and have a stronger uniqueness statement, if we remember that structure constants of diagonal theories are uniquely determined by crossing symmetry, as we deduced from eq. \eqref{ffm}. It would be interesting to probe the limits of uniqueness, i.e. to understand whether uniqueness survives when we weaken the assumptions on the spectrum and analyticity of correlation functions. We will now mention two cases in which uniqueness is known to break down:
+\begin{itemize}
+ \item We can relax the assumption that fields have multiplicities zero or one, and allow finite multiplicities. A simple theory where all fields have the same multiplicity $N\in\mathbb{N}^*$ can be built by taking $N$ non-interacting copies of Liouville theory.
+ \item We can relax the assumption that correlation functions are meromorphic functions of the Liouville coupling constant and of the fields' momentums. Then we find that for $b^2\in \mathbb{Q}_{<0}$, there exists a solution of crossing symmetry that differs from the Liouville three-point structure constant by a non-analytic factor with values in $\{0,1\}$ \cite{rs15}.
+ % Shows that \eqref{ffm} does not hold in such cases. But for c=1 the fusing relation is not particularly pathological, see Iorgov-Lisovyy-Tykhyy.
+\end{itemize}
 
 
-\subsubsection{Non-uniqueness}
+\subsection{Analytic continuation of OPEs and correlation functions}\label{secacl}
 
-It would also be interesting to investigate whether Liouville theory could be generalized by relaxing some of our defining assumptions. 
-For example, it turns out that nothing new can be obtained by relaxing our assumption that the multiplicities of representations in the spectrum do not exceed one, and allowing finite multiplicities. (See Exercise \ref{exomul}.)
-
-\subsection{Degenerate fields in Liouville theory}
+Continuing momentums
 
 \subsubsection{Degenerate OPEs}
 
@@ -4115,18 +4126,6 @@ Study how the degenerate OPE \eqref{vot} behaves under reflections, and show tha
 \end{enumerate}
  \end{exo}
  
-
-\begin{exo}[Allowing finite multiplicities in Liouville theory]
- ~\label{exomul}
-We want to generalize the analysis of Section \ref{seccbe}, by relaxing the assumption that the multiplies are at most one, and allowing a finite multiplicity $m\geq 2$ instead. 
-\begin{enumerate}
- \item 
-Assuming that the continuous fields are now vectors of size $m$ while the degenerate fields remain scalars, find the relations between the degenerate OPE coefficients and the reflection coefficient, all of which are now matrices of size $m$. 
-\item
-Requiring these quantities to be analytic functions of the momentum, show that the reflection coefficient must still be given by eq. \eqref{ram}, where the cosmological constant is now a matrix. 
-Conclude that the theory is equivalent to $m$ independent copies of Liouville theory. 
-\end{enumerate}
-\end{exo}
 
 \begin{exo}[Behaviour of Liouville four-point functions at coinciding points]
 ~\label{exo4a} 
