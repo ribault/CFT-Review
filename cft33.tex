@@ -3067,11 +3067,11 @@ According to eq. \eqref{cff}, the three-point function takes the form
 \label{vvv}
 \end{align}
 where $\Delta_i = \Delta(P_i)$ is given in eq. \eqref{daq}, and $C_{P_1,P_2,P_3}$ is the three-point structure constant. And adapting eq. \eqref{vvs}, the OPE is in our notations
-\begin{multline}
+\begin{align}
  V_{P_1}(z_1) V_{P_2}(z_2) = \int_{i{\mathbb{R}_+}} dP\ C_{P_1,P_2}^P |z_{12}|^{2(\Delta-\Delta_1-\Delta_2)} 
 \left|
 \sum_{L\in \mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta,L} z_{12}^{|L|}  L\right|^2 V_{P}(z_2) \ , 
-\end{multline}
+\end{align}
 for some OPE coefficient $C_{P_1,P_2}^P$. Inserting this OPE in the three-point function, and using the two-point function, we find
 \begin{align}
  B(P_3)C_{P_1,P_2}^{P_3} = C_{P_1,P_2,P_3}
@@ -3581,8 +3581,7 @@ Using the invariance of normalization-independant quantities under the reflectio
 \end{align}
 When we analytically continue $P_1,P_2$ beyond the imaginary axis, the behaviour of this OPE depends on the behaviour of the singularities of the OPE coefficient  as a function of $P$. In the case $c\in ]-\infty, 1]$, the poles of the OPE coefficient $\frac{\hat C_{P_1,P_2,P}}{\hat B(P)}$ do not depend on $P_1,P_2$, and our OPE remains valid as written for any $P_1,P_2\in\mathbb{C}$ such that $\hat N(P_1)$ and $\hat N(P_2)$ are finite.
 On the other hand, in the case $c\notin ]-\infty,1]$, the three-point structure constant has $P_1,P_2$-dependent simple poles due to the normalization-independent factor $C'_{P_1,P_2,P}$ \eqref{cp}. 
-Let us plot these poles in the complex $P$-plane, assuming $P_1,P_2\in i\mathbb{R}$. The poles lie on cones that we draw in the fashion of eq. \eqref{lines},
-and we also draw the line  of integration $P\in i{\mathbb{R}}$, together with the two lines $P\in \pm\frac{Q}{2}+i\mathbb{R}$:
+Let us plot these poles in the complex $P$-plane, assuming $P_1,P_2\in i\mathbb{R}$. The poles lie on cones that we draw in the fashion of eq. \eqref{lines}. We assume $\Re Q>0$, and we also draw the line  of integration $P\in i{\mathbb{R}}$, together with the two lines $P\in \pm\frac{Q}{2}+i\mathbb{R}$:
 \begin{align}
  \newcommand{\polewedge}[3]{
 \begin{scope}[#1]
@@ -3607,11 +3606,16 @@ and we also draw the line  of integration $P\in i{\mathbb{R}}$, together with th
   \polewedge{shift = {(1, -1.7)}}{$\frac{Q}{2}-P_1-P_2$}{right};
  \end{tikzpicture}
 \end{align}
-If we continue $P_1,P_2$ such that $|\Re(P_1+P_2)|>\frac{Q}{2}$ or $|\Re(P_1-P_2)|>\frac{Q}{2}$, then some poles cross the line of integration. Calling $\mathcal{P}_{P_1,P_2}$ the finite set of these poles, the OPE becomes
+If we continue $P_1,P_2$ such that $|\Re(P_1+P_2)|>\frac12\Re Q$ or $|\Re(P_1-P_2)|>\frac12\Re Q$, then some poles cross the line of integration. By reflection symmetry, it is enough to consider the poles that come from the left. The finite set of the poles that come from the left and end up on the right of the imaginary axis is
 \begin{align}
- V_{P_1}V_{P_2} \sim \frac12\int_{i{\mathbb{R}}} dP \frac{C_{P_1,P_2,P}}{B(P)} V_P + \frac12 \sum_{P_k\in \mathcal{P}_{P_1,P_2}} \frac{\underset{P=P_k}{\operatorname{Res}} C_{P_1,P_2,P}}{B(P_k)} V_{P_k}\ .
+ \mathcal{P}_{P_1,P_2} = \left\{\Re P >0\right\} \cap \bigcup_{\pm,\pm} \left(-\frac{Q}{2}\pm P_1\pm P_2 -b\mathbb{N}-b^{-1}\mathbb{N}\right)\ .
 \end{align}
-For an example of the explicit determination of the set $\mathcal{P}_{P_1,P_2}$, see Exercise \ref{exoaur}.
+Then the OPE becomes
+\begin{align}
+ V_{P_1}V_{P_2} \sim \frac12\int_{i{\mathbb{R}}} dP \frac{C_{P_1,P_2,P}}{B(P)} V_P + \sum_{P_k\in \mathcal{P}_{P_1,P_2}} \frac{\underset{P=P_k}{\operatorname{Res}} C_{P_1,P_2,P}}{B(P_k)} V_{P_k}\ ,
+ \label{acope}
+\end{align}
+where the discrete terms have lost their factor $\frac12$ due to the contributions of the poles from the right. (See Exercise \ref{exoaur} for examples of the resulting fusion rules.)
 
 
 
@@ -4172,17 +4176,21 @@ For an interpretation of these different behaviours in random energy models, see
 
 \begin{exo}[Fusion rules of all unitary representations if $c>1$]
  ~\label{exoaur}
-Assuming $Q>0$, compute the analytic continuation of the Liouville OPE to momentums $\Pi\in ]0,\frac{Q}{2}[$, which correspond to unitary representation that do not belong to the spectrum \eqref{sad}. 
-Show that this leads to the following fusion rules:
+ Let us investigate the fusion rules that follow from the analytically continued Liouville OPE \eqref{acope}.
+ \begin{enumerate}
+  \item Assuming $b>0$ so that $c\geq 25$, write the fusion rules of the Verma modules with momentums $\Pi\in ]0,\frac{Q}{2}[$, i.e. of the unitary representation that do not belong to the spectrum \eqref{sad}.  Check that you find
 \begin{align}
  \mathcal{V}_\Pi \times \mathcal{V}_P  
-&= \frac12 \int_{i\mathbb{R}} dP'\ \mathcal{V}_{P'}\ ,
+&= \int_{i\mathbb{R}_+} dP'\ \mathcal{V}_{P'}\ ,
 \\
  \mathcal{V}_{\Pi_1} \times \mathcal{V}_{\Pi_2} 
 &= \sum_{\Pi'\in \left]0,\frac{Q}{2}\right[\cap \left(\Pi_1+\Pi_2 -\frac{Q}{2}- b\mathbb{N}-b^{-1}\mathbb{N}\right)} \mathcal{V}_{\Pi'}  
-+ \frac12 \int_{i\mathbb{R}} dP'\ \mathcal{V}_{P'}\ .
++ \int_{i\mathbb{R}_+} dP'\ \mathcal{V}_{P'}\ .
 \end{align}
-In particular, show that $\mathcal{V}_\Delta \times \mathcal{V}_\Delta$ belongs to the Liouville spectrum if $\Delta \geq \frac{c-1}{32}$, and has discrete terms if $\Delta \in ]0,\frac{c-1}{32}[$.
+\item In particular, show that $\mathcal{V}_\Delta \times \mathcal{V}_\Delta$ belongs to the Liouville spectrum if $\Delta \geq \frac{c-1}{32}$, and has discrete terms if $\Delta \in ]0,\frac{c-1}{32}[$.
+\item If $1<c<25$, show that the set of unitary representations is not closed under fusion.
+ \end{enumerate}
+
 \end{exo}
 
 
