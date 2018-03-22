@@ -3068,7 +3068,7 @@ According to eq. \eqref{cff}, the three-point function takes the form
 \end{align}
 where $\Delta_i = \Delta(P_i)$ is given in eq. \eqref{daq}, and $C_{P_1,P_2,P_3}$ is the three-point structure constant. And adapting eq. \eqref{vvs}, the OPE is in our notations
 \begin{multline}
- V_{P_1}(z_1) V_{P_2}(z_2) = \int_{\frac{Q}{2}+i{\mathbb{R}_+}} dP\ C_{P_1,P_2}^P |z_{12}|^{2(\Delta-\Delta_1-\Delta_2)} 
+ V_{P_1}(z_1) V_{P_2}(z_2) = \int_{i{\mathbb{R}_+}} dP\ C_{P_1,P_2}^P |z_{12}|^{2(\Delta-\Delta_1-\Delta_2)} 
 \left|
 \sum_{L\in \mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta,L} z_{12}^{|L|}  L\right|^2 V_{P}(z_2) \ , 
 \end{multline}
@@ -3088,7 +3088,7 @@ Omitting the dependence on $z_i$, and neglecting the descendent fields, we schem
  &\boxed{ \left\langle V_{P_1}V_{P_2}V_{P_3} \right\rangle = C_{P_1,P_2,P_3} }\ ,
 \label{vvvs}
 \\
- &\boxed{V_{P_1}V_{P_2} \sim \int_{i{\mathbb{R}_+}} dP\ \frac{C_{P_1,P_2,P}}{B(P)} V_P}\ .
+ &\boxed{V_{P_1}V_{P_2} \sim \int_{i{\mathbb{R}_+}} dP \frac{C_{P_1,P_2,P}}{B(P)} V_P}\ .
 \label{vvi}
 \end{align}
 
@@ -3389,8 +3389,10 @@ This product formula is valid for all values of $x$, but it does not converge ve
 Using the functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$, we can write solutions $C'$ and $\hat C'$ of the shift equation \eqref{cps} (and its dual) for the renormalized three-point structure constant, which are respectively defined for $c\notin ]-\infty, 1]$ and $c\notin [25,\infty[$,
 \begin{align}
  \boxed{C'_{P_1,P_2,P_3} = \prod_{\pm,\pm} \Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)^{-1} }\ ,
+ \label{cp}
  \\
  \boxed{\hat C'_{P_1,P_2,P_3} = \prod_{\pm,\pm} \hat\Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)^{-1}}\ .
+ \label{hcp}
 \end{align}
 These solutions are 
 \begin{itemize}
@@ -3571,17 +3573,53 @@ This uniqueness statement relies on the assumption that degenerate fields exist.
 
 We will now sketch how OPEs and correlation functions behave when momentums are analytically continued beyond the imaginary axis. In particular, we will study what happens if momentums reach the values that correspond to degenerate fields, and this will allow us to determine the three-point structure constants of minimal models.
 
-Give poles. Explain principles of analytic continuation.
+\subsubsection{Analytic continuation of the OPE}
 
-Send to exercise for particular case $c>1$ etc.
+Using the invariance of normalization-independant quantities under the reflection $P\to -P$, we write the Liouville OPE \eqref{vvi} as an integral over the whole imaginary axis,
+\begin{align}
+ V_{P_1}V_{P_2} \sim \frac12\int_{i{\mathbb{R}}} dP \frac{C_{P_1,P_2,P}}{B(P)} V_P\ .
+\end{align}
+When we analytically continue $P_1,P_2$ beyond the imaginary axis, the behaviour of this OPE depends on the behaviour of the singularities of the OPE coefficient  as a function of $P$. In the case $c\in ]-\infty, 1]$, the poles of the OPE coefficient $\frac{\hat C_{P_1,P_2,P}}{\hat B(P)}$ do not depend on $P_1,P_2$, and our OPE remains valid as written for any $P_1,P_2\in\mathbb{C}$ such that $\hat N(P_1)$ and $\hat N(P_2)$ are finite.
+On the other hand, in the case $c\notin ]-\infty,1]$, the three-point structure constant has $P_1,P_2$-dependent simple poles due to the normalization-independent factor $C'_{P_1,P_2,P}$ \eqref{cp}. 
+Let us plot these poles in the complex $P$-plane, assuming $P_1,P_2\in i\mathbb{R}$. The poles lie on cones that we draw in the fashion of eq. \eqref{lines},
+and we also draw the line  of integration $P\in i{\mathbb{R}}$, together with the two lines $P\in \pm\frac{Q}{2}+i\mathbb{R}$:
+\begin{align}
+ \newcommand{\polewedge}[3]{
+\begin{scope}[#1]
+\node[blue, draw,circle,inner sep=1pt,fill] at (0, 0) {};
+\node[#3] at (0,0) {#2};
+\filldraw[opacity = .1, blue] (0,0) -- (5, -2.5) -- (5, 2.5) -- cycle;
+\end{scope}
+}
+ \begin{tikzpicture}[baseline=(current  bounding  box.center)]
+  \draw[-latex] (-5,0) --  (6,0) node [above] {$P$};
+  \clip (-5, -3.5) -- (-5, 3.5) -- (6, 3.5) -- (6, -3.5) -- cycle;
+  \draw (0, -4.5) -- (0, 4.5);
+  \draw (1, -4.5) -- (1, 4.5);
+  \draw[ultra thick, red] (.5, -4.5) -- (.5, 4.5);
+  \polewedge{shift = {(0, .7)}, rotate = 180}{$-\frac{Q}{2}+P_1-P_2$}{left};
+  \polewedge{shift = {(0, -.7)}, rotate = 180}{$-\frac{Q}{2}-P_1+P_2$}{left};
+  \polewedge{shift = {(0, 1.8)}, rotate = 180}{$-\frac{Q}{2}+P_1+P_2$}{left};
+  \polewedge{shift = {(0, -1.8)}, rotate = 180}{$-\frac{Q}{2}-P_1-P_2$}{left};
+  \polewedge{shift = {(1, .8)}}{$\frac{Q}{2}+P_1-P_2$}{right};
+  \polewedge{shift = {(1, -.6)}}{$\frac{Q}{2}-P_1+P_2$}{right};
+  \polewedge{shift = {(1, 1.9)}}{$\frac{Q}{2}+P_1+P_2$}{right};
+  \polewedge{shift = {(1, -1.7)}}{$\frac{Q}{2}-P_1-P_2$}{right};
+ \end{tikzpicture}
+\end{align}
+If we continue $P_1,P_2$ such that $|\Re(P_1+P_2)|>\frac{Q}{2}$ or $|\Re(P_1-P_2)|>\frac{Q}{2}$, then some poles cross the line of integration. Calling $\mathcal{P}_{P_1,P_2}$ the finite set of these poles, the OPE becomes
+\begin{align}
+ V_{P_1}V_{P_2} \sim \frac12\int_{i{\mathbb{R}}} dP \frac{C_{P_1,P_2,P}}{B(P)} V_P + \frac12 \sum_{P_k\in \mathcal{P}_{P_1,P_2}} \frac{\underset{P=P_k}{\operatorname{Res}} C_{P_1,P_2,P}}{B(P_k)} V_{P_k}\ .
+\end{align}
+For an example of the explicit determination of the set $\mathcal{P}_{P_1,P_2}$, see Exercise \ref{exoaur}.
 
-It is tempting to use a similar calculation for deriving the fusion rules of the unitary Verma modules that do not belong to the spectrum. 
-(See Exercise \ref{exoaur}.)
-
-Then go to degenerate fields
 
 
-\subsubsection{Degenerate OPEs}
+
+Then go to degenerate fields, we have been generic
+
+
+\subsubsection{Analytic continuation to degenerate momentums}
 
 Let us study the behaviour of the Liouville OPE $V_{\alpha_1}V_{\alpha_2}$ \eqref{vvi} when $\alpha_2 \to \alpha_{\langle r,s \rangle}$, where the degenerate field momentum $\alpha_{\langle r,s \rangle}$ is given in eq. \eqref{ars}.
 This behaviour depends on the value of the central charge $c$, because the structure constants $C$ and $\hat C$ have very different analytic properties. 
@@ -3594,31 +3632,7 @@ If on the other hand $c\notin ]-\infty, 1]$, we use the structure constant $C_{\
 \end{align}
 However, it turns out that the OPE $V_{\alpha_1}V_{\alpha_2}$ does not vanish, in other words $C_{\alpha_1,\alpha_2,\alpha_3}$ does not vanish when considered as a distribution.
 To see this, let us plot the poles of the OPE coefficient $C_{\alpha_1,\alpha_2}^\alpha = C_{\alpha_1,\alpha_2,Q-\alpha}$, viewed as a function of $\alpha$.
-These poles lie on cones, which we draw in the fashion of eq. \eqref{lines}, together with the line  of integration $\alpha\in \frac{Q}{2}+i{\mathbb{R}}$:
-\begin{align}
- \newcommand{\polewedge}[3]{
-\begin{scope}[#1]
-\node[blue, draw,circle,inner sep=1pt,fill] at (0, 0) {};
-\node[#3] at (0,0) {#2};
-\filldraw[opacity = .1, blue] (0,0) -- (5, -2.5) -- (5, 2.5) -- cycle;
-\end{scope}
-}
- \begin{tikzpicture}[baseline=(current  bounding  box.center)]
-  \draw[-latex] (-5,0) -- (0, 0) node[above left] {$0$} -- (6,0) node [above] {$\alpha$};
-  \clip (-5, -3.5) -- (-5, 3.5) -- (6, 3.5) -- (6, -3.5) -- cycle;
-  \draw (0, -4.5) -- (0, 4.5);
-  \draw[ultra thick, red] (.5, -4.5) -- (.5, 4.5);
-  \polewedge{shift = {(0, .7)}, rotate = 180}{$\alpha_1-\alpha_2$}{above left};
-  \polewedge{shift = {(0, -.7)}, rotate = 180}{$\alpha_2-\alpha_1$}{above left};
-  \polewedge{shift = {(0, 1.8)}, rotate = 180}{$\alpha_1+\alpha_2-Q$}{above left};
-  \polewedge{shift = {(0, -1.8)}, rotate = 180}{$Q-\alpha_1-\alpha_2$}{above left};
-  \polewedge{shift = {(1, .8)}}{$Q+\alpha_1-\alpha_2$}{above right};
-  \polewedge{shift = {(1, -.6)}}{$Q+\alpha_2-\alpha_1$}{above right};
-  \polewedge{shift = {(1, 1.9)}}{$\alpha_1+\alpha_2$}{above right};
-  \polewedge{shift = {(1, -1.7)}}{$2Q-\alpha_1-\alpha_2$}{above right};
- \end{tikzpicture}
-\end{align}
-In this picture, we have assumed $\alpha_1,\alpha_2\in \frac{Q}{2}+i{\mathbb{R}}$, so that the corresponding representations belong to the spectrum.
+
 If we analytically continue the OPE to a value $\alpha_2=\alpha_{\langle r,s \rangle}$, then poles from different sides of the line of integration must coincide, so some poles have to cross the line. 
 Let us deform the integration line to the right, so that poles cross it from right to left only.
 We now draw the deformed line, and the poles that have crossed it:
@@ -4158,18 +4172,17 @@ For an interpretation of these different behaviours in random energy models, see
 
 \begin{exo}[Fusion rules of all unitary representations if $c>1$]
  ~\label{exoaur}
-Compute the analytic continuation of the Liouville OPE to momentums $\beta\in ]0,Q[$, which correspond to unitary representation that do not belong to the spectrum \eqref{sad}. 
-Show that this leads to the following conjecture for the fusion rules, where we assume $\beta_1,\beta_2\in ]0,\frac{Q}{2}[$:
+Assuming $Q>0$, compute the analytic continuation of the Liouville OPE to momentums $\Pi\in ]0,\frac{Q}{2}[$, which correspond to unitary representation that do not belong to the spectrum \eqref{sad}. 
+Show that this leads to the following fusion rules:
 \begin{align}
- \mathcal{V}_\beta \times \mathcal{V}_\alpha  
-&= \frac12 \int_{\frac{Q}{2}+i\mathbb{R}} d\alpha'\ \mathcal{V}_{\alpha'}\ ,
+ \mathcal{V}_\Pi \times \mathcal{V}_P  
+&= \frac12 \int_{i\mathbb{R}} dP'\ \mathcal{V}_{P'}\ ,
 \\
- \mathcal{V}_{\beta_1} \times \mathcal{V}_{\beta_2} 
-&= \sum_{\beta'\in \left]0,\frac{Q}{2}\right[\cap \left(\beta_1+\beta_2 + b\mathbb{N}+b^{-1}\mathbb{N}\right)} \mathcal{V}_{\beta'}  
-+ \frac12 \int_{\frac{Q}{2}+i\mathbb{R}} d\alpha'\ \mathcal{V}_{\alpha'}\ .
+ \mathcal{V}_{\Pi_1} \times \mathcal{V}_{\Pi_2} 
+&= \sum_{\Pi'\in \left]0,\frac{Q}{2}\right[\cap \left(\Pi_1+\Pi_2 -\frac{Q}{2}- b\mathbb{N}-b^{-1}\mathbb{N}\right)} \mathcal{V}_{\Pi'}  
++ \frac12 \int_{i\mathbb{R}} dP'\ \mathcal{V}_{P'}\ .
 \end{align}
-In particular, determine a lower bound on the conformal dimension $\Delta$, such that $\mathcal{V}_\Delta \times \mathcal{V}_\Delta$ belongs to the Liouville spectrum.
-What are the consequences of these results for possible extensions of Liouville theory?
+In particular, show that $\mathcal{V}_\Delta \times \mathcal{V}_\Delta$ belongs to the Liouville spectrum if $\Delta \geq \frac{c-1}{32}$, and has discrete terms if $\Delta \in ]0,\frac{c-1}{32}[$.
 \end{exo}
 
 
