@@ -3627,17 +3627,11 @@ We will now study what happens in a special case where some poles coincide.
 
 Let us study how the Liouville OPE behaves when $P_2 \to P_{\langle r,s\rangle}$, where the degenerate momentum $P_{\langle r,s \rangle}$ is given in eq. \eqref{ars}.
 We still assume $c\notin ]-\infty,1]$, and we moreover choose the field normalization \eqref{nop} such that the three-point structure constant is given by the DOZZ formula. 
-This field normalization  is such that $N(P_{\langle r,s\rangle})=0$, and therefore $\lim_{P_2 \to P_{\langle r,s\rangle}} C_{P_1,P_2,P}=0$.
+With this field normalization, we have $N(P_{\langle r,s\rangle})=0$, and therefore $\lim_{P_2 \to P_{\langle r,s\rangle}} C_{P_1,P_2,P}=0$.
 This seems to imply that the limit of our OPE is zero. But actually our OPE has a finite limit, in other words the OPE coefficient does not vanish when considered as a distribution. 
 
-To see this, let us follow how the poles behave when $P_2 \to P_{\langle r,s\rangle}$. 
-
-
-If we analytically continue the OPE to a value $P_2=P_{\langle r,s \rangle}$, then poles from different sides of the line of integration must coincide, so some poles have to cross the line. 
-Let us deform the integration line to the right, so that poles cross it from right to left only.
-We now draw the deformed line, and the poles that have crossed it:
+To see this, let us follow how the poles behave when $P_2 \to P_{\langle r,s\rangle}$. In this limit, some poles from the left coincide with some poles from the right. In particular, $rs$ poles in $-\frac{Q}{2}+P_1+P_2-b\mathbb{N}-b^{-1}\mathbb{N}$ coincide with as many poles in $\frac{Q}{2}+P_1-P_2+b\mathbb{N}+b^{-1}\mathbb{N}$. Let us draw these coinciding poles in the case ${\langle r,s\rangle} = {\langle 3,4\rangle}$. For simplicity, we also deform the integration line so that it is crossed by all the coinciding poles from the left, and only those poles:
 \begin{align}
- % P_2 = P_{\langle 3, 4\rangle}
 \newcommand{\polewedge}[4]{
 \begin{scope}[#1]
 \node[blue, draw,circle,inner sep=1pt,fill] at (0, 0) {};
@@ -3667,29 +3661,15 @@ We now draw the deformed line, and the poles that have crossed it:
   \draw[ultra thick, red, rounded corners = 6] (.5, -4.5) -- (.5, -2.7) -- (-1.1, -1.9) -- (.5, -1.1) -- (.5, 1.2) -- (-1.1, 2) -- (.5, 2.8) -- (.5, 4.5);
  \end{tikzpicture}
 \end{align}
-The integral along the deformed line goes to zero as $P_2\to P_{\langle r,s \rangle}$, while the residues of the poles have finite limits.
-We obtain an OPE of the type of eq. \eqref{vrsv}, with 
+The integral along the deformed line goes to zero as $P_2\to P_{\langle r,s \rangle}$. On the other hand, the residues of the coinciding poles have finite nonzero limits, because the vanishing factor $N(P_2)$ is compensated by an infinite factor due to the coincidence of poles. We obtain 
 \begin{align}
- \boxed{C_{i,j}^{\langle r,s \rangle}(P_1) = \underset{P_2\to P_{\langle r,s \rangle}}{\lim}\ \underset{P=P_1+P_2+ib+jb^{-1}}{\operatorname{ Res}}\ C_{P_1,P_2,Q-P}}\ .
+\underset{P_2\to P_{\langle r,s \rangle}}{\lim} V_{P_1}V_{P_2} \sim \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}}
+ \left(\underset{P_2\to P_{\langle r,s \rangle}}{\lim}\ \underset{P=P_1+P_2-P_{\langle r,s \rangle}+ib+jb^{-1}}{\operatorname{ Res}}\ \frac{C_{P_1,P_2,P}}{B(P)}\right) V_{P_1 + ib+jb^{-1}}\ .
 \label{crs}
 \end{align}
-To summarize, 
-\begin{align}
- \boxed{
- \underset{P\to P_{\langle r,s \rangle}}{\lim } V_P = 
- \left\{ \begin{array}{ll}
-          V_{P_{\langle r,s \rangle}} \quad & \text{if\ } c\in ]-\infty, 1]\ ,
-          \\
-          V_{\langle r,s \rangle} & \text{otherwise}\ .
-         \end{array}\right. 
-         }
-\label{vla}
-\end{align}
-So, for $c\notin ]-\infty, 1]$, we obtain degenerate fields as limits of non-degenerate fields. 
-The reason for this behaviour is not clear.
-Nevertheless, this behaviour can be used for deriving the fusion rules \eqref{rtv} from the Liouville OPE. 
+This OPE is of the type of the degenerate OPE \eqref{vrsv}, so that $V_{P_2}$ becomes a degenerate field, whose fusion rule \eqref{rtv} we have now rederived from the Liouville OPE.
+Moreover, we have obtained a formula for the degenerate OPE coefficient in terms of the two- and three-point structure constants. Using the explicit expressions of these structure constants, this formula becomes
 
-Let us finish the computation of the degenerate OPE coefficient $C_{i,j}^{\langle r,s \rangle}(P)$.
 Using eq. \eqref{caaa}, we obtain 
 \begin{multline}
  C_{i,j}^{\langle r,s \rangle}(P) = \left[b^{\frac{2}{b}-2b}\mu\right]^{ib+jb^{-1}} \frac{\Upsilon_b'(0)}{\Upsilon_b'(-ib-jb^{-1})} \frac{\Upsilon_b'(2P_{\langle r,s \rangle})}{\Upsilon_b'(2P_{\langle r,s \rangle}+ib+jb^{-1})}
@@ -3703,7 +3683,27 @@ In the special case $i=j=0$, we find
  C_{0,0}^{\langle r,s \rangle}(P) = 1 \ .
 \end{align}
 In the cases $\langle r,s \rangle \in \{\langle 1,2 \rangle, \langle 2,1 \rangle\}$, 
-this agrees with eq \eqref{cco}.  
+refer to/from appropriate exercise.
+
+
+
+This does not happen if $c\in]-\infty, 1]$, as the three-point structure constant does not have the right type of poles.
+To summarize, 
+\begin{align}
+ \boxed{
+ \underset{P\to P_{\langle r,s \rangle}}{\lim } V_P = 
+ \left\{ \begin{array}{ll}
+          V_{P_{\langle r,s \rangle}} \quad & \text{if\ } c\in ]-\infty, 1]\ ,
+          \\
+          V_{\langle r,s \rangle} & \text{otherwise}\ .
+         \end{array}\right. 
+         }
+\label{vla}
+\end{align}
+
+
+
+
 
 \subsubsection{Three-point structure constant}
 
