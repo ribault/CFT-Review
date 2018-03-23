@@ -3579,8 +3579,10 @@ Using the invariance of normalization-independant quantities under the reflectio
 \begin{align}
  V_{P_1}V_{P_2} \sim \frac12\int_{i{\mathbb{R}}} dP \frac{C_{P_1,P_2,P}}{B(P)} V_P\ .
 \end{align}
-When we analytically continue $P_1,P_2$ beyond the imaginary axis, the behaviour of this OPE depends on the behaviour of the singularities of the OPE coefficient  as a function of $P$. In the case $c\in ]-\infty, 1]$, the poles of the OPE coefficient $\frac{\hat C_{P_1,P_2,P}}{\hat B(P)}$ do not depend on $P_1,P_2$, and our OPE remains valid as written for any $P_1,P_2\in\mathbb{C}$ such that $\hat N(P_1)$ and $\hat N(P_2)$ are finite.
-On the other hand, in the case $c\notin ]-\infty,1]$, the three-point structure constant has $P_1,P_2$-dependent simple poles due to the normalization-independent factor $C'_{P_1,P_2,P}$ \eqref{cp}. 
+As a function of $P$, the OPE coefficient $\frac{C_{P_1,P_2,P}}{B(P)}$ can have poles whose positions depend on $P_1,P_2$. 
+And these poles control how the OPE behaves when we analytically continue $P_1,P_2$ beyond the imaginary axis. In the case $c\in ]-\infty, 1]$, the poles of the OPE coefficient $\frac{\hat C_{P_1,P_2,P}}{\hat B(P)}$ do not depend on $P_1,P_2$, and our OPE remains valid as written for any $P_1,P_2\in\mathbb{C}$ such that $\hat N(P_1)$ and $\hat N(P_2)$ are finite.
+
+Let us focus on the case $c\notin ]-\infty,1]$. Then the three-point structure constant has $P_1,P_2$-dependent simple poles due to the normalization-independent factor $C'_{P_1,P_2,P}$ \eqref{cp}. 
 Let us plot these poles in the complex $P$-plane, assuming $P_1,P_2\in i\mathbb{R}$. The poles lie on cones that we draw in the fashion of eq. \eqref{lines}. We assume $\Re Q>0$, and we also draw the line  of integration $P\in i{\mathbb{R}}$, together with the two lines $P\in \pm\frac{Q}{2}+i\mathbb{R}$:
 \begin{align}
  \newcommand{\polewedge}[3]{
@@ -3617,31 +3619,25 @@ Then the OPE becomes
 \end{align}
 where the discrete terms have lost their factor $\frac12$ due to the contributions of the poles from the right. (See Exercise \ref{exoaur} for examples of the resulting fusion rules.)
 
-
-
-
-Then go to degenerate fields, we have been generic
+Our analytically continued OPE is valid for generic values of $P_1,P_2$, such that $C_{P_1,P_2,P}$ only has simple poles.
+We will now study what happens in a special case where some poles coincide.
 
 
 \subsubsection{Analytic continuation to degenerate momentums}
 
-Let us study the behaviour of the Liouville OPE $V_{\alpha_1}V_{\alpha_2}$ \eqref{vvi} when $\alpha_2 \to \alpha_{\langle r,s \rangle}$, where the degenerate field momentum $\alpha_{\langle r,s \rangle}$ is given in eq. \eqref{ars}.
-This behaviour depends on the value of the central charge $c$, because the structure constants $C$ and $\hat C$ have very different analytic properties. 
-If $c\in ]-\infty, 1]$, we use the structure constant $\hat C_{\alpha_1,\alpha_2,\alpha_3}$, which has a finite limit when $\alpha_2 \to \alpha_{\langle r,s \rangle}$.
-So the OPE remains an integral over the Liouville spectrum, and nothing particular happens. 
-If on the other hand $c\notin ]-\infty, 1]$, we use the structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$, which apparently vanishes due to the identity 
-\begin{align}
- \Upsilon_b(2\alpha_{\langle r,s \rangle})=0\ .
-\label{ubt}
-\end{align}
-However, it turns out that the OPE $V_{\alpha_1}V_{\alpha_2}$ does not vanish, in other words $C_{\alpha_1,\alpha_2,\alpha_3}$ does not vanish when considered as a distribution.
-To see this, let us plot the poles of the OPE coefficient $C_{\alpha_1,\alpha_2}^\alpha = C_{\alpha_1,\alpha_2,Q-\alpha}$, viewed as a function of $\alpha$.
+Let us study how the Liouville OPE behaves when $P_2 \to P_{\langle r,s\rangle}$, where the degenerate momentum $P_{\langle r,s \rangle}$ is given in eq. \eqref{ars}.
+We still assume $c\notin ]-\infty,1]$, and we moreover choose the field normalization \eqref{nop} such that the three-point structure constant is given by the DOZZ formula. 
+This field normalization  is such that $N(P_{\langle r,s\rangle})=0$, and therefore $\lim_{P_2 \to P_{\langle r,s\rangle}} C_{P_1,P_2,P}=0$.
+This seems to imply that the limit of our OPE is zero. But actually our OPE has a finite limit, in other words the OPE coefficient does not vanish when considered as a distribution. 
 
-If we analytically continue the OPE to a value $\alpha_2=\alpha_{\langle r,s \rangle}$, then poles from different sides of the line of integration must coincide, so some poles have to cross the line. 
+To see this, let us follow how the poles behave when $P_2 \to P_{\langle r,s\rangle}$. 
+
+
+If we analytically continue the OPE to a value $P_2=P_{\langle r,s \rangle}$, then poles from different sides of the line of integration must coincide, so some poles have to cross the line. 
 Let us deform the integration line to the right, so that poles cross it from right to left only.
 We now draw the deformed line, and the poles that have crossed it:
 \begin{align}
- % \alpha_2 = \alpha_{\langle 3, 4\rangle}
+ % P_2 = P_{\langle 3, 4\rangle}
 \newcommand{\polewedge}[4]{
 \begin{scope}[#1]
 \node[blue, draw,circle,inner sep=1pt,fill] at (0, 0) {};
@@ -3650,37 +3646,39 @@ We now draw the deformed line, and the poles that have crossed it:
 \end{scope}
 }
  \begin{tikzpicture}[baseline=(current  bounding  box.center)]
-  \draw[-latex] (-5,0) -- (0, 0) node[above left] {$0$} -- (6,0) node [above] {$\alpha$};
-  \draw (0, -4) -- (0, 4);
+  \draw[-latex] (-5,0) -- (0.5, 0) node[above left] {$0$} -- (6,0) node [above] {$P$};
+  \draw (0.5, -4) -- (0.5, 4);
  \clip (-5, -4) -- (-5, 4) -- (6, 4) -- (6, -4) -- cycle;
-  \polewedge{shift = {(1.7, 2)}, rotate = 180}{$\alpha_1-\alpha_2$}{below right};
-  \polewedge{shift = {(-1.7, -2)}, rotate = 180}{$\alpha_2-\alpha_1$}{below left};
-  \polewedge{shift = {(-1.7, 1.9)}, rotate = 180}{$\alpha_1+\alpha_2-Q$}{below left};
-  \polewedge{shift = {(1.7, -1.9)}, rotate = 180}{$Q-\alpha_1-\alpha_2$}{below right};
-  \polewedge{shift = {(2.7, 2.1)}}{$Q+\alpha_1-\alpha_2$}{above right};
-  \polewedge{shift = {(-.7, -1.9)}}{$Q+\alpha_2-\alpha_1$}{above left};
-  \polewedge{shift = {(-.7, 2)}}{$\alpha_1+\alpha_2$}{above left};
-  \polewedge{shift = {(2.7, -1.8)}}{$2Q-\alpha_1-\alpha_2$}{above right};
+  \polewedge{shift = {(1.7, 2)}, rotate = 180}{}{below right};
+  \node[right] at (1.2, 1.6) {$-\frac{Q}{2}+P_1+P_2$};
+  \polewedge{shift = {(-1.7, -2)}, rotate = 180}{$-\frac{Q}{2}-P_1-P_2$}{left};
+  \polewedge{shift = {(-1.7, 1.9)}, rotate = 180}{$-\frac{Q}{2}+P_1-P_2$}{left};
+  \polewedge{shift = {(1.7, -1.9)}, rotate = 180}{}{below right};
+  \node[right] at (1.2, -2.3) {$-\frac{Q}{2}-P_1+P_2$};
+  \polewedge{shift = {(2.7, 2.1)}}{$\frac{Q}{2}+P_1+P_2$}{right};
+  \polewedge{shift = {(-.7, -1.9)}}{$\frac{Q}{2}-P_1-P_2$}{above left};
+  \polewedge{shift = {(-.7, 2)}}{$\frac{Q}{2}+P_1-P_2$}{above left};
+  \polewedge{shift = {(2.7, -1.8)}}{$\frac{Q}{2}-P_1+P_2$}{right};
   \foreach \x in {0, ..., 2}{
   \foreach \y in {0, ..., 3}{
   \node[red, draw, circle,inner sep = 1.5pt, fill] at (-.7 + .6*\x + .4*\y, 2 + .3*\x -.2*\y) {};
   \node[red, draw, circle,inner sep = 1.5pt, fill] at (-.7 + .6*\x + .4*\y, -1.9 + .3*\x -.2*\y) {};
   }}
-  \draw[ultra thick, red, rounded corners = 6] (.5, -4.5) -- (.5, -2.7) -- (2.1, -1.9) -- (.5, -1.1) -- (.5, 1.2) -- (2.1, 2) -- (.5, 2.8) -- (.5, 4.5);
+  \draw[ultra thick, red, rounded corners = 6] (.5, -4.5) -- (.5, -2.7) -- (-1.1, -1.9) -- (.5, -1.1) -- (.5, 1.2) -- (-1.1, 2) -- (.5, 2.8) -- (.5, 4.5);
  \end{tikzpicture}
 \end{align}
-The integral along the deformed line goes to zero as $\alpha_2\to \alpha_{\langle r,s \rangle}$, while the residues of the poles have finite limits.
+The integral along the deformed line goes to zero as $P_2\to P_{\langle r,s \rangle}$, while the residues of the poles have finite limits.
 We obtain an OPE of the type of eq. \eqref{vrsv}, with 
 \begin{align}
- \boxed{C_{i,j}^{\langle r,s \rangle}(\alpha_1) = \underset{\alpha_2\to \alpha_{\langle r,s \rangle}}{\lim}\ \underset{\alpha=\alpha_1+\alpha_2+ib+jb^{-1}}{\operatorname{ Res}}\ C_{\alpha_1,\alpha_2,Q-\alpha}}\ .
+ \boxed{C_{i,j}^{\langle r,s \rangle}(P_1) = \underset{P_2\to P_{\langle r,s \rangle}}{\lim}\ \underset{P=P_1+P_2+ib+jb^{-1}}{\operatorname{ Res}}\ C_{P_1,P_2,Q-P}}\ .
 \label{crs}
 \end{align}
 To summarize, 
 \begin{align}
  \boxed{
- \underset{\alpha\to \alpha_{\langle r,s \rangle}}{\lim } V_\alpha = 
+ \underset{P\to P_{\langle r,s \rangle}}{\lim } V_P = 
  \left\{ \begin{array}{ll}
-          V_{\alpha_{\langle r,s \rangle}} \quad & \text{if\ } c\in ]-\infty, 1]\ ,
+          V_{P_{\langle r,s \rangle}} \quad & \text{if\ } c\in ]-\infty, 1]\ ,
           \\
           V_{\langle r,s \rangle} & \text{otherwise}\ .
          \end{array}\right. 
@@ -3691,18 +3689,18 @@ So, for $c\notin ]-\infty, 1]$, we obtain degenerate fields as limits of non-deg
 The reason for this behaviour is not clear.
 Nevertheless, this behaviour can be used for deriving the fusion rules \eqref{rtv} from the Liouville OPE. 
 
-Let us finish the computation of the degenerate OPE coefficient $C_{i,j}^{\langle r,s \rangle}(\alpha)$.
+Let us finish the computation of the degenerate OPE coefficient $C_{i,j}^{\langle r,s \rangle}(P)$.
 Using eq. \eqref{caaa}, we obtain 
 \begin{multline}
- C_{i,j}^{\langle r,s \rangle}(\alpha) = \left[b^{\frac{2}{b}-2b}\mu\right]^{ib+jb^{-1}} \frac{\Upsilon_b'(0)}{\Upsilon_b'(-ib-jb^{-1})} \frac{\Upsilon_b'(2\alpha_{\langle r,s \rangle})}{\Upsilon_b'(2\alpha_{\langle r,s \rangle}+ib+jb^{-1})}
+ C_{i,j}^{\langle r,s \rangle}(P) = \left[b^{\frac{2}{b}-2b}\mu\right]^{ib+jb^{-1}} \frac{\Upsilon_b'(0)}{\Upsilon_b'(-ib-jb^{-1})} \frac{\Upsilon_b'(2P_{\langle r,s \rangle})}{\Upsilon_b'(2P_{\langle r,s \rangle}+ib+jb^{-1})}
 \\ \times
- \frac{\Upsilon_b(2\alpha)}{\Upsilon_b(2\alpha+ib+jb^{-1})} \frac{\Upsilon_b(2\alpha+2\alpha_{\langle r,s \rangle}-Q+2ib+2jb^{-1})}{\Upsilon_b(2\alpha+2\alpha_{\langle r,s \rangle}-Q+ib+jb^{-1})} \ ,
+ \frac{\Upsilon_b(2P)}{\Upsilon_b(2P+ib+jb^{-1})} \frac{\Upsilon_b(2P+2P_{\langle r,s \rangle}-Q+2ib+2jb^{-1})}{\Upsilon_b(2P+2P_{\langle r,s \rangle}-Q+ib+jb^{-1})} \ ,
 \end{multline}
 where taking limits and residues produces derivatives of $\Upsilon_b$ at its zeros.
 We could expand the ratios of $\Upsilon_b$ functions into products of $\gamma$ functions using eq. \eqref{upup}.
 In the special case $i=j=0$, we find
 \begin{align}
- C_{0,0}^{\langle r,s \rangle}(\alpha) = 1 \ .
+ C_{0,0}^{\langle r,s \rangle}(P) = 1 \ .
 \end{align}
 In the cases $\langle r,s \rangle \in \{\langle 1,2 \rangle, \langle 2,1 \rangle\}$, 
 this agrees with eq \eqref{cco}.  
@@ -3713,15 +3711,15 @@ Evaluating the expression \eqref{clc} for the three-point structure constant, we
 \begin{multline}
 C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =  
 \\
-\frac{\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-\alpha_1-\alpha_2-\alpha_3}\Upsilon_b'(0) \Upsilon_b'(2\alpha_1) \Upsilon_b'(2\alpha_2) \Upsilon_b'(2\alpha_3)}{\Upsilon_b'(\alpha_1+\alpha_2+\alpha_3-Q) \Upsilon_b'(\alpha_1+\alpha_2-\alpha_3)\Upsilon_b'(\alpha_2+\alpha_3-\alpha_1)\Upsilon_b'(\alpha_3+\alpha_1-\alpha_2)}\ ,
+\frac{\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-P_1-P_2-P_3}\Upsilon_b'(0) \Upsilon_b'(2P_1) \Upsilon_b'(2P_2) \Upsilon_b'(2P_3)}{\Upsilon_b'(P_1+P_2+P_3-Q) \Upsilon_b'(P_1+P_2-P_3)\Upsilon_b'(P_2+P_3-P_1)\Upsilon_b'(P_3+P_1-P_2)}\ ,
 \label{crisi}
 \end{multline}
-where we use the notation $\alpha_i = \alpha_{\langle r_i,s_i \rangle}$ for short.
-This is the Liouville structure constant $C_{\alpha_1,\alpha_2,\alpha_3}$, where all $\Upsilon_b$ factors are replaced with their derivatives at some of their zeros.
+where we use the notation $P_i = P_{\langle r_i,s_i \rangle}$ for short.
+This is the Liouville structure constant $C_{P_1,P_2,P_3}$, where all $\Upsilon_b$ factors are replaced with their derivatives at some of their zeros.
 These $\Upsilon_b$ factors indeed have zeros whenever
 the momentums are degenerate and the degenerate fusion rules \eqref{rrrsss} are obeyed, due to $\Upsilon_b(-b{\mathbb{N}}-\frac{1}{b}{\mathbb{N}})=0$ (from eq. \eqref{xbn}) which implies 
 \begin{align}
- \forall i\neq j\neq k\ , \quad \Upsilon_b(\alpha_i+\alpha_j-\alpha_k) = 0\ .
+ \forall i\neq j\neq k\ , \quad \Upsilon_b(P_i+P_j-P_k) = 0\ .
 \end{align}
 But $\Upsilon_b(x)$ also has zeros for $x\in Q+b{\mathbb{N}}+\frac{1}{b}{\mathbb{N}}$, and these additional zeros are responsible for the expression \eqref{clc} being nonzero in cases when fusion rules are violated.
 
@@ -4187,7 +4185,7 @@ For an interpretation of these different behaviours in random energy models, see
 &= \sum_{\Pi'\in \left]0,\frac{Q}{2}\right[\cap \left(\Pi_1+\Pi_2 -\frac{Q}{2}- b\mathbb{N}-b^{-1}\mathbb{N}\right)} \mathcal{V}_{\Pi'}  
 + \int_{i\mathbb{R}_+} dP'\ \mathcal{V}_{P'}\ .
 \end{align}
-\item In particular, show that $\mathcal{V}_\Delta \times \mathcal{V}_\Delta$ belongs to the Liouville spectrum if $\Delta \geq \frac{c-1}{32}$, and has discrete terms if $\Delta \in ]0,\frac{c-1}{32}[$.
+\item Given a unitary Verma module $\mathcal{V}_\Delta$ of conformal dimension $\Delta>0$, show that $\mathcal{V}_\Delta \times \mathcal{V}_\Delta$ belongs to the Liouville spectrum if $\Delta \geq \frac{c-1}{32}$, and has discrete terms if $\Delta \in ]0,\frac{c-1}{32}[$.
 \item If $1<c<25$, show that the set of unitary representations is not closed under fusion.
  \end{enumerate}
 
