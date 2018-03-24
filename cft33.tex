@@ -3668,24 +3668,24 @@ The integral along the deformed line goes to zero as $P_2\to P_{\langle r,s \ran
 \label{crs}
 \end{align}
 This OPE is of the type of the degenerate OPE \eqref{vrsv}, so that $V_{P_2}$ becomes a degenerate field, whose fusion rule \eqref{rtv} we have now rederived from the Liouville OPE.
-Moreover, we have obtained a formula for the degenerate OPE coefficient in terms of the two- and three-point structure constants. Using the explicit expressions of these structure constants, this formula becomes
-
-Using eq. \eqref{caaa}, we obtain 
+Moreover, we have obtained a formula for the degenerate OPE coefficient in terms of the two- and three-point structure constants. Let us insert the explicit expressions of these structure constants in this formula. The calculation is slightly simplified by using the fact that $\frac{C_{P_1,P_2,P}}{B(P)} = C_{P_1,P_2,-P}$ in our normalization, and we find
 \begin{multline}
- C_{i,j}^{\langle r,s \rangle}(P) = \left[b^{\frac{2}{b}-2b}\mu\right]^{ib+jb^{-1}} \frac{\Upsilon_b'(0)}{\Upsilon_b'(-ib-jb^{-1})} \frac{\Upsilon_b'(2P_{\langle r,s \rangle})}{\Upsilon_b'(2P_{\langle r,s \rangle}+ib+jb^{-1})}
-\\ \times
- \frac{\Upsilon_b(2P)}{\Upsilon_b(2P+ib+jb^{-1})} \frac{\Upsilon_b(2P+2P_{\langle r,s \rangle}-Q+2ib+2jb^{-1})}{\Upsilon_b(2P+2P_{\langle r,s \rangle}-Q+ib+jb^{-1})} \ ,
+ C_{i,j}^{\langle r,s \rangle}(P) = \mu^{\frac{Q}{2}-P_{\langle r,s\rangle}+ib+jb^{-1}} 
+ \frac{\Upsilon_b'(0)\Upsilon_b'(-2P_{\langle r,s \rangle})}{\prod_{\pm}\Upsilon'_b(\frac{Q}{2}\pm P_{\langle r,s\rangle} +ib+jb^{-1})} 
+ \\ \times 
+ \frac{\Upsilon_b(2P+Q)\Upsilon_b(2P+2ib+2jb^{-1})}{\prod_\pm \Upsilon_b(\frac{Q}{2}+2P\pm P_{\langle r,s\rangle} +ib+jb^{-1})}
+ \ ,
 \end{multline}
 where taking limits and residues produces derivatives of $\Upsilon_b$ at its zeros.
 We could expand the ratios of $\Upsilon_b$ functions into products of $\gamma$ functions using eq. \eqref{upup}.
-In the special case $i=j=0$, we find
+In the special case $i=-\frac{r-1}{2}, j=-\frac{s-1}{2}$, we have $ib+jb^{-1} = \frac{Q}{2}-P_{\langle r,s\rangle} $, so that 
 \begin{align}
- C_{0,0}^{\langle r,s \rangle}(P) = 1 \ .
+ C_{-\frac{r-1}{2},-\frac{s-1}{2}}^{\langle r,s \rangle}(P) = 1 \ .
 \end{align}
 In the cases $\langle r,s \rangle \in \{\langle 1,2 \rangle, \langle 2,1 \rangle\}$, 
 refer to/from appropriate exercise.
 
-
+problem with power of $\mu$
 
 This does not happen if $c\in]-\infty, 1]$, as the three-point structure constant does not have the right type of poles.
 To summarize, 
@@ -3701,7 +3701,7 @@ To summarize,
 \label{vla}
 \end{align}
 
-
+Rather do it like table \eqref{ccr} ... or combine?
 
 
 
