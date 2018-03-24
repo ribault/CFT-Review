@@ -3427,7 +3427,7 @@ up to a redefinition of the cosmological constant. These normalizations are such
 
 The DOZZ formula is valid for $c\notin ]-\infty, 1]$. The analogous choice of normalizations for $c\notin [25,\infty[$ leads to the three-point structure constant 
 \begin{align}
- \hat C_{P_1,P_2,P_3} =  \frac{\mu^{-\frac{Q}{2}-P_1-P_2-P_3}\hat\Upsilon_b(0)\prod_{i=1}^3 \hat\Upsilon_b(-2P_i) }{\prod_{\pm,\pm} \hat\Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)} \ .
+ \hat C_{P_1,P_2,P_3} =  \frac{\mu^{-\frac{Q}{2}}\hat\Upsilon_b(0)\prod_{i=1}^3 \mu^{-P_i}\hat\Upsilon_b(-2P_i) }{\prod_{\pm,\pm} \hat\Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)} \ .
 \label{hc}
 \end{align}
 Then $\hat C_{P_1,P_2,P_3}$ has the same behaviour as $C_{P_1,P_2,P_3}$ under the shifts $P_1\to P_1+b$ and $P_1\to P_1+\frac{1}{b}$. Moreover, we have $\hat C_{-\frac{Q}{2},-\frac{Q}{2},\frac{Q}{2}} = 1$.
@@ -3668,9 +3668,9 @@ The integral along the deformed line goes to zero as $P_2\to P_{\langle r,s \ran
 \label{crs}
 \end{align}
 This OPE is of the type of the degenerate OPE \eqref{vrsv}, so that $V_{P_2}$ becomes a degenerate field, whose fusion rule \eqref{rtv} we have now rederived from the Liouville OPE.
-Moreover, we have obtained a formula for the degenerate OPE coefficient in terms of the two- and three-point structure constants. Let us insert the explicit expressions of these structure constants in this formula. The calculation is slightly simplified by using the fact that $\frac{C_{P_1,P_2,P}}{B(P)} = C_{P_1,P_2,-P}$ in our normalization, and we find
+Moreover, we have obtained a formula for the degenerate OPE coefficient in terms of the two- and three-point structure constants. Let us insert the explicit expressions of these structure constants in this formula. The calculation is slightly simplified by using the identity $\frac{C_{P_1,P_2,P}}{B(P)} = C_{P_1,P_2,-P}$ which holds in our normalization, and we find
 \begin{multline}
- C_{i,j}^{\langle r,s \rangle}(P) = \mu^{\frac{Q}{2}-P_{\langle r,s\rangle}+ib+jb^{-1}} 
+ C_{i,j}^{\langle r,s \rangle}(P) = \mu^{-\frac{Q}{2}-P_{\langle r,s\rangle}+ib+jb^{-1}} 
  \frac{\Upsilon_b'(0)\Upsilon_b'(-2P_{\langle r,s \rangle})}{\prod_{\pm}\Upsilon'_b(\frac{Q}{2}\pm P_{\langle r,s\rangle} +ib+jb^{-1})} 
  \\ \times 
  \frac{\Upsilon_b(2P+Q)\Upsilon_b(2P+2ib+2jb^{-1})}{\prod_\pm \Upsilon_b(\frac{Q}{2}+2P\pm P_{\langle r,s\rangle} +ib+jb^{-1})}
@@ -3682,10 +3682,9 @@ In the special case $i=-\frac{r-1}{2}, j=-\frac{s-1}{2}$, we have $ib+jb^{-1} = 
 \begin{align}
  C_{-\frac{r-1}{2},-\frac{s-1}{2}}^{\langle r,s \rangle}(P) = 1 \ .
 \end{align}
+% NB: not really true, check formulas, do we want P -> Prs or P -> -Prs?
 In the cases $\langle r,s \rangle \in \{\langle 1,2 \rangle, \langle 2,1 \rangle\}$, 
 refer to/from appropriate exercise.
-
-problem with power of $\mu$
 
 This does not happen if $c\in]-\infty, 1]$, as the three-point structure constant does not have the right type of poles.
 To summarize, 
