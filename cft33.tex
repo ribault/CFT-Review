@@ -3174,7 +3174,7 @@ This is all that we will need to know about the degenerate OPE coefficients $C_\
  \frac{\gamma(-b^{-2}-2b^{-1}P)}{\gamma(-b^{-2}+2b^{-1}P)} \ .
 \end{align}
 Additional constraints on degenerate OPE coefficients can be derived using a four-point function of the type $
- \left\langle V_{\langle 2,1\rangle} V_P V_{\langle 1, 2\rangle} V_{P-\frac{Q}{2}}\right\rangle$, see
+ \left\langle V_{\langle 2,1\rangle} V_P V_{\langle 1, 2\rangle} V_{P+\frac{Q}{2}}\right\rangle$, see
 Exercise \ref{exonorm}. But we will not need these additional constraints.
 
 \subsubsection{What we learn from $\left\langle V_{\langle 2,1 \rangle}(x)V_{P_1}(0)V_{P_2}(\infty)V_{P_3}(1)\right\rangle$}
@@ -3222,7 +3222,7 @@ We could consider the invariant combination $\frac{C_{P_1,P_2,P_3}}{\sqrt{B(P_1)
 \begin{align}
  C_{P_1,P_2,P_3} = N(P_1)N(P_2)N(P_3)C'_{P_1,P_2,P_3}\ ,
 \end{align}
-where the function $N(P)$ transforms as $N(P)\to \lambda(P)N(P)$, and the renormalized three-point structure constant $C'_{P_1,P_2,P_3}$ is invariant. Then the invariant quantities that we want to determine are $C'_{P_1,P_2,P_3}$, and the combination $N^2B^{-1}(P)$. As a check that these quantities are all we need, let us write the crossing symmetry equation for a four-point function of the type $\langle V_{P_1}V_{P_2}V_{P_3}V_{P_4}\rangle$. Adapting the crossing symmetry equation \eqref{csd} to the 
+where the normalization factor $N(P)$ transforms as $N(P)\to \lambda(P)N(P)$, and the renormalized three-point structure constant $C'_{P_1,P_2,P_3}$ is invariant. Then the invariant quantities that we want to determine are $C'_{P_1,P_2,P_3}$, and the combination $N^2B^{-1}(P)$. As a check that these quantities are all we need, let us write the crossing symmetry equation for a four-point function of the type $\langle V_{P_1}V_{P_2}V_{P_3}V_{P_4}\rangle$. Adapting the crossing symmetry equation \eqref{csd} to the 
 OPE \eqref{vvi}, we find 
 \begin{align}
  \int_{i\mathbb{R}_+} dP_s\frac{C_{12s} C_{s34}}{B_s} \left| 
@@ -3409,13 +3409,13 @@ This is again invariant under $b\to \frac{1}{b}$, and under the reflection $P\to
 We have determined the normalization-independant combinations of structure constants, and this is enough for solving Liouville theory in the conformal bootstrap approach. However, in order to compare different approaches to Liouville theory, it can be convenient to consider specific field normalizations. 
 Choosing the normalization such that $B(P)=1$ might seem natural, but this would cause $N(P)$ to have square root branch cuts, and would therefore violate our assumption that correlation functions are meromorphic. Rather, let us consider the normalization such that 
 \begin{align}
- N(P) = \mu^{-P}\Upsilon_b(-2P)\ ,
+ N(P) = \mu^{P}\Upsilon_b(2P)\ ,
  \label{nop}
 \end{align}
 where $\mu$ is an arbitrary parameter called the \textbf{\boldmath cosmological constant}\index{cosmological constant}.
 The resulting expression for the three-point structure constant is
 \begin{align}
- C_{P_1,P_2,P_3} =  \frac{\mu^{-\frac{Q}{2}}\Upsilon_b'(0)\prod_{i=1}^3 \mu^{-P_i}\Upsilon_b(-2P_i) }{\prod_{\pm,\pm} \Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)} \ ,
+ C_{P_1,P_2,P_3} =  \frac{\mu^{-\frac{Q}{2}}\Upsilon_b'(0)\prod_{i=1}^3 \mu^{P_i}\Upsilon_b(2P_i) }{\prod_{\pm,\pm} \Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)} \ ,
 \label{caaa}
 \end{align}
 where we chose not only a field normalization, but also an overall $P_i$-independent normalization factor. 
@@ -3423,14 +3423,14 @@ This is called the \textbf{\boldmath DOZZ formula}\index{DOZZ formula} for Dorn,
 Zamolodchikov and Al. Zamolodchikov. 
 The DOZZ formula was originally derived using the Lagrangian formulation of Liouville theory \cite{zz95}. 
 That formulation led to normalizations that agree with ours, 
-up to a redefinition of the cosmological constant. These normalizations are such that the later equation \eqref{crs} will hold, and such that $C_-(P)=1$. (See Exercise \ref{exodoc}.)
+up to a redefinition of the cosmological constant, and a reflection of the momentums. Our normalizations are such that the later equation \eqref{crs} will hold.
 
 The DOZZ formula is valid for $c\notin ]-\infty, 1]$. The analogous choice of normalizations for $c\notin [25,\infty[$ leads to the three-point structure constant 
 \begin{align}
- \hat C_{P_1,P_2,P_3} =  \frac{\mu^{-\frac{Q}{2}}\hat\Upsilon_b(0)\prod_{i=1}^3 \mu^{-P_i}\hat\Upsilon_b(-2P_i) }{\prod_{\pm,\pm} \hat\Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)} \ .
+ \hat C_{P_1,P_2,P_3} =  \frac{\mu^{-\frac{Q}{2}}\hat\Upsilon_b(0)\prod_{i=1}^3 \mu^{P_i}\hat\Upsilon_b(2P_i) }{\prod_{\pm,\pm} \hat\Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)} \ .
 \label{hc}
 \end{align}
-Then $\hat C_{P_1,P_2,P_3}$ has the same behaviour as $C_{P_1,P_2,P_3}$ under the shifts $P_1\to P_1+b$ and $P_1\to P_1+\frac{1}{b}$. Moreover, we have $\hat C_{-\frac{Q}{2},-\frac{Q}{2},\frac{Q}{2}} = 1$.
+Then $\hat C_{P_1,P_2,P_3}$ has the same behaviour as $C_{P_1,P_2,P_3}$ under the shifts $P_1\to P_1+b$ and $P_1\to P_1+\frac{1}{b}$.
 
 
 \subsubsection{The reflection coefficient}
@@ -3446,20 +3446,24 @@ The reflection coefficient must obey $R(P)R(-P)=1$, in particular $R(0)\in \{-1,
 \begin{align}
  \left<V_{P_1}V_{P_2}\right> = B(P_1)\Big[ \delta(P_1-P_2) + R(P_2)\delta(P_1+P_2) \Big]\ ,
 \end{align}
-where $B(P)=R(P)^2B(-P)$. Moreover, we must have $N(P)=R(P)N(-P)$ and $C_{P_1,P_2,P_3} = R(P_1) C_{-P_1,P_2,P_3}$. On the other hand, normalization-independent quantities are invariant under reflection.
+Under reflection, our structure constants and normalization factor behave as 
+\begin{align}
+ B(P)=R(P)^2B(-P) \ , \quad C_{P_1,P_2,P_3} = R(P_1) C_{-P_1,P_2,P_3} \ , \quad N(P)=R(P)N(-P)\ .
+\end{align}
+Normalization-independent quantities are invariant under reflection.
 
 Let us now focus on the particular normalization \eqref{nop}, such that the three-point function is given by the DOZZ formula. This normalization obeys $N(P)N(-P) = \left(N^2B^{-1}\right)(P)$, which implies $R(P)=B(P)$. 
 The expressions of the reflection coefficient for $c\notin ]-\infty, 1]$ and $c\notin [25,\infty[$ are respectively
 \begin{align}
- R(P) = \mu^{-2P}\frac{\Upsilon_b(-2P)}{\Upsilon_b(2P)} \quad , \quad \hat R(P) = \mu^{-2P}\frac{\hat{\Upsilon}_b(-2P)}{\hat{\Upsilon}_b(2P)}\ .
+ R(P) = \mu^{2P}\frac{\Upsilon_b(2P)}{\Upsilon_b(-2P)} \quad , \quad \hat R(P) = \mu^{2P}\frac{\hat{\Upsilon}_b(2P)}{\hat{\Upsilon}_b(-2P)}\ .
  \end{align}
 We have  $\hat\Upsilon_b(0)\neq 0$ so that $\hat R(0)=1$. On the other hand, we have $\Upsilon_b(0)=0$, so that $R(0)=-1$. This implies $V_{P=0}(z)=0$, which is consistent with $C_{0,P_2,P_3}=0$.
 Writing $\Upsilon_b(-2P)=\Upsilon_b(2P+Q)$, and using the shift equations \eqref{upup}, we can rewrite the reflection coefficient in terms of Gamma functions, and we find 
 \begin{align}
- R(P) &= -\left[b^{2b-\frac{2}{b}}\mu\right]^{-2P} \frac{\Gamma(2bP)\Gamma(2b^{-1}P)}{\Gamma(-2bP)\Gamma(-2b^{-1}P)} \ ,
+ R(P) &= -\left[b^{2b-\frac{2}{b}}\mu\right]^{2P} \frac{\Gamma(-2bP)\Gamma(-2b^{-1}P)}{\Gamma(2bP)\Gamma(2b^{-1}P)} \ ,
  \label{ram}
 \\
- \hat R(P) &= \left[(ib)^{2b-\frac{2}{b}}\mu\right]^{-2P} \frac{\Gamma(2bP)\Gamma(2b^{-1}P)}{\Gamma(-2bP)\Gamma(-2b^{-1}P)} \ .
+ \hat R(P) &= \left[(ib)^{2b-\frac{2}{b}}\mu\right]^{2P} \frac{\Gamma(-2bP)\Gamma(-2b^{-1}P)}{\Gamma(2bP)\Gamma(2b^{-1}P)} \ .
 \end{align}
 
 
@@ -3569,15 +3573,16 @@ This uniqueness statement relies on the assumption that degenerate fields exist.
 \end{itemize}
 
 
-\subsection{Analytic continuation}\label{secacl}
+\subsection{Analytic continuation of the OPE}\label{secacl}
 
-We will now sketch how OPEs and correlation functions behave when momentums are analytically continued beyond the imaginary axis. In particular, we will study what happens if momentums reach the values that correspond to degenerate fields, and this will allow us to determine the three-point structure constants of minimal models.
+We will now sketch how OPEs behave when momentums are analytically continued beyond the imaginary axis, in particular when they reach the values that correspond to degenerate fields.
 
-\subsubsection{Analytic continuation of the OPE}
+\subsubsection{Beyond the imaginary axis}
 
 Using the invariance of normalization-independant quantities under the reflection $P\to -P$, we write the Liouville OPE \eqref{vvi} as an integral over the whole imaginary axis,
 \begin{align}
  V_{P_1}V_{P_2} \sim \frac12\int_{i{\mathbb{R}}} dP \frac{C_{P_1,P_2,P}}{B(P)} V_P\ .
+ \label{vvir}
 \end{align}
 As a function of $P$, the OPE coefficient $\frac{C_{P_1,P_2,P}}{B(P)}$ can have poles whose positions depend on $P_1,P_2$. 
 And these poles control how the OPE behaves when we analytically continue $P_1,P_2$ beyond the imaginary axis. In the case $c\in ]-\infty, 1]$, the poles of the OPE coefficient $\frac{\hat C_{P_1,P_2,P}}{\hat B(P)}$ do not depend on $P_1,P_2$, and our OPE remains valid as written for any $P_1,P_2\in\mathbb{C}$ such that $\hat N(P_1)$ and $\hat N(P_2)$ are finite.
@@ -3623,7 +3628,7 @@ Our analytically continued OPE is valid for generic values of $P_1,P_2$, such th
 We will now study what happens in a special case where some poles coincide.
 
 
-\subsubsection{Analytic continuation to degenerate momentums}
+\subsubsection{Degenerate momentums}
 
 Let us study how the Liouville OPE behaves when $P_2 \to P_{\langle r,s\rangle}$, where the degenerate momentum $P_{\langle r,s \rangle}$ is given in eq. \eqref{ars}.
 We still assume $c\notin ]-\infty,1]$, and we moreover choose the field normalization \eqref{nop} such that the three-point structure constant is given by the DOZZ formula. 
@@ -3670,78 +3675,36 @@ The integral along the deformed line goes to zero as $P_2\to P_{\langle r,s \ran
 This OPE is of the type of the degenerate OPE \eqref{vrsv}, so that $V_{P_2}$ becomes a degenerate field, whose fusion rule \eqref{rtv} we have now rederived from the Liouville OPE.
 Moreover, we have obtained a formula for the degenerate OPE coefficient in terms of the two- and three-point structure constants. Let us insert the explicit expressions of these structure constants in this formula. The calculation is slightly simplified by using the identity $\frac{C_{P_1,P_2,P}}{B(P)} = C_{P_1,P_2,-P}$ which holds in our normalization, and we find
 \begin{multline}
- C_{i,j}^{\langle r,s \rangle}(P) = \mu^{-\frac{Q}{2}-P_{\langle r,s\rangle}+ib+jb^{-1}} 
- \frac{\Upsilon_b'(0)\Upsilon_b'(-2P_{\langle r,s \rangle})}{\prod_{\pm}\Upsilon'_b(\frac{Q}{2}\pm P_{\langle r,s\rangle} +ib+jb^{-1})} 
+ C_{i,j}^{\langle r,s \rangle}(P) = \mu^{-\frac{Q}{2}+P_{\langle r,s\rangle}-ib-jb^{-1}} 
+ \frac{\Upsilon_b'(0)\Upsilon_b'(2P_{\langle r,s \rangle})}{\prod_{\pm}\Upsilon'_b(\frac{Q}{2}\pm P_{\langle r,s\rangle} +ib+jb^{-1})} 
  \\ \times 
- \frac{\Upsilon_b(2P+Q)\Upsilon_b(2P+2ib+2jb^{-1})}{\prod_\pm \Upsilon_b(\frac{Q}{2}+2P\pm P_{\langle r,s\rangle} +ib+jb^{-1})}
+ \frac{\Upsilon_b(2P)\Upsilon_b(Q+2P+2ib+2jb^{-1})}{\prod_\pm \Upsilon_b(\frac{Q}{2}+2P\pm P_{\langle r,s\rangle} +ib+jb^{-1})}
  \ ,
 \end{multline}
 where taking limits and residues produces derivatives of $\Upsilon_b$ at its zeros.
 We could expand the ratios of $\Upsilon_b$ functions into products of $\gamma$ functions using eq. \eqref{upup}.
-In the special case $i=-\frac{r-1}{2}, j=-\frac{s-1}{2}$, we have $ib+jb^{-1} = \frac{Q}{2}-P_{\langle r,s\rangle} $, so that 
+In the special case $i=\frac{r-1}{2}, j=\frac{s-1}{2}$, we have $ib+jb^{-1} = P_{\langle r,s\rangle}-\frac{Q}{2} $, so that 
 \begin{align}
- C_{-\frac{r-1}{2},-\frac{s-1}{2}}^{\langle r,s \rangle}(P) = 1 \ .
+ C_{\frac{r-1}{2},\frac{s-1}{2}}^{\langle r,s \rangle}(P) = 1 \ .
 \end{align}
-% NB: not really true, check formulas, do we want P -> Prs or P -> -Prs?
-In the cases $\langle r,s \rangle \in \{\langle 1,2 \rangle, \langle 2,1 \rangle\}$, 
-refer to/from appropriate exercise.
+In particular, in the cases of the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$, we have $C_+(P)=\tilde{C}_+(P)=1$. This could have been derived more directly from crossing symmetry of four-point functions with two degenerate fields. 
+(See Exercise \ref{exodoc}.) 
 
-This does not happen if $c\in]-\infty, 1]$, as the three-point structure constant does not have the right type of poles.
-To summarize, 
+In the case $c\in]-\infty, 1]$, the OPE coefficient has no poles that could lead to discrete terms in the limit $P_2\to P_{\langle r,s\rangle}$, and the normalization factor $\hat N(P_2) = \mu^{P_2}\hat\Upsilon_b(2P_2)$ does not vanish in that limit. As a result, the OPE \eqref{vvir} remains valid as written. To summarize, when their momentums take degenerate values, primary fields can become degenerate or not, depending on the central charge:
 \begin{align}
- \boxed{
- \underset{P\to P_{\langle r,s \rangle}}{\lim } V_P = 
- \left\{ \begin{array}{ll}
-          V_{P_{\langle r,s \rangle}} \quad & \text{if\ } c\in ]-\infty, 1]\ ,
-          \\
-          V_{\langle r,s \rangle} & \text{otherwise}\ .
-         \end{array}\right. 
-         }
-\label{vla}
+\renewcommand{\arraystretch}{1.3}
+ \begin{tabular}{|l||c|c|}
+  \hline
+  central charge &  $c\in ]-\infty, 1]$ & $c\notin ]-\infty, 1]$
+  \\
+  \hline
+  $\underset{P\to P_{\langle r,s \rangle}}{\lim } V_P$ & $ V_{P_{\langle r,s \rangle}}$  & $V_{\langle r,s \rangle}$ 
+  \\
+  \hline
+ \end{tabular}
 \end{align}
-
-Rather do it like table \eqref{ccr} ... or combine?
 
 
-
-\subsubsection{Three-point structure constant}
-
-Evaluating the expression \eqref{clc} for the three-point structure constant, we obtain
-\begin{multline}
-C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =  
-\\
-\frac{\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-P_1-P_2-P_3}\Upsilon_b'(0) \Upsilon_b'(2P_1) \Upsilon_b'(2P_2) \Upsilon_b'(2P_3)}{\Upsilon_b'(P_1+P_2+P_3-Q) \Upsilon_b'(P_1+P_2-P_3)\Upsilon_b'(P_2+P_3-P_1)\Upsilon_b'(P_3+P_1-P_2)}\ ,
-\label{crisi}
-\end{multline}
-where we use the notation $P_i = P_{\langle r_i,s_i \rangle}$ for short.
-This is the Liouville structure constant $C_{P_1,P_2,P_3}$, where all $\Upsilon_b$ factors are replaced with their derivatives at some of their zeros.
-These $\Upsilon_b$ factors indeed have zeros whenever
-the momentums are degenerate and the degenerate fusion rules \eqref{rrrsss} are obeyed, due to $\Upsilon_b(-b{\mathbb{N}}-\frac{1}{b}{\mathbb{N}})=0$ (from eq. \eqref{xbn}) which implies 
-\begin{align}
- \forall i\neq j\neq k\ , \quad \Upsilon_b(P_i+P_j-P_k) = 0\ .
-\end{align}
-But $\Upsilon_b(x)$ also has zeros for $x\in Q+b{\mathbb{N}}+\frac{1}{b}{\mathbb{N}}$, and these additional zeros are responsible for the expression \eqref{clc} being nonzero in cases when fusion rules are violated.
-
-The three-point structure constant can be rewritten in terms of Gamma functions, using the following consequence of eq. \eqref{upup},
-\begin{align}
- \frac{\Upsilon_b'(-rb-sb^{-1})}{\Upsilon_b'(0)} = (-1)^{rs} b^{s-r} b^{s(s+1)b^{-2}-r(r+1)b^2} P_r(b^2)P_s(b^{-2}) Q_{r,s}(b)\ ,
-\end{align}
-where we defined
-\begin{align}
- P_r(x) = \prod_{i=1}^r \gamma(1+ix) \qquad \text{and} \qquad Q_{r,s}(b) = \prod_{i=1}^r \prod_{j=1}^s (ib+jb^{-1})^2\ .
-\end{align}
-We then find
-\begin{align}
- C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =  \frac{-(-b^2)^{r_0-s_0}\mu^{br_0 + b^{-1}s_0}}{P_{r_0}(b^2)P_{s_0}(b^{-2})Q_{r_0,s_0}(b)} \prod_{i=1}^3 \frac{P_{r_i-1}(b^2)P_{s_i-1}(b^{-2}) Q_{r_i-1,s_i-1}(b)}{P_{r_0-r_i}(b^2)P_{s_0-s_i}(b^{-2}) Q_{r_0-r_i,s_0-s_i}(b)} \ ,
-\label{cpqb}
-\end{align}
-where we introduce the integers
-\begin{align}
- r_0 = \frac{r_1+r_2+r_3-1}{2} \quad , \quad s_0=\frac{s_1+s_2+s_3-1}{2}\ .
-\end{align}
-This shows that the three-point function of a generalized minimal model is meromorphic as a function of $b^2\in {\mathbb{C}}^*$.
-This contrasts with the three-point function of Liouville theory, which is
-meromorphic only for $b^2\in \mathbb{C}-]-\infty, 1]$. 
 
 \section{Minimal models \label{secvmm}}
 
@@ -3822,6 +3785,44 @@ Instead, crossing symmetry in generalized minimal models can be checked numerica
 On the other hand, nothing guarantees that generalized minimal models are consistent on the torus. Actually, correlation functions involving only the identity field reduce to the partition function, and are therefore infinite. And there is no reason for the other correlation functions to be better behaved.  
 
 
+\subsubsection{Three-point structure constant}
+
+Evaluating the expression \eqref{clc} for the three-point structure constant, we obtain
+\begin{multline}
+C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =  
+\\
+\frac{\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-P_1-P_2-P_3}\Upsilon_b'(0) \Upsilon_b'(2P_1) \Upsilon_b'(2P_2) \Upsilon_b'(2P_3)}{\Upsilon_b'(P_1+P_2+P_3-Q) \Upsilon_b'(P_1+P_2-P_3)\Upsilon_b'(P_2+P_3-P_1)\Upsilon_b'(P_3+P_1-P_2)}\ ,
+\label{crisi}
+\end{multline}
+where we use the notation $P_i = P_{\langle r_i,s_i \rangle}$ for short.
+This is the Liouville structure constant $C_{P_1,P_2,P_3}$, where all $\Upsilon_b$ factors are replaced with their derivatives at some of their zeros.
+These $\Upsilon_b$ factors indeed have zeros whenever
+the momentums are degenerate and the degenerate fusion rules \eqref{rrrsss} are obeyed, due to $\Upsilon_b(-b{\mathbb{N}}-\frac{1}{b}{\mathbb{N}})=0$ (from eq. \eqref{xbn}) which implies 
+\begin{align}
+ \forall i\neq j\neq k\ , \quad \Upsilon_b(P_i+P_j-P_k) = 0\ .
+\end{align}
+But $\Upsilon_b(x)$ also has zeros for $x\in Q+b{\mathbb{N}}+\frac{1}{b}{\mathbb{N}}$, and these additional zeros are responsible for the expression \eqref{clc} being nonzero in cases when fusion rules are violated.
+
+The three-point structure constant can be rewritten in terms of Gamma functions, using the following consequence of eq. \eqref{upup},
+\begin{align}
+ \frac{\Upsilon_b'(-rb-sb^{-1})}{\Upsilon_b'(0)} = (-1)^{rs} b^{s-r} b^{s(s+1)b^{-2}-r(r+1)b^2} P_r(b^2)P_s(b^{-2}) Q_{r,s}(b)\ ,
+\end{align}
+where we defined
+\begin{align}
+ P_r(x) = \prod_{i=1}^r \gamma(1+ix) \qquad \text{and} \qquad Q_{r,s}(b) = \prod_{i=1}^r \prod_{j=1}^s (ib+jb^{-1})^2\ .
+\end{align}
+We then find
+\begin{align}
+ C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =  \frac{-(-b^2)^{r_0-s_0}\mu^{br_0 + b^{-1}s_0}}{P_{r_0}(b^2)P_{s_0}(b^{-2})Q_{r_0,s_0}(b)} \prod_{i=1}^3 \frac{P_{r_i-1}(b^2)P_{s_i-1}(b^{-2}) Q_{r_i-1,s_i-1}(b)}{P_{r_0-r_i}(b^2)P_{s_0-s_i}(b^{-2}) Q_{r_0-r_i,s_0-s_i}(b)} \ ,
+\label{cpqb}
+\end{align}
+where we introduce the integers
+\begin{align}
+ r_0 = \frac{r_1+r_2+r_3-1}{2} \quad , \quad s_0=\frac{s_1+s_2+s_3-1}{2}\ .
+\end{align}
+This shows that the three-point function of a generalized minimal model is meromorphic as a function of $b^2\in {\mathbb{C}}^*$.
+This contrasts with the three-point function of Liouville theory, which is
+meromorphic only for $b^2\in \mathbb{C}-]-\infty, 1]$. 
 
 \subsection{A-series minimal models \label{secamm}}
 
@@ -4074,81 +4075,54 @@ Flipping spins is a symmetry of the model, and this symmetry manifests itself as
 \begin{exo}[Constraints on degenerate OPE coefficients from crossing symmetry]
  ~\label{exonorm}
 Consider the four-point function $
- \left\langle V_{\langle 2,1\rangle}(x) V_P(0) V_{\langle 1, 2\rangle}(\infty) V_{P-\frac{Q}{2}}(1)\right\rangle$.
+ \left\langle V_{\langle 2,1\rangle}(x) V_P(0) V_{\langle 1, 2\rangle}(\infty) V_{P+\frac{Q}{2}}(1)\right\rangle$.
  \begin{enumerate}
   \item Show that the $s$- and $t$-channel decompositions of this four-point function each involve only one 
 conformal block,
 \begin{align}
-\mathcal{F}^{(s)}_- = 
+\mathcal{F}^{(s)}_+ = 
 \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .7]
 \draw[dashed] (2, 0) -- node [above right] {\!$\langle 1,2 \rangle$} (0, 2);
 \draw[dashed] (-2, 0)
 -- node [below left] {$\langle 2,1 \rangle$\!} (0, -2); 
 \draw (-2, 0) -- node [above left] {$P$\!} (0, 2) 
--- node [left] {$P-\frac{b}{2}\!  $} (0, -2)
--- node [below right] {\!$P-\frac{Q}{2}$} (2, 0);
+-- node [left] {$P+\frac{b}{2}\!  $} (0, -2)
+-- node [below right] {\!$P+\frac{Q}{2}$} (2, 0);
 \end{tikzpicture}
 \quad , \quad 
-\mathcal{F}^{(t)}_+ = 
+\mathcal{F}^{(t)}_- = 
 \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .7]
 \draw[dashed] (2, 0) -- node [above right] {\!$\langle 1,2 \rangle$} (0, 2);
 \draw[dashed] (-2, 0)
 -- node [below left] {$\langle 2,1 \rangle$\!} (0, -2); 
 \draw (0, 2) -- node [above left] {$P$\!} (-2, 0)
--- node [above] {$P-\frac{1}{2b}  $} (2, 0)
--- node [below right] {\!$P-\frac{Q}{2}$} (0, -2);
+-- node [above] {$P+\frac{1}{2b}  $} (2, 0)
+-- node [below right] {\!$P+\frac{Q}{2}$} (0, -2);
 \end{tikzpicture}
 \ . 
 \end{align}
-\item Compute these blocks using eqs. \eqref{gpm} and \eqref{tpm}, and show in particular that $\mathcal{F}^{(s)}_- = \mathcal{F}^{(t)}_+$.
+\item Compute these blocks using eqs. \eqref{gpm} and \eqref{tpm}, and show in particular that $\mathcal{F}^{(s)}_+ = \mathcal{F}^{(t)}_-$.
 
 \item Show that the coefficients of the two decompositions are expressed in terms of the OPE coefficients of degenerate fields as 
 \begin{align}
- c_-^{(s)} &= C_-(P)\tilde{C}_-(P-\tfrac{b}{2})B(P-\tfrac{Q}{2}) \ ,
+ c_+^{(s)} &= C_+(P)\tilde{C}_+(P+\tfrac{b}{2})B(P+\tfrac{Q}{2}) \ ,
  \\
- c_+^{(t)} &= \tilde{C}_-(P)C_-(P-\tfrac{1}{2b})B(P-\tfrac{Q}{2})\ .
+ c_-^{(t)} &= \tilde{C}_+(P)C_+(P+\tfrac{1}{2b})B(P+\tfrac{Q}{2})\ .
 \end{align}
-Argue that $c_-^{(s)}=c_+^{(t)}$, and deduce a relation between $C_-$ and $\tilde{C}_-$.
-\item Study how $C_-(P)$ and $\tilde{C}_-(P)$ behave under a field renormalization \eqref{vlv}, and show that they renormalize to one provided
+Argue that $c_+^{(s)}=c_-^{(t)}$, and deduce a relation between $C_+$ and $\tilde{C}_+$.
+\item Study how $C_+(P)$ and $\tilde{C}_+(P)$ behave under a field renormalization \eqref{vlv}, and show that they renormalize to one provided
 \begin{align}
- C_-(P) = \frac{\lambda(P-\frac{b}{2})}{\lambda(P)} \quad \text{and} \quad 
-\tilde{C}_-(P) = \frac{\lambda(P-\frac{1}{2b})}{\lambda(P)} \ .
+ C_+(P) = \frac{\lambda(P+\frac{b}{2})}{\lambda(P)} \quad \text{and} \quad 
+\tilde{C}_+(P) = \frac{\lambda(P+\frac{1}{2b})}{\lambda(P)} \ .
 \end{align}
-Using the relation between $C_-$ and $\tilde{C}_-$, show that these two equation for $\lambda(P)$ are compatible, and deduce that there exists a field normalization such that 
+Using the relation between $C_+$ and $\tilde{C}_+$, show that these two equation for $\lambda(P)$ are compatible, and deduce that there exists a field normalization such that 
 \begin{align}
- C_-(P) = \tilde{C}_-(P) = 1\ .
+ C_+(P) = \tilde{C}_+(P) = 1\ .
  \label{cmpo}
 \end{align}
  \end{enumerate}
 \end{exo}
 
-\begin{exo}[Degenerate OPE coefficients in the DOZZ normalization]
- ~\label{exodoc}
- Let us compute the degenerate OPE coefficients $C_\pm(P)$, assuming that fields are normalized as in eq. \eqref{nop}.
-\begin{enumerate}
- \item Further studying single-valued solutions of the hypergeometric functions, show that in addition to eq. \eqref{spsm}, we have 
- \begin{align}
-  \frac{c_-^{(s)}}{c_-^{(t)}} = \frac{1}{\det F}\frac{F_{++}}{F_{--}} = \frac{\gamma(-2bP_1)}{\gamma(-2bP_3)}\prod_\pm \gamma\left(\tfrac12+b(P_1\pm P_2-P_3)\right)\ .
- \end{align}
-\item Specializing to a four-point function with two degenerate fields,
-show that in addition to eq. \eqref{eq:ddgg} for $c_-^{(s)}$, we have the equation
-$
- c_-^{(t)} \propto B(P)
-$ for the coefficient of the $t$-channel field $V_{\langle 1,1\rangle}$. 
-(Here and in later equations, 
-we neglect $P$-independent factors.) Deduce that 
-\begin{align}
- C_-(P)^2 \propto \gamma(-2bP)\gamma(2bP-b^2) \frac{B(P)}{B(P-\frac{b}{2})}\ .
-\end{align}
-\item Using eq. \eqref{ram} for $B(P)=R(P)$, deduce $C_-(P)\propto 1$, and show that the DOZZ normalization is such that eq. \eqref{cmpo} holds. 
-\item
-Study how the degenerate OPE \eqref{vot} behaves under reflections, and show that $C_+(P) = R(P)R(-P-\frac{b}{2})C_-(-P)$. Using again eq. \eqref{ram} for $R(P)$, deduce
-\begin{align}
- C_+(P) = \mu^b b^{2bQ} \gamma(2bP)\gamma(-2bP-b^2)\ .
-\end{align}
-\end{enumerate}
- \end{exo}
- 
 
 \begin{exo}[Behaviour of Liouville four-point functions at coinciding points]
 ~\label{exo4a} 
@@ -4185,10 +4159,38 @@ For an interpretation of these different behaviours in random energy models, see
 + \int_{i\mathbb{R}_+} dP'\ \mathcal{V}_{P'}\ .
 \end{align}
 \item Given a unitary Verma module $\mathcal{V}_\Delta$ of conformal dimension $\Delta>0$, show that $\mathcal{V}_\Delta \times \mathcal{V}_\Delta$ belongs to the Liouville spectrum if $\Delta \geq \frac{c-1}{32}$, and has discrete terms if $\Delta \in ]0,\frac{c-1}{32}[$.
-\item If $1<c<25$, show that the set of unitary representations is not closed under fusion.
+\item If $1<c<25$, show that there is at most one discrete term, and determine its momentum. Deduce that the set of unitary representations is closed under fusion.
  \end{enumerate}
-
 \end{exo}
+
+
+\begin{exo}[Degenerate OPE coefficients in the DOZZ normalization]
+ ~\label{exodoc}
+ Let us compute the degenerate OPE coefficients $C_\pm(P)$, assuming that fields are normalized as in eq. \eqref{nop}.
+\begin{enumerate}
+ \item Further studying single-valued solutions of the hypergeometric functions, show that in addition to eq. \eqref{spsm}, we have 
+ \begin{align}
+  \frac{c_+^{(s)}}{c_-^{(t)}} = -\frac{1}{\det F}\frac{F_{-+}}{F_{+-}} = \frac{\gamma(2bP_1)}{\gamma(-2bP_3)}\prod_\pm \gamma\left(\tfrac12-b(P_1\pm P_2+P_3)\right)\ .
+ \end{align}
+\item Specializing to a four-point function with two degenerate fields,
+show that in addition to eq. \eqref{eq:ddgg} for $c_+^{(s)}$, we have the equation
+$
+ c_-^{(t)} \propto B(P)
+$ for the coefficient of the $t$-channel field $V_{\langle 1,1\rangle}$. 
+(Here and in later equations, 
+we neglect $P$-independent factors.) Deduce that 
+\begin{align}
+ C_+(P)^2 \propto \gamma(2bP)\gamma(-2bP-b^2) \frac{B(P)}{B(P+\frac{b}{2})}\ .
+\end{align}
+\item Using eq. \eqref{ram} for $B(P)=R(P)$, deduce $C_+(P)\propto 1$, and show that the DOZZ normalization is such that eq. \eqref{cmpo} holds. 
+\item
+Study how the degenerate OPE \eqref{vot} behaves under reflections, and show that $C_-(P) = R(P)R(-P+\frac{b}{2})C_+(-P)$. Using again eq. \eqref{ram} for $R(P)$, deduce
+\begin{align}
+ C_-(P) = \mu^b b^{2bQ} \gamma(-2bP)\gamma(2bP-b^2)\ .
+\end{align}
+\end{enumerate}
+ \end{exo}
+ 
 
 
 \begin{exo}[Fusion rules of doubly degenerate representations]
