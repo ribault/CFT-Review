@@ -407,31 +407,31 @@ We will now explore in turn the symmetry assumptions and consistency conditions 
 
 \subsection{Symmetry assumptions \label{secsa}}
 
-If a model of quantum field theory has a symmetry algebra, then the spectrum $S$ must be a representation of this algebra, and can therefore be written as
+If a model of quantum field theory has a symmetry algebra, then the spectrum $\mathcal{S}$ must be a representation of this algebra, and can therefore be written as
 \begin{align}
- S = \bigoplus_R m_R  R\ .\
+ \mathcal{S} = \bigoplus_\mathcal{R} m_\mathcal{R}  \mathcal{R}\ .\
 \label{somr}
 \end{align}
-Here we have decomposed $S$ as a combination of some basic representations $R$ of the symmetry algebra, and the number $m_R \in {\mathbb{N}}\cup\{\infty\}$ is the \textbf{\boldmath multiplicity}\index{multiplicity (of a representation)} of the representation $R$ in the spectrum $S$.
+Here we have decomposed $\mathcal{S}$ as a combination of some basic representations $\mathcal{R}$ of the symmetry algebra, and the number $m_\mathcal{R} \in {\mathbb{N}}\cup\{\infty\}$ is the \textbf{\boldmath multiplicity}\index{multiplicity (of a representation)} of the representation $\mathcal{R}$ in the spectrum $\mathcal{S}$.
 A state $\sigma$ in the spectrum can then be written as 
 \begin{align}
- \sigma = (R,v)\ ,
+ \sigma = (\mathcal{R},v)\ ,
 \label{arv}
 \end{align}
-where $v$ is a state in the representation $R$. 
+where $v$ is a state in the representation $\mathcal{R}$. 
 The corresponding field can be written as 
-$V_\sigma(x)= V_{(R,v)}(x)$. 
+$V_\sigma(x)= V_{(\mathcal{R},v)}(x)$. 
 For example, for any spin $j\in \frac12 \mathbb{N}$ the algebra $\mathfrak{sl}_2$ has a representation of dimension $2j+1$, whose states $\sigma = (j,m)$ can be labelled by their magnetic momentums $m\in\{-j, -j+1,\cdots j\}$.
 
-The idea is now that the dependence of a correlation function $\left\langle \prod_{i=1}^n V_{(R_i,v_i)}(x_i)\right\rangle$ on $v_i$ is determined by symmetry considerations, whereas the dependence on $R_i$ is constrained by consistency conditions.
+The idea is now that the dependence of a correlation function $\left\langle \prod_{i=1}^n V_{(\mathcal{R}_i,v_i)}(x_i)\right\rangle$ on $v_i$ is determined by symmetry considerations, whereas the dependence on $\mathcal{R}_i$ is constrained by consistency conditions.
 This idea however comes with a number of technical assumptions.
-In particular, for the dependence on $v_i$ to be completely determined by symmetry, $R_i$ must be an \textbf{\boldmath indecomposable representation}\index{indecomposable representation}, i.e. a representation that cannot be written as a direct sum of smaller representations.
+In particular, for the dependence on $v_i$ to be completely determined by symmetry, $\mathcal{R}_i$ must be an \textbf{\boldmath indecomposable representation}\index{indecomposable representation}, i.e. a representation that cannot be written as a direct sum of smaller representations.
 \begin{align}
- R \ \ \text{indecomposable} \quad \iff \quad \nexists R',R'' \neq 0 \quad | \quad R = R'\oplus R''\ .
+ \mathcal{R} \ \ \text{indecomposable} \quad \iff \quad \nexists \mathcal{R}',\mathcal{R}'' \neq 0 \quad | \quad \mathcal{R} = \mathcal{R}'\oplus \mathcal{R}''\ .
 \end{align}
 In particular, any \textbf{\boldmath irreducible representation}\index{irreducible representation}, which by definition does not have a nontrivial subrepresentation, is indecomposable,
 \begin{align}
- R \ \ \text{irreducible} \quad \iff \quad \nexists R' \neq 0,R \quad | \quad R'\subset R\ .
+ \mathcal{R} \ \ \text{irreducible} \quad \iff \quad \nexists \mathcal{R}' \neq 0,\mathcal{R} \quad | \quad \mathcal{R}'\subset \mathcal{R}\ .
 \end{align}
 (See Exercise \ref{exoirr} for an example of an indecomposable representation that is not irreducible.)
 
@@ -442,7 +442,7 @@ model-independent data.
 This is the information on representations of the symmetry algebra, which determines in particular the $v_i$-dependence of correlation functions.
 Universal data in conformal field theory, such as conformal blocks, will be studied in Chapter \ref{secccs}. 
 \item \textbf{\boldmath model-dependent data}\index{model-dependent data}, which encode how the spectrum and correlation functions of a particular model are built from the universal data.
-This includes the multiplicities $m_R$, which encode how the spectrum is built from representations, and the structure constants, which encode how correlation functions are built from conformal blocks.
+This includes the multiplicities $m_\mathcal{R}$, which encode how the spectrum is built from representations, and the structure constants, which encode how correlation functions are built from conformal blocks.
 We will study these data 
 in Chapter \ref{seccbm}.  
 \end{itemize}
@@ -486,10 +486,10 @@ Together with commutativity, this implies that correlation functions do not depe
 \begin{hyp}[Existence of an \textbf{\boldmath OPE}\index{OPE} (Operator Product Expansion)]
  \label{ax:ope}
  \begin{align}
- \boxed{V_{\sigma_1}(x_1)V_{\sigma_2}(x_2) = \sum_{\sigma\in S} C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2) V_{\sigma}(x_2)}\ ,
+ \boxed{V_{\sigma_1}(x_1)V_{\sigma_2}(x_2) = \sum_{\sigma\in \mathcal{S}} C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2) V_{\sigma}(x_2)}\ ,
 \label{ope}
 \end{align}
-where the \textbf{\boldmath OPE coefficients}\index{OPE!---coefficient} $C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2)$ are $\mathbb{C}$-valued functions, and the sum runs over a basis of the spectrum $S$. 
+where the \textbf{\boldmath OPE coefficients}\index{OPE!---coefficient} $C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2)$ are $\mathbb{C}$-valued functions, and the sum runs over a basis of the spectrum $\mathcal{S}$. 
 The sum is supposed to converge if $x_1$ and $x_2$ are sufficiently close. 
 \end{hyp} 
 \noindent
@@ -499,14 +499,14 @@ In Liouville theory this axiom is not satisfied, and in minimal models we can do
 Let us now study how these assumptions constrain the correlation functions.
 By performing multiple OPEs, an $N$-point function (with $N\geq 3$) can always be reduced to a combination of two-point functions, for instance
 \begin{align}
- \left\langle \prod_{i=1}^4 V_{\sigma_i}(x_i) \right\rangle = \sum_{\sigma\in S} C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2)\sum_{\sigma'\in S} C_{\sigma,\sigma_3}^{\sigma'}(x_2,x_3)\Big\langle V_{\sigma'}(x_3)V_{\sigma_4}(x_4)\Big\rangle\ .
+ \left\langle \prod_{i=1}^4 V_{\sigma_i}(x_i) \right\rangle = \sum_{\sigma\in \mathcal{S}} C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2)\sum_{\sigma'\in \mathcal{S}} C_{\sigma,\sigma_3}^{\sigma'}(x_2,x_3)\Big\langle V_{\sigma'}(x_3)V_{\sigma_4}(x_4)\Big\rangle\ .
 \end{align}
 We could go further and reduce the two-point function to a sum of one-point functions.
 This is however unnecessary, because conformal symmetry will determine the two-point function, so that we can consider it a known quantity.
-So, in order to compute correlation functions, all we need to know (in addition to the spectrum $S$) is the OPE coefficient $C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2)$.
+So, in order to compute correlation functions, all we need to know (in addition to the spectrum $\mathcal{S}$) is the OPE coefficient $C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2)$.
 But this quantity is itself strongly constrained by the associativity assumption \eqref{asso}, which implies
 \begin{align}
- \sum_{\sigma_s\in S} C_{\sigma_1,\sigma_2}^{\sigma_s}(x_1,x_2) C_{\sigma_s,\sigma_3}^{\sigma_4}(x_2,x_3) = \sum_{\sigma_t\in S} C_{\sigma_1,\sigma_t}^{\sigma_4}(x_1,x_3)C_{\sigma_2,\sigma_3}^{\sigma_t}(x_2,x_3)\ ,
+ \sum_{\sigma_s\in \mathcal{S}} C_{\sigma_1,\sigma_2}^{\sigma_s}(x_1,x_2) C_{\sigma_s,\sigma_3}^{\sigma_4}(x_2,x_3) = \sum_{\sigma_t\in \mathcal{S}} C_{\sigma_1,\sigma_t}^{\sigma_4}(x_1,x_3)C_{\sigma_2,\sigma_3}^{\sigma_t}(x_2,x_3)\ ,
 \label{cccc}
 \end{align}
 for any choice of the four states $(\sigma_1,\sigma_2,\sigma_3,\sigma_4)$.
@@ -530,44 +530,44 @@ where each node corresponds to an OPE coefficient.
 The OPE coefficients can be determined by solving the associativity condition \eqref{cccc}, provided the model has enough symmetry for 
 \begin{itemize}
  \item constraining the dependence of the OPE coefficient $C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2)$ on $(x_1,x_2)$, and
-\item decomposing the spectrum $S$ into a reasonable number of representations.
+\item decomposing the spectrum $\mathcal{S}$ into a reasonable number of representations.
 \end{itemize}
 These conditions are fulfilled in certain conformal field theories.
 In particular, as we will see in Chapter \ref{secccs}, conformal symmetry is enough for determining the $x$-dependence of OPE coefficients. 
 
 For the moment, let us show how symmetry constraints can simplify the associativity condition.
-We recall that a state $\sigma\in S$ can be written as $\sigma=(R,v)$ as in eq. \eqref{arv}, where $R$ is an indecomposable representation of the symmetry algebra and $v\in R$.
+We recall that a state $\sigma\in \mathcal{S}$ can be written as $\sigma=(\mathcal{R},v)$ as in eq. \eqref{arv}, where $\mathcal{R}$ is an indecomposable representation of the symmetry algebra and $v\in \mathcal{R}$.
 Symmetry constraints lead to linear equations for the OPE coefficient 
 $C_{\sigma_1,\sigma_2}^{\sigma_3}(x_1,x_2)$.
 Solving these equations allows us to decompose
 OPE coefficients as
 \begin{align}
- C_{\sigma_1,\sigma_2}^{\sigma_3}(x_1,x_2) = \sum_{\lambda=1}^{N_{R_1R_2}^{R_3}} C_{R_1,R_2}^{R_3,\lambda}(x_1,x_2) f_{R_1,R_2}^{R_3,\lambda}(v_1,v_2,v_3|x_1,x_2)\ ,
+ C_{\sigma_1,\sigma_2}^{\sigma_3}(x_1,x_2) = \sum_{\lambda=1}^{N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}} C_{\mathcal{R}_1,\mathcal{R}_2}^{\mathcal{R}_3,\lambda}(x_1,x_2) f_{\mathcal{R}_1,\mathcal{R}_2}^{\mathcal{R}_3,\lambda}(v_1,v_2,v_3|x_1,x_2)\ ,
 \label{clcf}
 \end{align}
-where $C_{R_1,R_2}^{R_3,\lambda}(x_1,x_2)$ is a model-dependent structure function, and 
-the universal quantity $f_{R_1,R_2}^{R_3,\lambda}(v_i|x_j)$ is a solution of the symmetry equations, which for given values of $R_i$ should be understood as equations on the space of functions of $(v_i,x_j)$.
+where $C_{\mathcal{R}_1,\mathcal{R}_2}^{\mathcal{R}_3,\lambda}(x_1,x_2)$ is a model-dependent structure function, and 
+the universal quantity $f_{\mathcal{R}_1,\mathcal{R}_2}^{\mathcal{R}_3,\lambda}(v_i|x_j)$ is a solution of the symmetry equations, which for given values of $\mathcal{R}_i$ should be understood as equations on the space of functions of $(v_i,x_j)$.
 The index $\lambda$ labels elements of a basis of solutions of the symmetry equations.
-The number $N_{R_1R_2}^{R_3}\in {\mathbb{N}} \cup \{\infty\}$ of independent solutions is the \textbf{\boldmath fusion multiplicity}\index{fusion multiplicity}. 
-In particular, the field $V_{\sigma_3}$ can appear in a $V_{\sigma_1}V_{\sigma_2}$ OPE only if $N_{R_1R_2}^{R_3}\neq 0$.
+The number $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\in {\mathbb{N}} \cup \{\infty\}$ of independent solutions is the \textbf{\boldmath fusion multiplicity}\index{fusion multiplicity}. 
+In particular, the field $V_{\sigma_3}$ can appear in a $V_{\sigma_1}V_{\sigma_2}$ OPE only if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\neq 0$.
 
 \begin{hyp}[\textbf{\boldmath Fusion product}\index{fusion product} or \textbf{\boldmath fusion rules}\index{fusion rules}]
  ~\label{ax:fp}
  There is a bilinear, commutative, associative product of representations, such that 
  \begin{align}
- R_1 \times R_2  = \sum_{R_3} N_{R_1R_2}^{R_3} R_3 \ . 
+ \mathcal{R}_1 \times \mathcal{R}_2  = \sum_{\mathcal{R}_3} N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3} \mathcal{R}_3 \ . 
 \label{rrnr}
 \end{align}
 \end{hyp} 
 \noindent
 In some cases, the fusion product can be constructed explicitly \cite{gab99}. However, all we will need is that it is commutative and associative. 
 
-The fusion product $R_1\times R_2$ is said to have nontrivial multiplicities if $N_{R_1R_2}^{R_3}\geq 2$ for some $R_3$, and trivial multiplicities if $N_{R_1R_2}^{R_3}\in \{0,1\}$, in which case the sum over $\lambda$ in eq. \eqref{clcf} can be omitted.
-A field is called a \textbf{\boldmath simple current}\index{simple current} if the corresponding representation $R$ is such that $R\times R'$ is indecomposable for any $R'$, so that $\sum_{R''} N_{RR'}^{R''} =1$. 
+The fusion product $\mathcal{R}_1\times \mathcal{R}_2$ is said to have nontrivial multiplicities if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\geq 2$ for some $\mathcal{R}_3$, and trivial multiplicities if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\in \{0,1\}$, in which case the sum over $\lambda$ in eq. \eqref{clcf} can be omitted.
+A field is called a \textbf{\boldmath simple current}\index{simple current} if the corresponding representation $\mathcal{R}$ is such that $\mathcal{R}\times \mathcal{R}'$ is indecomposable for any $\mathcal{R}'$, so that $\sum_{\mathcal{R}''} N_{\mathcal{R}\mathcal{R}'}^{\mathcal{R}''} =1$. 
 The fusion product may seem quite similar to a tensor product, but there is an essential difference: while the tensor product is a purely algebraic notion, the definition of the fusion product involves the state-field correspondence, and therefore the space on which the field theory lives. 
 
-Using the decomposition \eqref{clcf} of the OPE coefficients, where we assume that $f_{R_1,R_2}^{R_3,\lambda}(v_i|x_j)$ is known, the 
-associativity equation \eqref{cccc} reduces to an equation for the structure function $C_{R_1,R_2}^{R_3,\lambda}(x_1,x_2)$, and the sums over states $\sigma_s$ and $\sigma_t$ reduce to sums over representations $R_s$ and $R_t$.
+Using the decomposition \eqref{clcf} of the OPE coefficients, where we assume that $f_{\mathcal{R}_1,\mathcal{R}_2}^{\mathcal{R}_3,\lambda}(v_i|x_j)$ is known, the 
+associativity equation \eqref{cccc} reduces to an equation for the structure function $C_{\mathcal{R}_1,\mathcal{R}_2}^{\mathcal{R}_3,\lambda}(x_1,x_2)$, and the sums over states $\sigma_s$ and $\sigma_t$ reduce to sums over representations $\mathcal{R}_s$ and $\mathcal{R}_t$.
 If the symmetry algebra is large enough or the model simple enough, the number of representations in the spectrum can be small enough for the associativity equation to become tractable.
 To summarize,
 \begin{center}
@@ -823,10 +823,10 @@ Let us make further assumptions on its structure.
 Let us comment on the three parts of this axiom:
 \begin{itemize}
  \item 
- Factorizable representations are of the type $R\otimes \bar{R'}$, where $R$ and $R'$ are representations of $\mathfrak{V}$, and the bar in $\overline{\mathfrak{V}}$ and $\bar{R'}$ distinguishes right-moving from left-moving objects. 
+ Factorizable representations are of the type $\mathcal{R}\otimes \bar{\mathcal{R}'}$, where $\mathcal{R}$ and $\mathcal{R}'$ are representations of $\mathfrak{V}$, and the bar in $\overline{\mathfrak{V}}$ and $\bar{\mathcal{R}'}$ distinguishes right-moving from left-moving objects. 
 Then the decomposition \eqref{somr} takes the form
 \begin{align}
- \boxed{S = \bigoplus_{(R,R')\in \text{Rep}(\mathfrak{V})^2} m_{R,R'} R\otimes \bar{R'}}\ ,
+ \boxed{\mathcal{S} = \bigoplus_{(\mathcal{R},\mathcal{R}')\in \text{Rep}(\mathfrak{V})^2} m_{\mathcal{R},\mathcal{R}'} \mathcal{R}\otimes \bar{\mathcal{R}'}}\ ,
 \label{sorr}
 \end{align}
 where $\text{Rep}(\mathfrak{V})$ is some set of irreducible representations of the Virasoro algebra.
@@ -836,19 +836,19 @@ The assumption that the spectrum decomposes into irreducible representations exc
 There exist \textbf{\boldmath logarithmic conformal field theories}\index{conformal field theory!logarithmic---} whose spectrums involve such representations, where moreover $L_0$ is not diagonalizable. 
 But we will not consider such theories (except in Exercise \ref{exolog}).
 \item 
-By $L_0+\bar L_0$ being bounded from below, we mean that the real parts of its eigenvalues are bounded from below, which implies that the real parts of the eigenvalues of $L_0$ are bounded from below in each $R\in\text{Rep}(\mathfrak{V})$. 
+By $L_0+\bar L_0$ being bounded from below, we mean that the real parts of its eigenvalues are bounded from below, which implies that the real parts of the eigenvalues of $L_0$ are bounded from below in each $\mathcal{R}\in\text{Rep}(\mathfrak{V})$. 
 This is motivated by the interpretation of the dilation generator $L_0+\bar L_0$ as the Hamiltonian, if we consider the radial coordinate $|z|$ as the Euclidean time. 
 \end{itemize}
 
 Two important special cases are
 \begin{itemize}
 \item \textbf{\boldmath rational models}\index{rational model}, where the spectrum involves finitely many irreducible representations,
- \item \textbf{\boldmath diagonal models}\index{diagonal model}, where the spectrum is of the type $S=\bigoplus_{R\in \text{Rep}(\mathfrak{V})} m_R R\otimes \bar{R}$, i.e. $m_{R,R'}\neq 0 \implies R=R'$ in eq. \eqref{sorr}.
+ \item \textbf{\boldmath diagonal models}\index{diagonal model}, where the spectrum is of the type $\mathcal{S}=\bigoplus_{\mathcal{R}\in \text{Rep}(\mathfrak{V})} m_\mathcal{R} \mathcal{R}\otimes \bar{\mathcal{R}}$, i.e. $m_{\mathcal{R},\mathcal{R}'}\neq 0 \implies \mathcal{R}=\mathcal{R}'$ in eq. \eqref{sorr}.
 \end{itemize}
 
 \begin{hyp}[Closure under fusion]
 ~\label{ax:cuf}
-If the irreducible representations $R_1$ and $R_2$ of $\mathfrak{V}$ appear in the spectrum, then any representation $R_3$ with a non-vanishing fusion multiplicity $N_{R_1R_2}^{R_3}\neq 0$ also appears in the spectrum. 
+If the irreducible representations $\mathcal{R}_1$ and $\mathcal{R}_2$ of $\mathfrak{V}$ appear in the spectrum, then any representation $\mathcal{R}_3$ with a non-vanishing fusion multiplicity $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\neq 0$ also appears in the spectrum. 
 \end{hyp} 
 \noindent
 In other words, we assume that if Virasoro symmetry allows a representation of $\mathfrak{V}$ to appear in an OPE, then that representation does appear.
@@ -893,12 +893,12 @@ A representation of the Virasoro algebra is called \textbf{\boldmath unitary}\in
 $L^\dagger_n = L_{-n}$, and a model whose spectrum is unitary is itself called unitary. 
 
 Finally, let us illustrate the power of local conformal symmetry by thinking of a model in terms of global conformal symmetry only. 
-We then decompose each Virasoro representation $R$ into representations of the $\mathfrak{sl}_2$ algebra of global conformal transformations with generators $(L_0,L_1,L_{-1})$,
+We then decompose each Virasoro representation $\mathcal{R}$ into representations of the $\mathfrak{sl}_2$ algebra of global conformal transformations with generators $(L_0,L_1,L_{-1})$,
 \begin{align}
- R=\bigoplus_{n\in{\mathbb{N}}} m_{R,n} D_{\Delta+n}\ ,
+ \mathcal{R}=\bigoplus_{n\in{\mathbb{N}}} m_{\mathcal{R},n} D_{\Delta+n}\ ,
 \label{rbd}
 \end{align}
-where $m_{R,n}\in {\mathbb{N}}$ is a multiplicity, $\Delta$ is the lowest $L_0$-eigenvalue of the indecomposable Virasoro representation $R$, and $D_{\Delta+n}$ is a representation of $\mathfrak{sl}_2$ whose lowest $L_0$-eigenvalue is $\Delta+n$.
+where $m_{\mathcal{R},n}\in {\mathbb{N}}$ is a multiplicity, $\Delta$ is the lowest $L_0$-eigenvalue of the indecomposable Virasoro representation $\mathcal{R}$, and $D_{\Delta+n}$ is a representation of $\mathfrak{sl}_2$ whose lowest $L_0$-eigenvalue is $\Delta+n$.
 (See Exercise \ref{exodis}.)
 The above decomposition is universal data of the Virasoro algebra, and 
 model-dependent information from the point of view of global conformal symmetry.
@@ -915,14 +915,14 @@ This is because the algebra of conformal transformations is infinite-dimensional
 so that the spectrum can be decomposed into a small number of large representations.
 Moreover, the factorization of the symmetry algebra into two copies of the Virasoro algebra, and the decomposition of the spectrum into factorizable representations,
 imply that symmetry equations factorize into $z$-dependent equations from the left-moving Virasoro algebra, and $\bar{z}$-dependent equations from the right-moving Virasoro algebra.
-It follows that all universal quantities, for example $f_{R_1,R_2}^{R_3,\lambda}(v_i|x_j)$ from \eqref{clcf}, can be factorized into $z$-dependent and $\bar{z}$-dependent functions. 
+It follows that all universal quantities, for example $f_{\mathcal{R}_1,\mathcal{R}_2}^{\mathcal{R}_3,\lambda}(v_i|x_j)$ from \eqref{clcf}, can be factorized into $z$-dependent and $\bar{z}$-dependent functions. 
 This is called \textbf{\boldmath holomorphic factorization}\index{holomorphic factorization}, where the term ``holomorphic''
 should be understood as \textbf{\boldmath locally holomorphic}\index{locally holomorphic}: the $z$-dependent factors are supposed to be $\bar{z}$-independent, but they can have singularities such as poles and branch cuts, like the function $\sqrt{z}$.
 We will see in more detail in Section \ref{secaco} how holomorphic factorization simplifies the condition \eqref{cccc} of OPE associativity.
 
 In two-dimensional conformal field theory, the assumption of the existence of an OPE has a natural generalization: the assumption that on any closed contour $C$, one can insert a decomposition of the identity operator,
 \begin{align}
- \mathbf{1} = \sum_{\sigma\in S} |\sigma \rangle \langle \sigma^*| \ ,
+ \mathbf{1} = \sum_{\sigma\in \mathcal{S}} |\sigma \rangle \langle \sigma^*| \ ,
 \label{oss}
 \end{align}
 where the sum runs over a basis of the spectrum, and the linear form $\langle \sigma^*|$ is defined by $\langle \sigma^*|\sigma'\rangle = \delta_{\sigma,\sigma'}$.
@@ -930,7 +930,7 @@ where the sum runs over a basis of the spectrum, and the linear form $\langle \s
 Let us schematically explain why this implies the existence of an OPE.
 Considering a contour $C$ around the positions $x_1,x_2$ of two fields $V_{\sigma_1}(x_1),V_{\sigma_2}(x_2)$, and inserting the decomposition of the identity, we obtain
 \begin{align}
-V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)  =  \sum_{\sigma\in S} \Big\langle \sigma^* \Big| V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)  \Big\rangle  V_{\sigma}(x_2) \ .
+V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)  =  \sum_{\sigma\in \mathcal{S}} \Big\langle \sigma^* \Big| V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)  \Big\rangle  V_{\sigma}(x_2) \ .
 \end{align}
 Here we abused the state-field correspondence, by replacing the field $V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)$ with the corresponding state $|V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)\rangle$, and the state $|\sigma\rangle$ with the corresponding field $V_{\sigma}(x_2)$.
 This can be drawn as follows:
@@ -950,7 +950,7 @@ This can be drawn as follows:
   \filldraw (7.4, -1) circle [radius = 3pt] node [left] {$V_{\sigma_2}$};
  \end{tikzpicture}
 \quad
-= \ \ \sum_{\sigma\in S} 
+= \ \ \sum_{\sigma\in \mathcal{S}} 
 \quad
 \begin{tikzpicture}[scale = .45, baseline=(current  bounding  box.center)]
   \myoval{0}{0};
@@ -987,7 +987,7 @@ If we view the space near the contour $C$ as a cylinder, this can be drawn as fo
   \draw[dashed] (8, -2) -- (10, -2);
  \end{tikzpicture}
 \quad
-= \ \ \sum_{\sigma\in S} 
+= \ \ \sum_{\sigma\in \mathcal{S}} 
 \quad
 \begin{tikzpicture}[scale = .45, baseline=(current  bounding  box.center)]
   \myoval{0}{0};
@@ -1066,7 +1066,7 @@ The corresponding values of the central charge are still of the type of eq. \eqr
 Therefore,
 the properties of conformal field theories, starting with their very existence, crucially depend on the value of the central charge $c$ of the underlying Virasoro algebra.
 In the case of unitary theories, we observe that the size of the spectrum (as measured by the number of representations) increases with $c$, from the $c=0$ minimal model whose spectrum contains only one representation, to $c\geq 1$ Liouville theory whose spectrum contains infinitely many.
-The central charge is actually additive: given two theories with spectrums $S$ and $S'$ and central charges $c$ and $c'$, there is a natural product theory with central charge $c+c'$ and spectrum $S\otimes S'$.
+The central charge is actually additive: given two theories with spectrums $\mathcal{S}$ and $\mathcal{S}'$ and central charges $c$ and $c'$, there is a natural product theory with central charge $c+c'$ and spectrum $\mathcal{S}\otimes \mathcal{S}'$.
 Moreover, for any rational theory that is consistent on a torus, 
 the behaviour of the number $N(\Delta)$ of states with conformal dimension $\Delta$ is given by 
 \begin{align}
@@ -1083,19 +1083,19 @@ It can be checked that Cardy's formula is compatible with the additivity of the 
 \begin{exo}[Irreducible and indecomposable representations] 
 ~\label{exoirr}
 Consider the algebra with one generator $A$ such that $A^2 = 0$.
-Consider a two-dimensional representation $R$ with a basis $(v_1,v_2)$ such that $Av_1=v_2$.
+Consider a two-dimensional representation $\mathcal{R}$ with a basis $(v_1,v_2)$ such that $Av_1=v_2$.
 Write the matrix of $A$ in the basis $(v_1,v_2)$.
-Show that $R$ is indecomposable, but not irreducible. 
+Show that $\mathcal{R}$ is indecomposable, but not irreducible. 
 \end{exo}
 
 \begin{exo}[Associativity in a tensor category]
  ~\label{exoten}
-Consider a set of objects $R_i$ with two binary operations $\oplus$ (addition) and $\otimes$ (multiplication), such that 
+Consider a set of objects $\mathcal{R}_i$ with two binary operations $\oplus$ (addition) and $\otimes$ (multiplication), such that 
 \begin{align}
- R_i \otimes R_j = \bigoplus_k c_{ij}^k R_k\ ,
+ \mathcal{R}_i \otimes \mathcal{R}_j = \bigoplus_k c_{ij}^k \mathcal{R}_k\ ,
 \end{align}
 where $c_{ij}^k$ is a number.
-Assuming the objects $R_i$ are linearly independent, show that the associativity of the multiplication $\otimes$ amounts to a quadratic condition on the coefficients $c_{ij}^k$,
+Assuming the objects $\mathcal{R}_i$ are linearly independent, show that the associativity of the multiplication $\otimes$ amounts to a quadratic condition on the coefficients $c_{ij}^k$,
 \begin{align}
  \sum_m c_{ij}^m c_{mk}^\ell = \sum_n c_{in}^\ell c_{jk}^n\ .
 \end{align}
@@ -1132,9 +1132,9 @@ Observe that the second term can be absorbed by the redefinition $L_n\mapsto L_n
 
 \begin{exo}[Spectrum of $L_0$ in an indecomposable representation]
  ~\label{exodiffint}
-Show that the eigenvalues of $L_0$ in an indecomposable representation $R$ of the Virasoro algebra differ by integers.
-To do this, use the decomposition $R=\oplus_\Delta R_\Delta$ where $R_\Delta$ is the generalized eigenspace associated with the eigenvalue $\Delta$.
-Given any value of $\Delta$, show that  $\oplus_{n\in{\mathbb{Z}}} R_{\Delta+n}$ is a subrepresentation, and conclude. 
+Show that the eigenvalues of $L_0$ in an indecomposable representation $\mathcal{R}$ of the Virasoro algebra differ by integers.
+To do this, use the decomposition $\mathcal{R}=\oplus_\Delta \mathcal{R}_\Delta$ where $\mathcal{R}_\Delta$ is the generalized eigenspace associated with the eigenvalue $\Delta$.
+Given any value of $\Delta$, show that  $\oplus_{n\in{\mathbb{Z}}} \mathcal{R}_{\Delta+n}$ is a subrepresentation, and conclude. 
 \end{exo}
 
 \begin{exo}[Hermitian conjugates of Virasoro generators]
@@ -1149,7 +1149,7 @@ Consider the $\mathfrak{sl}_2$ algebra with generators $(L_0,L_1,L_{-1})$, and a
  \item 
 Repeatedly acting with $L_{-1}$ on $|v\rangle$, show that you obtain a representation of $\mathfrak{sl}_2$, where the eigenvalues of $L_0$ belong to $\Delta+{\mathbb{N}}$, and that this representation is irreducible if $\Delta\notin -\frac12 \mathbb{N}$.
 \item
-If $R$ is an indecomposable representation of the Virasoro algebra where $L_0$ is diagonalizable with eigenvalues in $\Delta_0+\mathbb{N}$ for $\Delta_0\notin\frac12 \mathbb{Z}$, show that $R$ can be decomposed into irreducible $\mathfrak{sl}_2$ representations as in eq. \eqref{rbd}.
+If $\mathcal{R}$ is an indecomposable representation of the Virasoro algebra where $L_0$ is diagonalizable with eigenvalues in $\Delta_0+\mathbb{N}$ for $\Delta_0\notin\frac12 \mathbb{Z}$, show that $\mathcal{R}$ can be decomposed into irreducible $\mathfrak{sl}_2$ representations as in eq. \eqref{rbd}.
 \end{enumerate}
 \end{exo}
 
@@ -1158,16 +1158,16 @@ If $R$ is an indecomposable representation of the Virasoro algebra where $L_0$ i
  ~\label{exoacf} 
 Let us show that Cardy's formula \eqref{nds} is compatible with the additivity of the central charge.
 \begin{enumerate}
- \item Construct the action of the Virasoro algebra on the spectrum $S\otimes S'$ of the product theory by 
+ \item Construct the action of the Virasoro algebra on the spectrum $\mathcal{S}\otimes \mathcal{S}'$ of the product theory by 
 \begin{align}
  L_n^\text{product} = L_n\otimes 1' + 1\otimes L_n'\ ,
 \end{align}
-where $L_n$ and $L_n'$ act on $S$ and $S'$ respectively.
+where $L_n$ and $L_n'$ act on $\mathcal{S}$ and $\mathcal{S}'$ respectively.
 Check the relation $c^\text{product} = c+c'$, and show $\Delta^\text{product} = \Delta+\Delta'$.
 \item 
-Assuming that Cardy's formula holds for $S$ and $S'$, show that computing the large $\Delta$ behaviour of the number of states $N^\text{product}(\Delta)$ in the product theory amounts to finding the maximum of the function $f(\Delta') = \sqrt{c\Delta'} +\sqrt{c'(\Delta-\Delta')}$.
+Assuming that Cardy's formula holds for $\mathcal{S}$ and $\mathcal{S}'$, show that computing the large $\Delta$ behaviour of the number of states $N^\text{product}(\Delta)$ in the product theory amounts to finding the maximum of the function $f(\Delta') = \sqrt{c\Delta'} +\sqrt{c'(\Delta-\Delta')}$.
 \item
-Conclude that Cardy's formula holds for $S\otimes S'$.
+Conclude that Cardy's formula holds for $\mathcal{S}\otimes \mathcal{S}'$.
 \end{enumerate}
 \end{exo}
 
@@ -1185,31 +1185,31 @@ Such equations depend on the action of the symmetry algebra on the fields -- in 
 \subsubsection{Definition}
 
 According to Axiom \ref{ax:sots}, the spectrum can be decomposed into irreducible Virasoro representations, where $L_0$ is bounded from below. 
-Let us study the structure of a representation $R$ of this type. 
-Let $|\Delta\rangle$ be an $L_0$-eigenstate for the lowest $L_0$-eigenvalue $\Delta$ in $R$.
+Let us study the structure of a representation $\mathcal{R}$ of this type. 
+Let $|\Delta\rangle$ be an $L_0$-eigenstate for the lowest $L_0$-eigenvalue $\Delta$ in $\mathcal{R}$.
 Since acting with $L_{n>0}$ decreases $L_0$-eigenvalues (see eq. \eqref{ddsn}), $|\Delta\rangle$ must be a \textbf{\boldmath primary state}\index{primary state}, that is
 \begin{align}
  \boxed{\left\{\begin{array}{l}  L_{n>0}|\Delta\rangle = 0\ , \\ L_0 |\Delta\rangle = \Delta |\Delta\rangle\ .\end{array}\right. }
 \label{lvlv}
 \end{align}
-Since $R$ is irreducible, $R$ coincides with the subrepresentation that is generated by $|\Delta\rangle$. We denote this subrepresentation as $U(\mathfrak{V})|\Delta\rangle$, where $U(\mathfrak{V})$ is the universal enveloping algebra of the Virasoro algebra, i.e. the associative algebra that is generated by the Virasoro generators $L_n$.
+Since $\mathcal{R}$ is irreducible, $\mathcal{R}$ coincides with the subrepresentation that is generated by $|\Delta\rangle$. We denote this subrepresentation as $U(\mathfrak{V})|\Delta\rangle$, where $U(\mathfrak{V})$ is the universal enveloping algebra of the Virasoro algebra, i.e. the associative algebra that is generated by the Virasoro generators $L_n$.
 Since $|\Delta\rangle$ is a primary state, it is enough to consider the algebra $U(\mathfrak{V}^+)$ of the \textbf{\boldmath creation operators}\index{creation operator} that is generated by the creation modes $\{L_n\}_{n<0}$, 
 \begin{align}
- R = U(\mathfrak{V})|\Delta\rangle =U(\mathfrak{V}^+)|\Delta\rangle\ .
+ \mathcal{R} = U(\mathfrak{V})|\Delta\rangle =U(\mathfrak{V}^+)|\Delta\rangle\ .
 \label{ruv}
 \end{align}
 (See Exercise \ref{exospan}.)
 Representations of this type are called \textbf{\boldmath highest-weight representations}\index{highest-weight representation}.
-A state of $R$ of the type $U|\Delta\rangle$ with $U\in U(\mathfrak{V}^+)$ is called a \textbf{\boldmath descendent state}\index{descendent state} if it is linearly independent from $|\Delta\rangle$.
+A state of $\mathcal{R}$ of the type $U|\Delta\rangle$ with $U\in U(\mathfrak{V}^+)$ is called a \textbf{\boldmath descendent state}\index{descendent state} if it is linearly independent from $|\Delta\rangle$.
 
 
 \subsubsection{Structure}
 
-The highest-weight representation $R$
+The highest-weight representation $\mathcal{R}$
 comes with a natural surjective map
 \begin{align}
 \begin{array}{cclcl}
- \varphi_R & : & U(\mathfrak{V}^+) & \rightarrow & R 
+ \varphi_\mathcal{R} & : & U(\mathfrak{V}^+) & \rightarrow & \mathcal{R} 
 \\
  &  & U & \mapsto & U|\Delta\rangle \ .
 \end{array}
@@ -1292,14 +1292,14 @@ We define the \textbf{\boldmath Verma module}\index{Verma module} $\mathcal{V}_\
 In other words, $\mathcal{V}_\Delta$ is the representation whose basis is given by the states  $\left\{ L_{-n_1} \cdots L_{-n_p}|\Delta\rangle\right\}_{1\leq n_1\leq n_2\leq \cdots n_p}$.
 Therefore, $\mathcal{V}_\Delta$ is the largest possible highest-weight representation with lowest conformal dimension $\Delta$. 
 
-Any  highest-weight representation $R$ that is not a Verma module is called a \textbf{\boldmath degenerate representation}\index{degenerate representation}.
-If $\Delta$ is the conformal dimension of the highest-weight state of $R$, we have a natural surjective morphism of representations from $\mathcal{V}_\Delta$ to $R$,
+Any  highest-weight representation $\mathcal{R}$ that is not a Verma module is called a \textbf{\boldmath degenerate representation}\index{degenerate representation}.
+If $\Delta$ is the conformal dimension of the highest-weight state of $\mathcal{R}$, we have a natural surjective morphism of representations from $\mathcal{V}_\Delta$ to $\mathcal{R}$,
 \begin{align}
-\varphi_R \varphi_{\mathcal{V}_\Delta}^{-1}\ : \  \mathcal{V}_\Delta\ \rightarrow\ R \ .
+\varphi_\mathcal{R} \varphi_{\mathcal{V}_\Delta}^{-1}\ : \  \mathcal{V}_\Delta\ \rightarrow\ \mathcal{R} \ .
 \end{align}
-Therefore, $R$ is a coset of $\mathcal{V}_\Delta$ by some subrepresentation $R'$,
+Therefore, $\mathcal{R}$ is a coset of $\mathcal{V}_\Delta$ by some subrepresentation $\mathcal{R}'$,
 \begin{align}
- R = \frac{\mathcal{V}_\Delta}{R'}\ .
+ \mathcal{R} = \frac{\mathcal{V}_\Delta}{\mathcal{R}'}\ .
 \label{rvrp}
 \end{align}
 In other words, a degenerate representation is associated with a nontrivial subrepresentation of a Verma module.
@@ -1307,8 +1307,8 @@ Now, in any nontrivial subrepresentation of a highest-weight representation, the
 This primary state $|\chi\rangle$ is also a descendent -- it is then called a \textbf{\boldmath singular vector}\index{singular vector} or \textbf{\boldmath null vector}\index{null vector} of the highest-weight representation.
 While a highest-weight representation is by construction always indecomposable, it is irreducible if and only if it has no singular vectors.
 
-Coming back to our Verma module $\mathcal{V}_\Delta$, and assuming that it has a singular vector $|\chi\rangle$, we can define the degenerate representation $R = \frac{\mathcal{V}_\Delta}{U(\mathfrak{V}^+)|\chi\rangle}$, which is a coset of two Verma modules.
-If a Verma module has several singular vectors, then it also has several corresponding subrepresentations, and therefore a number of possible cosets, depending on which subrepresentation is chosen as the denominator representation $R'$ in eq. \eqref{rvrp}.
+Coming back to our Verma module $\mathcal{V}_\Delta$, and assuming that it has a singular vector $|\chi\rangle$, we can define the degenerate representation $\mathcal{R} = \frac{\mathcal{V}_\Delta}{U(\mathfrak{V}^+)|\chi\rangle}$, which is a coset of two Verma modules.
+If a Verma module has several singular vectors, then it also has several corresponding subrepresentations, and therefore a number of possible cosets, depending on which subrepresentation is chosen as the denominator representation $\mathcal{R}'$ in eq. \eqref{rvrp}.
 
 \subsubsection{Looking for singular vectors at low levels}
 
@@ -1452,11 +1452,11 @@ This corresponds to the momemtums $\pm P_{\langle r,s \rangle}$, where
 (For a simple derivation using fusion rules, see Section \ref{secfr}.)
 Conversely, any singular vector that is not itself a descendent of another singular vector is of the type $|\chi_{\langle r,s \rangle}\rangle$.
 However, singular vectors that are descendents of other singular vectors are not necessarily of this type. (See 
-Exercise \ref{exosv}.) We define the \textbf{\boldmath maximally degenerate representation}\index{degenerate representation!maximally---} $R_{\langle r,s \rangle}$ as the coset of $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$ by the subrepresentation generated by all the singular vectors. 
-Then $R_{\langle r,s \rangle}$ is irreducible.
+Exercise \ref{exosv}.) We define the \textbf{\boldmath maximally degenerate representation}\index{degenerate representation!maximally---} $\mathcal{R}_{\langle r,s \rangle}$ as the coset of $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$ by the subrepresentation generated by all the singular vectors. 
+Then $\mathcal{R}_{\langle r,s \rangle}$ is irreducible.
 For generic values of $c$, $|\chi_{\langle r,s \rangle}\rangle$ is the only singular vector of $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$, and 
 \begin{align}
- R_{\langle r,s\rangle} =\frac{\mathcal{V}_{\Delta_{\langle r,s \rangle}}}{U(\mathfrak{V}^+) |\chi_{\langle r,s \rangle}\rangle }
+ \mathcal{R}_{\langle r,s\rangle} =\frac{\mathcal{V}_{\Delta_{\langle r,s \rangle}}}{U(\mathfrak{V}^+) |\chi_{\langle r,s \rangle}\rangle }
 = \frac{\mathcal{V}_{\Delta_{\langle r,s \rangle}}}{\mathcal{V}_{\Delta_{\langle -r,s \rangle}} }\ ,
 \end{align}
 where $\Delta_{\langle -r,s \rangle}$ is actually the conformal dimension of $|\chi_{\langle r,s \rangle}\rangle$, due to the identity
@@ -1464,7 +1464,7 @@ where $\Delta_{\langle -r,s \rangle}$ is actually the conformal dimension of $|\
  \Delta_{\langle r,s \rangle} + rs = \Delta_{\langle -r,s \rangle}\ .
 \label{dmr}
 \end{align}
-For particular values of $c$ such that $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$ has more than one singular vector, the structure of $ R_{\langle r,s\rangle}$ is more complicated, see Exercises \ref{exosv} and \ref{exochar}.
+For particular values of $c$ such that $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$ has more than one singular vector, the structure of $ \mathcal{R}_{\langle r,s\rangle}$ is more complicated, see Exercises \ref{exosv} and \ref{exochar}.
 
 
 
@@ -1480,7 +1480,7 @@ For example,
 \label{levo} 
 \end{align}
 Since $L_0$ is self-conjugate, different $L_0$-eigenspaces are orthogonal, and $\mathcal V_\Delta$ is unitary if and only if the scalar product is positive definite on each eigenspace. 
-Given a basis $\{v_i\}$ of the level-$N$ eigenspace $R_N$, the scalar product on $R_N$ is characterized by the \textbf{Gram matrix}\index{Gram matrix} $M^{(N)}$ defined by $M^{(N)}_{ij}=\langle v_i|v_j\rangle$, and in particular the scalar product is positive definite if and only if all the eigenvalues of $M^{(N)}$ are strictly positive. This implies in particular $\det M^{(N)}>0$.
+Given a basis $\{v_i\}$ of the level-$N$ eigenspace $\mathcal{R}_N$, the scalar product on $\mathcal{R}_N$ is characterized by the \textbf{Gram matrix}\index{Gram matrix} $M^{(N)}$ defined by $M^{(N)}_{ij}=\langle v_i|v_j\rangle$, and in particular the scalar product is positive definite if and only if all the eigenvalues of $M^{(N)}$ are strictly positive. This implies in particular $\det M^{(N)}>0$.
 We now make a useful remark:
 \begin{center}
  \begin{minipage}{0.9\textwidth}
@@ -1514,10 +1514,10 @@ If $c<1$, then the Verma module $\mathcal{V}_\Delta$ is never unitary.
 This is because for a given $\Delta>0$, the values of $c$ such that $\Delta = \Delta_{\langle r,s \rangle}$ for some $\langle r,s \rangle$ accumulate at $c=1^-$.
 \end{enumerate}
 
-We still have to consider the unitarity of degenerate highest-weight representations of the type $R=\frac{\mathcal{V}_\Delta}{R'}$, where the subrepresentation $R'$ contains at least one singular vector. 
-For $R$ to be unitary, the subrepresentation $R'$ must include all negative-norm states, that is all eigenstates of Gram matrices with negative eigenvalues.
+We still have to consider the unitarity of degenerate highest-weight representations of the type $\mathcal{R}=\frac{\mathcal{V}_\Delta}{\mathcal{R}'}$, where the subrepresentation $\mathcal{R}'$ contains at least one singular vector. 
+For $\mathcal{R}$ to be unitary, the subrepresentation $\mathcal{R}'$ must include all negative-norm states, that is all eigenstates of Gram matrices with negative eigenvalues.
 
-If $c > 1$, the only degenererate representation with a positive conformal dimension is $R_{\langle 1,1 \rangle}$, and actually $\Delta_{\langle 1,1 \rangle}=0$. This representation is unitary, because all the zero-norm states in $\mathcal{V}_0 = \underset{\Delta \to 0^+}{\lim} \mathcal{V}_\Delta$ are descendents of the level one singular vector. If $c=1$, all degenerate representations have positive conformal dimensions, and again they are unitary.
+If $c > 1$, the only degenererate representation with a positive conformal dimension is $\mathcal{R}_{\langle 1,1 \rangle}$, and actually $\Delta_{\langle 1,1 \rangle}=0$. This representation is unitary, because all the zero-norm states in $\mathcal{V}_0 = \underset{\Delta \to 0^+}{\lim} \mathcal{V}_\Delta$ are descendents of the level one singular vector. If $c=1$, all degenerate representations have positive conformal dimensions, and again they are unitary.
 
 If now $c<1$, it turns out that in order to have a unitary coset, a Verma module must have not only one but actually two independent singular vectors \cite{fms97}. 
 Since the existence of a singular vector in $\mathcal{V}_\Delta$ implies a relation between $\Delta$ and the central charge $c$, the existence of two singular vectors implies a constraint on $c$. 
@@ -1534,9 +1534,9 @@ the conformal dimensions of Verma modules that have unitary cosets are $\Delta=\
    1\leq s\leq r\leq p-1 \ .
 \label{srp}
 \end{align}
-These unitary cosets are the maximally degenerate representations $R_{\langle r,s \rangle}$, which take the form
+These unitary cosets are the maximally degenerate representations $\mathcal{R}_{\langle r,s \rangle}$, which take the form
 \begin{align}
- R_{\langle r,s \rangle} = \frac{\mathcal{V}_{\Delta_{\langle r,s \rangle}}}{U(\mathfrak{V}^+)|\chi_{\langle r,s \rangle}\rangle + U(\mathfrak{V}^+)|\chi_{\langle p-r,p+1-s \rangle}\rangle}\ ,
+ \mathcal{R}_{\langle r,s \rangle} = \frac{\mathcal{V}_{\Delta_{\langle r,s \rangle}}}{U(\mathfrak{V}^+)|\chi_{\langle r,s \rangle}\rangle + U(\mathfrak{V}^+)|\chi_{\langle p-r,p+1-s \rangle}\rangle}\ ,
 \label{rrs}
 \end{align}
 where the sum of the two subrepresentations is not a direct sum, because their intersection is nonzero. 
@@ -1551,7 +1551,7 @@ central charge & $c<1$ & $c=1$ & $c>1$
 $\mathcal{V}_\Delta$ unitary? & no & $\Delta>0$ and $\Delta \neq \frac14 n^2$ & $\Delta>0$
 \\
 \hline
-$R_{\langle r,s\rangle}$ unitary? & see eqs. \eqref{cpp} and \eqref{srp} &  yes & $\langle r,s \rangle = \langle 1,1\rangle$
+$\mathcal{R}_{\langle r,s\rangle}$ unitary? & see eqs. \eqref{cpp} and \eqref{srp} &  yes & $\langle r,s \rangle = \langle 1,1\rangle$
 \\
 \hline
  \end{tabular}
@@ -2337,7 +2337,7 @@ However, an advantage of the combinatorial representation is that it has an inte
 
 A primary field that has a vanishing descendent is called a \textbf{\boldmath degenerate field}\index{degenerate field}.
 In other words, a degenerate field corresponds to the highest-weight state of a degenerate representation.
-The degenerate field that corresponds to the highest-weight state of the degenerate representation $R_{\langle r,s \rangle}$ will be denoted $V_{\langle r,s\rangle}(z)$, and obeys the equation 
+The degenerate field that corresponds to the highest-weight state of the degenerate representation $\mathcal{R}_{\langle r,s \rangle}$ will be denoted $V_{\langle r,s\rangle}(z)$, and obeys the equation 
 \begin{align}
  L_{\langle r,s \rangle} V_{\langle r,s \rangle}(z) = 0 \ , 
 \label{lrsv}
@@ -2355,7 +2355,7 @@ the null vector equation $\left< L_{\langle r,s \rangle} V_{\langle r,s \rangle}
 \begin{align}
  \left< V_{\langle r,s \rangle} V_{\Delta_2}V_{\Delta_3}\right>\neq 0 \quad \implies \quad g^{L_{\langle r,s \rangle}}_{\Delta_{\langle r,s \rangle},\Delta_2,\Delta_3} = 0 \ .
 \end{align}
-This constraint on $\Delta_2$ and $\Delta_3$ can be interpreted as the fusion rule of the degenerate representation $R_{\langle r,s \rangle}$, using the relation between OPEs and three-point functions.
+This constraint on $\Delta_2$ and $\Delta_3$ can be interpreted as the fusion rule of the degenerate representation $\mathcal{R}_{\langle r,s \rangle}$, using the relation between OPEs and three-point functions.
 
 \subsubsection{Simplest degenerate fields}
 
@@ -2368,7 +2368,7 @@ $
 $,
 which is equivalent to the fusion rule
 \begin{align}
- \boxed{R_{\langle 1,1\rangle} \times \mathcal{V}_\Delta = \mathcal{V}_\Delta} \ .
+ \boxed{\mathcal{R}_{\langle 1,1\rangle} \times \mathcal{V}_\Delta = \mathcal{V}_\Delta} \ .
  \label{roof}
 \end{align}
 In fact, $V_{\langle 1,1\rangle}$ is an identity field, see Exercise \ref{exoid}.
@@ -2391,26 +2391,26 @@ $.
 We would similarly find $P_3 = P_2 \pm \frac{1}{2b}$ if we considered the case $\langle r,s\rangle = \langle 1,2\rangle$. 
 The resulting fusion rules are 
 \begin{align}
-\boxed{ R_{\langle 2,1 \rangle}\times \mathcal{V}_P = \sum_\pm \mathcal{V}_{P \pm \frac{b}{2}} }\quad , \quad 
-\boxed{ R_{\langle 1,2 \rangle}\times \mathcal{V}_P = \sum_\pm \mathcal{V}_{P \pm \frac{1}{2b}} }\ .
+\boxed{ \mathcal{R}_{\langle 2,1 \rangle}\times \mathcal{V}_P = \sum_\pm \mathcal{V}_{P \pm \frac{b}{2}} }\quad , \quad 
+\boxed{ \mathcal{R}_{\langle 1,2 \rangle}\times \mathcal{V}_P = \sum_\pm \mathcal{V}_{P \pm \frac{1}{2b}} }\ .
 \label{rot}
 \end{align}
 These fusion rules could be derived by directly analyzing OPEs, instead of three-point functions. (See Exercise \ref{exooit}.) 
 
 \subsubsection{Higher degenerate fields}
 
-We now assume that the fusion rules are associative, and proceed to deduce $R_{\langle r,s \rangle}\times \mathcal{V}_P$.
+We now assume that the fusion rules are associative, and proceed to deduce $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_P$.
 Due to null vector equations, we expect this product to be a sum of a finite number of Verma modules.
 By associativity, this implies that the fusion product of two degenerate representations must itself be a sum of degenerate representations.
 In the case of  
-$R_{\langle 2,1\rangle}\times R_{\langle r,s\rangle}$, the conformal dimensions of the resulting degenerate representations are given by eq. \eqref{rot}, and we find
+$\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle r,s\rangle}$, the conformal dimensions of the resulting degenerate representations are given by eq. \eqref{rot}, and we find
 \begin{align}
-R_{\langle 2,1\rangle}\times R_{\langle r,s\rangle} = R_{\langle r-1,s\rangle} + R_{\langle r+1,s\rangle }\ , \quad (r\geq 1)\ .
+\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle r,s\rangle} = \mathcal{R}_{\langle r-1,s\rangle} + \mathcal{R}_{\langle r+1,s\rangle }\ , \quad (r\geq 1)\ .
 \end{align}
-We could similarly compute $R_{\langle 1,2\rangle}\times R_{\langle r,s\rangle}$.
-Then, using the associativity of the fusion products $R_{\langle 2,1\rangle}\times R_{\langle r,s\rangle}\times \mathcal{V}_P$ and $R_{\langle 1,2\rangle}\times R_{\langle r,s\rangle}\times \mathcal{V}_P$, a recursion on $r$ and $s$ leads to
+We could similarly compute $\mathcal{R}_{\langle 1,2\rangle}\times \mathcal{R}_{\langle r,s\rangle}$.
+Then, using the associativity of the fusion products $\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle r,s\rangle}\times \mathcal{V}_P$ and $\mathcal{R}_{\langle 1,2\rangle}\times \mathcal{R}_{\langle r,s\rangle}\times \mathcal{V}_P$, a recursion on $r$ and $s$ leads to
 \begin{align}
- \boxed{R_{\langle r,s \rangle}\times \mathcal{V}_P = \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}} \mathcal{V}_{P + ib+jb^{-1}}}
+ \boxed{\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_P = \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}} \mathcal{V}_{P + ib+jb^{-1}}}
  \ ,
 \label{rtv}
 \end{align}
@@ -2420,14 +2420,14 @@ $rs$ terms.
 
 The fusion product of two degenerate representations must of course obey the fusion rules of both, and we find
 \begin{align}
- \boxed{R_{\langle r_1,s_1 \rangle} \times R_{\langle r_2,s_2 \rangle} = \sum_{r_3\overset{2}{=}|r_1-r_2|+1}^{r_1+r_2-1}\ \sum_{s_3\overset{2}{=}|s_1-s_2|+1}^{s_1+s_2-1} R_{\langle r_3,s_3 \rangle}}\ ,
+ \boxed{\mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle} = \sum_{r_3\overset{2}{=}|r_1-r_2|+1}^{r_1+r_2-1}\ \sum_{s_3\overset{2}{=}|s_1-s_2|+1}^{s_1+s_2-1} \mathcal{R}_{\langle r_3,s_3 \rangle}}\ ,
 \label{rrsr}
 \end{align}
 where a superscript $\overset{2}{=}$ indicates that the corresponding sums run by increments of $2$.
-So the fusion product $R_{\langle r_1,s_1 \rangle} \times R_{\langle r_2,s_2 \rangle}$ is a sum of $\min(r_1,r_2)\times \min(s_1,s_2)$ degenerate representations.
+So the fusion product $\mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle}$ is a sum of $\min(r_1,r_2)\times \min(s_1,s_2)$ degenerate representations.
 This can be rewritten as 
 \begin{align}
-R_{\langle r_1,s_1 \rangle} \times R_{\langle r_2,s_2 \rangle} = \sum_{r_3,s_3=1}^\infty f_{r_1,r_2,r_3} f_{s_1,s_2,s_3} R_{\langle r_3,s_3 \rangle}\ ,
+\mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle} = \sum_{r_3,s_3=1}^\infty f_{r_1,r_2,r_3} f_{s_1,s_2,s_3} \mathcal{R}_{\langle r_3,s_3 \rangle}\ ,
  \label{rrrsss}
 \end{align}
 using the coefficients
@@ -2448,7 +2448,7 @@ The degenerate representation manifests itself in the decompositions of correlat
 
 On the other hand, a conformal block in general has a pole when the $s$-channel momentum takes a degenerate value $\Delta_s=\Delta_{\langle r,s\rangle}$, as is manifest in Zamolodchikov's recursion representation \eqref{hrec}.
 This means that a field with this conformal dimension cannot appear in the OPEs of $V_{\Delta_1}V_{\Delta_2}$ and $V_{\Delta_3}V_{\Delta_4}$, unless the residue of the conformal block's pole vanishes. 
-This residue vanishes if the fusion rules allow $R_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_1}\to \mathcal{V}_{\Delta_2}$ or $R_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_3}\to \mathcal{V}_{\Delta_4}$.
+This residue vanishes if the fusion rules allow $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_1}\to \mathcal{V}_{\Delta_2}$ or $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_3}\to \mathcal{V}_{\Delta_4}$.
 In particular, the conformal blocks that appear in (generalized) minimal models can be computed using Zamolodchikov's recursion representation, although they involve degenerate $s$-channel momentums. 
 
 
@@ -2766,9 +2766,9 @@ Which ones of these singular vectors are of the type $|\chi_{\langle r',s' \rang
 
 \begin{exo}[Characters of Virasoro representations]
  ~\label{exochar}
-For a representation $R$ of the Virasoro algebra, let us define the character 
+For a representation $\mathcal{R}$ of the Virasoro algebra, let us define the character 
 \begin{align}
- \operatorname{ch}_R(y) = \operatorname{Tr}_R y^{L_0-\frac{c}{24}}\ .
+ \operatorname{ch}_\mathcal{R}(y) = \operatorname{Tr}_\mathcal{R} y^{L_0-\frac{c}{24}}\ .
 \end{align}
 \begin{enumerate}
  \item 
@@ -2780,12 +2780,12 @@ where $\eta(y) = y^{\frac{1}{24}}\prod_{n=1}^\infty(1-y^n)$ is the Dedekind eta 
 \item
 Deduce that for generic values of the central charge, the character of a maximally degenerate representation is 
 \begin{align}
- \operatorname{ch}_{R_{\langle r,s\rangle}} = \frac{y^{-P^2_{\langle r,s\rangle}} - y^{-P^2_{\langle -r,s\rangle}}}{\eta(y)}\ .
+ \operatorname{ch}_{\mathcal{R}_{\langle r,s\rangle}} = \frac{y^{-P^2_{\langle r,s\rangle}} - y^{-P^2_{\langle -r,s\rangle}}}{\eta(y)}\ .
 \end{align}
 \item
 Let us assume $b^2=-\frac{q}{p}$ where $p,q$ are strictly positive integers, and $1\leq r\leq p-1$ and $1\leq s\leq q-1$. Using the results of Exercise \ref{exosv}, show that 
 \begin{align}
- \operatorname{ch}_{R_{\langle r,s\rangle}} = 
+ \operatorname{ch}_{\mathcal{R}_{\langle r,s\rangle}} = 
  \sum_{k\in\mathbb{Z}} \frac{y^{-P^2_{\langle r, s+2qk\rangle}} - y^{-P^2_{\langle r, -s+2qk\rangle}}}{\eta(y)}\ .
 \end{align}
 \end{enumerate}
@@ -2892,10 +2892,10 @@ How is this compatible with eq. \eqref{tgv}, which suggests that $V_\Delta(z)$ t
 
 \begin{exo}[Logarithmic conformal field theory]
  ~\label{exolog}
-Consider a finite-dimensional vector space $E$ with a linear action of $L_0$, and the representation $R=U(\mathfrak{V}^+)E$ of the Virasoro algebra obtained by assuming $L_{n>0}E=0$.
+Consider a finite-dimensional vector space $E$ with a linear action of $L_0$, and the representation $\mathcal{R}=U(\mathfrak{V}^+)E$ of the Virasoro algebra obtained by assuming $L_{n>0}E=0$.
 \begin{enumerate}
  \item 
-Assume that $R$ is indecomposable but reducible: what does this mean for the action of $L_0$ on $E$, and the corresponding matrix? 
+Assume that $\mathcal{R}$ is indecomposable but reducible: what does this mean for the action of $L_0$ on $E$, and the corresponding matrix? 
 \item
 Let $V_v(z)$ be the field that corresponds to a vector $v\in E$: write the global Ward identities for correlation functions of such fields, and prove 
 \begin{align}
@@ -3029,7 +3029,7 @@ Moreover, single-valuedness of correlation functions requires $\Delta-\bar{\Delt
 By continuity, $\Delta-\bar{\Delta}$ must be a constant, and this constant must be zero for both $\Delta$ and $\bar{\Delta}$ to span the whole half-line $\left[\frac{c-1}{24},\infty\right[$.
 Therefore, the spectrum must be diagonal,
 \begin{align}
- \boxed{ S= \frac12\int_{i{\mathbb{R}}} dP\ \mathcal{V}_P \otimes \overline{\mathcal{V}}_P =\int_{i{\mathbb{R}_+}} dP\ \mathcal{V}_P \otimes \overline{\mathcal{V}}_P = \int_{\frac{c-1}{24}}^\infty d\Delta\ \mathcal{V}_\Delta\otimes \overline{\mathcal{V}}_\Delta} \ ,
+ \boxed{ \mathcal{S}= \frac12\int_{i{\mathbb{R}}} dP\ \mathcal{V}_P \otimes \overline{\mathcal{V}}_P =\int_{i{\mathbb{R}_+}} dP\ \mathcal{V}_P \otimes \overline{\mathcal{V}}_P = \int_{\frac{c-1}{24}}^\infty d\Delta\ \mathcal{V}_\Delta\otimes \overline{\mathcal{V}}_\Delta} \ ,
 \label{sad}
 \end{align}
 where the  factor $\frac12$ and the restriction of the integration domain to the half-line $P\in i\mathbb{R}_+$ are two ways of
@@ -3726,14 +3726,14 @@ It is not obvious that we can satisfy this assumption, on top of the conformal b
 This would however not be a problem, if the vanishing of almost all correlation functions was not an additional constraint, but rather a consequence of the fusion rules.
 This can happen provided the spectrum only contains degenerate representations, whose fusion products \eqref{rrsr} involve finite sums. 
 However, in general, no nontrivial finite set of degenerate representations of the Virasoro algebra is closed under fusion.
-Starting with the degenerate representation $R_{\langle 1,2 \rangle}$ for instance, the multiple fusion products $R_{\langle 1,2 \rangle}\times R_{\langle 1,2 \rangle}\times \cdots \times R_{\langle 1,2 \rangle}$ span the infinite set of representations $\{R_{\langle 1,s \rangle}\}_{s\in{\mathbb{N}}^*}$.
+Starting with the degenerate representation $\mathcal{R}_{\langle 1,2 \rangle}$ for instance, the multiple fusion products $\mathcal{R}_{\langle 1,2 \rangle}\times \mathcal{R}_{\langle 1,2 \rangle}\times \cdots \times \mathcal{R}_{\langle 1,2 \rangle}$ span the infinite set of representations $\{\mathcal{R}_{\langle 1,s \rangle}\}_{s\in{\mathbb{N}}^*}$.
 Our task would be easier if we would weaken our assumptions and replace the rationality of the theory with the discreteness of the spectrum, allowing the number of representations to be countable instead of finite.
 We would obtain \textbf{\boldmath generalized minimal models}\index{minimal model!generalized---}, whose spectrums contain all degenerate representations, and which exist for arbitrary values of the central charge $c$. 
 
 What if we insist on the original assumption of rationality? We will see that there are finite sets 
 of degenerate representations that close under fusion.
 Such sets are made of
-\textbf{\boldmath doubly degenerate representations}\index{degenerate representation!doubly---}, that is maximally degenerate representations of the type $R_{\langle r,s \rangle}=R_{\langle r',s' \rangle}$ with $\langle r,s \rangle\neq \langle r',s' \rangle$.
+\textbf{\boldmath doubly degenerate representations}\index{degenerate representation!doubly---}, that is maximally degenerate representations of the type $\mathcal{R}_{\langle r,s \rangle}=\mathcal{R}_{\langle r',s' \rangle}$ with $\langle r,s \rangle\neq \langle r',s' \rangle$.
 The ensuing equality of conformal dimensions $\Delta_{\langle r,s \rangle}=\Delta_{\langle r',s' \rangle}$ leads to a constraint on the central charge $c$.
 Therefore, minimal models exist only for certain discrete values of the central charge. 
 
@@ -3741,9 +3741,9 @@ Therefore, minimal models exist only for certain discrete values of the central 
 
 For any complex value of the central charge $c$, we define a generalized minimal model by its spectrum,
 \begin{align}
- \boxed{S = \bigoplus_{r,s=1}^\infty R_{\langle r,s \rangle}\otimes \bar{R}_{\langle r,s \rangle}}\ .
+ \boxed{\mathcal{S} = \bigoplus_{r,s=1}^\infty \mathcal{R}_{\langle r,s \rangle}\otimes \bar{\mathcal{R}}_{\langle r,s \rangle}}\ .
 \end{align}
-We could obtain other consistent models by using subsets of the degenerate representations, provided these subsets were closed under fusion, for instance $S=R_{\langle 1,1 \rangle}\otimes \bar{R}_{\langle 1,1 \rangle}$, $S=\bigoplus_{r=1}^\infty R_{\langle r,1 \rangle}\otimes \bar{R}_{\langle r,1 \rangle}$ or $S=\bigoplus_{r,s=1}^{\infty} R_{\langle 2r+1,2s+1 \rangle}\otimes \bar{R}_{\langle 2r+1,2s+1 \rangle}$.
+We could obtain other consistent models by using subsets of the degenerate representations, provided these subsets were closed under fusion, for instance $\mathcal{S}=\mathcal{\mathcal{R}}_{\langle 1,1 \rangle}\otimes \bar{\mathcal{R}}_{\langle 1,1 \rangle}$, $\mathcal{S}=\bigoplus_{r=1}^\infty \mathcal{R}_{\langle r,1 \rangle}\otimes \bar{\mathcal{R}}_{\langle r,1 \rangle}$ or $\mathcal{S}=\bigoplus_{r,s=1}^{\infty} \mathcal{R}_{\langle 2r+1,2s+1 \rangle}\otimes \bar{\mathcal{R}}_{\langle 2r+1,2s+1 \rangle}$.
 Solving the generalized minimal model will provide a solution of all these submodels. 
 
 \subsubsection{Relation with Liouville theory}
@@ -3830,7 +3830,7 @@ meromorphic only for $b^2\in \mathbb{C}-]-\infty, 1]$.
 
 Let us assume that the spectrum of a conformal field theory contains a doubly degenerate representation 
 \begin{align}
- R=R_{\langle r,s \rangle}=R_{\langle r',s' \rangle}\ .
+ \mathcal{R}=\mathcal{R}_{\langle r,s \rangle}=\mathcal{R}_{\langle r',s' \rangle}\ .
 \end{align}
 The equality of conformal dimension $\Delta_{\langle r,s \rangle}=\Delta_{\langle r',s' \rangle}$ implies that 
 the momentums $\alpha_{\langle r,s \rangle}$ and $\alpha_{\langle r',s' \rangle}$ \eqref{ars} obey $\alpha_{\langle r,s \rangle}=\alpha_{\langle r',s' \rangle}$ or $\alpha_{\langle r,s \rangle}=Q-\alpha_{\langle r',s' \rangle}$, and $b^2$ must therefore be rational.
@@ -3851,7 +3851,7 @@ and the central charge obeys $c\in ]-\infty, 1[$ and is given by eq. \eqref{cpq}
 \subsubsection{Fusion rules and spectrum}
 
 Let us investigate the fusion rules involving such a doubly degenerate field.
-According to eq. \eqref{rtv}, the representation $\mathcal{V}_{\alpha'} $ can appear in the fusion product $R\times \mathcal{V}_\alpha$ only if there are integers $(i,j,i',j')\in [0,r-1]\times [0,s-1]\times [0,r'-1]\times [0,s'-1]$ such that 
+According to eq. \eqref{rtv}, the representation $\mathcal{V}_{\alpha'} $ can appear in the fusion product $\mathcal{R}\times \mathcal{V}_\alpha$ only if there are integers $(i,j,i',j')\in [0,r-1]\times [0,s-1]\times [0,r'-1]\times [0,s'-1]$ such that 
 \begin{align}
  \Delta(\alpha') = \Delta\left(\alpha+\alpha_{\langle r,s \rangle} + ib+jb^{-1}\right) = \Delta\left(\alpha+\alpha_{\langle r',s' \rangle} +i'b+j'b^{-1}\right) \ .
 \end{align}
@@ -3867,21 +3867,21 @@ Using the notations $r'' = i+i'+1$ and $s''=j+j'+1$, this implies
  \alpha=\alpha_{\langle r'',s'' \rangle}\quad \text{with}\quad  \left\{\begin{array}{l}  r'' \in [1,p-1]\ , \\ s'' \in [1,q-1]\ . \end{array}\right. 
 \label{rpsq}
 \end{align}
-This defines the \textbf{\boldmath Kac table}\index{Kac table} -- the set of integers $(r'',s'')$ such that $\mathcal{V}_{\alpha_{\langle r'',s''\rangle}}$ has a nonzero fusion product with our doubly degenerate representation $R$.
-At a given central charge, this set does not depend on the choice of $R$. 
+This defines the \textbf{\boldmath Kac table}\index{Kac table} -- the set of integers $(r'',s'')$ such that $\mathcal{V}_{\alpha_{\langle r'',s''\rangle}}$ has a nonzero fusion product with our doubly degenerate representation $\mathcal{R}$.
+At a given central charge, this set does not depend on the choice of $\mathcal{R}$. 
 And due to the identity 
 \begin{align}
  \alpha_{\langle r'',s'' \rangle}+\alpha_{\langle p-r'',q-s'' \rangle}=Q\ ,
 \end{align}
-the corresponding degenerate representations $R_{\langle r'', s'' \rangle}$ are actually doubly degenerate. 
+the corresponding degenerate representations $\mathcal{R}_{\langle r'', s'' \rangle}$ are actually doubly degenerate. 
 
 The fusion rules of doubly degenerate representations can be deduced from the fusion rules \eqref{rrsr} of degenerate representations, 
 \begin{align}
-  \boxed{R_{\langle r_1,s_1 \rangle} \times R_{\langle r_2,s_2 \rangle} = \sum_{r_3\overset{2}{=}|r_1-r_2|+1}^{\min(r_1+r_2,2p-r_1-r_2)-1}\ \sum_{s_3\overset{2}{=}|s_1-s_2|+1}^{\min(s_1+s_2,2q-s_1-s_2)-1} R_{\langle r_3,s_3 \rangle}}\ .
+  \boxed{\mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle} = \sum_{r_3\overset{2}{=}|r_1-r_2|+1}^{\min(r_1+r_2,2p-r_1-r_2)-1}\ \sum_{s_3\overset{2}{=}|s_1-s_2|+1}^{\min(s_1+s_2,2q-s_1-s_2)-1} \mathcal{R}_{\langle r_3,s_3 \rangle}}\ .
 \label{rrmm}
 \end{align}
 (See Exercise \ref{exofus}.) Equivalently, 
-the condition for three doubly degenerate representations $R_{\langle r_i,s_i \rangle}$ to be intertwined by fusion is 
+the condition for three doubly degenerate representations $\mathcal{R}_{\langle r_i,s_i \rangle}$ to be intertwined by fusion is 
 \begin{align}
  \left\{\begin{array}{l}  2p-r_1-r_2-r_3\in 1+2{\mathbb{N}}\ , \\
  r_i+r_j-r_k \in 1 + 2{\mathbb{N}}\ , \\
@@ -3897,10 +3897,10 @@ where we assume $i\neq j\neq k$.
 So the set of the doubly degenerate representations is closed under fusion.
 This set can therefore be used to build the spectrum of an A-series minimal model,
 \begin{align}
- \boxed{ S_{p,q} = \frac12 \bigoplus_{r=1}^{p-1} \bigoplus_{s=1}^{q-1} R_{\langle r,s \rangle}\otimes \bar{R}_{\langle r,s \rangle} } \ ,
+ \boxed{ \mathcal{S}_{p,q} = \frac12 \bigoplus_{r=1}^{p-1} \bigoplus_{s=1}^{q-1} \mathcal{R}_{\langle r,s \rangle}\otimes \bar{\mathcal{R}}_{\langle r,s \rangle} } \ ,
 \label{smin}
 \end{align}
-where the factor $\frac12$ is here to avoid counting each representation $R_{\langle r,s \rangle}=R_{\langle p-r,q-s \rangle}$ twice.
+where the factor $\frac12$ is here to avoid counting each representation $\mathcal{R}_{\langle r,s \rangle}=\mathcal{R}_{\langle p-r,q-s \rangle}$ twice.
 As in the case of generalized minimal models, we could define submodels whose spectrums would be based on smaller sets of representations, provided these smaller sets were closed under fusion.
 However, the minimal models have the distinction of being consistent not only on the sphere, but also on all other Riemann surfaces \cite{fms97}.
 
@@ -4573,7 +4573,7 @@ This leaves us with a continuous parameter if $N=1,2$. But any spectrum with $N=
 Let us focus on generic maximal spectrums that contain diagonal states. 
 Let us parametrize a diagonal generator as  $\vec\alpha_1=(\frac{i}{2R},\frac{i}{2R})$. By integrality of the spins, the second generator $\vec\alpha_2$ must obey $\frac{i}{R}(\alpha_2-\bar\alpha_2)\in\mathbb{Z}$, and without loss of generality we assume $\alpha_2-\bar\alpha_2=iR$. This implies $\alpha_2+\bar\alpha_2 \in \frac{i}{R}\mathbb{Z}$, and we can always assume $\alpha_2+\bar\alpha_2=0$ by doing a redefinition $\vec\alpha_2\to \vec\alpha_2+k\vec\alpha_1$ with $k\in\mathbb{Z}$. This leads to the spectrum
 \begin{align}
- \boxed{S_R = \bigoplus_{(n,w)\in {\mathbb{Z}^2}} \mathcal{V}_{\frac{i}{2}\left(\frac{n}{R} + Rw\right)} \otimes \bar{\mathcal{V}}_{\frac{i}{2}\left(\frac{n}{R} - Rw\right)} }\ .
+ \boxed{\mathcal{S}_R = \bigoplus_{(n,w)\in {\mathbb{Z}^2}} \mathcal{V}_{\frac{i}{2}\left(\frac{n}{R} + Rw\right)} \otimes \bar{\mathcal{V}}_{\frac{i}{2}\left(\frac{n}{R} - Rw\right)} }\ .
 \label{sr}
 \end{align}
 The corresponding theory is called the \textbf{\boldmath compactified free boson}\index{free boson!compactified---} theory, whose parameter $R$ is  the compactification radius.
@@ -4587,7 +4587,7 @@ The  algebra $\hat{\mathfrak{u}}_1$ has the automorphism
 which preserves the Virasoro generators \eqref{lnj}-\eqref{lzj}. (For $Q\neq 0$ we would have to assume $\omega(Q)=-Q$.)
 This automorphism acts on representations of $\hat{\mathfrak{u}}_1 \times \bar{\hat{\mathfrak{u}}}_1$ as $\omega(\mathcal{V}_\alpha \otimes \bar{\mathcal{V}}_{\bar{\alpha}}) =  \mathcal{V}_{-\alpha} \otimes \bar{\mathcal{V}}_{\bar{\alpha}}$, and on the spectrum of a compactified free boson as 
 \begin{align}
- \omega(S_R) = S_{\frac{1}{R}}\ .
+ \omega(\mathcal{S}_R) = \mathcal{S}_{\frac{1}{R}}\ .
 \end{align}
 This shows that two compactified free bosons are equivalent if their radiuses are inverses of one another. In string theory, this is called T-duality.
 
@@ -4609,7 +4609,7 @@ For $Q\neq 0$, the condition that $\vec\alpha$ and $2\vec\alpha$ have integer sp
  \alpha-\bar\alpha\in \frac{1}{2Q}\mathbb{Z}\ .
  \label{amba}
 \end{align}
-Since any two vectors $\vec\alpha_1,\vec\alpha_2$ in the spectrum obey this condition, there must be an element of $\mathbb{Z}\vec\alpha_1 + \mathbb{Z}\vec\alpha_2$ that is diagonal. And actually, the compactified free boson spectrum $S_R$ \eqref{sr} is made of states with integer spins provided
+Since any two vectors $\vec\alpha_1,\vec\alpha_2$ in the spectrum obey this condition, there must be an element of $\mathbb{Z}\vec\alpha_1 + \mathbb{Z}\vec\alpha_2$ that is diagonal. And actually, the compactified free boson spectrum $\mathcal{S}_R$ \eqref{sr} is made of states with integer spins provided
 \begin{align}
  R \in \frac{1}{iQ}\mathbb{Z}\ .
  \label{riqz}
@@ -4617,7 +4617,7 @@ Since any two vectors $\vec\alpha_1,\vec\alpha_2$ in the spectrum obey this cond
 In this spectrum however, we have $\alpha-\bar\alpha\in\frac{1}{Q}\mathbb{Z}$. 
 If we insisted that the constraint \eqref{amba} be saturated, then we would find the alternative spectrum
 \begin{align}
- S'_R = \bigoplus_{n\in \mathbb{Z}} \bigoplus_{w\in \frac{n}{2}+\mathbb{Z}} \mathcal{V}_{\frac{i}{2}\left(\frac{n}{R} + Rw\right)} \otimes \bar{\mathcal{V}}_{\frac{i}{2}\left(\frac{n}{R} - Rw\right)} \qquad \text{with}\qquad R \in \frac{1}{iQ}(2\mathbb{Z}+1)\ .
+ \mathcal{S}'_R = \bigoplus_{n\in \mathbb{Z}} \bigoplus_{w\in \frac{n}{2}+\mathbb{Z}} \mathcal{V}_{\frac{i}{2}\left(\frac{n}{R} + Rw\right)} \otimes \bar{\mathcal{V}}_{\frac{i}{2}\left(\frac{n}{R} - Rw\right)} \qquad \text{with}\qquad R \in \frac{1}{iQ}(2\mathbb{Z}+1)\ .
 \end{align}
 Whether $Q=0$ or not, the correlation functions of our free bosonic theories with discrete spectrums have the form
 \begin{align}
@@ -4633,7 +4633,7 @@ We will obtain a continuous, diagonal spectrum by taking
 the large $R$ limit of the compactified free boson spectrum \eqref{sr}.
 If $Q\neq 0$, the compactification radius $R$ must obey the condition \eqref{riqz}, and therefore go to infinity in a particular, $Q$-dependent direction. We find the spectrum 
 \begin{align}
- \boxed{ S = \int_{Q\mathbb{R}} d\alpha\ \mathcal{V}_\alpha\otimes \bar{\mathcal{V}}_\alpha}\ ,
+ \boxed{ \mathcal{S} = \int_{Q\mathbb{R}} d\alpha\ \mathcal{V}_\alpha\otimes \bar{\mathcal{V}}_\alpha}\ ,
 \end{align}
 where for $Q=0$ we take $Q\mathbb{R}$ to be a straight line in an arbitrary direction.  
 The resulting theory is called the (uncompactified) \textbf{\boldmath free boson}\index{free boson} theory if $Q=0$ and momentums are pure imaginary. It might be called the \textbf{\boldmath linear dilaton theory}\index{linear dilaton theory} if $Q\neq 0$, although that term is usually applied to a Lagrangian, not to a specific spectrum. 
@@ -4948,49 +4948,49 @@ L_0 & = \frac{K_{ab}}{2(k+g)}\left(2\sum_{m=1}^\infty J^a_{-m}J^b_m + J^a_0J^b_0
  
 \subsubsection{Affine primary fields} 
  
-Given a representation $R$ of $\mathfrak{g}$, we define an \textbf{\boldmath affine primary field}\index{primary field!affine---} $\Phi^{R}(z_0)$ by its OPE with $J^a(y)$,
+Given a representation $\mathcal{R}$ of $\mathfrak{g}$, we define an \textbf{\boldmath affine primary field}\index{primary field!affine---} $\Phi^{\mathcal{R}}(z_0)$ by its OPE with $J^a(y)$,
 \begin{align}
- \boxed{ J^a(y) \Phi^{R}(z_0) = \frac{-t^a\Phi^{R}(z_0)}{y-z_0} + O(1) } \ .
+ \boxed{ J^a(y) \Phi^{\mathcal{R}}(z_0) = \frac{-t^a\Phi^{\mathcal{R}}(z_0)}{y-z_0} + O(1) } \ .
 \label{jpr}
 \end{align}
-This assumes that for any $z_0$, the field $\Phi^{R}$ is a vector in the representation $R$. 
-It can be checked that this OPE is compatible with the associativity of the $J^aJ^b\Phi^R$ OPE. (See Exercise \ref{exojjp}.)
+This assumes that for any $z_0$, the field $\Phi^{\mathcal{R}}$ is a vector in the representation $\mathcal{R}$. 
+It can be checked that this OPE is compatible with the associativity of the $J^aJ^b\Phi^\mathcal{R}$ OPE. (See Exercise \ref{exojjp}.)
 We can then 
-compute the OPE $T(y)\Phi^{R}(z_0)$, by applying Wick's theorem to $\cunderbracket{\Phi^R}{(z_0)}{(J^aJ_a)}(y)$, using eq. \eqref{jpr} in the form $\cunderbracket{\Phi^R}{(z_0)}{J^a}(x) = \frac{-t^a\Phi^R(x)}{x-z_0}$.
-We find an OPE of the form \eqref{tvp}, which shows that $\Phi^{R}$ is a primary field with the conformal dimension
+compute the OPE $T(y)\Phi^{\mathcal{R}}(z_0)$, by applying Wick's theorem to $\cunderbracket{\Phi^\mathcal{R}}{(z_0)}{(J^aJ_a)}(y)$, using eq. \eqref{jpr} in the form $\cunderbracket{\Phi^\mathcal{R}}{(z_0)}{J^a}(x) = \frac{-t^a\Phi^\mathcal{R}(x)}{x-z_0}$.
+We find an OPE of the form \eqref{tvp}, which shows that $\Phi^{\mathcal{R}}$ is a primary field with the conformal dimension
 \begin{align}
- \boxed{\Delta_R  = \frac{C_2(R)}{2(k+g)}}\ ,
+ \boxed{\Delta_\mathcal{R}  = \frac{C_2(\mathcal{R})}{2(k+g)}}\ ,
 \label{dr}
 \end{align}
-where $C_2(R)$ is the eigenvalue of the quadratic Casimir operator $C_2$ \eqref{ctk} when acting in the representation $R$. (We now assume $R$ to be indecomposable, so that it contains only one eigenspace of $C_2$.) Moreover, we find an expression for the derivative of $\Phi^R$ in terms of the action of currents,
+where $C_2(\mathcal{R})$ is the eigenvalue of the quadratic Casimir operator $C_2$ \eqref{ctk} when acting in the representation $\mathcal{R}$. (We now assume $\mathcal{R}$ to be indecomposable, so that it contains only one eigenspace of $C_2$.) Moreover, we find an expression for the derivative of $\Phi^\mathcal{R}$ in terms of the action of currents,
 \begin{align}
-\partial\Phi^R = -\frac{K_{ab}t^a(J^b\Phi^R)}{k+g} \ .
+\partial\Phi^\mathcal{R} = -\frac{K_{ab}t^a(J^b\Phi^\mathcal{R})}{k+g} \ .
 \label{lmp}
 \end{align}
-Let us now consider the states $|v^R\rangle$ that correspond to the $R$-valued field $\Phi^R(z_0)$ by the state-field correspondence.
-The definition \eqref{jpr} of $\Phi^R(z_0)$ is equivalent to 
+Let us now consider the states $|v^\mathcal{R}\rangle$ that correspond to the $\mathcal{R}$-valued field $\Phi^\mathcal{R}(z_0)$ by the state-field correspondence.
+The definition \eqref{jpr} of $\Phi^\mathcal{R}(z_0)$ is equivalent to 
 \begin{align}
 \renewcommand{\arraystretch}{1.3}
- \left\{\begin{array}{l}  J^a_{n>0}|v^R\rangle = 0 \ ,  \\ J^a_0|v^R\rangle = -t^a |v^R\rangle\ . \end{array}\right. 
+ \left\{\begin{array}{l}  J^a_{n>0}|v^\mathcal{R}\rangle = 0 \ ,  \\ J^a_0|v^\mathcal{R}\rangle = -t^a |v^\mathcal{R}\rangle\ . \end{array}\right. 
 \end{align}
-The states $|v^R\rangle$ are killed by the annihilation operators, and are called affine primary states.
-They transform in the representation $R$ of the \textbf{\boldmath horizontal subalgebra}\index{horizontal subalgebra} $\mathfrak{g}\subset \hat{\mathfrak{g}}$ generated by $\{J^a_0\}$.
-Acting on the affine primary states with creation operators $J^a_{n<0}$ generates affine descendent states, which form an \textbf{\boldmath affine highest-weight representation}\index{highest-weight representation!affine---} $\hat{R}$ of the affine Lie algebra $\hat{\mathfrak{g}}$.
+The states $|v^\mathcal{R}\rangle$ are killed by the annihilation operators, and are called affine primary states.
+They transform in the representation $\mathcal{R}$ of the \textbf{\boldmath horizontal subalgebra}\index{horizontal subalgebra} $\mathfrak{g}\subset \hat{\mathfrak{g}}$ generated by $\{J^a_0\}$.
+Acting on the affine primary states with creation operators $J^a_{n<0}$ generates affine descendent states, which form an \textbf{\boldmath affine highest-weight representation}\index{highest-weight representation!affine---} $\hat{\mathcal{R}}$ of the affine Lie algebra $\hat{\mathfrak{g}}$.
 
 \subsubsection{Isospin variables}
 
-That the affine primary field $\Phi^R$ lives in a representation $R$ of our Lie algebra $\mathfrak{g}$ could be made explicit by introducing  a basis $(e^i)$ of $R$, so that $\Phi^{R} = \Phi^{R}_ie^i$ and $t^a \Phi^{R} = R(t^a)_i^j \Phi^{R}_je^i$.
-Equivalently, we represent states in $R$ 
+That the affine primary field $\Phi^\mathcal{R}$ lives in a representation $\mathcal{R}$ of our Lie algebra $\mathfrak{g}$ could be made explicit by introducing  a basis $(e^i)$ of $\mathcal{R}$, so that $\Phi^{\mathcal{R}} = \Phi^{\mathcal{R}}_ie^i$ and $t^a \Phi^{\mathcal{R}} = \mathcal{R}(t^a)_i^j \Phi^{\mathcal{R}}_je^i$.
+Equivalently, we represent states in $\mathcal{R}$ 
 as functions of an \textbf{\boldmath isospin variable}\index{isospin variable} $X$. 
-Affine primary fields become functions $\Phi^R_X(z_0)$ of $X$, on which $t^a$ acts as a differential operator $D_X^R(t^a)$, 
+Affine primary fields become functions $\Phi^\mathcal{R}_X(z_0)$ of $X$, on which $t^a$ acts as a differential operator $D_X^\mathcal{R}(t^a)$, 
 and we have
 \begin{align}
- J^a(y)\Phi^R_X(z_0) = \frac{-D^R_X(t^a)\Phi^R_X(z_0)}{y-z_0}+O(1)\quad \text{with} \quad t^a \Phi^R_X(z_0) = D_X^R(t^a) \Phi^R_X(z_0)\ .
+ J^a(y)\Phi^\mathcal{R}_X(z_0) = \frac{-D^\mathcal{R}_X(t^a)\Phi^\mathcal{R}_X(z_0)}{y-z_0}+O(1)\quad \text{with} \quad t^a \Phi^\mathcal{R}_X(z_0) = D_X^\mathcal{R}(t^a) \Phi^\mathcal{R}_X(z_0)\ .
 \label{jprx}
 \end{align}
-The differential operators $D_X^R(t^a)$ obey the commutation relations of $\mathfrak{g}$, and their quadratic invariant combination is $C_2(R)$,
+The differential operators $D_X^\mathcal{R}(t^a)$ obey the commutation relations of $\mathfrak{g}$, and their quadratic invariant combination is $C_2(\mathcal{R})$,
 \begin{align}
-[D_X^R(t^a),D_X^R(t^b)] = f^{ab}_c D_X^R(t^c)\ , \qquad K_{ab} D_X^R(t^a)D_X^R(t^b) = C_2(R)\ .
+[D_X^\mathcal{R}(t^a),D_X^\mathcal{R}(t^b)] = f^{ab}_c D_X^\mathcal{R}(t^c)\ , \qquad K_{ab} D_X^\mathcal{R}(t^a)D_X^\mathcal{R}(t^b) = C_2(\mathcal{R})\ .
 \label{dta}
 \end{align}
 The isospin variable $X$ is a collection of as many complex variables as $\mathfrak{g}$ has positive roots.
@@ -5028,31 +5028,31 @@ Let us study the fusion rules of affine highest-weight representations, equivale
 To write such OPEs, we will omit the dependences on the positions $z_i$ of the fields, which are dictated by conformal symmetry since affine primary fields are also primary fields.
 We will also omit the affine descendent fields because, as in the cases of the Virasoro and $\hat{\mathfrak{u}}_1$ algebras, the contributions of affine descendent fields are determined by the contributions of the affine primary fields. (This would however not be true in the case of a $W$ algebra.) So we write a generic OPE as 
 \begin{align}
- \Phi^{R_1}_{X_1}\Phi^{R_2}_{X_2} \sim \sum_{R_3} \int dX_3\ C^{R_1,R_2}_{R_3}(X_1,X_2|X_3) \Phi^{R_3}_{X_3}\ .
+ \Phi^{\mathcal{R}_1}_{X_1}\Phi^{\mathcal{R}_2}_{X_2} \sim \sum_{\mathcal{R}_3} \int dX_3\ C^{\mathcal{R}_1,\mathcal{R}_2}_{\mathcal{R}_3}(X_1,X_2|X_3) \Phi^{\mathcal{R}_3}_{X_3}\ .
 \end{align}
-Inserting $\oint dz\, J^a(z)$ on both sides, and using the linear independence of the operators $\Phi^{R_3}_{X_3}$, we obtain an equation for the structure function $C^{R_1,R_2}_{R_3}(X_1,X_2|X_3)$,
+Inserting $\oint dz\, J^a(z)$ on both sides, and using the linear independence of the operators $\Phi^{\mathcal{R}_3}_{X_3}$, we obtain an equation for the structure function $C^{\mathcal{R}_1,\mathcal{R}_2}_{\mathcal{R}_3}(X_1,X_2|X_3)$,
 \begin{align}
- \left(D_{X_1}^{R_1}(t^a)+D_{X_2}^{R_2}(t^a)-\left(D_{X_3}^{R_3}(t^a)\right)^\dagger\right) C^{R_1,R_2}_{R_3}(X_1,X_2|X_3) = 0\ ,
+ \left(D_{X_1}^{\mathcal{R}_1}(t^a)+D_{X_2}^{\mathcal{R}_2}(t^a)-\left(D_{X_3}^{\mathcal{R}_3}(t^a)\right)^\dagger\right) C^{\mathcal{R}_1,\mathcal{R}_2}_{\mathcal{R}_3}(X_1,X_2|X_3) = 0\ ,
 \label{dddc}
 \end{align}
 where the dagger denotes the Hermitian conjugate for $X_3$-differential operators, such that for any functions $f,g$ we have 
 $\int fDg =\int g D^\dagger f$.
-This equation characterizes $C^{R_1,R_2}_{R_3}(X_1,X_2|X_3)$ as an intertwiner between the representations $R_1\otimes R_2$ and $R_3$ of the Lie algebra $\mathfrak{g}$.
+This equation characterizes $C^{\mathcal{R}_1,\mathcal{R}_2}_{\mathcal{R}_3}(X_1,X_2|X_3)$ as an intertwiner between the representations $\mathcal{R}_1\otimes \mathcal{R}_2$ and $\mathcal{R}_3$ of the Lie algebra $\mathfrak{g}$.
 This shows that the fusion multiplicities of affine highest-weight representations of $\hat{\mathfrak{g}}$ are bounded by the tensor product multiplicities of the underlying representations of $\mathfrak{g}$, 
 \begin{align}
- m_{\hat{R}_1,\hat{R}_2}^{\hat{R}_3} \leq m_{R_1,R_2}^{R_3}\ .
+ m_{\hat{\mathcal{R}}_1,\hat{\mathcal{R}}_2}^{\hat{\mathcal{R}}_3} \leq m_{\mathcal{R}_1,\mathcal{R}_2}^{\mathcal{R}_3}\ .
 \end{align}
-The presence of null vectors in the representations $\hat{R}_i$ can lead to extra conditions on the structure function $C^{R_1,R_2}_{R_3}(X_1,X_2|X_3)$, in which case $m_{\hat{R}_1,\hat{R}_2}^{\hat{R}_3} < m_{R_1,R_2}^{R_3}$. 
+The presence of null vectors in the representations $\hat{\mathcal{R}}_i$ can lead to extra conditions on the structure function $C^{\mathcal{R}_1,\mathcal{R}_2}_{\mathcal{R}_3}(X_1,X_2|X_3)$, in which case $m_{\hat{\mathcal{R}}_1,\hat{\mathcal{R}}_2}^{\hat{\mathcal{R}}_3} < m_{\mathcal{R}_1,\mathcal{R}_2}^{\mathcal{R}_3}$. 
 And nothing guarantees that only highest-weight representations appear in the fusion product of two highest-weight representations. 
 In the case of the $\widetilde{SL}_2(\mathbb{R})$ WZW model, other types of representations do appear. (See Section \ref{secslr}.) 
 
-For generic representations $R_i$, the multiplicity $m_{R_1,R_2}^{R_3}$ is the number of linearly independent solutions of eq. \eqref{dddc} in the absence of further constraints, namely
+For generic representations $\mathcal{R}_i$, the multiplicity $m_{\mathcal{R}_1,\mathcal{R}_2}^{\mathcal{R}_3}$ is the number of linearly independent solutions of eq. \eqref{dddc} in the absence of further constraints, namely
 \begin{align}
  m_{\mathrm{max}} = \left\{\begin{array}{l}  2 \quad \text{if}\ \mathfrak{g}=\mathfrak{sl}_2\ , \\ \infty \quad \text{if}\ \mathfrak{g}=\mathfrak{sl}_{n\geq 3}\ . \end{array}\right. 
 \end{align}
-We indeed have a set of $\dim \mathfrak{sl}_n=n^2-1$ equations, for a function $C^{R_1,R_2}_{R_3}(X_1,X_2|X_3)$ of $3\frac{n(n-1)}{2}$ variables -- the components of $X_1,X_2$ and $X_3$.
+We indeed have a set of $\dim \mathfrak{sl}_n=n^2-1$ equations, for a function $C^{\mathcal{R}_1,\mathcal{R}_2}_{\mathcal{R}_3}(X_1,X_2|X_3)$ of $3\frac{n(n-1)}{2}$ variables -- the components of $X_1,X_2$ and $X_3$.
 If $n=2$ there are three equations and three variables, and this can actually be reduced to one second-order differential equation for a function of one variable. (See eq. \eqref{pmf}.)
-If $n\geq 3$ there are more variables than equations, so that $C^{R_1,R_2}_{R_3}(X_1,X_2|X_3)$ has an arbitrary dependence on a number of variables.
+If $n\geq 3$ there are more variables than equations, so that $C^{\mathcal{R}_1,\mathcal{R}_2}_{\mathcal{R}_3}(X_1,X_2|X_3)$ has an arbitrary dependence on a number of variables.
 In the case of finite-dimensional representations of $\mathfrak{sl}_{n\geq 3}$, the multiplicities are of course finite, but they can take arbitrarily high values, depending on the involved representations.
 
 \subsection{Ward identities and Knizhnik--Zamolodchikov equations \label{secwikz}}
@@ -5071,7 +5071,7 @@ For any $N$-uple of fields $(\Phi^{\sigma_i}(z_i))$, and any meromorphic functio
 In the case $\epsilon(y)=\frac{1}{(y-z_i)^n}$ with $n\geq 1$, we obtain the $\hat{\mathfrak{g}}$ local Ward identities, which are formally identical to the $\hat{\mathfrak{u}}_1$ local Ward identities \eqref{jnjp}. 
 In particular, if all fields are affine primaries except possibly the field at $z_i$, we find 
 \begin{align}
-\left\langle J^a_{-n}\Phi^{\sigma_i}(z_i)\prod_{j\neq i} \Phi^{R_j}_{X_j}(z_j)\right\rangle &=\sum_{j\neq i} \frac{D_{X_j}^{R_j}(t^a)}{(z_j-z_i)^n} \left\langle \Phi^{\sigma_i}(z_i)\prod_{j\neq i} \Phi^{R_j}_{X_j}(z_j)\right\rangle\ . 
+\left\langle J^a_{-n}\Phi^{\sigma_i}(z_i)\prod_{j\neq i} \Phi^{\mathcal{R}_j}_{X_j}(z_j)\right\rangle &=\sum_{j\neq i} \frac{D_{X_j}^{\mathcal{R}_j}(t^a)}{(z_j-z_i)^n} \left\langle \Phi^{\sigma_i}(z_i)\prod_{j\neq i} \Phi^{\mathcal{R}_j}_{X_j}(z_j)\right\rangle\ . 
 \label{jmnz}
 \end{align}
 In the case $\epsilon(y)=1$, we obtain the $\hat{\mathfrak{g}}$ global Ward identities,
@@ -5081,12 +5081,12 @@ In the case $\epsilon(y)=1$, we obtain the $\hat{\mathfrak{g}}$ global Ward iden
 Let us specialize to correlation functions involving only affine primary fields.
 Knowing the poles \eqref{jpr} of $J^a(y)$ and its behaviour near $y=\infty$, we have
 \begin{align}
- \left\langle J^a(y) \prod_{i=1}^N \Phi^{R_i}_{X_i}(z_i)\right\rangle = - \sum_{i=1}^N \frac{D^{R_i}_{X_i}(t^a)}{y-z_i}\left\langle \prod_{i=1}^N \Phi^{R_i}_{X_i}(z_i)\right\rangle\ ,
+ \left\langle J^a(y) \prod_{i=1}^N \Phi^{\mathcal{R}_i}_{X_i}(z_i)\right\rangle = - \sum_{i=1}^N \frac{D^{\mathcal{R}_i}_{X_i}(t^a)}{y-z_i}\left\langle \prod_{i=1}^N \Phi^{\mathcal{R}_i}_{X_i}(z_i)\right\rangle\ ,
 \label{dja}
 \end{align}
 and the global Ward identities become
 \begin{align}
- \sum_{i=1}^N D_{X_i}^{R_i}(t^a) \left\langle \prod_{i=1}^N \Phi^{R_i}_{X_i}(z_i)\right\rangle   = 0 \ .
+ \sum_{i=1}^N D_{X_i}^{\mathcal{R}_i}(t^a) \left\langle \prod_{i=1}^N \Phi^{\mathcal{R}_i}_{X_i}(z_i)\right\rangle   = 0 \ .
 \label{drxt}
 \end{align}
 
@@ -5111,9 +5111,9 @@ The tensor product multiplicity for generic $\mathfrak{sl}_2$ representations is
 
 \subsubsection{Knizhnik--Zamolodchikov equations}
 
-Inserting the equation \eqref{lmp} in an $N$-point function of affine primary fields, and applying the local Ward identity \eqref{jmnz} to $J^b_{-1}\Phi^R_X = (J^b\Phi^R_X)$, we obtain the Knizhnik--Zamolodchikov equations or \textbf{\boldmath KZ equations}\index{KZ equations},
+Inserting the equation \eqref{lmp} in an $N$-point function of affine primary fields, and applying the local Ward identity \eqref{jmnz} to $J^b_{-1}\Phi^\mathcal{R}_X = (J^b\Phi^\mathcal{R}_X)$, we obtain the Knizhnik--Zamolodchikov equations or \textbf{\boldmath KZ equations}\index{KZ equations},
 \begin{align}
- \boxed{\left\{(k+g){\frac{\partial}{\partial z_i}} + \sum_{j\neq i} \frac{K_{ab}D_{X_i}^{R_i}(t^a)D_{X_j}^{R_j}(t^b)}{z_i-z_j}\right\}\left\langle \prod_{i=1}^N \Phi^{R_i}_{X_i}(z_i)\right\rangle  = 0}\ .
+ \boxed{\left\{(k+g){\frac{\partial}{\partial z_i}} + \sum_{j\neq i} \frac{K_{ab}D_{X_i}^{\mathcal{R}_i}(t^a)D_{X_j}^{\mathcal{R}_j}(t^b)}{z_i-z_j}\right\}\left\langle \prod_{i=1}^N \Phi^{\mathcal{R}_i}_{X_i}(z_i)\right\rangle  = 0}\ .
 \label{kz} 
 \end{align}
 These are first-order differential equations in $z_i$, and like the analogous equations \eqref{kzl} for free boson correlation functions, they determine the dependence on $z_i$ of correlation functions of primary fields.
@@ -5122,7 +5122,7 @@ It can be checked that the KZ equations imply the conformal global Ward identiti
 
 The KZ equations can be rewritten as 
 \begin{align}
- \left\{(k+g){\frac{\partial}{\partial z_i}} + H_i \right\}\left\langle \prod_{i=1}^N \Phi^{R_i}_{X_i}(z_i)\right\rangle   = 0 \ ,
+ \left\{(k+g){\frac{\partial}{\partial z_i}} + H_i \right\}\left\langle \prod_{i=1}^N \Phi^{\mathcal{R}_i}_{X_i}(z_i)\right\rangle   = 0 \ ,
 \label{phz}
 \end{align}
 where $H_i$ are the mutually commuting Gaudin Hamiltonians, the Hamiltonians of the \textbf{\boldmath Gaudin model}\index{Gaudin model} -- an integrable model associated with the Lie algebra $\mathfrak{g}$.
@@ -5146,7 +5146,7 @@ According to eqs. \eqref{dtz} and \eqref{dja}, inserting the fields $T(y)$ and $
  \hat{T}(y) &= \sum_{i=1}^N \left(\frac{\Delta_{j_i}}{(z-z_i)^2} + \frac{1}{z-z_i}{\frac{\partial}{\partial z_i}}\right)\ ,
 \label{tcy}
 \\
- \hat{J}^a(y) &= - \sum_{i=1}^N \frac{D^{R_i}_{X_i}(t^a)}{y-z_i}\ ,
+ \hat{J}^a(y) &= - \sum_{i=1}^N \frac{D^{\mathcal{R}_i}_{X_i}(t^a)}{y-z_i}\ ,
 \label{jay}
 \end{align}
 where $\Delta_j$ is defined in eq. \eqref{dj}.
@@ -5519,7 +5519,7 @@ then we have
 The action $U_g$ is characteristic of the \textbf{\boldmath principal series representation of $\mathfrak{sl}_2({\mathbb{C}})$}\index{principal series representation!of sl2c@---of $\mathfrak{sl}_2({\mathbb{C}})$} $C^j$. 
 So both $\Phi^j_x$ and $\phi^j_x$ transform in this representation, and 
 \begin{align}
- \underset{k\to\infty}{\lim} S^{H_3^+} =  \mathcal{F}(H_3^+) = \bigoplus_{j\in -\frac12+i{\mathbb{R}}_+} C^j\ .
+ \underset{k\to\infty}{\lim} \mathcal{S}^{H_3^+} =  \mathcal{F}(H_3^+) = \bigoplus_{j\in -\frac12+i{\mathbb{R}}_+} C^j\ .
 \end{align}
 (For a more rigorous definition of $\mathcal{F}(H_3^+)$, and proof of its decomposition into representations of $\mathfrak{sl}_2({\mathbb{C}})$, see \cite{tes97b}.)
 So, in the large level limit, the spectrum of the $H_3^+$ model coincides with $\mathcal{F}(H_3^+)$ as a representation of the symmetry algebra $\mathfrak{sl}_2({\mathbb{C}})$. 
@@ -5596,9 +5596,9 @@ We will not use the Lagrangian definition of WZW models.
 This raises the question of characterizing these models in the conformal bootstrap approach.
 The fundamental axiom is the presence of the symmetry algebra $\hat{\mathfrak{g}}$, and some  authors call all models with this symmetry algebra WZW models.
 Here we will insist that, among models with this symmetry, 
-a WZW model can be associated with a particular Lie group $G$, such that its spectrum $S$ obeys
+a WZW model can be associated with a particular Lie group $G$, such that its spectrum $\mathcal{S}$ obeys
 \begin{align}
- \boxed{\underset{k\to \infty}{\lim} S = \mathcal{F}(G)}\ ,
+ \boxed{\underset{k\to \infty}{\lim} \mathcal{S} = \mathcal{F}(G)}\ ,
 \label{lsfg}
 \end{align}
 where $\mathcal{F}(G)$ is the space of functions on $G$.
@@ -5628,16 +5628,17 @@ That is, $\mathfrak{g}$ and its generators $t^a$ are identified with the horizon
 We now assume that $G$ is compact.
 Then $\mathcal{F}(G)$ can be decomposed into irreducible representations of the symmetry group $G\times \bar{G}$ using the \textbf{\boldmath Peter--Weyl theorem}\index{Peter--Weyl theorem}, 
 \begin{align}
- \mathcal{F}(G) = \bigoplus_{R\in \mathcal{R}} R\otimes \bar{R}\ ,
+ \mathcal{F}(G) = \bigoplus_{\mathcal{R}\in \mathcal{R}} \mathcal{R}\otimes \bar{\mathcal{R}}\ ,
 \end{align}
+% NB: Problem with notations here.
 where $\mathcal{R}$ is the set of irreducible unitary representations of $G$, which coincides with the set of irreducible finite-dimensional representations of $G$.
 If moreover $G$ is simply connected, then the spectrum of the WZW model is diagonal for all positive integer values of $k$, \cite{fms97}
 \begin{align}
- S = \bigoplus_{R\in \mathcal{R}_k} \hat{R}\otimes \bar{\hat{R}}\ .
+ \mathcal{S} = \bigoplus_{\mathcal{R}\in \mathcal{R}_k} \hat{\mathcal{R}}\otimes \bar{\hat{\mathcal{R}}}\ .
 \end{align}
-Here $\hat{R}$ is the affine highest-weight representation of $\hat{\mathfrak{g}}$ that is built from $R$ by acting with the creation modes and removing the null vectors, and the finite subset $\mathcal{R}_k$ of $\mathcal{R}$ is defined by certain $k$-dependent conditions.
-The resulting representations $\hat{R}$ are called the integrable highest-weight representations of $\hat{\mathfrak{g}}$. 
-We have $\underset{k\to\infty}{\lim} \mathcal{R}_k =\mathcal{R}$ and $\underset{k\to \infty}{\lim} \hat{R} = R$, so that the spectrum $S$ has the desired large level limit $\mathcal{F}(G)$.
+Here $\hat{\mathcal{R}}$ is the affine highest-weight representation of $\hat{\mathfrak{g}}$ that is built from $\mathcal{R}$ by acting with the creation modes and removing the null vectors, and the finite subset $\mathcal{R}_k$ of $\mathcal{R}$ is defined by certain $k$-dependent conditions.
+The resulting representations $\hat{\mathcal{R}}$ are called the integrable highest-weight representations of $\hat{\mathfrak{g}}$. 
+We have $\underset{k\to\infty}{\lim} \mathcal{R}_k =\mathcal{R}$ and $\underset{k\to \infty}{\lim} \hat{\mathcal{R}} = \mathcal{R}$, so that the spectrum $\mathcal{S}$ has the desired large level limit $\mathcal{F}(G)$.
 
 \subsubsection{Scalar product}
 
@@ -5667,29 +5668,29 @@ Let us build conformal field theories from the finite-dimensional representation
 \subsubsection{Generalized $SU_2$ WZW model}
 
 Since the spins of the finite-dimensional representations of $SU_2$ are of the type $j=j_{\langle 0,s\rangle}$ \eqref{jrs}, the 
-corresponding affine highest-weight representations $\hat R^{\langle 0,s\rangle}$ of $\widehat{\mathfrak{sl}}_2$ are degenerate, with level zero null vectors.
+corresponding affine highest-weight representations $\hat{\mathcal{R}}^{\langle 0,s\rangle}$ of $\widehat{\mathfrak{sl}}_2$ are degenerate, with level zero null vectors.
 Their fusion rules are 
 \begin{align}
- \hat{R}^{\langle 0, s_1\rangle}\times\hat{R}^{\langle 0, s_2\rangle} = \sum_{s\overset{2}{=}|s_1-s_2|+1}^{s_1+s_2-1} \hat{R}^{\langle 0, s\rangle}\ .
+ \hat{\mathcal{R}}^{\langle 0, s_1\rangle}\times\hat{\mathcal{R}}^{\langle 0, s_2\rangle} = \sum_{s\overset{2}{=}|s_1-s_2|+1}^{s_1+s_2-1} \hat{\mathcal{R}}^{\langle 0, s\rangle}\ .
 \end{align}
 For any value of the level $k\in\mathbb{C}-\{-2\}$, we can build a diagonal spectrum from these representations,
 \begin{align}
- S = \bigoplus_{s=1}^\infty \hat{R}^{\langle 0, s\rangle}\otimes \bar{\hat{R}}^{\langle 0, s\rangle}\ ,
+ \mathcal{S} = \bigoplus_{s=1}^\infty \hat{\mathcal{R}}^{\langle 0, s\rangle}\otimes \bar{\hat{\mathcal{R}}}^{\langle 0, s\rangle}\ ,
 \end{align}
 thereby defining the \textbf{\boldmath generalized $SU_2$ WZW model}\index{WZW model!generalized $SU_2$---}. 
 We will now look for finite sets of such representations that are closed under fusion.
 
 \subsubsection{Spectrum of the $SU_2$ WZW model}
 
-As we did in the case of Virasoro minimal models, let us consider multiply degenerate representations of the type $\hat{R}^{\langle 0, s\rangle}$. 
+As we did in the case of Virasoro minimal models, let us consider multiply degenerate representations of the type $\hat{\mathcal{R}}^{\langle 0, s\rangle}$. 
 The simplest nontrivial assumption is $j_{\langle 0, s\rangle} + j_{\langle 1, s'\rangle} +1=0$ for some $s'\in\mathbb{N}^*$, which implies $s+s'=k+2$. 
 Then the level $k$ must be integer, and the spectrum becomes 
 \begin{align}
- S = \bigoplus_{s=1}^{k+1} \hat{R}^{\langle 0, s\rangle}\otimes \bar{\hat{R}}^{\langle 0, s\rangle}\ .
+ \mathcal{S} = \bigoplus_{s=1}^{k+1} \hat{\mathcal{R}}^{\langle 0, s\rangle}\otimes \bar{\hat{\mathcal{R}}}^{\langle 0, s\rangle}\ .
 \end{align}
 Fusion is constrained by both null vectors, and becomes 
 \begin{align}
- \hat{R}^{\langle 0, s_1\rangle}\times\hat{R}^{\langle 0, s_2\rangle} = \sum_{s\overset{2}{=}|s_1-s_2|+1}^{\min(s_1+s_2-1,2k+3-s_1-s_2)} \hat{R}^{\langle 0, s\rangle}\ .
+ \hat{\mathcal{R}}^{\langle 0, s_1\rangle}\times\hat{\mathcal{R}}^{\langle 0, s_2\rangle} = \sum_{s\overset{2}{=}|s_1-s_2|+1}^{\min(s_1+s_2-1,2k+3-s_1-s_2)} \hat{\mathcal{R}}^{\langle 0, s\rangle}\ .
 \end{align}
 
 \subsubsection{Correlation functions}
@@ -5739,7 +5740,7 @@ $D^{j,-}$ & $j\in]-\tfrac12,\infty[$ & $-(j+1+{\mathbb{N}})$
  \end{tabular}
 \label{rpe}
 \end{align}
-Given a representation $R$, let $R^*$ be the dual representation, that is the representation with opposite $J_0^0$ eigenvalues:
+Given a representation $\mathcal{R}$, let $\mathcal{R}^*$ be the dual representation, that is the representation with opposite $J_0^0$ eigenvalues:
 \begin{align}
  (C^j_\alpha)^* &= C^j_{-\alpha} \ , 
 \\
@@ -5755,11 +5756,11 @@ According to \cite{rib09} and references therein, we have
 where the identification of $\mathcal{F}(SL_2(\mathbb{R}))$ with the space of $\tau$-periodic functions on $\widetilde{SL}_2(\mathbb{R})$ amounts to restricting the eigenvalues of our Hermitian generator to be half-integers.
 Tensor products of principal and discrete series representations can be written as 
 \begin{align}
- R_1\otimes R_2 = \bigoplus_{R_3} N_{R_1,R_2,R_3^*} R_3\ ,
+ \mathcal{R}_1\otimes \mathcal{R}_2 = \bigoplus_{\mathcal{R}_3} N_{\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3^*} \mathcal{R}_3\ ,
 \label{ror}
 \end{align}
-where $N_{R_1,R_2,R_3}$ is an integer-valued function that obeys $N_{R_1^*,R_2^*,R_3^*}=N_{R_1,R_2,R_3}$ and is symmetric under permutations.
-Modulo these symmetries, the only nonzero values of $N_{R_1,R_2,R_3}$ are
+where $N_{\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3}$ is an integer-valued function that obeys $N_{\mathcal{R}_1^*,\mathcal{R}_2^*,\mathcal{R}_3^*}=N_{\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3}$ and is symmetric under permutations.
+Modulo these symmetries, the only nonzero values of $N_{\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3}$ are
 \begin{align}
 N_{D^{j_1,+},D^{j_2,+},D^{j_3,-}} &= 1 \quad \text{if}\ j_3\in j_1+j_2+1+{\mathbb{N}}\ ,
 \label{nddd}
@@ -5777,7 +5778,7 @@ For example, the tensor product of two principal series representations is
 \label{coc}
 \end{align}
 where the factor of $2$ is the tensor product multiplicity that we already encountered in Section \ref{secwikz}.
-Actually, all the values of $N_{R_1,R_2,R_3}$ can be deduced from the values of $N_{D^{j_1,+},D^{j_2,+},D^{j_3,-}}$, using the remark that as far as the eigenvalues \eqref{rpe} of $J^0_0$ are concerned, we have the identification
+Actually, all the values of $N_{\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3}$ can be deduced from the values of $N_{D^{j_1,+},D^{j_2,+},D^{j_3,-}}$, using the remark that as far as the eigenvalues \eqref{rpe} of $J^0_0$ are concerned, we have the identification
 \begin{align}
  C^j_\alpha \sim D^{\alpha-1,+} \oplus D^{-\alpha,-}\ .
 \label{cjdd}
@@ -5801,24 +5802,24 @@ According to eqs. \eqref{ljj} and \eqref{lzjj}, this implies
 \begin{align}
  \rho_w(L_n)  = L_n + wJ^0_n +\frac14 kw^2 \delta_{n,0}\ .
 \end{align}
-Given a representation $R$ of $\widehat{\mathfrak{sl}}_2$, i.e. an action of the generators $J^a_n$ on some vectors $|v\rangle$, we define the \textbf{\boldmath spectrally flowed representation}\index{spectrally flowed representation} $\rho_w(R)$ by the action $\rho_{-w}(J^a_n)|v\rangle$.  
+Given a representation $\mathcal{R}$ of $\widehat{\mathfrak{sl}}_2$, i.e. an action of the generators $J^a_n$ on some vectors $|v\rangle$, we define the \textbf{\boldmath spectrally flowed representation}\index{spectrally flowed representation} $\rho_w(\mathcal{R})$ by the action $\rho_{-w}(J^a_n)|v\rangle$.  
 It follows from this definition that 
 \begin{align}
- \rho_w(R)^* = \rho_{-w}(R^*)\ .
+ \rho_w(\mathcal{R})^* = \rho_{-w}(\mathcal{R}^*)\ .
 \end{align}
 Moreover, it is believed that the action of spectral flow commutes with fusion, in the sense that \cite{gab01b}
 \begin{align}
- \rho_{w}(R)\times \rho_{w'}(R') = \rho_{w+w'}(R\times R')\ .
+ \rho_{w}(\mathcal{R})\times \rho_{w'}(\mathcal{R}') = \rho_{w+w'}(\mathcal{R}\times \mathcal{R}')\ .
 \label{rwr}
 \end{align}
 We assume that fusion products of representations of $\widehat{\mathfrak{sl}}_2$ have the form 
 \begin{align}
- R_1\times R_2 = \bigoplus_{R_3} N_{R_1,R_2,R_3^*} R_3\ ,
+ \mathcal{R}_1\times \mathcal{R}_2 = \bigoplus_{\mathcal{R}_3} N_{\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3^*} \mathcal{R}_3\ ,
 \end{align}
-where the coefficients $N_{R_1,R_2,R_3}$ are a permutation-symmetric, integer-valued fusion multiplicities such that $N_{R_1^*,R_2^*,R_3^*}=N_{R_1,R_2,R_3}$.
+where the coefficients $N_{\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3}$ are a permutation-symmetric, integer-valued fusion multiplicities such that $N_{\mathcal{R}_1^*,\mathcal{R}_2^*,\mathcal{R}_3^*}=N_{\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3}$.
 From eq. \eqref{rwr}, we must then have 
 \begin{align}
-w_1+w_2+w_3=0 \quad \implies \quad N_{\rho_{w_1}(R_1),\rho_{w_2}(R_2),\rho_{w_3}(R_3)}=N_{R_1,R_2,R_3}\ .
+w_1+w_2+w_3=0 \quad \implies \quad N_{\rho_{w_1}(\mathcal{R}_1),\rho_{w_2}(\mathcal{R}_2),\rho_{w_3}(\mathcal{R}_3)}=N_{\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3}\ .
 \label{nrrr} 
 \end{align}
 Let us consider the action of spectral flow on our affine highest-weight representations. 
@@ -5855,8 +5856,8 @@ We will now argue that spectrally flowed representations must appear in the spec
 
 \subsubsection{Spectrum}
 
-By our definition of WZW models, the large level limit of the spectrum $\tilde{S}$ of the $\widetilde{SL}_2(\mathbb{R})$ WZW model is $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ \eqref{fst}, and we therefore expect $\tilde{S}$ to contain affine discrete representations of both series $\hat{D}^{j,\pm}$.
-Let us show that $\tilde{S}$ cannot contain only affine highest-weight representations.
+By our definition of WZW models, the large level limit of the spectrum $\tilde{\mathcal{S}}$ of the $\widetilde{SL}_2(\mathbb{R})$ WZW model is $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ \eqref{fst}, and we therefore expect $\tilde{\mathcal{S}}$ to contain affine discrete representations of both series $\hat{D}^{j,\pm}$.
+Let us show that $\tilde{\mathcal{S}}$ cannot contain only affine highest-weight representations.
 Consider spins $j_1,j_2,j_3$ such that $N_{D^{j_1,+},D^{j_2,-},D^{j_3,+}}=1$.
 If the level $k$ is large enough, we must then have $N_{\hat{D}^{j_1,\frac12},\hat{D}^{j_2,-\frac12},\hat{D}^{j_3,\frac12}}=1$.
 Using the behaviour \eqref{nrrr} of fusion multiplicities under spectral flow, this implies $N_{\hat{D}^{j_1,-\frac12},\hat{D}^{j_2,-\frac12},\hat{D}^{j_3,\frac32}}=1$.
@@ -5877,12 +5878,12 @@ This defines a non-empty interval provided
 (Nevertheless, the model surely exists for $k\in \mathbb{C}-\{2\}$ by analytic continuation.)
 The natural conjectures for the spectrums of the $\widetilde{SL}_2(\mathbb{R})$ and $SL_2(\mathbb{R})$ WZW models are then
 \begin{align}
- \tilde{S} &= \bigoplus_{w\in{\mathbb{Z}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ \hat{C}^{j,w}_\alpha \otimes \bar{\hat{C}}^{j,w}_{\alpha} 
+ \tilde{\mathcal{S}} &= \bigoplus_{w\in{\mathbb{Z}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ \hat{C}^{j,w}_\alpha \otimes \bar{\hat{C}}^{j,w}_{\alpha} 
 \oplus \bigoplus_{w\in\frac12+{\mathbb{Z}}}\int^\oplus_{]-\frac12,-\frac{k+3}{2}[} dj\ \hat{D}^{j,w}\otimes \bar{\hat{D}}^{j,w} \ ,
 \\
- S &= \bigoplus_{\substack{w_L,w_R\in{\mathbb{Z}}\\ w_L-w_R\in 2{\mathbb{Z}}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} \hat{C}^{j,w_L}_\alpha \otimes \bar{\hat{C}}^{j,w_R}_{\alpha} \oplus  \bigoplus_{\substack{w_L,w_R\in\frac12+{\mathbb{Z}}\\ w_L-w_R\in 2{\mathbb{Z}}}}\ \bigoplus_{\substack{j= -\frac12, 0,\frac12,\cdots \\ j<-\frac{k+3}{2}}} \hat{D}^{j,w_L}\otimes \bar{\hat{D}}^{j,w_R} \ .
+ \mathcal{S} &= \bigoplus_{\substack{w_L,w_R\in{\mathbb{Z}}\\ w_L-w_R\in 2{\mathbb{Z}}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} \hat{C}^{j,w_L}_\alpha \otimes \bar{\hat{C}}^{j,w_R}_{\alpha} \oplus  \bigoplus_{\substack{w_L,w_R\in\frac12+{\mathbb{Z}}\\ w_L-w_R\in 2{\mathbb{Z}}}}\ \bigoplus_{\substack{j= -\frac12, 0,\frac12,\cdots \\ j<-\frac{k+3}{2}}} \hat{D}^{j,w_L}\otimes \bar{\hat{D}}^{j,w_R} \ .
 \end{align}
-Notice that the left and right spectral flow numbers $w_L$ and $w_R$ are independent in the case of $SL_2(\mathbb{R})$, and equal in the case of $\widetilde{SL}_2(\mathbb{R})$, so that the spectrum $\tilde{S}$ is diagonal.
+Notice that the left and right spectral flow numbers $w_L$ and $w_R$ are independent in the case of $SL_2(\mathbb{R})$, and equal in the case of $\widetilde{SL}_2(\mathbb{R})$, so that the spectrum $\tilde{\mathcal{S}}$ is diagonal.
 The rule, which can only be heuristic in the absence of a definition of WZW models based on the corresponding loop groups, is:
 \begin{quote}
  In the $G$ WZW model the spectral flow takes values in the first homotopy group of the global symmetry group, that is $\pi_1(\frac{G\times \bar{G}}{Z(G)})$ where $Z(G)$ is the center of $G$.
@@ -6072,31 +6073,31 @@ In analogy with the $\hat{\mathfrak u}_1$ case \eqref{tqz}, let us modify the Su
 \end{exo}
 % NB: See diary10.tex
 
-\begin{exo}[Associativity of the $J^aJ^b\Phi^R$ OPE]
+\begin{exo}[Associativity of the $J^aJ^b\Phi^\mathcal{R}$ OPE]
  ~\label{exojjp}
-Let us check the associativity of the $J^aJ^b\Phi^R$ OPE, by performing two different computations of the behaviour near $y_2=z_0$ of 
+Let us check the associativity of the $J^aJ^b\Phi^\mathcal{R}$ OPE, by performing two different computations of the behaviour near $y_2=z_0$ of 
 \begin{align}
-\mathcal{O}= \frac{1}{2\pi i} \oint_{y_2}dy_1\ J^a(y_1)J^b(y_2)\Phi^R(z_0)\ .
+\mathcal{O}= \frac{1}{2\pi i} \oint_{y_2}dy_1\ J^a(y_1)J^b(y_2)\Phi^\mathcal{R}(z_0)\ .
 \end{align}
 \begin{enumerate}
  \item 
 Firstly, use the $J^aJ^b$ OPE \eqref{jajb}, and check that
 \begin{align}
- \mathcal{O}= f_c^{ab}J^c(y_2)\Phi^R(z_0) = \frac{-f_c^{ab}t^c\Phi^R(z_0)}{y_2-z_0} + O(1)\ .
+ \mathcal{O}= f_c^{ab}J^c(y_2)\Phi^\mathcal{R}(z_0) = \frac{-f_c^{ab}t^c\Phi^\mathcal{R}(z_0)}{y_2-z_0} + O(1)\ .
  \label{oftp}
 \end{align}
 
 \item
 Secondly, split the integration contour in two terms, $\oint_{y_2} = \oint_{y_2,z_0} - \oint_{z_0}$.
-In the first term, use the $J^b(y_2)\Phi^R(z_0)$ OPE, as no integration contour runs between these two operators.
-In the second term, use the $J^a(y_1)\Phi^R(z_0)$ OPE, and show that
+In the first term, use the $J^b(y_2)\Phi^\mathcal{R}(z_0)$ OPE, as no integration contour runs between these two operators.
+In the second term, use the $J^a(y_1)\Phi^\mathcal{R}(z_0)$ OPE, and show that
 \begin{align}
- \mathcal{O}& =\frac{1}{2\pi i} \oint_{y_2,z_0}dy_1 J^a(y_1)\frac{-t^b\Phi^R(z_0)}{y_2-z_0} - \frac{1}{2\pi i} \oint_{z_0}dy_1 J^b(y_2)\frac{-t^a\Phi^R(z_0)}{y_1-z_0} +O(1)\ .
+ \mathcal{O}& =\frac{1}{2\pi i} \oint_{y_2,z_0}dy_1 J^a(y_1)\frac{-t^b\Phi^\mathcal{R}(z_0)}{y_2-z_0} - \frac{1}{2\pi i} \oint_{z_0}dy_1 J^b(y_2)\frac{-t^a\Phi^\mathcal{R}(z_0)}{y_1-z_0} +O(1)\ .
 \end{align}
 
 \item
-Use $J^a(y_1) t^b \Phi^R(z_0) =t^b J^a(y_1)  \Phi^R(z_0)$, and check that you recover eq. \eqref{oftp}.
-Notice that this explains the minus sign in the $J^a\Phi^R$ OPE eq. \eqref{jpr}.
+Use $J^a(y_1) t^b \Phi^\mathcal{R}(z_0) =t^b J^a(y_1)  \Phi^\mathcal{R}(z_0)$, and check that you recover eq. \eqref{oftp}.
+Notice that this explains the minus sign in the $J^a\Phi^\mathcal{R}$ OPE eq. \eqref{jpr}.
 \end{enumerate}
 \end{exo}
 
@@ -6161,15 +6162,15 @@ right-hand side using the formula \eqref{djm} for $\hat{J}^-(y)$, and conclude.
 
 \begin{exo}[Level one null vectors in affine highest-weight representations]
  ~\label{exolos}
- Let $(|v_i\rangle)$ be a basis of a representation $R_j$ of $\mathfrak{sl}_2$, with a spin $j\in\mathbb{C}$. For $c_a^i$ some coefficients, let $|\chi\rangle =  c_a^i J_{-1}^a|v_i\rangle$ be a level one vector in the corresponding highest-weight representation of $\widehat{\mathfrak{sl}}_2$.
+ Let $(|v_i\rangle)$ be a basis of a representation $\mathcal{R}_j$ of $\mathfrak{sl}_2$, with a spin $j\in\mathbb{C}$. For $c_a^i$ some coefficients, let $|\chi\rangle =  c_a^i J_{-1}^a|v_i\rangle$ be a level one vector in the corresponding highest-weight representation of $\widehat{\mathfrak{sl}}_2$.
  \begin{enumerate}
   \item Show that $|\chi \rangle $ is an affine null vector if an only if 
   \begin{align}
     c_a^i f^{ab}_c t^c|v_i\rangle + k K^{ab} c_a^i |v_i\rangle = 0\ .
   \end{align}
-  \item Let $|w^a\rangle$ a basis of the adjoint representation $R_1$ of $\mathfrak{sl}_2$, with $t^a|w^b\rangle = f^{ab}_c|w^c\rangle$. Show that our affine null vector condition is equivalent to $c_a^i|w^a\rangle\otimes |v_i\rangle\in R_1\otimes R_j$ being an eigenvector of the operator $Q=K_{ab}t^a\otimes t^b$, with the eigenvalue $k$.
+  \item Let $|w^a\rangle$ a basis of the adjoint representation $\mathcal{R}_1$ of $\mathfrak{sl}_2$, with $t^a|w^b\rangle = f^{ab}_c|w^c\rangle$. Show that our affine null vector condition is equivalent to $c_a^i|w^a\rangle\otimes |v_i\rangle\in \mathcal{R}_1\otimes \mathcal{R}_j$ being an eigenvector of the operator $Q=K_{ab}t^a\otimes t^b$, with the eigenvalue $k$.
   % NB: Actually I find the eigenvalue -k, there must be a sign mistake.
-  \item Write the operator $Q$ in terms of the quadratic Casimir operators of the representations $R_1, R_j$ and $R_1\otimes R_j$, and show that its eigenvalues are $-2, 2j$ and $-2j-2$. 
+  \item Write the operator $Q$ in terms of the quadratic Casimir operators of the representations $\mathcal{R}_1, \mathcal{R}_j$ and $\mathcal{R}_1\otimes \mathcal{R}_j$, and show that its eigenvalues are $-2, 2j$ and $-2j-2$. 
   Compute these eigenvalues in the case $j=j_{\langle 1,1\rangle}$ \eqref{jrs}, and compare with the fusion rule \eqref{prspj}.
  \end{enumerate}
 \end{exo}
