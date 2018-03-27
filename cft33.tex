@@ -2406,6 +2406,7 @@ In the case of
 $\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle r,s\rangle}$, the conformal dimensions of the resulting degenerate representations are given by eq. \eqref{rot}, and we find
 \begin{align}
 \mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle r,s\rangle} = \mathcal{R}_{\langle r-1,s\rangle} + \mathcal{R}_{\langle r+1,s\rangle }\ , \quad (r\geq 1)\ .
+\label{rtod}
 \end{align}
 We could similarly compute $\mathcal{R}_{\langle 1,2\rangle}\times \mathcal{R}_{\langle r,s\rangle}$.
 Then, using the associativity of the fusion products $\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle r,s\rangle}\times \mathcal{V}_P$ and $\mathcal{R}_{\langle 1,2\rangle}\times \mathcal{R}_{\langle r,s\rangle}\times \mathcal{V}_P$, a recursion on $r$ and $s$ leads to
@@ -3406,7 +3407,7 @@ Similarly, we can write solutions of the shift equation \eqref{nbs} (and its dua
 \end{align}
 This is again invariant under $b\to \frac{1}{b}$, and under the reflection $P\to -P$.
 
-We have determined the normalization-independant combinations of structure constants, and this is enough for solving Liouville theory in the conformal bootstrap approach. However, in order to compare different approaches to Liouville theory, it can be convenient to consider specific field normalizations. 
+We have determined the normalization-independant combinations of structure constants, and this is enough for solving Liouville theory in the conformal bootstrap approach. However, in order to ease the comparison with other approaches, it can be convenient to consider specific field normalizations. 
 Choosing the normalization such that $B(P)=1$ might seem natural, but this would cause $N(P)$ to have square root branch cuts, and would therefore violate our assumption that correlation functions are meromorphic. Rather, let us consider the normalization such that 
 \begin{align}
  N(P) = \mu^{P}\Upsilon_b(2P)\ ,
@@ -3423,14 +3424,18 @@ This is called the \textbf{\boldmath DOZZ formula}\index{DOZZ formula} for Dorn,
 Zamolodchikov and Al. Zamolodchikov. 
 The DOZZ formula was originally derived using the Lagrangian formulation of Liouville theory \cite{zz95}. 
 That formulation led to normalizations that agree with ours, 
-up to a redefinition of the cosmological constant, and a reflection of the momentums. Our normalizations are such that the later equation \eqref{crs} will hold.
+up to a redefinition of the cosmological constant, and a reflection of the momentums. 
 
 The DOZZ formula is valid for $c\notin ]-\infty, 1]$. The analogous choice of normalizations for $c\notin [25,\infty[$ leads to the three-point structure constant 
 \begin{align}
  \hat C_{P_1,P_2,P_3} =  \frac{\mu^{-\frac{Q}{2}}\hat\Upsilon_b(0)\prod_{i=1}^3 \mu^{P_i}\hat\Upsilon_b(2P_i) }{\prod_{\pm,\pm} \hat\Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)} \ .
 \label{hc}
 \end{align}
-Then $\hat C_{P_1,P_2,P_3}$ has the same behaviour as $C_{P_1,P_2,P_3}$ under the shifts $P_1\to P_1+b$ and $P_1\to P_1+\frac{1}{b}$.
+Then $\hat C_{P_1,P_2,P_3}$ has the same behaviour as $C_{P_1,P_2,P_3}$ under the shifts $P_1\to P_1+b$ and $P_1\to P_1+\frac{1}{b}$. The normalizations that we have chosen are such that
+\begin{align}
+ \underset{P_1+P_2+P_3=\frac{Q}{2}}{\operatorname{Res}} C_{P_1,P_2,P_3} = 1 \qquad , \qquad \hat C_{P_1,P_2,P_3}\underset{P_1+P_2+P_3=\frac{Q}{2}}{=} 1\ .
+\label{chco}
+ \end{align}
 
 
 \subsubsection{The reflection coefficient}
@@ -3685,8 +3690,9 @@ where taking limits and residues produces derivatives of $\Upsilon_b$ at its zer
 We could expand the ratios of $\Upsilon_b$ functions into products of $\gamma$ functions using eq. \eqref{upup}.
 In the special case $i=\frac{r-1}{2}, j=\frac{s-1}{2}$, we have $ib+jb^{-1} = P_{\langle r,s\rangle}-\frac{Q}{2} $, so that 
 \begin{align}
- C_{\frac{r-1}{2},\frac{s-1}{2}}^{\langle r,s \rangle}(P) = 1 \ .
+ C_{\frac{r-1}{2},\frac{s-1}{2}}^{\langle r,s \rangle}(P) = 1 \ ,
 \end{align}
+which is a special case of eq. \eqref{chco}.
 In particular, in the cases of the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$, we have $C_+(P)=\tilde{C}_+(P)=1$. This could have been derived more directly from crossing symmetry of four-point functions with two degenerate fields. 
 (See Exercise \ref{exodoc}.) 
 
@@ -3708,9 +3714,8 @@ In the case $c\in]-\infty, 1]$, the OPE coefficient has no poles that could lead
 
 \section{Minimal models \label{secvmm}}
 
-\subsection{Definition}
 
-We define an \textbf{A-series minimal model}\index{minimal model!A-series---} as a conformal field theory such that
+Let us look for conformal field theories such that
 \begin{itemize}
 \item the theory is rational, i.e.
 the spectrum is made of finitely many representations;
@@ -3718,7 +3723,7 @@ the spectrum is made of finitely many representations;
 \item the theory is diagonal.
 \end{itemize}
 Diagonality is a simplifying assumption, which excludes the non-diagonal D- and E-series minimal models \cite{fms97}.
-That multiplicities do not exceed one is another simplifying assumption, but it is not well-known what we would find by relaxing it. 
+Having multiplicities zero or one is another simplifying assumption, but it is not well-known what we would find by relaxing it. 
 Rationality is the crucial axiom here -- and at first sight it seems difficult for rational theories to exist.
 Rationality can indeed be understood as the assumption that correlation functions vanish unless all involved fields belong to some finite set.
 It is not obvious that we can satisfy this assumption, on top of the conformal bootstrap equations.
@@ -3728,80 +3733,91 @@ This can happen provided the spectrum only contains degenerate representations, 
 However, in general, no nontrivial finite set of degenerate representations of the Virasoro algebra is closed under fusion.
 Starting with the degenerate representation $\mathcal{R}_{\langle 1,2 \rangle}$ for instance, the multiple fusion products $\mathcal{R}_{\langle 1,2 \rangle}\times \mathcal{R}_{\langle 1,2 \rangle}\times \cdots \times \mathcal{R}_{\langle 1,2 \rangle}$ span the infinite set of representations $\{\mathcal{R}_{\langle 1,s \rangle}\}_{s\in{\mathbb{N}}^*}$.
 Our task would be easier if we would weaken our assumptions and replace the rationality of the theory with the discreteness of the spectrum, allowing the number of representations to be countable instead of finite.
-We would obtain \textbf{\boldmath generalized minimal models}\index{minimal model!generalized---}, whose spectrums contain all degenerate representations, and which exist for arbitrary values of the central charge $c$. 
+We would obtain generalized minimal models, whose spectrums contain all degenerate representations, and which exist for arbitrary values of the central charge. 
 
 What if we insist on the original assumption of rationality? We will see that there are finite sets 
-of degenerate representations that close under fusion.
+of degenerate representations that close under fusion, from which we will build the A-series minimal models.
 Such sets are made of
-\textbf{\boldmath doubly degenerate representations}\index{degenerate representation!doubly---}, that is maximally degenerate representations of the type $\mathcal{R}_{\langle r,s \rangle}=\mathcal{R}_{\langle r',s' \rangle}$ with $\langle r,s \rangle\neq \langle r',s' \rangle$.
-The ensuing equality of conformal dimensions $\Delta_{\langle r,s \rangle}=\Delta_{\langle r',s' \rangle}$ leads to a constraint on the central charge $c$.
-Therefore, minimal models exist only for certain discrete values of the central charge. 
+\textbf{\boldmath doubly degenerate representations}\index{degenerate representation!doubly---}, that is maximally degenerate representations of the type $\mathcal{R}_{\langle r,s \rangle}=\mathcal{R}_{\langle r',s' \rangle}$ with $\langle r,s \rangle\neq \langle r',s' \rangle$. Due to the 
+equality of conformal dimensions $\Delta_{\langle r,s \rangle}=\Delta_{\langle r',s' \rangle}$, doubly degenerate representations exist only for certain discrete values of the central charge. 
 
 \subsection{Generalized minimal models}
 
-For any complex value of the central charge $c$, we define a generalized minimal model by its spectrum,
+For any complex value of the central charge, we define a \textbf{\boldmath generalized minimal model}\index{minimal model!generalized---} by its spectrum,
 \begin{align}
  \boxed{\mathcal{S} = \bigoplus_{r,s=1}^\infty \mathcal{R}_{\langle r,s \rangle}\otimes \bar{\mathcal{R}}_{\langle r,s \rangle}}\ .
 \end{align}
 We could obtain other consistent models by using subsets of the degenerate representations, provided these subsets were closed under fusion, for instance $\mathcal{S}=\mathcal{\mathcal{R}}_{\langle 1,1 \rangle}\otimes \bar{\mathcal{R}}_{\langle 1,1 \rangle}$, $\mathcal{S}=\bigoplus_{r=1}^\infty \mathcal{R}_{\langle r,1 \rangle}\otimes \bar{\mathcal{R}}_{\langle r,1 \rangle}$ or $\mathcal{S}=\bigoplus_{r,s=1}^{\infty} \mathcal{R}_{\langle 2r+1,2s+1 \rangle}\otimes \bar{\mathcal{R}}_{\langle 2r+1,2s+1 \rangle}$.
 Solving the generalized minimal model will provide a solution of all these submodels. 
 
-\subsubsection{Relation with Liouville theory}
+\subsubsection{Correlation functions}
 
-Correlation functions of generalized minimal models can be deduced from correlation functions of Liouville theory, because they obey the same conformal bootstrap equations.
-To begin with, the two-point function can be deduced from the Liouville two-point function \eqref{vvss} by changing a Dirac delta function into a Kronecker delta function, 
+For generic values of the central charge, two distinct degenerate representations cannot have the same conformal dimension, and the two-point function is of the type 
 \begin{align}
- \boxed{\left\langle V_{\langle r_1,s_1 \rangle} V_{\langle r_2,s_2 \rangle} \right\rangle = R(\alpha_{\langle r_1,s_1 \rangle}) \delta_{r_1,r_2} \delta_{s_1,s_2}}\ .
+ \left\langle V_{\langle r_1,s_1 \rangle} V_{\langle r_2,s_2 \rangle} \right\rangle = B_{\langle r_1,s_1 \rangle} \delta_{r_1,r_2} \delta_{s_1,s_2}\ ,
 \label{vvdd}
 \end{align}
-The three-point structure constant can similarly be obtained from both expressions $C$ \eqref{caaa} and $\hat C$ \eqref{hc} for the Liouville structure constant, since both obey the same shift equations. 
-There is a subtlety with the expression $C$, which is singular when momentums take degenerate values. 
-But we already found the correct regularization when we expressed degenerate OPE coefficients in terms of $C$ \eqref{crs}, after sending one momentum to a degenerate value. 
-The degenerate OPE coefficient then has a finite limit when $\alpha_1\to \alpha_{\langle r_1,s_1 \rangle}$, and we have
-\begin{align}
- C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} 
- &= \hat{C}_{\alpha_{\langle r_1,s_1 \rangle}, \alpha_{\langle r_2,s_2 \rangle} ,\alpha_{\langle r_3,s_3 \rangle} } \ ,
- \label{chc}
- \\
-& = \underset{\alpha_1\to \alpha_{\langle r_1,s_1 \rangle}}{\lim}\ 
-\underset{\alpha_2\to \alpha_{\langle r_2,s_2 \rangle}}{\lim}\ 
-\underset{\sum_i \alpha_i = \sum_i \alpha_{\langle r_i,s_i \rangle} }{\operatorname{ Res}} C_{\alpha_1,\alpha_2,\alpha_3}\ .
-\label{clc}
-\end{align}
-For these equalities to hold, we need the three degenerate fields to obey the fusion rules \eqref{rrrsss}.
-In particular, the expressions on the right do not necessarily vanish if the fusion rules are violated.
-For example, neither expression vanishes in the case of $C_{\langle 1,1\rangle , \langle 1,1 \rangle,\langle 3,3 \rangle}$, i.e. $(\alpha_1,\alpha_2,\alpha_3)=(0,0,-Q)$.
-The three-point function is therefore 
+where $B_{\langle r_1,s_1\rangle}$ is the two-point structure constant.
+
+When writing the three-point function, we take care to explicitly include a factor $f_{r_1,r_2,r_3} f_{s_1,s_2,s_3}$ \eqref{frrr}, which enforces the degenerate fusion rules:
 \begin{multline}
  \left\langle \prod_{i=1}^3 V_{\langle r_i,s_i \rangle}(z_i) \right\rangle = C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}  
 \\ \times 
-f_{r_1,r_2,r_3} f_{s_1,s_2,s_3} |z_{12}|^{2(\Delta_3-\Delta_1-\Delta_2)} |z_{23}|^{2(\Delta_1-\Delta_2-\Delta_3)} |z_{31}|^{2(\Delta_2-\Delta_3-\Delta_1)}\ ,
+f_{r_1,r_2,r_3} f_{s_1,s_2,s_3} |z_{12}|^{2(\Delta_3-\Delta_1-\Delta_2)} |z_{23}|^{2(\Delta_1-\Delta_2-\Delta_3)} |z_{31}|^{2(\Delta_2-\Delta_3-\Delta_1)}\ .
 \end{multline}
-where 
-the model-dependent data are $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$, and the universal data are the $z_i$-dependent factor as well as the factor $f_{r_1,r_2,r_3} f_{s_1,s_2,s_3}$ \eqref{frrr}, which enforces the degenerate fusion rules. 
-Due to this factor, the three-point function is not quite the limit of the Liouville three-point function. 
+This involves the model-dependent three-point structure constant $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$, times universal factors. We should resist the temptation to include the factor $f_{r_1,r_2,r_3} f_{s_1,s_2,s_3}$ in the definition of the three-point structure constant: this would cause conceptual confusion by combining model-dependent with universal data, and would prevent us from directly deriving the three-point structure constant from Liouville theory.
+
+
+\subsubsection{Relation with Liouville theory}
+
+The three-point structure constants of generalized minimal models and of Liouville theory obey the same shift equations, and must therefore be related. Building on this observation, we would like to deduce our three-point structure constant from Liouville theory, by sending Liouville momentums to degenerate values. 
+
+This is not straightforward, because our shift equations do not relate all degenerate fields to one another. According to the degenerate fusion rule \eqref{rtod}, the shift equation that comes from a four-point function of the type $\left< V_{\langle 2,1\rangle}V_{\langle r,s\rangle}\cdots \right>$ actually relates the degenerate fields $V_{\langle r-1,s\rangle}$ and $V_{\langle r+1,s\rangle}$, and therefore determines how the three-point structure constant $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ changes when the indices $r_i$ are shifted by two units.
+Similarly, the dual shift equation controls the shifts of $s_i$ by two units. This is not enough for reaching all the values $r_i,s_i\in \mathbb{N}^*$.
+
+In order to solve this problem, we start with the property \eqref{chco} of our solutions $C$ and $\hat C$ of the shift equations. We assume that our three-point structure constant obeys the analogous property
+\begin{align}
+ C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} \underset{\sum r_i =\sum s_i = 1}{=} 1\ .
+\end{align}
+From the values such that $\sum r_i=\sum s_i=1$, shifts of $r_i,s_i$ by two units allow us to reach all values such that 
+\begin{align}
+ \textstyle{\sum}_{i=1}^3 r_i\, , \, \textstyle{\sum}_{i=1}^3 s_i \in 2\mathbb{Z}+1\ .
+\end{align}
+This defines $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ for all such values of $r_i,s_i$, which include all the cases that obey the fusion rules \eqref{rrrsss}. And we have 
+\begin{align}
+ C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} 
+ &= \hat{C}_{P_{\langle r_1,s_1 \rangle}, P_{\langle r_2,s_2 \rangle} ,P_{\langle r_3,s_3 \rangle} } \ ,
+ \label{chc}
+ \\
+& = \underset{P_1\to P_{\langle r_1,s_1 \rangle}}{\lim}\ 
+\underset{P_2\to P_{\langle r_2,s_2 \rangle}}{\lim}\ 
+\underset{\sum_i P_i = \sum_i P_{\langle r_i,s_i \rangle} }{\operatorname{ Res}} C_{P_1,P_2,P_3}\ .
+\label{clc}
+\end{align}
+If the fusion rules are violated, our three-point structure constant may or may not vanish. For example, $C_{\langle 1,1\rangle , \langle 1,1 \rangle,\langle 3,3 \rangle} \neq 0$.
+Therefore, while the three-point structure constant can be deduced from Liouville theory, the three-point function cannot, as the factor 
+$f_{r_1,r_2,r_3} f_{s_1,s_2,s_3}$ that enforces the fusion rules has no known derivation from Liouville theory. 
 This makes it difficult to deduce crossing symmetry in generalized minimal models from crossing symmetry in Liouville theory. 
+
 Instead, crossing symmetry in generalized minimal models can be checked numerically \cite{rs15}, and this shows that generalized minimal models are consistent on the sphere. 
-On the other hand, nothing guarantees that generalized minimal models are consistent on the torus. Actually, correlation functions involving only the identity field reduce to the partition function, and are therefore infinite. And there is no reason for the other correlation functions to be better behaved.  
+On the other hand, nothing guarantees that generalized minimal models are consistent on the torus. Actually, torus correlation functions that involve only the identity field $V_{\langle 1,1\rangle}$ reduce to the partition function, which is infinite. And there is no reason for the other torus correlation functions to be better behaved.  
 
 
-\subsubsection{Three-point structure constant}
+\subsubsection{Two- and three-point structure constants}
 
 Evaluating the expression \eqref{clc} for the three-point structure constant, we obtain
-\begin{multline}
-C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =  
-\\
-\frac{\left[b^{\frac{2}{b}-2b}\mu\right]^{Q-P_1-P_2-P_3}\Upsilon_b'(0) \Upsilon_b'(2P_1) \Upsilon_b'(2P_2) \Upsilon_b'(2P_3)}{\Upsilon_b'(P_1+P_2+P_3-Q) \Upsilon_b'(P_1+P_2-P_3)\Upsilon_b'(P_2+P_3-P_1)\Upsilon_b'(P_3+P_1-P_2)}\ ,
-\label{crisi}
-\end{multline}
-where we use the notation $P_i = P_{\langle r_i,s_i \rangle}$ for short.
-This is the Liouville structure constant $C_{P_1,P_2,P_3}$, where all $\Upsilon_b$ factors are replaced with their derivatives at some of their zeros.
-These $\Upsilon_b$ factors indeed have zeros whenever
-the momentums are degenerate and the degenerate fusion rules \eqref{rrrsss} are obeyed, due to $\Upsilon_b(-b{\mathbb{N}}-\frac{1}{b}{\mathbb{N}})=0$ (from eq. \eqref{xbn}) which implies 
 \begin{align}
- \forall i\neq j\neq k\ , \quad \Upsilon_b(P_i+P_j-P_k) = 0\ .
+ C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =   \frac{\mu^{-\frac{Q}{2}}\Upsilon'_b(0)\prod_{i=1}^3 \mu^{P_{\langle r_i,s_i \rangle}}\Upsilon'_b(2P_{\langle r_i,s_i \rangle}) }{\prod_{\pm,\pm} \Upsilon'_b\left(\tfrac{Q}{2}+P_{\langle r_1,s_1 \rangle}\pm P_{\langle r_2,s_2 \rangle} \pm P_{\langle r_3,s_3 \rangle}\right)} \ .
+\label{crisi}
 \end{align}
-But $\Upsilon_b(x)$ also has zeros for $x\in Q+b{\mathbb{N}}+\frac{1}{b}{\mathbb{N}}$, and these additional zeros are responsible for the expression \eqref{clc} being nonzero in cases when fusion rules are violated.
+This is the Liouville structure constant $C_{P_1,P_2,P_3}$, where all $\Upsilon_b$ factors are replaced with their derivatives at some of their zeros.
+Knowing the zeros \eqref{xbn} of the function $\Upsilon_b$, we deduce that 
+all $\Upsilon_b$ factors have zeros whenever
+the momentums are degenerate and the degenerate fusion rules \eqref{rrrsss} are obeyed, in particular
+\begin{align}
+ \forall \pm, \pm\ , \quad \Upsilon_b\left(\tfrac{Q}{2}+P_{\langle r_1,s_1 \rangle}\pm P_{\langle r_2,s_2 \rangle} \pm P_{\langle r_3,s_3 \rangle}\right) = 0\ .
+\end{align}
+However, the $\Upsilon_b$ factors in the denominator can also have zeros when fusion rules are violated, and these additional zeros are responsible for the expression \eqref{clc} being nonzero in such cases, for example $C_{\langle 1,1\rangle , \langle 1,1 \rangle,\langle 3,3 \rangle} \neq 0$.
 
 The three-point structure constant can be rewritten in terms of Gamma functions, using the following consequence of eq. \eqref{upup},
 \begin{align}
@@ -3811,18 +3827,24 @@ where we defined
 \begin{align}
  P_r(x) = \prod_{i=1}^r \gamma(1+ix) \qquad \text{and} \qquad Q_{r,s}(b) = \prod_{i=1}^r \prod_{j=1}^s (ib+jb^{-1})^2\ .
 \end{align}
-We then find
+Assuming that the degenerate fusion rules \eqref{rrrsss} are obeyed, we find 
 \begin{align}
- C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =  \frac{-(-b^2)^{r_0-s_0}\mu^{br_0 + b^{-1}s_0}}{P_{r_0}(b^2)P_{s_0}(b^{-2})Q_{r_0,s_0}(b)} \prod_{i=1}^3 \frac{P_{r_i-1}(b^2)P_{s_i-1}(b^{-2}) Q_{r_i-1,s_i-1}(b)}{P_{r_0-r_i}(b^2)P_{s_0-s_i}(b^{-2}) Q_{r_0-r_i,s_0-s_i}(b)} \ ,
+ C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =  \frac{-(-b^2)^{r_0-s_0}\left[b^{2b-\frac{2}{b}}\mu\right]^{br_0 + \frac{s_0}{b}}}{P_{r_0}(b^2)P_{s_0}(b^{-2})Q_{r_0,s_0}(b)} \prod_{i=1}^3 \frac{P_{r_i-1}(b^2)P_{s_i-1}(b^{-2}) Q_{r_i-1,s_i-1}(b)}{P_{r_0-r_i}(b^2)P_{s_0-s_i}(b^{-2}) Q_{r_0-r_i,s_0-s_i}(b)} \ ,
 \label{cpqb}
 \end{align}
 where we introduce the integers
 \begin{align}
  r_0 = \frac{r_1+r_2+r_3-1}{2} \quad , \quad s_0=\frac{s_1+s_2+s_3-1}{2}\ .
 \end{align}
-This shows that the three-point function of a generalized minimal model is meromorphic as a function of $b^2\in {\mathbb{C}}^*$.
+If we choose the cosmological constant as $\mu = b^{\frac{2}{b}-2b}$, we obtain a three-point function that is manifestly meromorphic as a function of $b^2\in {\mathbb{C}}^*$.
 This contrasts with the three-point function of Liouville theory, which is
-meromorphic only for $b^2\in \mathbb{C}-]-\infty, 1]$. 
+meromorphic only for $b\notin i\mathbb{R}$. 
+
+The generalized minimal models' two-point structure constant can similarly be deduced from the Liouville two-point structure constant, equivalently from the Liouville reflection coefficient \eqref{ram}, by 
+\begin{align}
+B_{\langle r,s\rangle} = B(P_{\langle r,s\rangle}) = R(P_{\langle r,s\rangle})\ .
+\end{align}
+
 
 \subsection{A-series minimal models \label{secamm}}
 
@@ -3833,10 +3855,10 @@ Let us assume that the spectrum of a conformal field theory contains a doubly de
  \mathcal{R}=\mathcal{R}_{\langle r,s \rangle}=\mathcal{R}_{\langle r',s' \rangle}\ .
 \end{align}
 The equality of conformal dimension $\Delta_{\langle r,s \rangle}=\Delta_{\langle r',s' \rangle}$ implies that 
-the momentums $\alpha_{\langle r,s \rangle}$ and $\alpha_{\langle r',s' \rangle}$ \eqref{ars} obey $\alpha_{\langle r,s \rangle}=\alpha_{\langle r',s' \rangle}$ or $\alpha_{\langle r,s \rangle}=Q-\alpha_{\langle r',s' \rangle}$, and $b^2$ must therefore be rational.
+the momentums $P_{\langle r,s \rangle}$ and $P_{\langle r',s' \rangle}$ \eqref{ars} obey $P_{\langle r,s \rangle}=P_{\langle r',s' \rangle}$ or $P_{\langle r,s \rangle}=Q-P_{\langle r',s' \rangle}$, and $b^2$ must therefore be rational.
 To obtain rational theories, it is enough to focus on the case 
 \begin{align}
- \alpha_{\langle r,s \rangle}+\alpha_{\langle r',s' \rangle} = Q\ .
+ P_{\langle r,s \rangle}+P_{\langle r',s' \rangle} = Q\ .
 \end{align}
 Defining the natural integers 
 \begin{align}
@@ -3851,27 +3873,27 @@ and the central charge obeys $c\in ]-\infty, 1[$ and is given by eq. \eqref{cpq}
 \subsubsection{Fusion rules and spectrum}
 
 Let us investigate the fusion rules involving such a doubly degenerate field.
-According to eq. \eqref{rtv}, the representation $\mathcal{V}_{\alpha'} $ can appear in the fusion product $\mathcal{R}\times \mathcal{V}_\alpha$ only if there are integers $(i,j,i',j')\in [0,r-1]\times [0,s-1]\times [0,r'-1]\times [0,s'-1]$ such that 
+According to eq. \eqref{rtv}, the representation $\mathcal{V}_{P'} $ can appear in the fusion product $\mathcal{R}\times \mathcal{V}_P$ only if there are integers $(i,j,i',j')\in [0,r-1]\times [0,s-1]\times [0,r'-1]\times [0,s'-1]$ such that 
 \begin{align}
- \Delta(\alpha') = \Delta\left(\alpha+\alpha_{\langle r,s \rangle} + ib+jb^{-1}\right) = \Delta\left(\alpha+\alpha_{\langle r',s' \rangle} +i'b+j'b^{-1}\right) \ .
+ \Delta(P') = \Delta\left(P+P_{\langle r,s \rangle} + ib+jb^{-1}\right) = \Delta\left(P+P_{\langle r',s' \rangle} +i'b+j'b^{-1}\right) \ .
 \end{align}
-Since $\Delta(\alpha)$ \eqref{daq} is a quadratic function, we a priori have two types of solutions.
-In the first type, we have $\alpha+\alpha_{\langle r,s \rangle} + ib+jb^{-1} = \alpha+\alpha_{\langle r',s' \rangle} +i'b+j'b^{-1}$, which implies $q(r-i+i')=p(s-j+j')$.
+Since $\Delta(P)$ \eqref{daq} is a quadratic function, we a priori have two types of solutions.
+In the first type, we have $P+P_{\langle r,s \rangle} + ib+jb^{-1} = P+P_{\langle r',s' \rangle} +i'b+j'b^{-1}$, which implies $q(r-i+i')=p(s-j+j')$.
 Given the ranges of $i$ and $i'$, we however have $r-i+i'\in [1,p-1]$, and there are no solutions of the first type.
 Solutions of the second type are such that 
 \begin{align}
- \left(\alpha+\alpha_{\langle r,s \rangle} + ib+jb^{-1}\right) + \left(\alpha+\alpha_{\langle r',s' \rangle} +i'b+j'b^{-1}\right) = Q\ .
+ \left(P+P_{\langle r,s \rangle} + ib+jb^{-1}\right) + \left(P+P_{\langle r',s' \rangle} +i'b+j'b^{-1}\right) = Q\ .
 \end{align}
 Using the notations $r'' = i+i'+1$ and $s''=j+j'+1$, this implies
 \begin{align}
- \alpha=\alpha_{\langle r'',s'' \rangle}\quad \text{with}\quad  \left\{\begin{array}{l}  r'' \in [1,p-1]\ , \\ s'' \in [1,q-1]\ . \end{array}\right. 
+ P=P_{\langle r'',s'' \rangle}\quad \text{with}\quad  \left\{\begin{array}{l}  r'' \in [1,p-1]\ , \\ s'' \in [1,q-1]\ . \end{array}\right. 
 \label{rpsq}
 \end{align}
-This defines the \textbf{\boldmath Kac table}\index{Kac table} -- the set of integers $(r'',s'')$ such that $\mathcal{V}_{\alpha_{\langle r'',s''\rangle}}$ has a nonzero fusion product with our doubly degenerate representation $\mathcal{R}$.
+This defines the \textbf{\boldmath Kac table}\index{Kac table} -- the set of integers $(r'',s'')$ such that $\mathcal{V}_{P_{\langle r'',s''\rangle}}$ has a nonzero fusion product with our doubly degenerate representation $\mathcal{R}$.
 At a given central charge, this set does not depend on the choice of $\mathcal{R}$. 
 And due to the identity 
 \begin{align}
- \alpha_{\langle r'',s'' \rangle}+\alpha_{\langle p-r'',q-s'' \rangle}=Q\ ,
+ P_{\langle r'',s'' \rangle}+P_{\langle p-r'',q-s'' \rangle}=Q\ ,
 \end{align}
 the corresponding degenerate representations $\mathcal{R}_{\langle r'', s'' \rangle}$ are actually doubly degenerate. 
 
@@ -3895,7 +3917,7 @@ s_1+s_2+s_3-q\in 1+2{\mathbb{N}}\ , \\
 \end{align}
 where we assume $i\neq j\neq k$.
 So the set of the doubly degenerate representations is closed under fusion.
-This set can therefore be used to build the spectrum of an A-series minimal model,
+This set can therefore be used to build the spectrum of an \textbf{A-series minimal model}\index{minimal model!A-series---},
 \begin{align}
  \boxed{ \mathcal{S}_{p,q} = \frac12 \bigoplus_{r=1}^{p-1} \bigoplus_{s=1}^{q-1} \mathcal{R}_{\langle r,s \rangle}\otimes \bar{\mathcal{R}}_{\langle r,s \rangle} } \ ,
 \label{smin}
@@ -3914,17 +3936,17 @@ Some of the minimal model structure constants however correspond to values of $\
 
 The two-point function of a minimal model is 
 \begin{align}
- \left\langle V_{\langle r_1,s_1 \rangle} V_{\langle r_2,s_2 \rangle} \right\rangle = \delta_{r_1,p-r_2}\delta_{s_1,q-s_2} + R(\alpha_{\langle r_1,s_1 \rangle}) \delta_{r_1,r_2} \delta_{s_1,s_2} \ .
+ \left\langle V_{\langle r_1,s_1 \rangle} V_{\langle r_2,s_2 \rangle} \right\rangle = \delta_{r_1,p-r_2}\delta_{s_1,q-s_2} + R(P_{\langle r_1,s_1 \rangle}) \delta_{r_1,r_2} \delta_{s_1,s_2} \ .
 \label{vvddp}
 \end{align}
-(Compare with the two-point function of a generalized minimal model \eqref{vvdd}.) This formula can be simplified by renormalizing the fields, so that the reflection coefficient $R(\alpha_{\langle r,s\rangle})$ becomes one.
+(Compare with the two-point function of a generalized minimal model \eqref{vvdd}.) This formula can be simplified by renormalizing the fields, so that the reflection coefficient $R(P_{\langle r,s\rangle})$ becomes one.
 We refrained from performing such a renormalization in Liouville theory or in generalized minimal models, as this would have spoiled the analyticity of correlation functions.
 In minimal models, there are no continuous parameters and therefore no issues of analyticity.
 Defining
 \begin{align}
- \boxed{\tilde{V}_{\langle r,s \rangle} = \frac{1}{\sqrt{R(\alpha_{\langle r,s \rangle})}} V_{\langle r,s \rangle}}\ , 
+ \boxed{\tilde{V}_{\langle r,s \rangle} = \frac{1}{\sqrt{R(P_{\langle r,s \rangle})}} V_{\langle r,s \rangle}}\ , 
 \end{align}
-where the reflection coefficient $R(\alpha)$ was given in eq. \eqref{ram}, we now have 
+where the reflection coefficient $R(P)$ was given in eq. \eqref{ram}, we now have 
 \begin{align}
  \tilde{V}_{\langle r,s \rangle} = \tilde{V}_{\langle p-r,q-s \rangle}\ .
 \end{align}
@@ -3932,9 +3954,9 @@ Correlation functions are modified accordingly, and in particular the two-point 
 \begin{align}
  \boxed{\left\langle \tilde{V}_{\langle r_1,s_1 \rangle} \tilde{V}_{\langle r_2,s_2 \rangle} \right\rangle = \delta_{r_1,p-r_2}\delta_{s_1,q-s_2} + \delta_{r_1,r_2} \delta_{s_1,s_2}} \ .
 \end{align}
-There is an additional subtlety in the case of the three-point function: if we want $\tilde{V}_{\langle 1,1 \rangle}$ to be the identity field, we need to renormalize the three-point structure constant with a factor $\sqrt{R(\alpha_{\langle 1,1 \rangle})}$ on top of the factors coming from the field renormalizations, so that 
+There is an additional subtlety in the case of the three-point function: if we want $\tilde{V}_{\langle 1,1 \rangle}$ to be the identity field, we need to renormalize the three-point structure constant with a factor $\sqrt{R(P_{\langle 1,1 \rangle})}$ on top of the factors coming from the field renormalizations, so that 
 \begin{align}
- \tilde{C}_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} = \sqrt{\frac{R(\alpha_{\langle 1,1 \rangle})}{\prod_{i=1}^3 R(\alpha_{\langle r_i,s_i \rangle})}}  C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}\ ,
+ \tilde{C}_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} = \sqrt{\frac{R(P_{\langle 1,1 \rangle})}{\prod_{i=1}^3 R(P_{\langle r_i,s_i \rangle})}}  C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}\ ,
 \label{tcc}
 \end{align}
 where $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ was given in eq. \eqref{cpqb}.
@@ -4126,16 +4148,16 @@ Using the relation between $C_+$ and $\tilde{C}_+$, show that these two equation
 
 \begin{exo}[Behaviour of Liouville four-point functions at coinciding points]
 ~\label{exo4a} 
-We want to determine how the Liouville four-point function $\left<\prod_{i=1}^4 V_{\alpha_i}(z_i)\right>$ behaves in the limit $z_1\to z_2$, using the $s$-channel decomposition \eqref{vfcch}.
+We want to determine how the Liouville four-point function $\left<\prod_{i=1}^4 V_{P_i}(z_i)\right>$ behaves in the limit $z_1\to z_2$, using the $s$-channel decomposition \eqref{vfcch}.
 \begin{enumerate}
- \item Show that for $z_1\to z_2$, the integral over $s$-channel momentums localizes near $\alpha_s=\frac{Q}{2}$. Show that the three-point structure constants $C$ and $\hat C$ behave differently near this value of the momentum.
+ \item Show that for $z_1\to z_2$, the integral over $s$-channel momentums localizes near $P_s=\frac{Q}{2}$. Show that the three-point structure constants $C$ and $\hat C$ behave differently near this value of the momentum.
  \item Show that 
  \begin{align}
-  \left<\prod_{i=1}^4 V_{\alpha_i}(z_i)\right> \underset{z_1\to z_2}{\sim} \left\{
+  \left<\prod_{i=1}^4 V_{P_i}(z_i)\right> \underset{z_1\to z_2}{\sim} \left\{
   \begin{array}{ll} 
-  |z_{12}|^{\frac{Q^2}{2} -2\Delta_{\alpha_1}-2\Delta_{\alpha_2}} \left|\log|z_{12}|\right|^{-\frac32} &\quad \text{if \ } c\notin ]-\infty,1]\ ,
+  |z_{12}|^{\frac{Q^2}{2} -2\Delta_{P_1}-2\Delta_{P_2}} \left|\log|z_{12}|\right|^{-\frac32} &\quad \text{if \ } c\notin ]-\infty,1]\ ,
   \\
-  |z_{12}|^{\frac{Q^2}{2} -2\Delta_{\alpha_1}-2\Delta_{\alpha_2}} \left|\log|z_{12}|\right|^{-\frac12} &\quad \text{if \ } c\in ]-\infty,1]\ .
+  |z_{12}|^{\frac{Q^2}{2} -2\Delta_{P_1}-2\Delta_{P_2}} \left|\log|z_{12}|\right|^{-\frac12} &\quad \text{if \ } c\in ]-\infty,1]\ .
   \end{array}\right.
  \end{align}
 How does the first subleading correction behave?
@@ -4252,12 +4274,12 @@ Assuming that the fusion product of two representations is unitary if and only i
  ~\label{exocppp}
 Using eq. \eqref{tcc}, write the nontrivial structure constant of the $(5,2)$ minimal model as 
 \begin{align}
- \tilde{C}_{\phi\phi\phi} = \sqrt{\frac{R(\alpha_{\langle 1,1 \rangle})}{R(\alpha_{\langle 2,1 \rangle})^3}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 2,1 \rangle}\ .
+ \tilde{C}_{\phi\phi\phi} = \sqrt{\frac{R(P_{\langle 1,1 \rangle})}{R(P_{\langle 2,1 \rangle})^3}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 2,1 \rangle}\ .
 \end{align}
-Notice that $C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 2,1 \rangle} = C_+(\alpha_{\langle 2,1 \rangle})=1$ due to eqs. \eqref{vot} and \eqref{cco}.
+Notice that $C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 2,1 \rangle} = C_+(P_{\langle 2,1 \rangle})=1$ due to eqs. \eqref{vot} and \eqref{cco}.
 Setting $\mu=1$, compute
 \begin{align}
- R(\alpha_{\langle 1,1 \rangle}) = -\frac{\Gamma(-\frac35)\Gamma(\frac32)}{\Gamma(\frac35)\Gamma(-\frac32)} \ , \quad R(\alpha_{\langle 2,1 \rangle}) = -\frac{\Gamma(-\frac15)\Gamma(\frac12)}{\Gamma(\frac15)\Gamma(-\frac12)}\ , 
+ R(P_{\langle 1,1 \rangle}) = -\frac{\Gamma(-\frac35)\Gamma(\frac32)}{\Gamma(\frac35)\Gamma(-\frac32)} \ , \quad R(P_{\langle 2,1 \rangle}) = -\frac{\Gamma(-\frac15)\Gamma(\frac12)}{\Gamma(\frac15)\Gamma(-\frac12)}\ , 
 \end{align}
 and deduce the explicit formula \eqref{cppp} for $\tilde{C}_{\phi\phi\phi}$.
 \end{exo}
@@ -4266,11 +4288,11 @@ and deduce the explicit formula \eqref{cppp} for $\tilde{C}_{\phi\phi\phi}$.
  ~\label{exocsse}
 Write the nontrivial structure constant of the $(4,3)$ minimal model as
 \begin{align}
- \tilde{C}_{\sigma\sigma\epsilon} = \frac{1}{R(\alpha_{\langle 2,1 \rangle})}\sqrt{\frac{R(\alpha_{\langle 1,1 \rangle})}{R(\alpha_{\langle 1,2 \rangle})}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 1,2 \rangle}\ .
+ \tilde{C}_{\sigma\sigma\epsilon} = \frac{1}{R(P_{\langle 2,1 \rangle})}\sqrt{\frac{R(P_{\langle 1,1 \rangle})}{R(P_{\langle 1,2 \rangle})}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 1,2 \rangle}\ .
 \end{align}
 Setting $\mu=1$, compute
 \begin{align}
- R(\alpha_{\langle 1,1 \rangle}) = -\frac{\Gamma(-\frac14)\Gamma(\frac13)}{\Gamma(\frac14)\Gamma(-\frac13)} \ , \quad R(\alpha_{\langle 1,2 \rangle}) = -\frac{\Gamma(-\frac54)\Gamma(\frac53)}{\Gamma(\frac54)\Gamma(-\frac53)} \ , \quad R(\alpha_{\langle 2,1 \rangle}) = -\frac{\Gamma(\frac12)\Gamma(-\frac23)}{\Gamma(-\frac12)\Gamma(\frac23)}\ ,
+ R(P_{\langle 1,1 \rangle}) = -\frac{\Gamma(-\frac14)\Gamma(\frac13)}{\Gamma(\frac14)\Gamma(-\frac13)} \ , \quad R(P_{\langle 1,2 \rangle}) = -\frac{\Gamma(-\frac54)\Gamma(\frac53)}{\Gamma(\frac54)\Gamma(-\frac53)} \ , \quad R(P_{\langle 2,1 \rangle}) = -\frac{\Gamma(\frac12)\Gamma(-\frac23)}{\Gamma(-\frac12)\Gamma(\frac23)}\ ,
 \end{align}
 and deduce the explicit formula \eqref{csse} for $\tilde{C}_{\sigma\sigma\epsilon}$.
 \end{exo}
