@@ -2749,7 +2749,7 @@ a null vector in the $p(N)$-dimensional level-$N$ subspace of a Verma module.
 
 \begin{exo}[Singular vectors that are not of the type $|\chi_{\langle r,s \rangle}\rangle$]
  ~\label{exosv}
-Let us consider the Virasoro algebra with the Liouville coupling constant $b^2=-\frac{q}{p}$ where $p,q$ are strictly positive integers.
+Let us consider the Virasoro algebra with the Liouville coupling constant $b^2=-\frac{q}{p}$ where $p,q$ are strictly positive, coprime integers.
 \begin{enumerate}
  \item 
 Prove the identities 
@@ -3855,10 +3855,10 @@ Let us assume that the spectrum of a conformal field theory contains a doubly de
  \mathcal{R}=\mathcal{R}_{\langle r,s \rangle}=\mathcal{R}_{\langle r',s' \rangle}\ .
 \end{align}
 The equality of conformal dimension $\Delta_{\langle r,s \rangle}=\Delta_{\langle r',s' \rangle}$ implies that 
-the momentums $P_{\langle r,s \rangle}$ and $P_{\langle r',s' \rangle}$ \eqref{ars} obey $P_{\langle r,s \rangle}=P_{\langle r',s' \rangle}$ or $P_{\langle r,s \rangle}=Q-P_{\langle r',s' \rangle}$, and $b^2$ must therefore be rational.
-To obtain rational theories, it is enough to focus on the case 
+the momentums are equal or opposite, 
+$P_{\langle r,s \rangle}=\pm P_{\langle r',s' \rangle}$. Using eq. \eqref{ars} for $P_{\langle r,s\rangle}$, this implies $b^2\in\mathbb{Q}$. We restrict our attention to the case 
 \begin{align}
- P_{\langle r,s \rangle}+P_{\langle r',s' \rangle} = Q\ .
+ P_{\langle r,s \rangle}+P_{\langle r',s' \rangle} = 0\ .
 \end{align}
 Defining the natural integers 
 \begin{align}
@@ -3866,25 +3866,21 @@ Defining the natural integers
 \end{align}
 which we assume to be coprime, we have 
 \begin{align} 
- \boxed{b^2 = - \frac{q}{p}} \ ,
+ \boxed{b^2 = - \frac{q}{p} \in \mathbb{Q}_{<0}} \ .
 \end{align}
-and the central charge obeys $c\in ]-\infty, 1[$ and is given by eq. \eqref{cpq}.
+Then the central charge obeys $c\in ]-\infty, 1[$, and is given by eq. \eqref{cpq}.
 
 \subsubsection{Fusion rules and spectrum}
 
 Let us investigate the fusion rules involving such a doubly degenerate field.
-According to eq. \eqref{rtv}, the representation $\mathcal{V}_{P'} $ can appear in the fusion product $\mathcal{R}\times \mathcal{V}_P$ only if there are integers $(i,j,i',j')\in [0,r-1]\times [0,s-1]\times [0,r'-1]\times [0,s'-1]$ such that 
+According to eq. \eqref{rtv}, the representation $\mathcal{V}_{P'} $ can appear in the fusion product $\mathcal{R}\times \mathcal{V}_P$ only if there are half-integers $(i,j,i',j')\in I_r\times I_s\times I_{r'}\times I_{s'}$ with $I_r=\left\{i\in \frac{r-1}{2}+\mathbb{Z}\middle| \frac{r-1}{2}\geq |i|\right\}$, such that  
 \begin{align}
- \Delta(P') = \Delta\left(P+P_{\langle r,s \rangle} + ib+jb^{-1}\right) = \Delta\left(P+P_{\langle r',s' \rangle} +i'b+j'b^{-1}\right) \ .
+ \Delta(P') = \Delta\left(P+ ib+jb^{-1}\right) = \Delta\left(P+i'b+j'b^{-1}\right) \ .
+ \label{dppdp}
 \end{align}
-Since $\Delta(P)$ \eqref{daq} is a quadratic function, we a priori have two types of solutions.
-In the first type, we have $P+P_{\langle r,s \rangle} + ib+jb^{-1} = P+P_{\langle r',s' \rangle} +i'b+j'b^{-1}$, which implies $q(r-i+i')=p(s-j+j')$.
-Given the ranges of $i$ and $i'$, we however have $r-i+i'\in [1,p-1]$, and there are no solutions of the first type.
-Solutions of the second type are such that 
-\begin{align}
- \left(P+P_{\langle r,s \rangle} + ib+jb^{-1}\right) + \left(P+P_{\langle r',s' \rangle} +i'b+j'b^{-1}\right) = Q\ .
-\end{align}
-Using the notations $r'' = i+i'+1$ and $s''=j+j'+1$, this implies
+This implies that the two momentums $P+ib+jb^{-1}$ and $ P+i'b+j'b^{-1}$ are either equal or opposite. If they were equal, we would have $q(2i-2i')=p(2j-2j')$, where $2i-2i'$ and $2j-2j'$ are integers. Since $p$ and $q$ are coprime, we would have $p|2i-2i'$, which would imply $i=i'$ because $|2i-2i'|\leq r+r'-2=p-2$. We would deduce that $r-r'$ is even, and therefore that $p$ is even. Similarly, we would find that $q$ is even, which would contradict our assumption that $p$ and $q$ are coprime.
+
+So our two momentums must be opposite. Defining the integers $r'' = \frac{p}{2}-i-i'$ and $s''=\frac{q}{2}-j-j'$, this implies
 \begin{align}
  P=P_{\langle r'',s'' \rangle}\quad \text{with}\quad  \left\{\begin{array}{l}  r'' \in [1,p-1]\ , \\ s'' \in [1,q-1]\ . \end{array}\right. 
 \label{rpsq}
@@ -3893,11 +3889,12 @@ This defines the \textbf{\boldmath Kac table}\index{Kac table} -- the set of int
 At a given central charge, this set does not depend on the choice of $\mathcal{R}$. 
 And due to the identity 
 \begin{align}
- P_{\langle r'',s'' \rangle}+P_{\langle p-r'',q-s'' \rangle}=Q\ ,
+ \Delta_{\langle r,s \rangle}=\Delta_{\langle p-r,q-s \rangle}\ ,
+ \label{ddr}
 \end{align}
 the corresponding degenerate representations $\mathcal{R}_{\langle r'', s'' \rangle}$ are actually doubly degenerate. 
 
-The fusion rules of doubly degenerate representations can be deduced from the fusion rules \eqref{rrsr} of degenerate representations, 
+The fusion rules of Kac table representations can be deduced from the fusion rules \eqref{rrsr} of degenerate representations, 
 \begin{align}
   \boxed{\mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle} = \sum_{r_3\overset{2}{=}|r_1-r_2|+1}^{\min(r_1+r_2,2p-r_1-r_2)-1}\ \sum_{s_3\overset{2}{=}|s_1-s_2|+1}^{\min(s_1+s_2,2q-s_1-s_2)-1} \mathcal{R}_{\langle r_3,s_3 \rangle}}\ .
 \label{rrmm}
@@ -3931,39 +3928,30 @@ On the other hand, minimal models with $|p-q|=1$ are unitary, see eq. \eqref{srp
 
 \subsubsection{Correlation functions}
 
-The three-point structure constants are given by the same formula \eqref{cpqb} as in generalized minimal models, where the rationality of $b^2$ does not bring noteworthy simplifications. 
-Some of the minimal model structure constants however correspond to values of $\langle r_i,s_i\rangle$ that violate the fusion rules of the generalized minimal models -- for instance, $C_{\langle 1,1\rangle,\langle 1,1\rangle,\langle p-1,q-1\rangle}$. 
-
-The two-point function of a minimal model is 
+In minimal models, we adopt the field normalization such that the two-point structure constant is one. We could not do this in Liouville theory or in generalized minimal models, as this would have made correlation functions non-meromorphic as functions of $b$. But this issue is moot in minimal models, as $b$ takes discrete values. So we call $\check{V}_{\langle r,s\rangle}$ the Kac table fields in this normalization, and the two-point function is 
 \begin{align}
- \left\langle V_{\langle r_1,s_1 \rangle} V_{\langle r_2,s_2 \rangle} \right\rangle = \delta_{r_1,p-r_2}\delta_{s_1,q-s_2} + R(P_{\langle r_1,s_1 \rangle}) \delta_{r_1,r_2} \delta_{s_1,s_2} \ .
-\label{vvddp}
+ \boxed{\left\langle \check{V}_{\langle r_1,s_1 \rangle} \check{V}_{\langle r_2,s_2 \rangle} \right\rangle = \delta_{r_1,p-r_2}\delta_{s_1,q-s_2} + \delta_{r_1,r_2} \delta_{s_1,s_2}} \ .
 \end{align}
-(Compare with the two-point function of a generalized minimal model \eqref{vvdd}.) This formula can be simplified by renormalizing the fields, so that the reflection coefficient $R(P_{\langle r,s\rangle})$ becomes one.
-We refrained from performing such a renormalization in Liouville theory or in generalized minimal models, as this would have spoiled the analyticity of correlation functions.
-In minimal models, there are no continuous parameters and therefore no issues of analyticity.
-Defining
+Compared with the two-point function of a generalized minimal model \eqref{vvdd}, we have an extra term due to the identity \eqref{ddr}. This identity actually accounts for all coincidences of conformal dimensions in the Kac table. In our normalization, two fields with the same dimension are identical, 
 \begin{align}
- \boxed{\tilde{V}_{\langle r,s \rangle} = \frac{1}{\sqrt{R(P_{\langle r,s \rangle})}} V_{\langle r,s \rangle}}\ , 
+ \check{V}_{\langle r,s \rangle} = \check{V}_{\langle p-r,q-s \rangle}\ .
 \end{align}
-where the reflection coefficient $R(P)$ was given in eq. \eqref{ram}, we now have 
+Let us deduce the three-point structure constant from the generalized minimal models' three-point structure constant. To do this, we use the relation between our field normalization, and the normalization we had in generalized minimal modelds,
 \begin{align}
- \tilde{V}_{\langle r,s \rangle} = \tilde{V}_{\langle p-r,q-s \rangle}\ .
+ \check{V}_{\langle r,s \rangle} = \frac{1}{\sqrt{R(P_{\langle r,s \rangle})}} V_{\langle r,s \rangle}\ , 
 \end{align}
-Correlation functions are modified accordingly, and in particular the two-point function becomes
+where $R(P)$ is the Liouville reflection coefficient \eqref{ram}. We moreover renormalize the three-point structure constant with a factor $\sqrt{R(P_{\langle 1,1 \rangle})}$, in order to ensure that $V_{\langle 1,1\rangle}$ remains an identity field. This leads to the three-point structure constant 
 \begin{align}
- \boxed{\left\langle \tilde{V}_{\langle r_1,s_1 \rangle} \tilde{V}_{\langle r_2,s_2 \rangle} \right\rangle = \delta_{r_1,p-r_2}\delta_{s_1,q-s_2} + \delta_{r_1,r_2} \delta_{s_1,s_2}} \ .
-\end{align}
-There is an additional subtlety in the case of the three-point function: if we want $\tilde{V}_{\langle 1,1 \rangle}$ to be the identity field, we need to renormalize the three-point structure constant with a factor $\sqrt{R(P_{\langle 1,1 \rangle})}$ on top of the factors coming from the field renormalizations, so that 
-\begin{align}
- \tilde{C}_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} = \sqrt{\frac{R(P_{\langle 1,1 \rangle})}{\prod_{i=1}^3 R(P_{\langle r_i,s_i \rangle})}}  C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}\ ,
+ \check{C}_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} = \sqrt{\frac{R(P_{\langle 1,1 \rangle})}{\prod_{i=1}^3 R(P_{\langle r_i,s_i \rangle})}}  C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}\ ,
 \label{tcc}
 \end{align}
-where $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ was given in eq. \eqref{cpqb}.
-Then $\tilde{C}_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ does not depend on the cosmological constant, and we have 
+where $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ was given in eq. \eqref{cpqb}. 
+Then $\check{C}_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ does not depend on the cosmological constant, and we have 
 \begin{align}
-\boxed{ \tilde{C}_{\langle 1,1\rangle , \langle r,s \rangle,\langle r,s \rangle}=1}\ .
+\boxed{ \check{C}_{\langle 1,1\rangle , \langle r,s \rangle,\langle r,s \rangle}=1}\ .
 \end{align}
+
+% NB: say that sum of r_i and s_i is odd? is this really necessary? cf reflection invariance!
 
 % NB: 3pt function essentially agrees with Dotsenko-Fateev result, as transcribed in hep-th/9112029 eq. (15). 
 
@@ -3971,8 +3959,8 @@ Then $\tilde{C}_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3
 
 \subsubsection{Trivial model $(p,q)=(3,2) \implies c = 0$}
 
-This unitary minimal model has only one field -- the identity $I=\tilde{V}_{\langle 1,1 \rangle}=\tilde{V}_{\langle 2,1 \rangle}$.
-The fusion rule $I\times I = I$ and three-point structure constant $\tilde{C}_{III} = 1$ are trivial.
+This unitary minimal model has only one field -- the identity $I=\check{V}_{\langle 1,1 \rangle}=\check{V}_{\langle 2,1 \rangle}$.
+The fusion rule $I\times I = I$ and three-point structure constant $\check{C}_{III} = 1$ are trivial.
 
 \subsubsection{Model $(p,q)=(5,2) \implies c=-\tfrac{22}{5}$\ of the Yang-Lee singularity}
 
@@ -4012,7 +4000,7 @@ The fusion rules are
 \end{align}
 The only three-point structure constant not involving the identity field is 
 \begin{align}
- \tilde{C}_{\phi\phi\phi} = i\sqrt{3\frac{\Gamma(-\frac35)}{\Gamma(-\frac15)^3} \frac{\Gamma(\frac15)^3}{\Gamma(\frac35)}}\ .
+ \check{C}_{\phi\phi\phi} = i\sqrt{3\frac{\Gamma(-\frac35)}{\Gamma(-\frac15)^3} \frac{\Gamma(\frac15)^3}{\Gamma(\frac35)}}\ .
 \label{cppp}
 \end{align}
 (See Exercise \ref{exocppp}.)
@@ -4064,11 +4052,11 @@ The fusion rules are
 \end{array}
 \end{align}
 We notice that there are two simple currents: the identity field $I$, and the field $\epsilon$.
-Similarly, any A-series minimal model with $p,q>2$ has two simple currents $\tilde{V}_{\langle 1,1 \rangle}$ and $\tilde{V}_{\langle 1,q-1 \rangle}=\tilde{V}_{\langle p-1,1 \rangle}$. 
+Similarly, any A-series minimal model with $p,q>2$ has two simple currents $\check{V}_{\langle 1,1 \rangle}$ and $\check{V}_{\langle 1,q-1 \rangle}=\check{V}_{\langle p-1,1 \rangle}$. 
 
 The only three-point structure constant not involving the identity field is 
 \begin{align}
- \tilde{C}_{\sigma\sigma\epsilon} =\frac12\ .
+ \check{C}_{\sigma\sigma\epsilon} =\frac12\ .
 \label{csse}
 \end{align}
 (See Exercise \ref{exocsse}.)
@@ -4212,7 +4200,6 @@ Study how the degenerate OPE \eqref{vot} behaves under reflections, and show tha
 \end{align}
 \end{enumerate}
  \end{exo}
- 
 
 
 \begin{exo}[Fusion rules of doubly degenerate representations]
@@ -4274,27 +4261,27 @@ Assuming that the fusion product of two representations is unitary if and only i
  ~\label{exocppp}
 Using eq. \eqref{tcc}, write the nontrivial structure constant of the $(5,2)$ minimal model as 
 \begin{align}
- \tilde{C}_{\phi\phi\phi} = \sqrt{\frac{R(P_{\langle 1,1 \rangle})}{R(P_{\langle 2,1 \rangle})^3}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 2,1 \rangle}\ .
+ \check{C}_{\phi\phi\phi} = \sqrt{\frac{R(P_{\langle 1,1 \rangle})}{R(P_{\langle 2,1 \rangle})^3}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 2,1 \rangle}\ .
 \end{align}
 Notice that $C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 2,1 \rangle} = C_+(P_{\langle 2,1 \rangle})=1$ due to eqs. \eqref{vot} and \eqref{cco}.
 Setting $\mu=1$, compute
 \begin{align}
  R(P_{\langle 1,1 \rangle}) = -\frac{\Gamma(-\frac35)\Gamma(\frac32)}{\Gamma(\frac35)\Gamma(-\frac32)} \ , \quad R(P_{\langle 2,1 \rangle}) = -\frac{\Gamma(-\frac15)\Gamma(\frac12)}{\Gamma(\frac15)\Gamma(-\frac12)}\ , 
 \end{align}
-and deduce the explicit formula \eqref{cppp} for $\tilde{C}_{\phi\phi\phi}$.
+and deduce the explicit formula \eqref{cppp} for $\check{C}_{\phi\phi\phi}$.
 \end{exo}
 
 \begin{exo}[Structure constant of the $(4,3)$ minimal model]
  ~\label{exocsse}
 Write the nontrivial structure constant of the $(4,3)$ minimal model as
 \begin{align}
- \tilde{C}_{\sigma\sigma\epsilon} = \frac{1}{R(P_{\langle 2,1 \rangle})}\sqrt{\frac{R(P_{\langle 1,1 \rangle})}{R(P_{\langle 1,2 \rangle})}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 1,2 \rangle}\ .
+ \check{C}_{\sigma\sigma\epsilon} = \frac{1}{R(P_{\langle 2,1 \rangle})}\sqrt{\frac{R(P_{\langle 1,1 \rangle})}{R(P_{\langle 1,2 \rangle})}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 1,2 \rangle}\ .
 \end{align}
 Setting $\mu=1$, compute
 \begin{align}
  R(P_{\langle 1,1 \rangle}) = -\frac{\Gamma(-\frac14)\Gamma(\frac13)}{\Gamma(\frac14)\Gamma(-\frac13)} \ , \quad R(P_{\langle 1,2 \rangle}) = -\frac{\Gamma(-\frac54)\Gamma(\frac53)}{\Gamma(\frac54)\Gamma(-\frac53)} \ , \quad R(P_{\langle 2,1 \rangle}) = -\frac{\Gamma(\frac12)\Gamma(-\frac23)}{\Gamma(-\frac12)\Gamma(\frac23)}\ ,
 \end{align}
-and deduce the explicit formula \eqref{csse} for $\tilde{C}_{\sigma\sigma\epsilon}$.
+and deduce the explicit formula \eqref{csse} for $\check{C}_{\sigma\sigma\epsilon}$.
 \end{exo}
 
 
