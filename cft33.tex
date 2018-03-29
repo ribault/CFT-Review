@@ -3118,10 +3118,10 @@ For generic values of $b$, we have $P\in i\mathbb{R} \implies P+ib+jb^{-1}\notin
 
 In particular, the OPEs of the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ can be written as 
 \begin{align}
- &\boxed{V_{\langle 2,1 \rangle} V_P \sim C_+(P) V_{P-\frac{b}{2}} + C_-(P) V_{P+\frac{b}{2}}}\ ,
+ &\boxed{V_{\langle 2,1 \rangle} V_P \sim C_+(P) V_{P+\frac{b}{2}} + C_-(P) V_{P-\frac{b}{2}}}\ ,
 \label{vot}
 \\
-& \boxed{V_{\langle 1,2 \rangle} V_P \sim \tilde{C}_+(P) V_{P-\frac{1}{2b}} + \tilde{C}_-(P) V_{P+\frac{1}{2b}}}\ .
+& \boxed{V_{\langle 1,2 \rangle} V_P \sim \tilde{C}_+(P) V_{P+\frac{1}{2b}} + \tilde{C}_-(P) V_{P-\frac{1}{2b}}}\ .
  \label{vto}
 \end{align}
 The coefficients $C_+(P)$ and $C_-(P)$ are not independent, and can be deduced from one another, see Exercise \ref{exocpcm}.
@@ -3691,6 +3691,7 @@ We could expand the ratios of $\Upsilon_b$ functions into products of $\gamma$ f
 In the special case $i=\frac{r-1}{2}, j=\frac{s-1}{2}$, we have $ib+jb^{-1} = P_{\langle r,s\rangle}-\frac{Q}{2} $, so that 
 \begin{align}
  C_{\frac{r-1}{2},\frac{s-1}{2}}^{\langle r,s \rangle}(P) = 1 \ ,
+ \label{cco}
 \end{align}
 which is a special case of eq. \eqref{chco}.
 In particular, in the cases of the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$, we have $C_+(P)=\tilde{C}_+(P)=1$. This could have been derived more directly from crossing symmetry of four-point functions with two degenerate fields. 
@@ -3782,6 +3783,7 @@ In order to solve this problem, we start with the property \eqref{chco} of our s
 From the values such that $\sum r_i=\sum s_i=1$, shifts of $r_i,s_i$ by two units allow us to reach all values such that 
 \begin{align}
  \textstyle{\sum}_{i=1}^3 r_i\, , \, \textstyle{\sum}_{i=1}^3 s_i \in 2\mathbb{Z}+1\ .
+ \label{srss}
 \end{align}
 This defines $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ for all such values of $r_i,s_i$, which include all the cases that obey the fusion rules \eqref{rrrsss}. And we have 
 \begin{align}
@@ -3872,7 +3874,8 @@ Then the central charge obeys $c\in ]-\infty, 1[$, and is given by eq. \eqref{cp
 
 \subsubsection{Fusion rules and spectrum}
 
-Let us investigate the fusion rules involving such a doubly degenerate field.
+Let us investigate the fusion rules involving such a doubly degenerate representation. More specifically, let us look whether the fusion product $\mathcal{R}\times \mathcal{V}_P$ is empty or not. If it is empty, we consider that $\mathcal{R}$ cannot coexist with a representation of momentum $P$.
+
 According to eq. \eqref{rtv}, the representation $\mathcal{V}_{P'} $ can appear in the fusion product $\mathcal{R}\times \mathcal{V}_P$ only if there are half-integers $(i,j,i',j')\in I_r\times I_s\times I_{r'}\times I_{s'}$ with $I_r=\left\{i\in \frac{r-1}{2}+\mathbb{Z}\middle| \frac{r-1}{2}\geq |i|\right\}$, such that  
 \begin{align}
  \Delta(P') = \Delta\left(P+ ib+jb^{-1}\right) = \Delta\left(P+i'b+j'b^{-1}\right) \ .
@@ -3911,6 +3914,7 @@ the condition for three doubly degenerate representations $\mathcal{R}_{\langle 
  p+r_k-r_i-r_j\in 1+2{\mathbb{N}} \ , \\
 s_1+s_2+s_3-q\in 1+2{\mathbb{N}}\ , \\
  p+s_k-s_i-s_j\in 1+2{\mathbb{N}} \ ,\end{array}\right. 
+ \label{mmfr}
 \end{align}
 where we assume $i\neq j\neq k$.
 So the set of the doubly degenerate representations is closed under fusion.
@@ -3935,6 +3939,7 @@ In minimal models, we adopt the field normalization such that the two-point stru
 Compared with the two-point function of a generalized minimal model \eqref{vvdd}, we have an extra term due to the identity \eqref{ddr}. This identity actually accounts for all coincidences of conformal dimensions in the Kac table. In our normalization, two fields with the same dimension are identical, 
 \begin{align}
  \check{V}_{\langle r,s \rangle} = \check{V}_{\langle p-r,q-s \rangle}\ .
+  \label{vvr}
 \end{align}
 Let us deduce the three-point structure constant from the generalized minimal models' three-point structure constant. To do this, we use the relation between our field normalization, and the normalization we had in generalized minimal modelds,
 \begin{align}
@@ -3945,13 +3950,12 @@ where $R(P)$ is the Liouville reflection coefficient \eqref{ram}. We moreover re
  \check{C}_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} = \sqrt{\frac{R(P_{\langle 1,1 \rangle})}{\prod_{i=1}^3 R(P_{\langle r_i,s_i \rangle})}}  C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}\ ,
 \label{tcc}
 \end{align}
-where $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ was given in eq. \eqref{cpqb}. 
+where the three-point structure constant of generalized minimal models $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ was given in eq. \eqref{cpqb}. Our expression for $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ is valid under the condition \eqref{srss}, which is fulfilled under the first alternative in the minimal model fusion rule eq. \eqref{mmfr}. And the second alternative can be reduced to the first alternative by reflecting one field as in eq. \eqref{vvr}.
+
 Then $\check{C}_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ does not depend on the cosmological constant, and we have 
 \begin{align}
 \boxed{ \check{C}_{\langle 1,1\rangle , \langle r,s \rangle,\langle r,s \rangle}=1}\ .
 \end{align}
-
-% NB: say that sum of r_i and s_i is odd? is this really necessary? cf reflection invariance!
 
 % NB: 3pt function essentially agrees with Dotsenko-Fateev result, as transcribed in hep-th/9112029 eq. (15). 
 
@@ -4138,7 +4142,7 @@ Using the relation between $C_+$ and $\tilde{C}_+$, show that these two equation
 ~\label{exo4a} 
 We want to determine how the Liouville four-point function $\left<\prod_{i=1}^4 V_{P_i}(z_i)\right>$ behaves in the limit $z_1\to z_2$, using the $s$-channel decomposition \eqref{vfcch}.
 \begin{enumerate}
- \item Show that for $z_1\to z_2$, the integral over $s$-channel momentums localizes near $P_s=\frac{Q}{2}$. Show that the three-point structure constants $C$ and $\hat C$ behave differently near this value of the momentum.
+ \item Show that for $z_1\to z_2$, the integral over $s$-channel momentums localizes near $P_s=0$. Show that the three-point structure constants $C$ and $\hat C$ behave differently near this value of the momentum.
  \item Show that 
  \begin{align}
   \left<\prod_{i=1}^4 V_{P_i}(z_i)\right> \underset{z_1\to z_2}{\sim} \left\{
@@ -4261,10 +4265,10 @@ Assuming that the fusion product of two representations is unitary if and only i
  ~\label{exocppp}
 Using eq. \eqref{tcc}, write the nontrivial structure constant of the $(5,2)$ minimal model as 
 \begin{align}
- \check{C}_{\phi\phi\phi} = \sqrt{\frac{R(P_{\langle 1,1 \rangle})}{R(P_{\langle 2,1 \rangle})^3}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 2,1 \rangle}\ .
+ \check{C}_{\phi\phi\phi} = \sqrt{\frac{R(P_{\langle 1,1 \rangle})}{R(P_{\langle 2,1 \rangle})^3}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 3,1 \rangle}\ .
 \end{align}
-Notice that $C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 2,1 \rangle} = C_+(P_{\langle 2,1 \rangle})=1$ due to eqs. \eqref{vot} and \eqref{cco}.
-Setting $\mu=1$, compute
+Notice that $C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 3,1 \rangle} = C_+(P_{\langle 2,1 \rangle})=1$ due to eqs. \eqref{vot} and \eqref{cco}.
+Choosing an appropriate value for $\mu$, compute
 \begin{align}
  R(P_{\langle 1,1 \rangle}) = -\frac{\Gamma(-\frac35)\Gamma(\frac32)}{\Gamma(\frac35)\Gamma(-\frac32)} \ , \quad R(P_{\langle 2,1 \rangle}) = -\frac{\Gamma(-\frac15)\Gamma(\frac12)}{\Gamma(\frac15)\Gamma(-\frac12)}\ , 
 \end{align}
@@ -4275,9 +4279,9 @@ and deduce the explicit formula \eqref{cppp} for $\check{C}_{\phi\phi\phi}$.
  ~\label{exocsse}
 Write the nontrivial structure constant of the $(4,3)$ minimal model as
 \begin{align}
- \check{C}_{\sigma\sigma\epsilon} = \frac{1}{R(P_{\langle 2,1 \rangle})}\sqrt{\frac{R(P_{\langle 1,1 \rangle})}{R(P_{\langle 1,2 \rangle})}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 1,2 \rangle}\ .
+ \check{C}_{\sigma\sigma\epsilon} = \frac{1}{R(P_{\langle 2,1 \rangle})}\sqrt{\frac{R(P_{\langle 1,1 \rangle})}{R(P_{\langle 1,2 \rangle})}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 3,1 \rangle}\ .
 \end{align}
-Setting $\mu=1$, compute
+Choosing an appropriate value for $\mu$, compute
 \begin{align}
  R(P_{\langle 1,1 \rangle}) = -\frac{\Gamma(-\frac14)\Gamma(\frac13)}{\Gamma(\frac14)\Gamma(-\frac13)} \ , \quad R(P_{\langle 1,2 \rangle}) = -\frac{\Gamma(-\frac54)\Gamma(\frac53)}{\Gamma(\frac54)\Gamma(-\frac53)} \ , \quad R(P_{\langle 2,1 \rangle}) = -\frac{\Gamma(\frac12)\Gamma(-\frac23)}{\Gamma(-\frac12)\Gamma(\frac23)}\ ,
 \end{align}
