@@ -4396,36 +4396,37 @@ The conjugation is then
 \label{jdq}
 \end{align}
 
-\subsubsection{Primary fields}
+\subsubsection{Primary fields and highest-weight representations}
 
 We define a \textbf{\boldmath $\hat{\mathfrak{u}}_1$-primary field}\index{primary field!u1@$\hat{\mathfrak{u}}_1$---} $V_{\alpha}(z_0)$ with the \textbf{\boldmath $\hat{\mathfrak{u}}_1$ momentum}\index{momentum!u1@$\hat{\mathfrak{u}}_1$---} $\alpha$ by its OPE with $J(y)$,
 \begin{align}
  \boxed{J(y) V_\alpha(z_0) = \frac{\alpha}{y-z_0} V_\alpha(z_0) + O(1)}\ .
 \label{jva}
 \end{align}
-Any $\hat{\mathfrak{u}}_1$-primary field is also a primary field, whose OPE $T(y)V_\alpha(z_0)$ is given by eq. \eqref{tvp}, with the conformal dimension $\Delta(\alpha) = \alpha(Q-\alpha)$ (repeating eq. \eqref{daq}).
-To a $\hat{\mathfrak{u}}_1$-primary field $V_\alpha(z_0)$ we associate a highest-weight representation $\mathcal{V}_\alpha$ of the  affine Lie algebra $\hat{\mathfrak{u}}_1$.
-The states in $\mathcal{V}_\alpha$ correspond to $V_\alpha(z_0)$ and its $\hat{\mathfrak{u}}_1$-descendent fields $V_\sigma(z_0)=\left(\prod_i J_{-n_i}\right) V_\alpha(z_0)$ with $n_i\geq 1$, which obey 
+To a $\hat{\mathfrak{u}}_1$-primary field $V_\alpha(z_0)$ we associate a highest-weight representation $\mathcal{U}_\alpha$ of the  affine Lie algebra $\hat{\mathfrak{u}}_1$.
+The states in $\mathcal{U}_\alpha$ correspond to $V_\alpha(z_0)$ and its $\hat{\mathfrak{u}}_1$-descendent fields $V_\sigma(z_0)=\left(\prod_i J_{-n_i}\right) V_\alpha(z_0)$ with $n_i\geq 1$, which obey 
 \begin{align}
  \left(J_0 - \alpha\right) V_\sigma(z_0) = 0
 \label{jma}
 \end{align}
-
 For $Q^2\in\mathbb{R}$, 
-a natural scalar product can be defined in $\mathcal{V}_\alpha$ using eq. \eqref{jdq}.
-Then, if $|\alpha\rangle$ is the $\hat{\mathfrak{u}}_1$-primary state of $\mathcal{V}_\alpha$, we have $\left< J_{-1}\alpha\middle|J_{-1}\alpha\right> = \frac12 \operatorname{sign}(Q^2) \langle \alpha|\alpha\rangle$.
+a natural scalar product can be defined in $\mathcal{U}_\alpha$ using eq. \eqref{jdq}.
+Then, if $|\alpha\rangle$ is the $\hat{\mathfrak{u}}_1$-primary state of $\mathcal{U}_\alpha$, we have $\left< J_{-1}\alpha\middle|J_{-1}\alpha\right> = \frac12 \operatorname{sign}(Q^2) \langle \alpha|\alpha\rangle$.
 So, for the scalar product to be positive definite, we need $Q\in \mathbb{R}$.
 Moreover, since $J_0$ obeys $J_0^\dagger = Q-J_0$ and has the eigenvalue $\alpha$, we must have $\bar\alpha = Q-\alpha$, where $\bar \alpha$ is the complex conjugate of $\alpha$.
-Therefore, $\mathcal{V}_\alpha$ is unitary if and only if
+Therefore, $\mathcal{U}_\alpha$ is unitary if and only if
 \begin{align}
  Q\in\mathbb{R} \qquad \text{and} \qquad \alpha \in \frac{Q}{2} + i{\mathbb{R}}\ .
 \label{aif}
 \end{align}
-
-\subsubsection{Comparing $\hat{\mathfrak{u}}_1$ and Virasoro highest-weight representations}
-
-Under the action of the Virasoro algebra eqs. \eqref{lnj}-\eqref{lzj}, the $\hat{\mathfrak{u}}_1$ highest-weight representation $\mathcal{V}_\alpha$ is a Verma module -- the Verma module $\mathcal{V}_\alpha$ of Section \ref{secvm}.
-However, this Verma module is invariant under reflection of $\alpha$, whereas the $\hat{\mathfrak{u}}_1$ representation is not.
+Any $\hat{\mathfrak{u}}_1$-primary field is also a primary field, whose OPE $T(y)V_\alpha(z_0)$ is given by eq. \eqref{tvp}, with the conformal dimension 
+\begin{align}
+ \Delta(\alpha) = \alpha(Q-\alpha)\ .
+ \label{daqu}
+\end{align}
+Comparing with
+eq. \eqref{daq}, we obtain the relation $\alpha = \frac{Q}{2}+P$ (up to reflection) between $\hat{\mathfrak{u}}_1$ and Virasoro momentums. 
+Under the action of the Virasoro algebra eqs. \eqref{lnj}-\eqref{lzj}, the $\hat{\mathfrak{u}}_1$ highest-weight representation $\mathcal{U}_\alpha$ coincides with a Verma module $\mathcal{V}_P$ of momentum $P=\alpha-\frac{Q}{2}$.
 To summarize,
 \begin{align}
 \renewcommand{\arraystretch}{1.3}
@@ -4437,18 +4438,18 @@ To summarize,
  Existence of scalar product & $Q\in {\mathbb{R}} \cup i{\mathbb{R}} $ & $Q\in {\mathbb{R}} \cup i{\mathbb{R}}$ 
 \\
 \hline
- Unitarity of $\mathcal{V}_\alpha$ & $Q\in\mathbb{R}$ and $\alpha\in \frac{Q}{2}+i{\mathbb{R}} \cup ]0,Q[ $ &  $Q\in\mathbb{R}$ and $\alpha \in \frac{Q}{2}+i{\mathbb{R}}$
+ Unitarity & $Q\in\mathbb{R}$ and $P\in i{\mathbb{R}} \cup ]-\frac{Q}{2},\frac{Q}{2}[ $ &  $Q\in\mathbb{R}$ and $\alpha \in \frac{Q}{2}+i{\mathbb{R}}$
 \\
 \hline 
- Reflection relation  & $\mathcal{V}_\alpha = \mathcal{V}_{Q-\alpha} $ & $\mathcal{V}_\alpha \neq \mathcal{V}_{Q-\alpha} $ 
+ Reflection relation  & $\mathcal{V}_P = \mathcal{V}_{-P} $ & $\mathcal{U}_\alpha \neq \mathcal{U}_{Q-\alpha} $ 
 \\
 \hline
  \end{tabular}
 \end{align}
-Even in theories without $\hat{\mathfrak{u}}_1$ symmetry (and therefore no $\hat{\mathfrak{u}}_1$ Ward identities), 
+Even in theories with no $\hat{\mathfrak{u}}_1$ symmetry (and therefore no $\hat{\mathfrak{u}}_1$ Ward identities), 
 it can be useful to think of Virasoro representations as $\hat{\mathfrak{u}}_1$ representations. 
 For example,
-whenever Liouville theory is unitary i.e. $Q\in\mathbb{R}^*$, its spectrum \eqref{sad} contains only representations that are unitary as $\hat{\mathfrak{u}}_1$ representations, leaving out the representations with $\alpha\in ]0, Q[$ although they are unitary as Virasoro representations. 
+whenever Liouville theory is unitary i.e. $Q\in\mathbb{R}^*$, its spectrum \eqref{sad} contains only representations that are unitary as $\hat{\mathfrak{u}}_1$ representations, leaving out the representations with $P\in ]-\frac{Q}{2}, \frac{Q}{2}[$ although they are unitary as Virasoro representations. 
 For example, the AGT relation leads to an expression for Virasoro conformal blocks as sums over particular descendent states, and these states simplify when written in terms of $\hat{\mathfrak{u}}_1$ creation modes \cite{aflt10}.
 
 
@@ -4499,7 +4500,7 @@ Inserting $\oint_\infty J(z)dz$ on both sides of this OPE, we obtain a factor $\
 This leads to $(\alpha_3-\alpha_1-\alpha_2)C_{12}^3=0$, so that $V_{\alpha_3,\bar\alpha_3}$ can appear only if $\alpha_3=\alpha_1+\alpha_2$. 
 In other words, we have the $\hat{\mathfrak{u}}_1$ fusion rule
 \begin{align}
- \boxed{\mathcal{V}_{\alpha_1}\times \mathcal{V}_{\alpha_2} = \mathcal{V}_{\alpha_1+\alpha_2}}\ ,
+ \boxed{\mathcal{U}_{\alpha_1}\times \mathcal{U}_{\alpha_2} = \mathcal{U}_{\alpha_1+\alpha_2}}\ ,
 \label{vvp}
 \end{align}
 i.e. the momentum $\alpha$ is conserved.
@@ -4593,7 +4594,7 @@ This leaves us with a continuous parameter if $N=1,2$. But any spectrum with $N=
 Let us focus on generic maximal spectrums that contain diagonal states. 
 Let us parametrize a diagonal generator as  $\vec\alpha_1=(\frac{i}{2R},\frac{i}{2R})$. By integrality of the spins, the second generator $\vec\alpha_2$ must obey $\frac{i}{R}(\alpha_2-\bar\alpha_2)\in\mathbb{Z}$, and without loss of generality we assume $\alpha_2-\bar\alpha_2=iR$. This implies $\alpha_2+\bar\alpha_2 \in \frac{i}{R}\mathbb{Z}$, and we can always assume $\alpha_2+\bar\alpha_2=0$ by doing a redefinition $\vec\alpha_2\to \vec\alpha_2+k\vec\alpha_1$ with $k\in\mathbb{Z}$. This leads to the spectrum
 \begin{align}
- \boxed{\mathcal{S}_R = \bigoplus_{(n,w)\in {\mathbb{Z}^2}} \mathcal{V}_{\frac{i}{2}\left(\frac{n}{R} + Rw\right)} \otimes \bar{\mathcal{V}}_{\frac{i}{2}\left(\frac{n}{R} - Rw\right)} }\ .
+ \boxed{\mathcal{S}_R = \bigoplus_{(n,w)\in {\mathbb{Z}^2}} \mathcal{U}_{\frac{i}{2}\left(\frac{n}{R} + Rw\right)} \otimes \bar{\mathcal{U}}_{\frac{i}{2}\left(\frac{n}{R} - Rw\right)} }\ .
 \label{sr}
 \end{align}
 The corresponding theory is called the \textbf{\boldmath compactified free boson}\index{free boson!compactified---} theory, whose parameter $R$ is  the compactification radius.
@@ -4605,7 +4606,7 @@ The  algebra $\hat{\mathfrak{u}}_1$ has the automorphism
  \omega(J_n) = -J_n \ ,
 \end{align}
 which preserves the Virasoro generators \eqref{lnj}-\eqref{lzj}. (For $Q\neq 0$ we would have to assume $\omega(Q)=-Q$.)
-This automorphism acts on representations of $\hat{\mathfrak{u}}_1 \times \bar{\hat{\mathfrak{u}}}_1$ as $\omega(\mathcal{V}_\alpha \otimes \bar{\mathcal{V}}_{\bar{\alpha}}) =  \mathcal{V}_{-\alpha} \otimes \bar{\mathcal{V}}_{\bar{\alpha}}$, and on the spectrum of a compactified free boson as 
+This automorphism acts on representations of $\hat{\mathfrak{u}}_1 \times \bar{\hat{\mathfrak{u}}}_1$ as $\omega(\mathcal{U}_\alpha \otimes \bar{\mathcal{U}}_{\bar{\alpha}}) =  \mathcal{U}_{-\alpha} \otimes \bar{\mathcal{U}}_{\bar{\alpha}}$, and on the spectrum of a compactified free boson as 
 \begin{align}
  \omega(\mathcal{S}_R) = \mathcal{S}_{\frac{1}{R}}\ .
 \end{align}
@@ -4637,7 +4638,7 @@ Since any two vectors $\vec\alpha_1,\vec\alpha_2$ in the spectrum obey this cond
 In this spectrum however, we have $\alpha-\bar\alpha\in\frac{1}{Q}\mathbb{Z}$. 
 If we insisted that the constraint \eqref{amba} be saturated, then we would find the alternative spectrum
 \begin{align}
- \mathcal{S}'_R = \bigoplus_{n\in \mathbb{Z}} \bigoplus_{w\in \frac{n}{2}+\mathbb{Z}} \mathcal{V}_{\frac{i}{2}\left(\frac{n}{R} + Rw\right)} \otimes \bar{\mathcal{V}}_{\frac{i}{2}\left(\frac{n}{R} - Rw\right)} \qquad \text{with}\qquad R \in \frac{1}{iQ}(2\mathbb{Z}+1)\ .
+ \mathcal{S}'_R = \bigoplus_{n\in \mathbb{Z}} \bigoplus_{w\in \frac{n}{2}+\mathbb{Z}} \mathcal{U}_{\frac{i}{2}\left(\frac{n}{R} + Rw\right)} \otimes \bar{\mathcal{U}}_{\frac{i}{2}\left(\frac{n}{R} - Rw\right)} \qquad \text{with}\qquad R \in \frac{1}{iQ}(2\mathbb{Z}+1)\ .
 \end{align}
 Whether $Q=0$ or not, the correlation functions of our free bosonic theories with discrete spectrums have the form
 \begin{align}
@@ -4653,7 +4654,7 @@ We will obtain a continuous, diagonal spectrum by taking
 the large $R$ limit of the compactified free boson spectrum \eqref{sr}.
 If $Q\neq 0$, the compactification radius $R$ must obey the condition \eqref{riqz}, and therefore go to infinity in a particular, $Q$-dependent direction. We find the spectrum 
 \begin{align}
- \boxed{ \mathcal{S} = \int_{Q\mathbb{R}} d\alpha\ \mathcal{V}_\alpha\otimes \bar{\mathcal{V}}_\alpha}\ ,
+ \boxed{ \mathcal{S} = \int_{Q\mathbb{R}} d\alpha\ \mathcal{U}_\alpha\otimes \bar{\mathcal{U}}_\alpha}\ ,
 \end{align}
 where for $Q=0$ we take $Q\mathbb{R}$ to be a straight line in an arbitrary direction.  
 The resulting theory is called the (uncompactified) \textbf{\boldmath free boson}\index{free boson} theory if $Q=0$ and momentums are pure imaginary. It might be called the \textbf{\boldmath linear dilaton theory}\index{linear dilaton theory} if $Q\neq 0$, although that term is usually applied to a Lagrangian, not to a specific spectrum. 
