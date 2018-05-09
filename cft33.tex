@@ -11,6 +11,8 @@
 
 \usepackage{amsmath,amssymb,amsfonts}
 
+\usepackage{centernot}
+
 \usepackage{multirow}
 
 \usepackage{underbracket}
@@ -4577,22 +4579,26 @@ By analogy with supersymmetric gauge theory, these equations may be called \text
 
 \subsection{Spectrum and correlation functions \label{secsacf}}
 
-We define a \textbf{\boldmath free bosonic theory}\index{free bosonic theory} as a conformal field theory with $\hat{\mathfrak{u}}_1$ symmetry, such that each representation of the $\hat{\mathfrak{u}}_1 \times \bar{\hat{\mathfrak{u}}}_1$ symmetry algebra appears at most once in the spectrum. We assume that all fields $V_{\alpha,\bar\alpha}$ have integer spins, i.e. 
+We define a \textbf{\boldmath free bosonic theory}\index{free bosonic theory} as a conformal field theory with $\hat{\mathfrak{u}}_1$ symmetry, such that each representation of the $\hat{\mathfrak{u}}_1 \times \bar{\hat{\mathfrak{u}}}_1$ symmetry algebra appears at most once in the spectrum. Let us parametrize highest-weight representations of $\hat{\mathfrak{u}}_1 \times \bar{\hat{\mathfrak{u}}}_1$ with their momentum vectors $\vec\alpha = (\alpha,\bar\alpha)\in\mathbb{C}^2$: by closure under fusion \eqref{vvp}, the set of the momentum vectors must close under addition. Moreover, we assume that the corresponding spins are integer,
 \begin{align}
- (\alpha-\bar\alpha)(\alpha+\bar\alpha-Q)\in\mathbb{Z}\ . 
+ S(\vec\alpha) = (\alpha-\bar\alpha)(\alpha+\bar\alpha-Q)\in\mathbb{Z}\ . 
 \end{align}
-Moreover, by closure under fusion \eqref{vvp}, the vector $\vec\alpha = (\alpha,\bar\alpha)$ must take values in a set that is closed under addition.
+Let us analyze the interplay between this integer spin condition and closure under fusion, depending on whether the background charge vanishes or not.
 
-\subsubsection{Discrete spectrums at $Q=0$}
+\subsubsection{Discrete spectrums with $Q=0$}
 
-If two vectors $\vec\alpha_1$ and $\vec\alpha_2$ belong to the spectrum, then $\vec\alpha_1,\vec\alpha_2$ and $\vec\alpha_1+\vec\alpha_2$ must have integer spins.
-It follows that all vectors in $\mathbb{Z}\vec\alpha_1 + \mathbb{Z}\vec\alpha_2$ have integer spins, and this set can be assumed to be part of the spectrum without loss of generality. 
-So let us consider spectrums of the type $\sum_{i=1}^N \mathbb{Z}\vec \alpha_i$. 
-These spectrums have $2N$ complex parameters (the components of $\vec\alpha_i$), subject to the $\frac12 N(N+1)$ constraints that $\vec\alpha_i$ and $\vec\alpha_i+\vec\alpha_j$ have integer spins. 
-This leaves us with a continuous parameter if $N=1,2$. But any spectrum with $N=1$ generator can be extended by adding a second generator, so generic maximal spectrums have $N=2$ generators.
+For $Q=0$, arbitrary integer linear combinations of two momentum vectors have integer spins if and only if the vectors and their sums have integer spins,
+\begin{align}
+ S\left(\mathbb{Z}\vec\alpha_1 + \mathbb{Z}\vec\alpha_2\right)\subset \mathbb{Z} \quad \iff \quad S\left(\left\{\vec\alpha_1,\vec\alpha_2,\vec\alpha_1+\vec\alpha_2\right\}\right)\subset \mathbb{Z}\ .
+\end{align}
+More generally, the elements of the spectrum $\sum_{i=1}^N \mathbb{Z}\vec \alpha_i$ have integer spins if and only if the vectors $\vec\alpha_i$ and $\vec\alpha_i+\vec\alpha_j$ (with $i\neq j$) have integer spins. This gives us $\frac12 N(N+1)$ constraints for the $2N$ complex components of the vectors $\vec\alpha_i$. We focus on spectrums where these constraints are underdetermined and leave us with at least one continuous parameter, i.e. $N=1,2$: we call these spectrums generic. We further focus on spectrums that cannot be extended by adding an extra vector, i.e. $N=2$: we call these spectrums generic and maximal.
 
-Let us focus on generic maximal spectrums that contain diagonal states. 
-Let us parametrize a diagonal generator as  $\vec\alpha_1=(\frac{i}{2R},\frac{i}{2R})$. By integrality of the spins, the second generator $\vec\alpha_2$ must obey $\frac{i}{R}(\alpha_2-\bar\alpha_2)\in\mathbb{Z}$, and without loss of generality we assume $\alpha_2-\bar\alpha_2=iR$. This implies $\alpha_2+\bar\alpha_2 \in \frac{i}{R}\mathbb{Z}$, and we can always assume $\alpha_2+\bar\alpha_2=0$ by doing a redefinition $\vec\alpha_2\to \vec\alpha_2+k\vec\alpha_1$ with $k\in\mathbb{Z}$. This leads to the spectrum
+A generic maximal spectrum may or may not contain diagonal states, see Exercise \ref{exofbd}. We focus on generic maximal spectrums that do, and we parametrize a diagonal generator as  $\vec\alpha_1=(\frac{i}{2R},\frac{i}{2R})$. For $\vec\alpha_2$ another generator, we have 
+\begin{align}
+ S(\vec\alpha_1 + \vec\alpha_2) - S(\vec\alpha_1)-S(\vec\alpha_2) = \frac{i}{R}(\alpha_2-\bar\alpha_2)\ .
+\end{align}
+This combination of spins must be integer, and since the spectrum is maximal we have $\alpha_2-\bar\alpha_2=iR$ (or equivalently $\alpha_2-\bar\alpha_2=-iR$). This implies $\alpha_2+\bar\alpha_2 \in \frac{i}{R}\mathbb{Z}$,
+and by doing a redefinition of the type $\vec\alpha_2\to \vec\alpha_2+k\vec\alpha_1$ with $k\in\mathbb{Z}$ we set $\alpha_2+\bar\alpha_2=0$ and therefore $\vec\alpha_2=(\frac{iR}{2},-\frac{iR}{2})$. This leads to the spectrum
 \begin{align}
  \boxed{\mathcal{S}_R = \bigoplus_{(n,w)\in {\mathbb{Z}^2}} \mathcal{U}_{\frac{i}{2}\left(\frac{n}{R} + Rw\right)} \otimes \bar{\mathcal{U}}_{\frac{i}{2}\left(\frac{n}{R} - Rw\right)} }\ .
 \label{sr}
@@ -4612,25 +4618,19 @@ This automorphism acts on representations of $\hat{\mathfrak{u}}_1 \times \bar{\
 \end{align}
 This shows that two compactified free bosons are equivalent if their radiuses are inverses of one another. In string theory, this is called T-duality.
 
-Relaxing the assumption that we have diagonal states, generic maximal spectrums are built from any two vectors $\vec\alpha_1,\vec\alpha_2$ that have integer spins $s_1,s_2$, and are such that $\vec\alpha_1+\vec\alpha_2$ also has an integer spin $s$. The resulting theory describes a compactified free boson if and only if there are integers $n_1,n_2,w_1,w_2$ such that
+
+\subsubsection{Discrete spectrums with $Q\neq 0$}
+
+For $Q\neq 0$, $S(\vec\alpha)\in\mathbb{Z}\centernot\implies S(2\vec\alpha)\in\mathbb{Z}$, due to the identity
 \begin{align}
- s_1=n_1w_1 \quad , \quad s_2=n_2w_2 \quad ,\quad s = (n_1+n_2)(w_1+w_2)\ .
- \label{snw}
+ S(2\vec\alpha) - 4 S(\vec\alpha) = 2Q(\alpha-\bar \alpha)\ .
 \end{align}
-The combination $x=\frac{\alpha_1-\bar{\alpha}_1}{\alpha_2-\bar{\alpha}_2}$ indeed obeys the quadratic equation 
-$
- s_2x+s_1x^{-1} = s-s_1-s_2 
-$. If the spins $s_1,s_2$ and $s$ are factorized as in eq. \eqref{snw}, then the two solutions are $x=\frac{n_1}{n_2}$ and $x=\frac{w_1}{w_2}$. Since these are rational numbers, there is a vector $\vec \alpha = (\alpha,\bar\alpha)\in \mathbb{Z}\vec\alpha_1 + \mathbb{Z}\vec\alpha_2$ such that $\bar\alpha =\alpha$, i.e. $\vec\alpha$ is diagonal.
-
-
-\subsubsection{Discrete spectrums at $Q\neq 0$}
-
-For $Q\neq 0$, the condition that $\vec\alpha$ and $2\vec\alpha$ have integer spins implies 
+Looking again for a generic maximal spectrum of the type $\mathbb{Z}\vec\alpha_1 + \mathbb{Z}\vec\alpha_2$, we must have 
 \begin{align}
- \alpha-\bar\alpha\in \frac{1}{2Q}\mathbb{Z}\ .
+ \alpha_i-\bar\alpha_i\in \frac{1}{2Q}\mathbb{Z}\ .
  \label{amba}
 \end{align}
-Since any two vectors $\vec\alpha_1,\vec\alpha_2$ in the spectrum obey this condition, there must be an element of $\mathbb{Z}\vec\alpha_1 + \mathbb{Z}\vec\alpha_2$ that is diagonal. And actually, the compactified free boson spectrum $\mathcal{S}_R$ \eqref{sr} is made of states with integer spins provided
+This implies that the spectrum contains diagonal states. And actually, the compactified free boson spectrum $\mathcal{S}_R$ \eqref{sr} is made of states with integer spins provided
 \begin{align}
  R \in \frac{1}{iQ}\mathbb{Z}\ .
  \label{riqz}
@@ -4640,13 +4640,7 @@ If we insisted that the constraint \eqref{amba} be saturated, then we would find
 \begin{align}
  \mathcal{S}'_R = \bigoplus_{n\in \mathbb{Z}} \bigoplus_{w\in \frac{n}{2}+\mathbb{Z}} \mathcal{U}_{\frac{i}{2}\left(\frac{n}{R} + Rw\right)} \otimes \bar{\mathcal{U}}_{\frac{i}{2}\left(\frac{n}{R} - Rw\right)} \qquad \text{with}\qquad R \in \frac{1}{iQ}(2\mathbb{Z}+1)\ .
 \end{align}
-Whether $Q=0$ or not, the correlation functions of our free bosonic theories with discrete spectrums have the form
-\begin{align}
- \left\langle \prod_{i=1}^N V_{\alpha_i,\bar\alpha_i}(z_i) \right\rangle = 
- \delta_{\sum_i \alpha_i-Q} \delta_{\sum_i\bar\alpha_i-Q} 
- \prod_{i<j} (z_i-z_j)^{-2\alpha_i\alpha_j}(\bar{z}_i-\bar{z}_j)^{-2\bar{\alpha}_i\bar{\alpha}_j}\ , 
-\end{align}
-where the two Kronecker deltas constrain the two discrete coordinates of $(\sum_i\alpha_i,\sum_i\bar\alpha_i)\in \mathbb{Z}\vec\alpha_1 + \mathbb{Z}\vec\alpha_2$.
+
 
 \subsubsection{Continuous spectrums}
 
@@ -4655,19 +4649,31 @@ the large $R$ limit of the compactified free boson spectrum \eqref{sr}.
 If $Q\neq 0$, the compactification radius $R$ must obey the condition \eqref{riqz}, and therefore go to infinity in a particular, $Q$-dependent direction. We find the spectrum 
 \begin{align}
  \boxed{ \mathcal{S} = \int_{Q\mathbb{R}} d\alpha\ \mathcal{U}_\alpha\otimes \bar{\mathcal{U}}_\alpha}\ ,
+ \label{sc}
 \end{align}
 where for $Q=0$ we take $Q\mathbb{R}$ to be a straight line in an arbitrary direction.  
-The resulting theory is called the (uncompactified) \textbf{\boldmath free boson}\index{free boson} theory if $Q=0$ and momentums are pure imaginary. It might be called the \textbf{\boldmath linear dilaton theory}\index{linear dilaton theory} if $Q\neq 0$, although that term is usually applied to a Lagrangian, not to a specific spectrum. 
-The correlation functions are 
-\begin{align}
- \left\langle \prod_{i=1}^N V_{\alpha_i,\alpha_i}(z_i)\right\rangle = \delta\left({\textstyle \sum}_{i=1}^N\alpha_i-Q\right)\ \prod_{i<j} |z_i-z_j|^{-4\alpha_i\alpha_j} \ .
-\label{dpzz}
-\end{align}
-Having a consistent spectrum is not always necessary: in the application to Liouville theory (Section \ref{seclld}), we will use free bosonic correlation functions whose momentums $\alpha_i$ do not belong to the spectrum of any consistent theory.
+The resulting theory is called the (uncompactified) \textbf{\boldmath free boson}\index{free boson} theory if $Q=0$ and momentums are pure imaginary. It might be called the \textbf{\boldmath linear dilaton theory}\index{linear dilaton theory} if $Q\neq 0$. 
+
 
 \subsubsection{Unitarity}
 
 The only unitary free bosonic theories are the compactified free boson at $Q=0$ with a real compactification radius, and the uncompactified free boson that is obtained as its infinite radius limit. For $Q\neq 0$, free bosonic theories cannot be unitary, because the set $U=\frac{Q}{2}+i\mathbb{R}$ of unitary momentums is not closed under fusion, i.e. $(U+U)\cap U = \emptyset$ if $Q\in \mathbb{R}^*$.
+
+\subsubsection{Correlation functions}
+
+The correlation functions of our free bosonic theories with discrete spectrums have the form
+\begin{align}
+ \left\langle \prod_{i=1}^N V_{\alpha_i,\bar\alpha_i}(z_i) \right\rangle = 
+ \delta_{\sum_i \alpha_i-Q} \delta_{\sum_i\bar\alpha_i-Q} 
+ \prod_{i<j} (z_i-z_j)^{-2\alpha_i\alpha_j}(\bar{z}_i-\bar{z}_j)^{-2\bar{\alpha}_i\bar{\alpha}_j}\ , 
+\end{align}
+where the two Kronecker deltas constrain the two discrete coordinates of $(\sum_i\alpha_i,\sum_i\bar\alpha_i)$.
+In our theories with continuous, diagonal spectrums, momentum conservation is enforced by a Dirac delta function,
+\begin{align}
+ \left\langle \prod_{i=1}^N V_{\alpha_i,\alpha_i}(z_i)\right\rangle = \delta\left({\textstyle \sum}_{i=1}^N\alpha_i-Q\right)\ \prod_{i<j} |z_i-z_j|^{-4\alpha_i\alpha_j} \ .
+\label{dpzz}
+\end{align}
+In the application to Liouville theory (Section \ref{seclld}), we will actually use these correlation functions for momentums that do not necessarily belong to the spectrum \eqref{sc}. 
 
 
 \subsection{Free bosons and Liouville theory \label{seclld}}
@@ -6026,7 +6032,6 @@ In other words, calling this coefficient $C_{\alpha_1,\alpha_2}$, we want to sho
  C_{\alpha_1,\alpha_2} = \frac{\lambda(\alpha_1+\alpha_2)}{\lambda(\alpha_1)\lambda(\alpha_2)}\ .
 \label{clll}
 \end{align}
-
 \begin{enumerate}
  \item Use commutativity \eqref{comm} and associativity \eqref{asso} of the OPE, and show that 
 \begin{align}
@@ -6050,6 +6055,27 @@ Prove eq. \eqref{clll} by showing that both sides have the same value at $\alpha
 (If the spectrum is discrete, a similar proof can be done using finite differences instead of derivatives.) 
 \end{enumerate}
 \end{exo}
+
+\begin{exo}[Diagonal states in free bosonic theories]
+ ~\label{exofbd}
+ Let $\mathbb{Z}\vec\alpha_1+\mathbb{Z}\vec\alpha_2$ be a generic maximal spectrum for a free bosonic theory with $Q=0$.
+ Show that the following three statements are equivalent:
+ \begin{itemize}
+  \item The theory is a compactified free boson.
+  \item The spectrum contains diagonal states.
+  \item There are integer numbers $n_1,n_2,w_1,w_2$ such that 
+  \begin{align}
+  S(\vec\alpha_1)=n_1w_1 \ \ , \ \  S(\vec\alpha_2)=n_2w_2\ \ ,\ \  S(\vec\alpha_1+\vec\alpha_2) = (n_1+n_2)(w_1+w_2)\ .
+  \end{align}
+ \end{itemize}
+To do this, show that the combination $x=\frac{\alpha_1-\bar{\alpha}_1}{\alpha_2-\bar{\alpha}_2}$ obeys the quadratic equation 
+\begin{align}
+S(\vec\alpha_2)x+ S(\vec\alpha_1)x^{-1} = S(\vec\alpha_1+\vec\alpha_2) -S(\vec\alpha_1)-  S(\vec\alpha_2)\ .
+\end{align}
+If the third statement holds, show that the two solutions are $x=\frac{n_1}{n_2}$ and $x=\frac{w_1}{w_2}$.
+\end{exo}
+
+
 
 \begin{exo}[Sugawara construction]
  ~\label{exosug}
