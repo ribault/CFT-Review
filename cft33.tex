@@ -1403,7 +1403,7 @@ which is defined up to the \textbf{\boldmath reflection}\index{reflection}
  P \mapsto -P\ .
 \label{arqa}
 \end{align}
-We will sometimes write $\mathcal{V}_P=\mathcal{V}_{-P}$ for the Verma module $\mathcal{V}_{\Delta(P)}$ with conformal dimension $\Delta(P)$. In the literature, it is often the quantity $\alpha = \frac{Q}{2}+P$ that is called the momentum, but most formulas are simpler in terms of $P$.
+We will sometimes write $\mathcal{V}_P=\mathcal{V}_{-P}$ for the Verma module $\mathcal{V}_{\Delta(P)}$ with conformal dimension $\Delta(P)$. In the literature, it is often the quantity $\alpha = \frac{Q}{2}+P$ or $\alpha=\frac{Q}{2}-P$ that is called the momentum, but most formulas are simpler in terms of $P$.
 
 
 \subsubsection{Singular vectors at all levels}
@@ -3445,7 +3445,7 @@ Then $\hat C_{P_1,P_2,P_3}$ has the same behaviour as $C_{P_1,P_2,P_3}$ under th
  \underset{P_1+P_2+P_3=\frac{Q}{2}}{\operatorname{Res}} C_{P_1,P_2,P_3} = 1 \qquad , \qquad \hat C_{P_1,P_2,P_3}\underset{P_1+P_2+P_3=\frac{Q}{2}}{=} 1\ .
 \label{chco}
  \end{align}
-
+% Corresponds to \sum\alpha = Q if \alpha = Q/2 - P
 
 \subsubsection{The reflection coefficient}
 
@@ -4428,7 +4428,7 @@ Any $\hat{\mathfrak{u}}_1$-primary field is also a primary field, whose OPE $T(y
 \end{align}
 Comparing with
 eq. \eqref{daq}, we obtain the relation $\alpha = \frac{Q}{2}+P$ (up to reflection) between $\hat{\mathfrak{u}}_1$ and Virasoro momentums. 
-Under the action of the Virasoro algebra eqs. \eqref{lnj}-\eqref{lzj}, the $\hat{\mathfrak{u}}_1$ highest-weight representation $\mathcal{U}_\alpha$ coincides with a Verma module $\mathcal{V}_P$ of momentum $P=\alpha-\frac{Q}{2}$.
+Under the action of the Virasoro algebra eqs. \eqref{lnj}-\eqref{lzj}, the $\hat{\mathfrak{u}}_1$ highest-weight representation $\mathcal{U}_\alpha$ coincides with a Verma module $\mathcal{V}_P$ of momentum $P=\pm(\alpha-\frac{Q}{2})$.
 To summarize,
 \begin{align}
 \renewcommand{\arraystretch}{1.3}
@@ -4685,7 +4685,7 @@ Nevertheless, we will use them for computing limits and particular values of cor
 
 \subsubsection{The Liouville equation}
 
-Equation \eqref{tqz} is not enough for determining $J$. We could add the condition that $J$ be locally holomorphic, but we will add the milder condition $\partial \bar J = \bar\partial J$, 
+Equation \eqref{tqz} is not enough for determining $J$ from $T$. We could add the condition that $J$ be locally holomorphic, but we will add the milder condition $\partial \bar J = \bar\partial J$, 
 % This condition has to be compatible with the relations of J, \bar J with T, \bar T. Two reasons why it is compatible: it is milder than J being locally holomorphic, which is itself compatible because T is locally holomorphic. And the relations with T, \bar T both lead to the same Liouville equation.
 which is sufficient for the Seiberg--Witten equation \eqref{swp} to make sense. This implies that locally there is a field $\phi$ such that 
 \begin{align}
@@ -4695,9 +4695,12 @@ This field is called the \textbf{Liouville field}\index{Liouville field}. By for
 \begin{align}
  V_\alpha = e^{2\alpha \phi} \ .
 \end{align}
-Given an $N$-point function $\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle$, we define
+We are now labelling primary fields using the $\hat{\mathfrak{u}}_1$ momentum $\alpha$, which is related to the conformal dimension by eq. \eqref{daqu}, and to the Liouville momentum by $\alpha =\frac{Q}{2}-P$.
+
+Given an $N$-point function $\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle$ in Liouville theory, we define
 \begin{align}
  \boxed{F= -\log \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle} \quad , \quad \boxed{W(y) = \frac{\left\langle J(y)\prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle}{\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle}} \ .
+ \label{fwy}
 \end{align}
 By analogy with matrix models, we call $F$ the \textbf{\boldmath free energy}\index{free energy} and $W(y)$ the \textbf{resolvent}\index{resolvent}.
 In terms of these objects, the Seiberg--Witten equation \eqref{swp} becomes 
@@ -4738,7 +4741,7 @@ where we defined the accessory parameters
 \begin{align}
  \beta_i = -{\frac{\partial}{\partial z_i}} F^{(0)}\ .
 \end{align}
-The condition $t(z) \underset{z\to \infty}{=} O(\frac{1}{z^4})$, which follows from eq. \eqref{tyi}, amounts to three constraints on the accessory parameters, which are thereby uniquely determined if $N= 3$. Studying the behaviour of $t(z)\prod_{i=1}^3(z-z_i)$ near $z=z_i$ and $z=\infty$, we find 
+The condition $t(z) \underset{z\to \infty}{=} O(\frac{1}{z^4})$, which follows from eq. \eqref{tyi}, amounts to three constraints on the accessory parameters, which are thereby uniquely determined in the case $N= 3$. Studying the behaviour of $t(z)\prod_{i=1}^3(z-z_i)$ near $z=z_i$ and $z=\infty$, we find in this case
 \begin{align}
  t(z) \underset{N=3}{=} \frac{1}{\prod_{i=1}^3(z-z_i)} \sum_{i=1}^3 \frac{\prod_{j\neq i} z_{ij}}{z-z_i}\underset{Q\to\infty}{\lim} Q^{-2}\Delta(\alpha_i)\ .
 \end{align}
@@ -4754,6 +4757,7 @@ In terms of $\psi$, we obtain the linear differential equation
 In terms of $\phi^\text{cl}$, the $\bar{z}$-derivative of eq. \eqref{wwwt} reads $\partial\left(\log \partial\bar{\partial}\phi^\text{cl} -2\phi^\text{cl}\right)=0$. Together with $\bar{\partial} \left(\log \partial\bar{\partial}\phi^\text{cl} -2\phi^\text{cl}\right)=0$, this leads to 
 \begin{align}
  \partial\bar{\partial}\phi^\text{cl} = \mu e^{2\phi^\text{cl}}\ ,
+ \label{phieq}
 \end{align}
 where the integration constant $\mu$ coincides with the cosmological constant up to a normalization factor.
 This equation for $\phi^\text{cl}$ is the \textbf{\boldmath Liouville equation}\index{Liouville equation}, which gives its name to Liouville theory.
@@ -4773,8 +4777,7 @@ Since $J=O(Q)$, it is natural to assume $\alpha_i=O(Q)$, i.e. to consider the
 \end{align}
 We then have $\underset{Q\to\infty}{\lim} Q^{-2}\Delta(\alpha_i)=\eta_i(1-\eta_i)$, and eq. \eqref{wwwt} allows two possible asymptotic behaviours $W^{(0)}(y)\underset{y\to z_1}{=} \frac{\eta_1}{y-z_1} + O(1)$ and 
 $W^{(0)}(y)\underset{y\to z_1}{=} \frac{1-\eta_1}{y-z_1} + O(1)$.
-In the case $N=3$, the linear differential equation \eqref{dtp} for $\psi$ is equivalent to the hypergeometric equation.
-Choosing an asymptotic behaviour near $y=z_1$ determines a unique single-valued solution.
+In the case $N=3$, the linear differential equation \eqref{dtp} for $\psi$ is equivalent to the hypergeometric equation, which has a unique single-valued solution (up to an overall constant factor).
 The uniqueness of the solution provides an a posteriori justification for our factorization hypothesis \eqref{lqfac}.
 We can then deduce the leading term $F^{(0)}$ of the free energy, with the help of the heavy asymptotic limit of the Seiberg--Witten equation \eqref{daf}, 
 \begin{align}
@@ -4808,9 +4811,9 @@ So the solution for $\psi$ is not unique. And individual solutions are not covar
 Different solutions $\psi_h$ correspond to different linear forms on tuples of fields $(V_{\alpha_i}(z_i)) \mapsto e^{-F_h} = \langle \prod_i V_{\alpha_i}(z_i)\rangle_h$. 
 Liouville correlation functions correspond to a linear form that is covariant under global conformal transformations, and does not  obey our factorization assumption \eqref{lqfac}. 
 This form can be obtained as a linear combination of the linear forms $\langle \rangle_h$, so that $e^{-F^{(1)}} = \int dh\, e^{-F^{(1)}_h} = \int dh \prod_{i=1}^N \psi_h(z_i)^{-2\eta_i}$. 
-More explicitly, in the case $\mu=-1$ we have
+More explicitly, in the case where the integration constant in eq. \eqref{phieq} is $\mu=-1$, we have
 \begin{align}
-\left\langle\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle\ \underset{\text{light\ asymptotic\ limit}}{=}\ \int_{H^+_3} dh\ \prod_{i=1}^N \left( \left[\begin{smallmatrix} z_i \\ 1 \end{smallmatrix}\right]^\dagger h \left[\begin{smallmatrix} z_i \\ 1 \end{smallmatrix}\right] \right)^{-2\eta_i}\ ,
+\underset{\text{light asymptotic}}{\lim}\ \left\langle\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle= \int_{H^+_3} dh\ \prod_{i=1}^N \left( \left[\begin{smallmatrix} z_i \\ 1 \end{smallmatrix}\right]^\dagger h \left[\begin{smallmatrix} z_i \\ 1 \end{smallmatrix}\right] \right)^{-2\eta_i}\ ,
 \label{zih}
 \end{align}
 where the integral is over the space \textbf{\boldmath $H_3^+$}\index{H3+@$H_3^+$ (space)} of Hermitian matrices of size two and determinant one, with a measure $dh$ that we assume to be invariant under $h\mapsto g^\dagger hg$ for $g\in SL_2({\mathbb{C}})$.
@@ -4823,17 +4826,18 @@ the light asymptotic limit of Liouville theory is a two-dimensional global confo
 To conclude our discussion of the use of free boson techniques in Liouville theory, let us review
 the relation between certain Liouville correlation functions, and free bosonic correlation functions \cite{zz95}.
 The relevant Liouville correlation functions are $N$-point functions $\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Liouville}}$ at $\sum\alpha_i = Q-bm$ where $m\in \mathbb{N}$.  
-For the Liouville three-point structure constants $C$ and $\hat C$, the limit $\sum\alpha_i = Q-bm$ is similar to the degenerate field limit \eqref{chc}-\eqref{clc}, in that $\hat C$ is smooth while $C$ has a simple pole, and
+For the Liouville three-point structure constants $C$ and $\hat C$, we have in this case
 \begin{align}
  \lim_{\sum\alpha_i \to Q-bm} \hat C_{\alpha_1,\alpha_2,\alpha_3} 
- \propto \underset{\sum \alpha_i = Q-bm}{\operatorname{Res}}  C_{\alpha_1,\alpha_2,\alpha_3}\ ,
+ = \underset{\sum \alpha_i = Q-bm}{\operatorname{Res}}  C_{\alpha_1,\alpha_2,\alpha_3}\ .
 \end{align}
-where we neglect $b$-dependent prefactors. 
+This follows from eq. \eqref{chco} in the case $m=0$, from which the cases $m\neq 0$ are obtained using the shift equations.
 For $c\notin ]-\infty,1]$, our Liouville $N$-point function still has a simple pole at $\sum\alpha_i = Q-bm$, with the residue
 \begin{align}
- \underset{\sum \alpha_i = Q-bm}{\operatorname{Res}} \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Liouville}} = \underset{\sum\alpha_i = Q-bm}{\operatorname{Res}} \left\langle e^{-\frac{\mu^b}{\pi\gamma(b^2)}\int_{\mathbb{C}} V_b(z)d^2z}\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Free boson}}\ .
+ \underset{\sum \alpha_i = Q-bm}{\operatorname{Res}} \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Liouville}} = \underset{\sum\alpha_i = Q-bm}{\operatorname{Res}} \left\langle e^{-\frac{\mu^b}{\pi\gamma(b^2)}\int_{\mathbb{C}} V_b(z)d^2z}\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Free boson}}\ ,
 \label{lild}
 \end{align}
+where $\mu$ is the cosmological constant.
 On the free boson side, taking the residue of a correlation function \eqref{dpzz} means stripping out a delta function, and 
 \begin{multline}
  \underset{\sum\alpha_i = Q-bm}{\operatorname{Res}} \left\langle e^{-\frac{\mu^b}{\pi\gamma(b^2)}\int_{\mathbb{C}} V_b(z)d^2z}\prod_{i=1}^N V_{\alpha_i}(z_i)\right\rangle^{\text{Free boson}}
@@ -4846,23 +4850,24 @@ This is an example of \textbf{\boldmath conformal perturbation theory}\index{con
 The perturbing operator, here $V_b$, is chosen so that its conformal dimension is one, a necessary but not sufficient condition for the perturbed theory to still have conformal symmetry.
 This example is rather pathological, as Liouville theory does not have a smooth $\mu\to 0$ limit where we could recover a free bosonic theory, and we do not compute all Liouville theory correlation functions, but only their residues at certain poles. 
 
-The integral \eqref{mint} is called a \textbf{\boldmath Coulomb gas integral}\index{Coulomb gas integral}, and 
-coincides with the partition function of a matrix model \cite{ekr15}. Let us give the matrix model interpretation of some Liouville theory quantities:
+The integral \eqref{mint} is called a \textbf{\boldmath Coulomb gas integral}\index{Coulomb gas integral} or Dotsenko--Fateev integral. Such integrals can be used for computing correlation functions not only in Liouville theory, but also in other CFTs, including minimal models. Our integral
+coincides with the partition function of a matrix model \cite{ekr15}, and we have the following matrix model interpretation of certain CFT quantities:
 \begin{align}
+\renewcommand{\arraystretch}{1.3}
  \begin{tabular}{|l|l|}
   \hline
-Liouville theory & matrix model
+CFT & matrix model
 \\
 \hline \hline
 $N$-point function & partition function 
 \\
 \hline
-$W(y)$  & resolvent
+$F, W(y)$ in eq. \eqref{fwy}  & free energy, resolvent
 \\
 \hline
 eq. \eqref{wwwt} for $W^{(0)}(y)$ & loop equation 
 \\
-\hline $m$ & matrix size
+\hline $m$ in eq. \eqref{lild} & matrix size
 \\
 \hline
 $y_k$ in eq. \eqref{mint} & matrix eigenvalue
