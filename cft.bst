@@ -13,6 +13,8 @@
 % help SPIRES understand who cites whom. Need we include 'arXiv' prefix for that? 
 % Removed some useless stuff.
 
+% Version morder6: Adding DOI for books.
+
 %% This is file `morder.bst',
 %% generated with the docstrip utility.
 %%
@@ -76,6 +78,7 @@ ENTRY
     url
     volume
     year
+    doi
   }
   {}
   { label }
@@ -344,7 +347,19 @@ FUNCTION {format.eprint}
         'skip$
         { * }
       if$
-      "[" * swap$ * "]" *
+      "[arXiv:" * swap$ * "]" *
+    }
+  if$
+}
+FUNCTION {format.doi}
+{ doi duplicate$ empty$
+    'skip$
+    { " "
+      archive empty$
+        'skip$
+        { * }
+      if$
+      "[doi:" * swap$ * "]" *
     }
   if$
 }
@@ -449,7 +464,7 @@ FUNCTION {format.title}
   if$
 }
 
-% This function for adding a link, if applied to a title formatted as above, correctly keeps the '\\' at the beginning of the formatted title outside the link, for reasons unknown to me. 
+% NB: This function for adding a link, if applied to a title formatted as above, correctly keeps the '\\' at the beginning of the formatted title outside the link, for reasons unknown to me. 
 FUNCTION {add.link}
 { duplicate$ empty$
 { pop$ "" }
@@ -929,6 +944,7 @@ FUNCTION {book}
 { output.bibitem
   format.authors add.link "author" output.check
   format.bookdate "year" output.check
+  format.doi "doi" output.check
   format.title "title" output.check
   fin.entry
 }
