@@ -5272,7 +5272,7 @@ eq. \eqref{ppdz} is equivalent to the following equation for $\mathcal{K}\left\l
 \label{pkkz}
 \end{align}
 This equation apparently only involves $y_j$ for a given index $j$, whereas each KZ equation involves $(X_1,\cdots X_N)$. 
-So it may seem that using Sklyanin variables leads to a separation of variables no only in the Gaudin model, but also
+So it may seem that using Sklyanin variables leads to a separation of variables not only in the Gaudin model, but also
 in the KZ equations. 
 This is however not true, because the differential operator $\hat{T}(y)$ \eqref{tcy} involves $z_i$-derivatives at fixed isospin variables $X_i$.
 When writing $\mathcal{K} \hat{T}(\hat{y}_j) \mathcal{K}^{-1}$, we have to use $z_i$-derivatives at fixed Sklyanin variables $y_k$, and we find
@@ -5296,22 +5296,22 @@ the equation \eqref{pkkz} is equivalent to
 \subsubsection{KZ-BPZ relation for conformal blocks}
 
 As an equation for $\Theta_N^{\frac{k+2}{2}}\mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle$,
-eq. \eqref{vskz} coincides with the BPZ equation \eqref{pvot} for the correlation function of $\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \prod_{j=1}^{N-2}V_{\langle 2,1\rangle}(y_j)\right\rangle$, provided the parameter $b$ of the Virasoro algebra is given by 
+eq. \eqref{vskz} coincides with the BPZ equation \eqref{pvot} for the correlation function of $\left\langle \prod_{i=1}^N V_{P_i}(z_i) \prod_{j=1}^{N-2}V_{\langle 2,1\rangle}(y_j)\right\rangle$, provided the parameter $b$ of the Virasoro algebra is given by 
 \begin{align}
  \boxed{ b^2 = -k-2}\ ,
 \label{bk}
 \end{align}
-and the momentums $\alpha_i$ are given in terms of the spins $j_i$ by 
+and the momentums $P_i$ are given in terms of the spins $j_i$ by 
 \begin{align}
- \boxed{\alpha = -b^{-1}j+\frac{b}{2}}\quad \implies \quad \boxed{\Delta(\alpha(j)) = \Delta_j-\frac{k}{4}}\ ,
+ \boxed{P = b^{-1}\left(j+\tfrac12\right)}\quad \implies \quad \boxed{\Delta(P) = \Delta_j-\frac{k}{4}}\ ,
 \label{aj}
 \end{align}
-where $\Delta(\alpha)$ is given by eq. \eqref{daq}.
+where $\Delta(P)$ is given by eq. \eqref{daq}.
 The BPZ equations only constrain the dependence on $y_j$, but we already determined the dependence of  
 $\mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle$ on the variables $Y_1$ and $Y_2$.
 This leads to Feigin, Frenkel and Stoyanovsky's \textbf{\boldmath KZ-BPZ relation}\index{KZ-BPZ relation},
 \begin{align}
- \boxed{ \mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle \sim \delta(Y_1) Y_2 \Theta_N^{\frac12 b^2} \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\prod_{j=1}^{N-2}V_{\langle 2,1\rangle}(y_j)\right\rangle}\ .
+ \boxed{ \mathcal{K}\left\langle \prod_{i=1}^N \Phi^{j_i}_{X_i}(z_i)\right\rangle \sim \delta(Y_1) Y_2 \Theta_N^{\frac12 b^2} \left\langle \prod_{i=1}^N V_{P_i}(z_i)\prod_{j=1}^{N-2}V_{\langle 2,1\rangle}(y_j)\right\rangle}\ .
 \label{dyy}
 \end{align}
 This equation means that the differential equations obeyed by both sides coincide.
@@ -5323,15 +5323,15 @@ In the diagrammatic representation of conformal blocks as trees, the relevant Vi
 \draw (-1,-2) node [left] {$j_2$} -- (0,0);
 \draw (4,0) -- (5,-2) node [right] {$j_3$};
 \end{tikzpicture}
-\quad \rightarrow \quad  
+\quad \sim \quad  
 \begin{tikzpicture}[baseline={(0,0)}, very thick, scale = .6]
-\draw (-1,2) node [left] {$\alpha(j_1)$} -- (0,0) -- (1,0) -- node [above] {$\alpha(j_s)$} (5,0) -- (6.3,2.6) node [right] {$\alpha(j_4)$};
-\draw (-1,-2) node [left] {$\alpha(j_2)$} -- (0,0);
-\draw (5,0) -- (6,-2) node [right] {$\alpha(j_3)$};
+\draw (-1,2) node [left] {$P_1$} -- (0,0) -- (1,0) -- node [above] {$P_s$} (5,0) -- (6.3,2.6) node [right] {$P_4$};
+\draw (-1,-2) node [left] {$P_2$} -- (0,0);
+\draw (5,0) -- (6,-2) node [right] {$P_3$};
 \draw[dashed] (1,0) -- (1,2.2) node[above] {$\left<2,1\right>$};
 \draw[dashed] (5.3, .6) -- (4.3, 2.6) node[above] {$\left<2,1\right>$};
-\node[right] at (5.15, .2) {$\alpha(j_4)+\sigma \frac{b}{2}$};
-\draw[thin, latex-] (.5, -.2) to[out = -90, in = 180] (1,-1) node [right] {$\alpha(j_s) + \epsilon \frac{b}{2}$};
+\node[right] at (5.15, .2) {$P_4+\sigma \frac{b}{2}$};
+\draw[thin, latex-] (.5, -.2) to[out = -90, in = 180] (1,-1) node [right] {$P_s + \epsilon \frac{b}{2}$};
 \end{tikzpicture}
 \end{align}
 The separation of variables $\mathcal{K}$ is in general an integral transformation, but in the case of the $\mu$-basis \eqref{mub} of isospin variables, we have 
@@ -5351,11 +5351,11 @@ Then the resulting expression can be interpreted as an $N$-point function in a t
 \subsubsection{\texorpdfstring{$\widehat{\mathfrak{sl}}_2$}{sl2} degenerate representations and fusion rules}
 
 Let us use the KZ-BPZ relation for deriving $\widehat{\mathfrak{sl}}_2$ degenerate representations and fusion rules. 
-The idea is that an OPE of two $\widehat{\mathfrak{sl}}_2$-primary fields $\Phi^{j_1}\Phi^{j_2}$ is equivalent an OPE of three Virasoro-primary fields $V_{\langle 2, 1\rangle}V_{\alpha_1}V_{\alpha_2}$, with momentums given by eq. \eqref{aj}.
-Defining $\Phi^{j_1}$ as degenerate if the OPE $\Phi^{j_1}\Phi^{j_2}$ contains finitely many $\widehat{\mathfrak{sl}}_2$-primary fields, the corresponding Virasoro-primary field $V_{\alpha_1}$ must therefore itself be degenerate, $V_{\alpha_1}=V_{\langle r, s\rangle}$ with $r,s\geq 1$. 
+The idea is that an OPE of two $\widehat{\mathfrak{sl}}_2$-primary fields $\Phi^{j_1}\Phi^{j_2}$ is equivalent an OPE of three Virasoro-primary fields $V_{\langle 2, 1\rangle}V_{P_1}V_{P_2}$, with momentums given by eq. \eqref{aj}.
+Defining $\Phi^{j_1}$ as degenerate if the OPE $\Phi^{j_1}\Phi^{j_2}$ contains finitely many $\widehat{\mathfrak{sl}}_2$-primary fields, the corresponding Virasoro-primary field $V_{P_1}$ must therefore itself be degenerate, $V_{P_1}=V_{\langle r, s\rangle}$ with $r,s\geq 1$. 
 The relevant Virasoro OPE becomes 
 \begin{align}
- V_{\langle 2, 1\rangle}V_{\langle r, s\rangle}V_{\alpha_2} \sim V_{\langle r+1, s\rangle}V_{\alpha_2}\ .
+ V_{\langle 2, 1\rangle}V_{\langle r, s\rangle}V_{P_2} \sim V_{\langle r+1, s\rangle}V_{P_2}\ .
 \end{align}
 (If $r>1$, the OPE $V_{\langle 2, 1\rangle}V_{\langle r, s\rangle}\sim V_{\langle r-1, s\rangle}+ V_{\langle r+1, s\rangle}$ actually has two terms, but the first term's contributions are included in the second term's.)
 We actually only assume $r\geq 0,s\geq 1$ rather than $r,s\geq 1$, as this is enough for $V_{\langle r+1, s\rangle}$ to be degenerate.
@@ -5367,14 +5367,14 @@ This suggests that there are degenerate fields $\Phi^{\langle r,s\rangle}$ with 
 obtained by applying the relation \eqref{aj} to the degenerate momentums \eqref{ars}. And the resulting OPEs are
 \begin{align}
  \Phi^{\langle r, s\rangle}\Phi^j \sim 
- \sum_{i=0}^r \sum_{\ell=0}^{s-1} \Phi^{j-j_{\langle r,s\rangle}-(k+2)i+\ell}
+ \sum_{i=-\frac{r}{2}}^\frac{r}{2} \sum_{\ell=-\frac{s-1}{2}}^{\frac{s-1}{2}} \Phi^{j+(k+2)i+\ell}
  = \Phi^{j-j_{\langle r,s\rangle}} + \cdots + \Phi^{j+j_{\langle r,s\rangle}}\ .
  \label{prspj}
 \end{align}
-These OPEs agree with the fusion rules that can be derived from analyzing singular vectors in affine highest-weight representations \cite{ay92}, with $\Phi^{\langle r, s\rangle}$ having a vanishing descendent at the level $N=rs$. (See Exercise \ref{exolos} for the case $N=1$.) 
+These OPEs agree with the fusion rules that can be derived from analyzing singular vectors in affine highest-weight representations \cite{ay92}, with $\Phi^{\langle r, s\rangle}$ having a vanishing descendent at the level $N=rs$. (See Exercise \ref{exolos} for the case $N=1$.) In contrast to the case of Virasoro algebra, there are nontrivial representations with singular vectors at the level $N=0$.
 
 It is tempting to speculate that there exist $\widehat{\mathfrak{sl}}_2$ generalized minimal models.
-For any given value of the level, this would be a diagonal model whose spectrum would be made of the representations that correspond to the fields $\Phi^{\langle r, s\rangle}$. For a rational value of the level, there should also exist a diagonal $\widehat{\mathfrak{sl}}_2$ minimal model, whose spectrum would contain finitely many such representations.
+For any given value of the level $k$, this would be a diagonal model whose spectrum would be made of the representations that correspond to the fields $\Phi^{\langle r, s\rangle}$. For a rational value of the level $k$, there should also exist a diagonal $\widehat{\mathfrak{sl}}_2$ minimal model, whose spectrum would contain finitely many such representations.
 If we restrict ourselves to the set of half-integer spin fields $\Phi^{\langle 0, s\rangle}$, which is closed under OPEs, we actually obtain the (generalized) $SU_2$ WZW models of Section \ref{secsu}.
 
 
@@ -5405,14 +5405,14 @@ are deduced from Liouville theory via the relation \eqref{aj}. The relation \eqr
  \boxed{ \left\langle \prod_{i=1}^N \Phi^{j_i}_{\mu_i}(z_i)\right\rangle 
  = \delta^{(2)}\left({\textstyle\sum_{i=1}^N \mu_i}\right) 
  \left|{\textstyle\sum_{i=1}^N\mu_iz_i}\right|^2 |\Theta_N|^{-k-2} 
- \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i)\prod_{j=1}^{N-2}V_{\langle 2,1\rangle}(y_j)\right\rangle}\ .
+ \left\langle \prod_{i=1}^N V_{P_i}(z_i)\prod_{j=1}^{N-2}V_{\langle 2,1\rangle}(y_j)\right\rangle}\ .
 \label{dyym} 
 \end{align}
 The reflection relation for Liouville primary fields leads to a reflection relation for $H_3^+$ primary fields,
 \begin{align}
  \Phi^j_{\mu} = R(-b^{-1}j+\tfrac{b}{2}) \Phi^{-j-1}_{\mu} \ ,
 \end{align}
-which involves the Liouville reflection coefficient $R(\alpha)$ \eqref{ram}.
+which involves the Liouville reflection coefficient $R(P)$ \eqref{ram}.
 And the two-point function \eqref{vvss} of Liouville theory leads to
 \begin{align}
  \left\langle \Phi^{j_1}_{\mu_1} \Phi^{j_2}_{\mu_2}\right\rangle = \delta^{(2)}(\mu_1+\mu_2) |\mu_1|^2 b\Big(\delta(j_1+j_2+1)+R\left(-b^{-1}j_1+\tfrac{b}{2}\right) \delta(j_2-j_1) \Big)\ .
@@ -5460,17 +5460,17 @@ In this case there is one Sklyanin variables $y_1$, and we have
 \end{align}
 The relation \eqref{dyym} then reads 
 \begin{align}
- \left\langle \prod_{i=1}^3\Phi^{j_i}_{\mu_i} \right\rangle = \delta^{(2)}(\textstyle{\sum}_{i=1}^3\mu_i) |\mu_2|^2 \sum_\pm C_\pm(\alpha_1)C_{\alpha_1\mp\frac{b}{2},\alpha_2,\alpha_3} \left|\mathcal{H}^{(s)}_\pm(-\tfrac{\mu_1}{\mu_2})  \right|^2\ , 
+ \left\langle \prod_{i=1}^3\Phi^{j_i}_{\mu_i} \right\rangle = \delta^{(2)}(\textstyle{\sum}_{i=1}^3\mu_i) |\mu_2|^2 \sum_\pm C_\pm(P_1)C_{P_1\mp\frac{b}{2},P_2,P_3} \left|\mathcal{H}^{(s)}_\pm(-\tfrac{\mu_1}{\mu_2})  \right|^2\ , 
 \label{sfpm}
 \end{align}
-where we used the momentums $\alpha_i$ \eqref{aj}, the Liouville theory structure constants $C_\pm(\alpha)$ and $C_{\alpha_1,\alpha_2,\alpha_3}$, and the functions $\mathcal{H}^{(s)}_\pm(x)$ that are related to the 
+where we used the momentums $P_i$ \eqref{aj}, the Liouville theory structure constants $C_\pm(P)$ and $C_{P_1,P_2,P_3}$, and the functions $\mathcal{H}^{(s)}_\pm(x)$ that are related to the 
 $s$-channel Virasoro conformal blocks  
 $
  \mathcal{F}^{(s)}_\pm(x)  =  
 \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
-\draw (-1,2) node [left] {$\alpha_1$} -- (0,0) -- node [above] {$\alpha_1\mp \frac{b}{2}$} (4,0) -- (5,2) node [right] {$\alpha_2$};
+\draw (-1,2) node [left] {$P_1$} -- (0,0) -- node [above] {$P_1\mp \frac{b}{2}$} (4,0) -- (5,2) node [right] {$P_2$};
 \draw[dashed] (-1,-2) node [left] {$\langle 2,1 \rangle$} -- (0,0);
-\draw (4,0) -- (5,-2) node [right] {$\alpha_3$};
+\draw (4,0) -- (5,-2) node [right] {$P_3$};
 \end{tikzpicture}
 $
 by eq. \eqref{fgs}. 
@@ -5497,10 +5497,10 @@ where we define
 The right-hand side of eq. \eqref{iii} is a combination of solutions \eqref{pmf} of the $\mu$-basis global Ward identities, written using the functions $\mathcal{H}^{(s)}_\pm(x)$ of eq. \eqref{fpm}.
 Comparing with eq. \eqref{sfpm}, we obtain the three-point structure constant in terms of Liouville theory structure constants,
 \begin{align}
- C^{H_3^+}_{j_1,j_2,j_3} = \frac{\pi^2\prod_{i=1}^3\gamma(2j_i+1)}{d_\pm}C_{\pm}(\alpha_1)C_{\alpha_1\mp \frac{b}{2},\alpha_2,\alpha_3}\ .
+ C^{H_3^+}_{j_1,j_2,j_3} = \frac{\pi^2\prod_{i=1}^3\gamma(2j_i+1)}{d_\pm}C_{\pm}(P_1)C_{P_1\mp \frac{b}{2},P_2,P_3}\ .
 \end{align}
 The conformal boostrap equations of Liouville theory guarantee that this does not depend on the sign $\pm$, see Section \ref{seccbe}.
-Using eqs. \eqref{cpm} and \eqref{caaa} for $C_{\pm}(\alpha_1)$ and $C_{\alpha_1\mp \frac{b}{2},\alpha_2,\alpha_3}$ respectively, we find
+Using eqs. \eqref{cpm} and \eqref{caaa} for $C_{\pm}(P_1)$ and $C_{P_1\mp \frac{b}{2},P_2,P_3}$ respectively, we find
 \begin{align}
 \boxed{C^{H_3^+}_{j_1,j_2,j_3} = \frac{\pi^2b^{-1}\left[b^{\frac{2}{b^2}}\mu^{\frac{1}{b}}\right]^{j_1+j_2+j_3+1} \Upsilon'_b(0)\Upsilon_b(-\frac{2j_1}{b})\Upsilon_b(-\frac{2j_2}{b})\Upsilon_b(-\frac{2j_3}{b})}
 {\Upsilon_b(-\frac{j_1+j_2+j_3+1}{b})\Upsilon_b(-\frac{j_1+j_2-j_3}{b}) \Upsilon_b(-\frac{j_1-j_2+j_3}{b})\Upsilon_b(-\frac{-j_1+j_2+j_3}{b})}}\ ,
