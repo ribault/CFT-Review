@@ -272,9 +272,9 @@ I have tried to follow some stylistic good practices, such as: providing a click
 
 I am grateful to my colleagues at IPhT Saclay, and in particular to Antoine Duval, Riccardo Guida, Santiago Migliaccio, Vincent Pasquier, and Pierre Ronceray, for the opportunity to give lectures on this subject. I am also grateful to the organizers and participants of the 10th APCTP Focus Program on Liouville, Integrability and Branes, and in particular to Soojong Rey, for including my lectures in an otherwise very advanced workshop. Moreover, I am grateful to the organizers and participants of the 2016 Carg\`ese school on Quantum integrable systems, conformal field theory and stochastic processes, for challenging me to introduce the subject in about four hours. (See \cite{rib16}.) 
 
-I wish to thank Philippe Di Francesco, Sheer El-Showk, Matthias Gaberdiel, Christoph Keller, Miguel Paulos, Slava Rychkov, Vincent Vargas, and G\'erard Watts, for useful discussions and correspondence.
+I wish to thank Philippe Di Francesco, Sheer El-Showk, Matthias Gaberdiel, Christoph Keller, Miguel Paulos, R\'emi Rhodes, Slava Rychkov, Vincent Vargas, and G\'erard Watts, for useful discussions and correspondence.
 
-I am grateful to Connor Behan, Fran\c{c}ois David, Quang-Dien Duong, Bruno Le Floch, Omar Foda, Raoul Santachiara, and Vincent Vargas, for helpful comments on this text.
+I am grateful to Connor Behan, Fran\c{c}ois David, Quang-Dien Duong, Bruno Le Floch, Omar Foda, Santiago Migliaccio, Raoul Santachiara, and Vincent Vargas, for helpful comments on this text.
 
 \chapter{Introduction \label{secintr}}
 
@@ -1482,7 +1482,7 @@ For example,
 \label{levo} 
 \end{align}
 Since $L_0$ is self-conjugate, different $L_0$-eigenspaces are orthogonal, and $\mathcal V_\Delta$ is unitary if and only if the scalar product is positive definite on each eigenspace. 
-Given a basis $\{v_i\}$ of the level-$N$ eigenspace $\mathcal{R}_N$, the scalar product on $\mathcal{R}_N$ is characterized by the \textbf{Gram matrix}\index{Gram matrix} $M^{(N)}$ defined by $M^{(N)}_{ij}=\langle v_i|v_j\rangle$, and in particular the scalar product is positive definite if and only if all the eigenvalues of $M^{(N)}$ are strictly positive. This implies in particular $\det M^{(N)}>0$.
+Given a basis $\{v_i\}$ of the level-$N$ eigenspace $\mathcal{R}_N$, the scalar product on $\mathcal{R}_N$ is characterized by the Gram matrix $M^{(N)}$ defined by $M^{(N)}_{ij}=\langle v_i|v_j\rangle$, and in particular the scalar product is positive definite if and only if all the eigenvalues of $M^{(N)}$ are strictly positive. This implies in particular $\det M^{(N)}>0$.
 We now make a useful remark:
 \begin{center}
  \begin{minipage}{0.9\textwidth}
@@ -1912,7 +1912,7 @@ A three-point function of left and right primary fields is therefore of the type
 \label{cff}
 \end{align}
 where the $z_i$-independent factor
-$C_{123}$ is called a \textbf{\boldmath three-point structure constant}\index{three-point structure constant}, and the modulus square notation means 
+$C_{123}$ is called a \textbf{\boldmath three-point structure constant}\index{structure constant!three-point---}, and the modulus square notation means 
 \begin{align}
 |f(\Delta,z)|^2 = f(\Delta,z)f(\bar{\Delta},\bar{z})\ .
 \label{eq:msn}
@@ -3056,7 +3056,7 @@ Then the two-point function takes the form
  \Big\langle V_{P_1}(z_1) V_{P_2}(z_2)\Big\rangle = B(P_1)\delta(P_1-P_2) |z_{12}|^{-4\Delta(P_1)}\ , 
 \label{vvc}
 \end{align}
-where we introduce a coefficient $B(P)$ called the two-point structure constant. 
+where we introduce a coefficient $B(P)$ called the \textbf{two-point structure constant}\index{structure constant!two-point---}. 
 We could set this coefficient to one via a field renormalization,
 \begin{align}
  V_P(z) \to \lambda(P)  V_P(z) \ ,
@@ -3447,7 +3447,7 @@ Then $\hat C_{P_1,P_2,P_3}$ has the same behaviour as $C_{P_1,P_2,P_3}$ under th
  \end{align}
 % Corresponds to \sum\alpha = Q if \alpha = Q/2 - P
 
-\subsubsection{The reflection coefficient}
+\subsubsection{The reflection relation}
 
 While the representations in Liouville theory's spectrum can be parametrized by momentums $P\in i\mathbb{R}_+$, the analytic properties of correlation functions allow us to consider fields with arbitrary complex momentums. 
 In particular, for a given momentum $P$, it makes sense to consider the reflected momentum $-P$, which corresponds to the same representation of the Virasoro algebra. 
@@ -5393,12 +5393,10 @@ According to the relation \eqref{bk}, the central charges of the $H_3^+$ model \
 
 \subsection{Spectrum and correlation functions}
 
-\subsubsection{Spectrum and fields}
-
 Since Liouville theory is diagonal, the $H_3^+$ model is diagonal.
 The values of the spin $j$,
 \begin{align}
- \boxed{j\in -\frac12 + ib\mathbb{R}}\ , 
+ \boxed{j\in -\frac12 + ib\mathbb{R}_+}\ , 
 \end{align}
 are deduced from Liouville theory via the relation \eqref{aj}. The relation \eqref{my} between $\widehat{\mathfrak{sl}}_2$ isospin variables and positions of Liouville fields suggests that the left- and right-moving isospins $\mu$ and $\bar\mu$ are complex conjugates. Let us write $\Phi^j_\mu(z)$ an affine primary field of the $H_3^+$ model with isospins $\mu$ and $\bar\mu$. In terms of such fields, the $H_3^+$-Liouville relation reads 
 \begin{align}
@@ -5408,16 +5406,13 @@ are deduced from Liouville theory via the relation \eqref{aj}. The relation \eqr
  \left\langle \prod_{i=1}^N V_{P_i}(z_i)\prod_{j=1}^{N-2}V_{\langle 2,1\rangle}(y_j)\right\rangle}\ .
 \label{dyym} 
 \end{align}
-The reflection relation for Liouville primary fields leads to a reflection relation for $H_3^+$ primary fields,
+In particular, the two-point function can be deduced from the two-point function \eqref{vvss} of Liouville theory, 
 \begin{align}
- \Phi^j_{\mu} = R(-b^{-1}j+\tfrac{b}{2}) \Phi^{-j-1}_{\mu} \ ,
+ \left\langle \Phi^{j_1}_{\mu_1} \Phi^{j_2}_{\mu_2}\right\rangle = \delta^{(2)}(\mu_1+\mu_2) |\mu_1|^2 b\, B\left(b^{-1}(j_1+\tfrac12)\right) \delta(j_2-j_1)\ ,
 \end{align}
-which involves the Liouville reflection coefficient $R(P)$ \eqref{ram}.
-And the two-point function \eqref{vvss} of Liouville theory leads to
-\begin{align}
- \left\langle \Phi^{j_1}_{\mu_1} \Phi^{j_2}_{\mu_2}\right\rangle = \delta^{(2)}(\mu_1+\mu_2) |\mu_1|^2 b\Big(\delta(j_1+j_2+1)+R\left(-b^{-1}j_1+\tfrac{b}{2}\right) \delta(j_2-j_1) \Big)\ .
-\end{align}
-where we omitted the dependence on $z_i$.
+where we omitted the dependence on $z_i$, and $B(P)$ is the Liouville two-point structure constant.
+
+
 
 \subsubsection{$x$-basis fields}
 
@@ -5520,6 +5515,16 @@ The OPEs of affine primary fields are
 where the measures of integration on the spin and isospin variables are dictated by the $\delta(j_1+j_2+1)$ term in the two-point function.
 In the $\mu$-basis OPE, the integral over $\mu$ reduces to the value $\mu=\mu_1+\mu_2$, due to the delta-function prefactor of the three-point function. 
 For a study of the analytic properties of the $x$-basis OPE, and its analytic continuation to degenerate fields, see Exercise \ref{exodrfrh}.
+
+\subsubsection{Reflection relation}
+
+
+The reflection relation for Liouville primary fields leads to a reflection relation for $H_3^+$ primary fields,
+\begin{align}
+ \Phi^j_{\mu} = R(-b^{-1}j+\tfrac{b}{2}) \Phi^{-j-1}_{\mu} \ ,
+\end{align}
+which involves the Liouville reflection coefficient $R(P)$ \eqref{ram}.
+
 
 \subsection{Large level limit and geometrical interpretation}
 
