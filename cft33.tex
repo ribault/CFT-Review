@@ -3466,7 +3466,11 @@ Under reflection, our structure constants and normalization factor behave as
 \end{align}
 Normalization-independent quantities are invariant under reflection.
 
-Let us now focus on the particular normalization \eqref{nop}, such that the three-point function is given by the DOZZ formula. This normalization obeys $N(P)N(-P) = \left(N^2B^{-1}\right)(P)$, which implies $R(P)=B(P)$. 
+Let us now focus on the particular normalization \eqref{nop}, such that the three-point function is given by the DOZZ formula. This normalization obeys $N(P)N(-P) = \left(N^2B^{-1}\right)(P)$, which implies $R(P)=B(P)$ and 
+\begin{align}
+ \left<V_{P_1}V_{P_2}\right> = R(P_1)\delta(P_1-P_2) + \delta(P_1+P_2)\ .
+ \label{vvrdd}
+\end{align}
 The expressions of the reflection coefficient for $c\notin ]-\infty, 1]$ and $c\notin [25,\infty[$ are respectively
 \begin{align}
  R(P) = \mu^{2P}\frac{\Upsilon_b(2P)}{\Upsilon_b(-2P)} \quad , \quad \hat R(P) = \mu^{2P}\frac{\hat{\Upsilon}_b(2P)}{\hat{\Upsilon}_b(-2P)}\ .
@@ -5406,13 +5410,7 @@ are deduced from Liouville theory via the relation \eqref{aj}. The relation \eqr
  \left\langle \prod_{i=1}^N V_{P_i}(z_i)\prod_{j=1}^{N-2}V_{\langle 2,1\rangle}(y_j)\right\rangle}\ .
 \label{dyym} 
 \end{align}
-In particular, the two-point function can be deduced from the two-point function \eqref{vvss} of Liouville theory, 
-\begin{align}
- \left\langle \Phi^{j_1}_{\mu_1} \Phi^{j_2}_{\mu_2}\right\rangle = \delta^{(2)}(\mu_1+\mu_2) |\mu_1|^2 b\, B\left(b^{-1}(j_1+\tfrac12)\right) \delta(j_2-j_1)\ ,
-\end{align}
-where we omitted the dependence on $z_i$, and $B(P)$ is the Liouville two-point structure constant.
-
-
+We will now unpack the $H_3^+$-Liouville relation, and in particular extract the three-point structure constant of the $H_3^+$ model. In order to do that, we first need to define this structure constant. We will obtain a natural definition by studying three-point functions of $x$-basis fields. On the Liouville side, we will use the field normalization \eqref{nop} with the cosmological constant set to one.
 
 \subsubsection{$x$-basis fields}
 
@@ -5423,7 +5421,7 @@ We assume that the left- and right-moving isospins $x$ and $\bar x$ are complex 
  \Phi^j_{x} = \gamma(2j+1)\int_{{\mathbb{C}}} d^2\mu\ |\mu|^{-2j-2} e^{\mu x -\bar{\mu}\bar{x}}\Phi^j_{\mu}\ .
 \end{align}
 In this single-valued version of the Fourier transformation \eqref{emx}, 
-we introduced a prefactor $\gamma(2j+1)$, which ensures that the $H_3^+$ OPE has a finite limit when the spin becomes half-integer.
+we introduced a prefactor $\gamma(2j+1)$, which will ensure that the $H_3^+$ OPE has a finite limit when the spin becomes half-integer.
 Moreover, we flipped the sign of the second term of the exponent of $e^{\mu x -\bar{\mu}\bar{x}}$, as compared to the expected $e^{\mu x +\bar{\mu}\bar{x}}$, in order to ensure the convergence of the integral when $x$ and $\bar{x}$ are complex conjugates.
 This affects the relation between the differential operators 
 \begin{align}
@@ -5431,31 +5429,23 @@ This affects the relation between the differential operators
 \end{align}
 Notice that the minus sign in the operators $D^j_{-\bar{\mu}}(t^a)$ modifies neither their commutation relations, nor the KZ equations.
 
-The reflection relation for $x$-basis fields is
+In the $x$-basis, the dependence of the three-point function on isospin variables is given by eq. \eqref{xxx}.
+Assuming correlation functions are single-valued as functions of the isospin variables, we must have
 \begin{align}
- \Phi^j_{x} = \frac{b^2}{\pi}\mu^{\frac{2j+1}{b}}\gamma(1-\tfrac{2j+1}{b^2})\int_{{\mathbb{C}}}d^2x'\ |x-x'|^{4j}\Phi^{-j-1}_{x'}\ .
+  \left\langle \prod_{i=1}^3 \Phi^{j_i}_{x_i} \right\rangle = C^{H_3^+}_{j_1,j_2,j_3}\ |x_{12}|^{2(j_1+j_2-j_3)} |x_{23}|^{2(j_2+j_3-j_1)} |x_{31}|^{2(j_3+j_1-j_2)}\ ,
+\label{ch}
 \end{align}
-This is deduced from the reflection relation for $\mu$-basis fields using the formula
-\begin{align}
- \int_{{\mathbb{C}}}d^2\mu\ e^{\mu x-\bar{\mu}\bar{x}} |\mu|^{-4j-2} = |x|^{4j}\pi \gamma(-2j) \ .
-\label{icmx}
-\end{align}
-This formula can also be used for deducing the $x$-basis two-point function,
-\begin{align}
- \left\langle \Phi^{j_1}_{x_1} \Phi^{j_2}_{x_2} \right\rangle = \frac{-\pi^2 b}{(2j_1+1)^2}\, \delta(j_1+j_2+1)\delta^{(2)}(x_{12}) 
-+ \frac{\pi}{b}\mu^{\frac{2j_1+1}{b}} \gamma(-\tfrac{2j_1+1}{b^2})\, \delta(j_1-j_2)|x_{12}|^{4j_1}\, .
-\label{pjpj}
-\end{align}
+which provides a natural definition of the three-point structure constant $C^{H_3^+}_{j_1,j_2,j_3}$.
 
-\subsubsection{Three-point function and OPE}
+\subsubsection{Three-point structure constant}
 
-In this case there is one Sklyanin variables $y_1$, and we have
+In the case $N=3$, the $H_3^+$-Liouville relation involves one Sklyanin variables $y_1$, and we have
 \begin{align}
  N=3 \quad \implies \quad  \left\{\begin{array}{l} y_1 = -\frac{\mu_1z_2z_3+\mu_2z_3z_1+\mu_3z_1z_2}{\sum_{i=1}^3\mu_iz_i}\ , \\ \frac{(y_1-z_1)(z_2-z_3)}{(y_1-z_2)(z_1-z_3)} = -\frac{\mu_1}{\mu_2}\ . \end{array}\right.
 \end{align}
 The relation \eqref{dyym} then reads 
 \begin{align}
- \left\langle \prod_{i=1}^3\Phi^{j_i}_{\mu_i} \right\rangle = \delta^{(2)}(\textstyle{\sum}_{i=1}^3\mu_i) |\mu_2|^2 \sum_\pm C_\pm(P_1)C_{P_1\mp\frac{b}{2},P_2,P_3} \left|\mathcal{H}^{(s)}_\pm(-\tfrac{\mu_1}{\mu_2})  \right|^2\ , 
+ \left\langle \prod_{i=1}^3\Phi^{j_i}_{\mu_i} \right\rangle = \delta^{(2)}(\textstyle{\sum}_{i=1}^3\mu_i) |\mu_2|^2 \sum_\pm C_\pm(P_1)C_{P_1\pm\frac{b}{2},P_2,P_3} \left|\mathcal{H}^{(s)}_\pm(-\tfrac{\mu_1}{\mu_2})  \right|^2\ , 
 \label{sfpm}
 \end{align}
 where we used the momentums $P_i$ \eqref{aj}, the Liouville theory structure constants $C_\pm(P)$ and $C_{P_1,P_2,P_3}$, and the functions $\mathcal{H}^{(s)}_\pm(x)$ that are related to the 
@@ -5463,21 +5453,14 @@ $s$-channel Virasoro conformal blocks
 $
  \mathcal{F}^{(s)}_\pm(x)  =  
 \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
-\draw (-1,2) node [left] {$P_1$} -- (0,0) -- node [above] {$P_1\mp \frac{b}{2}$} (4,0) -- (5,2) node [right] {$P_2$};
+\draw (-1,2) node [left] {$P_1$} -- (0,0) -- node [above] {$P_1\pm \frac{b}{2}$} (4,0) -- (5,2) node [right] {$P_2$};
 \draw[dashed] (-1,-2) node [left] {$\langle 2,1 \rangle$} -- (0,0);
 \draw (4,0) -- (5,-2) node [right] {$P_3$};
 \end{tikzpicture}
 $
 by eq. \eqref{fgs}. 
 
-The three-point function is simpler in the $x$-basis, see eq. \eqref{xxx}.
-Assuming correlation functions are single-valued as functions of the isospin variables, we must have
-\begin{align}
-  \left\langle \prod_{i=1}^3 \Phi^{j_i}_{x_i} \right\rangle = C^{H_3^+}_{j_1,j_2,j_3}\ |x_{12}|^{2(j_1+j_2-j_3)} |x_{23}|^{2(j_2+j_3-j_1)} |x_{31}|^{2(j_3+j_1-j_2)}\ ,
-\label{ch}
-\end{align}
-which provides a natural definition of the three-point structure constant $C^{H_3^+}_{j_1,j_2,j_3}$.
-Let us compute this structure constant, by relating the $x$-basis and $\mu$-basis three-point functions. We will need the formula \cite{rt05}
+In order to extract the three-point structure constant, let us compute the Fourier transform of eq. \eqref{ch}, using the formula \cite{rt05}
 \begin{multline}
  \prod_{i=1}^3\left(\frac{|\mu_i|^{2j_i+2}}{\pi^2}\int_{{\mathbb{C}}}d^2x_i\ e^{-\mu_ix_i+\bar{\mu}_i\bar{x}_i}\right)
 |x_{12}|^{2(j_1+j_2-j_3)} |x_{23}|^{2(j_2+j_3-j_1)} |x_{31}|^{2(j_3+j_1-j_2)} 
@@ -5492,38 +5475,56 @@ where we define
 The right-hand side of eq. \eqref{iii} is a combination of solutions \eqref{pmf} of the $\mu$-basis global Ward identities, written using the functions $\mathcal{H}^{(s)}_\pm(x)$ of eq. \eqref{fpm}.
 Comparing with eq. \eqref{sfpm}, we obtain the three-point structure constant in terms of Liouville theory structure constants,
 \begin{align}
- C^{H_3^+}_{j_1,j_2,j_3} = \frac{\pi^2\prod_{i=1}^3\gamma(2j_i+1)}{d_\pm}C_{\pm}(P_1)C_{P_1\mp \frac{b}{2},P_2,P_3}\ .
+ C^{H_3^+}_{j_1,j_2,j_3} = \frac{\pi^2\prod_{i=1}^3\gamma(2j_i+1)}{d_\pm}C_{\pm}(P_1)C_{P_1\pm \frac{b}{2},P_2,P_3}\ .
 \end{align}
-The conformal boostrap equations of Liouville theory guarantee that this does not depend on the sign $\pm$, see Section \ref{seccbe}.
-Using eqs. \eqref{cpm} and \eqref{caaa} for $C_{\pm}(P_1)$ and $C_{P_1\mp \frac{b}{2},P_2,P_3}$ respectively, we find
+The single-valuedness of $\left\langle \prod_{i=1}^3\Phi^{j_i}_{\mu_i} \right\rangle $ as a function of $\mu_i$ guarantees that this does not depend on the sign $\pm$, due in particular to eq. \eqref{eq:shift}. 
+Using the DOZZ formula for $C_{P_1\pm \frac{b}{2},P_2,P_3}$, and $C_+(P)=1$ from Exercise \ref{exodoc}, we obtain
 \begin{align}
-\boxed{C^{H_3^+}_{j_1,j_2,j_3} = \frac{\pi^2b^{-1}\left[b^{\frac{2}{b^2}}\mu^{\frac{1}{b}}\right]^{j_1+j_2+j_3+1} \Upsilon'_b(0)\Upsilon_b(-\frac{2j_1}{b})\Upsilon_b(-\frac{2j_2}{b})\Upsilon_b(-\frac{2j_3}{b})}
+\boxed{C^{H_3^+}_{j_1,j_2,j_3} = \frac{\pi^2b^{-1}b^{\frac{2}{b^2}(j_1+j_2+j_3+1)} \Upsilon'_b(0)\Upsilon_b(-\frac{2j_1}{b})\Upsilon_b(-\frac{2j_2}{b})\Upsilon_b(-\frac{2j_3}{b})}
 {\Upsilon_b(-\frac{j_1+j_2+j_3+1}{b})\Upsilon_b(-\frac{j_1+j_2-j_3}{b}) \Upsilon_b(-\frac{j_1-j_2+j_3}{b})\Upsilon_b(-\frac{-j_1+j_2+j_3}{b})}}\ ,
 \label{chp}
 \end{align}
-where the parameter $b$ is given by eq. \eqref{bk}, and the cosmological constant $\mu$ is inherited from Liouville theory.
+where the parameter $b$ is given by eq. \eqref{bk}.
 (We would have a different formula in the case $b\in i\mathbb{R}$ i.e. $k>-2$, based on the alternative Liouville structure constant \eqref{hc}.)
 
-The OPEs of affine primary fields are
-\begin{align}
- \Phi^{j_1}_{x_1}\Phi^{j_2}_{x_2} &\sim \frac12 \int_{-\frac12 + ib\mathbb{R}} \frac{(2j+1)^2 dj}{-\pi^2b}\int_{{\mathbb{C}}}d^2x \left\langle \Phi^{j_1}_{x_1}\Phi^{j_2}_{x_2} \Phi^{-j-1}_{x} \right\rangle \Phi^j_{x}\ ,
-\label{xope}
-\\
-\Phi^{j_1}_{\mu_1}\Phi^{j_2}_{\mu_2} &\sim \frac12 \int_{-\frac12 + ib\mathbb{R}} dj\int_{{\mathbb{C}}}\frac{d^2\mu}{b|\mu|^2} \left\langle \Phi^{j_1}_{\mu_1}\Phi^{j_2}_{\mu_2} \Phi^{-j-1}_{-\mu} \right\rangle \Phi^j_{\mu}\ , 
-\label{mope}
-\end{align}
-where the measures of integration on the spin and isospin variables are dictated by the $\delta(j_1+j_2+1)$ term in the two-point function.
-In the $\mu$-basis OPE, the integral over $\mu$ reduces to the value $\mu=\mu_1+\mu_2$, due to the delta-function prefactor of the three-point function. 
-For a study of the analytic properties of the $x$-basis OPE, and its analytic continuation to degenerate fields, see Exercise \ref{exodrfrh}.
 
-\subsubsection{Reflection relation}
-
+\subsubsection{Reflection relation, two-point function and OPE}
 
 The reflection relation for Liouville primary fields leads to a reflection relation for $H_3^+$ primary fields,
 \begin{align}
- \Phi^j_{\mu} = R(-b^{-1}j+\tfrac{b}{2}) \Phi^{-j-1}_{\mu} \ ,
+ \Phi^j_{\mu} = R\left(b^{-1}(j+\tfrac12)\right) \Phi^{-j-1}_{\mu} \ ,
 \end{align}
-which involves the Liouville reflection coefficient $R(P)$ \eqref{ram}.
+which involves the Liouville reflection coefficient $R(P)$ \eqref{ram}. The two-point function can be deduced from the two-point function \eqref{vvrdd} of Liouville theory, 
+\begin{align}
+ \left\langle \Phi^{j_1}_{\mu_1} \Phi^{j_2}_{\mu_2}\right\rangle = \delta^{(2)}(\mu_1+\mu_2) |\mu_1|^2 b\Big[\delta(j_1+j_2+1) + R\left(b^{-1}(j_1+\tfrac12)\right) \delta(j_2-j_1)\Big]\ .
+\end{align}
+Let us deduce the reflection relation and two-point function for $x$-basis fields, using the formula  
+\begin{align}
+ \int_{{\mathbb{C}}}d^2\mu\ e^{\mu x-\bar{\mu}\bar{x}} |\mu|^{-4j-2} = |x|^{4j}\pi \gamma(-2j) \ .
+\label{icmx}
+\end{align}
+We find the reflection relation 
+\begin{align}
+ \Phi^j_{x} = \frac{b^2}{\pi}\gamma(1-\tfrac{2j+1}{b^2})\int_{{\mathbb{C}}}d^2x'\ |x-x'|^{4j}\Phi^{-j-1}_{x'}\ ,
+\end{align}
+and the two-point function 
+\begin{align}
+ \left\langle \Phi^{j_1}_{x_1} \Phi^{j_2}_{x_2} \right\rangle = \frac{-\pi^2 b}{(2j_1+1)^2}\, \delta(j_1+j_2+1)\delta^{(2)}(x_{12}) 
++ \pi b^{-1} \gamma(-\tfrac{2j_1+1}{b^2})\, \delta(j_1-j_2)|x_{12}|^{4j_1}\, .
+\label{pjpj}
+\end{align}
+Knowing the two-point function, we can easily deduce the OPE from the three-point function. 
+The simplest expression is obtained by focussing on the $\delta(j_1+j_2+1)$ term in the two-point function, and we find the following $\mu$-basis and $x$-basis OPEs,
+\begin{align}
+\Phi^{j_1}_{\mu_1}\Phi^{j_2}_{\mu_2} &\sim  \int_{-\frac12 + ib\mathbb{R}_+} dj\int_{{\mathbb{C}}}\frac{d^2\mu}{b|\mu|^2} \left\langle \Phi^{j_1}_{\mu_1}\Phi^{j_2}_{\mu_2} \Phi^{-j-1}_{-\mu} \right\rangle \Phi^j_{\mu}\ , 
+\label{mope}
+\\
+\Phi^{j_1}_{x_1}\Phi^{j_2}_{x_2} &\sim \int_{-\frac12 + ib\mathbb{R}_+} \frac{(2j+1)^2 dj}{-\pi^2b}\int_{{\mathbb{C}}}d^2x \left\langle \Phi^{j_1}_{x_1}\Phi^{j_2}_{x_2} \Phi^{-j-1}_{x} \right\rangle \Phi^j_{x}\ ,
+\label{xope}
+\end{align}
+In the $\mu$-basis OPE, the integral over $\mu$ reduces to the value $\mu=\mu_1+\mu_2$, due to the delta-function prefactor of the three-point function. 
+For a study of the analytic properties of the $x$-basis OPE, and its analytic continuation to degenerate fields, see Exercise \ref{exodrfrh}.
+
 
 
 \subsection{Large level limit and geometrical interpretation}
