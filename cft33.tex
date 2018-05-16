@@ -5561,25 +5561,26 @@ and the natural action of $g\in SL_2({\mathbb{C}})$ on the space $\mathcal{F}(H_
 \end{align}
 then we have 
 \begin{align}
- g\cdot \phi^j_{x}(h) = U_g \phi^j_{x}(h)\ .
+ g\cdot \phi^j_{x}(h) = U_g \phi^j_{x}(h)\ ,
 \end{align}
-The action $U_g$ is characteristic of the \textbf{\boldmath principal series representation of $\mathfrak{sl}_2({\mathbb{C}})$}\index{principal series representation!of sl2c@---of $\mathfrak{sl}_2({\mathbb{C}})$} $C^j$. 
-So both $\Phi^j_x$ and $\phi^j_x$ transform in this representation, and 
+with the same action $U_g$ as in eq. \eqref{ugp}.
+This shows that both $\Phi^j_x$ and $\phi^j_x$ transform in the \textbf{\boldmath principal series representation of $\mathfrak{sl}_2({\mathbb{C}})$}\index{principal series representation!of sl2c@---of $\mathfrak{sl}_2({\mathbb{C}})$} with spin $j$, which we denote as $\mathcal{C}^j$. 
+As a representation of $\mathfrak{sl}_2({\mathbb{C}})$, the large level limit of the spectrum is 
 \begin{align}
- \underset{k\to\infty}{\lim} \mathcal{S}^{H_3^+} =  \mathcal{F}(H_3^+) = \bigoplus_{j\in -\frac12+i{\mathbb{R}}_+} C^j\ .
+ \underset{k\to\infty}{\lim} \mathcal{S}^{H_3^+} =  \mathcal{F}(H_3^+) = \bigoplus_{j\in -\frac12+i{\mathbb{R}}_+} \mathcal{C}^j\ .
 \end{align}
-(For a more rigorous definition of $\mathcal{F}(H_3^+)$, and proof of its decomposition into representations of $\mathfrak{sl}_2({\mathbb{C}})$, see \cite{tes97b}.)
-So, in the large level limit, the spectrum of the $H_3^+$ model coincides with $\mathcal{F}(H_3^+)$ as a representation of the symmetry algebra $\mathfrak{sl}_2({\mathbb{C}})$. 
+(For a more rigorous definition of $\mathcal{F}(H_3^+)$, and proof of its decomposition into irreducible representations of $\mathfrak{sl}_2({\mathbb{C}})$, see \cite{tes97b}.)
+
 
 \subsubsection{Correlation functions}
 
-We will now argue that in the large level limit, correlation functions of the $H_3^+$ model are given in terms of functions on $H_3^+$ by 
+In the large level limit, correlation functions of the $H_3^+$ model are given in terms of functions on $H_3^+$ by 
 \begin{align}
  \underset{k\to \infty}{\lim} \left\langle \prod_{i=1}^N \Phi^{j_i}_{x_i}(z_i)\right\rangle \propto \int_{H_3^+} dh\ \prod_{i=1}^N \phi^{j_i}_{x_i}(h)\ , 
 \end{align}
 where the unknown proportionality factor is an $x$-independent field normalization.
 This is because both sides of this equation obey the same symmetry equations $\left<\prod_{i=1}^N U_g \phi^{j_i}_{x_i} \right> = \left<\prod_{i=1}^N \phi^{j_i}_{x_i} \right>$, and the same axioms of associativity and commutativity of the operator product, if we define the operator product in $\mathcal{F}(H_3^+)$ to be the product of functions. 
-An explicit checks of this equation can be done in the case $N=3$ \cite{tes97b}.
+An explicit check of this equation can be done in the case $N=3$ \cite{tes97b}.
 
 So the large level limit of our two-dimensional conformal field theory is the quantum mechanics of a point particle on the space $H_3^+$, which justifies naming the theory the $H_3^+$ model.
 Other names for the same theory include the $H_3^+$ WZW model and the $SL_2({\mathbb{C}})/SU_2$ WZW model; the latter name comes from the realization of the space $H_3^+$ as a coset.
@@ -5595,7 +5596,7 @@ There is a natural, positive definite scalar product on $\mathcal{F}(H_3^+)$,
 where $dh$ is the $SL_2({\mathbb{C}})$-invariant measure on $H_3^+$.
 For this scalar product, the action of $g\in SL_2({\mathbb{C}})$ is a unitary tranformation, i.e. $\left\langle g\cdot f \middle| g\cdot f'\right\rangle = \left\langle f \middle| f'\right\rangle $.
 Let us interpret this at the level of the symmetry algebra.
-The Lie algebra $\mathfrak{sl}_2({\mathbb{C}})$ of the symmetry group $SL_2({\mathbb{C}})$ can be viewed as a six-dimensional real space, whose generators are related to $J^a_0, \bar{J}^a_0$ by the ${\mathbb{R}}$-linear map
+The Lie algebra $\mathfrak{sl}_2({\mathbb{C}})$ of the symmetry group $SL_2({\mathbb{C}})$ can be viewed as a six-dimensional real vector space, whose generators $t^a,it^a$ are related to $J^a_0, \bar{J}^a_0$ by the ${\mathbb{R}}$-linear map
 \begin{align}
  \left\{\begin{array}{lcl} t^a & \mapsto & J_0^a + \bar{J}_0^a \ ,  \\ it^a & \mapsto & i(J^a_0 - \bar{J}^a_0)\ . \end{array}\right. 
 \end{align}
@@ -5620,8 +5621,8 @@ We refrain from discussing how this affects the geometrical interpretation of co
 Let us rather investigate the unitarity of the theory. 
 Given a primary state $|v\rangle$, the norm square of some of the level one descendents of $|v\rangle$ is
 \begin{align}
- \left\langle (J^0_{-1}+\lambda\bar{J}^0_{-1})v \middle| (J^0_{-1}+\lambda\bar{J}^0_{-1})v \right\rangle
-= -\left\langle v \middle| (\bar{\lambda} J^0_1+\bar{J}^0_1)(J^0_{-1}+\lambda\bar{J}^0_{-1})v \right\rangle 
+ \Big\langle (J^0_{-1}+\lambda\bar{J}^0_{-1})v \Big| (J^0_{-1}+\lambda\bar{J}^0_{-1})v \Big\rangle
+= -\Big\langle v \Big| (\bar{\lambda} J^0_1+\bar{J}^0_1)(J^0_{-1}+\lambda\bar{J}^0_{-1})v \Big\rangle 
 = -\frac{k}{2}(\lambda+\bar{\lambda}) \langle v| v\rangle\ .
 \label{viv}
 \end{align}
@@ -5643,9 +5644,9 @@ We will not use the Lagrangian definition of WZW models.
 This raises the question of characterizing these models in the conformal bootstrap approach.
 The fundamental axiom is the presence of the symmetry algebra $\hat{\mathfrak{g}}$, and some  authors call all models with this symmetry algebra WZW models.
 Here we will insist that, among models with this symmetry, 
-a WZW model can be associated with a particular Lie group $G$, such that its spectrum $\mathcal{S}$ obeys
+a WZW model can be associated with a particular Lie group $G$, such that its spectrum $\mathcal{S}_k$ obeys
 \begin{align}
- \boxed{\underset{k\to \infty}{\lim} \mathcal{S} = \mathcal{F}(G)}\ ,
+ \boxed{\underset{k\to \infty}{\lim} \mathcal{S}_k = \mathcal{F}(G)}\ ,
 \label{lsfg}
 \end{align}
 where $\mathcal{F}(G)$ is the space of functions on $G$.
@@ -5657,15 +5658,14 @@ Instead of a proper definition of WZW models, we will limit ourselves to giving 
 \item If $G$ is compact, then the level $k$ takes positive integer values.
 \item The $G$ WZW model is diagonal if and only if $G$ is simply connected. 
 \end{enumerate}
-The relation between the simple connectedness of $G$ and the diagonality of the associated model is already manifest in the case of abelian groups.
-The uncompactified free boson coincides with the ${\mathbb{R}}$ WZW model, and it is diagonal.
-The compactified free boson, whose spectrum was given in eq. \eqref{sr}, coincides with the $U(1)$ WZW model, and it is not diagonal. 
+The relation between the simple connectedness of $G$ and the diagonality of the associated model 
+has analogs in the case of free bosonic theories. Such theories are not strictly speaking WZW models, and they have no parameter that would be analogous to the level. Nevertheless, the uncompactified free boson is analogous to a WZW model with $G=\mathbb{R}$, and it is diagonal. The compactified free boson is analogous to a WZW model with $G=U_1$, and its spectrum \eqref{sr} is not diagonal. 
 
 \subsubsection{Features of the spectrum}
 
 Let us start with the large level limit \eqref{lsfg}.
 The space $\mathcal{F}(G)$ of functions on $G$ has a natural action of 
-$G\times \bar{G}$, where the bar is here for distinguishing the two copies of $G$, such that for $f\in \mathcal{F}(G)$ we have 
+$G\times \bar{G}$, where the bar is here for distinguishing two copies of $G$, such that for $f\in \mathcal{F}(G)$ we have 
 \begin{align}
 \left( (g,\bar{g})\cdot f\right)(h) = f(g^{-1}h\bar{g})\ .
 \end{align}
@@ -5675,17 +5675,17 @@ That is, $\mathfrak{g}$ and its generators $t^a$ are identified with the horizon
 We now assume that $G$ is compact.
 Then $\mathcal{F}(G)$ can be decomposed into irreducible representations of the symmetry group $G\times \bar{G}$ using the \textbf{\boldmath Peter--Weyl theorem}\index{Peter--Weyl theorem}, 
 \begin{align}
- \mathcal{F}(G) = \bigoplus_{\mathcal{R}\in \mathcal{R}} \mathcal{R}\otimes \bar{\mathcal{R}}\ ,
+ \mathcal{F}(G) = \bigoplus_{\mathcal{R}\in \text{Rep}(G)} \mathcal{R}\otimes \bar{\mathcal{R}}\ ,
 \end{align}
 % NB: Problem with notations here.
-where $\mathcal{R}$ is the set of irreducible unitary representations of $G$, which coincides with the set of irreducible finite-dimensional representations of $G$.
+where $\text{Rep}(G)$ is the set of irreducible unitary representations of $G$, which coincides with the set of irreducible finite-dimensional representations of $G$.
 If moreover $G$ is simply connected, then the spectrum of the WZW model is diagonal for all positive integer values of $k$, \cite{fms97}
 \begin{align}
- \mathcal{S} = \bigoplus_{\mathcal{R}\in \mathcal{R}_k} \hat{\mathcal{R}}\otimes \bar{\hat{\mathcal{R}}}\ .
+ \mathcal{S}_k = \bigoplus_{\mathcal{R}\in \text{Rep}_k(G)} \hat{\mathcal{R}}\otimes \bar{\hat{\mathcal{R}}}\ .
 \end{align}
-Here $\hat{\mathcal{R}}$ is the affine highest-weight representation of $\hat{\mathfrak{g}}$ that is built from $\mathcal{R}$ by acting with the creation modes and removing the null vectors, and the finite subset $\mathcal{R}_k$ of $\mathcal{R}$ is defined by certain $k$-dependent conditions.
+Here $\hat{\mathcal{R}}$ is the affine highest-weight representation of $\hat{\mathfrak{g}}$ that is built from $\mathcal{R}$ by acting with the creation modes and removing the null vectors, and the finite subset $\text{Rep}_k(G)$ of $\text{Rep}(G)$ is defined by certain $k$-dependent conditions.
 The resulting representations $\hat{\mathcal{R}}$ are called the integrable highest-weight representations of $\hat{\mathfrak{g}}$. 
-We have $\underset{k\to\infty}{\lim} \mathcal{R}_k =\mathcal{R}$ and $\underset{k\to \infty}{\lim} \hat{\mathcal{R}} = \mathcal{R}$, so that the spectrum $\mathcal{S}$ has the desired large level limit $\mathcal{F}(G)$.
+We have $\underset{k\to\infty}{\lim} \text{Rep}_k(G) =\text{Rep}(G)$ and $\underset{k\to \infty}{\lim} \hat{\mathcal{R}} = \mathcal{R}$, which imply that eq. \eqref{lsfg} holds in the case of compact groups.
 
 \subsubsection{Scalar product}
 
@@ -5722,18 +5722,18 @@ Their fusion rules are
 \end{align}
 For any value of the level $k\in\mathbb{C}-\{-2\}$, we can build a diagonal spectrum from these representations,
 \begin{align}
- \mathcal{S} = \bigoplus_{s=1}^\infty \hat{\mathcal{R}}^{\langle 0, s\rangle}\otimes \bar{\hat{\mathcal{R}}}^{\langle 0, s\rangle}\ ,
+ \mathcal{S}_k = \bigoplus_{s=1}^\infty \hat{\mathcal{R}}^{\langle 0, s\rangle}\otimes \bar{\hat{\mathcal{R}}}^{\langle 0, s\rangle}\ ,
 \end{align}
 thereby defining the \textbf{\boldmath generalized $SU_2$ WZW model}\index{WZW model!generalized $SU_2$---}. 
 We will now look for finite sets of such representations that are closed under fusion.
 
 \subsubsection{Spectrum of the $SU_2$ WZW model}
 
-As we did in the case of Virasoro minimal models, let us consider multiply degenerate representations of the type $\hat{\mathcal{R}}^{\langle 0, s\rangle}$. 
-The simplest nontrivial assumption is $j_{\langle 0, s\rangle} + j_{\langle 1, s'\rangle} +1=0$ for some $s'\in\mathbb{N}^*$, which implies $s+s'=k+2$. 
-Then the level $k$ must be integer, and the spectrum becomes 
+In the same way as we derived the spectrums of Virasoro minimal models by studying doubly-degenerate representations of the Virasoro algebra, let us study doubly degenerate representations of the affine Lie algebra $\widehat{\mathfrak{sl}}_2$. 
+
+We restrict our attention to representations that have level zero null vectors, and are therefore of the type $\hat{\mathcal{R}}^{\langle 0, s\rangle}$. In order to have another null vector, the representation must also be of the type $\hat{\mathcal{R}}^{\langle r', s'\rangle}$ with $(r',s')\neq (0,s)$. It is easy to see that this is possible only if $r'\neq 0$, and for simplicity we assume $r'=1$. This implies $j_{\langle 0, s\rangle} = j_{\langle 1, s'\rangle} $ or $j_{\langle 0, s\rangle} + j_{\langle 1, s'\rangle} +1=0$ for some $s'\in\mathbb{N}^*$. We focus on the second possibility, which implies $s+s'=k+2$. The level $k$ must therefore be integer, and for a given value of the level there are only $k+1$ doubly degenerate representations of this type. The resulting spectrum is
 \begin{align}
- \mathcal{S} = \bigoplus_{s=1}^{k+1} \hat{\mathcal{R}}^{\langle 0, s\rangle}\otimes \bar{\hat{\mathcal{R}}}^{\langle 0, s\rangle}\ .
+ \mathcal{S}_k = \bigoplus_{s=1}^{k+1} \hat{\mathcal{R}}^{\langle 0, s\rangle}\otimes \bar{\hat{\mathcal{R}}}^{\langle 0, s\rangle}\ .
 \end{align}
 Fusion is constrained by both null vectors, and becomes 
 \begin{align}
@@ -5768,7 +5768,7 @@ The group $SL_2({\mathbb{R}})$ is not simply-connected, as the matrices of the t
 So $\widetilde{SL}_2(\mathbb{R})$ is obtained from $SL_2({\mathbb{R}})$ by decompactifying the $\tau$ direction, and we have $SL_2({\mathbb{R}}) = \widetilde{SL}_2(\mathbb{R})/{\mathbb{Z}}$.
 
 Let us study the space $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ of functions on $\widetilde{SL}_2(\mathbb{R})$, which is assumed to be the large level limit of the spectrum of our model. 
-The decomposition of $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ into irreducible representations of the global symmetry algebra $\mathfrak{sl}_2\times \overline{\mathfrak{sl}}_2$ involves two types of representations of $\mathfrak{sl}_2$: the \textbf{\boldmath principal series representation}\index{principal series representation!of sl2@---of $\mathfrak{sl}_2$} $C^j_\alpha$ and the \textbf{\boldmath discrete series representation}\index{discrete series representation (of $\mathfrak{sl}_2$)} $D^{j,\pm}$, where $j$ is the spin. 
+The decomposition of $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ into irreducible representations of the global symmetry algebra $\mathfrak{sl}_2\times \overline{\mathfrak{sl}}_2$ involves two types of representations of $\mathfrak{sl}_2$: the \textbf{\boldmath principal series representation}\index{principal series representation!of sl2@---of $\mathfrak{sl}_2$} $\mathcal{C}^j_\alpha$ and the \textbf{\boldmath discrete series representation}\index{discrete series representation (of $\mathfrak{sl}_2$)} $\mathcal{D}^{j,\pm}$, where $j$ is the spin. 
 These representations can be characterized by the eigenvalues of the generator $J_0^0$,
 \begin{align} 
 \renewcommand{\arraystretch}{1.3}
@@ -5777,11 +5777,11 @@ These representations can be characterized by the eigenvalues of the generator $
 Representation & Parameter values & Eigenvalues of $J_0^0$
 \\
 \hline 
-$C^j_\alpha$  & $j\in -\tfrac12+i{\mathbb{R}}_+,\ \alpha\in{\mathbb{R}}\ \text{mod}\ {\mathbb{Z}}$ &  $\alpha + {\mathbb{Z}}$ 
+$\mathcal{C}^j_\alpha$  & $j\in -\tfrac12+i{\mathbb{R}}_+,\ \alpha\in{\mathbb{R}}\ \text{mod}\ {\mathbb{Z}}$ &  $\alpha + {\mathbb{Z}}$ 
 \\
-$D^{j,+}$ & $j\in]-\tfrac12,\infty[$ & $j+1+{\mathbb{N}}$
+$\mathcal{D}^{j,+}$ & $j\in]-\tfrac12,\infty[$ & $j+1+{\mathbb{N}}$
 \\
-$D^{j,-}$ & $j\in]-\tfrac12,\infty[$ & $-(j+1+{\mathbb{N}})$
+$\mathcal{D}^{j,-}$ & $j\in]-\tfrac12,\infty[$ & $-(j+1+{\mathbb{N}})$
 \\
 \hline 
  \end{tabular}
@@ -5789,16 +5789,16 @@ $D^{j,-}$ & $j\in]-\tfrac12,\infty[$ & $-(j+1+{\mathbb{N}})$
 \end{align}
 Given a representation $\mathcal{R}$, let $\mathcal{R}^*$ be the dual representation, that is the representation with opposite $J_0^0$ eigenvalues:
 \begin{align}
- (C^j_\alpha)^* &= C^j_{-\alpha} \ , 
+ (\mathcal{C}^j_\alpha)^* &= \mathcal{C}^j_{-\alpha} \ , 
 \\
- (D^{j,\pm})^* &= D^{j,\mp}\ .
+ (\mathcal{D}^{j,\pm})^* &= \mathcal{D}^{j,\mp}\ .
 \end{align}
 According to \cite{rib09} and references therein, we have
 \begin{align}
- \mathcal{F}(\widetilde{SL}_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ C^j_\alpha \otimes \bar{C}^j_{\alpha} \oplus \bigoplus_\pm \int^\oplus_{]-\frac12, \infty[} dj\ D^{j,\pm}\otimes \bar{D}^{j,\pm} \ ,
+ \mathcal{F}(\widetilde{SL}_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ \mathcal{C}^j_\alpha \otimes \bar{C}^j_{\alpha} \oplus \bigoplus_\pm \int^\oplus_{]-\frac12, \infty[} dj\ \mathcal{D}^{j,\pm}\otimes \bar{D}^{j,\pm} \ ,
 \label{fst}
 \\
- \mathcal{F}(SL_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} C^j_\alpha \otimes \bar{C}^j_{\alpha} \oplus \bigoplus_\pm \bigoplus_{j=-\frac12, 0,\frac12 \cdots} D^{j,\pm}\otimes \bar{D}^{j,\pm} \ ,
+ \mathcal{F}(SL_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} \mathcal{C}^j_\alpha \otimes \bar{C}^j_{\alpha} \oplus \bigoplus_\pm \bigoplus_{j=-\frac12, 0,\frac12 \cdots} \mathcal{D}^{j,\pm}\otimes \bar{D}^{j,\pm} \ ,
 \end{align}
 where the identification of $\mathcal{F}(SL_2(\mathbb{R}))$ with the space of $\tau$-periodic functions on $\widetilde{SL}_2(\mathbb{R})$ amounts to restricting the eigenvalues of our Hermitian generator to be half-integers.
 Tensor products of principal and discrete series representations can be written as 
@@ -5809,29 +5809,29 @@ Tensor products of principal and discrete series representations can be written 
 where $N_{\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3}$ is an integer-valued function that obeys $N_{\mathcal{R}_1^*,\mathcal{R}_2^*,\mathcal{R}_3^*}=N_{\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3}$ and is symmetric under permutations.
 Modulo these symmetries, the only nonzero values of $N_{\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3}$ are
 \begin{align}
-N_{D^{j_1,+},D^{j_2,+},D^{j_3,-}} &= 1 \quad \text{if}\ j_3\in j_1+j_2+1+{\mathbb{N}}\ ,
+N_{\mathcal{D}^{j_1,+},\mathcal{D}^{j_2,+},\mathcal{D}^{j_3,-}} &= 1 \quad \text{if}\ j_3\in j_1+j_2+1+{\mathbb{N}}\ ,
 \label{nddd}
 \\
-N_{C^{j_1}_{\alpha_1},D^{j_2,+},D^{j_3,-}} &= 1 \quad \text{if}\ \alpha_1+j_2-j_3\in{\mathbb{Z}}\ ,
+N_{\mathcal{C}^{j_1}_{\alpha_1},\mathcal{D}^{j_2,+},\mathcal{D}^{j_3,-}} &= 1 \quad \text{if}\ \alpha_1+j_2-j_3\in{\mathbb{Z}}\ ,
 \\
- N_{C^{j_1}_{\alpha_1},C^{j_2}_{\alpha_2},D^{j_3,+}} &= 1 \quad \text{if}\ \alpha_1+\alpha_2+j_3\in {\mathbb{Z}}\ ,
+ N_{\mathcal{C}^{j_1}_{\alpha_1},\mathcal{C}^{j_2}_{\alpha_2},\mathcal{D}^{j_3,+}} &= 1 \quad \text{if}\ \alpha_1+\alpha_2+j_3\in {\mathbb{Z}}\ ,
 \\
-N_{C^{j_1}_{\alpha_1},C^{j_2}_{\alpha_2},C^{j_3}_{\alpha_3}} &= 2 \quad \text{if}\ \alpha_1+\alpha_2+\alpha_3\in {\mathbb{Z}}\ .
+N_{\mathcal{C}^{j_1}_{\alpha_1},\mathcal{C}^{j_2}_{\alpha_2},\mathcal{C}^{j_3}_{\alpha_3}} &= 2 \quad \text{if}\ \alpha_1+\alpha_2+\alpha_3\in {\mathbb{Z}}\ .
 \end{align}
 For example, the tensor product of two principal series representations is
 \begin{align}
- C^{j_1}_{\alpha_1}\otimes C^{j_2}_{\alpha_2} &= 2\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj\ C^j_{\alpha_1+\alpha_2} 
-\oplus \bigoplus_\pm \bigoplus_{\substack{j\in \pm\alpha_1\pm\alpha_2+{\mathbb{Z}}\\ j\in]-\frac12, \infty[}} D^{j,\pm} \ ,
+ \mathcal{C}^{j_1}_{\alpha_1}\otimes \mathcal{C}^{j_2}_{\alpha_2} &= 2\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj\ \mathcal{C}^j_{\alpha_1+\alpha_2} 
+\oplus \bigoplus_\pm \bigoplus_{\substack{j\in \pm\alpha_1\pm\alpha_2+{\mathbb{Z}}\\ j\in]-\frac12, \infty[}} \mathcal{D}^{j,\pm} \ ,
 \label{coc}
 \end{align}
 where the factor of $2$ is the tensor product multiplicity that we already encountered in Section \ref{secwikz}.
-Actually, all the values of $N_{\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3}$ can be deduced from the values of $N_{D^{j_1,+},D^{j_2,+},D^{j_3,-}}$, using the remark that as far as the eigenvalues \eqref{rpe} of $J^0_0$ are concerned, we have the identification
+Actually, all the values of $N_{\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3}$ can be deduced from the values of $N_{\mathcal{D}^{j_1,+},\mathcal{D}^{j_2,+},\mathcal{D}^{j_3,-}}$, using the remark that as far as the eigenvalues \eqref{rpe} of $J^0_0$ are concerned, we have the identification
 \begin{align}
- C^j_\alpha \sim D^{\alpha-1,+} \oplus D^{-\alpha,-}\ .
+ \mathcal{C}^j_\alpha \sim \mathcal{D}^{\alpha-1,+} \oplus \mathcal{D}^{-\alpha,-}\ .
 \label{cjdd}
 \end{align}
-This identification apparently predicts a nonzero value for $N_{C^j_\alpha,D^{j_2,+},D^{j_3,+}}$.
-That value should be discarded, because it depends on $\alpha$ whereas $C^j_\alpha$ only depends on $\alpha\ \text{mod}\ {\mathbb{Z}}$.
+This identification apparently predicts a nonzero value for $N_{\mathcal{C}^j_\alpha,\mathcal{D}^{j_2,+},\mathcal{D}^{j_3,+}}$.
+That value should be discarded, because it depends on $\alpha$ whereas $\mathcal{C}^j_\alpha$ only depends on $\alpha\ \text{mod}\ {\mathbb{Z}}$.
 
 \subsubsection{Spectral flow}
 
@@ -5903,16 +5903,16 @@ We will now argue that spectrally flowed representations must appear in the spec
 
 \subsubsection{Spectrum}
 
-By our definition of WZW models, the large level limit of the spectrum $\tilde{\mathcal{S}}$ of the $\widetilde{SL}_2(\mathbb{R})$ WZW model is $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ \eqref{fst}, and we therefore expect $\tilde{\mathcal{S}}$ to contain affine discrete representations of both series $\hat{D}^{j,\pm}$.
-Let us show that $\tilde{\mathcal{S}}$ cannot contain only affine highest-weight representations.
-Consider spins $j_1,j_2,j_3$ such that $N_{D^{j_1,+},D^{j_2,-},D^{j_3,+}}=1$.
+By our definition of WZW models, the large level limit of the spectrum $\tilde{\mathcal{S}}_k$ of the $\widetilde{SL}_2(\mathbb{R})$ WZW model is $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ \eqref{fst}, and we therefore expect $\tilde{\mathcal{S}}_k$ to contain affine discrete representations of both series $\hat{D}^{j,\pm}$.
+Let us show that $\tilde{\mathcal{S}}_k$ cannot contain only affine highest-weight representations.
+Consider spins $j_1,j_2,j_3$ such that $N_{\mathcal{D}^{j_1,+},\mathcal{D}^{j_2,-},\mathcal{D}^{j_3,+}}=1$.
 If the level $k$ is large enough, we must then have $N_{\hat{D}^{j_1,\frac12},\hat{D}^{j_2,-\frac12},\hat{D}^{j_3,\frac12}}=1$.
 Using the behaviour \eqref{nrrr} of fusion multiplicities under spectral flow, this implies $N_{\hat{D}^{j_1,-\frac12},\hat{D}^{j_2,-\frac12},\hat{D}^{j_3,\frac32}}=1$.
 So the fusion product $\hat{D}^{j_1,-\frac12}\times \hat{D}^{j_2,-\frac12}$ contains the representation $(\hat{D}^{j_3,\frac32})^*$, which is not an affine highest-weight representation.
 Generalizing this argument, the spectrum must in fact contain 
 representations of the type $\hat{D}^{j,w}$ for all values of $w\in \frac12+{\mathbb{Z}}$.
 Then it is natural to assume that the spectral flow actually leaves the spectrum invariant.
-But what are the allowed values of the spin $j$ of $\hat{D}^{j,w}$? We still impose the constraint $j>-\frac12$ that comes from the representation $D^{j,\pm}$ of $\mathfrak{sl}_2$.
+But what are the allowed values of the spin $j$ of $\hat{D}^{j,w}$? We still impose the constraint $j>-\frac12$ that comes from the representation $\mathcal{D}^{j,\pm}$ of $\mathfrak{sl}_2$.
 If this applies to both spins in the relation \eqref{rdd}, we must then have 
 \begin{align}
  -\frac12 <j < -\frac{k+3}{2}\ .
@@ -5925,19 +5925,19 @@ This defines a non-empty interval provided
 (Nevertheless, the model surely exists for $k\in \mathbb{C}-\{2\}$ by analytic continuation.)
 The natural conjectures for the spectrums of the $\widetilde{SL}_2(\mathbb{R})$ and $SL_2(\mathbb{R})$ WZW models are then
 \begin{align}
- \tilde{\mathcal{S}} &= \bigoplus_{w\in{\mathbb{Z}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ \hat{C}^{j,w}_\alpha \otimes \bar{\hat{C}}^{j,w}_{\alpha} 
+ \tilde{\mathcal{S}}_k &= \bigoplus_{w\in{\mathbb{Z}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ \hat{C}^{j,w}_\alpha \otimes \bar{\hat{C}}^{j,w}_{\alpha} 
 \oplus \bigoplus_{w\in\frac12+{\mathbb{Z}}}\int^\oplus_{]-\frac12,-\frac{k+3}{2}[} dj\ \hat{D}^{j,w}\otimes \bar{\hat{D}}^{j,w} \ ,
 \\
- \mathcal{S} &= \bigoplus_{\substack{w_L,w_R\in{\mathbb{Z}}\\ w_L-w_R\in 2{\mathbb{Z}}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} \hat{C}^{j,w_L}_\alpha \otimes \bar{\hat{C}}^{j,w_R}_{\alpha} \oplus  \bigoplus_{\substack{w_L,w_R\in\frac12+{\mathbb{Z}}\\ w_L-w_R\in 2{\mathbb{Z}}}}\ \bigoplus_{\substack{j= -\frac12, 0,\frac12,\cdots \\ j<-\frac{k+3}{2}}} \hat{D}^{j,w_L}\otimes \bar{\hat{D}}^{j,w_R} \ .
+ \mathcal{S}_k &= \bigoplus_{\substack{w_L,w_R\in{\mathbb{Z}}\\ w_L-w_R\in 2{\mathbb{Z}}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} \hat{C}^{j,w_L}_\alpha \otimes \bar{\hat{C}}^{j,w_R}_{\alpha} \oplus  \bigoplus_{\substack{w_L,w_R\in\frac12+{\mathbb{Z}}\\ w_L-w_R\in 2{\mathbb{Z}}}}\ \bigoplus_{\substack{j= -\frac12, 0,\frac12,\cdots \\ j<-\frac{k+3}{2}}} \hat{D}^{j,w_L}\otimes \bar{\hat{D}}^{j,w_R} \ .
 \end{align}
-Notice that the left and right spectral flow numbers $w_L$ and $w_R$ are independent in the case of $SL_2(\mathbb{R})$, and equal in the case of $\widetilde{SL}_2(\mathbb{R})$, so that the spectrum $\tilde{\mathcal{S}}$ is diagonal.
+Notice that the left and right spectral flow numbers $w_L$ and $w_R$ are independent in the case of $SL_2(\mathbb{R})$, and equal in the case of $\widetilde{SL}_2(\mathbb{R})$, so that the spectrum $\tilde{\mathcal{S}}_k$ is diagonal.
 The rule, which can only be heuristic in the absence of a definition of WZW models based on the corresponding loop groups, is:
 \begin{quote}
  In the $G$ WZW model the spectral flow takes values in the first homotopy group of the global symmetry group, that is $\pi_1(\frac{G\times \bar{G}}{Z(G)})$ where $Z(G)$ is the center of $G$.
 \end{quote}
 For our WZW models, the relevant homotopy groups are 
 $ \pi_1(\frac{\widetilde{SL}_2(\mathbb{R})\times \overline{\widetilde{SL}_2(\mathbb{R})}}{{\mathbb{Z}}}) = {\mathbb{Z}}$ and $\pi_1(\frac{SL_2({\mathbb{R}})\times \overline{SL_2({\mathbb{R}})}}{{\mathbb{Z}}_2}) = \frac{{\mathbb{Z}}\times \overline{{\mathbb{Z}}}}{{\mathbb{Z}}_2}$.
-The rule also applies to the case $G=U(1)$ of the compactified free boson, if we consider the winding number as a spectral flow number. 
+The rule also applies to the case $G=U_1$ of the compactified free boson, if we consider the winding number as a spectral flow number. 
 
 \subsubsection{Fusion rules}
 
@@ -5998,7 +5998,7 @@ This can be achieved by changing the conjugation rule, or equivalently performin
 \right.
 \label{jtdj}
 \end{align}
-In the matrix representation \eqref{mta} of $\mathfrak{sl}_2$, this corresponds to the $\mathfrak{su}_{1,1}$ conjugation rule $M^\dagger = \left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right) \bar{M}^T \left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right)$. (The matrices that satisfy $M^\dagger =-M$ for the $\mathfrak{su}_{1,1}$ conjugation rule are by definition the elements of $\mathfrak{su}_{1,1}$ itself). With this conjugation rule, the representations $C^j_\alpha,D^{j,\pm}$, and the large level spectrum $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$, are unitary.
+In the matrix representation \eqref{mta} of $\mathfrak{sl}_2$, this corresponds to the $\mathfrak{su}_{1,1}$ conjugation rule $M^\dagger = \left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right) \bar{M}^T \left(\begin{smallmatrix} 1 & 0 \\ 0 & -1 \end{smallmatrix}\right)$. (The matrices that satisfy $M^\dagger =-M$ for the $\mathfrak{su}_{1,1}$ conjugation rule are by definition the elements of $\mathfrak{su}_{1,1}$ itself). With this conjugation rule, the representations $\mathcal{C}^j_\alpha,\mathcal{D}^{j,\pm}$, and the large level spectrum $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$, are unitary.
 
 The natural extension of this conjugation rule to the symmetry algebra $\widehat{\mathfrak{sl}}_2$ is
 \begin{align}
