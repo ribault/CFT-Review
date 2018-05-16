@@ -5777,7 +5777,7 @@ These representations can be characterized by the eigenvalues of the generator $
 Representation & Parameter values & Eigenvalues of $J_0^0$
 \\
 \hline 
-$\mathcal{C}^j_\alpha$  & $j\in -\tfrac12+i{\mathbb{R}}_+,\ \alpha\in{\mathbb{R}}\ \text{mod}\ {\mathbb{Z}}$ &  $\alpha + {\mathbb{Z}}$ 
+$\mathcal{C}^j_\alpha$  & $j\in -\tfrac12+i{\mathbb{R}}_+,\ \alpha\in{\mathbb{R}}\bmod {\mathbb{Z}}$ &  $\alpha + {\mathbb{Z}}$ 
 \\
 $\mathcal{D}^{j,+}$ & $j\in]-\tfrac12,\infty[$ & $j+1+{\mathbb{N}}$
 \\
@@ -5795,10 +5795,10 @@ Given a representation $\mathcal{R}$, let $\mathcal{R}^*$ be the dual representa
 \end{align}
 According to \cite{rib09} and references therein, we have
 \begin{align}
- \mathcal{F}(\widetilde{SL}_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ \mathcal{C}^j_\alpha \otimes \bar{C}^j_{\alpha} \oplus \bigoplus_\pm \int^\oplus_{]-\frac12, \infty[} dj\ \mathcal{D}^{j,\pm}\otimes \bar{D}^{j,\pm} \ ,
+ \mathcal{F}(\widetilde{SL}_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ \mathcal{C}^j_\alpha \otimes \bar{\mathcal{C}}^j_{\alpha} \oplus \bigoplus_\pm \int^\oplus_{]-\frac12, \infty[} dj\ \mathcal{D}^{j,\pm}\otimes \bar{\mathcal{D}}^{j,\pm} \ ,
 \label{fst}
 \\
- \mathcal{F}(SL_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} \mathcal{C}^j_\alpha \otimes \bar{C}^j_{\alpha} \oplus \bigoplus_\pm \bigoplus_{j=-\frac12, 0,\frac12 \cdots} \mathcal{D}^{j,\pm}\otimes \bar{D}^{j,\pm} \ ,
+ \mathcal{F}(SL_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} \mathcal{C}^j_\alpha \otimes \bar{\mathcal{C}}^j_{\alpha} \oplus \bigoplus_\pm \bigoplus_{j=-\frac12, 0,\frac12 \cdots} \mathcal{D}^{j,\pm}\otimes \bar{\mathcal{D}}^{j,\pm} \ ,
 \end{align}
 where the identification of $\mathcal{F}(SL_2(\mathbb{R}))$ with the space of $\tau$-periodic functions on $\widetilde{SL}_2(\mathbb{R})$ amounts to restricting the eigenvalues of our Hermitian generator to be half-integers.
 Tensor products of principal and discrete series representations can be written as 
@@ -5836,7 +5836,7 @@ That value should be discarded, because it depends on $\alpha$ whereas $\mathcal
 \subsubsection{Spectral flow}
 
 After these reminders on $\widetilde{SL}_2(\mathbb{R})$ and its representations, we are ready to consider the spectrum the associated WZW model.
-The principal and discrete series representations of $\mathfrak{sl}_2$ are naturally extended to affine highest-weight representations of $\widehat{\mathfrak{sl}}_2$: the principal series representations $\hat{C}^j_\alpha$ and discrete series representations $\hat{D}^{j,\pm}$.
+The principal and discrete series representations of $\mathfrak{sl}_2$ are naturally extended to affine highest-weight representations of $\widehat{\mathfrak{sl}}_2$: the principal series representations $\hat{\mathcal{C}}^j_\alpha$ and discrete series representations $\hat{\mathcal{D}}^{j,\pm}$.
 However, it turns out that we cannot build this spectrum from these representations.
 This can be understood in terms of an algebraic feature of $\widehat{\mathfrak{sl}}_2$ called the \textbf{\boldmath spectral flow}\index{spectral flow} \cite{mo00a}.
 The spectral flow is a family $(\rho_w)_{w\in{\mathbb{Z}}}$ of automorphisms of $\widehat{\mathfrak{sl}}_2$ that obey $\rho_w\rho_{w'}=\rho_{w+w'}$ and act as 
@@ -5872,30 +5872,30 @@ w_1+w_2+w_3=0 \quad \implies \quad N_{\rho_{w_1}(\mathcal{R}_1),\rho_{w_2}(\math
 Let us consider the action of spectral flow on our affine highest-weight representations. 
 We introduce the notations 
 \begin{align}
- \hat{C}^{j,w}_\alpha &= \rho_w(\hat{C}^j_\alpha) \quad , \quad (w\in{\mathbb{Z}})\ ,
+ \hat{\mathcal{C}}^{j,w}_\alpha &= \rho_w(\hat{\mathcal{C}}^j_\alpha) \quad , \quad (w\in{\mathbb{Z}})\ ,
 \\
-\hat{D}^{j,w} &= \rho_{w-\frac12}(\hat{D}^{j,+})\quad , \quad (w\in \tfrac12+{\mathbb{Z}})\ .
+\hat{\mathcal{D}}^{j,w} &= \rho_{w-\frac12}(\hat{\mathcal{D}}^{j,+})\quad , \quad (w\in \tfrac12+{\mathbb{Z}})\ .
 \end{align}
-If $w\neq 0$, then $\hat{C}^{j,w}_\alpha$ cannot be an affine highest-weight representation, because the eigenvalues of $\rho_{-w}(L_0) = L_0-w J^0_0 +\frac14 kw^2$ in $\hat{C}^j_\alpha$ are not bounded from below -- and actually, the representations $(\hat{C}^{j,w}_\alpha)_{w\in{\mathbb{Z}}}$ all differ from one another.
+If $w\neq 0$, then $\hat{\mathcal{C}}^{j,w}_\alpha$ cannot be an affine highest-weight representation, because the eigenvalues of $\rho_{-w}(L_0) = L_0-w J^0_0 +\frac14 kw^2$ in $\hat{\mathcal{C}}^j_\alpha$ are not bounded from below -- and actually, the representations $(\hat{\mathcal{C}}^{j,w}_\alpha)_{w\in{\mathbb{Z}}}$ all differ from one another.
 Let us now focus on discrete series representations.
-The representation $\hat{D}^{j,\pm}$ can be characterized by the existence of a state $|v^{j,\pm}\rangle$ such that 
+The representation $\hat{\mathcal{D}}^{j,\pm}$ can be characterized by the existence of a state $|v^{j,\pm}\rangle$ such that 
 \begin{align}
 J^\mp_{n\geq 0}|v^{j,\pm}\rangle = J^0_{n>0}|v^{j,\pm}\rangle =  J^\pm_{n>0}|v^{j,\pm}\rangle = (J^0_0\mp(j+1))|v^{j,\pm}\rangle = 0\ .
 \end{align}
-So we can characterize $\rho_w(\hat{D}^{j,\pm})$ by the action of $\rho_{-w}(J^a_n)$ on $|v^{j,\pm}\rangle$.
+So we can characterize $\rho_w(\hat{\mathcal{D}}^{j,\pm})$ by the action of $\rho_{-w}(J^a_n)$ on $|v^{j,\pm}\rangle$.
 In particular, we notice that $\rho_1(J^a_n)|v^{j,+}\rangle = 0 \ \iff \ J^a_n|v^{-j-2-\frac{k}{2},-}\rangle=0$, which leads to 
 \begin{align}
- \rho_{-1}(\hat{D}^{j,+}) = \hat{D}^{-j-2-\frac{k}{2},-} \ .
+ \rho_{-1}(\hat{\mathcal{D}}^{j,+}) = \hat{\mathcal{D}}^{-j-2-\frac{k}{2},-} \ .
 \label{rdd}
 \end{align}
-So the spectral flow orbit of $\hat{D}^{j,+}$ contains two affine highest-weight representations, namely $\hat{D}^{j,\frac12} = \hat{D}^{j,+}$ itself and $\hat{D}^{j,-\frac12} = \hat{D}^{-j-2-\frac{k}{2},-}$.
+So the spectral flow orbit of $\hat{\mathcal{D}}^{j,+}$ contains two affine highest-weight representations, namely $\hat{\mathcal{D}}^{j,\frac12} = \hat{\mathcal{D}}^{j,+}$ itself and $\hat{\mathcal{D}}^{j,-\frac12} = \hat{\mathcal{D}}^{-j-2-\frac{k}{2},-}$.
 The rest of the orbit is made of representations where the eigenvalues of $L_0$ are not bounded from below. 
 And the dual representations of our spectrally flowed representations are
 \begin{align}
- (\hat{C}^{j,w}_{\alpha})^* &= \hat{C}^{j,-w}_{-\alpha}\ ,
+ (\hat{\mathcal{C}}^{j,w}_{\alpha})^* &= \hat{\mathcal{C}}^{j,-w}_{-\alpha}\ ,
 \label{cjwd}
 \\
-(\hat{D}^{j,w})^* &= \hat{D}^{-j-2-\frac{k}{2},-w}\ .
+(\hat{\mathcal{D}}^{j,w})^* &= \hat{\mathcal{D}}^{-j-2-\frac{k}{2},-w}\ .
 \label{djwd}
 \end{align}
 This concludes our discussion of spectral flow.
@@ -5903,16 +5903,16 @@ We will now argue that spectrally flowed representations must appear in the spec
 
 \subsubsection{Spectrum}
 
-By our definition of WZW models, the large level limit of the spectrum $\tilde{\mathcal{S}}_k$ of the $\widetilde{SL}_2(\mathbb{R})$ WZW model is $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ \eqref{fst}, and we therefore expect $\tilde{\mathcal{S}}_k$ to contain affine discrete representations of both series $\hat{D}^{j,\pm}$.
+By our definition of WZW models, the large level limit of the spectrum $\tilde{\mathcal{S}}_k$ of the $\widetilde{SL}_2(\mathbb{R})$ WZW model is $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ \eqref{fst}, and we therefore expect $\tilde{\mathcal{S}}_k$ to contain affine discrete representations of both series $\hat{\mathcal{D}}^{j,\pm}$.
 Let us show that $\tilde{\mathcal{S}}_k$ cannot contain only affine highest-weight representations.
 Consider spins $j_1,j_2,j_3$ such that $N_{\mathcal{D}^{j_1,+},\mathcal{D}^{j_2,-},\mathcal{D}^{j_3,+}}=1$.
-If the level $k$ is large enough, we must then have $N_{\hat{D}^{j_1,\frac12},\hat{D}^{j_2,-\frac12},\hat{D}^{j_3,\frac12}}=1$.
-Using the behaviour \eqref{nrrr} of fusion multiplicities under spectral flow, this implies $N_{\hat{D}^{j_1,-\frac12},\hat{D}^{j_2,-\frac12},\hat{D}^{j_3,\frac32}}=1$.
-So the fusion product $\hat{D}^{j_1,-\frac12}\times \hat{D}^{j_2,-\frac12}$ contains the representation $(\hat{D}^{j_3,\frac32})^*$, which is not an affine highest-weight representation.
+If the level $k$ is large enough, we must then have $N_{\hat{\mathcal{D}}^{j_1,\frac12},\hat{\mathcal{D}}^{j_2,-\frac12},\hat{\mathcal{D}}^{j_3,\frac12}}=1$.
+Using the behaviour \eqref{nrrr} of fusion multiplicities under spectral flow, this implies $N_{\hat{\mathcal{D}}^{j_1,-\frac12},\hat{\mathcal{D}}^{j_2,-\frac12},\hat{\mathcal{D}}^{j_3,\frac32}}=1$.
+So the fusion product $\hat{\mathcal{D}}^{j_1,-\frac12}\times \hat{\mathcal{D}}^{j_2,-\frac12}$ contains the representation $(\hat{\mathcal{D}}^{j_3,\frac32})^*$, which is not an affine highest-weight representation.
 Generalizing this argument, the spectrum must in fact contain 
-representations of the type $\hat{D}^{j,w}$ for all values of $w\in \frac12+{\mathbb{Z}}$.
+representations of the type $\hat{\mathcal{D}}^{j,w}$ for all values of $w\in \frac12+{\mathbb{Z}}$.
 Then it is natural to assume that the spectral flow actually leaves the spectrum invariant.
-But what are the allowed values of the spin $j$ of $\hat{D}^{j,w}$? We still impose the constraint $j>-\frac12$ that comes from the representation $\mathcal{D}^{j,\pm}$ of $\mathfrak{sl}_2$.
+But what are the allowed values of the spin $j$ of $\hat{\mathcal{D}}^{j,w}$? We still impose the constraint $j>-\frac12$ that comes from the representation $\mathcal{D}^{j,\pm}$ of $\mathfrak{sl}_2$.
 If this applies to both spins in the relation \eqref{rdd}, we must then have 
 \begin{align}
  -\frac12 <j < -\frac{k+3}{2}\ .
@@ -5925,10 +5925,10 @@ This defines a non-empty interval provided
 (Nevertheless, the model surely exists for $k\in \mathbb{C}-\{2\}$ by analytic continuation.)
 The natural conjectures for the spectrums of the $\widetilde{SL}_2(\mathbb{R})$ and $SL_2(\mathbb{R})$ WZW models are then
 \begin{align}
- \tilde{\mathcal{S}}_k &= \bigoplus_{w\in{\mathbb{Z}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ \hat{C}^{j,w}_\alpha \otimes \bar{\hat{C}}^{j,w}_{\alpha} 
-\oplus \bigoplus_{w\in\frac12+{\mathbb{Z}}}\int^\oplus_{]-\frac12,-\frac{k+3}{2}[} dj\ \hat{D}^{j,w}\otimes \bar{\hat{D}}^{j,w} \ ,
+ \tilde{\mathcal{S}}_k &= \bigoplus_{w\in{\mathbb{Z}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ \hat{\mathcal{C}}^{j,w}_\alpha \otimes \bar{\hat{\mathcal{C}}}^{j,w}_{\alpha} 
+\oplus \bigoplus_{w\in\frac12+{\mathbb{Z}}}\int^\oplus_{]-\frac12,-\frac{k+3}{2}[} dj\ \hat{\mathcal{D}}^{j,w}\otimes \bar{\hat{\mathcal{D}}}^{j,w} \ ,
 \\
- \mathcal{S}_k &= \bigoplus_{\substack{w_L,w_R\in{\mathbb{Z}}\\ w_L-w_R\in 2{\mathbb{Z}}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} \hat{C}^{j,w_L}_\alpha \otimes \bar{\hat{C}}^{j,w_R}_{\alpha} \oplus  \bigoplus_{\substack{w_L,w_R\in\frac12+{\mathbb{Z}}\\ w_L-w_R\in 2{\mathbb{Z}}}}\ \bigoplus_{\substack{j= -\frac12, 0,\frac12,\cdots \\ j<-\frac{k+3}{2}}} \hat{D}^{j,w_L}\otimes \bar{\hat{D}}^{j,w_R} \ .
+ \mathcal{S}_k &= \bigoplus_{\substack{w_L,w_R\in{\mathbb{Z}}\\ w_L-w_R\in 2{\mathbb{Z}}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} \hat{\mathcal{C}}^{j,w_L}_\alpha \otimes \bar{\hat{\mathcal{C}}}^{j,w_R}_{\alpha} \oplus  \bigoplus_{\substack{w_L,w_R\in\frac12+{\mathbb{Z}}\\ w_L-w_R\in 2{\mathbb{Z}}}}\ \bigoplus_{\substack{j= -\frac12, 0,\frac12,\cdots \\ j<-\frac{k+3}{2}}} \hat{\mathcal{D}}^{j,w_L}\otimes \bar{\hat{\mathcal{D}}}^{j,w_R} \ .
 \end{align}
 Notice that the left and right spectral flow numbers $w_L$ and $w_R$ are independent in the case of $SL_2(\mathbb{R})$, and equal in the case of $\widetilde{SL}_2(\mathbb{R})$, so that the spectrum $\tilde{\mathcal{S}}_k$ is diagonal.
 The rule, which can only be heuristic in the absence of a definition of WZW models based on the corresponding loop groups, is:
@@ -5947,41 +5947,41 @@ Let us check that we can find fusion rules for the representations of $\widehat{
 \item in the large level limit $k\to -\infty$, the fusion rules reduce to the tensor product rules for representations of $\mathfrak{sl}_2$,
 \item the conjectured spectrums of the $\widetilde{SL}_2(\mathbb{R})$ and $SL_2(\mathbb{R})$ WZW models are closed under fusion.
 \end{enumerate}
-We first obtain the fusion multiplicities $N_{\hat{D}^{j_1,\pm},\hat{D}^{j_2,\pm},\hat{D}^{j_3,\pm}}$ for affine highest-weight representations of the discrete series  by assuming that it can be nonzero only when the corresponding tensor product multiplicity \eqref{nddd} is nonzero, and when all spins obey the condition \eqref{jimm}.
+We first obtain the fusion multiplicities $N_{\hat{\mathcal{D}}^{j_1,\pm},\hat{\mathcal{D}}^{j_2,\pm},\hat{\mathcal{D}}^{j_3,\pm}}$ for affine highest-weight representations of the discrete series  by assuming that it can be nonzero only when the corresponding tensor product multiplicity \eqref{nddd} is nonzero, and when all spins obey the condition \eqref{jimm}.
 The rest of the nonzero fusion multiplicities of the type    
-$N_{\hat{D}^{j_1,w_1},\hat{D}^{j_2,w_2},\hat{D}^{j_3,w_3}}$ are obtained by the rule \eqref{nrrr}.
+$N_{\hat{\mathcal{D}}^{j_1,w_1},\hat{\mathcal{D}}^{j_2,w_2},\hat{\mathcal{D}}^{j_3,w_3}}$ are obtained by the rule \eqref{nrrr}.
 Then we generalize the relation \eqref{cjdd} between $\mathfrak{sl}_2$ representations of the principal and discrete series, and obtain 
 \begin{align}
- \hat{C}^{j,w}_\alpha \sim \hat{D}^{\alpha-1,w+\frac12} \oplus \hat{D}^{\alpha-2-\frac{k}{2},w-\frac12} \ .
+ \hat{\mathcal{C}}^{j,w}_\alpha \sim \hat{\mathcal{D}}^{\alpha-1,w+\frac12} \oplus \hat{\mathcal{D}}^{\alpha-2-\frac{k}{2},w-\frac12} \ .
 \end{align}
-This enables us to compute fusion multiplicities involving representations of the type $\hat{C}^{j,w}_\alpha$.
-The only subtlety is that we obtain terms in $N_{\hat{C}^{j_1,w_1}_{\alpha_1},\hat{D}^{j_2,w_2},\hat{D}^{j_3,w_3}}$ that depend on $\alpha_1$ instead of $\alpha_1\ \text{mod}\ {\mathbb{Z}}$, and must be discarded.
+This enables us to compute fusion multiplicities involving representations of the type $\hat{\mathcal{C}}^{j,w}_\alpha$.
+The only subtlety is that we obtain terms in $N_{\hat{\mathcal{C}}^{j_1,w_1}_{\alpha_1},\hat{\mathcal{D}}^{j_2,w_2},\hat{\mathcal{D}}^{j_3,w_3}}$ that depend on $\alpha_1$ instead of $\alpha_1\ \text{mod}\ {\mathbb{Z}}$, and must be discarded.
 Keeping the condition \eqref{jimm} on spins of discrete series representations implicit, the results are 
 \begin{align}
- N_{\hat{D}^{j_1,w_1},\hat{D}^{j_2,w_2},\hat{D}^{j_3,w_3}} 
+ N_{\hat{\mathcal{D}}^{j_1,w_1},\hat{\mathcal{D}}^{j_2,w_2},\hat{\mathcal{D}}^{j_3,w_3}} 
 &= \delta_{\sum w_i,\frac12} \delta_{\sum j_i+3+\frac{k}{2},-{\mathbb{N}}} + \delta_{\sum w_i,-\frac12}\delta_{\sum j_i+3+k,{\mathbb{N}}} \ ,
 \\
- N_{\hat{C}^{j_1,w_1}_{\alpha_1},\hat{D}^{j_2,w_2},\hat{D}^{j_3,w_3}} &= \delta_{\sum w_i,0} \delta_{\alpha_1+j_2+j_3+\frac{k}{2},{\mathbb{Z}}}\ ,
+ N_{\hat{\mathcal{C}}^{j_1,w_1}_{\alpha_1},\hat{\mathcal{D}}^{j_2,w_2},\hat{\mathcal{D}}^{j_3,w_3}} &= \delta_{\sum w_i,0} \delta_{\alpha_1+j_2+j_3+\frac{k}{2},{\mathbb{Z}}}\ ,
 \\
- N_{\hat{C}^{j_1,w_1}_{\alpha_1},\hat{C}^{j_2,w_2}_{\alpha_2},\hat{D}^{j_3,w_3}} & = \delta_{\sum w_i,\frac12} \delta_{\alpha_1+\alpha_2+j_3,{\mathbb{Z}}} + \delta_{\sum w_i,-\frac12}\delta_{\alpha_1+\alpha_2+j_3+\frac{k}{2},{\mathbb{Z}}}\ ,
+ N_{\hat{\mathcal{C}}^{j_1,w_1}_{\alpha_1},\hat{\mathcal{C}}^{j_2,w_2}_{\alpha_2},\hat{\mathcal{D}}^{j_3,w_3}} & = \delta_{\sum w_i,\frac12} \delta_{\alpha_1+\alpha_2+j_3,{\mathbb{Z}}} + \delta_{\sum w_i,-\frac12}\delta_{\alpha_1+\alpha_2+j_3+\frac{k}{2},{\mathbb{Z}}}\ ,
 \\
-N_{\hat{C}^{j_1,w_1}_{\alpha_1},\hat{C}^{j_2,w_2}_{\alpha_2},\hat{C}^{j_3,w_3}_{\alpha_3}} & = \delta_{\sum w_i,1}\delta_{\sum\alpha_i-\frac{k}{2},{\mathbb{Z}}} + 2\, \delta_{\sum w_i,0}\delta_{\sum \alpha_i,{\mathbb{Z}}} + \delta_{\sum w_i,-1}\delta_{\sum\alpha_i+\frac{k}{2},{\mathbb{Z}}}\ .
+N_{\hat{\mathcal{C}}^{j_1,w_1}_{\alpha_1},\hat{\mathcal{C}}^{j_2,w_2}_{\alpha_2},\hat{\mathcal{C}}^{j_3,w_3}_{\alpha_3}} & = \delta_{\sum w_i,1}\delta_{\sum\alpha_i-\frac{k}{2},{\mathbb{Z}}} + 2\, \delta_{\sum w_i,0}\delta_{\sum \alpha_i,{\mathbb{Z}}} + \delta_{\sum w_i,-1}\delta_{\sum\alpha_i+\frac{k}{2},{\mathbb{Z}}}\ .
 \end{align}
 This leads to the following fusion rules:
 \begin{multline}
-\hat{D}^{j_1,w_1}\times \hat{D}^{j_2,w_2} = \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj\ \hat{C}^{j,w_1+w_2}_{j_1+j_2+\frac{k}{2}} 
+\hat{\mathcal{D}}^{j_1,w_1}\times \hat{\mathcal{D}}^{j_2,w_2} = \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj\ \hat{\mathcal{C}}^{j,w_1+w_2}_{j_1+j_2+\frac{k}{2}} 
 \\ \oplus 
-\bigoplus_{\substack{j\in j_1+j_2+1+{\mathbb{N}} \\ j\in ]-\frac12, -\frac{k+3}{2}[}} \hat{D}^{j,w_1+w_2-\frac12} \oplus 
-\bigoplus_{\substack{j\in j_1+j_2+1+\frac{k}{2}-{\mathbb{N}} \\ j\in ]-\frac12, -\frac{k+3}{2}[}} \hat{D}^{j,w_1+w_2+\frac12}\ ,
+\bigoplus_{\substack{j\in j_1+j_2+1+{\mathbb{N}} \\ j\in ]-\frac12, -\frac{k+3}{2}[}} \hat{\mathcal{D}}^{j,w_1+w_2-\frac12} \oplus 
+\bigoplus_{\substack{j\in j_1+j_2+1+\frac{k}{2}-{\mathbb{N}} \\ j\in ]-\frac12, -\frac{k+3}{2}[}} \hat{\mathcal{D}}^{j,w_1+w_2+\frac12}\ ,
 \end{multline}
 \begin{align}
- \hat{C}^{j_1,w_1}_{\alpha_1}\times \hat{D}^{j_2,w_2} &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj\left( \hat{C}^{j,w_1+w_2-\frac12}_{\alpha_1+j_2} \oplus \hat{C}^{j,w_1+w_2+\frac12}_{\alpha_1+j_2+\frac{k}{2}}\right) \oplus \bigoplus_{\substack{j\in \alpha_1+j_2+{\mathbb{Z}} \\ j\in ]-\frac12, -\frac{k+3}{2}[}} \hat{D}^{j,w_1+w_2}\ ,
+ \hat{\mathcal{C}}^{j_1,w_1}_{\alpha_1}\times \hat{\mathcal{D}}^{j_2,w_2} &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj\left( \hat{\mathcal{C}}^{j,w_1+w_2-\frac12}_{\alpha_1+j_2} \oplus \hat{\mathcal{C}}^{j,w_1+w_2+\frac12}_{\alpha_1+j_2+\frac{k}{2}}\right) \oplus \bigoplus_{\substack{j\in \alpha_1+j_2+{\mathbb{Z}} \\ j\in ]-\frac12, -\frac{k+3}{2}[}} \hat{\mathcal{D}}^{j,w_1+w_2}\ ,
 \end{align}
 \begin{multline}
- \hat{C}^{j_1,w_1}_{\alpha_1}\times \hat{C}^{j_2,w_2}_{\alpha_2} = \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \left(\hat{C}^{j,w_1+w_2-1}_{\alpha_1+\alpha_2-\frac{k}{2}} \oplus 2\, \hat{C}^{j,w_1+w_2}_{\alpha_1+\alpha_2} \oplus \hat{C}^{j,w_1+w_2+1}_{\alpha_1+\alpha_2+\frac{k}{2}}\right) 
+ \hat{\mathcal{C}}^{j_1,w_1}_{\alpha_1}\times \hat{\mathcal{C}}^{j_2,w_2}_{\alpha_2} = \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \left(\hat{\mathcal{C}}^{j,w_1+w_2-1}_{\alpha_1+\alpha_2-\frac{k}{2}} \oplus 2\, \hat{\mathcal{C}}^{j,w_1+w_2}_{\alpha_1+\alpha_2} \oplus \hat{\mathcal{C}}^{j,w_1+w_2+1}_{\alpha_1+\alpha_2+\frac{k}{2}}\right) 
 \\
-\oplus \bigoplus_{\substack{j\in \alpha_1+\alpha_2-\frac{k}{2}+{\mathbb{Z}} \\ j\in]-\frac12, -\frac{k+3}{2}[}} \hat{D}^{j,w_1+w_2-\frac12} 
-\oplus \bigoplus_{\substack{j\in \alpha_1+\alpha_2+{\mathbb{Z}} \\ j\in]-\frac12, -\frac{k+3}{2}[}} \hat{D}^{j,w_1+w_2+\frac12} \ .
+\oplus \bigoplus_{\substack{j\in \alpha_1+\alpha_2-\frac{k}{2}+{\mathbb{Z}} \\ j\in]-\frac12, -\frac{k+3}{2}[}} \hat{\mathcal{D}}^{j,w_1+w_2-\frac12} 
+\oplus \bigoplus_{\substack{j\in \alpha_1+\alpha_2+{\mathbb{Z}} \\ j\in]-\frac12, -\frac{k+3}{2}[}} \hat{\mathcal{D}}^{j,w_1+w_2+\frac12} \ .
 \end{multline}
 So, while the spectral flow number $w$ is not conserved, fusion violates it by at most one unit.
 This can alternatively be shown at the level of correlation functions by studying how spectral flow affects the Ward identities and Knizhnik--Zamolodchikov equations \cite{rib05}.
@@ -6008,7 +6008,7 @@ The natural extension of this conjugation rule to the symmetry algebra $\widehat
 \right.
 \end{align}
 which is compatible with the commutation relations \eqref{jam} provided the level $k$ is real.
-However, by computing the norms of level one states, it is easy to see that the affine highest-weight representations $\hat{C}^j_\alpha, \hat{D}^{j,\pm}$  are not unitary.
+However, by computing the norms of level one states, it is easy to see that the affine highest-weight representations $\hat{\mathcal{C}}^j_\alpha, \hat{\mathcal{D}}^{j,\pm}$  are not unitary.
 But the $\widetilde{SL}_2(\mathbb{R})$ WZW model is not expected to be unitary, as the metric on the underlying group has a mixed signature. (What matters for applications to string theory is not unitarity, but another property called the no-ghost theorem.) 
 
 \section{Exercises}
