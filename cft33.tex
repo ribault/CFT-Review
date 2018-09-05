@@ -7,7 +7,7 @@
 
 \usepackage[top=20mm,bottom=20mm,left=25mm,right=25mm]{geometry}
 
-%\usepackage{showkeys}
+\usepackage{showkeys}
 
 \usepackage{amsmath,amssymb,amsfonts}
 
@@ -3697,6 +3697,7 @@ Moreover, we have obtained a formula for the degenerate OPE coefficient in terms
  \frac{\Upsilon_b'(0)\Upsilon_b'(2P_{\langle r,s \rangle})}{\prod_{\pm}\Upsilon'_b(\frac{Q}{2}\pm P_{\langle r,s\rangle} +ib+jb^{-1})} 
  \\ \times 
  \frac{\Upsilon_b(2P)\Upsilon_b(Q+2P+2ib+2jb^{-1})}{\prod_\pm \Upsilon_b(\frac{Q}{2}+2P\pm P_{\langle r,s\rangle} +ib+jb^{-1})}
+ \label{cijrs}
  \ ,
 \end{multline}
 where taking limits and residues produces derivatives of $\Upsilon_b$ at its zeros.
@@ -3859,7 +3860,7 @@ The generalized minimal models' two-point structure constant can similarly be de
 \begin{align}
 B_{\langle r,s\rangle} = B(P_{\langle r,s\rangle}) = R(P_{\langle r,s\rangle})\ .
 \end{align}
-
+Rather than using the relation with Liouville theory, the generalized minimal models' structure constants can of course be rederived from first principles. (See Exercise \ref{exosssc} for examples.)
 
 \subsection{A-series minimal models \label{secamm}}
 
@@ -4274,31 +4275,58 @@ Assuming that the fusion product of two representations is unitary if and only i
 \end{enumerate}
 \end{exo}
 
+\begin{exo}[Computation of some simple structure constants]
+ ~\label{exosssc}
+ In this Exercise we compute structure constants of the type $\check{C}_P = \check{C}_{\langle 3,1\rangle, P,P}$, in the field normalization where two-point functions are one. 
+\begin{enumerate}
+\item Write the $s$-channel decomposition of the four-point function $\left< V_{\langle 2,1\rangle} V_{\langle 2,1\rangle} V_PV_P\right>$, and deduce $\check{C}_P \check{C}_{\langle 2,1\rangle}$ from eq. \eqref{spsm}.
+\item Using the identities $\gamma(x+1)=-x^2\gamma(x)$ and $\gamma(2x)= 2^{4x-1}\gamma(x)\gamma(x+\tfrac12)$, check that
+\begin{align}
+ \check{C}_P \check{C}_{\langle 2,1\rangle} &= 2^{8b^2+4} \prod_\pm \frac{\gamma(-b^2\pm 2bP)}{\gamma(-b^2\pm \frac12)} \ ,
+ \\
+ \check{C}_{\langle 3,1\rangle} &= 2^{-2-4b^2}(1+2b^2)\frac{\gamma(-\tfrac12-2b^2)}{\gamma(\tfrac12-b^2)}\sqrt{-\frac{\gamma(-b^2)}{\gamma(-1-3b^2)}}\ .
+ \label{cto}
+\end{align}
+ \item As an independent verification, deduce $\check{C}_P$ from the formula \eqref{cijrs}, and compare.
+\end{enumerate}
+\end{exo}
+
+
 \begin{exo}[Structure constant of the $(5,2)$ minimal model]
  ~\label{exocppp}
-Using eq. \eqref{tcc}, write the nontrivial structure constant of the $(5,2)$ minimal model as 
+ Let us compute the nontrivial structure constant $\check{C}_{\phi\phi\phi}$ of the $(5,2)$ minimal model.
+ \begin{enumerate}
+  \item Using eq. \eqref{tcc}, write
 \begin{align}
  \check{C}_{\phi\phi\phi} = \sqrt{\frac{R(P_{\langle 1,1 \rangle})}{R(P_{\langle 2,1 \rangle})^3}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 3,1 \rangle}\ .
 \end{align}
-Notice that $C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 3,1 \rangle} = C_+(P_{\langle 2,1 \rangle})=1$ due to eqs. \eqref{vot} and \eqref{cco}.
+\item Notice that $C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 3,1 \rangle} = C_+(P_{\langle 2,1 \rangle})=1$ due to eqs. \eqref{vot} and \eqref{cco}.
 Choosing an appropriate value for $\mu$, compute
 \begin{align}
  R(P_{\langle 1,1 \rangle}) = -\frac{\Gamma(-\frac35)\Gamma(\frac32)}{\Gamma(\frac35)\Gamma(-\frac32)} \ , \quad R(P_{\langle 2,1 \rangle}) = -\frac{\Gamma(-\frac15)\Gamma(\frac12)}{\Gamma(\frac15)\Gamma(-\frac12)}\ , 
 \end{align}
 and deduce the explicit formula \eqref{cppp} for $\check{C}_{\phi\phi\phi}$.
+\item Rederive the same result using eq. \eqref{cto}.
+ \end{enumerate}
+
+
 \end{exo}
 
 \begin{exo}[Structure constant of the $(4,3)$ minimal model]
  ~\label{exocsse}
-Write the nontrivial structure constant of the $(4,3)$ minimal model as
+ Let us compute the nontrivial structure constant $\check{C}_{\sigma\sigma\epsilon} $ of the $(4,3)$ minimal model.
+ \begin{enumerate}
+  \item Show that 
 \begin{align}
  \check{C}_{\sigma\sigma\epsilon} = \frac{1}{R(P_{\langle 2,1 \rangle})}\sqrt{\frac{R(P_{\langle 1,1 \rangle})}{R(P_{\langle 1,2 \rangle})}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 3,1 \rangle}\ .
 \end{align}
-Choosing an appropriate value for $\mu$, compute
+\item Choosing an appropriate value for $\mu$, compute
 \begin{align}
  R(P_{\langle 1,1 \rangle}) = -\frac{\Gamma(-\frac14)\Gamma(\frac13)}{\Gamma(\frac14)\Gamma(-\frac13)} \ , \quad R(P_{\langle 1,2 \rangle}) = -\frac{\Gamma(-\frac54)\Gamma(\frac53)}{\Gamma(\frac54)\Gamma(-\frac53)} \ , \quad R(P_{\langle 2,1 \rangle}) = -\frac{\Gamma(\frac12)\Gamma(-\frac23)}{\Gamma(-\frac12)\Gamma(\frac23)}\ ,
 \end{align}
 and deduce the explicit formula \eqref{csse} for $\check{C}_{\sigma\sigma\epsilon}$.
+\item Rederive that structure constant using the results of Exercise \ref{exosssc}.
+ \end{enumerate}
 \end{exo}
 
 
