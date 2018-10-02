@@ -1100,7 +1100,9 @@ And we can numerically compute correlation functions with a good precision.
 
 Historically, Liouville theory was first defined by quantizing a classical theory whose equation of motion is Liouville's equation. That definition actually gave its name to the theory. (That definition does not cover the case $c\leq 1$: using the name Liouville theory in this case, while natural in our approach, is not universally done at the time of this writing.) It can be shown that our definition of Liouville theory agrees with the historical definition, either by proving that the originally defined theory obeys our axioms, or by checking that both definitions lead to the same correlation functions, in particular the same three-point structure constants. See \cite{tes17} for a guide to the literature on the construction of Liouville theory by quantization. 
 
-\section{Diagonal minimal models}
+\section{Minimal models}
+
+\subsection{Diagonal minimal models}
 
 \begin{defn}[Minimal model]
  ~\label{def:mm}
@@ -1179,13 +1181,90 @@ For example, the minimal model with the central charge $c=\frac12$ has the spect
  \begin{array}{c|ccc} 2 & \frac{1}{2} & \frac{1}{16} & 0 \\ 1 & 0 & \frac{1}{16} & \frac{1}{2} \\  \hline & 1 & 2 & 3 \end{array} 
 \end{align}
 
+\subsection{D-series minimal models}
+
+\subsection{Modular bootstrap}
+
+
+\appendix
+
+\section{Temporary appendix}
+
+\subsection{Questions to be raised}
+
+\begin{enumerate}
+ \item It would be more logical for me to do affine symmetrie at the end. But this might come too late for the course on WZW models. Should two lectures be swapped? 
+ \item Does anyone need the Verlinde formula?
+ \item Who needs characters and torus partition functions? What for?
+\end{enumerate}
+
+
+\subsection{Modular bootstrap}
+
+Modular invariance neither necessary nor sufficient. Main advantage: technical simplicity, since characters are simpler than four-point blocks.
+
+We first have to justify the definition of the torus partition function, by explaining why it is modular invariant. 
+
+This comes from the geometry: the modular transformation from the plane to the cylinder $z=e^{\tau + i\sigma}$ shifts $L_0+\bar{L}_0$ by $-\frac{c}{12}$. (This comes from the $TT$ OPE.) Then we build a torus from a finite size cylinder of length $\tau-\bar{\tau}$, while doing a rotation by $\tau + \bar\tau$ before gluing. This explains why the torus partition function is 
+\begin{align}
+ Z = \operatorname{Tr} e^{2\pi i(\tau-\bar\tau)(L_0+\bar L_0-\frac{c}{12})} e^{2\pi i(\tau+\bar \tau)(L_0-\bar L_0)} = \operatorname{Tr} y^{L_0-\frac{c}{24}} \bar y^{\bar L_0-\frac{c}{24}}
+\end{align}
+where $y = e^{2\pi i\tau}$. We can then rewrite the torus as $\frac{\mathbb{C}}{\mathbb{Z} + \tau\mathbb{Z}}$ and justify modular invariance. 
+
+Start with Liouville theory: the partition function does not involve $c$ but $c_\text{eff}=1$. 
+
+Modular invariance of diagonal partition function always true if $S=S^T$. (We have $S^2=1$ by construction.)
+
+Do not talk about the Verlinde formula? Or just state it? It has a general proof in \cite{fms97} using manipulations of torus two-point functions. But what are exactly the assumptions? Naively using the formula in Liouville theory gives fusion rules that enforce momentum conservation!
+
+$T$-modular transformation requires $\Delta\equiv\bar\Delta \bmod \mathbb{Z}$. So there is room for non-diagonal invariants due to $\Delta_{\langle q-r,s\rangle} -\Delta_{\langle r,s\rangle}= \left(r-\frac{q}{2}\right)\left(s-\frac{p}{2}\right)$.
+But guessing the spectrum is better done with fusion rules? How do we guess conservation of diagonality? Parity of $r$ is given in $N$ sector, so $q\equiv 0\bmod 4 \implies N\times N = D$.
+
+\subsection{Modular transformation of degenerate characters}
+
+The character of a Verma module is 
+\begin{align}
+ \chi_p (y) = \frac{y^{p^2}}{\eta(y)}
+\end{align}
+(Explain!)
+The modular transformation is 
+\begin{align}
+ \chi_p(y) = \sqrt{2}\int_\mathbb{R} dp'\ e^{4\pi ipp'} \chi_{p'}(y) 
+\end{align}
+The character of a doubly degenerate representation is 
+\begin{align}
+ \chi_{\langle r,s\rangle}(y) = \sum_{k\in\mathbb{Z}} \left( \chi_{p_{\langle r,s\rangle} + k\sqrt{pq}} - \chi_{p_{\langle r,-s\rangle} + k\sqrt{pq}}\right)
+\end{align}
+Modular transforming, and using the Poisson summation formula,
+\begin{align}
+ \sum_{k\in\mathbb{Z}} e^{2\pi ikx} = \sum_{\ell\in\mathbb{Z}} \delta(x+\ell)
+\end{align}
+we obtain
+\begin{align}
+ \chi_{\langle r,s\rangle}(y) = 
+ -\sqrt{\frac{2}{pq}}\sum_{\ell\in\mathbb{Z}} 
+ \sin\left(\pi\frac{r}{q}\ell\right) 
+ \sin\left(\pi\frac{s}{p}\ell\right)
+ \chi_{\frac{\ell}{2\sqrt{pq}}}(\tilde{y})
+\end{align}
+Let us check that the modular $S$-matrix is
+\begin{align}
+ S_{\langle r,s\rangle, \langle r', s'\rangle} = -\sqrt{\frac{8}{pq}}(-1)^{rs'+r's} \sin\left(\pi\frac{p}{q}rr'\right)\sin\left(\pi\frac{q}{p}ss'\right)
+\end{align}
+We compute 
+\begin{align}
+ \frac12\sum_{r=1}^{q-1}\sum_{s=1}^{p-1} S_{\langle r,s\rangle, \langle r', s'\rangle} \chi_{\langle r,s\rangle}(y) = \chi_{\langle r',s'\rangle}(\tilde{y})
+\end{align}
+where we used
+\begin{align}
+ \sum_{r=1}^{q-1} (-1)^{rs'}\sin\left(\pi\frac{p}{q}rr'\right)\sin\left(\pi\frac{r}{q}\ell\right) 
+ = -\frac{q}{2}\sum_{\epsilon =\pm} \epsilon \delta_{\ell\equiv\epsilon pr'+qs'\bmod 2q}
+\end{align}
+
 
 \section*{Acknowledgements}
 
-I am grateful to the organizers of the Carg\`ese school, for challenging me to explain Liouville theory in about four hours.
-I with to thank Bertrand Eynard, Riccardo Guida and Andr\'e Voros for helpful suggestions and comments.
-I am grateful to the participants of the Carg\`ese school, for their stimulating participation in the lectures.
-I wish to thank the SciPost editor and reviewers for their feedback and \href{https://scipost.org/submission/1609.09523v2/}{suggestions}, which led to many improvements, both perturbative and non-perturbative.
+
 
 \bibliographystyle{cft}
 \bibliography{cft}
@@ -1194,70 +1273,9 @@ I wish to thank the SciPost editor and reviewers for their feedback and \href{ht
 
 \end{document}
 
-\pagebreak
 
 \appendix
 
-\section*{Reply to the SciPost reviewers}
-
-I am grateful to the reviewers and editor for their work. I have made many changes, especially in Sections 4 and 5, mainly in order to add or improve explanations. As a result, the revised version is more than 3 pages longer than the submitted version, while keeping the same plan. Let me comment on some of the most important changes, before addressing the reviewers' specific concerns:
-\begin{enumerate}
- \item In Sections 4 and 5, I have made the technical simplification of eliminating the reflection relation and the associated reflection coefficient. Instead, I have introduced a two-point structure constant $B(P)$ in eq. (4.10). 
- I hope that this makes the bootstrap analysis of Section 5 simpler, both conceptually and technically. 
- \item I have added 8 references, including some general references that are cited in the Introduction. These general references can serve as guides to the original literature, a role that the present notes do not strive to fulfill. Most references are textbooks or review articles. They do not detract from the self-contained nature of these notes, up to one exception which is pointed out in the Introduction.
-\end{enumerate}
-Reply to Reviewer 1:
-\begin{enumerate}
- \item Eq. (2.11) is indeed a specialization of eq. (2.10), as is now stated explicitly.
- \item The absence of antiholomorphic dependence in Section 2 is now stated explicitly after Axiom 2.3. Moreover, the role of $\bar z$ is now explained in more detail after Axiom 3.2.
- \item Actually, contour deformations are not needed for deriving (2.16). We only need to know the poles and residues of $Z(y)$.
- \item The mistaken exponent in (2.20) is now corrected.
- \item I have added a comment after (2.26) on its relation with (2.20), plus the Exercise 3.6 on the same subject.
- \item The reason for this choice of ordering can be understood graphically in eq. (3.18): it allows the $s$- and $t$-channels to correspond to the limits $z\to 0$ and $z\to 1$ respectively. On the other hand, radial ordering and radial quantization play no role in this text.
- \item Section 4.1 has been partly rewritten, I hope this answers some of the concerns about minimal models. In particular, there is now a comment on the values of $b, Q$ and $c$ after eq. (4.6). On the other hand I have refrained from commenting on unitarity, which plays no role in classifying and solving minimal models and Liouville theory. This concept would be superfluous in a minimal approach, and is already overemphasized in the existing literature, including in some of the cited references. 
- \item In my terminology, generalized minimal models are models that exist for all values of $c$, and reduce to minimal models when $c$ takes appropriate discrete values. Therefore, generalized minimal models have much to do with minimal models, and little to do with Liouville theory, as is obvious from their spectrums. 
- \item The values of $\Delta$ are real for states in the spectrum if $1<c<25$. The conformal dimensions of degenerate representations do become complex for these values of $c$, but this plays no role in the argument. I have followed the suggestion to give the figure (5.14) earlier in the text, and rewritten much of Section 5.
-\end{enumerate}
-Reply to Reviewer 2: I have done a major revision and expansion of Sections 4 and 5 in the hope of clarifying them, while also improving the rest of the text in a more perturbative fashion. There are also some more explanations in Section 3, in particular at the beginning of Section 3.2. Let me now address the 'minimal set of comments': 
-\begin{enumerate}
- \item I have added more details in the derivation of (2.12).
- \item I now state that indeed there is an ambiguity in the choice of $\delta_{ij}$, and that this corresponds to different possible definitions of the function $G(z)$. 
- \item In Exercise 2.8, I have given more justification of the definition of $V_\Delta(\infty)$. This notation is standard and unambiguous, so I am reluctant to change it.
- \item In what is now Exercise 3.8, I have given more precise guidance and questions. 
- \item Right. I have reordered the title of Section 4. 
-\end{enumerate}
-Reply to Reviewer 3: I would argue that this text is indeed self-contained, up to a small exception that is now stated explicitly in the Introduction. This text provides unambiguous definitions and solutions of Liouville theory and minimal models, that should be understandable without reference to the literature. 
-
-Admittedly there is relatively little discussion of the choices of axioms, but in the spirit of the axiomatico-deductive methods, axioms are justified a posteriori by the results that can be deduced from them (as I now recall in the Introduction). Admittedly there is also little discussion of the 'state of the art': this discussion is now delegated to ref. [3]. 
-
-Let me address some specific concerns:
-\begin{enumerate}
- \item The condition for degeneracy in Section 4.1 has been rewritten. The condition (4.3) in the old version was actually not necessary. Doubly degenerate fields do not exist in minimal models only: they can exist whenever $b^2\in\mathbb{Q}$. This is now stated more explicitly, see also Exercise 4.7.
- \item The reflection relation has been eliminated. Moreover, in Section 4.2 I now explicitly assume that ``each allowed representation appears only once in the spectrum''. 
- \item Yes a conformal dimension can be shared by two primary states, one of them in the spectrum and the other not. This actually happens in Liouville theory with $c\leq 1$. This issue plays no role in solving the theory, so I would rather not discuss it in the text.
- \item I would be happy to plug any gaps in the argument, but I do not see any, so long I am allowed to choose my axioms. There are certainly gaps in referring to concepts and assumptions that are present in much of the literature, but not needed in the present argument. (See the Introduction.) Again, I hope that ref. [3] will help the curious reader. 
-\end{enumerate}
-
-
-\section*{Second reply to the SciPost reviewers}
-
-I have made a number of relatively minor changes.
-
-Reply to Reviewer 1: The typo after (3.15) is now corrected.
-
-Reply to Reviewer 3:
-\begin{enumerate}
- \item There was indeed a contradition because Axiom 3.4 was too strong. I have modified that Axiom so that it applies only to fields that correspond to states in the spectrum. Then OPEs of degenerate fields are not covered, and should be discussed separately. I have added such a discussion after Axiom 4.10. 
- \item I have added a paragraph at the very end of Section 5, in order to make contact with the original definition (and naming) of Liouville theory, and to refer the reader to ref. [3] for more details.
- \item I have added  a paragraph between eqs. (4.10) and (4.11) in order to further discuss the guess for the lower bound, and to mention the alternative guess that the lower bound could be zero.
- \item Between eqs. (5.18) and (5.19), I have amended the discussion of invariance under field renormalization: it is now stated that invariant quantities are sufficient for checking crossing symmetry, and explained why we may want to choose a normalization.
-\end{enumerate}
-
-Additional changes:
-\begin{enumerate}
- \item At the end of the introduction, I have added a further motivation for the minimalistic approach, namely that it can be useful in research on other CFTs. Reference [6] is given as an example.
- \item In Exercise 3.5, I have added substantial hints.
-\end{enumerate}
 
 
 
