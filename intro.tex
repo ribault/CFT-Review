@@ -16,6 +16,8 @@
 
 \usepackage{centernot}
 
+\usepackage[nottoc]{tocbibind}
+
 \usepackage{pgf}
 \usepackage{tikz}
 
@@ -80,11 +82,11 @@
 We will introduce conformal field theory in two dimensions, from the basic principles to some of the simplest models. From the representations of the Virasoro algebra on the one hand, and the state-field correspondence on the other hand, we will deduce Ward identities and Belavin--Polyakov--Zamolodchikov equations for correlation functions. We will then explain the principles of the conformal bootstrap method, and introduce conformal blocks. This allows us to define and solve minimal models and Liouville theory. We will also introduce affine Lie algebras, and derive the Knizhnik--Zamolodchikov equations. 
 \end{abstract}
 
-\vspace{1mm}
+\vspace{2mm}
 
- \noindent\textit{Lecture notes prepared for the ``Young Researchers Integrability School'', Wien 2019}
+ \textit{Lecture notes for the ``Young Researchers Integrability School'', Wien 2019}
 
-\vspace{1mm}
+\vspace{4mm}
 
 These notes are based on the earlier lecture notes \cite{rib16}. They should correspond to 7 lectures of 45 minutes each, covering the following topics:
 \begin{enumerate}
@@ -102,14 +104,6 @@ These notes are based on the earlier lecture notes \cite{rib16}. They should cor
 
 \item Overflow. (All of the above will surely not fit in 6 lectures.)
 \end{enumerate}
-Planned changes include:
-\begin{itemize}
-\item Adding the modular bootstrap and characters.
-\item Adding an introduction to affine Lie algebras, including the KZ equations.
-\item Condensing the existing material somewhat. 
-\item More exercises? Regroup them?
- \item Changing notations, in particular $P\to P$ for momentums.
-\end{itemize}
 
 
 \clearpage
@@ -1212,9 +1206,137 @@ assuming it exists and is unique.
  If $p\equiv 0\bmod 4$, show that the D-series minimal model's fusion rules are completely determined by the fusion rules of the corresponding Virasoro representations. Write these fusion rules, and show that they conserve diagonality, in the sense that any correlation function with an odd number of non-diagonal fields vanishes. Assuming conservation of diagonality still holds if $p\equiv 2\bmod 4$, write the fusion rules of all D-series minimal models.
 \end{exo}
 
-
 \subsection{Modular bootstrap}
 
+The torus zero-point function (or partition function) is a correlation function that only depends on the spectrum, and on characters of representations of the Virasoro algebra. Since there is no dependence on three-point structure constants, and since characters are much simpler than four-point blocks, the torus partition function is much simpler than four-point functions on the sphere. Nevertheless, the partition function obeys a nontrivial constraint called modular invariance -- a counterpart of crossing symmetry.
+
+\begin{defn}[Modular bootstrap]
+The modular bootstrap consists in using the modular invariance of the torus partition function for deriving constraints on the spectrum.
+\end{defn}
+However, modular invariant partition functions do not always correspond to consistent CFTs: consistency of a CFT on all Riemann surfaces is equivalent to crossing symmetry of the sphere four-point function and modular invariance of the torus one-point function \cite{ms89b}. And some CFTs are consistent on the sphere only.
+
+\begin{defn}[Torus partition function]
+ For a CFT with the spectrum $S$, the partition function on the torus $\frac{\mathbb{C}}{\mathbb{Z}+\tau \mathbb{Z}}$ is 
+ \begin{align}
+  Z(\tau) = \operatorname{Tr}_S q^{L_0-\frac{c}{24}}\bar q^{\bar L_0-\frac{c}{24}}\quad \text{where} \quad q=e^{2\pi i \tau}\ .
+ \end{align}
+\end{defn}
+
+\begin{hyp}[Modular invariance]
+For $\left(\begin{smallmatrix} a & b \\ c & d\end{smallmatrix}\right)\in SL_2(\mathbb{Z})$, the torus partition function is invariant under the corresponding modular transformation,
+\begin{align}
+ Z(\tau) = Z\left(\frac{a\tau+b}{c\tau +d} \right)\ .
+\end{align}
+\end{hyp}
+Let us give some justification for the definition of the torus partition function. The energy operator on the complex plane is $L_0+\bar{L}_0$: under the conformal map $z\mapsto \log z$ to the infinite cylinder, this becomes $L_0+\bar{L}_0-\frac{c}{12}$. To get the torus, we truncate the cylinder to a finite length $i(\tau-\bar{\tau})$, and identify points on the upper and lower boundaries after a rotation by $\tau+\bar{\tau}$. The partition function is the trace of the operator that performs this identification.
+\begin{align*}
+\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraycolsep}{6mm}
+\begin{array}{ccc}
+ \begin{tikzpicture}[scale = .45, baseline=(current  bounding  box.center)]
+  \draw (-5, -5) -- (5, -5) -- (5, 5) -- (-5, 5) node[below right]{$z$} -- cycle;
+  \draw [red, ultra thick] (0, 0) circle (2.1);
+  \draw [red, ultra thick, -latex] (.3, -2.1) -- (.35, -2.1) node[black, below] {$i(L_0-\bar{L}_0)$};
+  \draw [blue, ultra thick] (0, 0) -- (0, 5);
+  \draw [blue, ultra thick, -latex] (0, 0) -- (0, 3.5) node[black, right] {$L_0+\bar{L}_0$};
+  \node[draw, circle, inner sep=1.5pt, fill] at (0, 0) {};
+ \end{tikzpicture}
+ & 
+ \begin{tikzpicture}[xscale = .65, yscale = .55, baseline=(current  bounding  box.center)]
+  \draw [very thick] (0, -5) -- (0, 5);
+  \draw [very thick] (5, -5) -- (5, 5);
+  \draw (0, -4) to [out = -90, in = -90] (5, -4);
+  \draw [dashed] (0, -4) to [out = 90, in = 90] (5, -4);
+  \draw (0, 4) node[right] {$\log z$} to [out = -90, in = -90] (5, 4);
+  \draw [dashed] (0, 4) to [out = 90, in = 90] (5, 4);
+  \draw [red, ultra thick] (0, 0) to [out = -90, in = -90] (5, 0);
+  \draw [red, ultra thick, dashed] (0, 0) to [out = 90, in = 90] (5, 0);
+  \draw [red, ultra thick, -latex] (2.2, -1.45) -- (2.15, -1.45) node[black, below] {$i(L_0-\bar{L}_0)$};
+  \draw [blue, ultra thick] (4.3, -5.8) -- (4.3, 4.2);
+  \draw [blue, ultra thick, -latex] (4.3, -5.8) -- (4.3, .5) node[black, left] {$L_0+\bar{L}_0-\frac{c}{12}$};
+ \end{tikzpicture}
+ & 
+ \begin{tikzpicture}[xscale = .65, yscale = .55, baseline=(current  bounding  box.center)]
+  \draw [very thick] (0, -4) -- (0, 4);
+  \draw [very thick] (5, -4) -- (5, 4);
+  \draw [very thick] (0, -4) to [out = -90, in = -90] (5, -4);
+  \draw [very thick, dashed] (0, -4) to [out = 90, in = 90] (5, -4);
+  \draw [very thick] (0, 4) to [out = -90, in = -90] (5, 4);
+  \draw [very thick] (0, 4) to [out = 90, in = 90] (5, 4);
+  \draw [red, very thick] (1.2, -5.3) to [out = -13, in = -167] (3.8, -5.3);
+  \draw [red, very thick, -latex] (2.2, -5.5) -- (2.15, -5.5) node[black, below] {$\tau+\bar{\tau}$};
+  \draw [blue, very thick] (1.2, -5.3) -- (1.2, 2.7);
+  \draw [blue, very thick, -latex] (1.2, -5) -- (1.2, -1) node[black, right] {$i(\tau-\bar\tau)$};
+  \node[draw, circle, inner sep=1.5pt, fill] at (3.8, -5.3) {};
+  \node[draw, circle, inner sep=1.5pt, fill] at (1.2, 2.7) {};
+ \end{tikzpicture}
+ \\
+ \text{complex plane}
+ & 
+ \text{infinite cylinder}
+ &
+ \text{torus}
+ \end{array}
+\end{align*}
+
+Actually, modular invariance reduces to the invariance under two particular modular transformations, $Z(\tau)=Z(\tau+1)=Z(-\frac{1}{\tau})$. The condition $Z(\tau)=Z(\tau+1)$ amounts to $L_0-\bar{L}_0$ having integer eigenvalues, in other words all states having integer conformal spins.
+The condition $Z(\tau)=Z(-\frac{1}{\tau})$ is more complicated: to exploit this condition, let us decompose the spectrum into factorized representations of the type $\mathcal{R}\otimes \bar{\mathcal{R}}$. 
+The contribution of $\mathcal{R}\otimes \bar{\mathcal{R}}'$ to the partition function is $\chi_{\mathcal{R}}(\tau) \chi_{\mathcal{R}'}(-\bar\tau)$, where we define the character of a representation as
+\begin{align}
+ \chi_\mathcal{R}(\tau) = \operatorname{Tr}_\mathcal{R} q^{L_0-\frac{c}{24}}\ .
+\end{align}
+From $Z(\tau)=Z(-\frac{1}{\tau})$, we first deduce that there exists a modular $S$-matrix such that 
+\begin{align}
+ \chi_\mathcal{R}(\tau) = \sum_{\mathcal{R}'} S_{\mathcal{R},\mathcal{R}'} \chi_{\mathcal{R}'}(-\tfrac{1}{\tau})\ .
+\end{align}
+Let us consider a diagonal CFT, with the partition function $Z(\tau)=\sum_\mathcal{R} \chi_\mathcal{R}(\tau)\chi_{\mathcal{R}}(-\bar{\tau})$.
+Comparing two expressions for $Z(-\frac{1}{\tau})$, 
+\begin{align}
+Z(-\tfrac{1}{\tau}) = \sum_{\mathcal{R}',\mathcal{R}''} S_{\mathcal{R},\mathcal{R}'} S_{\mathcal{R},\mathcal{R}''} \chi_{\mathcal{R}'}(-\tfrac{1}{\tau}) \chi_{\mathcal{R}''}(\tfrac{1}{\bar\tau}) = \sum_{\mathcal{R}} \chi_{\mathcal{R}}(-\tfrac{1}{\tau}) \chi_{\mathcal{R}}(\tfrac{1}{\bar\tau})\ ,
+\end{align}
+we deduce $SS^T=\text{Id}$. Since $S^2=\text{Id}$ by construction, this means that a diagonal modular invariant partition function exists if and only if the $S$-matrix is symmetric.
+
+Let us compute the characters and modular $S$-matrix of minimal models. We start with the character of a Verma module with momentum $P$,
+\begin{align}
+ \chi_P(\tau) = \frac{q^{-P^2}}{\eta(\tau)} \quad \text{with} \quad \eta(\tau) = q^{\frac{1}{24}} \prod_{n=1}^\infty (1-q^n)\ ,
+\end{align}
+where the nontrivial factor is called the Dedekind $\eta$ function. Why this function? If $L_{-1}$ was our only creation mode, we would have one state at each level, and the character would be $\chi(\tau)\sim 1+q+q^2+q^3+\cdots = \frac{1}{1-q}$. If we had $L_{-2}$ instead, the character would be $\chi(\tau)\sim \frac{1}{1-q^2}$. And in order to count the states that come from two creation modes, we must multiply the corresponding series.
+
+In order to compute the character of a degenerate representation, we should subtract the contributions of null vectors and their descendent states. For a simply degenerate representation, the character is therefore
+\begin{align}
+ \chi_{\langle r,s\rangle}(\tau) = \chi_{P_{\langle r,s\rangle}}(\tau) - \chi_{P_{\langle r,-s\rangle}}(\tau)\ .
+\end{align}
+For a fully degenerate representation in the Kac table of the $(p, q)$ minimal model, the structure is a bit more complicated: we have to subtract the two null vectors and their descendents, but add again the intersection of their two Verma submodules, which was subtracted twice. This intersection has a complicated structure, and the result is 
+\begin{align}
+ \chi_{\langle r,s\rangle}(\tau) = \sum_{k\in\mathbb{Z}} \left( \chi_{P_{\langle r,s\rangle} + ik\sqrt{pq}} - \chi_{P_{\langle r,-s\rangle} + ik\sqrt{pq}}\right)\ .
+\end{align}
+The modular $S$-matrix turns out to be symmetric, showing that the A-series minimal models have modular invariant partition functions. Actually, the D-series minimal models too. Furthermore, these minimal models exist on arbitrary Riemann surfaces, and so does Liouville theory.
+
+\begin{exo}[Modular $S$-matrices of minimal models]
+ Show that the modular transformation of the character $\chi_{P}(\tau)$ of a Verma module is 
+ \begin{align}
+  \chi_P(\tau) = \sqrt{2}i\int_{i\mathbb{R}} dP'\ e^{4\pi iPP'} \chi_{P'}(-\tfrac{1}{\tau})\ . 
+ \end{align}
+Using the Poisson resummation formula $\sum_{k\in\mathbb{Z}} e^{2\pi ikx} = \sum_{\ell\in\mathbb{Z}} \delta(x+\ell)$, deduce the modular transformation of the characters of fully degenerate representation in the Kac table of the $(p, q)$ minimal model,
+\begin{align}
+ \chi_{\langle r,s\rangle}(\tau) = 
+ -\sqrt{\frac{2}{pq}}\sum_{\ell\in\mathbb{Z}} 
+ \sin\left(\pi\frac{r}{p}\ell\right) 
+ \sin\left(\pi\frac{s}{q}\ell\right)
+ \chi_{i\frac{\ell}{2\sqrt{pq}}}(-\tfrac{1}{\tau})\ .
+\end{align}
+Using the identity
+\begin{align}
+ \sum_{r=1}^{p-1} (-1)^{rs'}\sin\left(\pi\frac{q}{p}rr'\right)\sin\left(\pi\frac{r}{p}\ell\right) 
+ = -\frac{p}{2}\sum_{\epsilon =\pm} \epsilon \delta_{\ell\equiv\epsilon qr'+ps'\bmod 2p}\ ,
+\end{align}
+show that the modular $S$-matrix is 
+\begin{align}
+ S_{\langle r,s\rangle, \langle r', s'\rangle} = -\sqrt{\frac{8}{pq}}(-1)^{rs'+r's} \sin\left(\pi\frac{q}{p}rr'\right)\sin\left(\pi\frac{p}{q}ss'\right)\ .
+\end{align}
+\end{exo}
+
+\section{Affine symmetry}
 
 \appendix
 
@@ -1226,77 +1348,17 @@ assuming it exists and is unique.
  \item It would be more logical for me to do affine symmetrie at the end. But this might come too late for the course on WZW models. Should two lectures be swapped? 
  \item Does anyone need the Verlinde formula?
  \item Who needs characters and torus partition functions? What for?
+ \item How are tutorials organized? Should lecture notes be adapted to tutorials? For instance, by listing all exercises, or choosing which exercies to do?
 \end{enumerate}
 
 \subsection{To be done}
 
 \begin{enumerate}
  \item Discuss correlation functions of minimal models?
+ \item Adding an introduction to affine Lie algebras, including the KZ equations.
+\item More exercises? Regroup them?
 \end{enumerate}
 
-
-
-\subsection{Modular bootstrap}
-
-Modular invariance neither necessary nor sufficient. Main advantage: technical simplicity, since characters are simpler than four-point blocks.
-
-We first have to justify the definition of the torus partition function, by explaining why it is modular invariant. 
-
-This comes from the geometry: the modular transformation from the plane to the cylinder $z=e^{\tau + i\sigma}$ shifts $L_0+\bar{L}_0$ by $-\frac{c}{12}$. (This comes from the $TT$ OPE.) Then we build a torus from a finite size cylinder of length $\tau-\bar{\tau}$, while doing a rotation by $\tau + \bar\tau$ before gluing. This explains why the torus partition function is 
-\begin{align}
- Z = \operatorname{Tr} e^{2\pi i(\tau-\bar\tau)(L_0+\bar L_0-\frac{c}{12})} e^{2\pi i(\tau+\bar \tau)(L_0-\bar L_0)} = \operatorname{Tr} y^{L_0-\frac{c}{24}} \bar y^{\bar L_0-\frac{c}{24}}
-\end{align}
-where $y = e^{2\pi i\tau}$. We can then rewrite the torus as $\frac{\mathbb{C}}{\mathbb{Z} + \tau\mathbb{Z}}$ and justify modular invariance. 
-
-Start with Liouville theory: the partition function does not involve $c$ but $c_\text{eff}=1$. 
-
-Modular invariance of diagonal partition function always true if $S=S^T$. (We have $S^2=1$ by construction.)
-
-Do not talk about the Verlinde formula? Or just state it? It has a general proof in \cite{fms97} using manipulations of torus two-point functions. But what are exactly the assumptions? Naively using the formula in Liouville theory gives fusion rules that enforce momentum conservation!
-
-$T$-modular transformation requires $\Delta\equiv\bar\Delta \bmod \mathbb{Z}$. So there is room for non-diagonal invariants due to $\Delta_{\langle q-r,s\rangle} -\Delta_{\langle r,s\rangle}= \left(r-\frac{q}{2}\right)\left(s-\frac{p}{2}\right)$.
-But guessing the spectrum is better done with fusion rules? How do we guess conservation of diagonality? Parity of $r$ is given in $N$ sector, so $q\equiv 0\bmod 4 \implies N\times N = D$.
-
-\subsection{Modular transformation of degenerate characters}
-
-The character of a Verma module is 
-\begin{align}
- \chi_p (y) = \frac{y^{p^2}}{\eta(y)}
-\end{align}
-(Explain!)
-The modular transformation is 
-\begin{align}
- \chi_p(y) = \sqrt{2}\int_\mathbb{R} dp'\ e^{4\pi ipp'} \chi_{p'}(y) 
-\end{align}
-The character of a doubly degenerate representation is 
-\begin{align}
- \chi_{\langle r,s\rangle}(y) = \sum_{k\in\mathbb{Z}} \left( \chi_{p_{\langle r,s\rangle} + k\sqrt{pq}} - \chi_{p_{\langle r,-s\rangle} + k\sqrt{pq}}\right)
-\end{align}
-Modular transforming, and using the Poisson summation formula,
-\begin{align}
- \sum_{k\in\mathbb{Z}} e^{2\pi ikx} = \sum_{\ell\in\mathbb{Z}} \delta(x+\ell)
-\end{align}
-we obtain
-\begin{align}
- \chi_{\langle r,s\rangle}(y) = 
- -\sqrt{\frac{2}{pq}}\sum_{\ell\in\mathbb{Z}} 
- \sin\left(\pi\frac{r}{q}\ell\right) 
- \sin\left(\pi\frac{s}{p}\ell\right)
- \chi_{\frac{\ell}{2\sqrt{pq}}}(\tilde{y})
-\end{align}
-Let us check that the modular $S$-matrix is
-\begin{align}
- S_{\langle r,s\rangle, \langle r', s'\rangle} = -\sqrt{\frac{8}{pq}}(-1)^{rs'+r's} \sin\left(\pi\frac{p}{q}rr'\right)\sin\left(\pi\frac{q}{p}ss'\right)
-\end{align}
-We compute 
-\begin{align}
- \frac12\sum_{r=1}^{q-1}\sum_{s=1}^{p-1} S_{\langle r,s\rangle, \langle r', s'\rangle} \chi_{\langle r,s\rangle}(y) = \chi_{\langle r',s'\rangle}(\tilde{y})
-\end{align}
-where we used
-\begin{align}
- \sum_{r=1}^{q-1} (-1)^{rs'}\sin\left(\pi\frac{p}{q}rr'\right)\sin\left(\pi\frac{r}{q}\ell\right) 
- = -\frac{q}{2}\sum_{\epsilon =\pm} \epsilon \delta_{\ell\equiv\epsilon pr'+qs'\bmod 2q}
-\end{align}
 
 
 \section*{Acknowledgements}
