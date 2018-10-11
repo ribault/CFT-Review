@@ -585,7 +585,7 @@ The simplest case is $\Delta=\bar\Delta$, which leads to the definition
  ~\label{def:diag}
  A primary state or field is called diagonal if it has the same left and right conformal dimensions. A spectrum is called diagonal if all primary states are diagonal.
 \end{defn}
-From now on we assume that all primary fields are diagonal, and write  $V_\Delta(z) = V_{\Delta,\Delta}(z)$.
+Until Section \ref{sec:dmm}, we will assume that all primary fields are diagonal, and write  $V_\Delta(z) = V_{\Delta,\Delta}(z)$.
 
 \subsection{Operator product expansion and crossing symmetry}
 
@@ -1102,13 +1102,14 @@ Historically, Liouville theory was first defined by quantizing a classical theor
 
 \section{Minimal models}
 
-\subsection{Diagonal minimal models}
-
 \begin{defn}[Minimal model]
  ~\label{def:mm}
  A minimal model is a conformal field theory whose spectrum is made of finitely many irreducible representations of the product of the left and the right Virasoro algebras.
 \end{defn}
-Although there exist non-diagonal minimal models \cite{fms97}, we focus on diagonal minimal models, whose spectrums are of the type
+
+\subsection{Diagonal minimal models}
+
+We first focus on diagonal minimal models, whose spectrums are of the type
 \begin{align}
  S = \bigoplus_\mathcal{R} \mathcal{R}\otimes  \mathcal{\bar R}\ ,
 \end{align}
@@ -1166,7 +1167,12 @@ For other values of $p,q$, it turns out that no minimal models exist.
 
 \begin{exo}[Closure of minimal model spectrums under fusion]
  ~\label{exo:cmm}
- Show that $S_{p,q}$ is closed under fusion. If you are brave, compute the fusion products of the representations that appear in $S_{p,q}$. If you are very brave, show that $p,q\geq 2$ is a necessary condition for the existence of a finite, nontrivial set of multiply degenerate representations that closes under fusion.
+ Show that $S_{p,q}$ is closed under fusion. If you are brave, show that the fusion products of the representations that appear in $S_{p,q}$ are
+ \begin{align}
+  \mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle} = \sum_{r_3\overset{2}{=}|r_1-r_2|+1}^{\min(r_1+r_2,2p-r_1-r_2)-1}\ \sum_{s_3\overset{2}{=}|s_1-s_2|+1}^{\min(s_1+s_2,2q-s_1-s_2)-1} \mathcal{R}_{\langle r_3,s_3 \rangle}\ .
+\label{rrmm}
+\end{align}
+ If you are very brave, show that $p,q\geq 2$ is a necessary condition for the existence of a finite, nontrivial set of multiply degenerate representations that closes under fusion.
 \end{exo}
 
 \begin{defn}[Diagonal minimal model]
@@ -1181,7 +1187,31 @@ For example, the minimal model with the central charge $c=\frac12$ has the spect
  \begin{array}{c|ccc} 2 & \frac{1}{2} & \frac{1}{16} & 0 \\ 1 & 0 & \frac{1}{16} & \frac{1}{2} \\  \hline & 1 & 2 & 3 \end{array} 
 \end{align}
 
-\subsection{D-series minimal models}
+\subsection{D-series minimal models}\label{sec:dmm}
+
+Let us look for non-diagonal minimal models. We therefore relax the assumption that fields be diagonal, and allow them to have integer spins. (We could allow half-integer spins, leading to fermionic minimal models \cite{pet88}.) We still assume that the spectrum is made of doubly degenerate representations, and is closed under fusion.
+
+Given a rational value of $b^2=-\frac{q}{p}$, let us look for pairs of doubly degenerate representations whose dimensions differ by integers, using the identity
+\begin{align}
+ \Delta_{\langle p-r,s\rangle} -\Delta_{\langle r,s\rangle}= \left(r-\frac{p}{2}\right)\left(s-\frac{q}{2}\right)\ .
+\end{align}
+Without loss of generality we assume that $q$ is odd. Then we need $r-\frac{p}{2}$ to be an even integer, therefore $p$ is even and $r\equiv\frac{p}{2}\bmod 2$. Under these assumptions, the representation $\mathcal{R}_{\langle r,s\rangle}\otimes \bar{\mathcal{R}}_{\langle p-r,s\rangle}$ has integer spin. We now look for a spectrum whose non-diagonal sector is made of all representations of this type, for $\langle r,s\rangle$ in the Kac table.
+
+Fusing two such representations produces degenerate representations with odd values of $r$. If $p\equiv 0\bmod 4$, such representations do not belong to our non-diagonal sector, and must therefore be diagonal. We therefore build a diagonal sector from all indices $\langle r,s\rangle$ in the Kac table with $r$ odd, not only if $p\equiv 0\bmod 4$, but also for $p\equiv 2\bmod 4$. 
+
+\begin{defn}[D-series minimal model]
+ For $p,q\geq 2$ coprime integers with $p\in 2\mathbb{N}+6$, the $(p,q)$ minimal model is the conformal field theory whose spectrum is 
+\begin{align}
+ S_{p,q}^\text{D-series} = \frac12 \bigoplus_{r\overset{2}{=}1}^{p-1} \bigoplus_{s=1}^{q-1} \mathcal{R}_{ r,s} \otimes \bar{\mathcal{R}}_{r,s}\oplus \frac12\bigoplus_{\substack{1\leq r\leq p-1 \\ r\equiv \frac{p}{2}\bmod 2}} \bigoplus_{s=1}^{q-1} \mathcal{R}_{r,s} \otimes \bar{\mathcal{R}}_{p-r,s}\ ,
+\end{align}
+assuming it exists and is unique.
+\end{defn}
+(We need $p\geq 6$ for our would-be non-diagonal sector to actually contain representations with nonzero spins.)
+
+\begin{exo}[Fusion rules of D-series minimal models]
+ If $p\equiv 0\bmod 4$, show that the D-series minimal model's fusion rules are completely determined by the fusion rules of the corresponding Virasoro representations. Write these fusion rules, and show that they conserve diagonality, in the sense that any correlation function with an odd number of non-diagonal fields vanishes. Assuming conservation of diagonality still holds if $p\equiv 2\bmod 4$, write the fusion rules of all D-series minimal models.
+\end{exo}
+
 
 \subsection{Modular bootstrap}
 
@@ -1197,6 +1227,13 @@ For example, the minimal model with the central charge $c=\frac12$ has the spect
  \item Does anyone need the Verlinde formula?
  \item Who needs characters and torus partition functions? What for?
 \end{enumerate}
+
+\subsection{To be done}
+
+\begin{enumerate}
+ \item Discuss correlation functions of minimal models?
+\end{enumerate}
+
 
 
 \subsection{Modular bootstrap}
