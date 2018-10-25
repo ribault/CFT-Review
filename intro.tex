@@ -16,6 +16,8 @@
 
 \usepackage{centernot}
 
+\usepackage{underbracket}
+
 \usepackage[nottoc]{tocbibind}
 
 \usepackage{pgf}
@@ -268,6 +270,7 @@ Let us now look for null vectors at the level $N=2$. Let $|\chi\rangle = (L_{-1}
 In order to simplify this formula, let us introduce other notations for $c$ and $\Delta$. We define
 \begin{align}
  \text{the background charge } Q \ , & \quad c = 1+6Q^2\ , \quad \text{up to } Q \to -Q\ ,
+ \label{eq:cqb}
  \\
  \text{the coupling constant } b \ , & \quad Q = b+\frac{1}{b} \ , \quad \text{up to } b\to \pm b^{\pm 1}\ ,
  \\
@@ -417,6 +420,23 @@ Correlation functions depend linearly on fields, and in particular $\frac{\parti
  \end{align}
 \end{hyp}
 
+\begin{exo}[Virasoro algebra and OPE] 
+~\label{exott}
+Show that the commutation relations \eqref{eq:vir} of the Virasoro algebra are equivalent to the following OPE of the field $T(y)$ with itself,
+\begin{align}
+ T(y)T(z) = \frac{\frac{c}{2}}{(y-z)^4} + \frac{2T(z)}{(y-z)^2} + \frac{\partial T(z)}{y-z} + O(1)\ .
+\label{tt}
+\end{align}
+To do this, use the commutativity of fields for writing
+\begin{align}
+ [L_n^{(z_0)},L_m^{(z_0)}] = -\frac{1}{4\pi^2} \left(\oint_{z_0} dy \oint_{z_0} dz - \oint_{z_0} dz \oint_{z_0} dy\right) (y-z_0)^{n+1}(z-z_0)^{m+1} T(y)T(z)\ ,
+\end{align}
+and use contour manipulations to show that 
+\begin{align}
+ \oint_{z_0} dy \oint_{z_0} dz - \oint_{z_0} dz \oint_{z_0} dy = \oint_{z_0} dy \oint_y dz\ .
+\end{align}
+\end{exo}
+
 Let us work out the consequences of conformal symmetry for correlation functions.
 In order to study an $N$-point function $Z$ of primary fields, we introduce an auxiliary $(N+1)$-point function $Z(y)$ where we insert the energy-momentum tensor,
 \begin{align}
@@ -539,6 +559,89 @@ In the case of a four-point function, the BPZ equation amounts to a differential
  \end{align}
 \end{exo}
 
+\subsection{Free bosons}
+
+We will now introduce the conformal field theory of free bosons. We will not need free bosons in the following, as we will use the conformal bootstrap rather than perturbative methods. However, free bosons provide the simplest examples of CFTs with extended symmetry algebras, i.e. algebras that are strictly larger than the Virasoro algebra: in this case, the abelian affine Lie algebra. This is a good preparation for Wess--Zumino--Witten models, with their non-abelian affine Lie algebras.
+
+Just as the Virasoro algebra can be defined by the self-OPE of the energy-momentum tensor \eqref{tt}, we define the abelian affine Lie algebra by the self-OPE of a locally holomorphic current $J(y)$,
+\begin{align}
+ J(y)J(z) = \frac{-\frac12}{(y-z)^2} + O(1)\ .
+\label{jj}
+\end{align}
+We are still doing conformal field theory, because we can build an energy-momentum tensor from the current. Actually, for any $Q\in\mathbb{C}$, we can build a Virasoro algebra, whose generators are the modes of 
+\begin{align}
+ T(y) = -(JJ)(y) - Q\partial J(y)\ .
+\label{tqz}
+\end{align}
+We choose a value of $Q$, and assume that the resulting Virasoro algebra generates conformal transformations, and in particular obeys Axiom \ref{hyp:geom}. Given the behaviour \eqref{eq:tinf} of $T(y)$ at infinity, we assume 
+\begin{align}
+ J(y)\underset{y\to\infty}{=}\frac{Q}{y} +O\left(\frac{1}{y^2}\right) \ .
+\end{align}
+
+\begin{defn}[Normal-ordered product]
+ ~\label{def:nop}
+ Given two locally holomorphic fields, their normal-ordered product is
+ \begin{align}
+ (AB)(z) = \frac{1}{2\pi i} \oint_z \frac{dy}{y-z} A(y)B(z)\ .
+\label{abz}
+\end{align}
+Equivalently, if $\cunderbracket{A}{(y)}{B}(z)$ is the singular part of the OPE $A(y)B(z)$,
+we have
+\begin{align}
+(AB)(z) &= \underset{y\to z}{\lim} \left(A(y)B(z)-\cunderbracket{A}{(y)}{B}(z)\right)\ ,
+\\
+ A(y)B(z) &= \cunderbracket{A}{(y)}{B}(z) + (AB)(z) + O(y-z)\ .
+ \label{abope}
+\end{align}
+The normal-ordered product is neither associative, nor commutative.
+\end{defn}
+OPEs that involve normal-ordered products can be computed using Wick's theorem,
+\begin{align}
+ \cunderbracket{A}{(z)}{(BC)}(y) = \frac{1}{2\pi i}\oint_y \frac{dx}{x-y}\left(\cunderbracket{A}{(z)}{B}(x)C(y) + B(x)\cunderbracket{A}{(z)}{C}(y)\right)\ .
+\label{wick}
+\end{align}
+For example, we can compute 
+\begin{align}
+ (JJ)(y)J(z) = -\frac{J(y)}{(y-z)^2} +O(1) =  -{\frac{\partial}{\partial z}}\frac{J(z)}{y-z} + O(1)\ ,
+\end{align}
+which leads to 
+\begin{align}
+ T(y)J(z) = \frac{-Q}{(y-z)^3} +{\frac{\partial}{\partial z}}\frac{1}{y-z}J(z) + O(1)\ .
+\label{tqj}
+\end{align}
+Then we can compute the OPE $T(y)T(z)$, and we find the OPE \eqref{tt}, where the central charge is given by $c = 1+6 Q^2$ (repeating eq. \eqref{eq:cqb}). 
+
+We define an affine primary field with the momentum $\alpha$ by the OPE 
+\begin{align}
+ J(y) V_\alpha(z) = \frac{\alpha}{y-z} V_\alpha(z) + O(1)\ .
+\label{jva}
+\end{align}
+Using Wick's theorem, we deduce 
+\begin{align}
+ T(y) V_\alpha(z) = \frac{\alpha(Q-\alpha) }{(y-z)^2}V_\alpha(z) - \frac{2\alpha}{y-z} (JV_\alpha)(z) + O(1)\ . 
+\end{align}
+This means that our affine primary field is also a Virasoro primary field with the conformal dimension $\alpha(Q-\alpha)$, and that 
+\begin{align}
+ \partial V_\alpha(z) = -2\alpha (JV_\alpha)(z)\ .
+\end{align}
+Inserting this equation in an $N$-point function of affine primary fields, we find the differential equation
+\begin{align}
+\left( {\frac{\partial}{\partial z_i}} +\sum_{j\neq i} \frac{2\alpha_i\alpha_j}{z_i-z_j} \right) \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle = 0 \ .
+\label{kzl}
+\end{align}
+(This is the abelian version of the Knizhnik--Zamolodchikov equation.) Correlation functions of affine primary fields are further constrained by the global Ward identity: 
+\begin{align}
+ \oint_\infty dy \left< \left(J(y)-\frac{Q}{y}\right) \prod_{i=1}^N V_{\alpha_i}(z_i)\right> = 0\ .
+\end{align}
+Using the definition \eqref{jva} of affine primary fields, this reduces to 
+\begin{align}
+ \left(\textstyle\sum_{i=1}^N \alpha_i - Q\right) \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle = 0 \ ,
+\end{align}
+which means that the momentum is conserved. Combining with our differential equation, we deduce
+\begin{align}
+ \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle \propto \delta\left(\textstyle\sum_{i=1}^N \alpha_i - Q\right) \prod_{i<j} (z_i-z_j)^{-2\alpha_i\alpha_j}\ .
+\end{align}
+Affine symmetry determines the $z_i$-dependence of all correlation functions, while Virasoro symmetry did it only for two- and three-point functions. 
 
 \section{Conformal bootstrap}
 
@@ -579,7 +682,22 @@ The simplest case is $\Delta=\bar\Delta$, which leads to the definition
  ~\label{def:diag}
  A primary state or field is called diagonal if it has the same left and right conformal dimensions. A spectrum is called diagonal if all primary states are diagonal.
 \end{defn}
-Until Section \ref{sec:dmm}, we will assume that all primary fields are diagonal, and write  $V_\Delta(z) = V_{\Delta,\Delta}(z)$.
+For diagonal primary fields, we will now write  $V_\Delta(z) = V_{\Delta,\Delta}(z)$.
+
+\begin{exo}[Free bosonic spectrums]
+~\label{exo:fbs}
+In the case $c=1$, we want to build CFTs with the abelian affine Lie algebra symmetry, whose primary states include diagonal states and non-diagonal states with integer spins. We interpret momentum conservation as implying that the spectrum is closed under the addition of momentums. Let $(\frac{i}{2R},\frac{i}{2R})$ be the left and right momentums of a diagonal primary state, and $(\alpha,\bar\alpha)$ the momentums of another state. Show that 
+\begin{align}
+ \frac{i}{R}(\alpha-\bar\alpha)\in\mathbb{Z}\ .
+\end{align}
+Deduce that the spectrum is of the type 
+ \begin{align}
+ S_R = \bigoplus_{(n,w)\in {\mathbb{Z}^2}} \mathcal{U}_{\frac{i}{2}\left(\frac{n}{R} + Rw\right)} \otimes \bar{\mathcal{U}}_{\frac{i}{2}\left(\frac{n}{R} - Rw\right)} \ ,
+\label{sr}
+\end{align}
+where $\mathcal{U}_\alpha$ is the representation of the abelian affine Lie algebra that corresponds to the primary field $V_\alpha$. The corresponding CFT is called the compactified free boson, with the compactification radius $R$. Do compactifield free bosons exist for $c\neq 1$?
+\end{exo}
+
 
 \subsection{Operator product expansion and crossing symmetry}
 
@@ -816,6 +934,252 @@ where the sums run by increments of $2$ if there is a superscript in $\overset{2
 \end{exo}
 The knowledge of such fusion products will be crucial for defining and studying minimal models, whose spectrums are made of degenerate representations. 
 
+\section{Minimal models}
+
+\begin{defn}[Minimal model]
+ ~\label{def:mm}
+ A minimal model is a conformal field theory whose spectrum is made of finitely many irreducible representations of the product of the left and the right Virasoro algebras.
+\end{defn}
+
+\subsection{Diagonal minimal models}
+
+We first focus on diagonal minimal models, whose spectrums are of the type
+\begin{align}
+ S = \bigoplus_\mathcal{R} \mathcal{R}\otimes  \mathcal{\bar R}\ ,
+\end{align}
+where $\mathcal{R}$ and $ \mathcal{\bar R}$ denote the same Virasoro representation, viewed as a representation of the left- or right-moving Virasoro algebra respectively.
+
+\begin{hyp}[Degenerate spectrum]
+ ~\label{hyp:deg}
+ All representations that appear in the spectrum of a minimal model are degenerate.
+\end{hyp}
+It is natural to use degenerate representations, because in an OPE of degenerate fields, only finitely many representations can appear. Conversely, we now assume that all representations that are allowed by fusion do appear in the spectrum, in other words
+
+\begin{hyp}[Closure under fusion]
+ ~\label{hyp:stab}
+ The spectrum is closed under fusion. 
+\end{hyp}
+
+Let us assume that the spectrum contains a nontrivial degenerate representation such as $\mathcal{R}_{\langle 2,1\rangle}$. Fusing it with itself, we get $\mathcal{R}_{\langle 1, 1\rangle}$ and $\mathcal{R}_{\langle 3,1\rangle}$. Fusing multiple times, we get $(\mathcal{R}_{\langle r, 1\rangle})_{r\in\mathbb{N}^*}$ due to $\mathcal{R}_{\langle 2,1\rangle} \times \mathcal{R}_{\langle r,1\rangle} = \mathcal{R}_{\langle r-1,1\rangle}  + \mathcal{R}_{\langle r+1,1\rangle}$. If the spectrum moreover contains $\mathcal{R}_{\langle 1,2\rangle}$, then it must contain all degenerate representations. 
+
+\begin{defn}[Generalized minimal model]
+ ~\label{def:gmm}
+ For any value of the central charge $c\in\mathbb{C}$, the generalized minimal model is the conformal field theory whose spectrum is
+ \begin{align}
+  S^\mathrm{GMM} = \bigoplus_{r=1}^\infty \bigoplus_{s=1}^\infty \mathcal{R}_{\langle r,s \rangle}\otimes  \mathcal{\bar R}_{\langle r,s \rangle} \ ,
+ \end{align}
+ assuming it exists and is unique.
+\end{defn}
+
+So, using only degenerate representations is not sufficient for building minimal models.
+In order to have even fewer fields in fusion products, let us consider representations that are multiply degenerate. For example, if $\mathcal{R}_{\langle 2, 1\rangle} = \mathcal{R}_{\langle 1, 3\rangle}$ has two vanishing null vectors, then $\mathcal{R}_{\langle 2, 1\rangle} \times \mathcal{R}_{\langle 2, 1\rangle} = \mathcal{R}_{\langle 1,1\rangle}$ has only one term, as the term $\mathcal{R}_{\langle 3, 1\rangle}$ is not allowed by the fusion rules of $\mathcal{R}_{\langle 1, 3\rangle}$.
+
+In order for a representation to have two null vectors, we however need a coincidence of 
+the type $\Delta_{\langle r,s \rangle} = \Delta_{\langle r',s' \rangle}$. 
+This is equivalent to $P_{\langle r,s \rangle} \in \{ P_{\langle r',s' \rangle}, Q-P_{\langle r',s' \rangle}\}$, and it follows that
+$b^2$ is rational,
+\begin{align} 
+ b^2 = - \frac{q}{p} \qquad \text{with} \qquad \left\{\begin{array}{l} (p,q)\in \mathbb{N}^*\times \mathbb{Z}^* \\ p\wedge q = 1 \end{array} \right. 
+ \qquad \text{i.e.} \qquad c = 1-6\frac{(q-p)^2}{pq}\ .
+ \label{eq:bcmin}
+\end{align}
+For any integers $r,s$, we then have the coincidence 
+\begin{align}
+ \Delta_{\langle r,s \rangle} = \Delta_{\langle p-r, q-s\rangle}\ .
+\end{align}
+In particular, for $1\leq r\leq p-1$ and $1\leq s\leq q-1$, there exists a doubly degenerate representation $\mathcal{R}_{\langle r, s\rangle} = \mathcal{R}_{\langle p-r, q-s\rangle}$. The diagonal spectrum built from representations of this type is 
+\begin{align}
+ S_{p, q} = \frac12 \bigoplus_{r=1}^{p-1} \bigoplus_{s=1}^{q-1} \mathcal{R}_{\langle r,s \rangle}\otimes \mathcal{\bar{R}}_{\langle r,s \rangle}\ ,
+\end{align}
+where the factor $\frac12$ is here to avoid counting the same representation twice. This spectrum is not empty provided the coprime integers $p,q$ are both greater than $2$,
+\begin{align}
+ p,q \geq 2 \ ,
+ \label{eq:pqmin}
+\end{align}
+which implies in particular $b,Q\in i\mathbb{R}$ and $c<1$.
+For other values of $p,q$, it turns out that no minimal models exist.
+
+\begin{exo}[Closure of minimal model spectrums under fusion]
+ ~\label{exo:cmm}
+ Show that $S_{p,q}$ is closed under fusion. If you are brave, show that the fusion products of the representations that appear in $S_{p,q}$ are
+ \begin{align}
+  \mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle} = \sum_{r_3\overset{2}{=}|r_1-r_2|+1}^{\min(r_1+r_2,2p-r_1-r_2)-1}\ \sum_{s_3\overset{2}{=}|s_1-s_2|+1}^{\min(s_1+s_2,2q-s_1-s_2)-1} \mathcal{R}_{\langle r_3,s_3 \rangle}\ .
+\label{rrmm}
+\end{align}
+ If you are very brave, show that $p,q\geq 2$ is a necessary condition for the existence of a finite, nontrivial set of multiply degenerate representations that closes under fusion.
+\end{exo}
+
+\begin{defn}[Diagonal minimal model]
+ ~\label{def:dmm}
+ For $p,q\geq 2$ coprime integers, the $(p,q)$ minimal model is the conformal field theory whose spectrum is $S_{p, q}$, assuming it exists and is unique.
+\end{defn}
+For example, the minimal model with the central charge $c=\frac12$ has the spectrum $S_{4,3}$, 
+\begin{align}
+\renewcommand{\arraystretch}{1.3}
+ \left\{\begin{array}{l} \Delta_{\langle 1,1\rangle}=\Delta_{\langle 3,2\rangle} = 0 \ , \\ \Delta_{\langle 1,2\rangle} =\Delta_{\langle 3,1\rangle} = \frac12 \ , \\ \Delta_{\langle 2,1\rangle} =\Delta_{\langle 2,2\rangle} = \frac{1}{16} \ .\end{array}\right. 
+ \qquad \iff \quad \text{the Kac table} \quad 
+ \begin{array}{c|ccc} 2 & \frac{1}{2} & \frac{1}{16} & 0 \\ 1 & 0 & \frac{1}{16} & \frac{1}{2} \\  \hline & 1 & 2 & 3 \end{array} 
+\end{align}
+
+\subsection{D-series minimal models}\label{sec:dmm}
+
+Let us look for non-diagonal minimal models. We therefore relax the assumption that fields be diagonal, and allow them to have integer spins. (We could allow half-integer spins, leading to fermionic minimal models \cite{pet88}.) We still assume that the spectrum is made of doubly degenerate representations, and is closed under fusion.
+
+Given a rational value of $b^2=-\frac{q}{p}$, let us look for pairs of doubly degenerate representations whose dimensions differ by integers, using the identity
+\begin{align}
+ \Delta_{\langle p-r,s\rangle} -\Delta_{\langle r,s\rangle}= \left(r-\frac{p}{2}\right)\left(s-\frac{q}{2}\right)\ .
+\end{align}
+Without loss of generality we assume that $q$ is odd. Then we need $r-\frac{p}{2}$ to be an even integer, therefore $p$ is even and $r\equiv\frac{p}{2}\bmod 2$. Under these assumptions, the representation $\mathcal{R}_{\langle r,s\rangle}\otimes \bar{\mathcal{R}}_{\langle p-r,s\rangle}$ has integer spin. We now look for a spectrum whose non-diagonal sector is made of all representations of this type, for $\langle r,s\rangle$ in the Kac table.
+
+Fusing two such representations produces degenerate representations with odd values of $r$. If $p\equiv 0\bmod 4$, such representations do not belong to our non-diagonal sector, and must therefore be diagonal. We therefore build a diagonal sector from all indices $\langle r,s\rangle$ in the Kac table with $r$ odd, not only if $p\equiv 0\bmod 4$, but also for $p\equiv 2\bmod 4$. 
+
+\begin{defn}[D-series minimal model]
+ For $p,q\geq 2$ coprime integers with $p\in 2\mathbb{N}+6$, the $(p,q)$ minimal model is the conformal field theory whose spectrum is 
+\begin{align}
+ S_{p,q}^\text{D-series} = \frac12 \bigoplus_{r\overset{2}{=}1}^{p-1} \bigoplus_{s=1}^{q-1} \mathcal{R}_{ r,s} \otimes \bar{\mathcal{R}}_{r,s}\oplus \frac12\bigoplus_{\substack{1\leq r\leq p-1 \\ r\equiv \frac{p}{2}\bmod 2}} \bigoplus_{s=1}^{q-1} \mathcal{R}_{r,s} \otimes \bar{\mathcal{R}}_{p-r,s}\ ,
+\end{align}
+assuming it exists and is unique.
+\end{defn}
+(We need $p\geq 6$ for our would-be non-diagonal sector to actually contain representations with nonzero spins.)
+
+\begin{exo}[Fusion rules of D-series minimal models]
+ If $p\equiv 0\bmod 4$, show that the D-series minimal model's fusion rules are completely determined by the fusion rules of the corresponding Virasoro representations. Write these fusion rules, and show that they conserve diagonality, in the sense that any correlation function with an odd number of non-diagonal fields vanishes. Assuming conservation of diagonality still holds if $p\equiv 2\bmod 4$, write the fusion rules of all D-series minimal models.
+\end{exo}
+
+\subsection{Modular bootstrap}
+
+The torus zero-point function (or partition function) is a correlation function that only depends on the spectrum, and on characters of representations of the Virasoro algebra. Since there is no dependence on three-point structure constants, and since characters are much simpler than four-point blocks, the torus partition function is much simpler than four-point functions on the sphere. Nevertheless, the partition function obeys a nontrivial constraint called modular invariance -- a counterpart of crossing symmetry.
+
+\begin{defn}[Modular bootstrap]
+The modular bootstrap consists in using the modular invariance of the torus partition function for deriving constraints on the spectrum.
+\end{defn}
+However, modular invariant partition functions do not always correspond to consistent CFTs: consistency of a CFT on all Riemann surfaces is equivalent to crossing symmetry of the sphere four-point function and modular invariance of the torus one-point function \cite{ms89b}. And some CFTs are consistent on the sphere only.
+
+\begin{defn}[Torus partition function]
+ For a CFT with the spectrum $S$, the partition function on the torus $\frac{\mathbb{C}}{\mathbb{Z}+\tau \mathbb{Z}}$ is 
+ \begin{align}
+  Z(\tau) = \operatorname{Tr}_S q^{L_0-\frac{c}{24}}\bar q^{\bar L_0-\frac{c}{24}}\quad \text{where} \quad q=e^{2\pi i \tau}\ .
+ \end{align}
+\end{defn}
+
+\begin{hyp}[Modular invariance]
+For $\left(\begin{smallmatrix} a & b \\ c & d\end{smallmatrix}\right)\in SL_2(\mathbb{Z})$, the torus partition function is invariant under the corresponding modular transformation,
+\begin{align}
+ Z(\tau) = Z\left(\frac{a\tau+b}{c\tau +d} \right)\ .
+\end{align}
+\end{hyp}
+Let us give some justification for the definition of the torus partition function. The energy operator on the complex plane is $L_0+\bar{L}_0$: under the conformal map $z\mapsto \log z$ to the infinite cylinder, this becomes $L_0+\bar{L}_0-\frac{c}{12}$. To get the torus, we truncate the cylinder to a finite length $i(\tau-\bar{\tau})$, and identify points on the upper and lower boundaries after a rotation by $\tau+\bar{\tau}$. The partition function is the trace of the operator that performs this identification.
+\begin{align*}
+\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraycolsep}{6mm}
+\begin{array}{ccc}
+ \begin{tikzpicture}[scale = .45, baseline=(current  bounding  box.center)]
+  \draw (-5, -5) -- (5, -5) -- (5, 5) -- (-5, 5) node[below right]{$z$} -- cycle;
+  \draw [red, ultra thick] (0, 0) circle (2.1);
+  \draw [red, ultra thick, -latex] (.3, -2.1) -- (.35, -2.1) node[black, below] {$i(L_0-\bar{L}_0)$};
+  \draw [blue, ultra thick] (0, 0) -- (0, 5);
+  \draw [blue, ultra thick, -latex] (0, 0) -- (0, 3.5) node[black, right] {$L_0+\bar{L}_0$};
+  \node[draw, circle, inner sep=1.5pt, fill] at (0, 0) {};
+ \end{tikzpicture}
+ & 
+ \begin{tikzpicture}[xscale = .65, yscale = .55, baseline=(current  bounding  box.center)]
+  \draw [very thick] (0, -5) -- (0, 5);
+  \draw [very thick] (5, -5) -- (5, 5);
+  \draw (0, -4) to [out = -90, in = -90] (5, -4);
+  \draw [dashed] (0, -4) to [out = 90, in = 90] (5, -4);
+  \draw (0, 4) node[right] {$\log z$} to [out = -90, in = -90] (5, 4);
+  \draw [dashed] (0, 4) to [out = 90, in = 90] (5, 4);
+  \draw [red, ultra thick] (0, 0) to [out = -90, in = -90] (5, 0);
+  \draw [red, ultra thick, dashed] (0, 0) to [out = 90, in = 90] (5, 0);
+  \draw [red, ultra thick, -latex] (2.2, -1.45) -- (2.15, -1.45) node[black, below] {$i(L_0-\bar{L}_0)$};
+  \draw [blue, ultra thick] (4.3, -5.8) -- (4.3, 4.2);
+  \draw [blue, ultra thick, -latex] (4.3, -5.8) -- (4.3, .5) node[black, left] {$L_0+\bar{L}_0-\frac{c}{12}$};
+ \end{tikzpicture}
+ & 
+ \begin{tikzpicture}[xscale = .65, yscale = .55, baseline=(current  bounding  box.center)]
+  \draw [very thick] (0, -4) -- (0, 4);
+  \draw [very thick] (5, -4) -- (5, 4);
+  \draw [very thick] (0, -4) to [out = -90, in = -90] (5, -4);
+  \draw [very thick, dashed] (0, -4) to [out = 90, in = 90] (5, -4);
+  \draw [very thick] (0, 4) to [out = -90, in = -90] (5, 4);
+  \draw [very thick] (0, 4) to [out = 90, in = 90] (5, 4);
+  \draw [red, very thick] (1.2, -5.3) to [out = -13, in = -167] (3.8, -5.3);
+  \draw [red, very thick, -latex] (2.2, -5.5) -- (2.15, -5.5) node[black, below] {$\tau+\bar{\tau}$};
+  \draw [blue, very thick] (1.2, -5.3) -- (1.2, 2.7);
+  \draw [blue, very thick, -latex] (1.2, -5) -- (1.2, -1) node[black, right] {$i(\tau-\bar\tau)$};
+  \node[draw, circle, inner sep=1.5pt, fill] at (3.8, -5.3) {};
+  \node[draw, circle, inner sep=1.5pt, fill] at (1.2, 2.7) {};
+ \end{tikzpicture}
+ \\
+ \text{complex plane}
+ & 
+ \text{infinite cylinder}
+ &
+ \text{torus}
+ \end{array}
+\end{align*}
+
+Actually, modular invariance reduces to the invariance under two particular modular transformations,
+\begin{align}
+ T(\tau) = \tau + 1 \qquad , \qquad S(\tau) = -\frac{1}{\tau}\ .
+\end{align}
+The condition $Z(\tau)=Z(\tau+1)$ amounts to $L_0-\bar{L}_0$ having integer eigenvalues, in other words all states having integer conformal spins.
+The condition $Z(\tau)=Z(-\frac{1}{\tau})$ is more complicated: to exploit this condition, let us decompose the spectrum into factorized representations of the type $\mathcal{R}\otimes \bar{\mathcal{R}}$. 
+The contribution of $\mathcal{R}\otimes \bar{\mathcal{R}}'$ to the partition function is $\chi_{\mathcal{R}}(\tau) \chi_{\mathcal{R}'}(-\bar\tau)$, where we define the character of a representation as
+\begin{align}
+ \chi_\mathcal{R}(\tau) = \operatorname{Tr}_\mathcal{R} q^{L_0-\frac{c}{24}}\ .
+\end{align}
+From $Z(\tau)=Z(-\frac{1}{\tau})$, we first deduce that there exists a modular $S$-matrix such that 
+\begin{align}
+ \chi_\mathcal{R}(\tau) = \sum_{\mathcal{R}'} S_{\mathcal{R},\mathcal{R}'} \chi_{\mathcal{R}'}(-\tfrac{1}{\tau})\ .
+\end{align}
+Let us consider a diagonal CFT, with the partition function $Z(\tau)=\sum_\mathcal{R} \chi_\mathcal{R}(\tau)\chi_{\mathcal{R}}(-\bar{\tau})$.
+Comparing two expressions for $Z(-\frac{1}{\tau})$, 
+\begin{align}
+Z(-\tfrac{1}{\tau}) = \sum_{\mathcal{R}',\mathcal{R}''} S_{\mathcal{R},\mathcal{R}'} S_{\mathcal{R},\mathcal{R}''} \chi_{\mathcal{R}'}(-\tfrac{1}{\tau}) \chi_{\mathcal{R}''}(\tfrac{1}{\bar\tau}) = \sum_{\mathcal{R}} \chi_{\mathcal{R}}(-\tfrac{1}{\tau}) \chi_{\mathcal{R}}(\tfrac{1}{\bar\tau})\ ,
+\end{align}
+we deduce $SS^T=\text{Id}$. Since $S^2=\text{Id}$ by construction, this means that a diagonal modular invariant partition function exists if and only if the $S$-matrix is symmetric.
+
+Let us compute the characters and modular $S$-matrix of minimal models. We start with the character of a Verma module with momentum $P$,
+\begin{align}
+ \chi_P(\tau) = \frac{q^{-P^2}}{\eta(\tau)} \quad \text{with} \quad \eta(\tau) = q^{\frac{1}{24}} \prod_{n=1}^\infty (1-q^n)\ ,
+\end{align}
+where the nontrivial factor is called the Dedekind $\eta$ function. Why this function? If $L_{-1}$ was our only creation mode, we would have one state at each level, and the character would be $\chi(\tau)\sim 1+q+q^2+q^3+\cdots = \frac{1}{1-q}$. If we had $L_{-2}$ instead, the character would be $\chi(\tau)\sim \frac{1}{1-q^2}$. And in order to count the states that come from two creation modes, we must multiply the corresponding series.
+
+In order to compute the character of a degenerate representation, we should subtract the contributions of null vectors and their descendent states. For a simply degenerate representation, the character is therefore
+\begin{align}
+ \chi_{\langle r,s\rangle}(\tau) = \chi_{P_{\langle r,s\rangle}}(\tau) - \chi_{P_{\langle r,-s\rangle}}(\tau)\ .
+\end{align}
+For a fully degenerate representation in the Kac table of the $(p, q)$ minimal model, the structure is a bit more complicated: we have to subtract the two null vectors and their descendents, but add again the intersection of their two Verma submodules, which was subtracted twice. This intersection has a complicated structure, and the result is 
+\begin{align}
+ \chi_{\langle r,s\rangle}(\tau) = \sum_{k\in\mathbb{Z}} \left( \chi_{P_{\langle r,s\rangle} + ik\sqrt{pq}} - \chi_{P_{\langle r,-s\rangle} + ik\sqrt{pq}}\right)\ .
+\end{align}
+The modular $S$-matrix turns out to be symmetric, showing that the A-series minimal models have modular invariant partition functions. Actually, the D-series minimal models too. Furthermore, these minimal models exist on arbitrary Riemann surfaces, and so does Liouville theory.
+
+\begin{exo}[Modular $S$-matrices of minimal models]
+ Show that the modular transformation of the character $\chi_{P}(\tau)$ of a Verma module is 
+ \begin{align}
+  \chi_P(\tau) = \sqrt{2}i\int_{i\mathbb{R}} dP'\ e^{4\pi iPP'} \chi_{P'}(-\tfrac{1}{\tau})\ . 
+ \end{align}
+Using the Poisson resummation formula $\sum_{k\in\mathbb{Z}} e^{2\pi ikx} = \sum_{\ell\in\mathbb{Z}} \delta(x+\ell)$, deduce the modular transformation of the characters of fully degenerate representation in the Kac table of the $(p, q)$ minimal model,
+\begin{align}
+ \chi_{\langle r,s\rangle}(\tau) = 
+ -\sqrt{\frac{2}{pq}}\sum_{\ell\in\mathbb{Z}} 
+ \sin\left(\pi\frac{r}{p}\ell\right) 
+ \sin\left(\pi\frac{s}{q}\ell\right)
+ \chi_{i\frac{\ell}{2\sqrt{pq}}}(-\tfrac{1}{\tau})\ .
+\end{align}
+Using the identity
+\begin{align}
+ \sum_{r=1}^{p-1} (-1)^{rs'}\sin\left(\pi\frac{q}{p}rr'\right)\sin\left(\pi\frac{r}{p}\ell\right) 
+ = -\frac{p}{2}\sum_{\epsilon =\pm} \epsilon \delta_{\ell\equiv\epsilon qr'+ps'\bmod 2p}\ ,
+\end{align}
+show that the modular $S$-matrix is 
+\begin{align}
+ S_{\langle r,s\rangle, \langle r', s'\rangle} = -\sqrt{\frac{8}{pq}}(-1)^{rs'+r's} \sin\left(\pi\frac{q}{p}rr'\right)\sin\left(\pi\frac{p}{q}ss'\right)\ .
+\end{align}
+\end{exo}
+
 \section{Liouville theory}
 
 \subsection{Definition}
@@ -836,9 +1200,9 @@ Let us give some justification for this definition. We are looking for a diagona
  \Delta \in \mathbb{R} \iff P\in \mathbb{R} \cup i\mathbb{R}\ ,
   \qquad
    \begin{tikzpicture}[scale = .4, baseline=(current  bounding  box.center)]
+   \draw[-latex] (-1.6, 0)  -- (2, 0) node[below right] {$0$} -- (4, 0)  -- (6.3, 0) node[below] {$P$};
   \draw[red, ultra thick] (-1.6, 0) -- (5.5, 0);
   \draw[red, ultra thick] (2, -3) -- (2, 3);
-  \draw[-latex] (-1.6, 0)  -- (2, 0) node[below right] {$0$} -- (4, 0)  -- (6.3, 0) node[below] {$P$};
  \end{tikzpicture}
 \end{align}
 From Axiom \ref{hyp:rep}, 
@@ -1094,269 +1458,14 @@ And we can numerically compute correlation functions with a good precision.
 
 Historically, Liouville theory was first defined by quantizing a classical theory whose equation of motion is Liouville's equation. That definition actually gave its name to the theory. (That definition does not cover the case $c\leq 1$: using the name Liouville theory in this case, while natural in our approach, is not universally done at the time of this writing.) It can be shown that our definition of Liouville theory agrees with the historical definition, either by proving that the originally defined theory obeys our axioms, or by checking that both definitions lead to the same correlation functions, in particular the same three-point structure constants. See \cite{tes17} for a guide to the literature on the construction of Liouville theory by quantization. 
 
-\section{Minimal models}
-
-\begin{defn}[Minimal model]
- ~\label{def:mm}
- A minimal model is a conformal field theory whose spectrum is made of finitely many irreducible representations of the product of the left and the right Virasoro algebras.
-\end{defn}
-
-\subsection{Diagonal minimal models}
-
-We first focus on diagonal minimal models, whose spectrums are of the type
-\begin{align}
- S = \bigoplus_\mathcal{R} \mathcal{R}\otimes  \mathcal{\bar R}\ ,
-\end{align}
-where $\mathcal{R}$ and $ \mathcal{\bar R}$ denote the same Virasoro representation, viewed as a representation of the left- or right-moving Virasoro algebra respectively.
-
-\begin{hyp}[Degenerate spectrum]
- ~\label{hyp:deg}
- All representations that appear in the spectrum of a minimal model are degenerate.
-\end{hyp}
-It is natural to use degenerate representations, because in an OPE of degenerate fields, only finitely many representations can appear. Conversely, we now assume that all representations that are allowed by fusion do appear in the spectrum, in other words
-
-\begin{hyp}[Closure under fusion]
- ~\label{hyp:stab}
- The spectrum is closed under fusion. 
-\end{hyp}
-
-Let us assume that the spectrum contains a nontrivial degenerate representation such as $\mathcal{R}_{\langle 2,1\rangle}$. Fusing it with itself, we get $\mathcal{R}_{\langle 1, 1\rangle}$ and $\mathcal{R}_{\langle 3,1\rangle}$. Fusing multiple times, we get $(\mathcal{R}_{\langle r, 1\rangle})_{r\in\mathbb{N}^*}$ due to $\mathcal{R}_{\langle 2,1\rangle} \times \mathcal{R}_{\langle r,1\rangle} = \mathcal{R}_{\langle r-1,1\rangle}  + \mathcal{R}_{\langle r+1,1\rangle}$. If the spectrum moreover contains $\mathcal{R}_{\langle 1,2\rangle}$, then it must contain all degenerate representations. 
-
-\begin{defn}[Generalized minimal model]
- ~\label{def:gmm}
- For any value of the central charge $c\in\mathbb{C}$, the generalized minimal model is the conformal field theory whose spectrum is
- \begin{align}
-  S^\mathrm{GMM} = \bigoplus_{r=1}^\infty \bigoplus_{s=1}^\infty \mathcal{R}_{\langle r,s \rangle}\otimes  \mathcal{\bar R}_{\langle r,s \rangle} \ ,
- \end{align}
- assuming it exists and is unique.
-\end{defn}
-
-So, using only degenerate representations is not sufficient for building minimal models.
-In order to have even fewer fields in fusion products, let us consider representations that are multiply degenerate. For example, if $\mathcal{R}_{\langle 2, 1\rangle} = \mathcal{R}_{\langle 1, 3\rangle}$ has two vanishing null vectors, then $\mathcal{R}_{\langle 2, 1\rangle} \times \mathcal{R}_{\langle 2, 1\rangle} = \mathcal{R}_{\langle 1,1\rangle}$ has only one term, as the term $\mathcal{R}_{\langle 3, 1\rangle}$ is not allowed by the fusion rules of $\mathcal{R}_{\langle 1, 3\rangle}$.
-
-In order for a representation to have two null vectors, we however need a coincidence of 
-the type $\Delta_{\langle r,s \rangle} = \Delta_{\langle r',s' \rangle}$. 
-This is equivalent to $P_{\langle r,s \rangle} \in \{ P_{\langle r',s' \rangle}, Q-P_{\langle r',s' \rangle}\}$, and it follows that
-$b^2$ is rational,
-\begin{align} 
- b^2 = - \frac{q}{p} \qquad \text{with} \qquad \left\{\begin{array}{l} (p,q)\in \mathbb{N}^*\times \mathbb{Z}^* \\ p\wedge q = 1 \end{array} \right. 
- \qquad \text{i.e.} \qquad c = 1-6\frac{(q-p)^2}{pq}\ .
- \label{eq:bcmin}
-\end{align}
-For any integers $r,s$, we then have the coincidence 
-\begin{align}
- \Delta_{\langle r,s \rangle} = \Delta_{\langle p-r, q-s\rangle}\ .
-\end{align}
-In particular, for $1\leq r\leq p-1$ and $1\leq s\leq q-1$, there exists a doubly degenerate representation $\mathcal{R}_{\langle r, s\rangle} = \mathcal{R}_{\langle p-r, q-s\rangle}$. The diagonal spectrum built from representations of this type is 
-\begin{align}
- S_{p, q} = \frac12 \bigoplus_{r=1}^{p-1} \bigoplus_{s=1}^{q-1} \mathcal{R}_{\langle r,s \rangle}\otimes \mathcal{\bar{R}}_{\langle r,s \rangle}\ ,
-\end{align}
-where the factor $\frac12$ is here to avoid counting the same representation twice. This spectrum is not empty provided the coprime integers $p,q$ are both greater than $2$,
-\begin{align}
- p,q \geq 2 \ ,
- \label{eq:pqmin}
-\end{align}
-which implies in particular $b,Q\in i\mathbb{R}$ and $c<1$.
-For other values of $p,q$, it turns out that no minimal models exist.
-
-\begin{exo}[Closure of minimal model spectrums under fusion]
- ~\label{exo:cmm}
- Show that $S_{p,q}$ is closed under fusion. If you are brave, show that the fusion products of the representations that appear in $S_{p,q}$ are
- \begin{align}
-  \mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle} = \sum_{r_3\overset{2}{=}|r_1-r_2|+1}^{\min(r_1+r_2,2p-r_1-r_2)-1}\ \sum_{s_3\overset{2}{=}|s_1-s_2|+1}^{\min(s_1+s_2,2q-s_1-s_2)-1} \mathcal{R}_{\langle r_3,s_3 \rangle}\ .
-\label{rrmm}
-\end{align}
- If you are very brave, show that $p,q\geq 2$ is a necessary condition for the existence of a finite, nontrivial set of multiply degenerate representations that closes under fusion.
-\end{exo}
-
-\begin{defn}[Diagonal minimal model]
- ~\label{def:dmm}
- For $p,q\geq 2$ coprime integers, the $(p,q)$ minimal model is the conformal field theory whose spectrum is $S_{p, q}$, assuming it exists and is unique.
-\end{defn}
-For example, the minimal model with the central charge $c=\frac12$ has the spectrum $S_{4,3}$, 
-\begin{align}
-\renewcommand{\arraystretch}{1.3}
- \left\{\begin{array}{l} \Delta_{\langle 1,1\rangle}=\Delta_{\langle 3,2\rangle} = 0 \ , \\ \Delta_{\langle 1,2\rangle} =\Delta_{\langle 3,1\rangle} = \frac12 \ , \\ \Delta_{\langle 2,1\rangle} =\Delta_{\langle 2,2\rangle} = \frac{1}{16} \ .\end{array}\right. 
- \qquad \iff \quad \text{the Kac table} \quad 
- \begin{array}{c|ccc} 2 & \frac{1}{2} & \frac{1}{16} & 0 \\ 1 & 0 & \frac{1}{16} & \frac{1}{2} \\  \hline & 1 & 2 & 3 \end{array} 
-\end{align}
-
-\subsection{D-series minimal models}\label{sec:dmm}
-
-Let us look for non-diagonal minimal models. We therefore relax the assumption that fields be diagonal, and allow them to have integer spins. (We could allow half-integer spins, leading to fermionic minimal models \cite{pet88}.) We still assume that the spectrum is made of doubly degenerate representations, and is closed under fusion.
-
-Given a rational value of $b^2=-\frac{q}{p}$, let us look for pairs of doubly degenerate representations whose dimensions differ by integers, using the identity
-\begin{align}
- \Delta_{\langle p-r,s\rangle} -\Delta_{\langle r,s\rangle}= \left(r-\frac{p}{2}\right)\left(s-\frac{q}{2}\right)\ .
-\end{align}
-Without loss of generality we assume that $q$ is odd. Then we need $r-\frac{p}{2}$ to be an even integer, therefore $p$ is even and $r\equiv\frac{p}{2}\bmod 2$. Under these assumptions, the representation $\mathcal{R}_{\langle r,s\rangle}\otimes \bar{\mathcal{R}}_{\langle p-r,s\rangle}$ has integer spin. We now look for a spectrum whose non-diagonal sector is made of all representations of this type, for $\langle r,s\rangle$ in the Kac table.
-
-Fusing two such representations produces degenerate representations with odd values of $r$. If $p\equiv 0\bmod 4$, such representations do not belong to our non-diagonal sector, and must therefore be diagonal. We therefore build a diagonal sector from all indices $\langle r,s\rangle$ in the Kac table with $r$ odd, not only if $p\equiv 0\bmod 4$, but also for $p\equiv 2\bmod 4$. 
-
-\begin{defn}[D-series minimal model]
- For $p,q\geq 2$ coprime integers with $p\in 2\mathbb{N}+6$, the $(p,q)$ minimal model is the conformal field theory whose spectrum is 
-\begin{align}
- S_{p,q}^\text{D-series} = \frac12 \bigoplus_{r\overset{2}{=}1}^{p-1} \bigoplus_{s=1}^{q-1} \mathcal{R}_{ r,s} \otimes \bar{\mathcal{R}}_{r,s}\oplus \frac12\bigoplus_{\substack{1\leq r\leq p-1 \\ r\equiv \frac{p}{2}\bmod 2}} \bigoplus_{s=1}^{q-1} \mathcal{R}_{r,s} \otimes \bar{\mathcal{R}}_{p-r,s}\ ,
-\end{align}
-assuming it exists and is unique.
-\end{defn}
-(We need $p\geq 6$ for our would-be non-diagonal sector to actually contain representations with nonzero spins.)
-
-\begin{exo}[Fusion rules of D-series minimal models]
- If $p\equiv 0\bmod 4$, show that the D-series minimal model's fusion rules are completely determined by the fusion rules of the corresponding Virasoro representations. Write these fusion rules, and show that they conserve diagonality, in the sense that any correlation function with an odd number of non-diagonal fields vanishes. Assuming conservation of diagonality still holds if $p\equiv 2\bmod 4$, write the fusion rules of all D-series minimal models.
-\end{exo}
-
-\subsection{Modular bootstrap}
-
-The torus zero-point function (or partition function) is a correlation function that only depends on the spectrum, and on characters of representations of the Virasoro algebra. Since there is no dependence on three-point structure constants, and since characters are much simpler than four-point blocks, the torus partition function is much simpler than four-point functions on the sphere. Nevertheless, the partition function obeys a nontrivial constraint called modular invariance -- a counterpart of crossing symmetry.
-
-\begin{defn}[Modular bootstrap]
-The modular bootstrap consists in using the modular invariance of the torus partition function for deriving constraints on the spectrum.
-\end{defn}
-However, modular invariant partition functions do not always correspond to consistent CFTs: consistency of a CFT on all Riemann surfaces is equivalent to crossing symmetry of the sphere four-point function and modular invariance of the torus one-point function \cite{ms89b}. And some CFTs are consistent on the sphere only.
-
-\begin{defn}[Torus partition function]
- For a CFT with the spectrum $S$, the partition function on the torus $\frac{\mathbb{C}}{\mathbb{Z}+\tau \mathbb{Z}}$ is 
- \begin{align}
-  Z(\tau) = \operatorname{Tr}_S q^{L_0-\frac{c}{24}}\bar q^{\bar L_0-\frac{c}{24}}\quad \text{where} \quad q=e^{2\pi i \tau}\ .
- \end{align}
-\end{defn}
-
-\begin{hyp}[Modular invariance]
-For $\left(\begin{smallmatrix} a & b \\ c & d\end{smallmatrix}\right)\in SL_2(\mathbb{Z})$, the torus partition function is invariant under the corresponding modular transformation,
-\begin{align}
- Z(\tau) = Z\left(\frac{a\tau+b}{c\tau +d} \right)\ .
-\end{align}
-\end{hyp}
-Let us give some justification for the definition of the torus partition function. The energy operator on the complex plane is $L_0+\bar{L}_0$: under the conformal map $z\mapsto \log z$ to the infinite cylinder, this becomes $L_0+\bar{L}_0-\frac{c}{12}$. To get the torus, we truncate the cylinder to a finite length $i(\tau-\bar{\tau})$, and identify points on the upper and lower boundaries after a rotation by $\tau+\bar{\tau}$. The partition function is the trace of the operator that performs this identification.
-\begin{align*}
-\renewcommand{\arraystretch}{1.3}
-\renewcommand{\arraycolsep}{6mm}
-\begin{array}{ccc}
- \begin{tikzpicture}[scale = .45, baseline=(current  bounding  box.center)]
-  \draw (-5, -5) -- (5, -5) -- (5, 5) -- (-5, 5) node[below right]{$z$} -- cycle;
-  \draw [red, ultra thick] (0, 0) circle (2.1);
-  \draw [red, ultra thick, -latex] (.3, -2.1) -- (.35, -2.1) node[black, below] {$i(L_0-\bar{L}_0)$};
-  \draw [blue, ultra thick] (0, 0) -- (0, 5);
-  \draw [blue, ultra thick, -latex] (0, 0) -- (0, 3.5) node[black, right] {$L_0+\bar{L}_0$};
-  \node[draw, circle, inner sep=1.5pt, fill] at (0, 0) {};
- \end{tikzpicture}
- & 
- \begin{tikzpicture}[xscale = .65, yscale = .55, baseline=(current  bounding  box.center)]
-  \draw [very thick] (0, -5) -- (0, 5);
-  \draw [very thick] (5, -5) -- (5, 5);
-  \draw (0, -4) to [out = -90, in = -90] (5, -4);
-  \draw [dashed] (0, -4) to [out = 90, in = 90] (5, -4);
-  \draw (0, 4) node[right] {$\log z$} to [out = -90, in = -90] (5, 4);
-  \draw [dashed] (0, 4) to [out = 90, in = 90] (5, 4);
-  \draw [red, ultra thick] (0, 0) to [out = -90, in = -90] (5, 0);
-  \draw [red, ultra thick, dashed] (0, 0) to [out = 90, in = 90] (5, 0);
-  \draw [red, ultra thick, -latex] (2.2, -1.45) -- (2.15, -1.45) node[black, below] {$i(L_0-\bar{L}_0)$};
-  \draw [blue, ultra thick] (4.3, -5.8) -- (4.3, 4.2);
-  \draw [blue, ultra thick, -latex] (4.3, -5.8) -- (4.3, .5) node[black, left] {$L_0+\bar{L}_0-\frac{c}{12}$};
- \end{tikzpicture}
- & 
- \begin{tikzpicture}[xscale = .65, yscale = .55, baseline=(current  bounding  box.center)]
-  \draw [very thick] (0, -4) -- (0, 4);
-  \draw [very thick] (5, -4) -- (5, 4);
-  \draw [very thick] (0, -4) to [out = -90, in = -90] (5, -4);
-  \draw [very thick, dashed] (0, -4) to [out = 90, in = 90] (5, -4);
-  \draw [very thick] (0, 4) to [out = -90, in = -90] (5, 4);
-  \draw [very thick] (0, 4) to [out = 90, in = 90] (5, 4);
-  \draw [red, very thick] (1.2, -5.3) to [out = -13, in = -167] (3.8, -5.3);
-  \draw [red, very thick, -latex] (2.2, -5.5) -- (2.15, -5.5) node[black, below] {$\tau+\bar{\tau}$};
-  \draw [blue, very thick] (1.2, -5.3) -- (1.2, 2.7);
-  \draw [blue, very thick, -latex] (1.2, -5) -- (1.2, -1) node[black, right] {$i(\tau-\bar\tau)$};
-  \node[draw, circle, inner sep=1.5pt, fill] at (3.8, -5.3) {};
-  \node[draw, circle, inner sep=1.5pt, fill] at (1.2, 2.7) {};
- \end{tikzpicture}
- \\
- \text{complex plane}
- & 
- \text{infinite cylinder}
- &
- \text{torus}
- \end{array}
-\end{align*}
-
-Actually, modular invariance reduces to the invariance under two particular modular transformations, $Z(\tau)=Z(\tau+1)=Z(-\frac{1}{\tau})$. The condition $Z(\tau)=Z(\tau+1)$ amounts to $L_0-\bar{L}_0$ having integer eigenvalues, in other words all states having integer conformal spins.
-The condition $Z(\tau)=Z(-\frac{1}{\tau})$ is more complicated: to exploit this condition, let us decompose the spectrum into factorized representations of the type $\mathcal{R}\otimes \bar{\mathcal{R}}$. 
-The contribution of $\mathcal{R}\otimes \bar{\mathcal{R}}'$ to the partition function is $\chi_{\mathcal{R}}(\tau) \chi_{\mathcal{R}'}(-\bar\tau)$, where we define the character of a representation as
-\begin{align}
- \chi_\mathcal{R}(\tau) = \operatorname{Tr}_\mathcal{R} q^{L_0-\frac{c}{24}}\ .
-\end{align}
-From $Z(\tau)=Z(-\frac{1}{\tau})$, we first deduce that there exists a modular $S$-matrix such that 
-\begin{align}
- \chi_\mathcal{R}(\tau) = \sum_{\mathcal{R}'} S_{\mathcal{R},\mathcal{R}'} \chi_{\mathcal{R}'}(-\tfrac{1}{\tau})\ .
-\end{align}
-Let us consider a diagonal CFT, with the partition function $Z(\tau)=\sum_\mathcal{R} \chi_\mathcal{R}(\tau)\chi_{\mathcal{R}}(-\bar{\tau})$.
-Comparing two expressions for $Z(-\frac{1}{\tau})$, 
-\begin{align}
-Z(-\tfrac{1}{\tau}) = \sum_{\mathcal{R}',\mathcal{R}''} S_{\mathcal{R},\mathcal{R}'} S_{\mathcal{R},\mathcal{R}''} \chi_{\mathcal{R}'}(-\tfrac{1}{\tau}) \chi_{\mathcal{R}''}(\tfrac{1}{\bar\tau}) = \sum_{\mathcal{R}} \chi_{\mathcal{R}}(-\tfrac{1}{\tau}) \chi_{\mathcal{R}}(\tfrac{1}{\bar\tau})\ ,
-\end{align}
-we deduce $SS^T=\text{Id}$. Since $S^2=\text{Id}$ by construction, this means that a diagonal modular invariant partition function exists if and only if the $S$-matrix is symmetric.
-
-Let us compute the characters and modular $S$-matrix of minimal models. We start with the character of a Verma module with momentum $P$,
-\begin{align}
- \chi_P(\tau) = \frac{q^{-P^2}}{\eta(\tau)} \quad \text{with} \quad \eta(\tau) = q^{\frac{1}{24}} \prod_{n=1}^\infty (1-q^n)\ ,
-\end{align}
-where the nontrivial factor is called the Dedekind $\eta$ function. Why this function? If $L_{-1}$ was our only creation mode, we would have one state at each level, and the character would be $\chi(\tau)\sim 1+q+q^2+q^3+\cdots = \frac{1}{1-q}$. If we had $L_{-2}$ instead, the character would be $\chi(\tau)\sim \frac{1}{1-q^2}$. And in order to count the states that come from two creation modes, we must multiply the corresponding series.
-
-In order to compute the character of a degenerate representation, we should subtract the contributions of null vectors and their descendent states. For a simply degenerate representation, the character is therefore
-\begin{align}
- \chi_{\langle r,s\rangle}(\tau) = \chi_{P_{\langle r,s\rangle}}(\tau) - \chi_{P_{\langle r,-s\rangle}}(\tau)\ .
-\end{align}
-For a fully degenerate representation in the Kac table of the $(p, q)$ minimal model, the structure is a bit more complicated: we have to subtract the two null vectors and their descendents, but add again the intersection of their two Verma submodules, which was subtracted twice. This intersection has a complicated structure, and the result is 
-\begin{align}
- \chi_{\langle r,s\rangle}(\tau) = \sum_{k\in\mathbb{Z}} \left( \chi_{P_{\langle r,s\rangle} + ik\sqrt{pq}} - \chi_{P_{\langle r,-s\rangle} + ik\sqrt{pq}}\right)\ .
-\end{align}
-The modular $S$-matrix turns out to be symmetric, showing that the A-series minimal models have modular invariant partition functions. Actually, the D-series minimal models too. Furthermore, these minimal models exist on arbitrary Riemann surfaces, and so does Liouville theory.
-
-\begin{exo}[Modular $S$-matrices of minimal models]
- Show that the modular transformation of the character $\chi_{P}(\tau)$ of a Verma module is 
- \begin{align}
-  \chi_P(\tau) = \sqrt{2}i\int_{i\mathbb{R}} dP'\ e^{4\pi iPP'} \chi_{P'}(-\tfrac{1}{\tau})\ . 
- \end{align}
-Using the Poisson resummation formula $\sum_{k\in\mathbb{Z}} e^{2\pi ikx} = \sum_{\ell\in\mathbb{Z}} \delta(x+\ell)$, deduce the modular transformation of the characters of fully degenerate representation in the Kac table of the $(p, q)$ minimal model,
-\begin{align}
- \chi_{\langle r,s\rangle}(\tau) = 
- -\sqrt{\frac{2}{pq}}\sum_{\ell\in\mathbb{Z}} 
- \sin\left(\pi\frac{r}{p}\ell\right) 
- \sin\left(\pi\frac{s}{q}\ell\right)
- \chi_{i\frac{\ell}{2\sqrt{pq}}}(-\tfrac{1}{\tau})\ .
-\end{align}
-Using the identity
-\begin{align}
- \sum_{r=1}^{p-1} (-1)^{rs'}\sin\left(\pi\frac{q}{p}rr'\right)\sin\left(\pi\frac{r}{p}\ell\right) 
- = -\frac{p}{2}\sum_{\epsilon =\pm} \epsilon \delta_{\ell\equiv\epsilon qr'+ps'\bmod 2p}\ ,
-\end{align}
-show that the modular $S$-matrix is 
-\begin{align}
- S_{\langle r,s\rangle, \langle r', s'\rangle} = -\sqrt{\frac{8}{pq}}(-1)^{rs'+r's} \sin\left(\pi\frac{q}{p}rr'\right)\sin\left(\pi\frac{p}{q}ss'\right)\ .
-\end{align}
-\end{exo}
-
-\section{Affine symmetry}
-
 \appendix
 
 \section{Temporary appendix}
 
-\subsection{Questions to be raised}
 
 \begin{enumerate}
- \item It would be more logical for me to do affine symmetrie at the end. But this might come too late for the course on WZW models. Should two lectures be swapped? 
- \item Does anyone need the Verlinde formula?
- \item Who needs characters and torus partition functions? What for?
- \item How are tutorials organized? Should lecture notes be adapted to tutorials? For instance, by listing all exercises, or choosing which exercies to do?
-\end{enumerate}
-
-\subsection{To be done}
-
-\begin{enumerate}
+ \item How are tutorials organized? Should lecture notes be adapted to tutorials? For instance, by listing all exercises, or choosing which exercises to do?
  \item Discuss correlation functions of minimal models?
- \item Adding an introduction to affine Lie algebras, including the KZ equations.
-\item More exercises? Regroup them?
 \end{enumerate}
 
 
