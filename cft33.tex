@@ -415,6 +415,7 @@ If a model of quantum field theory has a symmetry algebra, then the spectrum $\m
 \label{somr}
 \end{align}
 Here we have decomposed $\mathcal{S}$ as a combination of some basic representations $\mathcal{R}$ of the symmetry algebra, and the number $m_\mathcal{R} \in {\mathbb{N}}\cup\{\infty\}$ is the \textbf{\boldmath multiplicity}\index{multiplicity (of a representation)} of the representation $\mathcal{R}$ in the spectrum $\mathcal{S}$.
+(Notations: $\mathbb{N}= \{0,1,2,\dots\}, \mathbb{N}^*=\{1,2,3,\dots\}$.)
 A state $\sigma$ in the spectrum can then be written as 
 \begin{align}
  \sigma = (\mathcal{R},v)\ ,
@@ -512,7 +513,7 @@ But this quantity is itself strongly constrained by the associativity assumption
 \label{cccc}
 \end{align}
 for any choice of the four states $(\sigma_1,\sigma_2,\sigma_3,\sigma_4)$.
-(See Exercise \ref{exoten} a similar calculation in a technically simpler context.) This condition can be represented schematically as 
+(See Exercise \ref{exoten} for a similar calculation in a technically simpler context.) This condition can be represented schematically as 
 \begin{align}
 \sum_{s} 
  \begin{tikzpicture}[scale = .2, baseline=(current  bounding  box.center), very thick]
@@ -562,7 +563,7 @@ In particular, the field $V_{\sigma_3}$ can appear in a $V_{\sigma_1}V_{\sigma_2
 \end{align}
 \end{hyp} 
 \noindent
-In some cases, the fusion product can be constructed explicitly \cite{gab99}. However, all we will need is that it is commutative and associative. 
+In some cases, the fusion product has a constructive definition as a kind of generalization of the tensor product \cite{gab99}. However, all we will need is that it exists. The fusion product, in other words the structure of the category of representations, will turn out to play a more important role than the structure of the representations themselves.  
 
 The fusion product $\mathcal{R}_1\times \mathcal{R}_2$ is said to have nontrivial multiplicities if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\geq 2$ for some $\mathcal{R}_3$, and trivial multiplicities if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\in \{0,1\}$, in which case the sum over $\lambda$ in eq. \eqref{clcf} can be omitted.
 A field is called a \textbf{\boldmath simple current}\index{simple current} if the corresponding representation $\mathcal{R}$ is such that $\mathcal{R}\times \mathcal{R}'$ is indecomposable for any $\mathcal{R}'$, so that $\sum_{\mathcal{R}''} N_{\mathcal{R}\mathcal{R}'}^{\mathcal{R}''} =1$. 
@@ -672,13 +673,14 @@ This actually amounts to compactifying the space, and working not on the complex
 This does not even prevent us from studying models on the complex plane, as such models are equivalent to models on the sphere, with one field inserted at $z=\infty$.
 Combining the inversion with translations, rotations and dilations, we obtain the group of the \textbf{\boldmath global conformal transformations}\index{conformal transformation!global---} of the Riemann sphere,
 \begin{align}
- \boxed{f_\text{global conformal}(z)  = \frac{az+b}{cz+d}}\ ,
+ \boxed{f_\text{global conformal}(z)  = \frac{az+b}{cz+d}}\ .
 \end{align}
-and this group is isomorphic to the group $PSL_2({\mathbb{C}})=\frac{SL_2({\mathbb{C}})}{{\mathbb{Z}}_2}$ of the complex matrices $g$ of size $2$ and determinant one where $g$ and $-g$ are identified, through the map
+This group is isomorphic to the group $PGL_2({\mathbb{C}})=\frac{GL_2({\mathbb{C}})}{\mathbb{C}^*}$ of the complex matrices $g$ of size $2$ modulo the relations $g\sim \lambda g\ (\forall \lambda\in\mathbb{C}^*)$, via the map
 \begin{align}
- g = \left(\begin{array}{cc} a & b \\ c & d \end{array}\right) \in SL_2({\mathbb{C}}) \quad \longmapsto\quad f_g(z) = \frac{az+b}{cz+d}\ .
+ g = \left(\begin{array}{cc} a & b \\ c & d \end{array}\right) \in GL_2({\mathbb{C}}) \quad \longmapsto\quad f_g(z) = \frac{az+b}{cz+d}\ .
 \label{gisl}
 \end{align}
+This group can alternatively be written as $PSL_2(\mathbb{C}) = \frac{SL_2(\mathbb{C})}{\mathbb{Z}_2}$.
 (See Exercise \ref{exoiso}.) 
 
 
@@ -1027,15 +1029,15 @@ We first introduce diagonal models, where representations of $\mathfrak{V}\times
  \item For any value $c\in\mathbb{C}$ of the central charge, Liouville theory
 has a diagonal spectrum that is made of a continuum of representations.
 Liouville theory is unitary if $c\geq 1$. 
-\item For any $c\in\mathbb{C}$, the generalized minimal model has a diagonal spectrum that is made of a discrete infinity of representations.
+\item For any irrational $c\in\mathbb{C}$, the generalized minimal model has a diagonal spectrum that is made of a discrete infinity of representations.
 \item A-series minimal model are diagonal, rational models that exist for central charges of the type
 \begin{align}
- c = 1 - 6 \frac{(p-q)^2}{pq}  \quad \text{with} \quad \left\{\begin{array}{l}  p,q \ \text{coprime  integers}\ , \\ 2\leq p<q\ , \end{array}\right.  
+ c_{p,q} = 1 - 6 \frac{(p-q)^2}{pq}  \quad \text{with} \quad \left\{\begin{array}{l}  p,q \ \text{coprime  integers}\ , \\ 2\leq p<q\ , \end{array}\right.  
 \label{cpq}
 \end{align}
-in particular $c <1$.
+in particular $c_{p,q} <1$.
 There are $\frac{(p-1)(q-1)}{2}$ distinct representations in the spectrum.
-The model is unitary if $q=p+1$, then $c=1-\frac{6}{p(p+1)}=0,\frac12,\frac{7}{10},\frac45, \frac67,\cdots$.
+The model is unitary if $q=p+1$, then $c_{p,p+1}=1-\frac{6}{p(p+1)}=0,\frac12,\frac{7}{10},\frac45, \frac67,\cdots$.
 \end{itemize}
 Let us locate these models in the $c$-complex plane, with unitary models signalled by more intense colors:
 \begin{align}
@@ -1063,20 +1065,22 @@ the extra symmetry leads to very simple correlation functions.
  \item 
 (Virasoro) \textbf{minimal models}\index{minimal model} are by definition rational models, and beyond the A-series there exist two other series, called the 
 D- and E-series, which are not diagonal.
-The corresponding values of the central charge are still of the type of eq. \eqref{cpq}.
+The corresponding values of the central charge are still of the type $c_{p,q}$.
 \end{itemize}
 Therefore,
 the properties of conformal field theories, starting with their very existence, crucially depend on the value of the central charge $c$ of the underlying Virasoro algebra.
 In the case of unitary theories, we observe that the size of the spectrum (as measured by the number of representations) increases with $c$, from the $c=0$ minimal model whose spectrum contains only one representation, to $c\geq 1$ Liouville theory whose spectrum contains infinitely many.
 The central charge is actually additive: given two theories with spectrums $\mathcal{S}$ and $\mathcal{S}'$ and central charges $c$ and $c'$, there is a natural product theory with central charge $c+c'$ and spectrum $\mathcal{S}\otimes \mathcal{S}'$.
-Moreover, for any rational theory that is consistent on a torus, 
-the behaviour of the number $N(\Delta)$ of states with conformal dimension $\Delta$ is given by 
+Moreover, as a result of the modular bootstrap, for any rational theory that is consistent on a torus, 
+the behaviour of the number $N(\Delta,\bar{\Delta})$ of states with left and right conformal dimensions $\Delta,\bar{\Delta}$ is given by 
 \begin{align}
-\text{Cardy's formula:} \qquad \log N(\Delta) \underset{\Delta\to \infty}{\propto} \sqrt{c \Delta} \ ,
+\text{Cardy's formula:} \qquad \log N(\Delta,\bar{\Delta}) \underset{\Delta,\bar{\Delta}\to \infty}{\sim} \frac{2\pi}{\sqrt{6}} \Big(\sqrt{c_\text{eff} \Delta} + \sqrt{\bar c_\text{eff} \bar\Delta}\Big)\ ,
 % NB: Reference: see Wikipedia
+% NB: Corrections are logarithmic in \Delta, see Carlip, so writing (\Delta-c/24) instead of \Delta makes little sense.
 \label{nds}
 \end{align}
-which quantitatively shows how the central charge $c$ controls the size of the spectrum.
+where we introduced the effective central charge $c_\text{eff}=c-24\Delta_0$ where $\Delta_0$ is the lowest dimension in the spectrum.
+This quantitatively shows how the central charge $c$ controls the size of the spectrum.
 It can be checked that Cardy's formula is compatible with the additivity of the central charge. (See Exercise \ref{exoacf}.)
 
 \section{Exercises}
@@ -1105,8 +1109,8 @@ Assuming the objects $\mathcal{R}_i$ are linearly independent, show that the ass
 
 \begin{exo}[Group of global conformal transformations]
  ~\label{exoiso}
-Show that the map \eqref{gisl} is a group morphism whose kernel is the center of $SL_2({\mathbb{C}})$.
-Show that the group of global conformal transformations of the sphere is isomorphic to $PSL_2({\mathbb{C}})$. 
+Show that the map \eqref{gisl} is a group morphism whose kernel is the center of $GL_2({\mathbb{C}})$, such that any global conformal transformation has a preimage in $SL_2(\mathbb{C})$.
+Deduce that the group of global conformal transformations of the sphere is isomorphic to $PGL_2({\mathbb{C}})$, or equivalently $PSL_2(\mathbb{C}) = \frac{SL_2(\mathbb{C})}{\mathbb{Z}_2}$.
 \end{exo}
 
 \begin{exo}[Algebra of infinitesimal global conformal transformations]
@@ -1166,8 +1170,9 @@ Let us show that Cardy's formula \eqref{nds} is compatible with the additivity o
 \end{align}
 where $L_n$ and $L_n'$ act on $\mathcal{S}$ and $\mathcal{S}'$ respectively.
 Check the relation $c^\text{product} = c+c'$, and show $\Delta^\text{product} = \Delta+\Delta'$.
+Compute the effective central charges $c^\text{product}_\text{eff}, \bar c^\text{product}_\text{eff}$.
 \item 
-Assuming that Cardy's formula holds for $\mathcal{S}$ and $\mathcal{S}'$, show that computing the large $\Delta$ behaviour of the number of states $N^\text{product}(\Delta)$ in the product theory amounts to finding the maximum of the function $f(\Delta') = \sqrt{c\Delta'} +\sqrt{c'(\Delta-\Delta')}$.
+Assuming that Cardy's formula holds for $\mathcal{S}$ and $\mathcal{S}'$, show that computing the large $\Delta,\bar\Delta$ behaviour of the number of states $N^\text{product}(\Delta,\bar\Delta)$ in the product theory amounts to finding the maximum of the function $f(\Delta') = \sqrt{c_\text{eff}\Delta'} +\sqrt{c'_\text{eff}(\Delta-\Delta')}$.
 \item
 Conclude that Cardy's formula holds for $\mathcal{S}\otimes \mathcal{S}'$.
 \end{enumerate}
@@ -1483,19 +1488,20 @@ For example,
 \end{align}
 Since $L_0$ is self-conjugate, different $L_0$-eigenspaces are orthogonal, and $\mathcal V_\Delta$ is unitary if and only if the scalar product is positive definite on each eigenspace. 
 Given a basis $\{v_i\}$ of the level-$N$ eigenspace $\mathcal{R}_N$, the scalar product on $\mathcal{R}_N$ is characterized by the Gram matrix $M^{(N)}$ defined by $M^{(N)}_{ij}=\langle v_i|v_j\rangle$, and in particular the scalar product is positive definite if and only if all the eigenvalues of $M^{(N)}$ are strictly positive. This implies in particular $\det M^{(N)}>0$.
-We now make a useful remark:
+
+It is easy to see that $\det M^{(N)}$ must be a polynomial function of $\Delta$ and $c$.
+In order to determine its sign, we should study its zeros. These zeros are determined by the property:
 \begin{center}
  \begin{minipage}{0.9\textwidth}
  $\det M^{(N)}=0$ if and only if there is a singular vector at a level $N'\leq N$.  
  \end{minipage}
 \end{center}
 (See Exercise \ref{exodmn}.) 
-It is easy to see that $\det M^{(N)}$ must be a polynomial function of $\Delta$ and $c$.
 Knowing the zeros $\Delta_{\langle r,s \rangle}$ of $\det M^{(N)}$ as a function of $\Delta$ eq. \eqref{drs}, we obtain the \textbf{\boldmath Kac formula}\index{Kac formula} 
 \begin{align}
  \boxed{\det M^{(N)} \propto \prod_{\begin{smallmatrix} r,s\geq 1 \\ rs \leq N \end{smallmatrix}} (\Delta-\Delta_{\langle r,s \rangle})^{p(N-rs)}} \ ,
 \end{align}
-where the constant of proportionality is a $\Delta,c$-independent positive number, and $p(N')$ is the number of partitions of $N'$.
+where the constant of proportionality is a $\Delta,c$-independent positive number, and $p(N')$ is the number of partitions of $N'$, in particular $p(0)=1$.
 The multiplicity of the zero $\Delta_{\langle r,s \rangle}$ is $p(N-rs)$ because this is the number of linearly independent descendents at the level $N$ of a singular vector at the level $rs$.  
 
 \subsubsection{Unitarity of Verma modules and degenerate representations}
@@ -1513,7 +1519,7 @@ Therefore, $\mathcal{V}_\Delta$ is unitary.
 If $c=1$, then the Verma module $\mathcal{V}_\Delta$ is unitary if $\Delta > 0$ by continuity from the $c>1$ case, unless $\Delta=\Delta_{\langle r,s \rangle}$ for some $\langle r,s \rangle$, that is unless $\Delta =\frac14 n^2$ with $n\in {\mathbb{N}}$.
 \item 
 If $c<1$, then the Verma module $\mathcal{V}_\Delta$ is never unitary. 
-This is because for a given $\Delta>0$, the values of $c$ such that $\Delta = \Delta_{\langle r,s \rangle}$ for some $\langle r,s \rangle$ accumulate at $c=1^-$.
+This is because for a given $\Delta>0$, the values of $c$ such that $\Delta = \Delta_{\langle r,s \rangle}$ for some $\langle r,s \rangle$ accumulate at $c=1^-$. By tracking sign changes, one can show that $\det M^{(N)}\leq 0$ for some $N$ \cite{fms97}. 
 \end{enumerate}
 
 We still have to consider the unitarity of degenerate highest-weight representations of the type $\mathcal{R}=\frac{\mathcal{V}_\Delta}{\mathcal{R}'}$, where the subrepresentation $\mathcal{R}'$ contains at least one singular vector. 
@@ -1527,7 +1533,7 @@ As we will see in Section \ref{secamm}, the resulting values of $c$ correspond t
 However, the existence of two singular vectors is a necessary, but not yet a sufficient condition for a Verma module to have a unitary coset.
 The final result is that for $c<1$ unitary cosets exist only if the central charge $c$ takes values that correspond to the unitary minimal models,
 \begin{align}
- c = 1-\frac{6}{p(p+1)}  \quad \text{with} \quad 2\leq p\ ,
+ c_{p,p+1} = 1-\frac{6}{p(p+1)}  \quad \text{with} \quad 2\leq p\ ,
 \label{cpp}
 \end{align}
 For these values of $c$,
@@ -1541,7 +1547,7 @@ These unitary cosets are the maximally degenerate representations $\mathcal{R}_{
  \mathcal{R}_{\langle r,s \rangle} = \frac{\mathcal{V}_{\Delta_{\langle r,s \rangle}}}{U(\mathfrak{V}^+)|\chi_{\langle r,s \rangle}\rangle + U(\mathfrak{V}^+)|\chi_{\langle p-r,p+1-s \rangle}\rangle}\ ,
 \label{rrs}
 \end{align}
-where the sum of the two subrepresentations is not a direct sum, because their intersection is nonzero. 
+where the sum of the two subrepresentations is not a direct sum, because their intersection is nonzero. One way to prove that such representations are unitary is to identify them with representations of cosets of affine Lie algebras, in the context of the description of minimal models as cosets of WZW models \cite{fms97}.
 
 These results are summarized in the following table:
 \begin{align}
@@ -1621,8 +1627,7 @@ From Axiom \ref{ax:dvz} we can immediately deduce how $L_n^{(z)}$ depends on $z$
  \label{pll}
 \end{align}
 (See Exercise \ref{exowitt} for the corresponding Witt algebra identity.)
-This shows that the Virasoro generators at different points $(L_n^{(z_1)})_{n\in \mathbb{Z}}$ and $(L_n^{(z_2)})_{n\in \mathbb{Z}}$ are linearly related, and should be understood of two bases of the same space of symmetry generators.
-And this is equivalent to $\frac{\partial}{\partial z} T(y) = \frac{\partial}{\partial \bar z} T(y) = 0$, where we define the \textbf{\boldmath energy-momentum tensor}\index{energy-momentum tensor} $T(y)$ as 
+This shows that the Virasoro generators at different points $(L_n^{(z_1)})_{n\in \mathbb{Z}}$ and $(L_n^{(z_2)})_{n\in \mathbb{Z}}$ are linearly related, and should be understood of two bases of the same space of symmetry generators. Let us now introduce  a generating function $T(y)$ for $(L_n^{(z)})_{n\in\mathbb{Z}}$, such that the equations that determine the $z$-dependence of $L_n^{(z)}$ become $\frac{\partial}{\partial z} T(y) = \frac{\partial}{\partial \bar z} T(y) = 0$. The appropriate generating function is the \textbf{\boldmath energy-momentum tensor}\index{energy-momentum tensor}
 \begin{align}
  \boxed{T(y) = \sum_{n\in{\mathbb{Z}}} \frac{L_n^{(z)}}{(y-z)^{n+2}}}\ .
 \label{tsl}
@@ -2316,7 +2321,8 @@ where by convention $\Delta_{\langle m_0,-n_0\rangle} = \Delta_s$, and we introd
  R_{m,n} = \frac{2P_{\langle 0,0\rangle} P_{\langle m,n\rangle}}{\prod_{r=1-m}^m \prod_{s=1-n}^n 2P_{\langle r,s\rangle}}
 \prod_{r\overset{2}{=}1-m}^{m-1} \prod_{s\overset{2}{=}1-n}^{n-1} \prod_\pm (P_2\pm P_1 + P_{\langle r,s\rangle}) (P_3\pm P_4 +P_{\langle r,s\rangle})\ .
 \end{align}
-(Here $P$ is the Liouville momentum, and $P_{\langle r,s \rangle}$ \eqref{ars} are its values for degenerate representations.)
+(We introduced the notation $\overset{2}{=}$ for indices that run by increments of $2$.
+Moreover, $P$ is the Liouville momentum, and $P_{\langle r,s \rangle}$ \eqref{ars} are its values for degenerate representations.)
 
 The recursion representation owes its name to the original definition of the function $H_{\Delta_s}(\Delta_i|q)$ \eqref{hdq} by a recursive formula,
 \begin{align}
@@ -2804,6 +2810,8 @@ Let us assume $b^2=-\frac{q}{p}$ where $p,q$ are strictly positive integers, and
   \item there is a singular vector at a level $N'\leq N$.
  \end{itemize}
 (To construct the nontrivial subrepresentation, consider the space of states that are orthogonal to all states in the Verma module.)
+
+These equivalences hold in Verma modules of the Virasoro algebra, but not necessarily of larger symmetry algebras. In general, $\det M^{(N)}$ can vanish not only due to singular vectors, but also to subsingular vectors: states that become singular vectors only in cosets of the Verma module \cite{dv95}. Subsingular vectors can exist when a zero-mode generator of the symmetry algebra has a non-diagonalizable action in a Verma module \cite{rad13}.
 \end{exo}
 
 
@@ -3758,10 +3766,12 @@ equality of conformal dimensions $\Delta_{\langle r,s \rangle}=\Delta_{\langle r
 
 \subsection{Generalized minimal models}
 
-For any complex value of the central charge, we define a \textbf{\boldmath generalized minimal model}\index{minimal model!generalized---} by its spectrum,
+For any complex value of the central charge such that $b^2\notin \mathbb{Q}$, we define a \textbf{\boldmath generalized minimal model}\index{minimal model!generalized---} by its spectrum,
 \begin{align}
  \boxed{\mathcal{S} = \bigoplus_{r,s=1}^\infty \mathcal{R}_{\langle r,s \rangle}\otimes \bar{\mathcal{R}}_{\langle r,s \rangle}}\ .
 \end{align}
+The restriction that $b^2$ is irrational ensures that the representations $\mathcal{R}_{\langle r,s \rangle}$. Coincidences of such representations for $b^2\in\mathbb{Q}_{<0}$ will play an essential role in our analysis of minimal models. It is not known whether  generalized minimal models exist for rational $b^2$. 
+
 We could obtain other consistent models by using subsets of the degenerate representations, provided these subsets were closed under fusion, for instance $\mathcal{S}=\mathcal{\mathcal{R}}_{\langle 1,1 \rangle}\otimes \bar{\mathcal{R}}_{\langle 1,1 \rangle}$, $\mathcal{S}=\bigoplus_{r=1}^\infty \mathcal{R}_{\langle r,1 \rangle}\otimes \bar{\mathcal{R}}_{\langle r,1 \rangle}$ or $\mathcal{S}=\bigoplus_{r,s=1}^{\infty} \mathcal{R}_{\langle 2r+1,2s+1 \rangle}\otimes \bar{\mathcal{R}}_{\langle 2r+1,2s+1 \rangle}$.
 Solving the generalized minimal model will provide a solution of all these submodels. 
 
@@ -3884,7 +3894,7 @@ which we assume to be coprime, we have
 \begin{align} 
  \boxed{b^2 = - \frac{q}{p} \in \mathbb{Q}_{<0}} \ .
 \end{align}
-Then the central charge obeys $c\in ]-\infty, 1[$, and is given by eq. \eqref{cpq}.
+Then the central charge obeys $c\in ]-\infty, 1[$, and is given by $c_{p,q}$ \eqref{cpq}.
 
 \subsubsection{Fusion rules and spectrum}
 
@@ -3927,7 +3937,7 @@ the condition for three doubly degenerate representations $\mathcal{R}_{\langle 
  \left\{\begin{array}{l}  r_1+r_2+r_3-p\in 1+2{\mathbb{N}}\ , \\
  p+r_k-r_i-r_j\in 1+2{\mathbb{N}} \ , \\
 s_1+s_2+s_3-q\in 1+2{\mathbb{N}}\ , \\
- p+s_k-s_i-s_j\in 1+2{\mathbb{N}} \ ,\end{array}\right. 
+ q+s_k-s_i-s_j\in 1+2{\mathbb{N}} \ ,\end{array}\right. 
  \label{mmfr}
 \end{align}
 where we assume $i\neq j\neq k$.
@@ -4332,7 +4342,7 @@ and deduce the explicit formula \eqref{csse} for $\check{C}_{\sigma\sigma\epsilo
 
 \chapter{Affine symmetry \label{secaff}}
 
-Affine Lie algebras are infinite-dimensional Lie algebras that contain the Virasoro algebra, and are therefore relevant to conformal field theory.
+Affine Lie algebras are infinite-dimensional Lie algebras, which are relevant to conformal field theory because their universal enveloping algebras contain the Virasoro algebra.
 In order to study theories based on these algebras, we will follow the same steps as in the case of the Virasoro algebra: study the algebras and their representations, deduce Ward identities and differential equations for correlation functions, and write spectrums and correlation functions for particular models. 
 
 \section{Free bosons}
@@ -5406,7 +5416,7 @@ obtained by applying the relation \eqref{aj} to the degenerate momentums \eqref{
 These OPEs agree with the fusion rules that can be derived from analyzing singular vectors in affine highest-weight representations \cite{ay92}, with $\Phi^{\langle r, s\rangle}$ having a vanishing descendent at the level $N=rs$. (See Exercise \ref{exolos} for the case $N=1$.) In contrast to the case of Virasoro algebra, there are nontrivial representations with singular vectors at the level $N=0$.
 
 It is tempting to speculate that there exist $\widehat{\mathfrak{sl}}_2$ generalized minimal models.
-For any given value of the level $k$, this would be a diagonal model whose spectrum would be made of the representations that correspond to the fields $\Phi^{\langle r, s\rangle}$. For a rational value of the level $k$, there should also exist a diagonal $\widehat{\mathfrak{sl}}_2$ minimal model, whose spectrum would contain finitely many such representations.
+For any given irrational value of the level $k$, this would be a diagonal model whose spectrum would be made of the representations that correspond to the fields $\Phi^{\langle r, s\rangle}$. For a rational value of the level $k$, there should exist a diagonal $\widehat{\mathfrak{sl}}_2$ minimal model, whose spectrum would contain finitely many such representations.
 If we restrict ourselves to the set of half-integer spin fields $\Phi^{\langle 0, s\rangle}$, which is closed under OPEs, we actually obtain the (generalized) $SU_2$ WZW models of Section \ref{secsu}.
 
 
