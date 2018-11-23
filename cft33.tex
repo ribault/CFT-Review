@@ -5959,7 +5959,7 @@ So the spectral flow orbit of $\hat{\mathcal{D}}^{j,+}$ contains another affine 
 (The rest of the orbit is made of representations where the eigenvalues of $L_0$ are not bounded from below.)
 And discrete representations of both series can be written in our new notations as 
 \begin{align}
- \hat{\mathcal{D}}^{j,+} = \hat{\mathcal{D}}^{j,\frac12} \quad , \quad \hat{\mathcal{D}}^{j,-} = \hat{\mathcal{D}}^{-j-2-\frac{k}{2},-\frac12}\ .
+ \hat{\mathcal{D}}^{j,+} = \hat{\mathcal{D}}^{j,\frac12} \quad , \quad \hat{\mathcal{D}}^{j,-} = \hat{\mathcal{D}}^{\frac{k}{2}-j,-\frac12}\ .
  \label{dpdo}
 \end{align}
 The dual representations of our spectrally flowed representations are
@@ -5967,7 +5967,7 @@ The dual representations of our spectrally flowed representations are
  (\hat{\mathcal{C}}^{j,w}_{\alpha})^* &= \hat{\mathcal{C}}^{j,-w}_{-\alpha}\ ,
 \label{cjwd}
 \\
-(\hat{\mathcal{D}}^{j,w})^* &= \hat{\mathcal{D}}^{-j-2-\frac{k}{2},-w}\ .
+(\hat{\mathcal{D}}^{j,w})^* &= \hat{\mathcal{D}}^{\frac{k}{2}-j,-w}\ .
 \label{djwd}
 \end{align}
 This concludes our discussion of spectral flow.
@@ -5984,10 +5984,10 @@ So the fusion product $\hat{\mathcal{D}}^{j_1,-\frac12}\times \hat{\mathcal{D}}^
 Generalizing this argument, the spectrum must in fact contain 
 representations of the type $\hat{\mathcal{D}}^{j,w}$ for all values of $w\in \frac12+{\mathbb{Z}}$.
 Then it is natural to assume that the spectral flow actually leaves the spectrum invariant.
-But what are the allowed values of the spin $j$ of $\hat{\mathcal{D}}^{j,w}$? We still impose the constraint $j>-\frac12$ that comes from the representation $\mathcal{D}^{j,\pm}$ of $\mathfrak{sl}_2$.
+But what are the allowed values of the spin $j$ of $\hat{\mathcal{D}}^{j,w}$? We still impose the constraint $j<-\frac12$ that comes from the representation $\mathcal{D}^{j,\pm}$ of $\mathfrak{sl}_2$.
 If this applies to both spins in the relation \eqref{rdd}, we must then have 
 \begin{align}
- -\frac12 <j < -\frac{k+3}{2}\ .
+ \frac{k+1}{2} <j < -\frac12\ .
 \label{jimm}
 \end{align}
 This defines a non-empty interval provided
@@ -5998,9 +5998,9 @@ This defines a non-empty interval provided
 The natural conjectures for the spectrums of the $\widetilde{SL}_2(\mathbb{R})$ and $SL_2(\mathbb{R})$ WZW models are then
 \begin{align}
  \tilde{\mathcal{S}}_k &= \bigoplus_{w\in{\mathbb{Z}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ \hat{\mathcal{C}}^{j,w}_\alpha \otimes \bar{\hat{\mathcal{C}}}^{j,w}_{\alpha} 
-\oplus \bigoplus_{w\in\frac12+{\mathbb{Z}}}\int^\oplus_{]-\frac12,-\frac{k+3}{2}[} dj\ \hat{\mathcal{D}}^{j,w}\otimes \bar{\hat{\mathcal{D}}}^{j,w} \ ,
+\oplus \bigoplus_{w\in\frac12+{\mathbb{Z}}}\int^\oplus_{]\frac{k+1}{2},-\frac12[} dj\ \hat{\mathcal{D}}^{j,w}\otimes \bar{\hat{\mathcal{D}}}^{j,w} \ ,
 \\
- \mathcal{S}_k &= \bigoplus_{\substack{w_L,w_R\in{\mathbb{Z}}\\ w_L-w_R\in 2{\mathbb{Z}}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} \hat{\mathcal{C}}^{j,w_L}_\alpha \otimes \bar{\hat{\mathcal{C}}}^{j,w_R}_{\alpha} \oplus  \bigoplus_{\substack{w_L,w_R\in\frac12+{\mathbb{Z}}\\ w_L-w_R\in 2{\mathbb{Z}}}}\ \bigoplus_{\substack{j= -\frac12, 0,\frac12,\cdots \\ j<-\frac{k+3}{2}}} \hat{\mathcal{D}}^{j,w_L}\otimes \bar{\hat{\mathcal{D}}}^{j,w_R} \ .
+ \mathcal{S}_k &= \bigoplus_{\substack{w_L,w_R\in{\mathbb{Z}}\\ w_L-w_R\in 2{\mathbb{Z}}}}\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} \hat{\mathcal{C}}^{j,w_L}_\alpha \otimes \bar{\hat{\mathcal{C}}}^{j,w_R}_{\alpha} \oplus  \bigoplus_{\substack{w_L,w_R\in\frac12+{\mathbb{Z}}\\ w_L-w_R\in 2{\mathbb{Z}}}}\ \bigoplus_{\substack{j= -\frac12, -1,-\frac32,\cdots \\ j>\frac{k+1}{2}}} \hat{\mathcal{D}}^{j,w_L}\otimes \bar{\hat{\mathcal{D}}}^{j,w_R} \ .
 \end{align}
 Notice that the left and right spectral flow numbers $w_L$ and $w_R$ are independent in the case of $SL_2(\mathbb{R})$, and equal in the case of $\widetilde{SL}_2(\mathbb{R})$, so that the spectrum $\tilde{\mathcal{S}}_k$ is diagonal.
 The rule, which can only be heuristic in the absence of a definition of WZW models based on the corresponding loop groups, is:
@@ -6024,18 +6024,18 @@ The rest of the nonzero fusion multiplicities of the type
 $N_{\hat{\mathcal{D}}^{j_1,w_1},\hat{\mathcal{D}}^{j_2,w_2},\hat{\mathcal{D}}^{j_3,w_3}}$ are obtained by the rule \eqref{nrrr}.
 Then we generalize the relation \eqref{cjdd} between $\mathfrak{sl}_2$ representations of the principal and discrete series, and obtain $\hat{\mathcal{C}}^j_\alpha \sim \hat{\mathcal{D}}^{\alpha-1,+} \oplus \hat{\mathcal{D}}^{-\alpha,-}$. Using the notations \eqref{dpdo} and applying spectral flow, this implies
 \begin{align}
- \hat{\mathcal{C}}^{j,w}_\alpha \sim \hat{\mathcal{D}}^{\alpha-1,w+\frac12} \oplus \hat{\mathcal{D}}^{\alpha-2-\frac{k}{2},w-\frac12} \ .
+ \hat{\mathcal{C}}^{j,w}_\alpha \sim \hat{\mathcal{D}}^{\alpha-1,w+\frac12} \oplus \hat{\mathcal{D}}^{\alpha+\frac{k}{2},w-\frac12} \ .
 \end{align}
 This enables us to compute fusion multiplicities involving representations of the type $\hat{\mathcal{C}}^{j,w}_\alpha$.
 The only subtlety is that we obtain terms in $N_{\hat{\mathcal{C}}^{j_1,w_1}_{\alpha_1},\hat{\mathcal{D}}^{j_2,w_2},\hat{\mathcal{D}}^{j_3,w_3}}$ that depend on $\alpha_1$ instead of $\alpha_1\ \text{mod}\ {\mathbb{Z}}$, and must be discarded.
 Keeping the condition \eqref{jimm} on spins of discrete series representations implicit, the results are 
 \begin{align}
  N_{\hat{\mathcal{D}}^{j_1,w_1},\hat{\mathcal{D}}^{j_2,w_2},\hat{\mathcal{D}}^{j_3,w_3}} 
-&= \delta_{\sum w_i,\frac12} \delta_{\sum j_i+3+\frac{k}{2},-{\mathbb{N}}} + \delta_{\sum w_i,-\frac12}\delta_{\sum j_i+3+k,{\mathbb{N}}} \ ,
+&= \delta_{\sum w_i,\frac12} \delta_{\sum j_i-\frac{k}{2},{\mathbb{N}}} + \delta_{\sum w_i,-\frac12}\delta_{\sum j_i-k,-{\mathbb{N}}} \ ,
 \\
- N_{\hat{\mathcal{C}}^{j_1,w_1}_{\alpha_1},\hat{\mathcal{D}}^{j_2,w_2},\hat{\mathcal{D}}^{j_3,w_3}} &= \delta_{\sum w_i,0} \delta_{\alpha_1+j_2+j_3+\frac{k}{2},{\mathbb{Z}}}\ ,
+ N_{\hat{\mathcal{C}}^{j_1,w_1}_{\alpha_1},\hat{\mathcal{D}}^{j_2,w_2},\hat{\mathcal{D}}^{j_3,w_3}} &= \delta_{\sum w_i,0} \delta_{\alpha_1-j_2-j_3+\frac{k}{2},{\mathbb{Z}}}\ ,
 \\
- N_{\hat{\mathcal{C}}^{j_1,w_1}_{\alpha_1},\hat{\mathcal{C}}^{j_2,w_2}_{\alpha_2},\hat{\mathcal{D}}^{j_3,w_3}} & = \delta_{\sum w_i,\frac12} \delta_{\alpha_1+\alpha_2+j_3,{\mathbb{Z}}} + \delta_{\sum w_i,-\frac12}\delta_{\alpha_1+\alpha_2+j_3+\frac{k}{2},{\mathbb{Z}}}\ ,
+ N_{\hat{\mathcal{C}}^{j_1,w_1}_{\alpha_1},\hat{\mathcal{C}}^{j_2,w_2}_{\alpha_2},\hat{\mathcal{D}}^{j_3,w_3}} & = \delta_{\sum w_i,\frac12} \delta_{\alpha_1+\alpha_2-j_3,{\mathbb{Z}}} + \delta_{\sum w_i,-\frac12}\delta_{\alpha_1+\alpha_2-j_3+\frac{k}{2},{\mathbb{Z}}}\ ,
 \\
 N_{\hat{\mathcal{C}}^{j_1,w_1}_{\alpha_1},\hat{\mathcal{C}}^{j_2,w_2}_{\alpha_2},\hat{\mathcal{C}}^{j_3,w_3}_{\alpha_3}} & = \delta_{\sum w_i,1}\delta_{\sum\alpha_i-\frac{k}{2},{\mathbb{Z}}} + 2\, \delta_{\sum w_i,0}\delta_{\sum \alpha_i,{\mathbb{Z}}} + \delta_{\sum w_i,-1}\delta_{\sum\alpha_i+\frac{k}{2},{\mathbb{Z}}}\ .
 \end{align}
@@ -6043,17 +6043,17 @@ This leads to the following fusion rules:
 \begin{multline}
 \hat{\mathcal{D}}^{j_1,w_1}\times \hat{\mathcal{D}}^{j_2,w_2} = \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj\ \hat{\mathcal{C}}^{j,w_1+w_2}_{j_1+j_2+\frac{k}{2}} 
 \\ \oplus 
-\bigoplus_{\substack{j\in j_1+j_2+1+{\mathbb{N}} \\ j\in ]-\frac12, -\frac{k+3}{2}[}} \hat{\mathcal{D}}^{j,w_1+w_2-\frac12} \oplus 
-\bigoplus_{\substack{j\in j_1+j_2+1+\frac{k}{2}-{\mathbb{N}} \\ j\in ]-\frac12, -\frac{k+3}{2}[}} \hat{\mathcal{D}}^{j,w_1+w_2+\frac12}\ ,
+\bigoplus_{\substack{j\in j_1+j_2-{\mathbb{N}} \\ j\in ]\frac{k+1}{2}, -\frac12[}} \hat{\mathcal{D}}^{j,w_1+w_2-\frac12} \oplus 
+\bigoplus_{\substack{j\in j_1+j_2-\frac{k}{2}+{\mathbb{N}} \\ j\in ]\frac{k+1}{2}, -\frac12[}} \hat{\mathcal{D}}^{j,w_1+w_2+\frac12}\ ,
 \end{multline}
 \begin{align}
- \hat{\mathcal{C}}^{j_1,w_1}_{\alpha_1}\times \hat{\mathcal{D}}^{j_2,w_2} &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj\left( \hat{\mathcal{C}}^{j,w_1+w_2-\frac12}_{\alpha_1+j_2} \oplus \hat{\mathcal{C}}^{j,w_1+w_2+\frac12}_{\alpha_1+j_2+\frac{k}{2}}\right) \oplus \bigoplus_{\substack{j\in \alpha_1+j_2+{\mathbb{Z}} \\ j\in ]-\frac12, -\frac{k+3}{2}[}} \hat{\mathcal{D}}^{j,w_1+w_2}\ ,
+ \hat{\mathcal{C}}^{j_1,w_1}_{\alpha_1}\times \hat{\mathcal{D}}^{j_2,w_2} &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj\left( \hat{\mathcal{C}}^{j,w_1+w_2-\frac12}_{\alpha_1-j_2} \oplus \hat{\mathcal{C}}^{j,w_1+w_2+\frac12}_{\alpha_1-j_2+\frac{k}{2}}\right) \oplus \bigoplus_{\substack{j\in \alpha_1-j_2+{\mathbb{Z}} \\ j\in ]\frac{k+1}{2}, -\frac12[}} \hat{\mathcal{D}}^{j,w_1+w_2}\ ,
 \end{align}
 \begin{multline}
  \hat{\mathcal{C}}^{j_1,w_1}_{\alpha_1}\times \hat{\mathcal{C}}^{j_2,w_2}_{\alpha_2} = \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \left(\hat{\mathcal{C}}^{j,w_1+w_2-1}_{\alpha_1+\alpha_2-\frac{k}{2}} \oplus 2\, \hat{\mathcal{C}}^{j,w_1+w_2}_{\alpha_1+\alpha_2} \oplus \hat{\mathcal{C}}^{j,w_1+w_2+1}_{\alpha_1+\alpha_2+\frac{k}{2}}\right) 
 \\
-\oplus \bigoplus_{\substack{j\in \alpha_1+\alpha_2-\frac{k}{2}+{\mathbb{Z}} \\ j\in]-\frac12, -\frac{k+3}{2}[}} \hat{\mathcal{D}}^{j,w_1+w_2-\frac12} 
-\oplus \bigoplus_{\substack{j\in \alpha_1+\alpha_2+{\mathbb{Z}} \\ j\in]-\frac12, -\frac{k+3}{2}[}} \hat{\mathcal{D}}^{j,w_1+w_2+\frac12} \ .
+\oplus \bigoplus_{\substack{j\in -\alpha_1-\alpha_2+\frac{k}{2}+{\mathbb{Z}} \\ j\in]\frac{k+1}{2}, -\frac12[}} \hat{\mathcal{D}}^{j,w_1+w_2-\frac12} 
+\oplus \bigoplus_{\substack{j\in -\alpha_1-\alpha_2+{\mathbb{Z}} \\ j\in]\frac{k+1}{2}, -\frac12[}} \hat{\mathcal{D}}^{j,w_1+w_2+\frac12} \ .
 \end{multline}
 So, while the spectral flow number $w$ is not conserved, fusion violates it by at most one unit.
 This can alternatively be shown at the level of correlation functions by studying how spectral flow affects the Ward identities and Knizhnik--Zamolodchikov equations \cite{rib05}.
