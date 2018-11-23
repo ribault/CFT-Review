@@ -1799,6 +1799,7 @@ D_x^{j}(t^+) & = x^2{\frac{\partial}{\partial x}} - 2j x \ .
 \end{array}\right. 
 \label{ddz}
 \end{align}
+% NB: Our convention for the spin is such that finite-dimensional representations have spins 0, 1/2, 1, ... Similarly, our convention for the level is such that the SU_2 WZW models has positive integer level.
 These operators form a representation of the Lie algebra \textbf{\boldmath $\mathfrak{sl}_2$} \index{sl2@$\mathfrak{sl}_2$ (Lie algebra)} with the generators $(t^0,t^+,t^-)$ and commutation relations 
 \begin{align}
  [t^0,t^\pm ] =\pm t^\pm \quad , \quad [t^+,t^-]=2t^0\ .
@@ -5840,9 +5841,9 @@ Representation & Parameter values & Eigenvalues of $J_0^0$
 \hline 
 $\mathcal{C}^j_\alpha$  & $j\in -\tfrac12+i{\mathbb{R}}_+,\ \alpha\in{\mathbb{R}}\bmod {\mathbb{Z}}$ &  $\alpha + {\mathbb{Z}}$ 
 \\
-$\mathcal{D}^{j,+}$ & $j\in]-\tfrac12,\infty[$ & $j+1+{\mathbb{N}}$
+$\mathcal{D}^{j,+}$ & $j\in]-\infty,-\tfrac12[$ & $-j+{\mathbb{N}}$
 \\
-$\mathcal{D}^{j,-}$ & $j\in]-\tfrac12,\infty[$ & $-(j+1+{\mathbb{N}})$
+$\mathcal{D}^{j,-}$ & $j\in]-\infty,-\tfrac12[$ & $j-{\mathbb{N}}$
 \\
 \hline 
  \end{tabular}
@@ -5850,10 +5851,10 @@ $\mathcal{D}^{j,-}$ & $j\in]-\tfrac12,\infty[$ & $-(j+1+{\mathbb{N}})$
 \end{align}
 According to \cite{rib09} and references therein, we have
 \begin{align}
- \mathcal{F}(\widetilde{SL}_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ \mathcal{C}^j_\alpha \otimes \bar{\mathcal{C}}^j_{\alpha} \oplus \bigoplus_\pm \int^\oplus_{]-\frac12, \infty[} dj\ \mathcal{D}^{j,\pm}\otimes \bar{\mathcal{D}}^{j,\pm} \ ,
+ \mathcal{F}(\widetilde{SL}_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ \mathcal{C}^j_\alpha \otimes \bar{\mathcal{C}}^j_{\alpha} \oplus \bigoplus_\pm \int^\oplus_{]-\infty,-\frac12[} dj\ \mathcal{D}^{j,\pm}\otimes \bar{\mathcal{D}}^{j,\pm} \ ,
 \label{fst}
 \\
- \mathcal{F}(SL_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} \mathcal{C}^j_\alpha \otimes \bar{\mathcal{C}}^j_{\alpha} \oplus \bigoplus_\pm \bigoplus_{j=-\frac12, 0,\frac12 \cdots} \mathcal{D}^{j,\pm}\otimes \bar{\mathcal{D}}^{j,\pm} \ ,
+ \mathcal{F}(SL_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} \mathcal{C}^j_\alpha \otimes \bar{\mathcal{C}}^j_{\alpha} \oplus \bigoplus_\pm \bigoplus_{j=-\frac12, -1,-\frac32 \cdots} \mathcal{D}^{j,\pm}\otimes \bar{\mathcal{D}}^{j,\pm} \ ,
 \end{align}
 where the identification of $\mathcal{F}(SL_2(\mathbb{R}))$ with the space of $\tau$-periodic functions on $\widetilde{SL}_2(\mathbb{R})$ amounts to restricting the eigenvalues of our Hermitian generator to be half-integers.
 
@@ -5875,7 +5876,7 @@ Tensor products of principal and discrete series representations can be written 
 where $N_{\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3}$ is an integer-valued function that obeys $N_{\mathcal{R}_1^*,\mathcal{R}_2^*,\mathcal{R}_3^*}=N_{\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3}$ and is symmetric under permutations.
 Modulo these symmetries, the only nonzero values of $N_{\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3}$ are
 \begin{align}
-N_{\mathcal{D}^{j_1,+},\mathcal{D}^{j_2,+},\mathcal{D}^{j_3,-}} &= 1 \quad \text{if}\ j_3\in j_1+j_2+1+{\mathbb{N}}\ ,
+N_{\mathcal{D}^{j_1,+},\mathcal{D}^{j_2,+},\mathcal{D}^{j_3,-}} &= 1 \quad \text{if}\ j_3\in j_1+j_2-{\mathbb{N}}\ ,
 \label{nddd}
 \\
 N_{\mathcal{C}^{j_1}_{\alpha_1},\mathcal{D}^{j_2,+},\mathcal{D}^{j_3,-}} &= 1 \quad \text{if}\ \alpha_1+j_2-j_3\in{\mathbb{Z}}\ ,
@@ -5887,7 +5888,7 @@ N_{\mathcal{C}^{j_1}_{\alpha_1},\mathcal{C}^{j_2}_{\alpha_2},\mathcal{C}^{j_3}_{
 For example, the tensor product of two principal series representations is
 \begin{align}
  \mathcal{C}^{j_1}_{\alpha_1}\otimes \mathcal{C}^{j_2}_{\alpha_2} &= 2\int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj\ \mathcal{C}^j_{\alpha_1+\alpha_2} 
-\oplus \bigoplus_\pm \bigoplus_{\substack{j\in \pm\alpha_1\pm\alpha_2+{\mathbb{Z}}\\ j\in]-\frac12, \infty[}} \mathcal{D}^{j,\pm} \ ,
+\oplus \bigoplus_\pm \bigoplus_{\substack{j\in \pm\alpha_1\pm\alpha_2+{\mathbb{Z}}\\ j\in]-\infty,-\frac12[}} \mathcal{D}^{j,\pm} \ ,
 \label{coc}
 \end{align}
 where the factor of $2$ is the tensor product multiplicity that we already encountered in Section \ref{secwikz}.
@@ -5946,12 +5947,12 @@ If $w\neq 0$, then $\hat{\mathcal{C}}^{j,w}_\alpha$ cannot be an affine highest-
 Let us now focus on discrete series representations.
 The representation $\hat{\mathcal{D}}^{j,\pm}$ can be characterized by the existence of a state $|v^{j,\pm}\rangle$ such that 
 \begin{align}
-J^\mp_{n\geq 0}|v^{j,\pm}\rangle = J^0_{n>0}|v^{j,\pm}\rangle =  J^\pm_{n>0}|v^{j,\pm}\rangle = (J^0_0\mp(j+1))|v^{j,\pm}\rangle = 0\ .
+J^\mp_{n\geq 0}|v^{j,\pm}\rangle = J^0_{n>0}|v^{j,\pm}\rangle =  J^\pm_{n>0}|v^{j,\pm}\rangle = (J^0_0\pm j)|v^{j,\pm}\rangle = 0\ .
 \end{align}
 So we can characterize $\rho_w(\hat{\mathcal{D}}^{j,\pm})$ by the action of $\rho_{-w}(J^a_n)$ on $|v^{j,\pm}\rangle$.
-In particular, we notice that $\rho_1(J^a_n)|v^{j,+}\rangle = 0 \ \iff \ J^a_n|v^{-j-2-\frac{k}{2},-}\rangle=0$, which leads to 
+In particular, we notice that $\rho_1(J^a_n)|v^{j,+}\rangle = 0 \ \iff \ J^a_n|v^{\frac{k}{2}-j,-}\rangle=0$, which leads to 
 \begin{align}
- \rho_{-1}(\hat{\mathcal{D}}^{j,+}) = \hat{\mathcal{D}}^{-j-2-\frac{k}{2},-} \ .
+ \rho_{-1}(\hat{\mathcal{D}}^{j,+}) = \hat{\mathcal{D}}^{\frac{k}{2}-j,-} \ .
 \label{rdd}
 \end{align}
 So the spectral flow orbit of $\hat{\mathcal{D}}^{j,+}$ contains another affine highest-weight representations.
