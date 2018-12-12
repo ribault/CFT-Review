@@ -7,6 +7,9 @@
 
 \usepackage[top=20mm,bottom=20mm,left=25mm,right=25mm]{geometry}
 
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
 \usepackage{showkeys}
 
 \usepackage{amsmath,amssymb,amsfonts}
@@ -57,8 +60,7 @@
 \newtheorem{exo}{Exercise}[chapter]
 \newtheorem{hyp}{Axiom}[chapter]
 
-% urlcolor is set to black because unwanted url links appear in the bibliography
-\usepackage[colorlinks=true,linktoc=all,linkcolor=black,citecolor=red,urlcolor=blue]{hyperref}
+\usepackage[colorlinks=true, linktoc=all, linkcolor=black, citecolor=red, urlcolor=blue]{hyperref}
 
 \title{\bfseries Conformal field theory on the plane}
 
@@ -69,25 +71,36 @@
  {\footnotesize \ttfamily sylvain.ribault@ipht.fr }
 }
 
+\date{}
+
 
 \begin{document}
 
 \maketitle
 
+\begin{center}
+\textit{\noindent Habilitation thesis defended on 21 December 2018, in front of a jury composed of
+} \vspace{3mm}
+
+\begin{tabular}{ll} Denis Bernard & \\ Matthias Gaberdiel & (Rapporteur) \\ Jesper Jacobsen & (Rapporteur) \\ Vyacheslav Rychkov & \\ Véronique Terras & \\ Gérard Watts& (Rapporteur) \\ Jean-Bernard Zuber & \end{tabular}
+\end{center}
+
+\vspace{5mm}
 \begin{abstract}
 We provide an introduction to conformal field theory on the plane in the conformal bootstrap approach.
 We introduce the main ideas of the bootstrap approach to quantum field theory, and how they apply to two-dimensional theories with local conformal symmetry.
 We describe the mathematical structures that appear in such theories, from the Virasoro algebra and its representations, to the BPZ equations and their solutions.
 As examples, we study a number of models: Liouville theory, (generalized) minimal models, free bosonic theories, the $H_3^+$ model, and the $SU_2$ and $\widetilde{SL}_2(\mathbb{R})$ WZW models. 
 \end{abstract}
-\vspace{1cm}
+
+%\vspace{1cm}
 \begin{center}
  \textbf{Keywords}
 \end{center}
 \noindent conformal field theory, conformal bootstrap, Virasoro algebra, BPZ equations, Liouville theory, minimal models, free bosons,
 KZ equations, KZ-BPZ relation, $H_3^+$ model, WZW models
 
-\vspace{1cm}
+%\vspace{1cm}
 \begin{center}
 \textbf{Public domain notice}
 \end{center}
@@ -275,6 +288,9 @@ I am grateful to my colleagues at IPhT Saclay, and in particular to Antoine Duva
 I wish to thank Philippe Di Francesco, Sheer El-Showk, Matthias Gaberdiel, Christoph Keller, Miguel Paulos, R\'emi Rhodes, Slava Rychkov, Vincent Vargas, and G\'erard Watts, for useful discussions and correspondence.
 
 I am grateful to Connor Behan, Fran\c{c}ois David, Quang-Dien Duong, Bruno Le Floch, Omar Foda, Santiago Migliaccio, Raoul Santachiara, and Vincent Vargas, for helpful comments on this text.
+
+I wish to thank Matthias Gaberdiel, Jesper Jacobsen and G\'erard Watts for acting as referees of this habilitation thesis, and for providing feedback on this text.
+
 
 \chapter{Introduction \label{secintr}}
 
