@@ -193,12 +193,11 @@ The spectrum, i.e. the space of states, must be a representation of the Virasoro
  The spectrum is a direct sum of irreducible representations. In the spectrum, $L_0$ is diagonalizable, and the real part of its eigenvalues is bounded from below.
 \end{hyp}
 Why this special role for $L_0$? Because we want to interpret it as the energy operator. 
-We however do not assume that $L_0$ eigenvalues are real or that the spectrum is a Hilbert space: this would restrict the central charge to be real. The $L_0$ eigenvalue of an $L_0$ eigenvector is called its conformal dimension.
-
-Let us consider an irreducible representation that is allowed by our axiom. There must be an $L_0$ eigenvector $|v\rangle$ with the smallest eigenvalue $\Delta$. Then $L_n|v\rangle$ is also an $L_0$ eigenvector,
+We however do not assume that $L_0$ eigenvalues are real or that the spectrum is a Hilbert space: this would restrict the central charge to be real. The $L_0$ eigenvalue of an $L_0$ eigenvector is called its conformal dimension. The action of $L_n$ shifts conformal dimensions by $-n$:
 \begin{align}
- L_0 L_n|v\rangle = L_nL_0|v\rangle + [L_0, L_n] |v\rangle  = (\Delta-n)L_n|v\rangle \ .
+ L_0|v\rangle = \Delta|v\rangle \quad \Rightarrow\quad  L_0 L_n|v\rangle = L_nL_0|v\rangle + [L_0, L_n] |v\rangle  = (\Delta-n)L_n|v\rangle \ .
 \end{align}
+Let us consider an irreducible representation that is allowed by our axiom. In this representation, all $L_0$ eigenvalues differ by integers, and there is an eigenvector $|v\rangle$ with the smallest eigenvalue $\Delta$. 
 If $n>0$ we must have $L_n|v\rangle =0$, and $|v\rangle $ is called a primary state.
 
 \begin{defn}[Primary and descendent states, level, Verma module]
