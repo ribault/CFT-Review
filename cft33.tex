@@ -10,7 +10,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 
-%\usepackage{showkeys}
+\usepackage{showkeys}
 
 \usepackage{amsmath,amssymb,amsfonts}
 
@@ -162,7 +162,7 @@ Even later will come free bosonic theories, which do not play any fundamental ro
 
 \section{Plan of the text \label{secplan}}
 
-We will do a systematic exposition of the ideas and techniques of the conformal bootstrap approach in Chapters \ref{secintr} and \ref{secccs}, before studying particular models in Chapters \ref{seccbm} and \ref{secaff}.
+We will give a systematic exposition of the ideas and techniques of the conformal bootstrap approach in Chapters \ref{secintr} and \ref{secccs}, before studying particular models in Chapters \ref{seccbm} and \ref{secaff}.
 
 In Chapter \ref{secintr}, we introduce the bootstrap approach to quantum field theory, before focusing on the particular case of conformal field theories with their Virasoro symmetry algebra.
 We then give a preview of some of the simplest models.
@@ -177,7 +177,7 @@ We pay particular attention to the three-point structure constants, whose explic
 In Chapter \ref{secaff}, we introduce extended symmetry algebras, starting with the affine $\hat{\mathfrak{u}}_1$ algebra.
 This not only allows us to study free bosonic theories, but also provides alternative perspectives on Liouville theory.
 We then consider nonabelian affine symmetry algebras, and in particular $\widehat{\mathfrak{sl}}_2$.
-We deduce the definition and solution of the $H_3^+$ model from the KZ-BPZ relation between differential equations satisfied by $\widehat{\mathfrak{sl}}_2$-symmetric and Virasoro-symmetric correlation functions.
+The KZ-BPZ relation between differential equations satisfied by $\widehat{\mathfrak{sl}}_2$-symmetric and Virasoro-symmetric correlation functions leads us to define the $H_3^+$ model from Liouville theory, and allows us to solve it.
 We then consider WZW models, and in particular the $SU_2$ and $\widetilde{SL}_2(\mathbb{R})$ WZW models. 
 
 In each Chapter, the last Section is devoted to exercises.
@@ -481,7 +481,7 @@ The distinction between space-time and internal symmetries may depend on the cho
 
 \subsection{Consistency conditions \label{seccc}}
 
-The consistency conditions on the correlation functions $\left\langle\prod_{i=1}^n V_{\sigma_i}(x_i)\right\rangle$ are derived from axioms on the fields $V_{\sigma_i}(x_i)$:
+The consistency conditions on the correlation functions $\left\langle\prod_{i=1}^n V_{\sigma_i}(x_i)\right\rangle$ are derived from axioms on the fields $V_{\sigma_i}(x_i)$. These axioms should be understood as pertaining to correlation functions: we write fields outside correlation functions as a matter of notational convenience only. (In particular, we do not define fields as operators acting on the spectrum, as is done in formalisms such as vertex operator algebras.) 
 
 \begin{hyp}[\textbf{Commutativity}\index{commutativity} or locality]
 \label{ax:col}
@@ -554,21 +554,8 @@ The OPE coefficients can be determined by solving the associativity condition \e
 These conditions are fulfilled in certain conformal field theories.
 In particular, as we will see in Chapter \ref{secccs}, conformal symmetry is enough for determining the $x$-dependence of OPE coefficients. 
 
-For the moment, let us show how symmetry constraints can simplify the associativity condition.
-We recall that a state $\sigma\in \mathcal{S}$ can be written as $\sigma=(\mathcal{R},v)$ as in eq. \eqref{arv}, where $\mathcal{R}$ is an indecomposable representation of the symmetry algebra and $v\in \mathcal{R}$.
-Symmetry constraints lead to linear equations for the OPE coefficient 
-$C_{\sigma_1,\sigma_2}^{\sigma_3}(x_1,x_2)$.
-Solving these equations allows us to decompose
-OPE coefficients as
-\begin{align}
- C_{\sigma_1,\sigma_2}^{\sigma_3}(x_1,x_2) = \sum_{\lambda=1}^{N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}} C_{\mathcal{R}_1,\mathcal{R}_2}^{\mathcal{R}_3,\lambda}(x_1,x_2) f_{\mathcal{R}_1,\mathcal{R}_2}^{\mathcal{R}_3,\lambda}(v_1,v_2,v_3|x_1,x_2)\ ,
-\label{clcf}
-\end{align}
-where $C_{\mathcal{R}_1,\mathcal{R}_2}^{\mathcal{R}_3,\lambda}(x_1,x_2)$ is a model-dependent structure function, and 
-the universal quantity $f_{\mathcal{R}_1,\mathcal{R}_2}^{\mathcal{R}_3,\lambda}(v_i|x_j)$ is a solution of the symmetry equations, which for given values of $\mathcal{R}_i$ should be understood as equations on the space of functions of $(v_i,x_j)$.
-The index $\lambda$ labels elements of a basis of solutions of the symmetry equations.
-The number $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\in {\mathbb{N}} \cup \{\infty\}$ of independent solutions is the \textbf{\boldmath fusion multiplicity}\index{fusion multiplicity}. 
-In particular, the field $V_{\sigma_3}$ can appear in a $V_{\sigma_1}V_{\sigma_2}$ OPE only if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\neq 0$.
+Let us discuss in more detail how symmetry constrains OPEs. By definition, symmetry transformations act within representations of the symmetry algebras. Given three representations $(\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3)$, let us write states in these representations as $\sigma=(\mathcal{R},v)$ as in eq. \eqref{arv}: symmetry constraints on the OPE coefficients $C_{(\mathcal{R}_1,v_1),(\mathcal{R}_2,v_2)}^{(\mathcal{R}_3,v_3)}(x_1,x_2)$ are linear equations on functions of $(v_1,v_2,v_3,x_1,x_2)$. The number $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\in {\mathbb{N}} \cup \{\infty\}$ of independent solutions of these equations is the \textbf{\boldmath fusion multiplicity}\index{fusion multiplicity}. 
+In particular, the field $V_{\sigma_3}$ can appear in a $V_{\sigma_1}V_{\sigma_2}$ OPE only if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\neq 0$. 
 
 \begin{hyp}[\textbf{\boldmath Fusion product}\index{fusion product} or \textbf{\boldmath fusion rules}\index{fusion rules}]
  ~\label{ax:fp}
@@ -581,12 +568,12 @@ In particular, the field $V_{\sigma_3}$ can appear in a $V_{\sigma_1}V_{\sigma_2
 \noindent
 In some cases, the fusion product has a constructive definition as a kind of generalization of the tensor product \cite{gab99}. However, all we will need is that it exists. The fusion product, in other words the structure of the category of representations, will turn out to play a more important role than the structure of the representations themselves.  
 
-The fusion product $\mathcal{R}_1\times \mathcal{R}_2$ is said to have nontrivial multiplicities if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\geq 2$ for some $\mathcal{R}_3$, and trivial multiplicities if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\in \{0,1\}$, in which case the sum over $\lambda$ in eq. \eqref{clcf} can be omitted.
+The fusion product $\mathcal{R}_1\times \mathcal{R}_2$ is said to have nontrivial multiplicities if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\geq 2$ for some $\mathcal{R}_3$, and trivial multiplicities if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\in \{0,1\}$.
 A field is called a \textbf{\boldmath simple current}\index{simple current} if the corresponding representation $\mathcal{R}$ is such that $\mathcal{R}\times \mathcal{R}'$ is indecomposable for any $\mathcal{R}'$, so that $\sum_{\mathcal{R}''} N_{\mathcal{R}\mathcal{R}'}^{\mathcal{R}''} =1$. 
 The fusion product may seem quite similar to a tensor product, but there is an essential difference: while the tensor product is a purely algebraic notion, the definition of the fusion product involves the state-field correspondence, and therefore the space on which the field theory lives. 
 
-Using the decomposition \eqref{clcf} of the OPE coefficients, where we assume that $f_{\mathcal{R}_1,\mathcal{R}_2}^{\mathcal{R}_3,\lambda}(v_i|x_j)$ is known, the 
-associativity equation \eqref{cccc} reduces to an equation for the structure function $C_{\mathcal{R}_1,\mathcal{R}_2}^{\mathcal{R}_3,\lambda}(x_1,x_2)$, and the sums over states $\sigma_s$ and $\sigma_t$ reduce to sums over representations $\mathcal{R}_s$ and $\mathcal{R}_t$.
+If all fusion multiplicities are trivial, then the OPE coefficients  $C_{(\mathcal{R}_1,v_1),(\mathcal{R}_2,v_2)}^{(\mathcal{R}_3,v_3)}(x_1,x_2)$ are determined by symmetry up to overall factors that depend on the representations $\mathcal{R}_i$, but not on $v_i,x_j$. In the 
+associativity equation \eqref{cccc}, the sums over the states $\sigma_s,\sigma_t$  can then be reduced to sums over the corresponding representations $\mathcal{R}_s,\mathcal{R}_t$, since everything that involves $v_s,v_t$ is determined by symmetry. 
 If the symmetry algebra is large enough or the model simple enough, the number of representations in the spectrum can be small enough for the associativity equation to become tractable.
 To summarize,
 \begin{center}
@@ -865,6 +852,7 @@ Two important special cases are
 \item \textbf{\boldmath rational models}\index{rational model}, where the spectrum involves finitely many irreducible representations,
  \item \textbf{\boldmath diagonal models}\index{diagonal model}, where the spectrum is of the type $\mathcal{S}=\bigoplus_{\mathcal{R}\in \text{Rep}(\mathfrak{V})} m_\mathcal{R} \mathcal{R}\otimes \bar{\mathcal{R}}$, i.e. $m_{\mathcal{R},\mathcal{R}'}\neq 0 \implies \mathcal{R}=\mathcal{R}'$ in eq. \eqref{sorr}.
 \end{itemize}
+Let us now introduce an axiom about fusion of Virasoro representations. While the symmetry algebra is $\mathfrak{V}\times \overline{\mathfrak{V}}$, we define the fusion of representations of $\mathfrak{V}$ alone, thanks to the factorization of symmetry constraints on OPEs. 
 
 \begin{hyp}[Closure under fusion]
 ~\label{ax:cuf}
@@ -935,7 +923,7 @@ This is because the algebra of conformal transformations is infinite-dimensional
 so that the spectrum can be decomposed into a small number of large representations.
 Moreover, the factorization of the symmetry algebra into two copies of the Virasoro algebra, and the decomposition of the spectrum into factorizable representations,
 imply that symmetry equations factorize into $z$-dependent equations from the left-moving Virasoro algebra, and $\bar{z}$-dependent equations from the right-moving Virasoro algebra.
-It follows that all universal quantities, for example $f_{\mathcal{R}_1,\mathcal{R}_2}^{\mathcal{R}_3,\lambda}(v_i|x_j)$ from \eqref{clcf}, can be factorized into $z$-dependent and $\bar{z}$-dependent functions. 
+It follows that all universal quantities can be factorized into $z$-dependent and $\bar{z}$-dependent functions. 
 This is called \textbf{\boldmath holomorphic factorization}\index{holomorphic factorization}, where the term ``holomorphic''
 should be understood as \textbf{\boldmath locally holomorphic}\index{locally holomorphic}: the $z$-dependent factors are supposed to be $\bar{z}$-independent, but they can have singularities such as poles and branch cuts, like the function $\sqrt{z}$.
 We will see in more detail in Section \ref{secaco} how holomorphic factorization simplifies the condition \eqref{cccc} of OPE associativity.
