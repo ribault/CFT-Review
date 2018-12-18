@@ -596,7 +596,7 @@ suggesting, and sometimes proving, the existence of conformal field theories.
 
 In the Lagrangian method, correlation functions are represented as functional integrals
 \begin{align}
- \left\langle\prod_{i=1}^n V_{\sigma_i}(x_i)\right\rangle = \int D\phi\ e^{\int dx L[\phi](x)} \ \prod_{i=1}^n \tilde{V}_{\sigma_i}[\phi](x_i)\ ,
+ \left\langle\prod_{i=1}^n V_{\sigma_i}(x_i)\right\rangle = \int D\phi\ e^{-\int dx L[\phi](x)} \ \prod_{i=1}^n \tilde{V}_{\sigma_i}[\phi](x_i)\ ,
 \end{align}
 where  
 \begin{itemize}
@@ -616,7 +616,7 @@ Axioms requiring functional integrals to behave as ordinary integrals often leav
 it can happen that a transformation leaves the Lagrangian invariant, but changes the integration measure.
 This transformation is then called anomalous, and is not a symmetry of the model.
 
-Such an anomaly can also be described as a symmetry of the classical theory, that is not present in the corresponding quantum theory.
+Such an anomaly can also be described as a symmetry of the classical theory that is not present in the corresponding quantum theory.
 This is because the Lagrangian method can be interpreted as the quantization of the classical theory that is defined by the Lagrangian.
 The classical theory consists in the dynamics of the fundamental field, subject to the equations of motion associated with the Lagrangian, 
 \begin{align}
@@ -773,8 +773,8 @@ Its generators are $(L_n)_{n\in {\mathbb{Z}}}$, and its commutation relations ar
  \boxed{[L_n,L_m]=(n-m)L_{n+m} + \frac{c}{12} (n-1)n(n+1) \delta_{n+m,0}}\ .
 \label{vir}
 \end{align}
-The parameter $c$ is called the \textbf{\boldmath central charge}\index{central charge}, and the central term $\frac{c}{12} (n-1)n(n+1) \delta_{n+m,0}$ should be understood as the coefficient of an extra generator that commutes with all $L_n$.
-It can be checked that these commutation relations define a Lie algebra, and that the Virasoro algebra is the only central extension of the Witt algebra. (See Exercise \ref{exovir}.) Notice that the presence of the central term does not affect the generators $L_{-1},L_0,L_1$ of global conformal transformations. 
+Here the \textbf{\boldmath central charge}\index{central charge} $c$ is in principle a central generator, i.e. a generator that commutes with all $L_n$. However, this generator will always be proportional to the identity when acting on the spectrum of a given CFT: we then identify it with its eigenvalue, and consider $c$ as a complex number that characterizes the CFT. 
+It can be checked that the Virasoro algebra is the only central extension of the Witt algebra up to trivial redefinitions. (See Exercise \ref{exovir}.) Notice that the presence of the central term does not affect the generators $L_{-1},L_0,L_1$ of global conformal transformations. 
 
 Therefore, the symmetry algebra of conformal field theory is made of two commuting copies of the Virasoro algebra. It has
 \begin{itemize}
@@ -824,7 +824,7 @@ Let us make further assumptions on its structure.
 
 \begin{hyp}[Structure of the spectrum]
  ~\label{ax:sots}
- The spectrum decomposes into irreducible, factorizable representations of $\mathfrak{V}\times \overline{\mathfrak{V}}$, where $L_0+\bar L_0$ is bounded from below.
+ The spectrum decomposes into irreducible, factorizable representations of $\mathfrak{V}\times \overline{\mathfrak{V}}$. When acting on the spectrum, $L_0$ and $\bar L_0$ are diagonalizable, and $L_0+\bar L_0$ is bounded from below.
 \end{hyp} 
 \noindent
 Let us comment on the three parts of this axiom:
@@ -852,7 +852,7 @@ Two important special cases are
 \item \textbf{\boldmath rational models}\index{rational model}, where the spectrum involves finitely many irreducible representations,
  \item \textbf{\boldmath diagonal models}\index{diagonal model}, where the spectrum is of the type $\mathcal{S}=\bigoplus_{\mathcal{R}\in \text{Rep}(\mathfrak{V})} m_\mathcal{R} \mathcal{R}\otimes \bar{\mathcal{R}}$, i.e. $m_{\mathcal{R},\mathcal{R}'}\neq 0 \implies \mathcal{R}=\mathcal{R}'$ in eq. \eqref{sorr}.
 \end{itemize}
-Let us now introduce an axiom about fusion of Virasoro representations. While the symmetry algebra is $\mathfrak{V}\times \overline{\mathfrak{V}}$, we define the fusion of representations of $\mathfrak{V}$ alone, thanks to the factorization of symmetry constraints on OPEs. 
+Let us now introduce an axiom about fusion of Virasoro representations. Factorizability of the symmetry algebra and of the representations indeed implies that symmetry constraints on OPEs factorize as well, which allows us to define fusion multiplicities and fusion products for representations of $\mathfrak{V}$ (rather than $\mathfrak{V}\times \overline{\mathfrak{V}}$). 
 
 \begin{hyp}[Closure under fusion]
 ~\label{ax:cuf}
@@ -865,7 +865,7 @@ There are two similar-looking axioms that should not be adopted:
  \item Closure under fusion of $\mathfrak{V}\times \overline{\mathfrak{V}}$ representations, instead of $\mathfrak{V}$ representations, would rule out most nontrivial models, and in particular diagonal models. 
 \item Closure under tensor product, instead of fusion, would not make sense, as the tensor product of two representations of $\mathfrak{V}_c$ is a representation of $\mathfrak{V}_{2c}$ -- central charges behave additively in a tensor product. 
 \end{itemize}
-Our axiom, although better than these alternatives, nevertheless eliminates some interesting theories, for example the $(E_8,A_{30})$ minimal model \cite{fms97}.
+Our axiom, although better than these alternatives, nevertheless eliminates some interesting theories, for example the $(E_8,A_{30})$ E-series minimal model \cite{fms97}.
 
 Let us further discuss the roles of the operators $L_0$ and $\bar L_0$. Their eigenvalues are called \textbf{\boldmath conformal dimensions}\index{conformal dimension} or conformal weights. If 
 two states $v_1$ and $v_2$ are related by the action of Virasoro generators,
@@ -912,7 +912,7 @@ The above decomposition is universal data of the Virasoro algebra, and
 model-dependent information from the point of view of global conformal symmetry.
 This shows how constraining local conformal symmetry is, and how much more freedom there is in the spectrum of global conformal field theories.
 In particular, in a global conformal field theory, there is no reason for the spectrum to contain series of
-$\mathfrak{sl}_2$ representations, whose lowest $L_0$-eigenvalues differ by integers. 
+$\mathfrak{sl}_2$ representations whose lowest $L_0$-eigenvalues differ by integers. 
 
 
 \subsection{Conformal bootstrap}
@@ -1126,7 +1126,7 @@ To do this, expand the map $f_g$ of eq. \eqref{gisl} near the identity, followin
 
 \begin{exo}[Central term of the Virasoro algebra]
 ~\label{exovir}
- Show that the commutation relations \eqref{vir} of the Virasoro algebra define a Lie algebra, which is the only possible central extension of the Witt algebra.
+ Show that the commutation relations \eqref{vir} of the Virasoro algebra define a Lie algebra, which is the only possible central extension of the Witt algebra up to trivial redefinitions.
 To do this, consider commutation relations of the type
 \begin{align}
  [L_n,L_m] =(n-m)L_{n+m} + f(n,m) C  \quad , \quad [C,L_n]=0\ ,
@@ -1142,7 +1142,8 @@ Observe that the second term can be absorbed by the redefinition $L_n\mapsto L_n
 
 \begin{exo}[Spectrum of $L_0$ in an indecomposable representation]
  ~\label{exodiffint}
-Show that the eigenvalues of $L_0$ in an indecomposable representation $\mathcal{R}$ of the Virasoro algebra differ by integers.
+ Let $\mathcal{R}$ be an indecomposable representation of the Virasoro algebra where $L_0$ is diagonalizable. 
+Show that the eigenvalues of $L_0$ in  $\mathcal{R}$ differ by integers.
 To do this, use the decomposition $\mathcal{R}=\oplus_\Delta \mathcal{R}_\Delta$ where $\mathcal{R}_\Delta$ is the generalized eigenspace associated with the eigenvalue $\Delta$.
 Given any value of $\Delta$, show that  $\oplus_{n\in{\mathbb{Z}}} \mathcal{R}_{\Delta+n}$ is a subrepresentation, and conclude. 
 \end{exo}
@@ -1195,7 +1196,7 @@ Such equations depend on the action of the symmetry algebra on the fields -- in 
 
 \subsubsection{Definition}
 
-According to Axiom \ref{ax:sots}, the spectrum can be decomposed into irreducible Virasoro representations, where $L_0$ is bounded from below. 
+According to Axiom \ref{ax:sots}, the spectrum can be decomposed into irreducible Virasoro representations where $L_0$ is bounded from below. 
 Let us study the structure of a representation $\mathcal{R}$ of this type. 
 Let $|\Delta\rangle$ be an $L_0$-eigenstate for the lowest $L_0$-eigenvalue $\Delta$ in $\mathcal{R}$.
 Since acting with $L_{n>0}$ decreases $L_0$-eigenvalues (see eq. \eqref{ddsn}), $|\Delta\rangle$ must be a \textbf{\boldmath primary state}\index{primary state}, that is
