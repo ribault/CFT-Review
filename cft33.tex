@@ -1309,7 +1309,7 @@ If $\Delta$ is the conformal dimension of the highest-weight state of $\mathcal{
 \begin{align}
 \varphi_\mathcal{R} \varphi_{\mathcal{V}_\Delta}^{-1}\ : \  \mathcal{V}_\Delta\ \rightarrow\ \mathcal{R} \ .
 \end{align}
-Therefore, $\mathcal{R}$ is a coset of $\mathcal{V}_\Delta$ by some subrepresentation $\mathcal{R}'$,
+Therefore, $\mathcal{R}$ is a quotient of $\mathcal{V}_\Delta$ by some subrepresentation $\mathcal{R}'$,
 \begin{align}
  \mathcal{R} = \frac{\mathcal{V}_\Delta}{\mathcal{R}'}\ .
 \label{rvrp}
@@ -1319,8 +1319,8 @@ Now, in any nontrivial subrepresentation of a highest-weight representation, the
 This primary state $|\chi\rangle$ is also a descendent -- it is then called a \textbf{\boldmath singular vector}\index{singular vector} or \textbf{\boldmath null vector}\index{null vector} of the highest-weight representation.
 While a highest-weight representation is by construction always indecomposable, it is irreducible if and only if it has no singular vectors.
 
-Coming back to our Verma module $\mathcal{V}_\Delta$, and assuming that it has a singular vector $|\chi\rangle$, we can define the degenerate representation $\mathcal{R} = \frac{\mathcal{V}_\Delta}{U(\mathfrak{V}^+)|\chi\rangle}$, which is a coset of two Verma modules.
-If a Verma module has several singular vectors, then it also has several corresponding subrepresentations, and therefore a number of possible cosets, depending on which subrepresentation is chosen as the denominator representation $\mathcal{R}'$ in eq. \eqref{rvrp}.
+Coming back to our Verma module $\mathcal{V}_\Delta$, and assuming that it has a singular vector $|\chi\rangle$, we can define the degenerate representation $\mathcal{R} = \frac{\mathcal{V}_\Delta}{U(\mathfrak{V}^+)|\chi\rangle}$, which is a quotient of two Verma modules.
+If a Verma module has several singular vectors, then it also has several corresponding subrepresentations, and therefore a number of possible quotients, depending on which subrepresentation is chosen as the denominator representation $\mathcal{R}'$ in eq. \eqref{rvrp}.
 
 \subsubsection{Looking for singular vectors at low levels}
 
@@ -1371,10 +1371,10 @@ Singular vectors at the level $N=3$ exist if and only if
  D_3(\Delta) = 0 \quad \iff \quad \Delta = \frac{7-c\pm\sqrt{(c-25)(c-1)}}{6}\ .
 \end{align}
 
-\subsubsection{Liouville notations}
+\subsubsection{Alternative notations for $c$ and $\Delta$}
 
-Let us simplify these formulas by introducing Liouville notations for $c$ and $\Delta$.
-We introduce two new notations for the central charge $c$: the \textbf{\boldmath Liouville background charge}\index{background charge!Liouville---} $Q$ and the \textbf{\boldmath Liouville coupling constant}\index{Liouville coupling constant} $b$,
+Let us simplify these formulas by introducing alternative notations for $c$ and $\Delta$.
+We introduce two new notations for the central charge $c$: the \textbf{\boldmath background charge}\index{background charge} $Q$ and the \textbf{\boldmath coupling constant}\index{coupling constant} $b$,
 \begin{align}
 \boxed{ c= 1+6Q^2 }\quad , \quad \boxed{Q = b+\frac{1}{b}}\ ,
 \label{cqb}
@@ -1383,19 +1383,19 @@ or equivalently
 \begin{align}
  b = \sqrt{\frac{c-1}{24}} + \sqrt{\frac{c-25}{24}}\ .
 \end{align}
-The correspondences between the values of $c,Q$ and $b$ are 
+Let us indicate the correspondences between certain values of $c,Q$ and $b$. We pay particular attention to the values $c=1$ and $c=25$, which are the critical points of the map $c(b)$, and play an important role in the properties of Virasoro representations:
 \begin{align}
 \renewcommand{\arraystretch}{1.7}
- \begin{array}{|l|c||c|c|c|c|c|c|}
+ \begin{array}{|l|c||c|c|c|c|c|c|c|}
   \hline
-  \text{central\ charge} & c & \leq 1 & 1-6\frac{(p-q)^2}{pq} & 1 & [1,25] & 25 & \geq 25 
+  \text{central\ charge} & c & \mathbb{C} & \leq 1 & 1-6\frac{(p-q)^2}{pq} & 1 & [1,25] & 25 & \geq 25 
 \\
 \hline
-\text{background\ charge} & Q & i{\mathbb{R}} & i\frac{p-q}{\sqrt{pq}} & 0 & [0,2] & 2 & \geq 2 
+\text{background\ charge} & Q & \mathbb{C} & i{\mathbb{R}} & i\frac{p-q}{\sqrt{pq}} & 0 & [0,2] & 2 & \geq 2 
 \\
 \hline
 \text{coupling\ constant} &
-b& i{\mathbb{R}} & i\sqrt{\frac{p}{q}} & i & e^{i\mathbb{R}} & 1 & {\mathbb{R}}
+b& \mathbb{C}^* & i{\mathbb{R}} & i\sqrt{\frac{p}{q}} & i & e^{i\mathbb{R}} & 1 & {\mathbb{R}}
 \\
 \hline
  \end{array}
@@ -1403,7 +1403,7 @@ b& i{\mathbb{R}} & i\sqrt{\frac{p}{q}} & i & e^{i\mathbb{R}} & 1 & {\mathbb{R}}
 \end{align}
 where for each generic value of $c$ we choose among two corresponding values $\pm Q$ for $Q$ and four corresponding values $\pm b^{\pm 1}$ for $b$.
 The conformal dimension $\Delta$ can be written in terms of a 
-new parameter $P$ called the \textbf{\boldmath Liouville momentum}\index{momentum!Liouville---}, such that 
+new parameter $P$ called the \textbf{\boldmath momentum}\index{momentum}, such that 
 \begin{align}
  \boxed{\Delta(P) = \frac{Q^2}{4} - P^2}\ ,
 \label{daq}
@@ -1464,7 +1464,7 @@ This corresponds to the momemtums $\pm P_{\langle r,s \rangle}$, where
 (For a simple derivation using fusion rules, see Section \ref{secfr}.)
 Conversely, any singular vector that is not itself a descendent of another singular vector is of the type $|\chi_{\langle r,s \rangle}\rangle$.
 However, singular vectors that are descendents of other singular vectors are not necessarily of this type. (See 
-Exercise \ref{exosv}.) We define the \textbf{\boldmath maximally degenerate representation}\index{degenerate representation!maximally---} $\mathcal{R}_{\langle r,s \rangle}$ as the coset of $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$ by the subrepresentation generated by all the singular vectors. 
+Exercise \ref{exosv}.) We define the \textbf{\boldmath maximally degenerate representation}\index{degenerate representation!maximally---} $\mathcal{R}_{\langle r,s \rangle}$ as the quotient of $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$ by the subrepresentation generated by all the singular vectors. 
 Then $\mathcal{R}_{\langle r,s \rangle}$ is irreducible.
 For generic values of $c$, $|\chi_{\langle r,s \rangle}\rangle$ is the only singular vector of $\mathcal{V}_{\Delta_{\langle r,s \rangle}}$, and 
 \begin{align}
@@ -1502,7 +1502,7 @@ In order to determine its sign, we should study its zeros. These zeros are deter
  \end{minipage}
 \end{center}
 (See Exercise \ref{exodmn}.) 
-Knowing the zeros $\Delta_{\langle r,s \rangle}$ of $\det M^{(N)}$ as a function of $\Delta$ eq. \eqref{drs}, we obtain the \textbf{\boldmath Kac formula}\index{Kac formula} 
+Knowing the zeros $\Delta_{\langle r,s \rangle}$ of $\det M^{(N)}$ as a function of $\Delta$ eq. \eqref{drs}, we obtain the \textbf{\boldmath Kac determinant}\index{Kac determinant} formula
 \begin{align}
  \boxed{\det M^{(N)} \propto \prod_{\begin{smallmatrix} r,s\geq 1 \\ rs \leq N \end{smallmatrix}} (\Delta-\Delta_{\langle r,s \rangle})^{p(N-rs)}} \ ,
 \end{align}
@@ -1532,22 +1532,22 @@ For $\mathcal{R}$ to be unitary, the subrepresentation $\mathcal{R}'$ must inclu
 
 If $c > 1$, the only degenererate representation with a positive conformal dimension is $\mathcal{R}_{\langle 1,1 \rangle}$, and actually $\Delta_{\langle 1,1 \rangle}=0$. This representation is unitary, because all the zero-norm states in $\mathcal{V}_0 = \underset{\Delta \to 0^+}{\lim} \mathcal{V}_\Delta$ are descendents of the level one singular vector. If $c=1$, all degenerate representations have positive conformal dimensions, and again they are unitary.
 
-If now $c<1$, it turns out that in order to have a unitary coset, a Verma module must have not only one but actually two independent singular vectors \cite{fms97}. 
+If now $c<1$, it turns out that in order to have a unitary quotient, a Verma module must have not only one but actually two independent singular vectors \cite{fms97}. 
 Since the existence of a singular vector in $\mathcal{V}_\Delta$ implies a relation between $\Delta$ and the central charge $c$, the existence of two singular vectors implies a constraint on $c$. 
 As we will see in Section \ref{secamm}, the resulting values of $c$ correspond to the minimal models, whose central charges are given in eq. \eqref{cpq}. 
-However, the existence of two singular vectors is a necessary, but not yet a sufficient condition for a Verma module to have a unitary coset.
-The final result is that for $c<1$ unitary cosets exist only if the central charge $c$ takes values that correspond to the unitary minimal models,
+However, the existence of two singular vectors is a necessary, but not yet a sufficient condition for a Verma module to have a unitary quotient.
+The final result is that for $c<1$ unitary quotients exist only if the central charge $c$ takes values that correspond to the unitary minimal models,
 \begin{align}
  c_{p,p+1} = 1-\frac{6}{p(p+1)}  \quad \text{with} \quad 2\leq p\ ,
 \label{cpp}
 \end{align}
 For these values of $c$,
-the conformal dimensions of Verma modules that have unitary cosets are $\Delta=\Delta_{\langle r,s \rangle}=\Delta_{\langle p-r, p+1-s \rangle}$ where
+the conformal dimensions of Verma modules that have unitary quotients are $\Delta=\Delta_{\langle r,s \rangle}=\Delta_{\langle p-r, p+1-s \rangle}$ where
 \begin{align}
    1\leq s\leq r\leq p-1 \ .
 \label{srp}
 \end{align}
-These unitary cosets are the maximally degenerate representations $\mathcal{R}_{\langle r,s \rangle}$, which take the form
+These unitary quotients are the maximally degenerate representations $\mathcal{R}_{\langle r,s \rangle}$, which take the form
 \begin{align}
  \mathcal{R}_{\langle r,s \rangle} = \frac{\mathcal{V}_{\Delta_{\langle r,s \rangle}}}{U(\mathfrak{V}^+)|\chi_{\langle r,s \rangle}\rangle + U(\mathfrak{V}^+)|\chi_{\langle p-r,p+1-s \rangle}\rangle}\ ,
 \label{rrs}
@@ -1637,7 +1637,7 @@ This shows that the Virasoro generators at different points $(L_n^{(z_1)})_{n\in
  \boxed{T(y) = \sum_{n\in{\mathbb{Z}}} \frac{L_n^{(z)}}{(y-z)^{n+2}}}\ .
 \label{tsl}
 \end{align}
-(The series should converge if $y$ is close enough to $z$.) Calling $T(y)$ a tensor is an abuse of terminology: strictly speaking, the energy-momentum tensor is
+(The series should converge if $y$ is close enough to $z$.) Calling $T(y)$ the energy-momentum tensor is a stretch of terminology which is specific to two-dimensional CFT: when specialized to a two-dimensional space with complex coordinates, the general definition of the energy-momentum tensor actually yields the matrix 
 $\left(\begin{smallmatrix} T_{yy} = T(y) & T_{y\bar y} \\ T_{\bar y y} & T_{\bar y \bar y} = \bar T(y) \end{smallmatrix}\right)$, where in particular $\bar T(y)= \sum_{n\in{\mathbb{Z}}} \frac{\bar L_n^{(z)}}{(\bar y-\bar z)^{n+2}}$. 
 % (We refrain from using the notation $\bar T(\bar y)$ for a locally antiholomorphic field and reserving $T(y)$ for a locally holomorphic field, while fields that are neither holomorphic nor antiholomorphic would have to be written as $V_\sigma(z,\bar z)$.)
 
@@ -1875,7 +1875,8 @@ $
 Viewing the derivatives $\frac{\partial}{\partial z_i}\left\langle \prod_{i=1}^N V_{\Delta_i}(z_i) \right\rangle$ as $N$ unknowns, the properties of the system depend a lot on whether $N<3, N=3$ or $N>3$:
 \begin{itemize}
  \item $\boxed{N=0}$\ : The global Ward identities are trivial ($0=0$).
-The zero-point function, which may be called the sphere partition function, is actually a number rather than a function, and carries no useful information.
+The zero-point function, which may be called the sphere partition function, is actually a number rather than a function, and carries no information beyond the value of the central charge \cite{car01}.
+% NB: Citing Cardy's review on percolation, rather than the ancient, paywalled article by Cardy and Peschel.
 
 \item $\boxed{N=1}$\ :  The global Ward identities amount to $\frac{\partial}{\partial z_1}\left\langle V_{\Delta_1}(z_1)\right\rangle  =\Delta_1 \left\langle V_{\Delta_1}(z_1)\right\rangle =0$.
 This implies $\left\langle V_{\Delta_1,\bar\Delta_1}(z_1)\right\rangle$ is constant, and that this constant vanishes unless $\Delta_1=\bar\Delta_1=0$.
@@ -1904,7 +1905,8 @@ where the proportionality factor is an arbitrary antiholomorphic function. We de
  \boxed{ \Big\langle V_{\Delta_1,\bar{\Delta}_1}(z_1) V_{\Delta_2,\bar{\Delta}_2}(z_2)\Big\rangle = \delta_{\Delta_1,\Delta_2}\delta_{\bar{\Delta}_1,\bar{\Delta}_2} z_{12}^{-2\Delta_1}\bar z_{12}^{-2\bar \Delta_1} }\ .
  \label{eq:2pt}
 \end{align}
-Here the symbol $\delta_{\Delta_1,\Delta_2}$ is a Kronecker delta or a Dirac delta function, depending on whether the conformal dimensions take discrete or continuous values, and we have set the overall $z_i$-independent prefactor to one by a field renormalization.
+Here the symbol $\delta_{\Delta_1,\Delta_2}$ is a Kronecker delta or a Dirac delta function, depending on whether the conformal dimensions take discrete or continuous values. We have assumed that the fields have no multiplicities (i.e. two different primary fields cannot have the same dimensions), 
+and we have set the overall $z_i$-independent prefactor to one by a field renormalization.
 
 \item $\boxed{N=3}$\ : The three global Ward identities determine the dependence of three-point functions on the three coordinates $z_i$, without constraining the conformal dimensions $\Delta_i$. Using $\epsilon(z)= (z-z_2)(z-z_3)$ in eq. \eqref{oiz}, we indeed obtain
 \begin{align}
@@ -2328,7 +2330,7 @@ where by convention $\Delta_{\langle m_0,-n_0\rangle} = \Delta_s$, and we introd
 \prod_{r\overset{2}{=}1-m}^{m-1} \prod_{s\overset{2}{=}1-n}^{n-1} \prod_\pm (P_2\pm P_1 + P_{\langle r,s\rangle}) (P_3\pm P_4 +P_{\langle r,s\rangle})\ .
 \end{align}
 (We introduced the notation $\overset{2}{=}$ for indices that run by increments of $2$.
-Moreover, $P$ is the Liouville momentum, and $P_{\langle r,s \rangle}$ \eqref{ars} are its values for degenerate representations.)
+Moreover, $P$ is the momentum, and $P_{\langle r,s \rangle}$ \eqref{ars} are its values for degenerate representations.)
 
 The recursion representation owes its name to the original definition of the function $H_{\Delta_s}(\Delta_i|q)$ \eqref{hdq} by a recursive formula,
 \begin{align}
@@ -2394,7 +2396,7 @@ Using eqs. \eqref{gln} and \eqref{glt} for $g^{L_{-1}^2}$ and $g^{L_{-2}}$, this
 \begin{align}
  2(\Delta_2-\Delta_3)^2 + b^2 (\Delta_2+\Delta_3) - \frac12 - b^2 -\frac38 b^4= 0\ .
 \end{align}
-In terms the momentums $P_2,P_3$ \eqref{daq} that correspond to the conformal dimensions $\Delta_2,\Delta_3$, this equation becomes
+In terms of the momentums $P_2,P_3$ \eqref{daq} that correspond to the conformal dimensions $\Delta_2,\Delta_3$, this equation becomes
 \begin{align}
 \prod_{\pm,\pm} \left(P_2\pm P_3 \pm \frac{b}{2}\right) = 0 \ .
 \end{align}
@@ -2461,10 +2463,10 @@ If $\Delta_2$ and $\Delta_s$ happen to be related as dictated by the fusion rule
 In other words, a conformal block involving a degenerate representation coincides with the conformal block involving the corresponding Verma module.
 The degenerate representation manifests itself in the decompositions of correlation functions, where fusion rules dictate which conformal blocks can contribute.
 
-On the other hand, a conformal block in general has a pole when the $s$-channel momentum takes a degenerate value $\Delta_s=\Delta_{\langle r,s\rangle}$, as is manifest in Zamolodchikov's recursion representation \eqref{hrec}.
+On the other hand, a conformal block in general has a pole when the $s$-channel dimension takes a degenerate value $\Delta_s=\Delta_{\langle r,s\rangle}$, as is manifest in Zamolodchikov's recursion representation \eqref{hrec}.
 This means that a field with this conformal dimension cannot appear in the OPEs of $V_{\Delta_1}V_{\Delta_2}$ and $V_{\Delta_3}V_{\Delta_4}$, unless the residue of the conformal block's pole vanishes. 
 This residue vanishes if the fusion rules allow $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_1}\to \mathcal{V}_{\Delta_2}$ or $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_3}\to \mathcal{V}_{\Delta_4}$.
-In particular, the conformal blocks that appear in (generalized) minimal models can be computed using Zamolodchikov's recursion representation, although they involve degenerate $s$-channel momentums. 
+In particular, the conformal blocks that appear in (generalized) minimal models can be computed using Zamolodchikov's recursion representation, although they involve degenerate $s$-channel dimensions. 
 
 
 \subsection{BPZ differential equations \label{secbpz}}
@@ -2763,7 +2765,7 @@ a null vector in the $p(N)$-dimensional level-$N$ subspace of a Verma module.
 
 \begin{exo}[Singular vectors that are not of the type $|\chi_{\langle r,s \rangle}\rangle$]
  ~\label{exosv}
-Let us consider the Virasoro algebra with the Liouville coupling constant $b^2=-\frac{q}{p}$ where $p,q$ are strictly positive, coprime integers.
+Let us consider the Virasoro algebra with the coupling constant $b^2=-\frac{q}{p}$ where $p,q$ are strictly positive, coprime integers.
 \begin{enumerate}
  \item 
 Prove the identities 
@@ -2791,7 +2793,7 @@ Show that the character of a Verma module is
 \begin{align}
  \operatorname{ch}_{\mathcal{V}_P}(y) = \frac{y^{-P^2}}{\eta(y)}\ ,
 \end{align}
-where $\eta(y) = y^{\frac{1}{24}}\prod_{n=1}^\infty(1-y^n)$ is the Dedekind eta function, and $P$ is the Liouville momentum. 
+where $\eta(y) = y^{\frac{1}{24}}\prod_{n=1}^\infty(1-y^n)$ is the Dedekind eta function, and $P$ is the momentum. 
 \item
 Deduce that for generic values of the central charge, the character of a maximally degenerate representation is 
 \begin{align}
@@ -2817,7 +2819,7 @@ Let us assume $b^2=-\frac{q}{p}$ where $p,q$ are strictly positive integers, and
  \end{itemize}
 (To construct the nontrivial subrepresentation, consider the space of states that are orthogonal to all states in the Verma module.)
 
-These equivalences hold in Verma modules of the Virasoro algebra, but not necessarily of larger symmetry algebras. In general, $\det M^{(N)}$ can vanish not only due to singular vectors, but also to subsingular vectors: states that become singular vectors only in cosets of the Verma module \cite{dv95}. Subsingular vectors can exist when a zero-mode generator of the symmetry algebra has a non-diagonalizable action in a Verma module \cite{rad13}.
+These equivalences hold in Verma modules of the Virasoro algebra, but not necessarily of larger symmetry algebras. In general, $\det M^{(N)}$ can vanish not only due to singular vectors, but also to subsingular vectors: states that become singular vectors only in quotients of the Verma module \cite{dv95}. Subsingular vectors can exist when a zero-mode generator of the symmetry algebra has a non-diagonalizable action in a Verma module \cite{rad13}.
 \end{exo}
 
 
@@ -3024,7 +3026,7 @@ We want to define \textbf{Liouville theory}\index{Liouville theory} as the simpl
 \begin{enumerate}
  \item that Liouville theory is a family of conformal field theories, parametrized by the central charge $c\in\mathbb{C}$;
 \item that each theory has a continuous spectrum, where representations of the symmetry algebra $\mathfrak{V}\times\overline{\mathfrak{V}}$ have multiplicities zero or one;
-\item and that correlation functions are meromorphic functions of the Liouville coupling constant and of the fields' momentums.
+\item and that correlation functions are meromorphic functions of the coupling constant and of the fields' momentums.
 \end{enumerate}
 Let us first show that these assumptions determine the spectrum of Liouville theory.
 
@@ -3117,13 +3119,13 @@ Although degenerate representations do not appear in the spectrum of Liouville t
 
 \begin{hyp}[Existence of degenerate fields]
  ~\label{ax:edf}
-There exist diagonal degenerate fields $V_{\langle r,s \rangle}$ for $r,s\in\mathbb{N}^*$.
+There exist diagonal degenerate fields $V_{\langle r,s \rangle}$ for $r,s\in\mathbb{N}^*$, and correlation functions thereof.
 \end{hyp}
 \noindent
 Equivalently, we could assume that the two degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ exist, and construct the remaining degenerate fields by repeatedly performing OPEs of these two degenerate fields.
 
-Strictly speaking, degenerate fields are not covered by our axioms, such as Axiom \ref{ax:ope} on the existence of an OPE.
-Let us work out the natural extension of this axiom to degenerate fields, and in particular determine which fields appear in the OPE $V_{\langle r,s \rangle} V_P$. First and foremost, these fields must obey by the fusion rules
+Axiom \ref{ax:edf} means that there exists correlation functions that involve degenerate fields, and that obey our axioms on fields and correlation functions. However, Axiom \ref{ax:ope} on the existence of an OPE involves a sum over the whole spectrum, which would be inconsistent with the degenerate fields' fusion rules. 
+Let us work out the natural extension of that axiom to degenerate fields, and in particular determine which fields appear in the OPE $V_{\langle r,s \rangle} V_P$. First and foremost, these fields must obey the fusion rules
 \eqref{rtv}. The fusion rules apply independently to left- and right-moving representations, and  a priori they allow non-diagonal fields, for example a field with left momentum $P-\frac{b}{2}$ and right momentum $P+\frac{b}{2}$ could appear in the OPE $V_{\langle 2,1\rangle} V_P$. However, for generic value of $P$, such non-diagonal fields have spins that are not half-integer, and therefore violate the single-valuedness condition on spins eq. \eqref{dbdz}.
 Therefore, our OPE must involve only diagonal fields, and must be of the type
 \begin{align}
@@ -3400,7 +3402,7 @@ An alternative formula for $\Upsilon_b(x)$, which makes the zeros manifest, is
 \begin{align}
  \Upsilon_b(x) = \lambda_b^{(\frac{Q}{2}-x)^2}\prod_{m,n=0}^\infty f\left(\frac{\frac{Q}{2}-x}{\frac{Q}{2}+mb+nb^{-1}}\right) \quad \text{with} \quad f(x)=(1-x^2)e^{x^2}\ ,
 \end{align}
-where $\lambda_b$ is an unimportant $b$-dependent constant.
+where $\lambda_b$ is an irrelevant $b$-dependent constant. (The dependence of structure constants on $\lambda_b$ can be absorbed into a field renormalization.)
 This product formula is valid for all values of $x$, but it does not converge very fast.
 
 \subsubsection{Expression of the three-point structure constant}
@@ -3600,7 +3602,7 @@ But these alternative solutions are excluded by the assumption that correlation 
 This uniqueness statement relies on the assumption that degenerate fields exist. We can drop this assumption and have a stronger uniqueness statement, if we remember that structure constants of diagonal theories are uniquely determined by crossing symmetry, as we deduced from eq. \eqref{ffm}. It would be interesting to probe the limits of uniqueness, i.e. to understand whether uniqueness survives when we weaken the assumptions on the spectrum and analyticity of correlation functions. We will now mention two cases in which uniqueness is known to break down:
 \begin{itemize}
  \item We can relax the assumption that fields have multiplicities zero or one, and allow finite multiplicities. A simple theory where all fields have the same multiplicity $N\in\mathbb{N}^*$ can be built by taking $N$ non-interacting copies of Liouville theory.
- \item We can relax the assumption that correlation functions are meromorphic functions of the Liouville coupling constant and of the fields' momentums. Then we find that for $b^2\in \mathbb{Q}_{<0}$, there exists a solution of crossing symmetry that differs from the Liouville three-point structure constant by a non-analytic factor with values in $\{0,1\}$ \cite{rs15}.
+ \item We can relax the assumption that correlation functions are meromorphic functions of the coupling constant and of the fields' momentums. Then we find that for $b^2\in \mathbb{Q}_{<0}$, there exists a solution of crossing symmetry that differs from the Liouville three-point structure constant by a non-analytic factor with values in $\{0,1\}$ \cite{rs15}.
  % Shows that \eqref{ffm} does not hold in such cases. But for c=1 the fusing relation is not particularly pathological, see Iorgov-Lisovyy-Tykhyy.
 \end{itemize}
 
@@ -3801,7 +3803,7 @@ This involves the model-dependent three-point structure constant $C_{\langle r_1
 
 \subsubsection{Relation with Liouville theory}
 
-The three-point structure constants of generalized minimal models and of Liouville theory obey the same shift equations, and must therefore be related. Building on this observation, we would like to deduce our three-point structure constant from Liouville theory, by sending Liouville momentums to degenerate values. 
+The three-point structure constants of generalized minimal models and of Liouville theory obey the same shift equations, and must therefore be related. Building on this observation, we would like to deduce our three-point structure constant from Liouville theory, by sending momentums to degenerate values. 
 
 This is not straightforward, because our shift equations do not relate all degenerate fields to one another. According to the degenerate fusion rule \eqref{rtod}, the shift equation that comes from a four-point function of the type $\left< V_{\langle 2,1\rangle}V_{\langle r,s\rangle}\cdots \right>$ actually relates the degenerate fields $V_{\langle r-1,s\rangle}$ and $V_{\langle r+1,s\rangle}$, and therefore determines how the three-point structure constant $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ changes when the indices $r_i$ are shifted by two units.
 Similarly, the dual shift equation controls the shifts of $s_i$ by two units. This is not enough for reaching all the values $r_i,s_i\in \mathbb{N}^*$.
@@ -4369,7 +4371,7 @@ Using such a $\hat{\mathfrak{u}}_1$ current, it is possible to build a family of
  \boxed{T(z) = -(JJ)(z) - Q\partial J(z)}\ ,
 \label{tqz}
 \end{align}
-where the parameter $Q$ is called the \textbf{\boldmath $\hat{\mathfrak{u}}_1$ background charge}\index{background charge!u1@$\hat{\mathfrak{u}}_1$---}. 
+where the parameter $Q$ will shortly be found to coincide with the background charge. 
 Here $(JJ)(z)$ is an instance of the \textbf{\boldmath normal-ordered product}\index{normal-ordered product}, 
 \begin{align}
  (AB)(z) = \frac{1}{2\pi i} \oint_z \frac{dy}{y-z} A(y)B(z)\ .
@@ -4439,7 +4441,7 @@ and the $TJ$ OPE \eqref{tqj} is equivalent to
 \end{align}
 
 Let us now discuss how $\hat{\mathfrak{u}}_1$ generators can behave under Hermitian conjugation.
-It turns out that a conjugation of $\hat{\mathfrak{u}}_1$ that is compatible with the conjugation \eqref{ldn} of Virasoro algebra  can exist only if $Q^2\in\mathbb{R}$ (see Exercise \ref{exocuo}). 
+It turns out that a conjugation of $\hat{\mathfrak{u}}_1$ that is compatible with the conjugation \eqref{ldn} of the Virasoro algebra  can exist only if $Q^2\in\mathbb{R}$ (see Exercise \ref{exocuo}). 
 The conjugation is then 
 \begin{align}
  J_n^\dagger = \operatorname{sign}(Q^2)\big( Q\delta_{n,0}-J_{-n} \big)\ ,\qquad (Q^2\in\mathbb{R}) \ .
@@ -4553,7 +4555,7 @@ In other words, we have the $\hat{\mathfrak{u}}_1$ fusion rule
  \boxed{\mathcal{U}_{\alpha_1}\times \mathcal{U}_{\alpha_2} = \mathcal{U}_{\alpha_1+\alpha_2}}\ ,
 \label{vvp}
 \end{align}
-i.e. the momentum $\alpha$ is conserved.
+i.e. the $\hat{\mathfrak{u}}_1$ momentum $\alpha$ is conserved.
 The OPE then reads 
 \begin{align}
 \boxed{V_{\alpha_1,\bar\alpha_1}(z_1)V_{\alpha_2,\bar\alpha_2}(z_2) 
@@ -4601,7 +4603,7 @@ In the normalization of eq. \eqref{vvoo}, $V_{0,0}(z)$ is actually the identity 
 
 \subsubsection{Seiberg--Witten equations}
 
-Let us use eq. \eqref{pvaj} to find out how primary fields depend on momentums. 
+Let us use eq. \eqref{pvaj} to find out how primary fields depend on $\hat{\mathfrak{u}}_1$ momentums. 
 Since conformal spins take integer values, we cannot vary left and right momentums independently, and we will consider a diagonal primary field $V_{\alpha,\alpha}(z)$. 
 If $\nabla_z={\frac{\partial}{\partial z}} +2\alpha J(z)$ and $\overline{\nabla}_{z}={\frac{\partial}{\partial \bar z}} +2\alpha \bar J(z)$, then $\nabla_z V_{\alpha,\alpha}(z)=\overline{\nabla}_z V_{\alpha,\alpha}(z)=0$, neglecting the issue of regularizing operator products.
 If we then define $\nabla_\alpha = {\frac{\partial}{\partial \alpha}}+2\int^z (J(y)dy +\bar J(y)d\bar y)$ so that $[\nabla_z,\nabla_\alpha]=[\overline{\nabla}_z,\nabla_\alpha]=0$, then $\nabla_\alpha V_{\alpha,\alpha}(z)$ is annihilated by $\nabla_z,\overline{\nabla}_z$, and must be proportional to $V_{\alpha,\alpha}(z)$.
@@ -4700,12 +4702,12 @@ If $Q\neq 0$, the compactification radius $R$ must obey the condition \eqref{riq
  \label{sc}
 \end{align}
 where for $Q=0$ we take $Q\mathbb{R}$ to be a straight line in an arbitrary direction.  
-The resulting theory is called the (uncompactified) \textbf{\boldmath free boson}\index{free boson} theory if $Q=0$ and momentums are pure imaginary. It might be called the \textbf{\boldmath linear dilaton theory}\index{linear dilaton theory} if $Q\neq 0$. 
+The resulting theory is called the (uncompactified) \textbf{\boldmath free boson}\index{free boson} theory if $Q=0$ and $\hat{\mathfrak{u}}_1$ momentums are pure imaginary. It might be called the \textbf{\boldmath linear dilaton theory}\index{linear dilaton theory} if $Q\neq 0$. 
 
 
 \subsubsection{Unitarity}
 
-The only unitary free bosonic theories are the compactified free boson at $Q=0$ with a real compactification radius, and the uncompactified free boson that is obtained as its infinite radius limit. For $Q\neq 0$, free bosonic theories cannot be unitary, because the set $U=\frac{Q}{2}+i\mathbb{R}$ of unitary momentums is not closed under fusion, i.e. $(U+U)\cap U = \emptyset$ if $Q\in \mathbb{R}^*$.
+The only unitary free bosonic theories are the compactified free boson at $Q=0$ with a real compactification radius, and the uncompactified free boson that is obtained as its infinite radius limit. For $Q\neq 0$, free bosonic theories cannot be unitary, because the set $U=\frac{Q}{2}+i\mathbb{R}$ of unitary $\hat{\mathfrak{u}}_1$ momentums is not closed under fusion, i.e. $(U+U)\cap U = \emptyset$ if $Q\in \mathbb{R}^*$.
 
 \subsubsection{Correlation functions}
 
@@ -4716,12 +4718,12 @@ The correlation functions of our free bosonic theories with discrete spectrums h
  \prod_{i<j} (z_i-z_j)^{-2\alpha_i\alpha_j}(\bar{z}_i-\bar{z}_j)^{-2\bar{\alpha}_i\bar{\alpha}_j}\ , 
 \end{align}
 where the two Kronecker deltas constrain the two discrete coordinates of $(\sum_i\alpha_i,\sum_i\bar\alpha_i)$.
-In our theories with continuous, diagonal spectrums, momentum conservation is enforced by a Dirac delta function,
+In our theories with continuous, diagonal spectrums, $\hat{\mathfrak{u}}_1$ momentum conservation is enforced by a Dirac delta function,
 \begin{align}
  \left\langle \prod_{i=1}^N V_{\alpha_i,\alpha_i}(z_i)\right\rangle = \delta\left({\textstyle \sum}_{i=1}^N\alpha_i-Q\right)\ \prod_{i<j} |z_i-z_j|^{-4\alpha_i\alpha_j} \ .
 \label{dpzz}
 \end{align}
-In the application to Liouville theory (Section \ref{seclld}), we will actually use these correlation functions for momentums that do not necessarily belong to the spectrum \eqref{sc}. 
+In the application to Liouville theory (Section \ref{seclld}), we will actually use these correlation functions for $\hat{\mathfrak{u}}_1$ momentums that do not necessarily belong to the spectrum \eqref{sc}. 
 
 
 \subsection{Free bosons and Liouville theory \label{seclld}}
@@ -4743,7 +4745,7 @@ This field is called the \textbf{Liouville field}\index{Liouville field}. By for
 \begin{align}
  V_\alpha = e^{2\alpha \phi} \ .
 \end{align}
-We are now labelling primary fields using the $\hat{\mathfrak{u}}_1$ momentum $\alpha$, which is related to the conformal dimension by eq. \eqref{daqu}, and to the Liouville momentum by $\alpha =\frac{Q}{2}-P$.
+We are now labelling primary fields using the $\hat{\mathfrak{u}}_1$ momentum $\alpha$, which is related to the conformal dimension by eq. \eqref{daqu}, and to the momentum by $\alpha =\frac{Q}{2}-P$.
 
 Given an $N$-point function $\left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle$ in Liouville theory, we define
 \begin{align}
