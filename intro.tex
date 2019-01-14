@@ -1,6 +1,4 @@
 
-% Prepared for Cargèse, September 2016. Four lectures of 50 minutes each. 
-
 
 \documentclass[12pt, a4paper]{article}
 
@@ -51,6 +49,9 @@
 
 \usepackage{amsthm}
 
+\usepackage{thmtools}
+%\usepackage{thm-restate}   This package does not interact very smoothly with \theoremstyle and \listoftheorems
+
 \makeatletter
 % \def\@endtheorem{\endtrivlist\@endpefalse }% OLD
 \def\@endtheorem{\endtrivlist}% NEW
@@ -58,6 +59,7 @@
 
 \newtheoremstyle{break}{9pt}{9pt}{\itshape}{}{\bfseries}{}{\newline}{}
 \theoremstyle{break}    
+
 \newtheorem{exo}{Exercise}[section]
 \newtheorem{hyp}[exo]{Axiom}
 \newtheorem{res}[exo]{Result}
@@ -141,9 +143,16 @@ the Riemann sphere $\mathbb{C}\cup \{\infty\}$,
  z \mapsto \frac{az+b}{cz+d}\ .
 \end{align}
 
+
+%\begin{restatable}[An exercise]{exo}{anexercise}
+%~\label{exo:test}
+%Some text. With more text. A long test. See what the formatting does.
+%\end{restatable}
+
+
 \begin{exo}[Global conformal group of the sphere]
  ~\label{exo:sphere}
-Show that the global conformal group of the sphere is $PSL_2(\mathbb{C})$, and includes translations, rotations, and dilatations. 
+Show that the global conformal group of the sphere is $PSL_2(\mathbb{C})$, and includes translations, rotations, and dilations. 
 \end{exo}
 
 In a quantum theory, symmetry transformations act projectively on states. 
@@ -235,7 +244,7 @@ L_n L_{-1}|v\rangle = [L_n, L_{-1}] |v\rangle = (n+1) L_{n-1}|v\rangle =
 So $L_{-1}|v\rangle$ is a null vector if and only if $\Delta=0$, and the Verma module $\mathcal V_0$ is reducible.
 Let us now look for null vectors at the level $N=2$. Let $|\chi\rangle = (L_{-1}^2 + a L_{-2})|v\rangle$, then $L_{n\geq 3} |\chi \rangle =0$. 
 
-\begin{exo}
+\begin{exo}[Level two null vectors]
  ~\label{exo:level2}
  Compute  $L_1|\chi\rangle$ and $L_2|\chi\rangle$, and find 
  \begin{align}
@@ -411,10 +420,11 @@ Show that the commutation relations \eqref{eq:vir} of the Virasoro algebra are e
 To do this, use the commutativity of fields for writing
 \begin{align}
  [L_n^{(z_0)},L_m^{(z_0)}] = -\frac{1}{4\pi^2} \left(\oint_{z_0} dy \oint_{z_0} dz - \oint_{z_0} dz \oint_{z_0} dy\right) (y-z_0)^{n+1}(z-z_0)^{m+1} T(y)T(z)\ ,
+ \label{lzlz}
 \end{align}
 and use contour manipulations to show that 
 \begin{align}
- \oint_{z_0} dy \oint_{z_0} dz - \oint_{z_0} dz \oint_{z_0} dy = \oint_{z_0} dy \oint_y dz\ .
+ \oint_{z_0} dy \oint_{z_0} dz - \oint_{z_0} dz \oint_{z_0} dy = \oint_{z_0} dz \oint_z dy\ .
 \end{align}
 \end{exo}
 
@@ -460,6 +470,7 @@ with an unknown proportionality coefficient that does not depend on $z_i$.
 For four-point functions, the general solution is
 \begin{align}
  \left< \prod_{i=1}^4 V_{\Delta_i}(z_i) \right> = \left(\prod_{i<j}(z_i-z_j)^{\delta_{ij}}\right) G\left(\frac{(z_1-z_2)(z_3-z_4)}{(z_1-z_3)(z_2-z_4)}\right)\ ,
+ \label{eq:4pt}
 \end{align}
 where $G$ is an arbitrary function, and $\delta_{ij}$ are such that $\sum_{j\neq i} \delta_{ij} = -2\Delta_i$, where $\delta_{ij}\underset{i>j}{=}\delta_{ji}$. The six numbers $(\delta_{ij})_{i<j}$ are subject to only four equations, leaving two undetermined combinations. Changing these combinations amounts to a redefinition $G(z)\to z^\lambda (1-z)^\mu G(z)$.
 
@@ -705,7 +716,7 @@ the spectrum is made of diagonal primary states and their descendent states, the
 \end{align}
 where the subleading terms are contributions of descendents fields. 
 In particular, the $z_1,z_2$-dependence of the coefficients is dictated by the behaviour \eqref{eq:zgc}
-of correlation functions under translations $z_i\to z_i+c$ and dilatations $z_i\to\lambda z_i$, leaving a $z_i$-independent unknown factor $C_{\Delta_1,\Delta_2,\Delta}$.
+of correlation functions under translations $z_i\to z_i+c$ and dilations $z_i\to\lambda z_i$, leaving a $z_i$-independent unknown factor $C_{\Delta_1,\Delta_2,\Delta}$.
 Then, as in correlation functions, contributions of descendents are deduced from contributions of primaries via local Ward identitites.
 
 \begin{exo}[Computing the OPE of primary fields]
@@ -1440,6 +1451,137 @@ And we can numerically compute correlation functions with a good precision.
 Historically, Liouville theory was first defined by quantizing a classical theory whose equation of motion is Liouville's equation. That definition actually gave its name to the theory. (That definition does not cover the case $c\leq 1$: using the name Liouville theory in this case, while natural in our approach, is not universally done at the time of this writing.) It can be shown that our definition of Liouville theory agrees with the historical definition, either by proving that the originally defined theory obeys our axioms, or by checking that both definitions lead to the same correlation functions, in particular the same three-point structure constants. See \cite{tes17} for a guide to the literature on the construction of Liouville theory by quantization. 
 
 \appendix
+
+\hypersetup{linkcolor=black}
+
+\renewcommand{\listtheoremname}{List of Exercises}
+\listoftheorems[ignoreall, show={exo}]
+
+\hypersetup{linkcolor=blue}
+
+\section{Solutions of Exercises}
+%\addcontentsline{toc}{section}{Solutions of Exercises}
+
+% \anexercise*
+
+\paragraph{Exercise \ref{exo:sphere}.}
+
+Let us introduce the map
+\begin{align}
+ g = \left(\begin{array}{cc} a & b \\ c & d \end{array}\right) \in GL_2({\mathbb{C}}) \quad \longmapsto\quad f_g(z) = \frac{az+b}{cz+d}\ .
+\end{align}
+A direct calculation shows that $f_{g_1}\circ f_{g_2} = f_{g_1g_2}$, so that our map is a group morphism from $GL_2(\mathbb{C})$ to the global conformal group of the sphere. The morphism is manifestly surjective, let us determine its kernel. The matrix $g$ belongs to the kernel if and only if $\frac{az+b}{cz+d} =z$, equivalently $g=\left(\begin{array}{cc} a & 0 \\ 0 & a \end{array}\right)$ for $a\in\mathbb{C}^*$. So the global conformal group can be written as $\frac{GL_2(\mathbb{C})}{\mathbb{C}^*}$. Now, modulo $\mathbb{C}^*$, any element of $GL_2(\mathbb{C})$ is equivalent to a matrix of determinant one, i.e. an element of $SL_2(\mathbb{C})$. So the map $g\longmapsto f_g$ is also surjective as a map from $SL_2(\mathbb{C})$ to the global conformal group, and in $SL_2(\mathbb{C})$ its kernel is $\mathbb{Z}_2$, since $\det\left(\begin{array}{cc} a & 0 \\ 0 & a \end{array}\right)=1 \iff a\in\{1,-1\}$. Therefore, the global conformal group can also be written as $\frac{SL_2(\mathbb{C})}{\mathbb{Z}_2}$. 
+
+\paragraph{Exercise \ref{exo:vir}.}
+
+Let us look for central extensions of the Witt algebra, starting with the ansatz
+\begin{align}
+  [\mathbf 1, L_n] = 0 \quad , \quad [L_n,L_m] = (n-m)L_{n+m} +f(n,m)\mathbf 1 \ ,
+  \label{eq:wext}
+ \end{align}
+for some function $f(n,m)$. The constraint on $f(n,m)$ from antisymmetry $[L_n,L_m]=-[L_m,L_n]$ is 
+\begin{align}
+ f(n,m)= - f(m,n)\ .
+\end{align}
+The constraint from the Jacobi identity $[[L_n,L_m],L_p] + [[L_m,L_p],L_n] + [[L_p,L_n],L_m]=0$ is 
+\begin{align}
+ (n-m)f(n+m,p) + (m-p)f(m+p,n) + (p-n)f(n+p,m) = 0 \ .
+ \label{eq:jac}
+\end{align}
+In the case $p=0$, this reduces to
+\begin{align}
+ (m+n)f(n,m)+(m-n)f(m+n,0)=0\ .
+ \label{eq:jac0}
+\end{align}
+This means that for $m+n\neq 0$, $f(n,m)$ can be written in terms of a function of only one variable. We can actually set this function to zero by reparametrizing the generators of our algebra. If indeed we define 
+\begin{align}
+ L_n = L'_n + g(n) \mathbf 1\ ,
+\end{align}
+for some function $g(n)$, then the generators $L'_n$ obey commutation relations of the type \eqref{eq:wext}, with however the function 
+\begin{align}
+ f'(n,m) = f(n, m)+(n-m)g(n+m)\ .
+\end{align}
+Let us choose $g(n) = -\frac{f(n,0)}{n}$ for $n\neq 0$, then eq. \eqref{eq:jac0} becomes $f'(n,m)=0$ for $n+m\neq 0$. We therefore write 
+\begin{align}
+ f'(n,m) = \delta_{n+m,0}h(n)\ , 
+\end{align}
+for some unknown function $h(n)$ such that $h(0)=0$ by antisymmetry. We still have the freedom to choose $g(0)$, with $f'(n,-n) = f(n,-n) + 2ng(0)$. We use this freedom for setting $h(1)=0$. Let us rewrite the Jacobi identity \eqref{eq:jac} in terms of the function $h(n)$:
+\begin{align}
+ (n-m)h(m+n) -(2m+n)h(n) +(m+2n)h(m) = 0\ .
+ \label{eq:hhh}
+\end{align}
+In the particular case $m=1$, this becomes $(n-1)h(n+1) - (n+2)h(n)=0$. Since $h(-1)=h(0)=h(1)=0$ it is natural to write $h(n) = (n-1)n(n+1) h'(n)$, and our equation becomes $h'(n+1)=h'(n)$.  This shows that $h(n)=\lambda n(n^2-1)$ for some constant $\lambda$. To conclude, it remains to check that this solves eq. \eqref{eq:hhh} not only for $m=1$, but for all values of $m$ -- a straightforward computation.
+
+\paragraph{Exercise \ref{exo:level2}.} 
+
+Straighforward calculations.
+
+\paragraph{Exercise \ref{exott}.} We start with eq. \eqref{lzlz}, a straightforward consequence of eq. \eqref{eq:lvtv} together with $T(y)T(z)=T(z)T(y)$. In this formula, $\oint_{z_0} dy \oint_{z_0} dz$ means that the integration over $z$ should be performed before the integration over $y$, so the contour of integration over $z$ should be inside the contour of integration over $y$. We have a second term where the positions of the contours are exchanged. Let us focus on the contribution of a given value of $z$: in the second term this is simply $\oint_{z_0} dy$, while in the first term this is $\oint_{z} dy + \oint_{z_0} dy$. Subtracting, we obtain 
+\begin{align}
+ [L_n^{(z_0)},L_m^{(z_0)}] = -\frac{1}{4\pi^2} \oint_{z_0} dz \oint_{z} dy\  (y-z_0)^{n+1}(z-z_0)^{m+1} T(y)T(z)\ .
+\end{align}
+Let us compute the integral over $y$, using the OPE \eqref{tt}. We find 
+\begin{multline}
+ \frac{1}{2\pi i} \oint_z dy\ (y-z_0)^{n+1} T(y)T(z) = \frac{c}{12} n(n^2-1) (z-z_0)^{n-2} 
+ \\
+ +2(n+1)(z-z_0)^n T(z) + (z-z_0)^{n+1} \partial T(z)\ .
+ \label{eq:oitt}
+\end{multline}
+It remains to perform the integration over $z$. Using eq. \eqref{eq:lvtv}, this shows that $[L_n^{(z_0)},L_m^{(z_0)}]$ is given by the Virasoro algebra's commutation relations, with the last two terms of eq. \eqref{eq:oitt} contributing respectively $(2n+2)L_{m+n}^{(z_0)}$ and $-(m+n+2)L_{m+n}^{(z_0)}$.
+
+\paragraph{Exercise \ref{exo:4pt}.} 
+
+If $\Big<V_\Delta(z_1)V_\Delta(z_2)\Big> = (z_1-z_2)^{-2\Delta}$, then
+\begin{align}
+ \Big<V_\Delta(\infty)V_\Delta(z_2)\Big> = \lim_{z\to\infty} z^{2\Delta}(z-z_2)^{-2\Delta}=1 \ .
+\end{align}
+Similarly, we compute 
+\begin{align}
+ \Big<V_{\Delta_1}(\infty)V_{\Delta_2}(z_2)V_{\Delta_3}(z_3)\Big> \propto (z_2-z_3)^{\Delta_1-\Delta_2-\Delta_3}\ .
+\end{align}
+Using eq. \eqref{eq:zgc} with $\left(\begin{smallmatrix} a & b \\ c & d \end{smallmatrix} \right) = \left(\begin{smallmatrix} 0 & -1 \\ 1 & 0 \end{smallmatrix}\right)$, we find 
+\begin{align}
+ \left< \prod_{i=1}^N  V_{\Delta_i}\left(-\tfrac{1}{z_i}\right) \right>
+ = \prod_{i=1}^N z_i^{2\Delta_i} \left< \prod_{i=1}^N V_{\Delta_i}(z_i) \right>\ .
+\end{align}
+Since $V_{\Delta_1}(-\frac{1}{z_1})$ has a finite limit as $z_1\to \infty$, we deduce that $z_1^{2\Delta_1}V_{\Delta_1}(z_1)$ has a finite limit too, provided $z_2,\dots, z_N$ are finite.
+
+Starting with eq. \eqref{eq:4pt}, we compute 
+\begin{align}
+ \Big< V_{\Delta_1}(z) V_{\Delta_2}(0)V_{\Delta_3}(\infty)V_{\Delta_4}(1) \Big> = z^{\delta_{12}}(z-1)^{\delta_{14}} G(z)\ ,
+\end{align}
+where we used $\delta_{13}+\delta_{23}+\delta_{43}=-2\Delta_3$. The requirement that this is $G(z)$ is equivalent to  $\delta_{12}=\delta_{14}=0$. Then $\sum_{i<j}\delta_{ij}=-2\Delta_i$ provide $4$ equations for the $4$ remaining unknown exponents $\delta_{13}, \delta_{23}, \delta_{24}, \delta_{34}$. The solutions are 
+\begin{align}
+\delta_{13} &= -2\Delta_1\ ,
+\\
+ \delta_{23} &= \Delta_1-\Delta_2-\Delta_3+\Delta_4 \ ,
+ \\
+ \delta_{24} &= -\Delta_1-\Delta_2+\Delta_3-\Delta_4\ ,
+ \\
+ \delta_{34} &= \Delta_1+\Delta_2-\Delta_3-\Delta_4\ .
+\end{align}
+
+\paragraph{Exercise \ref{exo:bpz3pt}.} 
+
+Straightforward calculations.
+
+\paragraph{Exercise \ref{exo:bpz}.}
+
+The calculations using eq. \eqref{eq:4pt} are straightforward but tedious. Let us try to do a bit better. What prevents us from directly applying the BPZ equation to $G(z)=\Big< V_{\langle 2, 1 \rangle}(z) V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1) \Big>$, is that the equation involves derivatives with respect to the three positions that we want to set to fixed values. So apparently we need to introduce $\Big< V_{\langle 2, 1 \rangle}(z) V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)V_{\Delta_3}(z_3) \Big>$. 
+However, using the global Ward identities, any derivative with respect to $z_1,z_2,z_3$ can be rewritten as a derivative with respect to $z$, and therefore eliminated from the BPZ equation. To do this efficiently, remember that the derivatives with respect to $z_i$ originated from using eq. \eqref{eq:ltv} for computing $\Big< L_{-2}V_{\langle 2, 1 \rangle}(z) V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)V_{\Delta_3}(z_3) \Big>$. In order to eliminate such derivatives, it is enough to compute the following expression instead:
+\begin{align}
+ \frac{1}{2\pi i}\oint_{z} dy\frac{\prod_{i=1}^3(y-z_i)}{y-z} Z(y) \ .
+\end{align}
+Closing the contour on $y=z$ gives us a combination of $L_{-2}^{(z)}$, $\frac{\partial}{\partial z}$, and scalar factors, acting on  $\Big< V_{\langle 2, 1 \rangle}(z) V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)V_{\Delta_3}(z_3) \Big>$. Closing the contour on $y=z_i$ instead does not produce any derivatives with respect to $z_i$, thanks to the vanishing of the prefactor $\frac{\prod_{i=1}^3(y-z_i)}{y-z}$ at $y=z_i$. This leads to a version of the BPZ equation that involves derivatives with respect to $z$ only:
+\begin{multline}
+  \left\{ \prod_{i=1}^3(z-z_i)\left(-\frac{1}{b^2}\frac{\partial^2}{\partial z^2} +\sum_{i=1}^3 \frac{1}{z-z_i} {\frac{\partial}{\partial z}} \right) + (3z-z_1-z_2-z_3)\Delta_{\langle 2,1 \rangle} \right.
+  \\
+\left.  +\frac{z_{12}z_{13}}{z_1-z}\Delta_1 + \frac{z_{21}z_{23}}{z_2-z}\Delta_2+\frac{z_{31}z_{32}}{z_3-z}\Delta_3\right\} 
+\left\langle V_{\langle 2,1 \rangle}(z)\prod_{i=1}^3 V_{\Delta_i}(z_i)\right\rangle  = 0\ .
+\label{uode}
+\end{multline}
+In this version of the BPZ equation, it is straightforward to send $z_1,z_2,z_3$ to $0,\infty, 1$, and we obtain eq. \eqref{eq:ode}.
+
 
 
 
