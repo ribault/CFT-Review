@@ -682,7 +682,7 @@ In the case $c=1$, we want to build CFTs with the abelian affine Lie algebra sym
 \begin{align}
  \frac{i}{R}(\alpha-\bar\alpha)\in\mathbb{Z}\ .
 \end{align}
-Deduce that the spectrum is of the type 
+Under mild assumptions, deduce that the spectrum is of the type 
  \begin{align}
  S_R = \bigoplus_{(n,w)\in {\mathbb{Z}^2}} \mathcal{U}_{\frac{i}{2}\left(\frac{n}{R} + Rw\right)} \otimes \bar{\mathcal{U}}_{\frac{i}{2}\left(\frac{n}{R} - Rw\right)} \ ,
 \label{sr}
@@ -778,6 +778,7 @@ This is analogous to characters of representations, also known as zero-point con
  Compute the conformal block $ \mathcal{F}^{(s)}_\Delta(z)$ up to the order $O(z)$, and find
  \begin{align}
   \mathcal{F}^{(s)}_\Delta(z) = z^{\Delta-\Delta_1-\Delta_2}\left( 1 + \frac{(\Delta+\Delta_1-\Delta_2)(\Delta+\Delta_4-\Delta_3)}{2\Delta}z + O(z^2) \right)\ .
+  \label{eq:fsl}
  \end{align}
  Show that the first-order term has a pole when the Verma module $\mathcal{V}_\Delta$ has a null vector at level one.
  Compute the residue of this pole. Compare the condition that this residue vanishes with the condition \eqref{eq:vvvnz} that three-point functions involving $V_{\langle 1,1\rangle}$ exist.
@@ -1582,8 +1583,117 @@ Closing the contour on $y=z$ gives us a combination of $L_{-2}^{(z)}$, $\frac{\p
 \end{multline}
 In this version of the BPZ equation, it is straightforward to send $z_1,z_2,z_3$ to $0,\infty, 1$, and we obtain eq. \eqref{eq:ode}.
 
+\paragraph{Exercise \ref{exo:fbs}.}
+
+For $c=1$ the conformal dimension is related to the momentum by $\Delta = -\alpha^2$. If we have a state with momentums $(\alpha,\bar\alpha)$, its spin is $\bar\alpha^2-\alpha^2\in\mathbb{Z}$. Since we also assume that the spectrum is closed under fusion, and that we have a diagonal state with momentums $(\frac{i}{2R},\frac{i}{2R})$, we must have a state with momentums $(\alpha +\frac{i}{2R},\bar \alpha+\frac{i}{2R})$. The condition for this state to have integer spin is 
+\begin{align}
+ \left(\bar \alpha +\tfrac{i}{2R}\right)^2 - \left(\alpha +\tfrac{i}{2R}\right)^2 \in \mathbb{Z} \iff \frac{i}{R}(\alpha -\bar \alpha)\in\mathbb{Z}\ .
+ \label{eq:lba}
+\end{align}
+We assume that there are nondiagonal states $(\alpha,\bar\alpha)$ that minimize this number, i.e. $\alpha-\bar\alpha = -iR$.
+Since we also have $\bar\alpha^2-\alpha^2 = -(\alpha-\bar \alpha)(\alpha+\bar \alpha)\in\mathbb{Z}$, we deduce $\alpha+\bar\alpha\in \frac{i}{R}\mathbb{Z}$. Again, we assume that all allowed values actually occur, so that there is a state with $\alpha+\bar\alpha = 0$, i.e. a state with momentums $(-\frac{iR}{2},\frac{iR}{2})$.
+
+For $(\alpha,\bar\alpha)$ any state, the condition for the spin of $(\alpha-\frac{iR}{2},\bar\alpha +\frac{iR}{2})$ to be integer is $iR(\alpha+\bar\alpha)\in\mathbb{Z}$. Adding the constraint \eqref{eq:lba}, we deduce that our state must belong to the spectrum $S_R$ \eqref{sr}.
+
+For an arbitrary central charge, the conformal dimension is $\Delta = \alpha(Q-\alpha)$, and condition for  a state in the spectrum $S_R$ to have integer spin is 
+\begin{align}
+ Q(\alpha-\bar \alpha) \in\mathbb{Z} \iff QiRw \in\mathbb{Z}\ .
+\end{align}
+This must hold for any $w\in\mathbb{Z}$, and we must have $R\in \frac{i}{Q}\mathbb{Z}$. Therefore, compactified free bosons exist only for certain discrete values of the radius.
 
 
+\paragraph{Exercise \ref{exo:ope}.}
+
+Let us insert $\oint_C dz(z-z_2)^2 T(z)$ on both sides of eq. \eqref{eq:ope}, for $C$ a contour around both $z_1$ and $z_2$. Neglecting the dependence on $\bar z_i$, we rewrite this OPE as 
+\begin{align}
+ V_{\Delta_1}(z_1) V_{\Delta_2}(z_2) 
+ = \sum_{\Delta\in S} C_{\Delta_1,\Delta_2,\Delta} z_{12}^{\Delta-\Delta_1-\Delta_2}
+ \Big(V_{\Delta}(z_2) + f z_{12} L_{-1}V_{\Delta_2}(z_2) + O(z_{12}^2) \Big)\ .
+\end{align}
+We first compute the left-hand side. The integrand $(z-z_2)^2 T(z) V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$ is regular at $z=z_2$, and we only pick contributions from the pole at $z=z_1$. Using the OPE $T(z)V_{\Delta_1}(z_1)$ \eqref{eq:tvd}, we find 
+\begin{align}
+ \frac{1}{2\pi i}\oint_C dz(z-z_2)^2 T(z)V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) = \left(2z_{12}\Delta_1+z_{12}^2\frac{\partial}{\partial z_1}\right) V_{\Delta_1}(z_1) V_{\Delta_2}(z_2)\ .
+\end{align}
+Using the OPE \eqref{eq:ope}, we compute 
+\begin{multline}
+ \frac{1}{2\pi i}\oint_C dz(z-z_2)^2 T(z)V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)
+ \\
+ = \sum_{\Delta\in S} C_{\Delta_1,\Delta_2,\Delta} z_{12}^{\Delta-\Delta_1-\Delta_2+1} 
+ \Big( (\Delta+\Delta_1-\Delta_2)V_{\Delta}(z_2) + O(z_{12}) \Big)\ .
+ \label{eq:lhsope}
+\end{multline}
+Now we insert $\oint_C dz(z-z_2)^2 T(z)$ on the right-hand side of eq. \eqref{eq:ope}For any field $V(z_2)$ (primary or descendent) we have $\frac{1}{2\pi i}\oint_C dz(z-z_2)^2 T(z)V(z_2) = L_1 V(z_2)$. Since $L_1 V_{\Delta_2}(z_2)=0$, the leading contribution is from the level one descendent $L_{-1} V_{\Delta_2}(z_2)$,
+\begin{multline}
+ \frac{1}{2\pi i}\oint_C dz(z-z_2)^2 T(z)V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)
+ \\
+ = \sum_{\Delta\in S} C_{\Delta_1,\Delta_2,\Delta} z_{12}^{\Delta-\Delta_1-\Delta_2+1} 
+ \Big( f L_1L_{-1}V_{\Delta}(z_2) + O(z_{12}) \Big)\ .
+\end{multline}
+Using $L_1L_{-1}V_{\Delta}(z_2)=2\Delta V_\Delta(z_2)$, and comparing with the left-hand side result \eqref{eq:lhsope}, this leads to 
+\begin{align}
+ f = \frac{\Delta+\Delta_1-\Delta_2}{2\Delta}\ .
+\end{align}
+Of course, this expression is also the coefficient of the right-moving descendent $\bar L_{-1} V_\Delta(z_2)$.
+
+\paragraph{Exercise \ref{exo:id}.} 
+
+Let us write the OPE \eqref{eq:ope} in the case of the degenerate field $V_{\langle 1,1\rangle}$, while omitting the dependence on $\bar z_i$:
+\begin{align}
+ V_{\langle 1,1\rangle}(z_1) V_{\Delta_2}(z_2) = \sum_{\Delta\in S} C_{\langle 1,1\rangle,\Delta_2,\Delta}  \sum_{i=0}^\infty z_{12}^{\Delta-\Delta_2+i} \mathcal{L}_i V_\Delta(z_2) \ ,
+\end{align}
+where $\mathcal{L}_i V_\Delta(z_2)$ is some descendent at level $i$, and $\mathcal{L}_0 V_\Delta(z_2) = V_\Delta(z_2)$. Since $\frac{\partial}{\partial z_1} V_{\langle 1,1\rangle}(z_1) =0 $, we have 
+\begin{align}
+ 0 = \sum_{\Delta\in S} C_{\langle 1,1\rangle,\Delta_2,\Delta}  \sum_{i=0}^\infty z_{12}^{\Delta-\Delta_2+i-1}(\Delta-\Delta_2+i) \mathcal{L}_i V_\Delta(z_2) \ .
+\end{align}
+Assuming $C_{\langle 1,1\rangle,\Delta_2,\Delta}\neq 0$, the vanishing of the leading $i=0$ term implies $\Delta_2=\Delta$. The vanishing of an $i>0$ term then implies $\mathcal{L}_i V_\Delta(z_2) =0$. Therefore, the OPE reduces to 
+\begin{align}
+ V_{\langle 1,1\rangle}(z_1) V_{\Delta}(z_2) = C_\Delta V_\Delta(z_2)\ ,
+\end{align}
+where $C_\Delta = C_{\langle 1,1\rangle,\Delta,\Delta} $. Let us use this OPE in a correlation function that involves the fields $V_{\langle 1,1\rangle}(z_1)V_{\Delta_2}(z_2) V_{\Delta_3}(z_3)$. Using commutativity and associativity of the OPE, we obtain
+\begin{align}
+ V_{\langle 1,1\rangle}(z_1)V_{\Delta_2}(z_2) V_{\Delta_3}(z_3) = C_{\Delta_2} V_{\Delta_2}(z_2) V_{\Delta_3}(z_3) = C_{\Delta_3} V_{\Delta_2}(z_2) V_{\Delta_3}(z_3)\ .
+\end{align}
+This implies $C_{\Delta_2}=C_{\Delta_3}$, and actually $C_\Delta$ cannot depend on $\Delta$.
+
+\paragraph{Exercise \ref{exo:block}.}
+
+Using the OPE \eqref{eq:ope} including the first subleading correction from Exercise \ref{exo:ope}, and omitting the dependence on $\bar z_i$, we have 
+\begin{multline}
+ \Big<V_{\Delta_1}(z)V_{\Delta_2}(0)V_{\Delta_3}(\infty)V_{\Delta_4}(1)\Big> = \sum_{\Delta\in S} C_{\Delta_1,\Delta_2,\Delta} z^{\Delta-\Delta_1-\Delta_2}
+ \\ \times 
+ \left< \left(1 + \frac{\Delta+\Delta_1-\Delta_2}{2\Delta}z L_{-1} + O(z^2)\right) V_\Delta(0) V_{\Delta_3}(\infty)V_{\Delta_4}(1)\right>\ .
+\end{multline}
+Let us then compute $\Big< L_{-1} V_\Delta(0) V_{\Delta_3}(\infty)V_{\Delta_4}(1)\Big>$. This is done by computing it for three arbitrary field positions before specializing to $0,1,\infty$, using $L_{-1} V_\Delta(z) =\frac{\partial}{\partial z} V_\Delta(z)$. The result is 
+\begin{align}
+ \Big< L_{-1} V_\Delta(0) V_{\Delta_3}(\infty)V_{\Delta_4}(1)\Big> = C_{\Delta,\Delta_3,\Delta_4} (\Delta+\Delta_4-\Delta_3)\ .
+\end{align}
+We therefore deduce
+\begin{multline}
+ \Big<V_{\Delta_1}(z)V_{\Delta_2}(0)V_{\Delta_3}(\infty)V_{\Delta_4}(1)\Big> = \sum_{\Delta\in S} C_{\Delta_1,\Delta_2,\Delta} C_{\Delta,\Delta_3,\Delta_4} z^{\Delta-\Delta_1-\Delta_2}
+ \\ \times 
+ \left( 1+ \frac{(\Delta+\Delta_1-\Delta_2)(\Delta+\Delta_4-\Delta_3)}{2\Delta}z + O(z^2)\right) \ ,
+\end{multline}
+which is equivalent to eq. \eqref{eq:fsl}. The first subleading term has a pole at $\Delta=0$, with the residue $(\Delta_1-\Delta_2)(\Delta_4-\Delta_3)$. The residue vanishes if $\Delta_1=\Delta_2$ or $\Delta_3=\Delta_4$, i.e. if at least one of the three-point functions $\left< V_{\langle 1,1\rangle} V_{\Delta_1}V_{\Delta_2}\right>$ and $\left< V_{\langle 1,1\rangle} V_{\Delta_3}V_{\Delta_4}\right>$ is non-vanishing.
+
+\paragraph{Exercise \ref{exo:hdr}.} 
+
+We already know that the fusion product \eqref{rtv} holds for the representations $\mathcal{R}_{\langle 1,1\rangle}$, $\mathcal{R}_{\langle 2,1\rangle}$ and $\mathcal{R}_{\langle 1,2\rangle}$. Let us prove it more generally by recursion on $r,s$. Let us assume that it holds for all $r\leq r_0$ and $s\leq s_0$. For $s\leq s_0$ we compute 
+\begin{align}
+ \mathcal{R}_{\langle 2,1\rangle} \times \mathcal{R}_{r_0, s} \times \mathcal{V}_P 
+ &= \sum_{i=-\frac{r_0-1}{2}}^{\frac{r_0-1}{2}} 
+ \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}}  
+ \mathcal{R}_{\langle 2,1\rangle} \times \mathcal{V}_{P + ib+jb^{-1}} \ ,
+ \\
+ &= \left\{\sum_{i=-\frac{r_0}{2}}^{\frac{r_0}{2}} + \sum_{i=-\frac{r_0-2}{2}}^{\frac{r_0-2}{2}} \right\}
+ \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}} \mathcal{V}_{P + ib+jb^{-1}} \ .
+ \\
+ &= \mathcal{R}_{\langle r_0-1,s\rangle} \times \mathcal{V}_P + \sum_{i=-\frac{r_0}{2}}^{\frac{r_0}{2}}\sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}} \mathcal{V}_{P + ib+jb^{-1}} \ .
+\end{align}
+(This is true even if $r_0=1$, with the convention $\mathcal{R}_{\langle 0,s\rangle}=0$.) We obtain a combination of finitely many Verma modules, which shows that $\mathcal{R}_{\langle 2,1\rangle} \times \mathcal{R}_{r_0, s} $ must be a degenerate representation. In this degenerate representation, we know that the highest-weight states have the momentums $P_{\langle r_0, s\rangle} \pm \frac{b}{2} = P_{\langle r_0\pm 1,s\rangle}$. We already know that the momentum $P_{\langle r_0-1,s\rangle}$ corresponds to the degenerate representation $\mathcal{R}_{\langle r_0-1,s\rangle}$, and there must be a degenerate representation with the momentum  $P_{\langle r_0+1,s\rangle}$, which we call $\mathcal{R}_{\langle r_0+1,s\rangle}$. We can similarly do the recursion on $s$, and we obtain degenerate representations $\mathcal{R}_{\langle r,s\rangle}$ with $r,s\in\mathbb{N}^*$.
+
+The same method can be used for determining the fusion products \eqref{rrsr} of degenerate representations by recursion on $r_1,s_1$, starting with the known cases $(r_1,s_1)\in \{(1,1), (2,1), (1,2)\}$.
+
+\paragraph{Exercise \ref{exo:cmm}.} 
 
 
 \bibliographystyle{cft}
