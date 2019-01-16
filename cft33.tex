@@ -78,14 +78,7 @@
 
 \maketitle
 
-\begin{center}
-\textit{\noindent Habilitation thesis defended on 21 December 2018, in front of a jury composed of
-} \vspace{3mm}
 
-\begin{tabular}{ll} Denis Bernard & \\ Matthias Gaberdiel & (Rapporteur) \\ Jesper Jacobsen & (Rapporteur) \\ Vyacheslav Rychkov & \\ Véronique Terras & \\ Gérard Watts& (Rapporteur) \\ Jean-Bernard Zuber & \end{tabular}
-\end{center}
-
-\vspace{5mm}
 \begin{abstract}
 We provide an introduction to conformal field theory on the plane in the conformal bootstrap approach.
 We introduce the main ideas of the bootstrap approach to quantum field theory, and how they apply to two-dimensional theories with local conformal symmetry.
@@ -93,14 +86,14 @@ We describe the mathematical structures that appear in such theories, from the V
 As examples, we study a number of models: Liouville theory, (generalized) minimal models, free bosonic theories, the $H_3^+$ model, and the $SU_2$ and $\widetilde{SL}_2(\mathbb{R})$ WZW models. 
 \end{abstract}
 
-%\vspace{1cm}
+\vspace{1cm}
 \begin{center}
  \textbf{Keywords}
 \end{center}
 \noindent conformal field theory, conformal bootstrap, Virasoro algebra, BPZ equations, Liouville theory, minimal models, free bosons,
 KZ equations, KZ-BPZ relation, $H_3^+$ model, WZW models
 
-%\vspace{1cm}
+\vspace{1cm}
 \begin{center}
 \textbf{Public domain notice}
 \end{center}
@@ -130,7 +123,7 @@ Just like free field theories, conformal field theories are relatively simple an
  \end{tikzpicture}
 \end{align}
 Many conformal field theories
-are also of independent interest, in particular for describing critical points of condensed matter systems. In this text we will study conformal field theories in their own right, with little thought about applications.
+are also of independent interest, in particular for describing critical phenomenons. In this text we will focus on building and solving conformal field theories: for the applications, see some of the works cited in Section \ref{sec:womt}.
 
 In two dimensions, unlike in higher dimensions, the algebra of conformal transformations is infinite-dimensional. As a result, it has been possible to exactly solve certain non-trivial two-dimensional conformal field theories. Therefore, the subject of two-dimensional conformal field theory deserves a separate treatment. Nevertheless, the two-dimensional case may hold valuable lessons for
 the higher-dimensional case, for example that unitarity only plays a minor role in the structure and classification of conformal field theories.
@@ -199,7 +192,7 @@ This text comes with an index, which points to the definition of each listed ter
 These terms appear in bold where they are defined.
 
 
-\section{Why one more text on conformal field theory?}
+\section{Why one more text on conformal field theory?}\label{sec:womt}
 
 Let us argue that this text fills an available niche, by considering which neighbouring niches are already filled: 
 \begin{itemize}
@@ -289,7 +282,7 @@ I wish to thank Philippe Di Francesco, Sheer El-Showk, Matthias Gaberdiel, Chris
 
 I am grateful to Connor Behan, Fran\c{c}ois David, Quang-Dien Duong, Bruno Le Floch, Omar Foda, Santiago Migliaccio, Raoul Santachiara, and Vincent Vargas, for helpful comments on this text.
 
-I wish to thank Matthias Gaberdiel, Jesper Jacobsen and G\'erard Watts for acting as referees of this habilitation thesis, and for providing feedback on this text.
+A version of this text served as my habilitation thesis, defended on 21 December 2018. I wish to thank the jury members Denis Bernard, Matthias Gaberdiel, Jesper Jacobsen, Vyacheslav Rychkov, Véronique Terras, Gérard Watts and Jean-Bernard Zuber for a lively defense, and for valuable feedback. Special thanks to Matthias Gaberdiel and G\'erard Watts for their specific suggestions and comments.
 
 
 \chapter{Introduction \label{secintr}}
@@ -880,9 +873,9 @@ and if $v_1$ is an $L_0$-eigenstate with conformal dimension $\Delta_1$, then $v
 \end{align}
 as a consequence of the Virasoro algebra's commutation relations \eqref{vir}. Therefore, in any indecomposable representation of the Virasoro algebra, all conformal dimensions differ by integers. (See Exercise \ref{exodiffint}.)
 
-For a quantum field theory to have a probabilistic interpretation, 
-we should assume the spectrum to be a Hilbert space, i.e. to have a positive definite Hermitian form. 
-In conformal field theory, we are only interested in Hermitian forms that are compatible with the action of the symmetry algebra.
+Let us now define and discuss \textbf{\boldmath unitarity}\index{unitary!---theory} of two-dimensional conformal field theories. While a theory needs not be unitary for being consistent, only unitary theories can have quantum mechanical interpretations. Unitarity indeed means that the squared norms of states are positive, and can therefore be interpreted as probabilities in quantum mechanics. On the other hand, statistical physics can give rise to non-unitary theories. (See \cite{prv18} for more details.) Technically, unitarity requires that 
+the spectrum is a Hilbert space, i.e. has a positive definite Hermitian form. 
+In conformal field theory, this Hermitian form should moreover be compatible with the action of the Virasoro algebra.
 This means that the \textbf{Hermitian conjugation}\index{Hermitian conjugation} on $\mathfrak{V}\times\overline{\mathfrak{V}}$ that is induced by the Hermitian form, is an antilinear involution $A\to A^\dagger$ such that $[A,B]^\dagger = -[A^\dagger, B^\dagger]$.
 Interpreting the dilation generator $L_0+\bar L_0$ as the Hamiltonian, we assume that it is self-adjoint, and actually that both $L_0$ and $\bar L_0$ are self-adjoint.
 This implies
@@ -897,7 +890,7 @@ This implies
 \end{align}
 It also follows that the Hermitian form is compatible with the decomposition \eqref{sorr} of the spectrum as a sum of $\mathfrak{V}\times \overline{\mathfrak{V}}$ representations, in the sense that two different irreducible representations must be orthogonal to each other.
 So the the positivity of the Hermitian form can be examined within each representation.
-A representation of the Virasoro algebra is called \textbf{\boldmath unitary}\index{unitarity} if it has a positive definite Hermitian form such that 
+A representation of the Virasoro algebra is called \textbf{\boldmath unitary}\index{unitary!---representation} if it has a positive definite Hermitian form such that 
 $L^\dagger_n = L_{-n}$, and a model whose spectrum is unitary is itself called unitary. 
 
 Finally, let us illustrate the power of local conformal symmetry by thinking of a model in terms of global conformal symmetry only. 
