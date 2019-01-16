@@ -4233,34 +4233,8 @@ Study how the degenerate OPE \eqref{vot} behaves under reflections, and show tha
 
 \begin{exo}[Fusion rules of doubly degenerate representations]
  ~\label{exofus}
-Let us derive the fusion rules \eqref{rrmm} of doubly degenerate representations.
-We will use the degenerate fusion rule \eqref{rrsr}, 
-\begin{align}
-\langle r_3, s_3\rangle\in\ ]|r_1-r_2|,r_1+r_2[ \times ]|s_1-s_2|,s_1+s_2[ \ ,
-\end{align}
-and the symmetry of the Kac table,
-\begin{align}
- \sigma\langle r,s \rangle = \langle p-r,q-s\rangle\ .
-\label{srs}
-\end{align}
-\begin{enumerate}
- \item Show that the doubly degenerate fusion rules are
-\begin{multline}
-\langle r_3, s_3\rangle \in \bigcap_{\epsilon_1,\epsilon_2 = 0,1}\ \bigcup_{\epsilon=0,1} \ \sigma_1^{\epsilon_1} \sigma_2^{\epsilon_2} \sigma^{\epsilon}
-\Big( \big]|r_1-r_2|,r_1+r_2\big[ \times \big]|s_1-s_2|,s_1+s_2\big[  \Big)\ ,
-\\
- = \bigcup_{\epsilon:\{0,1\}^2 \to \{0,1\} }\ \bigcap_{\epsilon_1,\epsilon_2=0,1} \ \sigma_1^{\epsilon_1} \sigma_2^{\epsilon_2} \sigma^{\epsilon(\epsilon_1,\epsilon_2)} \Big( \big]|r_1-r_2|,r_1+r_2\big[ \times \big]|s_1-s_2|,s_1+s_2\big[  \Big)\ ,
-\end{multline}
-where $\sigma_i$ acts on $\langle r_i,s_i\rangle$ as in eq. \eqref{srs}, while $\sigma$ acts as $\sigma\big(]a,b[\times]c,d[\big) = ]p-b,p-a[\times ]q-d,q-c[$.
-\item
-Show that each one of the $16$ rectangles parametrized by the function $\epsilon:\{0,1\}^2 \to \{0,1\} $ is a subset of one of the two rectangles that correspond to the two functions $\epsilon(\epsilon_1,\epsilon_2)=\pm (\epsilon_1+\epsilon_2) \bmod 2$, so that 
-\begin{multline}
- \langle r_3, s_3\rangle  \in\  \big]|r_1-r_2|,p-|r_1+r_2-p|\big[\times \big]|s_1-s_2|,q-|s_1+s_2-q|\big[ 
-\\
- \bigcup\ \big]|r_1+r_2-p|,p-|r_1-r_2|\big[\times \big]|s_1+s_2-q|,q-|s_1-s_2|\big[\ .
-\end{multline}
-\item Rewrite this as eq. \eqref{rrmm}.
-\end{enumerate}
+Deduce the fusion rules \eqref{rrmm} of doubly degenerate representations from the degenerate fusion rule \eqref{rrsr}. 
+Hint: since $p$ or $q$ is odd, knowing the parity of $r_1,r_2,s_1,s_2$ is enough for ruling out one of the two coincidences $\mathcal{R}_{\langle r_1,s_1\rangle} = \mathcal{R}_{\langle r_2,s_2\rangle}$ and $\mathcal{R}_{\langle r_1,s_1\rangle} = \mathcal{R}_{\langle p-r_2,q-s_2\rangle}$.
 \end{exo}
 
 \begin{exo}[Unitarity of (generalized) minimal models]

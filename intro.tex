@@ -8,7 +8,7 @@
 
 \usepackage[top=20mm,bottom=20mm,left=25mm,right=25mm]{geometry}
 
-\usepackage{showkeys}
+%\usepackage{showkeys}
 
 \usepackage{amsmath,amssymb,amsfonts}
 
@@ -994,12 +994,12 @@ For other values of $p,q$, it turns out that no minimal models exist.
 
 \begin{exo}[Closure of minimal model spectrums under fusion]
  ~\label{exo:cmm}
- Show that $S_{p,q}$ is closed under fusion. If you are brave, show that the fusion products of the representations that appear in $S_{p,q}$ are
+ Show that $S_{p,q}$ is closed under fusion, and that the fusion products of the representations that appear in $S_{p,q}$ are
  \begin{align}
   \mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle} = \sum_{r_3\overset{2}{=}|r_1-r_2|+1}^{\min(r_1+r_2,2p-r_1-r_2)-1}\ \sum_{s_3\overset{2}{=}|s_1-s_2|+1}^{\min(s_1+s_2,2q-s_1-s_2)-1} \mathcal{R}_{\langle r_3,s_3 \rangle}\ .
 \label{rrmm}
 \end{align}
- If you are very brave, show that $p,q\geq 2$ is a necessary condition for the existence of a finite, nontrivial set of multiply degenerate representations that closes under fusion.
+ Are all finite, nontrivial sets of multiply degenerate representations that close under fusion subsets of some $S_{p,q}$? Do such sets exist only if $p,q\geq 2$?
 \end{exo}
 
 \begin{defn}[Diagonal minimal model]
@@ -1030,12 +1030,14 @@ Fusing two such representations produces degenerate representations with odd val
  For $p,q\geq 2$ coprime integers with $p\in 2\mathbb{N}+6$, the $(p,q)$ minimal model is the conformal field theory whose spectrum is 
 \begin{align}
  S_{p,q}^\text{D-series} = \frac12 \bigoplus_{r\overset{2}{=}1}^{p-1} \bigoplus_{s=1}^{q-1} \mathcal{R}_{ r,s} \otimes \bar{\mathcal{R}}_{r,s}\oplus \frac12\bigoplus_{\substack{1\leq r\leq p-1 \\ r\equiv \frac{p}{2}\bmod 2}} \bigoplus_{s=1}^{q-1} \mathcal{R}_{r,s} \otimes \bar{\mathcal{R}}_{p-r,s}\ ,
+ \label{eq:sds}
 \end{align}
 assuming it exists and is unique.
 \end{defn}
 (We need $p\geq 6$ for our would-be non-diagonal sector to actually contain representations with nonzero spins.)
 
 \begin{exo}[Fusion rules of D-series minimal models]
+~\label{exo:frd}
  If $p\equiv 0\bmod 4$, show that the D-series minimal model's fusion rules are completely determined by the fusion rules of the corresponding Virasoro representations. Write these fusion rules, and show that they conserve diagonality, in the sense that any correlation function with an odd number of non-diagonal fields vanishes. Assuming conservation of diagonality still holds if $p\equiv 2\bmod 4$, write the fusion rules of all D-series minimal models.
 \end{exo}
 
@@ -1143,35 +1145,26 @@ In order to compute the character of a degenerate representation, we should subt
 \begin{align}
  \chi_{\langle r,s\rangle}(\tau) = \chi_{P_{\langle r,s\rangle}}(\tau) - \chi_{P_{\langle r,-s\rangle}}(\tau)\ .
 \end{align}
-For a fully degenerate representation in the Kac table of the $(p, q)$ minimal model, the structure is a bit more complicated: we have to subtract the two null vectors and their descendents, but add again the intersection of their two Verma submodules, which was subtracted twice. This intersection has a complicated structure, and the result is 
-\begin{align}
- \chi_{\langle r,s\rangle}(\tau) = \sum_{k\in\mathbb{Z}} \left( \chi_{P_{\langle r,s\rangle} + ik\sqrt{pq}} - \chi_{P_{\langle r,-s\rangle} + ik\sqrt{pq}}\right)\ .
-\end{align}
-The modular $S$-matrix turns out to be symmetric, showing that the A-series minimal models have modular invariant partition functions. Actually, the D-series minimal models too. Furthermore, these minimal models exist on arbitrary Riemann surfaces, and so does Liouville theory.
+For a fully degenerate representation in the Kac table of the $(p, q)$ minimal model, the structure is a bit more complicated: we have to subtract the two null vectors and their descendents, but add again the intersection of their two Verma submodules, which was subtracted twice. 
 
-\begin{exo}[Modular $S$-matrices of minimal models]
- Show that the modular transformation of the character $\chi_{P}(\tau)$ of a Verma module is 
+\begin{exo}[Characters of minimal models]
+ ~\label{exo:chmm}
+ Show that the characters of fully degenerate representations in the Kac table of the $(p, q)$ minimal model are
  \begin{align}
-  \chi_P(\tau) = \sqrt{2}i\int_{i\mathbb{R}} dP'\ e^{4\pi iPP'} \chi_{P'}(-\tfrac{1}{\tau})\ . 
- \end{align}
-Using the Poisson resummation formula $\sum_{k\in\mathbb{Z}} e^{2\pi ikx} = \sum_{\ell\in\mathbb{Z}} \delta(x+\ell)$, deduce the modular transformation of the characters of fully degenerate representation in the Kac table of the $(p, q)$ minimal model,
-\begin{align}
- \chi_{\langle r,s\rangle}(\tau) = 
- -\sqrt{\frac{2}{pq}}\sum_{\ell\in\mathbb{Z}} 
- \sin\left(\pi\frac{r}{p}\ell\right) 
- \sin\left(\pi\frac{s}{q}\ell\right)
- \chi_{i\frac{\ell}{2\sqrt{pq}}}(-\tfrac{1}{\tau})\ .
-\end{align}
-Using the identity
-\begin{align}
- \sum_{r=1}^{p-1} (-1)^{rs'}\sin\left(\pi\frac{q}{p}rr'\right)\sin\left(\pi\frac{r}{p}\ell\right) 
- = -\frac{p}{2}\sum_{\epsilon =\pm} \epsilon \delta_{\ell\equiv\epsilon qr'+ps'\bmod 2p}\ ,
-\end{align}
-show that the modular $S$-matrix is 
-\begin{align}
- S_{\langle r,s\rangle, \langle r', s'\rangle} = -\sqrt{\frac{8}{pq}}(-1)^{rs'+r's} \sin\left(\pi\frac{q}{p}rr'\right)\sin\left(\pi\frac{p}{q}ss'\right)\ .
+ \chi_{\langle r,s\rangle}(\tau) = \sum_{k\in\mathbb{Z}} \left( \chi_{P_{\langle r,s\rangle} + ik\sqrt{pq}} - \chi_{P_{\langle r,-s\rangle} + ik\sqrt{pq}}\right)\ .
+ \label{eq:chmm}
 \end{align}
 \end{exo}
+
+\begin{exo}[Modular $S$-matrices of minimal models]
+~\label{exo:mods}
+ Show that the modular $S$-matrix of the $(p, q)$ minimal model is 
+ \begin{align}
+ S_{\langle r,s\rangle, \langle r', s'\rangle} = -\sqrt{\frac{8}{pq}}(-1)^{rs'+r's} \sin\left(\pi\frac{q}{p}rr'\right)\sin\left(\pi\frac{p}{q}ss'\right)\ .
+ \label{eq:smm}
+\end{align}
+\end{exo}
+The modular $S$-matrix is symmetric, showing that the A-series minimal models have modular invariant partition functions. Actually, the D-series minimal models too. Furthermore, these minimal models exist on arbitrary Riemann surfaces, and so does Liouville theory.
 
 \section{Liouville theory}
 
@@ -1291,42 +1284,37 @@ Moreover, if we had the degenerate field $V_{\langle 1,2\rangle}$ instead of $V_
 
 
 
-In order to solve the shift equations for $C_{P_1,P_2,P_3}$, we need a function that produces Gamma functions when its argument is shifted by $b$ or $\frac{1}{b}$. 
-
-\begin{exo}[Upsilon function]
-~\label{exo:upsilon}
- For $b>0$, show that there is a unique (up to a constant factor) holomorphic function $\Upsilon_b(x)$ that obeys the shift equations
- \begin{align}
-  \frac{\Upsilon_b(x+b)}{\Upsilon_b(x)} = b^{1-2bx} \gamma(bx)\qquad \text{and} \qquad \frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)} = b^{\frac{2x}{b}-1} \gamma(\tfrac{x}{b})\ .
+In order to solve the shift equations for $C_{P_1,P_2,P_3}$, we need a function that produces Gamma functions when its argument is shifted by $b$ or $\frac{1}{b}$. More precisely, we need a function such that 
+\begin{align}
+  \frac{\Upsilon_b(x+b)}{\Upsilon_b(x)} = b^{1-2bx} \gamma(bx)\qquad \text{and} \qquad \frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)} = b^{\frac{2x}{b}-1} \gamma(\tfrac{x}{b})\ ,
 \label{upup}
 \end{align}
-Show that $\Upsilon_b(x)=\Upsilon_b(Q-x)$.
-For $ib>0$, show that the meromorphic function 
-\begin{align}
- \hat{\Upsilon}_b(x) = \frac{1}{\Upsilon_{ib}(-ix+ib)}\ ,
-\end{align}
-obeys shift equations that differ from eq. \eqref{upup} by $b^{\cdots} \to (ib)^{\cdots}$. 
-\end{exo}
-The function that solves the exercise can be written as 
-\begin{align}
- \Upsilon_b(x) = \lambda_b^{(\frac{Q}{2}-x)^2}\prod_{m,n=0}^\infty f\left(\frac{\frac{Q}{2}-x}{\frac{Q}{2}+mb+nb^{-1}}\right) \quad \text{with} \quad f(x)=(1-x^2)e^{x^2}\ ,
- \label{eq:up}
-\end{align}
-where $\lambda_b$ is an unimportant $b$-dependent constant.
-The solution is unique for $b>0$, because the ratio of two solutions would be a continuous function with aligned periods $b$ and $\frac{1}{b}$, and such a function must be constant if $b^2\notin \mathbb{Q}$. In the complex plane, the periods $b$ and $\frac{1}{b}$ indeed look as follows:
+where the prefactors ensure that the two shift equations are compatible with one another. If it exists and is continuous, this function must be unique (up to a constant factor) if $b^2\in \mathbb{R}_+-\mathbb{Q}$, because the ratio of two solutions would be a continuous function with aligned periods $b$ and $\frac{1}{b}$. In the complex plane, the periods $b$ and $\frac{1}{b}$ indeed look as follows:
 \begin{equation}
  \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .6]
 \draw (0, 2) node[left]{$i$} -- (0, 1) node[below left] {$0$} -- (1, 1) node[below] {$1$};
 \draw [red, thick, latex-latex] (11,3) -- (11,1) node[fill, circle, minimum size = 1mm, inner sep = 0]{} -- (11,-.3);
 \draw [red, thick, latex-latex] (8,3) -- (7,1) node[fill, circle, minimum size = 1mm, inner sep = 0]{}-- (7.6,-.2);
 \draw [red, thick, latex-latex] (5,1) -- (3,1) node[fill, circle, minimum size = 1mm, inner sep = 0]{} -- (4.3,1) ;
-\node at (4, -1.5){$\begin{array}{c} b>0 \\ c\geq 25 \end{array}$};
+\node at (4, -1.5){$\begin{array}{c} b^2>0 \\ c\geq 25 \end{array}$};
 \node at (7.5, -1.5){$\begin{array}{c} b\in \mathbb{C} \\ c\in\mathbb{C} \end{array}$};
-\node at (11, -1.5){$\begin{array}{c} ib>0 \\ c\leq 1 \end{array}$};
+\node at (11, -1.5){$\begin{array}{c} b^2<0 \\ c\leq 1 \end{array}$};
  \end{tikzpicture}
 \end{equation}
-The formula \eqref{eq:up} for $\Upsilon_b(x)$ actually makes sense not only for $b>0$, but for $\Re b>0$. This defines the functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$  for $\Re b>0$ and $\Re ib>0$ respectively, such that they are analytic in $b$. 
+For $b^2\in \mathbb{R}_--\mathbb{Q}$, there is also a unique solution of the shifts equations that are obtained from eq. \eqref{upup} by $b^{\cdots} \to (ib)^{\cdots}$, namely 
+\begin{align}
+ \hat{\Upsilon}_b(x) = \frac{1}{\Upsilon_{ib}(-ix+ib)}\ .
+\end{align}
 
+\begin{exo}[Upsilon function]
+~\label{exo:upsilon}
+ For $b>0$, show that the solution of the shift equations \eqref{upup} is 
+ \begin{align}
+ \Upsilon_b(x) = \lambda_b^{(\frac{Q}{2}-x)^2}\prod_{m,n=0}^\infty f\left(\frac{\frac{Q}{2}-x}{\frac{Q}{2}+mb+nb^{-1}}\right) \quad \text{with} \quad f(x)=(1-x^2)e^{x^2}\ ,
+ \label{eq:up}
+\end{align}
+ where $\lambda_b$ is a function of $b$ to be determined. Deduce that $\Upsilon_b(x)$ is holomorphic and obeys $\Upsilon_b(x)=\Upsilon_b(Q-x)$. By analyticity in $b$, deduce that $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$ can be defined for $\Re b^2>0$ and $\Re b^2<0$ respectively.
+\end{exo}
 Let us now solve the shift equation \eqref{eq:shift} using the function $\Upsilon_b$. We write the ansatz
 \begin{align}
  C_{P_1,P_2,P_3} =  \frac{N_0 \prod_{i=1}^3 N(P_i)}{\prod_{\pm,\pm} \Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)} \ ,
@@ -1360,8 +1348,8 @@ Zamolodchikov and Al. Zamolodchikov): it is the natural normalization in the fun
 \end{itemize}
 
 Our three-point structure constant \eqref{cppp} holds if
-$c\notin ]-\infty, 1]$ i.e. $\Re b>0$. 
-On the other hand, doing the replacement $\Upsilon_b\to \hat\Upsilon_b$, we obtain a solution $\hat C$ that holds if  $c\notin [25,\infty[$ i.e. $\Re ib>0$, together with the corresponding functions $\hat B$ and $\hat N$.
+$c\notin ]-\infty, 1]$ i.e. $\Re b^2>0$. 
+On the other hand, doing the replacement $\Upsilon_b\to \hat\Upsilon_b$, we obtain a solution $\hat C$ that holds if  $c\notin [25,\infty[$ i.e. $\Re b^2<0$, together with the corresponding functions $\hat B$ and $\hat N$.
 The solution of the shift equations is unique if $b$ and $b^{-1}$ are aligned, i.e. if $b^2\in\mathbb{R}$. For generic values of the central charge, both $C$ and $\hat C$ are solutions, and there are actually infinitely many other solutions. In order to prove the existence and uniqueness of Liouville theory, we will have to determine which solutions lead to crossing-symmetric four-point functions.
 In the case of minimal models, the momentums $P_{\langle r,s\rangle}$ will belong to a lattice with periods $b$ and $\frac{1}{b}$, so the shift equations have a unique solution $C=\hat{C}$. (Actually $C$ has poles when $P_i$ take degenerate values, one should take the residues.)
 
@@ -1694,6 +1682,109 @@ We already know that the fusion product \eqref{rtv} holds for the representation
 The same method can be used for determining the fusion products \eqref{rrsr} of degenerate representations by recursion on $r_1,s_1$, starting with the known cases $(r_1,s_1)\in \{(1,1), (2,1), (1,2)\}$.
 
 \paragraph{Exercise \ref{exo:cmm}.} 
+
+Let $\mathcal{R}_{\langle r_1,s_1\rangle}$ and $\mathcal{R}_{\langle r_2,s_2\rangle}$ be two doubly degenerate representations in $S_{p, q}$. The fusion product $\mathcal{R}_{\langle r_1,s_1\rangle}\times \mathcal{R}_{\langle r_2,s_2\rangle}$ must be a subspace of two fusion products computed with the rule \eqref{rrsr} for degenerate representations: $\mathcal{R}_{\langle r_1,s_1\rangle}\times \mathcal{R}_{\langle r_2,s_2\rangle}$ and $\mathcal{R}_{\langle r_1,s_1\rangle}\times \mathcal{R}_{\langle p-r_2,q-s_2\rangle}$. The determination of this subspace is not completely straightforward, because each representation that appears in one of our two fusion products can be written in two possible ways, $\mathcal{R}_{\langle r_3, s_3\rangle}$ or $\mathcal{R}_{\langle p-r_3, q-s_3\rangle}$. 
+This ambiguity can be lifted by writing the two fusion products such that the parities of $r_3,s_3$ are the same in one fusion products as in the other. (Remember that at least one of the integers $p,q$ must be odd.)
+In particular, if we write $\mathcal{R}_{\langle r_1,s_1\rangle}\times \mathcal{R}_{\langle r_2,s_2\rangle}$ as in eq. \eqref{rrsr}, we should not write $\mathcal{R}_{\langle r_1,s_1\rangle}\times \mathcal{R}_{\langle p-r_2,q-s_2\rangle}$ as 
+\begin{align}
+ \mathcal{R}_{\langle r_1,s_1\rangle}\times \mathcal{R}_{\langle p-r_2,q-s_2\rangle} 
+ = \sum_{r_3\overset{2}{=}|r_1+r_2-p|+1}^{r_1-r_2+p-1}\ \sum_{s_3\overset{2}{=}|s_1+s_2-q|+1}^{s_1-s_2+q-1} \mathcal{R}_{\langle r_3,s_3 \rangle}\ ,
+\end{align}
+but rather as 
+\begin{align}
+  \mathcal{R}_{\langle r_1,s_1\rangle}\times \mathcal{R}_{\langle p-r_2,q-s_2\rangle} 
+  = \sum_{r_3\overset{2}{=}r_2-r_1+1}^{\min(r_1+r_2,2p-r_1-r_2)-1}\ \sum_{s_3\overset{2}{=}s_2-s_1+1}^{\min(s_1+s_2,2q-s_1-s_2)-1} \mathcal{R}_{\langle r_3,s_3 \rangle}\ .
+\end{align}
+In this form, we see that the intersection of the two fusion products $\mathcal{R}_{\langle r_1,s_1\rangle}\times \mathcal{R}_{\langle r_2,s_2\rangle}$ and $\mathcal{R}_{\langle r_1,s_1\rangle}\times \mathcal{R}_{\langle p-r_2,q-s_2\rangle}$ of degenerate representations is given by eq. \eqref{rrmm}. Taking further intersections with $\mathcal{R}_{\langle p-r_1,q-s_1\rangle}\times \mathcal{R}_{\langle r_2,s_2\rangle}$ and $\mathcal{R}_{\langle p-r_1,q-s_1\rangle}\times \mathcal{R}_{\langle p-r_2,q-s_2\rangle}$ does not yield further constraints, and the fusion products of our doubly degenerate representations are therefore given by eq. \eqref{rrmm}.
+
+\paragraph{Exercise \ref{exo:frd}.}
+
+Fusion rules are a priori defined for representations of the Virasoro algebra, and do not know how the left- and right-moving representations are combined. Therefore, fusion rules may not unambiguously determine operator product expansions in models where the same left-moving Virasoro representation is combined with different right-moving representations. 
+
+However, assuming that $p$ is even, let us look at the values of the $r$ index in the D-series spectrum \eqref{eq:sds}. The parity of $r$ is unambiguously defined, as it does not change under $(r,s)\to (p-r,q-s)$. If moreover $p\equiv 0 \bmod 4$, then $r$ is takes odd values in the diagonal sector, and even values in the non-diagonal sector: therefore, the two sectors do not involve the same representations of the Virasoro algebra. From the fusion product \eqref{rrmm}, we deduce that the fusion product of two representations is diagonal if and only if the two representations belong to the same sector. Let us write this in terms of OPEs of the primary fields $V^\epsilon_{\langle r,s\rangle}$ of the model, where the boolean $\epsilon = r-1\bmod 2$ indicates the sector: $V^0_{\langle r,s\rangle}$ corresponds to the representation $\mathcal{R}_{ r,s} \otimes \bar{\mathcal{R}}_{r,s}$, and $V^1_{\langle r,s\rangle}$ to $\mathcal{R}_{r,s} \otimes \bar{\mathcal{R}}_{p-r,s}$. We then have OPEs of the type 
+\begin{align}
+ V^{\epsilon_1}_{\langle r_1,s_1\rangle}V^{\epsilon_2}_{\langle r_2,s_2\rangle} \sim \sum_{r_3\overset{2}{=}|r_1-r_2|+1}^{\min(r_1+r_2,2p-r_1-r_2)-1}\ \sum_{s_3\overset{2}{=}|s_1-s_2|+1}^{\min(s_1+s_2,2q-s_1-s_2)-1} V^{\epsilon_1+\epsilon_2}_{\langle r_3,s_3\rangle}\ .
+\end{align}
+For $p\equiv 2\bmod 4$, we still use the boolean $\epsilon$ for labelling sectors, although it is no longer related to the parity of $r$, as $r$ is odd in both sectors. The same expression for the fusion rules makes sense, although the conservation of diagonality is now an ansatz to be tested, rather than an unavoidable consequence of symmetry.
+
+\paragraph{Exercise \ref{exo:chmm}.}
+
+To do this exercise, we only need to know the identities 
+\begin{align}
+ \Delta_{\langle r,s\rangle} = \Delta_{\langle -r,-s\rangle}=\Delta_{\langle p+r,q+s\rangle}\ ,
+ \label{eq:deltaid}
+\end{align}
+and the fact that a primary state with dimension $\Delta_{\langle r,s\rangle}$ with $r,s\in\mathbb{N}^*$ has a null vector with dimension $\Delta_{\langle r,-s\rangle}$.
+
+By definition, the doubly degenerate representation $\mathcal{R}_{\langle r,s\rangle} =\mathcal{R}_{\langle p-r,q-s\rangle}$ has two vanishing null vectors, with the dimensions $\Delta_{\langle r, -s\rangle}$ and $\Delta_{\langle p-r,s-q\rangle}$. Actually it has infinitely many null vectors due to the identities \eqref{eq:deltaid}, but we only consider the two null vectors with the lowest conformal dimensions for the moment. 
+The null vector with dimension $\Delta_{\langle r, -s\rangle}=\Delta_{\langle p+r, q-s\rangle} = \Delta_{\langle p-r,q+s\rangle}$ itself has null vectors with dimensions $\Delta_{\langle p+r, s-q\rangle}$ and $\Delta_{\langle p-r,-q-s\rangle}$. One way to tame this proliferation of null vectors is to use the identities \eqref{eq:deltaid} in order to rewrite them all with the same first index $r$, and to label them by their second index. In this notation, the primary state $s$ has null vectors $-s$ and $2q-s$. The first one of these null vectors itself has null vectors $s-2q$ and $2q+s$. Interestingly, the second null vector has two null vectors with the very same labels $s-2q$ and $2q+s$. We assume that two null vectors with the same conformal dimension are actually identical: this means that the submodules generated by the null vectors $-s$ and $2q-s$ share two submodules. The character of our representation therefore starts with 
+\begin{align}
+ \chi_{\langle r,s\rangle} = \chi_s - \chi_{-s} -\chi_{-s+2q} + \chi_{s-2q} + \chi_{s+2q} + \cdots \ , 
+\end{align}
+where $\chi_s$ is a temporary notation for the Verma module character $\chi_{P_{\langle r,s\rangle}}$, and the two shared submodules had to be added back. Iterating the reasoning, we find 
+\begin{align}
+ \chi_{\langle r,s\rangle} = \sum_{k\in\mathbb{Z}} \left(\chi_{s + 2k q} -\chi_{-s+2k q}\right)\ . 
+\end{align}
+Using $P_{\langle r,s+2q\rangle} = P_{\langle r,s\rangle} + i\sqrt{pq}$, this can be rewritten as eq. \eqref{eq:chmm}.
+
+But what do we do with the infinitely many null vectors that we have neglected? Actually, nothing: the neglected null vectors all coincide with null vectors that we already did take into account, and do not affect the character.
+
+\paragraph{Exercise \ref{exo:mods}.}
+
+From the Fourier transforms of Gaussian functions, we deduce the modular transformation of the character $\chi_{P}(\tau)$ of a Verma module: 
+ \begin{align}
+  \chi_P(\tau) = \sqrt{2}i\int_{i\mathbb{R}} dP'\ e^{4\pi iPP'} \chi_{P'}(-\tfrac{1}{\tau})\ . 
+ \end{align}
+Using the Poisson resummation formula $\sum_{k\in\mathbb{Z}} e^{2\pi ikx} = \sum_{\ell\in\mathbb{Z}} \delta(x+\ell)$, we then deduce the modular transformation of the characters of fully degenerate representation in the Kac table of the $(p, q)$ minimal model,
+\begin{align}
+ \chi_{\langle r,s\rangle}(\tau) = 
+ -\sqrt{\frac{2}{pq}}\sum_{\ell\in\mathbb{Z}} 
+ \sin\left(\pi\frac{r}{p}\ell\right) 
+ \sin\left(\pi\frac{s}{q}\ell\right)
+ \chi_{i\frac{\ell}{2\sqrt{pq}}}(-\tfrac{1}{\tau})\ .
+ \label{eq:chs}
+\end{align}
+Let us insert $\sum_{r=1}^{p-1} (-1)^{rs'}\sin\left(\pi\frac{q}{p}rr'\right)$ on both sides of this equation. We also insert an analogous sum over $s$. The right-hand side is computed using the elementary identity
+\begin{align}
+ \sum_{r=1}^{p-1} (-1)^{rs'}\sin\left(\pi\frac{q}{p}rr'\right)\sin\left(\pi\frac{r}{p}\ell\right) 
+ = -\frac{p}{2}\sum_{\epsilon =\pm} \epsilon \delta_{\ell\equiv\epsilon qr'+ps'\bmod 2p}\ ,
+\end{align}
+and it can then be written in terms of characters of fully degenerate representations, leading to 
+eq. \eqref{eq:smm}.
+
+\paragraph{Exercise \ref{exo:upsilon}.}
+
+From eq. \eqref{eq:up}, we deduce how the function $\Upsilon_b(x)$ behaves under shifts:
+\begin{align}
+ \frac{\Upsilon_b(x+b)}{\Upsilon_b(x)} = \lambda_b^{2bx-1} \prod_{n=0}^\infty \left[ \frac{n+1-bx}{n+bx} e^{ \sum_{m=0}^\infty \frac{2bx-1}{\left(\frac{Q}{2}+mb+nb^{-1}\right)^2}}\right] \ .
+\end{align}
+From Weierstrass's definition of the Gamma function, we deduce the product formula 
+\begin{align}
+ \gamma(x) = e^{-\gamma_\text{EM}(2x-1)} \frac{1-x}{x} \prod_{n=1}^\infty \left[\frac{n+1-x}{n+x} e^{\frac{2x-1}{n}}\right] \ ,
+\end{align}
+where $\gamma_\text{EM}$ is the Euler--Mascheroni constant. This implies 
+\begin{align}
+ \frac{\Upsilon_b(x+b)}{\Upsilon_b(x)} =  \gamma(bx) e^{(2bx-1)(\log \lambda_b +\gamma_\text{EM}  + K_b)}\ ,
+\end{align}
+where we define 
+\begin{align}
+ K_b = \sum_{n=0}^\infty \left[\sum_{m=0}^\infty \frac{1}{\left(\frac{Q}{2}+mb+nb^{-1}\right)^2} - \frac{1}{n}\right] \ ,
+\end{align}
+with the convention $\frac{1}{0} = 0$. We are not there yet, because $K_b$ is not invariant under $b\to \frac{1}{b}$. To understand its behaviour under $b\to \frac{1}{b}$, we introduce a cutoff $M$ on the sum over $M$, and perform the split $\sum_{n=0}^\infty = \sum_{n=0}^M + \sum_{n=M+1}^\infty$. This leads to 
+\begin{align}
+ K_b - K_{b^{-1}} = \lim_{M\to \infty} \left[ \sum_{n=0}^M \sum_{m=M+1}^\infty - \sum_{m=0}^M \sum_{n=M+1}^\infty\right] \frac{1}{\left(\frac{Q}{2}+mb+nb^{-1}\right)^2}\ .
+\end{align}
+In order to compute this limit, we can replace the sums with integrals, and we obtain
+\begin{align}
+  K_b - K_{b^{-1}} = \lim_{M\to \infty} \left[\int_0^{Mb^{-1}} dy \int_{Mb}^\infty dx - \int_0^{Mb} dx\int_{Mb^{-1}}^\infty dy\right] \frac{1}{(x+y)^2} = -2\log b\ .
+\end{align}
+This shows that $K_b+\log b$ is invariant under $b\to \frac{1}{b}$. Therefore, we set 
+\begin{align}
+ \lambda_b = e^{-\gamma_\text{EM}-K_b-\log b}\ ,
+\end{align}
+and we obtain the shift equation \eqref{upup} for $\frac{\Upsilon_b(x+b)}{\Upsilon_b(x)}$. Since $\lambda_b$ is invariant under $b\to \frac{1}{b}$, the shift equation for  $\frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)}$ follows immediately.
+
+
 
 
 \bibliographystyle{cft}
