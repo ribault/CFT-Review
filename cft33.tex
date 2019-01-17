@@ -223,7 +223,7 @@ On the statistical mechanics side, they are given in Cardy's lecture notes \cite
 $W$-symmetry is reviewed in depth in Bouwknegt and Schoutens's article \cite{bs92}, where $W$-symmetric conformal field theories are however not solved systematically.
 An exposition of the $W$-symmetric minimal models and conformal Toda theories would be a natural extension of the present text, although these theories have not been fully solved so far. 
 \end{itemize}
-A much abridged version is also available \cite{rib16}. An even briefer treatment is found in Wikipedia, with in particular the articles on \href{https://en.wikipedia.org/wiki/Two-dimensional_conformal_field_theory}{Two-dimensional conformal field theory} and \href{https://en.wikipedia.org/wiki/Liouville_field_theory}{Liouville theory}. (As of 2018, these Wikipedia articles were mostly written by the present author.)
+A much abridged version is also available \cite{rib16}. An even briefer treatment is found in Wikipedia, with in particular the articles on \href{https://en.wikipedia.org/wiki/Two-dimensional_conformal_field_theory}{Two-dimensional conformal field theory} and \href{https://en.wikipedia.org/wiki/Liouville_field_theory}{Liouville theory}. (As of 2019, these Wikipedia articles were mostly written by the present author.)
 
 While we mostly present known results, the following aspects may be original:
 \begin{itemize}
@@ -559,7 +559,7 @@ In particular, the field $V_{\sigma_3}$ can appear in a $V_{\sigma_1}V_{\sigma_2
 \end{align}
 \end{hyp} 
 \noindent
-In some cases, the fusion product has a constructive definition as a kind of generalization of the tensor product \cite{gab99}. However, all we will need is that it exists. The fusion product, in other words the structure of the category of representations, will turn out to play a more important role than the structure of the representations themselves.  
+In some cases, the fusion product has a constructive definition as a kind of generalization of the tensor product \cite{gab99, kr18}. However, all we will need is that it exists. The fusion product, in other words the structure of the category of representations, will turn out to play a more important role than the structure of the representations themselves.  
 
 The fusion product $\mathcal{R}_1\times \mathcal{R}_2$ is said to have nontrivial multiplicities if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\geq 2$ for some $\mathcal{R}_3$, and trivial multiplicities if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\in \{0,1\}$.
 A field is called a \textbf{\boldmath simple current}\index{simple current} if the corresponding representation $\mathcal{R}$ is such that $\mathcal{R}\times \mathcal{R}'$ is indecomposable for any $\mathcal{R}'$, so that $\sum_{\mathcal{R}''} N_{\mathcal{R}\mathcal{R}'}^{\mathcal{R}''} =1$. 
@@ -2078,7 +2078,7 @@ Inserting this in a three-point function, and using the two-point function \eqre
  = 
  C^3_{12} \left| z_{12}^{\Delta_3-\Delta_1-\Delta_2} \Big( z_{23}^{-2\Delta_3} + O(z_{12}) \Big) \right|^2\ .
 \end{align}
-Comparing this with the expression \eqref{cff} for the three-point function, we find that our OPE coefficient coincides with the three-point structure constant, 
+Comparing this with the expression \eqref{cff} for the three-point function, we find that $C^3_{12}$ coincides with the three-point structure constant, 
 \begin{align}
  C^3_{12}= C_{123}\ .
  \label{cftt}
@@ -2102,245 +2102,6 @@ The case $z_2=\infty$ can be obtained from the case $z_2\in\mathbb{C}$ by a glob
 \end{align}
 In the special case where there is no field at infinity, so that $\Delta_2=0$ and $\Delta_1=\Delta_3$, this is consistent with the behaviour \eqref{vdz} of $V_{\Delta_1,\bar\Delta_1}(z_1)$ near $z_1=\infty$.
 
-\subsection{Conformal blocks and crossing symmetry \label{secaco}}
-
-We will now define \textbf{\boldmath conformal blocks}\index{conformal block} as the universal constituents of correlation functions. 
-We want correlation functions to be decomposable as combinations of the model-dependent three-point structure constant, and conformal blocks.
-In this sense, a simple example of a conformal block is the three-point block $\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)$ \eqref{fzzz}. (On the torus, there exist nontrivial zero-point blocks, which coincide with the characters of representations.)
-
-Using the OPE of $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2)$ and Ward identities, any four-point function of primary or descendent fields can be decomposed as 
-\begin{align}
- \left\langle \prod_{i=1}^4 V_{\sigma_i}(z_i)\right\rangle 
- = \sum_{\Delta_s,\bar{\Delta}_s} C_{12s} C_{s34} \left| \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)\right|^2\ ,
-\label{fsd}
-\end{align}
-where all quantities that are not three-point structure constants have been combined into the \textbf{\boldmath $s$-channel}\index{s-channel@$s$-channel} four-point conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)$.
-The appearance of the factorized quantity $\left| \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)\right|^2$ (which involves the modulus square notation \eqref{eq:msn}) is a manifestation of holomophic factorization, and the conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)$ is a locally holomorphic function of $z_i$. 
-
-\subsubsection{Crossing symmetry}
-
-Our decomposition of the four-point function followed from the OPE of $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2)$: what if we used the OPE of $V_{\sigma_2}(z_2)V_{\sigma_3}(z_3)$ instead? We would then obtain a decomposition involving \textbf{\boldmath $t$-channel}\index{t-channel@$t$-channel} four-point conformal blocks  $\mathcal{F}^{(t)}_{\Delta_t}(\sigma_i|z_i)$.
-The equality of the two decompositions is called the \textbf{\boldmath crossing symmetry}\index{crossing symmetry} of the four-point function.
-Introducing two diagrammatic notations for conformal blocks, 
-\begin{align}
- \mathcal{F}^{(s)}_{\Delta_s}  =  
-\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
-\draw (-1,2) node [left] {$2$} -- (0,0) -- node [above] {$s$} (4,0) -- (5,2) node [right] {$3$};
-\draw (-1,-2) node [left] {$1$} -- (0,0);
-\draw (4,0) -- (5,-2) node [right] {$4$};
-\end{tikzpicture}
-=
-\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
-\draw (0, -2) -- node [below left] {$1$} (-2, 0) -- node [above left] {$2$} (0, 2) -- node [above right] {$3$} (2, 0) -- node [below right] {$4$} (0, -2) -- node [left] {$s$} (0, 2); 
-\end{tikzpicture}
-\quad\ ,\quad\
- \mathcal{F}^{(t)}_{\Delta_t}  =  
-\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
- \draw (-2,3) node [left] {$2$} -- (0,2) -- node [left] {$t$} (0,-2) -- (-2, -3) node [left] {$1$};
-\draw (0,2) -- (2,3) node [right] {$3$};
-\draw (0,-2) -- (2, -3) node [right] {$4$};
-\end{tikzpicture}
-=
-\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
-\draw (-2, 0) -- node [above left] {$2$} (0, 2) -- node [above right] {$3$} (2, 0) -- node [below right] {$4$} (0, -2) -- node [below left] {$1$} (-2, 0) -- node [below] {$t$} (2, 0); 
-\end{tikzpicture}
-\ \ ,
-\label{ftfs}
-\end{align}
-we can write crossing symmetry of the four-point function as the equation
-\begin{align}
- \sum_{\Delta_s,\bar{\Delta}_s} C_{12s} C_{s34} \left| 
- \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
-\draw (-1,2) node [left] {$2$} -- (0,0) -- node [above] {$s$} (4,0) -- (5,2) node [right] {$3$};
-\draw (-1,-2) node [left] {$1$} -- (0,0);
-\draw (4,0) -- (5,-2) node [right] {$4$};
-\end{tikzpicture} 
-\right|^2 = \sum_{\Delta_t,\bar{\Delta}_t} C_{23t}C_{t41} \left|
-\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
- \draw (-2,3) node [left] {$2$} -- (0,2) -- node [left] {$t$} (0,-2) -- (-2, -3) node [left] {$1$};
-\draw (0,2) -- (2,3) node [right] {$3$};
-\draw (0,-2) -- (2, -3) node [right] {$4$};
-\end{tikzpicture}
-\right|^2\ .
-\label{csd}
-\end{align}
-Considering the conformal blocks as known quantities, this is an equation for the spectrum and three-point structure constant, which is quadratic in the structure constant.
-This equation is equivalent to the associativity Axiom \ref{ax:ass}. In order to show that the theory is consistent, it suffices to moreover check the commutativity Axiom \ref{ax:col}, equivalently the behaviour \eqref{css} of the three-point structure constant under permutations. 
-$N$-point functions on the sphere can similarly be decomposed into three-point structure constants and $N$-point conformal blocks, but the cases $N\geq 5$ do not yield more equations. 
-
-The general crossing symmetry equation \eqref{csd}, while it may in principle determine the three-point structure constant, is in practice often intractable, because
-\begin{enumerate}
- \item it can involve sums over large sets of possible conformal dimensions in the $s$- and $t$-channels, 
- \item the general conformal blocks are rather complicated. 
-\end{enumerate}
-So, while the general crossing equation is useful for testing the consistency of proposals for the spectrum and three-point structure constant, it is often useless for deriving specific proposals in the first place. However, it is possible to restrict the $s$- and $t$-channels conformal dimensions to finite sets, and to simplify the conformal blocks, by taking one of the four fields to be degenerate. (See Section \ref{sec:degf}.) If the other three fields remain generic, this still leads to constraints on the generic three-point structure constant. 
-
-Conformal blocks obey the same local and global Ward identities as the corresponding correlation functions.
-In particular, given a four-point function of primary fields, the holomorphic global Ward identities \eqref{spz} are linear differential equations for locally holomorphic functions of $(z_1,z_2,z_3,z_4)$.
-Then
-$s$-channel and $t$-channel four-point blocks each provide a basis of solutions of these equations, whose elements are respectively parametrized by $\Delta_s$ and $\Delta_t$.
-So there must exist a linear, invertible fusing relation between the two bases, 
-\begin{align}
- \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i) = \sum_{\Delta_t}\ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix} \mathcal{F}^{(t)}_{\Delta_t}(\sigma_i|z_i)\ ,
-\end{align}
-whose $z_i$-independent kernel $F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}$ is called the \textbf{\boldmath fusing matrix}\index{fusing matrix} of the Virasoro algebra.
-The parameters of the fusing matrix are in principle representations of the Virasoro algebra: the conformal dimensions that we wrote stand for the corresponding Verma modules. Explicit formulas for the fusing matrix can be found in \cite{tv12}.
-A diagrammatic notation for the fusing matrix is 
-\begin{align}
- F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix} = \ \ 
-\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .55]
-\draw (0, -2) -- node [below left] {$1$} (-2, 0) -- node [above left] {$2$} (0, 2) -- node [above right] {$3$} (2, 0) -- node [below right] {$4$} (0, -2) -- (0, 2);
-\draw (-2, 0) -- (-.2, 0) node [below left] {$t$}; \draw (.2, 0) -- (2, 0);
-\node [above left] at (0, .2) {$s$};
-\end{tikzpicture}
-\ \ .
-\end{align}
-It is possible to eliminate the conformal blocks from the crossing symmetry equation \eqref{csd}, using the fusing relation and the linear independence of blocks within a given basis,
-\begin{align}
- \sum_{\Delta_s,\bar{\Delta}_s} C_{12s} C_{s34}
-F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}
-F_{\bar{\Delta}_s,\bar{\Delta}_t}\begin{bmatrix} \bar{\Delta}_2 & \bar{\Delta}_3 \\ \bar{\Delta}_1 & \bar{\Delta}_4 \end{bmatrix}
-=  C_{23t}C_{t41}\ .
-\end{align}
-This can be further simplified if the theory is diagonal.
-In this case, we have $\Delta_i=\bar{\Delta}_i$ for $i=1,2,3,4$, and we should insert factors $\delta_{\Delta_s,\bar\Delta_s}$ (left-hand side) and $\delta_{\Delta_t,\bar\Delta_t}$ (right-hand side) in the above formula.
-Using the inverse fusing matrix, we obtain 
-\begin{align}
- C_{12s} C_{s34}
-F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}
-= C_{23t}C_{t41} 
-F^{-1}_{\Delta_t,\Delta_s}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}
-\ .
-\label{ffm}
-\end{align}
-% NB: F^{-1} is related to F by a permutation of the arguments.
-This formulation of crossing symmetry can be useful, because the fusing matrix is a simpler object than the conformal blocks, as we will see in a special case in Section \ref{sechcb}. Moreover, this formulation implies that in a diagonal theory, the structure constant is uniquely determined by crossing symmetry. (See Exercise \ref{exoudt}.)
-
-
-\subsubsection{Pedestrian computation of conformal blocks}
-
-For simplicity, we assume that our four fields are primary.
-Thanks to global conformal symmetry, we furthermore restrict our attention to the case $(z_1,z_2,z_3,z_4)=(x,0,\infty, 1)$. 
-We therefore want to compute the conformal blocks 
-\begin{align}
- \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x)=\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x,0,\infty,1)\ ,
-\end{align}
-from which $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$ can be recovered  using eqs. \eqref{zgg} and \eqref{fx}.
-Inserting the OPE \eqref{vvs} in our four-point function, we obtain
-\begin{multline}
- \Big< V_{\Delta_1,\bar\Delta_1}(x) V_{\Delta_2,\bar\Delta_2}(0)V_{\Delta_3,\bar\Delta_3}(\infty)V_{\Delta_4,\bar\Delta_4}(1)\Big>
- \\
- = 
- \sum_{\Delta_s,\bar\Delta_s} C_{12s} 
- \left| x^{\Delta_s-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} x^Lf^{\Delta_s,L}_{\Delta_1,\Delta_2} \right|^2
- \Big< L\bar L V_{\Delta_s,\bar\Delta_s}(0) V_{\Delta_3,\bar\Delta_3}(\infty) V_{\Delta_4,\bar\Delta_4}(1) \Big>\ .
- \label{4ope}
-\end{multline}
-Then, using Ward identities, we write three-point functions of descendent fields as three-point functions of primary fields, times the universal factors
-\begin{align}
-g^{L}_{\Delta_1,\Delta_2,\Delta_3} = 
- \frac{ \left< L V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right> }{  \left<  V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right>}\ .
- \label{glvv}
-\end{align}
-In the case of $L_{-1}^n$ descendents, this only involves taking derivatives of three-point conformal blocks, 
-\begin{align}
- g^{L_{-1}^n}_{\Delta_1,\Delta_2,\Delta_3} & =\left. \frac{\frac{\partial^n}{\partial z_1^n} \mathcal{F}^{(3)}(\Delta_i|z_i)}{\mathcal{F}^{(3)}(\Delta_i|z_i)}\right|_{(z_1,z_2,z_3)=(0,\infty,1)} =(\Delta_1-\Delta_2+\Delta_3)_n \ ,
- \label{gln}
-\end{align}
-where we use the notation
-\begin{align}
- (x)_n = \frac{\Gamma(x+n)}{\Gamma(x)} = \prod_{i=0}^{n-1}(x+i)\ .
-\label{xn}
-\end{align}
-For more general descendents, we use local Ward identities \eqref{lmn}. For example,
-\begin{align}
- g^{L_{-2}}_{\Delta_1,\Delta_2,\Delta_3}
- = \Delta_1-\Delta_2+2\Delta_3\ .
- \label{glt}
-\end{align}
-Using the universal factors $g^L_{\Delta_s,\Delta_3,\Delta_4}$, the expression \eqref{4ope} of our four-point function can be written as a conformal block decomposition \eqref{fsd}, where the blocks are 
-\begin{align}
- \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) = x^{\Delta_s-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta_s,L} g^{L}_{\Delta_s,\Delta_3,\Delta_4}x^{|L|}\ .
-\label{gsd}
-\end{align}
-Explicitly, using eqs. \eqref{flfo}-\eqref{flff} for $f_{\Delta_1,\Delta_2}^{\Delta_s,L}$, we find 
-\begin{multline}
- \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) 
-= x^{\Delta_s - \Delta_1 - \Delta_2}\Bigg\{ 1 
-+ \frac{(\Delta_s+\Delta_1-\Delta_2)(\Delta_s+\Delta_4-\Delta_3)}{2\Delta_s} x  
-\\
-+ \frac{1}{D_2(\Delta_s)}
-\begin{bmatrix} (\Delta_s+\Delta_1-\Delta_2)_2 \\ \Delta_s+2\Delta_1-\Delta_2 \end{bmatrix}^T
-\begin{bmatrix} 2+\frac{c}{4\Delta_s} & -3 \\ -3 & 4\Delta_s+2 \end{bmatrix}
-\begin{bmatrix} (\Delta_s+\Delta_4-\Delta_3)_2 \\ \Delta_s+2\Delta_4-\Delta_3 \end{bmatrix}
- x^2 + O(x^3)\Bigg\}\ ,
-\end{multline}
-where the level-$2$ determinant $D_2(\Delta_s)$ was defined in eq. \eqref{dud}.
-Once $s$-channel blocks are known, $t$-channel blocks can be obtained by a permutation of the arguments, as suggested by the diagrammatic notations \eqref{ftfs},
-\begin{align}
- \mathcal{F}^{(t)}_{\Delta_t}(\Delta_1,\Delta_2,\Delta_3,\Delta_4|z_1,z_2,z_3,z_4) = \mathcal{F}^{(s)}_{\Delta_t}(\Delta_1,\Delta_4,\Delta_3,\Delta_2|z_1,z_4,z_3,z_2)\ . 
-\label{gtgs}
-\end{align}
-Taking global conformal symmetry into account, this becomes
-\begin{align}
- \mathcal{F}^{(t)}_{\Delta_t}(\Delta_1,\Delta_2,\Delta_3,\Delta_4|x) = \mathcal{F}^{(s)}_{\Delta_t}(\Delta_1,\Delta_4,\Delta_3,\Delta_2|1-x)\ .
-\end{align}
-
-\subsubsection{Zamolodchikov's recursion}
-
-For practical computations of conformal blocks, the formula \eqref{gsd} is not very efficient: the number of terms grows quickly with the level $|L_s|$, and the cofficients $f_{\Delta_1,\Delta_2}^{\Delta_s,L_s}$ are not known explicitly.
-Fortunately, there is also Al.
-Zamolodchikov's recursion representation \cite{zz90}, which converges faster.
-Instead of a power series in the cross-ratio $x$, this representation is a power series in the \textbf{elliptic nome}\index{elliptic nome}
-\begin{align}
- q = \exp -\pi \frac{F(\frac12,\frac12,1,1-x)}{F(\frac12,\frac12,1,x)}  \ , 
-\end{align}
-where $F(\frac12,\frac12,1,x)$ is a special case of the hypergeometric function \eqref{fsn}. 
-We have 
-\begin{align}
- q(x=0)=0 \ \ , \ \ q(x=\tfrac12) = e^{-\pi} \ \ , \ \ q(x=1)=1 \ \ , \ \ q(x)\underset{x\to 0}{=} \frac{x}{16} +O(x^2)\ .
-\end{align}
-The convergence radius of both power series is $1$.
-But since $|q|\leq 1$ for any $x\in\mathbb{C}$, Zamolodchikov's recursion representation converges for almost all $x\in \mathbb{C}$, whereas the formula \eqref{gsd} only converges for $|x|<1$.
-
-Explicitly, Zamolodchikov's recursion representation reads 
-\begin{align}
- \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) 
-=  (16q)^{\Delta_s -\frac{Q^2}{4}} x^{\frac{Q^2}{4}-\Delta_1-\Delta_2} (1-x)^{\frac{Q^2}{4}-\Delta_1-\Delta_4} \theta_3(q)^{3Q^2-4(\Delta_1+\Delta_2+\Delta_3+\Delta_4)} H_{\Delta_s}(\Delta_i|q)\ .
-\end{align}
-Here $\theta_3(q)$ is the elliptic function
-\begin{align}
- \theta_3(q) = \sum_{n\in{\mathbb{Z}}} q^{n^2}\ ,
-\end{align}
- and the nontrivial factor is the function
-\begin{align}
- H_{\Delta_s}(\Delta_i|q) = \sum_{k=0}^\infty \prod_{j=1}^k \sum_{m_j,n_j=1}^\infty \frac{(16q)^{m_jn_j}R_{m_j,n_j}}{\Delta_{\langle m_{j-1},-n_{j-1} \rangle}-\Delta_{\langle m_j,n_j\rangle}}\ ,
-\label{hdq}
-\end{align}
-where by convention $\Delta_{\langle m_0,-n_0\rangle} = \Delta_s$, and we introduce the coefficients
-\begin{align}
- R_{m,n} = \frac{2P_{\langle 0,0\rangle} P_{\langle m,n\rangle}}{\prod_{r=1-m}^m \prod_{s=1-n}^n 2P_{\langle r,s\rangle}}
-\prod_{r\overset{2}{=}1-m}^{m-1} \prod_{s\overset{2}{=}1-n}^{n-1} \prod_\pm (P_2\pm P_1 + P_{\langle r,s\rangle}) (P_3\pm P_4 +P_{\langle r,s\rangle})\ .
-\end{align}
-(We introduced the notation $\overset{2}{=}$ for indices that run by increments of $2$.
-Moreover, $P$ is the momentum, and $P_{\langle r,s \rangle}$ \eqref{ars} are its values for degenerate representations.)
-
-The recursion representation owes its name to the original definition of the function $H_{\Delta_s}(\Delta_i|q)$ \eqref{hdq} by a recursive formula,
-\begin{align}
- H_{\Delta_s}(\Delta_i|q) = 1 + \sum_{m,n=1}^\infty \frac{(16q)^{mn}}{\Delta_s-\Delta_{\langle m,n\rangle}} R_{m,n} H_{\Delta_{\langle m,-n\rangle}}(\Delta_i|q)\ .
- \label{hrec}
-\end{align}
-This formula shows that conformal blocks have poles for $\Delta_s \in \{\Delta_{\langle r,s\rangle}\}_{r,s\in {\mathbb{N}}^*}$.
-Moreover, in the reflection representation, conformal blocks are manifestly invariant under reflections of all momentums.
-
-\subsubsection{Other representations of conformal blocks}
-
-The recursion representation that we described can be understood as a large $\Delta_s$ expansion, that makes $\Delta_s$-poles manifest. Al. Zamolodchikov has derived another recursion representation that is a large $c$ expansion, and makes $c$-poles manifest. That $c$-recursion representation is a power series in the cross-ratio $x$, rather than the elliptic nome $q$. For both recursion representations in the case of $N$-point conformal blocks (and not just $4$-point blocks), see \cite{ccy17}.
-
-Moreover, conformal blocks have a combinatorial representation that follows from the AGT relation \cite{aflt10}. 
-This representation is a power series in $x$, and therefore converges more slowly than the $\Delta_s$-recursion representation. 
-Moreover, invariance under reflections is not manifest, and individual terms have spurious poles in $\Delta_s$.
-However, an advantage of the combinatorial representation is that it has an interpretation as a sum over descendents in a particular basis.
 
 \section{Degenerate fields}\label{sec:degf}
 
@@ -2446,20 +2207,7 @@ f_{r_1,r_2,r_3} = \left\{\begin{array}{l}  1 \quad \text{if} \quad
  \forall i\neq j\neq k \ , \quad r_i+r_j-r_k \in 1 + 2{\mathbb{N}}\ .
 \\ 0 \quad \text{otherwise} \ .\end{array}\right.  
 \label{frrr}
-\end{align}
-
-\subsubsection{Fusion rules and conformal blocks}
-
-Conformal blocks that involve degenerate fields obey differential equations, as we will see in Section \ref{secbpz}.
-Nevertheless, the conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$ is a smooth function of $\Delta_i$, and has a finite value for $\Delta_1 = \Delta_{\langle r,s\rangle}$. 
-If $\Delta_2$ and $\Delta_s$ happen to be related as dictated by the fusion rule of the degenerate field $V_{\langle r,s\rangle}$, then this value obeys a differential equation of order $rs$.
-In other words, a conformal block involving a degenerate representation coincides with the conformal block involving the corresponding Verma module.
-The degenerate representation manifests itself in the decompositions of correlation functions, where fusion rules dictate which conformal blocks can contribute.
-
-On the other hand, a conformal block in general has a pole when the $s$-channel dimension takes a degenerate value $\Delta_s=\Delta_{\langle r,s\rangle}$, as is manifest in Zamolodchikov's recursion representation \eqref{hrec}.
-This means that a field with this conformal dimension cannot appear in the OPEs of $V_{\Delta_1}V_{\Delta_2}$ and $V_{\Delta_3}V_{\Delta_4}$, unless the residue of the conformal block's pole vanishes. 
-This residue vanishes if the fusion rules allow $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_1}\to \mathcal{V}_{\Delta_2}$ or $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_3}\to \mathcal{V}_{\Delta_4}$.
-In particular, the conformal blocks that appear in (generalized) minimal models can be computed using Zamolodchikov's recursion representation, although they involve degenerate $s$-channel dimensions. 
+\end{align} 
 
 
 \subsection{BPZ differential equations \label{secbpz}}
@@ -2716,6 +2464,301 @@ This relation is a special case of eq. \eqref{ffm}.
 It determines our four-point function up to an $x$-independent factor. 
 
 
+\section{Conformal blocks and crossing symmetry \label{secaco}}
+
+\textbf{\boldmath Conformal blocks}\index{conformal block} are the universal constituents of correlation functions, such that correlation functions can be decomposed as combinations of conformal blocks, and model-dependent quantities.
+In this sense, a simple example of a conformal block is the three-point block $\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)$ \eqref{fzzz}. 
+We have also encountered degenerate four-point blocks that obey differential equations in Section \ref{sec:degf}.
+And on the torus, there exist nontrivial zero-point blocks, which coincide with the characters of representations. 
+
+Conformal blocks associated with a correlation function obey the Ward identities for that correlation function. 
+Since the Ward identities are holomorphically factorized, the blocks can be factorized into left-moving and right-moving conformal blocks. Left-moving conformal blocks are solutions of the left-moving Ward identities, and are locally holomorphic functions of the fields' positions. From now on, by conformal block we will mean left-moving conformal block. 
+
+Conformal blocks are sometimes defined as arbitrary solutions of the Ward identities. We will be more specific, and define them as the elements of particular bases of solutions. The bases in question are defined by using OPEs for computing correlation functions. In particular, using the OPE of $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2)$ and Ward identities, any four-point function of primary or descendent fields can be decomposed as 
+\begin{align}
+ \left\langle \prod_{i=1}^4 V_{\sigma_i}(z_i)\right\rangle 
+ = \sum_{\Delta_s,\bar{\Delta}_s} C_{12s} C_{s34} \left| \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)\right|^2\ ,
+\label{fsd}
+\end{align}
+where all quantities that are not three-point structure constants have been combined into the \textbf{\boldmath $s$-channel}\index{s-channel@$s$-channel} four-point conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)$.
+The appearance of the factorized quantity $\left| \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)\right|^2 $ (which involves the modulus square notation \eqref{eq:msn}) is a manifestation of holomophic factorization, and the right-moving conformal block $\mathcal{F}^{(s)}_{\bar\Delta_s}(\bar\sigma_i|\bar z_i)$ is given by the same function as the left-moving conformal block, applied to right-moving quantities.
+
+Using the OPE of $V_{\sigma_1}(z_1)V_{\sigma_4}(z_4)$, we would obtain \textbf{\boldmath $t$-channel}\index{t-channel@$t$-channel} four-point conformal block $\mathcal{F}^{(t)}_{\Delta_t}(\sigma_i|z_i)$. And with the OPE of $V_{\sigma_1}(z_1)V_{\sigma_3}(z_3)$, we would obtain \textbf{\boldmath $u$-channel}\index{u-channel@$u$-channel} four-point conformal block $\mathcal{F}^{(u)}_{\Delta_u}(\sigma_i|z_i)$. The three inequivalent OPEs give rise to three different decompositions of the same four-point function, and therefore to three bases of conformal blocks. The equality of the different decompositions leads to constraints on the spectrum and correlation functions, called \textbf{\boldmath crossing symmetry}\index{crossing symmetry}.
+
+\subsection{Four-point conformal blocks}
+
+\subsubsection{Basic properties}
+
+For simplicity, we assume that our four fields are primary.
+Thanks to global conformal symmetry, we furthermore restrict our attention to the case $(z_1,z_2,z_3,z_4)=(x,0,\infty, 1)$, and we focus on the blocks
+\begin{align}
+ \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x)=\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x,0,\infty,1)\ ,
+\end{align}
+from which $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$ can be recovered  using eqs. \eqref{zgg} and \eqref{fx}.
+Once $s$-channel blocks are known, $t$-channel blocks can be obtained by a permutation of the arguments, 
+\begin{align}
+ \mathcal{F}^{(t)}_{\Delta_t}(\Delta_1,\Delta_2,\Delta_3,\Delta_4|z_1,z_2,z_3,z_4) = \mathcal{F}^{(s)}_{\Delta_t}(\Delta_1,\Delta_4,\Delta_3,\Delta_2|z_1,z_4,z_3,z_2)\ . 
+\label{gtgs}
+\end{align}
+Taking global conformal symmetry into account, this becomes
+\begin{align}
+ \mathcal{F}^{(t)}_{\Delta_t}(\Delta_1,\Delta_2,\Delta_3,\Delta_4|x) = \mathcal{F}^{(s)}_{\Delta_t}(\Delta_1,\Delta_4,\Delta_3,\Delta_2|1-x)\ .
+\end{align}
+
+From the role of OPEs in their definition, we can deduce some analytic properties of conformal blocks. In particular, $s$-channel four-point blocks have singularities at $x=0$, where they behave as 
+\begin{align}
+ \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) \underset{x\to 0}{=} x^{\Delta_s-\Delta_1-\Delta_2}\Big( 1+ O(x)\Big)\ .
+\end{align}
+Similarly, $t$- and $u$-channel conformal blocks have regular singular points at $x=1$ and $x=\infty$ respectively. Actually, $s$-channel conformal blocks must be singular at $x=1$ and $x=\infty$ too, because four-point functions are singular there. But an $s$-channel block typically has essential singularities at $x=1$ and $x=\infty$. 
+Furthermore, a conformal block in general has a pole when the $s$-channel dimension takes a degenerate value $\Delta_s=\Delta_{\langle r,s\rangle}$ because this is how OPE coefficients behave. (See Section \ref{secope}.) 
+This means that a field with this conformal dimension cannot appear in the decomposition of our four-point function, unless the residue of the conformal block's pole vanishes. The residue turns out to vanish if the fusion rules allow $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_1}\to \mathcal{V}_{\Delta_2}$ or $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_3}\to \mathcal{V}_{\Delta_4}$. This allows $s$-channel degenerate dimensions to occur in  (generalized) minimal models, with perfectly well-defined conformal blocks.
+
+Now what happens if our four-point function involves degenerate fields? Conformal blocks that involve degenerate fields obey differential equations, as we have seen in Section \ref{secbpz}.
+Nevertheless, the conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$ is a smooth function of $\Delta_i$, and has a finite value for $\Delta_1 = \Delta_{\langle r,s\rangle}$. 
+If $\Delta_2$ and $\Delta_s$ happen to be related as dictated by the fusion rule of the degenerate field $V_{\langle r,s\rangle}$, then this finite value obeys a differential equation of order $rs$, as required by the degenerate field.
+In other words, a conformal block involving a degenerate representation coincides with the conformal block involving the corresponding Verma module.
+The degenerate representation only manifests itself by constraining which conformal blocks can contribute (via its fusion rules).
+
+
+\subsubsection{Pedestrian computation}
+
+Inserting the OPE \eqref{vvs} in our four-point function, we obtain
+\begin{multline}
+ \Big< V_{\Delta_1,\bar\Delta_1}(x) V_{\Delta_2,\bar\Delta_2}(0)V_{\Delta_3,\bar\Delta_3}(\infty)V_{\Delta_4,\bar\Delta_4}(1)\Big>
+ \\
+ = 
+ \sum_{\Delta_s,\bar\Delta_s} C_{12s} 
+ \left| x^{\Delta_s-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} x^Lf^{\Delta_s,L}_{\Delta_1,\Delta_2} \right|^2
+ \Big< L\bar L V_{\Delta_s,\bar\Delta_s}(0) V_{\Delta_3,\bar\Delta_3}(\infty) V_{\Delta_4,\bar\Delta_4}(1) \Big>\ .
+ \label{4ope}
+\end{multline}
+Then, using Ward identities, we write three-point functions of descendent fields as three-point functions of primary fields, times the universal factors
+\begin{align}
+g^{L}_{\Delta_1,\Delta_2,\Delta_3} = 
+ \frac{ \left< L V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right> }{  \left<  V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right>}\ .
+ \label{glvv}
+\end{align}
+In the case of $L_{-1}^n$ descendents, this only involves taking derivatives of three-point conformal blocks, 
+\begin{align}
+ g^{L_{-1}^n}_{\Delta_1,\Delta_2,\Delta_3} & =\left. \frac{\frac{\partial^n}{\partial z_1^n} \mathcal{F}^{(3)}(\Delta_i|z_i)}{\mathcal{F}^{(3)}(\Delta_i|z_i)}\right|_{(z_1,z_2,z_3)=(0,\infty,1)} =(\Delta_1-\Delta_2+\Delta_3)_n \ ,
+ \label{gln}
+\end{align}
+where we use the notation
+\begin{align}
+ (x)_n = \frac{\Gamma(x+n)}{\Gamma(x)} = \prod_{i=0}^{n-1}(x+i)\ .
+\label{xn}
+\end{align}
+For more general descendents, we use local Ward identities \eqref{lmn}. For example,
+\begin{align}
+ g^{L_{-2}}_{\Delta_1,\Delta_2,\Delta_3}
+ = \Delta_1-\Delta_2+2\Delta_3\ .
+ \label{glt}
+\end{align}
+Using the universal factors $g^L_{\Delta_s,\Delta_3,\Delta_4}$, the expression \eqref{4ope} of our four-point function can be written as a conformal block decomposition \eqref{fsd}, where the blocks are 
+\begin{align}
+ \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) = x^{\Delta_s-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta_s,L} g^{L}_{\Delta_s,\Delta_3,\Delta_4}x^{|L|}\ .
+\label{gsd}
+\end{align}
+Explicitly, using eqs. \eqref{flfo}-\eqref{flff} for $f_{\Delta_1,\Delta_2}^{\Delta_s,L}$, we find 
+\begin{multline}
+ \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) 
+= x^{\Delta_s - \Delta_1 - \Delta_2}\Bigg\{ 1 
++ \frac{(\Delta_s+\Delta_1-\Delta_2)(\Delta_s+\Delta_4-\Delta_3)}{2\Delta_s} x  
+\\
++ \frac{1}{D_2(\Delta_s)}
+\begin{bmatrix} (\Delta_s+\Delta_1-\Delta_2)_2 \\ \Delta_s+2\Delta_1-\Delta_2 \end{bmatrix}^T
+\begin{bmatrix} 2+\frac{c}{4\Delta_s} & -3 \\ -3 & 4\Delta_s+2 \end{bmatrix}
+\begin{bmatrix} (\Delta_s+\Delta_4-\Delta_3)_2 \\ \Delta_s+2\Delta_4-\Delta_3 \end{bmatrix}
+ x^2 + O(x^3)\Bigg\}\ ,
+\end{multline}
+where the level-$2$ determinant $D_2(\Delta_s)$ was defined in eq. \eqref{dud}.
+
+
+\subsubsection{Zamolodchikov's recursion}
+
+For practical computations of conformal blocks, the formula \eqref{gsd} is not very efficient: the number of terms grows quickly with the level $|L_s|$, and the cofficients $f_{\Delta_1,\Delta_2}^{\Delta_s,L_s}$ are not known explicitly.
+Fortunately, there is also Al.
+Zamolodchikov's recursion representation \cite{zz90}, which converges faster.
+Instead of a power series in the cross-ratio $x$, this representation is a power series in the \textbf{elliptic nome}\index{elliptic nome}
+\begin{align}
+ q = \exp -\pi \frac{F(\frac12,\frac12,1,1-x)}{F(\frac12,\frac12,1,x)}  \ , 
+\end{align}
+where $F(\frac12,\frac12,1,x)$ is a special case of the hypergeometric function \eqref{fsn}. 
+We have 
+\begin{align}
+ q(x=0)=0 \ \ , \ \ q(x=\tfrac12) = e^{-\pi} \ \ , \ \ q(x=1)=1 \ \ , \ \ q(x)\underset{x\to 0}{=} \frac{x}{16} +O(x^2)\ .
+\end{align}
+The convergence radius of both power series is $1$.
+But since $|q|\leq 1$ for any $x\in\mathbb{C}$, Zamolodchikov's recursion representation converges for almost all $x\in \mathbb{C}$, whereas the formula \eqref{gsd} only converges for $|x|<1$.
+
+Explicitly, Zamolodchikov's recursion representation reads 
+\begin{align}
+ \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) 
+=  (16q)^{\Delta_s -\frac{Q^2}{4}} x^{\frac{Q^2}{4}-\Delta_1-\Delta_2} (1-x)^{\frac{Q^2}{4}-\Delta_1-\Delta_4} \theta_3(q)^{3Q^2-4(\Delta_1+\Delta_2+\Delta_3+\Delta_4)} H_{\Delta_s}(\Delta_i|q)\ .
+\end{align}
+Here $\theta_3(q)$ is the elliptic function
+\begin{align}
+ \theta_3(q) = \sum_{n\in{\mathbb{Z}}} q^{n^2}\ ,
+\end{align}
+ and the nontrivial factor is the function
+\begin{align}
+ H_{\Delta_s}(\Delta_i|q) = \sum_{k=0}^\infty \prod_{j=1}^k \sum_{m_j,n_j=1}^\infty \frac{(16q)^{m_jn_j}R_{m_j,n_j}}{\Delta_{\langle m_{j-1},-n_{j-1} \rangle}-\Delta_{\langle m_j,n_j\rangle}}\ ,
+\label{hdq}
+\end{align}
+where by convention $\Delta_{\langle m_0,-n_0\rangle} = \Delta_s$, and we introduce the coefficients
+\begin{align}
+ R_{m,n} = \frac{2P_{\langle 0,0\rangle} P_{\langle m,n\rangle}}{\prod_{r=1-m}^m \prod_{s=1-n}^n 2P_{\langle r,s\rangle}}
+\prod_{r\overset{2}{=}1-m}^{m-1} \prod_{s\overset{2}{=}1-n}^{n-1} \prod_\pm (P_2\pm P_1 + P_{\langle r,s\rangle}) (P_3\pm P_4 +P_{\langle r,s\rangle})\ .
+\end{align}
+(We introduced the notation $\overset{2}{=}$ for indices that run by increments of $2$.
+Moreover, $P$ is the momentum, and $P_{\langle r,s \rangle}$ is given by eq. \eqref{ars}.) In the recursion representation, conformal blocks are manifestly invariant under reflections of all momentums.
+
+The recursion representation owes its name to the original definition of the function $H_{\Delta_s}(\Delta_i|q)$ \eqref{hdq} by a recursive formula,
+\begin{align}
+ H_{\Delta_s}(\Delta_i|q) = 1 + \sum_{m,n=1}^\infty \frac{(16q)^{mn}}{\Delta_s-\Delta_{\langle m,n\rangle}} R_{m,n} H_{\Delta_{\langle m,-n\rangle}}(\Delta_i|q)\ .
+ \label{hrec}
+\end{align}
+This formula makes it manifest that conformal blocks have poles for $\Delta_s \in \{\Delta_{\langle r,s\rangle}\}_{r,s\in {\mathbb{N}}^*}$. However, the recursion representation also has unphysical singularities at 
+valeus of the central charge of the type $c= c_{p, q}$ \eqref{cpq}: singularities of some terms that cancel when the terms are added. This makes it difficult to use the recursion representation for such values of the central charge, and in particular for minimal models \cite{rib18}.
+
+
+\subsubsection{Other representations}
+
+The recursion representation that we described can be understood as a large $\Delta_s$ expansion, that makes $\Delta_s$-poles manifest. Al. Zamolodchikov has derived another recursion representation that is a large $c$ expansion, and makes $c$-poles manifest. That $c$-recursion representation is a power series in the cross-ratio $x$, rather than the elliptic nome $q$. For both recursion representations in the case of $N$-point conformal blocks (and not just $4$-point blocks), see \cite{ccy17}.
+
+Moreover, conformal blocks have a combinatorial representation that follows from the AGT relation \cite{aflt10}. 
+This representation is a power series in $x$, and therefore converges more slowly than the $\Delta_s$-recursion representation. 
+Moreover, invariance under reflections is not manifest, and individual terms have spurious poles in $\Delta_s$.
+However, an advantage of the combinatorial representation is that it has an interpretation as a sum over descendents in a particular basis.
+
+
+\subsection{Crossing symmetry and the fusing matrix}
+
+\subsubsection{The crossing symmetry equation}
+
+Let us analyze the crossing symmetry equation that relates the $s$- and $t$-channel decompositions of a four-point function. We introduce diagrammatic notations for the conformal blocks, 
+\begin{align}
+ \mathcal{F}^{(s)}_{\Delta_s}  =  
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
+\draw (-1,2) node [left] {$2$} -- (0,0) -- node [above] {$s$} (4,0) -- (5,2) node [right] {$3$};
+\draw (-1,-2) node [left] {$1$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$4$};
+\end{tikzpicture}
+=
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
+\draw (0, -2) -- node [below left] {$1$} (-2, 0) -- node [above left] {$2$} (0, 2) -- node [above right] {$3$} (2, 0) -- node [below right] {$4$} (0, -2) -- node [left] {$s$} (0, 2); 
+\end{tikzpicture}
+\quad\ ,\quad\
+ \mathcal{F}^{(t)}_{\Delta_t}  =  
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
+ \draw (-2,3) node [left] {$2$} -- (0,2) -- node [left] {$t$} (0,-2) -- (-2, -3) node [left] {$1$};
+\draw (0,2) -- (2,3) node [right] {$3$};
+\draw (0,-2) -- (2, -3) node [right] {$4$};
+\end{tikzpicture}
+=
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
+\draw (-2, 0) -- node [above left] {$2$} (0, 2) -- node [above right] {$3$} (2, 0) -- node [below right] {$4$} (0, -2) -- node [below left] {$1$} (-2, 0) -- node [below] {$t$} (2, 0); 
+\end{tikzpicture}
+\ \ ,
+\label{ftfs}
+\end{align}
+and write crossing symmetry as
+\begin{align}
+ \sum_{\Delta_s,\bar{\Delta}_s} C_{12s} C_{s34} \left| 
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
+\draw (-1,2) node [left] {$2$} -- (0,0) -- node [above] {$s$} (4,0) -- (5,2) node [right] {$3$};
+\draw (-1,-2) node [left] {$1$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$4$};
+\end{tikzpicture} 
+\right|^2 = \sum_{\Delta_t,\bar{\Delta}_t} C_{23t}C_{t41} \left|
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
+ \draw (-2,3) node [left] {$2$} -- (0,2) -- node [left] {$t$} (0,-2) -- (-2, -3) node [left] {$1$};
+\draw (0,2) -- (2,3) node [right] {$3$};
+\draw (0,-2) -- (2, -3) node [right] {$4$};
+\end{tikzpicture}
+\right|^2\ .
+\label{csd}
+\end{align}
+Considering the conformal blocks as known quantities, this is an equation for the spectrum and three-point structure constant, which is quadratic in the structure constant.
+This equation is equivalent to the associativity Axiom \ref{ax:ass}. In order to show that the theory is consistent, it suffices to moreover check the commutativity Axiom \ref{ax:col}, equivalently the behaviour \eqref{css} of the three-point structure constant under permutations. 
+% NB: in particular this implies equality with the u-channel.
+$N$-point functions on the sphere can similarly be decomposed into three-point structure constants and $N$-point conformal blocks, but the cases $N\geq 5$ do not yield more equations. 
+
+The general crossing symmetry equation \eqref{csd}, while it may in principle determine the three-point structure constant, is in practice often intractable, because
+\begin{enumerate}
+ \item it can involve sums over large sets of possible conformal dimensions in the $s$- and $t$-channels, 
+ \item the general conformal blocks are rather complicated. 
+\end{enumerate}
+So, while the general crossing equation is useful for testing the consistency of proposals for the spectrum and three-point structure constant, it is often useless for deriving specific proposals in the first place. However, it is possible to restrict the $s$- and $t$-channels conformal dimensions to finite sets, and to simplify the conformal blocks, by taking one of the four fields to be degenerate. (See Section \ref{sec:degf}.) If the other three fields remain generic, this still leads to constraints on the generic three-point structure constant. 
+
+\subsubsection{The fusing matrix}
+
+By definition, $s$-channel and $t$-channel four-point blocks are two bases of the same space of solutions of the four-point Ward identities, whose elements are respectively parametrized by $\Delta_s$ and $\Delta_t$.
+So there must exist a linear, invertible relation between the two bases, 
+\begin{align}
+ \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i) = \sum_{\Delta_t}\ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix} \mathcal{F}^{(t)}_{\Delta_t}(\sigma_i|z_i)\ ,
+ \label{eq:fusrel}
+\end{align}
+whose $z_i$-independent kernel $F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}$ is called the \textbf{\boldmath fusing matrix}\index{fusing matrix} of the Virasoro algebra.
+The parameters of the fusing matrix are in principle representations of the Virasoro algebra: the conformal dimensions that we wrote stand for the corresponding Verma modules.
+A diagrammatic notation for the fusing matrix is 
+\begin{align}
+ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix} = \ \ 
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .55]
+\draw (0, -2) -- node [below left] {$1$} (-2, 0) -- node [above left] {$2$} (0, 2) -- node [above right] {$3$} (2, 0) -- node [below right] {$4$} (0, -2) -- (0, 2);
+\draw (-2, 0) -- (-.2, 0) node [below left] {$t$}; \draw (.2, 0) -- (2, 0);
+\node [above left] at (0, .2) {$s$};
+\end{tikzpicture}
+\ \ .
+\end{align}
+The fusing matrix can be written in terms of the Barnes double Gamma function $\Gamma_b$ as \cite{tv12} 
+\begin{multline}
+ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix} = \left(\prod_{\pm}\frac{\Gamma_b(Q\pm 2P_s)}{\Gamma_b(\pm 2P_t)}\right) \frac{\Delta_+(P_1,P_4,P_t)\Delta_+(P_2,P_3,P_t)}{\Delta_-(P_1,P_2,P_s)\Delta_-(P_3,P_4,P_s)}
+ \\
+ \times \int_{\frac{Q}{4}+i\mathbb{R}}du \ S_b(u-P_{12s})S_b(u-P_{s34})S_b(u-P_{23t})S_b(u-P_{t14}) \hspace{3cm}
+ \\
+ \times S_b(\tfrac{Q}{2}-u+P_{1234}) S_b(\tfrac{Q}{2}-u+P_{st13}) S_b(\tfrac{Q}{2}-u+P_{st24})S_b(\tfrac{Q}{2}-u) \ .
+\end{multline}
+In this formula, we use momentums $P_i$ and sums of momentums such as $P_{12s}=P_1+P_2+P_s$. We also introduce ratios of double Gamma functions: the double Sine function $S_b(x) = \frac{\Gamma_b(x)}{\Gamma_b(Q-x)}$, and the ratios 
+\begin{align}
+ \Delta_\epsilon(P_1,P_2,P_3) =\prod_{\substack{\epsilon_1,\epsilon_2,\epsilon_3=\pm \\ \epsilon_1\epsilon_2\epsilon_3=\epsilon}} \Gamma_b\left(\tfrac{Q}{2}+\textstyle{\sum}_i\epsilon_iP_i\right)\ .
+\end{align}
+The analytic properties of the fusing matrix, and in particular the poles of the integrand, are such that the relation \eqref{eq:fusrel} between the two bases reduces to the relation \eqref{gfg} between hypergeometric conformal blocks, in the limit $P_1\to P_{\langle 2,1\rangle},\ P_s\to P_2 \pm \frac{b}{2}$.
+
+It is not only the move from $s$-channel to $t$-channel blocks, but also changes of bases in more general $N$-point conformal blocks, that can be written in terms of the fusing matrix. Some changes of bases can be written in several possible ways, giving rise to consistency constraints on the fusing matrix. All consistency constraints actually boil down to the \textbf{pentagon relation}\index{pentagon relation} that can be derived from five-point blocks, 
+
+When it comes to five-point blocks, there is a change of bases whose matrix can be written in terms of the fusing matrix in two possible ways, giving rise to a relation 
+
+Fusing matrix invariant under reflection. But fusion relation is integral over momentum!
+
+Pentagon relation
+
+Fusing / pentagon are formal equations if sums are infinite: here? later? 
+ 
+\subsubsection{Crossing symmetry in terms of the fusing matrix}
+
+It is possible to eliminate the conformal blocks from the crossing symmetry equation \eqref{csd}, using the fusing relation and the linear independence of blocks within a given basis,
+\begin{align}
+ \sum_{\Delta_s,\bar{\Delta}_s} C_{12s} C_{s34}
+F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}
+F_{\bar{\Delta}_s,\bar{\Delta}_t}\begin{bmatrix} \bar{\Delta}_2 & \bar{\Delta}_3 \\ \bar{\Delta}_1 & \bar{\Delta}_4 \end{bmatrix}
+=  C_{23t}C_{t41}\ .
+\end{align}
+This can be further simplified if the theory is diagonal.
+In this case, we have $\Delta_i=\bar{\Delta}_i$ for $i=1,2,3,4$, and we should insert factors $\delta_{\Delta_s,\bar\Delta_s}$ (left-hand side) and $\delta_{\Delta_t,\bar\Delta_t}$ (right-hand side) in the above formula.
+Using the inverse fusing matrix, we obtain 
+\begin{align}
+ C_{12s} C_{s34}
+F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}
+= C_{23t}C_{t41} 
+F^{-1}_{\Delta_t,\Delta_s}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}
+\ .
+\label{ffm}
+\end{align}
+% NB: F^{-1} is related to F by a permutation of the arguments.
+This formulation of crossing symmetry can be useful, because the fusing matrix is a simpler object than the conformal blocks, as we will see in a special case in Section \ref{sechcb}. Moreover, this formulation implies that in a diagonal theory, the structure constant is uniquely determined by crossing symmetry. (See Exercise \ref{exoudt}.)
+
+Get Liouville three-point, define Upsilon function (index), postpone properties to later. Use its name in Liouville part.
 
 \section{Exercises}
 
