@@ -27,6 +27,8 @@
 \usetikzlibrary{arrows}
 \usetikzlibrary{decorations.markings}
 
+\usepackage{ifthen}
+
 % Syntax: \colorboxed[<color model>]{<color specification>}{<math formula>}
 \newcommand*{\colorboxed}{}
 \def\colorboxed#1#{%
@@ -2696,11 +2698,11 @@ So, while the general crossing equation is useful for testing the consistency of
 By definition, $s$-channel and $t$-channel four-point blocks are two bases of the same space of solutions of the four-point Ward identities, whose elements are respectively parametrized by $\Delta_s$ and $\Delta_t$.
 So there must exist a linear, invertible relation between the two bases, 
 \begin{align}
- \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i) = \sum_{\Delta_t}\ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix} \mathcal{F}^{(t)}_{\Delta_t}(\sigma_i|z_i)\ ,
+ \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i) = \int_{i\mathbb{R}}dP_t\ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix} \mathcal{F}^{(t)}_{\Delta_t}(\sigma_i|z_i)\ ,
  \label{eq:fusrel}
 \end{align}
 whose $z_i$-independent kernel $F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}$ is called the \textbf{\boldmath fusing matrix}\index{fusing matrix} of the Virasoro algebra.
-The parameters of the fusing matrix are in principle representations of the Virasoro algebra: the conformal dimensions that we wrote stand for the corresponding Verma modules.
+The parameters of the fusing matrix are in principle representations of the Virasoro algebra: the conformal dimensions that we wrote stand for the corresponding Verma modules. The measure of integration is $dP_t$, and actually the expression \eqref{eq:fm} for the fusing matrix involves momentums rather than conformal dimensions; we nevertheless use conformal dimensions in our notation for the fusing matrix, as it is by definition invariant under reflections of momentums.
 A diagrammatic notation for the fusing matrix is 
 \begin{align}
  F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix} = \ \ 
@@ -2718,6 +2720,7 @@ The fusing matrix can be written in terms of the Barnes double Gamma function $\
  \times \int_{\frac{Q}{4}+i\mathbb{R}}du \ S_b(u-P_{12s})S_b(u-P_{s34})S_b(u-P_{23t})S_b(u-P_{t14}) \hspace{3cm}
  \\
  \times S_b(\tfrac{Q}{2}-u+P_{1234}) S_b(\tfrac{Q}{2}-u+P_{st13}) S_b(\tfrac{Q}{2}-u+P_{st24})S_b(\tfrac{Q}{2}-u) \ .
+ \label{eq:fm}
 \end{multline}
 In this formula, we use momentums $P_i$ and sums of momentums such as $P_{12s}=P_1+P_2+P_s$. We also introduce ratios of double Gamma functions: the double Sine function $S_b(x) = \frac{\Gamma_b(x)}{\Gamma_b(Q-x)}$, and the ratios 
 \begin{align}
@@ -2725,15 +2728,50 @@ In this formula, we use momentums $P_i$ and sums of momentums such as $P_{12s}=P
 \end{align}
 The analytic properties of the fusing matrix, and in particular the poles of the integrand, are such that the relation \eqref{eq:fusrel} between the two bases reduces to the relation \eqref{gfg} between hypergeometric conformal blocks, in the limit $P_1\to P_{\langle 2,1\rangle},\ P_s\to P_2 \pm \frac{b}{2}$.
 
-It is not only the move from $s$-channel to $t$-channel blocks, but also changes of bases in more general $N$-point conformal blocks, that can be written in terms of the fusing matrix. Some changes of bases can be written in several possible ways, giving rise to consistency constraints on the fusing matrix. All consistency constraints actually boil down to the \textbf{pentagon relation}\index{pentagon relation} that can be derived from five-point blocks, 
+All possible changes of bases for $N$-point conformal blocks on the sphere can be expressed in terms of the fusing matrix, and the diagonal matrix that describes how $s$-channel blocks behave under a permutation of the first two fields,
+\begin{align}
+ \mathcal{F}^{(s)}_{\Delta_s}(\Delta_1,\Delta_2,\Delta_3,\Delta_4|z_1,z_2,z_3,z_4) = e^{i\pi(\Delta_s-\Delta_1-\Delta_2)} \mathcal{F}^{(s)}_{\Delta_s}(\Delta_2,\Delta_1,\Delta_3,\Delta_4|z_2,z_1,z_3,z_4)\ .
+\end{align}
+Some changes of bases can be written in several possible ways, giving rise to consistency constraints on the fusing matrix. All consistency constraints actually boil down to finitely many relations \cite{ms89b}, the least trivial being 
+the \textbf{pentagon relation}\index{pentagon relation} that can be derived from five-point blocks, 
+\begin{multline}
+ \int_{i\mathbb{R}} dP_{23}\ 
+ F_{\Delta_{12},\Delta_{23}}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_{45} \end{bmatrix}
+ F_{\Delta_{45},\Delta_{51}}\begin{bmatrix} \Delta_{23} & \Delta_4 \\ \Delta_1 & \Delta_5 \end{bmatrix}
+ F_{\Delta_{23},\Delta_{34}}\begin{bmatrix} \Delta_3 & \Delta_4 \\ \Delta_2 & \Delta_{51} \end{bmatrix}
+ \\
+ = 
+ F_{\Delta_{45},\Delta_{34}}\begin{bmatrix} \Delta_3 & \Delta_4 \\ \Delta_{12} & \Delta_5 \end{bmatrix}
+ F_{\Delta_{12},\Delta_{51}}\begin{bmatrix} \Delta_2 & \Delta_{34} \\ \Delta_1 & \Delta_5 \end{bmatrix}
+ \ .
+\end{multline}
+The pentagon relation follows from the existence of two ways of writing the linear relation between the two bases that are depicted as filled pentagons in the following picture. One way uses two fusing matrices, the other way uses three fusing matrices:
+\begin{align}
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .8]
+  \foreach\i in {0, 1, 2, 3, 4}{
+ \begin{scope}[shift = +(36+72*\i:3.5)]
+   \ifthenelse{\equal{\i}{2}\OR\equal{\i}{4}}{  
+   \fill[color = blue!20] (-36:1) -- (36:1) -- (108:1) -- (180:1) -- (-108:1) -- cycle;
+   }
+   \draw (-36:1) -- (36:1); % Useless line to avoid a bug.
+   \draw (-108+144*\i:1) -- (36+144*\i:1) -- (180+144*\i:1);
+   \foreach\j in {1, 2, 3, 4, 5}{
+   \begin{scope}[rotate = 72*(\j-1)]
+   \draw (-36:1) -- (36:1);
+   \node at (1.1, 0) {$\j$};
+   \end{scope}
+   }
+  \end{scope}
+  }
+  \foreach\i in {0, 1, 2}{
+  \draw [-latex, ultra thick, red] (10+72*\i:3) -- (-10+72*\i:3);
+  }
+ \foreach\i in {3, 4}{
+  \draw [-latex, ultra thick, red] (-10+72*\i:3) -- (10+72*\i:3);
+  }
+ \end{tikzpicture}
+\end{align}
 
-When it comes to five-point blocks, there is a change of bases whose matrix can be written in terms of the fusing matrix in two possible ways, giving rise to a relation 
-
-Fusing matrix invariant under reflection. But fusion relation is integral over momentum!
-
-Pentagon relation
-
-Fusing / pentagon are formal equations if sums are infinite: here? later? 
  
 \subsubsection{Crossing symmetry in terms of the fusing matrix}
 
@@ -2756,9 +2794,15 @@ F^{-1}_{\Delta_t,\Delta_s}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Del
 \label{ffm}
 \end{align}
 % NB: F^{-1} is related to F by a permutation of the arguments.
-This formulation of crossing symmetry can be useful, because the fusing matrix is a simpler object than the conformal blocks, as we will see in a special case in Section \ref{sechcb}. Moreover, this formulation implies that in a diagonal theory, the structure constant is uniquely determined by crossing symmetry. (See Exercise \ref{exoudt}.)
+This formulation of crossing symmetry can be useful, because the fusing matrix is a simpler object than the conformal blocks. Moreover, this formulation implies that in a diagonal theory, the structure constant is uniquely determined by crossing symmetry. (See Exercise \ref{exoudt}.) 
 
-Get Liouville three-point, define Upsilon function (index), postpone properties to later. Use its name in Liouville part.
+Get Liouville three-point, define Upsilon function (index), postpone properties to later. Use its name in Liouville part. 
+
+Denounce name 'Liouville fusing matrix'. 
+
+Fusing / pentagon are formal equations if sums are infinite. Derivation of Liouville from fusion is both formal and non-elementary, we have to admit formulas. Later derivation is more elementary.
+
+Universality of Liouville theory... also emphasize in section 0/1.
 
 \section{Exercises}
 
