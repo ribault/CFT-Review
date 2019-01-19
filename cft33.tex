@@ -2572,6 +2572,7 @@ Explicitly, using eqs. \eqref{flfo}-\eqref{flff} for $f_{\Delta_1,\Delta_2}^{\De
 \begin{bmatrix} 2+\frac{c}{4\Delta_s} & -3 \\ -3 & 4\Delta_s+2 \end{bmatrix}
 \begin{bmatrix} (\Delta_s+\Delta_4-\Delta_3)_2 \\ \Delta_s+2\Delta_4-\Delta_3 \end{bmatrix}
  x^2 + O(x^3)\Bigg\}\ ,
+ \label{eq:fsexp}
 \end{multline}
 where the level-$2$ determinant $D_2(\Delta_s)$ was defined in eq. \eqref{dud}.
 
@@ -2731,7 +2732,9 @@ The analytic properties of the fusing matrix, and in particular the poles of the
 All possible changes of bases for $N$-point conformal blocks on the sphere can be expressed in terms of the fusing matrix, and the diagonal matrix that describes how $s$-channel blocks behave under a permutation of the first two fields,
 \begin{align}
  \mathcal{F}^{(s)}_{\Delta_s}(\Delta_1,\Delta_2,\Delta_3,\Delta_4|z_1,z_2,z_3,z_4) = e^{i\pi(\Delta_s-\Delta_1-\Delta_2)} \mathcal{F}^{(s)}_{\Delta_s}(\Delta_2,\Delta_1,\Delta_3,\Delta_4|z_2,z_1,z_3,z_4)\ .
+ \label{eq:bot}
 \end{align}
+(See Exercise \ref{exobot} for a proof and discussion of this relation.)
 Some changes of bases can be written in several possible ways, giving rise to consistency constraints on the fusing matrix. All consistency constraints actually boil down to finitely many relations \cite{ms89b}, the least trivial being 
 the \textbf{pentagon relation}\index{pentagon relation} that can be derived from five-point blocks, 
 \begin{multline}
@@ -3026,16 +3029,6 @@ Discuss how the presence of a null vector affects the equations for $f^{\Delta,L
 \end{enumerate}
 \end{exo}
 
-\begin{exo}[Uniqueness of the three-point structure constant in diagonal theories]
- ~\label{exoudt}
- Let us show that the crossing symmetry equation \eqref{ffm} uniquely determines the three-point structure constant. 
- \begin{enumerate}
-  \item Show that the ratio $\rho_{123}$ of two structure constants obeys $\rho_{12s}\rho_{s34} = \rho_{23t}\rho_{t41}$.
-  \item Show that $\rho_{12s}^2 = \rho_{12t}^2$, and deduce that $\rho_{123}\in\{-1,1\}$ up to a constant normalization factor.
-  \item Show that $\frac{\rho_{12s}}{\rho_{12s'}} = \frac{\rho_{34s}}{\rho_{34s'}} $, and deduce that our ratio factorizes as $\rho_{123} = \lambda_1\lambda_2\lambda_3$. Conclude.
- \end{enumerate} 
-\end{exo}
-
 \begin{exo}[$V_{\langle 1,1\rangle}$ is an identity field]
 ~\label{exoid}
 Using $\frac{\partial}{\partial z_1} V_{\langle 1,1\rangle}(z_1)=0$, show that the OPE of $V_{\langle 1,1\rangle}$ with another primary field is of the form 
@@ -3087,6 +3080,37 @@ Let us assume that we do not know the structures of the Virasoro algebra or its 
  Check that the change of unknown function $\mathcal{F}(x)=x^{\lambda}(1-x)^{\mu}\mathcal{G}(x)$ in the second-order BPZ equation \eqref{sode} leads to a hypergeometric equation \eqref{dzp} for $\mathcal{G}(x)$, provided $\lambda$ and $\mu$ are suitably chosen.
 What are the four possible choices for the pair $(\lambda,\mu)$?
 Check that eq. \eqref{heg} corresponds to one of these choices.
+\end{exo}
+
+
+\begin{exo}[Behaviour of conformal blocks under a permutation]
+ ~\label{exobot}
+Let us prove and discuss the relation \eqref{eq:bot} that describes how an $s$-channel conformal block behaves under the permutation of the first two fields.
+\begin{enumerate}
+ \item Deduce the relation \eqref{eq:bot} from the existence and uniqueness of the decomposition a four-point function into conformal blocks, given a choice of basis of conformal blocks.
+ \item Rewrite this relation in terms of $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x)$.
+ \item Check that this relation is compatible with the expansion \eqref{eq:fsexp}.
+ \item Show that this relation is compatible with Zamolodchikov's recursion. To do this, you may use the identities 
+ \begin{align}
+  q\left(\tfrac{x}{x-1}\right)=-q(x) \quad , \quad \theta_3(-q) = (x-1)^{\frac14}\theta_3(q)\ ,
+ \end{align}
+ and derive the identity
+ \begin{align}
+  \left. R_{m,n}\right|_{P_1\leftrightarrow P_2} = (-1)^{mn} R_{m,n}\ .
+ \end{align}
+\end{enumerate}
+
+\end{exo}
+
+
+\begin{exo}[Uniqueness of the three-point structure constant in diagonal theories]
+ ~\label{exoudt}
+ Let us show that the crossing symmetry equation \eqref{ffm} uniquely determines the three-point structure constant. 
+ \begin{enumerate}
+  \item Show that the ratio $\rho_{123}$ of two structure constants obeys $\rho_{12s}\rho_{s34} = \rho_{23t}\rho_{t41}$.
+  \item Show that $\rho_{12s}^2 = \rho_{12t}^2$, and deduce that $\rho_{123}\in\{-1,1\}$ up to a constant normalization factor.
+  \item Show that $\frac{\rho_{12s}}{\rho_{12s'}} = \frac{\rho_{34s}}{\rho_{34s'}} $, and deduce that our ratio factorizes as $\rho_{123} = \lambda_1\lambda_2\lambda_3$. Conclude.
+ \end{enumerate} 
 \end{exo}
 
 
