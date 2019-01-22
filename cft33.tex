@@ -2796,14 +2796,71 @@ F^{-1}_{\Delta_t,\Delta_s}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Del
 \ .
 \label{ffm}
 \end{align}
-% NB: F^{-1} is related to F by a permutation of the arguments.
 This formulation of crossing symmetry can be useful, because the fusing matrix is a simpler object than the conformal blocks. Moreover, this formulation implies that in a diagonal theory, the structure constant is uniquely determined by crossing symmetry. (See Exercise \ref{exoudt}.) 
+And we will now show that the solution of this equation can be written in terms of the fusion matrix. 
+To do this, let us consider a pentagon relation where the Verma module $\mathcal{V}_{\Delta_{45}}$ is replaced with the identity representation $\mathcal{R}_{\langle 1,1\rangle}$. From the fusion rule \eqref{roof}, we deduce the triviality of the fusing matrix 
+\begin{align}
+ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \langle 1,1\rangle \end{bmatrix} = \delta_{\Delta_s,\Delta_3}\delta_{\Delta_t,\Delta_1}\ .
+\end{align}
+The pentagon relation therefore reduces to 
+\begin{align}
+ F_{\langle 1,1\rangle, \Delta_{4}} \begin{bmatrix} \Delta_s & \Delta_3\\ \Delta_s & \Delta_3\end{bmatrix} 
+ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix} = 
+ F_{\langle 1,1\rangle, \Delta_{t}} \begin{bmatrix} \Delta_2 & \Delta_3\\ \Delta_2 & \Delta_3\end{bmatrix}
+ F_{\Delta_2,\Delta_4}\begin{bmatrix} \Delta_1 & \Delta_t \\ \Delta_s & \Delta_3 \end{bmatrix}\ .
+\end{align}
+This equation governs the behaviour of the fusing matrix under a permutation of its arguments.
+Moreover, by definition, the fusing matrix is invariant under simpler permutations that leave $\Delta_s, \Delta_t$ untouched,
+\begin{align}
+ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix} = 
+ F_{\Delta_s,\Delta_t}\begin{bmatrix}\Delta_1 & \Delta_4 \\  \Delta_2 & \Delta_3  \end{bmatrix} =
+ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_3 & \Delta_2 \\ \Delta_4 & \Delta_1 \end{bmatrix}  \ ,
+ \end{align}
+ And the inverse fusing matrix can be rewritten in terms of the fusing matrix,
+ \begin{align}
+ F^{-1}_{\Delta_t,\Delta_s}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix} = 
+ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_3 & \Delta_4 \\ \Delta_2 & \Delta_1 \end{bmatrix} \ .
+\end{align}
+Combining the last three equations, we obtain
+\begin{align}
+ & F_{\langle 1,1\rangle, \Delta_{4}} \begin{bmatrix} \Delta_s & \Delta_3\\ \Delta_s & \Delta_3\end{bmatrix}  
+ F_{\langle 1,1\rangle, \Delta_{s}} \begin{bmatrix} \Delta_2 & \Delta_1\\ \Delta_2 & \Delta_1\end{bmatrix}  
+ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}
+ \nonumber
+ \\
+=\ & 
+F_{\langle 1,1\rangle, \Delta_{t}} \begin{bmatrix} \Delta_2 & \Delta_3\\ \Delta_2 & \Delta_3\end{bmatrix}
+F_{\langle 1,1\rangle, \Delta_{4}} \begin{bmatrix} \Delta_t & \Delta_1\\ \Delta_t & \Delta_1\end{bmatrix}
+F^{-1}_{\Delta_t,\Delta_s}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}
+\ .
+\end{align}
+This shows that a solution of the crossing symmetry equation \eqref{ffm} is given by 
+\begin{align}
+ C_{123} = F_{\langle 1,1\rangle, \Delta_{1}} \begin{bmatrix} \Delta_2 & \Delta_3\\ \Delta_2 & \Delta_3\end{bmatrix}\ ,
+\end{align}
+provided the right-hand side is symmetric under permutations of $\Delta_1,\Delta_2,\Delta_3$. 
+The particular fusing matrix that we need can actually be computed as a limit of the general expression \eqref{eq:fm},
+\begin{align}
+ F_{\langle 1,1\rangle, \Delta_{t}} \begin{bmatrix} \Delta_1 & \Delta_4\\ \Delta_1 & \Delta_4\end{bmatrix} 
+ & = 
+ \lim_{P_2\to P_1}\lim_{P_s\to -\frac{Q}{2}} \lim_{P_3\to P_4} 
+ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix} \ ,
+ \label{eq:flim}
+ \\
+  &\propto \frac{1}{\prod_{\pm,\pm,\pm} \Gamma_b(\frac{Q}{2} \pm P_t\pm P_1\pm P_4)}\ ,
+  \label{eq:fdozz}
+\end{align}
+where we neglect factors that can be absorbed into field renormalizations $V_{\Delta}(z)\to \lambda(\Delta)V_\Delta(z)$. (See Exercise \ref{exoflfg}.) This  coincides with the DOZZ formula \eqref{caaa} for the three-point function of Liouville theory, given the relation $\Upsilon_b(x) = \frac{1}{\Gamma_b(x)\Gamma_b(Q-x)}$ between the Upsilon function that appears in the DOZZ formula, and the double Gamma function.
 
-Get Liouville three-point, define Upsilon function (index), postpone properties to later. Use its name in Liouville part. 
+This derivation of the DOZZ formula is rather formal: proving the equations that we used, starting with the existence of the linear  relation \eqref{eq:fusrel} between $s$- and $t$-channel conformal blocks, requires a good control over the analytic properties of conformal blocks \cite{tv12}, which is beyond the scope of this text. Moreover, we have deduced the formula from the much more complicated expression for the fusing matrix, which we had to admit. In Chapter \ref{seccbm} we will solve Liouville theory in a more constructive and elementary way, which can be generalized to more complicated CFTs. We will also discuss under which assumptions Liouville theory is unique, starting with the assumption that there is at most one primary field with a given conformal dimension -- an assumption that we implicitly made when writing the crossing symmetry equation \eqref{csd} as a sum over conformal dimensions.
 
-Denounce name 'Liouville fusing matrix'. 
+Rather than an appealing way of solving Liouville theory, the present discussion is a demonstration of its fundamental nature, as its three-point structure constant is a special case of the fusing matrix of Verma modules. Actually, the full fusing matrix coincides (up to simple factors) with Liouville theory's boundary three-point structure constant \cite{pt01}, and is sometimes called the Liouville fusing matrix. 
 
-Fusing / pentagon are formal equations if sums are infinite. Derivation of Liouville from fusion is both formal and non-elementary, we have to admit formulas. Later derivation is more elementary.
+
+
+
+define Upsilon function (index), postpone properties to later. Use its name in Liouville part. 
+
 
 Universality of Liouville theory... also emphasize in section 0/1.
 
@@ -3112,6 +3169,17 @@ Let us prove and discuss the relation \eqref{eq:bot} that describes how an $s$-c
   \item Show that $\frac{\rho_{12s}}{\rho_{12s'}} = \frac{\rho_{34s}}{\rho_{34s'}} $, and deduce that our ratio factorizes as $\rho_{123} = \lambda_1\lambda_2\lambda_3$. Conclude.
  \end{enumerate} 
 \end{exo}
+
+\begin{exo}[A special case of the fusing matrix of Verma modules]
+ ~\label{exoflfg}
+ Let us prove that the limit \eqref{eq:flim} of the fusing matrix exists, and is given by eq. \eqref{eq:fdozz}. 
+ \begin{enumerate}
+ \item Study how $s$-channel conformal blocks behave in our limit, and deduce the relation \eqref{eq:flim} between the fusing matrix of Verma modules, and the fusing matrix that involves the degenerate representation $\mathcal{R}_{\langle 1,1\rangle}$. 
+  \item Accepting that the double Gamma function $\Gamma_b(x)$ has simple poles for $x\in -b\mathbb{N}-b^{-1}\mathbb{N}$, study the behaviour of the poles of the integrand in the expression \eqref{ffm} of the fusing matrix. Deduce that in our limit, the integral reduces to its residue at $u=P_{t14}$.
+  \item Compute the limit of the integral, and of the prefactors. Check that the result is eq. \eqref{eq:fdozz} up to field renormalizations. Show that the crossing symmetry equation is invariant under field renormalizations, and conclude that we did find a solution of the crossing symmetry equation.
+ \end{enumerate}
+\end{exo}
+
 
 
 % NB: Ensuring the coming Chapter begins on an odd-numbered page, in case we want to print the document in two halves.
@@ -3440,7 +3508,7 @@ If $b>0$, the compatible equations that result from inserting the missing factor
   \boxed{\frac{\Upsilon_b(x+b)}{\Upsilon_b(x)} = b^{1-2bx} \gamma(bx)}\quad \text{and} \quad \boxed{\frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)} = b^{\frac{2x}{b}-1} \gamma(\tfrac{x}{b})}\ ,
 \label{upup}
 \end{align}
-These equations define a unique (up to a constant factor) function $\Upsilon_b(x)$, which will turn out to be defined for any $b$ such that $\Re b > 0$ by analytic continuation. 
+These equations define a unique (up to a constant factor) \textbf{Upsilon function}\index{Upsilon function} $\Upsilon_b(x)$, which will turn out to be defined for any $b$ such that $\Re b > 0$ by analytic continuation. 
 On the other hand, if $ib>0$, the compatible equations are 
 \begin{align}
  \frac{\hat{\Upsilon}_b(x+b)}{\hat{\Upsilon}_b(x)} = (ib)^{1-2bx} \gamma(bx)\quad \text{and} \quad \frac{\hat{\Upsilon}_b(x+\frac{1}{b})}{\hat{\Upsilon}_b(x)} = (ib)^{\frac{2x}{b}-1} \gamma(\tfrac{x}{b})\ .
@@ -3454,7 +3522,7 @@ which exists for $\Im b < 0$.
 For any $c\notin ]-\infty, 1] \cup [25,\infty[$, there is a choice of $b$ such that $\Re b>0$ and $\Im b<0$. 
 Both functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$ exist and obey shift equations that are essentially the same, so their ratio is essentially an elliptic function \cite{zam05}. 
 
-\subsubsection{Properties of the function $\Upsilon_b(x)$}
+\subsubsection{Properties of the Upsilon function}
 
 The equations \eqref{upup} that determine how $\Upsilon_b(x)$ behaves under shifts $x\to x+b$ and $x\to x+\frac{1}{b}$, also determine how $\Upsilon_b(Q-x)$ behaves under the same shifts.
 The resulting shift equations for $\Upsilon_b(Q-x)$ turn out to be identical to the shift equations for $\Upsilon_b(x)$, which suggests 
@@ -3496,13 +3564,13 @@ These zeros lie in two infinite cones with tips at $x=0$ and $x=Q$, which we rep
 \end{align}
 It turns out that these zeros account for all the poles and zeros of $\frac{\Upsilon_b(x+b)}{\Upsilon_b(x)}$ and $\frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)}$ in the equations \eqref{upup}, so that $\Upsilon_b(x)$ has no poles and is analytic on ${\mathbb{C}}$. 
 
-There is an explicit expression for the function $\Upsilon_b(x)$ in the strip $0<\Re x<\Re Q$, 
+There is an explicit expression for the Upsilon function in the strip $0<\Re x<\Re Q$, 
 \begin{align}
  \log\Upsilon_b(x) = \int_0^\infty \frac{dt}{t} \left[\left(\tfrac{Q}{2}-x\right)^2 e^{-2t} -\frac{\sinh^2\left(\left(\frac{Q}{2}-x\right)\!t\right)}{\sinh (bt)\sinh\left(\frac{t}{b}\right)}\right]\ .
 \label{lup}
 \end{align}
 If $x$ is outside the strip, the value of $\Upsilon_b(x)$ can be found by combining the above integral expression with the shift equations \eqref{upup}.
-An alternative formula for $\Upsilon_b(x)$, which makes the zeros manifest, is 
+An alternative formula for the Upsilon function, which makes the zeros manifest, is 
 \begin{align}
  \Upsilon_b(x) = \lambda_b^{(\frac{Q}{2}-x)^2}\prod_{m,n=0}^\infty f\left(\frac{\frac{Q}{2}-x}{\frac{Q}{2}+mb+nb^{-1}}\right) \quad \text{with} \quad f(x)=(1-x^2)e^{x^2}\ ,
 \end{align}
@@ -3820,8 +3888,8 @@ Moreover, we have obtained a formula for the degenerate OPE coefficient in terms
  \label{cijrs}
  \ ,
 \end{multline}
-where taking limits and residues produces derivatives of $\Upsilon_b$ at its zeros.
-We could expand the ratios of $\Upsilon_b$ functions into products of $\gamma$ functions using eq. \eqref{upup}.
+where taking limits and residues produces derivatives of the Upsilon function at its zeros.
+We could expand the ratios of Upsilon functions into products of $\gamma$ functions using eq. \eqref{upup}.
 In the special case $i=\frac{r-1}{2}, j=\frac{s-1}{2}$, we have $ib+jb^{-1} = P_{\langle r,s\rangle}-\frac{Q}{2} $, so that 
 \begin{align}
  C_{\frac{r-1}{2},\frac{s-1}{2}}^{\langle r,s \rangle}(P) = 1 \ ,
@@ -3948,14 +4016,14 @@ Evaluating the expression \eqref{clc} for the three-point structure constant, we
  C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =   \frac{\mu^{-\frac{Q}{2}}\Upsilon'_b(0)\prod_{i=1}^3 \mu^{P_{\langle r_i,s_i \rangle}}\Upsilon'_b(2P_{\langle r_i,s_i \rangle}) }{\prod_{\pm,\pm} \Upsilon'_b\left(\tfrac{Q}{2}+P_{\langle r_1,s_1 \rangle}\pm P_{\langle r_2,s_2 \rangle} \pm P_{\langle r_3,s_3 \rangle}\right)} \ .
 \label{crisi}
 \end{align}
-This is the Liouville structure constant $C_{P_1,P_2,P_3}$, where all $\Upsilon_b$ factors are replaced with their derivatives at some of their zeros.
-Knowing the zeros \eqref{xbn} of the function $\Upsilon_b$, we deduce that 
-all $\Upsilon_b$ factors have zeros whenever
+This is the Liouville structure constant $C_{P_1,P_2,P_3}$, where all Upsilon factors are replaced with their derivatives at some of their zeros.
+Knowing the zeros \eqref{xbn} of the Upsilon function, we deduce that 
+all Upsilon factors have zeros whenever
 the momentums are degenerate and the degenerate fusion rules \eqref{rrrsss} are obeyed, in particular
 \begin{align}
  \forall \pm, \pm\ , \quad \Upsilon_b\left(\tfrac{Q}{2}+P_{\langle r_1,s_1 \rangle}\pm P_{\langle r_2,s_2 \rangle} \pm P_{\langle r_3,s_3 \rangle}\right) = 0\ .
 \end{align}
-However, the $\Upsilon_b$ factors in the denominator can also have zeros when fusion rules are violated, and these additional zeros are responsible for the expression \eqref{clc} being nonzero in such cases, for example $C_{\langle 1,1\rangle , \langle 1,1 \rangle,\langle 3,3 \rangle} \neq 0$.
+However, the Upsilon factors in the denominator can also have zeros when fusion rules are violated, and these additional zeros are responsible for the expression \eqref{clc} being nonzero in such cases, for example $C_{\langle 1,1\rangle , \langle 1,1 \rangle,\langle 3,3 \rangle} \neq 0$.
 
 The three-point structure constant can be rewritten in terms of Gamma functions, using the following consequence of eq. \eqref{upup},
 \begin{align}
