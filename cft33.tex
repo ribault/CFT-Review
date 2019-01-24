@@ -150,7 +150,7 @@ Non-rational theories do not necessarily have a vacuum state, and assuming their
 
 By definition, rational conformal field theories have spectrums made of finitely many representations.
 However, in order to ensure closure under fusion, these representations must have complicated structures.
-In Liouville theory, the spectrum is made of a continuum of representations, but these representations are merely Verma modules, so we will study this theory first.
+In Liouville theory, the spectrum is made of a continuum of representations, but these representations are merely Verma modules, so we will study this theory first. The fundamental nature of Liouville theory is also apparent in the relation between its structure constants, and the fusing matrix of the Virasoro algebra.
 Then we will study minimal models, which are rational and therefore less generic and more complicated.
 Even later will come free bosonic theories, which do not play any fundamental role in the bootstrap approach.
 
@@ -671,7 +671,7 @@ This actually amounts to compactifying the space, and working not on the complex
 This does not even prevent us from studying models on the complex plane, as such models are equivalent to models on the sphere, with one field inserted at $z=\infty$.
 Combining the inversion with translations, rotations and dilations, we obtain the group of the \textbf{\boldmath global conformal transformations}\index{conformal transformation!global---} of the Riemann sphere,
 \begin{align}
- \boxed{f_\text{global conformal}(z)  = \frac{az+b}{cz+d}}\ .
+ \boxed{f_\text{global conformal}(z)  = \frac{az+b}{cz+d}}\ , \quad (a,b,c,d\in\mathbb{C},\ ad-bc\neq 0)\ .
 \end{align}
 This group is isomorphic to the group $PGL_2({\mathbb{C}})=\frac{GL_2({\mathbb{C}})}{\mathbb{C}^*}$ of the complex matrices $g$ of size $2$ modulo the relations $g\sim \lambda g\ (\forall \lambda\in\mathbb{C}^*)$, via the map
 \begin{align}
@@ -1977,7 +1977,7 @@ In order for the three-point function \eqref{cff} to be single-valued as require
 \label{dbdz}
 \end{align}
 Primary fields with spins $S\in\frac12+\mathbb{Z}$ are called fermionic. Allowing fermionic fields would require us to modify our commutativity Axiom \ref{ax:col}, as fermions anticommute. Considering indeed a two-point function \eqref{eq:2pt} of a fermionic field with itself, we have $\left< V(z_1)V(z_2)\right> = -\left<V(z_2)V(z_1)\right>$, which suggests $\{V(z_1),V(z_2)\}=0$.
-It is actually possible to relax the single-valuedness axiom, and have fields with spins $S\notin \frac12\mathbb{Z}$, such as parafermionic fields. But we will only consider \textbf{bosonic fields}\index{bosonic field} with spins $S\in\mathbb{Z}$.
+It is actually possible to relax the single-valuedness axiom, and have fields with spins $S\notin \frac12\mathbb{Z}$, such as parafermionic fields. But we will only consider fields with integer spins $S\in\mathbb{Z}$.
 
 The conformal spin then controls how three-point structure constants behave under permutations. For $\sigma$ a permutation of $(1,2,3)$, we indeed have 
 \begin{align}
@@ -2483,7 +2483,7 @@ Conformal blocks are sometimes defined as arbitrary solutions of the Ward identi
 \label{fsd}
 \end{align}
 where all quantities that are not three-point structure constants have been combined into the \textbf{\boldmath $s$-channel}\index{s-channel@$s$-channel} four-point conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)$.
-The appearance of the factorized quantity $\left| \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)\right|^2 $ (which involves the modulus square notation \eqref{eq:msn}) is a manifestation of holomophic factorization, and the right-moving conformal block $\mathcal{F}^{(s)}_{\bar\Delta_s}(\bar\sigma_i|\bar z_i)$ is given by the same function as the left-moving conformal block, applied to right-moving quantities.
+The appearance of the factorized quantity $\left| \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)\right|^2 $ (which involves the modulus square notation \eqref{eq:msn}) is a manifestation of holomophic factorization, and the right-moving conformal block $\mathcal{F}^{(s)}_{\bar\Delta_s}(\bar\sigma_i|\bar z_i)$ is given by the same function as the left-moving conformal block, applied to right-moving quantities. The sum is over conformal dimensions $\Delta_s,\bar{\Delta}_s$, which stand for representations of the Virasoro algebra: the relative contributions of all states in a given irreducible representations are determined by Ward identities, and the sum over these states is included in the conformal block by definition.
 
 Using the OPE of $V_{\sigma_1}(z_1)V_{\sigma_4}(z_4)$, we would obtain \textbf{\boldmath $t$-channel}\index{t-channel@$t$-channel} four-point conformal block $\mathcal{F}^{(t)}_{\Delta_t}(\sigma_i|z_i)$. And with the OPE of $V_{\sigma_1}(z_1)V_{\sigma_3}(z_3)$, we would obtain \textbf{\boldmath $u$-channel}\index{u-channel@$u$-channel} four-point conformal block $\mathcal{F}^{(u)}_{\Delta_u}(\sigma_i|z_i)$. The three inequivalent OPEs give rise to three different decompositions of the same four-point function, and therefore to three bases of conformal blocks. The equality of the different decompositions leads to constraints on the spectrum and correlation functions, called \textbf{\boldmath crossing symmetry}\index{crossing symmetry}.
 
@@ -2512,8 +2512,8 @@ From the role of OPEs in their definition, we can deduce some analytic propertie
  \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) \underset{x\to 0}{=} x^{\Delta_s-\Delta_1-\Delta_2}\Big( 1+ O(x)\Big)\ .
 \end{align}
 Similarly, $t$- and $u$-channel conformal blocks have regular singular points at $x=1$ and $x=\infty$ respectively. Actually, $s$-channel conformal blocks must be singular at $x=1$ and $x=\infty$ too, because four-point functions are singular there. But an $s$-channel block typically has essential singularities at $x=1$ and $x=\infty$. 
-Furthermore, a conformal block in general has a pole when the $s$-channel dimension takes a degenerate value $\Delta_s=\Delta_{\langle r,s\rangle}$ because this is how OPE coefficients behave. (See Section \ref{secope}.) 
-This means that a field with this conformal dimension cannot appear in the decomposition of our four-point function, unless the residue of the conformal block's pole vanishes. The residue turns out to vanish if the fusion rules allow $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_1}\to \mathcal{V}_{\Delta_2}$ or $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_3}\to \mathcal{V}_{\Delta_4}$. This allows $s$-channel degenerate dimensions to occur in  (generalized) minimal models, with perfectly well-defined conformal blocks.
+Furthermore, a conformal block in general has a pole when the $s$-channel dimension takes a degenerate value $\Delta_s=\Delta_{\langle r,s\rangle}$, because the OPE has a pole there. (See Section \ref{secope}.) 
+This means that a field with this conformal dimension cannot appear in the decomposition of our four-point function, unless the residue of the conformal block's pole vanishes. The residue turns out to vanish if the fusion rules allow $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_1}\to \mathcal{V}_{\Delta_2}$ or $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_3}\to \mathcal{V}_{\Delta_4}$. This allows $s$-channel degenerate dimensions to occur in  (generalized) minimal models, with finite conformal blocks.
 
 Now what happens if our four-point function involves degenerate fields? Conformal blocks that involve degenerate fields obey differential equations, as we have seen in Section \ref{secbpz}.
 Nevertheless, the conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$ is a smooth function of $\Delta_i$, and has a finite value for $\Delta_1 = \Delta_{\langle r,s\rangle}$. 
@@ -2692,7 +2692,7 @@ The general crossing symmetry equation \eqref{csd}, while it may in principle de
  \item it can involve sums over large sets of possible conformal dimensions in the $s$- and $t$-channels, 
  \item the general conformal blocks are rather complicated. 
 \end{enumerate}
-So, while the general crossing equation is useful for testing the consistency of proposals for the spectrum and three-point structure constant, it is often useless for deriving specific proposals in the first place. However, it is possible to restrict the $s$- and $t$-channels conformal dimensions to finite sets, and to simplify the conformal blocks, by taking one of the four fields to be degenerate. (See Section \ref{sec:degf}.) If the other three fields remain generic, this still leads to constraints on the generic three-point structure constant. 
+So, while the general crossing equation is useful for testing the consistency of proposals for the spectrum and three-point structure constant, it is often useless for deriving specific proposals in the first place. However, it is possible to restrict the $s$- and $t$-channels conformal dimensions to finite sets, and to simplify the conformal blocks, by taking one of the four fields to be degenerate. (See Section \ref{sec:degf}.) If the other three fields remain generic, this still leads to constraints on the generic three-point structure constant. We will use such constraints for solving Liouville theory and minimal models.
 
 \subsubsection{The fusing matrix}
 
@@ -2723,7 +2723,7 @@ The fusing matrix can be written in terms of the Barnes double Gamma function $\
  \times S_b(\tfrac{Q}{2}-u+P_{1234}) S_b(\tfrac{Q}{2}-u+P_{st13}) S_b(\tfrac{Q}{2}-u+P_{st24})S_b(\tfrac{Q}{2}-u) \ .
  \label{eq:fm}
 \end{multline}
-In this formula, we use momentums $P_i$ and sums of momentums such as $P_{12s}=P_1+P_2+P_s$. We also introduce ratios of double Gamma functions: the double Sine function $S_b(x) = \frac{\Gamma_b(x)}{\Gamma_b(Q-x)}$, and the ratios 
+In this formula, we use momentums $P_i$ and sums of momentums such as $P_{12s}=P_1+P_2+P_s$. We also introduced combinations of double Gamma functions: the double Sine function $S_b(x) = \frac{\Gamma_b(x)}{\Gamma_b(Q-x)}$, and the products
 \begin{align}
  \Delta_\epsilon(P_1,P_2,P_3) =\prod_{\substack{\epsilon_1,\epsilon_2,\epsilon_3=\pm \\ \epsilon_1\epsilon_2\epsilon_3=\epsilon}} \Gamma_b\left(\tfrac{Q}{2}+\textstyle{\sum}_i\epsilon_iP_i\right)\ .
 \end{align}
@@ -2797,7 +2797,7 @@ F^{-1}_{\Delta_t,\Delta_s}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Del
 \label{ffm}
 \end{align}
 This formulation of crossing symmetry can be useful, because the fusing matrix is a simpler object than the conformal blocks. Moreover, this formulation implies that in a diagonal theory, the structure constant is uniquely determined by crossing symmetry. (See Exercise \ref{exoudt}.) 
-And we will now show that the solution of this equation can be written in terms of the fusion matrix. 
+And we will now show that the solution of this equation can be written in terms of the fusing matrix. 
 To do this, let us consider a pentagon relation where the Verma module $\mathcal{V}_{\Delta_{45}}$ is replaced with the identity representation $\mathcal{R}_{\langle 1,1\rangle}$. From the fusion rule \eqref{roof}, we deduce the triviality of the fusing matrix 
 \begin{align}
  F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \langle 1,1\rangle \end{bmatrix} = \delta_{\Delta_s,\Delta_3}\delta_{\Delta_t,\Delta_1}\ .
@@ -2839,7 +2839,7 @@ This shows that a solution of the crossing symmetry equation \eqref{ffm} is give
  C_{123} = F_{\langle 1,1\rangle, \Delta_{1}} \begin{bmatrix} \Delta_2 & \Delta_3\\ \Delta_2 & \Delta_3\end{bmatrix}\ ,
 \end{align}
 provided the right-hand side is symmetric under permutations of $\Delta_1,\Delta_2,\Delta_3$. 
-The particular fusing matrix that we need can actually be computed as a limit of the general expression \eqref{eq:fm},
+This right-hand side can actually be computed as a limit of the general expression \eqref{eq:fm} of the fusing matrix,
 \begin{align}
  F_{\langle 1,1\rangle, \Delta_{t}} \begin{bmatrix} \Delta_1 & \Delta_4\\ \Delta_1 & \Delta_4\end{bmatrix} 
  & = 
@@ -2850,19 +2850,17 @@ The particular fusing matrix that we need can actually be computed as a limit of
   &\propto \frac{1}{\prod_{\pm,\pm,\pm} \Gamma_b(\frac{Q}{2} \pm P_t\pm P_1\pm P_4)}\ ,
   \label{eq:fdozz}
 \end{align}
-where we neglect factors that can be absorbed into field renormalizations $V_{\Delta}(z)\to \lambda(\Delta)V_\Delta(z)$. (See Exercise \ref{exoflfg}.) This  coincides with the DOZZ formula \eqref{caaa} for the three-point function of Liouville theory, given the relation $\Upsilon_b(x) = \frac{1}{\Gamma_b(x)\Gamma_b(Q-x)}$ between the Upsilon function that appears in the DOZZ formula, and the double Gamma function.
+where we neglect factors that can be absorbed into field renormalizations $V_{\Delta}(z)\to \lambda(\Delta)V_\Delta(z)$. (See Exercise \ref{exoflfg}.) This  coincides with the DOZZ formula \eqref{caaa} for the three-point function of Liouville theory, given the relation 
+\begin{align}
+ \Upsilon_b(x) = \frac{1}{\Gamma_b(x)\Gamma_b(Q-x)}\ ,
+ \label{eq:upga}
+\end{align}
+between the Upsilon function that appears in the DOZZ formula, and the double Gamma function.
 
 This derivation of the DOZZ formula is rather formal: proving the equations that we used, starting with the existence of the linear  relation \eqref{eq:fusrel} between $s$- and $t$-channel conformal blocks, requires a good control over the analytic properties of conformal blocks \cite{tv12}, which is beyond the scope of this text. Moreover, we have deduced the formula from the much more complicated expression for the fusing matrix, which we had to admit. In Chapter \ref{seccbm} we will solve Liouville theory in a more constructive and elementary way, which can be generalized to more complicated CFTs. We will also discuss under which assumptions Liouville theory is unique, starting with the assumption that there is at most one primary field with a given conformal dimension -- an assumption that we implicitly made when writing the crossing symmetry equation \eqref{csd} as a sum over conformal dimensions.
 
-Rather than an appealing way of solving Liouville theory, the present discussion is a demonstration of its fundamental nature, as its three-point structure constant is a special case of the fusing matrix of Verma modules. Actually, the full fusing matrix coincides (up to simple factors) with Liouville theory's boundary three-point structure constant \cite{pt01}, and is sometimes called the Liouville fusing matrix. 
+Rather than an appealing way of solving Liouville theory, the present discussion is a demonstration of its fundamental nature, as its three-point structure constant is a special case of the fusing matrix. Actually, the full fusing matrix coincides (up to simple factors) with Liouville theory's boundary three-point structure constant \cite{pt01}, and is sometimes called the Liouville fusing matrix. 
 
-
-
-
-define Upsilon function (index), postpone properties to later. Use its name in Liouville part. 
-
-
-Universality of Liouville theory... also emphasize in section 0/1.
 
 \section{Exercises}
 
@@ -3509,6 +3507,7 @@ If $b>0$, the compatible equations that result from inserting the missing factor
 \label{upup}
 \end{align}
 These equations define a unique (up to a constant factor) \textbf{Upsilon function}\index{Upsilon function} $\Upsilon_b(x)$, which will turn out to be defined for any $b$ such that $\Re b > 0$ by analytic continuation. 
+This function can be constructed from the Barnes double Gamma function using eq. \eqref{eq:upga}.
 On the other hand, if $ib>0$, the compatible equations are 
 \begin{align}
  \frac{\hat{\Upsilon}_b(x+b)}{\hat{\Upsilon}_b(x)} = (ib)^{1-2bx} \gamma(bx)\quad \text{and} \quad \frac{\hat{\Upsilon}_b(x+\frac{1}{b})}{\hat{\Upsilon}_b(x)} = (ib)^{\frac{2x}{b}-1} \gamma(\tfrac{x}{b})\ .
