@@ -147,7 +147,7 @@ The Bible of rational conformal field theory is of course the epic textbook \cit
 
 \begin{exo}[Update Wikipedia]
  ~\label{exo:wiki}
- How would you rate Wikipedia's coverage of these lectures' topics? For a list of relevant articles, see 
+ How would you rate Wikipedia's coverage of these lectures' topics? For a list of some relevant articles, see 
  \href{https://en.wikipedia.org/wiki/User:Sylvain_Ribault/YRIS2019}{this page}.
  Correct and update these articles when needed. Are there other relevant articles? Which articles should be created?
 \end{exo}
@@ -510,9 +510,10 @@ For four-point functions, the general solution can be written as
 where $z_{ij} = z_i - z_j$ and $G(z)$ is an arbitrary function of the cross-ratio $z$. 
 So the three global Ward identities effectively reduce the four-point function to a function of one variable $G$ -- equivalently, we can set $z_2,z_3,z_4$ to fixed values, and recover the four-point function from its dependence on $z_1$ alone. 
 
-\begin{exo}[Conformal symmetry of four-point functions]
+\begin{exo}[Global conformal symmetry]
 ~\label{exo:4pt}
- Let us define $V_\Delta(\infty) = \lim_{z\to\infty} z^{2\Delta}V_\Delta(z) $. Check that this is finite when inserted into a two- or three-point function. More generally, show that this is finite using the behaviour \eqref{eq:zgc} of correlation functions under $z\to -\frac{1}{z}$. 
+Solve the global Ward identities for two-, three- and four-point functions, and recover eqs. \eqref{eq:2pt}, \eqref{eq:3pt} and \eqref{eq:4pt} respectively. 
+Defining $V_\Delta(\infty) = \lim_{z\to\infty} z^{2\Delta}V_\Delta(z) $, show that this is finite when inserted into a two- or three-point function. More generally, show that this is finite using the behaviour \eqref{eq:zgc} of correlation functions under $z\to -\frac{1}{z}$. 
  Show that
  \begin{align}
   G(z) = \Big< V_{\Delta_1}(z) V_{\Delta_2}(0)V_{\Delta_3}(\infty)V_{\Delta_4}(1) \Big>\ .
@@ -948,7 +949,7 @@ It can be checked that $\mathcal{R}_{\langle 3,1\rangle}$ has a vanishing null v
 
 \begin{exo}[Higher degenerate representations]
 ~\label{exo:hdr}
- Show that there exist degenerate representations $\mathcal{R}_{\langle r,s \rangle}$ (for $r, s \in \mathbb{N}^*$) with momentums $P_{\langle r,s \rangle}$ \eqref{eq:ars},
+ By recursion on $r,s\in \mathbb{N}^*$, show that there exist degenerate representations $\mathcal{R}_{\langle r,s \rangle}$ with momentums $P_{\langle r,s \rangle}$ \eqref{eq:ars},
 such that 
  \begin{align}
  \mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_P &= \mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_P = \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}} \mathcal{V}_{P + ib+jb^{-1}}\ ,
@@ -1500,7 +1501,7 @@ Historically, Liouville theory was first defined by quantizing a classical theor
 
 \hypersetup{linkcolor=blue}
 
-\iffalse
+%\iffalse
 
 \section{Solutions of Exercises}
 %\addcontentsline{toc}{section}{Solutions of Exercises}
@@ -1843,7 +1844,7 @@ This shows that $K_b+\log b$ is invariant under $b\to \frac{1}{b}$. Therefore, w
 \end{align}
 and we obtain the shift equation \eqref{upup} for $\frac{\Upsilon_b(x+b)}{\Upsilon_b(x)}$. Since $\lambda_b$ is invariant under $b\to \frac{1}{b}$, the shift equation for  $\frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)}$ follows immediately.
 
-\fi
+%\fi
 
 
 \bibliographystyle{cft}
