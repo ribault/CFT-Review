@@ -1064,7 +1064,7 @@ Fusing two such representations produces degenerate representations with odd val
 \begin{defn}[D-series minimal model]
  For $p,q\geq 2$ coprime integers with $p\in 6+2\mathbb{N}$, the D-series $(p,q)$ minimal model is the conformal field theory whose spectrum is 
 \begin{align}
- S_{p,q}^\text{D-series} = \frac12 \bigoplus_{r\overset{2}{=}1}^{p-1} \bigoplus_{s=1}^{q-1} \mathcal{R}_{ r,s} \otimes \bar{\mathcal{R}}_{r,s}\oplus \frac12\bigoplus_{\substack{1\leq r\leq p-1 \\ r\equiv \frac{p}{2}\bmod 2}} \bigoplus_{s=1}^{q-1} \mathcal{R}_{r,s} \otimes \bar{\mathcal{R}}_{p-r,s}\ ,
+ S_{p,q}^\text{D-series} = \frac12 \bigoplus_{r\overset{2}{=}1}^{p-1} \bigoplus_{s=1}^{q-1} \mathcal{R}_{ \langle r,s \rangle} \otimes \bar{\mathcal{R}}_{\langle r,s \rangle}\oplus \frac12\bigoplus_{\substack{1\leq r\leq p-1 \\ r\equiv \frac{p}{2}\bmod 2}} \bigoplus_{s=1}^{q-1} \mathcal{R}_{\langle r,s \rangle} \otimes \bar{\mathcal{R}}_{\langle p-r,s\rangle}\ ,
  \label{eq:sds}
 \end{align}
 assuming it exists and is unique.
@@ -1656,7 +1656,7 @@ Let us insert $\oint_C dz(z-z_2)^2 T(z)$ on both sides of eq. \eqref{eq:ope}, fo
 \begin{align}
  V_{\Delta_1}(z_1) V_{\Delta_2}(z_2) 
  = \sum_{\Delta\in S} C_{\Delta_1,\Delta_2,\Delta} z_{12}^{\Delta-\Delta_1-\Delta_2}
- \Big(V_{\Delta}(z_2) + f z_{12} L_{-1}V_{\Delta_2}(z_2) + O(z_{12}^2) \Big)\ .
+ \Big(V_{\Delta}(z_2) + f z_{12} L_{-1}V_{\Delta}(z_2) + O(z_{12}^2) \Big)\ .
 \end{align}
 We first compute the left-hand side. The integrand $(z-z_2)^2 T(z) V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$ is regular at $z=z_2$, and we only pick contributions from the pole at $z=z_1$. Using the OPE $T(z)V_{\Delta_1}(z_1)$ \eqref{eq:tvd}, we find 
 \begin{align}
@@ -1727,7 +1727,7 @@ which is equivalent to eq. \eqref{eq:fsl}. The first subleading term has a pole 
 
 We already know that the fusion product \eqref{rtv} holds for the representations $\mathcal{R}_{\langle 1,1\rangle}$, $\mathcal{R}_{\langle 2,1\rangle}$ and $\mathcal{R}_{\langle 1,2\rangle}$. Let us prove it more generally by recursion on $r,s$. Let us assume that it holds for all $r\leq r_0$ and $s\leq s_0$. For $s\leq s_0$ we compute 
 \begin{align}
- \mathcal{R}_{\langle 2,1\rangle} \times \mathcal{R}_{r_0, s} \times \mathcal{V}_P 
+ \mathcal{R}_{\langle 2,1\rangle} \times \mathcal{R}_{\langle r_0, s\rangle} \times \mathcal{V}_P 
  &= \sum_{i=-\frac{r_0-1}{2}}^{\frac{r_0-1}{2}} 
  \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}}  
  \mathcal{R}_{\langle 2,1\rangle} \times \mathcal{V}_{P + ib+jb^{-1}} \ ,
@@ -1761,7 +1761,7 @@ In this form, we see that the intersection of the two fusion products $\mathcal{
 
 Fusion rules are a priori defined for representations of the Virasoro algebra, and do not know how the left- and right-moving representations are combined. Therefore, fusion rules may not unambiguously determine operator product expansions in models where the same left-moving Virasoro representation is combined with different right-moving representations. 
 
-However, assuming that $p$ is even, let us look at the values of the $r$ index in the D-series spectrum \eqref{eq:sds}. The parity of $r$ is unambiguously defined, as it does not change under $(r,s)\to (p-r,q-s)$. If moreover $p\equiv 0 \bmod 4$, then $r$ is takes odd values in the diagonal sector, and even values in the non-diagonal sector: therefore, the two sectors do not involve the same representations of the Virasoro algebra. From the fusion product \eqref{rrmm}, we deduce that the fusion product of two representations is diagonal if and only if the two representations belong to the same sector. Let us write this in terms of OPEs of the primary fields $V^\epsilon_{\langle r,s\rangle}$ of the model, where the boolean $\epsilon = r-1\bmod 2$ indicates the sector: $V^0_{\langle r,s\rangle}$ corresponds to the representation $\mathcal{R}_{ r,s} \otimes \bar{\mathcal{R}}_{r,s}$, and $V^1_{\langle r,s\rangle}$ to $\mathcal{R}_{r,s} \otimes \bar{\mathcal{R}}_{p-r,s}$. We then have OPEs of the type 
+However, assuming that $p$ is even, let us look at the values of the $r$ index in the D-series spectrum \eqref{eq:sds}. The parity of $r$ is unambiguously defined, as it does not change under $(r,s)\to (p-r,q-s)$. If moreover $p\equiv 0 \bmod 4$, then $r$ takes odd values in the diagonal sector, and even values in the non-diagonal sector: therefore, the two sectors do not involve the same representations of the Virasoro algebra. From the fusion product \eqref{rrmm}, we deduce that the fusion product of two representations is diagonal if and only if the two representations belong to the same sector. Let us write this in terms of OPEs of the primary fields $V^\epsilon_{\langle r,s\rangle}$ of the model, where the boolean $\epsilon = r-1\bmod 2$ indicates the sector: $V^0_{\langle r,s\rangle}$ corresponds to the representation $\mathcal{R}_{ \langle r,s\rangle} \otimes \bar{\mathcal{R}}_{\langle r,s\rangle}$, and $V^1_{\langle r,s\rangle}$ to $\mathcal{R}_{\langle r,s\rangle} \otimes \bar{\mathcal{R}}_{\langle p-r,s\rangle}$. We then have OPEs of the type 
 \begin{align}
  V^{\epsilon_1}_{\langle r_1,s_1\rangle}V^{\epsilon_2}_{\langle r_2,s_2\rangle} \sim \sum_{r_3\overset{2}{=}|r_1-r_2|+1}^{\min(r_1+r_2,2p-r_1-r_2)-1}\ \sum_{s_3\overset{2}{=}|s_1-s_2|+1}^{\min(s_1+s_2,2q-s_1-s_2)-1} V^{\epsilon_1+\epsilon_2}_{\langle r_3,s_3\rangle}\ .
 \end{align}
