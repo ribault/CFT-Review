@@ -1035,23 +1035,27 @@ in particular $c_{p,q} <1$.
 There are $\frac{(p-1)(q-1)}{2}$ distinct representations in the spectrum.
 The model is unitary if $q=p+1$, then $c_{p,p+1}=1-\frac{6}{p(p+1)}=0,\frac12,\frac{7}{10},\frac45, \frac67,\cdots$.
 \end{itemize}
-Let us locate these models in the $c$-complex plane, with unitary models signalled by more intense colors:
+Let us locate these models in the $c$-complex plane: Liouville theory and generalized minimal models in blue, minimal models in red (with larger bars for smaller spectrums), unitary Liouville theory and unitary minimal models in darker colors:
 \begin{align}
- \begin{tikzpicture}[scale = 4.5, baseline=(current  bounding  box.center)]
- \filldraw [blue!50!red, opacity = .15] (2.15, -.3) -- (2.15, .75) -- (-.6, .75) -- (-.6, -.3) -- cycle;
- \node [draw = red, fill = red!15, right] at (-.5, .65) {Liouville theory};
- \node [draw = blue, fill = blue!15, right] at (-.5, .49) {Generalized minimal models};
- \node[draw = green!70!black, fill = green!16!black!7, right] at (-.5, .12) {Minimal models};
- %\node[below] at (1.6, -.05) {Liouville theory};
-  \filldraw [red] (.98, -.02) -- (.98, .02) -- (2.15, .02) -- (2.15, -.02) -- cycle;
-  \filldraw [green!70!black, opacity = .15] (-.6, -.02) -- (-.6, .02) -- (.98, .02) -- (.98, -.02) -- cycle;
- \foreach \p in {2,...,20}
-  {
-  \draw [green!70!black, thick] ({1-6/(\p*(\p+1))}, -.03) -- ({1-6/(\p*(\p+1))}, .03);
-  }
-  \node [below] at (0, -.02) {$0$};  \node [below] at (.99, -.02) {$1$};
-  \draw[-latex] (-.6, 0) -- (2.2, 0) node [below right] {$c$};
-\end{tikzpicture}
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .95] 
+ \clip (-5,-3) rectangle (7,3);
+ % Liouville theory
+ \fill[blue!15] (-5, -3) rectangle (5.5, 3); 
+ \fill[blue!70] (1, -.1) rectangle (5.5, .1);
+  % Minimal models
+ \newcommand{\mm}[3]{\draw[ultra thick, #3] ({#1}, -{#2}) -- ({#1}, {#2});}
+ \foreach \p in {2,...,14}{
+ \foreach \q in {\numexpr\p+2,...,16}{
+ \ifthenelse{\q<\numexpr 3*\p}{
+ \mm{1-6*(\p-\q)*(\p-\q)/(\p*\q)}{2/(\p*\q)^(.7)}{red!40};
+ }}};
+ \foreach \p in {2,...,14}{
+ \mm{1-6/(\p*(\p+1))}{2/(\p*(\p+1))^(.7)}{red!80!black};
+ }
+  % Landmarks 
+  \draw[-latex] (-5, 0) -- (0, 0) node[above] {$0$} --   (1, 0) node[above] {$1$} 
+   -- (6.5,0) node[above] {$c$};
+ \end{tikzpicture}
 \end{align}
 Other simple models include:
 \begin{itemize}
@@ -2028,17 +2032,14 @@ Let us generically write the OPE as $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) = z_{12}
 Using this identity for eliminating $z_1$-derivatives in the $n\geq 1$ identity, we obtain
 \begin{align}
  \Bigg\{ L_n^{(z_2)} - z_{12}^n \left( n\Delta_1-\Delta_2+L_0^{(z_2)}\right)\Bigg\} \mathcal{O}(z_1,z_2) = 0 \ .
+ \label{eq:llo}
 \end{align}
 Let us specialize to the case where $\mathcal{O}(z_1,z_2)$ is a combination of primary fields and their descendants, and focus on the contribution of one primary field with dimension $\Delta_3$:
 \begin{align}
  \mathcal{O}_{\Delta_3}(z_1,z_2) = z_{12}^{\Delta_3}\sum_{L\in\mathcal{L}} z_{12}^{|L|} C^{L|\Delta_3\rangle}_{12} LV_{\Delta_3}(z_2)\ , 
 \end{align}
 where $\mathcal{L}$ is a basis of the space of creation operators $U(\mathfrak{V}^+)$.
-In this case the local Ward identities read 
-
-(unfinished)
-
-at a level $|L|=N\geq n$, we find
+In this case, for any level $N\geq n$, we extract the coefficient of $z_{12}^{\Delta_3+N}$ in eq. \eqref{eq:llo}, and we obtain the local Ward identity
 \begin{align}
  \sum_{|L|=N-n} C^{L|\Delta_3\rangle}_{12}(\Delta_3+N-n+n\Delta_1-\Delta_2)L V_{\Delta_3}(z_2)
  = 
