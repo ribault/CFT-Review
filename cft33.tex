@@ -486,19 +486,12 @@ The consistency conditions on the correlation functions $\left\langle\prod_{i=1}
  \boxed{V_{\sigma_1}(x_1)V_{\sigma_2}(x_2) = V_{\sigma_2}(x_2) V_{\sigma_1}(x_1)}\ ,
 \label{comm}
 \end{align}
-provided $(x_1,x_2)$ obey some condition.
-In Minkowski space for instance, $x_1-x_2$ is supposed to be space-like.
-In the two-dimensional Euclidean space, the condition is $x_1\neq x_2$.
+provided $x_1\neq x_2$. 
 \end{hyp}
-\begin{hyp}[\textbf{Associativity}\index{associativity}]
-\label{ax:ass}
-\begin{align}
- \boxed{\Big(V_{\sigma_1}(x_1)V_{\sigma_2}(x_2)\Big) V_{\sigma_3}(x_3) = V_{\sigma_1}(x_1)  \Big(V_{\sigma_2}(x_2) V_{\sigma_3}(x_3)\Big)}\ .
-\label{asso}
-\end{align}
-\end{hyp} 
 \noindent
-Together with commutativity, this implies that correlation functions do not depend on how fields are ordered.
+We are writing this axiom for a theory on a Euclidean space: if the space was Minkowskian, fields would commute if $x_1-x_2$ was space-like, rather than non-vanishing. 
+This axiom implies that correlation functions do not depend on how fields are ordered.
+
 \begin{hyp}[Existence of an \textbf{\boldmath OPE}\index{OPE} (Operator Product Expansion)]
  \label{ax:ope}
  \begin{align}
@@ -509,10 +502,12 @@ where the \textbf{\boldmath OPE coefficients}\index{OPE!---coefficient} $C_{\sig
 The sum is supposed to converge if $x_1$ and $x_2$ are sufficiently close. 
 \end{hyp} 
 \noindent
+The commutativity axiom implies that the OPE is \textbf{associative}\index{associativity (of the OPE)} and commutative. However, we wrote the OPE in a way that makes commutativity non-trivial, by using fields $V_\sigma(x_2)$. Had we used $V_\sigma(\frac{x_1+x_2}{2})$ instead, commutativity would have reduced to the simple condition $C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2) = C_{\sigma_2,\sigma_1}^{\sigma}(x_2,x_1)$.
+
 Our axioms do not include the existence of a vacuum state, a frequently encountered axiom of quantum field theory in flat space.
 In Liouville theory this axiom is not satisfied, and in minimal models we can do without it. 
 
-Let us now study how these assumptions constrain the correlation functions.
+Let us now study how these axioms constrain the correlation functions.
 By performing multiple OPEs, an $N$-point function (with $N\geq 3$) can always be reduced to a combination of two-point functions, for instance
 \begin{align}
  \left\langle \prod_{i=1}^4 V_{\sigma_i}(x_i) \right\rangle = \sum_{\sigma\in \mathcal{S}} C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2)\sum_{\sigma'\in \mathcal{S}} C_{\sigma,\sigma_3}^{\sigma'}(x_2,x_3)\Big\langle V_{\sigma'}(x_3)V_{\sigma_4}(x_4)\Big\rangle\ .
@@ -520,7 +515,7 @@ By performing multiple OPEs, an $N$-point function (with $N\geq 3$) can always b
 We could go further and reduce the two-point function to a sum of one-point functions.
 This is however unnecessary, because conformal symmetry will determine the two-point function, so that we can consider it a known quantity.
 So, in order to compute correlation functions, all we need to know (in addition to the spectrum $\mathcal{S}$) is the OPE coefficient $C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2)$.
-But this quantity is itself strongly constrained by the associativity assumption \eqref{asso}, which implies
+But this quantity is itself strongly constrained by the associativity of the OPE, which implies
 \begin{align}
  \sum_{\sigma_s\in \mathcal{S}} C_{\sigma_1,\sigma_2}^{\sigma_s}(x_1,x_2) C_{\sigma_s,\sigma_3}^{\sigma_4}(x_2,x_3) = \sum_{\sigma_t\in \mathcal{S}} C_{\sigma_1,\sigma_t}^{\sigma_4}(x_1,x_3)C_{\sigma_2,\sigma_3}^{\sigma_t}(x_2,x_3)\ ,
 \label{cccc}
@@ -2026,18 +2021,24 @@ in agreement with dimensional analysis eq. \eqref{zaz}.
 
 For simplicity, let us specialize to an OPE of two primary fields $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$. 
 The left-hand side of the OPE Ward identity reduces to the terms with $L_{-1}^{(z_1)}$ and $L_0^{(z_1)}$, and therefore to $\left(z_{12}^{n+1}\frac{\partial}{\partial z_1} + (n+1)\Delta_1z_{12}^n\right) V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$. 
-Inserting the OPE $V_{\Delta_1}V_{\Delta_2}$, with 
-the form \eqref{eq:coz} of the OPE coefficients, 
-the local Ward identities read 
+Let us generically write the OPE as $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) = z_{12}^{-\Delta_1-\Delta_2}\mathcal{O}(z_1,z_2)$, where $\mathcal{O}(z_1,z_2)$ is a linear combination of fields at $z_2$, with coefficients that depend on $z_{12}$. In this notation, the $n=0$ global Ward identity is 
 \begin{align}
- \sum_{\sigma_3} C^{\sigma_3}_{12}(\Delta_{\sigma_3} + n\Delta_1-\Delta_2) 
- \left| z_{12}^{\Delta_{{\sigma_3}}-\Delta_1-\Delta_2}\right|^2 z_{12}^n V_{\sigma_3}(z_2) 
- = 
- \sum_{\sigma_3} C^{\sigma_3}_{12} 
- \left| z_{12}^{\Delta_{{\sigma_3}}-\Delta_1-\Delta_2} \right|^2 L_nV_{\sigma_3}(z_2)\ ,
+ \left(z_{12}\frac{\partial}{\partial z_1} - L_0^{(z_2)}\right) \mathcal{O}(z_1,z_2) = 0 \ .
 \end{align}
-where we now write $C^{\sigma_3}_{\sigma_1,\sigma_2}=C^{\sigma_3}_{12}$.
-Focusing on the right-hand side terms that come from descendents $V_{\sigma_3}= V_{L|\Delta_3\rangle}= LV_{\Delta_3}$ of a given primary field at a level $|L|=N\geq n$, we find
+Using this identity for eliminating $z_1$-derivatives in the $n\geq 1$ identity, we obtain
+\begin{align}
+ \Bigg\{ L_n^{(z_2)} - z_{12}^n \left( n\Delta_1-\Delta_2+L_0^{(z_2)}\right)\Bigg\} \mathcal{O}(z_1,z_2) = 0 \ .
+\end{align}
+Let us specialize to the case where $\mathcal{O}(z_1,z_2)$ is a combination of primary fields and their descendants, and focus on the contribution of one primary field with dimension $\Delta_3$:
+\begin{align}
+ \mathcal{O}_{\Delta_3}(z_1,z_2) = z_{12}^{\Delta_3}\sum_{L\in\mathcal{L}} z_{12}^{|L|} C^{L|\Delta_3\rangle}_{12} LV_{\Delta_3}(z_2)\ , 
+\end{align}
+where $\mathcal{L}$ is a basis of the space of creation operators $U(\mathfrak{V}^+)$.
+In this case the local Ward identities read 
+
+(unfinished)
+
+at a level $|L|=N\geq n$, we find
 \begin{align}
  \sum_{|L|=N-n} C^{L|\Delta_3\rangle}_{12}(\Delta_3+N-n+n\Delta_1-\Delta_2)L V_{\Delta_3}(z_2)
  = 
@@ -2095,7 +2096,7 @@ Let us now write the complete expression of the OPE of two primary fields:
  }\ ,
  \label{vvs}
 \end{align}
-where $\mathcal{L}$ is a basis of the space of creation operators $U(\mathfrak{V}^+)$, and the modulus square notation \eqref{eq:msn} means a product of left-moving $z,\Delta,L$ and right-moving $\bar z, \bar \Delta, \bar L$ quantities.
+where  the modulus square notation \eqref{eq:msn} means a product of left-moving $z,\Delta,L$ and right-moving $\bar z, \bar \Delta, \bar L$ quantities.
 
 That OPE Ward identities uniquely determine the contributions of the descendents of a given primary field, means that fusion multiplicities are trivial in fusion products of highest-weight representations of the Virasoro algebra. By definition, the multiplicity of the Verma module $\mathcal{V}_{\Delta_3}$ in the fusion product $\mathcal{V}_{\Delta_1}\times \mathcal{V}_{\Delta_2}$ indeed coincides with the dimension of the space of solutions of the OPE Ward identities, and that dimension is one or zero.
 
@@ -2685,7 +2686,7 @@ and write crossing symmetry as
 \label{csd}
 \end{align}
 Considering the conformal blocks as known quantities, this is an equation for the spectrum and three-point structure constant, which is quadratic in the structure constant.
-This equation is equivalent to the associativity Axiom \ref{ax:ass}. In order to show that the theory is consistent, it suffices to moreover check the commutativity Axiom \ref{ax:col}, equivalently the behaviour \eqref{css} of the three-point structure constant under permutations. 
+This equation is equivalent to the associativity of the OPE. In order to show that the theory is consistent, it suffices to moreover check the commutativity of the OPE, equivalently the behaviour \eqref{css} of the three-point structure constant under permutations. 
 % NB: in particular this implies equality with the u-channel.
 $N$-point functions on the sphere can similarly be decomposed into three-point structure constants and $N$-point conformal blocks, but the cases $N\geq 5$ do not yield more equations. 
 
@@ -6281,7 +6282,7 @@ In other words, calling this coefficient $C_{\alpha_1,\alpha_2}$, we want to sho
 \label{clll}
 \end{align}
 \begin{enumerate}
- \item Use commutativity \eqref{comm} and associativity \eqref{asso} of the OPE, and show that 
+ \item Use commutativity and associativity of the OPE, and show that 
 \begin{align}
 C_{\alpha_1,\alpha_2} &= C_{\alpha_2,\alpha_1}\ ,
 \\
