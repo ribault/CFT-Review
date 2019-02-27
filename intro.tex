@@ -85,7 +85,7 @@
 
 \usepackage[colorlinks=true,linktoc=all,linkcolor=black,citecolor=red,urlcolor=blue]{hyperref}
 
-\title{\bfseries Introduction to two-dimensional \\ conformal field theory}
+\title{\bfseries Minimal lectures on two-dimensional \\ conformal field theory}
 
 \author{Sylvain Ribault \vspace{2mm}
 \\
@@ -101,21 +101,29 @@
 
 
 \begin{abstract}
-We introduce conformal field theory in two dimensions, from the basic principles to some of the simplest models. From the representations of the Virasoro algebra on the one hand, and the state-field correspondence on the other hand, we deduce Ward identities and Belavin--Polyakov--Zamolodchikov equations for correlation functions. We then explain the principles of the conformal bootstrap method, and introduce conformal blocks. This allows us to define and solve minimal models and Liouville theory. We also introduce the free boson with its abelian affine Lie algebra. 
+We provide a brief but self-contained review of two-dimensional conformal field theory, from the basic principles to some of the simplest models. From the representations of the Virasoro algebra on the one hand, and the state-field correspondence on the other hand, we deduce Ward identities and Belavin--Polyakov--Zamolodchikov equations for correlation functions. We then explain the principles of the conformal bootstrap method, and introduce conformal blocks. This allows us to define and solve minimal models and Liouville theory. In particular, we study their
+three- and four-point functions, and discuss their existence and uniqueness. In appendices, we introduce the free boson theory (with an arbitrary central charge), and the modular bootstrap in minimal models.
 \end{abstract}
 
 \vspace{5mm}
 
- \textit{Lecture notes for the ``Young Researchers Integrability School'', Wien 2019, based on the earlier lecture notes \cite{rib16}. Estimated length: 7 lectures of 45 minutes each. 
- \begin{tcolorbox}
-  Material that may be skipped in the lectures is in green boxes. Exercises are in green boxes when their statements are not part of the lectures' text; this does not make them less interesting as exercises.
- \end{tcolorbox}
- }
+ \textit{Based on lectures given at the school on ``Quantum integrable systems, conformal field theories and stochastic processes'' (Carg\`ese, September 2016), and at the ``Young Researchers Integrability School'' (Vienna, February 2019).}
+\vspace{2mm}
+
+\textit{
+An earlier version of this text was published in SciPost Physics Lecture Notes: arXiv's fourth version} \href{https://arxiv.org/abs/1609.09523v4}{\texttt{arXiv:1609.09523v4}}. 
+% %\begin{tcolorbox}
+%  Material that may be skipped in the lectures is in green boxes. Exercises are in green boxes when their statements are not part of the lectures' text; this does not make them less interesting as exercises.
+% %\end{tcolorbox}
+
 
 
 \clearpage
 
 \tableofcontents
+
+\renewcommand{\listtheoremname}{List of Exercises}
+\listoftheorems[ignoreall, show={exo}]
 
 \hypersetup{linkcolor=blue}
 
@@ -130,7 +138,7 @@ We will introduce the main ideas of two-dimensional CFT in the conformal bootstr
 While not claiming mathematical rigour, we explicitly state the axioms that underlie our derivations.
 This is supposed to facilitate generalizations, for example to CFTs based on larger symmetry algebras, or to non-diagonal CFTs \cite{mr17}.
 
-\begin{tcolorbox}
+%\begin{tcolorbox}
 Our first axioms will specify how the Virasoro symmetry algebra acts on fields, and the existence and properties of the operator product expansion. 
 Next, we introduce additional axioms that single out either minimal models, or Liouville theory.
 We will then check that these theories actually exist, by studying their four-point functions.
@@ -138,8 +146,8 @@ It is the success of such checks, more than a priori considerations, that justif
 
 Our main tool for solving CFTs is crossing symmetry of the sphere four-point function. We will however introduce two other tools as side subjects:
 \begin{itemize}
- \item The free boson (Section \ref{sec:fb}) is not needed in our approach, because we do not build CFTs as perturbed free theories, as is done in the Lagrangian approach. However, it is an excellent preparation to the study of WZW models. 
- \item The modular bootstrap (Section \ref{sec:mb}) focuses on torus partition functions: less interesting than sphere four-point functions, but also much simpler, so they can be tractable even in complicated models. 
+ \item The free boson (Appendix \ref{sec:fb}) is not needed in our approach, because we do not build CFTs as perturbed free theories, as is done in the Lagrangian approach. However, it is a good preparation to the study of of CFTs based on larger symmetry algebras, in particular WZW models. 
+ \item The modular bootstrap (Appendix \ref{sec:mb}) focuses on torus partition functions: less interesting than sphere four-point functions, but also much simpler, so they can be tractable even in complicated models. 
 \end{itemize}
 This text  aims to be self-contained, except at the very end when we will refer to \cite{zz90} for the properties of generic conformal blocks.
 For a more detailed text in the same spirit, see the review article \cite{rib14}. For a wider and more advanced review, and a guide to the recent literature, see Teschner's text \cite{tes17}. 
@@ -147,16 +155,21 @@ The Bible of rational conformal field theory is of course the epic textbook \cit
 
 \begin{exo}[Update Wikipedia]
  ~\label{exo:wiki}
- How would you rate Wikipedia's coverage of these lectures' topics? For a list of some relevant articles, see 
+ How would you rate Wikipedia's coverage of two-dimensional CFT? For a list of some relevant articles, see 
  \href{https://en.wikipedia.org/wiki/User:Sylvain_Ribault/YRIS2019}{this page}.
  Correct and update these articles when needed. Are there other relevant articles? Which articles should be created?
 \end{exo}
 
 \subsection*{Acknowledgements}
 
-I am grateful to Riccardo Guida and Yifei He for helpful comments and suggestions.
+I am grateful to the organizers of the Carg\`ese school, for challenging me to explain Liouville theory in about four hours. I am grateful to the organizers of the Vienna school, for the opportunity to fit these lectures into a school on various aspects of two-dimensional CFT. 
 
-\end{tcolorbox}
+I wish to thank Bertrand Eynard, Riccardo Guida, Yifei He, and Andr\'e Voros for helpful suggestions and comments.
+I am grateful to the participants of the Carg\`ese and Vienna schools, for their stimulating participation in the lectures.
+I wish to thank the SciPost editor and reviewers for their feedback and \href{https://scipost.org/submission/1609.09523v2/}{suggestions}, which led to many improvements, both perturbative and non-perturbative.
+
+
+%\end{tcolorbox}
 
 \section{The Virasoro algebra and its representations}
 
@@ -177,7 +190,7 @@ and these operators generate the Witt algebra, with commutation relations
  [\ell_n,\ell_m ] = (n-m)\ell_{m+n}\ .
 \end{align}
 
-\begin{tcolorbox}
+%\begin{tcolorbox}
 The generators $(\ell_{-1},\ell_0,\ell_1)$ generate a subalgebra called the algebra of infinitesimal global conformal transformations and isomorphic to $s\ell_2$.  The corresponding Lie group is the group of global conformal transformations of 
 the Riemann sphere $\mathbb{C}\cup \{\infty\}$,
 \begin{align}
@@ -193,7 +206,7 @@ the Riemann sphere $\mathbb{C}\cup \{\infty\}$,
  ~\label{exo:sphere}
 Show that the global conformal group of the sphere is $PSL_2(\mathbb{C})$, and includes translations, rotations, and dilations. 
 \end{exo}
-\end{tcolorbox}
+%\end{tcolorbox}
 
 In a quantum theory, symmetry transformations act projectively on states. 
 Projective representations of an algebra are equivalent to representations of a centrally extended algebra. 
@@ -209,12 +222,12 @@ This is why we always look for central extensions of symmetry algebras.
  where the number $c$ is called the central charge. (The notation $c\mathbf 1$ stands for a central generator that always has the same eigenvalue $c$ within a given conformal field theory.)
 \end{defn}
 
-\begin{tcolorbox}
+%\begin{tcolorbox}
 \begin{exo}[Uniqueness of the Virasoro algebra]
  ~\label{exo:vir}
  Show that the Virasoro algebra is the unique central extension of the Witt algebra.
 \end{exo}
-\end{tcolorbox}
+%\end{tcolorbox}
 
 
 \subsection{Representations}
@@ -270,7 +283,7 @@ Let us plot a basis of primary and descendent states up to the level $3$:
 \end{align}
 We need not include the state $L_{-2}L_{-1}|v\rangle$, due to $L_{-2}L_{-1} = L_{-1}L_{-2} - L_{-3}$.
 
-Are Verma module reducible representations? i.e. do they have nontrivial subrepresentations? In any subrepresentation of a Verma module, $L_0$ is again diagonalizable and bounded from below, so there must be a primary state $|\chi\rangle$. If the subrepresentation differs from the Verma module, that primary state must differ from $|v\rangle$, and therefore be a descendent of $|v\rangle$.
+Are Verma modules reducible representations? i.e. do they have nontrivial subrepresentations? In any subrepresentation of a Verma module, $L_0$ is again diagonalizable and bounded from below, so there must be a primary state $|\chi\rangle$. If the subrepresentation differs from the Verma module, that primary state must differ from $|v\rangle$, and therefore be a descendent of $|v\rangle$.
 
 
 \subsection{Null vectors and degenerate representations}\label{sec:nv}
@@ -355,7 +368,7 @@ In this representation, the null vector vanishes,
 \end{defn}
 
 
-\section{Conformal field theory}\label{sec:cft}
+\section{Fields and correlation functions}\label{sec:cft}
 
 Now that we understand the algebraic structure of conformal symmetry in two dimensions, let us study how the Virasoro algebra acts on objects that live on the Riemann sphere -- the fields of conformal field theory. (Technically, fields are sections of vector bundles over the sphere.)
 
@@ -477,14 +490,14 @@ So the coefficients of $y^{-1}, y^{-2}, y^{-3}$ in the large $y$ expansion of $Z
  \label{eq:gward}
 \end{align}
 These three equations are called global Ward identities. 
-\begin{tcolorbox}
+%\begin{tcolorbox}
 The global Ward identities determine how $Z$ behaves under global conformal transformations of the Riemann sphere,
 \begin{align}
  \left< \prod_{i=1}^N  V_{\Delta_i}\left(\frac{az_i+b}{cz_i+d}\right) \right>
  = \prod_{i=1}^N (cz_i +d)^{2\Delta_i} \left< \prod_{i=1}^N V_{\Delta_i}(z_i) \right>\ .
  \label{eq:zgc}
 \end{align}
-\end{tcolorbox}
+%\end{tcolorbox}
 Let us solve the global Ward identities in the cases of one, two, three and four-point functions. For a one-point function, we have 
 \begin{align}
 \partial_z \Big< V_\Delta(z)\Big> =  \Delta \Big< V_\Delta(z)\Big> = 0\quad \text{so that} \quad \Big< V_\Delta(z)\Big> \neq 0 \implies V_\Delta \propto V_{\langle 1,1\rangle}\ .
@@ -562,7 +575,7 @@ this leads to the second-order Belavin--Polyakov--Zamolodchikov partial differen
  \label{eq:bpz}
 \end{align}
 More generally, a correlation function with the degenerate field $V_{\langle r,s\rangle}$ obeys a partial differential equation of order $rs$. 
-\begin{tcolorbox}
+%\begin{tcolorbox}
 \begin{exo}[Second-order BPZ equation for a three-point function]
  ~\label{exo:bpz3pt}
  Show that 
@@ -572,7 +585,7 @@ More generally, a correlation function with the degenerate field $V_{\langle r,s
  \label{eq:alpm}
 \end{align}
 \end{exo}
-\end{tcolorbox}
+%\end{tcolorbox}
 In the case of a four-point function, the BPZ equation amounts to a differential equation for the function of one variable $G(z)$.
 
 \begin{exo}[BPZ second-order differential equation]
@@ -584,92 +597,6 @@ In the case of a four-point function, the BPZ equation amounts to a differential
  \end{align}
 \end{exo}
 
-\subsection{Free boson}\label{sec:fb}
-
-We will now introduce the conformal field theory of the free boson. This provides the simplest examples of a CFT with an extended symmetry algebra, i.e. an algebra that is strictly larger than the Virasoro algebra: the abelian affine Lie algebra. This is a good preparation for Wess--Zumino--Witten models, with their non-abelian affine Lie algebras.
-
-Just as the Virasoro algebra can be defined by the self-OPE of the energy-momentum tensor \eqref{tt}, we define the abelian affine Lie algebra by the self-OPE of a locally holomorphic current $J(y)$,
-\begin{align}
- J(y)J(z) \underset{y\to z}{=} \frac{-\frac12}{(y-z)^2} + O(1)\ .
-\label{jj}
-\end{align}
-We are still doing conformal field theory, because we can build an energy-momentum tensor from the current. Actually, for any $Q\in\mathbb{C}$, we can build a Virasoro algebra, whose generators are the modes of 
-\begin{align}
- T(y) = -(JJ)(y) - Q\partial J(y)\ .
-\label{tqz}
-\end{align}
-We choose a value of $Q$, and assume that the resulting Virasoro algebra generates conformal transformations, and in particular obeys Axiom \ref{hyp:geom}. Given the behaviour \eqref{eq:tinf} of $T(y)$ at infinity, we assume 
-\begin{align}
- J(y)\underset{y\to\infty}{=}\frac{Q}{y} +O\left(\frac{1}{y^2}\right) \ .
- \label{eq:ji}
-\end{align}
-
-\begin{defn}[Normal-ordered product]
- ~\label{def:nop}
- Given two locally holomorphic fields, their normal-ordered product is
- \begin{align}
- (AB)(z) = \frac{1}{2\pi i} \oint_z \frac{dy}{y-z} A(y)B(z)\ .
-\label{abz}
-\end{align}
-Equivalently, if $\cunderbracket{A}{(y)}{B}(z)$ is the singular part of the OPE $A(y)B(z)$,
-we have
-\begin{align}
-(AB)(z) &= \underset{y\to z}{\lim} \left(A(y)B(z)-\cunderbracket{A}{(y)}{B}(z)\right)\ ,
-\\
- A(y)B(z) &= \cunderbracket{A}{(y)}{B}(z) + (AB)(z) + O(y-z)\ .
- \label{abope}
-\end{align}
-The normal-ordered product is neither associative, nor commutative.
-\end{defn}
-OPEs that involve normal-ordered products can be computed using Wick's theorem,
-\begin{align}
- \cunderbracket{A}{(z)}{(BC)}(y) = \frac{1}{2\pi i}\oint_y \frac{dx}{x-y}\left(\cunderbracket{A}{(z)}{B}(x)C(y) + B(x)\cunderbracket{A}{(z)}{C}(y)\right)\ .
-\label{wick}
-\end{align}
-For example, we can compute 
-\begin{align}
- (JJ)(y)J(z) \underset{z\to y}{=} -\frac{J(y)}{(y-z)^2} +O(1) \underset{y\to z}{=}  -{\frac{\partial}{\partial z}}\frac{J(z)}{y-z} + O(1)\ ,
-\end{align}
-which leads to 
-\begin{align}
- T(y)J(z) \underset{y\to z}{=} \frac{-Q}{(y-z)^3} +{\frac{\partial}{\partial z}}\frac{1}{y-z}J(z) + O(1)\ .
-\label{tqj}
-\end{align}
-Then we can compute the OPE $T(y)T(z)$, and we find the OPE \eqref{tt}, where the central charge is given by $c = 1+6 Q^2$ (repeating eq. \eqref{eq:cqb}). 
-
-We define an affine primary field with the momentum $\alpha$ by the OPE 
-\begin{align}
- J(y) V_\alpha(z) \underset{y\to z}{=} \frac{\alpha}{y-z} V_\alpha(z) + O(1)\ .
-\label{jva}
-\end{align}
-Using Wick's theorem, we deduce 
-\begin{align}
- T(y) V_\alpha(z) \underset{y\to z}{=} \frac{\alpha(Q-\alpha) }{(y-z)^2}V_\alpha(z) - \frac{2\alpha}{y-z} (JV_\alpha)(z) + O(1)\ . 
-\end{align}
-This means that our affine primary field is also a Virasoro primary field with the conformal dimension $\alpha(Q-\alpha)$, and that 
-\begin{align}
- \partial V_\alpha(z) = -2\alpha (JV_\alpha)(z)\ .
- \label{eq:pv}
-\end{align}
-Knowing its poles and residues, we compute 
-\begin{align}
- \left< J(y) \prod_{i=1}^N V_{\alpha_i}(z_i)\right> = \sum_{i=1}^N\frac{\alpha_i}{y-z_i} \left<\prod_{i=1}^N V_{\alpha_i}(z_i)\right>\ .
-\end{align}
-From eq. \eqref{eq:ji} we first deduce the global Ward identity 
-\begin{align}
- \left(\textstyle\sum_{i=1}^N \alpha_i - Q\right) \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle = 0 \ ,
-\end{align}
-which means that the momentum is conserved. Then, using eq. \eqref{eq:pv}, we deduce 
-\begin{align}
-\left( {\frac{\partial}{\partial z_i}} +\sum_{j\neq i} \frac{2\alpha_i\alpha_j}{z_i-z_j} \right) \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle = 0 \ .
-\label{kzl}
-\end{align}
-(This is the abelian version of the Knizhnik--Zamolodchikov equation.) 
-We can solve this differential equation, and we find
-\begin{align}
- \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle \propto \delta\left(\textstyle\sum_{i=1}^N \alpha_i - Q\right) \prod_{i<j} (z_i-z_j)^{-2\alpha_i\alpha_j}\ .
-\end{align}
-Affine symmetry determines the $z_i$-dependence of all correlation functions, while Virasoro symmetry did it only for two- and three-point functions. 
 
 \section{Conformal bootstrap}
 
@@ -712,21 +639,6 @@ The simplest case is $\Delta=\bar\Delta$, which leads to the definition
 \end{defn}
 For diagonal primary fields, we will now write  $V_\Delta(z) = V_{\Delta,\Delta}(z)$.
 
-\begin{tcolorbox}
-\begin{exo}[Free bosonic spectrums]
-~\label{exo:fbs}
-In the case $c=1$, we want to build CFTs with the abelian affine Lie algebra symmetry, whose primary states include diagonal states and non-diagonal states with integer spins. We interpret momentum conservation as implying that the spectrum is closed under the addition of momentums. Let $(\frac{i}{2R},\frac{i}{2R})$ be the left and right momentums of a diagonal primary state, and $(\alpha,\bar\alpha)$ the momentums of another state. Show that 
-\begin{align}
- \frac{i}{R}(\alpha-\bar\alpha)\in\mathbb{Z}\ .
-\end{align}
-Under mild assumptions, deduce that the spectrum is of the type 
- \begin{align}
- S_R = \bigoplus_{(n,w)\in {\mathbb{Z}^2}} \mathcal{U}_{\frac{i}{2}\left(\frac{n}{R} + Rw\right)} \otimes \bar{\mathcal{U}}_{\frac{i}{2}\left(\frac{n}{R} - Rw\right)} \ ,
-\label{sr}
-\end{align}
-where $\mathcal{U}_\alpha$ is the representation of the abelian affine Lie algebra that corresponds to the primary field $V_\alpha$. The corresponding CFT is called the compactified free boson, with the compactification radius $R$. Do compactifield free bosons exist for $c\neq 1$?
-\end{exo}
-\end{tcolorbox}
 
 \subsection{Operator product expansion and crossing symmetry}
 
@@ -764,7 +676,7 @@ Then, as in correlation functions, contributions of descendents are deduced from
  \end{align}
 Hints: Insert $\oint_C dz(z-z_2)^2 T(z)$ on both sides of the OPE, for a contour $C$ that encloses both $z_1$ and $z_2$. Compute the relevant contour integrals with the help of eq. \eqref{eq:tvd}.
 \end{exo}
-\begin{tcolorbox}
+%\begin{tcolorbox}
 \begin{exo}[$V_{\langle 1,1\rangle}$ is an identity field]
 ~\label{exo:id}
 Using $\frac{\partial}{\partial z_1} V_{\langle 1,1\rangle}(z_1)=0$, show that the OPE of $V_{\langle 1,1\rangle}$ with another primary field is of the form 
@@ -773,7 +685,7 @@ Using $\frac{\partial}{\partial z_1} V_{\langle 1,1\rangle}(z_1)=0$, show that t
 \end{align}
 where the subleading terms vanish. Inserting this OPE in a correlation function, show that the constant $C_\Delta$ actually does not depend on $\Delta$. Deduce that, up to a factor $C=C_\Delta$, the field $V_{\langle 1,1\rangle}$ is an identity field.
 \end{exo}
-\end{tcolorbox}
+%\end{tcolorbox}
 Using the OPE, we can reduce a three-point function to a combination of two-point functions, and we find 
 \begin{align}
  \left<\prod_{i=1}^3 V_{\Delta_i}(z_i) \right> = C_{\Delta_1,\Delta_2,\Delta_3} |z_1-z_2|^{2(\Delta_3-\Delta_1-\Delta_2)} |z_1-z_3|^{2(\Delta_2-\Delta_1-\Delta_3)} |z_2-z_3|^{2(\Delta_1-\Delta_2-\Delta_3)}\ ,
@@ -893,14 +805,14 @@ These blocks are written in terms of the hypergeometric function,
  \times F\left(\tfrac12 + b(-\epsilon P_1+P_2+P_3), \tfrac12 + b(-\epsilon P_1-P_2+P_3), 1 - 2b\epsilon P_1, z\right)\ ,
 \label{gpm}
 \end{multline}
-\begin{tcolorbox}
+%\begin{tcolorbox}
 \begin{multline}
  \mathcal{F}^{(t)}_\eta(z) = z^{b(\frac{Q}{2}+P_1)} (1-z)^{b(\frac{Q}{2}-\eta P_3)}
  \\
  \times F\left(\tfrac12 + b(P_1+P_2-\eta P_3), \tfrac12 + b(P_1-P_2-\eta P_3), 1 - 2b\eta P_3, 1-z\right)\ .
  \label{tpm}
 \end{multline}
-\end{tcolorbox}
+%\end{tcolorbox}
 Let us build single-valued four-point functions as linear combinations of such blocks. Single-valuedness near $z=0$ forbids terms such as $\mathcal{F}^{(s)}_{-}(z) \mathcal{F}^{(s)}_{+}(\bar z)$, and we must have 
 \begin{align}
  G(z) = \sum_{\epsilon=\pm} c^{(s)}_{\epsilon} \mathcal{F}^{(s)}_{\epsilon}(z) \mathcal{F}^{(s)}_{\epsilon}(\bar z) = \sum_{\eta=\pm} c^{(t)}_{\eta} \mathcal{F}^{(t)}_{\eta}(z) \mathcal{F}^{(t)}_{\eta}(\bar z)\ .
@@ -919,19 +831,20 @@ We will later express $c_\pm^{(s)}$ in terms of three-point structure constants,
 
 The presence of only two $s$-channel fields with momentums $P_1\pm \frac{b}{2}$ means that the operator product expansion $V_{\langle 2, 1 \rangle}(z) V_{P_1}(0)$ involves only two primary fields $V_{P_1\pm \frac{b}{2}}(0)$. 
 
-\begin{hyp}[Fusion product]
- ~\label{hyp:fus}
- There is a bilinear, associative product of representations of the Virasoro algebra, that encodes the constraints on OPEs from Virasoro symmetry and null vectors. In particular,
+\begin{defn}[Fusion product]
+ ~\label{def:fus}
+ The fusion product is a bilinear product of representations of the Virasoro algebra, that encodes the constraints on OPEs from Virasoro symmetry and null vectors. In particular,
  \begin{align}
   \mathcal{R}_{\langle 1,1\rangle}\times \mathcal V_P = \mathcal V_P \quad , \quad 
   \mathcal{R}_{\langle 2,1\rangle}\times \mathcal V_P = \sum_\pm \mathcal V_{P\pm \frac{b}{2}}\quad , \quad  
   \mathcal{R}_{\langle 1,2\rangle}\times \mathcal V_P = \sum_\pm \mathcal V_{P\pm \frac{1}{2b}}\ .
   \label{eq:rv}
  \end{align}
-\end{hyp}
-\begin{tcolorbox}
+ From the commutativity of fields, it follows that the fusion product is commutative and associative.
+\end{defn}
+%\begin{tcolorbox}
 The fusion product can be defined algebraically \cite{gab99}: the fusion product of two representations is a coset of their tensor product, where however the Virasoro algebra does not act as it would in the tensor product. (In the tensor product, central charges and conformal dimensions add.) 
-\end{tcolorbox}
+%\end{tcolorbox}
 
 Using the associativity of the fusion product, we have 
 \begin{align}
@@ -969,7 +882,7 @@ These fusion products will play a crucial role in minimal models, whose spectrum
  A minimal model is a conformal field theory whose spectrum is made of finitely many irreducible representations of the product of the left and the right Virasoro algebras.
 \end{defn}
 
-\subsection{Diagonal minimal models}
+\subsection{Diagonal minimal models}\label{sec:amm}
 
 We first focus on diagonal minimal models, whose spectrums are of the type
 \begin{align}
@@ -1071,142 +984,12 @@ assuming it exists and is unique.
 \end{defn}
 (We need $p\geq 6$ for our would-be non-diagonal sector to actually contain representations with nonzero spins.)
 
-\begin{tcolorbox}
+%\begin{tcolorbox}
 \begin{exo}[Fusion rules of D-series minimal models]
 ~\label{exo:frd}
  If $p\equiv 0\bmod 4$, show that the D-series minimal model's fusion rules are completely determined by the fusion rules of the corresponding Virasoro representations. Write these fusion rules, and show that they conserve diagonality, in the sense that any correlation function with an odd number of non-diagonal fields vanishes. Assuming conservation of diagonality still holds if $p\equiv 2\bmod 4$, write the fusion rules of all D-series minimal models.
 \end{exo}
-\end{tcolorbox}
-
-\subsection{Modular bootstrap}\label{sec:mb}
-
-The torus zero-point function (or partition function) is a correlation function that only depends on the spectrum, and on characters of representations of the Virasoro algebra. Since there is no dependence on three-point structure constants, and since characters are much simpler than four-point blocks, the torus partition function is much simpler than four-point functions on the sphere. Nevertheless, the partition function obeys a nontrivial constraint called modular invariance.
-
-\begin{defn}[Modular bootstrap]
-The modular bootstrap consists in using the modular invariance of the torus partition function for deriving constraints on the spectrum.
-\end{defn}
-However, modular invariant partition functions do not always correspond to consistent CFTs: consistency of a CFT on all Riemann surfaces is equivalent to crossing symmetry of the sphere four-point function and modular invariance of the torus one-point function \cite{ms89b}. And some CFTs are consistent on the sphere only.
-
-\begin{defn}[Torus partition function]
- For a CFT with the spectrum $S$, the partition function on the torus $\frac{\mathbb{C}}{\mathbb{Z}+\tau \mathbb{Z}}$ is 
- \begin{align}
-  Z(\tau) = \operatorname{Tr}_S q^{L_0-\frac{c}{24}}\bar q^{\bar L_0-\frac{c}{24}}\quad \text{where} \quad q=e^{2\pi i \tau}\ .
- \end{align}
-\end{defn}
-
-\begin{hyp}[Modular invariance]
-For $\left(\begin{smallmatrix} a & b \\ c & d\end{smallmatrix}\right)\in SL_2(\mathbb{Z})$, the torus partition function is invariant under the corresponding modular transformation,
-\begin{align}
- Z(\tau) = Z\left(\frac{a\tau+b}{c\tau +d} \right)\ .
-\end{align}
-\end{hyp}
-\begin{tcolorbox}
-Let us give some justification for the definition of the torus partition function. The energy operator on the complex plane is $L_0+\bar{L}_0$: under the conformal map $z\mapsto \log z$ to the infinite cylinder, this becomes $L_0+\bar{L}_0-\frac{c}{12}$. To get the torus, we truncate the cylinder to a finite length $i(\tau-\bar{\tau})$, and identify points on the upper and lower boundaries after a rotation by $\tau+\bar{\tau}$. The partition function is the trace of the operator that performs this identification.
-\begin{align*}
-\renewcommand{\arraystretch}{1.3}
-\renewcommand{\arraycolsep}{6mm}
-\begin{array}{ccc}
- \begin{tikzpicture}[scale = .45, baseline=(current  bounding  box.center)]
-  \draw (-5, -5) -- (5, -5) -- (5, 5) -- (-5, 5) node[below right]{$z$} -- cycle;
-  \draw [red, ultra thick] (0, 0) circle (2.1);
-  \draw [red, ultra thick, -latex] (.3, -2.1) -- (.35, -2.1) node[black, below] {$i(L_0-\bar{L}_0)$};
-  \draw [blue, ultra thick] (0, 0) -- (0, 5);
-  \draw [blue, ultra thick, -latex] (0, 0) -- (0, 3.5) node[black, right] {$L_0+\bar{L}_0$};
-  \node[draw, circle, inner sep=1.5pt, fill] at (0, 0) {};
- \end{tikzpicture}
- & 
- \begin{tikzpicture}[xscale = .65, yscale = .55, baseline=(current  bounding  box.center)]
-  \draw [very thick] (0, -5) -- (0, 5);
-  \draw [very thick] (5, -5) -- (5, 5);
-  \draw (0, -4) to [out = -90, in = -90] (5, -4);
-  \draw [dashed] (0, -4) to [out = 90, in = 90] (5, -4);
-  \draw (0, 4) node[right] {$\log z$} to [out = -90, in = -90] (5, 4);
-  \draw [dashed] (0, 4) to [out = 90, in = 90] (5, 4);
-  \draw [red, ultra thick] (0, 0) to [out = -90, in = -90] (5, 0);
-  \draw [red, ultra thick, dashed] (0, 0) to [out = 90, in = 90] (5, 0);
-  \draw [red, ultra thick, -latex] (2.2, -1.45) -- (2.15, -1.45) node[black, below] {$i(L_0-\bar{L}_0)$};
-  \draw [blue, ultra thick] (4.3, -5.8) -- (4.3, 4.2);
-  \draw [blue, ultra thick, -latex] (4.3, -5.8) -- (4.3, .5) node[black, left] {$L_0+\bar{L}_0-\frac{c}{12}$};
- \end{tikzpicture}
- & 
- \begin{tikzpicture}[xscale = .65, yscale = .55, baseline=(current  bounding  box.center)]
-  \draw [very thick] (0, -4) -- (0, 4);
-  \draw [very thick] (5, -4) -- (5, 4);
-  \draw [very thick] (0, -4) to [out = -90, in = -90] (5, -4);
-  \draw [very thick, dashed] (0, -4) to [out = 90, in = 90] (5, -4);
-  \draw [very thick] (0, 4) to [out = -90, in = -90] (5, 4);
-  \draw [very thick] (0, 4) to [out = 90, in = 90] (5, 4);
-  \draw [red, very thick] (1.2, -5.3) to [out = -13, in = -167] (3.8, -5.3);
-  \draw [red, very thick, -latex] (2.2, -5.5) -- (2.15, -5.5) node[black, below] {$\tau+\bar{\tau}$};
-  \draw [blue, very thick] (1.2, -5.3) -- (1.2, 2.7);
-  \draw [blue, very thick, -latex] (1.2, -5) -- (1.2, -1) node[black, right] {$i(\tau-\bar\tau)$};
-  \node[draw, circle, inner sep=1.5pt, fill] at (3.8, -5.3) {};
-  \node[draw, circle, inner sep=1.5pt, fill] at (1.2, 2.7) {};
- \end{tikzpicture}
- \\
- \text{complex plane}
- & 
- \text{infinite cylinder}
- &
- \text{torus}
- \end{array}
-\end{align*}
-\end{tcolorbox}
-
-Actually, modular invariance reduces to the invariance under two particular modular transformations,
-\begin{align}
- T(\tau) = \tau + 1 \qquad , \qquad S(\tau) = -\frac{1}{\tau}\ .
-\end{align}
-The condition $Z(\tau)=Z(\tau+1)$ amounts to $L_0-\bar{L}_0$ having integer eigenvalues, in other words all states having integer conformal spins.
-The condition $Z(\tau)=Z(-\frac{1}{\tau})$ is more complicated: to exploit this condition, let us decompose the spectrum into factorized representations of the type $\mathcal{R}\otimes \bar{\mathcal{R}}'$. 
-The contribution of $\mathcal{R}\otimes \bar{\mathcal{R}}'$ to the partition function is $\chi_{\mathcal{R}}(\tau) \chi_{\mathcal{R}'}(-\bar\tau)$, where we define the character of a representation as
-\begin{align}
- \chi_\mathcal{R}(\tau) = \operatorname{Tr}_\mathcal{R} q^{L_0-\frac{c}{24}}\ .
-\end{align}
-From $Z(\tau)=Z(-\frac{1}{\tau})$, we first deduce that there exists a modular $S$-matrix such that 
-\begin{align}
- \chi_\mathcal{R}(\tau) = \sum_{\mathcal{R}'} S_{\mathcal{R},\mathcal{R}'} \chi_{\mathcal{R}'}(-\tfrac{1}{\tau})\ .
-\end{align}
-Let us consider a diagonal CFT, with the partition function $Z(\tau)=\sum_\mathcal{R} \chi_\mathcal{R}(\tau)\chi_{\mathcal{R}}(-\bar{\tau})$.
-Comparing two expressions for $Z(-\frac{1}{\tau})$, 
-\begin{align}
-Z(-\tfrac{1}{\tau}) = \sum_{\mathcal{R}',\mathcal{R}''} \sum_{\mathcal{R}} S_{\mathcal{R},\mathcal{R}'} S_{\mathcal{R},\mathcal{R}''} \chi_{\mathcal{R}'}(-\tfrac{1}{\tau}) \chi_{\mathcal{R}''}(\tfrac{1}{\bar\tau}) = \sum_{\mathcal{R}} \chi_{\mathcal{R}}(-\tfrac{1}{\tau}) \chi_{\mathcal{R}}(\tfrac{1}{\bar\tau})\ ,
-\end{align}
-we deduce $SS^T=\text{Id}$. Since $S^2=\text{Id}$ by construction, this means that a diagonal modular invariant partition function exists if and only if the $S$-matrix is symmetric.
-
-Let us compute the characters and modular $S$-matrix of minimal models. We start with the character of a Verma module with momentum $P$,
-\begin{align}
- \chi_P(\tau) = \frac{q^{-P^2}}{\eta(\tau)} \quad \text{with} \quad \eta(\tau) = q^{\frac{1}{24}} \prod_{n=1}^\infty (1-q^n)\ ,
-\end{align}
-where the nontrivial factor is called the Dedekind $\eta$ function. Why this function? If $L_{-1}$ was our only creation mode, we would have one state at each level, and the character would be $\chi(\tau)\sim 1+q+q^2+q^3+\cdots = \frac{1}{1-q}$. If we had $L_{-2}$ instead, the character would be $\chi(\tau)\sim \frac{1}{1-q^2}$. And in order to count the states that come from two creation modes, we must multiply the corresponding series.
-
-In order to compute the character of a degenerate representation, we should subtract the contributions of null vectors and their descendent states. For a simply degenerate representation, the character is therefore
-\begin{align}
- \chi_{\langle r,s\rangle}(\tau) = \chi_{P_{\langle r,s\rangle}}(\tau) - \chi_{P_{\langle r,-s\rangle}}(\tau)\ .
-\end{align}
-For a fully degenerate representation in the Kac table of the $(p, q)$ minimal model, the structure is a bit more complicated: we have to subtract the two null vectors and their descendents, but add again the intersection of their two Verma submodules, which was subtracted twice.
-It turns out that 
-the corresponding $S$-matrix is symmetric, showing that the A-series minimal models have modular invariant partition functions. Actually, the D-series minimal models too. 
-
-\begin{tcolorbox}
-\begin{exo}[Characters of minimal models]
- ~\label{exo:chmm}
- Show that the characters of fully degenerate representations in the Kac table of the $(p, q)$ minimal model are
- \begin{align}
- \chi_{\langle r,s\rangle}(\tau) = \sum_{k\in\mathbb{Z}} \left( \chi_{P_{\langle r,s\rangle} + ik\sqrt{pq}} - \chi_{P_{\langle r,-s\rangle} + ik\sqrt{pq}}\right)\ .
- \label{eq:chmm}
-\end{align}
-\end{exo}
-
-\begin{exo}[Modular $S$-matrices of minimal models]
-~\label{exo:mods}
- Show that the modular $S$-matrix of the $(p, q)$ minimal model is 
- \begin{align}
- S_{\langle r,s\rangle, \langle r', s'\rangle} = -\sqrt{\frac{8}{pq}}(-1)^{rs'+r's} \sin\left(\pi\frac{q}{p}rr'\right)\sin\left(\pi\frac{p}{q}ss'\right)\ .
- \label{eq:smm}
-\end{align}
-\end{exo}
-\end{tcolorbox}
+%\end{tcolorbox}
 
 
 \section{Liouville theory}
@@ -1244,10 +1027,10 @@ We then obtain our guess \eqref{eq:sl} for the spectrum, equivalently $S^\mathrm
 = \int_{\frac{c-1}{24}}^\infty d\Delta\ \mathcal V_{\Delta}\otimes \bar{\mathcal{V}}_\Delta $.
 We take this guess to hold not only for $c\in\mathbb{R}$, but also for $c\in\mathbb{C}$ by analyticity.
 
-\begin{tcolorbox}
+%\begin{tcolorbox}
 Other guesses for the lower bound may seem equally plausible, in particular $\Delta_\text{min}=0$. In the spirit of the axiomatic method, the arbiter for such guesses is the consistency of the resulting theory. 
 This will be tested in Section \ref{sec:cs}, and the spectrum $S^\mathrm{Liouville}$ will turn out to be correct.
-\end{tcolorbox}
+%\end{tcolorbox}
 
 Let us schematically write two- and three-point functions in Liouville theory, as well as OPEs:
 \begin{align}
@@ -1488,18 +1271,256 @@ We find that Liouville theory exists for all values of $c\in\mathbb{C}$, with th
 We also find that generalized minimal models exist for all values of $c$, and minimal models exist at the discrete values \eqref{eq:bcmin} of $c\leq 1$ where they are defined. 
 And we can numerically compute correlation functions with a good precision.
 
-\begin{tcolorbox}
+%\begin{tcolorbox}
 Historically, Liouville theory was first defined by quantizing a classical theory whose equation of motion is Liouville's equation. That definition actually gave its name to the theory. (That definition does not cover the case $c\leq 1$: using the name Liouville theory in this case, while natural in our approach, is not universally done at the time of this writing.) It can be shown that our definition of Liouville theory agrees with the historical definition, either by proving that the originally defined theory obeys our axioms, or by checking that both definitions lead to the same correlation functions, in particular the same three-point structure constants. See \cite{tes17} for a guide to the literature on the construction of Liouville theory by quantization. 
-\end{tcolorbox}
+%\end{tcolorbox}
 
 \appendix
 
-\hypersetup{linkcolor=black}
+\section{Side subjects}
 
-\renewcommand{\listtheoremname}{List of Exercises}
-\listoftheorems[ignoreall, show={exo}]
+\subsection{Free boson}\label{sec:fb}
 
-\hypersetup{linkcolor=blue}
+\textit{This Appendix can be read after Section \ref{sec:cft}, and Exercise \ref{exo:fbs} can be done after Section \ref{sec:sv}.}
+
+\vspace{2mm}
+
+We will now introduce the conformal field theory of the free boson. This provides the simplest examples of a CFT with an extended symmetry algebra, i.e. an algebra that is strictly larger than the Virasoro algebra: the abelian affine Lie algebra. This is a good preparation for Wess--Zumino--Witten models, with their non-abelian affine Lie algebras.
+
+Just as the Virasoro algebra can be defined by the self-OPE of the energy-momentum tensor \eqref{tt}, we define the abelian affine Lie algebra by the self-OPE of a locally holomorphic current $J(y)$,
+\begin{align}
+ J(y)J(z) \underset{y\to z}{=} \frac{-\frac12}{(y-z)^2} + O(1)\ .
+\label{jj}
+\end{align}
+We are still doing conformal field theory, because we can build an energy-momentum tensor from the current. Actually, for any $Q\in\mathbb{C}$, we can build a Virasoro algebra, whose generators are the modes of 
+\begin{align}
+ T(y) = -(JJ)(y) - Q\partial J(y)\ .
+\label{tqz}
+\end{align}
+We choose a value of $Q$, and assume that the resulting Virasoro algebra generates conformal transformations, and in particular obeys Axiom \ref{hyp:geom}. Given the behaviour \eqref{eq:tinf} of $T(y)$ at infinity, we assume 
+\begin{align}
+ J(y)\underset{y\to\infty}{=}\frac{Q}{y} +O\left(\frac{1}{y^2}\right) \ .
+ \label{eq:ji}
+\end{align}
+
+\begin{defn}[Normal-ordered product]
+ ~\label{def:nop}
+ Given two locally holomorphic fields, their normal-ordered product is
+ \begin{align}
+ (AB)(z) = \frac{1}{2\pi i} \oint_z \frac{dy}{y-z} A(y)B(z)\ .
+\label{abz}
+\end{align}
+Equivalently, if $\cunderbracket{A}{(y)}{B}(z)$ is the singular part of the OPE $A(y)B(z)$,
+we have
+\begin{align}
+(AB)(z) &= \underset{y\to z}{\lim} \left(A(y)B(z)-\cunderbracket{A}{(y)}{B}(z)\right)\ ,
+\\
+ A(y)B(z) &= \cunderbracket{A}{(y)}{B}(z) + (AB)(z) + O(y-z)\ .
+ \label{abope}
+\end{align}
+The normal-ordered product is neither associative, nor commutative.
+\end{defn}
+OPEs that involve normal-ordered products can be computed using Wick's theorem,
+\begin{align}
+ \cunderbracket{A}{(z)}{(BC)}(y) \underset{z\to y}{=} \frac{1}{2\pi i}\oint_y \frac{dx}{x-y}\left(\cunderbracket{A}{(z)}{B}(x)C(y) + B(x)\cunderbracket{A}{(z)}{C}(y)\right)\ .
+\label{wick}
+\end{align}
+For example, we can compute 
+\begin{align}
+ (JJ)(y)J(z) \underset{z\to y}{=} -\frac{J(y)}{(y-z)^2} +O(1) \underset{y\to z}{=}  -{\frac{\partial}{\partial z}}\frac{J(z)}{y-z} + O(1)\ ,
+\end{align}
+which leads to 
+\begin{align}
+ T(y)J(z) \underset{y\to z}{=} \frac{-Q}{(y-z)^3} +{\frac{\partial}{\partial z}}\frac{1}{y-z}J(z) + O(1)\ .
+\label{tqj}
+\end{align}
+Then we can compute the OPE $T(y)T(z)$, and we find the OPE \eqref{tt}, where the central charge is given by $c = 1+6 Q^2$ (repeating eq. \eqref{eq:cqb}). 
+
+We define an affine primary field with the momentum $\alpha$ by the OPE 
+\begin{align}
+ J(y) V_\alpha(z) \underset{y\to z}{=} \frac{\alpha}{y-z} V_\alpha(z) + O(1)\ .
+\label{jva}
+\end{align}
+Using Wick's theorem, we deduce 
+\begin{align}
+ T(y) V_\alpha(z) \underset{y\to z}{=} \frac{\alpha(Q-\alpha) }{(y-z)^2}V_\alpha(z) - \frac{2\alpha}{y-z} (JV_\alpha)(z) + O(1)\ . 
+\end{align}
+This means that our affine primary field is also a Virasoro primary field with the conformal dimension $\alpha(Q-\alpha)$, and that 
+\begin{align}
+ \partial V_\alpha(z) = -2\alpha (JV_\alpha)(z)\ .
+ \label{eq:pv}
+\end{align}
+Knowing its poles and residues, we compute 
+\begin{align}
+ \left< J(y) \prod_{i=1}^N V_{\alpha_i}(z_i)\right> = \sum_{i=1}^N\frac{\alpha_i}{y-z_i} \left<\prod_{i=1}^N V_{\alpha_i}(z_i)\right>\ .
+\end{align}
+From eq. \eqref{eq:ji} we first deduce the global Ward identity 
+\begin{align}
+ \left(\textstyle\sum_{i=1}^N \alpha_i - Q\right) \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle = 0 \ ,
+\end{align}
+which means that the momentum is conserved. Then, using eq. \eqref{eq:pv}, we deduce 
+\begin{align}
+\left( {\frac{\partial}{\partial z_i}} +\sum_{j\neq i} \frac{2\alpha_i\alpha_j}{z_i-z_j} \right) \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle = 0 \ .
+\label{kzl}
+\end{align}
+(This is the abelian version of the Knizhnik--Zamolodchikov equation.) 
+We can solve this differential equation, and we find
+\begin{align}
+ \left\langle \prod_{i=1}^N V_{\alpha_i}(z_i) \right\rangle \propto \delta\left(\textstyle\sum_{i=1}^N \alpha_i - Q\right) \prod_{i<j} (z_i-z_j)^{-2\alpha_i\alpha_j}\ .
+\end{align}
+Affine symmetry determines the $z_i$-dependence of all correlation functions, while Virasoro symmetry did it only for two- and three-point functions. 
+
+%\begin{tcolorbox}
+\begin{exo}[Free bosonic spectrums]
+~\label{exo:fbs}
+In the case $c=1$, we want to build CFTs with the abelian affine Lie algebra symmetry, whose primary states include diagonal states and non-diagonal states with integer spins. We interpret momentum conservation as implying that the spectrum is closed under the addition of momentums. Let $(\frac{i}{2R},\frac{i}{2R})$ be the left and right momentums of a diagonal primary state, and $(\alpha,\bar\alpha)$ the momentums of another state. Show that 
+\begin{align}
+ \frac{i}{R}(\alpha-\bar\alpha)\in\mathbb{Z}\ .
+\end{align}
+Under mild assumptions, deduce that the spectrum is of the type 
+ \begin{align}
+ S_R = \bigoplus_{(n,w)\in {\mathbb{Z}^2}} \mathcal{U}_{\frac{i}{2}\left(\frac{n}{R} + Rw\right)} \otimes \bar{\mathcal{U}}_{\frac{i}{2}\left(\frac{n}{R} - Rw\right)} \ ,
+\label{sr}
+\end{align}
+where $\mathcal{U}_\alpha$ is the representation of the abelian affine Lie algebra that corresponds to the primary field $V_\alpha$. The corresponding CFT is called the compactified free boson, with the compactification radius $R$. Do compactifield free bosons exist for $c\neq 1$?
+\end{exo}
+%\end{tcolorbox}
+
+
+\subsection{Modular bootstrap}\label{sec:mb}
+
+\textit{This Appendix can be read after Section \ref{sec:amm}.}
+
+\vspace{2mm}
+
+The torus zero-point function (or partition function) is a correlation function that only depends on the spectrum, and on characters of representations of the Virasoro algebra. Since there is no dependence on three-point structure constants, and since characters are much simpler than four-point blocks, the torus partition function is much simpler than four-point functions on the sphere. Nevertheless, the partition function obeys a nontrivial constraint called modular invariance.
+
+\begin{defn}[Modular bootstrap]
+The modular bootstrap consists in using the modular invariance of the torus partition function for deriving constraints on the spectrum.
+\end{defn}
+However, modular invariant partition functions do not always correspond to consistent CFTs: consistency of a CFT on all Riemann surfaces is equivalent to crossing symmetry of the sphere four-point function and modular invariance of the torus one-point function \cite{ms89b}. And some CFTs are consistent on the sphere only.
+
+\begin{defn}[Torus partition function]
+ For a CFT with the spectrum $S$, the partition function on the torus $\frac{\mathbb{C}}{\mathbb{Z}+\tau \mathbb{Z}}$ is 
+ \begin{align}
+  Z(\tau) = \operatorname{Tr}_S q^{L_0-\frac{c}{24}}\bar q^{\bar L_0-\frac{c}{24}}\quad \text{where} \quad q=e^{2\pi i \tau}\ .
+ \end{align}
+\end{defn}
+
+\begin{hyp}[Modular invariance]
+For $\left(\begin{smallmatrix} a & b \\ c & d\end{smallmatrix}\right)\in SL_2(\mathbb{Z})$, the torus partition function is invariant under the corresponding modular transformation,
+\begin{align}
+ Z(\tau) = Z\left(\frac{a\tau+b}{c\tau +d} \right)\ .
+\end{align}
+\end{hyp}
+%\begin{tcolorbox}
+Let us give some justification for the definition of the torus partition function. The energy operator on the complex plane is $L_0+\bar{L}_0$: under the conformal map $z\mapsto \log z$ to the infinite cylinder, this becomes $L_0+\bar{L}_0-\frac{c}{12}$. To get the torus, we truncate the cylinder to a finite length $i(\tau-\bar{\tau})$, and identify points on the upper and lower boundaries after a rotation by $\tau+\bar{\tau}$. The partition function is the trace of the operator that performs this identification.
+\begin{align*}
+\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraycolsep}{6mm}
+\begin{array}{ccc}
+ \begin{tikzpicture}[scale = .45, baseline=(current  bounding  box.center)]
+  \draw (-5, -5) -- (5, -5) -- (5, 5) -- (-5, 5) node[below right]{$z$} -- cycle;
+  \draw [red, ultra thick] (0, 0) circle (2.1);
+  \draw [red, ultra thick, -latex] (.3, -2.1) -- (.35, -2.1) node[black, below] {$i(L_0-\bar{L}_0)$};
+  \draw [blue, ultra thick] (0, 0) -- (0, 5);
+  \draw [blue, ultra thick, -latex] (0, 0) -- (0, 3.5) node[black, right] {$L_0+\bar{L}_0$};
+  \node[draw, circle, inner sep=1.5pt, fill] at (0, 0) {};
+ \end{tikzpicture}
+ & 
+ \begin{tikzpicture}[xscale = .65, yscale = .55, baseline=(current  bounding  box.center)]
+  \draw [very thick] (0, -5) -- (0, 5);
+  \draw [very thick] (5, -5) -- (5, 5);
+  \draw (0, -4) to [out = -90, in = -90] (5, -4);
+  \draw [dashed] (0, -4) to [out = 90, in = 90] (5, -4);
+  \draw (0, 4) node[right] {$\log z$} to [out = -90, in = -90] (5, 4);
+  \draw [dashed] (0, 4) to [out = 90, in = 90] (5, 4);
+  \draw [red, ultra thick] (0, 0) to [out = -90, in = -90] (5, 0);
+  \draw [red, ultra thick, dashed] (0, 0) to [out = 90, in = 90] (5, 0);
+  \draw [red, ultra thick, -latex] (2.2, -1.45) -- (2.15, -1.45) node[black, below] {$i(L_0-\bar{L}_0)$};
+  \draw [blue, ultra thick] (4.3, -5.8) -- (4.3, 4.2);
+  \draw [blue, ultra thick, -latex] (4.3, -5.8) -- (4.3, .5) node[black, left] {$L_0+\bar{L}_0-\frac{c}{12}$};
+ \end{tikzpicture}
+ & 
+ \begin{tikzpicture}[xscale = .65, yscale = .55, baseline=(current  bounding  box.center)]
+  \draw [very thick] (0, -4) -- (0, 4);
+  \draw [very thick] (5, -4) -- (5, 4);
+  \draw [very thick] (0, -4) to [out = -90, in = -90] (5, -4);
+  \draw [very thick, dashed] (0, -4) to [out = 90, in = 90] (5, -4);
+  \draw [very thick] (0, 4) to [out = -90, in = -90] (5, 4);
+  \draw [very thick] (0, 4) to [out = 90, in = 90] (5, 4);
+  \draw [red, very thick] (1.2, -5.3) to [out = -13, in = -167] (3.8, -5.3);
+  \draw [red, very thick, -latex] (2.2, -5.5) -- (2.15, -5.5) node[black, below] {$\tau+\bar{\tau}$};
+  \draw [blue, very thick] (1.2, -5.3) -- (1.2, 2.7);
+  \draw [blue, very thick, -latex] (1.2, -5) -- (1.2, -1) node[black, right] {$i(\tau-\bar\tau)$};
+  \node[draw, circle, inner sep=1.5pt, fill] at (3.8, -5.3) {};
+  \node[draw, circle, inner sep=1.5pt, fill] at (1.2, 2.7) {};
+ \end{tikzpicture}
+ \\
+ \text{complex plane}
+ & 
+ \text{infinite cylinder}
+ &
+ \text{torus}
+ \end{array}
+\end{align*}
+%\end{tcolorbox}
+
+Actually, modular invariance reduces to the invariance under two particular modular transformations,
+\begin{align}
+ T(\tau) = \tau + 1 \qquad , \qquad S(\tau) = -\frac{1}{\tau}\ .
+\end{align}
+The condition $Z(\tau)=Z(\tau+1)$ amounts to $L_0-\bar{L}_0$ having integer eigenvalues, in other words all states having integer conformal spins.
+The condition $Z(\tau)=Z(-\frac{1}{\tau})$ is more complicated: to exploit this condition, let us decompose the spectrum into factorized representations of the type $\mathcal{R}\otimes \bar{\mathcal{R}}'$. 
+The contribution of $\mathcal{R}\otimes \bar{\mathcal{R}}'$ to the partition function is $\chi_{\mathcal{R}}(\tau) \chi_{\mathcal{R}'}(-\bar\tau)$, where we define the character of a representation as
+\begin{align}
+ \chi_\mathcal{R}(\tau) = \operatorname{Tr}_\mathcal{R} q^{L_0-\frac{c}{24}}\ .
+\end{align}
+From $Z(\tau)=Z(-\frac{1}{\tau})$, we first deduce that there exists a modular $S$-matrix such that 
+\begin{align}
+ \chi_\mathcal{R}(\tau) = \sum_{\mathcal{R}'} S_{\mathcal{R},\mathcal{R}'} \chi_{\mathcal{R}'}(-\tfrac{1}{\tau})\ .
+\end{align}
+Let us consider a diagonal CFT, with the partition function $Z(\tau)=\sum_\mathcal{R} \chi_\mathcal{R}(\tau)\chi_{\mathcal{R}}(-\bar{\tau})$.
+Comparing two expressions for $Z(-\frac{1}{\tau})$, 
+\begin{align}
+Z(-\tfrac{1}{\tau}) = \sum_{\mathcal{R}',\mathcal{R}''} \sum_{\mathcal{R}} S_{\mathcal{R},\mathcal{R}'} S_{\mathcal{R},\mathcal{R}''} \chi_{\mathcal{R}'}(-\tfrac{1}{\tau}) \chi_{\mathcal{R}''}(\tfrac{1}{\bar\tau}) = \sum_{\mathcal{R}} \chi_{\mathcal{R}}(-\tfrac{1}{\tau}) \chi_{\mathcal{R}}(\tfrac{1}{\bar\tau})\ ,
+\end{align}
+we deduce $SS^T=\text{Id}$. Since $S^2=\text{Id}$ by construction, this means that a diagonal modular invariant partition function exists if and only if the $S$-matrix is symmetric. (This reasoning must be modified in CFTs based on larger symmetry algebras \cite{fms97}. In particular, characters depend not just on $\tau$ but on extra variables, and $S^2$ is no longer identity but the charge conjugation matrix, where charge conjugation is the involution $\mathcal{R}\to \mathcal{R}^*$ such that $\left<V_{\mathcal{R}} V_{\mathcal{R}^*}\right>\neq 0$.)
+
+Let us compute the characters and modular $S$-matrix of minimal models. We start with the character of a Verma module with momentum $P$,
+\begin{align}
+ \chi_P(\tau) = \frac{q^{-P^2}}{\eta(\tau)} \quad \text{with} \quad \eta(\tau) = q^{\frac{1}{24}} \prod_{n=1}^\infty (1-q^n)\ ,
+\end{align}
+where the nontrivial factor is called the Dedekind $\eta$ function. Why this function? If $L_{-1}$ was our only creation mode, we would have one state at each level, and the character would be $\chi(\tau)\sim 1+q+q^2+q^3+\cdots = \frac{1}{1-q}$. If we had $L_{-2}$ instead, the character would be $\chi(\tau)\sim \frac{1}{1-q^2}$. And in order to count the states that come from two creation modes, we must multiply the corresponding series.
+
+In order to compute the character of a degenerate representation, we should subtract the contributions of null vectors and their descendent states. For a simply degenerate representation, the character is therefore
+\begin{align}
+ \chi_{\langle r,s\rangle}(\tau) = \chi_{P_{\langle r,s\rangle}}(\tau) - \chi_{P_{\langle r,-s\rangle}}(\tau)\ .
+\end{align}
+For a fully degenerate representation in the Kac table of the $(p, q)$ minimal model, the structure is a bit more complicated: we have to subtract the two null vectors and their descendents, but add again the intersection of their two Verma submodules, which was subtracted twice.
+It turns out that 
+the corresponding $S$-matrix is symmetric, showing that the A-series minimal models have modular invariant partition functions. Actually, the D-series minimal models too. 
+
+%\begin{tcolorbox}
+\begin{exo}[Characters of minimal models]
+ ~\label{exo:chmm}
+ Show that the characters of fully degenerate representations in the Kac table of the $(p, q)$ minimal model are
+ \begin{align}
+ \chi_{\langle r,s\rangle}(\tau) = \sum_{k\in\mathbb{Z}} \left( \chi_{P_{\langle r,s\rangle} + ik\sqrt{pq}} - \chi_{P_{\langle r,-s\rangle} + ik\sqrt{pq}}\right)\ .
+ \label{eq:chmm}
+\end{align}
+\end{exo}
+
+\begin{exo}[Modular $S$-matrices of minimal models]
+~\label{exo:mods}
+ Show that the modular $S$-matrix of the $(p, q)$ minimal model is 
+ \begin{align}
+ S_{\langle r,s\rangle, \langle r', s'\rangle} = -\sqrt{\frac{8}{pq}}(-1)^{rs'+r's} \sin\left(\pi\frac{q}{p}rr'\right)\sin\left(\pi\frac{p}{q}ss'\right)\ .
+ \label{eq:smm}
+\end{align}
+\end{exo}
+%\end{tcolorbox}
+
 
 %\iffalse
 
@@ -1631,24 +1652,6 @@ Closing the contour on $y=z$ gives us a combination of $L_{-2}^{(z)}$, $\frac{\p
 \end{multline}
 In this version of the BPZ equation, it is straightforward to send $z_1,z_2,z_3$ to $0,\infty, 1$, and we obtain eq. \eqref{eq:ode}.
 
-\paragraph{Exercise \ref{exo:fbs}.}
-
-For $c=1$ the conformal dimension is related to the momentum by $\Delta = -\alpha^2$. If we have a state with momentums $(\alpha,\bar\alpha)$, its spin is $\bar\alpha^2-\alpha^2\in\mathbb{Z}$. Since we also assume that the spectrum is closed under fusion, and that we have a diagonal state with momentums $(\frac{i}{2R},\frac{i}{2R})$, we must have a state with momentums $(\alpha +\frac{i}{2R},\bar \alpha+\frac{i}{2R})$. The condition for this state to have integer spin is 
-\begin{align}
- \left(\bar \alpha +\tfrac{i}{2R}\right)^2 - \left(\alpha +\tfrac{i}{2R}\right)^2 \in \mathbb{Z} \iff \frac{i}{R}(\alpha -\bar \alpha)\in\mathbb{Z}\ .
- \label{eq:lba}
-\end{align}
-We assume that there are nondiagonal states $(\alpha,\bar\alpha)$ that minimize this number, i.e. $\alpha-\bar\alpha = -iR$.
-Since we also have $\bar\alpha^2-\alpha^2 = -(\alpha-\bar \alpha)(\alpha+\bar \alpha)\in\mathbb{Z}$, we deduce $\alpha+\bar\alpha\in \frac{i}{R}\mathbb{Z}$. Again, we assume that all allowed values actually occur, so that there is a state with $\alpha+\bar\alpha = 0$, i.e. a state with momentums $(-\frac{iR}{2},\frac{iR}{2})$.
-
-For $(\alpha,\bar\alpha)$ any state, the condition for the spin of $(\alpha-\frac{iR}{2},\bar\alpha +\frac{iR}{2})$ to be integer is $iR(\alpha+\bar\alpha)\in\mathbb{Z}$. Adding the constraint \eqref{eq:lba}, we deduce that our state must belong to the spectrum $S_R$ \eqref{sr}.
-
-For an arbitrary central charge, the conformal dimension is $\Delta = \alpha(Q-\alpha)$, and condition for  a state in the spectrum $S_R$ to have integer spin is 
-\begin{align}
- Q(\alpha-\bar \alpha) \in\mathbb{Z} \iff QiRw \in\mathbb{Z}\ .
-\end{align}
-This must hold for any $w\in\mathbb{Z}$, and we must have $R\in \frac{i}{Q}\mathbb{Z}$. Therefore, compactified free bosons exist only for certain discrete values of the radius.
-
 
 \paragraph{Exercise \ref{exo:ope}.}
 
@@ -1767,6 +1770,57 @@ However, assuming that $p$ is even, let us look at the values of the $r$ index i
 \end{align}
 For $p\equiv 2\bmod 4$, we still use the boolean $\epsilon$ for labelling sectors, although it is no longer related to the parity of $r$, as $r$ is odd in both sectors. The same expression for the fusion rules makes sense, although the conservation of diagonality is now an ansatz to be tested, rather than an unavoidable consequence of symmetry.
 
+
+\paragraph{Exercise \ref{exo:upsilon}.}
+
+From eq. \eqref{eq:up}, we deduce how the function $\Upsilon_b(x)$ behaves under shifts:
+\begin{align}
+ \frac{\Upsilon_b(x+b)}{\Upsilon_b(x)} = \lambda_b^{2bx-1} \prod_{n=0}^\infty \left[ \frac{n+1-bx}{n+bx} e^{ \sum_{m=0}^\infty \frac{2bx-1}{\left(\frac{Q}{2}+mb+nb^{-1}\right)^2}}\right] \ .
+\end{align}
+From Weierstrass's definition of the Gamma function, we deduce the product formula 
+\begin{align}
+ \gamma(x) = e^{-\gamma_\text{EM}(2x-1)} \frac{1-x}{x} \prod_{n=1}^\infty \left[\frac{n+1-x}{n+x} e^{\frac{2x-1}{n}}\right] \ ,
+\end{align}
+where $\gamma_\text{EM}$ is the Euler--Mascheroni constant. This implies 
+\begin{align}
+ \frac{\Upsilon_b(x+b)}{\Upsilon_b(x)} =  \gamma(bx) e^{(2bx-1)(\log \lambda_b +\gamma_\text{EM}  + K_b)}\ ,
+\end{align}
+where we define 
+\begin{align}
+ K_b = \sum_{n=0}^\infty \left[\sum_{m=0}^\infty \frac{1}{\left(\frac{Q}{2}+mb+nb^{-1}\right)^2} - \frac{1}{n}\right] \ ,
+\end{align}
+with the convention $\frac{1}{0} = 0$. We are not there yet, because $K_b$ is not invariant under $b\to \frac{1}{b}$. To understand its behaviour under $b\to \frac{1}{b}$, we introduce a cutoff $M$ on the sum over $M$, and perform the split $\sum_{n=0}^\infty = \sum_{n=0}^M + \sum_{n=M+1}^\infty$. This leads to 
+\begin{align}
+ K_b - K_{b^{-1}} = \lim_{M\to \infty} \left[ \sum_{n=0}^M \sum_{m=M+1}^\infty - \sum_{m=0}^M \sum_{n=M+1}^\infty\right] \frac{1}{\left(\frac{Q}{2}+mb+nb^{-1}\right)^2}\ .
+\end{align}
+In order to compute this limit, we can replace the sums with integrals, and we obtain
+\begin{align}
+  K_b - K_{b^{-1}} = \lim_{M\to \infty} \left[\int_0^{Mb^{-1}} dy \int_{Mb}^\infty dx - \int_0^{Mb} dx\int_{Mb^{-1}}^\infty dy\right] \frac{1}{(x+y)^2} = -2\log b\ .
+\end{align}
+This shows that $K_b+\log b$ is invariant under $b\to \frac{1}{b}$. Therefore, we set 
+\begin{align}
+ \lambda_b = e^{-\gamma_\text{EM}-K_b-\log b}\ ,
+\end{align}
+and we obtain the shift equation \eqref{upup} for $\frac{\Upsilon_b(x+b)}{\Upsilon_b(x)}$. Since $\lambda_b$ is invariant under $b\to \frac{1}{b}$, the shift equation for  $\frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)}$ follows immediately.
+
+\paragraph{Exercise \ref{exo:fbs}.}
+
+For $c=1$ the conformal dimension is related to the momentum by $\Delta = -\alpha^2$. If we have a state with momentums $(\alpha,\bar\alpha)$, its spin is $\bar\alpha^2-\alpha^2\in\mathbb{Z}$. Since we also assume that the spectrum is closed under fusion, and that we have a diagonal state with momentums $(\frac{i}{2R},\frac{i}{2R})$, we must have a state with momentums $(\alpha +\frac{i}{2R},\bar \alpha+\frac{i}{2R})$. The condition for this state to have integer spin is 
+\begin{align}
+ \left(\bar \alpha +\tfrac{i}{2R}\right)^2 - \left(\alpha +\tfrac{i}{2R}\right)^2 \in \mathbb{Z} \iff \frac{i}{R}(\alpha -\bar \alpha)\in\mathbb{Z}\ .
+ \label{eq:lba}
+\end{align}
+We assume that there are nondiagonal states $(\alpha,\bar\alpha)$ that minimize this number, i.e. $\alpha-\bar\alpha = -iR$.
+Since we also have $\bar\alpha^2-\alpha^2 = -(\alpha-\bar \alpha)(\alpha+\bar \alpha)\in\mathbb{Z}$, we deduce $\alpha+\bar\alpha\in \frac{i}{R}\mathbb{Z}$. Again, we assume that all allowed values actually occur, so that there is a state with $\alpha+\bar\alpha = 0$, i.e. a state with momentums $(-\frac{iR}{2},\frac{iR}{2})$.
+
+For $(\alpha,\bar\alpha)$ any state, the condition for the spin of $(\alpha-\frac{iR}{2},\bar\alpha +\frac{iR}{2})$ to be integer is $iR(\alpha+\bar\alpha)\in\mathbb{Z}$. Adding the constraint \eqref{eq:lba}, we deduce that our state must belong to the spectrum $S_R$ \eqref{sr}.
+
+For an arbitrary central charge, the conformal dimension is $\Delta = \alpha(Q-\alpha)$, and condition for  a state in the spectrum $S_R$ to have integer spin is 
+\begin{align}
+ Q(\alpha-\bar \alpha) \in\mathbb{Z} \iff QiRw \in\mathbb{Z}\ .
+\end{align}
+This must hold for any $w\in\mathbb{Z}$, and we must have $R\in \frac{i}{Q}\mathbb{Z}$. Therefore, compactified free bosons exist only for certain discrete values of the radius.
+
 \paragraph{Exercise \ref{exo:chmm}.}
 
 To do this exercise, we only need to know the identities 
@@ -1812,37 +1866,6 @@ Let us insert $\sum_{r=1}^{p-1} (-1)^{rs'}\sin\left(\pi\frac{q}{p}rr'\right)$ on
 and it can then be written in terms of characters of fully degenerate representations, leading to 
 eq. \eqref{eq:smm}.
 
-\paragraph{Exercise \ref{exo:upsilon}.}
-
-From eq. \eqref{eq:up}, we deduce how the function $\Upsilon_b(x)$ behaves under shifts:
-\begin{align}
- \frac{\Upsilon_b(x+b)}{\Upsilon_b(x)} = \lambda_b^{2bx-1} \prod_{n=0}^\infty \left[ \frac{n+1-bx}{n+bx} e^{ \sum_{m=0}^\infty \frac{2bx-1}{\left(\frac{Q}{2}+mb+nb^{-1}\right)^2}}\right] \ .
-\end{align}
-From Weierstrass's definition of the Gamma function, we deduce the product formula 
-\begin{align}
- \gamma(x) = e^{-\gamma_\text{EM}(2x-1)} \frac{1-x}{x} \prod_{n=1}^\infty \left[\frac{n+1-x}{n+x} e^{\frac{2x-1}{n}}\right] \ ,
-\end{align}
-where $\gamma_\text{EM}$ is the Euler--Mascheroni constant. This implies 
-\begin{align}
- \frac{\Upsilon_b(x+b)}{\Upsilon_b(x)} =  \gamma(bx) e^{(2bx-1)(\log \lambda_b +\gamma_\text{EM}  + K_b)}\ ,
-\end{align}
-where we define 
-\begin{align}
- K_b = \sum_{n=0}^\infty \left[\sum_{m=0}^\infty \frac{1}{\left(\frac{Q}{2}+mb+nb^{-1}\right)^2} - \frac{1}{n}\right] \ ,
-\end{align}
-with the convention $\frac{1}{0} = 0$. We are not there yet, because $K_b$ is not invariant under $b\to \frac{1}{b}$. To understand its behaviour under $b\to \frac{1}{b}$, we introduce a cutoff $M$ on the sum over $M$, and perform the split $\sum_{n=0}^\infty = \sum_{n=0}^M + \sum_{n=M+1}^\infty$. This leads to 
-\begin{align}
- K_b - K_{b^{-1}} = \lim_{M\to \infty} \left[ \sum_{n=0}^M \sum_{m=M+1}^\infty - \sum_{m=0}^M \sum_{n=M+1}^\infty\right] \frac{1}{\left(\frac{Q}{2}+mb+nb^{-1}\right)^2}\ .
-\end{align}
-In order to compute this limit, we can replace the sums with integrals, and we obtain
-\begin{align}
-  K_b - K_{b^{-1}} = \lim_{M\to \infty} \left[\int_0^{Mb^{-1}} dy \int_{Mb}^\infty dx - \int_0^{Mb} dx\int_{Mb^{-1}}^\infty dy\right] \frac{1}{(x+y)^2} = -2\log b\ .
-\end{align}
-This shows that $K_b+\log b$ is invariant under $b\to \frac{1}{b}$. Therefore, we set 
-\begin{align}
- \lambda_b = e^{-\gamma_\text{EM}-K_b-\log b}\ ,
-\end{align}
-and we obtain the shift equation \eqref{upup} for $\frac{\Upsilon_b(x+b)}{\Upsilon_b(x)}$. Since $\lambda_b$ is invariant under $b\to \frac{1}{b}$, the shift equation for  $\frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)}$ follows immediately.
 
 %\fi
 
