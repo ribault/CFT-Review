@@ -547,18 +547,13 @@ These conditions are fulfilled in certain conformal field theories.
 In particular, as we will see in Chapter \ref{secccs}, conformal symmetry is enough for determining the $x$-dependence of OPE coefficients. 
 
 Let us discuss in more detail how symmetry constrains OPEs. By definition, symmetry transformations act within representations of the symmetry algebras. Given three representations $(\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3)$, let us write states in these representations as $\sigma=(\mathcal{R},v)$ as in eq. \eqref{arv}: symmetry constraints on the OPE coefficients $C_{(\mathcal{R}_1,v_1),(\mathcal{R}_2,v_2)}^{(\mathcal{R}_3,v_3)}(x_1,x_2)$ are linear equations on functions of $(v_1,v_2,v_3,x_1,x_2)$. The number $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\in {\mathbb{N}} \cup \{\infty\}$ of independent solutions of these equations is the \textbf{\boldmath fusion multiplicity}\index{fusion multiplicity}. 
-In particular, the field $V_{\sigma_3}$ can appear in a $V_{\sigma_1}V_{\sigma_2}$ OPE only if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\neq 0$. 
-
-\begin{hyp}[\textbf{\boldmath Fusion product}\index{fusion product} or \textbf{\boldmath fusion rules}\index{fusion rules}]
- ~\label{ax:fp}
- There is a bilinear, commutative, associative product of representations, such that 
+In particular, the field $V_{\sigma_3}$ can appear in a $V_{\sigma_1}V_{\sigma_2}$ OPE only if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\neq 0$. Let us define the \textbf{\boldmath fusion product}\index{fusion product} or \textbf{\boldmath fusion rules}\index{fusion rules} for representations of the symmetry algebra as 
  \begin{align}
  \mathcal{R}_1 \times \mathcal{R}_2  = \sum_{\mathcal{R}_3} N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3} \mathcal{R}_3 \ . 
 \label{rrnr}
 \end{align}
-\end{hyp} 
-\noindent
-In some cases, the fusion product has a constructive definition as a kind of generalization of the tensor product \cite{gab99, kr18}. However, all we will need is that it exists. The fusion product, in other words the structure of the category of representations, will turn out to play a more important role than the structure of the representations themselves.  
+From the OPE, the fusion product inherits the properties of bilinearity, commutativity and associativity. 
+In some cases, the fusion product has a constructive definition as a kind of generalization of the tensor product \cite{gab99, kr18}: then $ \mathcal{R}_1 \times \mathcal{R}_2$ is a representation, and the equality in eq. \eqref{rrnr} is an isomorphism of representations. But we will not need such constructions. The fusion product, in other words the structure of the category of representations, will turn out to play a more important role than the structure of the representations themselves.  
 
 The fusion product $\mathcal{R}_1\times \mathcal{R}_2$ is said to have nontrivial multiplicities if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\geq 2$ for some $\mathcal{R}_3$, and trivial multiplicities if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\in \{0,1\}$.
 A field is called a \textbf{\boldmath simple current}\index{simple current} if the corresponding representation $\mathcal{R}$ is such that $\mathcal{R}\times \mathcal{R}'$ is indecomposable for any $\mathcal{R}'$, so that $\sum_{\mathcal{R}''} N_{\mathcal{R}\mathcal{R}'}^{\mathcal{R}''} =1$. 
@@ -2978,12 +2973,15 @@ In other words, the Virasoro algebra \eqref{vir} effectively reduces to a sum of
 
 \begin{exo}[Dependence of the Witt algebra on the position]
  ~\label{exowitt}
-Show that for any choice of $z_0\in\mathbb{C}$, the generators 
+For any reference point $z_0\in\mathbb{C}$, we define the generators
 \begin{align}
- \ell_n^{(z_0)} = -(z-z_0)^{n+1}{\frac{\partial}{\partial z}}\ ,
+ \ell_n^{(z_0)} = -(z-z_0)^{n+1}{\frac{\partial}{\partial z}}\ .
 \end{align}
-obey the commutation relations of the Witt algebra. To which value of $z_0$ do the original generators \eqref{elln} correspond?
+\begin{enumerate}
+ \item Show that $\ell_n^{(z_0)}$ obey the commutation relations of the Witt algebra. To which value of $z_0$ do the original generators \eqref{elln} correspond?
 Compute $\frac{\partial}{\partial z_0} \ell_n^{(z_0)}$, and compare with eq. \eqref{pll}.
+\item For any function $f:\mathbb{C}\to \mathbb{C}$, we define the field $V_f(z_0)$ as the function $z\mapsto f(z-z_0)$. Compute $\frac{\partial}{\partial z_0} V_f(z_0)$, and compare with eq. \eqref{lvpv}.
+\end{enumerate}
 \end{exo}
 
 \begin{exo}[Behaviour of the energy-momentum tensor at infinity]
@@ -4081,7 +4079,9 @@ Then the central charge obeys $c\in ]-\infty, 1[$, and is given by $c_{p,q}$ \eq
 
 \subsubsection{Fusion rules and spectrum}
 
-Let us investigate the fusion rules involving such a doubly degenerate representation. More specifically, let us look whether the fusion product $\mathcal{R}\times \mathcal{V}_P$ is empty or not. If it is empty, we consider that $\mathcal{R}$ cannot coexist with a representation of momentum $P$.
+Let us investigate the fusion rules involving doubly degenerate representations. 
+Let us start with the fusion product $\mathcal{R}\times \mathcal{V}_P$ of a doubly degenerate representation $\mathcal{R}$ with a Verma module, which encodes rules that apply to fusion products of $\mathcal{R}$ with 
+arbitrary highest-weight representations. We will see that this fusion product is zero for almost all values of $P$. Whenever $\mathcal{R}\times \mathcal{V}_P=0$, we consider that $\mathcal{R}$ cannot coexist with a representation of momentum $P$, as correlation functions that involve both representations would vanish. 
 
 According to eq. \eqref{rtv}, the representation $\mathcal{V}_{P'} $ can appear in the fusion product $\mathcal{R}\times \mathcal{V}_P$ only if there are half-integers $(i,j,i',j')\in I_r\times I_s\times I_{r'}\times I_{s'}$ with $I_r=\left\{i\in \frac{r-1}{2}+\mathbb{Z}\middle| \frac{r-1}{2}\geq |i|\right\}$, such that  
 \begin{align}
@@ -4092,7 +4092,7 @@ This implies that the two momentums $P+ib+jb^{-1}$ and $ P+i'b+j'b^{-1}$ are eit
 
 So our two momentums must be opposite. Defining the integers $r'' = \frac{p}{2}-i-i'$ and $s''=\frac{q}{2}-j-j'$, this implies
 \begin{align}
- P=P_{\langle r'',s'' \rangle}\quad \text{with}\quad  \left\{\begin{array}{l}  r'' \in [1,p-1]\ , \\ s'' \in [1,q-1]\ . \end{array}\right. 
+ \mathcal{R}\times \mathcal{V}_P \neq 0 \iff    P=P_{\langle r'',s'' \rangle}\quad \text{with}\quad  \left\{\begin{array}{l}  r'' \in [1,p-1]\ , \\ s'' \in [1,q-1]\ . \end{array}\right. 
 \label{rpsq}
 \end{align}
 This defines the \textbf{\boldmath Kac table}\index{Kac table} -- the set of integers $(r'',s'')$ such that $\mathcal{V}_{P_{\langle r'',s''\rangle}}$ has a nonzero fusion product with our doubly degenerate representation $\mathcal{R}$.
