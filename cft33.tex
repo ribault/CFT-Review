@@ -4062,35 +4062,32 @@ After our digression on generalized minimal models with their generic central ch
 Let us consider the doubly degenerate representation 
 \begin{align}
  \mathcal{R}=\mathcal{R}_{\langle r,s \rangle}=\mathcal{R}_{\langle r',s' \rangle}\ .
+ \label{rerer}
 \end{align}
 The equality of conformal dimension $\Delta_{\langle r,s \rangle}=\Delta_{\langle r',s' \rangle}$ implies that 
 the momentums are equal or opposite, 
-$P_{\langle r,s \rangle}=\pm P_{\langle r',s' \rangle}$. Using eq. \eqref{ars} for $P_{\langle r,s\rangle}$, this implies
+$P_{\langle r,s \rangle}=\pm P_{\langle r',s' \rangle}$. Using eq. \eqref{ars} for $P_{\langle r,s\rangle}$, this implies that $b^2$ is a rational number, 
 \begin{align} 
 b^2=-\frac{q}{p} \in \mathbb{Q} \quad \Rightarrow \quad c\in ]-\infty, 1] \cup [25,\infty[\ .
 \end{align}
-For $b^2=-\frac{q}{p}$, we have the relation
+In order to recover the known minimal models with their central charges $c_{p,q}$ \eqref{cpq}, it is actually enough to restrict to integers $p,q$ that are coprime and obey $p,q\geq 2$.
+In this case, there exists at least one doubly degenerate representation such that 
+\begin{align}
+ p = r+r' \quad , \quad q = s+s'\ ,
+ \label{prrp}
+\end{align}
+so that $P_{\langle r,s \rangle}+P_{\langle r',s' \rangle} = 0$. 
+In any case where $b^2$ is rational, we have the relation
 \begin{align}
  \forall r,s\in \mathbb{C}\ , \quad \Delta_{\langle r,s \rangle}=\Delta_{\langle p-r,q-s \rangle}\ ,
  \label{ddr}
 \end{align}
 in addition to the relation $\Delta_{\langle r,s \rangle}=\Delta_{\langle -r,-s \rangle}$ which holds for any central charge. 
 
-In order to recover the known minimal models, it is enough to consider rational values of $b^2$ that obey a few additional assumptions. We first assume that the relation between the momentums is 
-\begin{align}
- P_{\langle r,s \rangle}+P_{\langle r',s' \rangle} = 0\ .
-\end{align}
-This leads to $b^2=-\frac{q}{p}$ where the integers $p,q$ are positive,
-\begin{align}
- p = r+r' \quad , \quad q = s+s'\ ,
-\end{align}
-and we further assume that they are coprime. 
-After we introduce the Kac table, we will finally need to assume $p,q\geq 2$ in order for that table to be non-empty, and we will finally recover the values $c_{p,q}$ \eqref{cpq} of the central charges of minimal models.
 
 \subsubsection{Kac table}
 
-Let us investigate fusion rules involving doubly degenerate representations. 
-Let us start with the fusion product $\mathcal{R}\times \mathcal{V}_P$ of a doubly degenerate representation $\mathcal{R}$ with a Verma module, which encodes constraints that apply to the fusion of $\mathcal{R}$ with 
+Let us consider a doubly degenerate representation $\mathcal{R}=\mathcal{R}_{\langle r,s \rangle}=\mathcal{R}_{\langle r',s' \rangle}$ such that the integers  $p=r+r'$ and $q=s+s'$ are coprime. Let us investigate the fusion product of $\mathcal{R}$ with a Verma module, which encodes constraints that apply to the fusion of $\mathcal{R}$ with 
 any highest-weight representation. We will see that this fusion product is zero for almost all values of $P$. Whenever $\mathcal{R}\times \mathcal{V}_P=0$, we consider that $\mathcal{R}$ cannot coexist with a representation of momentum $P$, as correlation functions that involve both representations would vanish. 
 
 According to eq. \eqref{rtv}, the representation $\mathcal{V}_{P'} $ can appear in the fusion product $\mathcal{R}\times \mathcal{V}_P$ only if there are half-integers $(i,j,i',j')\in I_r\times I_s\times I_{r'}\times I_{s'}$ with $I_r=\left\{i\in \frac{r-1}{2}+\mathbb{Z}\middle| \frac{r-1}{2}\geq |i|\right\}$, such that  
@@ -4108,16 +4105,16 @@ So our two momentums must be opposite. Defining the integers $r'' = \frac{p}{2}-
 This defines the \textbf{\boldmath Kac table}\index{Kac table} -- the set of integers $(r'',s'')$ such that $\mathcal{V}_{P_{\langle r'',s''\rangle}}$ has a nonzero fusion product with our doubly degenerate representation $\mathcal{R}$.
 At a given central charge, this set does not depend on the choice of $\mathcal{R}$. 
 And due to the identity \eqref{ddr},
-the corresponding degenerate representations $\mathcal{R}_{\langle r'', s'' \rangle}$ are actually doubly degenerate. 
+the corresponding degenerate representations $\mathcal{R}_{\langle r'', s'' \rangle}$ are actually doubly degenerate: the set of these representations is also called the Kac table.
 
 \subsubsection{Fusion rules}
 
-The fusion rules of Kac table representations can be deduced from the fusion rules \eqref{rrsr} of degenerate representations, 
+The fusion rules \eqref{rrsr} of degenerate representations are valid at arbitrary central charges, and do not depend on the central charge. In order to deduce the fusion rules of doubly degenerate representations from the Kac table, we only need to take the identification \eqref{ddr} into account, with the result
 \begin{align}
   \boxed{\mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle} = \sum_{r_3\overset{2}{=}|r_1-r_2|+1}^{\min(r_1+r_2,2p-r_1-r_2)-1}\ \sum_{s_3\overset{2}{=}|s_1-s_2|+1}^{\min(s_1+s_2,2q-s_1-s_2)-1} \mathcal{R}_{\langle r_3,s_3 \rangle}}\ .
 \label{rrmm}
 \end{align}
-(See Exercise \ref{exofus}.) 
+(See Exercise \ref{exofus}.) In particular, the Kac table is closed under fusion.
 Equivalently, 
 the condition for three doubly degenerate representations $\mathcal{R}_{\langle r_i,s_i \rangle}$ to be intertwined by fusion is 
 \begin{align}
@@ -4133,8 +4130,13 @@ s_1+s_2+s_3-q\in 1+2{\mathbb{N}}\ , \\
  \label{mmfr}
 \end{align}
 where we assume $i\neq j\neq k$.
-So the set of the doubly degenerate representations is closed under fusion.
-This set can therefore be used to build the spectrum of an \textbf{A-series minimal model}\index{minimal model!A-series---},
+
+
+\subsection{A-series minimal models \label{secamm}}
+
+\subsubsection{Spectrum}
+
+The diagonal combination of all representation in the Kac table is the spectrum of an \textbf{A-series minimal model}\index{minimal model!A-series---},
 \begin{align}
  \boxed{ \mathcal{S}_{p,q} = \frac12 \bigoplus_{r=1}^{p-1} \bigoplus_{s=1}^{q-1} \mathcal{R}_{\langle r,s \rangle}\otimes \bar{\mathcal{R}}_{\langle r,s \rangle} } \ ,
 \label{smin}
@@ -4145,8 +4147,6 @@ However, the minimal models have the distinction of being consistent not only on
 
 It is easy to see that minimal models with $|p-q|>1$, and generalized minimal models, cannot be unitary, due to the presence of fields with negative conformal dimensions in their spectrums. (See Exercise \ref{exoneg}.)
 On the other hand, minimal models with $|p-q|=1$ are unitary, see eq. \eqref{srp}.
-
-\subsection{A-series minimal models \label{secamm}}
 
 \subsubsection{Correlation functions}
 
