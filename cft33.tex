@@ -3990,7 +3990,7 @@ Such sets are made of
 \textbf{\boldmath doubly degenerate representations}\index{degenerate representation!doubly---}, i.e. maximally degenerate representations of the type $\mathcal{R}_{\langle r,s \rangle}=\mathcal{R}_{\langle r',s' \rangle}$ with $\langle r,s \rangle\neq \langle r',s' \rangle$. Due to the 
 equality of conformal dimensions $\Delta_{\langle r,s \rangle}=\Delta_{\langle r',s' \rangle}$, doubly degenerate representations exist only for certain discrete values of the central charge. 
 
-\subsection{Generalized minimal models}
+\subsection{Generalized minimal models \label{secgmm}}
 
 For any complex value of the central charge such that $b^2\notin \mathbb{Q}$, we define a \textbf{\boldmath generalized minimal model}\index{minimal model!generalized---} by its spectrum,
 \begin{align}
@@ -4331,6 +4331,37 @@ Finally, let us comment on the interpretation of this minimal model in terms of 
 The Ising model of statistical physics describes two-state spins on a lattice.
 Our field $\sigma$ describes these spins, while the field $\epsilon$ describes the energy.
 Flipping spins is a symmetry of the model, and this symmetry manifests itself as the invariance of the fusion rules under $\sigma\to -\sigma$. 
+
+\subsection{Limits to and from Liouville theory}
+
+In Liouville theory, generalized minimal models and A-series minimal models, the existence of the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ ultimately determines the three-point structure constants. These CFTs are distinguished by their spectrums: diagonal in all cases, and respectively continuous, discrete infinite, and finite. These spectrums are related to one another by certain limits: for example, the Kac table of the $(p, q)$ minimal model becomes infinite as $p,q\to \infty$, and degenerate fields can be recovered from Liouville fields by taking limits of their momentums. (See Section \ref{secacl}.) This suggests that our CFTs themselves are related to one another by the same limits. 
+
+Proving such relations is not straightforward, because of subtleties with the analytic behaviour of correlation functions. In particular, the fusion rules of degenerate fields cannot be derived from Liouville theory, as we saw in Section \ref{secgmm}. Moreover, the analyticity of structure constants and conformal blocks as functions of the central charge does not imply the analyticity of four-point functions, as we saw in Section \ref{seceul}. Therefore, we need to understand the behaviour of four-point functions, and not just three-point functions. In Liouville theory and generalized minimal models, four-point functions are combinations of infinitely many conformal blocks, and their limits are not easy to control. Our statements on limits of CFTs will therefore only be conjectures.
+
+
+\subsubsection{From minimal models to Liouville theory}
+
+Minimal models exist for central charges $c_{p,q}$ \eqref{cpq} that are dense in the half-line $]-\infty, 1]$, let us consider the limit $c_{p, q}\to c_0\in ]-\infty, 1]$ with $p,q\to\infty$. At the level of the spectrum, we will consider two possible behaviours of the doubly degenerate representations $\mathcal{R}_{\langle r,s\rangle}$: 
+\begin{itemize}
+ \item We can keep $r,s$ fixed. In this case our representation always has a vanishing null vector at level $rs$. However, the second null vector of $\mathcal{R}_{\langle r,s\rangle}=\mathcal{R}_{\langle p-r,q-s\rangle}$ has the level $(p-r)(q-s)\to \infty$. Therefore, the limit of our doubly degenerate representation is a degenerate representation, which we still denote as $\mathcal{R}_{\langle r,s\rangle}$:
+ \begin{align}
+  \lim_{c_{p,q}\to c_0} \mathcal{R}_{\langle r,s\rangle} = \mathcal{R}_{\langle r,s\rangle} \ .
+ \end{align}
+The fusion rules \eqref{rrmm} of doubly degenerate representations then reduce to the fusion rules of degenerate representations. We therefore expect that the limit of minimal models is the generalized minimal model with central charge $c_0$. 
+\item We can send $r,s$ to infinity so that the momentum $P_{\langle r,s\rangle}$ tends to a given imaginary value $P_0$. Then the levels of both null vectors tend to infinity, and our doubly degenerate representation becomes a Verma module,
+\begin{align}
+ \lim_{\substack{c_{p,q}\to c_0\\ P_{\langle r,s\rangle} \to P_0}} \mathcal{R}_{\langle r,s\rangle} = \mathcal{V}_{P_0}\ .
+\end{align}
+We therefore expect that this limit yields Liouville theory with the central charge $c_0$. 
+\end{itemize}
+The only known subtleties occur if $c_0$ is again of the type $c_{p_0,q_0}$ with $p_0,q_0\in \mathbb{Z}$. In this case, there are several inequivalent ways of defining the limit $\lim_{\substack{c_{p,q}\to c_0\\ P_{\langle r,s\rangle} \to P_0}}$. With some definitions, we recover Liouville theory. But in the case $c=1$, another definition leads to a CFT with the same spectrum as Liouville theory but a non-analytic structure constant, called Runkel--Watts theory \cite{rw01}. There is an analog of Runkel--Watts theory for any central charges of the type $c_{p_0,q_0}$ \cite {rs15}, and we expect that this analog can again be reached as a particular limit of minimal models.
+
+
+\subsubsection{From Liouville theory to minimal models}
+
+\subsubsection{Summary of conjectures}
+
+Everything conjectural. Need notation for limits that work for some 4pt functions.
 
 
 \section{Exercises}
