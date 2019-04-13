@@ -1947,16 +1947,19 @@ Then $F(x_1,x_2,\cdots x_{N-3})$ is related to an $N$-point function with $(z_{N
 \end{align}
 and the general solution is 
 \begin{align}
- \left\langle\prod_{i=1}^4 V_{\Delta_i,\bar\Delta_i}(z_i)\right\rangle = \left|\mathcal{F}^{(3)}(\Delta_1,\Delta_2,0|z_1,z_2,z_3) \mathcal{F}^{(3)}(\Delta_3,\Delta_4,0|z_3,z_4,z_2)\right|^2 F(x)\ ,
+ \left\langle\prod_{i=1}^4 V_{\Delta_i,\bar\Delta_i}(z_i)\right\rangle = \Big| 
+ z_{13}^{-2\Delta_1}z_{23}^{\Delta_1-\Delta_2-\Delta_3+\Delta_4}
+ z_{34}^{\Delta_1+\Delta_2-\Delta_3-\Delta_4} z_{24}^{-\Delta_1-\Delta_2+\Delta_3-\Delta_4}
+ \Big|^2 F(x)\ ,
 \label{zgg}
 \end{align}
-where we built the prefactor as a combination of three-point functions, so as to satisfy the equations \eqref{sdd}.
-These are $4$ equations for $6$ unknowns $(\delta_{ij})_{i<j}$: choosing another solution amounts to replacing the function $F(x)$ with $x^\lambda (1-x)^\mu F(x)$ for some numbers $\lambda,\mu$.
-With our choice of prefactor, $F(x)$ is related to a four-point function with $(z_2,z_3,z_4)=(0,\infty,1)$ by
+for an arbitrary function $F(x)$.
+The exponents in the prefactor are a particular solution of eq. \eqref{sdd}, chosen so that 
 \begin{align}
- F(x) =\left| x^{\Delta_1+\Delta_2} \right|^2 \Big\langle V_{\Delta_1,\bar\Delta_1}(x)V_{\Delta_2,\bar\Delta_2}(0)V_{\Delta_3,\bar\Delta_3}(\infty) V_{\Delta_4,\bar\Delta_4}(1)\Big\rangle \ .
+ F(x) =\Big\langle V_{\Delta_1,\bar\Delta_1}(x)V_{\Delta_2,\bar\Delta_2}(0)V_{\Delta_3,\bar\Delta_3}(\infty) V_{\Delta_4,\bar\Delta_4}(1)\Big\rangle \ .
 \label{fx}
 \end{align}
+Choosing another solution of the $4$ equations for $6$ unknowns $(\delta_{ij})_{i<j}$ would amount to replacing the function $F(x)$ with $x^\lambda (1-x)^\mu F(x)$ for some numbers $\lambda,\mu$. For the behaviour of $F(x)$ under field permutations, see Exercise \ref{exoperm}.
 \end{itemize}
 
 \subsubsection{Conformal spins and single-valuedness}
@@ -3070,6 +3073,29 @@ a conformal field theory can involve indecomposable, reducible representations w
 \end{exo}
 
 
+\begin{exo}[Behaviour of four-point functions under field permutations]
+ ~\label{exoperm}
+Due to the commutativity of field \eqref{comm}, the four-point function of primary fields \eqref{zgg} is invariant under field permutations. Deduce the behaviour of the reduced four-point function \eqref{fx} under permutations of the dimensions $(\Delta_i,\bar \Delta_i)$. Using the notation 
+\begin{align}
+ F_{ijkl}(x) =\Big\langle V_{\Delta_i,\bar\Delta_i}(x)V_{\Delta_j,\bar\Delta_j}(0)V_{\Delta_k,\bar\Delta_k}(\infty) V_{\Delta_l,\bar\Delta_l}(1)\Big\rangle \ ,
+\end{align}
+with in particular $F(x) = F_{1234}(x)$, you should find, in the case of transpositions, 
+\begin{align}
+ F(x) 
+ &= \left|(x-1)^{-\Delta_1-\Delta_2+\Delta_3-\Delta_4}\right|^2 F_{2134}\left(\tfrac{x}{x-1}\right)
+ =\left|(x-1)^{-2\Delta_1}\right|^2 F_{1243}\left(\tfrac{x}{x-1}\right)\ ,
+ \label{ftotf}
+ \\
+ & = \left|x^{-2\Delta_1}\right|^2 F_{1324}\left(\tfrac{1}{x}\right) 
+  = \left|x^{-\Delta_1-\Delta_2+\Delta_3-\Delta_4}\right|^2 F_{4231}\left(\tfrac{1}{x}\right) 
+  \ ,
+  \\
+&  = \left|x^{-\Delta_1-\Delta_2+\Delta_3+\Delta_4}(x-1)^{-\Delta_1+\Delta_2+\Delta_3-\Delta_4}\right|^2 F_{3214}(1-x)
+  = F_{1432}(1-x)\ .
+\end{align}
+\end{exo}
+
+
 \begin{exo}[Computing OPE coefficients]
  ~\label{exohf}
 The OPE coefficients $f^{\Delta,L}_{\Delta_1,\Delta_2}$ at the level $|L|= 2$ are determined by the linear equations \eqref{eq:lwo}.
@@ -3145,7 +3171,13 @@ Check that eq. \eqref{heg} corresponds to one of these choices.
 Let us prove and discuss the relation \eqref{eq:bot} that describes how an $s$-channel conformal block behaves under the permutation of the first two fields.
 \begin{enumerate}
  \item Deduce the relation \eqref{eq:bot} from the existence and uniqueness of the decomposition a four-point function into conformal blocks, given a choice of basis of conformal blocks.
- \item Rewrite this relation in terms of $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x)$.
+ \item 
+ With the help of eq. \eqref{ftotf}, show that this relation is equivalent to 
+ \begin{multline}
+  \mathcal{F}^{(s)}_{\Delta_s}(\Delta_1,\Delta_2,\Delta_3,\Delta_4|x) 
+  \\
+  = e^{i\pi(\Delta_s-\Delta_1-\Delta_2)} (1-x)^{-\Delta_1-\Delta_2+\Delta_3-\Delta_4} \mathcal{F}^{(s)}_{\Delta_s}\left(\Delta_2,\Delta_1,\Delta_3,\Delta_4\middle|\tfrac{x}{x-1}\right)\ .
+ \end{multline}
  \item Check that this relation is compatible with the expansion \eqref{eq:fsexp}.
  \item Show that this relation is compatible with Zamolodchikov's recursion. To do this, you may use the identities 
  \begin{align}
