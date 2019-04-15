@@ -3957,6 +3957,7 @@ In the case $c\in]-\infty, 1]$, the OPE coefficient has no poles that could lead
   \\
   \hline
  \end{tabular}
+ \label{cicni}
 \end{align}
 
 
@@ -4336,7 +4337,7 @@ Flipping spins is a symmetry of the model, and this symmetry manifests itself as
 
 In Liouville theory, generalized minimal models and A-series minimal models, the existence of the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ ultimately determines the three-point structure constants. These CFTs are distinguished by their spectrums: diagonal in all cases, and respectively continuous, discrete infinite, and finite. These spectrums are related to one another by certain limits: for example, the Kac table of the $(p, q)$ minimal model becomes infinite as $p,q\to \infty$, and degenerate fields can be recovered from Liouville fields by taking limits of their momentums. (See Section \ref{secacl}.) This suggests that our CFTs themselves are related to one another by the same limits. 
 
-Proving such relations is not straightforward, because of subtleties with the analytic behaviour of correlation functions. In particular, the fusion rules of degenerate fields cannot be derived from Liouville theory, as we saw in Section \ref{secgmm}. Moreover, the analyticity of structure constants and conformal blocks as functions of the central charge does not imply the analyticity of four-point functions, as we saw in Section \ref{seceul}. Therefore, we need to understand the behaviour of four-point functions, and not just three-point functions. In Liouville theory and generalized minimal models, four-point functions are combinations of infinitely many conformal blocks, and their limits are not easy to control. Our statements on limits of CFTs will therefore only be conjectures.
+Proving such relations is not straightforward, because of subtleties with the analytic behaviour of correlation functions. As we saw in Section \ref{seceul}, the analyticity of structure constants and conformal blocks as functions of the central charge does not necessarily imply the analyticity of four-point functions. Therefore, we need to understand the behaviour of four-point functions, and not just three-point functions. In Liouville theory and generalized minimal models, four-point functions are combinations of infinitely many conformal blocks, and their limits are not easy to control. Our statements on limits of CFTs will therefore only be conjectures.
 
 
 \subsubsection{From minimal models to Liouville theory}
@@ -4354,15 +4355,20 @@ The fusion rules \eqref{rrmm} of doubly degenerate representations then reduce t
 \end{align}
 We therefore expect that this limit yields Liouville theory with the central charge $c_0$. 
 \end{itemize}
-The only known subtleties occur if $c_0$ is again of the type $c_{p_0,q_0}$ with $p_0,q_0\in \mathbb{Z}$. In this case, there are several inequivalent ways of defining the limit $\lim_{\substack{c_{p,q}\to c_0\\ P_{\langle r,s\rangle} \to P_0}}$. With some definitions, we recover Liouville theory. But in the case $c=1$, another definition leads to a CFT with the same spectrum as Liouville theory but a non-analytic structure constant, called Runkel--Watts theory \cite{rw01}. There is a Runkel--Watts-type theory for any central charges of the type $c_{p_0,q_0}$ \cite {rs15}, and we expect that this theory can again be reached as a particular limit of minimal models.
+The only known subtleties occur if $c_0$ is again of the type $c_{p_0,q_0}$ with $p_0,q_0\in \mathbb{Z}$. Then there are several inequivalent ways of defining the limit $\lim_{\substack{c_{p,q}\to c_0\\ P_{\langle r,s\rangle} \to P_0}}$. In the case $c=1$, assuming $q=p+1$ while keeping $r-s$ and $r/q$ fixed 
+does not lead to Liouville theory, but to another CFT with the same spectrum as Liouville theory and a non-analytic structure constant, called Runkel--Watts theory \cite{rw01}. There is a Runkel--Watts-type theory for any central charges of the type $c_{p_0,q_0}$ \cite {rs15}, and we expect that this theory can again be reached as a particular limit of minimal models.
 
-Need we give more details? rate at which $p/q$ approaches $p_0/q_0$? 
 
 \subsubsection{From Liouville theory to minimal models}
 
-First send momentums to be degenerate: can recover GMM in some cases. Then send central charge to be rational: can recover MM in some cases. 
+Starting from Liouville theory, we first want to recover generalized minimal models by making the fields degenerate, and then recover minimal models by sending the central charge to rational values. 
 
-Get RWT from Liouville also possible. 
+According to eq. \eqref{cicni}, we can make the Liouville primary fields degenerate by sending their momentums to degenerate values, provided $c\notin ]-\infty, 1]$. However, as pointed out in Section \ref{secgmm}, we do not recover all the fusion rules of degenerate fields. This implies that after taking the limit, the decomposition of a four-point function into conformal blocks can involve terms that would not occur in generalized minimal models. The existence and nature of these terms depends on the four-point function, and on the order in which we make the fields degenerate. We conclude that from Liouville theory, we recover only certain four-point functions of generalized minimal models. 
+
+The problem is much the same when we start from generalized minimal models, and send the central charge to $c_{p, q}$. In order to recover the corresponding minimal model, we need the degenerate fields to become doubly degenerate. At the level of correlation functions, this means that we need the doubly degenerate fusion rules to emerge. However, this occurs only in some cases, and we recover only certain four-point functions of the minimal model \cite{rib18}. 
+
+Finally, what happens if we directly send $c\to c_{p, q}$ in Liouville theory, without first making the fields degenerate? Of course, nothing much happens if $c\in ]-\infty, 1]$ to begin with: we just recover Liouville theory at $c=c_{p, q}$. If however we start with $c\notin ]-\infty, 1]$, the limit $c\to c_0\in ]-\infty, 1]$ is not expected to exist, as the structure constants have an essential singularity on $]-\infty, 1]$. However, it turns out that the limit of Liouville theory for $c\to 1$ is Runkel--Watts theory \cite{sch03}, and more generally the limit for $c\to c_{p,q}$ is a Runkel--Watts-like CFT \cite{mce07}. 
+
 
 
 \subsubsection{Summary of conjectures}
@@ -4375,6 +4381,7 @@ One other column for references?
 
 Get RWT from Liouville: need momentums to be physical... not very important restriction
 
+limit of RWT for irrational c is Liouville 
 
 \section{Exercises}
 
