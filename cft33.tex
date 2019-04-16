@@ -4342,21 +4342,25 @@ Proving such relations is not straightforward, because of subtleties with the an
 
 \subsubsection{From minimal models to Liouville theory}
 
-Minimal models exist for central charges $c_{p,q}$ \eqref{cpq} that are dense in the half-line $]-\infty, 1]$, let us consider the limit $c_{p, q}\to c_0\in ]-\infty, 1]$ with $p,q\to\infty$. At the level of the spectrum, we will consider two possible behaviours of the doubly degenerate representations $\mathcal{R}_{\langle r,s\rangle}$: 
-\begin{itemize}
- \item We can keep $r,s$ fixed. In this case our representation always has a vanishing null vector at level $rs$. However, the second null vector of $\mathcal{R}_{\langle r,s\rangle}=\mathcal{R}_{\langle p-r,q-s\rangle}$ has the level $(p-r)(q-s)\to \infty$. Therefore, the limit of our doubly degenerate representation is a degenerate representation, which we still denote as $\mathcal{R}_{\langle r,s\rangle}$:
+Minimal models exist for central charges $c_{p,q}$ \eqref{cpq} that are dense in the half-line $]-\infty, 1]$, let us consider the limit $c_{p, q}\to c\in ]-\infty, 1]$ with $p,q\to\infty$.
+We consider a doubly degenerate representation $\mathcal{R}_{\langle r,s\rangle}=\mathcal{R}_{\langle p-r,q-s\rangle}$, and keep the indices $r,s$ fixed. 
+Then our representation always has a vanishing null vector at level $rs$. However, the level $(p-r)(q-s)$ of the second null vector goes to infinity, and the limit of our doubly degenerate representation is a degenerate representation, which we still denote as $\mathcal{R}_{\langle r,s\rangle}$:
  \begin{align}
-  \lim_{c_{p,q}\to c_0} \mathcal{R}_{\langle r,s\rangle} = \mathcal{R}_{\langle r,s\rangle} \ .
+  \lim_{c_{p,q}\to c} \mathcal{R}_{\langle r,s\rangle} = \mathcal{R}_{\langle r,s\rangle} \ .
  \end{align}
-The fusion rules \eqref{rrmm} of doubly degenerate representations then reduce to the fusion rules of degenerate representations. We therefore expect that the limit of minimal models is the generalized minimal model with central charge $c_0$. 
-\item We can send $r,s$ to infinity so that the momentum $P_{\langle r,s\rangle}$ tends to a given imaginary value $P_0$. Then the levels of both null vectors tend to infinity, and our doubly degenerate representation becomes a Verma module,
+The fusion rules \eqref{rrmm} of doubly degenerate representations then reduce to the fusion rules of degenerate representations. We therefore expect that the limit of minimal models is the generalized minimal model with central charge $c$. 
+
+For any central charge $c\in ]-\infty,1]$ such that $b^2\notin \mathbb{Q}$, the degenerate momentums $P_{\langle r,s\rangle}$ are dense in $i\mathbb{R}$. 
+We can send $r,s$ to infinity so that $P_{\langle r,s\rangle}$ tends to a given imaginary value $P$. Then the the null vector of $\mathcal{R}_{\langle r,s\rangle}$ goes to infinite level, and our degenerate representation becomes a Verma module,
 \begin{align}
- \lim_{\substack{c_{p,q}\to c_0\\ P_{\langle r,s\rangle} \to P_0}} \mathcal{R}_{\langle r,s\rangle} = \mathcal{V}_{P_0}\ .
+ \lim_{P_{\langle r,s\rangle} \to P} \mathcal{R}_{\langle r,s\rangle} 
+ \ \underset{b^2\in \mathbb{R}_{<0}-\mathbb{Q}}{=} \
+ \mathcal{V}_{P}\ .
 \end{align}
-We therefore expect that this limit yields Liouville theory with the central charge $c_0$. 
-\end{itemize}
-The only known subtleties occur if $c_0$ is again of the type $c_{p_0,q_0}$ with $p_0,q_0\in \mathbb{Z}$. Then there are several inequivalent ways of defining the limit $\lim_{\substack{c_{p,q}\to c_0\\ P_{\langle r,s\rangle} \to P_0}}$. In the case $c=1$, assuming $q=p+1$ while keeping $r-s$ and $r/q$ fixed 
-does not lead to Liouville theory, but to another CFT with the same spectrum as Liouville theory and a non-analytic structure constant, called Runkel--Watts theory \cite{rw01}. There is a Runkel--Watts-type theory for any central charges of the type $c_{p_0,q_0}$ \cite {rs15}, and we expect that this theory can again be reached as a particular limit of minimal models.
+Applying this treatment to the momentums in a generalized minimal model, we therefore expect that we recover Liouville theory.
+
+The situation is more subtle if we take the limit $c_{p,q}\to c$ where  $c$ is again of the type $c_{p_0,q_0}$ with $p_0,q_0\in \mathbb{N}^*$. In this case, minimal models have several inequivalent nontrivial limits where the central charge and momentums are sent to continuous values at the same time. In some of these limits, we recover Liouville theory. However, in the case $c=1$, assuming $q=p+1$ while keeping $r-s$ and $\frac{r}{q}$ fixed 
+does not lead to Liouville theory. Rather, we obtain another CFT with the same spectrum as Liouville theory and a non-analytic structure constant, called Runkel--Watts theory \cite{rw01}. There is a Runkel--Watts-type theory for any central charges of the type $c_{p_0,q_0}$ \cite {rs15}, and we expect that this theory can again be reached as a particular limit of minimal models.
 
 
 \subsubsection{From Liouville theory to minimal models}
@@ -4367,21 +4371,37 @@ According to eq. \eqref{cicni}, we can make the Liouville primary fields degener
 
 The problem is much the same when we start from generalized minimal models, and send the central charge to $c_{p, q}$. In order to recover the corresponding minimal model, we need the degenerate fields to become doubly degenerate. At the level of correlation functions, this means that we need the doubly degenerate fusion rules to emerge. However, this occurs only in some cases, and we recover only certain four-point functions of the minimal model \cite{rib18}. 
 
-Finally, what happens if we directly send $c\to c_{p, q}$ in Liouville theory, without first making the fields degenerate? Of course, nothing much happens if $c\in ]-\infty, 1]$ to begin with: we just recover Liouville theory at $c=c_{p, q}$. If however we start with $c\notin ]-\infty, 1]$, the limit $c\to c_0\in ]-\infty, 1]$ is not expected to exist, as the structure constants have an essential singularity on $]-\infty, 1]$. However, it turns out that the limit of Liouville theory for $c\to 1$ is Runkel--Watts theory \cite{sch03}, and more generally the limit for $c\to c_{p,q}$ is a Runkel--Watts-like CFT \cite{mce07}. 
+Finally, what happens if we directly send $c\to c_{p, q}$ in Liouville theory, without first making the fields degenerate? Of course, nothing much happens if $c\in ]-\infty, 1]$ to begin with: we just recover Liouville theory at $c=c_{p, q}$. If however we start with $c\notin ]-\infty, 1]$, the limit $c\to c_0\in ]-\infty, 1]$ is not expected to exist, as the structure constant has an essential singularity on $]-\infty, 1]$. However, it turns out that the limit of Liouville theory for $c\to 1$ is Runkel--Watts theory \cite{sch03}, and more generally the limit for $c\to c_{p,q}$ with $p,q\in\mathbb{N}^*$ is a Runkel--Watts-like CFT \cite{mce07}. 
 
 
 
 \subsubsection{Summary of conjectures}
 
-Everything conjectural. Need notation for limits that work for some 4pt functions.
+Let us schematically summarize the limits we have been discussing. We denote (generalized) minimal models as (G)MM, and Runkel--Watts-like CFTs as RWL. We begin with limits of minimal models:
+\begin{align}
+ \lim_{\substack{p,q\to \infty \\ c_{p,q}\to c \\ r_i,s_i\text{ fixed}}} \text{MM}_{p,q} &= \text{GMM}_{c}\ ,
+\\
+ \lim_{P_{\langle r_i,s_i\rangle} \to P_i} \text{GMM}_{c\neq c_{p,q}\in]-\infty,1[} &= \text{Liouville}_{c} \ , 
+ \\
+ \lim_{\substack{p,q\to \infty \\ c_{p,q}\to c_{p_0,q_0} \\ P_{\langle r_i,s_i\rangle} \to P_i}} \text{MM}_{p,q}
+ & \supset \left\{\text{Liouville}_{c_{p_0,q_0}}, \text{RWL}_{p_0,q_0}\right\}\ ,
+ \\
+ \lim_{\substack{p,q\to \infty \\ c_{p,q}\to c }} \text{RWL}_{p,q} & = \text{Liouville}_{c}\ .
+\end{align}
+ We then summarize limits where the momentums or the central charge go from generic to discrete values. The limits are denoted as $\sim$ when they hold only for a subset of four-point functions. 
+\begin{align}
+ \lim_{P_i\to P_{\langle r_i,s_i\rangle}} \text{Liouville}_{c\notin ]-\infty,1]} &\sim \text{GMM}_c\ ,
+ \\
+ \lim_{P_i\to P_{\langle r_i,s_i\rangle}} \text{Liouville}_{c\in ]-\infty,1]} &= \text{Liouville}_{c}\ ,
+ \\
+ \lim_{c\to c_{p,q}} \text{Liouville}_{c\notin ]-\infty,1]} & = \text{RWL}_{p,q}\ ,
+ \\
+ \lim_{c\to c_{p,q}} \text{Liouville}_{c\in ]-\infty,1]} & = \text{Liouville}_{c_{p,q}}\ ,
+ \\
+ \lim_{c\to c_{p,q}} \text{GMM}_c & \sim \text{MM}_{p, q}\ .
+\end{align}
+Much work remains to be done in order to fully understand these limits.
 
-Table with one column for conditions on parameters, for example $p_0,q_0\in \mathbb{N}^*$
-
-One other column for references?
-
-Get RWT from Liouville: need momentums to be physical... not very important restriction
-
-limit of RWT for irrational c is Liouville 
 
 \section{Exercises}
 
