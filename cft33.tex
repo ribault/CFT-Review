@@ -178,17 +178,7 @@ We then consider WZW models, and in particular the $SU_2$ and $\widetilde{SL}_2(
 In each Chapter, the last Section is devoted to exercises.
 Some exercises are intended to test and improve one's comprehension of the material; such exercises become scarcer in later Chapters.
 Some exercises sketch proofs of results from the main text, in cases when hints and guidance seem warranted.
-And some exercises provide supplementary material about: 
-\begin{itemize}
- \item singular vectors of Verma modules (Exercise \ref{exosv}),
- \item characters of Virasoro representations (Exercise \ref{exochar}),
-\item logarithmic conformal field theory (Exercise \ref{exolog}), 
-\item the behaviour of Liouville four-point functions at coinciding points (Exercise \ref{exo4a}),
-\item fusion rules of unitary Verma modules (Exercise \ref{exoaur}), 
-\item generalization of the Sugawara construction (Exercise \ref{exotqpj}),
-\item the Wakimoto free-field representation of $\widehat{\mathfrak{sl}}_2$ (Exercise \ref{exowaki}),
-\item level one null vectors of affine highest-weight representations of $\widehat{\mathfrak{sl}}_2$ (Exercise \ref{exolos}).
-\end{itemize}
+And some exercises provide supplementary material.
 
 This text comes with an index, which points to the definition of each listed term. 
 These terms appear in bold where they are defined.
@@ -275,14 +265,13 @@ This makes it easier to reuse excerpts of that file.
 \end{itemize}
 
 I have tried to follow some stylistic good practices, such as: providing a clickable table of contents, not clogging the bibliography with superfluous information such as journal data, \href{http://researchpracticesandtools.blogspot.fr/2018/01/will-no-one-rid-me-of-these-tiresome.html}{avoiding Latin plurals} when regular plurals are available, and numbering all equations while boxing the important ones. 
-% NB: Also, having a linebreak at the end of each sentence, in order to facilitate version control.
 
 
 \section{Acknowledgements}
 
 I am grateful to my colleagues at IPhT Saclay, and in particular to Antoine Duval, Riccardo Guida, Santiago Migliaccio, Vincent Pasquier, and Pierre Ronceray, for the opportunity to give lectures on this subject. I am also grateful to the organizers and participants of the 10th APCTP Focus Program on Liouville, Integrability and Branes, and in particular to Soojong Rey, for including my lectures in an otherwise very advanced workshop. Moreover, I am grateful to the organizers and participants of the 2016 Carg\`ese school on Quantum integrable systems, conformal field theory and stochastic processes, for challenging me to introduce the subject in about four hours. (See \cite{rib16}.) 
 
-I wish to thank Philippe Di Francesco, Sheer El-Showk, Matthias Gaberdiel, Christoph Keller, Miguel Paulos, R\'emi Rhodes, Slava Rychkov, Vincent Vargas, and G\'erard Watts, for useful discussions and correspondence.
+I wish to thank Philippe Di Francesco, Sheer El-Showk, Matthias Gaberdiel, Christoph Keller, Miguel Paulos, R\'emi Rhodes, Slava Rychkov, Joerg Teschner, Vincent Vargas, and G\'erard Watts, for useful discussions and correspondence.
 
 I am grateful to Connor Behan, Fran\c{c}ois David, Quang-Dien Duong, Bruno Le Floch, Omar Foda, Santiago Migliaccio, Raoul Santachiara, and Vincent Vargas, for helpful comments on this text.
 
@@ -2470,6 +2459,10 @@ It determines our four-point function up to an $x$-independent factor.
 
 \section{Conformal blocks and crossing symmetry \label{secaco}}
 
+\subsection{Definition and basic properties of conformal blocks}
+
+\subsubsection{Definition}
+
 \textbf{\boldmath Conformal blocks}\index{conformal block} are the universal constituents of correlation functions, such that correlation functions can be decomposed as combinations of conformal blocks, and model-dependent quantities.
 In this sense, a simple example of a conformal block is the three-point block $\mathcal{F}^{(3)}(\Delta_1,\Delta_2,\Delta_3|z_1,z_2,z_3)$ \eqref{fzzz}. 
 We have also encountered degenerate four-point blocks that obey differential equations in Section \ref{sec:degf}.
@@ -2489,9 +2482,8 @@ The appearance of the factorized quantity $\left| \mathcal{F}^{(s)}_{\Delta_s}(\
 
 Using the OPE of $V_{\sigma_1}(z_1)V_{\sigma_4}(z_4)$, we would obtain \textbf{\boldmath $t$-channel}\index{t-channel@$t$-channel} four-point conformal block $\mathcal{F}^{(t)}_{\Delta_t}(\sigma_i|z_i)$. And with the OPE of $V_{\sigma_1}(z_1)V_{\sigma_3}(z_3)$, we would obtain \textbf{\boldmath $u$-channel}\index{u-channel@$u$-channel} four-point conformal block $\mathcal{F}^{(u)}_{\Delta_u}(\sigma_i|z_i)$. The three inequivalent OPEs give rise to three different decompositions of the same four-point function, and therefore to three bases of conformal blocks. The equality of the different decompositions leads to constraints on the spectrum and correlation functions, called \textbf{\boldmath crossing symmetry}\index{crossing symmetry}.
 
-\subsection{Four-point conformal blocks}
 
-\subsubsection{Basic properties}
+\subsubsection{Dependence on field positions}
 
 For simplicity, we assume that our four fields are primary.
 Thanks to global conformal symmetry, we furthermore restrict our attention to the case $(z_1,z_2,z_3,z_4)=(x,0,\infty, 1)$, and we focus on the blocks
@@ -2509,12 +2501,19 @@ Taking global conformal symmetry into account, this becomes
  \mathcal{F}^{(t)}_{\Delta_t}(\Delta_1,\Delta_2,\Delta_3,\Delta_4|x) = \mathcal{F}^{(s)}_{\Delta_t}(\Delta_1,\Delta_4,\Delta_3,\Delta_2|1-x)\ .
 \end{align}
 
+% NB: sketch
+See pedestrian computation for a few terms of series in x.
+Def. from OPEs defines block where OPE converges. Presence of extra field leads to singularity so radius of cvgce of s-channel looks like 1, see also hypergeom blocks, no known proof. Blocks defined elsewhere by ana. continuation, but multivalued. (monodromy manifest around 0, also nontrivial around 1, infinity, cf hypergeom.) Zamo recursion is a representation that makes it manifest. 
+
 From the role of OPEs in their definition, we can deduce some analytic properties of conformal blocks. In particular, $s$-channel four-point blocks have singularities at $x=0$, where they behave as 
 \begin{align}
  \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) \underset{x\to 0}{=} x^{\Delta_s-\Delta_1-\Delta_2}\Big( 1+ O(x)\Big)\ .
 \end{align}
 Similarly, $t$- and $u$-channel conformal blocks have regular singular points at $x=1$ and $x=\infty$ respectively. Actually, $s$-channel conformal blocks must be singular at $x=1$ and $x=\infty$ too, because four-point functions are singular there. But an $s$-channel block typically has essential singularities at $x=1$ and $x=\infty$. 
-Furthermore, a conformal block in general has a pole when the $s$-channel dimension takes a degenerate value $\Delta_s=\Delta_{\langle r,s\rangle}$, because the OPE has a pole there. (See Section \ref{secope}.) 
+
+\subsubsection{Dependence on conformal dimensions}
+
+A conformal block in general has a pole when the $s$-channel dimension takes a degenerate value $\Delta_s=\Delta_{\langle r,s\rangle}$, because the OPE has a pole there. (See Section \ref{secope}.) 
 This means that a field with this conformal dimension cannot appear in the decomposition of our four-point function, unless the residue of the conformal block's pole vanishes. The residue turns out to vanish if the fusion rules allow $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_1}\to \mathcal{V}_{\Delta_2}$ or $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_3}\to \mathcal{V}_{\Delta_4}$. This allows $s$-channel degenerate dimensions to occur in  (generalized) minimal models, with finite conformal blocks.
 
 Now what happens if our four-point function involves degenerate fields? Conformal blocks that involve degenerate fields obey differential equations, as we have seen in Section \ref{secbpz}.
@@ -2523,6 +2522,7 @@ If $\Delta_2$ and $\Delta_s$ happen to be related as dictated by the fusion rule
 In other words, a conformal block involving a degenerate representation coincides with the conformal block involving the corresponding Verma module.
 The degenerate representation only manifests itself by constraining which conformal blocks can contribute (via its fusion rules).
 
+\subsection{Computing four-point conformal blocks}
 
 \subsubsection{Pedestrian computation}
 
@@ -2626,6 +2626,8 @@ The recursion representation owes its name to the original definition of the fun
 This formula makes it manifest that conformal blocks have poles for $\Delta_s \in \{\Delta_{\langle r,s\rangle}\}_{r,s\in {\mathbb{N}}^*}$. However, the recursion representation also has unphysical singularities at 
 valeus of the central charge of the type $c= c_{p, q}$ \eqref{cpq}: singularities of some terms that cancel when the terms are added. This makes it difficult to use the recursion representation for such values of the central charge, and in particular for minimal models \cite{rib18}.
 
+% NB: sketch
+Show radius of convergence is one, therefore defining blocks everywhere.
 
 \subsubsection{Other representations}
 
@@ -2635,6 +2637,9 @@ Moreover, conformal blocks have a combinatorial representation that follows from
 This representation is a power series in $x$, and therefore converges more slowly than the $\Delta_s$-recursion representation. 
 Moreover, invariance under reflections is not manifest, and individual terms have spurious poles in $\Delta_s$.
 However, an advantage of the combinatorial representation is that it has an interpretation as a sum over descendents in a particular basis.
+
+% NB: sketch
+Converges more slowly, and/or on smaller region?
 
 
 \subsection{Crossing symmetry and the fusing matrix}
