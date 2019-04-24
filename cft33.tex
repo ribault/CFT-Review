@@ -127,7 +127,7 @@ Just like free field theories, conformal field theories are relatively simple an
 Many conformal field theories
 are also of independent interest, in particular for describing critical phenomenons. In this text we will focus on building and solving conformal field theories: for the applications, see some of the works cited in Section \ref{sec:womt}.
 
-In two dimensions, unlike in higher dimensions, the algebra of conformal transformations is infinite-dimensional. As a result, it has been possible to exactly solve certain non-trivial two-dimensional conformal field theories. Therefore, the subject of two-dimensional conformal field theory deserves a separate treatment. Nevertheless, the two-dimensional case may hold valuable lessons for
+In two dimensions, unlike in higher dimensions, the algebra of conformal transformations is infinite-dimensional. As a result, it has been possible to exactly solve certain nontrivial two-dimensional conformal field theories. Therefore, the subject of two-dimensional conformal field theory deserves a separate treatment. Nevertheless, the two-dimensional case may hold valuable lessons for
 the higher-dimensional case, for example that unitarity only plays a minor role in the structure and classification of conformal field theories.
 
 As an introduction to two-dimensional conformal field theory, this text has the particularity of using exclusively the bootstrap approach, which consists in systematically exploiting symmetry and consistency assumptions.
@@ -221,9 +221,10 @@ A much abridged version is also available \cite{rib16}. An even briefer treatmen
 
 While we mostly present known results, the following aspects may be original:
 \begin{itemize}
-\item in Section \ref{secaco}, the formulation of Al. Zamolodchikov's recursion representation of conformal blocks as an explicit formula,
+\item in Section \ref{secaco}, the formulation of Al. Zamolodchikov's recursive representation of conformal blocks as an explicit formula, and the proof of its convergence,
 \item in Section \ref{secliou}, a complete and correct solution of Liouville theory in the bootstrap approach, 
 \item in Section \ref{secvmm}, the logical sequence ``Liouville theory $\rightarrow$ generalized minimal models $\rightarrow$ minimal models'',
+\item in Section \ref{secltf}, the systematic discussion of the limits of Liouville theory and (generalized) minimal models,
 \item in Section \ref{secsacf}, the study of compactified free bosons for any value of $c$ and not just $c=1$,
 \item in Section \ref{seclld}, the derivation of the light and heavy asymptotic limits of Liouville theory, without using the Lagrangian definition,
 \item in Section \ref{seckzbpz}, the derivation of $\widehat{\mathfrak{sl}}_2$ degenerate representations and fusion rules from the KZ-BPZ relation,
@@ -491,7 +492,7 @@ where the \textbf{\boldmath OPE coefficients}\index{OPE!---coefficient} $C_{\sig
 The sum is supposed to converge if $x_1$ and $x_2$ are sufficiently close. 
 \end{hyp} 
 \noindent
-The commutativity axiom implies that the OPE is \textbf{associative}\index{associativity (of the OPE)} and commutative. However, we wrote the OPE in a way that makes commutativity non-trivial, by using fields $V_\sigma(x_2)$. Had we used $V_\sigma(\frac{x_1+x_2}{2})$ instead, commutativity would have reduced to the simple condition $C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2) = C_{\sigma_2,\sigma_1}^{\sigma}(x_2,x_1)$.
+The commutativity axiom implies that the OPE is \textbf{associative}\index{associativity (of the OPE)} and commutative. However, we wrote the OPE in a way that makes commutativity nontrivial, by using fields $V_\sigma(x_2)$. Had we used $V_\sigma(\frac{x_1+x_2}{2})$ instead, commutativity would have reduced to the simple condition $C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2) = C_{\sigma_2,\sigma_1}^{\sigma}(x_2,x_1)$.
 
 Our axioms do not include the existence of a vacuum state, a frequently encountered axiom of quantum field theory in flat space.
 In Liouville theory this axiom is not satisfied, and in minimal models we can do without it. 
@@ -2478,15 +2479,17 @@ Conformal blocks are sometimes defined as arbitrary solutions of the Ward identi
 \label{fsd}
 \end{align}
 where all quantities that are not three-point structure constants have been combined into the \textbf{\boldmath $s$-channel}\index{s-channel@$s$-channel} four-point conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)$.
-The appearance of the factorized quantity $\left| \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)\right|^2 $ (which involves the modulus square notation \eqref{eq:msn}) is a manifestation of holomophic factorization, and the right-moving conformal block $\mathcal{F}^{(s)}_{\bar\Delta_s}(\bar\sigma_i|\bar z_i)$ is given by the same function as the left-moving conformal block, applied to right-moving quantities. The sum is over conformal dimensions $\Delta_s,\bar{\Delta}_s$, which stand for representations of the Virasoro algebra: the relative contributions of all states in a given irreducible representations are determined by Ward identities, and the sum over these states is included in the conformal block by definition.
+The appearance of the factorized quantity $\left| \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)\right|^2 $ (which involves the modulus square notation \eqref{eq:msn}) is a manifestation of holomophic factorization, and the right-moving conformal block $\mathcal{F}^{(s)}_{\bar\Delta_s}(\bar\sigma_i|\bar z_i)$ is given by the same function as the left-moving conformal block, applied to right-moving quantities. 
+
+The sum in eq. \eqref{fsd} is over conformal dimensions $\Delta_s,\bar{\Delta}_s$, which stand for representations of the Virasoro algebra. The relative contributions of all states in a given irreducible representations are determined by Ward identities, and the sum over these states is included in the conformal block by definition. By definition, the sum has to converge whenever the OPE $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2)$ converges. However, we will shortly see that conformal blocks can be defined for all positions $z_i$ by analytic continuation, and the sum actually converges everywhere in minimal models (because it is a finite sum) and in Liouville theory (see Section \ref{seceul}).
 
 Using the OPE of $V_{\sigma_1}(z_1)V_{\sigma_4}(z_4)$, we would obtain \textbf{\boldmath $t$-channel}\index{t-channel@$t$-channel} four-point conformal block $\mathcal{F}^{(t)}_{\Delta_t}(\sigma_i|z_i)$. And with the OPE of $V_{\sigma_1}(z_1)V_{\sigma_3}(z_3)$, we would obtain \textbf{\boldmath $u$-channel}\index{u-channel@$u$-channel} four-point conformal block $\mathcal{F}^{(u)}_{\Delta_u}(\sigma_i|z_i)$. The three inequivalent OPEs give rise to three different decompositions of the same four-point function, and therefore to three bases of conformal blocks. The equality of the different decompositions leads to constraints on the spectrum and correlation functions, called \textbf{\boldmath crossing symmetry}\index{crossing symmetry}.
 
 
 \subsubsection{Dependence on field positions}
 
-For simplicity, we assume that our four fields are primary.
-Thanks to global conformal symmetry, we furthermore restrict our attention to the case $(z_1,z_2,z_3,z_4)=(x,0,\infty, 1)$, and we focus on the blocks
+For simplicity, we consider the conformal blocks that are associated to a four-point function of primary fields $\left<\prod_{i=1}^4V_{\Delta_i}(z_i)\right>$. 
+Thanks to global conformal symmetry, we restrict our attention to the case $(z_1,z_2,z_3,z_4)=(x,0,\infty, 1)$. Our four-point blocks read
 \begin{align}
  \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x)=\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x,0,\infty,1)\ ,
 \end{align}
@@ -2501,20 +2504,27 @@ Taking global conformal symmetry into account, this becomes
  \mathcal{F}^{(t)}_{\Delta_t}(\Delta_1,\Delta_2,\Delta_3,\Delta_4|x) = \mathcal{F}^{(s)}_{\Delta_t}(\Delta_1,\Delta_4,\Delta_3,\Delta_2|1-x)\ .
 \end{align}
 
-% NB: sketch
-See pedestrian computation for a few terms of series in x.
-Def. from OPEs defines block where OPE converges. Presence of extra field leads to singularity so radius of cvgce of s-channel looks like 1, see also hypergeom blocks, no known proof. Blocks defined elsewhere by ana. continuation, but multivalued. (monodromy manifest around 0, also nontrivial around 1, infinity, cf hypergeom.) Zamo recursion is a representation that makes it manifest. 
-
-From the role of OPEs in their definition, we can deduce some analytic properties of conformal blocks. In particular, $s$-channel four-point blocks have singularities at $x=0$, where they behave as 
-\begin{align}
+Let us summarize the analytic properties of 
+the $s$-channel conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x)$ as a function of $x$, before giving supporting arguments:
+\begin{enumerate}
+ \item The $s$-channel conformal block has a regular singularity at $x=0$, where it behaves as 
+ \begin{align}
  \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) \underset{x\to 0}{=} x^{\Delta_s-\Delta_1-\Delta_2}\Big( 1+ O(x)\Big)\ .
 \end{align}
-Similarly, $t$- and $u$-channel conformal blocks have regular singular points at $x=1$ and $x=\infty$ respectively. Actually, $s$-channel conformal blocks must be singular at $x=1$ and $x=\infty$ too, because four-point functions are singular there. But an $s$-channel block typically has essential singularities at $x=1$ and $x=\infty$. 
+\item The factor $\big( 1+ O(x)\big)$ is a power series in $x$, whose radius of convergence is $1$.
+\item The conformal block has an analytic continuation to $\mathbb{C}-\{0,1\}$. 
+\item For generic values of the parameters $c,\Delta_s,\Delta_i$, the block has nontrivial monodromy around the singularities at $x=0,1,\infty$, and the singularities at $x=1,\infty$ are essential.
+\end{enumerate}
+Similarly, $t$- and $u$-channel conformal blocks have singularities at $x=0,1,\infty$, including 
+regular singularities at $x=1$ and $x=\infty$ respectively.
+
+The behaviour of the $s$-channel conformal block near $x=0$ follows from its definition from an OPE. The presence of a field at $x=1$ suggests that the radius of convergence of the resulting series is $1$, but it is not known how to prove this, or how to prove the existence of an analytic continuation to $\mathbb{C}-\{0,1\}$. These properties are however manifest in the case of the hypergeometric conformal blocks of Section \ref{sechcb}. Moreover, they can be deduced from Zamolodchikov's recursive representation -- but this moves the problem to proving the equivalence between that representation, and the original definition of conformal blocks.
+
 
 \subsubsection{Dependence on conformal dimensions}
 
 A conformal block in general has a pole when the $s$-channel dimension takes a degenerate value $\Delta_s=\Delta_{\langle r,s\rangle}$, because the OPE has a pole there. (See Section \ref{secope}.) 
-This means that a field with this conformal dimension cannot appear in the decomposition of our four-point function, unless the residue of the conformal block's pole vanishes. The residue turns out to vanish if the fusion rules allow $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_1}\to \mathcal{V}_{\Delta_2}$ or $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_3}\to \mathcal{V}_{\Delta_4}$. This allows $s$-channel degenerate dimensions to occur in  (generalized) minimal models, with finite conformal blocks.
+This means that a field with this conformal dimension cannot appear in the decomposition of our four-point function, unless the residue of the conformal block's pole vanishes. The residue turns out to vanish if the fusion rules allow $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_1}\to \mathcal{V}_{\Delta_2}$ or $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_{\Delta_3}\to \mathcal{V}_{\Delta_4}$. This allows $s$-channel degenerate dimensions to occur in  (generalized) minimal models.
 
 Now what happens if our four-point function involves degenerate fields? Conformal blocks that involve degenerate fields obey differential equations, as we have seen in Section \ref{secbpz}.
 Nevertheless, the conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|z_i)$ is a smooth function of $\Delta_i$, and has a finite value for $\Delta_1 = \Delta_{\langle r,s\rangle}$. 
@@ -2582,8 +2592,8 @@ where the level-$2$ determinant $D_2(\Delta_s)$ was defined in eq. \eqref{dud}.
 \subsubsection{Zamolodchikov's recursion}
 
 For practical computations of conformal blocks, the formula \eqref{gsd} is not very efficient: the number of terms grows quickly with the level $|L_s|$, and the cofficients $f_{\Delta_1,\Delta_2}^{\Delta_s,L_s}$ are not known explicitly.
-Fortunately, there is also Al.
-Zamolodchikov's recursion representation \cite{zz90}, which converges faster.
+Fortunately, there is also
+\textbf{Zamolodchikov's recursion}\index{Zamolodchikov's recursion} (or recursive representation) \cite{zz90}, which converges faster, and for all $x\in\mathbb{C}-\{1\}$, not just $|x|<1$.
 Instead of a power series in the cross-ratio $x$, this representation is a power series in the \textbf{elliptic nome}\index{elliptic nome}
 \begin{align}
  q = \exp -\pi \frac{F(\frac12,\frac12,1,1-x)}{F(\frac12,\frac12,1,x)}  \ , 
@@ -2593,10 +2603,7 @@ We have
 \begin{align}
  q(x=0)=0 \ \ , \ \ q(x=\tfrac12) = e^{-\pi} \ \ , \ \ q(x=1)=1 \ \ , \ \ q(x)\underset{x\to 0}{=} \frac{x}{16} +O(x^2)\ .
 \end{align}
-The convergence radius of both power series is $1$.
-But since $|q|\leq 1$ for any $x\in\mathbb{C}$, Zamolodchikov's recursion representation converges for almost all $x\in \mathbb{C}$, whereas the formula \eqref{gsd} only converges for $|x|<1$.
-
-Explicitly, Zamolodchikov's recursion representation reads 
+Zamolodchikov's recursive representation reads 
 \begin{align}
  \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) 
 =  (16q)^{\Delta_s -\frac{Q^2}{4}} x^{\frac{Q^2}{4}-\Delta_1-\Delta_2} (1-x)^{\frac{Q^2}{4}-\Delta_1-\Delta_4} \theta_3(q)^{3Q^2-4(\Delta_1+\Delta_2+\Delta_3+\Delta_4)} H_{\Delta_s}(\Delta_i|q)\ .
@@ -2616,30 +2623,33 @@ where by convention $\Delta_{\langle m_0,-n_0\rangle} = \Delta_s$, and we introd
 \prod_{r\overset{2}{=}1-m}^{m-1} \prod_{s\overset{2}{=}1-n}^{n-1} \prod_\pm (P_2\pm P_1 + P_{\langle r,s\rangle}) (P_3\pm P_4 +P_{\langle r,s\rangle})\ .
 \end{align}
 (We introduced the notation $\overset{2}{=}$ for indices that run by increments of $2$.
-Moreover, $P$ is the momentum, and $P_{\langle r,s \rangle}$ is given by eq. \eqref{ars}.) In the recursion representation, conformal blocks are manifestly invariant under reflections of all momentums.
+Moreover, $P$ is the momentum, and $P_{\langle r,s \rangle}$ is given by eq. \eqref{ars}.) In Zamolodchikov's  recursion, conformal blocks are manifestly invariant under reflections of all momentums.
 
-The recursion representation owes its name to the original definition of the function $H_{\Delta_s}(\Delta_i|q)$ \eqref{hdq} by a recursive formula,
+Zamolodchikov's recursion owes its name to the original definition of the function $H_{\Delta_s}(\Delta_i|q)$ \eqref{hdq} by a recursive formula,
 \begin{align}
  H_{\Delta_s}(\Delta_i|q) = 1 + \sum_{m,n=1}^\infty \frac{(16q)^{mn}}{\Delta_s-\Delta_{\langle m,n\rangle}} R_{m,n} H_{\Delta_{\langle m,-n\rangle}}(\Delta_i|q)\ .
  \label{hrec}
 \end{align}
-This formula makes it manifest that conformal blocks have poles for $\Delta_s \in \{\Delta_{\langle r,s\rangle}\}_{r,s\in {\mathbb{N}}^*}$. However, the recursion representation also has unphysical singularities at 
-valeus of the central charge of the type $c= c_{p, q}$ \eqref{cpq}: singularities of some terms that cancel when the terms are added. This makes it difficult to use the recursion representation for such values of the central charge, and in particular for minimal models \cite{rib18}.
+This formula makes it manifest that conformal blocks have poles for $\Delta_s \in \{\Delta_{\langle r,s\rangle}\}_{r,s\in {\mathbb{N}}^*}$. However, the recursive representation also has unphysical singularities at 
+values of the central charge of the type $c= c_{p, q}$ \eqref{cpq}: singularities of some terms that cancel when the terms are added. This makes it difficult to use the recursive representation for such values of the central charge, and in particular for minimal models \cite{rib18}.
 
-% NB: sketch
-Show radius of convergence is one, therefore defining blocks everywhere.
+Let us view $H_{\Delta_s}(\Delta_i|q)$ as a power series in the elliptic nome $q$, and argue that its radius of convergence is $1$. We assume that $b^2\notin\mathbb{Q}$ and $\Delta_s \notin \{\Delta_{\langle r,s\rangle}\}_{r,s\in {\mathbb{N}}^*}$, which ensures that the series is well-defined. (If our assumptions did not hold, the coefficients $\frac{R_{m_j,n_j}}{\Delta_{\langle m_{j-1},-n_{j-1} \rangle}-\Delta_{\langle m_j,n_j\rangle}}$ in eq. \eqref{hdq} could diverge.) The radius of convergence is controlled by the behaviour of $R_{m,n}$ for large indices $m,n$, more specifically by factors that behave as $e^{O(mn)}$. Neglecting factors that behave as $e^{o(mn)}$, we find 
+\begin{align}
+ R_{m,n} \underset{m,n\to \infty}{\sim } \frac{P_{\langle 0,0\rangle}\prod_{r\overset{2}{=}1-m}^{m-1} \prod_{s\overset{2}{=}1-n}^{n-1} P_{\langle r,s\rangle}^2 }{\prod_{r=1-m}^m \prod_{s=1-n}^n 2P_{\langle r,s\rangle}}
+  \underset{m,n\to \infty}{\sim } 16^{-mn}\ .
+\end{align}
+In this approximation, we therefore have $H_{\Delta_s}(\Delta_i|q)\sim \sum_{k=0}^\infty \left(\sum_{m,n=1}^\infty q^{mn}\right)^k$, whose radius of convergence is $1$. Therefore, the Zamolodchikov's recursion converges for $|q|<1$ i.e. $x\in\mathbb{C}-\{1\}$.
+
+
 
 \subsubsection{Other representations}
 
-The recursion representation that we described can be understood as a large $\Delta_s$ expansion, that makes $\Delta_s$-poles manifest. Al. Zamolodchikov has derived another recursion representation that is a large $c$ expansion, and makes $c$-poles manifest. That $c$-recursion representation is a power series in the cross-ratio $x$, rather than the elliptic nome $q$. For both recursion representations in the case of $N$-point conformal blocks (and not just $4$-point blocks), see \cite{ccy17}.
+The recursive representation that we described can be understood as a large $\Delta_s$ expansion, and it makes $\Delta_s$-poles manifest. Al. Zamolodchikov has derived another recursive representation that is a large $c$ expansion, and makes $c$-poles manifest. That $c$-recursive representation is a power series in the cross-ratio $x$, rather than the elliptic nome $q$. For both recursive representations in the case of $N$-point conformal blocks (and not just $4$-point blocks), see \cite{ccy17}.
 
 Moreover, conformal blocks have a combinatorial representation that follows from the AGT relation \cite{aflt10}. 
-This representation is a power series in $x$, and therefore converges more slowly than the $\Delta_s$-recursion representation. 
+This representation is a power series in $x$, and therefore converges more slowly than the $\Delta_s$-recursive representation, and only for $|x|<1$.
 Moreover, invariance under reflections is not manifest, and individual terms have spurious poles in $\Delta_s$.
 However, an advantage of the combinatorial representation is that it has an interpretation as a sum over descendents in a particular basis.
-
-% NB: sketch
-Converges more slowly, and/or on smaller region?
 
 
 \subsection{Crossing symmetry and the fusing matrix}
@@ -3730,7 +3740,8 @@ Writing $\Upsilon_b(-2P)=\Upsilon_b(2P+Q)$, and using the shift equations \eqref
 
 We derived the three-point structure constants $C$ and $\hat C$ by solving crossing symmetry equations for four-point functions involving degenerate fields. 
 For Liouville theory to exist, we need generic four-point functions to be crossing symmetric, i.e. we need the two- and three-point structure constants to obey eq. \eqref{gce}.
-This issue has been explored numerically \cite{rs15}. 
+To begin with, the convergence of the integrals over $s$- and $t$-channel momentums is easily deduced from the expressions for the structure constants and conformal blocks, see Exercise \ref{exocvg}.
+Then, the equality between the $s$- and the $t$-channel decompositions can be explored numerically \cite{rs15}. 
 It turns out that for each value of the central charge $c\in\mathbb{C}$, either $C$ or $\hat C$ leads to crossing symmetric four-point functions, and is therefore the three-point structure constant of Liouville theory:
 \begin{align}
 \renewcommand{\arraystretch}{1.3}
@@ -3825,8 +3836,14 @@ But these alternative solutions are excluded by the assumption that correlation 
 This uniqueness statement relies on the assumption that degenerate fields exist. We can drop this assumption and have a stronger uniqueness statement, if we remember that structure constants of diagonal theories are uniquely determined by crossing symmetry, as we deduced from eq. \eqref{ffm}. It would be interesting to probe the limits of uniqueness, i.e. to understand whether uniqueness survives when we weaken the assumptions on the spectrum and analyticity of correlation functions. We will now mention two cases in which uniqueness is known to break down:
 \begin{itemize}
  \item We can relax the assumption that fields have multiplicities zero or one, and allow finite multiplicities. A simple theory where all fields have the same multiplicity $N\in\mathbb{N}^*$ can be built by taking $N$ non-interacting copies of Liouville theory.
- \item We can relax the assumption that correlation functions are meromorphic functions of the coupling constant and of the fields' momentums. Then we find that for $b^2\in \mathbb{Q}_{<0}$, there exists a solution of crossing symmetry that differs from the Liouville three-point structure constant by a non-analytic factor with values in $\{0,1\}$ \cite{rs15}.
+ \item We can relax the assumption that correlation functions are meromorphic functions of the coupling constant and of the fields' momentums. Then we find that for $b^2=-\frac{q}{p}\in \mathbb{Q}_{<0}$, there exists a solution of crossing symmetry that differs from the Liouville three-point structure constant $\hat{C}_{P_1,P_2,P_3}$ by a non-analytic factor with values in $\{0,1\}$ \cite{rs15},
  % Shows that \eqref{ffm} does not hold in such cases. But for c=1 the fusing relation is not particularly pathological, see Iorgov-Lisovyy-Tykhyy.
+ \begin{align}
+  \sigma_{P_1,P_2,P_3} = \left\{\begin{array}{cl} 1 & \text{if} \ \ \prod_{\pm,\pm} \sin\pi\left(\frac12(p-q)+\sqrt{pq}(P_1\pm P_2\pm P_3)\right) < 0\ , 
+  \\ 0 & \text{else}\ . \end{array} \right.
+  \label{sigma}
+ \end{align}
+We will call the corresponding theories \textbf{Runkel--Watts-type CFTs}\index{Runkel--Watts-type CFT}, for reasons that will become apparent in Section \ref{secltf}.
 \end{itemize}
 
 
@@ -4338,7 +4355,7 @@ The Ising model of statistical physics describes two-state spins on a lattice.
 Our field $\sigma$ describes these spins, while the field $\epsilon$ describes the energy.
 Flipping spins is a symmetry of the model, and this symmetry manifests itself as the invariance of the fusion rules under $\sigma\to -\sigma$. 
 
-\subsection{Limits to and from Liouville theory}
+\subsection{Limits to and from Liouville theory}\label{secltf}
 
 In Liouville theory, generalized minimal models and A-series minimal models, the existence of the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ ultimately determines the three-point structure constants. These CFTs are distinguished by their spectrums: diagonal in all cases, and respectively continuous, discrete infinite, and finite. These spectrums are related to one another by certain limits: for example, the Kac table of the $(p, q)$ minimal model becomes infinite as $p,q\to \infty$, and degenerate fields can be recovered from Liouville fields by taking limits of their momentums. (See Section \ref{secacl}.) This suggests that our CFTs themselves are related to one another by the same limits. 
 
@@ -4365,7 +4382,8 @@ We can send $r,s$ to infinity so that $P_{\langle r,s\rangle}$ tends to a given 
 Applying this treatment to the momentums in a generalized minimal model, we therefore expect that we recover Liouville theory.
 
 The situation is more subtle if we take the limit $c_{p,q}\to c$ where  $c$ is again of the type $c_{p_0,q_0}$ with $p_0,q_0\in \mathbb{N}^*$. In this case, minimal models have several inequivalent nontrivial limits where the central charge and momentums are sent to continuous values at the same time. In some of these limits, we recover Liouville theory. However, in the case $c=1$, assuming $q=p+1$ while keeping $r-s$ and $\frac{r}{q}$ fixed 
-does not lead to Liouville theory. Rather, we obtain another CFT with the same spectrum as Liouville theory and a non-analytic structure constant, called Runkel--Watts theory \cite{rw01}. There is a Runkel--Watts-type theory for any central charges of the type $c_{p_0,q_0}$ \cite {rs15}, and we expect that this theory can again be reached as a particular limit of minimal models.
+does not lead to Liouville theory. Rather, we obtain another CFT with the same spectrum as Liouville theory and a non-analytic structure constant, called Runkel--Watts theory \cite{rw01}. There is a Runkel--Watts-type theory for any central charges of the type $c_{p_0,q_0}$ \cite {rs15}, whose structure constant includes the non-analytic factor \eqref{sigma}.
+We expect that this theory can again be reached as a particular limit of minimal models.
 
 
 \subsubsection{From Liouville theory to minimal models}
@@ -4376,22 +4394,22 @@ According to eq. \eqref{cicni}, we can make the Liouville primary fields degener
 
 The problem is much the same when we start from generalized minimal models, and send the central charge to $c_{p, q}$. In order to recover the corresponding minimal model, we need the degenerate fields to become doubly degenerate. At the level of correlation functions, this means that we need the doubly degenerate fusion rules to emerge. However, this occurs only in some cases, and we recover only certain four-point functions of the minimal model \cite{rib18}. 
 
-Finally, what happens if we directly send $c\to c_{p, q}$ in Liouville theory, without first making the fields degenerate? Of course, nothing much happens if $c\in ]-\infty, 1]$ to begin with: we just recover Liouville theory at $c=c_{p, q}$. If however we start with $c\notin ]-\infty, 1]$, the limit $c\to c_0\in ]-\infty, 1]$ is not expected to exist, as the structure constant has an essential singularity on $]-\infty, 1]$. However, it turns out that the limit of Liouville theory for $c\to 1$ is Runkel--Watts theory \cite{sch03}, and more generally the limit for $c\to c_{p,q}$ with $p,q\in\mathbb{N}^*$ is a Runkel--Watts-like CFT \cite{mce07}. 
+Finally, what happens if we directly send $c\to c_{p, q}$ in Liouville theory, without first making the fields degenerate? Of course, nothing much happens if $c\in ]-\infty, 1]$ to begin with: we just recover Liouville theory at $c=c_{p, q}$. If however we start with $c\notin ]-\infty, 1]$, the limit $c\to c_0\in ]-\infty, 1]$ is not expected to exist, as the structure constant has an essential singularity on $]-\infty, 1]$. However, it turns out that the limit of Liouville theory for $c\to 1$ is Runkel--Watts theory \cite{sch03}, and more generally the limit for $c\to c_{p,q}$ with $p,q\in\mathbb{N}^*$ is a Runkel--Watts-type CFT \cite{mce07}. 
 
 
 
 \subsubsection{Summary of conjectures}
 
-Let us schematically summarize the limits we have been discussing. We denote (generalized) minimal models as (G)MM, and Runkel--Watts-like CFTs as RWL. We begin with limits of minimal models:
+Let us schematically summarize the limits we have been discussing. We denote (generalized) minimal models as (G)MM, and Runkel--Watts-type CFTs as RWT. We begin with limits of minimal models:
 \begin{align}
  \lim_{\substack{p,q\to \infty \\ c_{p,q}\to c \\ r_i,s_i\text{ fixed}}} \text{MM}_{p,q} &= \text{GMM}_{c}\ ,
 \\
  \lim_{P_{\langle r_i,s_i\rangle} \to P_i} \text{GMM}_{c\neq c_{p,q}\in]-\infty,1[} &= \text{Liouville}_{c} \ , 
  \\
  \lim_{\substack{p,q\to \infty \\ c_{p,q}\to c_{p_0,q_0} \\ P_{\langle r_i,s_i\rangle} \to P_i}} \text{MM}_{p,q}
- & \supset \left\{\text{Liouville}_{c_{p_0,q_0}}, \text{RWL}_{p_0,q_0}\right\}\ ,
+ & \supset \left\{\text{Liouville}_{c_{p_0,q_0}}, \text{RWT}_{p_0,q_0}\right\}\ ,
  \\
- \lim_{\substack{p,q\to \infty \\ c_{p,q}\to c }} \text{RWL}_{p,q} & = \text{Liouville}_{c}\ .
+ \lim_{\substack{p,q\to \infty \\ c_{p,q}\to c }} \text{RWT}_{p,q} & = \text{Liouville}_{c}\ .
 \end{align}
  We then summarize limits where the momentums or the central charge go from generic to discrete values. The limits are denoted as $\sim$ when they hold only for a subset of four-point functions. 
 \begin{align}
@@ -4399,7 +4417,7 @@ Let us schematically summarize the limits we have been discussing. We denote (ge
  \\
  \lim_{P_i\to P_{\langle r_i,s_i\rangle}} \text{Liouville}_{c\in ]-\infty,1]} &= \text{Liouville}_{c}\ ,
  \\
- \lim_{c\to c_{p,q}} \text{Liouville}_{c\notin ]-\infty,1]} & = \text{RWL}_{p,q}\ ,
+ \lim_{c\to c_{p,q}} \text{Liouville}_{c\notin ]-\infty,1]} & = \text{RWT}_{p,q}\ ,
  \\
  \lim_{c\to c_{p,q}} \text{Liouville}_{c\in ]-\infty,1]} & = \text{Liouville}_{c_{p,q}}\ ,
  \\
@@ -4470,6 +4488,23 @@ Using the relation between $C_+$ and $\tilde{C}_+$, show that these two equation
  C_+(P) = \tilde{C}_+(P) = 1\ .
  \label{cmpo}
 \end{align}
+ \end{enumerate}
+\end{exo}
+
+\begin{exo}[Convergence of the conformal block decomposition in Liouville theory]
+ ~\label{exocvg}
+ Following \cite{rs15}, let us show that the integral over $s$-channel momentums converges in the decomposition \eqref{vfcch} of the four-point function.
+ \begin{enumerate}
+  \item Using its integral representation \eqref{lup}, show that the Upsilon function has the asymptotic behaviour
+  \begin{align}
+   \log \Upsilon_b(\tfrac{Q}{2}+P) \underset{P\to i\infty}{=} P^2\log |P| -\frac32 P^2 + o(P^2)\ ,
+  \end{align}
+  and deduce the behaviour of the combination of structure constants $\frac{C_{12s}C_{s34}}{B_s}$ as $P_s\to i\infty$.
+  \item Using Zamolodchikov's recursion, show that $s$-channel conformal blocks have the asymptotic behaviour
+  \begin{align}
+   \log\mathcal{F}_{\Delta_s}^{(s)}(\Delta_i|x) \underset{\Delta_s\to \infty}{=} \Delta_s\log(16q) + O(1)\ .
+  \end{align}
+  \item Deduce that the integral over $s$-channel momentums converges for $|q|<1$.
  \end{enumerate}
 \end{exo}
 
