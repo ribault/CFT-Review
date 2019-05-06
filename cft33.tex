@@ -82,18 +82,19 @@
 
 
 \begin{abstract}
-We provide an introduction to conformal field theory on the plane in the conformal bootstrap approach.
+We review conformal field theory on the plane in the conformal bootstrap approach.
 We introduce the main ideas of the bootstrap approach to quantum field theory, and how they apply to two-dimensional theories with local conformal symmetry.
-We describe the mathematical structures that appear in such theories, from the Virasoro algebra and its representations, to the BPZ equations and their solutions.
-As examples, we study a number of models: Liouville theory, (generalized) minimal models, free bosonic theories, the $H_3^+$ model, and the $SU_2$ and $\widetilde{SL}_2(\mathbb{R})$ WZW models. 
+We describe the mathematical structures that appear in such theories, from the Virasoro algebra and its representations, to BPZ equations and conformal blocks.
+Examples include Liouville theory, (generalized) minimal models, free bosonic theories, the $H_3^+$ model, and the $SU_2$ and $\widetilde{SL}_2(\mathbb{R})$ WZW models. 
+We also discuss relations between some of these models, and limits of these models when the central charge and/or conformal dimensions tend to particular values.
 \end{abstract}
 
 \vspace{1cm}
 \begin{center}
  \textbf{Keywords}
 \end{center}
-\noindent conformal field theory, conformal bootstrap, Virasoro algebra, BPZ equations, Liouville theory, minimal models, free bosons,
-KZ equations, KZ-BPZ relation, $H_3^+$ model, WZW models
+\noindent conformal field theory, operator product expansion, conformal bootstrap, Virasoro algebra, BPZ equation, conformal block, crossing symmetry, Liouville theory, DOZZ formula, minimal models, affine Lie algebra, free boson, Sugawara construction,
+KZ equations, KZ-BPZ relation, $H_3^+$ model, WZW model
 
 \vspace{1cm}
 \begin{center}
@@ -138,7 +139,7 @@ elementary complex analysis, and some familiarity with Lie algebras and their re
 
 Another advantage of the bootstrap approach is that by making assumptions explicit, we can better understand them, and if necessary lift them.
 For example, results such as the C-theorem, and the fact that scale invariance implies conformal invariance in two-dimensional unitary quantum field theories, rely on the strong assumption that there exists an energy-momentum tensor -- a conserved field with spin two and conformal dimension two that generates conformal transformations.
-We will not lift this assumption, as we will study theories with local (i.e.
+We will not lift this particular assumption, as we will study theories with local (i.e.
 not just global) conformal invariance, which always have an energy-momentum tensor.
 
 We will however lift a number of other common assumptions, in particular the existence of a vacuum state, and the existence of theories on any Riemann surface (and not just on the plane).
@@ -164,10 +165,13 @@ We then give a preview of some of the simplest models.
 
 In Chapter \ref{secccs}, we work out the technical consequences of these ideas for the spectrum and correlation functions.
 We study the highest-weight representations of the Virasoro algebra, the fields that correspond to states in these representations, and the correlation functions of these fields. 
+In particular we derive Ward identities for correlation functions of primary fields, and BPZ equations for correlation functions that involve degenerate fields. 
+We decompose correlation functions into conformal blocks, and write crossing symmetry equations.
 
-In Chapter \ref{seccbm}, we introduce and solve the simplest nontrivial two-dimensional conformal field theories: Liouville theory, generalized minimal models, and A-series minimal models.
+In Chapter \ref{seccbm}, we introduce and solve some of the simplest nontrivial two-dimensional conformal field theories: Liouville theory, generalized minimal models, A-series minimal models, and Runkel--Watts-type theories.
 We define these theories by a few simple assumptions on their spectrums and correlation functions.
 We pay particular attention to the three-point structure constants, whose explicit expressions we derive. 
+We study the analytic properties of correlation functions, and find relations between these theories by taking limits in the central charge and/or conformal dimensions.
 
 In Chapter \ref{secaff}, we introduce extended symmetry algebras, starting with the affine $\hat{\mathfrak{u}}_1$ algebra.
 This not only allows us to study free bosonic theories, but also provides alternative perspectives on Liouville theory.
@@ -215,16 +219,16 @@ On the statistical mechanics side, they are given in Cardy's lecture notes \cite
 $W$-symmetry is reviewed in depth in Bouwknegt and Schoutens's article \cite{bs92}, where $W$-symmetric conformal field theories are however not solved systematically.
 An exposition of the $W$-symmetric minimal models and conformal Toda theories would be a natural extension of the present text, although these theories have not been fully solved so far. 
 \end{itemize}
-A much abridged version is also available \cite{rib16}. An even briefer treatment is found in Wikipedia, with in particular the articles on \href{https://en.wikipedia.org/wiki/Two-dimensional_conformal_field_theory}{Two-dimensional conformal field theory}, \href{https://en.wikipedia.org/wiki/Liouville_field_theory}{Liouville theory},
+A much abridged version of this text is available \cite{rib16}, which includes a number of corrected exercises. An even briefer treatment is found in Wikipedia, with in particular the articles on \href{https://en.wikipedia.org/wiki/Two-dimensional_conformal_field_theory}{Two-dimensional conformal field theory}, \href{https://en.wikipedia.org/wiki/Liouville_field_theory}{Liouville theory},
 \href{https://en.wikipedia.org/wiki/Minimal_models}{minimal models}, and \href{https://en.wikipedia.org/wiki/Virasoro_conformal_block}{Virasoro conformal blocks}.
 (As of 2019, these Wikipedia articles were mostly written by the present author.)
 
-While we mostly present known results, the following aspects may be original:
+While we mostly review known results, the following aspects may be original:
 \begin{itemize}
 \item in Section \ref{secaco}, the formulation of Al. Zamolodchikov's recursive representation of conformal blocks as an explicit formula, and the proof of its convergence,
 \item in Section \ref{secliou}, a complete and correct solution of Liouville theory in the bootstrap approach, 
 \item in Section \ref{secvmm}, the logical sequence ``Liouville theory $\rightarrow$ generalized minimal models $\rightarrow$ minimal models'',
-\item in Section \ref{secltf}, the systematic discussion of the limits of Liouville theory and (generalized) minimal models,
+\item in Section \ref{secltf}, the systematic discussion of the limits of Liouville theory, (generalized) minimal models, and Runkel--Watts-type theories,
 \item in Section \ref{secsacf}, the study of compactified free bosons for any value of $c$ and not just $c=1$,
 \item in Section \ref{seclld}, the derivation of the light and heavy asymptotic limits of Liouville theory, without using the Lagrangian definition,
 \item in Section \ref{seckzbpz}, the derivation of $\widehat{\mathfrak{sl}}_2$ degenerate representations and fusion rules from the KZ-BPZ relation,
@@ -260,7 +264,7 @@ Meanwhile, it seems prudent to distribute the present text so that it can easily
 For this purpose:
 \begin{itemize}
  \item This text is in the public domain, in order to eliminate legal restrictions to its reuse. 
-\item This article is distributed not only using Arxiv, but also using \href{https://github.com/ribault/CFT-Review}{GitHub}, so that it can be collaboratively modified. 
+\item This article is distributed not only on Arxiv, but also on \href{https://github.com/ribault/CFT-Review}{GitHub}, so that it can be collaboratively modified. 
 \item In the Latex file, there are no user-defined global macros.
 This makes it easier to reuse excerpts of that file. 
 \end{itemize}
@@ -283,7 +287,7 @@ A version of this text served as my habilitation thesis, defended on 21 December
 
 \section{Quantum field theory \label{secqft} }
 
-Conformal field theory is a special type of \textbf{\boldmath quantum field theory}\index{quantum field theory}, and we start with a brief reminder of what quantum field theory is.
+Conformal field theory is a special type of \textbf{\boldmath quantum field theory}\index{quantum field theory}, and we start with a brief reminder on quantum field theory.
 
 \subsection{Definition} 
 
@@ -396,7 +400,7 @@ To \textbf{\boldmath solve a model}\index{solve (a model)} is to actually comput
 The \textbf{\boldmath bootstrap approach}\index{bootstrap approach} is a method for constructing and solving theories, based on the systematic exploitation of 
 \begin{enumerate}
  \item symmetry assumptions,
- \item consistency conditions,
+ \item consistency conditions.
 \end{enumerate}
 For example, the symmetry assumption of general covariance is the basis of the theory of general relativity, and the further symmetry assumptions of homogeneity and isotropy of the universe are used in constructing models of cosmology.
 In quantum theories, an essential consistency condition is that the sum of the probabilities of all possible events is one. 
@@ -463,12 +467,14 @@ Since a field theory is defined on some space, we can distinguish two types of s
 \item internal symmetries, which do not.
 \end{itemize}
 Space-time symmetries include in particular the invariances under rotations and translations.
-Internal symmetries include gauge invariances.
+In particle physics, internal symmetries include flavour symmetry.
 The distinction between space-time and internal symmetries may depend on the choice of the space: for example, supersymmetry can be an internal or space-time symmetry depending on whether the theory is formulated on an ordinary space or on a superspace.
 
 \subsection{Consistency conditions \label{seccc}}
 
-The consistency conditions on the correlation functions $\left\langle\prod_{i=1}^n V_{\sigma_i}(x_i)\right\rangle$ are derived from axioms on the fields $V_{\sigma_i}(x_i)$. These axioms should be understood as pertaining to correlation functions: we write fields outside correlation functions as a matter of notational convenience only. (In particular, we do not define fields as operators acting on the spectrum, as is done in formalisms such as vertex operator algebras.) 
+The consistency conditions on the correlation functions $\left\langle\prod_{i=1}^n V_{\sigma_i}(x_i)\right\rangle$ are derived from axioms on the fields $V_{\sigma_i}(x_i)$. These axioms should be understood as pertaining to correlation functions: we write fields outside correlation functions as a matter of notational convenience only. In particular, we do not define fields as operators acting on the spectrum, as is done in formalisms such as vertex operator algebras. 
+Moreover, our axioms do not include the existence of a vacuum state, a frequently encountered axiom of quantum field theory in flat space.
+In Liouville theory this axiom is not satisfied, and in minimal models we can do without it. 
 
 \begin{hyp}[\textbf{Commutativity}\index{commutativity} or locality]
 \label{ax:col}
@@ -492,20 +498,8 @@ where the \textbf{\boldmath OPE coefficients}\index{OPE!---coefficient} $C_{\sig
 The sum is supposed to converge if $x_1$ and $x_2$ are sufficiently close. 
 \end{hyp} 
 \noindent
-The commutativity axiom implies that the OPE is \textbf{associative}\index{associativity (of the OPE)} and commutative. However, we wrote the OPE in a way that makes commutativity nontrivial, by using fields $V_\sigma(x_2)$. Had we used $V_\sigma(\frac{x_1+x_2}{2})$ instead, commutativity would have reduced to the simple condition $C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2) = C_{\sigma_2,\sigma_1}^{\sigma}(x_2,x_1)$.
-
-Our axioms do not include the existence of a vacuum state, a frequently encountered axiom of quantum field theory in flat space.
-In Liouville theory this axiom is not satisfied, and in minimal models we can do without it. 
-
-Let us now study how these axioms constrain the correlation functions.
-By performing multiple OPEs, an $N$-point function (with $N\geq 3$) can always be reduced to a combination of two-point functions, for instance
-\begin{align}
- \left\langle \prod_{i=1}^4 V_{\sigma_i}(x_i) \right\rangle = \sum_{\sigma\in \mathcal{S}} C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2)\sum_{\sigma'\in \mathcal{S}} C_{\sigma,\sigma_3}^{\sigma'}(x_2,x_3)\Big\langle V_{\sigma'}(x_3)V_{\sigma_4}(x_4)\Big\rangle\ .
-\end{align}
-We could go further and reduce the two-point function to a sum of one-point functions.
-This is however unnecessary, because conformal symmetry will determine the two-point function, so that we can consider it a known quantity.
-So, in order to compute correlation functions, all we need to know (in addition to the spectrum $\mathcal{S}$) is the OPE coefficient $C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2)$.
-But this quantity is itself strongly constrained by the associativity of the OPE, which implies
+The commutativity axiom implies that the OPE is \textbf{associative}\index{associativity (of the OPE)} and commutative. 
+In terms of OPE coefficients, the associativity of the OPE reads
 \begin{align}
  \sum_{\sigma_s\in \mathcal{S}} C_{\sigma_1,\sigma_2}^{\sigma_s}(x_1,x_2) C_{\sigma_s,\sigma_3}^{\sigma_4}(x_2,x_3) = \sum_{\sigma_t\in \mathcal{S}} C_{\sigma_1,\sigma_t}^{\sigma_4}(x_1,x_3)C_{\sigma_2,\sigma_3}^{\sigma_t}(x_2,x_3)\ ,
 \label{cccc}
@@ -527,8 +521,18 @@ for any choice of the four states $(\sigma_1,\sigma_2,\sigma_3,\sigma_4)$.
 \label{sdsd}
 \end{align}
 where each node corresponds to an OPE coefficient. 
+In terms of OPE coefficients, it is less straightforward to write commutativity than associativity of the OPE,
+because we broke the symmetry $x_1\leftrightarrow x_2$ by writing the OPE in terms of $V_\sigma(x_2)$. Had we used $V_\sigma(\frac{x_1+x_2}{2})$ instead, commutativity would have reduced to the simple condition $C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2) = C_{\sigma_2,\sigma_1}^{\sigma}(x_2,x_1)$, but associativity would have been complicated. (See Exercise \ref{exocva}.)
 
-The OPE coefficients can be determined by solving the associativity condition \eqref{cccc}, provided the model has enough symmetry for 
+Let us now study how these axioms constrain the correlation functions.
+By performing multiple OPEs, an $N$-point function (with $N\geq 3$) can always be reduced to a combination of two-point functions, for instance
+\begin{align}
+ \left\langle \prod_{i=1}^4 V_{\sigma_i}(x_i) \right\rangle = \sum_{\sigma\in \mathcal{S}} C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2)\sum_{\sigma'\in \mathcal{S}} C_{\sigma,\sigma_3}^{\sigma'}(x_2,x_3)\Big\langle V_{\sigma'}(x_3)V_{\sigma_4}(x_4)\Big\rangle\ .
+\end{align}
+We could go further and reduce the two-point function to a sum of one-point functions.
+This is however unnecessary, because conformal symmetry will determine the two-point function, so that we can consider it a known quantity.
+So, in order to compute correlation functions, all we need to know (in addition to the spectrum $\mathcal{S}$) is the OPE coefficient $C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2)$.
+This can be determined by solving associativity \eqref{cccc} and commutativity conditions, provided the model has enough symmetry for 
 \begin{itemize}
  \item constraining the dependence of the OPE coefficient $C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2)$ on $(x_1,x_2)$, and
 \item decomposing the spectrum $\mathcal{S}$ into a reasonable number of representations.
@@ -543,11 +547,10 @@ In particular, the field $V_{\sigma_3}$ can appear in a $V_{\sigma_1}V_{\sigma_2
 \label{rrnr}
 \end{align}
 From the OPE, the fusion product inherits the properties of bilinearity, commutativity and associativity. 
-In some cases, the fusion product has a constructive definition as a kind of generalization of the tensor product \cite{gab99, kr18}: then $ \mathcal{R}_1 \times \mathcal{R}_2$ is a representation, and the equality in eq. \eqref{rrnr} is an isomorphism of representations. But we will not need such constructions. The fusion product, in other words the structure of the category of representations, will turn out to play a more important role than the structure of the representations themselves.  
+In some cases, the fusion product has a constructive definition as a kind of generalization of the tensor product \cite{gab99, kr18}: then $ \mathcal{R}_1 \times \mathcal{R}_2$ is a representation, and the equality in eq. \eqref{rrnr} is an isomorphism of representations. (We will not need such constructions.) The fusion product, in other words the structure of the category of representations, will turn out to play a more important role than the structure of the representations themselves.  
 
 The fusion product $\mathcal{R}_1\times \mathcal{R}_2$ is said to have nontrivial multiplicities if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\geq 2$ for some $\mathcal{R}_3$, and trivial multiplicities if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\in \{0,1\}$.
 A field is called a \textbf{\boldmath simple current}\index{simple current} if the corresponding representation $\mathcal{R}$ is such that $\mathcal{R}\times \mathcal{R}'$ is indecomposable for any $\mathcal{R}'$, so that $\sum_{\mathcal{R}''} N_{\mathcal{R}\mathcal{R}'}^{\mathcal{R}''} =1$. 
-The fusion product may seem quite similar to a tensor product, but there is an essential difference: while the tensor product is a purely algebraic notion, the definition of the fusion product involves the state-field correspondence, and therefore the space on which the field theory lives. 
 
 If all fusion multiplicities are trivial, then the OPE coefficients  $C_{(\mathcal{R}_1,v_1),(\mathcal{R}_2,v_2)}^{(\mathcal{R}_3,v_3)}(x_1,x_2)$ are determined by symmetry up to overall factors that depend on the representations $\mathcal{R}_i$, but not on $v_i,x_j$. In the 
 associativity equation \eqref{cccc}, the sums over the states $\sigma_s,\sigma_t$  can then be reduced to sums over the corresponding representations $\mathcal{R}_s,\mathcal{R}_t$, since everything that involves $v_s,v_t$ is determined by symmetry. 
@@ -1091,6 +1094,27 @@ Assuming the objects $\mathcal{R}_i$ are linearly independent, show that the ass
  \sum_m c_{ij}^m c_{mk}^\ell = \sum_n c_{in}^\ell c_{jk}^n\ .
 \end{align}
 \end{exo}
+
+\begin{exo}[Commutativity and OPE coefficients]
+ ~\label{exocva}
+In this exercise we study how the commutativity of the OPE constrains OPE coefficients.
+\begin{enumerate}
+ \item By Taylor-expanding $V_\sigma(x_1)$ around $x_2$, show that the commutativity of the OPE amounts to the equation
+ \begin{align}
+  \sum_{\sigma\in \mathcal{S}} C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2) V_{\sigma}(x_2) 
+  = \sum_{\sigma\in \mathcal{S}} C_{\sigma_2,\sigma_1}^{\sigma}(x_2,x_1)
+  \sum_{n=0}^\infty \frac{(x_1-x_2)^n}{n!}\partial^n
+  V_{\sigma}(x_2)\ .
+ \end{align}
+ \item Assuming that $\sigma = (\sigma_0,m)$ with $m\in\mathbb{N}$ and $V_\sigma(x) = \partial^m V_{(\sigma_0,0)}(x)$, write the commutativity of the OPE in terms of OPE coefficients. 
+ \item Redefining the OPE and OPE coefficients as 
+ \begin{align}
+  V_{\sigma_1}(x_1)V_{\sigma_2}(x_2) = \sum_{\sigma\in \mathcal{S}} C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2) V_{\sigma}(\tfrac{x_1+x_2}{2})\ ,
+ \end{align}
+ show that OPE coefficients now obey a simple commutativity condition, and a complicated associativity condition.
+\end{enumerate}
+\end{exo}
+
 
 \begin{exo}[Group of global conformal transformations]
  ~\label{exoiso}
@@ -4359,7 +4383,7 @@ Flipping spins is a symmetry of the model, and this symmetry manifests itself as
 
 In Liouville theory, generalized minimal models and A-series minimal models, the existence of the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ ultimately determines the three-point structure constants. These CFTs are distinguished by their spectrums: diagonal in all cases, and respectively continuous, discrete infinite, and finite. These spectrums are related to one another by certain limits: for example, the Kac table of the $(p, q)$ minimal model becomes infinite as $p,q\to \infty$, and degenerate fields can be recovered from Liouville fields by taking limits of their momentums. (See Section \ref{secacl}.) This suggests that our CFTs themselves are related to one another by the same limits. 
 
-Proving such relations is not straightforward, because of subtleties with the analytic behaviour of correlation functions. As we saw in Section \ref{seceul}, the analyticity of structure constants and conformal blocks as functions of the central charge does not necessarily imply the analyticity of four-point functions. Therefore, we need to understand the behaviour of four-point functions, and not just three-point functions. In Liouville theory and generalized minimal models, four-point functions are combinations of infinitely many conformal blocks, and their limits are not easy to control. Our statements on limits of CFTs will therefore only be conjectures.
+Proving such relations is not always straightforward, because of subtleties with the analytic behaviour of correlation functions. As we saw in Section \ref{seceul}, the analyticity of structure constants and conformal blocks as functions of the central charge does not necessarily imply the analyticity of four-point functions. Therefore, we need to understand the behaviour of four-point functions, and not just three-point functions. 
 
 
 \subsubsection{From minimal models to Liouville theory}
@@ -4398,7 +4422,7 @@ Finally, what happens if we directly send $c\to c_{p, q}$ in Liouville theory, w
 
 
 
-\subsubsection{Summary of conjectures}
+\subsubsection{Summary of results}
 
 Let us schematically summarize the limits we have been discussing. We denote (generalized) minimal models as (G)MM, and Runkel--Watts-type CFTs as RWT. We begin with limits of minimal models:
 \begin{align}
@@ -4411,19 +4435,21 @@ Let us schematically summarize the limits we have been discussing. We denote (ge
  \\
  \lim_{\substack{p,q\to \infty \\ c_{p,q}\to c }} \text{RWT}_{p,q} & = \text{Liouville}_{c}\ .
 \end{align}
- We then summarize limits where the momentums or the central charge go from generic to discrete values. The limits are denoted as $\sim$ when they hold only for a subset of four-point functions. 
+ We then summarize limits where the momentums or the central charge go from generic to discrete values. 
 \begin{align}
- \lim_{P_i\to P_{\langle r_i,s_i\rangle}} \text{Liouville}_{c\notin ]-\infty,1]} &\sim \text{GMM}_c\ ,
- \\
  \lim_{P_i\to P_{\langle r_i,s_i\rangle}} \text{Liouville}_{c\in ]-\infty,1]} &= \text{Liouville}_{c}\ ,
- \\
- \lim_{c\to c_{p,q}} \text{Liouville}_{c\notin ]-\infty,1]} & = \text{RWT}_{p,q}\ ,
  \\
  \lim_{c\to c_{p,q}} \text{Liouville}_{c\in ]-\infty,1]} & = \text{Liouville}_{c_{p,q}}\ ,
  \\
+ \lim_{c\to c_{p,q}} \text{Liouville}_{c\notin ]-\infty,1]} & = \text{RWT}_{p,q}\ ,
+\end{align}
+The $7$ limits that we wrote until now are relatively straighforward consequences of the analytic properties of structure constants and conformal blocks, together with the convergence of conformal block decompositions of correlation functions. The main subtlety is the emergence of the three-point structure constants of Runkel--Watts-type theories, but this subtlety does not affect conformal blocks. On the other hand, the following two limits involve an interplay between singularities of structure constants and conformal blocks. These limits hold only for subsets of four-point functions, and these subsets are not fully known:
+\begin{align}
+ \lim_{P_i\to P_{\langle r_i,s_i\rangle}} \text{Liouville}_{c\notin ]-\infty,1]} &\sim \text{GMM}_c\ ,
+ \\
  \lim_{c\to c_{p,q}} \text{GMM}_c & \sim \text{MM}_{p, q}\ .
 \end{align}
-Much work remains to be done in order to fully understand these limits.
+
 
 
 \section{Exercises}
