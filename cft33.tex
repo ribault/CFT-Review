@@ -179,8 +179,8 @@ We then consider nonabelian affine symmetry algebras, and in particular $\wideha
 The KZ-BPZ relation between differential equations satisfied by $\widehat{\mathfrak{sl}}_2$-symmetric and Virasoro-symmetric correlation functions leads us to define the $H_3^+$ model from Liouville theory, and allows us to solve it.
 We then consider WZW models, and in particular the $SU_2$ and $\widetilde{SL}_2(\mathbb{R})$ WZW models. 
 
-In each Chapter, the last Section is devoted to exercises.
-Some exercises are intended to test and improve one's comprehension of the material; such exercises become scarcer in later Chapters.
+In each chapter, the last section is devoted to exercises.
+Some exercises are intended to test and improve one's comprehension of the material; such exercises become scarcer in later chapters.
 Some exercises sketch proofs of results from the main text, in cases when hints and guidance seem warranted.
 And some exercises provide supplementary material.
 
@@ -680,7 +680,7 @@ which transforms the metric into $dfd\bar{f} = |h'(z)|^2 dzd\bar{z}$, and is the
 One may object that the only holomorphic functions on the sphere are the functions $f_g$ \eqref{gisl} that encode the global conformal transformations.
 And indeed, any further conformal transformation must have singularities, and cannot be one-to-one.
 We could consider transformations that would be defined only on some subset of the Riemann sphere, where there would be no singularities.
-We will adopt a different point of view, and interpret a singularity of $h(z)$ at $z=z_0$ as meaning that a field $V_\sigma(z_0)$ transforms nontrivially.
+However, in the case of infinitesimal transformations, it is possible to interpret a singularity of $h(z)$ at $z=z_0$ as meaning that a field $V_\sigma(z_0)$ transforms nontrivially.
 This makes sense not only with a correlation function $\left\langle V_{\sigma}(z_0)\cdots \right\rangle $ that manifestly involves a field at $z=z_0$, 
 but also with arbitrary correlation functions.
 We can indeed always assume the presence at $z_0$ of a trivial field, called the identity field, which can however become nontrivial after a conformal transformation is performed.
@@ -1024,6 +1024,21 @@ The model is unitary if $q=p+1$, then $c_{p,p+1}=1-\frac{6}{p(p+1)}=0,\frac12,\f
 \item For any  $c\in\mathbb{C}-\{c_{p,q}\}_{p,q\in\mathbb{Z}^*}$, the generalized minimal model has a diagonal spectrum that is made of a discrete infinity of representations. (It is not known whether such a model exists for $c=c_{p,q}$.)
 \item For any $c\in \{c_{p,q}\}_{p,q\in\mathbb{N}^*}$, there is a Runkel--Watts-type theory with the same continuous spectrum as Liouville theory, but different correlation functions. 
 \end{itemize}
+We can fit these models in the following table, according to whether they exist for generic $c\in\mathbb{C}$ or for discrete $c=c_{p,q}$, and whether their spectrums are discrete or continuous:
+\begin{align}
+\renewcommand{\arraystretch}{1.3}
+ \begin{tabular}{|r|cc|}
+ \cline{2-3}
+   \multicolumn{1}{c}{} &  \multicolumn{1}{|c}{$c=c_{p,q}$} & $c\in\mathbb{C}$ 
+   \\
+   \hline
+   discrete spectrum & minimal models & generalized minimal models
+   \\
+   continuous spectrum & Runkel--Watts-type theories & Liouville theory
+   \\
+   \hline
+ \end{tabular}
+\end{align}
 Let us locate some of these models in the $c$-complex plane: Liouville theory in blue, minimal models in red (with larger bars for smaller spectrums), unitary Liouville theory and unitary minimal models in darker colors:
 \begin{align}
  \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .95] 
@@ -1191,9 +1206,9 @@ Conclude that Cardy's formula holds for $\mathcal{S}\otimes \mathcal{S}'$.
 
 
 
-\chapter{From representation theory to differential equations \label{secccs}}
+\chapter{From representation theory to conformal blocks \label{secccs}}
 
-This Chapter is devoted to studying the linear equations that symmetry constraints impose on correlation functions.
+This chapter is devoted to studying the linear equations that symmetry constraints impose on correlation functions.
 Such equations depend on the action of the symmetry algebra on the fields -- in mathematical terms, on the representations to which the corresponding states belong. 
 
 \section{Representations of the Virasoro algebra \label{secrep}}
@@ -1229,7 +1244,7 @@ comes with a natural surjective map
 \begin{array}{cclcl}
  \varphi_\mathcal{R} & : & U(\mathfrak{V}^+) & \rightarrow & \mathcal{R} 
 \\
- &  & U & \mapsto & U|\Delta\rangle \ .
+ &  & u & \mapsto & u|\Delta\rangle \ .
 \end{array}
 \label{pur}
 \end{align}
@@ -1424,7 +1439,7 @@ We will sometimes write $\mathcal{V}_P=\mathcal{V}_{-P}$ for the Verma module $\
 
 \subsubsection{Singular vectors at all levels}
 
-In the Liouville notations, the singular vectors at the levels $N=1,2,3$, and the corresponding conformal dimensions $\Delta$ are 
+In terms of the coupling constant $b$, the singular vectors at the levels $N=1,2,3$, and the corresponding conformal dimensions $\Delta$ are 
 \begin{align}
 \renewcommand{\arraystretch}{1.3}
 \begin{array}{|c|c|c|c|}
@@ -1558,10 +1573,11 @@ These unitary quotients are the maximally degenerate representations $\mathcal{R
  \mathcal{R}_{\langle r,s \rangle} = \frac{\mathcal{V}_{\Delta_{\langle r,s \rangle}}}{U(\mathfrak{V}^+)|\chi_{\langle r,s \rangle}\rangle + U(\mathfrak{V}^+)|\chi_{\langle p-r,p+1-s \rangle}\rangle}\ ,
 \label{rrs}
 \end{align}
-where the sum of the two subrepresentations is not a direct sum, because their intersection is nonzero. One way to prove that such representations are unitary is to identify them with representations of cosets of affine Lie algebras, in the context of the description of minimal models as cosets of WZW models \cite{fms97}.
+where the sum of the two subrepresentations is not a direct sum, because their intersection is nonzero. One way to prove that such representations are unitary is to identify them with representations of quotients of affine Lie algebras, in the context of the description of minimal models as quotients of WZW models \cite{fms97}.
 
 These results are summarized in the following table:
 \begin{align}
+\renewcommand{\arraystretch}{1.3}
  \begin{tabular}{|c|c|c|c|}
   \hline
 central charge & $c<1$ & $c=1$ & $c>1$
@@ -1690,7 +1706,7 @@ The commutation relations \eqref{vir} of the Virasoro algebra are equivalent to 
 The proof of this equivalence is sketched in Exercise \ref{exott}. 
 The term $\frac{c}{2}$ should be understood as $\frac{c}{2}I$ where $I$ is the
 central generator of the Virasoro algebra.
-We are now considering this generator as a field called the 
+We can consider $I$ as a field called the 
 \textbf{\boldmath identity field}\index{identity field}, whose presence does not affect correlation functions, and which is in particular $z$-independent,
 \begin{align}
  \left\langle I \cdots \right\rangle = \left\langle \cdots \right\rangle \ .
@@ -1699,7 +1715,7 @@ We are now considering this generator as a field called the
 The energy-momentum tensor itself can be seen as a descendent of the identity field. (See Exercise \ref{exoit}.)
 
 The energy-momentum tensor is a \textbf{\boldmath symmetry field}\index{symmetry field}: a field that encodes the action of symmetry transformations, but does not necessarily correspond to a state in the spectrum. 
-That field nevertheless obeys the same assumptions of commutativity, associativity, and existence of an OPE, as the fields $V_\sigma(z)$.
+That field nevertheless obeys the same axioms of commutativity and existence of an OPE, as the fields $V_\sigma(z)$.
 More generally, let a \textbf{Virasoro field}\index{Virasoro field} be a holomorphic field $T(y)$ that obeys the OPE \eqref{tt}. 
 From such a field, we can deduce a Virasoro symmetry algebra via eq. \eqref{lit}, so $T(y)$ is a symmetry field. However, that Virasoro symmetry may be unrelated to conformal symmetry, in which case it does not obey Axiom \ref{ax:dvz}. 
 Most results in Section \ref{secccs} will hold for Virasoro fields and non-conformal Virasoro symmetries, including: Ward identities, nontrivial factors of conformal blocks, and fusion rules. We will however work under Axiom \ref{ax:dvz}, as this simplifies some calculations.
@@ -1737,7 +1753,7 @@ All symmetry equations can be obtained as linear combinations of such local and 
 
 \subsubsection{Local Ward identities}
 
-A spanning set of local Ward identities can be obtained by taking $\epsilon(z) = \frac{1}{(z-z_i)^{n-1}}$ with $n\geq 2$ and $i=1, \cdots N$ in eq. \eqref{oiz}. 
+A spanning set of local Ward identities can be obtained by taking $\epsilon(z) = \frac{1}{(z-z_i)^{n-1}}$ with $n\geq 2$ and $i=1, \cdots , N$ in eq. \eqref{oiz}. 
 Since the integrand has singularities only at $z_1,\cdots z_N$, we have $\oint_\infty=\sum_{i=1}^N \oint_{z_i}$.
 Using the 
 $TV_\sigma$ OPE \eqref{tv}, we obtain
@@ -1868,8 +1884,7 @@ For any holomorphic function $h(z)$, we can define the image of a primary field 
 \label{thv}
 \end{align}
 which generalizes the image of a quasi-primary field under a global conformal transformation \eqref{tgv}.
-However, unlike a global transformation, a local transformation $h(z)$ must have a singularity at some point $z_0$, in which case our formula for $T_hV_{\Delta,\bar\Delta}(z_0)$ does not make sense. And local Ward identities involve not only $V_{\Delta,\bar\Delta}(z_0)$ and its derivatives, but also its $L_{n\leq -2}$ descendents.
-So a covariance equation for the transformation $h(z)$ would have to involve creation operators at the singularities of $h(z)$, and would be more complicated than eq. \eqref{vtv}.
+However, this makes sense only in domains where $h'(z)\notin \{0, \infty\}$. On such domains, the analog of eq. \eqref{vtv} holds. We did not encounter such restrictions in the case of infinitesimal local conformal transformations: for $h(z)$ close to the identity, we have $h'(z)\neq 0$, and a singularity $z_0$ where $h'(z_0)=\infty$ gave rise to contributions of $L_{n\leq -2}$ descendents of the field at $z_0$.
 
 
 \subsubsection{Solving global Ward identities}
@@ -1878,7 +1893,7 @@ Let us discuss the solutions of the three global Ward identities \eqref{spz} for
 $
 \left\langle \prod_{i=1}^N V_{\Delta_i}(z_i) \right\rangle\ .
 $
-Viewing the derivatives $\frac{\partial}{\partial z_i}\left\langle \prod_{i=1}^N V_{\Delta_i}(z_i) \right\rangle$ as $N$ unknowns, the properties of the system depend a lot on whether $N<3, N=3$ or $N>3$:
+Viewing the derivatives $\frac{\partial}{\partial z_i}\left\langle \prod_{i=1}^N V_{\Delta_i}(z_i) \right\rangle$ as $N$ unknowns, the properties of the system depend a lot on the value of $N$:
 \begin{itemize}
  \item $\boxed{N=0}$\ : The global Ward identities are trivial ($0=0$).
 The zero-point function, which may be called the sphere partition function, is actually a number rather than a function, and carries no information beyond the value of the central charge \cite{car01}.
@@ -2007,7 +2022,7 @@ For example, if fields $1$ and $2$ are identical, then $C_{123}=C_{213}$, and th
 
 \subsection{Operator product expansions \label{secope}}
 
-Let us study how local conformal symmetry constrain OPEs. We start with a generic OPE of the type $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_{\sigma_3} C_{\sigma_1,\sigma_2}^{\sigma_3}(z_1,z_2) V_{\sigma_3}(z_2)$. Let us insert $\oint_C dz (z-z_2)^{n+1} T(z)$ on both sides of the OPE, where the contour $C$ encircles both $z_1$ and $z_2$. Assuming $n\geq -1$, and using the $TV$ OPE \eqref{tv}, this yields the \textbf{OPE Ward identity}\index{Ward identity!---for OPEs}
+Let us study how local conformal symmetry constrains OPEs. We start with a generic OPE of the type $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_{\sigma_3} C_{\sigma_1,\sigma_2}^{\sigma_3}(z_1,z_2) V_{\sigma_3}(z_2)$. Let us insert $\oint_C dz (z-z_2)^{n+1} T(z)$ on both sides of the OPE, where the contour $C$ encircles both $z_1$ and $z_2$. Assuming $n\geq -1$, and using the $TV$ OPE \eqref{tv}, this yields the \textbf{OPE Ward identity}\index{Ward identity!---for OPEs}
 \begin{align}
  \left(L_n^{(z_2)}+\sum_{m=-1}^{n}\binom{m+1}{n+1} z_{12}^{n-m}L_{m}^{(z_1)}\right)V_{\sigma_1}(z_1)V_{\sigma_2}(z_2) = \sum_{\sigma_3} C_{\sigma_1,\sigma_2}^{\sigma_3}(z_1,z_2) L_n V_{\sigma_3}(z_2)\ .
 \end{align}
@@ -2079,7 +2094,7 @@ Let us show this for $|L|\leq 2$. The cases $(N,n)=(1,1),(2,2),(2,1)$ of \eqref{
 where we temporarily use the notation $f^L=f^{\Delta_3,L}_{\Delta_1,\Delta_2}$.
 The first equation determines $f^{L_{-1}}$, unless $\Delta_3=0$. The next two equations determine
 $f^{L_{-1}^2}$ and $f^{L_{-2}}$, unless $\Delta_3 \in \{\Delta_{\langle 1,2 \rangle}, \Delta_{\langle 2,1 \rangle}\}$.
-More generally, given a value of the level $N\geq 2$, the equations with $n=1,2$ determine $\{f^L\}_{|L|=N}$, unless $\Delta_3\in\{\Delta_{\langle r,s \rangle}\}_{rs=N}$. (See Exercise \ref{exohf}.) If $\Delta_3=\Delta_{\langle r,s \rangle}=$, then for generic values of $\Delta_1,\Delta_2$ there is no solution for $\{f^L\}$, which means that $V_{\Delta_3}$ cannot appear in the OPE $V_{\Delta_1}V_{\Delta_2}$.
+More generally, given a value of the level $N\geq 2$, the equations with $n=1,2$ determine $\{f^L\}_{|L|=N}$, unless $\Delta_3\in\{\Delta_{\langle r,s \rangle}\}_{rs=N}$. (See Exercise \ref{exohf}.) If $\Delta_3\in\{\Delta_{\langle r,s \rangle}\}_{r,s\in\mathbb{N}^*}$, then for generic values of $\Delta_1,\Delta_2$ there is no solution for $\{f^L\}_{L\in\mathcal{L}}$, which means that $V_{\Delta_3}$ cannot appear in the OPE $V_{\Delta_1}V_{\Delta_2}$.
 
 
 \subsubsection{Structure of the OPE}
@@ -2112,7 +2127,7 @@ Let us now write the complete expression of the OPE of two primary fields:
 \end{align}
 where  the modulus square notation \eqref{eq:msn} means a product of left-moving $z,\Delta,L$ and right-moving $\bar z, \bar \Delta, \bar L$ quantities.
 
-That OPE Ward identities uniquely determine the contributions of the descendents of a given primary field, means that fusion multiplicities are trivial in fusion products of highest-weight representations of the Virasoro algebra. By definition, the multiplicity of the Verma module $\mathcal{V}_{\Delta_3}$ in the fusion product $\mathcal{V}_{\Delta_1}\times \mathcal{V}_{\Delta_2}$ indeed coincides with the dimension of the space of solutions of the OPE Ward identities, and that dimension is one or zero.
+Since OPE Ward identities uniquely determine the contributions of the descendents of a given primary field, fusion multiplicities are trivial in fusion products of highest-weight representations of the Virasoro algebra. By definition, the multiplicity of the Verma module $\mathcal{V}_{\Delta_3}$ in the fusion product $\mathcal{V}_{\Delta_1}\times \mathcal{V}_{\Delta_2}$ indeed coincides with the dimension of the space of solutions of the OPE Ward identities, and that dimension is one or zero.
 
 The case $z_2=\infty$ can be obtained from the case $z_2\in\mathbb{C}$ by a global conformal transformation, and we find 
 \begin{align}
@@ -3254,13 +3269,13 @@ Let us prove and discuss the relation \eqref{eq:bot} that describes how an $s$-c
 
 
 
-% NB: Ensuring the coming Chapter begins on an odd-numbered page, in case we want to print the document in two halves.
+% NB: Ensuring the coming chapter begins on an odd-numbered page, in case we want to print the document in two halves.
 
 \cleardoublepage
 
 \chapter{Liouville theory and minimal models \label{seccbm}}
 
-In this Chapter we introduce and solve Liouville theory, generalized minimal models, and A-series minimal models, which are the simplest nontrivial families of two-dimensional conformal field theories. 
+In this chapter we introduce and solve Liouville theory, generalized minimal models, and A-series minimal models, which are the simplest nontrivial families of two-dimensional conformal field theories. 
 
 \section{Liouville theory \label{secliou}}
 
@@ -5969,7 +5984,7 @@ This is because both sides of this equation obey the same symmetry equations $\l
 An explicit check of this equation can be done in the case $N=3$ \cite{tes97b}.
 
 So the large level limit of our two-dimensional conformal field theory is the quantum mechanics of a point particle on the space $H_3^+$, which justifies naming the theory the $H_3^+$ model.
-Other names for the same theory include the $H_3^+$ WZW model and the $SL_2({\mathbb{C}})/SU_2$ WZW model; the latter name comes from the realization of the space $H_3^+$ as a coset.
+Other names for the same theory include the $H_3^+$ WZW model and the $SL_2({\mathbb{C}})/SU_2$ WZW model; the latter name comes from the realization of the space $H_3^+$ as a quotient.
 The large level limit of the $H_3^+$ $N$-point function is formally identical to the light asymptotic limit of the Liouville $N$-point function \eqref{zih}, whose interpretation is however quite different as it depends on positions $z$ instead of isospin variables $x$.
 
 
