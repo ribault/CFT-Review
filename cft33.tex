@@ -2203,15 +2203,24 @@ These fusion rules could be derived by directly analyzing OPEs, instead of three
 
 \subsubsection{Higher degenerate fields}
 
-We now assume that the fusion rules are associative, and proceed to deduce $\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_P$.
-Due to null vector equations, we expect this product to be a sum of a finite number of Verma modules.
-By associativity, this implies that the fusion product of two degenerate representations must itself be a sum of degenerate representations.
-In the case of  
-$\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle r,s\rangle}$, the conformal dimensions of the resulting degenerate representations are given by eq. \eqref{rot}, and we find
+We now assume that the fusion rules are associative, and proceed to deduce the existence of the higher degenerate representations $\mathcal{R}_{\langle r,s \rangle}$, and their fusion products. From the product $\mathcal{R}_{\langle 2,1 \rangle}\times \mathcal{V}_P$ and associativity, we first deduce 
 \begin{align}
-\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle r,s\rangle} = \mathcal{R}_{\langle r-1,s\rangle} + \mathcal{R}_{\langle r+1,s\rangle }\ , \quad (r\geq 1)\ .
+ \left(\mathcal{R}_{\langle 2,1 \rangle}\times \mathcal{R}_{\langle 2,1 \rangle}\right)\times\mathcal{V}_P = \mathcal{R}_{\langle 2,1 \rangle}\times \left(\mathcal{R}_{\langle 2,1 \rangle}\times\mathcal{V}_P\right) = 
+ \mathcal{V}_{P-b} + 2\cdot \mathcal{V}_P + \mathcal{V}_{P+b}\ .
+\end{align}
+Since we obtain a sum of finitely many Verma modules, $\mathcal{R}_{\langle 2,1 \rangle}\times \mathcal{R}_{\langle 2,1 \rangle}$ must be a sum of finitely many degenerate representations. But we know that $\mathcal{R}_{\langle 2,1 \rangle}\times \mathcal{R}_{\langle 2,1 \rangle}$ is a sum of two representations with the momentums $\{P_{\langle 2,1 \rangle} \pm \frac{b}{2}\} = \{P_{\langle 1,1\rangle}, P_{\langle 3,1\rangle}\}$. 
+We deduce that these two representations are degenerate. In particular, if we did not know it already, we could deduce that there exists a degenerate representation $\mathcal{R}_{\langle 3, 1\rangle}=\mathcal{R}_{\langle 2,1 \rangle}\times \mathcal{R}_{\langle 2,1 \rangle} -\mathcal{R}_{\langle 1,1\rangle}$ with the momentum $P_{\langle 3,1\rangle}$ and the fusion rule 
+\begin{align}
+ \mathcal{R}_{\langle 3, 1\rangle}\times \mathcal{V}_P = \left(\mathcal{R}_{\langle 2,1 \rangle}\times \mathcal{R}_{\langle 2,1 \rangle}\right)\times\mathcal{V}_P - \mathcal{R}_{\langle 1,1\rangle}\times \mathcal{V}_P =  \mathcal{V}_{P-b} + \mathcal{V}_P + \mathcal{V}_{P+b}\ .
+\end{align}
+Generalizing this reasoning, we can construct the degenerate representation $\mathcal{R}_{\langle r,s\rangle}$ and its fusion rules by recursion on $r,s\in\mathbb{N}^*$, starting from the known degenerate representations $\mathcal{R}_{\langle 1,1\rangle}, \mathcal{R}_{\langle 2,1\rangle}, \mathcal{R}_{\langle 1,2\rangle}$. 
+In particular, the fusion rule 
+\begin{align}
+\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle r,s\rangle} = \mathcal{R}_{\langle r-1,s\rangle} + \mathcal{R}_{\langle r+1,s\rangle }\ , \quad (r\geq 1)\ ,
 \label{rtod}
 \end{align}
+allows us to deduce the 
+
 We could similarly compute $\mathcal{R}_{\langle 1,2\rangle}\times \mathcal{R}_{\langle r,s\rangle}$.
 Then, using the associativity of the fusion products $\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle r,s\rangle}\times \mathcal{V}_P$ and $\mathcal{R}_{\langle 1,2\rangle}\times \mathcal{R}_{\langle r,s\rangle}\times \mathcal{V}_P$, a recursion on $r$ and $s$ leads to
 \begin{align}
