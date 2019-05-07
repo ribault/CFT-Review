@@ -636,10 +636,12 @@ For $a\in{\mathbb{R}}$, these transformations are called \textbf{\boldmath dilat
  f_\text{dilation}(z) &= a z\ , \ a\in {\mathbb{R}}\ .
 \end{align}
 While the laws of physics are (mostly) invariant under translations and rotations, they are not invariant under dilations, and the structures of matter and of the universe are strongly scale-dependent.
-It is nevertheless interesting to study scale-invariant models, for at least two reasons.
-Firstly, some particular systems are invariant under scale transformations, for instance certain materials at critical points.
-Secondly, by rescaling a quantum field theory to very small or large scales in a controlled way, one often reaches a scale-invariant theory (called a fixed point of the renormalization group flow).
+It is nevertheless interesting to study scale-invariant models, for at least two reasons:
+\begin{enumerate}
+ \item Some particular systems are invariant under scale transformations, for instance certain materials at critical points.
+ \item By rescaling a quantum field theory to very small or large scales in a controlled way, one often reaches a scale-invariant theory (called a fixed point of the renormalization group flow).
 That new theory can be nontrivial, and helpful for the understanding of the original theory.
+\end{enumerate}
 
 It may seem reasonable to study quantum field theories that are invariant under translations, rotations and dilations. 
 Surprisingly, many interesting systems have much more symmetry, which makes them accessible to the powerful methods that are the subject of this text.
@@ -700,7 +702,7 @@ The structure of this algebra is worked out by considering transformations close
 \end{align}
 To each transformation $f_\epsilon$ we associate an infinitesimal differential operator $D_\epsilon$ such that for any function $F(z)$ we have 
 \begin{align}
- F(f_\epsilon(z)) = \left(1- D_\epsilon -\overline{D_\epsilon} \right)F(z) + O(\epsilon^2)\ ,
+ F(f_\epsilon(z)) = \left(1- D_\epsilon -\bar{D}_\epsilon \right)F(z) + O(\epsilon^2)\ ,
 \label{ffe}
 \end{align}
 and we find
@@ -712,7 +714,7 @@ The differential operators $(\ell_n)_{n\in {\mathbb{Z}}}$ generate the \textbf{\
 \begin{align}
  \boxed{[\ell_n,\ell_m]=(n-m)\ell_{n+m}}\ .
 \end{align}
-Differential operators $D_\epsilon +\overline{D_\epsilon}$ that correspond to local conformal transformations are linear combinations (with real coefficients) of the operators
+Differential operators $D_\epsilon +\bar{D}_\epsilon$ that correspond to local conformal transformations are linear combinations (with real coefficients) of the operators
 \begin{align}
  \ell_n + \bar\ell_n \quad , \quad i(\ell_n-\bar\ell_n) \ .
  \label{ilml}
@@ -754,7 +756,7 @@ Its generators are $(L_n)_{n\in {\mathbb{Z}}}$, and its commutation relations ar
 \label{vir}
 \end{align}
 Here the \textbf{\boldmath central charge}\index{central charge} $c$ is in principle a central generator, i.e. a generator that commutes with all $L_n$. However, this generator will always be proportional to the identity when acting on the spectrum of a given CFT: we then identify it with its eigenvalue, and consider $c$ as a complex number that characterizes the CFT. 
-It can be checked that the Virasoro algebra is the only central extension of the Witt algebra up to trivial redefinitions. (See Exercise \ref{exovir}.) Notice that the presence of the central term does not affect the generators $L_{-1},L_0,L_1$ of global conformal transformations. 
+The Virasoro algebra is the only central extension of the Witt algebra up to trivial redefinitions. (See Exercise \ref{exovir}.) Notice that the presence of the central term does not affect the generators $L_{-1},L_0,L_1$ of global conformal transformations. 
 
 Therefore, the symmetry algebra of conformal field theory is made of two commuting copies of the Virasoro algebra. It has
 \begin{itemize}
@@ -883,10 +885,10 @@ $L^\dagger_n = L_{-n}$, and a model whose spectrum is unitary is itself called u
 Finally, let us illustrate the power of local conformal symmetry by thinking of a model in terms of global conformal symmetry only. 
 We then decompose each Virasoro representation $\mathcal{R}$ into representations of the $\mathfrak{sl}_2$ algebra of global conformal transformations with generators $(L_0,L_1,L_{-1})$,
 \begin{align}
- \mathcal{R}=\bigoplus_{n\in{\mathbb{N}}} m_{\mathcal{R},n} D_{\Delta+n}\ ,
+ \mathcal{R}=\bigoplus_{n\in{\mathbb{N}}} m_{\mathcal{R},n} \mathcal{D}^{\Delta+n}\ ,
 \label{rbd}
 \end{align}
-where $m_{\mathcal{R},n}\in {\mathbb{N}}$ is a multiplicity, $\Delta$ is the lowest $L_0$-eigenvalue of the indecomposable Virasoro representation $\mathcal{R}$, and $D_{\Delta+n}$ is a representation of $\mathfrak{sl}_2$ whose lowest $L_0$-eigenvalue is $\Delta+n$.
+where $m_{\mathcal{R},n}\in {\mathbb{N}}$ is a multiplicity, $\Delta$ is the lowest $L_0$-eigenvalue of the indecomposable Virasoro representation $\mathcal{R}$, and $\mathcal{D}^{\Delta+n}$ is a representation of $\mathfrak{sl}_2$ whose lowest $L_0$-eigenvalue is $\Delta+n$.
 (See Exercise \ref{exodis}.)
 The above decomposition is universal data of the Virasoro algebra, and 
 model-dependent information from the point of view of global conformal symmetry.
@@ -901,11 +903,10 @@ The application of the bootstrap approach to conformal field theories, called th
 is particularly powerful in two dimensions.
 This is because the algebra of conformal transformations is infinite-dimensional, 
 so that the spectrum can be decomposed into a small number of large representations.
-Moreover, the factorization of the symmetry algebra into two copies of the Virasoro algebra, and the decomposition of the spectrum into factorizable representations,
-imply that symmetry equations factorize into $z$-dependent equations from the left-moving Virasoro algebra, and $\bar{z}$-dependent equations from the right-moving Virasoro algebra.
-It follows that all universal quantities can be factorized into $z$-dependent and $\bar{z}$-dependent functions. 
-This is called \textbf{\boldmath holomorphic factorization}\index{holomorphic factorization}, where the term ``holomorphic''
-should be understood as \textbf{\boldmath locally holomorphic}\index{locally holomorphic}: the $z$-dependent factors are supposed to be $\bar{z}$-independent, but they can have singularities such as poles and branch cuts, like the function $\sqrt{z}$.
+Moreover, since the symmetry algebra factorizes into two copies of the Virasoro algebra, and since the spectrum is a sum of factorizable representations,
+symmetry equations factorize into $z$-dependent equations from the left-moving Virasoro algebra, and $\bar{z}$-dependent equations from the right-moving Virasoro algebra.
+This leads to  \textbf{\boldmath holomorphic factorization}\index{holomorphic factorization}:
+any universal quantity can be factorized into a holomorphic function of $z$, times a holomorphic function of $\bar z$. The holomorphic functions that appear are typically not entire functions, and have singularities such as poles, branch cuts and/or essential singularities, just like the functions $\frac{1}{z},\sqrt{z}, e^{-\frac{1}{z}}$. 
 We will see in more detail in Section \ref{secaco} how holomorphic factorization simplifies the condition \eqref{cccc} of OPE associativity.
 
 In two-dimensional conformal field theory, the assumption of the existence of an OPE has a natural generalization: the assumption that on any closed contour $C$, one can insert a decomposition of the identity operator,
@@ -947,7 +948,7 @@ This can be drawn as follows:
   \draw (0, 2) -- (2, 2);
   \draw (0, -2) -- (2, -2);
   \draw (2, 2) arc (90 : -90 : 2);
-  \filldraw (3.7, 0) circle [radius = 3pt] node [left] {$V_{\sigma}$};
+  \filldraw (3.7, 0) circle [radius = 3pt] node [left] {$V_{\sigma^*}$};
   \draw (8, 0) circle (2);
   \filldraw (9.4, 1) circle [radius = 3pt] node [left] {$V_{\sigma_1}$};
   \filldraw (9.4, -1) circle [radius = 3pt] node [left] {$V_{\sigma_2}$};
@@ -991,7 +992,7 @@ If we view the space near the contour $C$ as a cylinder, this can be drawn as fo
   \draw (6.5, 2) -- (8, 2);
   \draw (6.5, -2) -- (8, -2);
   \filldraw (4.8, 0) circle [radius = 3pt] node [right] {$V_{\sigma}$};
-  \filldraw (3.2, 0) circle [radius = 3pt] node [left] {$V_{\sigma}$};
+  \filldraw (3.2, 0) circle [radius = 3pt] node [left] {$V_{\sigma^*}$};
 \end{tikzpicture}
 \label{cscc}
 \end{align}
@@ -1005,15 +1006,13 @@ We will only consider conformal field theories on the sphere, which are consiste
 
 \subsection{Sketching the space of simple models \label{secmomo}}
 
-After discussing the general properties of two-dimensional conformal field theory, we will now describe some simple models that are known to satisfy the consistency conditions of the conformal bootstrap.
-These simple models are also the most commonly encountered in applications.  
+After discussing the general properties of two-dimensional conformal field theory, we will now describe some simple models that have been solved.
 
-We first introduce diagonal models, where representations of $\mathfrak{V}\times \overline{\mathfrak{V}}$ have multiplicities no higher than one:
+We first introduce models that are diagonal and such that representations of $\mathfrak{V}\times \overline{\mathfrak{V}}$ have multiplicities no higher than one:
 \begin{itemize}
  \item For any value $c\in\mathbb{C}$ of the central charge, Liouville theory
 has a diagonal spectrum that is made of a continuum of representations.
 Liouville theory is unitary if $c\geq 1$. 
-\item For any irrational $c\in\mathbb{C}$, the generalized minimal model has a diagonal spectrum that is made of a discrete infinity of representations.
 \item A-series minimal model are diagonal, rational models that exist for central charges of the type
 \begin{align}
  c_{p,q} = 1 - 6 \frac{(p-q)^2}{pq}  \quad \text{with} \quad \left\{\begin{array}{l}  p,q \ \text{coprime  integers}\ , \\ 2\leq p<q\ , \end{array}\right.  
@@ -1022,8 +1021,10 @@ Liouville theory is unitary if $c\geq 1$.
 in particular $c_{p,q} <1$.
 There are $\frac{(p-1)(q-1)}{2}$ distinct representations in the spectrum.
 The model is unitary if $q=p+1$, then $c_{p,p+1}=1-\frac{6}{p(p+1)}=0,\frac12,\frac{7}{10},\frac45, \frac67,\cdots$.
+\item For any  $c\in\mathbb{C}-\{c_{p,q}\}_{p,q\in\mathbb{Z}^*}$, the generalized minimal model has a diagonal spectrum that is made of a discrete infinity of representations. (It is not known whether such a model exists for $c=c_{p,q}$.)
+\item For any $c\in \{c_{p,q}\}_{p,q\in\mathbb{N}^*}$, there is a Runkel--Watts-type theory with the same continuous spectrum as Liouville theory, but different correlation functions. 
 \end{itemize}
-Let us locate these models in the $c$-complex plane: Liouville theory and generalized minimal models in blue, minimal models in red (with larger bars for smaller spectrums), unitary Liouville theory and unitary minimal models in darker colors:
+Let us locate some of these models in the $c$-complex plane: Liouville theory in blue, minimal models in red (with larger bars for smaller spectrums), unitary Liouville theory and unitary minimal models in darker colors:
 \begin{align}
  \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .95] 
  \clip (-5,-3) rectangle (7,3);
@@ -1629,7 +1630,7 @@ In order to derive equations that constrain the correlation functions, we will n
 consistently with the interpretation of $L_{-1},\bar L_{-1}$ as generators of translations. 
 \end{hyp}
 \noindent
-The action of the left-moving Virasoro algebra will therefore give rise to holomorphic derivatives $\frac{\partial}{\partial z}$, and the solutions of the corresponding differential equations will be locally holomorphic functions of $z$. The analogous results for the right-moving Virasoro algebra are obtained by $z\to \bar z$ and $\frac{\partial}{\partial z} \to \frac{\partial}{\partial \bar z}$. 
+The action of the left-moving Virasoro algebra will therefore give rise to holomorphic derivatives $\frac{\partial}{\partial z}$, and the solutions of the corresponding differential equations will be holomorphic functions of $z$. The analogous results for the right-moving Virasoro algebra are obtained by $z\to \bar z$ and $\frac{\partial}{\partial z} \to \frac{\partial}{\partial \bar z}$. 
 
 From Axiom \ref{ax:dvz} we can immediately deduce how $L_n^{(z)}$ depends on $z$. Applying the axiom to the two fields $V_\sigma(z)$ and $L_n^{(z)}V_\sigma(z)$, we find $\frac{\partial}{\partial \bar z} L_n^{(z)}=0$ and 
 \begin{align}
@@ -1644,7 +1645,7 @@ This shows that the Virasoro generators at different points $(L_n^{(z_1)})_{n\in
 \end{align}
 (The series should converge if $y$ is close enough to $z$.) Calling $T(y)$ the energy-momentum tensor is a stretch of terminology which is specific to two-dimensional CFT: when specialized to a two-dimensional space with complex coordinates, the general definition of the energy-momentum tensor actually yields the matrix 
 $\left(\begin{smallmatrix} T_{yy} = T(y) & T_{y\bar y} \\ T_{\bar y y} & T_{\bar y \bar y} = \bar T(y) \end{smallmatrix}\right)$, where in particular $\bar T(y)= \sum_{n\in{\mathbb{Z}}} \frac{\bar L_n^{(z)}}{(\bar y-\bar z)^{n+2}}$. 
-% (We refrain from using the notation $\bar T(\bar y)$ for a locally antiholomorphic field and reserving $T(y)$ for a locally holomorphic field, while fields that are neither holomorphic nor antiholomorphic would have to be written as $V_\sigma(z,\bar z)$.)
+% (We refrain from using the notation $\bar T(\bar y)$ for a locally antiholomorphic field and reserving $T(y)$ for a holomorphic field, while fields that are neither holomorphic nor antiholomorphic would have to be written as $V_\sigma(z,\bar z)$.)
 
 \subsubsection{Analytic properties}
 
@@ -1699,7 +1700,7 @@ The energy-momentum tensor itself can be seen as a descendent of the identity fi
 
 The energy-momentum tensor is a \textbf{\boldmath symmetry field}\index{symmetry field}: a field that encodes the action of symmetry transformations, but does not necessarily correspond to a state in the spectrum. 
 That field nevertheless obeys the same assumptions of commutativity, associativity, and existence of an OPE, as the fields $V_\sigma(z)$.
-More generally, let a \textbf{Virasoro field}\index{Virasoro field} be a locally holomorphic field $T(y)$ that obeys the OPE \eqref{tt}. 
+More generally, let a \textbf{Virasoro field}\index{Virasoro field} be a holomorphic field $T(y)$ that obeys the OPE \eqref{tt}. 
 From such a field, we can deduce a Virasoro symmetry algebra via eq. \eqref{lit}, so $T(y)$ is a symmetry field. However, that Virasoro symmetry may be unrelated to conformal symmetry, in which case it does not obey Axiom \ref{ax:dvz}. 
 Most results in Section \ref{secccs} will hold for Virasoro fields and non-conformal Virasoro symmetries, including: Ward identities, nontrivial factors of conformal blocks, and fusion rules. We will however work under Axiom \ref{ax:dvz}, as this simplifies some calculations.
 % NB: The right place for dealing with Virasoro fields would be a part on W algebras.
@@ -2494,7 +2495,7 @@ We have also encountered degenerate four-point blocks that obey differential equ
 And on the torus, there exist nontrivial zero-point blocks, which coincide with the characters of representations. 
 
 Conformal blocks associated with a correlation function obey the Ward identities for that correlation function. 
-Since the Ward identities are holomorphically factorized, the blocks can be factorized into left-moving and right-moving conformal blocks. Left-moving conformal blocks are solutions of the left-moving Ward identities, and are locally holomorphic functions of the fields' positions. From now on, by conformal block we will mean left-moving conformal block. 
+Since the Ward identities are holomorphically factorized, the blocks can be factorized into left-moving and right-moving conformal blocks. Left-moving conformal blocks are solutions of the left-moving Ward identities, and are holomorphic functions of the fields' positions. From now on, by conformal block we will mean left-moving conformal block. 
 
 Conformal blocks are sometimes defined as arbitrary solutions of the Ward identities. We will be more specific, and define them as the elements of particular bases of solutions. The bases in question are defined by using OPEs for computing correlation functions. In particular, using the OPE of $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2)$ and Ward identities, any four-point function of primary or descendent fields can be decomposed as 
 \begin{align}
@@ -5074,8 +5075,8 @@ Nevertheless, we will use them for computing limits and particular values of cor
 
 \subsubsection{The Liouville equation}
 
-Equation \eqref{tqz} is not enough for determining $J$ from $T$. We could add the condition that $J$ be locally holomorphic, but we will add the milder condition $\partial \bar J = \bar\partial J$, 
-% This condition has to be compatible with the relations of J, \bar J with T, \bar T. Two reasons why it is compatible: it is milder than J being locally holomorphic, which is itself compatible because T is locally holomorphic. And the relations with T, \bar T both lead to the same Liouville equation.
+Equation \eqref{tqz} is not enough for determining $J$ from $T$. We could add the condition that $J$ be holomorphic, but we will add the milder condition $\partial \bar J = \bar\partial J$, 
+% This condition has to be compatible with the relations of J, \bar J with T, \bar T. Two reasons why it is compatible: it is milder than J being holomorphic, which is itself compatible because T is holomorphic. And the relations with T, \bar T both lead to the same Liouville equation.
 which is sufficient for the Seiberg--Witten equation \eqref{swp} to make sense. This implies that locally there is a field $\phi$ such that 
 \begin{align}
  J = -\partial \phi \qquad , \qquad \bar J = -\bar\partial \phi \ .
