@@ -547,7 +547,7 @@ In particular, the field $V_{\sigma_3}$ can appear in a $V_{\sigma_1}V_{\sigma_2
 \label{rrnr}
 \end{align}
 From the OPE, the fusion product inherits the properties of bilinearity, commutativity and associativity. 
-In some cases, the fusion product has a constructive definition as a kind of generalization of the tensor product \cite{gab99, kr18}: then $ \mathcal{R}_1 \times \mathcal{R}_2$ is a representation, and the equality in eq. \eqref{rrnr} is an isomorphism of representations. (We will not need such constructions.) The fusion product, in other words the structure of the category of representations, will turn out to play a more important role than the structure of the representations themselves.  
+In some cases, the fusion product has a constructive definition as a kind of generalization of the tensor product \cite{gab99, kr18}: then $ \mathcal{R}_1 \times \mathcal{R}_2$ is a representation, and the equality in eq. \eqref{rrnr} is an isomorphism of representations. (We will not need such constructions.) The fusion product, in other words the structure of the category of representations, will turn out to play a more important role than the structure of the representations themselves, see Section \ref{secfr}.  
 
 The fusion product $\mathcal{R}_1\times \mathcal{R}_2$ is said to have nontrivial multiplicities if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\geq 2$ for some $\mathcal{R}_3$, and trivial multiplicities if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\in \{0,1\}$.
 A field is called a \textbf{\boldmath simple current}\index{simple current} if the corresponding representation $\mathcal{R}$ is such that $\mathcal{R}\times \mathcal{R}'$ is indecomposable for any $\mathcal{R}'$, so that $\sum_{\mathcal{R}''} N_{\mathcal{R}\mathcal{R}'}^{\mathcal{R}''} =1$. 
@@ -2161,9 +2161,9 @@ the null vector equation $\left< L_{\langle r,s \rangle} V_{\langle r,s \rangle}
 \end{align}
 This constraint on $\Delta_2$ and $\Delta_3$ can be interpreted as the fusion rule of the degenerate representation $\mathcal{R}_{\langle r,s \rangle}$, using the relation between OPEs and three-point functions.
 
-\subsubsection{Simplest degenerate fields}
+\subsubsection{Basic degenerate representations $\mathcal{R}_{\langle 1,1 \rangle}, \mathcal{R}_{\langle 2,1 \rangle}, \mathcal{R}_{\langle 1,2 \rangle}$}
 
-For example, let us consider the case $\langle r,s \rangle = \langle 1,1 \rangle$.
+Let us begin with the case $\langle r,s \rangle = \langle 1,1 \rangle$.
 Using eq. \eqref{lot} for $\Delta_{\langle 1,1 \rangle}$ and $L_{\langle 1,1 \rangle}$, we obtain
 $g^{L_{-1}}_{0,\Delta_2,\Delta_3} = 0$.
 Using eq. \eqref{gln} for $g^{L_{-1}}$, this implies 
@@ -2201,43 +2201,67 @@ The resulting fusion rules are
 \end{align}
 These fusion rules could be derived by directly analyzing OPEs, instead of three-point functions. (See Exercise \ref{exooit}.) 
 
-\subsubsection{Higher degenerate fields}
+\subsubsection{Higher degenerate representations $\{\mathcal{R}_{\langle r,s\rangle}\}_{rs>2}$}
 
-We now assume that the fusion rules are associative, and proceed to deduce the existence of the higher degenerate representations $\mathcal{R}_{\langle r,s \rangle}$, and their fusion products. From the product $\mathcal{R}_{\langle 2,1 \rangle}\times \mathcal{V}_P$ and associativity, we first deduce 
+The higher degenerate representations' existence, momentums and fusion rules are in principle dictated by their null vectors, but working out these null vectors is practically intractable. 
+Instead, we will deduce this information from the basic degenerate representations and their fusion rules, thanks to the associativity of the fusion product. 
+This amounts to working with the category of representations of the Virasoro algebra, rather than with the structure of the representations. 
+
+The basic idea is to build $\mathcal{R}_{\langle 3, 1\rangle}$ as the combination $\mathcal{R}_{\langle 2,1 \rangle} \times \mathcal{R}_{\langle 2,1 \rangle} - \mathcal{R}_{\langle 1,1 \rangle}$.
+From the product $\mathcal{R}_{\langle 2,1 \rangle}\times \mathcal{V}_P$, we first deduce 
 \begin{align}
  \left(\mathcal{R}_{\langle 2,1 \rangle}\times \mathcal{R}_{\langle 2,1 \rangle}\right)\times\mathcal{V}_P = \mathcal{R}_{\langle 2,1 \rangle}\times \left(\mathcal{R}_{\langle 2,1 \rangle}\times\mathcal{V}_P\right) = 
  \mathcal{V}_{P-b} + 2\cdot \mathcal{V}_P + \mathcal{V}_{P+b}\ .
 \end{align}
-Since we obtain a sum of finitely many Verma modules, $\mathcal{R}_{\langle 2,1 \rangle}\times \mathcal{R}_{\langle 2,1 \rangle}$ must be a sum of finitely many degenerate representations. But we know that $\mathcal{R}_{\langle 2,1 \rangle}\times \mathcal{R}_{\langle 2,1 \rangle}$ is a sum of two representations with the momentums $\{P_{\langle 2,1 \rangle} \pm \frac{b}{2}\} = \{P_{\langle 1,1\rangle}, P_{\langle 3,1\rangle}\}$. 
+Since we obtain a sum of finitely many Verma modules, $\mathcal{R}_{\langle 2,1 \rangle}\times \mathcal{R}_{\langle 2,1 \rangle}$ must be a sum of finitely many degenerate representations. But we know that $\mathcal{R}_{\langle 2,1 \rangle}\times \mathcal{R}_{\langle 2,1 \rangle}$ is a sum of two representations with the momentums $\{P_{\langle 2,1 \rangle} \pm \frac{b}{2}\} = \{P_{\langle 1,1\rangle}, P_{\langle 3,1\rangle}\}$, where $P_{\langle r,s\rangle}$ is defined in eq. \eqref{ars}. 
 We deduce that these two representations are degenerate. In particular, if we did not know it already, we could deduce that there exists a degenerate representation $\mathcal{R}_{\langle 3, 1\rangle}=\mathcal{R}_{\langle 2,1 \rangle}\times \mathcal{R}_{\langle 2,1 \rangle} -\mathcal{R}_{\langle 1,1\rangle}$ with the momentum $P_{\langle 3,1\rangle}$ and the fusion rule 
 \begin{align}
  \mathcal{R}_{\langle 3, 1\rangle}\times \mathcal{V}_P = \left(\mathcal{R}_{\langle 2,1 \rangle}\times \mathcal{R}_{\langle 2,1 \rangle}\right)\times\mathcal{V}_P - \mathcal{R}_{\langle 1,1\rangle}\times \mathcal{V}_P =  \mathcal{V}_{P-b} + \mathcal{V}_P + \mathcal{V}_{P+b}\ .
 \end{align}
-Generalizing this reasoning, we can construct the degenerate representation $\mathcal{R}_{\langle r,s\rangle}$ and its fusion rules by recursion on $r,s\in\mathbb{N}^*$, starting from the known degenerate representations $\mathcal{R}_{\langle 1,1\rangle}, \mathcal{R}_{\langle 2,1\rangle}, \mathcal{R}_{\langle 1,2\rangle}$. 
-In particular, the fusion rule 
+Iterating this procedure, let us construct $\{\mathcal{R}_{\langle r,s\rangle}\}_{rs>2}$  and their fusion rules by recursion on $r,s\in\mathbb{N}^*$. 
+We first find the fusion rule 
 \begin{align}
 \mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle r,s\rangle} = \mathcal{R}_{\langle r-1,s\rangle} + \mathcal{R}_{\langle r+1,s\rangle }\ , \quad (r\geq 1)\ ,
 \label{rtod}
 \end{align}
-allows us to deduce the 
-
-We could similarly compute $\mathcal{R}_{\langle 1,2\rangle}\times \mathcal{R}_{\langle r,s\rangle}$.
-Then, using the associativity of the fusion products $\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle r,s\rangle}\times \mathcal{V}_P$ and $\mathcal{R}_{\langle 1,2\rangle}\times \mathcal{R}_{\langle r,s\rangle}\times \mathcal{V}_P$, a recursion on $r$ and $s$ leads to
+which allows us to deduce $\mathcal{R}_{\langle r+1,s\rangle}$ from $\mathcal{R}_{\langle 2,1\rangle}, \mathcal{R}_{\langle r-1,s\rangle}$ and $\mathcal{R}_{\langle r,s\rangle}$. Similarly, the recursion on the second index $s$ relies on the fusion rule 
+\begin{align}
+ \mathcal{R}_{\langle 1,2\rangle}\times \mathcal{R}_{\langle r,s\rangle} = \mathcal{R}_{\langle r,s-1\rangle} + \mathcal{R}_{\langle r,s+1\rangle }\ , \quad (s\geq 1)\ .
+\end{align}
+Using the associativity of the fusion products $\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle r,s\rangle}\times \mathcal{V}_P$ and $\mathcal{R}_{\langle 1,2\rangle}\times \mathcal{R}_{\langle r,s\rangle}\times \mathcal{V}_P$, the recursion yields
 \begin{align}
  \boxed{\mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_P = \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}} \mathcal{V}_{P + ib+jb^{-1}}}
  \ ,
 \label{rtv}
 \end{align}
 where the summation index $i$ takes half-integer values if $r$ is even, and integer values if $r$ is odd. 
-This fusion product therefore yields a sum of 
+This fusion product is therefore a sum of 
 $rs$ terms.
 
-The fusion product of two degenerate representations must of course obey the fusion rules of both, and we find
+\subsubsection{Fusion product of two degenerate representations}
+
+In order to determine $\mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle}$, we could use a recursion on $r_1,s_1$ using the associativity of $\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle}$ and $\mathcal{R}_{\langle 1,2\rangle}\times\mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle}$. 
+We will however employ a more direct method. 
+Using the fusion rule \eqref{rtv}, we find 
 \begin{align}
- \boxed{\mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle} = \sum_{r_3\overset{2}{=}|r_1-r_2|+1}^{r_1+r_2-1}\ \sum_{s_3\overset{2}{=}|s_1-s_2|+1}^{s_1+s_2-1} \mathcal{R}_{\langle r_3,s_3 \rangle}}\ ,
+ \mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{V}_{P_{\langle r_2,s_2\rangle}} = \sum_{r_3\overset{2}{=}r_2-r_1+1}^{r_1+r_2-1}\ \sum_{s_3\overset{2}{=}s_2-s_1+1}^{s_1+s_2-1} \mathcal{V}_{P_{\langle r_3,s_3 \rangle}}\ ,
+\\
+\mathcal{V}_{P_{\langle r_1,s_1 \rangle}} \times \mathcal{R}_{\langle r_2,s_2\rangle} = \sum_{r_3\overset{2}{=}r_1-r_2+1}^{r_1+r_2-1}\ \sum_{s_3\overset{2}{=}s_1-s_2+1}^{s_1+s_2-1} \mathcal{V}_{P_{\langle r_3,s_3 \rangle}}\ ,
+\end{align}
+where a superscript $\overset{2}{=}$ indicates that the corresponding sum runs by increments of $2$.
+These two fusion products encode the vanishing of the null vectors of $\mathcal{R}_{\langle r_1,s_1 \rangle}$ and $\mathcal{R}_{\langle r_2,s_2\rangle}$ respectively.
+By definition of fusion rules, the product $\mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle}$ is constrained by the vanishing of the null vectors of both degenerate representations. 
+Therefore, we have 
+\begin{align}
+ \mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle}\ \overset{\text{formal}}{=}\  \left(\mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{V}_{P_{\langle r_2,s_2\rangle}} \right) \bigcap \left(\mathcal{V}_{P_{\langle r_1,s_1 \rangle}} \times \mathcal{R}_{\langle r_2,s_2\rangle}\right)\ .
+\end{align}
+This relation is formal in the sense that it determines the momentums of the representations that appear in $\mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle}$, but does not say whether these representations are Verma modules or degenerate representations. 
+However, we do know that these representations must all be degenerate, because $\mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle}\times \mathcal{V}_P$ is a finite sum of Verma modules by associativity.
+Therefore,
+\begin{align}
+ \boxed{\mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle} = \sum_{r_3\overset{2}{=}|r_1-r_2|+1}^{r_1+r_2-1}\ \sum_{s_3\overset{2}{=}|s_1-s_2|+1}^{s_1+s_2-1} \mathcal{R}_{\langle r_3,s_3 \rangle}}\ .
 \label{rrsr}
 \end{align}
-where a superscript $\overset{2}{=}$ indicates that the corresponding sums run by increments of $2$.
 So the fusion product $\mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle}$ is a sum of $\min(r_1,r_2)\times \min(s_1,s_2)$ degenerate representations.
 This can be rewritten as 
 \begin{align}
