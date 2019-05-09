@@ -2298,7 +2298,7 @@ In particular, a BPZ equation for a four-point function boils down to an ordinar
 \subsubsection{Case of a four-point function with the field $V_{\langle 2,1 \rangle}$}
 
 Let us derive the ordinary differential equation for $\left\langle V_{\langle 2,1 \rangle}(x)\prod_{i=1}^3 V_{\Delta_i}(z_i)\right\rangle$.
-Inserting the identity $\oint_\infty dz\ \epsilon(z) T(z) =0$ with $\epsilon(z) = \frac{(z-z_1)(z-z_2)(z-z_3)}{z-x}$, and using eq. \eqref{lrsv}, we obtain a differential equation with derivatives only with respect to $x$, 
+Inserting the identity $\oint_\infty dz\ \epsilon(z) T(z) =0$ with $\epsilon(z) = \frac{(z-z_1)(z-z_2)(z-z_3)}{z-x}$, and using eq. \eqref{lrsv}, we obtain a differential equation with derivatives with respect to $x$ alone, 
 \begin{multline}
   \left\{ \prod_{i=1}^3(x-z_i)\left(-\frac{1}{b^2}\frac{\partial^2}{\partial x^2} +\sum_{i=1}^3 \frac{1}{x-z_i} {\frac{\partial}{\partial x}} \right) + (3x-z_1-z_2-z_3)\Delta_{\langle 2,1 \rangle} \right.
   \\
@@ -2450,7 +2450,7 @@ The corresponding solutions of the twisted equation \eqref{hj} are
 
 \subsubsection{Fusing matrix}
 
-Let us define the $t$-channel basis of solutions, whose elements are of the type \eqref{zxl} near the regular singular point $x=1$.
+Let us define the $t$-channel basis of solutions, whose elements are of the type \eqref{zxl} near the regular singular point $x_0=1$.
 Such solutions are obtained from the $s$-channel solutions by the exchanges $\left\{\begin{smallmatrix} 1\leftrightarrow 3\\ x\leftrightarrow 1-x \end{smallmatrix}\right.$, and we find 
 \begin{align}
 \renewcommand{\arraystretch}{1.3}
@@ -2508,7 +2508,9 @@ How can the single-valued four-point function $\left\langle V_{\langle 2,1 \rang
 where $c^{(s)}_{\epsilon_1,\bar{\epsilon}_1}$ and $c^{(t)}_{\epsilon_3,\bar{\epsilon}_3}$ are $x$-independent coefficients.
 These two sets of coefficients are related by the change of basis \eqref{gfg},
 \begin{align}
+\forall \epsilon_3,\bar{\epsilon}_3 \in \{+,-\}\ , \quad 
  \sum_{\epsilon_1,\bar{\epsilon}_1=\pm} c^{(s)}_{\epsilon_1,\bar{\epsilon}_1} F_{\epsilon_1,\epsilon_3} F_{\bar{\epsilon}_1,\bar{\epsilon}_3} = c^{(t)}_{\epsilon_3,\bar{\epsilon}_3}\ .
+ \label{febe}
 \end{align}
 For generic dimensions $\Delta_i$, single-valuedness near $x=0$ implies $c^{(s)}_{+,-}=c^{(s)}_{-,+}=0$, and single-valuedness near $x=1$ similarly implies $c^{(t)}_{+,-}=c^{(t)}_{-,+}=0$.
 Thus we can write
@@ -2516,7 +2518,8 @@ Thus we can write
  \left\langle V_{\langle 2,1 \rangle}(x)V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle = \sum_{\epsilon_1=\pm} c^{(s)}_{\epsilon_1} \mathcal{F}_{\epsilon_1}^{(s)}(x) \mathcal{F}_{\epsilon_1}^{(s)}(\bar{x}) = \sum_{{\epsilon_3}=\pm} c^{(t)}_{\epsilon_3} \mathcal{F}^{(t)}_{\epsilon_3}(x) \mathcal{F}^{(t)}_{\epsilon_3}(\bar{x})\ ,
 \label{zsc}
 \end{align}
-where the coefficients $c^{(s)}_\pm$ obey the relation
+where we slightly simplified the notation by writing $c^{(s)}_\epsilon = c^{(s)}_{\epsilon,\epsilon}$. 
+In particular, using eq. \eqref{febe} in the case $(\epsilon_3,\bar{\epsilon}_3)=(+, -)$, we find 
 \begin{align}
  \boxed{\frac{c^{(s)}_+}{c^{(s)}_-}  = -\frac{F_{-+}F_{--}}{F_{++}F_{+-}}
  = \gamma(2bP_1)\gamma(1+2bP_1)\prod_{\pm,\pm}\gamma\left(\tfrac12+b(-P_1\pm P_2\pm P_3)\right)}\ ,
@@ -2527,8 +2530,7 @@ where we introduce the function
  \gamma(x) = \frac{\Gamma(x)}{\Gamma(1-x)}\ .
 \label{gx}
 \end{align}
-This relation is a special case of eq. \eqref{ffm}.
-It determines our four-point function up to an $x$-independent factor. 
+This relation determines our four-point function up to an $x$-independent factor. 
 
 
 \section{Conformal blocks and crossing symmetry \label{secaco}}
