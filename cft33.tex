@@ -3317,7 +3317,7 @@ Let us prove and discuss the relation \eqref{eq:bot} that describes how an $s$-c
 
 \chapter{Liouville theory and minimal models \label{seccbm}}
 
-In this chapter we introduce and solve Liouville theory, generalized minimal models, and A-series minimal models, which are the simplest nontrivial families of two-dimensional conformal field theories. 
+In this chapter we introduce and solve Liouville theory and minimal models, which are the simplest nontrivial two-dimensional conformal field theories, and appear in many applications. In order to complete the picture of Section \ref{secmomo}, we also discuss the less well-known generalized minimal models and Runkel--Watts-type theories. 
 
 \section{Liouville theory \label{secliou}}
 
@@ -3341,7 +3341,7 @@ According to Axiom \ref{ax:sots}, real parts of conformal dimensions are bounded
 \end{align}
 Other guesses for the spectrum might also seem plausible: in particular, for $c>1$, unitarity would allow $\Delta> 0$ rather than $\Delta \geq \frac{c-1}{24}$. 
 The decisive argument in favour of our spectrum will be the consistency of the resulting CFT, i.e. 
-the crossing symmetry of the resulting four-point functions, see Section \ref{seceul}.
+crossing symmetry of the resulting four-point functions, see Section \ref{seceul}.
 
 The representation $\mathcal{V}_\Delta\otimes \overline{\mathcal{V}}_{\bar{\Delta}}$ can appear in the spectrum only if both 
 $\Delta$ and $\bar{\Delta}$ obey the condition \eqref{aqd}. 
@@ -3425,7 +3425,7 @@ There exist diagonal degenerate fields $V_{\langle r,s \rangle}$ for $r,s\in\mat
 \noindent
 Equivalently, we could assume that the two degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ exist, and construct the remaining degenerate fields by repeatedly performing OPEs of these two degenerate fields.
 
-Axiom \ref{ax:edf} means that there exists correlation functions that involve degenerate fields, and that obey our axioms on fields and correlation functions. However, Axiom \ref{ax:ope} on the existence of an OPE involves a sum over the whole spectrum, which would be inconsistent with the degenerate fields' fusion rules. 
+Axiom \ref{ax:edf} means that there exist correlation functions that involve degenerate fields, and that obey our axioms on fields and correlation functions. However, Axiom \ref{ax:ope} on the existence of an OPE involves a sum over the whole spectrum, which would be inconsistent with the degenerate fields' fusion rules. 
 Let us work out the natural extension of that axiom to degenerate fields, and in particular determine which fields appear in the OPE $V_{\langle r,s \rangle} V_P$. First and foremost, these fields must obey the fusion rules
 \eqref{rtv}. The fusion rules apply independently to left- and right-moving representations, and  a priori they allow non-diagonal fields, for example a field with left momentum $P-\frac{b}{2}$ and right momentum $P+\frac{b}{2}$ could appear in the OPE $V_{\langle 2,1\rangle} V_P$. However, for generic value of $P$, such non-diagonal fields have spins that are not half-integer, and therefore violate the single-valuedness condition on spins eq. \eqref{dbdz}.
 Therefore, our OPE must involve only diagonal fields, and must be of the type
@@ -3433,8 +3433,7 @@ Therefore, our OPE must involve only diagonal fields, and must be of the type
  \boxed{V_{\langle r,s \rangle} V_P \sim \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}}  C_{i,j}^{\langle r,s \rangle}(P) V_{P + ib+jb^{-1}}}\ .
 \label{vrsv}
 \end{align}
-For generic values of $b$, we have $P\in i\mathbb{R} \implies P+ib+jb^{-1}\notin i\mathbb{R}$, so we may worry that the field $ V_{P + ib+jb^{-1}}$ may not exist. However, we now resort to our assumption that correlation functions are meromorphic functions of momentums, and intepret $ V_{P + ib+jb^{-1}}$ as an analytic continuation of the fields with imaginary momentums.
-
+For generic values of $b$, we have $P\in i\mathbb{R} \centernot\implies P+ib+jb^{-1}\in i\mathbb{R}$, and the field $ V_{P + ib+jb^{-1}}$ may not belong to the spectrum. However, we now resort to our assumption that correlation functions are meromorphic functions of momentums, and intepret $ V_{P + ib+jb^{-1}}$ as an analytic continuation of the fields with imaginary momentums.
 In particular, the OPEs of the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ can be written as 
 \begin{align}
  &\boxed{V_{\langle 2,1 \rangle} V_P \sim C_+(P) V_{P+\frac{b}{2}} + C_-(P) V_{P-\frac{b}{2}}}\ ,
@@ -3449,7 +3448,7 @@ The coefficients $C_+(P)$ and $C_-(P)$ are not independent, and can be deduced f
 \subsection{Crossing symmetry equations \label{seccbe}}
 
 Let us now investigate the consequences of the crossing symmetry of four-point functions, whose general form was given in eq. \eqref{csd}. In order to constrain the three-point structure constant, we will study four-point functions that involve one degenerate field $V_{\langle 2,1\rangle}$ or $V_{\langle 1, 2\rangle}$. We will therefore need to constrain the OPE coefficients of these degenerate fields. 
-To do this, we will consider four-point functions that involve two degenerate fields. 
+To do this, we will first consider four-point functions that involve two degenerate fields. 
 
 
 \subsubsection{What we learn from $
@@ -3487,7 +3486,9 @@ Crossing symmetry and single-valuedness of the four-point function imply that th
 \end{align}
 This is all that we will need to know about the degenerate OPE coefficients $C_\pm(P)$. A dual equation can be derived for $\tilde{C}_\pm (P)$, using a  four-point function of the type  $
  \left\langle V_{\langle 1,2 \rangle} V_P V_{P} V_{\langle 1,2 \rangle} \right\rangle$ instead of $
- \left\langle V_{\langle 2,1 \rangle} V_P V_{P} V_{\langle 2,1 \rangle} \right\rangle$. That dual equation is
+ \left\langle V_{\langle 2,1 \rangle} V_P V_{P} V_{\langle 2,1 \rangle} \right\rangle$. 
+ That dual equation is obtained by performing 
+ the substitutions $C_\pm \to \tilde{C}_\pm$ and $b\to \frac{1}{b}$,
  \begin{align}
  \frac{\tilde{C}_+(P)^2B(P+\tfrac{1}{2b})}{\tilde{C}_-(P)^2 B(P-\tfrac{1}{2b})}
  =  \frac{\gamma(2b^{-1}P)}{\gamma(-2b^{-1}P)}
@@ -3539,6 +3540,7 @@ Crossing symmetry equations are invariant under
  \item field renormalizations \eqref{vlv}, which act on two- and three-point structure constants as 
  \begin{align}
  B(P) \to \lambda(P)^2 B(P) \quad , \quad C_{P_1,P_2,P_3} \to \lambda(P_1)\lambda(P_2)\lambda(P_3) C_{P_1,P_2,P_3}\ ,
+ \label{blsb}
 \end{align}
 \item renormalizations of the three-point structure constant by constant factors,
 \begin{align}
@@ -3648,7 +3650,7 @@ If $b>0$, the compatible equations that result from inserting the missing factor
   \boxed{\frac{\Upsilon_b(x+b)}{\Upsilon_b(x)} = b^{1-2bx} \gamma(bx)}\quad \text{and} \quad \boxed{\frac{\Upsilon_b(x+\frac{1}{b})}{\Upsilon_b(x)} = b^{\frac{2x}{b}-1} \gamma(\tfrac{x}{b})}\ ,
 \label{upup}
 \end{align}
-These equations define a unique (up to a constant factor) \textbf{Upsilon function}\index{Upsilon function} $\Upsilon_b(x)$, which will turn out to be defined for any $b$ such that $\Re b > 0$ by analytic continuation. 
+These equations define a unique (up to a constant factor) \textbf{Upsilon function}\index{Upsilon function} $\Upsilon_b(x)$, which turns out to be defined for any $b$ such that $\Re b > 0$ by analytic continuation. 
 This function can be constructed from the Barnes double Gamma function using eq. \eqref{eq:upga}.
 On the other hand, if $ib>0$, the compatible equations are 
 \begin{align}
@@ -3716,16 +3718,16 @@ An alternative formula for the Upsilon function, which makes the zeros manifest,
  \Upsilon_b(x) = \lambda_b^{(\frac{Q}{2}-x)^2}\prod_{m,n=0}^\infty f\left(\frac{\frac{Q}{2}-x}{\frac{Q}{2}+mb+nb^{-1}}\right) \quad \text{with} \quad f(x)=(1-x^2)e^{x^2}\ ,
 \end{align}
 where $\lambda_b$ is an irrelevant $b$-dependent constant. (The dependence of structure constants on $\lambda_b$ can be absorbed into a field renormalization.)
-This product formula is valid for all values of $x$, but it does not converge very fast.
+This product formula is valid for all values of $x\in\mathbb{C}$, but it does not converge very fast.
 
 \subsubsection{Expression of the three-point structure constant}
 
-Using the functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$, we can write solutions $C'$ and $\hat C'$ of the shift equation \eqref{cps} (and its dual) for the renormalized three-point structure constant, which are respectively defined for $c\notin ]-\infty, 1]$ and $c\notin [25,\infty[$,
+Using the functions $\Upsilon_b(x)$ and $\hat\Upsilon_b(x)$, we can write solutions $C'$ and $\hat C'$ of the shift equation \eqref{cps} (and its dual) for the three-point structure constant, 
 \begin{align}
- \boxed{C'_{P_1,P_2,P_3} = \prod_{\pm,\pm} \Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)^{-1} }\ ,
+ \boxed{C'_{P_1,P_2,P_3} \ \underset{c\notin ]-\infty, 1]}{=}\ \prod_{\pm,\pm} \Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)^{-1} }\ ,
  \label{cp}
  \\
- \boxed{\hat C'_{P_1,P_2,P_3} = \prod_{\pm,\pm} \hat\Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)^{-1}}\ .
+ \boxed{\hat C'_{P_1,P_2,P_3} \ \underset{c\notin [25,\infty[}{=}\ \prod_{\pm,\pm} \hat\Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)^{-1}}\ .
  \label{hcp}
 \end{align}
 These solutions are 
@@ -3753,13 +3755,12 @@ which implies $C_{P_1,P_2,P_3}\in \mathbb{R}$. However, in this normalization, $
  N(P) = \mu^{P}\Upsilon_b(2P)\ ,
  \label{nop}
 \end{align}
-where $\mu$ is an arbitrary parameter called the \textbf{\boldmath cosmological constant}\index{cosmological constant}.
+where $\mu$ is an arbitrary parameter called the \textbf{\boldmath cosmological constant}\index{cosmological constant} -- a name that comes from the interpretation of Liouville theory in terms of two-dimensional gravity.
 The resulting expression for the three-point structure constant is
 \begin{align}
- C_{P_1,P_2,P_3} =  \frac{\mu^{-\frac{Q}{2}}\Upsilon_b'(0)\prod_{i=1}^3 \mu^{P_i}\Upsilon_b(2P_i) }{\prod_{\pm,\pm} \Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)} \ ,
+ C_{P_1,P_2,P_3} =  \frac{\mu^{-\frac{Q}{2}}\Upsilon_b'(0)\prod_{i=1}^3 \mu^{P_i}\Upsilon_b(2P_i) }{\prod_{\pm,\pm} \Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)} \ .
 \label{caaa}
 \end{align}
-where we chose not only a field normalization, but also an overall $P_i$-independent normalization factor. 
 This is called the \textbf{\boldmath DOZZ formula}\index{DOZZ formula} for Dorn, Otto, A.
 Zamolodchikov and Al. Zamolodchikov. 
 The DOZZ formula was originally derived using the Lagrangian formulation of Liouville theory \cite{zz95}. 
@@ -3771,7 +3772,7 @@ The DOZZ formula is valid for $c\notin ]-\infty, 1]$. The analogous choice of no
  \hat C_{P_1,P_2,P_3} =  \frac{\mu^{-\frac{Q}{2}}\hat\Upsilon_b(0)\prod_{i=1}^3 \mu^{P_i}\hat\Upsilon_b(2P_i) }{\prod_{\pm,\pm} \hat\Upsilon_b\left(\tfrac{Q}{2}+P_1\pm P_2 \pm P_3\right)} \ .
 \label{hc}
 \end{align}
-Then $\hat C_{P_1,P_2,P_3}$ has the same behaviour as $C_{P_1,P_2,P_3}$ under the shifts $P_1\to P_1+b$ and $P_1\to P_1+\frac{1}{b}$. The normalizations that we have chosen are such that
+The normalizations that we have chosen are such that
 \begin{align}
  \underset{P_1+P_2+P_3=\frac{Q}{2}}{\operatorname{Res}} C_{P_1,P_2,P_3} = 1 \qquad , \qquad \hat C_{P_1,P_2,P_3}\underset{P_1+P_2+P_3=\frac{Q}{2}}{=} 1\ .
 \label{chco}
@@ -3954,19 +3955,19 @@ Let us plot these poles in the complex $P$-plane, assuming $P_1,P_2\in i\mathbb{
 \end{scope}
 }
  \begin{tikzpicture}[baseline=(current  bounding  box.center)]
-  \draw[-latex] (-5,0) --  (6,0) node [above] {$P$};
+  \draw[-latex] (-5,0) --  (.5,0) node [below left] {$0$} -- (6,0) node [below] {$P$};
   \clip (-5, -3.5) -- (-5, 3.5) -- (6, 3.5) -- (6, -3.5) -- cycle;
-  \draw (0, -4.5) -- (0, 4.5);
-  \draw (1, -4.5) -- (1, 4.5);
+  \draw (-1, -4.5) -- (-1, 4.5);
+  \draw (2, -4.5) -- (2, 4.5);
   \draw[ultra thick, red] (.5, -4.5) -- (.5, 4.5);
-  \polewedge{shift = {(0, .7)}, rotate = 180}{$-\frac{Q}{2}+P_1-P_2$}{left};
-  \polewedge{shift = {(0, -.7)}, rotate = 180}{$-\frac{Q}{2}-P_1+P_2$}{left};
-  \polewedge{shift = {(0, 1.8)}, rotate = 180}{$-\frac{Q}{2}+P_1+P_2$}{left};
-  \polewedge{shift = {(0, -1.8)}, rotate = 180}{$-\frac{Q}{2}-P_1-P_2$}{left};
-  \polewedge{shift = {(1, .8)}}{$\frac{Q}{2}+P_1-P_2$}{right};
-  \polewedge{shift = {(1, -.6)}}{$\frac{Q}{2}-P_1+P_2$}{right};
-  \polewedge{shift = {(1, 1.9)}}{$\frac{Q}{2}+P_1+P_2$}{right};
-  \polewedge{shift = {(1, -1.7)}}{$\frac{Q}{2}-P_1-P_2$}{right};
+  \polewedge{shift = {(-1, .7)}, rotate = 180}{$-\frac{Q}{2}+P_1-P_2$}{left};
+  \polewedge{shift = {(-1, -.7)}, rotate = 180}{$-\frac{Q}{2}-P_1+P_2$}{left};
+  \polewedge{shift = {(-1, 1.8)}, rotate = 180}{$-\frac{Q}{2}+P_1+P_2$}{left};
+  \polewedge{shift = {(-1, -1.8)}, rotate = 180}{$-\frac{Q}{2}-P_1-P_2$}{left};
+  \polewedge{shift = {(2, .8)}}{$\frac{Q}{2}+P_1-P_2$}{right};
+  \polewedge{shift = {(2, -.6)}}{$\frac{Q}{2}-P_1+P_2$}{right};
+  \polewedge{shift = {(2, 1.9)}}{$\frac{Q}{2}+P_1+P_2$}{right};
+  \polewedge{shift = {(2, -1.7)}}{$\frac{Q}{2}-P_1-P_2$}{right};
  \end{tikzpicture}
 \end{align}
 If we continue $P_1,P_2$ such that $|\Re(P_1+P_2)|>\frac12\Re Q$ or $|\Re(P_1-P_2)|>\frac12\Re Q$, then some poles cross the line of integration. By reflection symmetry, it is enough to consider the poles that come from the left. The finite set of the poles that come from the left and end up on the right of the imaginary axis is
@@ -4079,12 +4080,20 @@ the spectrum is made of finitely many representations;
 Diagonality is a simplifying assumption, which excludes the non-diagonal D- and E-series minimal models \cite{fms97}.
 Having multiplicities zero or one is another simplifying assumption, but it is not well-known what we would find by relaxing it. 
 Rationality is the crucial axiom here -- and at first sight it seems difficult for rational theories to exist.
-Rationality can indeed be understood as the assumption that correlation functions vanish unless all involved fields belong to some finite set.
-It is not obvious that we can satisfy this assumption, on top of the conformal bootstrap equations.
+The OPE of two fields $V_1V_2\sim \sum_{s \in \mathcal{S}_{12}} C_{12s} V_s$ typically involves infinitely many primary fields $V_s$, and can only be finite in two cases:
+\begin{itemize}
+ \item if the set $\mathcal{S}_{12}$ of allowed representations is finite as a consequence of fusion rules,
+ \item or failing that, if $C_{12s}$ vanishes for all but a finite number of values of $s$. 
+\end{itemize}
+The second alternative amounts to imposing infinitely many constraints on the three-point structure constant, on top of crossing symmetry. 
+This cannot plausibly lead to nonzero solutions, except in special cases. 
+We therefore accept that all fields that can appear do appear, in other words that the spectrum is closed under fusion, as required by Axiom \ref{ax:cuf}.
+We then have to ensure that the set $\mathcal{S}_{12}$ is finite.
+This requires us to allow
+only degenerate representations in the spectrum, i.e. representations whose fusion products \eqref{rrsr} are finite sums. 
 
-This would however not be a problem, if the vanishing of almost all correlation functions was not an additional constraint, but rather a consequence of the fusion rules.
-This can happen provided the spectrum only contains degenerate representations, whose fusion products \eqref{rrsr} involve finite sums. 
-However, in general, no nontrivial finite set of degenerate representations of the Virasoro algebra is closed under fusion.
+However, having finite fusion products is still not enough for a having a finite spectrum. 
+Actually, for generic central charges, no nontrivial finite set of degenerate representations of the Virasoro algebra is closed under fusion.
 Starting with the degenerate representation $\mathcal{R}_{\langle 1,2 \rangle}$ for instance, the multiple fusion products $\mathcal{R}_{\langle 1,2 \rangle}\times \mathcal{R}_{\langle 1,2 \rangle}\times \cdots \times \mathcal{R}_{\langle 1,2 \rangle}$ span the infinite set of representations $\{\mathcal{R}_{\langle 1,s \rangle}\}_{s\in{\mathbb{N}}^*}$.
 Our task would be easier if we would weaken our assumptions and replace the rationality of the theory with the discreteness of the spectrum, allowing the number of representations to be countable instead of finite.
 We would obtain generalized minimal models, whose spectrums contain all degenerate representations, and which exist for arbitrary values of the central charge. 
@@ -4092,8 +4101,17 @@ We would obtain generalized minimal models, whose spectrums contain all degenera
 What if we insist on the original assumption of rationality? We will see that there are finite sets 
 of degenerate representations that close under fusion, from which we will build the A-series minimal models.
 Such sets are made of
-\textbf{\boldmath doubly degenerate representations}\index{degenerate representation!doubly---}, i.e. maximally degenerate representations of the type $\mathcal{R}_{\langle r,s \rangle}=\mathcal{R}_{\langle r',s' \rangle}$ with $\langle r,s \rangle\neq \langle r',s' \rangle$. Due to the 
-equality of conformal dimensions $\Delta_{\langle r,s \rangle}=\Delta_{\langle r',s' \rangle}$, doubly degenerate representations exist only for certain discrete values of the central charge. 
+\textbf{\boldmath doubly degenerate representations}\index{degenerate representation!doubly---}, i.e. maximally degenerate representations of the type $\mathcal{R}_{\langle r,s \rangle}=\mathcal{R}_{\langle r',s' \rangle}$ with $\langle r,s \rangle\neq \langle r',s' \rangle$. 
+Since 
+\begin{align}
+\renewcommand{\arraystretch}{1.3}
+ \left.\begin{array}{r} 
+ \Delta_{\langle r,s \rangle}=\Delta_{\langle r',s' \rangle} \\ 
+        \langle r,s \rangle\neq \langle r',s' \rangle
+       \end{array} \right\} \quad \implies \quad b^2 \in\mathbb{Q}\ ,
+ \label{ddibq}
+\end{align}
+doubly degenerate representations exist only for certain discrete values of the central charge. 
 
 \subsection{Generalized minimal models \label{secgmm}}
 
@@ -4101,14 +4119,14 @@ For any complex value of the central charge such that $b^2\notin \mathbb{Q}$, we
 \begin{align}
  \boxed{\mathcal{S} = \bigoplus_{r,s=1}^\infty \mathcal{R}_{\langle r,s \rangle}\otimes \bar{\mathcal{R}}_{\langle r,s \rangle}}\ .
 \end{align}
-The restriction that $b^2$ is irrational ensures that the representations $\mathcal{R}_{\langle r,s \rangle}$. Coincidences of such representations for $b^2\in\mathbb{Q}_{<0}$ will play an essential role in our analysis of minimal models. It is not known whether  generalized minimal models exist for rational $b^2$. 
+The representations $\mathcal{R}_{\langle r,s \rangle}$ are all distinct due to eq. \eqref{ddibq}, and it is not known whether  generalized minimal models exist for rational $b^2$. 
 
 We could obtain other consistent models by using subsets of the degenerate representations, provided these subsets were closed under fusion, for instance $\mathcal{S}=\mathcal{\mathcal{R}}_{\langle 1,1 \rangle}\otimes \bar{\mathcal{R}}_{\langle 1,1 \rangle}$, $\mathcal{S}=\bigoplus_{r=1}^\infty \mathcal{R}_{\langle r,1 \rangle}\otimes \bar{\mathcal{R}}_{\langle r,1 \rangle}$ or $\mathcal{S}=\bigoplus_{r,s=1}^{\infty} \mathcal{R}_{\langle 2r+1,2s+1 \rangle}\otimes \bar{\mathcal{R}}_{\langle 2r+1,2s+1 \rangle}$.
-Solving the generalized minimal model will provide a solution of all these submodels. 
+Solving the generalized minimal model will also solve all these submodels. 
 
 \subsubsection{Correlation functions}
 
-For generic values of the central charge, two distinct degenerate representations cannot have the same conformal dimension, and the two-point function is of the type 
+Due to eq. \eqref{ddibq}, different representations have different conformal dimensions, and the two-point function must be of the type 
 \begin{align}
  \left\langle V_{\langle r_1,s_1 \rangle} V_{\langle r_2,s_2 \rangle} \right\rangle = B_{\langle r_1,s_1 \rangle} \delta_{r_1,r_2} \delta_{s_1,s_2}\ ,
 \label{vvdd}
@@ -4124,23 +4142,9 @@ f_{r_1,r_2,r_3} f_{s_1,s_2,s_3} |z_{12}|^{2(\Delta_3-\Delta_1-\Delta_2)} |z_{23}
 This involves the model-dependent three-point structure constant $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$, times universal factors. We should resist the temptation to include the factor $f_{r_1,r_2,r_3} f_{s_1,s_2,s_3}$ in the definition of the three-point structure constant: this would cause conceptual confusion by combining model-dependent with universal data, and would prevent us from directly deriving the three-point structure constant from Liouville theory.
 
 
-\subsubsection{Relation with Liouville theory}
+\subsubsection{Relation with Liouville theory and uniqueness}
 
-The three-point structure constants of generalized minimal models and of Liouville theory obey the same shift equations, and must therefore be related. Building on this observation, we would like to deduce our three-point structure constant from Liouville theory, by sending momentums to degenerate values. 
-
-This is not straightforward, because our shift equations do not relate all degenerate fields to one another. According to the degenerate fusion rule \eqref{rtod}, the shift equation that comes from a four-point function of the type $\left< V_{\langle 2,1\rangle}V_{\langle r,s\rangle}\cdots \right>$ actually relates the degenerate fields $V_{\langle r-1,s\rangle}$ and $V_{\langle r+1,s\rangle}$, and therefore determines how the three-point structure constant $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ changes when the indices $r_i$ are shifted by two units.
-Similarly, the dual shift equation controls the shifts of $s_i$ by two units. This is not enough for reaching all the values $r_i,s_i\in \mathbb{N}^*$.
-
-In order to solve this problem, we start with the property \eqref{chco} of our solutions $C$ and $\hat C$ of the shift equations. We assume that our three-point structure constant obeys the analogous property
-\begin{align}
- C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} \underset{\sum r_i =\sum s_i = 1}{=} 1\ .
-\end{align}
-From the values such that $\sum r_i=\sum s_i=1$, shifts of $r_i,s_i$ by two units allow us to reach all values such that 
-\begin{align}
- \textstyle{\sum}_{i=1}^3 r_i\, , \, \textstyle{\sum}_{i=1}^3 s_i \in 2\mathbb{Z}+1\ .
- \label{srss}
-\end{align}
-This defines $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ for all such values of $r_i,s_i$, which include all the cases that obey the fusion rules \eqref{rrrsss}. And we have 
+The three-point structure constants of generalized minimal models and of Liouville theory obey the same crossing symmetry equations. We can therefore deduce our three-point structure constants from Liouville theory, by sending momentums to degenerate values, 
 \begin{align}
  C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} 
  &= \hat{C}_{P_{\langle r_1,s_1 \rangle}, P_{\langle r_2,s_2 \rangle} ,P_{\langle r_3,s_3 \rangle} } \ ,
@@ -4151,6 +4155,10 @@ This defines $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3
 \underset{\sum_i P_i = \sum_i P_{\langle r_i,s_i \rangle} }{\operatorname{ Res}} C_{P_1,P_2,P_3}\ .
 \label{clc}
 \end{align}
+This is certainly a solution of the crossing symmetry equations in generalized minimal models, 
+and it must be unique according to the arguments of Exercise \ref{exoudt}, which apply to all diagonal theories. 
+(See Exercise \ref{exofix} for a more explicit proof in this case.) 
+
 If the fusion rules are violated, our three-point structure constant may or may not vanish. For example, $C_{\langle 1,1\rangle , \langle 1,1 \rangle,\langle 3,3 \rangle} \neq 0$.
 Therefore, while the three-point structure constant can be deduced from Liouville theory, the three-point function cannot, as the factor 
 $f_{r_1,r_2,r_3} f_{s_1,s_2,s_3}$ that enforces the fusion rules has no known derivation from Liouville theory. 
@@ -4660,7 +4668,49 @@ Study how the degenerate OPE \eqref{vot} behaves under reflections, and show tha
 \end{enumerate}
  \end{exo}
 
+ \begin{exo}[Uniqueness of generalized minimal models]
+ ~\label{exofix}
+Let us prove the uniqueness of the structure constants \eqref{chc} of generalized minimal models.
+We start by considering special cases of crossing symmetry equations: the shift equations that we used for determining the Liouville structure constant.
+ \begin{enumerate}
+  \item Show that the shift equations determine how the three-point structure constants $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ change when the indices $r_i,s_i$ are shifted by two units.
+  \item Deduce that together with permutation symmetry, the shift equations determine all structure constants in terms of the five fundamental quantities 
+\begin{align}
+ C_{\langle 1,1\rangle,\langle 1,1\rangle, \langle 1,1\rangle}
+ \ , \ 
+ C_{\langle 1,1\rangle,\langle 1,2\rangle, \langle 1,2\rangle}
+ \ , \
+ C_{\langle 1,1\rangle,\langle 2,1\rangle, \langle 2,1\rangle}
+ \ , \
+ C_{\langle 1,1\rangle,\langle 2,2\rangle, \langle 2,2\rangle}
+ \ , \
+ C_{\langle 1,2\rangle,\langle 2,1\rangle, \langle 2,2\rangle}\ .
+\end{align}
+\item Using crossing symmetry equations in the form \eqref{ffm}, applied to four-point functions of the type 
+$\langle V_{\langle 1,1\rangle}\cdots \rangle$, show that the structure constants that involve the field $V_{\langle 1,1\rangle}$ are related to one another.
+\item Using a judiciously chosen four-point function, show that $C^2_{\langle 1,2\rangle,\langle 2,1\rangle, \langle 2,2\rangle}$ is determined in terms of the other structure constants. 
+\item Show that the remaining sign ambiguity in $C_{\langle 1,2\rangle,\langle 2,1\rangle, \langle 2,2\rangle}$ can be absorbed in a field renormalization, and conclude. 
+ \end{enumerate}
+ \end{exo}
 
+
+\begin{exo}[Computation of some simple structure constants]
+ ~\label{exosssc}
+ In this Exercise we compute structure constants of the type $\check{C}_P = \check{C}_{\langle 3,1\rangle, P,P}$, in the field normalization where two-point functions are one. 
+\begin{enumerate}
+\item Write the $s$-channel decomposition of the four-point function $\left< V_{\langle 2,1\rangle} V_{\langle 2,1\rangle} V_PV_P\right>$, and deduce $\check{C}_P \check{C}_{\langle 2,1\rangle}$ from eq. \eqref{spsm}.
+\item Using the identities $\gamma(x+1)=-x^2\gamma(x)$ and $\gamma(2x)= 2^{4x-1}\gamma(x)\gamma(x+\tfrac12)$, check that
+\begin{align}
+ \check{C}_P \check{C}_{\langle 2,1\rangle} &= 2^{8b^2+4} \prod_\pm \frac{\gamma(-b^2\pm 2bP)}{\gamma(-b^2\pm \frac12)} \ ,
+ \\
+ \check{C}_{\langle 3,1\rangle} &= 2^{-2-4b^2}(1+2b^2)\frac{\gamma(-\tfrac12-2b^2)}{\gamma(\tfrac12-b^2)}\sqrt{-\frac{\gamma(-b^2)}{\gamma(-1-3b^2)}}\ .
+ \label{cto}
+\end{align}
+ \item As an independent verification, deduce $\check{C}_P$ from the formula \eqref{cijrs}, and compare.
+\end{enumerate}
+\end{exo}
+
+ 
 \begin{exo}[Fusion rules of doubly degenerate representations]
  ~\label{exofus}
 Deduce the fusion rules \eqref{rrmm} of doubly degenerate representations from the degenerate fusion rule \eqref{rrsr}. 
@@ -4689,23 +4739,6 @@ In the minimal model case $b^2 = -\frac{q}{p}$, show that
 Assuming that the fusion product of two representations is unitary if and only if both representations are unitary, show that in non-unitary (generalized) minimal models, at least some of the representations with positive conformal dimensions are non-unitary.
 \end{enumerate}
 \end{exo}
-
-\begin{exo}[Computation of some simple structure constants]
- ~\label{exosssc}
- In this Exercise we compute structure constants of the type $\check{C}_P = \check{C}_{\langle 3,1\rangle, P,P}$, in the field normalization where two-point functions are one. 
-\begin{enumerate}
-\item Write the $s$-channel decomposition of the four-point function $\left< V_{\langle 2,1\rangle} V_{\langle 2,1\rangle} V_PV_P\right>$, and deduce $\check{C}_P \check{C}_{\langle 2,1\rangle}$ from eq. \eqref{spsm}.
-\item Using the identities $\gamma(x+1)=-x^2\gamma(x)$ and $\gamma(2x)= 2^{4x-1}\gamma(x)\gamma(x+\tfrac12)$, check that
-\begin{align}
- \check{C}_P \check{C}_{\langle 2,1\rangle} &= 2^{8b^2+4} \prod_\pm \frac{\gamma(-b^2\pm 2bP)}{\gamma(-b^2\pm \frac12)} \ ,
- \\
- \check{C}_{\langle 3,1\rangle} &= 2^{-2-4b^2}(1+2b^2)\frac{\gamma(-\tfrac12-2b^2)}{\gamma(\tfrac12-b^2)}\sqrt{-\frac{\gamma(-b^2)}{\gamma(-1-3b^2)}}\ .
- \label{cto}
-\end{align}
- \item As an independent verification, deduce $\check{C}_P$ from the formula \eqref{cijrs}, and compare.
-\end{enumerate}
-\end{exo}
-
 
 \begin{exo}[Structure constant of the $(5,2)$ minimal model]
  ~\label{exocppp}
