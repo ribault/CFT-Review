@@ -1927,7 +1927,7 @@ where the proportionality factor is an arbitrary antiholomorphic function. We de
  \label{eq:2pt}
 \end{align}
 Here the symbol $\delta_{\Delta_1,\Delta_2}$ is a Kronecker delta or a Dirac delta function, depending on whether the conformal dimensions take discrete or continuous values. We have assumed that the fields have no multiplicities (i.e. two different primary fields cannot have the same dimensions), 
-and we have set the overall $z_i$-independent prefactor to one by a field renormalization.
+and we have set the overall $z_i$-independent prefactor to one by a \textbf{field renormalization}\index{renormalization!field---} $V_{\Delta,\bar\Delta}(z)\to \lambda(\Delta,\bar\Delta)V_{\Delta,\bar\Delta}(z)$. (This still leaves the freedom to perform field renormalizations by signs $\lambda(\Delta,\bar\Delta) \in \{1,-1\}$.)
 
 \item $\boxed{N=3}$\ : The three global Ward identities determine the dependence of three-point functions on the three coordinates $z_i$, without constraining the conformal dimensions $\Delta_i$. Using $\epsilon(z)= (z-z_2)(z-z_3)$ in eq. \eqref{oiz}, we indeed obtain
 \begin{align}
@@ -2785,12 +2785,17 @@ Considering the conformal blocks as known quantities, this is an equation for th
 This equation is equivalent to the associativity of the OPE. In order to show that the theory is consistent, it suffices to moreover check the commutativity of the OPE, equivalently the behaviour \eqref{css} of the three-point structure constant under permutations. 
 % NB: in particular this implies equality with the u-channel.
 
-The general crossing symmetry equation \eqref{csd}, while it may in principle determine the three-point structure constant, is in practice often intractable, because
+The crossing symmetry equation is invariant under two types  of transformations: 
+\begin{itemize}
+ \item field renormalizations by signs $V_i(z_i)\to \lambda_i V_i(z_i)$ with $\lambda_i\in\{-1,1\}$, i.e. the only field renormalizations that preserve the two-point function \eqref{eq:2pt}, 
+ \item \textbf{structure constant renormalizations}\index{renormalization!structure constant---} $C_{ijk}\to \lambda_0 C_{ijk}$. Whenever there exists an identity field $I$, this freedom is eliminated by the requirement $C_{III}=1$, and more generally $C_{Iii}=1$.
+\end{itemize}
+The crossing symmetry equation \eqref{csd}, while it may in principle determine the three-point structure constant modulo such renormalizations, is in practice often intractable, because
 \begin{enumerate}
  \item it can involve sums over large sets of possible conformal dimensions in the $s$- and $t$-channels, 
- \item the general conformal blocks are rather complicated. 
+ \item the conformal blocks are rather complicated. 
 \end{enumerate}
-So, while the general crossing equation is useful for testing the consistency of proposals for the spectrum and three-point structure constant, it is often useless for deriving specific proposals in the first place. However, it is possible to restrict the $s$- and $t$-channels conformal dimensions to finite sets, and to simplify the conformal blocks, by taking one of the four fields to be degenerate. (See Section \ref{sec:degf}.) If the other three fields remain generic, this still leads to constraints on the generic three-point structure constant. We will use such constraints for solving Liouville theory and minimal models.
+So, while this equation is useful for testing the consistency of proposals for the spectrum and three-point structure constant, it is often useless for deriving specific proposals in the first place. However, it is possible to restrict the $s$- and $t$-channels conformal dimensions to finite sets, and to simplify the conformal blocks, by taking one of the four fields to be degenerate. (See Section \ref{sec:degf}.) If the other three fields remain generic, this still leads to constraints on the generic three-point structure constant. We will use such constraints for solving Liouville theory and minimal models.
 
 \subsubsection{The fusing matrix}
 
@@ -2949,7 +2954,7 @@ This right-hand side can actually be computed as a limit of the general expressi
   &\propto \frac{1}{\prod_{\pm,\pm,\pm} \Gamma_b(\frac{Q}{2} \pm P_t\pm P_1\pm P_4)}\ ,
   \label{eq:fdozz}
 \end{align}
-where we neglect factors that can be absorbed into field renormalizations $V_{\Delta}(z)\to \lambda(\Delta)V_\Delta(z)$. (See Exercise \ref{exoflfg}.) This  coincides with the DOZZ formula \eqref{caaa} for the three-point function of Liouville theory, given the relation 
+where we neglect factors that can be absorbed into field renormalizations. (See Exercise \ref{exoflfg}.) This  coincides with the DOZZ formula \eqref{caaa} for the three-point function of Liouville theory, given the relation 
 \begin{align}
  \Upsilon_b(x) = \frac{1}{\Gamma_b(x)\Gamma_b(Q-x)}\ ,
  \label{eq:upga}
@@ -3291,10 +3296,10 @@ Let us prove and discuss the relation \eqref{eq:bot} that describes how an $s$-c
 
 \begin{exo}[Uniqueness of the three-point structure constant in diagonal theories]
  ~\label{exoudt}
- Let us show that the crossing symmetry equation \eqref{ffm} uniquely determines the three-point structure constant. 
+ Let us show that the crossing symmetry equation \eqref{ffm} uniquely determines the three-point structure constant modulo field and structure constant renormalizations.
  \begin{enumerate}
   \item Show that the ratio $\rho_{123}$ of two structure constants obeys $\rho_{12s}\rho_{s34} = \rho_{23t}\rho_{t41}$.
-  \item Show that $\rho_{12s}^2 = \rho_{12t}^2$, and deduce that $\rho_{123}\in\{-1,1\}$ up to a constant normalization factor.
+  \item Show that $\rho_{12s}^2 = \rho_{12t}^2$, and deduce that $\rho_{123}\in\{-1,1\}$ modulo a structure constant renormalization.
   \item Show that $\frac{\rho_{12s}}{\rho_{12s'}} = \frac{\rho_{34s}}{\rho_{34s'}} $, and deduce that our ratio factorizes as $\rho_{123} = \lambda_1\lambda_2\lambda_3$. Conclude.
  \end{enumerate} 
 \end{exo}
@@ -3305,7 +3310,7 @@ Let us prove and discuss the relation \eqref{eq:bot} that describes how an $s$-c
  \begin{enumerate}
  \item Study how $s$-channel conformal blocks behave in our limit, and deduce the relation \eqref{eq:flim} between the fusing matrix of Verma modules, and the fusing matrix that involves the degenerate representation $\mathcal{R}_{\langle 1,1\rangle}$. 
   \item Accepting that the double Gamma function $\Gamma_b(x)$ has simple poles for $x\in -b\mathbb{N}-b^{-1}\mathbb{N}$, study the behaviour of the poles of the integrand in the expression \eqref{ffm} of the fusing matrix. Deduce that in our limit, the integral reduces to its residue at $u=P_{t14}$.
-  \item Compute the limit of the integral, and of the prefactors. Check that the result is eq. \eqref{eq:fdozz} up to field renormalizations. Show that the crossing symmetry equation is invariant under field renormalizations, and conclude that we did find a solution of the crossing symmetry equation.
+  \item Compute the limit of the integral, and of the prefactors. Check that the result is eq. \eqref{eq:fdozz} up to field renormalizations, and conclude that we found a solution of the crossing symmetry equation.
  \end{enumerate}
 \end{exo}
 
@@ -3375,10 +3380,6 @@ Then the two-point function takes the form
 \end{align}
 where we introduce a coefficient $B(P)$ called the \textbf{two-point structure constant}\index{structure constant!two-point---}. 
 We could set this coefficient to one via a field renormalization,
-\begin{align}
- V_P(z) \to \lambda(P)  V_P(z) \ ,
-\label{vlv}
-\end{align}
 and we would recover a two-point function of the type of eq. \eqref{eq:2pt}. However, we refrain from setting $B(P)=1$, as the resulting three-point structure constant would then have branch cuts as a function of momentums.  
 
 According to eq. \eqref{cff}, the three-point function takes the form
@@ -3535,27 +3536,20 @@ Using a four-point function of the type  $
 
 \subsubsection{Normalization-independent quantities} 
 
-Crossing symmetry equations are invariant under 
-\begin{itemize}
- \item field renormalizations \eqref{vlv}, which act on two- and three-point structure constants as 
+Crossing symmetry equations are invariant under structure constant renormalizations $C_{P_1,P_2,P_3} \to \lambda_0 C_{P_1,P_2,P_3}$, and under 
+ field renormalizations $V_P(z) \to \lambda(P)  V_P(z)$. Taken together, these renormalizations act on two- and three-point structure constants as 
  \begin{align}
- B(P) \to \lambda(P)^2 B(P) \quad , \quad C_{P_1,P_2,P_3} \to \lambda(P_1)\lambda(P_2)\lambda(P_3) C_{P_1,P_2,P_3}\ ,
+ B(P) \to \lambda(P)^2 B(P) \quad , \quad C_{P_1,P_2,P_3} \to \lambda_0 \lambda(P_1)\lambda(P_2)\lambda(P_3) C_{P_1,P_2,P_3}\ .
  \label{blsb}
 \end{align}
-\item renormalizations of the three-point structure constant by constant factors,
-\begin{align}
- C_{P_1,P_2,P_3} \to \lambda_0 C_{P_1,P_2,P_3}\ .
- \label{clzc}
-\end{align}
-\end{itemize}
-(Renormalizations of the two-point structure constant are also possible, but they are combinations of the above renormalizations.) Our shift equations \eqref{eq:shiftd} and \eqref{eq:shift} are therefore also invariant under such renormalizations, and they can determine structure constants only up to such renormalizations -- equivalently, they can only determine renormalization-invariant combinations of structure constants.
+The shift equations \eqref{eq:shiftd} and \eqref{eq:shift} are therefore also invariant under such renormalizations, and they can determine structure constants only up to such renormalizations -- equivalently, they can only determine renormalization-invariant combinations of structure constants.
 
 We could focus on combinations of two-and three-point structure constants that are invariant under field renormalizations. However, the combination $\frac{C_{P_1,P_2,P_3}}{\sqrt{B(P_1)B(P_2)B(P_3)}}$ involves a square root and is therefore not meromorphic, and the combination $\frac{C_{P_1,P_2,P_3}^2}{B(P_1)B(P_2)B(P_3)}$ loses track of the sign of the three-point structure constant. 
 Rather, we will decompose the three-point structure constant as 
 \begin{align}
  C_{P_1,P_2,P_3} = N(P_1)N(P_2)N(P_3)C'_{P_1,P_2,P_3}\ ,
 \end{align}
-where the normalization factor $N(P)$ transforms as $N(P)\to \lambda(P)N(P)$ under field renormalizations, while  $C'_{P_1,P_2,P_3}$ is invariant. In other words, $C'_{P_1,P_2,P_3}$ is the three-point structure constant in a reference normalization that we can in principle choose arbitrarily, and that we will shortly choose so that $C'_{P_1,P_2,P_3}$ is as simple as possible.
+where the normalization factor $N(P)$ transforms as $N(P)\to \lambda(P)N(P)$ under field renormalizations, while  $C'_{P_1,P_2,P_3}$ is invariant. In other words, $C'_{P_1,P_2,P_3}$ is the three-point structure constant in a reference normalization which we can in principle choose arbitrarily, and which we will shortly choose so that $C'_{P_1,P_2,P_3}$ is as simple as possible.
 Then the invariant quantities that we want to determine are $C'_{P_1,P_2,P_3}$, and the combination $N^2B^{-1}(P)$. As a check that these quantities are all we need, let us write the crossing symmetry equation for a four-point function of the type $\langle V_{P_1}V_{P_2}V_{P_3}V_{P_4}\rangle$. Adapting the crossing symmetry equation \eqref{csd} to the 
 OPE \eqref{vvi}, we find 
 \begin{align}
@@ -3736,7 +3730,7 @@ These solutions are
  \item invariant under reflection of each momentum $P_i\to -P_i$, due to eq. \eqref{upq},
  \item and symmetric under permutations of the momentums.
 \end{itemize}
-When writing these solutions, we have lifted the ambiguity of the three-point structure constant under renormalizations \eqref{clzc}. Our choice of normalization will allow the three-point structure constant to obey eq. \eqref{chco}.
+When writing these solutions, we have lifted the ambiguity of the three-point structure constant under structure constant renormalizations. Our choice of normalization will allow the three-point structure constant to obey eq. \eqref{chco}.
 
 Similarly, we can write solutions of the shift equation \eqref{nbs} (and its dual) for the normalization-independent combination $N^2B^{-1}$,
 \begin{align}
@@ -4570,7 +4564,7 @@ conformal block,
  c_-^{(t)} &= \tilde{C}_+(P)C_+(P+\tfrac{1}{2b})B(P+\tfrac{Q}{2})\ .
 \end{align}
 Argue that $c_+^{(s)}=c_-^{(t)}$, and deduce a relation between $C_+$ and $\tilde{C}_+$.
-\item Study how $C_+(P)$ and $\tilde{C}_+(P)$ behave under a field renormalization \eqref{vlv}, and show that they renormalize to one provided
+\item Study how $C_+(P)$ and $\tilde{C}_+(P)$ behave under a field renormalization, and show that they renormalize to one provided
 \begin{align}
  C_+(P) = \frac{\lambda(P+\frac{b}{2})}{\lambda(P)} \quad \text{and} \quad 
 \tilde{C}_+(P) = \frac{\lambda(P+\frac{1}{2b})}{\lambda(P)} \ .
