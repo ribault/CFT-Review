@@ -3937,7 +3937,7 @@ If we continue $P_1,P_2$ such that $|\Re(P_1+P_2)|>\frac12\Re Q$ or $|\Re(P_1-P_
 \end{align}
 Then the OPE becomes
 \begin{align}
- V_{P_1}V_{P_2} \sim \frac12\int_{i{\mathbb{R}}} dP \frac{C_{P_1,P_2,P}}{B_P} V_P + \sum_{P_k\in \mathcal{P}_{P_1,P_2}} \frac{\underset{P=P_k}{\operatorname{Res}} C_{P_1,P_2,P}}{B(P_k)} V_{P_k}\ ,
+ V_{P_1}V_{P_2} \sim \frac12\int_{i{\mathbb{R}}} dP \frac{C_{P_1,P_2,P}}{B_P} V_P + \sum_{P_k\in \mathcal{P}_{P_1,P_2}} \frac{\underset{P=P_k}{\operatorname{Res}} C_{P_1,P_2,P}}{B_{P_k}} V_{P_k}\ ,
  \label{acope}
 \end{align}
 where the discrete terms have lost their factor $\frac12$ due to the contributions of the poles from the right. (See Exercise \ref{exoaur} for examples of the resulting fusion rules.)
@@ -4168,7 +4168,7 @@ meromorphic only for $b\notin i\mathbb{R}$.
 
 The generalized minimal models' two-point structure constant can similarly be deduced from the Liouville two-point structure constant, equivalently from the Liouville reflection coefficient \eqref{ram}, by 
 \begin{align}
-B_{\langle r,s\rangle} = B(P_{\langle r,s\rangle}) = R(P_{\langle r,s\rangle})\ .
+B_{\langle r,s\rangle} = B_{P_{\langle r,s\rangle}} = R_{P_{\langle r,s\rangle}}\ .
 \end{align}
 Rather than using the relation with Liouville theory, the generalized minimal models' structure constants can of course be rederived from first principles. (See Exercise \ref{exosssc} for examples.)
 
@@ -4280,11 +4280,11 @@ Compared with the two-point function of a generalized minimal model \eqref{vvdd}
 \end{align}
 Let us deduce the three-point structure constant from the generalized minimal models' three-point structure constant. To do this, we use the relation between our field normalization, and the normalization we had in generalized minimal modelds,
 \begin{align}
- \check{V}_{\langle r,s \rangle} = \frac{1}{\sqrt{R(P_{\langle r,s \rangle})}} V_{\langle r,s \rangle}\ , 
+ \check{V}_{\langle r,s \rangle} = \frac{1}{\sqrt{R_{P_{\langle r,s \rangle}}}} V_{\langle r,s \rangle}\ , 
 \end{align}
-where $R(P)$ is the Liouville reflection coefficient \eqref{ram}. We moreover renormalize the three-point structure constant with a factor $\sqrt{R(P_{\langle 1,1 \rangle})}$, in order to ensure that $V_{\langle 1,1\rangle}$ remains an identity field. This leads to the three-point structure constant 
+where $R_P$ is the Liouville reflection coefficient \eqref{ram}. We moreover renormalize the three-point structure constant with a factor $\sqrt{R_{P_{\langle 1,1 \rangle}}}$, in order to ensure that $V_{\langle 1,1\rangle}$ remains an identity field. This leads to the three-point structure constant 
 \begin{align}
- \check{C}_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} = \sqrt{\frac{R(P_{\langle 1,1 \rangle})}{\prod_{i=1}^3 R(P_{\langle r_i,s_i \rangle})}}  C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}\ ,
+ \check{C}_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} = \sqrt{\frac{R_{P_{\langle 1,1 \rangle}}}{\prod_{i=1}^3 R_{P_{\langle r_i,s_i \rangle}}}}  C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}\ ,
 \label{tcc}
 \end{align}
 where the three-point structure constant of generalized minimal models $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ was given in eq. \eqref{cpqb}. Our expression for $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ is valid under the condition \eqref{srss}, which is fulfilled under the first alternative in the minimal model fusion rule eq. \eqref{mmfr}. And the second alternative can be reduced to the first alternative by reflecting one field as in eq. \eqref{vvr}.
@@ -4485,11 +4485,11 @@ The $7$ limits that we wrote until now are relatively straighforward consequence
  ~\label{exocpcm}
  Write the OPE coefficients $C_\pm(P)$ \eqref{vot} in terms of two- and three-point structure constants. In particular, show that 
  \begin{align}
-  C_+(P)B(P+\tfrac{b}{2}) = C_{\langle 2,1\rangle, P, P+\frac{b}{2}}\ . 
+  C_+(P)B_{P+\tfrac{b}{2}} = C_{\langle 2,1\rangle, P, P+\frac{b}{2}}\ . 
  \end{align}
  Using the invariance of the three-point structure constant $C_{\langle 2,1\rangle, P,P'}$ under permutations of its last two arguments, show that $C_+(P)$ and $C_-(P)$ are related as
  \begin{align}
-  C_+(P)B(P+\tfrac{b}{2}) = C_-(P+\tfrac{b}{2}) B(P)\ .
+  C_+(P)B_{P+\tfrac{b}{2}} = C_-(P+\tfrac{b}{2}) B_{P}\ .
  \end{align}
 \end{exo}
 
@@ -4613,16 +4613,16 @@ For an interpretation of these different behaviours in random energy models, see
 \item Specializing to a four-point function with two degenerate fields,
 show that in addition to eq. \eqref{eq:ddgg} for $c_+^{(s)}$, we have the equation
 $
- c_-^{(t)} \propto B(P)
+ c_-^{(t)} \propto B_{P}
 $ for the coefficient of the $t$-channel field $V_{\langle 1,1\rangle}$. 
 (Here and in later equations, 
 we neglect $P$-independent factors.) Deduce that 
 \begin{align}
- C_+(P)^2 \propto \gamma(2bP)\gamma(-2bP-b^2) \frac{B(P)}{B(P+\frac{b}{2})}\ .
+ C_+(P)^2 \propto \gamma(2bP)\gamma(-2bP-b^2) \frac{B_P}{B_{P+\frac{b}{2}}}\ .
 \end{align}
-\item Using eq. \eqref{ram} for $B(P)=R(P)$, deduce $C_+(P)\propto 1$, and show that the DOZZ normalization is such that eq. \eqref{cmpo} holds. 
+\item Using eq. \eqref{ram} for $B_P=R_P$, deduce $C_+(P)\propto 1$, and show that the DOZZ normalization is such that eq. \eqref{cmpo} holds. 
 \item
-Study how the degenerate OPE \eqref{vot} behaves under reflections, and show that $C_-(P) = R(P)R(-P+\frac{b}{2})C_+(-P)$. Using again eq. \eqref{ram} for $R(P)$, deduce
+Study how the degenerate OPE \eqref{vot} behaves under reflections, and show that $C_-(P) = R_PR_{-P+\frac{b}{2}}C_+(-P)$. Using again eq. \eqref{ram} for $R_P$, deduce
 \begin{align}
  C_-(P) = \mu^b b^{2bQ} \gamma(-2bP)\gamma(2bP-b^2)\ .
 \end{align}
@@ -4707,12 +4707,12 @@ Assuming that the fusion product of two representations is unitary if and only i
  \begin{enumerate}
   \item Using eq. \eqref{tcc}, write
 \begin{align}
- \check{C}_{\phi\phi\phi} = \sqrt{\frac{R(P_{\langle 1,1 \rangle})}{R(P_{\langle 2,1 \rangle})^3}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 3,1 \rangle}\ .
+ \check{C}_{\phi\phi\phi} = \sqrt{\frac{R_{P_{\langle 1,1 \rangle}}}{R_{P_{\langle 2,1 \rangle}}^3}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 3,1 \rangle}\ .
 \end{align}
 \item Notice that $C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 3,1 \rangle} = C_+(P_{\langle 2,1 \rangle})=1$ due to eqs. \eqref{vot} and \eqref{cco}.
 Choosing an appropriate value for $\mu$, compute
 \begin{align}
- R(P_{\langle 1,1 \rangle}) = -\frac{\Gamma(-\frac35)\Gamma(\frac32)}{\Gamma(\frac35)\Gamma(-\frac32)} \ , \quad R(P_{\langle 2,1 \rangle}) = -\frac{\Gamma(-\frac15)\Gamma(\frac12)}{\Gamma(\frac15)\Gamma(-\frac12)}\ , 
+ R_{P_{\langle 1,1 \rangle}} = -\frac{\Gamma(-\frac35)\Gamma(\frac32)}{\Gamma(\frac35)\Gamma(-\frac32)} \ , \quad R_{P_{\langle 2,1 \rangle}} = -\frac{\Gamma(-\frac15)\Gamma(\frac12)}{\Gamma(\frac15)\Gamma(-\frac12)}\ , 
 \end{align}
 and deduce the explicit formula \eqref{cppp} for $\check{C}_{\phi\phi\phi}$.
 \item Rederive the same result using eq. \eqref{cto}.
@@ -4727,11 +4727,11 @@ and deduce the explicit formula \eqref{cppp} for $\check{C}_{\phi\phi\phi}$.
  \begin{enumerate}
   \item Show that 
 \begin{align}
- \check{C}_{\sigma\sigma\epsilon} = \frac{1}{R(P_{\langle 2,1 \rangle})}\sqrt{\frac{R(P_{\langle 1,1 \rangle})}{R(P_{\langle 1,2 \rangle})}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 3,1 \rangle}\ .
+ \check{C}_{\sigma\sigma\epsilon} = \frac{1}{R_{P_{\langle 2,1 \rangle}}}\sqrt{\frac{R_{P_{\langle 1,1 \rangle}}}{R_{P_{\langle 1,2 \rangle}}}} C_{\langle 2,1\rangle , \langle 2,1 \rangle,\langle 3,1 \rangle}\ .
 \end{align}
 \item Choosing an appropriate value for $\mu$, compute
 \begin{align}
- R(P_{\langle 1,1 \rangle}) = -\frac{\Gamma(-\frac14)\Gamma(\frac13)}{\Gamma(\frac14)\Gamma(-\frac13)} \ , \quad R(P_{\langle 1,2 \rangle}) = -\frac{\Gamma(-\frac54)\Gamma(\frac53)}{\Gamma(\frac54)\Gamma(-\frac53)} \ , \quad R(P_{\langle 2,1 \rangle}) = -\frac{\Gamma(\frac12)\Gamma(-\frac23)}{\Gamma(-\frac12)\Gamma(\frac23)}\ ,
+ R_{P_{\langle 1,1 \rangle}} = -\frac{\Gamma(-\frac14)\Gamma(\frac13)}{\Gamma(\frac14)\Gamma(-\frac13)} \ , \quad R_{P_{\langle 1,2 \rangle}} = -\frac{\Gamma(-\frac54)\Gamma(\frac53)}{\Gamma(\frac54)\Gamma(-\frac53)} \ , \quad R_{P_{\langle 2,1 \rangle}} = -\frac{\Gamma(\frac12)\Gamma(-\frac23)}{\Gamma(-\frac12)\Gamma(\frac23)}\ ,
 \end{align}
 and deduce the explicit formula \eqref{csse} for $\check{C}_{\sigma\sigma\epsilon}$.
 \item Rederive that structure constant using the results of Exercise \ref{exosssc}.
@@ -5931,7 +5931,7 @@ The reflection relation for Liouville primary fields leads to a reflection relat
 \begin{align}
  \Phi^j_{\mu} = R\left(b^{-1}(j+\tfrac12)\right) \Phi^{-j-1}_{\mu} \ ,
 \end{align}
-which involves the Liouville reflection coefficient $R(P)$ \eqref{ram}. The two-point function can be deduced from the two-point function \eqref{vvrdd} of Liouville theory, 
+which involves the Liouville reflection coefficient $R_P$ \eqref{ram}. The two-point function can be deduced from the two-point function \eqref{vvrdd} of Liouville theory, 
 \begin{align}
  \left\langle \Phi^{j_1}_{\mu_1} \Phi^{j_2}_{\mu_2}\right\rangle = \delta^{(2)}(\mu_1+\mu_2) |\mu_1|^2 b\Big[\delta(j_1+j_2+1) + R\left(b^{-1}(j_1+\tfrac12)\right) \delta(j_2-j_1)\Big]\ .
 \end{align}
@@ -6519,9 +6519,9 @@ Given a highest-weight representation $\mathcal{U}_\alpha$ of the affine Lie alg
 \begin{exo}[Normalization of OPE coefficients in free bosonic theories]
  ~\label{exoone}
 The aim of this exercise is to show that the OPE coefficient in the OPE of $\hat{\mathfrak{u}}_1$-primary fields \eqref{vvoo} can be set to one by renormalizing the fields.
-In other words, calling this coefficient $C_{\alpha_1,\alpha_2}$, we want to show that there exists a function $\lambda(\alpha)$ such that 
+In other words, calling this coefficient $C_{\alpha_1,\alpha_2}$, we want to show that there exists a function $\lambda_{\alpha}$ such that 
 \begin{align}
- C_{\alpha_1,\alpha_2} = \frac{\lambda(\alpha_1+\alpha_2)}{\lambda(\alpha_1)\lambda(\alpha_2)}\ .
+ C_{\alpha_1,\alpha_2} = \frac{\lambda_{\alpha_1+\alpha_2}}{\lambda_{\alpha_1}\lambda_{\alpha_2}}\ .
 \label{clll}
 \end{align}
 \begin{enumerate}
@@ -6534,7 +6534,7 @@ C_{\alpha_1,\alpha_2} &= C_{\alpha_2,\alpha_1}\ ,
 
 \item Consider the ansatz
 \begin{align}
-  \lambda(\alpha) = \frac{1}{C_{\alpha,0}} \exp \int_0^{\alpha} \varphi \ , \quad \text{where}\quad  
+  \lambda_{\alpha} = \frac{1}{C_{\alpha,0}} \exp \int_0^{\alpha} \varphi \ , \quad \text{where}\quad  
  \varphi(\alpha)&=\left.{\frac{\partial}{\partial \alpha_2}}\log C_{\alpha,\alpha_2}\right|_{\alpha_2=0}\ .
 \end{align}
 Show that $C_{\alpha,0}$ is actually an $\alpha$-independent constant, and that the function $\varphi(\alpha)$ is such that
