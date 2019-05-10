@@ -2907,7 +2907,7 @@ F^{-1}_{\Delta_t,\Delta_s}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Del
 \label{ffm}
 \end{align}
 (Replacing one of the four Verma modules $\mathcal{V}_{\Delta_i}$ with the degenerate representation $\mathcal{R}_{\langle 2,1\rangle}$, this would reduce to eq. \eqref{spsm}.)
-This formulation of crossing symmetry can be useful, because the fusing matrix is a simpler object than the conformal blocks. Moreover, this formulation implies that in a diagonal theory, the structure constant is uniquely determined by crossing symmetry. (See Exercise \ref{exoudt}.) 
+This formulation of crossing symmetry can be useful, because the fusing matrix is a simpler object than the conformal blocks. Moreover, this formulation implies that in a diagonal theory, the structure constants are uniquely determined by crossing symmetry. (See Exercise \ref{exoudt}.) 
 And we will now show that the solution of this equation can be written in terms of the fusing matrix. 
 To do this, let us consider a pentagon relation where the Verma module $\mathcal{V}_{\Delta_{45}}$ is replaced with the identity representation $\mathcal{R}_{\langle 1,1\rangle}$. From the fusion rule \eqref{roof}, we deduce the triviality of the fusing matrix element
 \begin{align}
@@ -3531,7 +3531,7 @@ Using a four-point function of the type  $
 \subsubsection{Normalization-independent quantities} 
 
 Crossing symmetry equations are invariant under field and structure constant renormalizations, and can therefore only determine renormalization-invariant combinations of structure constants.
-We could focus on combinations of two-and three-point structure constants that are invariant under field renormalizations. However, the combination $\frac{C_{P_1,P_2,P_3}}{\sqrt{B_{P_1}B_{P_2}B_{P_3}}}$ involves a square root and is therefore not meromorphic, and the combination $\frac{C_{P_1,P_2,P_3}^2}{B_{P_1}B_{P_2}B_{P_3}}$ loses track of the sign of the three-point structure constant. 
+We could focus on combinations of two- and three-point structure constants that are invariant under field renormalizations. However, the combination $\frac{C_{P_1,P_2,P_3}}{\sqrt{B_{P_1}B_{P_2}B_{P_3}}}$ involves a square root and is therefore not meromorphic, and the combination $\frac{C_{P_1,P_2,P_3}^2}{B_{P_1}B_{P_2}B_{P_3}}$ loses track of the sign of the three-point structure constant. 
 Rather, we will decompose the three-point structure constant as 
 \begin{align}
  C_{P_1,P_2,P_3} = N_{P_1}N_{P_2}N_{P_3}C'_{P_1,P_2,P_3}\ ,
@@ -3881,7 +3881,7 @@ This uniqueness statement relies on the assumption that degenerate fields exist.
 \begin{itemize}
  \item We can relax the assumption that fields have multiplicities zero or one, and allow finite multiplicities. A simple theory where all fields have the same multiplicity $N\in\mathbb{N}^*$ can be built by taking $N$ non-interacting copies of Liouville theory.
  \item We can relax the assumption that correlation functions are meromorphic functions of the coupling constant and of the fields' momentums. Then we find that for $b^2=-\frac{q}{p}\in \mathbb{Q}_{<0}$, there exists a solution of crossing symmetry that differs from the Liouville three-point structure constant $\hat{C}_{P_1,P_2,P_3}$ by a non-analytic factor with values in $\{0,1\}$ \cite{rs15},
- % Shows that \eqref{ffm} does not hold in such cases. But for c=1 the fusing relation is not particularly pathological, see Iorgov-Lisovyy-Tykhyy.
+ % NB: Shows that \eqref{ffm} does not hold in such cases. But for c=1 the fusing relation is not particularly pathological, see Iorgov-Lisovyy-Tykhyy.
  \begin{align}
   \sigma_{P_1,P_2,P_3} = \left\{\begin{array}{cl} 1 & \text{if} \ \ \prod_{\pm,\pm} \sin\pi\left(\frac12(p-q)+\sqrt{pq}(P_1\pm P_2\pm P_3)\right) < 0\ , 
   \\ 0 & \text{else}\ . \end{array} \right.
@@ -4131,7 +4131,7 @@ On the other hand, nothing guarantees that generalized minimal models are consis
 
 \subsubsection{Two- and three-point structure constants}
 
-Evaluating the expression \eqref{clc} for the three-point structure constant, we obtain
+Let us deduce the three-point structure constant from the DOZZ formula \eqref{caaa} using eq. \eqref{clc}:
 \begin{align}
  C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle} =   \frac{\mu^{-\frac{Q}{2}}\Upsilon'_b(0)\prod_{i=1}^3 \mu^{P_{\langle r_i,s_i \rangle}}\Upsilon'_b(2P_{\langle r_i,s_i \rangle}) }{\prod_{\pm,\pm} \Upsilon'_b\left(\tfrac{Q}{2}+P_{\langle r_1,s_1 \rangle}\pm P_{\langle r_2,s_2 \rangle} \pm P_{\langle r_3,s_3 \rangle}\right)} \ .
 \label{crisi}
@@ -4176,7 +4176,7 @@ Rather than using the relation with Liouville theory, the generalized minimal mo
 
 After our digression on generalized minimal models with their generic central charges, let us study the doubly degenerate representations that are used for building minimal models. We will first determine the central charges for which doubly degenerate representations exist. 
 
-\subsubsection{Central charge}
+\subsubsection{Kac table}
 
 Let us consider the doubly degenerate representation 
 \begin{align}
@@ -4189,27 +4189,21 @@ $P_{\langle r,s \rangle}=\pm P_{\langle r',s' \rangle}$. Using eq. \eqref{ars} f
 \begin{align} 
 b^2=-\frac{q}{p} \in \mathbb{Q} \quad \Rightarrow \quad c\in ]-\infty, 1] \cup [25,\infty[\ .
 \end{align}
-In order to recover the known minimal models with their central charges $c_{p,q}$ \eqref{cpq}, it is actually enough to restrict to integers $p,q$ that are coprime and obey $p,q\geq 2$.
-In this case, there exists at least one doubly degenerate representation such that 
-\begin{align}
- p = r+r' \quad , \quad q = s+s'\ ,
- \label{prrp}
-\end{align}
-so that $P_{\langle r,s \rangle}+P_{\langle r',s' \rangle} = 0$. 
-In any case where $b^2$ is rational, we have the relation
+Then, in addition to the relation $\Delta_{\langle r,s \rangle}=\Delta_{\langle -r,-s \rangle}$ which holds for any central charge, we have the relation
 \begin{align}
  \forall r,s\in \mathbb{C}\ , \quad \Delta_{\langle r,s \rangle}=\Delta_{\langle p-r,q-s \rangle}\ ,
  \label{ddr}
 \end{align}
-in addition to the relation $\Delta_{\langle r,s \rangle}=\Delta_{\langle -r,-s \rangle}$ which holds for any central charge. 
+In order to recover the known minimal models with their central charges $c_{p,q}$ \eqref{cpq}, it is actually enough to restrict to integers $p,q$ that are coprime and obey $p,q\geq 2$.
+In this case, there exists at least one doubly degenerate representation $\mathcal{R}=\mathcal{R}_{\langle r,s \rangle}=\mathcal{R}_{\langle r',s' \rangle}$ such that 
+\begin{align}
+ p = r+r' \quad , \quad q = s+s'\ .
+ \label{prrp}
+\end{align}
+Let us investigate the fusion product of $\mathcal{R}$ with  the Verma module $\mathcal{V}_P$. 
+We will see that this fusion product is zero for almost all values of $P$. Whenever $\mathcal{R}\times \mathcal{V}_P=0$, we consider that $\mathcal{R}$ cannot coexist with a representation of momentum $P$, as correlation functions that involve both representations would vanish. 
 
-
-\subsubsection{Kac table}
-
-Let us consider a doubly degenerate representation $\mathcal{R}=\mathcal{R}_{\langle r,s \rangle}=\mathcal{R}_{\langle r',s' \rangle}$ such that the integers  $p=r+r'$ and $q=s+s'$ are coprime. Let us investigate the fusion product of $\mathcal{R}$ with a Verma module, which encodes constraints that apply to the fusion of $\mathcal{R}$ with 
-any highest-weight representation. We will see that this fusion product is zero for almost all values of $P$. Whenever $\mathcal{R}\times \mathcal{V}_P=0$, we consider that $\mathcal{R}$ cannot coexist with a representation of momentum $P$, as correlation functions that involve both representations would vanish. 
-
-According to eq. \eqref{rtv}, the representation $\mathcal{V}_{P'} $ can appear in the fusion product $\mathcal{R}\times \mathcal{V}_P$ only if there are half-integers $(i,j,i',j')\in I_r\times I_s\times I_{r'}\times I_{s'}$ with $I_r=\left\{i\in \frac{r-1}{2}+\mathbb{Z}\middle| \frac{r-1}{2}\geq |i|\right\}$, such that  
+According to eq. \eqref{rtv}, the representation $\mathcal{V}_{P'} $ can appear in the fusion product $\mathcal{R}\times \mathcal{V}_P$ only if there are half-integers $(i,j,i',j')\in I_r\times I_s\times I_{r'}\times I_{s'}$ with $I_r=\left\{i\in \frac{r-1}{2}+\mathbb{Z}\middle| |i|\leq \frac{r-1}{2}\right\}$, such that  
 \begin{align}
  \Delta(P') = \Delta\left(P+ ib+jb^{-1}\right) = \Delta\left(P+i'b+j'b^{-1}\right) \ .
  \label{dppdp}
@@ -4221,8 +4215,7 @@ So our two momentums must be opposite. Defining the integers $r'' = \frac{p}{2}-
  \mathcal{R}\times \mathcal{V}_P \neq 0 \iff    P=P_{\langle r'',s'' \rangle}\quad \text{with}\quad  \left\{\begin{array}{l}  r'' \in [1,p-1]\ , \\ s'' \in [1,q-1]\ . \end{array}\right. 
 \label{rpsq}
 \end{align}
-This defines the \textbf{\boldmath Kac table}\index{Kac!---table} -- the set of integers $(r'',s'')$ such that $\mathcal{V}_{P_{\langle r'',s''\rangle}}$ has a nonzero fusion product with our doubly degenerate representation $\mathcal{R}$.
-At a given central charge, this set does not depend on the choice of $\mathcal{R}$. 
+At a given central charge, this set of values of $(r'', s'')$ does not depend on the choice of $\mathcal{R}$, and is called the \textbf{\boldmath Kac table}\index{Kac!---table}.
 And due to the identity \eqref{ddr},
 the corresponding degenerate representations $\mathcal{R}_{\langle r'', s'' \rangle}$ are actually doubly degenerate: the set of these representations is also called the Kac table.
 
@@ -4409,9 +4402,6 @@ Flipping spins is a symmetry of the model, and this symmetry manifests itself as
 
 In Liouville theory, generalized minimal models and A-series minimal models, the existence of the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ ultimately determines the three-point structure constants. These CFTs are distinguished by their spectrums: diagonal in all cases, and respectively continuous, discrete infinite, and finite. These spectrums are related to one another by certain limits: for example, the Kac table of the $(p, q)$ minimal model becomes infinite as $p,q\to \infty$, and degenerate fields can be recovered from Liouville fields by taking limits of their momentums. (See Section \ref{secacl}.) This suggests that our CFTs themselves are related to one another by the same limits. 
 
-Proving such relations is not always straightforward, because of subtleties with the analytic behaviour of correlation functions. As we saw in Section \ref{seceul}, the analyticity of structure constants and conformal blocks as functions of the central charge does not necessarily imply the analyticity of four-point functions. Therefore, we need to understand the behaviour of four-point functions, and not just three-point functions. 
-
-
 \subsubsection{From minimal models to Liouville theory}
 
 Minimal models exist for central charges $c_{p,q}$ \eqref{cpq} that are dense in the half-line $]-\infty, 1]$, let us consider the limit $c_{p, q}\to c\in ]-\infty, 1]$ with $p,q\to\infty$.
@@ -4420,7 +4410,7 @@ Then our representation always has a vanishing null vector at level $rs$. Howeve
  \begin{align}
   \lim_{c_{p,q}\to c} \mathcal{R}_{\langle r,s\rangle} = \mathcal{R}_{\langle r,s\rangle} \ .
  \end{align}
-The fusion rules \eqref{rrmm} of doubly degenerate representations then reduce to the fusion rules of degenerate representations. We therefore expect that the limit of minimal models is the generalized minimal model with central charge $c$. 
+The fusion rules \eqref{rrmm} of doubly degenerate representations then reduce to the fusion rules of degenerate representations. Therefore, the limit of minimal models is the generalized minimal model with central charge $c$. 
 
 For any central charge $c\in ]-\infty,1]$ such that $b^2\notin \mathbb{Q}$, the degenerate momentums $P_{\langle r,s\rangle}$ are dense in $i\mathbb{R}$. 
 We can send $r,s$ to infinity so that $P_{\langle r,s\rangle}$ tends to a given imaginary value $P$. Then the the null vector of $\mathcal{R}_{\langle r,s\rangle}$ goes to infinite level, and our degenerate representation becomes a Verma module,
@@ -4429,10 +4419,10 @@ We can send $r,s$ to infinity so that $P_{\langle r,s\rangle}$ tends to a given 
  \ \underset{b^2\in \mathbb{R}_{<0}-\mathbb{Q}}{=} \
  \mathcal{V}_{P}\ .
 \end{align}
-Applying this treatment to the momentums in a generalized minimal model, we therefore expect that we recover Liouville theory.
+Applying this treatment to the momentums in a generalized minimal model, we must recover Liouville theory.
 
 The situation is more subtle if we take the limit $c_{p,q}\to c$ where  $c$ is again of the type $c_{p_0,q_0}$ with $p_0,q_0\in \mathbb{N}^*$. In this case, minimal models have several inequivalent nontrivial limits where the central charge and momentums are sent to continuous values at the same time. In some of these limits, we recover Liouville theory. However, in the case $c=1$, assuming $q=p+1$ while keeping $r-s$ and $\frac{r}{q}$ fixed 
-does not lead to Liouville theory. Rather, we obtain another CFT with the same spectrum as Liouville theory and a non-analytic structure constant, called Runkel--Watts theory \cite{rw01}. There is a Runkel--Watts-type theory for any central charges of the type $c_{p_0,q_0}$ \cite {rs15}, whose structure constant includes the non-analytic factor \eqref{sigma}.
+does not lead to Liouville theory. Rather, we obtain another CFT with the same spectrum as Liouville theory and a non-analytic three-point structure constant, called Runkel--Watts theory \cite{rw01}. There is a Runkel--Watts-type theory for any central charges of the type $c_{p_0,q_0}$ \cite {rs15}, whose three-point structure constant includes the non-analytic factor \eqref{sigma}.
 We expect that this theory can again be reached as a particular limit of minimal models.
 
 
@@ -4444,7 +4434,7 @@ According to eq. \eqref{cicni}, we can make the Liouville primary fields degener
 
 The problem is much the same when we start from generalized minimal models, and send the central charge to $c_{p, q}$. In order to recover the corresponding minimal model, we need the degenerate fields to become doubly degenerate. At the level of correlation functions, this means that we need the doubly degenerate fusion rules to emerge. However, this occurs only in some cases, and we recover only certain four-point functions of the minimal model \cite{rib18}. 
 
-Finally, what happens if we directly send $c\to c_{p, q}$ in Liouville theory, without first making the fields degenerate? Of course, nothing much happens if $c\in ]-\infty, 1]$ to begin with: we just recover Liouville theory at $c=c_{p, q}$. If however we start with $c\notin ]-\infty, 1]$, the limit $c\to c_0\in ]-\infty, 1]$ is not expected to exist, as the structure constant has an essential singularity on $]-\infty, 1]$. However, it turns out that the limit of Liouville theory for $c\to 1$ is Runkel--Watts theory \cite{sch03}, and more generally the limit for $c\to c_{p,q}$ with $p,q\in\mathbb{N}^*$ is a Runkel--Watts-type theory \cite{mce07}. 
+Finally, what happens if we directly send $c\to c_{p, q}$ in Liouville theory, without first making the fields degenerate? Of course, nothing much happens if $c\in ]-\infty, 1]$ to begin with: we just recover Liouville theory at $c=c_{p, q}$. If however we start with $c\notin ]-\infty, 1]$, the limit $c\to c_0\in ]-\infty, 1]$ is not expected to exist, as the three-point structure constant has an essential singularity on $]-\infty, 1]$. However, it turns out that the limit of Liouville theory for $c\to 1$ is Runkel--Watts theory \cite{sch03}, and more generally the limit for $c\to c_{p,q}$ with $p,q\in\mathbb{N}^*$ is a Runkel--Watts-type theory \cite{mce07}. 
 
 
 
@@ -4630,11 +4620,11 @@ Study how the degenerate OPE \eqref{vot} behaves under reflections, and show tha
 
  \begin{exo}[Uniqueness of generalized minimal models]
  ~\label{exofix}
-Let us prove the uniqueness of the structure constants \eqref{chc} of generalized minimal models.
+Let us prove the uniqueness of the three-point structure constants \eqref{chc} of generalized minimal models.
 We start by considering special cases of crossing symmetry equations: the shift equations that we used for determining the Liouville structure constant.
  \begin{enumerate}
   \item Show that the shift equations determine how the three-point structure constants $C_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3 \rangle}$ change when the indices $r_i,s_i$ are shifted by two units.
-  \item Deduce that together with permutation symmetry, the shift equations determine all structure constants in terms of the five fundamental quantities 
+  \item Deduce that together with permutation symmetry, the shift equations determine all three-point structure constants in terms of the five fundamental quantities 
 \begin{align}
  C_{\langle 1,1\rangle,\langle 1,1\rangle, \langle 1,1\rangle}
  \ , \ 
@@ -4646,8 +4636,7 @@ We start by considering special cases of crossing symmetry equations: the shift 
  \ , \
  C_{\langle 1,2\rangle,\langle 2,1\rangle, \langle 2,2\rangle}\ .
 \end{align}
-\item Using crossing symmetry equations in the form \eqref{ffm}, applied to four-point functions of the type 
-$\langle V_{\langle 1,1\rangle}\cdots \rangle$, show that the structure constants that involve the field $V_{\langle 1,1\rangle}$ are related to one another.
+Determine the first four quantities by assuming that $V_{\langle 1,1\rangle}$ is the identity field, and that the two-point structure constant is one.
 \item Using a judiciously chosen four-point function, show that $C^2_{\langle 1,2\rangle,\langle 2,1\rangle, \langle 2,2\rangle}$ is determined in terms of the other structure constants. 
 \item Show that the remaining sign ambiguity in $C_{\langle 1,2\rangle,\langle 2,1\rangle, \langle 2,2\rangle}$ can be absorbed in a field renormalization, and conclude. 
  \end{enumerate}
@@ -4695,14 +4684,12 @@ In the minimal model case $b^2 = -\frac{q}{p}$, show that
  \bigcup_{r=1}^{p-1}\bigcup_{s=1}^{q-1} \left] \frac{r-1}{s-1} , \frac{r+1}{s+1} \right[  = \left]0, \frac{p}{p+1}\right[ \ .
 \end{align}
 (Pay special attention to the case $s=r+1$.) Deduce that if $|q-p|>1$, then the corresponding minimal model is not unitary.
-\item
-Assuming that the fusion product of two representations is unitary if and only if both representations are unitary, show that in non-unitary (generalized) minimal models, at least some of the representations with positive conformal dimensions are non-unitary.
 \end{enumerate}
 \end{exo}
 
 \begin{exo}[Structure constant of the $(5,2)$ minimal model]
  ~\label{exocppp}
- Let us compute the nontrivial structure constant $\check{C}_{\phi\phi\phi}$ of the $(5,2)$ minimal model.
+ Let us compute the nontrivial three-point structure constant $\check{C}_{\phi\phi\phi}$ of the $(5,2)$ minimal model.
  \begin{enumerate}
   \item Using eq. \eqref{tcc}, write
 \begin{align}
@@ -4722,7 +4709,7 @@ and deduce the explicit formula \eqref{cppp} for $\check{C}_{\phi\phi\phi}$.
 
 \begin{exo}[Structure constant of the $(4,3)$ minimal model]
  ~\label{exocsse}
- Let us compute the nontrivial structure constant $\check{C}_{\sigma\sigma\epsilon} $ of the $(4,3)$ minimal model.
+ Let us compute the nontrivial three-point structure constant $\check{C}_{\sigma\sigma\epsilon} $ of the $(4,3)$ minimal model.
  \begin{enumerate}
   \item Show that 
 \begin{align}
