@@ -1923,11 +1923,10 @@ Using the notation $z_{12}=z_1-z_2$, the solution is
 \end{align}
 where the proportionality factor is an arbitrary antiholomorphic function. We determine this function by assuming that our fields are not only left primaries but also right primaries, and find
 \begin{align}
- \boxed{ \Big\langle V_{\Delta_1,\bar{\Delta}_1}(z_1) V_{\Delta_2,\bar{\Delta}_2}(z_2)\Big\rangle = \delta_{\Delta_1,\Delta_2}\delta_{\bar{\Delta}_1,\bar{\Delta}_2} z_{12}^{-2\Delta_1}\bar z_{12}^{-2\bar \Delta_1} }\ .
+ \boxed{ \Big\langle V_{\Delta_1,\bar{\Delta}_1}(z_1) V_{\Delta_2,\bar{\Delta}_2}(z_2)\Big\rangle = B_{1}\delta_{\Delta_1,\Delta_2}\delta_{\bar{\Delta}_1,\bar{\Delta}_2} z_{12}^{-2\Delta_1}\bar z_{12}^{-2\bar \Delta_1} }\ .
  \label{eq:2pt}
 \end{align}
-Here the symbol $\delta_{\Delta_1,\Delta_2}$ is a Kronecker delta or a Dirac delta function, depending on whether the conformal dimensions take discrete or continuous values. We have assumed that the fields have no multiplicities (i.e. two different primary fields cannot have the same dimensions), 
-and we have set the overall $z_i$-independent prefactor to one by a \textbf{field renormalization}\index{renormalization!field---} $V_{\Delta,\bar\Delta}(z)\to \lambda(\Delta,\bar\Delta)V_{\Delta,\bar\Delta}(z)$. (This still leaves the freedom to perform field renormalizations by signs $\lambda(\Delta,\bar\Delta) \in \{1,-1\}$.)
+Here the symbol $\delta_{\Delta_1,\Delta_2}$ is a Kronecker delta or a Dirac delta function, depending on whether the conformal dimensions take discrete or continuous values. We have assumed that the fields have no multiplicities, i.e. two different primary fields cannot have the same dimensions. And we have introduced the \textbf{two-point structure constant}\index{structure constant!two-point---} $B_{1}$, which depends on $(\Delta_1,\bar\Delta_1)$, equivalently on $(\Delta_2,\bar\Delta_2)$. We could perform a field renormalization such that $B_{1}=1$, but this would be incompatible with the analyticity of the three-point structure constant in Liouville theory, as we will see in Section \ref{seccbe}.
 
 \item $\boxed{N=3}$\ : The three global Ward identities determine the dependence of three-point functions on the three coordinates $z_i$, without constraining the conformal dimensions $\Delta_i$. Using $\epsilon(z)= (z-z_2)(z-z_3)$ in eq. \eqref{oiz}, we indeed obtain
 \begin{align}
@@ -2110,18 +2109,18 @@ Inserting this in a three-point function, and using the two-point function \eqre
 \begin{align}
  \left<  \prod_{i=1}^3 V_{\Delta_i,\bar\Delta_i}(z_i) \right> 
  = 
- C^3_{12} \left| z_{12}^{\Delta_3-\Delta_1-\Delta_2} \Big( z_{23}^{-2\Delta_3} + O(z_{12}) \Big) \right|^2\ .
+ B_3C^3_{12} \left| z_{12}^{\Delta_3-\Delta_1-\Delta_2} \Big( z_{23}^{-2\Delta_3} + O(z_{12}) \Big) \right|^2\ .
 \end{align}
-Comparing this with the expression \eqref{cff} for the three-point function, we find that $C^3_{12}$ coincides with the three-point structure constant, 
+Comparing this with the expression \eqref{cff} for the three-point function, we find the expression of  $C^3_{12}$ in terms of the two- and three-point structure constants, 
 \begin{align}
- C^3_{12}= C_{123}\ .
+ C^3_{12}= \frac{C_{123}}{B_3}\ .
  \label{cftt}
 \end{align}
 Let us now write the complete expression of the OPE of two primary fields:
 \begin{align}
  \boxed{ V_{\Delta_1,\bar\Delta_1}(z_1) V_{\Delta_2,\bar\Delta_2}(z_2) 
  = 
- \sum_{\Delta_3,\bar\Delta_3} C_{123} \left| z_{12}^{\Delta_3-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} z_{12}^Lf^{\Delta_3,L}_{\Delta_1,\Delta_2} L \right|^2 V_{\Delta_3,\bar\Delta_3}(z_2)
+ \sum_{\Delta_3,\bar\Delta_3} \frac{C_{123}}{B_3} \left| z_{12}^{\Delta_3-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} z_{12}^Lf^{\Delta_3,L}_{\Delta_1,\Delta_2} L \right|^2 V_{\Delta_3,\bar\Delta_3}(z_2)
  }\ ,
  \label{vvs}
 \end{align}
@@ -2131,7 +2130,7 @@ Since OPE Ward identities uniquely determine the contributions of the descendent
 
 The case $z_2=\infty$ can be obtained from the case $z_2\in\mathbb{C}$ by a global conformal transformation, and we find 
 \begin{align}
- V_{\Delta_1,\bar\Delta_1}(z_1) V_{\Delta_2,\bar\Delta_2}(\infty) =  \sum_{\Delta_3,\bar\Delta_3}C_{123}\left| z_1^{\Delta_2-\Delta_1-\Delta_3}\right|^2 \Big( V_{\Delta_3,\bar\Delta_3}(\infty) + O\left(z_1^{-1}\right)\Big) \ .
+ V_{\Delta_1,\bar\Delta_1}(z_1) V_{\Delta_2,\bar\Delta_2}(\infty) =  \sum_{\Delta_3,\bar\Delta_3}\frac{C_{123}}{B_3}\left| z_1^{\Delta_2-\Delta_1-\Delta_3}\right|^2 \Big( V_{\Delta_3,\bar\Delta_3}(\infty) + O\left(z_1^{-1}\right)\Big) \ .
  \label{iope}
 \end{align}
 In the special case where there is no field at infinity, so that $\Delta_2=0$ and $\Delta_1=\Delta_3$, this is consistent with the behaviour \eqref{vdz} of $V_{\Delta_1,\bar\Delta_1}(z_1)$ near $z_1=\infty$.
@@ -2550,10 +2549,10 @@ Since the Ward identities are holomorphically factorized, the blocks can be fact
 Conformal blocks are sometimes defined as arbitrary solutions of the Ward identities. We will be more specific, and define them as the elements of particular bases of solutions. The bases in question are defined by using OPEs for computing correlation functions. In particular, using the OPE of $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2)$ and Ward identities, any four-point function of primary or descendent fields can be decomposed as 
 \begin{align}
  \left\langle \prod_{i=1}^4 V_{\sigma_i}(z_i)\right\rangle 
- = \sum_{\Delta_s,\bar{\Delta}_s} C_{12s} C_{s34} \left| \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)\right|^2\ ,
+ = \sum_{\Delta_s,\bar{\Delta}_s} \frac{C_{12s} C_{s34}}{B_s} \left| \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)\right|^2\ ,
 \label{fsd}
 \end{align}
-where all quantities that are not three-point structure constants have been combined into the \textbf{\boldmath $s$-channel}\index{s-channel@$s$-channel} four-point conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)$.
+where all quantities that are not two- and three-point structure constants have been combined into the \textbf{\boldmath $s$-channel}\index{s-channel@$s$-channel} four-point conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)$.
 The appearance of the factorized quantity $\left| \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i)\right|^2 $ (which involves the modulus square notation \eqref{eq:msn}) is a manifestation of holomophic factorization, and the right-moving conformal block $\mathcal{F}^{(s)}_{\bar\Delta_s}(\bar\sigma_i|\bar z_i)$ is given by the same function as the left-moving conformal block, applied to right-moving quantities. 
 
 More precisely, deducing the conformal block decomposition \eqref{fsd} from the OPE $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2)$ involves splitting the sum in the OPE into two sums:
@@ -2623,7 +2622,7 @@ Inserting the OPE \eqref{vvs} in our four-point function, we obtain
  \Big< V_{\Delta_1,\bar\Delta_1}(x) V_{\Delta_2,\bar\Delta_2}(0)V_{\Delta_3,\bar\Delta_3}(\infty)V_{\Delta_4,\bar\Delta_4}(1)\Big>
  \\
  = 
- \sum_{\Delta_s,\bar\Delta_s} C_{12s} 
+ \sum_{\Delta_s,\bar\Delta_s} \frac{C_{12s}}{B_s} 
  \left| x^{\Delta_s-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} x^Lf^{\Delta_s,L}_{\Delta_1,\Delta_2} \right|^2
  \Big< L\bar L V_{\Delta_s,\bar\Delta_s}(0) V_{\Delta_3,\bar\Delta_3}(\infty) V_{\Delta_4,\bar\Delta_4}(1) \Big>\ .
  \label{4ope}
@@ -2766,13 +2765,13 @@ Let us analyze the crossing symmetry equation that relates the $s$- and $t$-chan
 \end{align}
 and write crossing symmetry as
 \begin{align}
- \sum_{\Delta_s,\bar{\Delta}_s} C_{12s} C_{s34} \left| 
+ \sum_{\Delta_s,\bar{\Delta}_s} \frac{C_{12s} C_{s34}}{B_s} \left| 
  \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
 \draw (-1,2) node [left] {$2$} -- (0,0) -- node [above] {$s$} (4,0) -- (5,2) node [right] {$3$};
 \draw (-1,-2) node [left] {$1$} -- (0,0);
 \draw (4,0) -- (5,-2) node [right] {$4$};
 \end{tikzpicture} 
-\right|^2 = \sum_{\Delta_t,\bar{\Delta}_t} C_{23t}C_{t41} \left|
+\right|^2 = \sum_{\Delta_t,\bar{\Delta}_t} \frac{C_{23t}C_{t41}}{B_t} \left|
 \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
  \draw (-2,3) node [left] {$2$} -- (0,2) -- node [left] {$t$} (0,-2) -- (-2, -3) node [left] {$1$};
 \draw (0,2) -- (2,3) node [right] {$3$};
@@ -2781,16 +2780,24 @@ and write crossing symmetry as
 \right|^2\ .
 \label{csd}
 \end{align}
-Considering the conformal blocks as known quantities, this is an equation for the spectrum and three-point structure constant, which is quadratic in the structure constant.
+Considering the conformal blocks as known quantities, this is an equation for the spectrum and the two- and three-point structure constants, which is quadratic in the three-point structure constant.
 This equation is equivalent to the associativity of the OPE. In order to show that the theory is consistent, it suffices to moreover check the commutativity of the OPE, equivalently the behaviour \eqref{css} of the three-point structure constant under permutations. 
 % NB: in particular this implies equality with the u-channel.
 
 The crossing symmetry equation is invariant under two types  of transformations: 
 \begin{itemize}
- \item field renormalizations by signs $V_i(z_i)\to \lambda_i V_i(z_i)$ with $\lambda_i\in\{-1,1\}$, i.e. the only field renormalizations that preserve the two-point function \eqref{eq:2pt}, 
- \item \textbf{structure constant renormalizations}\index{renormalization!structure constant---} $C_{ijk}\to \lambda_0 C_{ijk}$. Whenever there exists an identity field $I$, this freedom is eliminated by the requirement $C_{III}=1$, and more generally $C_{Iii}=1$.
+\item \textbf{field renormalizations}\index{renormalization!field---} $V_i(z_i)\to \lambda_i V_i(z_i)$, where $\lambda_i$ depends on the field's dimensions $(\Delta_i,\bar\Delta_i)$ but not on its position $z_i$,
+ \item \textbf{structure constant renormalizations}\index{renormalization!structure constant---} $C_{ijk}\to \kappa C_{ijk}$. 
 \end{itemize}
-The crossing symmetry equation \eqref{csd}, while it may in principle determine the three-point structure constant modulo such renormalizations, is in practice often intractable, because
+Taken together, these transformations act on the structure constants as 
+\begin{align}
+ B_i \to \lambda_i^2 B_i \quad , \quad C_{ijk} \to \kappa \lambda_i\lambda_j\lambda_k C_{ijk}\ .
+\end{align}
+Field renormalizations can be reduced to sign ambiguities by setting $B_i=1$. 
+And 
+whenever there exists an identity field $I$, structure constant renormalizations can be eliminated by the requirement $C_{III}=1$, and more generally $C_{Iii}=1$.
+
+The crossing symmetry equation \eqref{csd}, while it may in principle determine the three-point structure constant modulo renormalizations, is in practice often intractable, because
 \begin{enumerate}
  \item it can involve sums over large sets of possible conformal dimensions in the $s$- and $t$-channels, 
  \item the conformal blocks are rather complicated. 
@@ -2883,18 +2890,18 @@ The pentagon relation follows from the existence of two ways of writing the line
 
 It is possible to eliminate the conformal blocks from the crossing symmetry equation \eqref{csd}, using the fusing relation and the linear independence of blocks within a given basis,
 \begin{align}
- \sum_{\Delta_s,\bar{\Delta}_s} C_{12s} C_{s34}
+ \sum_{\Delta_s,\bar{\Delta}_s} \frac{C_{12s} C_{s34}}{B_s}
 F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}
 F_{\bar{\Delta}_s,\bar{\Delta}_t}\begin{bmatrix} \bar{\Delta}_2 & \bar{\Delta}_3 \\ \bar{\Delta}_1 & \bar{\Delta}_4 \end{bmatrix}
-=  C_{23t}C_{t41}\ .
+=  \frac{C_{23t}C_{t41}}{B_t}\ .
 \end{align}
 This can be further simplified if the theory is diagonal.
 In this case, we have $\Delta_i=\bar{\Delta}_i$ for $i=1,2,3,4$, and we should insert factors $\delta_{\Delta_s,\bar\Delta_s}$ (left-hand side) and $\delta_{\Delta_t,\bar\Delta_t}$ (right-hand side) in the above formula.
 Using the inverse fusing matrix, we obtain 
 \begin{align}
- C_{12s} C_{s34}
+ \frac{C_{12s} C_{s34}}{B_s}
 F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}
-= C_{23t}C_{t41} 
+= \frac{C_{23t}C_{t41}}{B_t} 
 F^{-1}_{\Delta_t,\Delta_s}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}
 \ .
 \label{ffm}
@@ -2938,11 +2945,12 @@ F_{\langle 1,1\rangle, \Delta_{4}} \begin{bmatrix} \Delta_t & \Delta_1\\ \Delta_
 F^{-1}_{\Delta_t,\Delta_s}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}
 \ .
 \end{align}
-This shows that a solution of the crossing symmetry equation \eqref{ffm} is given by 
+This shows that a solution of the crossing symmetry equation \eqref{ffm} can be built as
 \begin{align}
- C_{123} = F_{\langle 1,1\rangle, \Delta_{1}} \begin{bmatrix} \Delta_2 & \Delta_3\\ \Delta_2 & \Delta_3\end{bmatrix}\ ,
+ C_{123} = \mu(\Delta_1) \nu(\Delta_2)\nu(\Delta_3)F_{\langle 1,1\rangle, \Delta_{1}} \begin{bmatrix} \Delta_2 & \Delta_3\\ \Delta_2 & \Delta_3\end{bmatrix}\ ,
 \end{align}
-provided the right-hand side is symmetric under permutations of $\Delta_1,\Delta_2,\Delta_3$. 
+provided there exist functions $\mu,\nu$ of the conformal dimension such that 
+the right-hand side is symmetric under permutations of $\Delta_1,\Delta_2,\Delta_3$. 
 This right-hand side can actually be computed as a limit of the general expression \eqref{eq:fm} of the fusing matrix,
 \begin{align}
  F_{\langle 1,1\rangle, \Delta_{t}} \begin{bmatrix} \Delta_1 & \Delta_4\\ \Delta_1 & \Delta_4\end{bmatrix} 
@@ -3296,9 +3304,11 @@ Let us prove and discuss the relation \eqref{eq:bot} that describes how an $s$-c
 
 \begin{exo}[Uniqueness of the three-point structure constant in diagonal theories]
  ~\label{exoudt}
- Let us show that the crossing symmetry equation \eqref{ffm} uniquely determines the three-point structure constant modulo field and structure constant renormalizations.
+ Let us show that the crossing symmetry equation \eqref{ffm} uniquely determines the two- and three-point structure constant modulo field and structure constant renormalizations.
  \begin{enumerate}
-  \item Show that the ratio $\rho_{123}$ of two structure constants obeys $\rho_{12s}\rho_{s34} = \rho_{23t}\rho_{t41}$.
+  \item 
+  We set the two-point structure constant to one by a field renormalization, and assume that we have two solutions $C^\pm_{123}$ for the three-point structure constant. 
+  Show that the ratio $\rho_{123}=\frac{C^+_{123}}{C^-_{123}}$ obeys $\rho_{12s}\rho_{s34} = \rho_{23t}\rho_{t41}$.
   \item Show that $\rho_{12s}^2 = \rho_{12t}^2$, and deduce that $\rho_{123}\in\{-1,1\}$ modulo a structure constant renormalization.
   \item Show that $\frac{\rho_{12s}}{\rho_{12s'}} = \frac{\rho_{34s}}{\rho_{34s'}} $, and deduce that our ratio factorizes as $\rho_{123} = \lambda_1\lambda_2\lambda_3$. Conclude.
  \end{enumerate} 
@@ -3375,41 +3385,25 @@ This subtlety with the spectrum is a first hint that something special happens i
 We work with momentums on the half-line $P\in i\mathbb{R}_+$, so that $\Delta(P_1)=\Delta(P_2)\iff P_1=P_2$. 
 Then the two-point function takes the form
 \begin{align}
- \Big\langle V_{P_1}(z_1) V_{P_2}(z_2)\Big\rangle = B(P_1)\delta(P_1-P_2) |z_{12}|^{-4\Delta(P_1)}\ , 
+ \Big\langle V_{P_1}(z_1) V_{P_2}(z_2)\Big\rangle = B_{P_1}\delta(P_1-P_2) |z_{12}|^{-4\Delta(P_1)}\ , 
 \label{vvc}
 \end{align}
-where we introduce a coefficient $B(P)$ called the \textbf{two-point structure constant}\index{structure constant!two-point---}. 
-We could set this coefficient to one via a field renormalization,
-and we would recover a two-point function of the type of eq. \eqref{eq:2pt}. However, we refrain from setting $B(P)=1$, as the resulting three-point structure constant would then have branch cuts as a function of momentums.  
-
+where $B_P$ is the two-point structure constant. 
 According to eq. \eqref{cff}, the three-point function takes the form
 \begin{align}
 \left\langle \prod_{i=1}^3 V_{P_i}(z_i)\right\rangle = C_{P_1,P_2,P_3}\ |z_{12}|^{2(\Delta_3-\Delta_1-\Delta_2)} |z_{23}|^{2(\Delta_1-\Delta_2-\Delta_3)} |z_{31}|^{2(\Delta_3-\Delta_2-\Delta_1)}\ ,
 \label{vvv}
 \end{align}
-where $\Delta_i = \Delta(P_i)$ is given in eq. \eqref{daq}, and $C_{P_1,P_2,P_3}$ is the three-point structure constant. And adapting eq. \eqref{vvs}, the OPE is in our notations
-\begin{align}
- V_{P_1}(z_1) V_{P_2}(z_2) = \int_{i{\mathbb{R}_+}} dP\ C_{P_1,P_2}^P |z_{12}|^{2(\Delta-\Delta_1-\Delta_2)} 
-\left|
-\sum_{L\in \mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta,L} z_{12}^{|L|}  L\right|^2 V_{P}(z_2) \ , 
-\end{align}
-for some OPE coefficient $C_{P_1,P_2}^P$. Inserting this OPE in the three-point function, and using the two-point function, we find
-\begin{align}
- B(P_3)C_{P_1,P_2}^{P_3} = C_{P_1,P_2,P_3}
-\ . 
-\label{hcc}
-\end{align}
-(Compare with eq. \eqref{cftt}.) 
-
+where $\Delta_i = \Delta(P_i)$ is given in eq. \eqref{daq}, and $C_{P_1,P_2,P_3}$ is the three-point structure constant. 
 Omitting the dependence on $z_i$, and neglecting the descendent fields, we schematically rewrite the two- and three-point functions, and the OPE, as follows: 
 \begin{align}
- &\boxed{\left\langle V_{P_1}V_{P_2} \right\rangle = B(P_1)\delta(P_1-P_2) }\ ,
+ &\boxed{\left\langle V_{P_1}V_{P_2} \right\rangle = B_{P_1}\delta(P_1-P_2) }\ ,
 \label{vvss}
 \\
  &\boxed{ \left\langle V_{P_1}V_{P_2}V_{P_3} \right\rangle = C_{P_1,P_2,P_3} }\ ,
 \label{vvvs}
 \\
- &\boxed{V_{P_1}V_{P_2} \sim \int_{i{\mathbb{R}_+}} dP \frac{C_{P_1,P_2,P}}{B(P)} V_P}\ .
+ &\boxed{V_{P_1}V_{P_2} \sim \int_{i{\mathbb{R}_+}} dP \frac{C_{P_1,P_2,P}}{B_P} V_P}\ .
 \label{vvi}
 \end{align}
 
@@ -3461,7 +3455,7 @@ Using the degenerate OPE \eqref{vot} and the two-point function \eqref{vvss}, we
 \draw (-1,2) node [left] {$P$} -- (0,0) -- node [above] {$P-\frac{b}{2}$} (4,0) -- (5,2) node [right] {$P$};
 \draw (-1,-2) node [left] {$\langle 2,1\rangle$} -- (0,0);
 \draw (4,0) -- (5,-2) node [right] {$\langle 2,1\rangle$};
-\node at (1, -4) {$c_{-}^{(s)} = \colorboxed{red}{C_-(P)}\, \colorboxed{red}{B(P-\tfrac{b}{2})}\, \colorboxed{red}{C_-(P)} $};
+\node at (1, -4) {$c_{-}^{(s)} = \colorboxed{red}{C_-(P)}\, \colorboxed{red}{B_{P-\tfrac{b}{2}}}\, \colorboxed{red}{C_-(P)} $};
 \draw[dashed, ->, red] (-.7,-3.2) to [out=90, in=-70] (.2, -.3);
 \draw[dashed, ->, red] (4.6,-3.2) to [out=90, in=-110] (3.8, -.3);
 \draw[dashed, ->, red] (1.9,-3.2) to [out=90, in=-110] (2, -.3);
@@ -3471,7 +3465,7 @@ Using the degenerate OPE \eqref{vot} and the two-point function \eqref{vvss}, we
 \draw (-1,2) node [left] {$P$} -- (0,0) -- node [above] {$P+\frac{b}{2}$} (4,0) -- (5,2) node [right] {$P$};
 \draw (-1,-2) node [left] {$\langle 2,1\rangle$} -- (0,0);
 \draw (4,0) -- (5,-2) node [right] {$\langle 2,1\rangle$};
-\node at (1, -4) {$c_{+}^{(s)} = \colorboxed{red}{C_+(P)}\, \colorboxed{red}{B(P+\tfrac{b}{2})}\, \colorboxed{red}{C_+(P)} $};
+\node at (1, -4) {$c_{+}^{(s)} = \colorboxed{red}{C_+(P)}\, \colorboxed{red}{B_{P+\tfrac{b}{2}}}\, \colorboxed{red}{C_+(P)} $};
 \draw[dashed, ->, red] (-.7,-3.2) to [out=90, in=-70] (.2, -.3);
 \draw[dashed, ->, red] (4.6,-3.2) to [out=90, in=-110] (3.8, -.3);
 \draw[dashed, ->, red] (1.9,-3.2) to [out=90, in=-110] (2, -.3);
@@ -3480,7 +3474,7 @@ Using the degenerate OPE \eqref{vot} and the two-point function \eqref{vvss}, we
 \end{align} 
 Crossing symmetry and single-valuedness of the four-point function imply that the two structure constants $c_\pm^{(s)}$ obey eq. \eqref{spsm}. In our case, this equation reduces to 
 \begin{align}
- \frac{C_+(P)^2B(P+\tfrac{b}{2})}{C_-(P)^2 B(P-\tfrac{b}{2})}
+ \frac{C_+(P)^2B_{P+\tfrac{b}{2}}}{C_-(P)^2 B_{P-\tfrac{b}{2}}}
  =  \frac{\gamma(2bP)}{\gamma(-2bP)}
  \frac{\gamma(-b^2-2bP)}{\gamma(-b^2+2bP)} \ .
  \label{eq:shiftd}
@@ -3491,7 +3485,7 @@ This is all that we will need to know about the degenerate OPE coefficients $C_\
  That dual equation is obtained by performing 
  the substitutions $C_\pm \to \tilde{C}_\pm$ and $b\to \frac{1}{b}$,
  \begin{align}
- \frac{\tilde{C}_+(P)^2B(P+\tfrac{1}{2b})}{\tilde{C}_-(P)^2 B(P-\tfrac{1}{2b})}
+ \frac{\tilde{C}_+(P)^2B_{P+\tfrac{1}{2b}}}{\tilde{C}_-(P)^2 B_{P-\tfrac{1}{2b}}}
  =  \frac{\gamma(2b^{-1}P)}{\gamma(-2b^{-1}P)}
  \frac{\gamma(-b^{-2}-2b^{-1}P)}{\gamma(-b^{-2}+2b^{-1}P)} \ .
 \end{align}
@@ -3536,40 +3530,14 @@ Using a four-point function of the type  $
 
 \subsubsection{Normalization-independent quantities} 
 
-Crossing symmetry equations are invariant under structure constant renormalizations $C_{P_1,P_2,P_3} \to \lambda_0 C_{P_1,P_2,P_3}$, and under 
- field renormalizations $V_P(z) \to \lambda(P)  V_P(z)$. Taken together, these renormalizations act on two- and three-point structure constants as 
- \begin{align}
- B(P) \to \lambda(P)^2 B(P) \quad , \quad C_{P_1,P_2,P_3} \to \lambda_0 \lambda(P_1)\lambda(P_2)\lambda(P_3) C_{P_1,P_2,P_3}\ .
- \label{blsb}
-\end{align}
-The shift equations \eqref{eq:shiftd} and \eqref{eq:shift} are therefore also invariant under such renormalizations, and they can determine structure constants only up to such renormalizations -- equivalently, they can only determine renormalization-invariant combinations of structure constants.
-
-We could focus on combinations of two-and three-point structure constants that are invariant under field renormalizations. However, the combination $\frac{C_{P_1,P_2,P_3}}{\sqrt{B(P_1)B(P_2)B(P_3)}}$ involves a square root and is therefore not meromorphic, and the combination $\frac{C_{P_1,P_2,P_3}^2}{B(P_1)B(P_2)B(P_3)}$ loses track of the sign of the three-point structure constant. 
+Crossing symmetry equations are invariant under field and structure constant renormalizations, and can therefore only determine renormalization-invariant combinations of structure constants.
+We could focus on combinations of two-and three-point structure constants that are invariant under field renormalizations. However, the combination $\frac{C_{P_1,P_2,P_3}}{\sqrt{B_{P_1}B_{P_2}B_{P_3}}}$ involves a square root and is therefore not meromorphic, and the combination $\frac{C_{P_1,P_2,P_3}^2}{B_{P_1}B_{P_2}B_{P_3}}$ loses track of the sign of the three-point structure constant. 
 Rather, we will decompose the three-point structure constant as 
 \begin{align}
- C_{P_1,P_2,P_3} = N(P_1)N(P_2)N(P_3)C'_{P_1,P_2,P_3}\ ,
+ C_{P_1,P_2,P_3} = N_{P_1}N_{P_2}N_{P_3}C'_{P_1,P_2,P_3}\ ,
 \end{align}
-where the normalization factor $N(P)$ transforms as $N(P)\to \lambda(P)N(P)$ under field renormalizations, while  $C'_{P_1,P_2,P_3}$ is invariant. In other words, $C'_{P_1,P_2,P_3}$ is the three-point structure constant in a reference normalization which we can in principle choose arbitrarily, and which we will shortly choose so that $C'_{P_1,P_2,P_3}$ is as simple as possible.
-Then the invariant quantities that we want to determine are $C'_{P_1,P_2,P_3}$, and the combination $N^2B^{-1}(P)$. As a check that these quantities are all we need, let us write the crossing symmetry equation for a four-point function of the type $\langle V_{P_1}V_{P_2}V_{P_3}V_{P_4}\rangle$. Adapting the crossing symmetry equation \eqref{csd} to the 
-OPE \eqref{vvi}, we find 
-\begin{align}
- \int_{i\mathbb{R}_+} dP_s\frac{C_{12s} C_{s34}}{B_s} \left| 
- \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .2]
-\draw (-1,2) node [left] {$2$} -- (0,0) -- node [above] {$s$} (4,0) -- (5,2) node [right] {$3$};
-\draw (-1,-2) node [left] {$1$} -- (0,0);
-\draw (4,0) -- (5,-2) node [right] {$4$};
-\end{tikzpicture} 
-\right|^2 = \int_{i\mathbb{R}_+} dP_t \frac{C_{23t}C_{t41}}{B_t} \left|
-\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .2]
- \draw (-2,3) node [left] {$2$} -- (0,2) -- node [left] {$t$} (0,-2) -- (-2, -3) node [left] {$1$};
-\draw (0,2) -- (2,3) node [right] {$3$};
-\draw (0,-2) -- (2, -3) node [right] {$4$};
-\end{tikzpicture}
-\right|^2\ .
-\label{gce}
-\end{align}
-Inserting our decomposition of the three-point structure constant, and 
-removing a factor $\prod_{i=1}^4 N(P_i)$ on both sides, this becomes
+where the normalization factor $N_{P}$ transforms as $N_{P}\to \lambda_PN_{P}$ under a field renormalization $V_P\to \lambda_PV_P$, while  $C'_{P_1,P_2,P_3}$ is invariant. In other words, $C'_{P_1,P_2,P_3}$ is the three-point structure constant in a reference normalization which we can in principle choose arbitrarily, and which we will shortly choose so that $C'_{P_1,P_2,P_3}$ is as simple as possible.
+In terms of our invariant quantities, the crossing symmetry equation \eqref{csd} becomes
 \begin{align}
  \int_{i\mathbb{R}_+} dP_s\, C'_{12s}(N^2B^{-1})_s C'_{s34} \left| 
  \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .2]
@@ -3583,24 +3551,23 @@ removing a factor $\prod_{i=1}^4 N(P_i)$ on both sides, this becomes
 \draw (0,2) -- (2,3) node [right] {$3$};
 \draw (0,-2) -- (2, -3) node [right] {$4$};
 \end{tikzpicture}
-\right|^2\ ,
+\right|^2\ .
+\label{gce}
 \end{align}
-which manifestly depends on invariant quantities only.
-
-We now complete the definitions of $N(P)$ and $C'_{P_1,P_2,P_3}$
+We now complete the definitions of $N_P$ and $C'_{P_1,P_2,P_3}$
 by assuming that the shift equation \eqref{eq:shift} splits into the two equations 
 \begin{align}
 \frac{C'_{P_1+\frac{b}{2},P_2,P_3}}{C'_{P_1-\frac{b}{2},P_2,P_3} } 
  &=b^{8bP_1}\prod_{\pm,\pm} \gamma(\tfrac12 -bP_1 \pm bP_2 \pm bP_3)\ ,
  \label{cps}
  \\
-\frac{C_+(P_1) N(P_1+\frac{b}{2})}{C_-(P_1) N(P_1-\frac{b}{2}) } 
+\frac{C_+(P_1) N_{P_1+\frac{b}{2}}}{C_-(P_1) N_{P_1-\frac{b}{2}} } 
  &=b^{-8bP_1}\gamma(2bP_1) \gamma(1+2bP_1) \ .
  \label{cns}
 \end{align}
 Combining the second equation with the shift equation \eqref{eq:shiftd}, we obtain a shift equation for the combination $N^2B^{-1}$,
 \begin{align}
- \frac{\left(N^2B^{-1}\right)(P+\frac{b}{2})}{\left(N^2B^{-1}\right)(P-\frac{b}{2})} = b^{-16bP} \frac{\gamma(2bP)}{\gamma(-2bP)} \frac{\gamma(-b^2+2bP)}{\gamma(-b^2-2bP)}\ .
+ \frac{\left(N^2B^{-1}\right)_{P+\frac{b}{2}}}{\left(N^2B^{-1}\right)_{P-\frac{b}{2}}} = b^{-16bP} \frac{\gamma(2bP)}{\gamma(-2bP)} \frac{\gamma(-b^2+2bP)}{\gamma(-b^2-2bP)}\ .
  \label{nbs}
 \end{align}
 When splitting the shift equation, we have separated the factors that only depend on $P_1$ from the rest, and added the prefactors $b^{\pm 8bP_1}$. These prefactors are here to ensure that the resulting shift equations are compatible with the dual equations, in other words that the shifts by $b$ and $\frac{1}{b}$ commute. Next we will elaborate on this point, and solve the shift equations.
@@ -3734,19 +3701,19 @@ When writing these solutions, we have lifted the ambiguity of the three-point st
 
 Similarly, we can write solutions of the shift equation \eqref{nbs} (and its dual) for the normalization-independent combination $N^2B^{-1}$,
 \begin{align}
- \boxed{\left(N^2B^{-1}\right)(P) =\prod_\pm \Upsilon_b(\pm 2P)} \quad , \quad \boxed{\left(\hat N^2\hat B^{-1}\right)(P) = \prod_\pm \hat\Upsilon_b(\pm 2P) } \ .
+ \boxed{\left(N^2B^{-1}\right)_P =\prod_\pm \Upsilon_b(\pm 2P)} \quad , \quad \boxed{\left(\hat N^2\hat B^{-1}\right)_P = \prod_\pm \hat\Upsilon_b(\pm 2P) } \ .
 \end{align}
 This is again invariant under $b\to \frac{1}{b}$, and under the reflection $P\to -P$.
 
 We have determined the normalization-independant combinations of structure constants, and this is enough for solving Liouville theory in the conformal bootstrap approach. However, in order to ease the comparison with other approaches, it can be convenient to consider specific field normalizations. 
-In the normalization such that $B(P)=1$, the three-point structure constant must be real if the theory is unitary \cite{rib14b}: and indeed, we find
+In the normalization such that $B_P=1$, the three-point structure constant must be real if the theory is unitary \cite{rib14b}: and indeed, we find
 \begin{align}
 \renewcommand{\arraystretch}{1.3}
- \left\{\begin{array}{l} c > 1\ , \\ P,P_i\in i\mathbb{R}\ , \end{array}\right. \quad \implies \quad \left\{\begin{array}{l} C'_{P_1,P_2,P_3}\in\mathbb{R}\ , \\ \left(N^2B^{-1}\right)(P)\in \mathbb{R}_+\ , \end{array}\right.
+ \left\{\begin{array}{l} c > 1\ , \\ P,P_i\in i\mathbb{R}\ , \end{array}\right. \quad \implies \quad \left\{\begin{array}{l} C'_{P_1,P_2,P_3}\in\mathbb{R}\ , \\ \left(N^2B^{-1}\right)_P\in \mathbb{R}_+\ , \end{array}\right.
 \end{align}
-which implies $C_{P_1,P_2,P_3}\in \mathbb{R}$. However, in this normalization, $N(P)$ has square root branch cuts, which violates our assumption that correlation functions are meromorphic. Then let us  consider the normalization such that 
+which implies $C_{P_1,P_2,P_3}\in \mathbb{R}$. However, in this normalization, $N_P$ has square root branch cuts, which violates our assumption that correlation functions are meromorphic. Then let us  consider the normalization such that 
 \begin{align}
- N(P) = \mu^{P}\Upsilon_b(2P)\ ,
+ N_P = \mu^{P}\Upsilon_b(2P)\ ,
  \label{nop}
 \end{align}
 where $\mu$ is an arbitrary parameter called the \textbf{\boldmath cosmological constant}\index{cosmological constant} -- a name that comes from the interpretation of Liouville theory in terms of two-dimensional gravity.
@@ -3777,37 +3744,37 @@ The normalizations that we have chosen are such that
 
 While the representations in Liouville theory's spectrum can be parametrized by momentums $P\in i\mathbb{R}_+$, the analytic properties of correlation functions allow us to consider fields with arbitrary complex momentums. 
 In particular, for a given momentum $P$, it makes sense to consider the reflected momentum $-P$, which corresponds to the same representation of the Virasoro algebra. 
-We interpret our assumption that multiplicities are trivial as applying not only to the spectrum, but also to representations with arbitrary momentums. Then the fields $V_P(z)$ and $V_{-P}(z)$ correspond to the same primary state, and must be the same up to a factor $R(P)$ called the \textbf{\boldmath reflection coefficient}\index{reflection!---coefficient}. In other words, we must have the \textbf{\boldmath reflection relation}\index{reflection!---relation}
+We interpret our assumption that multiplicities are trivial as applying not only to the spectrum, but also to representations with arbitrary momentums. Then the fields $V_P(z)$ and $V_{-P}(z)$ correspond to the same primary state, and must be the same up to a factor $R_P$ called the \textbf{\boldmath reflection coefficient}\index{reflection!---coefficient}. In other words, we must have the \textbf{\boldmath reflection relation}\index{reflection!---relation}
 \begin{align}
-V_P(z)= R(P) V_{-P}(z)\ .
+V_P(z)= R_P V_{-P}(z)\ .
 \label{vrv}
 \end{align}
-The reflection coefficient must obey $R(P)R(-P)=1$, in particular $R(0)\in \{-1,1\}$. Allowing arbitrary complex momentums, and taking the reflection relation into account, the two-point function \eqref{vvss} becomes 
+The reflection coefficient must obey $R_PR_{-P}=1$, in particular $R_0\in \{-1,1\}$. Allowing arbitrary complex momentums, and taking the reflection relation into account, the two-point function \eqref{vvss} becomes 
 \begin{align}
- \left<V_{P_1}V_{P_2}\right> = B(P_1)\Big[ \delta(P_1-P_2) + R(P_2)\delta(P_1+P_2) \Big]\ ,
+ \left<V_{P_1}V_{P_2}\right> = B_{P_1}\Big[ \delta(P_1-P_2) + R_{P_2}\delta(P_1+P_2) \Big]\ ,
 \end{align}
 Under reflection, our structure constants and normalization factor behave as 
 \begin{align}
- B(P)=R(P)^2B(-P) \ , \quad C_{P_1,P_2,P_3} = R(P_1) C_{-P_1,P_2,P_3} \ , \quad N(P)=R(P)N(-P)\ .
+ B_P=R_P^2B_{-P} \ , \quad C_{P_1,P_2,P_3} = R_{P_1} C_{-P_1,P_2,P_3} \ , \quad N_P=R_PN_{-P}\ .
 \end{align}
 Normalization-independent quantities are invariant under reflection.
 
-Let us now focus on the particular normalization \eqref{nop}, such that the three-point function is given by the DOZZ formula. This normalization obeys $N(P)N(-P) = \left(N^2B^{-1}\right)(P)$, which implies $R(P)=B(P)$ and 
+Let us now focus on the particular normalization \eqref{nop}, such that the three-point function is given by the DOZZ formula. This normalization obeys $N_PN_{-P} = \left(N^2B^{-1}\right)_P$, which implies $R_P=B_P$ and 
 \begin{align}
- \left<V_{P_1}V_{P_2}\right> = R(P_1)\delta(P_1-P_2) + \delta(P_1+P_2)\ .
+ \left<V_{P_1}V_{P_2}\right> = R_{P_1}\delta(P_1-P_2) + \delta(P_1+P_2)\ .
  \label{vvrdd}
 \end{align}
 The expressions of the reflection coefficient for $c\notin ]-\infty, 1]$ and $c\notin [25,\infty[$ are respectively
 \begin{align}
- R(P) = \mu^{2P}\frac{\Upsilon_b(2P)}{\Upsilon_b(-2P)} \quad , \quad \hat R(P) = \mu^{2P}\frac{\hat{\Upsilon}_b(2P)}{\hat{\Upsilon}_b(-2P)}\ .
+ R_P = \mu^{2P}\frac{\Upsilon_b(2P)}{\Upsilon_b(-2P)} \quad , \quad \hat R_P = \mu^{2P}\frac{\hat{\Upsilon}_b(2P)}{\hat{\Upsilon}_b(-2P)}\ .
  \end{align}
-We have  $\hat\Upsilon_b(0)\neq 0$ so that $\hat R(0)=1$. On the other hand, we have $\Upsilon_b(0)=0$, so that $R(0)=-1$. This implies $V_{P=0}(z)=0$, which is consistent with $C_{0,P_2,P_3}=0$.
+We have  $\hat\Upsilon_b(0)\neq 0$ so that $\hat R_0=1$. On the other hand, we have $\Upsilon_b(0)=0$, so that $R_0=-1$. This implies $V_{P=0}(z)=0$, which is consistent with $C_{0,P_2,P_3}=0$.
 Writing $\Upsilon_b(-2P)=\Upsilon_b(2P+Q)$, and using the shift equations \eqref{upup}, we can rewrite the reflection coefficient in terms of Gamma functions, and we find 
 \begin{align}
- R(P) &= -\left[b^{2b-\frac{2}{b}}\mu\right]^{2P} \frac{\Gamma(-2bP)\Gamma(-2b^{-1}P)}{\Gamma(2bP)\Gamma(2b^{-1}P)} \ ,
+ R_P &= -\left[b^{2b-\frac{2}{b}}\mu\right]^{2P} \frac{\Gamma(-2bP)\Gamma(-2b^{-1}P)}{\Gamma(2bP)\Gamma(2b^{-1}P)} \ ,
  \label{ram}
 \\
- \hat R(P) &= \left[(ib)^{2b-\frac{2}{b}}\mu\right]^{2P} \frac{\Gamma(-2bP)\Gamma(-2b^{-1}P)}{\Gamma(2bP)\Gamma(2b^{-1}P)} \ .
+ \hat R_P &= \left[(ib)^{2b-\frac{2}{b}}\mu\right]^{2P} \frac{\Gamma(-2bP)\Gamma(-2b^{-1}P)}{\Gamma(2bP)\Gamma(2b^{-1}P)} \ .
 \end{align}
 
 
@@ -3932,11 +3899,11 @@ We will now sketch how OPEs behave when momentums are analytically continued bey
 
 Using the invariance of normalization-independant quantities under the reflection $P\to -P$, we write the Liouville OPE \eqref{vvi} as an integral over the whole imaginary axis,
 \begin{align}
- V_{P_1}V_{P_2} \sim \frac12\int_{i{\mathbb{R}}} dP \frac{C_{P_1,P_2,P}}{B(P)} V_P\ .
+ V_{P_1}V_{P_2} \sim \frac12\int_{i{\mathbb{R}}} dP \frac{C_{P_1,P_2,P}}{B_P} V_P\ .
  \label{vvir}
 \end{align}
-As a function of $P$, the OPE coefficient $\frac{C_{P_1,P_2,P}}{B(P)}$ can have poles whose positions depend on $P_1,P_2$. 
-And these poles control how the OPE behaves when we analytically continue $P_1,P_2$ beyond the imaginary axis. In the case $c\in ]-\infty, 1]$, the poles of the OPE coefficient $\frac{\hat C_{P_1,P_2,P}}{\hat B(P)}$ do not depend on $P_1,P_2$, and our OPE remains valid as written for any $P_1,P_2\in\mathbb{C}$ such that $\hat N(P_1)$ and $\hat N(P_2)$ are finite.
+As a function of $P$, the OPE coefficient $\frac{C_{P_1,P_2,P}}{B_P}$ can have poles whose positions depend on $P_1,P_2$. 
+And these poles control how the OPE behaves when we analytically continue $P_1,P_2$ beyond the imaginary axis. In the case $c\in ]-\infty, 1]$, the poles of the OPE coefficient $\frac{\hat C_{P_1,P_2,P}}{\hat B_P}$ do not depend on $P_1,P_2$, and our OPE remains valid as written for any $P_1,P_2\in\mathbb{C}$ such that $\hat N(P_1)$ and $\hat N(P_2)$ are finite.
 
 Let us focus on the case $c\notin ]-\infty,1]$. Then the three-point structure constant has $P_1,P_2$-dependent simple poles due to the normalization-independent factor $C'_{P_1,P_2,P}$ \eqref{cp}. 
 Let us plot these poles in the complex $P$-plane, assuming $P_1,P_2\in i\mathbb{R}$. The poles lie on cones that we draw in the fashion of eq. \eqref{lines}. We assume $\Re Q>0$, and we also draw the line  of integration $P\in i{\mathbb{R}}$, together with the two lines $P\in \pm\frac{Q}{2}+i\mathbb{R}$:
@@ -3970,7 +3937,7 @@ If we continue $P_1,P_2$ such that $|\Re(P_1+P_2)|>\frac12\Re Q$ or $|\Re(P_1-P_
 \end{align}
 Then the OPE becomes
 \begin{align}
- V_{P_1}V_{P_2} \sim \frac12\int_{i{\mathbb{R}}} dP \frac{C_{P_1,P_2,P}}{B(P)} V_P + \sum_{P_k\in \mathcal{P}_{P_1,P_2}} \frac{\underset{P=P_k}{\operatorname{Res}} C_{P_1,P_2,P}}{B(P_k)} V_{P_k}\ ,
+ V_{P_1}V_{P_2} \sim \frac12\int_{i{\mathbb{R}}} dP \frac{C_{P_1,P_2,P}}{B_P} V_P + \sum_{P_k\in \mathcal{P}_{P_1,P_2}} \frac{\underset{P=P_k}{\operatorname{Res}} C_{P_1,P_2,P}}{B(P_k)} V_{P_k}\ ,
  \label{acope}
 \end{align}
 where the discrete terms have lost their factor $\frac12$ due to the contributions of the poles from the right. (See Exercise \ref{exoaur} for examples of the resulting fusion rules.)
@@ -4020,11 +3987,11 @@ To see this, let us follow how the poles behave when $P_2 \to P_{\langle r,s\ran
 The integral along the deformed line goes to zero as $P_2\to P_{\langle r,s \rangle}$. On the other hand, the residues of the coinciding poles have finite nonzero limits, because the vanishing factor $N(P_2)$ is compensated by an infinite factor due to the coincidence of poles. We obtain 
 \begin{align}
 \underset{P_2\to P_{\langle r,s \rangle}}{\lim} V_{P_1}V_{P_2} \sim \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}}
- \left(\underset{P_2\to P_{\langle r,s \rangle}}{\lim}\ \underset{P=P_1+P_2-P_{\langle r,s \rangle}+ib+jb^{-1}}{\operatorname{ Res}}\ \frac{C_{P_1,P_2,P}}{B(P)}\right) V_{P_1 + ib+jb^{-1}}\ .
+ \left(\underset{P_2\to P_{\langle r,s \rangle}}{\lim}\ \underset{P=P_1+P_2-P_{\langle r,s \rangle}+ib+jb^{-1}}{\operatorname{ Res}}\ \frac{C_{P_1,P_2,P}}{B_P}\right) V_{P_1 + ib+jb^{-1}}\ .
 \label{crs}
 \end{align}
 This OPE is of the type of the degenerate OPE \eqref{vrsv}, so that $V_{P_2}$ becomes a degenerate field, whose fusion rule \eqref{rtv} we have now rederived from the Liouville OPE.
-Moreover, we have obtained a formula for the degenerate OPE coefficient in terms of the two- and three-point structure constants. Let us insert the explicit expressions of these structure constants in this formula. The calculation is slightly simplified by using the identity $\frac{C_{P_1,P_2,P}}{B(P)} = C_{P_1,P_2,-P}$ which holds in our normalization, and we find
+Moreover, we have obtained a formula for the degenerate OPE coefficient in terms of the two- and three-point structure constants. Let us insert the explicit expressions of these structure constants in this formula. The calculation is slightly simplified by using the identity $\frac{C_{P_1,P_2,P}}{B_P} = C_{P_1,P_2,-P}$ which holds in our normalization, and we find
 \begin{multline}
  C_{i,j}^{\langle r,s \rangle}(P) = \mu^{-\frac{Q}{2}+P_{\langle r,s\rangle}-ib-jb^{-1}} 
  \frac{\Upsilon_b'(0)\Upsilon_b'(2P_{\langle r,s \rangle})}{\prod_{\pm}\Upsilon'_b(\frac{Q}{2}\pm P_{\langle r,s\rangle} +ib+jb^{-1})} 
@@ -4559,17 +4526,17 @@ conformal block,
 
 \item Show that the coefficients of the two decompositions are expressed in terms of the OPE coefficients of degenerate fields as 
 \begin{align}
- c_+^{(s)} &= C_+(P)\tilde{C}_+(P+\tfrac{b}{2})B(P+\tfrac{Q}{2}) \ ,
+ c_+^{(s)} &= C_+(P)\tilde{C}_+(P+\tfrac{b}{2})B_{P+\tfrac{Q}{2}} \ ,
  \\
- c_-^{(t)} &= \tilde{C}_+(P)C_+(P+\tfrac{1}{2b})B(P+\tfrac{Q}{2})\ .
+ c_-^{(t)} &= \tilde{C}_+(P)C_+(P+\tfrac{1}{2b})B_{P+\tfrac{Q}{2}}\ .
 \end{align}
 Argue that $c_+^{(s)}=c_-^{(t)}$, and deduce a relation between $C_+$ and $\tilde{C}_+$.
 \item Study how $C_+(P)$ and $\tilde{C}_+(P)$ behave under a field renormalization, and show that they renormalize to one provided
 \begin{align}
- C_+(P) = \frac{\lambda(P+\frac{b}{2})}{\lambda(P)} \quad \text{and} \quad 
-\tilde{C}_+(P) = \frac{\lambda(P+\frac{1}{2b})}{\lambda(P)} \ .
+ C_+(P) = \frac{\lambda_{P+\frac{b}{2}}}{\lambda_P} \quad \text{and} \quad 
+\tilde{C}_+(P) = \frac{\lambda_{P+\frac{1}{2b}}}{\lambda_P} \ .
 \end{align}
-Using the relation between $C_+$ and $\tilde{C}_+$, show that these two equation for $\lambda(P)$ are compatible, and deduce that there exists a field normalization such that 
+Using the relation between $C_+$ and $\tilde{C}_+$, show that these two equation for $\lambda_P$ are compatible, and deduce that there exists a field normalization such that 
 \begin{align}
  C_+(P) = \tilde{C}_+(P) = 1\ .
  \label{cmpo}
