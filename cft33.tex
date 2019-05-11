@@ -1026,32 +1026,28 @@ The model is unitary if $q=p+1$, then $c_{p,p+1}=1-\frac{6}{p(p+1)}=0,\frac12,\f
 \end{itemize}
 We can fit these models in the following table, according to whether they exist for generic $c\in\mathbb{C}$ or for discrete $c=c_{p,q}$, and whether their spectrums are discrete or continuous:
 \begin{align}
-\renewcommand{\arraystretch}{1.3}
- \begin{tabular}{|r|cc|}
- \cline{2-3}
-   \multicolumn{1}{c}{} &  \multicolumn{1}{|c}{$c=c_{p,q}$} & $c\in\mathbb{C}$ 
-   \\
-   \hline
-   discrete spectrum & minimal models & generalized minimal models
-   \\
-   continuous spectrum & Runkel--Watts-type theories & Liouville theory
-   \\
-   \hline
- \end{tabular}
+\begin{tikzpicture}[scale = .3]
+\node at (0,0){Hello}; 
+\end{tikzpicture}
+\label{lims}
 \end{align}
-Let us locate some of these models in the $c$-complex plane: Liouville theory in blue, minimal models in red (with larger bars for smaller spectrums), unitary Liouville theory and unitary minimal models in darker colors:
+
+
+Let us draw some relevant regions of the $c$-complex plane. We use light blue for $\{c\leq 1\}$, blue for the rest of the plane, and red for the discrete central charges of minimal models (with larger bars for smaller spectrums). We use darker colors for 
+unitary Liouville theory and unitary minimal models:
 \begin{align}
  \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .95] 
  \clip (-5,-3) rectangle (7,3);
  % Liouville theory
- \fill[blue!15] (-5, -3) rectangle (5.5, 3); 
+ \fill[blue!30] (-5, -3) rectangle (5.5, 3); 
+ \fill[blue!15] (-5, -.1) rectangle (1, .1);
  \fill[blue!70] (1, -.1) rectangle (5.5, .1);
   % Minimal models
  \newcommand{\mm}[3]{\draw[ultra thick, #3] ({#1}, -{#2}) -- ({#1}, {#2});}
  \foreach \p in {2,...,14}{
  \foreach \q in {\numexpr\p+2,...,16}{
  \ifthenelse{\q<\numexpr 3*\p}{
- \mm{1-6*(\p-\q)*(\p-\q)/(\p*\q)}{2/(\p*\q)^(.7)}{red!40};
+ \mm{1-6*(\p-\q)*(\p-\q)/(\p*\q)}{2/(\p*\q)^(.7)}{red!50};
  }}};
  \foreach \p in {2,...,14}{
  \mm{1-6/(\p*(\p+1))}{2/(\p*(\p+1))^(.7)}{red!80!black};
