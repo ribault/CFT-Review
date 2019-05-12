@@ -1024,20 +1024,45 @@ The model is unitary if $q=p+1$, then $c_{p,p+1}=1-\frac{6}{p(p+1)}=0,\frac12,\f
 \item For any  $c\in\mathbb{C}-\{c_{p,q}\}_{p,q\in\mathbb{Z}^*}$, the generalized minimal model has a diagonal spectrum that is made of a discrete infinity of representations. (It is not known whether such a model exists for $c=c_{p,q}$.)
 \item For any $c\in \{c_{p,q}\}_{p,q\in\mathbb{N}^*}$, there is a Runkel--Watts-type theory with the same continuous spectrum as Liouville theory, but different correlation functions. 
 \end{itemize}
-We can fit these models in the following table, according to whether they exist for generic $c\in\mathbb{C}$ or for discrete $c=c_{p,q}$, and whether their spectrums are discrete or continuous:
+These models are related by a number of limits, see Section \ref{secltf}. 
+We summarize these limits on the following diagram, where we place the models according to whether their spectrums are discrete or continuous, and to their central charges. 
+We distinguish $c\leq 1$ from the rest of the complex $c$-plane, because Liouville theory is not analytic on $\{c\leq 1\}$, and because only $c\leq 1$ can be reached from $c\in \{c_{p,q}\}_{p,q\in \mathbb{N}^*}$. Dashed arrows are for limits that hold only for a subset of correlation functions. And we abbreviate (generalized) minimal models as (G)MM, and Runkel--Watts-type theories as RWT:
 \begin{align}
-\begin{tikzpicture}[scale = .3]
-\node at (0,0){Hello}; 
+\begin{tikzpicture}[scale = .25, baseline=(current  bounding  box.center)]
+\fill[red!50, rounded corners = 10] (-6, -10) rectangle (6, 10);
+\fill[blue!15, rounded corners = 10] (7, -10) rectangle (19, 10);
+\fill[blue!30, rounded corners = 10] (20, -10) rectangle (32, 10);
+\node at (0, 11) {$c=c_{p,q}$};
+\node at (13, 11) {$c\leq 1$};
+\node at (26, 11) {$c\in \mathbb{C}$};
+\node[left] at (-6.5, 7) {Discrete};
+\node[left] at (-6.5, -7) {Continuous};
+\draw (0, 7) node[draw, fill = white] (mm) {MM};
+\draw (13, 7) node[draw, fill = white] (gmm1) {GMM};
+\draw (26, 7) node[draw, fill = white] (gmm2) {GMM};
+\draw (0, -7) node[draw, fill = white] (rwt) {RWT};
+\draw (13, -7) node[draw, fill = white] (clo) {Liouville};
+\draw (26, -7) node[draw, fill = white] (liou) {Liouville};
+\draw [ultra thick, shorten <= 2mm, shorten >= 2mm, -latex, 
+       out = -10, in = -170] (mm) to (gmm1);
+\draw [ultra thick, shorten <= 2mm, shorten >= 2mm, -latex, dashed,
+       out = 170, in = 10] (gmm1) to (mm);
+\draw [ultra thick, shorten <= 2mm, shorten >= 2mm, -latex] (gmm2) to (gmm1);
+\draw [ultra thick, shorten <= 2mm, shorten >= 2mm, -latex] (mm) to (clo);
+\draw [ultra thick, shorten <= 2mm, shorten >= 2mm, -latex] (mm) to (rwt);
+\draw [ultra thick, shorten <= 2mm, shorten >= 2mm, -latex] (rwt) to (clo);
+\draw [ultra thick, shorten <= 2mm, shorten >= 2mm, -latex] (gmm1) to (clo);
+\draw [ultra thick, shorten <= 2mm, shorten >= 2mm, -latex,
+       out = -165, in = -15] (liou) to (rwt);
+\draw [ultra thick, shorten <= 2mm, shorten >= 2mm, -latex, dashed] (liou) to (gmm2);
 \end{tikzpicture}
 \label{lims}
 \end{align}
-
-
-Let us draw some relevant regions of the $c$-complex plane. We use light blue for $\{c\leq 1\}$, blue for the rest of the plane, and red for the discrete central charges of minimal models (with larger bars for smaller spectrums). We use darker colors for 
+Let us also draw some relevant regions of the $c$-complex plane. We use light blue for $\{c\leq 1\}$, blue for the rest of the plane, and red for the discrete central charges of minimal models (with larger bars for smaller spectrums). We use darker colors for 
 unitary Liouville theory and unitary minimal models:
 \begin{align}
  \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .95] 
- \clip (-5,-3) rectangle (7,3);
+ \clip (-5,-2.5) rectangle (7,2.5);
  % Liouville theory
  \fill[blue!30] (-5, -3) rectangle (5.5, 3); 
  \fill[blue!15] (-5, -.1) rectangle (1, .1);
@@ -4436,7 +4461,7 @@ Finally, what happens if we directly send $c\to c_{p, q}$ in Liouville theory, w
 
 \subsubsection{Summary of results}
 
-Let us schematically summarize the limits we have been discussing. We denote (generalized) minimal models as (G)MM, and Runkel--Watts-type theorys as RWT. We begin with limits of minimal models:
+Let us schematically summarize the limits we have been discussing, see also the diagram \eqref{lims}. We denote (generalized) minimal models as (G)MM, and Runkel--Watts-type theorys as RWT. We begin with limits of minimal models:
 \begin{align}
  \lim_{\substack{p,q\to \infty \\ c_{p,q}\to c \\ r_i,s_i\text{ fixed}}} \text{MM}_{p,q} &= \text{GMM}_{c}\ ,
 \\
