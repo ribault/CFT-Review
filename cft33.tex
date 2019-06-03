@@ -5840,8 +5840,8 @@ If we restrict ourselves to the set of half-integer spin fields $\Phi^{\langle 0
 
 The \textbf{\boldmath $H_3^+$ model}\index{h3+ model@$H_3^+$ model} is to the $\widehat{\mathfrak{sl}}_2$ algebra what Liouville theory is to the Virasoro algebra: the simplest model with the given symmetry and a continuous spectrum. 
 
-We could follow the same route as with Liouville theory, of studying the representations of $\widehat{\mathfrak{sl}}_2$, and deducing the three-point function from the associativity of OPEs involving degenerate fields, as was done by Teschner \cite{tes97a}.
-Rather, we will build the $H_3^+$ model from Liouville theory, by extending the KZ-BPZ relation for conformal blocks \eqref{dyy} to a relation between correlation functions, called the \textbf{\boldmath $H_3^+$-Liouville relation}\index{h3+-Liouville relation@$H_3^+$-Liouville relation}.
+In the $H_3^+$ model as in Liouville theory, it is possible to deduce the three-point function from the associativity of OPEs involving degenerate fields \cite{tes97a}.
+We will take a shortcut, and build the $H_3^+$ model from Liouville theory, by extending the KZ-BPZ relation for conformal blocks \eqref{dyy} to a relation between correlation functions, called the \textbf{\boldmath $H_3^+$-Liouville relation}\index{h3+-Liouville relation@$H_3^+$-Liouville relation}.
 
 Since Liouville theory exists for all complex values of the central charge, we expect that the $H_3^+$ model exists for all values of the level except $k=-2$, when the Sugawara construction breaks down and the model is no longer a conformal field theory.
 According to the relation \eqref{bk}, the central charges of the $H_3^+$ model \eqref{ckg} and of the corresponding Liouville theory then take the values
@@ -5864,7 +5864,9 @@ are deduced from Liouville theory via the relation \eqref{aj}. The relation \eqr
  \left\langle \prod_{i=1}^N V_{P_i}(z_i)\prod_{j=1}^{N-2}V_{\langle 2,1\rangle}(y_j)\right\rangle}\ .
 \label{dyym} 
 \end{align}
-We will now unpack the $H_3^+$-Liouville relation, and in particular extract the three-point structure constant of the $H_3^+$ model. In order to do that, we first need to define this structure constant. We will obtain a natural definition by studying three-point functions of $x$-basis fields. On the Liouville side, we will use the field normalization \eqref{nop} with the cosmological constant set to one.
+We will now unpack the $H_3^+$-Liouville relation, and in particular extract the three-point structure constant of the $H_3^+$ model. 
+To begin with, let us produce a natural definition for this structure constant, using the $x$-basis.
+
 
 \subsubsection{$x$-basis fields}
 
@@ -5877,7 +5879,7 @@ We assume that the left- and right-moving isospins $x$ and $\bar x$ are complex 
 In this single-valued version of the Fourier transformation \eqref{emx}, 
 we introduced a prefactor $\gamma(2j+1)$, which will ensure that the $H_3^+$ OPE has a finite limit when the spin becomes half-integer.
 Moreover, we flipped the sign of the second term of the exponent of $e^{\mu x -\bar{\mu}\bar{x}}$, as compared to the expected $e^{\mu x +\bar{\mu}\bar{x}}$, in order to ensure the convergence of the integral when $x$ and $\bar{x}$ are complex conjugates.
-This affects the relation between the differential operators 
+At the level of the $J^a\Phi^j_\mu$ OPE \eqref{jprx}, this sign flipping manifests itself in the relation between the left- and right-moving differential operators,
 \begin{align}
  \bar{D}^j_{\bar{x}}(t^a) = D^j_{\bar{x}}(t^a)  \quad , \quad \bar{D}^j_{\bar{\mu}}(t^a) = D^j_{-\bar{\mu}}(t^a)\ . 
 \end{align}
@@ -5895,7 +5897,9 @@ which provides a natural definition of the three-point structure constant $C^{H_
 
 In the case $N=3$, the $H_3^+$-Liouville relation involves one Sklyanin variables $y_1$, and we have
 \begin{align}
- N=3 \quad \implies \quad  \left\{\begin{array}{l} y_1 = -\frac{\mu_1z_2z_3+\mu_2z_3z_1+\mu_3z_1z_2}{\sum_{i=1}^3\mu_iz_i}\ , \\ \frac{(y_1-z_1)(z_2-z_3)}{(y_1-z_2)(z_1-z_3)} = -\frac{\mu_1}{\mu_2}\ . \end{array}\right.
+ N=3 \quad \implies \quad  
+ \renewcommand{\arraystretch}{1.6}
+ \left\{\begin{array}{l} y_1 = -\frac{\mu_1z_2z_3+\mu_2z_3z_1+\mu_3z_1z_2}{\sum_{i=1}^3\mu_iz_i}\ , \\ \frac{(y_1-z_1)(z_2-z_3)}{(y_1-z_2)(z_1-z_3)} = -\frac{\mu_1}{\mu_2}\ . \end{array}\right.
 \end{align}
 The relation \eqref{dyym} then reads 
 \begin{align}
@@ -5932,7 +5936,7 @@ Comparing with Eq. \eqref{sfpm}, we obtain the three-point structure constant in
  C^{H_3^+}_{j_1,j_2,j_3} = \frac{\pi^2\prod_{i=1}^3\gamma(2j_i+1)}{d_\pm}C_{\pm}(P_1)C_{P_1\pm \frac{b}{2},P_2,P_3}\ .
 \end{align}
 The single-valuedness of $\left\langle \prod_{i=1}^3\Phi^{j_i}_{\mu_i} \right\rangle $ as a function of $\mu_i$ guarantees that this does not depend on the sign $\pm$, due in particular to Eq. \eqref{eq:shift}. 
-Using the DOZZ formula for $C_{P_1\pm \frac{b}{2},P_2,P_3}$, and $C_+(P)=1$ from Exercise \ref{exodoc}, we obtain
+Using the DOZZ formula \eqref{caaa} (with $\mu=1$) for $C_{P_1\pm \frac{b}{2},P_2,P_3}$, and $C_+(P)=1$ from Exercise \ref{exodoc}, we obtain
 \begin{align}
 \boxed{C^{H_3^+}_{j_1,j_2,j_3} = \frac{\pi^2b^{-1}b^{\frac{2}{b^2}(j_1+j_2+j_3+1)} \Upsilon'_b(0)\Upsilon_b(-\frac{2j_1}{b})\Upsilon_b(-\frac{2j_2}{b})\Upsilon_b(-\frac{2j_3}{b})}
 {\Upsilon_b(-\frac{j_1+j_2+j_3+1}{b})\Upsilon_b(-\frac{j_1+j_2-j_3}{b}) \Upsilon_b(-\frac{j_1-j_2+j_3}{b})\Upsilon_b(-\frac{-j_1+j_2+j_3}{b})}}\ ,
@@ -5959,12 +5963,12 @@ Let us deduce the reflection relation and two-point function for $x$-basis field
 \end{align}
 We find the reflection relation 
 \begin{align}
- \Phi^j_{x} = \frac{b^2}{\pi}\gamma(1-\tfrac{2j+1}{b^2})\int_{{\mathbb{C}}}d^2x'\ |x-x'|^{4j}\Phi^{-j-1}_{x'}\ ,
+ \Phi^j_{x} = \frac{b^2}{\pi}\gamma\left(1-\tfrac{2j+1}{b^2}\right)\int_{{\mathbb{C}}}d^2x'\ |x-x'|^{4j}\Phi^{-j-1}_{x'}\ ,
 \end{align}
 and the two-point function 
 \begin{align}
  \left\langle \Phi^{j_1}_{x_1} \Phi^{j_2}_{x_2} \right\rangle = \frac{-\pi^2 b}{(2j_1+1)^2}\, \delta(j_1+j_2+1)\delta^{(2)}(x_{12}) 
-+ \pi b^{-1} \gamma(-\tfrac{2j_1+1}{b^2})\, \delta(j_1-j_2)|x_{12}|^{4j_1}\, .
++ \pi b^{-1} \gamma\left(-\tfrac{2j_1+1}{b^2}\right)\, \delta(j_1-j_2)|x_{12}|^{4j_1}\, .
 \label{pjpj}
 \end{align}
 Knowing the two-point function, we can easily deduce the OPE from the three-point function. 
@@ -5998,8 +6002,7 @@ Since the left and right isospin variables are complex conjugates, the correspon
 \end{align}
 (This is formally identical to the action \eqref{tgv} of global conformal transformations on quasi-primary fields.)
 
-Now this action of $SL_2({\mathbb{C}})$ on our fields coincides with the action of $SL_2({\mathbb{C}})$ on the space $H_3^+$ of Hermitian matrices of size two and determinant one.
-Consider indeed the function
+Let us consider the following functions on the space $H_3^+$ of Hermitian matrices of size two and determinant one,
 \begin{align}
  \phi^j_{x}(h) = \left(\begin{bmatrix}
                                 x \\ 1
@@ -6007,13 +6010,13 @@ Consider indeed the function
 h \begin{bmatrix}
    x \\ 1 
   \end{bmatrix}
- \right)^{2j}\ ,
+ \right)^{2j}\ .
 \end{align}
-and the natural action of $g\in SL_2({\mathbb{C}})$ on the space $\mathcal{F}(H_3^+)$ of functions on $H_3^+$,
+The natural action of $g\in SL_2({\mathbb{C}})$ on the space $\mathcal{F}(H_3^+)$ of functions on $H_3^+$ is
 \begin{align}
  g\cdot f(h) = f(g^\dagger h g)\ ,
 \end{align}
-then we have 
+and we have 
 \begin{align}
  g\cdot \phi^j_{x}(h) = U_g \phi^j_{x}(h)\ ,
 \end{align}
@@ -6133,7 +6136,7 @@ Then $\mathcal{F}(G)$ can be decomposed into irreducible representations of the 
 \end{align}
 % NB: Problem with notations here.
 where $\text{Rep}(G)$ is the set of irreducible unitary representations of $G$, which coincides with the set of irreducible finite-dimensional representations of $G$.
-If moreover $G$ is simply connected, then the spectrum of the WZW model is diagonal for all positive integer values of $k$, \cite{fms97}
+If moreover $G$ is simply connected, then the spectrum of the WZW model is diagonal for all positive integer values of $k$ \cite{fms97},
 \begin{align}
  \mathcal{S}_k = \bigoplus_{\mathcal{R}\in \text{Rep}_k(G)} \hat{\mathcal{R}}\otimes \bar{\hat{\mathcal{R}}}\ .
 \end{align}
@@ -6174,7 +6177,7 @@ Their fusion rules are
 \begin{align}
  \hat{\mathcal{R}}^{\langle 0, s_1\rangle}\times\hat{\mathcal{R}}^{\langle 0, s_2\rangle} = \sum_{s\overset{2}{=}|s_1-s_2|+1}^{s_1+s_2-1} \hat{\mathcal{R}}^{\langle 0, s\rangle}\ .
 \end{align}
-For any value of the level $k\in\mathbb{C}-\{-2\}$, we can build a diagonal spectrum from these representations,
+For any value of the level $k\in\mathbb{C}-\{-2\}$, let us build a diagonal spectrum from these representations,
 \begin{align}
  \mathcal{S}_k = \bigoplus_{s=1}^\infty \hat{\mathcal{R}}^{\langle 0, s\rangle}\otimes \bar{\hat{\mathcal{R}}}^{\langle 0, s\rangle}\ ,
 \end{align}
@@ -6196,7 +6199,7 @@ Fusion is constrained by both null vectors, and becomes
 
 \subsubsection{Correlation functions}
 
-Like the $H_3^+$ model, the (generalized) $SU_2$ WZW model has a diagonal spectrum that is made of highest-weight representations.
+Like the $H_3^+$ model, the (generalized) $SU_2$ WZW model has a diagonal spectrum made of highest-weight representations.
 Therefore, it is natural to conjecture that correlation functions of the (generalized) $SU_2$ WZW model can be deduced from $H_3^+$ correlation functions by analytically continuing the spins and the level to discrete values, in the same way as two- and three-point functions of (generalized) minimal models  are deduced from Liouville theory. 
 In particular, degenerate fusion rules can be deduced from the $H_3^+$ OPE, see Exercise \ref{exodrfrh}.
 
@@ -6221,6 +6224,9 @@ In order to compute correlation functions, it is tempting to use a Wick rotation
 The Lie group \textbf{\boldmath $\widetilde{SL}_2(\mathbb{R})$}\index{sl2tilder@$\widetilde{SL}_2(\mathbb{R})$ (group)} is defined as the universal covering group of the group $SL_2({\mathbb{R}})$ of matrices of size two with real coefficients and determinant one.
 The group $SL_2({\mathbb{R}})$ is not simply connected, as the matrices of the type $\left(\begin{smallmatrix} \cos \tau & \sin\tau \\ -\sin\tau & \cos \tau \end{smallmatrix}\right)$ form a non-contractible loop, and the first homotopy group of $SL_2({\mathbb{R}})$ is ${\mathbb{Z}}$.
 So $\widetilde{SL}_2(\mathbb{R})$ is obtained from $SL_2({\mathbb{R}})$ by decompactifying the $\tau$ direction, and we have $SL_2({\mathbb{R}}) = \widetilde{SL}_2(\mathbb{R})/{\mathbb{Z}}$, where the denominator subgroup $\mathbb{Z}$ is generated by $\exp 2\pi\left(\begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix}\right)$. The center of $\widetilde{SL}_2(\mathbb{R})$ is the (twice larger) $\mathbb{Z}$ subgroup generated by $\exp\pi\left(\begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix}\right)$.
+
+Let us adopt a basis of the Lie algebra that includes a timelike matrix such as $\left(\begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix}\right)$ as its Cartan generator.
+
 
 The exponential maps from the Lie algebra $\mathfrak{sl}_2(\mathbb{R})$ to the groups $SL_2({\mathbb{R}})$ and $\widetilde{SL}_2(\mathbb{R})$ therefore single out a special direction in the Lie algebra: the direction of $\left(\begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix}\right)$. We will now adopt a basis of the Lie algebra that is adapted to this direction. In order to reproduce the commutation relation \eqref{ttpm} with a generator $t^0$ in the special direction, we choose the matrix representation 
 \begin{align}
