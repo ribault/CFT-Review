@@ -2696,7 +2696,7 @@ where the level-$2$ determinant $D_2(\Delta_s)$ was defined in Eq. \eqref{dud}.
 For practical computations of conformal blocks, the formula \eqref{gsd} is not very efficient: the number of terms grows quickly with the level $|L_s|$, and the cofficients $f_{\Delta_1,\Delta_2}^{\Delta_s,L_s}$ are not known explicitly.
 Fortunately, there is also
 \textbf{Zamolodchikov's recursion}\index{Zamolodchikov's recursion} (or recursive representation) \cite{zz90}, which converges faster, and for all $x\in\mathbb{C}-\{1\}$, not just $|x|<1$.
-Instead of a power series in the cross-ratio $x$, this representation is a power series in the \textbf{elliptic nome}\index{elliptic nome}
+Instead of a power series in the cross-ratio $x$, this representation is a power series in the \textbf{nome}\index{nome}
 \begin{align}
  q(x) = \exp -\pi \frac{F(\frac12,\frac12,1,1-x)}{F(\frac12,\frac12,1,x)}  \ , 
 \end{align}
@@ -2735,7 +2735,7 @@ Zamolodchikov's recursion owes its name to the original definition of the functi
 This formula makes it manifest that conformal blocks have poles for $\Delta_s \in \{\Delta_{\langle r,s\rangle}\}_{r,s\in {\mathbb{N}}^*}$. However, the recursive representation also has unphysical singularities at 
 values of the central charge of the type $c= c_{p, q}$ \eqref{cpq}: singularities of some terms that cancel when the terms are added. This makes it difficult to use the recursive representation for such values of the central charge, and in particular for minimal models \cite{rib18}.
 
-Let us view $H_{\Delta_s}(\Delta_i|q)$ as a power series in the elliptic nome $q$, and argue that its radius of convergence is $1$. We assume that $b^2\notin\mathbb{Q}$ and $\Delta_s \notin \{\Delta_{\langle r,s\rangle}\}_{r,s\in {\mathbb{N}}^*}$, which ensures that the series is well-defined. (If these assumptions did not hold, the coefficients $\frac{R_{m_j,n_j}}{\Delta_{\langle m_{j-1},-n_{j-1} \rangle}-\Delta_{\langle m_j,n_j\rangle}}$ in Eq. \eqref{hdq} could diverge.) The radius of convergence is controlled by the behaviour of $R_{m,n}$ for large indices $m,n$, more specifically by factors that behave as $e^{O(mn)}$. Neglecting factors that behave as $e^{o(mn)}$, we find 
+Let us view $H_{\Delta_s}(\Delta_i|q)$ as a power series in the nome $q$, and argue that its radius of convergence is $1$. We assume that $b^2\notin\mathbb{Q}$ and $\Delta_s \notin \{\Delta_{\langle r,s\rangle}\}_{r,s\in {\mathbb{N}}^*}$, which ensures that the series is well-defined. (If these assumptions did not hold, the coefficients $\frac{R_{m_j,n_j}}{\Delta_{\langle m_{j-1},-n_{j-1} \rangle}-\Delta_{\langle m_j,n_j\rangle}}$ in Eq. \eqref{hdq} could diverge.) The radius of convergence is controlled by the behaviour of $R_{m,n}$ for large indices $m,n$, more specifically by factors that behave as $e^{O(mn)}$. Neglecting factors that behave as $e^{o(mn)}$, we find 
 \begin{align}
  R_{m,n} \underset{m,n\to \infty}{\sim } \frac{P_{\langle 0,0\rangle}\prod_{r\overset{2}{=}1-m}^{m-1} \prod_{s\overset{2}{=}1-n}^{n-1} P_{\langle r,s\rangle}^2 }{\prod_{r=1-m}^m \prod_{s=1-n}^n 2P_{\langle r,s\rangle}}
   \underset{m,n\to \infty}{\sim } 16^{-mn}\ .
@@ -2746,7 +2746,7 @@ In this approximation, we therefore have $H_{\Delta_s}(\Delta_i|q)\sim \sum_{k=0
 
 \subsubsection{Other representations}
 
-The recursive representation that we described can be understood as a large $\Delta_s$ expansion, and it makes $\Delta_s$-poles manifest. Al. Zamolodchikov has derived another recursive representation that is a large $c$ expansion, and makes $c$-poles manifest. That $c$-recursive representation is a power series in the cross-ratio $x$, rather than the elliptic nome $q$. For both recursive representations in the case of $N$-point conformal blocks (and not just $4$-point blocks), see \cite{ccy17}.
+The recursive representation that we described can be understood as a large $\Delta_s$ expansion, and it makes $\Delta_s$-poles manifest. Al. Zamolodchikov has derived another recursive representation that is a large $c$ expansion, and makes $c$-poles manifest. That $c$-recursive representation is a power series in the cross-ratio $x$, rather than the nome $q$. For both recursive representations in the case of $N$-point conformal blocks (and not just $4$-point blocks), see \cite{ccy17}.
 
 Moreover, conformal blocks have a combinatorial representation that follows from the AGT relation \cite{aflt10}. 
 This representation is a power series in $x$, and therefore converges more slowly than the $\Delta_s$-recursive representation, and only for $|x|<1$.
@@ -2969,6 +2969,7 @@ F^{-1}_{\Delta_t,\Delta_s}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Del
 This shows that a solution of the crossing symmetry equation \eqref{ffm} can be built as
 \begin{align}
  C_{123} = \mu_{\Delta_1} \nu_{\Delta_2}\nu_{\Delta_3}F_{\langle 1,1\rangle, \Delta_{1}} \begin{bmatrix} \Delta_2 & \Delta_3\\ \Delta_2 & \Delta_3\end{bmatrix}\ ,
+ \label{cmnnf}
 \end{align}
 provided there exist functions $\mu,\nu$ of the conformal dimension such that 
 the right-hand side is symmetric under permutations of $\Delta_1,\Delta_2,\Delta_3$. 
@@ -3898,17 +3899,17 @@ For the other values of $c$, we have $b^2\notin\mathbb{R}$, and we can find alte
 This leads to alternative solutions of the shift equations for structure constants.
 But these alternative solutions are excluded by the assumption that correlation functions are meromorphic functions of $b$, as this assumption determines correlation functions for $c\notin ]-\infty, 1]$ from their values for $c\in [25,\infty[$.
 
-This uniqueness statement relies on the assumption that degenerate fields exist. We can drop this assumption and have a stronger uniqueness statement, if we remember that structure constants of diagonal theories are uniquely determined by crossing symmetry, as we deduced from Eq. \eqref{ffm}. It would be interesting to probe the limits of uniqueness, i.e. to understand whether uniqueness survives when we weaken the assumptions on the spectrum and analyticity of correlation functions. We will now mention two cases in which uniqueness is known to break down:
+This uniqueness statement relies on the assumption that degenerate fields exist. We can drop this assumption and have a stronger uniqueness statement, if we remember that structure constants of diagonal theories are uniquely determined by crossing symmetry, see Eq. \eqref{cmnnf}. It would be interesting to probe the limits of uniqueness, i.e. to understand whether uniqueness survives when we weaken the assumptions on the spectrum and analyticity of correlation functions. We will now mention two cases in which uniqueness is known to break down:
 \begin{itemize}
  \item We can relax the assumption that fields have multiplicities zero or one, and allow finite multiplicities. A simple theory where all fields have the same multiplicity $N\in\mathbb{N}^*$ can be built by taking $N$ non-interacting copies of Liouville theory.
  \item We can relax the assumption that correlation functions are meromorphic functions of the coupling constant and of the fields' momentums. Then we find that for $b^2=-\frac{q}{p}\in \mathbb{Q}_{<0}$, there exists a solution of crossing symmetry that differs from the Liouville three-point structure constant $\hat{C}_{P_1,P_2,P_3}$ by a non-analytic factor with values in $\{0,1\}$ \cite{rs15},
- % NB: Shows that \eqref{ffm} does not hold in such cases. But for c=1 the fusing relation is not particularly pathological, see Iorgov-Lisovyy-Tykhyy.
  \begin{align}
   \sigma_{P_1,P_2,P_3} = \left\{\begin{array}{cl} 1 & \text{if} \ \ \prod_{\pm,\pm} \sin\pi\left(\frac12(p-q)+\sqrt{pq}(P_1\pm P_2\pm P_3)\right) < 0\ , 
   \\ 0 & \text{else}\ . \end{array} \right.
   \label{sigma}
  \end{align}
-We will call the corresponding theories \textbf{Runkel--Watts-type theorys}\index{Runkel--Watts-type theory}, for reasons that will become apparent in Section \ref{secltf}.
+This structure constant makes sense for real momentums $P_i$.
+We will call the corresponding theories \textbf{Runkel--Watts-type theories}\index{Runkel--Watts-type theory}, for reasons that will become apparent in Section \ref{secltf}. See Exercise \ref{exonurw} for more details on how uniqueness is circumvented in this case. 
 \end{itemize}
 
 
@@ -4461,7 +4462,7 @@ Finally, what happens if we directly send $c\to c_{p, q}$ in Liouville theory, w
 
 \subsubsection{Summary of results}
 
-Let us schematically summarize the limits we have been discussing, see also the diagram \eqref{lims}. We denote (generalized) minimal models as (G)MM, and Runkel--Watts-type theorys as RWT. We begin with limits of minimal models:
+Let us schematically summarize the limits we have been discussing, see also the diagram \eqref{lims}. We denote (generalized) minimal models as (G)MM, and Runkel--Watts-type theories as RWT. We begin with limits of minimal models:
 \begin{align}
  \lim_{\substack{p,q\to \infty \\ c_{p,q}\to c \\ r_i,s_i\text{ fixed}}} \text{MM}_{p,q} &= \text{GMM}_{c}\ ,
 \\
@@ -4591,6 +4592,17 @@ How does the first subleading correction behave?
 For an interpretation of these different behaviours in random energy models, see \cite{clrs16}.
 \end{enumerate}
 \end{exo}
+
+\begin{exo}[How Runkel--Watts-type theories circumvent the uniqueness of diagonal CFTs]
+ ~\label{exonurw}
+The aim of this exercise is to understand how Liouville theory and Runkel--Watts-type theories can have different three-point structure constants, circumventing in particular the relation \eqref{cmnnf} between the three-point structure constant and the fusing matrix. We focus on the case $c=1$ for technical simplicity. 
+\begin{enumerate}
+ \item In the case $c=1$, the conformal blocks and fusing matrix have considerably simpler expressions than in the general case. Study the analyticity properties of the fusing matrix from the article \cite{ilt13}, and deduce that Eq. \eqref{cmnnf} cannot hold in Runkel--Watts theory. 
+ \item Review the derivation of Eq. \eqref{cmnnf} in the cases of Liouville theory with $c=1$, and of Runkel--Watts theory. Paying particular attention to integration contours, poles of conformal blocks, and analyticity of structure constants, deduce that the derivation works in Liouville theory and fails in Runkel--Watts theory.
+ \item Show that  Eq. \eqref{cmnnf} holds in Liouville theory with $c=1$ and more generally $c\leq 1$, and write an article about it.
+\end{enumerate}
+\end{exo}
+
 
 
 \begin{exo}[Fusion rules of all unitary representations if $c>1$]
@@ -6225,10 +6237,8 @@ The Lie group \textbf{\boldmath $\widetilde{SL}_2(\mathbb{R})$}\index{sl2tilder@
 The group $SL_2({\mathbb{R}})$ is not simply connected, as the matrices of the type $\left(\begin{smallmatrix} \cos \tau & \sin\tau \\ -\sin\tau & \cos \tau \end{smallmatrix}\right)$ form a non-contractible loop, and the first homotopy group of $SL_2({\mathbb{R}})$ is ${\mathbb{Z}}$.
 So $\widetilde{SL}_2(\mathbb{R})$ is obtained from $SL_2({\mathbb{R}})$ by decompactifying the $\tau$ direction, and we have $SL_2({\mathbb{R}}) = \widetilde{SL}_2(\mathbb{R})/{\mathbb{Z}}$, where the denominator subgroup $\mathbb{Z}$ is generated by $\exp 2\pi\left(\begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix}\right)$. The center of $\widetilde{SL}_2(\mathbb{R})$ is the (twice larger) $\mathbb{Z}$ subgroup generated by $\exp\pi\left(\begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix}\right)$.
 
-Let us adopt a basis of the Lie algebra that includes a timelike matrix such as $\left(\begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix}\right)$ as its Cartan generator.
-
-
-The exponential maps from the Lie algebra $\mathfrak{sl}_2(\mathbb{R})$ to the groups $SL_2({\mathbb{R}})$ and $\widetilde{SL}_2(\mathbb{R})$ therefore single out a special direction in the Lie algebra: the direction of $\left(\begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix}\right)$. We will now adopt a basis of the Lie algebra that is adapted to this direction. In order to reproduce the commutation relation \eqref{ttpm} with a generator $t^0$ in the special direction, we choose the matrix representation 
+Let us adopt a basis of the Lie algebra whose Cartan generator is proportional to the matrix $\left(\begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix}\right)$. We could choose another timelike generator, i.e. another matrix of the type $g\left(\begin{smallmatrix} 0 & 1 \\ -1 & 0 \end{smallmatrix}\right) g^{-1}$ with $g\in SL_2({\mathbb{R}})$, such that the corresponding Cartan subgroup contains the center of $\widetilde{SL}_2(\mathbb{R})$. 
+The following matrix representation of the Lie algebra obeys the commutation relations \eqref{ttpm},
 \begin{align}
 \renewcommand{\arraystretch}{1.3}
 \left\{ \begin{array}{rl}
@@ -6275,9 +6285,9 @@ According to \cite{rib09} and references therein, we have
  \mathcal{F}(\widetilde{SL}_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \int^\oplus_{]0,1[} d\alpha\ \mathcal{C}^j_\alpha \otimes \bar{\mathcal{C}}^j_{\alpha} \oplus \bigoplus_\pm \int^\oplus_{]-\infty,-\frac12[} dj\ \mathcal{D}^{j,\pm}\otimes \bar{\mathcal{D}}^{j,\pm} \ ,
 \label{fst}
 \\
- \mathcal{F}(SL_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} \mathcal{C}^j_\alpha \otimes \bar{\mathcal{C}}^j_{\alpha} \oplus \bigoplus_\pm \bigoplus_{j=-\frac12, -1,-\frac32 \cdots} \mathcal{D}^{j,\pm}\otimes \bar{\mathcal{D}}^{j,\pm} \ ,
+ \mathcal{F}(SL_2(\mathbb{R})) &= \int^\oplus_{-\frac12+i{\mathbb{R}}_+} dj \bigoplus_{\alpha\in\{0,\frac12\}} \mathcal{C}^j_\alpha \otimes \bar{\mathcal{C}}^j_{\alpha} \oplus \bigoplus_\pm \bigoplus_{j=-\frac12, -1,-\frac32 \cdots} \mathcal{D}^{j,\pm}\otimes \bar{\mathcal{D}}^{j,\pm} \ .
 \end{align}
-where the identification of $\mathcal{F}(SL_2(\mathbb{R}))$ with the space of $\tau$-periodic functions on $\widetilde{SL}_2(\mathbb{R})$ amounts to restricting the eigenvalues of our Hermitian generator to be half-integers.
+The space $\mathcal{F}(SL_2(\mathbb{R}))$ is the subspace of $\mathcal{F}(\widetilde{SL}_2(\mathbb{R}))$ where the Hermitian generator $J_0^0$ has half-integer eigenvalues.
 
 The groups $SL_2(\mathbb{R})$ and $\widetilde{SL}_2(\mathbb{R})$ have an outer automorphism: in $SL_2(\mathbb{R})$ it can be realized as the conjugation by the matrix $\left(\begin{smallmatrix} 0 & 1 \\ 1 & 0\end{smallmatrix}\right)$, which does not belong to the group because its determinant is $-1$. The action of this outer automorphism of the Lie algebra is 
 \begin{align}
@@ -6313,12 +6323,15 @@ For example, the tensor product of two principal series representations is
 \label{coc}
 \end{align}
 where the factor of $2$ is the tensor product multiplicity that we already encountered in Section \ref{secwikz}.
-Actually, all the values of $N_{\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3}$ can be deduced from the values of $N_{\mathcal{D}^{j_1,+},\mathcal{D}^{j_2,+},\mathcal{D}^{j_3,-}}$, using the remark that as far as the eigenvalues \eqref{rpe} of $J^0_0$ are concerned, we have the identification
+
+There is a heuristic reasoning for deducing all the values of $N_{\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3}$ from the values of $N_{\mathcal{D}^{j_1,+},\mathcal{D}^{j_2,+},\mathcal{D}^{j_3,-}}$.
+The idea is to use the identification
 \begin{align}
- \mathcal{C}^j_\alpha \sim \mathcal{D}^{\alpha-1,+} \oplus \mathcal{D}^{-\alpha,-}\ .
+ \mathcal{C}^j_\alpha \sim \mathcal{D}^{\alpha-1,+} \oplus \mathcal{D}^{-\alpha,-}\ ,
 \label{cjdd}
 \end{align}
-This identification apparently predicts a nonzero value for $N_{\mathcal{C}^j_\alpha,\mathcal{D}^{j_2,+},\mathcal{D}^{j_3,+}}$.
+which holds as far as the eigenvalues \eqref{rpe} of $J^0_0$ are concerned.
+This reasoning apparently predicts a nonzero value for $N_{\mathcal{C}^j_\alpha,\mathcal{D}^{j_2,+},\mathcal{D}^{j_3,+}}$.
 That value should be discarded, because it depends on $\alpha$ whereas $\mathcal{C}^j_\alpha$ only depends on $\alpha\ \text{mod}\ {\mathbb{Z}}$.
 
 \subsubsection{Spectral flow}
@@ -6491,7 +6504,7 @@ The natural extension of the conjugation rule to the affine algebra $\widehat{\m
         \end{array}
 \right.
 \end{align}
-By computing the norms of level one states, it is easy to see that the affine highest-weight representations $\hat{\mathcal{C}}^j_\alpha, \hat{\mathcal{D}}^{j,\pm}$  are not unitary.
+By computing the norms of level one states, it is easy to see that the affine highest-weight representations $\hat{\mathcal{C}}^j_\alpha, \hat{\mathcal{D}}^{j,\pm}$  are not unitary. (See Eq. \eqref{viv} for the analogous computation in the $H_3^+$ model.)
 But the $\widetilde{SL}_2(\mathbb{R})$ WZW model is not expected to be unitary, as the metric on the underlying group has a mixed signature. (What matters for applications to string theory is not unitarity, but another property called the no-ghost theorem.) 
 
 \section{Exercises}
@@ -6733,7 +6746,7 @@ right-hand side using the formula \eqref{djm} for $\hat{J}^-(y)$, and conclude.
   \item Let $|w^a\rangle$ a basis of the adjoint representation $\mathcal{R}_1$ of $\mathfrak{sl}_2$, with $t^a|w^b\rangle = f^{ab}_c|w^c\rangle$. Show that our affine null vector condition is equivalent to $c_a^i|w^a\rangle\otimes |v_i\rangle\in \mathcal{R}_1\otimes \mathcal{R}_j$ being an eigenvector of the operator $Q=K_{ab}t^a\otimes t^b$, with the eigenvalue $k$.
   % NB: Actually I find the eigenvalue -k, there must be a sign mistake.
   \item Write the operator $Q$ in terms of the quadratic Casimir operators of the representations $\mathcal{R}_1, \mathcal{R}_j$ and $\mathcal{R}_1\otimes \mathcal{R}_j$, and show that its eigenvalues are $-2, 2j$ and $-2j-2$. 
-  Compute these eigenvalues in the case $j=j_{\langle 1,1\rangle}$ \eqref{jrs}, and compare with the fusion rule \eqref{prspj}.
+  Compute these eigenvalues in the case $j=j_{\langle 1,1\rangle}$ \eqref{jrs}, and show that we have an affine null vector in this case. 
  \end{enumerate}
 \end{exo}
 
@@ -6774,7 +6787,7 @@ Check that the line of integration $j\in -\frac12+ib{\mathbb{R}}$ and the eight 
 We want to analytically continue our OPE to degenerate values of the spin $j_1$, i.e. values such that the integral over $j$ reduces to a finite sum. This happens whenever poles from the left of the line of integration, coincide with poles on the right of that line. (In principle we also need $j_1$ to be a zero of the OPE coefficient, but this can always be achieved by a field renormalization.) Compute the degenerate spins, and compare them with Eq. \eqref{jrs}.
 
 \item 
-Compute the limit of the OPE when $j_1$ takes degenerate values, and compare with Eq. \eqref{prspj}.
+Compute the limit of the OPE when $j_1$ takes degenerate values, and compare with the OPE Eq. \eqref{prspj}.
 \end{enumerate}
 \end{exo}
 
