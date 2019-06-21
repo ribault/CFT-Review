@@ -1,7 +1,7 @@
 CFT-Review
 ==========
 
-A review article on conformal field theory 'cft33.tex' (142 pages), with also a much briefer version 'minimal.tex' (24+13 pages) and an even briefer version 'crash.tex' (12 pages). An affordable printed copy of the latest release (Version 4) can be ordered on [Glasstree](https://glasstree.com/shop/catalog/conformal-field-theory-on-the-plane_819/).
+A review article on conformal field theory 'cft33.tex' (142 pages), with also a much briefer version 'minimal.tex' (24+13 pages) and an even briefer version 'crash.tex' (12 pages). An affordable printed copy of the latest release (Version 4) can be ordered on [Glasstree](https://glasstree.com/shop/catalog/conformal-field-theory-on-the-plane_1204/).
 
 
 Why would a review article on theoretical physics end up on GitHub, and not just on [Arxiv](http://arxiv.org/abs/1406.4290)? 
