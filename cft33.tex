@@ -4037,15 +4037,20 @@ which is a special case of Eq. \eqref{chco}.
 In particular, in the cases of the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$, we have $C_+(P)=\tilde{C}_+(P)=1$. This could have been derived more directly from crossing symmetry of four-point functions with two degenerate fields. 
 (See Exercise \ref{exodoc}.) 
 
-In the case $c\in]-\infty, 1]$, the OPE coefficient has no poles that could lead to discrete terms in the limit $P_2\to P_{\langle r,s\rangle}$, and the normalization factor $\hat N_{P_2} = \mu^{P_2}\hat\Upsilon_b(2P_2)$ does not vanish in that limit. As a result, the OPE \eqref{vvir} remains valid as written. To summarize, when their momentums take degenerate values, primary fields can become degenerate or not, depending on the central charge:
+In the case $c\in]-\infty, 1]$, the OPE coefficient has no poles that could lead to discrete terms in the limit $P_2\to P_{\langle r,s\rangle}$, and the normalization factor $\hat N_{P_2} = \mu^{P_2}\hat\Upsilon_b(2P_2)$ does not vanish in that limit. As a result, the OPE \eqref{vvir} remains valid as written, and $\lim V_{P_2} = V_{P_{\langle r,s\rangle}}$ is not degenerate. Moreover, the non-vanishing null vector $L_{\langle r,s\rangle}\bar{L}_{\langle r,s\rangle} V_{P_{\langle r,s\rangle}}$ is a diagonal primary field of dimension $\Delta_{\langle r,-s\rangle}$, and must therefore be proportional to $V_{P_{\langle r,-s\rangle}}$. Coming back to the case $c\notin ]-\infty,1]$, there is an analogous relation called a higher equation of motion, which involves $\left.\frac{\partial}{\partial P} V_P\right|_{P=P_{\langle r,s\rangle}}$, and whose coefficient of proportionality is known \cite{zam03}. To summarize:
 \begin{align}
 \renewcommand{\arraystretch}{1.3}
- \begin{tabular}{|l||c|c|}
+ \begin{tabular}{|r||c|c|}
   \hline
   central charge &  $c\in ]-\infty, 1]$ & $c\notin ]-\infty, 1]$
   \\
   \hline
-  $\underset{P\to P_{\langle r,s \rangle}}{\lim } V_P$ & $ V_{P_{\langle r,s \rangle}}$  & $V_{\langle r,s \rangle}$ 
+  $\underset{P\to P_{\langle r,s \rangle}}{\lim } V_P = $ & $ V_{P_{\langle r,s \rangle}}$  & $V_{\langle r,s \rangle}$ 
+  \\
+  \hline
+  $V_{P_{\langle r,-s\rangle}} \propto$ 
+  & $L_{\langle r,s\rangle}\bar{L}_{\langle r,s\rangle} V_{P_{\langle r,s\rangle}}$ 
+  &  $L_{\langle r,s\rangle}\bar{L}_{\langle r,s\rangle} \left.\frac{\partial}{\partial P} V_P\right|_{P=P_{\langle r,s\rangle}}$
   \\
   \hline
  \end{tabular}
