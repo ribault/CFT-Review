@@ -155,7 +155,7 @@ This is why we always look for central extensions of symmetry algebras.
   [\mathbf 1, L_n] = 0 \quad , \quad [L_n,L_m] = (n-m)L_{n+m} +\frac{c}{12}(n-1)n(n+1)\delta_{n+m,0}\mathbf 1 \ ,
   \label{eq:vir}
  \end{align}
- where the number $c$ is called the central charge. (The notation $c\mathbf 1$ stands for a central generator that always has the same eigenvalue $c$ within a given conformal field theory.)
+ where the number $c$ is called the central charge. 
 \end{defn}
 
 \subsection{Representations}
@@ -331,9 +331,10 @@ From Axiom \ref{hyp:vaf}, we can deduce that correlation functions of primary fi
 \end{align}
 In the case of two-point functions, this implies
 \begin{align}
- \Big< V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \Big> \propto \delta_{\Delta_1,\Delta_2} z_{12}^{-2\Delta_1} \ .
+ \Big< V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \Big> \propto \delta_{\Delta_1,\Delta_2} z_{12}^{-2\Delta_1} \ ,
  \label{eq:2pt}
 \end{align}
+where $z_{ij} = z_i - z_j$.
 So a two-point function can be non-vanishing only if the two fields have the same dimension.
 For three-point functions, this implies
 \begin{align}
@@ -347,10 +348,10 @@ For four-point functions, the general solution can be written as
  = z_{13}^{-2\Delta_1} z_{23}^{\Delta_1-\Delta_2-\Delta_3+\Delta_4} z_{24}^{-\Delta_1-\Delta_2+\Delta_3-\Delta_4} z_{34}^{\Delta_1+\Delta_2-\Delta_3-\Delta_4} G\left(z=\frac{z_{12}z_{34}}{z_{13}z_{24}}\right)\ ,
  \label{eq:4pt}
 \end{align}
-where $z_{ij} = z_i - z_j$ and $G(z)$ is an arbitrary function of the cross-ratio $z$. 
+where $G(z)$ is an arbitrary function of the cross-ratio $z$. 
 So conformal symmetry reduces the four-point function to a function of one variable $G$, and we will frequently omit the prefactors.
 
-We have been studying global conformal invariance of correlation functions of primary fields, rather than more general fields. This was not only for making things simpler, but also because correlation functions of descendants can be deduced from correlation functions of primaries, as a consequence of Axiom \ref{hyp:vaf}. For example,
+We have seen how global conformal symmetry constrains correlation functions. The rest of conformal symmetry, i.e. local conformal symmetry, allows us to deduce correlation functions of descendants from correlation functions of primaries, for example
 \begin{align}
  \Big< L_{-2}V_{\Delta_1}(z_1) \cdots V_{\Delta_N}(z_N) \Big>
   =\sum_{i=2}^N\left(\frac{1}{z_1-z_i}\frac{\partial}{\partial z_i} +\frac{\Delta_i}{(z_i-z_1)^2}\right)  \Big< V_{\Delta_1}(z_1) \cdots V_{\Delta_N}(z_N)\Big>\ .
@@ -402,7 +403,6 @@ In order to control the dependence on $\bar z$, we need  a second copy of the Vi
  \begin{align}
   \frac{\partial}{\partial z} V(z) = L_{-1}V(z)   \quad , \quad \frac{\partial}{\partial \bar z} V(z)= \bar L_{-1} V(z)   \ .
  \end{align}
- The generators of conformal transformations are the diagonal combinations $L_n+\bar L_n$.
 \end{hyp}
 Let us consider left- and right-primary fields $V_{\Delta_i,\bar\Delta_i}(z_i)$, with the 
 two-point functions
@@ -497,13 +497,19 @@ A (model of) conformal field theory on the Riemann sphere is a spectrum $S$ and 
 \end{defn}
 
 
-\subsection{Degenerate fields and the fusion product}\label{sec:dffp}
+\subsection{Degenerate fields and analytic bootstrap}\label{sec:dffp}
 
 Crossing symmetry equations typically involve infinite sums, which makes them difficult to solve.
 However, if at least one field is degenerate, then the four-point function belongs to the finite-dimensional space of solutions of a BPZ equation, and is therefore a combination of finitely many conformal blocks. 
 For example,
 $\left< V_{\langle 2, 1 \rangle}(z_0) \prod_{i=1}^3 V_{\Delta_i}(z_i) \right>$ is a combination of only two holomorphic $s$-channel conformal blocks.
 These two blocks are characterized by their asymptotic behaviour near $z=0$ \eqref{eq:gsd}, where the BPZ equation allows only two values of $\Delta$, namely $\Delta\in\{\Delta(P_1-\frac{\beta}{2}),\Delta(P_1+\frac{\beta}{2})\}$.
+The interpretation is that the OPE of the degenerate field $V_{\langle 2,1\rangle}$ with another fields involves only two primary fields,
+\begin{align}
+ V_{\langle 2,1\rangle} V_P \sim \sum_\pm V_{P\pm \frac{\beta}{2}} \ .
+\end{align}
+This schematic way of writing OPEs is called a fusion rule.
+
 Another basis of solutions of the same BPZ equation is given by two $t$-channel blocks, which are characterized by their power-like behaviour near $z=1$.
 \begin{align}
  \mathcal{F}^{(s)}_\pm(z_i)  =  
@@ -536,63 +542,84 @@ In particular, this implies
  \frac{c_{+}^{(s)}}{c_{-}^{(s)}} = -\frac{F_{-+}F_{--}}{F_{++}F_{+-}} \ .
  \label{eq:coc}
 \end{align}
-We will later express $c_\pm^{(s)}$ in terms of three-point structure constants, and obtain equations for these structure constants.
-
-The presence of only two $s$-channel fields with momentums $P_1\pm \frac{\beta}{2}$ means that the operator product expansion $V_{\langle 2, 1 \rangle}(z) V_{P_1}(0)$ involves only two primary fields $V_{P_1\pm \frac{\beta}{2}}(0)$. 
-
-\begin{defn}[Fusion product]
- ~\label{def:fus}
- The fusion product is a bilinear product of representations of the Virasoro algebra, which encodes the constraints on OPEs from Virasoro symmetry and null vectors. In particular,
- \begin{align}
-  \mathcal{R}_{\langle 1,1\rangle}\times \mathcal V_P = \mathcal V_P \quad , \quad 
-  \mathcal{R}_{\langle 2,1\rangle}\times \mathcal V_P = \sum_\pm \mathcal V_{P\pm \frac{\beta}{2}}\quad , \quad  
-  \mathcal{R}_{\langle 1,2\rangle}\times \mathcal V_P = \sum_\pm \mathcal V_{P\pm \frac{1}{2\beta}}\ .
-  \label{eq:rv}
- \end{align}
- From the commutativity of fields, it follows that the fusion product is commutative and associative.
-\end{defn}
-Using associativity, we can work out the fusion products (and even the existence) of higher degenerate representations, for example, 
+But the coefficients $c_\pm^{(s)}$ are products of three-point structure constants,
 \begin{align}
- \mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle 2,1\rangle} = \mathcal{R}_{\langle 1,1\rangle} + \mathcal{R}_{\langle 3,1\rangle} \quad , \quad \mathcal{R}_{\langle 3,1\rangle} \times \mathcal V_P = \mathcal V_{P - \beta} + \mathcal V_P + \mathcal V_{P + \beta}\ .
+ c_\epsilon^{(s)} = C_{\langle 2,1\rangle, P_1, P_1+\epsilon\frac{\beta}{2}} C_{P_1+\epsilon\frac{\beta}{2}, P_2,P_3}\ .
 \end{align}
-More generally, the degenerate representations $\mathcal{R}_{\langle r,s \rangle}$ have the fusion products
- \begin{align}
- \mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_P &= \mathcal{R}_{\langle r,s \rangle}\times \mathcal{V}_P = \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}} \mathcal{V}_{P + i\beta+j\beta^{-1}}\ ,
-\label{rtv}
- \\
- \mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle} &= \sum_{r_3\overset{2}{=}|r_1-r_2|+1}^{r_1+r_2-1}\ \sum_{s_3\overset{2}{=}|s_1-s_2|+1}^{s_1+s_2-1} \mathcal{R}_{\langle r_3,s_3 \rangle}\ ,
-\label{rrsr}
+Explicitly, Eq. \eqref{eq:coc} reads
+\begin{align}
+ \frac{C_{\langle 2,1\rangle, P_1, P_1+\frac{\beta}{2}} C_{P_1+\frac{\beta}{2},P_2,P_3}}{C_{\langle 2,1\rangle, P_1, P_1-\frac{\beta}{2}} C_{P_1-\frac{\beta}{2},P_2,P_3} } 
+ =\gamma(2\beta P_1) \gamma(1+2\beta P_1)\prod_{\pm,\pm} \gamma(\tfrac12 -\beta P_1 \pm \beta P_2 \pm \beta P_3)\ ,
+ \label{eq:shift}
 \end{align}
-where the sums run by increments of $2$ if there is a superscript in $\overset{2}{=}$, and $1$ otherwise.
+where we introduce the ratio of Euler Gamma functions
+\begin{align}
+ \gamma(x) = \frac{\Gamma(x)}{\Gamma(1-x)}\ .
+\label{gx}
+\end{align}
+Using an appropriate field renormalization $V_P(z)\to \lambda_PV_P(z)$, we can arrange for the $P_1$-dependent prefactors on both sides to cancel. We are left with a shift equation that determines how $C_{P_1,P_2,P_3}$ behaves when one momentum is shifted by $\beta$. Using the degenerate field $V_{\langle 1,2\rangle}$ instead of $V_{\langle 2,1\rangle}$, we would obtain the equation \eqref{eq:shift} with $\beta\to \frac{1}{\beta}$. The two shift equations have a unique solution if $\beta^2>0$, 
+\begin{align}
+ C_{P_1,P_2,P_3} = \prod_{\pm,\pm} \Upsilon_\beta\left(\tfrac{\beta+\beta^{-1}}{2}+P_1\pm P_2 \pm P_3\right) \ ,
+ \label{cppp}
+\end{align}
+where we introduce the special function 
+\begin{align}
+ \Upsilon_\beta(x) = \prod_{m,n\in\mathbb{N}+\frac12} f\left(\frac{\frac{\beta+\beta^{-1}}{2}-x}{m\beta +n\beta^{-1}}\right) \quad \text{with} \quad f(x)=(1-x^2)e^{x^2}\ .
+ \label{eq:up}
+\end{align}
+Therefore, we have analytically determined the three-point functions of diagonal fields, under the assumption that the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ exist.
 
-\section{Minimal models}
+\section{Liouville theory and minimal models}
+
+\subsection{Liouville theory}
+
+\begin{defn}[Liouville theory]
+ ~\label{def:liou}
+ For any value of the central charge $c\in\mathbb{C}$, Liouville theory is the conformal field theory whose spectrum is 
+ \begin{align}
+  S^\mathrm{Liouville} 
+= \int_{\mathbb{R}_+}  dP\ \mathcal V_P \otimes 
+   \bar{\mathcal V}_P\ , 
+   \label{eq:sl}
+ \end{align}
+and whose correlation functions are smooth functions of $\beta$ and $P$, assuming it exists and its unique.
+\end{defn}
+\begin{hyp}[Degenerate fields in Liouville theory]
+ ~\label{hyp:degl}
+ The degenerate fields $V_{\langle r, s\rangle}$, and their correlation functions, exist. 
+\end{hyp}
+This axiom allows us to use the result \eqref{cppp} for the three-point structure constant. To see whether our assumptions make sense, we have to test crossing symmetry of generic four-point functions $\left<\prod_{i=1}^4 V_{P_i}(z_i)\right>$ (with no degenerate field). The test is successful, proving the existence of Liouville theory. The theory is unique because the three-point structure constant $C_{P_1,P_2,P_3}$ is the unique solution of the shift equations. 
+
+There are however subtleties in the analytic properties of correlation functions as functions of the central charge. Our three-point structure constant actually solves crossing symmetry only for $c\leq 1$. For $c\in \mathbb{C}-(-\infty, 1)$, we have to use another solution of the shift equations, called the DOZZ formula. (It is still based on the special function $\Upsilon_\beta(x)$.)
+
+\subsection{Fusion rules of degenerate fields}
 
 \begin{defn}[Minimal model]
  ~\label{def:mm}
  A minimal model is a conformal field theory whose spectrum is made of finitely many irreducible representations of the product of the left and the right Virasoro algebras.
 \end{defn}
 
-\subsection{Diagonal minimal models}\label{sec:amm}
-
-We first focus on diagonal minimal models, whose spectrums are of the type
-\begin{align}
- S = \bigoplus_\mathcal{R} \mathcal{R}\otimes  \mathcal{\bar R}\ ,
-\end{align}
-where $\mathcal{R}$ and $ \mathcal{\bar R}$ denote the same Virasoro representation, viewed as a representation of the left- or right-moving Virasoro algebra respectively.
-
 \begin{hyp}[Degenerate spectrum]
  ~\label{hyp:deg}
  All representations that appear in the spectrum of a minimal model are degenerate.
 \end{hyp}
-It is natural to use degenerate representations, because in an OPE of degenerate fields, only finitely many representations can appear. Conversely, we now assume that all representations that are allowed by fusion do appear in the spectrum, in other words
+It is natural to use degenerate representations, because in an OPE of degenerate fields, only finitely many representations can appear. For the moment, we know the fusion rules of the degenerate field $V_{\langle 2,1\rangle}$. Similarly, we can determine the fusion rules
+\begin{align}
+V_{\langle 1,1\rangle} V_P \sim V_P \quad ,\quad 
+ V_{\langle 2,1\rangle} V_P \sim \sum_\pm V_{P\pm \frac{\beta}{2}} \quad , \quad V_{\langle 1,2\rangle} V_P\sim \sum_\pm V_{P\pm \frac{1}{2\beta}}  \ . 
+\end{align}
+Then, using the associativity of the OPE, we can determine the fusion rules (and even the existence) of the more general degenerate fields $V_{\langle r,s\rangle}$ with $r,s\in\mathbb{N}^*$. For example, 
+\begin{align}
+ V_{\langle 2,1\rangle} V_{\langle 2,1\rangle} \sim V_{\langle 1,1\rangle} + V_{\langle 3,1\rangle} 
+\end{align}
+allows us to deduce the OPEs of $V_{\langle 3,1\rangle}$. We find 
+ \begin{align}
+ V_{\langle r_1,s_1 \rangle}V_{\langle r_2,s_2 \rangle} \sim \sum_{r_3\overset{2}{=}|r_1-r_2|+1}^{r_1+r_2-1}\ \sum_{s_3\overset{2}{=}|s_1-s_2|+1}^{s_1+s_2-1} V_{\langle r_3,s_3 \rangle}\ ,
+\label{rrsr}
+\end{align}
+where the sums run by increments of $2$.
 
-\begin{hyp}[Closure under fusion]
- ~\label{hyp:stab}
- The spectrum is closed under fusion. 
-\end{hyp}
-
-Let us assume that the spectrum contains a nontrivial degenerate representation such as $\mathcal{R}_{\langle 2,1\rangle}$. Fusing it with itself, we get $\mathcal{R}_{\langle 1, 1\rangle}$ and $\mathcal{R}_{\langle 3,1\rangle}$. Fusing multiple times, we get $(\mathcal{R}_{\langle r, 1\rangle})_{r\in\mathbb{N}^*}$ due to $\mathcal{R}_{\langle 2,1\rangle} \times \mathcal{R}_{\langle r,1\rangle} = \mathcal{R}_{\langle r-1,1\rangle}  + \mathcal{R}_{\langle r+1,1\rangle}$. 
-So, using degenerate representations is not sufficient for building minimal models. Let us consider representations that are multiply degenerate. For example, if $\mathcal{R}_{\langle 2, 1\rangle} = \mathcal{R}_{\langle 1, 3\rangle}$ has two vanishing null vectors, then $\mathcal{R}_{\langle 2, 1\rangle} \times \mathcal{R}_{\langle 2, 1\rangle} = \mathcal{R}_{\langle 1,1\rangle}$ has only one term, as the term $\mathcal{R}_{\langle 3, 1\rangle}$ is not allowed by the fusion rules of $\mathcal{R}_{\langle 1, 3\rangle}$.
+Now, if we start with a nontrivial degenerate field such as $V_{\langle 2,1\rangle}$, repeated OPEs will generate infinitely many fields $V_{\langle r,1\rangle}$ with $r\in\mathbb{N}^*$. In order to build minimal models, additional restrictions are needed: we should consider multiply degenerate fields. For example, if $V_{\langle 2, 1\rangle} = V_{\langle 1, 3\rangle}$ has two vanishing null vectors, then $V_{\langle 2, 1\rangle} V_{\langle 2, 1\rangle} \sim V_{\langle 1,1\rangle}$ has only one term, as the term $V_{\langle 3, 1\rangle}$ is not allowed by the fusion rules of $V_{\langle 1, 3\rangle}$.
 
 In order for a representation to have two null vectors, we however need a coincidence of 
 the type $\Delta_{\langle r,s \rangle} = \Delta_{\langle r',s' \rangle}$. 
@@ -607,7 +634,11 @@ For any integers $r,s$, we then have the coincidence
 \begin{align}
  \Delta_{\langle r,s \rangle} = \Delta_{\langle p-r, q-s\rangle}\ .
 \end{align}
-In particular, let the Kac table be the set $(r,s)\in [1, p-1]\times [1,q-1]$, and let us build a diagonal spectrum from the corresponding representations:
+In particular, let the Kac table be the set $(r,s)\in [1, p-1]\times [1,q-1]$: this turns out to be closed under fusion, i.e. the OPE of two fields in the Kac table only involves fields in the table. 
+
+\subsection{Minimal models}
+
+We build a diagonal spectrum from all Kac table representations:
 \begin{align}
  S_{p, q} = \frac12 \bigoplus_{r=1}^{p-1} \bigoplus_{s=1}^{q-1} \mathcal{R}_{\langle r,s \rangle}\otimes \mathcal{\bar{R}}_{\langle r,s \rangle}\ ,
 \end{align}
@@ -617,7 +648,7 @@ This spectrum is not empty provided the coprime integers $p,q$ are both greater 
  p,q \geq 2 \ ,
  \label{eq:pqmin}
 \end{align}
-which implies in particular $\beta\in \mathbb{R}$ and $c<1$. And $S_{p, q}$ is closed under fusion.
+which implies in particular $\beta\in \mathbb{R}$ and $c<1$. 
 
 \begin{defn}[Diagonal minimal model]
  ~\label{def:dmm}
@@ -631,15 +662,7 @@ For example, the minimal model with the central charge $c=\frac12$ has the spect
  \begin{array}{c|ccc} 2 & \frac{1}{2} & \frac{1}{16} & 0 \\ 1 & 0 & \frac{1}{16} & \frac{1}{2} \\  \hline & 1 & 2 & 3 \end{array} 
 \end{align}
 
-\subsection{D-series minimal models}\label{sec:dmm}
-
-Let us look for non-diagonal minimal models. We therefore relax the assumption that fields be diagonal, and allow them to have integer spins. 
-
-Given a rational value of $\beta^2=\frac{q}{p}$, let us look for pairs of doubly degenerate representations whose dimensions differ by integers, using the identity
-\begin{align}
- \Delta_{\langle p-r,s\rangle} -\Delta_{\langle r,s\rangle}= \left(r-\frac{p}{2}\right)\left(s-\frac{q}{2}\right)\ .
-\end{align}
-Without loss of generality we assume that $q$ is odd. Then we need $r-\frac{p}{2}$ to be an even integer, therefore $p$ is even and $r\equiv\frac{p}{2}\bmod 2$. Under these assumptions, the representation $\mathcal{R}_{\langle r,s\rangle}\otimes \bar{\mathcal{R}}_{\langle p-r,s\rangle}$ has integer spin. We look for a spectrum that contains all representations of this type, for $(r,s)$ in the Kac table. Closure under fusion forces us to include diagonal representations as well.
+Let us look for non-diagonal minimal models. We  allow fields to have nonzero integer spins. 
 
 \begin{defn}[D-series minimal model]
  For $p,q\geq 2$ coprime integers with $p$ even, the D-series $(p,q)$ minimal model is the conformal field theory whose spectrum is 
@@ -649,87 +672,11 @@ Without loss of generality we assume that $q$ is odd. Then we need $r-\frac{p}{2
 \end{align}
 assuming it exists and is unique.
 \end{defn}
+Here the non-diagonal sector is built from all pairs of Kac table representations whose dimensions differ by integers. OPEs of two nondiagonal fields produce diagonal fields, which we are forced to include in the spectrum as well. 
 
-\section{Liouville theory}
-
-\subsection{Definition}
-
-\begin{defn}[Liouville theory]
- ~\label{def:liou}
- For any value of the central charge $c\in\mathbb{C}$, Liouville theory is the conformal field theory whose spectrum is 
- \begin{align}
-  S^\mathrm{Liouville} 
-= \int_{\mathbb{R}_+}  dP\ \mathcal V_P \otimes 
-   \bar{\mathcal V}_P\ , 
-   \label{eq:sl}
- \end{align}
-and whose correlation functions are smooth functions of $\beta$ and $P$, assuming it exists and its unique.
-\end{defn}
-
-In order to have reasonably simple crossing symmetry equations, we need degenerate fields. 
-But the spectrum of Liouville theory is made of Verma modules, and does not involve any degenerate representations.
-In order to have degenerate fields, we need a special axiom:
-
-\begin{hyp}[Degenerate fields in Liouville theory]
- ~\label{hyp:degl}
- The degenerate fields $V_{\langle r, s\rangle}$, and their correlation functions, exist. 
-\end{hyp}
-This allows us to write the OPE
-\begin{align}
- V_{\langle 2, 1\rangle} V_P \sim C_-(P) V_{P-\frac{\beta}{2}} + C_+(P)V_{P +\frac{\beta}{2}}\ ,
- \label{degope}
-\end{align}
-where we introduced the degenerate OPE coefficients $C_\pm(P)$, and $V_{P\pm \frac{\beta}{2}}$ make sense by analytic continuation in $P$.
+\end{document}
 
 
-\subsection{Three-point structure constants}\label{sec:sol}
-
-Let us determine the three-point structure constant by solving crossing symmetry equations from four-point functions with degenerate fields. 
-
-Let us determine the coefficients $c^{(s)}_{\epsilon}$ in the expression \eqref{gz} for the four-point function $\left< V_{\langle 2, 1 \rangle}(z_0) \prod_{i=1}^3 V_{\Delta_i}(z_i) \right>$.
-Using the degenerate OPE \eqref{degope} and the three-point function, we find
-\begin{align}
-\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .6]
-\draw (-1,2) node [left] {$P_1$} -- (0,0) -- node [above] {$P_1+\epsilon\frac{\beta}{2}$} (4,0) -- (5,2) node [right] {$P_2$};
-\draw (-1,-2) node [left] {$\langle 2,1\rangle$} -- (0,0);
-\draw (4,0) -- (5,-2) node [right] {$P_3$};
-\node at (1.5, -4) {$c_{\epsilon}^{(s)} = \colorboxed{red}{C_\epsilon(P_1)}\, \colorboxed{red}{C_{P_1+\epsilon\frac{\beta}{2},P_2,P_3}}  $};
-\draw[dashed, ->, red] (.7,-3.2) to [out=90, in=-70] (.2, -.3);
-\draw[dashed, ->, red] (3.5,-3.2) to [out=90, in=-110] (3.8, -.3);
-\end{tikzpicture} 
-\label{cs}
-\end{align}
-Crossing symmetry and single-valuedness of the four-point function imply that the two structure constants $c_\pm^{(s)}$ obey eq. \eqref{eq:coc},
-\begin{align}
- \frac{C_+(P_1) C_{P_1+\frac{\beta}{2},P_2,P_3}}{C_-(P_1) C_{P_1-\frac{\beta}{2},P_2,P_3} } 
- =\gamma(2\beta P_1) \gamma(1+2\beta P_1)\prod_{\pm,\pm} \gamma(\tfrac12 -\beta P_1 \pm \beta P_2 \pm \beta P_3)\ ,
- \label{eq:shift}
-\end{align}
-where we introduce the ratio of Euler Gamma functions
-\begin{align}
- \gamma(x) = \frac{\Gamma(x)}{\Gamma(1-x)}\ .
-\label{gx}
-\end{align}
-Using a field renormalization $V_P(z)\to \lambda_PV_P(z)$, we can set $\frac{C_+(P)}{C_-(P)}$ to a convenient value. 
-Moreover, if we had the degenerate field $V_{\langle 1,2\rangle}$ instead of $V_{\langle 2,1\rangle}$ in our four-point functions, we would obtain the equation \eqref{eq:shift} with $\beta\to \frac{1}{\beta}$.
-
-In order to solve the shift equations for $C_{P_1,P_2,P_3}$, we need a function that produces Gamma functions when its argument is shifted by $\beta$ or $\frac{1}{\beta}$. More precisely, we need a function such that 
-\begin{align}
-  \frac{\Upsilon_\beta(x+\beta)}{\Upsilon_\beta(x)} = \beta^{1-2\beta x} \gamma(\beta x)\qquad \text{and} \qquad \frac{\Upsilon_\beta(x+\frac{1}{\beta})}{\Upsilon_\beta(x)} = \beta^{\frac{2x}{\beta}-1} \gamma(\tfrac{x}{\beta})\ ,
-\label{upup}
-\end{align}
-where the prefactors ensure that the two shift equations are compatible with one another.  
-For $\beta^2>0$, the unique solution is 
-\begin{align}
- \Upsilon_\beta(x) = \prod_{m,n\in\mathbb{N}+\frac12} f\left(\frac{\frac{\beta+\beta^{-1}}{2}-x}{m\beta +n\beta^{-1}}\right) \quad \text{with} \quad f(x)=(1-x^2)e^{x^2}\ .
- \label{eq:up}
-\end{align}
-and the unique solution of the shift equations is 
-\begin{align}
- C_{P_1,P_2,P_3} = \prod_{\pm,\pm} \Upsilon_\beta\left(\tfrac{\beta+\beta^{-1}}{2}+P_1\pm P_2 \pm P_3\right) \ .
- \label{cppp}
-\end{align}
-Let us extend these results to all complex values of $\beta$:
 \begin{center}
 \renewcommand{\arraystretch}{1.5}
  \begin{tabular}{|r|c|c|c|}
@@ -760,30 +707,3 @@ Let us extend these results to all complex values of $\beta$:
  \hline
  \end{tabular}
 \end{center}
-The solution is unique if $\beta^{2}\in\mathbb{R}^*-\mathbb{Q}$, because the two periods are aligned and incommensurable. Uniqueness extends to $\beta^2 \in\mathbb{R}^*$ by continuity. The solutions then extend to $\beta^2\in\mathbb{C}$ by analyticity.
-
-
-\subsection{Existence and uniqueness}
-
-We have to determine which solutions lead to crossing-symmetric four-point functions. The $s$-channel 
-decomposition of a Liouville four-point function is,
-\begin{align}
-\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
-\draw (-1,2) node [left] {$P_2$} -- (0,0) -- node [above] {$P$} (4,0) -- (5,2) node [right] {$P_3$};
-\draw (-1,-2) node [left] {$P_1$} -- (0,0);
-\draw (4,0) -- (5,-2) node [right] {$P_4$};
-\node at (0, -4) {${\displaystyle\left< \prod_{i=1}^4 V_{\Delta_i}(z_i) \right> = \int_{\mathbb{R}_+}} dP\ \colorboxed{red}{C_{P_1,P_2,P}}\, \colorboxed{red}{ C_{P,P_3, P_4}}\, \mathcal{F}_{P}^{(s)}(z_i) \mathcal{F}_{P}^{(s)}(\bar z_i)$};
-\draw[dashed, ->, red] (.6,-3) to [out=90, in=-70] (.2, -.3);
-\draw[dashed, ->, red] (3.4,-3) to [out=90, in=-110] (3.8, -.3);
-\end{tikzpicture} 
-\end{align}
-(We have a similar expression with $C \to \hat C$ whenever the solutions $ \hat C$ exist.) 
-It can be numerically checked that crossing symmetry is obeyed whenever Liouville theory is unique, i.e. for $\beta^2\in \mathbb{R}^*$. 
-We may be tempted to deduce that it is also obeyed whenever $C$ and $\hat{C}$ are defined, by analyticity in $\beta$. However, while $C$ and $\hat{C}$ are analytic, the four-point function may not be analytic, as poles of the integrand may cross the integration line. 
-It turns out that $\hat{C}$ is crossing-symmetric whenever it is defined. 
-while $\hat{C}$ is crossing symmetric only for $\beta^2>0$. 
-This saves us from the embarrassment of having two different Liouville theories for some values of the central charge: Liouville theory is uniquely defined for any $c\in\mathbb{C}$. 
-
-
-\end{document}
-
