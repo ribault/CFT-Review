@@ -281,7 +281,7 @@ I am grateful to my colleagues at IPhT Saclay, and in particular to Antoine Duva
 
 I wish to thank Philippe Di Francesco, Sheer El-Showk, Matthias Gaberdiel, Christoph Keller, Miguel Paulos, R\'emi Rhodes, Slava Rychkov, Joerg Teschner, Vincent Vargas, and G\'erard Watts, for useful discussions and correspondence.
 
-I am grateful to Connor Behan, Fran\c{c}ois David, Quang-Dien Duong, Bruno Le Floch, Omar Foda, Santiago Migliaccio, Raoul Santachiara, and Vincent Vargas, for helpful comments on this text.
+I am grateful to Connor Behan, Fran\c{c}ois David, Quang-Dien Duong, Bruno Le Floch, Omar Foda, Santiago Migliaccio, Nikita Nemkov, Raoul Santachiara, and Vincent Vargas, for helpful comments on this text.
 
 A version of this text served as my habilitation thesis, defended on 21 December 2018. I wish to thank the jury members Denis Bernard, Matthias Gaberdiel, Jesper Jacobsen, Vyacheslav Rychkov, V\'eronique Terras, G\'erard Watts and Jean-Bernard Zuber for a lively defense, and for valuable feedback. Special thanks to Matthias Gaberdiel and G\'erard Watts for their specific suggestions and comments.
 
@@ -2137,14 +2137,15 @@ Inserting this in a three-point function, and using the two-point function \eqre
 \end{align}
 Comparing this with the expression \eqref{cff} for the three-point function, we find the expression of  $C^3_{12}$ in terms of the two- and three-point structure constants, 
 \begin{align}
- C^3_{12}= \frac{C_{123}}{B_3}\ .
+ C^3_{12}= (-1)^{S_1-S_2+S_3}\frac{C_{123}}{B_3}\ .
  \label{cftt}
 \end{align}
+Here we wrote the sign prefactor under the single-valuedness assumption \eqref{dbdz}. Under our further assumption that the spins $S_i$ are integer, the prefactor can be written as $(-1)^{\sum S_i}$.  
 Let us now write the complete expression of the OPE of two primary fields:
 \begin{align}
  \boxed{ V_{\Delta_1,\bar\Delta_1}(z_1) V_{\Delta_2,\bar\Delta_2}(z_2) 
  = 
- \sum_{\Delta_3,\bar\Delta_3} \frac{C_{123}}{B_3} \left| z_{12}^{\Delta_3-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} z_{12}^Lf^{\Delta_3,L}_{\Delta_1,\Delta_2} L \right|^2 V_{\Delta_3,\bar\Delta_3}(z_2)
+ \sum_{\Delta_3,\bar\Delta_3} (-1)^{\sum S_i}\frac{C_{123}}{B_3} \left| z_{12}^{\Delta_3-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} z_{12}^Lf^{\Delta_3,L}_{\Delta_1,\Delta_2} L \right|^2 V_{\Delta_3,\bar\Delta_3}(z_2)
  }\ ,
  \label{vvs}
 \end{align}
@@ -2154,7 +2155,7 @@ Since OPE Ward identities uniquely determine the contributions of the descendant
 
 The case $z_2=\infty$ can be obtained from the case $z_2\in\mathbb{C}$ by a global conformal transformation, and we find 
 \begin{align}
- V_{\Delta_1,\bar\Delta_1}(z_1) V_{\Delta_2,\bar\Delta_2}(\infty) =  \sum_{\Delta_3,\bar\Delta_3}\frac{C_{123}}{B_3}\left| z_1^{\Delta_2-\Delta_1-\Delta_3}\right|^2 \Big( V_{\Delta_3,\bar\Delta_3}(\infty) + O\left(z_1^{-1}\right)\Big) \ .
+ V_{\Delta_1,\bar\Delta_1}(z_1) V_{\Delta_2,\bar\Delta_2}(\infty) =  \sum_{\Delta_3,\bar\Delta_3}(-1)^{\sum S_i}\frac{C_{123}}{B_3}\left| z_1^{\Delta_2-\Delta_1-\Delta_3}\right|^2 \Big( V_{\Delta_3,\bar\Delta_3}(\infty) + O\left(z_1^{-1}\right)\Big) \ .
  \label{iope}
 \end{align}
 In the special case where there is no field at infinity, so that $\Delta_2=0$ and $\Delta_1=\Delta_3$, this is consistent with the behaviour \eqref{vdz} of $V_{\Delta_1,\bar\Delta_1}(z_1)$ near $z_1=\infty$.
