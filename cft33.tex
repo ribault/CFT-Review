@@ -5150,6 +5150,13 @@ In theories with continuous, diagonal spectrums, $\hat{\mathfrak{u}}_1$ momentum
 \end{align}
 In the application to Liouville theory (Section \ref{seclld}), we will actually use these correlation functions for $\hat{\mathfrak{u}}_1$ momentums that do not necessarily belong to the spectrum \eqref{sc}. 
 
+While the three-point structure constants are trivial if the spectrum only involves even spins, they are nontrivial functions with values in $\{-1,1\}$ in the presence of odd spins, due to the permutation rule \eqref{css}. In the case of a compactified free boson, the structure constants are 
+\begin{align}
+ C_{(n_1,w_1),(n_2,w_2),(n_3,w_3)} = (-1)^{n_1w_2 + n_2w_3+n_3w_1}\ .
+ \label{csigns}
+\end{align}
+(The Kronecker delta functions that appear in the three-point functions are universal quantities, so we do not include them in the structure constants.)
+
 
 \subsection{Free bosons and Liouville theory \label{seclld}}
 
@@ -6565,7 +6572,8 @@ Given a highest-weight representation $\mathcal{U}_\alpha$ of the affine Lie alg
 \begin{exo}[Normalization of OPE coefficients in free bosonic theories]
  ~\label{exoone}
 The aim of this exercise is to show that the OPE coefficient in the OPE of $\hat{\mathfrak{u}}_1$-primary fields \eqref{vvoo} can be set to one by renormalizing the fields.
-In other words, calling this coefficient $C_{\alpha_1,\alpha_2}$, we want to show that there exists a function $\lambda_{\alpha}$ such that 
+We focus on diagonal fields for simplicity: in the presence of fields with odd spins, OPE coefficients take values in $\{-1,1\}$, see Eq. \eqref{csigns} for an example.
+Calling the OPE coefficient $C_{\alpha_1,\alpha_2}$, we want to show that there exists a function $\lambda_{\alpha}$ such that 
 \begin{align}
  C_{\alpha_1,\alpha_2} = \frac{\lambda_{\alpha_1+\alpha_2}}{\lambda_{\alpha_1}\lambda_{\alpha_2}}\ .
 \label{clll}
