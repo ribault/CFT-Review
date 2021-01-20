@@ -224,7 +224,7 @@ An exposition of the $W$-symmetric minimal models and conformal Toda theories wo
 \end{itemize}
 A much abridged version of this text is available \cite{rib16}, which includes a number of corrected exercises. An even briefer treatment is found in Wikipedia, with in particular the articles on \href{https://en.wikipedia.org/wiki/Two-dimensional_conformal_field_theory}{Two-dimensional conformal field theory}, \href{https://en.wikipedia.org/wiki/Liouville_field_theory}{Liouville theory},
 \href{https://en.wikipedia.org/wiki/Minimal_models}{minimal models}, and \href{https://en.wikipedia.org/wiki/Virasoro_conformal_block}{Virasoro conformal blocks}.
-(As of 2019, these Wikipedia articles were mostly written by the present author.)
+(As of 2021, these Wikipedia articles were mostly written by the present author.)
 
 While we mostly review known results, the following aspects may be original:
 \begin{itemize}
@@ -279,7 +279,7 @@ I have tried to follow some stylistic good practices, such as: providing a click
 
 I am grateful to my colleagues at IPhT Saclay, and in particular to Antoine Duval, Riccardo Guida, Santiago Migliaccio, Vincent Pasquier, and Pierre Ronceray, for the opportunity to give lectures on this subject. I am also grateful to the organizers and participants of the 10th APCTP Focus Program on Liouville, Integrability and Branes, and in particular to Soojong Rey, for including my lectures in an otherwise very advanced workshop. Moreover, I am grateful to the organizers and participants of the 2016 Carg\`ese school on Quantum integrable systems, conformal field theory and stochastic processes, for challenging me to introduce the subject in about four hours. (See \cite{rib16}.) 
 
-I wish to thank Philippe Di Francesco, Sheer El-Showk, Matthias Gaberdiel, Christoph Keller, Miguel Paulos, R\'emi Rhodes, Slava Rychkov, Joerg Teschner, Vincent Vargas, and G\'erard Watts, for useful discussions and correspondence.
+I wish to thank Philippe Di Francesco, Sheer El-Showk, Matthias Gaberdiel, Christoph Keller, Miguel Paulos, R\'emi Rhodes, Slava Rychkov, Hubert Saleur, Joerg Teschner, Vincent Vargas, and G\'erard Watts, for useful discussions and correspondence.
 
 I am grateful to Connor Behan, Fran\c{c}ois David, Quang-Dien Duong, Bruno Le Floch, Omar Foda, Santiago Migliaccio, Nikita Nemkov, Raoul Santachiara, and Vincent Vargas, for helpful comments on this text.
 
@@ -869,8 +869,8 @@ Let us now define and discuss \textbf{\boldmath unitarity}\index{unitary!---theo
 the spectrum is a Hilbert space, i.e. has a positive definite Hermitian form. 
 In conformal field theory, this Hermitian form should moreover be compatible with the action of the Virasoro algebra.
 This means that the \textbf{Hermitian conjugation}\index{Hermitian conjugation} on $\mathfrak{V}\times\overline{\mathfrak{V}}$ that is induced by the Hermitian form, is an antilinear involution $A\to A^\dagger$ such that $[A,B]^\dagger = -[A^\dagger, B^\dagger]$.
-Interpreting the dilation generator $L_0+\bar L_0$ as the Hamiltonian, we assume that it is self-adjoint, and actually that both $L_0$ and $\bar L_0$ are self-adjoint.
-This implies
+Interpreting the dilation generator $L_0+\bar L_0$ as the Hamiltonian, we assume that it is self-adjoint. It is also natural to assume that $L_0-\bar L_0$ is self-adjoint, since its eigenvalues are conformal spins, which must be half-integer and therefore real. (See Eq. \eqref{dbdz}.) So both $L_0$ and $\bar L_0$ are self-adjoint,
+which implies
 \begin{align}
  L^\dagger_n = L_{-n} \quad , \quad \bar L_n^\dagger = \bar L_{-n}\ ,
 \label{ldn}
@@ -6103,18 +6103,7 @@ This is compatible with the structure \eqref{jam} of the affine Lie algebra $\ha
  k\in\mathbb{R}\ .
 \label{kir}
 \end{align}
-Via the Sugawara construction \eqref{ljj}, the conjugation rule for $J^a_n$ implies $L_n^\dagger = \bar{L}_{-n}$, which differs from the conjugation rule \eqref{ldn} that we previously assumed. 
-We refrain from discussing how this affects the geometrical interpretation of conformal transformations.
-Let us rather investigate the unitarity of the theory. 
-Given a primary state $|v\rangle$, the norm square of some of the level one descendants of $|v\rangle$ is
-\begin{align}
- \Big\langle (J^0_{-1}+\lambda\bar{J}^0_{-1})v \Big| (J^0_{-1}+\lambda\bar{J}^0_{-1})v \Big\rangle
-= -\Big\langle v \Big| (\bar{\lambda} J^0_1+\bar{J}^0_1)(J^0_{-1}+\lambda\bar{J}^0_{-1})v \Big\rangle 
-= -\frac{k}{2}(\lambda+\bar{\lambda}) \langle v| v\rangle\ .
-\label{viv}
-\end{align}
-This cannot be positive for all values of $\lambda$,  
-so the theory cannot be unitary -- except of course in the large level limit, where descendant modes disappear. 
+Via the Sugawara construction \eqref{ljj}, the conjugation rule for $J^a_n$ implies $L_n^\dagger = \bar{L}_{-n}$, which differs from the conjugation rule \eqref{ldn} that we previously assumed. While the dilation generator $L_0+\bar L_0$ is still self-ajoint, the generator $L_0-\bar L_0$ is now antihermitian. However, the eigenvalues of this generator are conformal spins, which must be half-integer and therefore real. This shows that the $H_3^+$ model cannot be unitary -- except of course in the large level limit, where descendent modes disappear, correlation functions are $z$-independent, and conformal spins all vanish. For a more pedestrian proof that the model is non-unitary, see Exercise \ref{exonu}.
 
 
 \section{WZW models}
@@ -6522,7 +6511,7 @@ The natural extension of the conjugation rule to the affine algebra $\widehat{\m
         \end{array}
 \right.
 \end{align}
-By computing the norms of level one states, it is easy to see that the affine highest-weight representations $\hat{\mathcal{C}}^j_\alpha, \hat{\mathcal{D}}^{j,\pm}$  are not unitary. (See Eq. \eqref{viv} for the analogous computation in the $H_3^+$ model.)
+By computing the norms of level one states, it is easy to see that the affine highest-weight representations $\hat{\mathcal{C}}^j_\alpha$  are not unitary. (See Exercise \ref{exonu}.)
 But the $\widetilde{SL}_2(\mathbb{R})$ WZW model is not expected to be unitary, as the metric on the underlying group has a mixed signature. (What matters for applications to string theory is not unitarity, but another property called the no-ghost theorem.) 
 
 \section{Exercises}
@@ -6809,6 +6798,18 @@ We want to analytically continue our OPE to degenerate values of the spin $j_1$,
 Compute the limit of the OPE when $j_1$ takes degenerate values, and compare with the OPE Eq. \eqref{prspj}.
 \end{enumerate}
 \end{exo}
+
+\begin{exo}[Non-unitarity of the $H_3^+$ and \texorpdfstring{$\widetilde{SL}_2(\mathbb{R})$}{SL2(R)} WZW models]
+ ~\label{exonu}
+We want to show that the $H_3^+$ and $\widetilde{SL}_2(\mathbb{R})$ WZW models are not unitary, either by a pedestrian calculation, or by a more algebraic reasoning. 
+\begin{enumerate}
+\item 
+Let $|v\rangle$ be an affine primary state in an affine highest-weight representation. For $\lambda$ a complex number, compute the norm square of the level one descendant states  $|(J^0_{-1}+\lambda\bar{J}^0_{-1})v\rangle$ in both models. In the case of the $H_3^+$ model, show that this cannot be positive for all $\lambda\in\mathbb{C}$. In the case of the  $\widetilde{SL}_2(\mathbb{R})$ WZW model, find another family of level one descendant states whose norm square is not positive. 
+\item
+In an affine highest-weight representation, show that the level one subspace is a representation of the horizontal subalgebra, which is obtained by tensoring the level zero subspace with the adjoint representation. Decompose that representation into irreducibles, and discuss its unitarity. 
+\end{enumerate}
+\end{exo}
+
 
 \bibliographystyle{cft}
 \bibliography{cft}
