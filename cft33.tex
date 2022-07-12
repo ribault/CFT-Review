@@ -1,4 +1,3 @@
-
 % 142 pages. Public domain. Suggest modifications at this https URL . Version 5: More on the fusing matrix, limits of Liouville theory and minimal models, Runkel--Watts-type CFTs. Improved notations and normalizations.
 
 
@@ -65,7 +64,13 @@
 \newtheorem{exo}{Exercise}[chapter]
 \newtheorem{hyp}{Axiom}[chapter]
 
-\usepackage[colorlinks=true, linktoc=all, linkcolor=black, citecolor=red, urlcolor=blue]{hyperref}
+\usepackage[colorlinks=true, linktoc=all, linkcolor=black, citecolor=red, urlcolor=blue, backref=page]{hyperref}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\BR@backref}{\newblock}{\newblock(}{}{}
+\patchcmd{\BR@backref}{\par}{)\par}{}{}
+\makeatother
 
 \title{\bfseries Conformal field theory on the plane}
 
@@ -202,12 +207,12 @@ However, the depth and breadth of the ideas may be too much for beginning studen
 Non-rational theories such as Liouville theory are not covered.
 And misprints are frequent.
 \item
-Again in the spirit of the present text, the review article \cite{tes17} is both more concise and more advanced, and provides a guide to the literature.
+Again in the spirit of the present text, Teschner's review article \cite{tes17} is both more concise and more advanced, and provides a guide to the literature.
 \item
 Non-rational theories are covered in a review by Schomerus \cite{sch05}.
 That article uses multiple approaches, and pays particular attention to boundary conformal field theory, with applications to string theory in mind. 
 \item
-The Big Yellow Book \cite{fms97} is a useful reference, especially on rational conformal field theories.
+The Big Yellow Book \cite{fms97} by di Francesco, Mathieu and Sénéchal is a useful reference, especially on rational conformal field theories.
 As its epic length suggests, it is rather encyclopedic. 
 \item
 The encyclopedic approach was extended in the direction of Liouville theory by Nakayama's review \cite{nak04}, which includes systematic guides to the literature.
@@ -224,11 +229,11 @@ An exposition of the $W$-symmetric minimal models and conformal Toda theories wo
 \end{itemize}
 A much abridged version of this text is available \cite{rib16}, which includes a number of corrected exercises. An even briefer treatment is found in Wikipedia, with in particular the articles on \href{https://en.wikipedia.org/wiki/Two-dimensional_conformal_field_theory}{Two-dimensional conformal field theory}, \href{https://en.wikipedia.org/wiki/Liouville_field_theory}{Liouville theory},
 \href{https://en.wikipedia.org/wiki/Minimal_models}{minimal models}, and \href{https://en.wikipedia.org/wiki/Virasoro_conformal_block}{Virasoro conformal blocks}.
-(As of 2021, these Wikipedia articles were mostly written by the present author.)
+(As of 2022, these Wikipedia articles were mostly written by the present author.) Moreover, the video recordings of 7 lectures at YRISW 2019 are available online.
 
 While we mostly review known results, the following aspects may be original:
 \begin{itemize}
-\item in Section \ref{secaco}, the formulation of Al. Zamolodchikov's recursive representation of conformal blocks as an explicit formula, and the proof of its convergence,
+\item in Section \ref{secaco}, the formulation of Al. Zamolodchikov's recursive representation of conformal blocks as an explicit formula,
 \item in Section \ref{secliou}, a complete and correct solution of Liouville theory in the bootstrap approach, 
 \item in Section \ref{secvmm}, the logical sequence ``Liouville theory $\rightarrow$ generalized minimal models $\rightarrow$ minimal models'',
 \item in Section \ref{secltf}, the systematic discussion of the limits of Liouville theory, (generalized) minimal models, and Runkel--Watts-type theories,
@@ -281,7 +286,7 @@ I am grateful to my colleagues at IPhT Saclay, and in particular to Antoine Duva
 
 I wish to thank Philippe Di Francesco, Sheer El-Showk, Matthias Gaberdiel, Christoph Keller, Miguel Paulos, R\'emi Rhodes, Slava Rychkov, Hubert Saleur, Joerg Teschner, Vincent Vargas, and G\'erard Watts, for useful discussions and correspondence.
 
-I am grateful to Connor Behan, Fran\c{c}ois David, Quang-Dien Duong, Bruno Le Floch, Omar Foda, Santiago Migliaccio, Nikita Nemkov, Raoul Santachiara, and Vincent Vargas, for helpful comments on this text.
+I am grateful to Connor Behan, Fran\c{c}ois David, Quang-Dien Duong, Bruno Le Floch, Omar Foda, Santiago Migliaccio, Nikita Nemkov, Paul Roux, Raoul Santachiara, and Vincent Vargas, for helpful comments on this text.
 
 A version of this text served as my habilitation thesis, defended on 21 December 2018. I wish to thank the jury members Denis Bernard, Matthias Gaberdiel, Jesper Jacobsen, Vyacheslav Rychkov, V\'eronique Terras, G\'erard Watts and Jean-Bernard Zuber for a lively defense, and for valuable feedback. Special thanks to Matthias Gaberdiel and G\'erard Watts for their specific suggestions and comments.
 
@@ -387,7 +392,7 @@ Then, an $N$-point \textbf{\boldmath correlation function}\index{correlation fun
 \left\langle \prod_{i=1}^N V_{\sigma_i}(x_i)\right\rangle\in \mathbb{C}\ .
 \label{pva}
 \end{align}
-Correlation functions depend linearly on fields, in particular 
+This notation for a correlation function as the expectation value of a product of fields is only formal, as we will not define fields independently of correlation functions. The product is meant to convey the idea that an $N$-point function depends linearly on each field, so that in particular 
 \begin{align}
  \frac{\partial}{\partial x} \left\langle \prod_{i=1}^N V_{\sigma_i}(x_i)\right\rangle = \left\langle \frac{\partial}{\partial x} \prod_{i=1}^N V_{\sigma_i}(x_i)\right\rangle\ ,
 \end{align}
@@ -440,11 +445,15 @@ The idea is now that the dependence of a correlation function $\left\langle \pro
 This idea however comes with a number of technical assumptions.
 In particular, for the dependence on $v_i$ to be completely determined by symmetry, $\mathcal{R}_i$ must be an \textbf{\boldmath indecomposable representation}\index{indecomposable representation}, i.e. a representation that cannot be written as a direct sum of smaller representations.
 \begin{align}
- \mathcal{R} \ \ \text{indecomposable} \quad \iff \quad \nexists \mathcal{R}',\mathcal{R}'' \neq 0 \quad | \quad \mathcal{R} = \mathcal{R}'\oplus \mathcal{R}''\ .
+ \mathcal{R} \ \ \text{indecomposable} \quad \iff \quad 
+ \Big(\mathcal{R} = \mathcal{R}'\oplus \mathcal{R}'' \implies \mathcal{R}' \in\left\{ 0,\mathcal{R}\right\}\Big)
+ \ .
 \end{align}
 In particular, any \textbf{\boldmath irreducible representation}\index{irreducible representation}, which by definition does not have a nontrivial subrepresentation, is indecomposable,
 \begin{align}
- \mathcal{R} \ \ \text{irreducible} \quad \iff \quad \nexists \mathcal{R}' \neq 0,\mathcal{R} \quad | \quad \mathcal{R}'\subset \mathcal{R}\ .
+ \mathcal{R} \ \ \text{irreducible} \quad \iff \quad 
+ \Big(\mathcal{R}'\subset \mathcal{R} \implies \mathcal{R}' \in\left\{ 0,\mathcal{R}\right\}\Big)
+ \ .
 \end{align}
 (See Exercise \ref{exoirr} for an example of an indecomposable representation that is not irreducible.)
 
@@ -474,6 +483,8 @@ In particle physics, internal symmetries include flavour symmetry.
 The distinction between space-time and internal symmetries may depend on the choice of the space: for example, supersymmetry can be an internal or space-time symmetry depending on whether the theory is formulated on an ordinary space or on a superspace.
 
 \subsection{Consistency conditions \label{seccc}}
+
+\subsubsection{The axioms}
 
 The consistency conditions on the correlation functions $\left\langle\prod_{i=1}^n V_{\sigma_i}(x_i)\right\rangle$ are derived from axioms on the fields $V_{\sigma_i}(x_i)$. These axioms should be understood as pertaining to correlation functions: we write fields outside correlation functions as a matter of notational convenience only. In particular, we do not define fields as operators acting on the spectrum, as is done in formalisms such as vertex operator algebras. 
 Moreover, our axioms do not include the existence of a vacuum state, a frequently encountered axiom of quantum field theory in flat space.
@@ -527,7 +538,8 @@ where each node corresponds to an OPE coefficient.
 In terms of OPE coefficients, it is less straightforward to write commutativity than associativity of the OPE,
 because we broke the symmetry $x_1\leftrightarrow x_2$ by writing the OPE in terms of $V_\sigma(x_2)$. Had we used $V_\sigma(\frac{x_1+x_2}{2})$ instead, commutativity would have reduced to the simple condition $C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2) = C_{\sigma_2,\sigma_1}^{\sigma}(x_2,x_1)$, but associativity would have been complicated. (See Exercise \ref{exocva}.)
 
-Let us now study how these axioms constrain the correlation functions.
+\subsubsection{How the axioms constrain correlation functions}
+
 By performing multiple OPEs, an $N$-point function (with $N\geq 3$) can always be reduced to a combination of two-point functions, for instance
 \begin{align}
  \left\langle \prod_{i=1}^4 V_{\sigma_i}(x_i) \right\rangle = \sum_{\sigma\in \mathcal{S}} C_{\sigma_1,\sigma_2}^{\sigma}(x_1,x_2)\sum_{\sigma'\in \mathcal{S}} C_{\sigma,\sigma_3}^{\sigma'}(x_2,x_3)\Big\langle V_{\sigma'}(x_3)V_{\sigma_4}(x_4)\Big\rangle\ .
@@ -543,6 +555,8 @@ This can be determined by solving associativity \eqref{cccc} and commutativity c
 These conditions are fulfilled in certain conformal field theories.
 In particular, as we will see in Chapter \ref{secccs}, conformal symmetry is enough for determining the $x$-dependence of OPE coefficients. 
 
+\subsubsection{Fusion rules}
+
 Let us discuss in more detail how symmetry constrains OPEs. By definition, symmetry transformations act within representations of the symmetry algebras. Given three representations $(\mathcal{R}_1,\mathcal{R}_2,\mathcal{R}_3)$, let us write states in these representations as $\sigma=(\mathcal{R},v)$ as in Eq. \eqref{arv}: symmetry constraints on the OPE coefficients $C_{(\mathcal{R}_1,v_1),(\mathcal{R}_2,v_2)}^{(\mathcal{R}_3,v_3)}(x_1,x_2)$ are linear equations on functions of $(v_1,v_2,v_3,x_1,x_2)$. The number $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\in {\mathbb{N}} \cup \{\infty\}$ of independent solutions of these equations is the \textbf{\boldmath fusion multiplicity}\index{fusion!---multiplicity}. 
 In particular, the field $V_{\sigma_3}$ can appear in a $V_{\sigma_1}V_{\sigma_2}$ OPE only if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\neq 0$. Let us define the \textbf{\boldmath fusion product}\index{fusion!---product} or \textbf{\boldmath fusion rules}\index{fusion!---rules} for representations of the symmetry algebra as 
  \begin{align}
@@ -553,7 +567,7 @@ From the OPE, the fusion product inherits the properties of bilinearity, commuta
 In some cases, the fusion product has a constructive definition as a kind of generalization of the tensor product \cite{gab99, kr18}: then $ \mathcal{R}_1 \times \mathcal{R}_2$ is a representation, and the equality in Eq. \eqref{rrnr} is an isomorphism of representations. (We will not need such constructions.) The fusion product, in other words the structure of the category of representations, will turn out to play a more important role than the structure of the representations themselves, see Section \ref{secfr}.  
 
 The fusion product $\mathcal{R}_1\times \mathcal{R}_2$ is said to have nontrivial multiplicities if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\geq 2$ for some $\mathcal{R}_3$, and trivial multiplicities if $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\in \{0,1\}$.
-A field is called a \textbf{\boldmath simple current}\index{simple current} if the corresponding representation $\mathcal{R}$ is such that $\mathcal{R}\times \mathcal{R}'$ is indecomposable for any $\mathcal{R}'$, so that $\sum_{\mathcal{R}''} N_{\mathcal{R}\mathcal{R}'}^{\mathcal{R}''} =1$. 
+A field is called a \textbf{\boldmath simple current}\index{simple current} if the corresponding representation $\mathcal{R}$ is such that $\mathcal{R}\times \mathcal{R}'$ is indecomposable for any indecomposable $\mathcal{R}'$, so that $\sum_{\mathcal{R}''} N_{\mathcal{R}\mathcal{R}'}^{\mathcal{R}''} =1$. 
 
 If all fusion multiplicities are trivial, then the OPE coefficients  $C_{(\mathcal{R}_1,v_1),(\mathcal{R}_2,v_2)}^{(\mathcal{R}_3,v_3)}(x_1,x_2)$ are determined by symmetry up to overall factors that depend on the representations $\mathcal{R}_i$, but not on $v_i,x_j$. In the 
 associativity equation \eqref{cccc}, the sums over the states $\sigma_s,\sigma_t$  can then be reduced to sums over the corresponding representations $\mathcal{R}_s,\mathcal{R}_t$, since everything that involves $v_s,v_t$ is determined by symmetry. 
@@ -616,8 +630,7 @@ Our subject of two-dimensional \textbf{conformal field theory}\index{conformal f
 We consider a two-dimensional space, and assume that it comes equipped with a metric.
 The metric plays very little role in conformal field theory, because conformal invariance will allow us to fix it once and for all.
 But we need the metric in order to explain what conformal invariance is.
-We assume that the metric has Euclidean signature, not considering the other option that it is Minkowskian.
-The Euclidean signature brings important technical simplifications, and does not necessarily prevent the observables from having an interpretation in Minkowski space after analytic continuation.
+We assume that the metric has Euclidean signature. CFT in Minkowski space is related to CFT in Euclidean space by Wick rotation, which translates the Euclidean CFT axioms into good properties of the Minkowskian CFT, including the Wightman axioms \cite{kqr21}.
 
 \subsection{Global conformal transformations\label{secglob}}
 
@@ -639,11 +652,12 @@ For $a\in{\mathbb{R}}$, these transformations are called \textbf{\boldmath dilat
  f_\text{dilation}(z) &= a z\ , \ a\in {\mathbb{R}}\ .
 \end{align}
 While the laws of physics are (mostly) invariant under translations and rotations, they are not invariant under dilations, and the structures of matter and of the universe are strongly scale-dependent.
-It is nevertheless interesting to study scale-invariant models, for at least two reasons:
+It is nevertheless interesting to study scale-invariant models, for at least three reasons:
 \begin{enumerate}
- \item Some particular systems are invariant under scale transformations, for instance certain materials at critical points.
- \item By rescaling a quantum field theory to very small or large scales in a controlled way, one often reaches a scale-invariant theory (called a fixed point of the renormalization group flow).
-That new theory can be nontrivial, and helpful for the understanding of the original theory.
+ \item Some particular systems are invariant under scale transformations, for instance certain materials at phase transitions.
+ \item By rescaling a quantum field theory or statistical model to very small or large scales in a controlled way, one often reaches a scale-invariant theory (called a fixed point of the renormalization group flow).
+That new theory can be nontrivial, and helpful for understanding the original theory.
+\item Moreover, many different models can lead to the same scale-invariant theory: they form a universality class. Scale-invariant theories are therefore much fewer and more general than finite-scale models.
 \end{enumerate}
 
 It may seem reasonable to study quantum field theories that are invariant under translations, rotations and dilations. 
@@ -674,6 +688,8 @@ This group can alternatively be written as $PSL_2(\mathbb{C}) = \frac{SL_2(\math
 
 \subsection{Local conformal transformations \label{secloc}}
 
+\subsubsection{Holomorphic functions and their singularities}
+
 Actually, any holomorphic function $h(z)$ defines a conformal transformation,
 \begin{align}
  f_\text{local conformal}(z) = h(z) \quad , \quad h(z)\ \text{holomorphic}\ , 
@@ -696,6 +712,9 @@ Global conformal transformations only move fields around, while local conformal 
 }
 \end{center}
 So, we assume that the symmetries include the infinitely many independent \textbf{\boldmath local conformal transformations}\index{conformal transformation!local---}, in addition to the global conformal transformations.
+
+\subsubsection{The Witt algebra}
+
 For technical simplicity, we will work with the Lie algebra of infinitesimal conformal transformations, rather than with the Lie group of conformal transformations.
 The structure of this algebra is worked out by considering transformations close to the identity, 
 \begin{align}
@@ -723,6 +742,8 @@ Differential operators $D_\epsilon +\bar{D}_\epsilon$ that correspond to local c
  \label{ilml}
 \end{align}
 Generators with $n\in\{-1,0,1\}$ correspond to global transformations, and the rest to local transformations. (See Exercise \ref{exomoz}.) 
+
+\subsubsection{Consequences of local conformal symmetry}
 
 The assumption of local conformal symmetry drastically restricts the dependence of the theory on the metric.
 Let us restrict our attention to theories on compact Riemann surfaces, where a \textbf{\boldmath Riemann surface}\index{Riemann!---surface} is a two-dimensional orientable smooth manifold.
@@ -768,8 +789,8 @@ generators $L_n$,  and
 \item  \textbf{\boldmath right-moving}\index{right-moving (symmetry generators)}, anti-chiral or antiholomorphic generators $\bar{L}_n$,
 \end{itemize}
  with
-$[L_n,\bar{L}_m]=0$.
-We assume for simplicity that both Virasoro algebras have the same central charge, which is then called the central charge of the model:
+$[L_n,\bar{L}_m]=0$. Assuming invariance under parity, which in our two-dimensional Euclidean space is the transformation $z\to -\bar z$, 
+both Virasoro algebras must have the same central charge, which is then called the central charge of the model:
 \begin{align}
 \renewcommand{\arraystretch}{1.3}
  \begin{tabular}{|c|c|c|c|}
@@ -802,6 +823,8 @@ In the free boson theory, it is even possible to find Virasoro algebras with all
 \section{Basic consequences of conformal symmetry}
 
 \subsection{Structure of the spectrum \label{secsots}}
+
+\subsubsection{Decomposition into irreducible representations}
 
 We know that the spectrum is a representation of the 
 $\mathfrak{V}\times \overline{\mathfrak{V}}$ symmetry algebra.
@@ -837,6 +860,9 @@ Two important special cases are
 \item \textbf{\boldmath rational models}\index{rational model}, where the spectrum involves finitely many irreducible representations,
  \item \textbf{\boldmath diagonal models}\index{diagonal!---model}, where the spectrum is of the type $\mathcal{S}=\bigoplus_{\mathcal{R}\in \text{Rep}(\mathfrak{V})} m_\mathcal{R} \mathcal{R}\otimes \bar{\mathcal{R}}$, i.e. $m_{\mathcal{R},\mathcal{R}'}\neq 0 \implies \mathcal{R}=\mathcal{R}'$ in Eq. \eqref{sorr}.
 \end{itemize}
+
+\subsubsection{Closure under fusion}
+
 Let us now introduce an axiom about fusion of Virasoro representations. Factorizability of the symmetry algebra and of the representations indeed implies that symmetry constraints on OPEs factorize as well, which allows us to define fusion multiplicities and fusion products for representations of $\mathfrak{V}$ (rather than $\mathfrak{V}\times \overline{\mathfrak{V}}$). 
 
 \begin{hyp}[Closure under fusion]
@@ -844,13 +870,15 @@ Let us now introduce an axiom about fusion of Virasoro representations. Factoriz
 If the irreducible representations $\mathcal{R}_1$ and $\mathcal{R}_2$ of $\mathfrak{V}$ appear in the spectrum, then any representation $\mathcal{R}_3$ with a non-vanishing fusion multiplicity $N_{\mathcal{R}_1\mathcal{R}_2}^{\mathcal{R}_3}\neq 0$ also appears in the spectrum. 
 \end{hyp} 
 \noindent
-In other words, we assume that if Virasoro symmetry allows a representation of $\mathfrak{V}$ to appear in an OPE, then that representation does appear.
+In other words, we assume that if Virasoro symmetry allows a representation of $\mathfrak{V}$ to appear in an OPE, then that representation does appear. This is true in many CFTs, but there are exceptions, such as the $(E_8,A_{30})$ E-series minimal model \cite{fms97}. 
 There are two similar-looking axioms that should not be adopted:
 \begin{itemize}
  \item Closure under fusion of $\mathfrak{V}\times \overline{\mathfrak{V}}$ representations, instead of $\mathfrak{V}$ representations, would rule out most nontrivial models, and in particular diagonal models. 
-\item Closure under tensor product, instead of fusion, would not make sense, as the tensor product of two representations of $\mathfrak{V}_c$ is a representation of $\mathfrak{V}_{2c}$ -- central charges behave additively in a tensor product. 
+\item Closure under tensor product, instead of fusion, would not make sense in field theory, because the definition of fusion involves the space dependence of fields. Actually, 
+the tensor product of two representations of $\mathfrak{V}_c$ is a representation of $\mathfrak{V}_{2c}$ -- central charges behave additively in a tensor product. 
 \end{itemize}
-Our axiom, although better than these alternatives, nevertheless eliminates some interesting theories, for example the $(E_8,A_{30})$ E-series minimal model \cite{fms97}.
+
+\subsubsection{Conformal dimensions}
 
 Let us further discuss the roles of the operators $L_0$ and $\bar L_0$. Their eigenvalues are called \textbf{\boldmath conformal dimensions}\index{conformal dimension} or conformal weights. If 
 two states $v_1$ and $v_2$ are related by the action of Virasoro generators,
@@ -865,28 +893,8 @@ and if $v_1$ is an $L_0$-eigenstate with conformal dimension $\Delta_1$, then $v
 \end{align}
 as a consequence of the Virasoro algebra's commutation relations \eqref{vir}. Therefore, in any indecomposable representation of the Virasoro algebra, all conformal dimensions differ by integers. (See Exercise \ref{exodiffint}.)
 
-Let us now define and discuss \textbf{\boldmath unitarity}\index{unitary!---theory} of two-dimensional conformal field theories. While a theory needs not be unitary for being consistent, only unitary theories can have quantum mechanical interpretations. Unitarity indeed means that the squared norms of states are positive, and can therefore be interpreted as probabilities in quantum mechanics. On the other hand, statistical physics can give rise to non-unitary theories. (See \cite{prv18} for more details.) Technically, unitarity requires that 
-the spectrum is a Hilbert space, i.e. has a positive definite Hermitian form. 
-In conformal field theory, this Hermitian form should moreover be compatible with the action of the Virasoro algebra.
-This means that the \textbf{Hermitian conjugation}\index{Hermitian conjugation} on $\mathfrak{V}\times\overline{\mathfrak{V}}$ that is induced by the Hermitian form, is an antilinear involution $A\to A^\dagger$ such that $[A,B]^\dagger = -[A^\dagger, B^\dagger]$.
-Interpreting the dilation generator $L_0+\bar L_0$ as the Hamiltonian, we assume that it is self-adjoint. It is also natural to assume that $L_0-\bar L_0$ is self-adjoint, since its eigenvalues are conformal spins, which must be half-integer and therefore real. (See Eq. \eqref{dbdz}.) So both $L_0$ and $\bar L_0$ are self-adjoint,
-which implies
-\begin{align}
- L^\dagger_n = L_{-n} \quad , \quad \bar L_n^\dagger = \bar L_{-n}\ ,
-\label{ldn}
-\end{align}
-(see Exercise \ref{exolnd}), and it follows that
-\begin{align}
- c\in {\mathbb{R}}\ .
-\label{cir}
-\end{align}
-It also follows that the Hermitian form is compatible with the decomposition \eqref{sorr} of the spectrum as a sum of $\mathfrak{V}\times \overline{\mathfrak{V}}$ representations, in the sense that two different irreducible representations must be orthogonal to each other.
-So the the positivity of the Hermitian form can be examined within each representation.
-A representation of the Virasoro algebra is called \textbf{\boldmath unitary}\index{unitary!---representation} if it has a positive definite Hermitian form such that 
-$L^\dagger_n = L_{-n}$, and a model whose spectrum is unitary is itself called unitary. 
-
-Finally, let us illustrate the power of local conformal symmetry by thinking of a model in terms of global conformal symmetry only. 
-We then decompose each Virasoro representation $\mathcal{R}$ into representations of the $\mathfrak{sl}_2$ algebra of global conformal transformations with generators $(L_0,L_1,L_{-1})$,
+Let us illustrate the power of local conformal symmetry by thinking of a model in terms of global conformal symmetry. 
+We decompose each Virasoro representation $\mathcal{R}$ into representations of the $\mathfrak{sl}_2$ algebra of global conformal transformations with generators $(L_0,L_1,L_{-1})$,
 \begin{align}
  \mathcal{R}=\bigoplus_{n\in{\mathbb{N}}} m_{\mathcal{R},n} \mathcal{D}^{\Delta+n}\ ,
 \label{rbd}
@@ -898,6 +906,32 @@ model-dependent information from the point of view of global conformal symmetry.
 This shows how constraining local conformal symmetry is, and how much more freedom there is in the spectrum of global conformal field theories.
 In particular, in a global conformal field theory, there is no reason for the spectrum to contain series of
 $\mathfrak{sl}_2$ representations whose lowest $L_0$-eigenvalues differ by integers. 
+
+\subsubsection{Unitarity}
+
+Let us now define and discuss \textbf{\boldmath unitarity}\index{unitary!---theory} of two-dimensional conformal field theories. While a theory needs not be unitary for being consistent, only unitary theories can have quantum mechanical interpretations. Unitarity indeed means that the squared norms of states are positive, and can therefore be interpreted as probabilities in quantum mechanics. On the other hand, statistical physics can give rise to non-unitary theories. (See \cite{prv18} for more details.) 
+
+Technically, unitarity requires that 
+the spectrum is a Hilbert space, i.e. has a positive definite Hermitian form. Let us first discuss the existence of a Hermitian form, positive or not. 
+In conformal field theory, this Hermitian form should be compatible with the action of the Virasoro algebra.
+This means that the \textbf{Hermitian conjugation}\index{Hermitian conjugation} on $\mathfrak{V}\times\overline{\mathfrak{V}}$ that is induced by the Hermitian form, is an antilinear involution $A\to A^\dagger$ such that $[A,B]^\dagger = -[A^\dagger, B^\dagger]$.
+Interpreting the dilation generator $L_0+\bar L_0$ as the Hamiltonian, we assume that it is self-adjoint. It is also natural to assume that $L_0-\bar L_0$ is self-adjoint, since its eigenvalues are conformal spins, which must be half-integer and therefore real. (See Eq. \eqref{dbdz}.) So both $L_0$ and $\bar L_0$ are self-adjoint,
+which implies
+\begin{align}
+ L^\dagger_n = L_{-n} \quad , \quad \bar L_n^\dagger = \bar L_{-n}\ ,
+\label{ldn}
+\end{align}
+and it follows that $c\in \mathbb{R}$. (See Exercise \ref{exolnd}.) 
+It also follows that the Hermitian form is compatible with the decomposition \eqref{sorr} of the spectrum as a sum of $\mathfrak{V}\times \overline{\mathfrak{V}}$ representations, in the sense that two different irreducible representations must be orthogonal to each other.
+
+So the positivity of the Hermitian form can be examined within each representation.
+A representation of the Virasoro algebra is called \textbf{\boldmath unitary}\index{unitary!---representation} if it has a positive definite Hermitian form such that 
+$L^\dagger_n = L_{-n}$, and a model whose spectrum is unitary is itself called unitary. Unitarity implies that the central charge is not only real, but positive, 
+\begin{align}
+ c \in \mathbb{R}_{\geq 0}\ .
+ \label{cpos}
+\end{align}
+(See Exercise \ref{exocp}.)
 
 
 \subsection{Conformal bootstrap}
@@ -1009,14 +1043,16 @@ We will only consider conformal field theories on the sphere, which are consiste
 
 \subsection{Sketching the space of simple models \label{secmomo}}
 
-After discussing the general properties of two-dimensional conformal field theory, we will now describe some simple models that have been solved.
+We will now describe some simple models that have been solved.
+
+\subsubsection{Diagonal models with trivial multiplicities}
 
 We first introduce models that are diagonal and such that representations of $\mathfrak{V}\times \overline{\mathfrak{V}}$ have multiplicities no higher than one:
 \begin{itemize}
  \item For any value $c\in\mathbb{C}$ of the central charge, Liouville theory
 has a diagonal spectrum that is made of a continuum of representations.
 Liouville theory is unitary if $c\geq 1$. 
-\item A-series minimal model are diagonal, rational models that exist for central charges of the type
+\item A-series minimal models (MM) are diagonal, rational models that exist for central charges of the type
 \begin{align}
  c_{p,q} = 1 - 6 \frac{(p-q)^2}{pq}  \quad \text{with} \quad \left\{\begin{array}{l}  p,q \ \text{coprime  integers}\ , \\ 2\leq p<q\ , \end{array}\right.  
 \label{cpq}
@@ -1024,12 +1060,15 @@ Liouville theory is unitary if $c\geq 1$.
 in particular $c_{p,q} <1$.
 There are $\frac{(p-1)(q-1)}{2}$ distinct representations in the spectrum.
 The model is unitary if $q=p+1$, then $c_{p,p+1}=1-\frac{6}{p(p+1)}=0,\frac12,\frac{7}{10},\frac45, \frac67,\cdots$.
-\item For any  $c\in\mathbb{C}-\{c_{p,q}\}_{p,q\in\mathbb{Z}^*}$, the generalized minimal model has a diagonal spectrum that is made of a discrete infinity of representations. (It is not known whether such a model exists for $c=c_{p,q}$.)
-\item For any $c\in \{c_{p,q}\}_{p,q\in\mathbb{N}^*}$, there is a Runkel--Watts-type theory with the same continuous spectrum as Liouville theory, but different correlation functions. 
+\item For any  $c\in\mathbb{C}-\{c_{p,q}\}_{p,q\in\mathbb{Z}^*}$, the generalized minimal model (GMM) has a diagonal spectrum that is made of a discrete infinity of representations. (It is not known whether such a model exists for $c=c_{p,q}$.)
+\item For any $c\in \{c_{p,q}\}_{p,q\in\mathbb{N}^*}$, there is a Runkel--Watts-type theory (RWT) with the same continuous spectrum as Liouville theory, but different correlation functions. 
 \end{itemize}
+
+\subsubsection{Limits}
+
 These models are related by a number of limits, see Section \ref{secltf}. 
 We summarize these limits on the following diagram, where we place the models according to whether their spectrums are discrete or continuous, and to their central charges. 
-We distinguish $c\leq 1$ from the rest of the complex $c$-plane, because Liouville theory is not analytic on $\{c\leq 1\}$, and because only $c\leq 1$ can be reached from $c\in \{c_{p,q}\}_{p,q\in \mathbb{N}^*}$. Dashed arrows are for limits that hold only for a subset of correlation functions. And we abbreviate (generalized) minimal models as (G)MM, and Runkel--Watts-type theories as RWT:
+We distinguish $c\leq 1$ from the rest of the complex $c$-plane, because Liouville theory is not analytic on $\{c\leq 1\}$, and because only $c\leq 1$ can be reached from $c\in \{c_{p,q}\}_{p,q\in \mathbb{N}^*}$. Dashed arrows are for limits that hold only for a subset of correlation functions:
 \begin{align}
 \begin{tikzpicture}[scale = .25, baseline=(current  bounding  box.center)]
 \fill[red!50, rounded corners = 10] (-6, -10) rectangle (6, 10);
@@ -1085,18 +1124,22 @@ unitary Liouville theory and unitary minimal models:
    -- (6.5,0) node[above] {$c$};
  \end{tikzpicture}
 \end{align}
-Other simple models include:
+
+\subsubsection{Other simple models}
+
 \begin{itemize}
  \item Free bosonic theories, whose spectrums may be continuous and diagonal (non-compact case) or discrete and non-diagonal (compactified free bosons), exist for any $c\in {\mathbb{C}}$.
 Their symmetry algebra is larger than the Virasoro algebra, and  
-the extra symmetry leads to very simple correlation functions.
+the extra symmetry leads to very simple correlation functions. (See Section \ref{secfb}.)
  \item 
 (Virasoro) \textbf{minimal models}\index{minimal model} are by definition rational models, and beyond the A-series there exist two other series, called the 
-D- and E-series, which are not diagonal.
+D- and E-series. D- and E-series minimal models are not diagonal, and some of them involve representations of $\mathfrak{V}\times \overline{\mathfrak{V}}$  with multiplicity $2$.
 The corresponding values of the central charge are still of the type $c_{p,q}$.
 \end{itemize}
-Therefore,
-the properties of conformal field theories, starting with their very existence, crucially depend on the value of the central charge $c$ of the underlying Virasoro algebra.
+
+\subsubsection{Interpretation of the central charge}
+
+The properties of conformal field theories, starting with their very existence, crucially depend on the value of the central charge $c$ of the underlying Virasoro algebra.
 In the case of unitary theories, we observe that the size of the spectrum (as measured by the number of representations) increases with $c$, from the $c=0$ minimal model whose spectrum contains only one representation, to $c\geq 1$ Liouville theory whose spectrum contains infinitely many.
 The central charge is actually additive: given two theories with spectrums $\mathcal{S}$ and $\mathcal{S}'$ and central charges $c$ and $c'$, there is a natural product theory with central charge $c+c'$ and spectrum $\mathcal{S}\otimes \mathcal{S}'$.
 Moreover, as a result of the modular bootstrap, for any rational theory that is consistent on a torus, 
@@ -1124,7 +1167,7 @@ Show that $\mathcal{R}$ is indecomposable, but not irreducible.
 
 \begin{exo}[Associativity in a tensor category]
  ~\label{exoten}
-Consider a set of objects $\mathcal{R}_i$ with two binary operations $\oplus$ (addition) and $\otimes$ (multiplication), such that 
+Consider a set of objects $\mathcal{R}_i$ with two binary operations $\oplus$ (addition) and $\otimes$ (multiplication), such that $\otimes$ is distributive over $\oplus$, and
 \begin{align}
  \mathcal{R}_i \otimes \mathcal{R}_j = \bigoplus_k c_{ij}^k \mathcal{R}_k\ ,
 \end{align}
@@ -1193,11 +1236,6 @@ To do this, use the decomposition $\mathcal{R}=\oplus_\Delta \mathcal{R}_\Delta$
 Given any value of $\Delta$, show that  $\oplus_{n\in{\mathbb{Z}}} \mathcal{R}_{\Delta+n}$ is a subrepresentation, and conclude. 
 \end{exo}
 
-\begin{exo}[Hermitian conjugates of Virasoro generators]
- ~\label{exolnd}
-Assuming that there is a Hermitian form such that $L_0^\dagger = L_0$, and that $L_n^\dagger$ belongs to the Virasoro algebra, show that $L_n^\dagger = L_{-n}$. To do this, use the Virasoro commutation relations \eqref{vir}, and the identity $[A,B]^\dagger = -[A^\dagger, B^\dagger]$. Show that $L_n^\dagger = \lambda_n L_{-n}$ for some coefficients $\lambda_n$, and that there is a simple redefinition of $L_n$ such that $\lambda_n=1$.
-\end{exo}
-
 \begin{exo}[Comparing Virasoro and $\mathfrak{sl}_2$ representations]
  ~\label{exodis}
 Consider the $\mathfrak{sl}_2$ algebra with generators $(L_0,L_1,L_{-1})$, and a vector $|v\rangle$ such that $L_1|v\rangle = 0 $ and $L_0|v\rangle = \Delta |v\rangle$.
@@ -1209,6 +1247,15 @@ If $\mathcal{R}$ is an indecomposable representation of the Virasoro algebra whe
 \end{enumerate}
 \end{exo}
 
+\begin{exo}[Hermitian conjugates of Virasoro generators]
+ ~\label{exolnd}
+Assuming that there is a Hermitian form such that $L_0^\dagger = L_0$, and that $L_n^\dagger$ belongs to the Virasoro algebra, show that $L_n^\dagger = L_{-n}$. To do this, use the Virasoro commutation relations \eqref{vir}, and the identity $[A,B]^\dagger = -[A^\dagger, B^\dagger]$. Show that $L_n^\dagger = \lambda_n L_{-n}$ for some coefficients $\lambda_n$, and that there is a simple redefinition of $L_n$ such that $\lambda_n=1$. Deduce that the central charge is real.
+\end{exo}
+
+\begin{exo}[Positivity of the central charge in a unitary CFT]
+ ~\label{exocp}
+In a unitary CFT, consider an eigenvector $|\Delta\rangle$ of $L_0$ with the eigenvalue $\Delta$. Compute the square norm of $L_{-n}|\Delta\rangle$ for any $n\in\mathbb{N}$, and deduce that the central charge is positive \eqref{cpos}.
+\end{exo}
 
 \begin{exo}[Number of states and additivity of the central charge]
  ~\label{exoacf} 
@@ -4445,7 +4492,7 @@ Then our representation always has a vanishing null vector at level $rs$. Howeve
 The fusion rules \eqref{rrmm} of doubly degenerate representations then reduce to the fusion rules of degenerate representations. Therefore, the limit of minimal models is the generalized minimal model with central charge $c$. 
 
 For any central charge $c\in ]-\infty,1]$ such that $b^2\notin \mathbb{Q}$, the degenerate momentums $P_{\langle r,s\rangle}$ are dense in $i\mathbb{R}$. 
-We can send $r,s$ to infinity so that $P_{\langle r,s\rangle}$ tends to a given imaginary value $P$. Then the the null vector of $\mathcal{R}_{\langle r,s\rangle}$ goes to infinite level, and our degenerate representation becomes a Verma module,
+We can send $r,s$ to infinity so that $P_{\langle r,s\rangle}$ tends to a given imaginary value $P$. Then the null vector of $\mathcal{R}_{\langle r,s\rangle}$ goes to infinite level, and our degenerate representation becomes a Verma module,
 \begin{align}
  \lim_{P_{\langle r,s\rangle} \to P} \mathcal{R}_{\langle r,s\rangle} 
  \ \underset{b^2\in \mathbb{R}_{<0}-\mathbb{Q}}{=} \
@@ -4773,7 +4820,7 @@ and deduce the explicit formula \eqref{csse} for $\check{C}_{\sigma\sigma\epsilo
 Affine Lie algebras are infinite-dimensional Lie algebras whose universal enveloping algebras contain the Virasoro algebra.
 In order to study conformal field theories based on these algebras, we will follow the same steps as in the case of the Virasoro algebra: study the algebras and their representations, deduce Ward identities and differential equations for correlation functions, and write spectrums and correlation functions for particular models. 
 
-\section{Free bosons}
+\section{Free bosons}\label{secfb}
 
 \subsection{Symmetry algebra and representations \label{secaua}}
 
