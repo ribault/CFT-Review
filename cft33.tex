@@ -2657,7 +2657,7 @@ We have also encountered degenerate four-point blocks that obey differential equ
 And on the torus, there exist nontrivial zero-point blocks, which coincide with the characters of representations. 
 
 Conformal blocks associated with a correlation function obey the Ward identities for that correlation function. 
-Since the Ward identities are holomorphically factorized, the blocks can be factorized into left-moving and right-moving conformal blocks. Left-moving conformal blocks are solutions of the left-moving Ward identities, and are holomorphic functions of the fields' positions. From now on, by conformal block we will mean left-moving conformal block. 
+Since the Ward identities are holomorphically factorized, the blocks can be factorized into left-moving and right-moving conformal blocks. Left-moving conformal blocks are solutions of the left-moving Ward identities, and are locally holomorphic functions of the fields' positions. From now on, by conformal block we will mean left-moving conformal block. 
 
 Conformal blocks are sometimes defined as arbitrary solutions of the Ward identities. We will be more specific, and define them as the elements of particular bases of solutions. The bases in question are defined by using OPEs for computing correlation functions. In particular, using the OPE of $V_{\sigma_1}(z_1)V_{\sigma_2}(z_2)$ and Ward identities, any four-point function of primary or descendant fields can be decomposed as 
 \begin{align}
@@ -2700,7 +2700,7 @@ Taking global conformal symmetry into account, this becomes
 Let us summarize the analytic properties of 
 the $s$-channel conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x)$ as a function of $x$, before giving supporting arguments:
 \begin{enumerate}
- \item The $s$-channel conformal block has a regular singularity at $x=0$, where it behaves as 
+ \item The $s$-channel conformal block has a regular singular point at $x=0$, where it behaves as 
  \begin{align}
  \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) \underset{x\to 0}{=} x^{\Delta_s-\Delta_1-\Delta_2}\Big( 1+ O(x)\Big)\ .
 \end{align}
@@ -2711,8 +2711,9 @@ the $s$-channel conformal block $\mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x)$ as a 
 Similarly, $t$- and $u$-channel conformal blocks have singularities at $x=0,1,\infty$, including 
 regular singularities at $x=1$ and $x=\infty$ respectively.
 
-The behaviour of the $s$-channel conformal block near $x=0$ follows from its definition from an OPE. The presence of a field at $x=1$ suggests that the radius of convergence of the resulting series is $1$, but it is not known how to prove this, or how to prove the existence of an analytic continuation to $\mathbb{C}-\{0,1\}$. These properties are however manifest in the case of the hypergeometric conformal blocks of Section \ref{sechcb}. Moreover, they can be deduced from Zamolodchikov's recursive representation -- but this moves the problem to proving the equivalence between that representation, and the original definition of conformal blocks.
+The behaviour of the $s$-channel conformal block near $x=0$ follows from its definition from an OPE. The presence of a field at $x=1$ suggests that the radius of convergence of the resulting series is $1$, but it is not known how to prove this, or how to prove the existence of an analytic continuation to $\mathbb{C}-\{0,1\}$. These properties are however manifest in the case of the hypergeometric conformal blocks of Section \ref{sechcb}. 
 
+Virasoro four-point blocks only have singularities at $x=0,1,\infty$. Four-point blocks of larger symmetry algebras can have additional singularities. The KZ-BPZ relation \eqref{dyy} shows that conformal blocks of the affine Lie algebra $\hat{\mathfrak{sl}}_2$ have additional singularities that depend on isospin variables. Certain families of conformal blocks of the $W_3$ algebra have an additional singularity at $x=-1$ \cite{fr11}. The existence of additional singularities might well be a generic feature of conformal blocks of larger symmetry algebras. Vanishing null vectors however tend to remove the additional singularities, while making the blocks more tractable.
 
 \subsubsection{Dependence on conformal dimensions}
 
@@ -2740,14 +2741,12 @@ Inserting the OPE \eqref{vvs} in our four-point function, we obtain
  \Big< L\bar L V_{\Delta_s,\bar\Delta_s}(0) V_{\Delta_3,\bar\Delta_3}(\infty) V_{\Delta_4,\bar\Delta_4}(1) \Big>\ .
  \label{4ope}
 \end{multline}
-Then, 
-
-Using the universal factors $g^L_{\Delta_s,\Delta_3,\Delta_4}$ \eqref{glvv}, the expression \eqref{4ope} of our four-point function can be written as a conformal block decomposition \eqref{fsd}, where the blocks are 
+Using the universal factors $g^L_{\Delta_s,\Delta_3,\Delta_4}$ \eqref{glvv}, this can be written as a conformal block decomposition \eqref{fsd}, where the blocks are 
 \begin{align}
  \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) = x^{\Delta_s-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta_s,L} g^{L}_{\Delta_s,\Delta_3,\Delta_4}x^{|L|}\ .
 \label{gsd}
 \end{align}
-Explicitly, using Eqs. \eqref{flfo}-\eqref{flff} for $f_{\Delta_1,\Delta_2}^{\Delta_s,L}$, we find 
+Explicitly, using Eqs. \eqref{flfo}-\eqref{flff} for $f_{\Delta_1,\Delta_2}^{\Delta_s,L}$ and Eqs. \eqref{gln}-\eqref{glt} for $g^L_{\Delta_s,\Delta_3,\Delta_4}$, we find 
 \begin{multline}
  \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) 
 = x^{\Delta_s - \Delta_1 - \Delta_2}\Bigg\{ 1 
@@ -2760,14 +2759,14 @@ Explicitly, using Eqs. \eqref{flfo}-\eqref{flff} for $f_{\Delta_1,\Delta_2}^{\De
  x^2 + O(x^3)\Bigg\}\ ,
  \label{eq:fsexp}
 \end{multline}
-where the level-$2$ determinant $D_2(\Delta_s)$ was defined in Eq. \eqref{dud}.
+where we use the level-$2$ determinant $D_2(\Delta_s)=4(2\Delta_s+1)^2 +(c-13)(2\Delta_s+1) +9$ from Eq. \eqref{dud}.
 
 
 \subsubsection{Zamolodchikov's recursion}
 
 For practical computations of conformal blocks, the formula \eqref{gsd} is not very efficient: the number of terms grows quickly with the level $|L_s|$, and the cofficients $f_{\Delta_1,\Delta_2}^{\Delta_s,L_s}$ are not known explicitly.
 Fortunately, there is also
-\textbf{Zamolodchikov's recursion}\index{Zamolodchikov's recursion} (or recursive representation) \cite{zz90}, which converges faster, and for all $x\in\mathbb{C}-\{1\}$, not just $|x|<1$.
+\textbf{Zamolodchikov's recursion}\index{Zamolodchikov's recursion} (or recursive representation) \cite{zz90, ccy17}, which converges faster, and for all $x\in\mathbb{C}-\{1\}$, not just $|x|<1$.
 Instead of a power series in the cross-ratio $x$, this representation is a power series in the \textbf{nome}\index{nome}
 \begin{align}
  q(x) = \exp -\pi \frac{F(\frac12,\frac12,1,1-x)}{F(\frac12,\frac12,1,x)}  \ , 
