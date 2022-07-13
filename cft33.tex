@@ -1381,12 +1381,12 @@ The basis of $U(\mathfrak{V}^+)$ up to the level $N=5$ can be plotted as follows
   \draw[-latex] (3) -- (23);
  \end{tikzpicture}
 \end{align}
-In this diagram, each arrow stands for the action of a Virasoro generator $L_n$ with $n<0$.
+In this diagram, each arrow stands for the action of a Virasoro generator $L_{n<0}$ from the left.
 Acting with generators that are not depicted on the diagram would produce linear combinations of our basis states, for example $L_{-2}L_{-1} = L_{-1}L_{-2} - L_{-3}$.
 
 Our basis \eqref{lels}, while convenient for enumerating the states, is not distinguished by any particularly useful property.
 Other bases can be used, starting with the ``reverse-ordered'' basis $\{ L_{-n_1} \cdots L_{-n_p} \}_{n_1\geq n_2\geq \cdots n_p\geq 1} $.
-It can be tempting to use the fact that the two operators $\{L_{-1},L_{-2}\}$ algebraically generate $\{L_{n}\}_{n<0}$, and to consider $\{\prod_{i=1}^p L_{-n_i}\}_{n_i\in\{1,2\}}$.
+It can be tempting to use the fact that the two operators $L_{-1},L_{-2}$ algebraically generate $\{L_{n}\}_{n<0}$, and to consider $\{\prod_{i=1}^p L_{-n_i}\}_{n_i\in\{1,2\}}$.
 While this set does span $U(\mathfrak{V}^+)$, it however does not provide a basis. (See Exercise \ref{exoot}.)
 
 \subsection{Verma modules and degenerate representations \label{secvm}}
@@ -1434,7 +1434,7 @@ We compute
 \\
 L_2 |\chi \rangle &= \left(6\Delta a_{1,1}+(4\Delta+\tfrac12 c) a_2\right)|\Delta\rangle\ .
 \end{align}
-The vanishing of these two vectors leads to a system of two linear equations for the two unknowns $(a_{1,1},a_2)$, whose determinant is 
+Then $L_1|\chi\rangle=L_2 |\chi \rangle=0$ is a system of two linear equations for the two unknowns $(a_{1,1},a_2)$, whose determinant is 
 \begin{align}
  D_2(\Delta) = 4(2\Delta+1)^2 +(c-13)(2\Delta+1) +9\ . 
 \label{dud}
@@ -1488,7 +1488,7 @@ Let us indicate the correspondences between certain values of $c,Q$ and $b$. We 
 \\
 \hline
 \text{coupling\ constant} &
-b& \mathbb{C}^* & i{\mathbb{R}} & i\sqrt{\frac{p}{q}} & i & e^{i\mathbb{R}} & 1 & {\mathbb{R}}
+b& \mathbb{C}^* & i{\mathbb{R}} & i\sqrt{\frac{p}{q}} & i & e^{i\mathbb{R}} & 1 & {\mathbb{R}^*}
 \\
 \hline
  \end{array}
@@ -1595,7 +1595,7 @@ In order to determine its sign, we should study its zeros. These zeros are deter
  \end{minipage}
 \end{center}
 (See Exercise \ref{exodmn}.) 
-Knowing the zeros $\Delta_{\langle r,s \rangle}$ of $\det M^{(N)}$ as a function of $\Delta$ Eq. \eqref{drs}, we obtain the \textbf{\boldmath Kac determinant}\index{Kac!---determinant} formula
+We therefore know the zeros $\Delta_{\langle r,s \rangle}$ of $\det M^{(N)}$ as a function of $\Delta$ Eq. \eqref{drs}, and we obtain the \textbf{\boldmath Kac determinant}\index{Kac!---determinant} formula
 \begin{align}
  \boxed{\det M^{(N)} \propto \prod_{\begin{smallmatrix} r,s\geq 1 \\ rs \leq N \end{smallmatrix}} (\Delta-\Delta_{\langle r,s \rangle})^{p(N-rs)}} \ ,
 \end{align}
@@ -1837,17 +1837,23 @@ where $\binom{p+n-1}{p+1}$ is a binomial coefficient.
 The sum over $p$ has finitely many nonzero terms, because $L_p^{(z_j)}V_{\sigma_j}(z_j)=0$ if $p$ exceeds the level $N_j$ of the descendant state $\sigma_j$. 
 Using Eq. \eqref{lvpv}, and the fact that $\sigma_j$ is an $L_0$-eigenstate, the terms with $p=-1,0$ involve differential operators, whereas the terms with $p\geq 1$ involve annihilation operators. 
 Therefore, the local Ward identity amounts to writing $\left\langle  L_{-n}^{(z_i)} \prod_{j=1}^N V_{\sigma_j}(z_j) \right\rangle$, whose total level is $n+\sum_j N_j$, in terms of correlation functions whose total levels do not exceed $\sum_jN_j$. By induction on the total level,
-\begin{quote}
- the repeated use of local Ward identities yields an expression for any $N$-point function of descendant fields, as a differential operator of the corresponding $N$-point function of primary fields.
-\end{quote}
-In particular, if the fields with indices $j\neq i$ are primary, the local Ward identity simplifies to
+\begin{center}
+\fbox{
+\begin{minipage}{0.9\textwidth}
+the repeated use of local Ward identities yields an expression for any $N$-point function of descendant fields, as a differential operator of the corresponding $N$-point function of primary fields.
+\end{minipage}
+}
+\end{center}
+This result is a consequence of the OPE $T(y)V_\Delta(z)=(\text{differential operator})V_\Delta(z) +O(1) $ \eqref{tvp}. It no longer holds if we enlarge the Virasoro algebra into a W-algebra, or for non-conformal Virasoro symmetry i.e. in the absence of Axiom \ref{ax:dvz}.
+
+If the fields with indices $j\neq i$ are primary, the local Ward identity simplifies to
 \begin{align}
  \boxed{\left\langle L_{-n}^{(z_i)}V_{\sigma_i}(z_i)\prod_{j\neq i} V_{\Delta_j}(z_j) \right\rangle =
 \sum_{j\neq i} \left(-\frac{1}{z_{ji}^{n-1}} {\frac{\partial}{\partial z_j}}  + \frac{n-1}{z_{ji}^n} \Delta_j\right)
 \left\langle V_{\sigma_i}(z_i)\prod_{j\neq i} V_{\Delta_j}(z_j) \right\rangle} \ ,
 \label{lmn}
 \end{align}
-where we assume $n\geq 1$, and we use the notation $z_{ji}=z_j-z_i$. (See Exercise \ref{exodma}.) Actually, inserting $T(z)$ in an $N$-point function of primary fields also amounts to acting with a differential operator. This operator is uniquely determined by its poles and residues, which are given by the $TV_\Delta$ OPE \eqref{tvp}, and we find
+where we assume $n\geq 1$, and we use the notation $z_{ji}=z_j-z_i$. (See Exercise \ref{exodma}.) Actually, inserting $T(z)$ itself in an $N$-point function of primary fields also amounts to acting with a differential operator. This operator is uniquely determined by its poles and residues, which are given by the $TV_\Delta$ OPE \eqref{tvp}, and we find
 \begin{align}
  \boxed{\left\langle T(z) \prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle = \sum_{i=1}^N \left(\frac{\Delta_i}{(z-z_i)^2} + \frac{1}{z-z_i}{\frac{\partial}{\partial z_i}}\right)\left\langle  \prod_{i=1}^N V_{\Delta_i}(z_i)\right\rangle }\ .
 \label{dtz}
@@ -2226,16 +2232,43 @@ Inserting Eq. \eqref{lrsv} into correlation functions, we obtain linear equation
 \subsection{Fusion rules}\label{secfr}
 
 Let us focus on null vector equations for three-point functions. 
-Using Eq. \eqref{glvv},
-the null vector equation $\left< L_{\langle r,s \rangle} V_{\langle r,s \rangle} V_{\Delta_2}V_{\Delta_3}\right>=0$ leads to
+We will show that the null vector equation $\left< L_{\langle r,s \rangle} V_{\langle r,s \rangle} V_{\Delta_2}V_{\Delta_3}\right>=0$ leads to
+a constraint on $\Delta_2$ and $\Delta_3$. Using the relation between OPEs and three-point functions, this can be interpreted as the fusion rule of the degenerate representation $\mathcal{R}_{\langle r,s \rangle}$.
+
+\subsubsection{Three-point functions of descendant fields}
+
+Conformal symmetry allows us to write three-point functions of descendant fields as three-point functions of primary fields, times the universal factors
 \begin{align}
- \left< V_{\langle r,s \rangle} V_{\Delta_2}V_{\Delta_3}\right>\neq 0 \quad \implies \quad g^{L_{\langle r,s \rangle}}_{\Delta_{\langle r,s \rangle},\Delta_2,\Delta_3} = 0 \ .
+g^{L}_{\Delta_1,\Delta_2,\Delta_3} = 
+ \frac{ \left< L V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right> }{  \left<  V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right>}\ .
+ \label{glvv}
 \end{align}
-This constraint on $\Delta_2$ and $\Delta_3$ can be interpreted as the fusion rule of the degenerate representation $\mathcal{R}_{\langle r,s \rangle}$, using the relation between OPEs and three-point functions.
+In the case of $L_{-1}^n$ descendants, this only involves taking derivatives of three-point conformal blocks, 
+\begin{align}
+ g^{L_{-1}^n}_{\Delta_1,\Delta_2,\Delta_3} & =\left. \frac{\frac{\partial^n}{\partial z_1^n} \mathcal{F}^{(3)}(\Delta_i|z_i)}{\mathcal{F}^{(3)}(\Delta_i|z_i)}\right|_{(z_1,z_2,z_3)=(0,\infty,1)} =(\Delta_1-\Delta_2+\Delta_3)_n \ ,
+ \label{gln}
+\end{align}
+where we use the notation
+\begin{align}
+ (x)_n = \frac{\Gamma(x+n)}{\Gamma(x)} = \prod_{i=0}^{n-1}(x+i)\ .
+\label{xn}
+\end{align}
+For more general descendants, we use local Ward identities \eqref{lmn}. For example,
+\begin{align}
+ g^{L_{-2}}_{\Delta_1,\Delta_2,\Delta_3}
+ = \Delta_1-\Delta_2+2\Delta_3\ .
+ \label{glt}
+\end{align}
+Let us rewrite the null vector equations for three-point functions as 
+\begin{align}
+ \left< V_{\langle r,s \rangle} V_{\Delta_2}V_{\Delta_3}\right> \neq 0 \quad \implies \quad 
+ g^{L_{\langle r,s\rangle}}_{\Delta_{\langle r,s\rangle},\Delta_2,\Delta_3} = 0\ ,
+\end{align}
+and proceed to solve this equation in the three simplest cases. 
 
 \subsubsection{Basic degenerate representations $\mathcal{R}_{\langle 1,1 \rangle}, \mathcal{R}_{\langle 2,1 \rangle}, \mathcal{R}_{\langle 1,2 \rangle}$}
 
-Let us begin with the case $\langle r,s \rangle = \langle 1,1 \rangle$.
+We begin with the case $\langle r,s \rangle = \langle 1,1 \rangle$.
 Using Eq. \eqref{lot} for $\Delta_{\langle 1,1 \rangle}$ and $L_{\langle 1,1 \rangle}$, we obtain
 $g^{L_{-1}}_{0,\Delta_2,\Delta_3} = 0$.
 Using Eq. \eqref{gln} for $g^{L_{-1}}$, this implies 
@@ -2275,8 +2308,8 @@ These fusion rules could be derived by directly analyzing OPEs, instead of three
 
 \subsubsection{Higher degenerate representations $\{\mathcal{R}_{\langle r,s\rangle}\}_{rs>2}$}
 
-The higher degenerate representations' existence, momentums and fusion rules are in principle dictated by their null vectors, but working out these null vectors is practically intractable. 
-Instead, we will deduce this information from the basic degenerate representations and their fusion rules, thanks to the associativity of the fusion product. 
+The higher degenerate representations' existence, momentums and fusion rules are in principle dictated by their null vectors. We know how to write these null vectors explicitly if $r=1$ or $s=1$, but not in general \cite{fms97}.
+Instead, we will deduce all we need from the basic degenerate representations and their fusion rules, thanks to the associativity of the fusion product. 
 This amounts to working with the category of representations of the Virasoro algebra, rather than with the structure of the representations. 
 
 The basic idea is to build $\mathcal{R}_{\langle 3, 1\rangle}$ as the combination $\mathcal{R}_{\langle 2,1 \rangle} \times \mathcal{R}_{\langle 2,1 \rangle} - \mathcal{R}_{\langle 1,1 \rangle}$.
@@ -2340,7 +2373,7 @@ This can be rewritten as
 \mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle} = \sum_{r_3,s_3=1}^\infty f_{r_1,r_2,r_3} f_{s_1,s_2,s_3} \mathcal{R}_{\langle r_3,s_3 \rangle}\ ,
  \label{rrrsss}
 \end{align}
-using the coefficients
+with the coefficients
 \begin{align}
 f_{r_1,r_2,r_3} = \left\{\begin{array}{l}  1 \quad \text{if} \quad 
  \forall i\neq j\neq k \ , \quad r_i+r_j-r_k \in 1 + 2{\mathbb{N}}\ .
@@ -2372,9 +2405,9 @@ In particular, a BPZ equation for a four-point function boils down to an ordinar
 Let us derive the ordinary differential equation for $\left\langle V_{\langle 2,1 \rangle}(x)\prod_{i=1}^3 V_{\Delta_i}(z_i)\right\rangle$.
 Inserting the identity $\oint_\infty dz\ \epsilon(z) T(z) =0$ with $\epsilon(z) = \frac{(z-z_1)(z-z_2)(z-z_3)}{z-x}$, and using Eq. \eqref{lrsv}, we obtain a differential equation with derivatives with respect to $x$ alone, 
 \begin{multline}
-  \left\{ \prod_{i=1}^3(x-z_i)\left(-\frac{1}{b^2}\frac{\partial^2}{\partial x^2} +\sum_{i=1}^3 \frac{1}{x-z_i} {\frac{\partial}{\partial x}} \right) + (3x-z_1-z_2-z_3)\Delta_{\langle 2,1 \rangle} \right.
+  \Bigg\{ \prod_{i=1}^3(x-z_i)\left(-\frac{1}{b^2}\frac{\partial^2}{\partial x^2} +\sum_{i=1}^3 \frac{1}{x-z_i} {\frac{\partial}{\partial x}} \right) + (3x-z_1-z_2-z_3)\Delta_{\langle 2,1 \rangle} 
   \\
-\left.  +\frac{z_{12}z_{13}}{z_1-x}\Delta_1 + \frac{z_{21}z_{23}}{z_2-x}\Delta_2+\frac{z_{31}z_{32}}{z_3-x}\Delta_3\right\} 
+ +\frac{z_{12}z_{13}}{z_1-x}\Delta_1 + \frac{z_{21}z_{23}}{z_2-x}\Delta_2+\frac{z_{31}z_{32}}{z_3-x}\Delta_3\Bigg\} 
 \left\langle V_{\langle 2,1 \rangle}(x)\prod_{i=1}^3 V_{\Delta_i}(z_i)\right\rangle  = 0\ .
 \label{uode}
 \end{multline}
@@ -2409,7 +2442,8 @@ The roots of this equation have simple expressions in terms of the momentum $P_1
  \lambda_\pm = b\left(\frac{Q}{2}\mp P_1\right) \ .
 \label{lpm}
 \end{align}
-In conformal field theory, singularities of a correlation function correspond to coincidences of fields, and characteristic exponents are constrained by the corresponding OPEs.
+In conformal field theory, coincidences of fields lead to 
+singularities of correlation functions, with characteristic exponents that are constrained by the corresponding OPEs.
 In the case of our four-point function \eqref{fxv} at $x=0$, the fusion rule \eqref{rot} leads to an OPE of the type
 \begin{align}
  V_{\langle 2,1 \rangle}(x)V_{P}(0) = \sum_\pm C_\pm(P) x^{\Delta\left(P\pm \frac{b}{2}\right) -\Delta(P) - \Delta_{\langle 2,1 \rangle}} \left(V_{P\pm\frac{b}{2}}(0) + O(x)\right)\ ,
@@ -2429,7 +2463,7 @@ so that each characteristic exponent corresponds to a primary field in the OPE.
 \draw (4,0) -- (5,-2) node [right] {$P_3$};
 \end{tikzpicture}
 \ =\ 
-\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .7]
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .8]
 \draw[dashed] (0, -2) -- node [below left] {$\langle 2,1 \rangle$} (-2, 0); 
 \draw (-2, 0) -- node [above left] {$P_1$} (0, 2) -- node [above right] {$P_2$} (2, 0) -- node [below right] {$P_3$} (0, -2) -- node [left] {$P_1\pm \frac{b}{2}\! \! $} (0, 2); 
 \end{tikzpicture}
@@ -2453,9 +2487,10 @@ It turns out that the second-order BPZ equation is the only meromorphic second-o
  \left\{ x(1-x) \frac{\partial^2}{\partial x^2} +\left[C-(A+B+1)x\right]{\frac{\partial}{\partial x}} - AB \right\} \mathcal{G}(x)= 0\ .
 \label{dzp}
 \end{align}
-Using a change of notations and unknown function,
+Using a change of parameters and unknown function,
 \begin{align}
- \mathcal{H}(x)= x^{\frac{C}{2}} (x-1)^{\frac{A+B+1-C}{2}}\mathcal{G}(x)\ , \quad \renewcommand{\arraystretch}{1.3}\left\{\begin{array}{l}  j_1 = -\frac{C}{2} \ , \\ j_2=\frac{B-A-1}{2} \ , \\  j_3= \frac{C-A-B-1}{2}\ , \end{array}\right.    
+\mathcal{G}(x) = x^{j_1} (x-1)^{j_3} \mathcal{H}(x)
+ \ , \quad \renewcommand{\arraystretch}{1.3}\left\{\begin{array}{l}  j_1 = -\frac{C}{2} \ , \\ j_2=\frac{B-A-1}{2} \ , \\  j_3= \frac{C-A-B-1}{2}\ , \end{array}\right.    
 \quad \left\{\begin{array}{l}  A = -1-j_1-j_2-j_3\ , \\ B = -j_1+j_2-j_3\ , \\ C = -2j_1\ , \end{array}\right. 
 \end{align}
 we obtain the twisted hypergeometric equation,
@@ -2573,17 +2608,20 @@ whose determinant is
 
 \subsubsection{Single-valued solutions}
 
-How can the single-valued four-point function $\left\langle V_{\langle 2,1 \rangle}(x)V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle$ be decomposed as a combination of our solutions? We assume that our four fields are diagonal, so that the four-point function obeys not only the BPZ equation \eqref{sode}, but also the complex conjugate equation, and must be of the type 
-\begin{align}
- \left\langle V_{\langle 2,1 \rangle}(x)V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right\rangle = \sum_{\epsilon_1,\bar{\epsilon}_1=\pm} c^{(s)}_{\epsilon_1,\bar{\epsilon}_1} \mathcal{F}_{\epsilon_1}^{(s)}(x) \mathcal{F}_{\bar{\epsilon}_1}^{(s)}(\bar{x}) = \sum_{\epsilon_3,\bar{\epsilon}_3=\pm} c^{(t)}_{\epsilon_3,\bar{\epsilon}_3} \mathcal{F}_{\epsilon_3}^{(t)}(x) \mathcal{F}_{\bar{\epsilon}_3}^{(t)}(\bar{x})\ ,
-\end{align}
+Let us consider a four-point function that involves a diagonal degenerate field $V_{\langle 2,1 \rangle}$, and therefore obeys not only the BPZ equation, but also the complex conjugate equation. Our four-point function must therefore be a combination of hypergeometric conformal blocks:
+\begin{multline}
+ \left\langle V_{\langle 2,1 \rangle}(x)V_{\Delta_1,\bar\Delta_1}(0)V_{\Delta_2,\bar\Delta_2}(\infty)V_{\Delta_3,\bar\Delta_3}(1)\right\rangle 
+ \\
+ = \sum_{\epsilon_1,\bar{\epsilon}_1=\pm} c^{(s)}_{\epsilon_1,\bar{\epsilon}_1} \mathcal{F}_{\epsilon_1}^{(s)}(x) \bar{\mathcal{F}}_{\bar{\epsilon}_1}^{(s)}(\bar{x}) = \sum_{\epsilon_3,\bar{\epsilon}_3=\pm} c^{(t)}_{\epsilon_3,\bar{\epsilon}_3} \mathcal{F}_{\epsilon_3}^{(t)}(x) \bar{\mathcal{F}}_{\bar{\epsilon}_3}^{(t)}(\bar{x})\ ,
+\end{multline}
 where $c^{(s)}_{\epsilon_1,\bar{\epsilon}_1}$ and $c^{(t)}_{\epsilon_3,\bar{\epsilon}_3}$ are $x$-independent coefficients.
 These two sets of coefficients are related by the change of basis \eqref{gfg},
 \begin{align}
 \forall \epsilon_3,\bar{\epsilon}_3 \in \{+,-\}\ , \quad 
- \sum_{\epsilon_1,\bar{\epsilon}_1=\pm} c^{(s)}_{\epsilon_1,\bar{\epsilon}_1} F_{\epsilon_1,\epsilon_3} F_{\bar{\epsilon}_1,\bar{\epsilon}_3} = c^{(t)}_{\epsilon_3,\bar{\epsilon}_3}\ .
+ \sum_{\epsilon_1,\bar{\epsilon}_1=\pm} c^{(s)}_{\epsilon_1,\bar{\epsilon}_1} F_{\epsilon_1,\epsilon_3} \bar{F}_{\bar{\epsilon}_1,\bar{\epsilon}_3} = c^{(t)}_{\epsilon_3,\bar{\epsilon}_3}\ .
  \label{febe}
 \end{align}
+We now assume that our three fields $V_{\Delta_i,\bar\Delta_i}$ are diagonal, so that $\bar{\mathcal{F}} = \mathcal{F}$ and $\bar F = F$. (For the non-diagonal case, see \cite{mr17}.)
 For generic dimensions $\Delta_i$, single-valuedness near $x=0$ implies $c^{(s)}_{+,-}=c^{(s)}_{-,+}=0$, and single-valuedness near $x=1$ similarly implies $c^{(t)}_{+,-}=c^{(t)}_{-,+}=0$.
 Thus we can write
 \begin{align}
@@ -2701,29 +2739,9 @@ Inserting the OPE \eqref{vvs} in our four-point function, we obtain
  \Big< L\bar L V_{\Delta_s,\bar\Delta_s}(0) V_{\Delta_3,\bar\Delta_3}(\infty) V_{\Delta_4,\bar\Delta_4}(1) \Big>\ .
  \label{4ope}
 \end{multline}
-Then, using Ward identities, we write three-point functions of descendant fields as three-point functions of primary fields, times the universal factors
-\begin{align}
-g^{L}_{\Delta_1,\Delta_2,\Delta_3} = 
- \frac{ \left< L V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right> }{  \left<  V_{\Delta_1}(0)V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right>}\ .
- \label{glvv}
-\end{align}
-In the case of $L_{-1}^n$ descendants, this only involves taking derivatives of three-point conformal blocks, 
-\begin{align}
- g^{L_{-1}^n}_{\Delta_1,\Delta_2,\Delta_3} & =\left. \frac{\frac{\partial^n}{\partial z_1^n} \mathcal{F}^{(3)}(\Delta_i|z_i)}{\mathcal{F}^{(3)}(\Delta_i|z_i)}\right|_{(z_1,z_2,z_3)=(0,\infty,1)} =(\Delta_1-\Delta_2+\Delta_3)_n \ ,
- \label{gln}
-\end{align}
-where we use the notation
-\begin{align}
- (x)_n = \frac{\Gamma(x+n)}{\Gamma(x)} = \prod_{i=0}^{n-1}(x+i)\ .
-\label{xn}
-\end{align}
-For more general descendants, we use local Ward identities \eqref{lmn}. For example,
-\begin{align}
- g^{L_{-2}}_{\Delta_1,\Delta_2,\Delta_3}
- = \Delta_1-\Delta_2+2\Delta_3\ .
- \label{glt}
-\end{align}
-Using the universal factors $g^L_{\Delta_s,\Delta_3,\Delta_4}$, the expression \eqref{4ope} of our four-point function can be written as a conformal block decomposition \eqref{fsd}, where the blocks are 
+Then, 
+
+Using the universal factors $g^L_{\Delta_s,\Delta_3,\Delta_4}$ \eqref{glvv}, the expression \eqref{4ope} of our four-point function can be written as a conformal block decomposition \eqref{fsd}, where the blocks are 
 \begin{align}
  \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) = x^{\Delta_s-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} f_{\Delta_1,\Delta_2}^{\Delta_s,L} g^{L}_{\Delta_s,\Delta_3,\Delta_4}x^{|L|}\ .
 \label{gsd}
@@ -6151,7 +6169,7 @@ This is compatible with the structure \eqref{jam} of the affine Lie algebra $\ha
  k\in\mathbb{R}\ .
 \label{kir}
 \end{align}
-Via the Sugawara construction \eqref{ljj}, the conjugation rule for $J^a_n$ implies $L_n^\dagger = \bar{L}_{-n}$, which differs from the conjugation rule \eqref{ldn} that we previously assumed. While the dilation generator $L_0+\bar L_0$ is still self-ajoint, the generator $L_0-\bar L_0$ is now antihermitian. However, the eigenvalues of this generator are conformal spins, which must be half-integer and therefore real. This shows that the $H_3^+$ model cannot be unitary -- except of course in the large level limit, where descendent modes disappear, correlation functions are $z$-independent, and conformal spins all vanish. For a more pedestrian proof that the model is non-unitary, see Exercise \ref{exonu}.
+Via the Sugawara construction \eqref{ljj}, the conjugation rule for $J^a_n$ implies $L_n^\dagger = \bar{L}_{-n}$, which differs from the conjugation rule \eqref{ldn} that we previously assumed. While the dilation generator $L_0+\bar L_0$ is still self-ajoint, the generator $L_0-\bar L_0$ is now antihermitian. However, the eigenvalues of this generator are conformal spins, which must be half-integer and therefore real. This shows that the $H_3^+$ model cannot be unitary -- except of course in the large level limit, where descendant modes disappear, correlation functions are $z$-independent, and conformal spins all vanish. For a more pedestrian proof that the model is non-unitary, see Exercise \ref{exonu}.
 
 
 \section{WZW models}
