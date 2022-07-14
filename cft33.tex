@@ -2774,14 +2774,14 @@ Instead of a power series in the cross-ratio $x$, this representation is a power
 where $F(\frac12,\frac12,1,x)$ is a special case of the hypergeometric function \eqref{fsn}. 
 We have 
 \begin{align}
- q(0)=0 \ \ , \ \ q(\tfrac12) = e^{-\pi} \ \ , \ \ q(1)=1 \ \ , \ \ q(x)\underset{x\to 0}{=} \frac{x}{16} +O(x^2)\ .
+ q(0)=0 \ \ , \ \ q(\tfrac12) = e^{-\pi} \ \ , \ \ q(1)=1 \ \ , \ \ q(x)\underset{x\to 0}{=} \frac{x}{16}+\frac{x^2}{32} +O(x^3)\ .
 \end{align}
 Zamolodchikov's recursive representation reads 
 \begin{align}
  \mathcal{F}^{(s)}_{\Delta_s}(\Delta_i|x) 
 =  (16q)^{\Delta_s -\frac{Q^2}{4}} x^{\frac{Q^2}{4}-\Delta_1-\Delta_2} (1-x)^{\frac{Q^2}{4}-\Delta_1-\Delta_4} \theta_3(q)^{3Q^2-4(\Delta_1+\Delta_2+\Delta_3+\Delta_4)} H_{\Delta_s}(\Delta_i|q)\ .
 \end{align}
-Here $\theta_3(q)$ is the elliptic function
+Here $\theta_3(q)$ is the Jacobi theta function
 \begin{align}
  \theta_3(q) = \sum_{n\in{\mathbb{Z}}} q^{n^2}\ ,
 \end{align}
@@ -2805,14 +2805,6 @@ Zamolodchikov's recursion owes its name to the original definition of the functi
 \end{align}
 This formula makes it manifest that conformal blocks have poles for $\Delta_s \in \{\Delta_{\langle r,s\rangle}\}_{r,s\in {\mathbb{N}}^*}$. However, the recursive representation also has unphysical singularities at 
 values of the central charge of the type $c= c_{p, q}$ \eqref{cpq}: singularities of some terms that cancel when the terms are added. This makes it difficult to use the recursive representation for such values of the central charge, and in particular for minimal models \cite{rib18}.
-
-Let us view $H_{\Delta_s}(\Delta_i|q)$ as a power series in the nome $q$, and argue that its radius of convergence is $1$. We assume that $b^2\notin\mathbb{Q}$ and $\Delta_s \notin \{\Delta_{\langle r,s\rangle}\}_{r,s\in {\mathbb{N}}^*}$, which ensures that the series is well-defined. (If these assumptions did not hold, the coefficients $\frac{R_{m_j,n_j}}{\Delta_{\langle m_{j-1},-n_{j-1} \rangle}-\Delta_{\langle m_j,n_j\rangle}}$ in Eq. \eqref{hdq} could diverge.) The radius of convergence is controlled by the behaviour of $R_{m,n}$ for large indices $m,n$, more specifically by factors that behave as $e^{O(mn)}$. Neglecting factors that behave as $e^{o(mn)}$, we find 
-\begin{align}
- R_{m,n} \underset{m,n\to \infty}{\sim } \frac{P_{\langle 0,0\rangle}\prod_{r\overset{2}{=}1-m}^{m-1} \prod_{s\overset{2}{=}1-n}^{n-1} P_{\langle r,s\rangle}^2 }{\prod_{r=1-m}^m \prod_{s=1-n}^n 2P_{\langle r,s\rangle}}
-  \underset{m,n\to \infty}{\sim } 16^{-mn}\ .
-\end{align}
-In this approximation, we therefore have $H_{\Delta_s}(\Delta_i|q)\sim \sum_{k=0}^\infty \left(\sum_{m,n=1}^\infty q^{mn}\right)^k$, whose radius of convergence is $1$. Therefore, the Zamolodchikov's recursion converges for $|q|<1$ i.e. $x\in\mathbb{C}-\{1\}$.
-
 
 
 \subsubsection{Other representations}
@@ -2904,15 +2896,16 @@ So there must exist a linear, invertible relation between the two bases,
  \mathcal{F}^{(s)}_{\Delta_s}(\sigma_i|z_i) = \int_{i\mathbb{R}}dP_t\ F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix} \mathcal{F}^{(t)}_{\Delta_t}(\sigma_i|z_i)\ ,
  \label{eq:fusrel}
 \end{align}
-whose $z_i$-independent kernel $F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}$ is called the \textbf{\boldmath fusing matrix}\index{fusing matrix} of the Virasoro algebra.
+whose $z_i$-independent kernel $F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix}$ is called the \textbf{\boldmath fusing matrix}\index{fusing matrix} of the Virasoro algebra. (Alternative names: fusion kernel, fusion matrix.)
 The parameters of the fusing matrix are in principle representations of the Virasoro algebra: the conformal dimensions that we wrote stand for the corresponding Verma modules. The measure of integration is $dP_t$, and actually the expression \eqref{eq:fm} for the fusing matrix involves momentums rather than conformal dimensions; we nevertheless use conformal dimensions in our notation for the fusing matrix, as it is by definition invariant under reflections of momentums.
 A diagrammatic notation for the fusing matrix is 
 \begin{align}
  F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix} = \ \ 
-\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .55]
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .65]
 \draw (0, -2) -- node [below left] {$1$} (-2, 0) -- node [above left] {$2$} (0, 2) -- node [above right] {$3$} (2, 0) -- node [below right] {$4$} (0, -2) -- (0, 2);
-\draw (-2, 0) -- (-.2, 0) node [below left] {$t$}; \draw (.2, 0) -- (2, 0);
-\node [above left] at (0, .2) {$s$};
+\draw (-2, 0) -- (-.2, 0); \draw (.2, 0) -- (2, 0);
+\node at (-.25, .6) {$s$};
+\node at (-.6, -.35) {$t$};
 \end{tikzpicture}
 \ \ .
 \end{align}
