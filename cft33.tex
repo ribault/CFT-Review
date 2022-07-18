@@ -2817,7 +2817,7 @@ Moreover, invariance under reflections is not manifest, and individual terms hav
 However, an advantage of the combinatorial representation is that it has an interpretation as a sum over descendants in a particular basis.
 
 
-\subsection{Crossing symmetry and the fusing matrix}
+\subsection{Crossing symmetry and the fusing matrix}\label{seccsfm}
 
 \subsubsection{The crossing symmetry equation}
 
@@ -3497,7 +3497,7 @@ Omitting the dependence on $z_i$, and neglecting the descendant fields, we schem
 
 \subsubsection{Degenerate fields}
 
-Although degenerate representations do not appear in the spectrum of Liouville theory, assuming  that they exist is crucial for analytically solving the theory using the conformal bootstrap method. This is because the crossing symmetry equations become much simpler in the presence of degenerate fields, as we explained in Section \ref{secaco}.
+Although degenerate representations do not appear in the spectrum of Liouville theory, assuming  that they exist is crucial for analytically solving the theory using the conformal bootstrap method. This is because the crossing symmetry equations become simpler in the presence of degenerate fields, as we explained in Section \ref{seccsfm}.
 
 \begin{hyp}[Existence of degenerate fields]
  ~\label{ax:edf}
@@ -3526,11 +3526,12 @@ In particular, the OPEs of the degenerate fields $V_{\langle 2,1\rangle}$ and $V
 The coefficients $C_+(P)$ and $C_-(P)$ are not independent, and can be deduced from one another, see Exercise \ref{exocpcm}.
 
 
-\subsection{Crossing symmetry equations \label{seccbe}}
+\subsection{Degenerate crossing symmetry equations \label{seccbe}}
 
-Let us now investigate the consequences of the crossing symmetry of four-point functions, whose general form was given in Eq. \eqref{csd}. In order to constrain the three-point structure constant, we will study four-point functions that involve one degenerate field $V_{\langle 2,1\rangle}$ or $V_{\langle 1, 2\rangle}$. We will therefore need to constrain the OPE coefficients of these degenerate fields. 
+Let us now investigate the consequences of the crossing symmetry of four-point functions. For simplicity, we focus on crossing symmetry of four-point functions that involve one degenerate field $V_{\langle 2,1\rangle}$ or $V_{\langle 1, 2\rangle}$. This will nevertheless turn out to uniquely determine the three-point structure constant $C_{P_1,P_2,P_3}$. 
+
+In order to write the degenerate crossing symmetry equations, we need to constrain the OPE coefficients of the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1, 2\rangle}$. 
 To do this, we will first consider four-point functions that involve two degenerate fields. 
-
 
 \subsubsection{What we learn from $
  \left\langle V_{\langle 2,1 \rangle}(x) V_P(0) V_{P}(\infty) V_{\langle 2,1 \rangle}(1) \right\rangle$}
@@ -3621,27 +3622,9 @@ We could focus on combinations of two- and three-point structure constants that 
 Rather, we will decompose the three-point structure constant as 
 \begin{align}
  C_{P_1,P_2,P_3} = N_{P_1}N_{P_2}N_{P_3}C'_{P_1,P_2,P_3}\ ,
+ \label{cnnnc}
 \end{align}
-where the normalization factor $N_{P}$ transforms as $N_{P}\to \lambda_PN_{P}$ under a field renormalization $V_P\to \lambda_PV_P$, while  $C'_{P_1,P_2,P_3}$ is invariant. In other words, $C'_{P_1,P_2,P_3}$ is the three-point structure constant in a reference normalization which we can in principle choose arbitrarily, and which we will shortly choose so that $C'_{P_1,P_2,P_3}$ is as simple as possible.
-In terms of our invariant quantities, the crossing symmetry equation \eqref{csd} becomes
-\begin{align}
- \int_{i\mathbb{R}_+} dP_s\, C'_{12s}(N^2B^{-1})_s C'_{s34} \left| 
- \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .2]
-\draw (-1,2) node [left] {$2$} -- (0,0) -- node [above] {$s$} (4,0) -- (5,2) node [right] {$3$};
-\draw (-1,-2) node [left] {$1$} -- (0,0);
-\draw (4,0) -- (5,-2) node [right] {$4$};
-\end{tikzpicture} 
-\right|^2 = \int_{i\mathbb{R}_+} dP_t\, C'_{23t}(N^2B^{-1})_tC'_{t41} \left|
-\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .2]
- \draw (-2,3) node [left] {$2$} -- (0,2) -- node [left] {$t$} (0,-2) -- (-2, -3) node [left] {$1$};
-\draw (0,2) -- (2,3) node [right] {$3$};
-\draw (0,-2) -- (2, -3) node [right] {$4$};
-\end{tikzpicture}
-\right|^2\ .
-\label{gce}
-\end{align}
-We now complete the definitions of $N_P$ and $C'_{P_1,P_2,P_3}$
-by assuming that the shift equation \eqref{eq:shift} splits into the two equations 
+where the normalization factor $N_{P}$ transforms as $N_{P}\to \lambda_PN_{P}$ under a field renormalization $V_P\to \lambda_PV_P$, while  $C'_{P_1,P_2,P_3}$ is invariant. In other words, $C'_{P_1,P_2,P_3}$ is the three-point structure constant in a reference normalization which we can in principle choose arbitrarily. We now choose a normalization such that $C'_{P_1,P_2,P_3}$ is as simple as possible, by assuming that the shift equation \eqref{eq:shift} splits into the two equations 
 \begin{align}
 \frac{C'_{P_1+\frac{b}{2},P_2,P_3}}{C'_{P_1-\frac{b}{2},P_2,P_3} } 
  &=b^{8bP_1}\prod_{\pm,\pm} \gamma(\tfrac12 -bP_1 \pm bP_2 \pm bP_3)\ ,
@@ -3783,8 +3766,6 @@ These solutions are
  \item invariant under reflection of each momentum $P_i\to -P_i$, due to Eq. \eqref{upq},
  \item and symmetric under permutations of the momentums.
 \end{itemize}
-When writing these solutions, we have lifted the ambiguity of the three-point structure constant under structure constant renormalizations. Our choice of normalization will allow the three-point structure constant to obey Eq. \eqref{chco}.
-
 Similarly, we can write solutions of the shift equation \eqref{nbs} (and its dual) for the normalization-independent combination $N^2B^{-1}$,
 \begin{align}
  \boxed{\left(N^2B^{-1}\right)_P =\prod_\pm \Upsilon_b(\pm 2P)} \quad , \quad \boxed{\left(\hat N^2\hat B^{-1}\right)_P = \prod_\pm \hat\Upsilon_b(\pm 2P) } \ .
@@ -3830,7 +3811,7 @@ The normalizations that we have chosen are such that
 
 While the representations in Liouville theory's spectrum can be parametrized by momentums $P\in i\mathbb{R}_+$, the analytic properties of correlation functions allow us to consider fields with arbitrary complex momentums. 
 In particular, for a given momentum $P$, it makes sense to consider the reflected momentum $-P$, which corresponds to the same representation of the Virasoro algebra. 
-We interpret our assumption that multiplicities are trivial as applying not only to the spectrum, but also to representations with arbitrary momentums. Then the fields $V_P(z)$ and $V_{-P}(z)$ correspond to the same primary state, and must be the same up to a factor $R_P$ called the \textbf{\boldmath reflection coefficient}\index{reflection!---coefficient}. In other words, we must have the \textbf{\boldmath reflection relation}\index{reflection!---relation}
+Our definition of Liouville theory includes the assumption that multiplicities are trivial: this implies that the fields $V_P(z)$ and $V_{-P}(z)$ correspond to the same primary state, and must be the same up to a factor $R_P$ called the \textbf{\boldmath reflection coefficient}\index{reflection!---coefficient}. In other words, we must have the \textbf{\boldmath reflection relation}\index{reflection!---relation}
 \begin{align}
 V_P(z)= R_P V_{-P}(z)\ .
 \label{vrv}
@@ -3868,8 +3849,12 @@ Writing $\Upsilon_b(-2P)=\Upsilon_b(2P+Q)$, and using the shift equations \eqref
 
 \subsubsection{Existence}
 
-We derived the three-point structure constants $C$ and $\hat C$ by solving crossing symmetry equations for four-point functions involving degenerate fields. 
-For Liouville theory to exist, we need generic four-point functions to be crossing symmetric, i.e. we need the two- and three-point structure constants to obey Eq. \eqref{gce}.
+We derived the three-point structure constants $C$ and $\hat C$ by solving degenerate crossing symmetry equations. 
+For Liouville theory to exist, we also need generic four-point functions $\left< \prod_{i=1}^4 V_{P_i}\right>$ to obey the crossing symmetry equation \eqref{csd}. In the case of Liouville theory, this boils down to 
+\begin{align}
+ \int_{i\mathbb{R}_+} dP_s \frac{C_{12s}C_{s34}}{B_s} \left|\mathcal{F}_{P_s}^{(s)} \right|^2 = \int_{i\mathbb{R}_+} dP_t \frac{C_{23t}C_{t41}}{B_t} \left|\mathcal{F}_{P_t}^{(t)} \right|^2\ ,
+\end{align}
+where $\mathcal{F}_{P_s}^{(s)}$ and $\mathcal{F}_{P_t}^{(t)}$ are $s$- and $t$-channel conformal blocks.
 To begin with, the convergence of the integrals over $s$- and $t$-channel momentums is easily deduced from the expressions for the structure constants and conformal blocks, see Exercise \ref{exocvg}.
 Then, the equality between the $s$- and the $t$-channel decompositions can be explored numerically \cite{rs15}. 
 It turns out that for each value of the central charge $c\in\mathbb{C}$, either $C$ or $\hat C$ leads to crossing symmetric four-point functions, and is therefore the three-point structure constant of Liouville theory:
@@ -4148,7 +4133,7 @@ However, having finite fusion products is still not enough for a having a finite
 Actually, for generic central charges, no nontrivial finite set of degenerate representations of the Virasoro algebra is closed under fusion.
 Starting with the degenerate representation $\mathcal{R}_{\langle 1,2 \rangle}$ for instance, the multiple fusion products $\mathcal{R}_{\langle 1,2 \rangle}\times \mathcal{R}_{\langle 1,2 \rangle}\times \cdots \times \mathcal{R}_{\langle 1,2 \rangle}$ span the infinite set of representations $\{\mathcal{R}_{\langle 1,s \rangle}\}_{s\in{\mathbb{N}}^*}$.
 Our task would be easier if we would weaken our assumptions and replace the rationality of the theory with the discreteness of the spectrum, allowing the number of representations to be countable instead of finite.
-We would obtain generalized minimal models, whose spectrums contain all degenerate representations, and which exist for arbitrary values of the central charge. 
+We would obtain generalized minimal models, whose spectrums contain all degenerate representations, and which exist for generic values of the central charge. 
 
 What if we insist on the original assumption of rationality? We will see that there are finite sets 
 of degenerate representations that close under fusion, from which we will build the A-series minimal models.
@@ -4312,7 +4297,7 @@ the corresponding degenerate representations $\mathcal{R}_{\langle r'', s'' \ran
 
 \subsubsection{Fusion rules}
 
-The fusion rules \eqref{rrsr} of degenerate representations are valid at arbitrary central charges, and do not depend on the central charge. In order to deduce the fusion rules of doubly degenerate representations from the Kac table, we only need to take the identification \eqref{ddr} into account, with the result
+The fusion rules \eqref{rrsr} of degenerate representations are valid at arbitrary central charges, and do not depend on the central charge. In order to deduce the fusion rules of doubly degenerate representations in the Kac table, we only need to take the identification \eqref{ddr} into account, with the result
 \begin{align}
   \boxed{\mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle} = \sum_{r_3\overset{2}{=}|r_1-r_2|+1}^{\min(r_1+r_2,2p-r_1-r_2)-1}\ \sum_{s_3\overset{2}{=}|s_1-s_2|+1}^{\min(s_1+s_2,2q-s_1-s_2)-1} \mathcal{R}_{\langle r_3,s_3 \rangle}}\ .
 \label{rrmm}
@@ -4384,7 +4369,7 @@ Then $\check{C}_{\langle r_1,s_1\rangle ,\langle r_2,s_2\rangle ,\langle r_3,s_3
 This unitary minimal model has only one field -- the identity $I=\check{V}_{\langle 1,1 \rangle}=\check{V}_{\langle 2,1 \rangle}$.
 The fusion rule $I\times I = I$ and three-point structure constant $\check{C}_{III} = 1$ are trivial.
 
-\subsubsection{Model $(p,q)=(5,2) \implies c=-\tfrac{22}{5}$\ of the Yang-Lee singularity}
+\subsubsection{Yang--Lee singularity $(p,q)=(5,2) \implies c=-\tfrac{22}{5}$}
 
 This minimal model has two independent fields, whose names and conformal dimensions $\Delta_{\langle r,s\rangle}$ are 
 \begin{align}
@@ -4487,11 +4472,11 @@ The only three-point structure constant not involving the identity field is
 Finally, let us comment on the interpretation of this minimal model in terms of statistical physics.
 The Ising model of statistical physics describes two-state spins on a lattice.
 Our field $\sigma$ describes these spins, while the field $\epsilon$ describes the energy.
-Flipping spins is a symmetry of the model, and this symmetry manifests itself as the invariance of the fusion rules under $\sigma\to -\sigma$. 
+Flipping spins is a symmetry of the model, and this symmetry manifests itself as the invariance of the fusion rules under $\sigma\to -\sigma$. The statistical model actually gives rise to infinitely many primary fields which do not belong to the minimal model.
 
 \subsection{Limits to and from Liouville theory}\label{secltf}
 
-In Liouville theory, generalized minimal models and A-series minimal models, the existence of the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ ultimately determines the three-point structure constants. These CFTs are distinguished by their spectrums: diagonal in all cases, and respectively continuous, discrete infinite, and finite. These spectrums are related to one another by certain limits: for example, the Kac table of the $(p, q)$ minimal model becomes infinite as $p,q\to \infty$, and degenerate fields can be recovered from Liouville fields by taking limits of their momentums. (See Section \ref{secacl}.) This suggests that our CFTs themselves are related to one another by the same limits. 
+In Liouville theory, generalized minimal models and A-series minimal models, the existence of the degenerate fields $V_{\langle 2,1\rangle}$ and $V_{\langle 1,2\rangle}$ ultimately determines the three-point structure constants. These CFTs are distinguished by their spectrums: diagonal in all cases, and respectively continuous, discrete infinite, and finite. These spectrums are related to one another by certain limits: for example, the Kac table of the $(p, q)$ minimal model becomes infinite as $p,q\to \infty$, and degenerate fields can be recovered from Liouville fields by taking limits of their momentums. (See Section \ref{secacl}.) This suggests that our CFTs themselves are related to one another by these limits. 
 
 \subsubsection{From minimal models to Liouville theory}
 
@@ -4512,7 +4497,7 @@ We can send $r,s$ to infinity so that $P_{\langle r,s\rangle}$ tends to a given 
 \end{align}
 Applying this treatment to the momentums in a generalized minimal model, we must recover Liouville theory.
 
-The situation is more subtle if we take the limit $c_{p,q}\to c$ where  $c$ is again of the type $c_{p_0,q_0}$ with $p_0,q_0\in \mathbb{N}^*$. In this case, minimal models have several inequivalent nontrivial limits where the central charge and momentums are sent to continuous values at the same time. In some of these limits, we recover Liouville theory. However, in the case $c=1$, assuming $q=p+1$ while keeping $r-s$ and $\frac{r}{q}$ fixed 
+The situation is more subtle if we take the limit $c_{p,q}\to c$ where  $c$ is again of the type $c_{p_0,q_0}$ with $p_0,q_0\in \mathbb{N}^*$. In this case, minimal models have several inequivalent nontrivial limits where the momentums are sent to continuous values. In some of these limits, we recover Liouville theory. However, in the case $c=1$, assuming $q=p+1$ while keeping $r-s$ and $\frac{r}{q}$ fixed 
 does not lead to Liouville theory. Rather, we obtain another CFT with the same spectrum as Liouville theory and a non-analytic three-point structure constant, called Runkel--Watts theory \cite{rw01}. There is a Runkel--Watts-type theory for any central charges of the type $c_{p_0,q_0}$ \cite {rs15}, whose three-point structure constant includes the non-analytic factor \eqref{sigma}.
 We expect that this theory can again be reached as a particular limit of minimal models.
 
@@ -4602,7 +4587,7 @@ conformal block,
 \end{tikzpicture}
 \ . 
 \end{align}
-\item Compute these blocks using Eqs. \eqref{gpm} and \eqref{tpm}, and show in particular that $\mathcal{F}^{(s)}_+ = \mathcal{F}^{(t)}_-$.
+\item Compute these hypergeometric blocks using Eqs. \eqref{gpm} and \eqref{tpm}, and show in particular that $\mathcal{F}^{(s)}_+ = \mathcal{F}^{(t)}_-$.
 
 \item Show that the coefficients of the two decompositions are expressed in terms of the OPE coefficients of degenerate fields as 
 \begin{align}
@@ -4610,7 +4595,7 @@ conformal block,
  \\
  c_-^{(t)} &= \tilde{C}_+(P)C_+(P+\tfrac{1}{2b})B_{P+\tfrac{Q}{2}}\ .
 \end{align}
-Argue that $c_+^{(s)}=c_-^{(t)}$, and deduce a relation between $C_+$ and $\tilde{C}_+$.
+From $c_+^{(s)}=c_-^{(t)}$, deduce a relation between $C_+$ and $\tilde{C}_+$.
 \item Study how $C_+(P)$ and $\tilde{C}_+(P)$ behave under a field renormalization, and show that they renormalize to one provided
 \begin{align}
  C_+(P) = \frac{\lambda_{P+\frac{b}{2}}}{\lambda_P} \quad \text{and} \quad 
@@ -4668,7 +4653,6 @@ The aim of this exercise is to understand how Liouville theory and Runkel--Watts
 \begin{enumerate}
  \item In the case $c=1$, the conformal blocks and fusing matrix have considerably simpler expressions than in the general case. Study the analyticity properties of the fusing matrix from the article \cite{ilt13}, and deduce that Eq. \eqref{cmnnf} cannot hold in Runkel--Watts theory. 
  \item Review the derivation of Eq. \eqref{cmnnf} in the cases of Liouville theory with $c=1$, and of Runkel--Watts theory. Paying particular attention to integration contours, poles of conformal blocks, and analyticity of structure constants, deduce that the derivation works in Liouville theory and fails in Runkel--Watts theory.
- \item Show that  Eq. \eqref{cmnnf} holds in Liouville theory with $c=1$ and more generally $c\leq 1$, and write an article about it.
 \end{enumerate}
 \end{exo}
 
@@ -4747,7 +4731,7 @@ Determine the first four quantities by assuming that $V_{\langle 1,1\rangle}$ is
 
 \begin{exo}[Computation of some simple structure constants]
  ~\label{exosssc}
- In this Exercise we compute structure constants of the type $\check{C}_P = \check{C}_{\langle 3,1\rangle, P,P}$, in the field normalization where two-point functions are one. 
+ In this exercise we compute structure constants of the type $\check{C}_P = \check{C}_{\langle 3,1\rangle, P,P}$, in the field normalization where two-point functions are one. 
 \begin{enumerate}
 \item Write the $s$-channel decomposition of the four-point function $\left< V_{\langle 2,1\rangle} V_{\langle 2,1\rangle} V_PV_P\right>$, and deduce $\check{C}_P \check{C}_{\langle 2,1\rangle}$ from Eq. \eqref{spsm}.
 \item Using the identities $\gamma(x+1)=-x^2\gamma(x)$ and $\gamma(2x)= 2^{4x-1}\gamma(x)\gamma(x+\tfrac12)$, check that
