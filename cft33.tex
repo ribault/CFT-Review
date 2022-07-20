@@ -5512,9 +5512,10 @@ Given a representation $\mathcal{R}$ of $\mathfrak{g}$, we define an \textbf{\bo
  \boxed{ J^a(y) \Phi^{\mathcal{R}}(z_0) = \frac{-t^a\Phi^{\mathcal{R}}(z_0)}{y-z_0} + O(1) } \ .
 \label{jpr}
 \end{align}
-This assumes that for any $z_0$, the field $\Phi^{\mathcal{R}}$ is a vector in the representation $\mathcal{R}$. 
-It can be checked that this OPE is compatible with the associativity of the $J^aJ^b\Phi^\mathcal{R}$ OPE. (See Exercise \ref{exojjp}.)
-We can then 
+This assumes that for any $z_0$, the field $\Phi^{\mathcal{R}}$ is a vector in the representation $\mathcal{R}$. Given a basis $(e^i)$ of $\mathcal{R}$, the field $\Phi^{\mathcal{R}} = \Phi^{\mathcal{R}}_ie^i$ is a collection of scalar fields $\Phi^{\mathcal{R}}_i$, such that $J^a(y)\Phi^{\mathcal{R}}_i(z_0) = \frac{-(t^a)^j_i\Phi^{\mathcal{R}}(z_0)_j}{y-z_0}+O(1)$. This OPE involves the transpose $(t^a)^T$ of a Lie algebra generator. Transposition flips the sign of commutation relations, which is why we have a minus sign in Eq. \eqref{jpr}. This minus sign is needed for 
+the associativity of the $J^aJ^b\Phi^\mathcal{R}$ OPE. (See Exercise \ref{exojjp}.)
+
+Let us
 compute the OPE $T(y)\Phi^{\mathcal{R}}(z_0)$, by applying Wick's theorem to $\cunderbracket{\Phi^\mathcal{R}}{(z_0)}{(J^aJ_a)}(y)$, using Eq. \eqref{jpr} in the form $\cunderbracket{\Phi^\mathcal{R}}{(z_0)}{J^a}(x) = \frac{-t^a\Phi^\mathcal{R}(x)}{x-z_0}$.
 We find 
 \begin{align}
@@ -5525,7 +5526,7 @@ Because $T$ is the energy-momentum tensor and obeys Axiom \ref{ax:dvz}, this det
 \partial\Phi^\mathcal{R} = -\frac{K_{ab}t^a(J^b\Phi^\mathcal{R})}{k+g} \ .
 \label{lmp}
 \end{align}
-Then, we see that our OPE is 
+Then, we see that our $T\Phi^{\mathcal{R}}$ OPE is 
 of the form \eqref{tvp}, which shows that $\Phi^{\mathcal{R}}$ is a primary field with the conformal dimension
 \begin{align}
  \boxed{\Delta_\mathcal{R}  = \frac{C_2(\mathcal{R})}{2(k+g)}}\ ,
@@ -5545,9 +5546,7 @@ Acting on the affine primary states with creation operators $J^a_{n<0}$ generate
 
 \subsubsection{Isospin variables}
 
-The affine primary field $\Phi^\mathcal{R}$ lives in a representation $\mathcal{R}$ of our Lie algebra $\mathfrak{g}$, and is actually a linear combination of $\dim \mathcal{R}$ independent fields. 
-In order to make this explicit, we could introduce a basis $(e^i)$ of $\mathcal{R}$, so that $\Phi^{\mathcal{R}} = \Phi^{\mathcal{R}}_ie^i$ and $t^a \Phi^{\mathcal{R}} = \mathcal{R}(t^a)_i^j \Phi^{\mathcal{R}}_je^i$.
-Equivalently, we represent states in $\mathcal{R}$ 
+Rather than introducing a discrete basis of the representation $\mathcal{R}$, it is often convenient to represent states in $\mathcal{R}$ 
 as functions of an \textbf{\boldmath isospin variable}\index{isospin variable} $X$. 
 Affine primary fields become functions $\Phi^\mathcal{R}_X(z_0)$ of $X$, on which $t^a$ acts as a differential operator $D_X^\mathcal{R}(t^a)$, 
 and we have
@@ -5631,7 +5630,7 @@ The Sugawara construction of the energy-momentum tensor $T(y)$ from the currents
  \boxed{J^a(y) \underset{y\to \infty}{=} O\left(\frac{1}{y^2}\right)}\ .
 \label{jayi}
 \end{align}
-For any $N$-uple of fields $(\Phi^{\sigma_i}(z_i))$, and any meromorphic function $\epsilon(z)$, with no poles outside $\{z_1,\cdots z_N\}$, we therefore have 
+Given $N$ fields $\Phi^{\sigma_i}(z_i)$, and any meromorphic function $\epsilon(z)$, with no poles outside $\{z_1,\cdots z_N\}$, we therefore have 
 \begin{align}
  \oint_\infty dy\ \epsilon(y) \left\langle J^a(y)  \prod_{i=1}^N \Phi^{\sigma_i}(z_i)\right\rangle = 0 \quad \text{provided} \quad \epsilon(y) \underset{y\to\infty}{=} O(1)\ ,
 \end{align}
@@ -5671,8 +5670,8 @@ In the $\mu$-basis, we find
 \label{pmf}
 \end{align}
 where the function $\mathcal{H}(x)$, which parametrizes the general solution of the $t^-$ and $t^0$ equations, is constrained by the $t^+$ equation to obey the twisted hypergeometric differential equation \eqref{hj}.
-It may seem strange that in the $\mu$-basis we obtain a second-order differential equation, whereas in the $x$-basis the solution appeared to be unique.
-The number of solutions of the global Ward identities has the algebraic interpretation of a tensor product multiplicity for $\mathfrak{sl}_2$ representations, and this should not depend on our choice of isospin variable.
+It may seem strange that in the $\mu$-basis we obtain a second-order differential equation, whereas in the $x$-basis the space of solutions appeared to be one-dimensional.
+The number of linearly independent solutions of the global Ward identities has the algebraic interpretation of a tensor product multiplicity for $\mathfrak{sl}_2$ representations, and this should not depend on our choice of isospin variable.
 Actually it is the $x$-basis calculation that is misleading: analyticity conditions on the $x_i$-dependence of $\left\langle \prod_{i=1}^3 \Phi^{j_i}_{x_i} \right\rangle$ in general allow the existence of two solutions that differ globally, although they are locally identical \cite{rib09}.
 The tensor product multiplicity for generic $\mathfrak{sl}_2$ representations is two, as correctly suggested by the $\mu$-basis calculation. 
 
@@ -6005,7 +6004,7 @@ Comparing with Eq. \eqref{sfpm}, we obtain the three-point structure constant in
 \begin{align}
  C^{H_3^+}_{j_1,j_2,j_3} = \frac{\pi^2\prod_{i=1}^3\gamma(2j_i+1)}{d_\pm}C_{\pm}(P_1)C_{P_1\pm \frac{b}{2},P_2,P_3}\ .
 \end{align}
-The single-valuedness of $\left\langle \prod_{i=1}^3\Phi^{j_i}_{\mu_i} \right\rangle $ as a function of $\mu_i$ guarantees that this does not depend on the sign $\pm$, due in particular to Eq. \eqref{eq:shift}. 
+The single-valuedness of $\left\langle \prod_{i=1}^3\Phi^{j_i}_{\mu_i} \right\rangle $ as a function of $\mu_i$ guarantees that this does not depend on the sign $\pm$, and this can be checked explicitly using Eq. \eqref{eq:shift}. 
 Using the DOZZ formula \eqref{caaa} (with $\mu=1$) for $C_{P_1\pm \frac{b}{2},P_2,P_3}$, and $C_+(P)=1$ from Exercise \ref{exodoc}, we obtain
 \begin{align}
 \boxed{C^{H_3^+}_{j_1,j_2,j_3} = \frac{\pi^2b^{-1}b^{\frac{2}{b^2}(j_1+j_2+j_3+1)} \Upsilon'_b(0)\Upsilon_b(-\frac{2j_1}{b})\Upsilon_b(-\frac{2j_2}{b})\Upsilon_b(-\frac{2j_3}{b})}
@@ -6020,11 +6019,11 @@ where the parameter $b$ is given by Eq. \eqref{bk}.
 
 The reflection relation for Liouville primary fields leads to a reflection relation for $H_3^+$ primary fields,
 \begin{align}
- \Phi^j_{\mu} = R\left(b^{-1}(j+\tfrac12)\right) \Phi^{-j-1}_{\mu} \ ,
+ \Phi^j_{\mu} = R_{b^{-1}(j+\frac12)} \Phi^{-j-1}_{\mu} \ ,
 \end{align}
 which involves the Liouville reflection coefficient $R_P$ \eqref{ram}. The two-point function can be deduced from the two-point function \eqref{vvrdd} of Liouville theory, 
 \begin{align}
- \left\langle \Phi^{j_1}_{\mu_1} \Phi^{j_2}_{\mu_2}\right\rangle = \delta^{(2)}(\mu_1+\mu_2) |\mu_1|^2 b\Big[\delta(j_1+j_2+1) + R\left(b^{-1}(j_1+\tfrac12)\right) \delta(j_2-j_1)\Big]\ .
+ \left\langle \Phi^{j_1}_{\mu_1} \Phi^{j_2}_{\mu_2}\right\rangle = \delta^{(2)}(\mu_1+\mu_2) |\mu_1|^2 b\Big[\delta(j_1+j_2+1) + R_{b^{-1}(j_1+\frac12)} \delta(j_2-j_1)\Big]\ .
 \end{align}
 Let us deduce the reflection relation and two-point function for $x$-basis fields, using the formula  
 \begin{align}
@@ -6736,7 +6735,6 @@ In the second term, use the $J^a(y_1)\Phi^\mathcal{R}(z_0)$ OPE, and show that
 
 \item
 Use $J^a(y_1) t^b \Phi^\mathcal{R}(z_0) =t^b J^a(y_1)  \Phi^\mathcal{R}(z_0)$, and check that you recover Eq. \eqref{oftp}.
-Notice that this explains the minus sign in the $J^a\Phi^\mathcal{R}$ OPE Eq. \eqref{jpr}.
 \end{enumerate}
 \end{exo}
 
