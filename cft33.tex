@@ -3899,10 +3899,10 @@ The tips of the cones appear as dots, and the cones themselves are respectively 
 }
 \begin{array}{ccc}
 \begin{tikzpicture}[scale = .4, baseline=(current  bounding  box.center)]
-  \draw[-latex] (-3,0) -- (0, 0) -- (4,0) node [above] {$P_s$};
   \draw[ultra thick, blue, opacity = .3] (0, -4.5) -- (0, 4.5);
   \draw (0, -4.5) -- (0, 4.5);
   \draw[line width = .6mm, red] (.5, -4.5) -- (.5, 4.5);
+  \draw[-latex] (-3,0) -- (0, 0) -- (4,0) node [above] {$P_s$};
 \node[above left] at (.2,-.2) {$0$};
 \node[blue, draw,circle,inner sep=1pt,fill] at (0, 2) {};
 \node[blue, draw,circle,inner sep=1pt,fill] at (0, -2) {};
@@ -3911,9 +3911,9 @@ The tips of the cones appear as dots, and the cones themselves are respectively 
  \end{tikzpicture}
  & 
  \begin{tikzpicture}[scale = .4, baseline=(current  bounding  box.center)]
-  \draw[-latex] (-4,0)  --  (6,0) node [above] {$P_s$};
-  \draw (1, -4.5) -- (1, 4.5);
   \draw[line width = .6mm, red] (1, -4.5)  -- (1, 4.5);
+  \draw (1, -4.5) -- (1, 4.5);
+  \draw[-latex] (-4,0)  --  (6,0) node [above] {$P_s$};
   \node[above left] at (1.2,-.2) {$0$};
   \polewedge{rotate = 180, shift = {(0,.4)}}{$-\frac{Q}{2}$}{below};
   \polewedge{shift = {(2, .4)}}{$\frac{Q}{2}$}{above};
@@ -3922,9 +3922,9 @@ The tips of the cones appear as dots, and the cones themselves are respectively 
  \begin{tikzpicture}[scale = .4, baseline=(current  bounding  box.center)]
  \draw[ultra thick, blue, opacity = .3] (0,0) -- (-4,0);
  \draw[ultra thick, blue, opacity = .3] (2,0) -- (6,0);
+  \draw[line width = .6mm, red] (1, -4.5) -- (1, 4.5);
   \draw[-latex] (-4,0) -- (6,0) node [above] {$P_s$};
   \draw (1, -4.5) -- (1, 4.5);
-  \draw[line width = .6mm, red] (1, -4.5) -- (1, 4.5);
   \node[blue, draw,circle,inner sep=1pt,fill] at (0, 0) {};
 \node[above left] at (1.2,-.2) {$0$};
 \node[blue, draw,circle,inner sep=1pt,fill] at (2, 0) {};
