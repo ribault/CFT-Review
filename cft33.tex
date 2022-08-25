@@ -1072,7 +1072,7 @@ We distinguish $c\leq 1$ from the rest of the complex $c$-plane, because Liouvil
 \begin{align}
 \begin{tikzpicture}[scale = .25, baseline=(current  bounding  box.center)]
 \fill[red!50, rounded corners = 10] (-6, -10) rectangle (6, 10);
-\fill[blue!15, rounded corners = 10] (7, -10) rectangle (19, 10);
+\fill[green!15, rounded corners = 10] (7, -10) rectangle (19, 10);
 \fill[blue!30, rounded corners = 10] (20, -10) rectangle (32, 10);
 \node at (0, 11) {$c=c_{p,q}$};
 \node at (13, 11) {$c\leq 1$};
@@ -1100,14 +1100,14 @@ We distinguish $c\leq 1$ from the rest of the complex $c$-plane, because Liouvil
 \end{tikzpicture}
 \label{lims}
 \end{align}
-Let us also draw some relevant regions of the $c$-complex plane. We use light blue for $\{c\leq 1\}$, blue for the rest of the plane, and red for the discrete central charges of minimal models (with larger bars for smaller spectrums). We use darker colors for 
+Let us also draw some relevant regions of the $c$-complex plane. For each minimal model we draw a bar, with larger bars for smaller spectrums. We use darker shades for 
 unitary Liouville theory and unitary minimal models:
 \begin{align}
  \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .95] 
  \clip (-5,-2.5) rectangle (7,2.5);
  % Liouville theory
  \fill[blue!30] (-5, -3) rectangle (5.5, 3); 
- \fill[blue!15] (-5, -.1) rectangle (1, .1);
+ \fill[green!15] (-5, -.1) rectangle (1, .1);
  \fill[blue!70] (1, -.1) rectangle (5.5, .1);
   % Minimal models
  \newcommand{\mm}[3]{\draw[ultra thick, #3] ({#1}, -{#2}) -- ({#1}, {#2});}
@@ -3887,7 +3887,8 @@ To understand this, let us study the analytic properties of the corresponding fo
 \end{align}
 Although the structure constants $C$ and $\hat C$ have rather different analytic properties (see Exercise \ref{exo4a}), what matters is the behaviour of the poles of the $s$-channel conformal blocks $\mathcal{F}_{P_s}^{(s)}$. 
 These poles correspond to degenerate values of the momentum $P_s$, and are therefore found in two cones with tips at $P_s= \pm\frac{Q}{2}$. 
-Consider the relative positions of these cones (blue), and of the integration line for $P_s$ (red), depending on the value of the central charge $c$:
+In the following figures, we draw the relative positions of these cones, and of the integration line, depending on the central charge $c$. 
+The tips of the cones appear as dots, and the cones themselves are respectively flattened into lines, not flattened, and flattened into half-lines:
 \begin{align}
  \newcommand{\polewedge}[3]{
 \begin{scope}[#1]
@@ -3901,7 +3902,7 @@ Consider the relative positions of these cones (blue), and of the integration li
   \draw[-latex] (-3,0) -- (0, 0) -- (4,0) node [above] {$P_s$};
   \draw[ultra thick, blue, opacity = .3] (0, -4.5) -- (0, 4.5);
   \draw (0, -4.5) -- (0, 4.5);
-  \draw[ultra thick, red] (.5, -4.5) -- (.5, 4.5);
+  \draw[line width = .6mm, red] (.5, -4.5) -- (.5, 4.5);
 \node[above left] at (.2,-.2) {$0$};
 \node[blue, draw,circle,inner sep=1pt,fill] at (0, 2) {};
 \node[blue, draw,circle,inner sep=1pt,fill] at (0, -2) {};
@@ -3911,7 +3912,8 @@ Consider the relative positions of these cones (blue), and of the integration li
  & 
  \begin{tikzpicture}[scale = .4, baseline=(current  bounding  box.center)]
   \draw[-latex] (-4,0)  --  (6,0) node [above] {$P_s$};
-  \draw[ultra thick, red] (1, -4.5)  -- (1, 4.5);
+  \draw (1, -4.5) -- (1, 4.5);
+  \draw[line width = .6mm, red] (1, -4.5)  -- (1, 4.5);
   \node[above left] at (1.2,-.2) {$0$};
   \polewedge{rotate = 180, shift = {(0,.4)}}{$-\frac{Q}{2}$}{below};
   \polewedge{shift = {(2, .4)}}{$\frac{Q}{2}$}{above};
@@ -3921,7 +3923,8 @@ Consider the relative positions of these cones (blue), and of the integration li
  \draw[ultra thick, blue, opacity = .3] (0,0) -- (-4,0);
  \draw[ultra thick, blue, opacity = .3] (2,0) -- (6,0);
   \draw[-latex] (-4,0) -- (6,0) node [above] {$P_s$};
-  \draw[ultra thick, red] (1, -4.5) -- (1, 4.5);
+  \draw (1, -4.5) -- (1, 4.5);
+  \draw[line width = .6mm, red] (1, -4.5) -- (1, 4.5);
   \node[blue, draw,circle,inner sep=1pt,fill] at (0, 0) {};
 \node[above left] at (1.2,-.2) {$0$};
 \node[blue, draw,circle,inner sep=1pt,fill] at (2, 0) {};
