@@ -70,11 +70,6 @@
 \usepackage{thmtools}
 %\usepackage{thm-restate}   This package does not interact very smoothly with \theoremstyle and \listoftheorems
 
-\makeatletter
-% \def\@endtheorem{\endtrivlist\@endpefalse }% OLD
-\def\@endtheorem{\endtrivlist}% NEW
-\makeatother
-
 \newtheoremstyle{break}{9pt}{9pt}{\itshape}{}{\bfseries}{}{\newline}{}
 \theoremstyle{break}    
 
@@ -82,6 +77,17 @@
 \newtheorem{hyp}[exo]{Axiom}
 \newtheorem{res}[exo]{Result}
 \newtheorem{defn}[exo]{Definition}
+
+\makeatletter
+\def\ll@exo{%
+  \protect\numberline{\csname the\thmt@envname\endcsname}%
+  \ifx\@empty\thmt@shortoptarg
+    \thmt@thmname
+  \else
+    \thmt@shortoptarg
+  \fi}
+\def\l@thmt@exo{} 
+\makeatother
 
 \usepackage[colorlinks=true,linktoc=all,linkcolor=black,citecolor=red,urlcolor=blue]{hyperref}
 
