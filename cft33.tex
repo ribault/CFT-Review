@@ -2999,11 +2999,14 @@ F^{-1}_{\Delta_t,\Delta_s}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Del
 (Replacing one of the four Verma modules $\mathcal{V}_{\Delta_i}$ with the degenerate representation $\mathcal{R}_{\langle 2,1\rangle}$, this would reduce to Eq. \eqref{spsm}.)
 This formulation of crossing symmetry can be useful, because the fusing matrix is a simpler object than the conformal blocks. Moreover, this formulation implies that in a diagonal theory, the structure constants are uniquely determined by crossing symmetry. (See Exercise \ref{exoudt}.) 
 And we will now show that the solution of this equation can be written in terms of the fusing matrix. 
-To do this, let us consider a pentagon relation where the Verma module $\mathcal{V}_{\Delta_{45}}$ is replaced with the identity representation $\mathcal{R}_{\langle 1,1\rangle}$. From the fusion rule \eqref{roof}, we deduce the triviality of the fusing matrix element
+From the fusion rule \eqref{roof}, we deduce the triviality of the fusing matrix element
 \begin{align}
- F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \langle 1,1\rangle \end{bmatrix} = \delta_{\Delta_s,\Delta_3}\delta_{\Delta_t,\Delta_1}\ .
+ F_{\Delta_3,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \langle 1,1\rangle \end{bmatrix} = \delta_{\Delta_t,\Delta_1}\ .
+ \label{eq:fusid}
 \end{align}
-The pentagon relation therefore reduces to 
+(The four-point blocks that appear in the corresponding relation \eqref{eq:fusrel} actually reduce to three-point blocks.) 
+Then let us consider a pentagon relation where the Verma module $\mathcal{V}_{\Delta_{45}}$ is replaced with the identity representation $\mathcal{R}_{\langle 1,1\rangle}$ --- this forces us to set $\Delta_{12}=\Delta_3$ and $\Delta_4=\Delta_5$. 
+The pentagon relation reduces to 
 \begin{align}
  F_{\langle 1,1\rangle, \Delta_{4}} \begin{bmatrix} \Delta_s & \Delta_3\\ \Delta_s & \Delta_3\end{bmatrix} 
  F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix} = 
@@ -3017,7 +3020,7 @@ Moreover, by definition, the fusing matrix is invariant under simpler permutatio
  F_{\Delta_s,\Delta_t}\begin{bmatrix}\Delta_1 & \Delta_4 \\  \Delta_2 & \Delta_3  \end{bmatrix} =
  F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_3 & \Delta_2 \\ \Delta_4 & \Delta_1 \end{bmatrix}  \ .
  \end{align}
- Furthermore, using the pentagon relation where $\mathcal{V}_{\Delta_5}$ is replaced with the identity representation $\mathcal{R}_{\langle 1,1\rangle}$, we find that the inverse fusing matrix can be rewritten in terms of the fusing matrix,
+ Furthermore, using the pentagon relation where $\mathcal{V}_{\Delta_5}$ is replaced with the identity representation $\mathcal{R}_{\langle 1,1\rangle}$, which forces us to set $\Delta_{45}=\Delta_4$, we find using Eq. \eqref{eq:fusid} that the inverse fusing matrix can be rewritten in terms of the fusing matrix,
  \begin{align}
  F^{-1}_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_2 & \Delta_3 \\ \Delta_1 & \Delta_4 \end{bmatrix} = 
  F_{\Delta_s,\Delta_t}\begin{bmatrix} \Delta_4 & \Delta_3 \\ \Delta_1 & \Delta_2 \end{bmatrix} \ .
