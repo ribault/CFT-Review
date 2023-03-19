@@ -1,0 +1,208 @@
+
+
+\documentclass[12pt, a4paper]{article}
+
+\raggedbottom
+
+\RequirePackage[l2tabu, orthodox]{nag}
+
+\usepackage[top=20mm,bottom=20mm,left=25mm,right=25mm]{geometry}
+
+%\usepackage{showkeys}
+
+\usepackage{amsmath,amssymb,amsfonts}
+
+\usepackage{centernot}
+
+\usepackage{underbracket}
+
+\usepackage[nottoc]{tocbibind}
+
+\usepackage{pgf}
+\usepackage{tikz}
+
+\usepackage{multirow}
+
+\usepackage{pgf}
+\usepackage{tikz}
+
+\usepackage{xcolor}
+
+% Syntax: \colorboxed[<color model>]{<color specification>}{<math formula>}
+\newcommand*{\colorboxed}{}
+\def\colorboxed#1#{%
+  \colorboxedAux{#1}%
+}
+\newcommand*{\colorboxedAux}[3]{%
+  % #1: optional argument for color model
+  % #2: color specification
+  % #3: formula
+  \begingroup
+    \colorlet{cb@saved}{.}%
+    \color#1{#2}%
+    \boxed{%
+      \color{cb@saved}%
+      #3%
+    }%
+  \endgroup
+}
+
+\usepackage[most]{tcolorbox}
+
+\tcbset{
+    frame code={}
+    center title,
+    left=0pt,
+    right=0pt,
+    top=0pt,
+    bottom=0pt,
+    colback=green!15,
+    colframe=white,
+    % width=\dimexpr\textwidth\relax,
+    enlarge left by=0mm,
+    % boxsep=5pt,
+    arc=0pt,outer arc=0pt,
+    breakable,
+    }
+
+\usepackage{amsthm}
+
+\usepackage{thmtools}
+%\usepackage{thm-restate}   This package does not interact very smoothly with \theoremstyle and \listoftheorems
+
+\newtheoremstyle{break}{9pt}{9pt}{\itshape}{}{\bfseries}{}{\newline}{}
+\theoremstyle{break}    
+
+\newtheorem{exo}{Exercise}[section]
+\newtheorem{hyp}[exo]{Axiom}
+\newtheorem{res}[exo]{Result}
+\newtheorem{defn}[exo]{Definition}
+
+\makeatletter
+\def\ll@exo{%
+  \protect\numberline{\csname the\thmt@envname\endcsname}%
+  \ifx\@empty\thmt@shortoptarg
+    \thmt@thmname
+  \else
+    \thmt@shortoptarg
+  \fi}
+\def\l@thmt@exo{} 
+\makeatother
+
+\usepackage[colorlinks=true,linktoc=all,linkcolor=black,citecolor=red,urlcolor=blue]{hyperref}
+
+\title{\bfseries Exactly solvable two-dimensional \\ conformal field theories}
+
+\author{Sylvain Ribault \vspace{2mm}
+\\
+{\normalsize CEA Saclay, Institut de Physique Th\'eorique}
+ \\
+ {\footnotesize \ttfamily sylvain.ribault@ipht.fr }
+}
+
+\begin{document}
+
+
+\maketitle
+
+
+\begin{abstract}
+This course will introduce two-dimensional CFT in the bootstrap approach, and sketch the known exactly solvable CFTs with no extended chiral symmetry.
+\begin{itemize}
+ \item The Virasoro algebra, its representations, Ward identities, fusion rules.
+ \item (Generalized) minimal models, Liouville theory, logarithmic minimal models, the $O(n)$ model and more general loop models. Taking limits in the central charge and/or in conformal dimensions. 
+ \item Conformal bootstrap methods, analytic and numerical. Generic and degenerate conformal blocks. Crossing symmetry equations and their solutions. 
+ \item Exactly known structure constants. Analytic properties of correlation functions. 
+\end{itemize}
+\end{abstract}
+
+\vspace{5mm}
+
+
+\textit{
+Could make life easier by renouncing logarithms. But they appear naturally when taking limits, and are in principle needed for solving the $O(n)$ model.}
+
+
+
+
+
+\clearpage
+
+\tableofcontents
+
+\hypersetup{linkcolor=blue}
+
+\numberwithin{equation}{section}
+\setcounter{section}{-1}
+
+\section{Introduction}
+
+CFTs that are exactly solvable with known methods = bootstrap, analytic and numerical. Only Virasoro. Do not characterize with twist gap, as symmetry cannot be inferred from spectrum: chiral symmetry fields might be absent from spectrum. Also, affine abelian symmetry can be present in spectrum but absent in interactions. (Is there a strong statement that unitary CFTs do not have these pathologies?)
+
+Forget Coulomb gas, a dead end. Larger symmetry allows many generalizations, but tend to be always more complicated. (Liouville not solved from WZW, quite the opposite.) No modular bootstrap. 
+
+Exact solution means analytic expression for three-point structure constants. Here: CFTs that are presumed to be solvable, not necessarily solved. 
+
+
+\subsection*{Acknowledgements}
+
+
+%\end{tcolorbox}
+
+\section{The Virasoro algebra, its representations, Ward identities, fusion rules}
+
+i.e. chiral CFT. 
+
+Including logarithmic representations?
+
+But we also need single-valuedness so we can guess spectrums. 
+
+Use low central charge notations ($\beta$ not $b$) because more examples. Rare are solved CFTs with large $c$.
+
+\section{Sketching exactly solvable CFTs}
+
+Start with GMM. Then focus on rational central charge, get MM. If we take limit, we presumably get log-MM. 
+
+Deduce Liouville with $c\leq 1$ by taking a limit. Then get Liouville for generic $c$. Other limits of diag CFT: RWT. Limit of non-diagonal MM.
+
+Then reduce to one degenerate field. Maximal spectrum is $O(n)$. Depends on $\beta^2$, not $c$. Cannot really argue for Potts, but does not matter much. Anyway, at this stage, we know nothing about global symmetry.
+
+Brownian loop soup: presumably has higher symmetry.
+
+Ashkin--Teller does have higher symmetry, solved wrt Virasoro nevertheless.
+
+\section{Bootstrap methods}
+
+\subsection{Analytic bootstrap}
+
+Non-diagonal, simplify it as much as possible. Non-diagonal solution. 
+
+Loop weights are invariant under shifts, left undetermined. 
+
+\subsection{Numerical bootstrap}
+
+Sketch method. Start with Zamolodchikov recursion.
+
+\section{Exact solutions for structure constants}
+
+Deduce analytic properties of correlation functions, and limits of CFTs. 
+
+Do we want a synthetic table of known solutions? 
+
+
+
+\bibliographystyle{cft}
+\bibliography{cft}
+
+%\input{refs.tex}
+
+\end{document}
+
+
+\appendix
+
+
+
+
+\end{document}
+
