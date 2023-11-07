@@ -89,7 +89,13 @@
 \def\l@thmt@exo{} 
 \makeatother
 
-\usepackage[colorlinks=true,linktoc=all,linkcolor=black,citecolor=red,urlcolor=blue]{hyperref}
+\usepackage[colorlinks=true,linktoc=all,linkcolor=black,citecolor=red,urlcolor=blue,backref=page]{hyperref}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\BR@backref}{\newblock}{\newblock(}{}{}
+\patchcmd{\BR@backref}{\par}{)\par}{}{}
+\makeatother
 
 \title{\bfseries Exactly solvable two-dimensional \\ conformal field theories}
 
@@ -122,10 +128,6 @@ This course will introduce two-dimensional CFT in the bootstrap approach, and sk
 \textit{
 Could make life easier by renouncing logarithms. But they appear naturally when taking limits, and are in principle needed for solving the $O(n)$ model.}
 
-
-
-
-
 \clearpage
 
 \tableofcontents
@@ -133,52 +135,103 @@ Could make life easier by renouncing logarithms. But they appear naturally when 
 \hypersetup{linkcolor=blue}
 
 \numberwithin{equation}{section}
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{2}
 \setcounter{section}{-1}
 
 \section{Introduction}
 
+Sketch map of CFTs according to symmetry: deg. fields, no deg. fields, local conf. sym, global conf. sym.
+
 CFTs that are exactly solvable with known methods = bootstrap, analytic and numerical. Only Virasoro. Do not characterize with twist gap, as symmetry cannot be inferred from spectrum: chiral symmetry fields might be absent from spectrum. Also, affine abelian symmetry can be present in spectrum but absent in interactions. (Is there a strong statement that unitary CFTs do not have these pathologies?)
 
-Forget Coulomb gas, a dead end. Larger symmetry allows many generalizations, but tend to be always more complicated. (Liouville not solved from WZW, quite the opposite.) No modular bootstrap. 
+Forget Coulomb gas, a dead end. For correl fct, applies only if we have two deg. fields? But used to find spectrum of $O(n)$ etc. Larger symmetry allows many generalizations, but tend to be always more complicated. (Liouville not solved from WZW, quite the opposite.) No modular bootstrap. 
 
 Exact solution means analytic expression for three-point structure constants. Here: CFTs that are presumed to be solvable, not necessarily solved. 
 
+Focus on correl fct: no modular bootstrap, no KPZ. These methods are efficient at getting the spectrum but we can get it otherwise. 
+
 This review: only necessary calculations. Derive the recursion for blocks? hard part is coef $R_{r,s}$ but it obeys simple shift equations. Rewrite it in terms of Upsilon functions, and somehow derive it from Liouville theory! But cancellation of double poles hard to argue? And need to determine sign, since we get square of $R_{r,s}$. We can choose any value of the continuous parameters including $c$, but is there a value that makes $R_{r,s}$ simple enough? And what about the $\Delta\to\infty$ prefactors? See Yin et al? See Appendix D of \cite{msz15} for the pillow geometry that underlies the variable $q$.
+
+Use low central charge notations ($\beta$ not $b$) because more examples. Rare are solved CFTs with large $c$.
+
+Relation with \cite{rib16}.
 
 \subsection*{Acknowledgements}
 
 
 %\end{tcolorbox}
 
-\section{Algebraic structures}
+\section{Basic structures}
 
-Use low central charge notations ($\beta$ not $b$) because more examples. Rare are solved CFTs with large $c$.
+In this section we will introduce the basic structures of conformal field theory: conformal symmetry, fields, and operator product expansions. In particular we will focus on the two ingredients of exact solvability: \textit{local} conformal symmetry and \textit{degenerate} fields. 
 
-Get fusion for two basic deg. fields from OPE Ward identity. Vanishing NV implies finite fusion is quite easy because descendants (including NV) come with polynomial coefs. Reverse implication is harder, we would need a definition of the fusion product. 
+\subsection{The Virasoro algebra and its representations}
 
-We need log reps. Can deduce them from non-log using degenerate fields. Issue is conceptually less important if we adopt interchiral symmetry, since logarithms only appear for interchiral descendants. 
+\subsubsection{The Virasoro algebra}
 
-To get log reps we need associativity of OPE of degenerate field. We might say that this does not belong to the chiral, algebraic part of the review. However, to get conformal blocks we need associativity of OPEs of the energy-momentum tensor. Again, interchiral point of view changes things! And we need bootstrap axioms, including single-valuedness? 
+Let us consider the Riemann sphere $\overline{\mathbb{C}}=\mathbb{C}\cup \{\infty\}$, equipped with the metric $ds^2 = dzd\bar z$. By definition, a conformal transformation of a Riemannian manifold is a transformation that preserves angles. On any open subset of the Riemann sphere, a map $z\to f(z)$ is conformal if and only if it is holomorphic. It is indeed straightforward to show that any holomorphic map is conformal,
+because it transforms the metric into itself, up to a scalar factor: 
+\begin{align}
+ dzd\bar z\to dfd\bar f = |f'(z)|^2 dzd\bar z\ .
+\end{align}
+The Lie algebra of infinitesimal conformal transformations on $\mathbb{C}^*= \mathbb{C}-\{0\}$ is called the Witt algebra. It is infinite-dimensional, with the basis 
+\begin{align}
+ \left(\ell_n\right)_{n\in\mathbb{Z}}  \quad \text{with} \quad \ell_n = -z^{n+1}\frac{\partial}{\partial z}\ , 
+\end{align}
+and the commutation relations 
+\begin{align}
+ [\ell_n,\ell_m] = (n-m)\ell_{m+n}\ .
+\end{align}
+The generators of the Witt algebra include the translation generator $\ell_{-1} = -\frac{\partial}{\partial z}$, and the dilation generator $\ell_0 = -z\frac{\partial}{\partial z}$. In fact, $(\ell_{-1},\ell_0,\ell_1)$ generate the infinitesimal conformal transformations on the full Riemann sphere.
+The corresponding Lie group is the group of global conformal transformations $PSL_2(\mathbb{C})$, whose elements act as 
+\begin{align}
+ z \mapsto \frac{az+b}{cz+d}\quad , \quad (a,b,c,d\in \mathbb{C},\ ad-bc\neq 0)\ .
+\end{align}
 
-Emergence of logarithms: $\Delta_{P+\frac{\beta}{2}}-\Delta_{P-\frac{\beta}{2}} = \beta P$ integer $\implies P=P_{(0,s)}$. This calculation is a diagonal version of the argument about integer spin that leads to non-diagonal $O(n)$ spectrum.
 
-In $V_{\langle 1,2\rangle}V^N_{(r,0)} = \sum_\pm V^N_{(r,\pm 1)}$ it is not just spins but also dimensions that differ by integers. 
+\subsubsection{Highest-weight representations}
 
-Need we assume that $V^N_{(r,0)}$ is the limit of diagonal fields? Why would we not get $V_{P_{(r,0)}}$? Are there two ways to take the limit? See OPE coefficients. 
+\subsubsection{Null vectors and degenerate representations}
 
-\subsection{The Virasoro algebra and its highest-weight representations}
+\subsection{Fields and operator product expansions}
 
-\subsection{Fields and correlation functions}
+Everything chiral here! And outside correlation functions.
 
-Axioms including single-valuedness, Ward identities. Degenerate fusion. Poles at degenerate channel momentums in OPE. 
+\subsubsection{State-field correspondence}
 
-Do not try to rederive monodromies of BPZ equations! 
+And commutativity of fields.
+
+\subsubsection{Operator product expansion}
+
+OPE Ward identities. Poles at degenerate channel momentums in OPE. 
+
+\subsubsection{Degenerate OPEs and fusion rules}
+
+Degenerate fusion. 
+
+Vanishing NV implies finite fusion is quite easy because descendants (including NV) come with polynomial coefs. Reverse implication is harder, we would need a definition of the fusion product. Or maybe impossible, who know what happens in all possible CFTs? 
+
+\subsection{Conformal symmetry and correlation functions}
+
+\subsubsection{Conformal algebra}
+
+Non-chiral CFT: two times Virasoro.
+
+Representations may not be factorized.
+
+\subsubsection{Interchiral algebra}
+
+\subsubsection{Single-valuedness}
+
 
 \section{Sketching exactly solvable CFTs}
 
 Diagonal fields. Non-diagonal fields. Get logarithmic fields by degenerate fusion.
 
 Start with GMM. Then focus on rational central charge, get MM. If we take limit, we presumably get log-MM. 
+
+Get D-series, can we get E-series? 
 
 Deduce Liouville with $c\leq 1$ by taking a limit. Then get Liouville for generic $c$. Other limits of diag CFT: RWT. Limit of non-diagonal MM.
 
@@ -191,11 +244,13 @@ Ashkin--Teller does have higher symmetry, solved wrt Virasoro nevertheless.
 Criterion for $b^2\in\mathbb{Q}$ limit to become logarithmic? For 4pt function, criterion about vanishing of residues, which depends on fusion rules being obeyed for NV? In MM case we completely escape log. reps, criterion should account for that.  
 For $c>25$, what happens to GMM at rational $b^2$? Concidences of dimensions boil down to $\Delta_{(r,s)}-\Delta_{(r,-s)} \in \mathbb{Z}$ modulo $(p, -q)$. 
 
-\section{Bootstrap methods}
+\section{Conformal bootstrap and conformal blocks}
 
-Notion of interchiral symmetry. Liouville 4pt is only one interchiral block? Same for MM, including non-diagonal. Distinguish double interchiral from simple interchiral, cf nb of deg. fields. 
+Not yet degenerate. 
 
-\subsection{Analytic bootstrap}
+\section{Degenerate four-point functions}
+
+\subsection{BPZ equations and their solutions}
 
 Non-diagonal, simplify it as much as possible. Non-diagonal solution. 
 
@@ -203,11 +258,9 @@ Loop weights are invariant under shifts, left undetermined.
 
 $s\to s+1$ shift equations can be violated, cf Potts model. $s\to s+2$ may be derived from $(1,2)$ deg. field but are always obeyed if $(1,3)$ exists. 
 
-\subsection{Numerical bootstrap}
+Do not try to rederive monodromies of BPZ equations! 
 
-Sketch method. Start with Zamolodchikov recursion.
-
-\section{Exact solutions for structure constants}
+\subsection{Exact solutions for structure constants}
 
 Deduce analytic properties of correlation functions, and limits of CFTs. 
 
@@ -219,6 +272,30 @@ Do we want a synthetic table of known solutions?
  \item $V_{\langle 1,2\rangle}^d$ shift equations $\implies$ $s_i\to s_i+2$  
  \item Parity $\forall i, (r_i,s_i)\to (r_i,-s_i)$, reflection $(r_i,s_i)\to (-r_i,-s_i)$
 \end{itemize}
+
+
+\section{Numerical bootstrap}
+
+Synthesis of what precedes?
+
+Notion of interchiral symmetry. Liouville 4pt is only one interchiral block? Same for MM, including non-diagonal. Distinguish double interchiral from simple interchiral, cf nb of deg. fields. 
+
+Sketch method. Start with Zamolodchikov recursion.
+
+
+\section{Logarithmic representations and fields} 
+
+Not clear where to put this section. Before conformal blocks or after?
+
+We need log reps. Can deduce them from non-log using degenerate fields. Issue is conceptually less important if we adopt interchiral symmetry, since logarithms only appear for interchiral descendants. 
+
+To get log reps we need associativity of OPE of degenerate field. We might say that this does not belong to the chiral, algebraic part of the review. However, to get conformal blocks we need associativity of OPEs of the energy-momentum tensor. Again, interchiral point of view changes things! And we need bootstrap axioms, including single-valuedness? 
+
+Emergence of logarithms: $\Delta_{P+\frac{\beta}{2}}-\Delta_{P-\frac{\beta}{2}} = \beta P$ integer $\implies P=P_{(0,s)}$. This calculation is a diagonal version of the argument about integer spin that leads to non-diagonal $O(n)$ spectrum.
+
+In $V_{\langle 1,2\rangle}V^N_{(r,0)} = \sum_\pm V^N_{(r,\pm 1)}$ it is not just spins but also dimensions that differ by integers. 
+
+Need we assume that $V^N_{(r,0)}$ is the limit of diagonal fields? Why would we not get $V_{P_{(r,0)}}$? Are there two ways to take the limit? See OPE coefficients. 
 
 \bibliographystyle{cft}
 \bibliography{cft}
