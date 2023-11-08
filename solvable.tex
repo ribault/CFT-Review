@@ -8,7 +8,7 @@
 
 \usepackage[top=20mm,bottom=20mm,left=25mm,right=25mm]{geometry}
 
-%\usepackage{showkeys}
+\usepackage{showkeys}
 
 \usepackage{amsmath,amssymb,amsfonts}
 
@@ -97,6 +97,8 @@
 \patchcmd{\BR@backref}{\par}{)\par}{}{}
 \makeatother
 
+\renewcommand{\arraystretch}{1.3}
+
 \title{\bfseries Exactly solvable two-dimensional \\ conformal field theories}
 
 \author{Sylvain Ribault \vspace{2mm}
@@ -135,8 +137,8 @@ Could make life easier by renouncing logarithms. But they appear naturally when 
 \hypersetup{linkcolor=blue}
 
 \numberwithin{equation}{section}
-\setcounter{secnumdepth}{2}
-\setcounter{tocdepth}{2}
+%\setcounter{secnumdepth}{2}
+%\setcounter{tocdepth}{2}
 \setcounter{section}{-1}
 
 \section{Introduction}
@@ -155,7 +157,11 @@ This review: only necessary calculations. Derive the recursion for blocks? hard 
 
 Use low central charge notations ($\beta$ not $b$) because more examples. Rare are solved CFTs with large $c$.
 
+Nothing about unitarity?
+
 Relation with \cite{rib16}.
+
+Words in bold are defined.
 
 \subsection*{Acknowledgements}
 
@@ -164,7 +170,7 @@ Relation with \cite{rib16}.
 
 \section{Basic structures}
 
-In this section we will introduce the basic structures of conformal field theory: conformal symmetry, fields, and operator product expansions. In particular we will focus on the two ingredients of exact solvability: \textit{local} conformal symmetry and \textit{degenerate} fields. 
+In this section we will introduce the basic structures of conformal field theory: conformal symmetry, fields, and operator product expansions. In particular, we will focus on the two ingredients of exact solvability: \textit{local} conformal symmetry and \textit{degenerate} fields. 
 
 \subsection{The Virasoro algebra and its representations}
 
@@ -175,7 +181,12 @@ because it transforms the metric into itself, up to a scalar factor:
 \begin{align}
  dzd\bar z\to dfd\bar f = |f'(z)|^2 dzd\bar z\ .
 \end{align}
-The Lie algebra of infinitesimal conformal transformations on $\mathbb{C}^*= \mathbb{C}-\{0\}$ is called the Witt algebra. It is infinite-dimensional, with the basis 
+Let us define the \textbf{Witt algebra} as the Lie algebra of infinitesimal conformal transformations on $\mathbb{C}^*= \mathbb{C}-\{0\}$. This algebra describes local conformal symmetry for quantum field theory on the Riemann sphere, as can be argued in two alternative ways:
+\begin{itemize}
+ \item Transformations need not be defined at $z=\infty$ because they are local, and can be singular at $z=0$ if we insert a field at that point.
+ \item Holomorphic functions on $\mathbb{C}^*$ are equivalent to holomorphic functions on a neighbourhood of the circle $|z|=1$, which can be interpreted as a Euclidean time slice where the states of our theory live. 
+\end{itemize}
+The Witt algebra is infinite-dimensional, with the basis 
 \begin{align}
  \left(\ell_n\right)_{n\in\mathbb{Z}}  \quad \text{with} \quad \ell_n = -z^{n+1}\frac{\partial}{\partial z}\ , 
 \end{align}
@@ -188,11 +199,134 @@ The corresponding Lie group is the group of global conformal transformations $PS
 \begin{align}
  z \mapsto \frac{az+b}{cz+d}\quad , \quad (a,b,c,d\in \mathbb{C},\ ad-bc\neq 0)\ .
 \end{align}
-
+Now, in a quantum theory, symmetries act projectively on states. And projective representations of an algebra are equivalent to representations of that algebra's central extension. Therefore, the algebra that describes local conformal transformations in conformal field theory is the Witt algebra's central extension, called the Virasoro algebra. The \textbf{Virasoro algebra} $\mathfrak{V}$ has generators $(L_n)_{n\in\mathbb{Z}}$ that correspond to the Witt algebra generators, plus a central generator $\mathbf 1$. The commutation relations are 
+ \begin{align}
+  [\mathbf 1, L_n] = 0 \quad , \quad \boxed{[L_n,L_m] = (n-m)L_{n+m} +\frac{c}{12}(n-1)n(n+1)\delta_{n+m,0}\mathbf 1} \ .
+  \label{vir}
+ \end{align}
+ The \textbf{central charge} $c\in\mathbb{C}$ is a fundamental parameter not only of the Virasoro algebra, but also of any conformal field theory built on that algebra. 
 
 \subsubsection{Highest-weight representations}
 
-\subsubsection{Null vectors and degenerate representations}
+In a conformal field theory, the spectrum is a representation of the Virasoro algebra, and can be decomposed into indecomposable representations. But which indecomposable representations are physically relevant? To answer this question, we will focus on the properties of the generator $L_0$ of the Virasoro algebra. Conceptually, this is because $L_0$ can be interpreted as the energy operator. Technically, since $L_0$ generates dilations, it controls the convergence of operator product expansions, as we will see in Section \ref{sec:ope}. More specifically, a necessary condition for convergence is that the eigenvalues of $L_0$ be bounded from below in any indecomposable representation. We will always work under this assumption.
+
+%We now make the further technical assumption that $L_0$ be diagonalizable. This assumption holds in Liouville theory and minimal models, and also in many representations that appear in other solvable CFTs. However, it does not hold in the logarithmic representations of Section \ref{sec:log}. 
+
+The eigenvalues of $L_0$ are called \textbf{conformal dimensions}. Under the action of the Virasoro generator $L_n$, the conformal dimension decreases by $n$:
+\begin{align}
+ L_0|v\rangle = \Delta|v\rangle \quad \Rightarrow\quad  L_0 L_n|v\rangle = L_nL_0|v\rangle + [L_0, L_n] |v\rangle  = (\Delta-n)L_n|v\rangle \ .
+\end{align}
+In an indecomposable representation $\mathcal{R}$, the $L_0$-eigenstate $|v\rangle$ with the lowest eigenvalue $\Delta$ must therefore be annihilated by $L_{n>0}$:
+\begin{align}
+  L_0 |v\rangle = \Delta |v\rangle \quad , \quad L_{n>0} |v\rangle = 0\ .
+ \end{align}
+Any nonzero state that obeys these conditions is called a \textbf{primary state}, even if its eigenvalue is not the smallest. Any state of the type $\prod_{i=1}^k L_{-n_i} |v\rangle$ with $k\in\mathbb{N}$ and $ 0<n_1\leq \dots \leq n_k$ is called a \textbf{descendant state} of that primary state. Let  $N=\sum_{i=1}^k n_i \in\mathbb{N}$ be the  \textbf{level} of that state, then its conformal dimension is $\Delta+N$. By extension, a linear combination of descendant states is also called a descendant state. 
+
+A primary state $|v\rangle \in \mathcal{R}$ generates a subrepresentation $\mathcal{R}_{|v\rangle}\subset\mathcal{R}$, which is the space of its descendant states. The states $\left\{\prod_{i=1}^k L_{-n_i} |v\rangle\right\}_{0<n_1\leq \dots \leq n_k}$ generate $\mathcal{R}_{|v\rangle}$. If they are linearly independent, then $\mathcal{R}_{|v\rangle}$ is called the \textbf{Verma module} $\mathcal{V}_\Delta$. More generally, $\mathcal{R}_{|v\rangle}$ is a coset of $\mathcal{V}_\Delta$ by a subrepresentation (trivial or not): such cosets are called \textbf{highest-weight representations}. In such a representation, $L_0$ is diagonalizable. 
+Let us sketch a Verma module by displaying all its basis states up to the level $N=3$, with arrows representing the action of the Virasoro generators $L_{-1},L_{-2},L_{-3}$:
+\begin{align}
+ \begin{tikzpicture}[scale = .25, baseline=(current  bounding  box.center)]
+  \draw[-latex, very thick] (20, 0) -- (20, -21) node [right] {$N$};
+  \foreach \x in {0, ..., 3}
+  {
+  \draw [dotted] (-20, {-6*\x}) -- (20, {-6*\x}) node [right] {${\x}$};
+  }
+  \node[fill = white] at (0, 0) (0) {$|v\rangle$};
+  \node[fill = white] at (-4,-6) (1) {$L_{-1}|v\rangle$};
+  \node[fill = white] at (-8, -12) (11) {$L_{-1}^2|v\rangle$};
+  \node[fill = white] at (-12, -18) (111) {$L_{-1}^3|v\rangle$};
+  \node[fill = white] at (0,-12) (2) {$L_{-2}|v\rangle$};
+  \node[fill = white] at (0,-18) (12) {$L_{-1}L_{-2}|v\rangle$};
+  \node[fill = white] at (8,-18) (3) {$L_{-3}|v\rangle$};
+  \draw[-latex] (0) -- (1);
+  \draw[-latex] (1) -- (11);
+  \draw[-latex] (11) -- (111);
+  \draw[-latex] (0) -- (2);
+  \draw[-latex] (0) -- (3);
+  \draw[-latex] (2) -- (12);
+ \end{tikzpicture}
+\end{align}
+
+\subsubsection{Null vectors of Verma modules}
+
+In a representation of the Virasoro algebra, we define a \textbf{null vector} or singular vector as a primary state that is a descendant of another primary state. Null vectors play an important structural role: a highest-weight representation is irreducible if and only if it has no null vector. 
+
+Let us look for null vectors in the Verma module $\mathcal{V}_\Delta$. This can be done level by level, starting with level $1$. That level is generated by a single state $L_{-1}|v\rangle$. To determine whether that state is primary, we take $n\geq 1$ and compute 
+\begin{align}
+L_n L_{-1}|v\rangle = [L_n, L_{-1}] |v\rangle = (n+1) L_{n-1}|v\rangle = 
+\left\{\begin{array}{ll} 0 &  \quad \text{if } n\geq 2\ , \\ 2\Delta |v\rangle & \quad \text{if } n = 1\ . \end{array}\right. 
+\end{align}
+Therefore, $\mathcal{V}_\Delta$ has a null vector at level $1$ if and only if $\Delta=0$. Next, consider the case of level $2$, where we write states as 
+\begin{align}
+ |\chi\rangle = \left(a_{1,1} L_{-1}^2 + a_2 L_{-2}\right) |v\rangle\ ,
+\end{align}
+where $a_{1,1}$ and $a_2$ are complex coefficients. It is easy to show that $L_{n\geq 3}|\chi\rangle=0$, and we compute 
+\begin{align}
+ L_1|\chi\rangle &= \left((4\Delta+2)a_{1,1} + 3a_2\right) L_{-1}|v\rangle\ ,
+\\
+L_2 |\chi \rangle &= \left(6\Delta a_{1,1}+(4\Delta+\tfrac12 c) a_2\right)|v\rangle\ .
+\end{align}
+Therefore, the condition $L_1|\chi\rangle=L_2 |\chi \rangle=0$ for $|\chi\rangle$ to be a null vector boil down to a system of two linear equations for the coefficients $(a_{1,1},a_2)$. The vanishing of that system's determinant determines the conformal dimension $\Delta$ as a function of the central charge $c$,
+\begin{align}
+ \Delta = \frac{1}{16}\left( 5-c\pm\sqrt{(c-1)(c-25)} \right) \ .
+ \label{dpm}
+\end{align}
+Solving CFTs will lead to fairly complicated formulas, which would become even more complicated if we tolerated a square root at this early and elementary stage.
+To get rid of the square root, we rewrite the central charge in terms a the parameter $\beta$ such that 
+\begin{align}
+ \boxed{c = 1- 6\left(\beta - \beta^{-1}\right)^2 } \ .
+\end{align}
+Then the conformal dimensions \eqref{dpm} of the two Verma modules that have null vectors become 
+$
+ \Delta = -\frac12 + \frac34\beta^{\pm 2}
+$. The price to pay for this simplification is that that $\beta$ is ambiguous, since the central charge is invariant under $\beta \to -\beta$ and $\beta \to \beta^{-1}$. 
+
+More generally, the values $\Delta_{\langle r,s\rangle}$ of the conformal dimensions such that $\mathcal{V}_\Delta$ has a null vector at level $N$ are parametrized by pairs $r,s\in \mathbb{N}^*$ such that $rs=N$. For $N=1,2$ we have found 
+\begin{align}
+ \Delta_{\langle 1,1\rangle} = 0 \quad, \quad \Delta_{\langle 2,1\rangle} = -\frac12 + \frac34\beta^2 \quad , \quad \Delta_{\langle 1,2\rangle} = -\frac12 + \frac34 \beta^{-2} \ . 
+\end{align}
+To write the result for any level $N\in\mathbb{N}^*$, we rewrite the conformal dimension in terms of the momentum $P$ defined by 
+\begin{align}
+ \boxed{\Delta = \frac{c-1}{24} + P^2}\ .
+ \label{dp}
+\end{align}
+The conformal dimension is invariant under the \textbf{reflection} $P\to -P$. The dimensions $\Delta_{\langle r,s\rangle}$ correspond to the momentums 
+\begin{align}
+ \boxed{P_{\langle r,s\rangle} = \frac12\left(r\beta -s\beta^{-1}\right)}\ .
+ \label{prs}
+\end{align}
+We will provide a derivation of these formulas using operator product expansions in Section \ref{sec:dope}. For the moment, let us summarize these results, and write the null vectors themselves $|\chi\rangle = L_{\langle r,s\rangle} |v\rangle$ for $N=1,2$:
+\begin{align}
+\begin{array}{|c|c|c|c|}
+\hline 
+N & \langle r,s\rangle & P_{\langle r,s\rangle} &  L_{\langle r,s\rangle} 
+\\
+\hline\hline
+1 & \langle 1,1\rangle & \frac12\left(\beta -\beta^{-1}\right) &  L_{-1}
+\\
+\hline
+\multirow{2}{*}{2} & 
+\langle 2,1\rangle & \frac12\left(2\beta -\beta^{-1}\right)  & L_{-1}^2 -\beta^{2} L_{-2}
+\\
+\cline{2-4}
+& \langle 1,2\rangle & \frac12\left(\beta -2\beta^{-1}\right) & L_{-1}^2 -\beta^{-2} L_{-2} 
+\\
+\hline
+rs & \langle r,s\rangle &  \frac12\left(r\beta -s\beta^{-1}\right) & L_{-1}^{rs} + \cdots 
+\\
+\hline
+\end{array}
+\label{eq:ars}
+\end{align}
+
+
+\subsubsection{Vanishing and non-vanishing null vectors}
+
+... vanishing NVs basis for solvability, provide extra eqn.
+
+
+
+could build reducible rep that is not coset of Verma, for example $\frac{\mathcal{V}_0 \oplus \mathcal{V}_0}{\mathcal{V}_1}$. 
 
 \subsection{Fields and operator product expansions}
 
@@ -202,11 +336,13 @@ Everything chiral here! And outside correlation functions.
 
 And commutativity of fields.
 
-\subsubsection{Operator product expansion}
+\subsubsection{Operator product expansion}\label{sec:ope}
 
 OPE Ward identities. Poles at degenerate channel momentums in OPE. 
 
-\subsubsection{Degenerate OPEs and fusion rules}
+Convergence of OPEs, energy bounded from below.
+
+\subsubsection{Degenerate OPEs and fusion rules}\label{sec:dope}
 
 Degenerate fusion. 
 
@@ -283,7 +419,7 @@ Notion of interchiral symmetry. Liouville 4pt is only one interchiral block? Sam
 Sketch method. Start with Zamolodchikov recursion.
 
 
-\section{Logarithmic representations and fields} 
+\section{Logarithmic representations and fields} \label{sec:log}
 
 Not clear where to put this section. Before conformal blocks or after?
 
