@@ -281,11 +281,11 @@ $
  \Delta = -\frac12 + \frac34\beta^{\pm 2}
 $. The price to pay for this simplification is that that $\beta$ is ambiguous, since the central charge is invariant under $\beta \to -\beta$ and $\beta \to \beta^{-1}$. 
 
-More generally, the values $\Delta_{\langle r,s\rangle}$ of the conformal dimensions such that $\mathcal{V}_\Delta$ has a null vector at level $N$ are parametrized by pairs $r,s\in \mathbb{N}^*$ such that $rs=N$. For $N=1,2$ we have found 
+More generally, there is an infinite family of conformal dimensions $(\Delta_{\langle r,s\rangle})_{r,s\in\mathbb{N}^*}$ such that $\mathcal{V}_{\Delta_{\langle r,s\rangle}}$ has a null vector $|\chi_{\langle r,s\rangle}\rangle $ at level $N=rs$. For $N=1,2$ we have found 
 \begin{align}
  \Delta_{\langle 1,1\rangle} = 0 \quad, \quad \Delta_{\langle 2,1\rangle} = -\frac12 + \frac34\beta^2 \quad , \quad \Delta_{\langle 1,2\rangle} = -\frac12 + \frac34 \beta^{-2} \ . 
 \end{align}
-To write the result for any level $N\in\mathbb{N}^*$, we rewrite the conformal dimension in terms of the momentum $P$ defined by 
+To write $\Delta_{\langle r,s\rangle}$ for any level $N\in\mathbb{N}^*$, we rewrite the conformal dimension in terms of the momentum $P$ defined by 
 \begin{align}
  \boxed{\Delta = \frac{c-1}{24} + P^2}\ .
  \label{dp}
@@ -295,7 +295,7 @@ The conformal dimension is invariant under the \textbf{reflection} $P\to -P$. Th
  \boxed{P_{\langle r,s\rangle} = \frac12\left(r\beta -s\beta^{-1}\right)}\ .
  \label{prs}
 \end{align}
-We will provide a derivation of these formulas using operator product expansions in Section \ref{sec:dope}. For the moment, let us summarize these results, and write the null vectors themselves $|\chi\rangle = L_{\langle r,s\rangle} |v\rangle$ for $N=1,2$:
+We will provide a derivation of $P_{\langle r,s\rangle}$ using operator product expansions in Section \ref{sec:dope}. For the moment, let us summarize these results, including the null vectors themselves for $N=1,2$. We display the operators $L_{\langle r,s\rangle}$ such that null vectors are of the form $|\chi_{\langle r,s\rangle}\rangle = L_{\langle r,s\rangle} |v\rangle$:
 \begin{align}
 \begin{array}{|c|c|c|c|}
 \hline 
@@ -318,9 +318,26 @@ rs & \langle r,s\rangle &  \frac12\left(r\beta -s\beta^{-1}\right) & L_{-1}^{rs}
 \end{array}
 \label{eq:ars}
 \end{align}
+For $\beta^2\in\mathbb{C}-\mathbb{Q}$, the Verma module $\mathcal{V}_\Delta$ has a null vector if and only if $\Delta=\Delta_{\langle r,s\rangle}$ for some $r,s\in\mathbb{N}^*$, in which case it has only one null vector. For $\beta^2\in\mathbb{Q}$ however, there are coincidences of the type $\Delta_{\langle r,s\rangle}=\Delta_{\langle r',s'\rangle}$ with $(r,s)\neq (r',s')$, and Verma modules can have multiple null vectors. In fact, they can have null vectors that are not of the type $|\chi_{\langle r,s\rangle}\rangle= L_{\langle r,s\rangle} |v\rangle$, bur rather  $L_{\langle r'',s''\rangle}L_{\langle r,s\rangle} |v\rangle$.
+
+The structure of Verma modules with multiple null vectors depends a lot on the sign of $\beta^2$. This is because the set $\{\Delta_{\langle r,s\rangle}\}_{r,s\in\mathbb{N}^*}$ is bounded from above if $\beta^2<0$, but not if $\beta^2>0$. However, the null vector always has a larger dimension than its primary state. This results in infinitely many null vectors if $\beta^2>0$ (null vectors of null vectors of null vectors...), and finitely many if $\beta^2<0$. To summarize:
+\begin{align}
+ \begin{array}{|c||c|c|c|}
+  \hline 
+  \text{Value of }\beta^2 & \mathbb{C}-\mathbb{Q} & \mathbb{Q}_{>0} & \mathbb{Q}_{<0}
+  \\
+  \hline 
+  \#\text{null vectors in } \mathcal{V}_{\Delta_{\langle r,s\rangle}} & 1 & \infty & \text{finite} 
+  \\
+  \hline 
+ \end{array}
+\end{align}
+
 
 
 \subsubsection{Vanishing and non-vanishing null vectors}
+
+A Verma module
 
 ... vanishing NVs basis for solvability, provide extra eqn.
 
@@ -362,6 +379,8 @@ Representations may not be factorized.
 
 
 \section{Sketching exactly solvable CFTs}
+
+Use deg. fields rather than torus partition fct. We lose Verlinde formula for fusion rules but we get them otherwise. Our method is more elementary. Degeneracy of fields can be hard to deduce from partition fct. 
 
 Diagonal fields. Non-diagonal fields. Get logarithmic fields by degenerate fusion.
 
