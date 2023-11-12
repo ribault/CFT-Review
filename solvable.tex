@@ -280,92 +280,51 @@ To get rid of the square root, we rewrite the central charge in terms a the para
 Then the conformal dimensions \eqref{dpm} of the two Verma modules that have null vectors become 
 $
  \Delta = -\frac12 + \frac34\beta^{\pm 2}
-$. The price to pay for this simplification is that that $\beta$ is ambiguous, since the central charge is invariant under $\beta \to -\beta$ and $\beta \to \beta^{-1}$. 
+$. The price to pay for this simplification is that the four values $\beta,-\beta,\beta^{-1},-\beta^{-1}$ all correspond to the same central charge. 
 
-More generally, there is an infinite family of conformal dimensions $(\Delta_{(r, s)})_{r,s\in\mathbb{N}^*}$ such that $\mathcal{V}_{\Delta_{(r, s)}}$ has a null vector $|\chi_{\langle r,s\rangle}\rangle $ at level $N=rs$. For $N=1,2$ we have found 
+More generally, there is an infinite family of conformal dimensions $(\Delta_{(r, s)})_{r,s\in\mathbb{N}^*}$ such that $\mathcal{V}_{\Delta_{(r, s)}}$ has a null vector $|\chi_{\langle r,s\rangle}\rangle = L_{\langle r,s\rangle} |v\rangle$ at level $N=rs$. Let us summarize the cases $N=1,2$ in these notations:
 \begin{align}
- \Delta_{(1, 1)} = 0 \quad, \quad \Delta_{(2, 1)} = -\frac12 + \frac34\beta^2 \quad , \quad \Delta_{(1, 2)} = -\frac12 + \frac34 \beta^{-2} \ . 
+\begin{array}{|c|c|c|c|}
+\hline 
+N & (r, s) & \Delta_{(r, s)} &  L_{\langle r,s\rangle} 
+\\
+\hline\hline
+1 & (1, 1) & 0 &  L_{-1}
+\\
+\hline
+\multirow{2}{*}{2} & 
+(2, 1) & -\frac12 + \frac34 \beta^{2}  & L_{-1}^2 -\beta^{2} L_{-2}
+\\
+\cline{2-4}
+& (1, 2) & -\frac12 + \frac34 \beta^{-2} & L_{-1}^2 -\beta^{-2} L_{-2} 
+\\
+\hline
+\end{array}
+\label{eq:ars}
 \end{align}
-To write $\Delta_{(r, s)}$ for any level $N\in\mathbb{N}^*$, we rewrite the conformal dimension in terms of the momentum $P$ defined by 
+To write $\Delta_{(r, s)}$ for any $r,s\in\mathbb{N}^*$, we rewrite the conformal dimension in terms of the momentum $P$ defined by 
 \begin{align}
  \boxed{\Delta = \frac{c-1}{24} + P^2}\ .
  \label{dp}
 \end{align}
 The conformal dimension is invariant under the \textbf{reflection} $P\to -P$. The dimensions $\Delta_{(r, s)}$ correspond to the momentums 
 \begin{align}
- \boxed{P_{(r, s)} = \frac12\left(r\beta -s\beta^{-1}\right)}\ .
+ \boxed{P_{(r, s)} = \frac12\left(r\beta -s\beta^{-1}\right)}\ ,
  \label{prs}
 \end{align}
-We will provide a derivation of $P_{(r, s)}$ using operator product expansions in Section \ref{sec:dope}. For the moment, let us summarize these results, including the null vectors themselves for $N=1,2$. We display the operators $L_{\langle r,s\rangle}$ such that null vectors are of the form $|\chi_{\langle r,s\rangle}\rangle = L_{\langle r,s\rangle} |v\rangle$:
+and it follows that the null vector $|\chi_{\langle r,s\rangle}\rangle$ is a primary state of dimension
 \begin{align}
-\begin{array}{|c|c|c|c|}
-\hline 
-N & (r, s) & P_{(r, s)} &  L_{\langle r,s\rangle} 
-\\
-\hline\hline
-1 & (1, 1) & \frac12\left(\beta -\beta^{-1}\right) &  L_{-1}
-\\
-\hline
-\multirow{2}{*}{2} & 
-(2, 1) & \frac12\left(2\beta -\beta^{-1}\right)  & L_{-1}^2 -\beta^{2} L_{-2}
-\\
-\cline{2-4}
-& (1, 2) & \frac12\left(\beta -2\beta^{-1}\right) & L_{-1}^2 -\beta^{-2} L_{-2} 
-\\
-\hline
-rs & (r, s) &  \frac12\left(r\beta -s\beta^{-1}\right) & L_{-1}^{rs} + \cdots 
-\\
-\hline
-\end{array}
-\label{eq:ars}
-\end{align}
-For $\beta^2\in\mathbb{C}-\mathbb{Q}$, the Verma module $\mathcal{V}_\Delta$ has a null vector if and only if $\Delta=\Delta_{(r, s)}$ for some $r,s\in\mathbb{N}^*$, in which case it has only one null vector. For $\beta^2\in\mathbb{Q}$ however, there are coincidences of the type $\Delta_{(r, s)}=\Delta_{\langle r',s'\rangle}$ with $(r,s)\neq (r',s')$, and Verma modules can have several null vectors: not only several null vectors of the type $|\chi_{\langle r,s\rangle}\rangle= L_{\langle r,s\rangle} |v\rangle$, but also, in addition, null vectors of the type  $L_{\langle r'',s''\rangle}L_{\langle r,s\rangle} |v\rangle$.
-
-
-\begin{align}
- \Delta_{(r, s)} + rs = \Delta_{(r, -s)}\ .
+ \Delta_{(r, s)} + rs = \Delta_{(r, -s)}\ , 
  \label{drms}
 \end{align}
+We will provide a derivation of $P_{(r, s)}$ using operator product expansions in Section \ref{sec:dope}. On the other hand, the expressions for the null vectors $|\chi_{\langle r,s\rangle}\rangle$ themselves are complicated and not particularly useful. 
 
+For $\beta^2\in\mathbb{C}-\mathbb{Q}$, the Verma module $\mathcal{V}_\Delta$ has a null vector if and only if $\Delta=\Delta_{(r, s)}$ for some $r,s\in\mathbb{N}^*$, in which case it has only one null vector. For $\beta^2\in\mathbb{Q}$ however, there are coincidences of the type $\Delta_{(r, s)}=\Delta_{\langle r',s'\rangle}$ with $(r,s)\neq (r',s')$, and Verma modules can have several null vectors: not only several null vectors of the type $|\chi_{\langle r,s\rangle}\rangle= L_{\langle r,s\rangle} |v\rangle$, but also, in addition, null vectors of the type  $L_{\langle r'',s''\rangle}L_{\langle r,s\rangle} |v\rangle$. To see this, let us write $\beta^2 = \frac{q}{p}$ with $p,q$ coprime integers, we then have 
 \begin{align}
  \Delta_{(r+p,s+q)} = \Delta_{(r,s)}\ .
  \label{rpsq}
 \end{align}
-
-
-\begin{align}
- \begin{tikzpicture}[baseline=(base), scale = .5]
- \coordinate (base) at (0, 4);
-  \draw[latex-latex] (0, 10) node [left] {$s$} -- (0, 0) node[below left] {$0$} -- (10, 0) node [below] {$r$};
-  \draw[thick, red, -latex] (0, 0) -- (5, 3);
-  \foreach \r in {1,...,10}{
-  \foreach \s in {1,...,10}{
-  %\pgfmathsetmacro{\mycol}{100-1.8*abs(3*\r-5*\s)}
-  %\filldraw[black!\mycol] (\r, \s) circle [radius = 4pt];
-  \pgfmathsetmacro{\myrad}{6-.1*abs(3*\r-5*\s)}
-  \filldraw (\r, \s) circle [radius = \myrad pt];
-  }}
-  \node at (5, -2) {$\beta^2 = \frac35>0$};
- \end{tikzpicture}
- \qquad 
- \begin{tikzpicture}[baseline=(base), scale = .5]
- \coordinate (base) at (0, 4);
-  \draw[latex-latex] (0, 10) node [left] {$s$} -- (0, 0) node[below left] {$0$} -- (10, 0) node [below] {$r$};
-  \draw[thick, red, -latex] (5, 0) -- (0, 3);
-  \foreach \r in {1,...,10}{
-  \foreach \s in {1,...,10}{
-  %\pgfmathsetmacro{\mycol}{3*\r+5*\s}
-  %\filldraw[black!\mycol] (\r, \s) circle [radius = 4pt];
-  \pgfmathsetmacro{\myrad}{(3*\r+5*\s)/15}
-  \filldraw (\r, \s) circle [radius = \myrad pt];
-  }}
-  \node at (5, -2) {$\beta^2 = -\frac35>0$};
- \end{tikzpicture}
-\end{align}
-
-
-
-The structure of Verma modules with several null vectors depends a lot on the sign of $\beta^2$. This is because the set $\{\Delta_{(r, s)}\}_{r,s\in\mathbb{N}^*}$ is bounded from above if $\beta^2<0$, but not if $\beta^2>0$. However, the null vector always has a larger dimension than its primary state. This results in infinitely many null vectors if $\beta^2>0$, and finitely many if $\beta^2<0$. To summarize:
+This implies not only that the same Verma module can have several null vectors at different levels, but also that a null vector can itself have null vectors, since its dimension \eqref{drms} is in some cases of the type $\Delta_{\langle r'',s''\rangle}$ with $r'',s''\in \mathbb{N}^*$. However, the situation depends a lot on the sign of $\beta^2$. If $\beta^2<0$, then $\{\Delta_{(r, s)}\}_{r,s\in\mathbb{N}^*}$ is bounded from above, and Eq. \eqref{drms} implies that a Verma module can only have finitely many null vectors. If $\beta^2>0$, then by Eq. \eqref{rpsq} the existence of a null vector implies the existence of infinitely many others: 
 \begin{align}
  \begin{array}{|c||c|c|c|}
   \hline 
@@ -376,6 +335,37 @@ The structure of Verma modules with several null vectors depends a lot on the si
   \\
   \hline 
  \end{array}
+\end{align}
+To illustrate the differences between these two cases, let us plot a dot for each $(r,s)\in \{1,\dots, 10\}^2$ whose size increases with 
+$\Delta_{(r,s)}$, together with the vector $(p, q)$ of Eq. \eqref{rpsq} as a red arrow:
+\begin{align}
+ \begin{tikzpicture}[baseline=(base), scale = .5]
+ \coordinate (base) at (0, 4);
+  \draw[latex-latex] (0, 10) node [left] {$s$} -- (0, 0) node[below left] {$0$} -- (10, 0) node [below] {$r$};
+  \draw[thick, red, -latex] (0, 0) -- (5, 3);
+  \foreach \r in {1,...,10}{
+  \foreach \s in {1,...,10}{
+  %\pgfmathsetmacro{\mycol}{100-1.8*abs(3*\r-5*\s)}
+  %\filldraw[black!\mycol] (\r, \s) circle [radius = 4pt];
+  \pgfmathsetmacro{\myrad}{.2+.12*abs(3*\r-5*\s)}
+  \filldraw (\r, \s) circle [radius = \myrad pt];
+  }}
+  \node at (5, -2) {$\beta^2 = \frac35>0$};
+ \end{tikzpicture}
+ \qquad \qquad
+ \begin{tikzpicture}[baseline=(base), scale = .5]
+ \coordinate (base) at (0, 4);
+  \draw[latex-latex] (0, 10) node [left] {$s$} -- (0, 0) node[below left] {$0$} -- (10, 0) node [below] {$r$};
+  \draw[thick, red, -latex] (5, 0) -- (0, 3);
+  \foreach \r in {1,...,10}{
+  \foreach \s in {1,...,10}{
+  %\pgfmathsetmacro{\mycol}{3*\r+5*\s}
+  %\filldraw[black!\mycol] (\r, \s) circle [radius = 4pt];
+  \pgfmathsetmacro{\myrad}{6-(3*\r+5*\s)/15}
+  \filldraw (\r, \s) circle [radius = \myrad pt];
+  }}
+  \node at (5, -2) {$\beta^2 = -\frac35<0$};
+ \end{tikzpicture}
 \end{align}
 
 
