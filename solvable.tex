@@ -158,6 +158,8 @@ This review: only necessary calculations. Derive the recursion for blocks? hard 
 
 Use low central charge notations ($\beta$ not $b$) because more examples. Rare are solved CFTs with large $c$.
 
+define somewhere \textbf{extended chiral algebra}
+
 Nothing about unitarity?
 
 Relation with \cite{rib16}.
@@ -223,7 +225,7 @@ In an indecomposable representation $\mathcal{R}$, the $L_0$-eigenstate $|v\rang
  \end{align}
 Any nonzero state that obeys these conditions is called a \textbf{primary state}, even if its eigenvalue is not the smallest. Any state of the type $\prod_{i=1}^k L_{-n_i} |v\rangle$ with $k\in\mathbb{N}$ and $ 0<n_1\leq \dots \leq n_k$ is called a \textbf{descendant state} of that primary state. Let  $N=\sum_{i=1}^k n_i \in\mathbb{N}$ be the  \textbf{level} of that state, then its conformal dimension is $\Delta+N$. By extension, a linear combination of descendant states is also called a descendant state. 
 
-A primary state $|v\rangle \in \mathcal{R}$ generates a subrepresentation $\mathcal{R}_{|v\rangle}\subset\mathcal{R}$, which is the space of its descendant states. The states $\left\{\prod_{i=1}^k L_{-n_i} |v\rangle\right\}_{0<n_1\leq \dots \leq n_k}$ generate $\mathcal{R}_{|v\rangle}$. If they are linearly independent, then $\mathcal{R}_{|v\rangle}$ is called the \textbf{Verma module} $\mathcal{V}_\Delta$. More generally, $\mathcal{R}_{|v\rangle}$ is a coset of $\mathcal{V}_\Delta$ by a subrepresentation (trivial or not): such cosets are called \textbf{highest-weight representations}. In such a representation, $L_0$ is diagonalizable. 
+A primary state $|v\rangle \in \mathcal{R}$ generates a subrepresentation $\mathcal{R}_{|v\rangle}\subset\mathcal{R}$, which is the space of its descendant states. The states $\left\{\prod_{i=1}^k L_{-n_i} |v\rangle\right\}_{0<n_1\leq \dots \leq n_k}$ generate $\mathcal{R}_{|v\rangle}$. If they are linearly independent, then $\mathcal{R}_{|v\rangle}$ is called the \textbf{Verma module} $\mathcal{V}_\Delta$. More generally, $\mathcal{R}_{|v\rangle}$ is a quotient of $\mathcal{V}_\Delta$ by a subrepresentation (trivial or not): such quotients are called \textbf{highest-weight representations}. In such a representation, $L_0$ is diagonalizable. 
 Let us sketch a Verma module by displaying all its basis states up to the level $N=3$, with arrows representing the action of the Virasoro generators $L_{-1},L_{-2},L_{-3}$:
 \begin{align}
  \begin{tikzpicture}[scale = .25, baseline=(current  bounding  box.center)]
@@ -319,12 +321,16 @@ and it follows that the null vector $|\chi_{\langle r,s\rangle}\rangle$ is a pri
 \end{align}
 We will provide a derivation of $P_{(r, s)}$ using operator product expansions in Section \ref{sec:dope}. On the other hand, the expressions for the null vectors $|\chi_{\langle r,s\rangle}\rangle$ themselves are complicated and not particularly useful. 
 
-For $\beta^2\in\mathbb{C}-\mathbb{Q}$, the Verma module $\mathcal{V}_\Delta$ has a null vector if and only if $\Delta=\Delta_{(r, s)}$ for some $r,s\in\mathbb{N}^*$, in which case it has only one null vector. For $\beta^2\in\mathbb{Q}$ however, there are coincidences of the type $\Delta_{(r, s)}=\Delta_{\langle r',s'\rangle}$ with $(r,s)\neq (r',s')$, and Verma modules can have several null vectors: not only several null vectors of the type $|\chi_{\langle r,s\rangle}\rangle= L_{\langle r,s\rangle} |v\rangle$, but also, in addition, null vectors of the type  $L_{\langle r'',s''\rangle}L_{\langle r,s\rangle} |v\rangle$. To see this, let us write $\beta^2 = \frac{q}{p}$ with $p,q$ coprime integers, we then have 
+For $\beta^2\in\mathbb{C}-\mathbb{Q}$, the Verma module $\mathcal{V}_\Delta$ has a null vector if and only if $\Delta=\Delta_{(r, s)}$ for some $r,s\in\mathbb{N}^*$, in which case it has only one null vector. For $\beta^2\in\mathbb{Q}$ however, a Verma module can have several null vectors. If $\beta^2 = \frac{q}{p}$ with $p,q$ coprime integers, we indeed have the identity
 \begin{align}
- \Delta_{(r+p,s+q)} = \Delta_{(r,s)}\ .
+ \Delta_{(r+p,s+q)} = \Delta_{(r,s)}\ ,
  \label{rpsq}
 \end{align}
-This implies not only that the same Verma module can have several null vectors at different levels, but also that a null vector can itself have null vectors, since its dimension \eqref{drms} is in some cases of the type $\Delta_{\langle r'',s''\rangle}$ with $r'',s''\in \mathbb{N}^*$. However, the situation depends a lot on the sign of $\beta^2$. If $\beta^2<0$, then $\{\Delta_{(r, s)}\}_{r,s\in\mathbb{N}^*}$ is bounded from above, and Eq. \eqref{drms} implies that a Verma module can only have finitely many null vectors. If $\beta^2>0$, then by Eq. \eqref{rpsq} the existence of a null vector implies the existence of infinitely many others: 
+which together with $\Delta_{(r,s)}=\Delta_{(-r,-s)}$ implies infinitely many coincidences of the type $\Delta_{(r,s)}=\Delta_{(r',s')}$. 
+Whenever $r',s'>0$, the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$ has a null vector $|\chi_{\langle r',s'\rangle}\rangle= L_{\langle r',s'\rangle} |v\rangle$. 
+Moreover, if we apply the identity \eqref{rpsq} to the dimension $\Delta_{(r',-s')}$ \eqref{drms} of that null vector, we find that it is itself of the type $\Delta_{\langle r'',s''\rangle}$. If $r'',s''>0$, this leads to another null vector $L_{\langle r'',s''\rangle}L_{\langle r',s'\rangle} |v\rangle$. It turns out that all null vectors of Verma modules are of the type $L_{\langle r',s'\rangle} |v\rangle$ or $L_{\langle r'',s''\rangle}L_{\langle r',s'\rangle} |v\rangle$: in particular, $L_{\langle r''',s'''\rangle}L_{\langle r'',s''\rangle}L_{\langle r',s'\rangle} |v\rangle$ is of the type $L_{\langle r'''',s''''\rangle} |v\rangle$.
+
+ Numbers of null vectors depend a lot on the sign of $\beta^2$. If $\beta^2<0$, then $\{\Delta_{(r, s)}\}_{r,s\in\mathbb{N}^*}$ is bounded from above, and Eq. \eqref{drms} implies that a Verma module can only have finitely many null vectors. If $\beta^2>0$, then by Eq. \eqref{rpsq} the existence of a null vector implies the existence of infinitely many others: 
 \begin{align}
  \begin{array}{|c||c|c|c|}
   \hline 
@@ -370,20 +376,21 @@ $\Delta_{(r,s)}$, together with the vector $(p, q)$ of Eq. \eqref{rpsq} as a red
 
 \subsubsection{Vanishing and non-vanishing null vectors}
 
-When a representation $\mathcal{R}$ has a null vector $|\chi\rangle$, this allows us to define a quotient representation $\frac{\mathcal{R}}{\mathcal{R}_{|\chi\rangle}}$ by setting the null vector to zero. 
-If $\mathcal{R}$ has several null vectors, we can define various quotient representations by setting some null vectors to zero. 
+When a representation $\mathcal{R}$ has a null vector $|\chi\rangle=L|v\rangle$, this allows us to define a quotient representation $\frac{\mathcal{R}}{\mathcal{R}_{|\chi\rangle}}$ by setting the null vector to zero. 
+By an abuse of terminology, we say that $\frac{\mathcal{R}}{\mathcal{R}_{|\chi\rangle}}$ has a \textbf{vanishing null vector}, which really means that the primary state $|v\rangle$ obeys the \textbf{null vector equation} $L|v\rangle=0$. On the other hand, $\mathcal{R}$ itself has a non-vanishing null vector $|\chi\rangle$. 
 
+If $\mathcal{R}$ has several null vectors, we can define various quotient representations by setting some null vectors to zero. A \textbf{degenerate} representation is a representation that has at least one vanishing null vector. A degenerate representation is partly degenerate if it has some non-vanishing null vectors, and fully degenerate if all null vectors vanish. Partly degenerate representations play an important role in CFTs with extended chiral algebras, such as conformal Toda theories \cite{fl07c}. But all degenerate representations that we will consider will be fully degenerate. 
 
-set NV to zero: by abuse of terminology we say that the rep. has a vanishing null vector. 
+For $r,s\in\mathbb{N}^*$, let us call $\mathcal{R}_{\langle r,s\rangle}$ the fully degenerate quotient of the Verma module $\mathcal{V}_{\Delta_{\langle r,s\rangle}}$. If $\beta^2\in \mathbb{C}-\mathbb{Q}$, we simply have 
+\begin{align}
+ \mathcal{R}_{\langle r,s\rangle} \ \underset{\beta^2\in \mathbb{C}-\mathbb{Q}}{=}\ \frac{\mathcal{V}_{\Delta_{\langle r,s\rangle}}}{\mathcal{V}_{\Delta_{\langle r,-s\rangle}}}\ . 
+ \label{rvv}
+\end{align}
+If $\beta^2\in \mathbb{Q}$, the fully degenerate quotient can generally not be obtained by setting one null vector to zero, but it is always enough to set two null vectors to zero, with all other null vectors being descendants of these two. Schematically,
+\begin{align}
+ \mathcal{R}_{\langle r,s\rangle} = \frac{\mathcal{V}_{\Delta_{\langle r,s\rangle}}}{\mathcal{V}_{\Delta_{\langle r',-s'\rangle}}+ \mathcal{V}_{\Delta_{\langle r'',-s''\rangle}}}\ .
+\end{align}
 
-not fully deg reps. play more important role with extended sym. alg, we will say deg. for full deg. 
-
-
-... vanishing NVs basis for solvability, provide extra eqn.
-
-
-
-could build reducible rep that is not coset of Verma, for example $\frac{\mathcal{V}_0 \oplus \mathcal{V}_0}{\mathcal{V}_1}$. 
 
 \subsection{Fields and operator product expansions}
 
