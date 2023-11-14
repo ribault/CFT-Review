@@ -191,7 +191,8 @@ Let us define the \textbf{Witt algebra} as the Lie algebra of infinitesimal conf
 \end{itemize}
 The Witt algebra is infinite-dimensional, with the basis 
 \begin{align}
- \left(\ell_n\right)_{n\in\mathbb{Z}}  \quad \text{with} \quad \ell_n = -z^{n+1}\frac{\partial}{\partial z}\ , 
+ \left(\ell_n\right)_{n\in\mathbb{Z}}  \quad \text{with} \quad \ell_n = -z^{n+1}\frac{\partial}{\partial z}\ ,
+ \label{lpz}
 \end{align}
 and the commutation relations 
 \begin{align}
@@ -394,11 +395,29 @@ If $\beta^2\in \mathbb{Q}$, the fully degenerate quotient can generally not be o
 
 \subsection{Fields and operator product expansions}
 
-Everything chiral here! And outside correlation functions.
+The fundamental objects of conformal field theory are fields. A field $V_{|w\rangle}(z)$ depends on a vector $|w\rangle$ in a space of states $\mathcal{S}$, and on a position $z\in\overline{\mathbb{C}}$ in the Riemann sphere. In the bootstrap approach, which is axiomatic rather than constructive, we need not define fields. Rather, we use fields as convenient notations for stating properties of correlation functions, which we will introduce in Section \ref{sec:cor}. 
 
 \subsubsection{State-field correspondence}
 
-And commutativity of fields.
+We assume that the field $V_{|w\rangle}(z)$ belong to a vector space, such that the \textbf{state-field correspondence} $|w\rangle \to V_{|w\rangle}(z)$ is linear and injective. The Virasoro algebra acts on the space of states, and the state-field correspondence allows us to define its action on fields,
+\begin{align}
+ L_n^{(z)} V_{|w\rangle}(z) = L_n V_{|w\rangle}(z) = V_{L_n|w\rangle}(z)\ ,
+\end{align}
+where $L_n$ is an abbreviated notation for $L_n^{(z)}$. By the correspondence, primary states and descendant states give rise to \textbf{primary fields} and \textbf{descendant fields}. In particular, a primary state $|v\rangle$ of conformal dimension $\Delta$ gives rise to a primary field $V_{|v\rangle}(z)=V_\Delta(z)$, which obeys 
+\begin{align}
+ L_0 V_\Delta(z) = \Delta V_\Delta(z) \quad , \quad  L_{n> 0} V_\Delta(z) = 0 \ .
+ \label{lvdv}
+\end{align}
+If $\Delta=\Delta_{\langle r,s\rangle}$ with $r,s\in \mathbb{N}^*$, the existence of null vectors in the Verma module $\mathcal{V}_\Delta$ makes the definition of $V_\Delta(z)$ a priori ambiguous. In that case, we reserve the name $V_\Delta(z)$ for a primary field that generates $\mathcal{V}_\Delta$, and write $V_{\langle r,s\rangle}(z)$ for a \textbf{degenerate field} that generates the fully degenerate representation $\mathcal{R}_{\langle r,s\rangle}$, and therefore obeys not only Eq. \eqref{lvdv}, but also the null vector equation
+\begin{align}
+L_{\langle r, s\rangle} V_{\langle r,s\rangle}(z) = 0\ .
+\end{align}
+
+Let us now determine how fields depend on $z$, by insisting that the Virasoro generator $L_{-1}$ generates translations, just like its counterpart $\ell_{-1}$ \eqref{lpz} from the Witt algebra:
+\begin{align}
+  \frac{\partial}{\partial z} V(z) = L_{-1} V(z)  \ .
+  \label{pvlv}
+ \end{align}
 
 \subsubsection{Operator product expansion}\label{sec:ope}
 
@@ -412,7 +431,7 @@ Degenerate fusion.
 
 Vanishing NV implies finite fusion is quite easy because descendants (including NV) come with polynomial coefs. Reverse implication is harder, we would need a definition of the fusion product. Or maybe impossible, who know what happens in all possible CFTs? 
 
-\subsection{Conformal symmetry and correlation functions}
+\subsection{Conformal symmetry and interchiral symmetry}
 
 \subsubsection{Conformal algebra}
 
@@ -420,12 +439,20 @@ Non-chiral CFT: two times Virasoro.
 
 Representations may not be factorized.
 
-\subsubsection{Interchiral algebra}
+\subsubsection{Interchiral algebras}
 
-\subsubsection{Single-valuedness}
+\subsection{Correlation functions}\label{sec:cor}
 
+\subsubsection{Single-valuedness and crossing symmetry}
+
+\subsubsection{Conformal Ward identities}
+
+\subsubsection{Conformal blocks}
 
 \section{Sketching exactly solvable CFTs}
+
+What is a CFT? symmetry algebra has fields that may not belong to the space of states. Space of states not very well defined when continuum. 
+
 
 Use deg. fields rather than torus partition fct. We lose Verlinde formula for fusion rules but we get them otherwise. Our method is more elementary. Degeneracy of fields can be hard to deduce from partition fct. 
 
