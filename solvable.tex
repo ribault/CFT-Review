@@ -399,7 +399,7 @@ The fundamental objects of conformal field theory are fields. A field $V_{|w\ran
 
 \subsubsection{State-field correspondence}
 
-We assume that the field $V_{|w\rangle}(z)$ belong to a vector space, such that the \textbf{state-field correspondence} $|w\rangle \to V_{|w\rangle}(z)$ is linear and injective. The Virasoro algebra acts on the space of states, and the state-field correspondence allows us to define its action on fields,
+We assume that the field $V_{|w\rangle}(z)$ belong to a vector space, such that the \textbf{state-field correspondence} $|w\rangle \to V_{|w\rangle}(z)$ is linear and bijective. The Virasoro algebra acts on the space of states, and the state-field correspondence allows us to define its action on fields,
 \begin{align}
  L_n^{(z)} V_{|w\rangle}(z) = L_n V_{|w\rangle}(z) = V_{L_n|w\rangle}(z)\ ,
 \end{align}
@@ -413,13 +413,61 @@ If $\Delta=\Delta_{\langle r,s\rangle}$ with $r,s\in \mathbb{N}^*$, the existenc
 L_{\langle r, s\rangle} V_{\langle r,s\rangle}(z) = 0\ .
 \end{align}
 
-Let us now determine how fields depend on $z$, by insisting that the Virasoro generator $L_{-1}$ generates translations, just like its counterpart $\ell_{-1}$ \eqref{lpz} from the Witt algebra:
+The dependence of fields on the coordinate $z$ is determined by the assumption that the Virasoro generator $L_{-1}$ generates translations, just like its counterpart $\ell_{-1}$ \eqref{lpz} from the Witt algebra:
 \begin{align}
-  \frac{\partial}{\partial z} V(z) = L_{-1} V(z)  \ .
+  \boxed{\frac{\partial}{\partial z} V_{|w\rangle}(z) = L_{-1} V_{|w\rangle}(z)}  \ .
   \label{pvlv}
  \end{align}
+ Applying this to $L_n^{(z)} V_{|w\rangle}(z)$, we find how the Virasoro generator $L_n^{(z)}$ depends on $z$,
+ \begin{align}
+ \frac{\partial}{\partial z} L_n^{(z)} = [L_{-1}^{(z)},L_n^{(z)}]= -(n+1)L_{n-1}^{(z)}\ ,\qquad (\forall n\in\mathbb{Z})\ .
+\end{align}
+This can be rewritten as the $z$-independence of a formal Laurent series that combines all the generators $(L_n^{(z)})_{n\in\mathbb{Z}}$, 
+\begin{align}
+ \frac{\partial}{\partial z} \sum_{n\in\mathbb{Z}} \frac{L_n^{(z)}}{(y-z)^{n+2}} = 0\ ,\qquad (\forall y\in\mathbb{C}-\{z\})\ .
+\end{align}
+This formal Laurent series is then called the \textbf{energy-momentum tensor}, 
+\begin{align}
+  \boxed{T(y) = \sum_{n\in\mathbb{Z}} \frac{L_n^{(z)}}{(y-z)^{n+2}}} \ .
+ \end{align}
+ A priori, this only makes sense when acting on a field $V_{|w\rangle}(z)$,
+ \begin{align}
+ T(y)V_{|w\rangle}(z) = \sum_{n\in\mathbb{Z}} \frac{L_n V_{|w\rangle}(z)}{(y-z)^{n+2}}\quad , \quad L_n V_{|w\rangle}(z) = \frac{1}{2\pi i} \oint_{z}dy\ (y-z)^{n+1} T(y)V_{|w\rangle}(z)\ .
+ \label{eq:lvtv}
+\end{align}
+However, we will shortly interpret $T(y)$ as a field, and $T(y)V_{|w\rangle}(z)$ as an operator product expansion of two fields. For the moment, let us apply this equation to a primary field $V_\Delta(z)$. Using Eq. \eqref{pvlv} and writing the regular terms as $O(1)$, we obtain a new form of the definition of a primary field of dimension $\Delta$,
+\begin{align}
+ \boxed{T(y)V_\Delta(z) = \frac{\Delta}{(y-z)^2} V_\Delta(z) + \frac{1}{y-z} \frac{\partial}{\partial z} V_\Delta(z) + O(1)}\ . 
+ \label{eq:tvd}
+\end{align}
 
-\subsubsection{Operator product expansion}\label{sec:ope}
+\subsubsection{Operator product expansions}\label{sec:ope}
+
+The fundamental axiom of conformal field theory, which underlies the conformal bootstrap approach, is the existence of \textbf{operator product expansions (OPEs)}. This axiom states that there exists a bilinear product on the space of fields. Given a basis $(|w_i\rangle)_i$ of the space of states $\mathcal{S}$, this reads 
+\begin{align}
+  \boxed{V_{|w_1\rangle}(z_1)V_{|w_2\rangle}(z_2) = \sum_i C^i_{12}(z_1,z_2) V_{|w_i\rangle}(z_2)}\ ,
+  \label{ope}
+ \end{align}
+for some coefficients $C^i_{12}(z_1,z_2)$. Operator product expansions generally exist in quantum field theory, but they are particularly powerful in conformal field theory because they are supposed to hold for any $z_1$ in a finite neighbourhood of $z_2$ (but $z_1\neq z_2$), and not just asymptotically as $z_1\to z_2$. The finite neighbourhood in question may depend on the correlation function in which we perform the OPE, and also on the basis $(|w_i\rangle)_i$. 
+
+We further assume that the product of fields is commutative,
+\begin{align}
+ \boxed{V_{|w_1\rangle}(z_1)V_{|w_2\rangle}(z_2) = V_{|w_2\rangle}(z_2)V_{|w_1\rangle}(z_1)}\ .
+\end{align}
+This implies that OPEs are commutative and associative. However, the resulting constraints on the coefficients $C^i_{12}(z_1,z_2)$ are not particularly simple, because of having to choose a position ($z_2$ in our conventions) for the fields in the right-hand side of the OPE \eqref{ope}. 
+
+We also assume that there exists an \textbf{identity field} $I(z)$ whose OPE with any other field is trivial, namely $I(z_1)V_{|w\rangle}(z_2) = V_{|w\rangle}(z_2)$. Let the \textbf{vacuum state} $|\text{vac}\rangle\in \mathcal{S}$ be the corresponding state, i.e. $I(z) = V_{|\text{vac}\rangle}(z)$. Let us consider the energy-momentum tensor $T$ as a field, then we have 
+$
+ T(y)I(z) = T(y) = T(z)  + O(y-z)
+$. 
+Comparing this with Eq. \eqref{eq:lvtv} applied to $I(z)$, we find 
+\begin{align}
+ L_{n\geq -1} I(z) = 0 \quad , \quad T(z) = L_{-2}I(z)\ .
+\end{align}
+In particular, the identity field is a degenerate primary field of conformal dimension zero, with a vanishing null vector at level $1$, i.e. $I(z) \propto V_{\langle 1,1\rangle}(z)$. And the energy-momentum tensor is a descendant of that field.
+
+
+$TT$ OPEs. 
 
 OPE Ward identities. Poles at degenerate channel momentums in OPE. 
 
@@ -446,6 +494,8 @@ Representations may not be factorized.
 \subsubsection{Single-valuedness and crossing symmetry}
 
 \subsubsection{Conformal Ward identities}
+
+Here only we need behaviour of fields at infinity, including $T$?
 
 \subsubsection{Conformal blocks}
 
