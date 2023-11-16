@@ -100,7 +100,7 @@
 
 \renewcommand{\arraystretch}{1.3}
 
-\title{\bfseries Exactly solvable two-dimensional \\ conformal field theories}
+\title{\bfseries Exactly solvable conformal field theories}
 
 \author{Sylvain Ribault \vspace{2mm}
 \\
@@ -303,7 +303,7 @@ N & (r, s) & \Delta_{(r, s)} &  L_{\langle r,s\rangle}
 \\
 \hline
 \end{array}
-\label{eq:ars}
+\label{ars}
 \end{align}
 To write $\Delta_{(r, s)}$ for any $r,s\in\mathbb{N}^*$, we rewrite the conformal dimension in terms of the momentum $P$ defined by 
 \begin{align}
@@ -429,16 +429,17 @@ This can be rewritten as the $z$-independence of a formal Laurent series that co
 This formal Laurent series is then called the \textbf{energy-momentum tensor}, 
 \begin{align}
   \boxed{T(y) = \sum_{n\in\mathbb{Z}} \frac{L_n^{(z)}}{(y-z)^{n+2}}} \ .
+  \label{tl}
  \end{align}
  A priori, this only makes sense when acting on a field $V_{|w\rangle}(z)$,
  \begin{align}
  T(y)V_{|w\rangle}(z) = \sum_{n\in\mathbb{Z}} \frac{L_n V_{|w\rangle}(z)}{(y-z)^{n+2}}\quad , \quad L_n V_{|w\rangle}(z) = \frac{1}{2\pi i} \oint_{z}dy\ (y-z)^{n+1} T(y)V_{|w\rangle}(z)\ .
- \label{eq:lvtv}
+ \label{lvtv}
 \end{align}
 However, we will shortly interpret $T(y)$ as a field, and $T(y)V_{|w\rangle}(z)$ as an operator product expansion of two fields. For the moment, let us apply this equation to a primary field $V_\Delta(z)$. Using Eq. \eqref{pvlv} and writing the regular terms as $O(1)$, we obtain a new form of the definition of a primary field of dimension $\Delta$,
 \begin{align}
  \boxed{T(y)V_\Delta(z) = \frac{\Delta}{(y-z)^2} V_\Delta(z) + \frac{1}{y-z} \frac{\partial}{\partial z} V_\Delta(z) + O(1)}\ . 
- \label{eq:tvd}
+ \label{tvd}
 \end{align}
 
 \subsubsection{Operator product expansions}\label{sec:ope}
@@ -460,14 +461,18 @@ We also assume that there exists an \textbf{identity field} $I(z)$ whose OPE wit
 $
  T(y)I(z) = T(y) = T(z)  + O(y-z)
 $. 
-Comparing this with Eq. \eqref{eq:lvtv} applied to $I(z)$, we find 
+Comparing this with Eq. \eqref{lvtv} applied to $I(z)$, we find 
 \begin{align}
  L_{n\geq -1} I(z) = 0 \quad , \quad T(z) = L_{-2}I(z)\ .
 \end{align}
 In particular, the identity field is a degenerate primary field of conformal dimension zero, with a vanishing null vector at level $1$, i.e. $I(z) \propto V_{\langle 1,1\rangle}(z)$. And the energy-momentum tensor is a descendant of that field.
+OPEs that involve the energy-momentum tensor provide a way of rewriting not only the definition of primary fields \eqref{tvd}, but also the commutation relations of the Virasoro algebra itself: 
+\begin{align}
+ T(y)T(z) = \frac{\frac{c}{2}}{(y-z)^4} + \frac{2T(z)}{(y-z)^2} + \frac{\partial T(z)}{y-z} + O(1)\ .
+\label{tt}
+\end{align}
+Via the definition \eqref{tl} of $T(y)$, this OPE is equivalent to the commutation relations \eqref{vir}.
 
-
-$TT$ OPEs. 
 
 OPE Ward identities. Poles at degenerate channel momentums in OPE. 
 
@@ -496,6 +501,8 @@ Representations may not be factorized.
 \subsubsection{Conformal Ward identities}
 
 Here only we need behaviour of fields at infinity, including $T$?
+
+Get descendants from primaries. We already saw it in OPEs.
 
 \subsubsection{Conformal blocks}
 
