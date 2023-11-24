@@ -128,9 +128,6 @@ This course will introduce two-dimensional CFT in the bootstrap approach, and sk
 \vspace{5mm}
 
 
-\textit{
-Could make life easier by renouncing logarithms. But they appear naturally when taking limits, and are in principle needed for solving the $O(n)$ model.}
-
 \clearpage
 
 \tableofcontents
@@ -212,7 +209,7 @@ Now, in a quantum theory, symmetries act projectively on states. And projective 
  \end{align}
  The \textbf{central charge} $c\in\mathbb{C}$ is a fundamental parameter not only of the Virasoro algebra, but also of any conformal field theory built on that algebra. 
 
-\subsubsection{Highest-weight representations}
+\subsubsection{Highest-weight representations}\label{sec:hwr}
 
 In a conformal field theory, the spectrum is a representation of the Virasoro algebra, and can be decomposed into indecomposable representations. But which indecomposable representations are physically relevant? To answer this question, we will focus on the properties of the generator $L_0$ of the Virasoro algebra. Conceptually, this is because $L_0$ can be interpreted as the energy operator. Technically, since $L_0$ generates dilations, it controls the convergence of operator product expansions, as we will see in Section \ref{sec:ope}. More specifically, a necessary condition for convergence is that the eigenvalues of $L_0$ be bounded from below in any indecomposable representation. We will always work under this assumption.
 
@@ -258,7 +255,7 @@ Let us sketch a Verma module by displaying all its basis states up to the level 
  \end{tikzpicture}
 \end{align}
 
-\subsubsection{Null vectors of Verma modules}
+\subsubsection{Null vectors of Verma modules}\label{sec:nvvm}
 
 In a representation of the Virasoro algebra, we define a \textbf{null vector} or singular vector as a primary state that is a descendant of another primary state. Null vectors play an important structural role: a highest-weight representation is irreducible if and only if it has no null vector. 
 
@@ -269,15 +266,17 @@ L_n L_{-1}|v\rangle = [L_n, L_{-1}] |v\rangle = (n+1) L_{n-1}|v\rangle =
 \end{align}
 Therefore, $\mathcal{V}_\Delta$ has a null vector at level $1$ if and only if $\Delta=0$. Next, consider the case of level $2$, where we write states as 
 \begin{align}
- |\chi\rangle = \left(a_{1,1} L_{-1}^2 + a_2 L_{-2}\right) |v\rangle\ ,
+ |\chi\rangle = \left(a^{L_{-1}^2} L_{-1}^2 + a^{L_{-2}} L_{-2}\right) |v\rangle\ ,
 \end{align}
-where $a_{1,1}$ and $a_2$ are complex coefficients. It is easy to show that $L_{n\geq 3}|\chi\rangle=0$, and we compute 
+where $a^{L_{-1}^2}$ and $a^{L_{-2}}$ are complex coefficients. It is easy to show that $L_{n\geq 3}|\chi\rangle=0$, and we compute 
 \begin{align}
- L_1|\chi\rangle &= \left((4\Delta+2)a_{1,1} + 3a_2\right) L_{-1}|v\rangle\ ,
+ L_1|\chi\rangle &= \left((4\Delta+2)a^{L_{-1}^2} + 3a^{L_{-2}}\right) L_{-1}|v\rangle\ ,
+ \label{l1c}
 \\
-L_2 |\chi \rangle &= \left(6\Delta a_{1,1}+(4\Delta+\tfrac12 c) a_2\right)|v\rangle\ .
+L_2 |\chi \rangle &= \left(6\Delta a^{L_{-1}^2}+(4\Delta+\tfrac12 c) a^{L_{-2}}\right)|v\rangle\ .
+\label{l2c}
 \end{align}
-Therefore, the condition $L_1|\chi\rangle=L_2 |\chi \rangle=0$ for $|\chi\rangle$ to be a null vector boil down to a system of two linear equations for the coefficients $(a_{1,1},a_2)$. The vanishing of that system's determinant determines the conformal dimension $\Delta$ as a function of the central charge $c$,
+Therefore, the condition $L_1|\chi\rangle=L_2 |\chi \rangle=0$ for $|\chi\rangle$ to be a null vector boil down to a system of two linear equations for the coefficients $(a^{L_{-1}^2},a^{L_{-2}})$. The vanishing of that system's determinant determines the conformal dimension $\Delta$ as a function of the central charge $c$,
 \begin{align}
  \Delta = \frac{1}{16}\left( 5-c\pm\sqrt{(c-1)(c-25)} \right) \ .
  \label{dpm}
@@ -480,9 +479,9 @@ OPEs that involve the energy-momentum tensor provide a way of rewriting not only
 \end{align}
 Via the definition \eqref{tl} of $T(y)$, this OPE is equivalent to the commutation relations \eqref{vir}.
 
-\subsubsection{OPE Ward identities and their solutions}
+\subsubsection{Conformal symmetry constraints on OPEs}
 
-Let us work out the consequences of conformal symmetry for OPEs. For technical simplicity, we focus on an OPE of two primary fields. In that OPE, we single out the contributions of a primary field $V_\Delta$ and its descendants:
+For technical simplicity, we focus on an OPE of two primary fields. In that OPE, we single out the contributions of a primary field $V_\Delta$ and its descendants:
 \begin{align}
  V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset \sum_{L\in \mathcal{L}} C_{\Delta_1,\Delta_2}^{\Delta, L}(z_1,z_2) LV_\Delta(z_2) \ ,
 \end{align}
@@ -502,29 +501,113 @@ We distinguish three cases:
  \sum_{L\in\mathcal{L}} C^{\Delta,L}_{\Delta_1,\Delta_2}z_{12}^{|L|+n}(\Delta+|L|+n\Delta_1-\Delta_2) LV_{\Delta}(z_2)= \sum_{L\in\mathcal{L}} C^{\Delta,L}_{\Delta_1,\Delta_2}z_{12}^{|L|}L_n LV_{\Delta}(z_2)\ .
 \end{align}
 \end{itemize}
-This leads to a system of linear equations for the OPE coefficients $C^{\Delta,L}_{\Delta_1,\Delta_2}$, called \textbf{OPE Ward identities}. It turns out that for $\Delta\notin \left\{\Delta_{(r,s)}\right\}_{r,s\in\mathbb{N}^*}$, this system has a unique solution $f^{\Delta,L}_{\Delta_1,\Delta_2}$, assuming that the coefficient of the primary field is normalized as
-$f^{\Delta,1}_{\Delta_1,\Delta_2}=1$. Let us illustrate this claim by deriving the first few coefficients $f^{\Delta,L}_{\Delta_1,\Delta_2}$ with $L\in \{L_{-1},L_{-1}^2,L_{-2}\}$. Let us write the term of order $O(z_{12})$ of the $n=1$ OPE Ward identity, i.e. $L=1$ on the left and $L=L_{-1}$ on the right:
+This leads to a system of linear equations for the OPE coefficients $C^{\Delta,L}_{\Delta_1,\Delta_2}$, called \textbf{OPE Ward identities}. It turns out that for $\Delta\notin \left\{\Delta_{(r,s)}\right\}_{r,s\in\mathbb{N}^*}$, this system has a unique solution $\left(f^{\Delta,L}_{\Delta_1,\Delta_2}\right)_{L\in\mathcal{L}}=\left(f^L\right)_{L\in\mathcal{L}}$, assuming that the coefficient of the primary field is normalized as
+$f^{1}=1$. Let us illustrate this claim by deriving the first few coefficients $f^{L_{-1}},f^{L_{-1}^2},f^{L_{-2}}$. Let us write the term of order $O(z_{12})$ of the $n=1$ OPE Ward identity, i.e. $L=1$ on the left and $L=L_{-1}$ on the right:
 \begin{align}
- (\Delta+\Delta_1-\Delta_2)V_\Delta(z_2) = f^{\Delta,L_{-1}}_{\Delta_1,\Delta_2} L_1L_{-1}V_\Delta(z_2)\ .
+ (\Delta+\Delta_1-\Delta_2)V_\Delta(z_2) = f^{L_{-1}} L_1L_{-1}V_\Delta(z_2)=2\Delta f^{L_{-1}}V_\Delta(z_2)\ .
+ \label{dddv}
 \end{align}
-This determines $f^{\Delta,L_{-1}}_{\Delta_1,\Delta_2}$, except if its coefficient vanishes, which occurs if and only if there is a null vector at level one in the Verma module $\mathcal{V}_\Delta$, i.e. if and only if $\Delta=\Delta_{(1,1)}=0$. In the resulting expression, the null vector manifests itself as a simple pole at $\Delta=0$:
+This determines $f^{L_{-1}}$, except if its coefficient vanishes, which occurs if and only if there is a null vector at level one in the Verma module $\mathcal{V}_\Delta$, i.e. if and only if $\Delta=\Delta_{(1,1)}=0$. In the resulting expression, the null vector manifests itself as a simple pole at $\Delta=0$:
 \begin{align}
- f^{\Delta,L_{-1}}_{\Delta_1,\Delta_2} = \frac{\Delta+\Delta_1-\Delta_2}{2\Delta}\ . 
+ f^{L_{-1}} = \frac{\Delta+\Delta_1-\Delta_2}{2\Delta}\ . 
+ \label{fl1}
 \end{align}
-Similarly, the level two coefficients $f^{\Delta,l_{-1}^2}_{\Delta_1,\Delta_2},f^{\Delta,L_{-2}}_{\Delta_1,\Delta_2}$ are determined by the $O(z_{12}^2)$ terms in the $n=1,2$ OPE Ward identities.
+Similarly, the level two coefficients $f^{L_{-1}^2},f^{L_{-2}}$ are determined by the $O(z_{12}^2)$ terms in the $n=1,2$ OPE Ward identities. If we write $|v\rangle$ the primary state that corresponds to $V_\Delta$, and $|\chi\rangle = \left(f^{L_{-1}^2}L_{-1}^2 + f^{L_{-2}}L_{-2}\right) |v\rangle$, these equations read 
+\begin{align}
+ (\Delta+1+\Delta_1-\Delta_2)f^{L_{-1}}L_{-1}|v\rangle  &= L_1|\chi\rangle\ ,
+ \label{el1c}
+ \\
+ (\Delta+2\Delta_1-\Delta_2)|v\rangle  &=L_2|\chi\rangle \ .
+ \label{el2c}
+\end{align}
+This is a system of linear equations for $f^{L_{-1}^2},f^{L_{-2}}$, whose homogeneous part is the condition that $|\chi\rangle$ be a null vector. This is why the determinant vanishes if and only if $\Delta\in \left\{\Delta_{(2,1)},\Delta_{(1,2)}\right\}$. Otherwise, the solution is unique. 
+
+To summarize, the contributions of $V_\Delta$ and its descendants in an OPE of two primary fields read
+\begin{align}
+ \boxed{V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset  C_{\Delta_1,\Delta_2}^{\Delta} z_{12}^{\Delta-\Delta_1-\Delta_2} \Bigg(V_\Delta(z_2) +\sum_{L\in \mathcal{L}-\{1\}}z_{12}^{|L|} f^{\Delta,L}_{\Delta_1,\Delta_2} LV_\Delta(z_2)\Bigg)}
+ \ ,
+ \label{prope}
+\end{align}
+where the \textbf{OPE structure constant} $C^\Delta_{\Delta_1,\Delta_2}$ is left undetermined by conformal symmetry, while the dependence on $z_1,z_2$ and the coefficients $f^{\Delta,L}_{\Delta_1,\Delta_2}$ are universal quantities that are in principle known. The coefficient $f^{\Delta,L}_{\Delta_1,\Delta_2}$ depends on the conformal dimensions and also on the central charge, and has simple poles at $\Delta=\Delta_{(r,s)}$ with $r,s\in\mathbb{N}^*$ such that $rs\leq |L|$. 
+
+In the case of the OPE coefficients $C^{\Delta,L}_{\Delta_1,\Delta_2}(z_1,z_2)$, we have seen that the primary field determines the contributions of its descendant fields. This will also be true in correlation functions, as a result of Virasoro symmetry. However, this would not necessarily hold if we had a larger chiral symmetry algebra such as a W-algebra. 
+
+The form of the dependence on $z_1,z_2$ provides an a posteriori justification for our assumption in Section \ref{sec:hwr} that $L_0$-eigenvalues be bounded from below. We have indeed seen that a descendant state at level $|L|$ (with $L_0$-eigenvalue $\Delta+|L|$) comes with a factor $z_{12}^{|L|}$. This helps the sum over descendants converge in a neighbourhood of $z_1=z_2$. 
 
 
-summary OPE structure with OPE struct cst... simple pole for generic $c$. 
+\subsubsection{Fusion rules and fusion products}\label{sec:dope}
 
+The appearance of poles in OPE coefficients is a hint that when degenerate conformal dimensions $(\Delta_{(r,s)})_{r,s\in\mathbb{N}^*}$ are involved, there are constraints on the fields that can appear in a given OPE. Let us derive these constraints in the simplest case $\Delta_{(1,1)}=0$. There are two types of primary fields of dimension $0$: the non-degenerate field $V_0$, which generates the Verma module $\mathcal{V}_0$, and the degenerate field $V_{\langle 1,1\rangle}$, which obeys the null vector equation $L_{-1}V_{\langle 1,1\rangle}=\partial V_{\langle 1,1\rangle}=0$ and generates the degenerate representation $\mathcal{R}_{\langle 1,1\rangle}$. While the OPE $V_0(z_1)V_{\Delta_2}(z_2)$ is just a special case of the OPE \eqref{prope}, 
+the null vector equation implies 
+\begin{align}
+ 0 = \frac{\partial}{\partial z_1} V_{\langle 1,1\rangle}(z_1)V_{\Delta_2}(z_2) \supset C_{\langle 1,1\rangle,\Delta_2}^{\Delta} \frac{\partial}{\partial z_1} z_{12}^{\Delta-\Delta_2} \left(V_\Delta(z_2) +\cdots \right) \ ,
+\end{align}
+therefore $V_\Delta$ may appear in $V_{\langle 1,1\rangle}(z_1)V_{\Delta_2}(z_2)$ only provided $\Delta=\Delta_2$. This agrees with the remark (in Section \ref{sec:ope}) that $V_{\langle 1,1\rangle}$ is proportional to the identity field. 
 
+Then let us study the subtler question of whether $V_0$ or $V_{\langle 1,1\rangle}$ may appear in $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$. In the case of $V_0$, the pole of $f^{L_{-1}}$ \eqref{fl1} means that our normalization condition $f^1=1$ was wrong: we in fact have $f^1=0$ while $f^{L_{-1}}\neq 0$. Therefore, the non-vanishing null vector $L_{-1}V_0$ may appear in the OPE, together with its descendants, while $V_0$ itself and its other descendants give vanishing contributions. In the case of $V_{\langle 1,1\rangle}$ however, the null vector vanishes, and no descendant of $V_{\langle 1,1\rangle}$ may appear --- unless the left-hand side of the OPE Ward identity \eqref{dddv} vanishes, which happens if $\Delta_1=\Delta_2$. 
 
-Convergence of OPEs, energy bounded from below.
+Let us introduce the \textbf{fusion rules} as a convenient notation for writing constraints on OPEs, by omitting everything but the primary fields:
+\begin{align}
+ V_{\langle 1,1\rangle} V_{\Delta} = V_\Delta \quad , \quad V_{\Delta_1} V_{\Delta_2} \ni V_{\langle 1,1\rangle} \implies \Delta_1=\Delta_2\ . 
+\end{align}
+In terms of representations of the Virasoro algebra, this can may be rewritten in terms of a \textbf{fusion product} such that 
+\begin{align}
+ \mathcal{R}_{\langle 1,1\rangle} \times \mathcal{V}_\Delta = \mathcal{V}_\Delta \quad , \quad \dim\text{Hom}\left(\mathcal{V}_{\Delta_1}\times \mathcal{V}_{\Delta_2}, \mathcal{R}_{\langle 1,1\rangle}\right) = \delta_{\Delta_1,\Delta_2}\ ,
+ \label{rtv}
+\end{align}
+where $\text{Hom}(\mathcal{R},\mathcal{R}')$ is the space of linear maps from $\mathcal{R}$ to $\mathcal{R}'$ that commute with the action of the Virasoro algebra. 
+Such a fusion product can be algebraically defined \cite{gab99}. It differs from the tensor product, in particular its definition involves the fields' positions, although the resulting product does not. Just like OPEs, the fusion product is commutative and associative. Moreover, as we just saw in the case of Verma modules, we have an isomorphism
+\begin{align}
+ \text{Hom}\left(\mathcal{R},\mathcal{R}'\right) \simeq \text{Hom}\left(\mathcal{R}\times\mathcal{R}',\mathcal{R}_{\langle 1,1\rangle}\right)\ . 
+ \label{hrr}
+\end{align}
 
-\subsubsection{Degenerate OPEs and fusion rules}\label{sec:dope}
+\subsubsection{Fusion products of degenerate representations}
 
-Degenerate fusion. 
+Thanks to the isomorphism \eqref{hrr}, we can find the fusion rules of $V_{\langle 2,1\rangle}$ by studying whether it may appear in an OPE $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$. This amounts to finding whether the two-dimensional linear system \eqref{el1c}, \eqref{el2c} has a solution, even though it is of rank one. With the help of Eq. \eqref{l1c}, \eqref{l2c}, this condition boils down to 
+\begin{align}
+ \left(4\Delta_{\langle 2,1\rangle}+2\right) \left(\Delta_{\langle 2,1\rangle}+¨2\Delta_1-\Delta_2\right) = 3\left(\Delta_{\langle 2,1\rangle}+\Delta_1-\Delta_2\right)\left(\Delta_{\langle 2,1\rangle}+1+\Delta_1-\Delta_2\right)\ .
+\end{align}
+Using the expression \eqref{ars} for $\Delta_{\langle 2,1\rangle}$, and replacing conformal dimensions with momentums \eqref{dp}, this equation reduces to 
+\begin{align}
+ \prod_{\pm,\pm}\left(\tfrac{\beta}{2}\pm P_1\pm P_2\right) = 0\ . 
+\end{align}
+This leads to the fusion rules of $V_{\langle 2,1\rangle}$, from which the fusion rules of $V_{\langle 1,2\rangle}$ are deduced by $\beta\to \beta^{-1}$. We write these fusion rules in terms of fusion products, where we index Verma modules by their momentums:
+\begin{align}
+ \boxed{\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{V}_P = \sum_\pm \mathcal{V}_{P\pm \frac{\beta}{2}}} \quad, \quad \boxed{\mathcal{R}_{\langle 1,2\rangle}\times \mathcal{V}_P = \sum_\pm \mathcal{V}_{P\pm \frac{1}{2\beta}}}\ . 
+ \label{rvvp}
+\end{align}
+From these simple formulas, all the discrete spectrums of Section \ref{sec:sesc} will follow. For the moment, let us deduce the fusion products of higher degenerate representations $\mathcal{R}_{\langle r,s\rangle}$, using the associativity of the fusion product. We start with the remark that a highest-weight representation $\mathcal{R}$ is degenerate if and only if its fusion product with any Verma module $\mathcal{R}\times \mathcal{V}_P$ has finitely many terms:
+\begin{itemize}
+ \item If $\mathcal{R}=\mathcal{R}_{\langle r,s\rangle}$ is degenerate, the condition that $V_{\langle r,s\rangle}$ may appear in the OPE $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$ leads to polynomial equations of order $rs$ on $\Delta_1,\Delta_2$, just as we saw in the case $(r,s)=(2,1)$. 
+ \item If $\mathcal{R}$ is not degenerate, the corresponding primary field may appear in any OPE of the type $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$, because the OPE Ward identities have a unique solution (up to normalization). 
+\end{itemize}
+It follows that a fusion product of degenerate representations is itself a sum of degenerate representations. 
+For example, according to Eq. \eqref{rvvp}, the product $\mathcal{R}_{\langle 2,1\rangle}\times\mathcal{R}_{\langle 2,1\rangle}$ is the sum of two representations of momentums $\{P_{(2,1)} \pm \frac{\beta}{2}\} = \{P_{(1,1)},P_{(3,1)}\}$. These representations must be degenerate, therefore $\mathcal{R}_{\langle 2,1\rangle}\times\mathcal{R}_{\langle 2,1\rangle}=\mathcal{R}_{\langle 1,1\rangle}+\mathcal{R}_{\langle 3,1\rangle}$. By associativity of $\mathcal{R}_{\langle 2,1\rangle}\times\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{V}_P$, we then deduce 
+$
+ \mathcal{R}_{\langle 3,1\rangle} \times \mathcal{V}_P = \mathcal{V}_{P-\beta}+\mathcal{V}_P+\mathcal{V}_{P+\beta}
+$. Iterating this reasoning over $r$ or $s$, we obtain 
+\begin{align}
+ \mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle r,s\rangle} 
+ \underset{r\geq 2}{=} \sum_\pm \mathcal{R}_{\langle r\pm 1,s\rangle} 
+ \quad , \quad 
+ \mathcal{R}_{\langle 1,2\rangle}\times \mathcal{R}_{\langle r,s\rangle} 
+ \underset{s\geq 2}{=}\sum_\pm \mathcal{R}_{\langle r,s\pm 1\rangle} \ .
+ \label{rrrs}
+\end{align}
+This allows us to find the fusion product of any degenerate representation with a Verma module, by iteration over $r$ and $s$:
+\begin{align}
+ \boxed{\mathcal{R}_{\langle r,s\rangle}\times \mathcal{V}_P = \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}} \mathcal{V}_{P+i\beta +j\beta^{-1}}}\ ,
+ \label{rrsvp}
+\end{align}
+where the sums run by increments of $1$. Since this sum has $rs$ terms, the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$ must have a null vector at level $rs$, a result that we admitted in Section \ref{sec:nvvm}, and which we now derived using fusion products. Fusion can even be used to compute the null vectors themselves \cite{fms97}. 
 
-Vanishing NV implies finite fusion is quite easy because descendants (including NV) come with polynomial coefs. Reverse implication is harder, we would need a definition of the fusion product. Or maybe impossible, who know what happens in all possible CFTs? 
+We can then find the fusion product $\mathcal{R}_{\langle r_1,s_1\rangle}\times \mathcal{R}_{\langle r_2,s_2\rangle}$, either by again iterating over $r_1$ and $s_1$, or by summing the degenerate representations whose momentums appear in both  $\mathcal{R}_{\langle r_1,s_1\rangle}\times \mathcal{V}_{P_{(r_2,s_2)}}$ and $\mathcal{R}_{\langle r_2,s_2\rangle}\times \mathcal{V}_{P_{(r_1,s_1)}}$:
+\begin{align}
+  \boxed{\mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle} = \sum_{r\overset{2}{=}|r_1-r_2|+1}^{r_1+r_2-1}\ \sum_{s\overset{2}{=}|s_1-s_2|+1}^{s_1+s_2-1} \mathcal{R}_{\langle r,s \rangle}}\ ,
+  \label{rrsr}
+\end{align}
+where the sums now run by increments of $2$. 
 
 \subsection{Conformal symmetry and interchiral symmetry}
 
@@ -548,7 +631,7 @@ Get descendants from primaries. We already saw it in OPEs.
 
 \subsubsection{Conformal blocks}
 
-\section{Sketching exactly solvable CFTs}
+\section{Sketching exactly solvable CFTs}\label{sec:sesc}
 
 What is a CFT? symmetry algebra has fields that may not belong to the space of states. Space of states not very well defined when continuum. 
 
