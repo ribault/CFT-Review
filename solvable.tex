@@ -172,9 +172,9 @@ Words in bold are defined.
 
 \section{Basic structures}
 
-In this section we will introduce the basic structures of conformal field theory: conformal symmetry, fields, and operator product expansions. In particular, we will focus on the two ingredients of exact solvability: \textit{local} conformal symmetry and \textit{degenerate} fields. 
+In this section we will introduce the basic structures of conformal field theory: conformal symmetry, fields, and operator product expansions. In particular, we will focus on the two ingredients of exact solvability: \textit{local} conformal symmetry and \textit{degenerate} fields. We begin with the Virasoro algebra, which describes local conformal transformations. 
 
-\subsection{The Virasoro algebra and its representations}
+\subsection{The Virasoro algebra and its representations}\label{sec:vir}
 
 \subsubsection{The Virasoro algebra}
 
@@ -399,11 +399,11 @@ If $\beta^2\in \mathbb{Q}$, the fully degenerate quotient can generally not be o
 \end{align}
 
 
-\subsection{Fields and operator product expansions}
+\subsection{Fields and operator product expansions}\label{sec:fope}
 
 The fundamental objects of conformal field theory are fields. A field $V_{|w\rangle}(z)$ depends on a vector $|w\rangle$ in a \textbf{space of states} $\mathcal{S}$, and on a position $z\in\overline{\mathbb{C}}$ in the Riemann sphere. In the bootstrap approach, which is axiomatic rather than constructive, we need not define fields. Rather, we use fields as convenient notations for stating properties of correlation functions, which we will introduce in Section \ref{sec:cor}. 
 
-\subsubsection{State-field correspondence}
+\subsubsection{Fields, primary fields, degenerate fields}
 
 We assume that the field $V_{|w\rangle}(z)$ belong to a vector space, such that the \textbf{state-field correspondence} $|w\rangle \to V_{|w\rangle}(z)$ is linear and bijective. The Virasoro algebra acts on the space of states, and the state-field correspondence allows us to define its action on fields,
 \begin{align}
@@ -609,31 +609,62 @@ We can then find the fusion product $\mathcal{R}_{\langle r_1,s_1\rangle}\times 
 \end{align}
 where the sums now run by increments of $2$. 
 
-\subsection{Conformal symmetry and interchiral symmetry}
-
-until now multivalued cf $z^\Delta$ was chiral sym alg, but want single-valued... 
-
-on top of that include deg. fields in symmetry no longer algebra... do I really have sth to say? interchiral blocks make sense but algebra not really. Unless I can say something on OPE by associativity 
-
-\subsubsection{Conformal algebra}
-
-Non-chiral CFT: two times Virasoro.
-
-Representations may not be factorized.
-
-\subsubsection{Interchiral algebras}
 
 \subsection{Correlation functions}\label{sec:cor}
 
-\subsubsection{Single-valuedness and crossing symmetry}
+Correlation functions are observables of quantum field theory: quantities that we can in principle compute, and compare with experimental data. We will focus on $n$-point functions on the Riemann sphere: functions of $n$ distinct positions $z_1,z_2,\dots, z_n\in \overline{\mathbb{C}}$, which depend on $n$ states $|w_1\rangle,|w_2\rangle,\dots, |w_n\rangle$, and are written in terms of $n$ fields as 
+\begin{align}
+ \Big< V_{|w_1\rangle}(z_1) V_{|w_2\rangle}(z_2) \cdots V_{|w_n\rangle}(z_n)\Big>\ . 
+\end{align}
+Correlation functions are assumed to depend linearly on fields: in particular, this implies $\partial_{z_1}\left<  V_{|w_1\rangle}(z_1) \cdots \right> = \left< \partial_{z_1} V_{|w_1\rangle}(z_1) \cdots \right>$.
+All the assumptions and results of Section \ref{sec:fope} may be understood as constraints on correlation functions. 
+In two-dimensional CFT, there are other observables that we will not consider, such as: 
+\begin{itemize}
+ \item Correlation functions on higher-genus Riemann surfaces, starting with the torus. 
+ \item Correlation functions on Riemann surfaces with boundaries, starting with the disc. 
+ \item Correlation functions in the presence of defect lines. 
+ \item Entanglement entropy. 
+\end{itemize}
 
-\subsubsection{Conformal Ward identities}
+\subsubsection{Single-valuedness and chiral factorization}
 
-Here only we need behaviour of fields at infinity, including $T$?
+We assume that correlation functions are single-valued functions on the Riemann sphere. However, in OPEs \eqref{prope}, we have seen functions of the type of $z^\Delta$, which is multivalued unless $\Delta\in\mathbb{Z}$. Single-valued functions like $|z|^{2\Delta}=z^\Delta\bar{z}^\Delta$ are not written in terms of powers of $z$, but also involve $\bar z$. In the literature, the notation $f(z,\bar z)$ is sometimes used for arbitrary functions of $z$, with $f(z)$ reserved to locally holomorphic functions, i.e. functions such that $\frac{\partial}{\partial \bar z} f(z) =0$. We will not use the notation $f(z,\bar z)$, which is redundant since $\bar z$ is itself a function of $z$. However, the generators $\ell_n$ \eqref{lpz} of local conformal transformations are only valid when acting on locally holomorphic functions: for more general functions, the generators are 
+\begin{align}
+ \ell_n +\bar{\ell}_n \quad , \quad i(\bar\ell_n -\bar \ell_n)\  .
+ \label{epbe}
+\end{align}
+In fact we want the algebra of conformal transformations to act on a complex vector space: the space of complex-valued functions on $\overline{\mathbb{C}}$ for the Witt algebra, the space of states of the CFT for the Virasoro algebra. We should therefore complexify our symmetry algebra, and we obtain two copies of the Virasoro algebra: a \textbf{left-moving or holomorphic} Virasoro algebra $\mathfrak{V}$ with generators $L_n$, and a \textbf{right-moving or antiholomorphic} Virasoro algebra $\bar{\mathfrak{V}}$ with generators $\bar{L}_n$. In the case of the algebra of global conformal transformations, we start with the 6-dimensional real Lie algebra $\mathfrak{sl}_2(\mathbb{C})$, with generators \eqref{epbe} with $n=-1,0,1$, and the complexification yields $\mathfrak{sl}_2(\mathbb{C})^\mathbb{C} = \mathfrak{sl}_2(\mathbb{C})\times \mathfrak{sl}_2(\mathbb{C})$.
+
+In Sections \eqref{sec:vir} and \eqref{sec:ope}, we have been doing \textbf{chiral CFT}, which means considering $\mathfrak{V}$ only. In a full CFT, the symmetry algebra is the \textbf{conformal algebra} $\mathfrak{V}\times \bar{\mathfrak{V}}$, where for simplicity we assume that the left and right central charges are equal. When it comes to representations, Verma modules of $\mathfrak{V}\times \bar{\mathfrak{V}}$ are simply $\mathcal{V}_\Delta\otimes \bar{\mathcal{V}}_{\bar \Delta}$, where we write a bar over representations of $\bar{\mathfrak{V}}$. There are also representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$ that are not themselves factorized. We will encounter such representations in Section \ref{sec:log}. 
+
+Fields now belong to representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$, and they obey $\frac{\partial}{\partial \bar z} V_{|w\rangle}(z) = \bar L_{-1} V_{|w\rangle}(z)$, which is the antiholomorphic version of Eq. \eqref{pvlv}. This allows us to define a right-moving energy-momentum tensor $\bar T(y) = \sum_{n\in\mathbb{Z}} \frac{\bar L_n^{(z)}}{(\bar y-\bar z)^{n+2}}$. While $T$ is locally holomorphic, $\bar T$ is locally antiholomorphic:
+\begin{align}
+ \partial_{\bar z} T(z) = 0 \quad , \quad \partial_z \bar T(z) = 0 \ . 
+\end{align}
+We write $V_{\Delta,\bar\Delta}(z)$ for field that is primary with respect to the conformal algebra, with the left dimension $\Delta$ and the right dimension $\bar\Delta$. The difference of these dimensions is called the \textbf{conformal spin}
+\begin{align}
+ S = \Delta -\bar\Delta\ . 
+ \label{sdd} 
+\end{align}
+A \textbf{spinless field} $V_\Delta(z)=V_{\Delta,\Delta}(z)$ is a primary field whose spin vanishes. The contribution of $V_\Delta$ to the OPE $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$ of two other spinless fields is manifestly single-valued, since by Eq. \eqref{prope} the $z_1,z_2$-dependent prefactor is $|z_{12}|^{2(\Delta-\Delta_1-\Delta_2)}$. However, having spinless fields is not necessary for single-valuedness, as we will now see by studying conformally symmetric correlation functions.  
+
+\subsubsection{Conformal symmetry}
+
+Focus on left-moving first. 
+
+like OPEs: focus on primaries for technical simplicity, insert $T$ to get Ward identities. 
+
+assume behaviour of $T$ at infinity 
 
 Get descendants from primaries. We already saw it in OPEs.
 
-\subsubsection{Conformal blocks}
+Global conformal symmetry. Define fields at infinity. 
+
+1, 2, 3, 4 point functions. Then single-valuedness. Need also permutation symmetry. 
+
+\subsubsection{Crossing symmetry and conformal blocks}
+
+\subsubsection{Calculation of conformal blocks}
 
 \section{Sketching exactly solvable CFTs}\label{sec:sesc}
 
@@ -659,11 +690,10 @@ Ashkin--Teller does have higher symmetry, solved wrt Virasoro nevertheless.
 Criterion for $b^2\in\mathbb{Q}$ limit to become logarithmic? For 4pt function, criterion about vanishing of residues, which depends on fusion rules being obeyed for NV? In MM case we completely escape log. reps, criterion should account for that.  
 For $c>25$, what happens to GMM at rational $b^2$? Concidences of dimensions boil down to $\Delta_{(r,s)}-\Delta_{(r,-s)} \in \mathbb{Z}$ modulo $(p, -q)$. 
 
-\section{Conformal bootstrap and conformal blocks}
-
-Not yet degenerate. 
 
 \section{Degenerate four-point functions}
+
+Could be interpreted as using OPE associativity for $V^{deg}VV$ just like we did for $TVV$ and getting constraints on interchiral descendants. 
 
 \subsection{BPZ equations and their solutions}
 
