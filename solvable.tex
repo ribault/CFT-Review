@@ -147,7 +147,7 @@ CFTs that are exactly solvable with known methods = bootstrap, analytic and nume
 
 Forget Coulomb gas, a dead end. For correl fct, applies only if we have two deg. fields? But used to find spectrum of $O(n)$ etc. Larger symmetry allows many generalizations, but tend to be always more complicated. (Liouville not solved from WZW, quite the opposite.) No modular bootstrap. 
 
-Exact solution means analytic expression for three-point structure constants. Here: CFTs that are presumed to be solvable, not necessarily solved. 
+Exact solution means analytic expression for 3-point structure constants. Here: CFTs that are presumed to be solvable, not necessarily solved. 
 
 Focus on correl fct: no modular bootstrap, no KPZ. These methods are efficient at getting the spectrum but we can get it otherwise. 
 
@@ -461,6 +461,7 @@ for some \textbf{OPE coefficients} $C^i_{12}(z_1,z_2)$. Operator product expansi
 We further assume that the product of fields is commutative,
 \begin{align}
  \boxed{V_{|w_1\rangle}(z_1)V_{|w_2\rangle}(z_2) = V_{|w_2\rangle}(z_2)V_{|w_1\rangle}(z_1)}\ .
+ \label{comm}
 \end{align}
 This implies that OPEs are commutative and associative. However, the resulting constraints on the coefficients $C^i_{12}(z_1,z_2)$ are not particularly simple, because of having to choose a position ($z_2$ in our conventions) for the fields in the right-hand side of the OPE \eqref{ope}. 
 
@@ -669,23 +670,23 @@ Let us solve the global Ward identities in the cases $N=1,2,3,4$. We have $3$ li
  \end{align}
  \item \boxed{$N=2$}\ : Similarly, there are more Ward identities than variables in $Z$, leading to $Z\neq 0\implies \Delta_1=\Delta_2$, and to the solution
  \begin{align}
- \boxed{\Big< V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \Big> \propto \delta_{\Delta_1,\Delta_2} z_{12}^{-2\Delta_1}} \ .
+ \Big< V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \Big> \propto \delta_{\Delta_1,\Delta_2} z_{12}^{-2\Delta_1} \ .
  \label{2pt}
 \end{align}
 \item \boxed{$N=3$}\ : With as many Ward identities as variables, we have a unique solution with no constraints on the conformal dimensions:
 \begin{align}
- \boxed{\left< \prod_{i=1}^3 V_{\Delta_i}(z_i) \right> \propto z_{12}^{\Delta_3-\Delta_1-\Delta_2} z_{13}^{\Delta_2-\Delta_1-\Delta_3} z_{23}^{\Delta_1-\Delta_2-\Delta_3}}\ .
+ \left< \prod_{i=1}^3 V_{\Delta_i}(z_i) \right> \propto z_{12}^{\Delta_3-\Delta_1-\Delta_2} z_{13}^{\Delta_2-\Delta_1-\Delta_3} z_{23}^{\Delta_1-\Delta_2-\Delta_3}\ .
  \label{3pt}
 \end{align}
 \item \boxed{$N=4$}\ : The solution involves an arbitrary function $G(z)$ of the cross-ratio $z=\frac{z_{12}z_{34}}{z_{13}z_{24}}$:
 \begin{align}
  \left< \prod_{i=1}^4 V_{\Delta_i}(z_i) \right> 
- = z_{13}^{-2\Delta_1} z_{23}^{\Delta_1-\Delta_2-\Delta_3+\Delta_4} z_{24}^{-\Delta_1-\Delta_2+\Delta_3-\Delta_4} z_{34}^{\Delta_1+\Delta_2-\Delta_3-\Delta_4} G\left(\frac{z_{12}z_{34}}{z_{13}z_{24}}\right)\ .
+ \propto z_{13}^{-2\Delta_1} z_{23}^{\Delta_1-\Delta_2-\Delta_3+\Delta_4} z_{24}^{-\Delta_1-\Delta_2+\Delta_3-\Delta_4} z_{34}^{\Delta_1+\Delta_2-\Delta_3-\Delta_4} G\left(\frac{z_{12}z_{34}}{z_{13}z_{24}}\right)\ .
  \label{4pt}
 \end{align}
 A four-point function is therefore completely determined by its dependence on $1$ of its $4$ variables. In particular, it can be convenient to choose the fixed values $(z_1,z_2,z_3)=(0,\infty,1)$. Using Eq. \eqref{vdi}, this leads to 
 \begin{align}
- \Big< V_{\Delta_1}(z) V_{\Delta_2}(0)V_{\Delta_3}(\infty)V_{\Delta_4}(1) \Big> = G(z)\ . 
+ \Big< V_{\Delta_1}(z) V_{\Delta_2}(0)V_{\Delta_3}(\infty)V_{\Delta_4}(1) \Big> \propto G(z)\ . 
 \end{align}
 \end{itemize}
 In addition to global Ward identities, there are \textbf{local Ward identities}, which follow from $\oint_\infty dy\ \epsilon(y)Z(y)=0$, where $\epsilon(y)$ is a meromorphic function such that $\epsilon(y)\underset{y\to\infty}{=}O(y^2)$, with poles at $y=z_i$. Local Ward identities allow us to determine correlation functions of descendant fields from the corresponding correlation functions of primary fields, thereby justifying of focus on primary fields. In the case $\epsilon(y) = \frac{1}{(y-z_1)^{n-1}}$ with $n\geq -1$, using the expressions \eqref{zy} for $Z(y)$ and \eqref{lvtv} for $L_{-n}V_{\Delta_1}(z_1)$, we obtain the Ward identity
@@ -697,7 +698,7 @@ If $n\geq 2$ this is a local Ward identity, while for $n=-1,0,1$ we recover glob
 
 \subsubsection{Single-valuedness and chiral factorization}
 
-We assume that correlation functions are single-valued functions on the Riemann sphere. However, in OPEs \eqref{prope}, we have seen functions of the type of $z^\Delta$, which is multivalued unless $\Delta\in\mathbb{Z}$. Single-valued functions like $|z|^{2\Delta}=z^\Delta\bar{z}^\Delta$ are not written in terms of powers of $z$, but also involve $\bar z$. In the literature, the notation $f(z,\bar z)$ is sometimes used for arbitrary functions of $z$, with $f(z)$ reserved to locally holomorphic functions, i.e. functions such that $\frac{\partial}{\partial \bar z} f(z) =0$. We will not use the notation $f(z,\bar z)$, which is redundant since $\bar z$ is itself a function of $z$. However, the generators $\ell_n$ \eqref{lpz} of local conformal transformations are only valid when acting on locally holomorphic functions: for more general functions, the generators are 
+We assume that correlation functions are single-valued functions on the Riemann sphere. However, correlation functions are of the type of $z^\Delta$, which is multivalued unless $\Delta\in\mathbb{Z}$. Single-valued functions like $|z|^{2\Delta}=z^\Delta\bar{z}^\Delta$ are not written in terms of powers of $z$, but also involve $\bar z$. In the literature, the notation $f(z,\bar z)$ is sometimes used for arbitrary functions of $z$, with $f(z)$ reserved to locally holomorphic functions, i.e. functions such that $\frac{\partial}{\partial \bar z} f(z) =0$. We will not use the notation $f(z,\bar z)$, which is redundant since $\bar z$ is itself a function of $z$. However, the generators $\ell_n$ \eqref{lpz} of local conformal transformations are only valid when acting on locally holomorphic functions: for more general functions, the generators are 
 \begin{align}
  \ell_n +\bar{\ell}_n \quad , \quad i(\bar\ell_n -\bar \ell_n)\  .
  \label{epbe}
@@ -715,15 +716,45 @@ We write $V_{\Delta,\bar\Delta}(z)$ for field that is primary with respect to th
  S = \Delta -\bar\Delta\ . 
  \label{sdd} 
 \end{align}
-A \textbf{spinless field} $V_\Delta(z)=V_{\Delta,\Delta}(z)$ is a primary field whose spin vanishes. The contribution of $V_\Delta$ to the OPE $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$ of two other spinless fields is manifestly single-valued, since by Eq. \eqref{prope} the $z_1,z_2$-dependent prefactor is $|z_{12}|^{2(\Delta-\Delta_1-\Delta_2)}$. However, having spinless fields is not necessary for single-valuedness, as we will now see by studying conformally symmetric correlation functions.  
+A \textbf{spinless field} $V_\Delta(z)=V_{\Delta,\Delta}(z)$ is a primary field whose spin vanishes. Spinless fields are often called diagonal, but in Section \ref{sec:sesc} we will define diagonal fields as a subclass of spinless fields. 
 
-Then single-valuedness of correlation functions. Need also permutation symmetry. 
+In order to write correlation functions, let us define the \textbf{modulus squared notation} 
+\begin{align}
+ \left| f(\Delta, z)\right|^2 = f(\Delta, z)f(\bar\Delta,\bar z)\ ,
+ \label{fdz2}
+\end{align}
+where $z,\bar z$ are complex conjugates, while $\Delta,\bar\Delta$ are generally not. The solution of the left- and right-moving global Ward identities for 2-point functions is the modulus squared of Eq. \eqref{2pt},
+\begin{align}
+\boxed{ \Big< V_{\Delta_1,\bar\Delta_1}(z_1)V_{\Delta_2,\bar\Delta_2}(z_2) \Big> = B_{12} \left|\delta_{\Delta_1,\Delta_2} z_{12}^{-2\Delta_1}\right|^2} \ ,
+\label{2ptb}
+\end{align}
+where the constant, $z_i$-independent coefficient is now called the \textbf{2-point structure constant} $B_{12}$. Similarly, 3-point functions are given by the modulus squared of Eq. \eqref{3pt},
+\begin{align}
+ \boxed{  \left< \prod_{i=1}^3 V_{\Delta_i,\bar\Delta_i}(z_i) \right> = C_{123} \left|z_{12}^{\Delta_3-\Delta_1-\Delta_2} z_{13}^{\Delta_2-\Delta_1-\Delta_3} z_{23}^{\Delta_1-\Delta_2-\Delta_3}\right|^2 }\ ,
+ \label{3ptc}
+\end{align}
+where $C_{123}$ is the \textbf{3-point structure constant}. (We are labelling structure constants by indices rather than by conformal dimensions, because there could exist several fields with the same conformal dimensions, although this is not manifest in our notation $V_{\Delta,\bar\Delta}$.) Single-valuedness of the 2-point and 3-point functions implies that spins obey
+\begin{align}
+ S_i\in\frac12 \mathbb{Z} \quad , \quad S_1+S_2+S_3 \in\mathbb{Z}\ . 
+\end{align}
+Now we have assumed that fields commute \eqref{comm}, but the $z_i$-dependent factors of the 2-point and 3-point functions are not invariant under permutations. This leads to the non-trivial behaviour of structure constants,
+\begin{align}
+ B_{21} = (-)^{2S_1} B_{12} \quad ,\quad C_{\sigma(1)\sigma(2)\sigma(3)} = \text{sign}(\sigma)^{S_1+S_2+S_3} C_{123}\ , 
+ \label{b21}
+\end{align}
+where $\sigma$ is a permutation of $\{1,2,3\}$. In particular, for the 2-point function of a field with itself, we have $B_{12}=B_{21}$, which must vanish if the spin is half-integer $S_1\in \frac12+\mathbb{Z}$. Fields with half-integer spins should rather anti-commute with themselves, i.e. they should be fermionic. We will assume that spins are integer unless otherwise stated,
+\begin{align}
+ \boxed{S\in \mathbb{Z}}\ .
+ \label{siz}
+\end{align}
 
 \subsubsection{Crossing symmetry and conformal blocks}
 
 \subsubsection{Calculation of conformal blocks}
 
 \section{Sketching exactly solvable CFTs}\label{sec:sesc}
+
+\textbf{diagonal field}
 
 What is a CFT? symmetry algebra has fields that may not belong to the space of states. Space of states not very well defined when continuum. 
 
