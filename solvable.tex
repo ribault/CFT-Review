@@ -98,7 +98,7 @@
 \patchcmd{\BR@backref}{\par}{)\par}{}{}
 \makeatother
 
-\renewcommand{\arraystretch}{1.3}
+\renewcommand{\arraystretch}{1.5}
 
 \title{\bfseries Exactly solvable conformal field theories}
 
@@ -581,7 +581,12 @@ This leads to the fusion rules of $V_{\langle 2,1\rangle}$, from which the fusio
 \end{align}
 From these simple formulas, all the discrete spectrums of Section \ref{sec:sesc} will follow. For the moment, let us deduce the fusion products of higher degenerate representations $\mathcal{R}_{\langle r,s\rangle}$, using the associativity of the fusion product. We start with the remark that a highest-weight representation $\mathcal{R}$ is degenerate if and only if its fusion product with any Verma module $\mathcal{R}\times \mathcal{V}_P$ has finitely many terms:
 \begin{itemize}
- \item If $\mathcal{R}=\mathcal{R}_{\langle r,s\rangle}$ is degenerate, the condition that $V_{\langle r,s\rangle}$ may appear in the OPE $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$ leads to polynomial equations of order $rs$ on $\Delta_1,\Delta_2$, just as we saw in the case $(r,s)=(2,1)$. 
+ \item If $\mathcal{R}=\mathcal{R}_{\langle r,s\rangle}$ is degenerate, the condition that $V_{\langle r,s\rangle}$ may appear in the OPE $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$ leads to polynomial equations of order $rs$ on $\Delta_1,\Delta_2$, just as we saw in the case $(r,s)=(2,1)$. These equations may be interpreted as conditions on residues of OPE coefficients,
+ \begin{align}
+  V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset V_{\langle r,s\rangle} \quad \implies \quad \forall L\in \mathcal{L},\ \underset{\Delta=\Delta_{(r,s)}}{\operatorname{Res}} f^{\Delta,L}_{\Delta_1,\Delta_2} = 0\ .
+  \label{resf}
+ \end{align}
+ (If the residues vanish for $|L|=rs$, then they vanish for all $L\in\mathcal{L}$.)
  \item If $\mathcal{R}$ is not degenerate, the corresponding primary field may appear in any OPE of the type $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$, because the OPE Ward identities have a unique solution (up to normalization). 
 \end{itemize}
 It follows that a fusion product of degenerate representations is itself a sum of degenerate representations. 
@@ -711,13 +716,11 @@ Fields now belong to representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$,
 \begin{align}
  \partial_{\bar z} T(z) = 0 \quad , \quad \partial_z \bar T(z) = 0 \ . 
 \end{align}
-We write $V_{\Delta,\bar\Delta}(z)$ for field that is primary with respect to the conformal algebra, with the left dimension $\Delta$ and the right dimension $\bar\Delta$. The difference of these dimensions is called the \textbf{conformal spin}
+Let $V_i(z)$ be a field that is primary with respect to the conformal algebra, with the left dimension $\Delta_i$ and the right dimension $\bar\Delta_i$. The difference of these dimensions is called the \textbf{conformal spin}
 \begin{align}
- S = \Delta -\bar\Delta\ . 
+ S_i = \Delta_i -\bar\Delta_i\ . 
  \label{sdd} 
 \end{align}
-A \textbf{spinless field} $V_\Delta(z)=V_{\Delta,\Delta}(z)$ is a primary field whose spin vanishes. Spinless fields are often called diagonal, but in Section \ref{sec:sesc} we will define diagonal fields as a subclass of spinless fields. 
-
 In order to write correlation functions, let us define the \textbf{modulus squared notation} 
 \begin{align}
  \left| f(\Delta, z)\right|^2 = f(\Delta, z)f(\bar\Delta,\bar z)\ ,
@@ -725,19 +728,19 @@ In order to write correlation functions, let us define the \textbf{modulus squar
 \end{align}
 where $z,\bar z$ are complex conjugates, while $\Delta,\bar\Delta$ are generally not. The solution of the left- and right-moving global Ward identities for 2-point functions is the modulus squared of Eq. \eqref{2pt},
 \begin{align}
-\boxed{ \Big< V_{\Delta_1,\bar\Delta_1}(z_1)V_{\Delta_2,\bar\Delta_2}(z_2) \Big> = B_{12} \left|\delta_{\Delta_1,\Delta_2} z_{12}^{-2\Delta_1}\right|^2} \ ,
+\boxed{ \Big< V_1(z_1)V_2(z_2) \Big> = B_{12} \left|\delta_{\Delta_1,\Delta_2} z_{12}^{-2\Delta_1}\right|^2} \ ,
 \label{2ptb}
 \end{align}
 where the constant, $z_i$-independent coefficient is now called the \textbf{2-point structure constant} $B_{12}$. Similarly, 3-point functions are given by the modulus squared of Eq. \eqref{3pt},
 \begin{align}
- \boxed{  \left< \prod_{i=1}^3 V_{\Delta_i,\bar\Delta_i}(z_i) \right> = C_{123} \left|z_{12}^{\Delta_3-\Delta_1-\Delta_2} z_{13}^{\Delta_2-\Delta_1-\Delta_3} z_{23}^{\Delta_1-\Delta_2-\Delta_3}\right|^2 }\ ,
+ \boxed{  \Big< V_1(z_1)V_2(z_2)V_3(z_3) \Big> = C_{123} \left|z_{12}^{\Delta_3-\Delta_1-\Delta_2} z_{13}^{\Delta_2-\Delta_1-\Delta_3} z_{23}^{\Delta_1-\Delta_2-\Delta_3}\right|^2 }\ ,
  \label{3ptc}
 \end{align}
-where $C_{123}$ is the \textbf{3-point structure constant}. (We are labelling structure constants by indices rather than by conformal dimensions, because there could exist several fields with the same conformal dimensions, although this is not manifest in our notation $V_{\Delta,\bar\Delta}$.) Single-valuedness of the 2-point and 3-point functions implies that spins obey
+where $C_{123}$ is the \textbf{3-point structure constant}. Single-valuedness of the 2-point and 3-point functions implies that spins obey
 \begin{align}
  S_i\in\frac12 \mathbb{Z} \quad , \quad S_1+S_2+S_3 \in\mathbb{Z}\ . 
 \end{align}
-Now we have assumed that fields commute \eqref{comm}, but the $z_i$-dependent factors of the 2-point and 3-point functions are not invariant under permutations. This leads to the non-trivial behaviour of structure constants,
+Now we have assumed that fields commute \eqref{comm}, but the $z_i$-dependent factors of the 2-point and 3-point functions are not invariant under permutations. This implies that structure constants behave as
 \begin{align}
  B_{21} = (-)^{2S_1} B_{12} \quad ,\quad C_{\sigma(1)\sigma(2)\sigma(3)} = \text{sign}(\sigma)^{S_1+S_2+S_3} C_{123}\ , 
  \label{b21}
@@ -750,9 +753,84 @@ where $\sigma$ is a permutation of $\{1,2,3\}$. In particular, for the 2-point f
 
 \subsubsection{Crossing symmetry and conformal blocks}
 
-\subsubsection{Calculation of conformal blocks}
+Let us systematically use OPEs for simplifying correlation functions. Knowing the contribution \eqref{prope} of left-moving descendants of primary fields, the complete OPE of two primary fields reads 
+\begin{align}
+ V_1(z_1)V_2(z_2) = \sum_{k\in\mathcal{S}} C_{12}^k \left|z_{12}^{\Delta_k-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} z_{12}^{|L|}f_{\Delta_1,\Delta_2}^{\Delta_k,L}\right|^2 V_k(z_2)\ ,
+\end{align}
+where we assume that all fields are primaries or descendants thereof, and redefine the spectrum $\mathcal{S}$ as a basis of primaries. Let us insert this OPE in a three-point function, and focus on the leading terms as $z_1\to z_2$. Using the 2-point function \eqref{2ptb}, we obtain
+\begin{align}
+  \Big< V_1(z_1)V_2(z_2)V_3(z_3) \Big> \underset{z_1\to z_2}{\sim} 
+  \left|z_{12}^{\Delta_3-\Delta_1-\Delta_2}z_{23}^{-2\Delta_3}\right|^2 
+  \sum_{k\in\mathcal{S}\left|\substack{\Delta_3=\Delta_k\\ \bar{\Delta}_3=\bar\Delta_k}\right. }
+  C_{12}^k B_{k3}\ .
+\end{align}
+Comparing with the 3-point function \eqref{3ptc}, this implies a relation between the 2-point, 3-point and OPE structure constants, 
+\begin{align}
+ \boxed{C_{123} = C_{12}^k B_{k3}}\ .
+ \label{ccb}
+\end{align}
+If the basis of fields is such that $B_{ij}=\delta_{ij}B_i$, and in particular if two different primary fields never share the same conformal dimensions, the sum over $k$ reduces to one term, and the relation reduces to $C_{123} = C_{12}^3B_{3}$. 
+
+Let us insert the OPE in the four-point function $Z=\left<V_1(z)V_2(0)V_3(\infty)V_4(1)\right>$. This reduces $Z$ to a linear combination of 3-point functions of the type $\left<L\bar{L}V_k(0) V_3(\infty)V_4(1)\right>$ with $L,\bar L\in\mathcal{L}$. Deducing 3-point functions of descendants from 3-point functions of primaries using local Ward identities, we can in principle compute the ratios
+\begin{align}
+ g^L_{\Delta_1,\Delta_2,\Delta_3} = \frac{\left< LV_{\Delta_1}(0) V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right>}{\left< V_{\Delta_1}(0) V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right>}\ .
+\end{align}
+This allows us to write our 4-point function as 
+\begin{align}
+ \boxed{\Big<V_1(z)V_2(0)V_3(\infty)V_4(1)\Big> = \sum_{k\in\mathcal{S}} C_{12}^k C_{k34} \left|\mathcal{F}^{(s)}_{\Delta_k}\left(c\middle|\Delta_1,\Delta_2,\Delta_3,\Delta_4\middle|z\right)\right|^2}  \ ,
+ \label{sdec}
+\end{align}
+where we introduce the \textbf{$s$-channel Virasoro blocks}, which are known (in principle) functions of $z$ as well as the central charge and conformal dimensions:
+\begin{align}
+ \mathcal{F}_{\Delta}^{(s)}\left(c\middle|\Delta_1,\Delta_2,\Delta_3,\Delta_4\middle|z\right) = z^{\Delta-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} z^{|L|} f_{\Delta_1,\Delta_2}^{\Delta,L}g^L_{\Delta,\Delta_3,\Delta_4}\ ,
+ \label{fsl}
+\end{align}
+The $s$-channel decomposition \eqref{sdec} reduces the 4-point function to a combination of model-dependent structure constants, and universal Virasoro blocks. Repeatedly using OPEs, any $N$-point function can likewise be decomposed into $N$-point Virasoro blocks. However, these decompositions are not unique. In the case $N=4$, there are 3 possible decompositions, called the \textbf{$s$-channel}, \textbf{$t$-channel} and \textbf{$u$-channel} decompositions, depending on which OPE we perform. For each channel, let us write the relevant OPE, the \textbf{4-point structure constants} that appear as coefficients, the asymptotics of the Virasoro blocks, and a diagram that represents the decomposition:
+\begin{align}
+ \begin{array}{|r||c|c|c|}
+  \hline 
+  \text{Channel} & s & t & u
+  \\ \hline 
+  \text{OPE} & V_1(z)V_2(0) & V_1(z)V_4(1) & V_1(z)V_3(\infty)
+  \\ \hline 
+  \text{4-point} & D^{(s)}_k = C_{12}^k C_{k34} & D^{(t)}_k = C_{41}^k C_{k23} & D^{(u)}_k = C_{13}^k C_{k42}
+\\ \hline 
+  \text{Asymptotics} & \mathcal{F}^{(s)}_{\Delta}\underset{z\to 0}{\sim} z^{\Delta-\Delta_1-\Delta_2} & \mathcal{F}^{(t)}_{\Delta}\underset{z\to 1}{\sim} (1-z)^{\Delta-\Delta_1-\Delta_4}
+  & \mathcal{F}^{(u)}_\Delta  \underset{z\to \infty}{\sim} \left(\tfrac{1}{z}\right)^{\Delta+\Delta_1-\Delta_3}
+  \\
+  \hline 
+ \end{array}
+ \label{stu}
+\end{align}
+
+
+
+where the \textbf{$s$-channel conformal block} $\mathcal{G}^{(s)}_{\Delta_k}$ is a  With our assumption that all fields are primaries or descendants, conformal blocks are chirally factorized into \textbf{$s$-channel Virasoro blocks}
+
+namely we have 
+\begin{align}
+ \mathcal{G}^{(s)}_{\Delta_k} = \left|\mathcal{F}_{\Delta_k}^{(s)}\right|^2 \ . 
+ \label{gf2}
+\end{align}
+
+\begin{align}
+ Z = \sum_{k\in\mathcal{S}} D_k^{(s)} \mathcal{G}^{(s)}_{\Delta_k}
+\end{align}
+
+
+
+Then 4pt that depends on $z$. 3 inequivalent decompositions, start with $s$-channel. Non-chiral blocks! Chiral factorization of blocks, with abstract formula for Virasoro blocks as sums over descendants. 
+
+Equality of channels, crossing symmetry equations for struct. csts and spectrum. Channel-dependent spectrums. Spectrum arbitrariness. 
+
+Not just linear, due to factorization. But 
+4-point factorization not true if multiplicities, so not that constraining. 
+
+CFT data 
 
 \section{Sketching exactly solvable CFTs}\label{sec:sesc}
+
+A \textbf{spinless field} is a primary field whose spin vanishes. Spinless fields are often called diagonal, but in Section \ref{sec:sesc} we will define diagonal fields as a subclass of spinless fields. 
 
 \textbf{diagonal field}
 
@@ -777,6 +855,8 @@ Ashkin--Teller does have higher symmetry, solved wrt Virasoro nevertheless.
 
 Criterion for $b^2\in\mathbb{Q}$ limit to become logarithmic? For 4pt function, criterion about vanishing of residues, which depends on fusion rules being obeyed for NV? In MM case we completely escape log. reps, criterion should account for that.  
 For $c>25$, what happens to GMM at rational $b^2$? Concidences of dimensions boil down to $\Delta_{(r,s)}-\Delta_{(r,-s)} \in \mathbb{Z}$ modulo $(p, -q)$. 
+
+How much to say about limits? Reread my results on limits of 4pt functions, try to infer general rules on appearance of logarithms, depending on fusion rules?
 
 
 \section{Degenerate four-point functions}
@@ -814,6 +894,8 @@ Synthesis of what precedes?
 Notion of interchiral symmetry. Liouville 4pt is only one interchiral block? Same for MM, including non-diagonal. Distinguish double interchiral from simple interchiral, cf nb of deg. fields. 
 
 Sketch method. Start with Zamolodchikov recursion.
+
+\subsection{Virasoro conformal blocks and Zamolodchikov's recursion}
 
 
 \section{Logarithmic representations and fields} \label{sec:log}
