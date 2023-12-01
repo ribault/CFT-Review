@@ -771,7 +771,7 @@ Comparing with the 3-point function \eqref{3ptc}, this implies a relation betwee
 \end{align}
 If the basis of fields is such that $B_{ij}=\delta_{ij}B_i$, and in particular if two different primary fields never share the same conformal dimensions, the sum over $k$ reduces to one term, and the relation reduces to $C_{123} = C_{12}^3B_{3}$. 
 
-Let us insert the OPE in the four-point function $Z=\left<V_1(z)V_2(0)V_3(\infty)V_4(1)\right>$. This reduces $Z$ to a linear combination of 3-point functions of the type $\left<L\bar{L}V_k(0) V_3(\infty)V_4(1)\right>$ with $L,\bar L\in\mathcal{L}$. Deducing 3-point functions of descendants from 3-point functions of primaries using local Ward identities, we can in principle compute the ratios
+Inserting the OPE in the four-point function $\left<V_1(z)V_2(0)V_3(\infty)V_4(1)\right>$, we obtain a linear combination of 3-point functions of the type $\left<L\bar{L}V_k(0) V_3(\infty)V_4(1)\right>$ with $L,\bar L\in\mathcal{L}$. Deducing 3-point functions of descendants from 3-point functions of primaries using local Ward identities, we can in principle compute the ratios
 \begin{align}
  g^L_{\Delta_1,\Delta_2,\Delta_3} = \frac{\left< LV_{\Delta_1}(0) V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right>}{\left< V_{\Delta_1}(0) V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right>}\ .
 \end{align}
@@ -790,13 +790,16 @@ The $s$-channel decomposition \eqref{sdec} reduces the 4-point function to a com
  \begin{array}{|r||c|c|c|}
   \hline 
   \text{Channel} & s & t & u
-  \\ \hline 
+  \\ \hline\hline 
   \text{OPE} & V_1(z)V_2(0) & V_1(z)V_4(1) & V_1(z)V_3(\infty)
   \\ \hline 
   \text{4-point} & D^{(s)}_k = C_{12}^k C_{k34} & D^{(t)}_k = C_{41}^k C_{k23} & D^{(u)}_k = C_{13}^k C_{k42}
 \\ \hline 
   \text{Asymptotics} & \mathcal{F}^{(s)}_{\Delta}\underset{z\to 0}{\sim} z^{\Delta-\Delta_1-\Delta_2} & \mathcal{F}^{(t)}_{\Delta}\underset{z\to 1}{\sim} (1-z)^{\Delta-\Delta_1-\Delta_4}
   & \mathcal{F}^{(u)}_\Delta  \underset{z\to \infty}{\sim} \left(\tfrac{1}{z}\right)^{\Delta+\Delta_1-\Delta_3}
+  \\
+  \hline 
+\text{Diagram} & & & 
   \\
   \hline 
  \end{array}
@@ -814,7 +817,7 @@ namely we have
 \end{align}
 
 \begin{align}
- Z = \sum_{k\in\mathcal{S}} D_k^{(s)} \mathcal{G}^{(s)}_{\Delta_k}
+ \sum_{k\in\mathcal{S}} D_k^{(s)} \mathcal{G}^{(s)}_{\Delta_k}
 \end{align}
 
 
