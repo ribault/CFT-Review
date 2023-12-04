@@ -799,37 +799,46 @@ The $s$-channel decomposition \eqref{sdec} reduces the 4-point function to a com
   & \mathcal{F}^{(u)}_\Delta  \underset{z\to \infty}{\sim} \left(\tfrac{1}{z}\right)^{\Delta+\Delta_1-\Delta_3}
   \\
   \hline 
-\text{Diagram} & & & 
+\text{Diagram} & 
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
+\draw (-1,2) node [left] {$2$} -- (0,0) -- node [above] {$k$} (4,0) -- (5,2) node [right] {$3$};
+\draw (-1,-2) node [left] {$1$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$4$};
+\end{tikzpicture}
+& 
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
+ \draw (-2,3) node [left] {$2$} -- (0,2) -- node [left] {$k$} (0,-2) -- (-2, -3) node [left] {$1$};
+\draw (0,2) -- (2,3) node [right] {$3$};
+\draw (0,-2) -- (2, -3) node [right] {$4$};
+\end{tikzpicture}
+& 
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
+\draw (-2,1) node [left] {$2$} -- (0,0) -- node [left] {$k$} (0,-4) ;
+\draw (0,0)-- (2,-5) node [right] {$4$};
+\draw (-2,-5) node [left] {$1$} -- (0,-4);
+\draw (0,-4) -- (2,1) node [right] {$3$};
+\end{tikzpicture} 
   \\
   \hline 
  \end{array}
  \label{stu}
 \end{align}
-
-
-
-where the \textbf{$s$-channel conformal block} $\mathcal{G}^{(s)}_{\Delta_k}$ is a  With our assumption that all fields are primaries or descendants, conformal blocks are chirally factorized into \textbf{$s$-channel Virasoro blocks}
-
-namely we have 
+In order to write these decompositions in greater generality, let us define the $x$-channel \textbf{conformal blocks} as 
 \begin{align}
- \mathcal{G}^{(s)}_{\Delta_k} = \left|\mathcal{F}_{\Delta_k}^{(s)}\right|^2 \ . 
+ \mathcal{G}^{(x)}_{\Delta_k} = \left|\mathcal{F}_{\Delta_k}^{(x)}\right|^2\ , \qquad (x=s,t,u)\ . 
  \label{gf2}
 \end{align}
-
+Our conformal blocks are chirally factorized into Virasoro blocks because of our assumption that all fields are primaries or descendants. However, representations of the conformal algebra that are not factorized give rise to blocks that are also not factorized: this is the case with the logarithmic representations of Section \ref{sec:log}. We now write the \textbf{crossing symmetry equations} as the equality between the 3 decompositions of a four-point function into structure constants and conformal blocks:
 \begin{align}
- \sum_{k\in\mathcal{S}} D_k^{(s)} \mathcal{G}^{(s)}_{\Delta_k}
+ \boxed{\sum_{k\in\mathcal{S}} D_k^{(s)} \mathcal{G}^{(s)}_{\Delta_k} = \sum_{k\in\mathcal{S}} D_k^{(t)} \mathcal{G}^{(t)}_{\Delta_k} = \sum_{k\in\mathcal{S}} D_k^{(u)} \mathcal{G}^{(u)}_{\Delta_k}} \ . 
 \end{align}
-
-
-
-Then 4pt that depends on $z$. 3 inequivalent decompositions, start with $s$-channel. Non-chiral blocks! Chiral factorization of blocks, with abstract formula for Virasoro blocks as sums over descendants. 
-
-Equality of channels, crossing symmetry equations for struct. csts and spectrum. Channel-dependent spectrums. Spectrum arbitrariness. 
-
-Not just linear, due to factorization. But 
-4-point factorization not true if multiplicities, so not that constraining. 
-
-CFT data 
+Given 4 fields $V_1,V_2,V_3,V_4$, this is a system of infinitely many equations (parametrized by the cross-ratio $z$) for the spectrum $\mathcal{S}$ and the 4-point structure constants $D_k^{(x)}$. The difficulty of solving these equations depends on what we know (or assume) on these objects. Let us discuss 3 scenarios:
+\begin{enumerate}
+ \item We know the \textbf{CFT data}: the spectrm $\mathcal{S}$ and the 2-point and 3-point structure constants $B,C$. This determines the OPEs, and crossing symmetry of arbitrary 4-point functions is equivalent to the associativity of the OPE, and therefore to the consistency of the CFT on the sphere. In this scenario, we have to check that the crossing symmetry equations are obeyed, not to solve them.
+ \item We know the spectrum but not the structure constants. Using the factorization of 4-point structure constants into 3-point structure constants (see Table \eqref{stu}), crossing symmetry is a system of nonlinear equations for the 3-point structure constants.
+ \item We know the conformal dimensions that appear in the spectrum, but not how many fields of a given dimensions exist. Then crossing symmetry is a system of linear equations for the 4-point structure constants, viewed as functions of conformal dimensions. But cannot distinguish two fields with the same dimension, or factorize 4-point structure constants into 3-point structure constants. 
+\end{enumerate}
+We will encounter Scenario 1 in Liouville theory, and Scenario 3 in loop models.
 
 \section{Sketching exactly solvable CFTs}\label{sec:sesc}
 
