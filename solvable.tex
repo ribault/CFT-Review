@@ -165,20 +165,23 @@ Relation with \cite{rib16}.
 
 Words in bold are defined.
 
+
+Brownian loop soup: presumably has higher symmetry.
+
 \subsection*{Acknowledgements}
 
 
 %\end{tcolorbox}
 
-\section{Basic structures}
+\section{Basic objects of two-dimensional CFT}
 
-In this section we will introduce the basic structures of conformal field theory: conformal symmetry, fields, and operator product expansions. In particular, we will focus on the two ingredients of exact solvability: \textit{local} conformal symmetry and \textit{degenerate} fields. We begin with the Virasoro algebra, which describes local conformal transformations. 
+In this section we introduce conformal symmetry, fields, operator product expansions, and correlation functions. In particular, we will focus on the two ingredients of exact solvability: \textit{local} conformal symmetry and \textit{degenerate} fields. We begin with the Virasoro algebra, which describes local conformal transformations. 
 
 \subsection{The Virasoro algebra and its representations}\label{sec:vir}
 
 \subsubsection{The Virasoro algebra}
 
-Let us consider the Riemann sphere $\overline{\mathbb{C}}=\mathbb{C}\cup \{\infty\}$, equipped with the metric $ds^2 = dzd\bar z$. By definition, a conformal transformation of a Riemannian manifold is a transformation that preserves angles. On any open subset of the Riemann sphere, a map $z\to f(z)$ is conformal if and only if it is holomorphic. It is indeed straightforward to show that any holomorphic map is conformal,
+Let us consider the Riemann sphere $\overline{\mathbb{C}}=\mathbb{C}\cup \{\infty\}$, equipped with the metric $ds^2 = dzd\bar z$. By definition, a \textbf{conformal transformation} of a Riemannian manifold is a transformation that preserves angles. On any open subset of the Riemann sphere, a map $z\to f(z)$ is conformal if and only if it is holomorphic. It is indeed straightforward to show that any holomorphic map is conformal,
 because it transforms the metric into itself, up to a scalar factor: 
 \begin{align}
  dzd\bar z\to dfd\bar f = |f'(z)|^2 dzd\bar z\ .
@@ -197,8 +200,8 @@ and the commutation relations
 \begin{align}
  [\ell_n,\ell_m] = (n-m)\ell_{m+n}\ .
 \end{align}
-The generators of the Witt algebra include the translation generator $\ell_{-1} = -\frac{\partial}{\partial z}$, and the dilation generator $\ell_0 = -z\frac{\partial}{\partial z}$. In fact, $(\ell_{-1},\ell_0,\ell_1)$ generate the infinitesimal conformal transformations on the full Riemann sphere.
-The corresponding Lie group is the group of global conformal transformations $PSL_2(\mathbb{C})$, whose elements act as 
+The generators of the Witt algebra include the translation generator $\ell_{-1} = -\frac{\partial}{\partial z}$, and the dilation generator $\ell_0 = -z\frac{\partial}{\partial z}$. In fact, $(\ell_{-1},\ell_0,\ell_1)$ generate the infinitesimal conformal transformations of the Riemann sphere.
+The corresponding Lie group is the group of \textbf{global conformal transformations} $PSL_2(\mathbb{C})$, whose elements act as 
 \begin{align}
  z \mapsto \frac{az+b}{cz+d}\quad , \quad (a,b,c,d\in \mathbb{C},\ ad-bc\neq 0)\ .
  \label{abcd}
@@ -212,9 +215,7 @@ Now, in a quantum theory, symmetries act projectively on states. And projective 
 
 \subsubsection{Highest-weight representations}\label{sec:hwr}
 
-In a conformal field theory, the spectrum is a representation of the Virasoro algebra, and can be decomposed into indecomposable representations. But which indecomposable representations are physically relevant? To answer this question, we will focus on the properties of the generator $L_0$ of the Virasoro algebra. Conceptually, this is because $L_0$ can be interpreted as the energy operator. Technically, since $L_0$ generates dilations, it controls the convergence of operator product expansions, as we will see in Section \ref{sec:ope}. More specifically, a necessary condition for convergence is that the eigenvalues of $L_0$ be bounded from below in any indecomposable representation. We will always work under this assumption.
-
-%We now make the further technical assumption that $L_0$ be diagonalizable. This assumption holds in Liouville theory and minimal models, and also in many representations that appear in other solvable CFTs. However, it does not hold in the logarithmic representations of Section \ref{sec:log}. 
+In a conformal field theory, the space of states is a representation of the Virasoro algebra, and can be decomposed into indecomposable representations. But which indecomposable representations are physically relevant? To answer this question, we will focus on the properties of the generator $L_0$ of the Virasoro algebra. Conceptually, this is because $L_0$ can be interpreted as the energy operator. Technically, since $L_0$ generates dilations, it controls the convergence of operator product expansions, as we will see in Section \ref{sec:csope}. More specifically, a necessary condition for convergence is that the eigenvalues of $L_0$ be bounded from below in any indecomposable representation. We will always assume that this condition holds.
 
 The eigenvalues of $L_0$ are called \textbf{conformal dimensions}. Under the action of the Virasoro generator $L_n$, the conformal dimension decreases by $n$:
 \begin{align}
@@ -222,16 +223,16 @@ The eigenvalues of $L_0$ are called \textbf{conformal dimensions}. Under the act
 \end{align}
 In an indecomposable representation $\mathcal{R}$, the $L_0$-eigenstate $|v\rangle$ with the lowest eigenvalue $\Delta$ must therefore be annihilated by $L_{n>0}$:
 \begin{align}
-  L_0 |v\rangle = \Delta |v\rangle \quad , \quad L_{n>0} |v\rangle = 0\ .
+  \boxed{L_0 |v\rangle = \Delta |v\rangle \quad , \quad L_{n>0} |v\rangle = 0}\ .
  \end{align}
-Any nonzero state that obeys these conditions is called a \textbf{primary state}, even if its eigenvalue is not the smallest. Let us introduce a basis of \textbf{creation operators},
+Any nonzero state that obeys these conditions is called a \textbf{primary state}. Let us introduce a basis of \textbf{creation operators},
 \begin{align}
  \mathcal{L} = \left\{\prod_{i=1}^k L_{-n_i} \right\}_{k\in\mathbb{N},\ 0<n_1\leq \dots \leq n_k}==\left\{1, L_{-1}, L_{-1}^2, L_{-2},\cdots \right\}\ .
  \label{lcm}
 \end{align}
 Any state of the type $L |v\rangle$ with $L\in\mathcal{L}$ is called a \textbf{descendant state} of that primary state. Let  $N=|L|=\sum_{i=1}^k n_i \in\mathbb{N}$ be the  \textbf{level} of that state, then its conformal dimension is $\Delta+N$. By extension, a linear combination of descendant states is also called a descendant state. 
 
-A primary state $|v\rangle \in \mathcal{R}$ generates a subrepresentation $\mathcal{R}_{|v\rangle}\subset\mathcal{R}$, which is the space of its descendant states. The states $L |v\rangle$ generate $\mathcal{R}_{|v\rangle}$. If they are linearly independent, then $\mathcal{R}_{|v\rangle}$ is called the \textbf{Verma module} $\mathcal{V}_\Delta$. More generally, $\mathcal{R}_{|v\rangle}$ is a quotient of $\mathcal{V}_\Delta$ by a subrepresentation (trivial or not): such quotients are called \textbf{highest-weight representations}. In such a representation, $L_0$ is diagonalizable. 
+A primary state $|v\rangle \in \mathcal{R}$ generates a subrepresentation $\mathcal{R}_{|v\rangle}= \text{Span}(L|v\rangle)_{L\in\mathcal{L}}\subset\mathcal{R}$, which is the space of its descendant states. If the states $(L|v\rangle)_{L\in\mathcal{L}}$ are linearly independent, then $\mathcal{R}_{|v\rangle}$ is called the \textbf{Verma module} $\mathcal{V}_\Delta$. More generally, $\mathcal{R}_{|v\rangle}$ is a quotient of $\mathcal{V}_\Delta$ by a subrepresentation (trivial or not): such quotients are called \textbf{highest-weight representations}. In such a representation, $L_0$ is diagonalizable. 
 Let us sketch a Verma module by displaying all its basis states up to the level $N=3$, with arrows representing the action of the Virasoro generators $L_{-1},L_{-2},L_{-3}$:
 \begin{align}
  \begin{tikzpicture}[scale = .25, baseline=(current  bounding  box.center)]
@@ -260,7 +261,7 @@ Let us sketch a Verma module by displaying all its basis states up to the level 
 
 In a representation of the Virasoro algebra, we define a \textbf{null vector} or singular vector as a primary state that is a descendant of another primary state. Null vectors play an important structural role: a highest-weight representation is irreducible if and only if it has no null vector. 
 
-Let us look for null vectors in the Verma module $\mathcal{V}_\Delta$. This can be done level by level, starting with level $1$. That level is generated by a single state $L_{-1}|v\rangle$. To determine whether that state is primary, we take $n\geq 1$ and compute 
+Let us look for null vectors in the Verma module $\mathcal{V}_\Delta$. This can be done level by level, starting with level $1$. That level is generated by a single state $L_{-1}|v\rangle$. To determine whether that state is primary, let us determine how it behaves under the action of $L_{n\geq 1}$:
 \begin{align}
 L_n L_{-1}|v\rangle = [L_n, L_{-1}] |v\rangle = (n+1) L_{n-1}|v\rangle = 
 \left\{\begin{array}{ll} 0 &  \quad \text{if } n\geq 2\ , \\ 2\Delta |v\rangle & \quad \text{if } n = 1\ . \end{array}\right. 
@@ -287,7 +288,7 @@ To get rid of the square root, we rewrite the central charge in terms a the para
 \begin{align}
  \boxed{c = 1- 6\left(\beta - \beta^{-1}\right)^2 } \ .
 \end{align}
-Then the conformal dimensions \eqref{dpm} of the two Verma modules that have null vectors become 
+Then the conformal dimensions \eqref{dpm} become 
 $
  \Delta = -\frac12 + \frac34\beta^{\pm 2}
 $. The price to pay for this simplification is that the four values $\beta,-\beta,\beta^{-1},-\beta^{-1}$ all correspond to the same central charge. 
@@ -327,16 +328,16 @@ and it follows that the null vector $|\chi_{\langle r,s\rangle}\rangle$ is a pri
  \Delta_{(r, s)} + rs = \Delta_{(r, -s)}\ , 
  \label{drms}
 \end{align}
-We will provide a derivation of $P_{(r, s)}$ using operator product expansions in Section \ref{sec:dope}. On the other hand, the expressions for the null vectors $|\chi_{\langle r,s\rangle}\rangle$ themselves are complicated and not particularly useful. 
+We will provide a derivation of $P_{(r, s)}$ using operator product expansions in Section \ref{sec:dope}. On the other hand, the expressions of the null vectors $|\chi_{\langle r,s\rangle}\rangle$ are complicated and not particularly useful. 
 
 For $\beta^2\in\mathbb{C}-\mathbb{Q}$, the Verma module $\mathcal{V}_\Delta$ has a null vector if and only if $\Delta=\Delta_{(r, s)}$ for some $r,s\in\mathbb{N}^*$, in which case it has only one null vector. For $\beta^2\in\mathbb{Q}$ however, a Verma module can have several null vectors. If $\beta^2 = \frac{q}{p}$ with $p,q$ coprime integers, we indeed have the identity
 \begin{align}
  \Delta_{(r+p,s+q)} = \Delta_{(r,s)}\ ,
  \label{rpsq}
 \end{align}
-which together with $\Delta_{(r,s)}=\Delta_{(-r,-s)}$ implies infinitely many coincidences of the type $\Delta_{(r,s)}=\Delta_{(r',s')}$. 
-Whenever $r',s'>0$, the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$ has a null vector $|\chi_{\langle r',s'\rangle}\rangle= L_{\langle r',s'\rangle} |v\rangle$. 
-Moreover, if we apply the identity \eqref{rpsq} to the dimension $\Delta_{(r',-s')}$ \eqref{drms} of that null vector, we find that it is itself of the type $\Delta_{\langle r'',s''\rangle}$. If $r'',s''>0$, this leads to another null vector $L_{\langle r'',s''\rangle}L_{\langle r',s'\rangle} |v\rangle$. It turns out that all null vectors of Verma modules are of the type $L_{\langle r',s'\rangle} |v\rangle$ or $L_{\langle r'',s''\rangle}L_{\langle r',s'\rangle} |v\rangle$: in particular, $L_{\langle r''',s'''\rangle}L_{\langle r'',s''\rangle}L_{\langle r',s'\rangle} |v\rangle$ is of the type $L_{\langle r'''',s''''\rangle} |v\rangle$.
+which together with $\Delta_{(r,s)}=\Delta_{(-r,-s)}$ implies infinitely many coincidences of the type $\Delta_{(r,s)}=\Delta_{(r_1,s_1)}$. 
+Whenever $r_1,s_1>0$, the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$ has a null vector $|\chi_{\langle r_1,s_1\rangle}\rangle= L_{\langle r_1,s_1\rangle} |v\rangle$. 
+Moreover, if we apply the identity \eqref{rpsq} to the dimension $\Delta_{(r_1,-s_1)}$ \eqref{drms} of that null vector, we find that it is itself of the type $\Delta_{\langle r_2,s_2\rangle}$. If $r_2,s_2>0$, this leads to another null vector $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} |v\rangle$. It turns out that all null vectors of Verma modules are of the type $L_{\langle r_1,s_1\rangle} |v\rangle$ or $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} |v\rangle$. In particular, $L_{\langle r_3,s_3\rangle}L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} |v\rangle$ is of the type $L_{\langle r_4,s_4\rangle} |v\rangle$. To see this, let $\epsilon,\nu\in\{+,-\}$ be the signs such that $P_{(-r_1,s_1)}=\epsilon P_{(r_2,s_2)}$ and $P_{(r_2,-s_2)}=\eta P_{(r_3,s_3)}$, and let $r_4=|\epsilon r_1-r_2+\eta r_3|$ and $s_4=|\epsilon s_1+s_2+\eta s_3|$, then $r_4s_4=\sum_{i=1}^3 r_is_i$, which means that the null vector $L_{\langle r_4,s_4\rangle} |v\rangle$ has the right level. 
 
  Numbers of null vectors depend a lot on the sign of $\beta^2$. If $\beta^2<0$, then $\{\Delta_{(r, s)}\}_{r,s\in\mathbb{N}^*}$ is bounded from above, and Eq. \eqref{drms} implies that a Verma module can only have finitely many null vectors. If $\beta^2>0$, then by Eq. \eqref{rpsq} the existence of a null vector implies the existence of infinitely many others: 
 \begin{align}
@@ -396,7 +397,7 @@ For $r,s\in\mathbb{N}^*$, let us call $\mathcal{R}_{\langle r,s\rangle}$ the ful
 \end{align}
 If $\beta^2\in \mathbb{Q}$, the fully degenerate quotient can generally not be obtained by setting one null vector to zero, but it is always enough to set two null vectors to zero, with all other null vectors being descendants of these two. Schematically,
 \begin{align}
- \mathcal{R}_{\langle r,s\rangle} = \frac{\mathcal{V}_{\Delta_{\langle r,s\rangle}}}{\mathcal{V}_{\Delta_{\langle r',-s'\rangle}}+ \mathcal{V}_{\Delta_{\langle r'',-s''\rangle}}}\ .
+ \mathcal{R}_{\langle r,s\rangle} = \frac{\mathcal{V}_{\Delta_{\langle r,s\rangle}}}{\mathcal{V}_{\Delta_{\langle r_1,-s_1\rangle}}+ \mathcal{V}_{\Delta_{\langle r_2,-s_2\rangle}}}\ .
 \end{align}
 
 
@@ -481,7 +482,7 @@ OPEs that involve the energy-momentum tensor provide a way of rewriting not only
 \end{align}
 Via the definition \eqref{tl} of $T(y)$, this OPE is equivalent to the commutation relations \eqref{vir}.
 
-\subsubsection{Conformal symmetry constraints on OPEs}
+\subsubsection{Conformal symmetry constraints on OPEs}\label{sec:csope}
 
 For technical simplicity, we focus on an OPE of two primary fields. In that OPE, we single out the contributions of a primary field $V_\Delta$ and its descendants:
 \begin{align}
@@ -745,7 +746,8 @@ Now we have assumed that fields commute \eqref{comm}, but the $z_i$-dependent fa
  B_{21} = (-)^{2S_1} B_{12} \quad ,\quad C_{\sigma(1)\sigma(2)\sigma(3)} = \text{sign}(\sigma)^{S_1+S_2+S_3} C_{123}\ , 
  \label{b21}
 \end{align}
-where $\sigma$ is a permutation of $\{1,2,3\}$. In particular, for the 2-point function of a field with itself, we have $B_{12}=B_{21}$, which must vanish if the spin is half-integer $S_1\in \frac12+\mathbb{Z}$. Fields with half-integer spins should rather anti-commute with themselves, i.e. they should be fermionic. We will assume that spins are integer unless otherwise stated,
+where $\sigma$ is a permutation of $\{1,2,3\}$. In particular, for the 2-point function of a field with itself, we have $B_{12}=B_{21}$, which must vanish if the spin is half-integer $S_1\in \frac12+\mathbb{Z}$. Fields with half-integer spins should rather anti-commute with themselves, i.e. they should be fermionic. 
+Unless stated otherwise, we will assume that spins are integer:
 \begin{align}
  \boxed{S\in \mathbb{Z}}\ .
  \label{siz}
@@ -836,22 +838,42 @@ Given 4 fields $V_1,V_2,V_3,V_4$, this is a system of infinitely many equations 
 \begin{enumerate}
  \item We know the \textbf{CFT data}: the spectrm $\mathcal{S}$ and the 2-point and 3-point structure constants $B,C$. This determines the OPEs, and crossing symmetry of arbitrary 4-point functions is equivalent to the associativity of the OPE, and therefore to the consistency of the CFT on the sphere. In this scenario, we have to check that the crossing symmetry equations are obeyed, not to solve them.
  \item We know the spectrum but not the structure constants. Using the factorization of 4-point structure constants into 3-point structure constants (see Table \eqref{stu}), crossing symmetry is a system of nonlinear equations for the 3-point structure constants.
- \item We know the conformal dimensions that appear in the spectrum, but not how many fields of a given dimensions exist. Then crossing symmetry is a system of linear equations for the 4-point structure constants, viewed as functions of conformal dimensions. But cannot distinguish two fields with the same dimension, or factorize 4-point structure constants into 3-point structure constants. 
+ \item We know the conformal dimensions that appear in the spectrum, but not how many fields of a given dimensions exist. Then crossing symmetry is a system of linear equations for the 4-point structure constants, viewed as functions of conformal dimensions. But we cannot distinguish two fields with the same dimension, or factorize 4-point structure constants into 3-point structure constants. 
 \end{enumerate}
 We will encounter Scenario 1 in Liouville theory, and Scenario 3 in loop models.
 
+
 \section{Sketching exactly solvable CFTs}\label{sec:sesc}
+
+\subsection{Spectrum and symmetries}
+
+Use deg. fields rather than torus partition fct. We lose Verlinde formula for fusion rules but we get them otherwise. Our method is more elementary and flexible, can extend CFTs. Degeneracy of fields can be hard to deduce from partition fct. 
+
+\subsubsection{What is a CFT? What is a spectrum?}
+
+What is a CFT? symmetry algebra has fields that may not belong to the space of states. Space of states not very well defined when continuum. 
+
+\subsubsection{How many degenerate fields?}
+
+If only one: depends on $\beta^2$, not $c$.
+
+\subsubsection{Diagonal and non-diagonal fields}
 
 A \textbf{spinless field} is a primary field whose spin vanishes. Spinless fields are often called diagonal, but in Section \ref{sec:sesc} we will define diagonal fields as a subclass of spinless fields. 
 
 \textbf{diagonal field}
 
-What is a CFT? symmetry algebra has fields that may not belong to the space of states. Space of states not very well defined when continuum. 
 
 
-Use deg. fields rather than torus partition fct. We lose Verlinde formula for fusion rules but we get them otherwise. Our method is more elementary. Degeneracy of fields can be hard to deduce from partition fct. 
+\subsection{CFTs with 1 degenerate field}
 
-Diagonal fields. Non-diagonal fields. Get logarithmic fields by degenerate fusion.
+Study monodromies of 4-point function with $V_{\langle 1,2\rangle}$ (not single valued) leads to $r_1+r_2+r_3\in\mathbb{Z}$. Applies also to D-series MM, explains conservation of diagonality.
+
+
+Maximal spectrum is $O(n)$. Cannot really argue for Potts, but does not matter much. Anyway, at this stage, we know nothing about global symmetry.
+
+\subsection{CFTs with 2 degenerate fields}
+
 
 Start with GMM. Then focus on rational central charge, get MM. If we take limit, we presumably get log-MM. 
 
@@ -859,17 +881,9 @@ Get D-series, can we get E-series?
 
 Deduce Liouville with $c\leq 1$ by taking a limit. Then get Liouville for generic $c$. Other limits of diag CFT: RWT. Limit of non-diagonal MM.
 
-Then reduce to one degenerate field. Maximal spectrum is $O(n)$. Depends on $\beta^2$, not $c$. Cannot really argue for Potts, but does not matter much. Anyway, at this stage, we know nothing about global symmetry.
+Ashkin--Teller does have higher symmetry, solved wrt Virasoro nevertheless. Not really 2 degenerate fields, but no fractional Kac indices either. 
 
-Brownian loop soup: presumably has higher symmetry.
-
-Ashkin--Teller does have higher symmetry, solved wrt Virasoro nevertheless.
-
-Criterion for $b^2\in\mathbb{Q}$ limit to become logarithmic? For 4pt function, criterion about vanishing of residues, which depends on fusion rules being obeyed for NV? In MM case we completely escape log. reps, criterion should account for that.  
-For $c>25$, what happens to GMM at rational $b^2$? Concidences of dimensions boil down to $\Delta_{(r,s)}-\Delta_{(r,-s)} \in \mathbb{Z}$ modulo $(p, -q)$. 
-
-How much to say about limits? Reread my results on limits of 4pt functions, try to infer general rules on appearance of logarithms, depending on fusion rules?
-
+Summary of limits for CFTs with 2 deg. fields? Can we see whether in Liouville theory fields with deg. dimensions are actually deg.? For $c\leq 1$, guess not deg. from MM limit. For other $c$, need to know about poles of struct. csts. So answer is probably no. 
 
 \section{Degenerate four-point functions}
 
@@ -912,7 +926,12 @@ Sketch method. Start with Zamolodchikov recursion.
 
 \section{Logarithmic representations and fields} \label{sec:log}
 
-Not clear where to put this section. Before conformal blocks or after?
+Reread my results on limits of 4pt functions, try to infer general rules on appearance of logarithms, depending on fusion rules?
+
+Logarithmic fields?
+
+Criterion for $b^2\in\mathbb{Q}$ limit to become logarithmic? For 4pt function, criterion about vanishing of residues, which depends on fusion rules being obeyed for NV? In MM case we completely escape log. reps, criterion should account for that.  
+For $c>25$, what happens to GMM at rational $b^2$? Concidences of dimensions boil down to $\Delta_{(r,s)}-\Delta_{(r,-s)} \in \mathbb{Z}$ modulo $(p, -q)$. 
 
 We need log reps. Can deduce them from non-log using degenerate fields. Issue is conceptually less important if we adopt interchiral symmetry, since logarithms only appear for interchiral descendants. 
 
