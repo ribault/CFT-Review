@@ -217,22 +217,22 @@ Now, in a quantum theory, symmetries act projectively on states. And projective 
 
 In a conformal field theory, the space of states is a representation of the Virasoro algebra, and can be decomposed into indecomposable representations. But which indecomposable representations are physically relevant? To answer this question, we will focus on the properties of the generator $L_0$ of the Virasoro algebra. Conceptually, this is because $L_0$ can be interpreted as the energy operator. Technically, since $L_0$ generates dilations, it controls the convergence of operator product expansions, as we will see in Section \ref{sec:csope}. More specifically, a necessary condition for convergence is that the eigenvalues of $L_0$ be bounded from below in any indecomposable representation. We will always assume that this condition holds.
 
-The eigenvalues of $L_0$ are called \textbf{conformal dimensions}. Under the action of the Virasoro generator $L_n$, the conformal dimension decreases by $n$:
+The eigenvalues of $L_0$ are called \textbf{conformal dimensions}. Under the action of the Virasoro generator $L_n$, the conformal dimension decreases by $n$. For any vector $V$ in a representation of the Virasoro algebra, we indeed have 
 \begin{align}
- L_0|v\rangle = \Delta|v\rangle \quad \Rightarrow\quad  L_0 L_n|v\rangle = L_nL_0|v\rangle + [L_0, L_n] |v\rangle  = (\Delta-n)L_n|v\rangle \ .
+ L_0V{} = \Delta V{} \quad \Rightarrow\quad  L_0 L_nV{} = L_nL_0V{} + [L_0, L_n] V{}  = (\Delta-n)L_nV{} \ .
 \end{align}
-In an indecomposable representation $\mathcal{R}$, the $L_0$-eigenstate $|v\rangle$ with the lowest eigenvalue $\Delta$ must therefore be annihilated by $L_{n>0}$:
+In an indecomposable representation $\mathcal{R}$, the $L_0$-eigenstate with the lowest eigenvalue must therefore be annihilated by $L_{n>0}$. This eigenstate is therefore a \textbf{primary state}, where we define a primary state $V_\Delta$ of conformal dimension $\Delta$ by 
 \begin{align}
-  \boxed{L_0 |v\rangle = \Delta |v\rangle \quad , \quad L_{n>0} |v\rangle = 0}\ .
+  \boxed{L_0 V_\Delta = \Delta V_\Delta \quad , \quad L_{n>0} V_\Delta = 0}\ .
  \end{align}
-Any nonzero state that obeys these conditions is called a \textbf{primary state}. Let us introduce a basis of \textbf{creation operators},
+Let us introduce a basis of \textbf{creation operators},
 \begin{align}
  \mathcal{L} = \left\{\prod_{i=1}^k L_{-n_i} \right\}_{k\in\mathbb{N},\ 0<n_1\leq \dots \leq n_k}==\left\{1, L_{-1}, L_{-1}^2, L_{-2},\cdots \right\}\ .
  \label{lcm}
 \end{align}
-Any state of the type $L |v\rangle$ with $L\in\mathcal{L}$ is called a \textbf{descendant state} of that primary state. Let  $N=|L|=\sum_{i=1}^k n_i \in\mathbb{N}$ be the  \textbf{level} of that state, then its conformal dimension is $\Delta+N$. By extension, a linear combination of descendant states is also called a descendant state. 
+Any state of the type $L V{}$ with $L\in\mathcal{L}$ is called a \textbf{descendant state} of that primary state. Let  $N=|L|=\sum_{i=1}^k n_i \in\mathbb{N}$ be the  \textbf{level} of that state, then its conformal dimension is $\Delta+N$. By extension, a linear combination of descendant states is also called a descendant state. 
 
-A primary state $|v\rangle \in \mathcal{R}$ generates a subrepresentation $\mathcal{R}_{|v\rangle}= \text{Span}(L|v\rangle)_{L\in\mathcal{L}}\subset\mathcal{R}$, which is the space of its descendant states. If the states $(L|v\rangle)_{L\in\mathcal{L}}$ are linearly independent, then $\mathcal{R}_{|v\rangle}$ is called the \textbf{Verma module} $\mathcal{V}_\Delta$. More generally, $\mathcal{R}_{|v\rangle}$ is a quotient of $\mathcal{V}_\Delta$ by a subrepresentation (trivial or not): such quotients are called \textbf{highest-weight representations}. In such a representation, $L_0$ is diagonalizable. 
+A primary state $V{} \in \mathcal{R}$ generates a subrepresentation $\mathcal{R}_{V{}}= \text{Span}(LV{})_{L\in\mathcal{L}}\subset\mathcal{R}$, which is the space of its descendant states. If the states $(LV{})_{L\in\mathcal{L}}$ are linearly independent, then $\mathcal{R}_{V{}}$ is called the \textbf{Verma module} $\mathcal{V}_\Delta$. More generally, $\mathcal{R}_{V{}}$ is a quotient of $\mathcal{V}_\Delta$ by a subrepresentation (trivial or not): such quotients are called \textbf{highest-weight representations}. In such a representation, $L_0$ is diagonalizable. 
 Let us sketch a Verma module by displaying all its basis states up to the level $N=3$, with arrows representing the action of the Virasoro generators $L_{-1},L_{-2},L_{-3}$:
 \begin{align}
  \begin{tikzpicture}[scale = .25, baseline=(current  bounding  box.center)]
@@ -241,13 +241,13 @@ Let us sketch a Verma module by displaying all its basis states up to the level 
   {
   \draw [dotted] (-20, {-6*\x}) -- (20, {-6*\x}) node [right] {${\x}$};
   }
-  \node[fill = white] at (0, 0) (0) {$|v\rangle$};
-  \node[fill = white] at (-4,-6) (1) {$L_{-1}|v\rangle$};
-  \node[fill = white] at (-8, -12) (11) {$L_{-1}^2|v\rangle$};
-  \node[fill = white] at (-12, -18) (111) {$L_{-1}^3|v\rangle$};
-  \node[fill = white] at (0,-12) (2) {$L_{-2}|v\rangle$};
-  \node[fill = white] at (0,-18) (12) {$L_{-1}L_{-2}|v\rangle$};
-  \node[fill = white] at (8,-18) (3) {$L_{-3}|v\rangle$};
+  \node[fill = white] at (0, 0) (0) {$V{}$};
+  \node[fill = white] at (-4,-6) (1) {$L_{-1}V{}$};
+  \node[fill = white] at (-8, -12) (11) {$L_{-1}^2V{}$};
+  \node[fill = white] at (-12, -18) (111) {$L_{-1}^3V{}$};
+  \node[fill = white] at (0,-12) (2) {$L_{-2}V{}$};
+  \node[fill = white] at (0,-18) (12) {$L_{-1}L_{-2}V{}$};
+  \node[fill = white] at (8,-18) (3) {$L_{-3}V{}$};
   \draw[-latex] (0) -- (1);
   \draw[-latex] (1) -- (11);
   \draw[-latex] (11) -- (111);
@@ -261,24 +261,24 @@ Let us sketch a Verma module by displaying all its basis states up to the level 
 
 In a representation of the Virasoro algebra, we define a \textbf{null vector} or singular vector as a primary state that is a descendant of another primary state. Null vectors play an important structural role: a highest-weight representation is irreducible if and only if it has no null vector. 
 
-Let us look for null vectors in the Verma module $\mathcal{V}_\Delta$. This can be done level by level, starting with level $1$. That level is generated by a single state $L_{-1}|v\rangle$. To determine whether that state is primary, let us determine how it behaves under the action of $L_{n\geq 1}$:
+Let us look for null vectors in the Verma module $\mathcal{V}_\Delta$. This can be done level by level, starting with level $1$. That level is generated by a single state $L_{-1}V_\Delta$. To determine whether that state is primary, let us determine how it behaves under the action of $L_{n\geq 1}$:
 \begin{align}
-L_n L_{-1}|v\rangle = [L_n, L_{-1}] |v\rangle = (n+1) L_{n-1}|v\rangle = 
-\left\{\begin{array}{ll} 0 &  \quad \text{if } n\geq 2\ , \\ 2\Delta |v\rangle & \quad \text{if } n = 1\ . \end{array}\right. 
+L_n L_{-1}V_\Delta = [L_n, L_{-1}] V_\Delta = (n+1) L_{n-1}V_\Delta = 
+\left\{\begin{array}{ll} 0 &  \quad \text{if } n\geq 2\ , \\ 2\Delta V_\Delta & \quad \text{if } n = 1\ . \end{array}\right. 
 \end{align}
 Therefore, $\mathcal{V}_\Delta$ has a null vector at level $1$ if and only if $\Delta=0$. Next, consider the case of level $2$, where we write states as 
 \begin{align}
- |\chi\rangle = \left(a^{L_{-1}^2} L_{-1}^2 + a^{L_{-2}} L_{-2}\right) |v\rangle\ ,
+ X{} = \left(a^{L_{-1}^2} L_{-1}^2 + a^{L_{-2}} L_{-2}\right) V_\Delta\ ,
 \end{align}
-where $a^{L_{-1}^2}$ and $a^{L_{-2}}$ are complex coefficients. It is easy to show that $L_{n\geq 3}|\chi\rangle=0$, and we compute 
+where $a^{L_{-1}^2}$ and $a^{L_{-2}}$ are complex coefficients. It is easy to show that $L_{n\geq 3}X{}=0$, and we compute 
 \begin{align}
- L_1|\chi\rangle &= \left((4\Delta+2)a^{L_{-1}^2} + 3a^{L_{-2}}\right) L_{-1}|v\rangle\ ,
+ L_1X{} &= \left((4\Delta+2)a^{L_{-1}^2} + 3a^{L_{-2}}\right) L_{-1}V_\Delta\ ,
  \label{l1c}
 \\
-L_2 |\chi \rangle &= \left(6\Delta a^{L_{-1}^2}+(4\Delta+\tfrac12 c) a^{L_{-2}}\right)|v\rangle\ .
+L_2 X{} &= \left(6\Delta a^{L_{-1}^2}+(4\Delta+\tfrac12 c) a^{L_{-2}}\right)V_\Delta\ .
 \label{l2c}
 \end{align}
-Therefore, the condition $L_1|\chi\rangle=L_2 |\chi \rangle=0$ for $|\chi\rangle$ to be a null vector boil down to a system of two linear equations for the coefficients $(a^{L_{-1}^2},a^{L_{-2}})$. The vanishing of that system's determinant determines the conformal dimension $\Delta$ as a function of the central charge $c$,
+Therefore, the condition $L_1X{}=L_2 X{}=0$ for $X{}$ to be a null vector boil down to a system of two linear equations for the coefficients $(a^{L_{-1}^2},a^{L_{-2}})$. The vanishing of that system's determinant determines the conformal dimension $\Delta$ as a function of the central charge $c$,
 \begin{align}
  \Delta = \frac{1}{16}\left( 5-c\pm\sqrt{(c-1)(c-25)} \right) \ .
  \label{dpm}
@@ -293,7 +293,7 @@ $
  \Delta = -\frac12 + \frac34\beta^{\pm 2}
 $. The price to pay for this simplification is that the four values $\beta,-\beta,\beta^{-1},-\beta^{-1}$ all correspond to the same central charge. 
 
-More generally, there is an infinite family of conformal dimensions $(\Delta_{(r, s)})_{r,s\in\mathbb{N}^*}$ such that $\mathcal{V}_{\Delta_{(r, s)}}$ has a null vector $|\chi_{\langle r,s\rangle}\rangle = L_{\langle r,s\rangle} |v\rangle$ at level $N=rs$. Let us summarize the cases $N=1,2$ in these notations:
+More generally, there is an infinite family of conformal dimensions $(\Delta_{(r, s)})_{r,s\in\mathbb{N}^*}$ such that $\mathcal{V}_{\Delta_{(r, s)}}$ has a null vector $L_{\langle r,s\rangle} V_{\Delta_{(r, s)}}$ at level $N=rs$. Let us summarize the cases $N=1,2$ in these notations:
 \begin{align}
 \begin{array}{|c|c|c|c|}
 \hline 
@@ -328,7 +328,7 @@ and it follows that the null vector $|\chi_{\langle r,s\rangle}\rangle$ is a pri
  \Delta_{(r, s)} + rs = \Delta_{(r, -s)}\ , 
  \label{drms}
 \end{align}
-We will provide a derivation of $P_{(r, s)}$ using operator product expansions in Section \ref{sec:dope}. On the other hand, the expressions of the null vectors $|\chi_{\langle r,s\rangle}\rangle$ are complicated and not particularly useful. 
+We will provide a derivation of $P_{(r, s)}$ using operator product expansions in Section \ref{sec:dope}. On the other hand, the expressions of $L_{\langle r,s\rangle} $ are complicated and not particularly useful. 
 
 For $\beta^2\in\mathbb{C}-\mathbb{Q}$, the Verma module $\mathcal{V}_\Delta$ has a null vector if and only if $\Delta=\Delta_{(r, s)}$ for some $r,s\in\mathbb{N}^*$, in which case it has only one null vector. For $\beta^2\in\mathbb{Q}$ however, a Verma module can have several null vectors. If $\beta^2 = \frac{q}{p}$ with $p,q$ coprime integers, we indeed have the identity
 \begin{align}
@@ -336,8 +336,13 @@ For $\beta^2\in\mathbb{C}-\mathbb{Q}$, the Verma module $\mathcal{V}_\Delta$ has
  \label{rpsq}
 \end{align}
 which together with $\Delta_{(r,s)}=\Delta_{(-r,-s)}$ implies infinitely many coincidences of the type $\Delta_{(r,s)}=\Delta_{(r_1,s_1)}$. 
-Whenever $r_1,s_1>0$, the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$ has a null vector $|\chi_{\langle r_1,s_1\rangle}\rangle= L_{\langle r_1,s_1\rangle} |v\rangle$. 
-Moreover, if we apply the identity \eqref{rpsq} to the dimension $\Delta_{(r_1,-s_1)}$ \eqref{drms} of that null vector, we find that it is itself of the type $\Delta_{\langle r_2,s_2\rangle}$. If $r_2,s_2>0$, this leads to another null vector $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} |v\rangle$. It turns out that all null vectors of Verma modules are of the type $L_{\langle r_1,s_1\rangle} |v\rangle$ or $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} |v\rangle$. In particular, $L_{\langle r_3,s_3\rangle}L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} |v\rangle$ is of the type $L_{\langle r_4,s_4\rangle} |v\rangle$. To see this, let $\epsilon,\nu\in\{+,-\}$ be the signs such that $P_{(-r_1,s_1)}=\epsilon P_{(r_2,s_2)}$ and $P_{(r_2,-s_2)}=\eta P_{(r_3,s_3)}$, and let $r_4=|\epsilon r_1-r_2+\eta r_3|$ and $s_4=|\epsilon s_1+s_2+\eta s_3|$, then $r_4s_4=\sum_{i=1}^3 r_is_i$, which means that the null vector $L_{\langle r_4,s_4\rangle} |v\rangle$ has the right level. 
+Whenever $r_1,s_1>0$, the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$ has a null vector $L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. 
+Moreover, if we apply the identity \eqref{rpsq} to the dimension $\Delta_{(r_1,-s_1)}$ \eqref{drms} of that null vector, we find that it is itself of the type $\Delta_{\langle r_2,s_2\rangle}$. If $r_2,s_2>0$, this leads to another null vector $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. It turns out that all null vectors of Verma modules are of the type $L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$ or $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. In particular,
+\begin{align}
+ \exists r_4,s_4\in \mathbb{N}^*\ , \ L_{\langle r_3,s_3\rangle}L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}} = L_{\langle r_4,s_4\rangle} V_{\Delta_{(r,s)}}\ .
+ \label{lllel}
+\end{align}
+To see this, let $\epsilon,\eta\in\{+,-\}$ be the signs such that $P_{(-r_1,s_1)}=\epsilon P_{(r_2,s_2)}$ and $P_{(r_2,-s_2)}=\eta P_{(r_3,s_3)}$, and let $r_4=|\epsilon r_1-r_2+\eta r_3|$ and $s_4=|\epsilon s_1+s_2+\eta s_3|$, then $\sum_{i=1}^3 r_is_i=r_4s_4$, i.e. the two null vectors in Eq. \eqref{lllel} have the same level. 
 
  Numbers of null vectors depend a lot on the sign of $\beta^2$. If $\beta^2<0$, then $\{\Delta_{(r, s)}\}_{r,s\in\mathbb{N}^*}$ is bounded from above, and Eq. \eqref{drms} implies that a Verma module can only have finitely many null vectors. If $\beta^2>0$, then by Eq. \eqref{rpsq} the existence of a null vector implies the existence of infinitely many others: 
 \begin{align}
@@ -351,7 +356,7 @@ Moreover, if we apply the identity \eqref{rpsq} to the dimension $\Delta_{(r_1,-
   \hline 
  \end{array}
 \end{align}
-To illustrate the differences between these two cases, let us plot at each $(r,s)\in \{1,\dots, 10\}^2$ a dot whose size increases with 
+To illustrate the two cases $\beta^2\in \mathbb{Q}_{>0}$ and $\beta^2\in \mathbb{Q}_{<0}$, let us plot at each $(r,s)\in \{1,\dots, 10\}^2$ a dot whose size increases with 
 $\Delta_{(r,s)}$, together with the vector $(p, q)$ of Eq. \eqref{rpsq} as a red arrow:
 \begin{align}
  \begin{tikzpicture}[baseline=(base), scale = .5]
@@ -385,10 +390,10 @@ $\Delta_{(r,s)}$, together with the vector $(p, q)$ of Eq. \eqref{rpsq} as a red
 
 \subsubsection{Vanishing and non-vanishing null vectors}
 
-When a representation $\mathcal{R}$ has a null vector $|\chi\rangle=L|v\rangle$, this allows us to define a quotient representation $\frac{\mathcal{R}}{\mathcal{R}_{|\chi\rangle}}$ by setting the null vector to zero. 
-By an abuse of terminology, we say that $\frac{\mathcal{R}}{\mathcal{R}_{|\chi\rangle}}$ has a \textbf{vanishing null vector}, which really means that the primary state $|v\rangle$ obeys the \textbf{null vector equation} $L|v\rangle=0$. On the other hand, $\mathcal{R}$ itself has a non-vanishing null vector $|\chi\rangle$. 
+When a representation $\mathcal{R}$ has a null vector $X{}=LV{}$, this allows us to define a quotient representation $\frac{\mathcal{R}}{\mathcal{R}_{X{}}}$ by setting the null vector to zero. 
+By an abuse of terminology, we say that $\frac{\mathcal{R}}{\mathcal{R}_{X{}}}$ has a \textbf{vanishing null vector}, which really means that the primary state $V{}$ obeys the \textbf{null vector equation} $LV{}=0$. On the other hand, $\mathcal{R}$ itself has a non-vanishing null vector $X{}$. 
 
-If $\mathcal{R}$ has several null vectors, we can define various quotient representations by setting some null vectors to zero. A \textbf{degenerate} representation is a representation that has at least one vanishing null vector. A degenerate representation is partly degenerate if it has some non-vanishing null vectors, and fully degenerate if all null vectors vanish. Partly degenerate representations play an important role in CFTs with extended chiral algebras, such as conformal Toda theories \cite{fl07c}. But all degenerate representations that we will consider will be fully degenerate. 
+If $\mathcal{R}$ has several null vectors, we can define various quotient representations by setting some null vectors to zero. A \textbf{degenerate representation} is a representation that has at least one vanishing null vector. A degenerate representation is partly degenerate if it has some non-vanishing null vectors, and fully degenerate if all null vectors vanish. Partly degenerate representations play an important role in CFTs with extended chiral algebras, such as conformal Toda theories \cite{fl07c}. But all degenerate representations that we will consider will be fully degenerate. 
 
 For $r,s\in\mathbb{N}^*$, let us call $\mathcal{R}_{\langle r,s\rangle}$ the fully degenerate quotient of the Verma module $\mathcal{V}_{\Delta_{\langle r,s\rangle}}$. If $\beta^2\in \mathbb{C}-\mathbb{Q}$, we simply have 
 \begin{align}
@@ -399,36 +404,30 @@ If $\beta^2\in \mathbb{Q}$, the fully degenerate quotient can generally not be o
 \begin{align}
  \mathcal{R}_{\langle r,s\rangle} = \frac{\mathcal{V}_{\Delta_{\langle r,s\rangle}}}{\mathcal{V}_{\Delta_{\langle r_1,-s_1\rangle}}+ \mathcal{V}_{\Delta_{\langle r_2,-s_2\rangle}}}\ .
 \end{align}
-
+We define the \textbf{degenerate state} $V_{\langle r,s\rangle}$ as the primary state of the degenerate representation $\mathcal{R}_{\langle r,s\rangle}$, which obeys the null vector equation
+\begin{align}
+L_{\langle r, s\rangle} V_{\langle r,s\rangle} = 0\ .
+\end{align}
+A primary state $V_{\Delta_{(r,s)}}$ has the same dimension as $V_{\langle r,s\rangle}$, but does not necessarily obey the null vector equation. 
 
 \subsection{Fields and operator product expansions}\label{sec:fope}
 
-The fundamental objects of conformal field theory are fields. In quantum field theory, all states can be obtained by acting on the vacuum state with fields: this is called the state-field correspondence or operator-state correspondence. In conformal field theory, the correspondence is bijective, and we will not distinguish states from fields. 
+The fundamental objects of conformal field theory are fields. In quantum field theory, all states can be obtained by acting on the vacuum state with fields: this is called the \textbf{state-field correspondence} or operator-state correspondence. In conformal field theory, the correspondence is bijective, and allows us to identify the space of fields with the \textbf{space of states} (or spectrum) $\mathcal{S}$ --- a vector space on which the Virasoro algebra acts. To a state $V$, the correspondence associates a field $V(z)$, which depends on a position $z\in\overline{\mathbb{C}}$ in the Riemann sphere. Primary states, descendant states and degenerate states respectively give rise to \textbf{primary fields}, \textbf{descendant fields} and \textbf{degenerate fields}.
 
 In the bootstrap approach, which is axiomatic rather than constructive, we need not define fields. Rather, we use fields as convenient notations for stating properties of correlation functions, which we will introduce in Section \ref{sec:cor}. 
 
-\subsubsection{Fields, primary fields, degenerate fields}
+\subsubsection{The energy-momentum tensor}
 
-The \textbf{space of states} $\mathcal{S}$, also called spectrum or space of fields, is a vector space, whose elements $V(z)$ depend on a position $z\in\overline{\mathbb{C}}$ in the Riemann sphere. The Virasoro algebra acts on $\mathcal{S}$; depending on the context, we may use the following two notations for this action:
-\begin{align}
- L_n^{(z)} V(z) = L_n V(z) \ . 
-\end{align}
-Primary states and descendant states that belong to $\mathcal{S}$ are now called \textbf{primary fields} and \textbf{descendant fields}. By definition, a primary field $V_\Delta(z)$ of conformal dimension $\Delta$  obeys 
-\begin{align}
- L_0 V_\Delta(z) = \Delta V_\Delta(z) \quad , \quad  L_{n> 0} V_\Delta(z) = 0 \ .
- \label{lvdv}
-\end{align}
-If $\Delta=\Delta_{\langle r,s\rangle}$ with $r,s\in \mathbb{N}^*$, the existence of null vectors in the Verma module $\mathcal{V}_\Delta$ makes the definition of $V_\Delta(z)$ a priori ambiguous. In that case, we reserve the name $V_\Delta(z)$ for a primary field that generates $\mathcal{V}_\Delta$, and write $V_{\langle r,s\rangle}(z)$ for a \textbf{degenerate field} that generates the fully degenerate representation $\mathcal{R}_{\langle r,s\rangle}$, and therefore obeys not only Eq. \eqref{lvdv}, but also the null vector equation
-\begin{align}
-L_{\langle r, s\rangle} V_{\langle r,s\rangle}(z) = 0\ .
-\end{align}
-
-The dependence of fields on the coordinate $z$ is determined by the assumption that the Virasoro generator $L_{-1}$ generates translations, just like its counterpart $\ell_{-1}$ \eqref{lpz} from the Witt algebra:
+The dependence of fields on the coordinate $z$ is determined by the assumption that the Virasoro generator $L_{-1}$ generates translations, just like the Witt algebra generator $\ell_{-1}$ \eqref{lpz}:
 \begin{align}
   \boxed{\frac{\partial}{\partial z} V(z) = L_{-1} V(z)}  \ .
   \label{pvlv}
  \end{align}
- Applying this to $L_n^{(z)} V(z)$, we find how the Virasoro generator $L_n^{(z)}$ depends on $z$,
+ Since fields depend on $z$, the Virasoro algebra that acts on fields also depends on $z$. This can be made explicit using the notation
+\begin{align}
+   L_n V(z) = L_n^{(z)} V(z) \ . 
+\end{align}
+Applying Eq. \eqref{pvlv} to $L_n^{(z)} V(z)$, we find how the Virasoro generator $L_n^{(z)}$ depends on $z$,
  \begin{align}
  \frac{\partial}{\partial z} L_n^{(z)} = [L_{-1}^{(z)},L_n^{(z)}]= -(n+1)L_{n-1}^{(z)}\ ,\qquad (\forall n\in\mathbb{Z})\ .
 \end{align}
@@ -454,12 +453,12 @@ However, we will shortly interpret $T(y)$ as a field, and $T(y)V(z)$ as an opera
 
 \subsubsection{Operator product expansions}\label{sec:ope}
 
-The fundamental axiom of conformal field theory, which underlies the conformal bootstrap approach, is the existence of \textbf{operator product expansions (OPEs)}. This axiom states that there exists a bilinear product on the space of fields. Given a basis $(V_i)_i$ of the space of states $\mathcal{S}$, this reads 
+The fundamental axiom of conformal field theory, which underlies the conformal bootstrap approach, is the existence of \textbf{operator product expansions (OPEs)}. This axiom states that there exists a bilinear product on the space of fields. Given a basis $(V_k)_k$ of the space of states $\mathcal{S}$, this reads 
 \begin{align}
-  \boxed{V_1(z_1)V_2(z_2) = \sum_i C^i_{12}(z_1,z_2) V_i(z_2)}\ ,
+  \boxed{V_1(z_1)V_2(z_2) = \sum_k C^k_{12}(z_1,z_2) V_k(z_2)}\ ,
   \label{ope}
  \end{align}
-for some \textbf{OPE coefficients} $C^i_{12}(z_1,z_2)$. Operator product expansions generally exist in quantum field theory, but they are particularly powerful in conformal field theory because they are supposed to hold for any $z_1$ in a finite neighbourhood of $z_2$ (but $z_1\neq z_2$), and not just asymptotically as $z_1\to z_2$. The finite neighbourhood in question may depend on the correlation function in which we perform the OPE, and also on the basis $(|w_i\rangle)_i$. 
+for some \textbf{OPE coefficients} $C^k_{12}(z_1,z_2)$. Operator product expansions generally exist in quantum field theory, but they are particularly powerful in conformal field theory because they are supposed to hold for any $z_1$ in a finite neighbourhood of $z_2$ (but $z_1\neq z_2$), and not just asymptotically as $z_1\to z_2$. The finite neighbourhood in question may depend on the correlation function in which we perform the OPE, and also on the basis $(V_k)_k$. 
 
 We further assume that the product of fields is commutative,
 \begin{align}
@@ -468,7 +467,7 @@ We further assume that the product of fields is commutative,
 \end{align}
 This implies that OPEs are commutative and associative. However, the resulting constraints on the coefficients $C^i_{12}(z_1,z_2)$ are not particularly simple, because of having to choose a position ($z_2$ in our conventions) for the fields in the right-hand side of the OPE \eqref{ope}. 
 
-We also assume that there exists an \textbf{identity field} $I(z)$ whose OPE with any other field is trivial, namely $I(z_1)V(z_2) = V(z_2)$. Let us consider the energy-momentum tensor $T$ as a field, then we have 
+We also assume that there exists an \textbf{identity field} $I(z)$ whose OPE with any other field is trivial, namely $I(z_1)V(z_2) = V(z_2)$. (The corresponding state is called the vacuum state.) Let us consider the energy-momentum tensor $T$ as a field, then we have 
 $
  T(y)I(z) = T(y) = T(z)  + O(y-z)
 $. 
@@ -542,20 +541,20 @@ The form of the dependence on $z_1,z_2$ provides an a posteriori justification f
 
 \subsubsection{Fusion rules and fusion products}\label{sec:dope}
 
-The appearance of poles in OPE coefficients is a hint that when degenerate conformal dimensions $(\Delta_{(r,s)})_{r,s\in\mathbb{N}^*}$ are involved, there are constraints on the fields that can appear in a given OPE. Let us derive these constraints in the simplest case $\Delta_{(1,1)}=0$. There are two types of primary fields of dimension $0$: the non-degenerate field $V_0$, which generates the Verma module $\mathcal{V}_0$, and the degenerate field $V_{\langle 1,1\rangle}$, which obeys the null vector equation $L_{-1}V_{\langle 1,1\rangle}=\partial V_{\langle 1,1\rangle}=0$ and generates the degenerate representation $\mathcal{R}_{\langle 1,1\rangle}$. While the OPE $V_0(z_1)V_{\Delta_2}(z_2)$ is just a special case of the OPE \eqref{prope}, 
-the null vector equation implies 
+The appearance of poles in OPE coefficients is a hint that when degenerate conformal dimensions $(\Delta_{(r,s)})_{r,s\in\mathbb{N}^*}$ are involved, there are constraints on the fields that can appear in a given OPE. Let us derive these constraints in the simplest case $\Delta_{(1,1)}=0$. There are two types of primary fields of dimension $0$: the non-degenerate field $V_0$, which generates the Verma module $\mathcal{V}_0$, and the degenerate field $V_{\langle 1,1\rangle}$, which obeys the null vector equation $L_{-1}V_{\langle 1,1\rangle}=\partial V_{\langle 1,1\rangle}=0$ and generates the degenerate representation $\mathcal{R}_{\langle 1,1\rangle}$. While the OPE $V_0V_{\Delta_2}$ is just a special case of the OPE \eqref{prope}, 
+the OPE $V_{\langle 1,1\rangle}V_{\Delta_2}$ also obeys 
 \begin{align}
  0 = \frac{\partial}{\partial z_1} V_{\langle 1,1\rangle}(z_1)V_{\Delta_2}(z_2) \supset C_{\langle 1,1\rangle,\Delta_2}^{\Delta} \frac{\partial}{\partial z_1} z_{12}^{\Delta-\Delta_2} \left(V_\Delta(z_2) +\cdots \right) \ ,
 \end{align}
-therefore $V_\Delta$ may appear in $V_{\langle 1,1\rangle}(z_1)V_{\Delta_2}(z_2)$ only provided $\Delta=\Delta_2$. This agrees with the remark (in Section \ref{sec:ope}) that $V_{\langle 1,1\rangle}$ is proportional to the identity field. 
+therefore $V_\Delta$ may appear only provided $\Delta=\Delta_2$. This agrees with the remark (in Section \ref{sec:ope}) that $V_{\langle 1,1\rangle}$ is proportional to the identity field. 
 
-Then let us study the subtler question of whether $V_0$ or $V_{\langle 1,1\rangle}$ may appear in $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$. In the case of $V_0$, the pole of $f^{L_{-1}}$ \eqref{fl1} means that our normalization condition $f^1=1$ was wrong: we in fact have $f^1=0$ while $f^{L_{-1}}\neq 0$. Therefore, the non-vanishing null vector $L_{-1}V_0$ may appear in the OPE, together with its descendants, while $V_0$ itself and its other descendants give vanishing contributions. In the case of $V_{\langle 1,1\rangle}$ however, the null vector vanishes, and no descendant of $V_{\langle 1,1\rangle}$ may appear --- unless the left-hand side of the OPE Ward identity \eqref{dddv} vanishes, which happens if $\Delta_1=\Delta_2$. 
+Then let us study the subtler question of whether $V_0$ or $V_{\langle 1,1\rangle}$ may appear in the OPE $V_{\Delta_1}V_{\Delta_2}$. In the case of $V_0$, the pole of $f^{L_{-1}}$ \eqref{fl1} means that our normalization condition $f^1=1$ was wrong: we in fact have $f^1=0$ while $f^{L_{-1}}\neq 0$. Therefore, the non-vanishing null vector $L_{-1}V_0$ may appear in the OPE, together with its descendants, while $V_0$ itself and its other descendants give vanishing contributions. In the case of $V_{\langle 1,1\rangle}$ however, the null vector vanishes, and no descendant of $V_{\langle 1,1\rangle}$ may appear --- unless the left-hand side of the OPE Ward identity \eqref{dddv} vanishes, which happens if $\Delta_1=\Delta_2$. 
 
 Let us introduce the \textbf{fusion rules} as a convenient notation for writing constraints on OPEs, by omitting everything but the primary fields:
 \begin{align}
  V_{\langle 1,1\rangle} V_{\Delta} = V_\Delta \quad , \quad V_{\Delta_1} V_{\Delta_2} \ni V_{\langle 1,1\rangle} \implies \Delta_1=\Delta_2\ . 
 \end{align}
-In terms of representations of the Virasoro algebra, this can may be rewritten in terms of a \textbf{fusion product} such that 
+In terms of representations of the Virasoro algebra, this may be rewritten in terms of a \textbf{fusion product} such that 
 \begin{align}
  \mathcal{R}_{\langle 1,1\rangle} \times \mathcal{V}_\Delta = \mathcal{V}_\Delta \quad , \quad \dim\text{Hom}\left(\mathcal{V}_{\Delta_1}\times \mathcal{V}_{\Delta_2}, \mathcal{R}_{\langle 1,1\rangle}\right) = \delta_{\Delta_1,\Delta_2}\ ,
  \label{rtv}
@@ -590,7 +589,7 @@ From these simple formulas, all the discrete spectrums of Section \ref{sec:sesc}
   \label{resf}
  \end{align}
  (If the residues vanish for $|L|=rs$, then they vanish for all $L\in\mathcal{L}$.)
- \item If $\mathcal{R}$ is not degenerate, the corresponding primary field may appear in any OPE of the type $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$, because the OPE Ward identities have a unique solution (up to normalization). 
+ \item If $\mathcal{R}$ is not degenerate, the corresponding primary field may appear in any OPE of the type $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$, because the OPE Ward identities have a solution. 
 \end{itemize}
 It follows that a fusion product of degenerate representations is itself a sum of degenerate representations. 
 For example, according to Eq. \eqref{rvvp}, the product $\mathcal{R}_{\langle 2,1\rangle}\times\mathcal{R}_{\langle 2,1\rangle}$ is the sum of two representations of momentums $\{P_{(2,1)} \pm \frac{\beta}{2}\} = \{P_{(1,1)},P_{(3,1)}\}$. These representations must be degenerate, therefore $\mathcal{R}_{\langle 2,1\rangle}\times\mathcal{R}_{\langle 2,1\rangle}=\mathcal{R}_{\langle 1,1\rangle}+\mathcal{R}_{\langle 3,1\rangle}$. By associativity of $\mathcal{R}_{\langle 2,1\rangle}\times\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{V}_P$, we then deduce 
@@ -622,9 +621,9 @@ where the sums now run by increments of $2$.
 
 \subsection{Correlation functions}\label{sec:cor}
 
-Correlation functions are observables of quantum field theory: quantities that we can in principle compute, and compare with experimental data. We will focus on $N$-point functions on the Riemann sphere: functions of $N$ distinct positions $z_1,z_2,\dots, z_N\in \overline{\mathbb{C}}$, which depend on $n$ states $|w_1\rangle,|w_2\rangle,\dots, |w_N\rangle$, and are written in terms of $n$ fields as 
+Correlation functions are observables of quantum field theory: quantities that we can in principle compute, and compare with experimental data. We will focus on $N$-point functions on the Riemann sphere: functions of $N$ distinct positions $z_1,z_2,\dots, z_N\in \overline{\mathbb{C}}$, which are written in terms of $n$ fields as 
 \begin{align}
- \Big< V_1(z_1) V_2(z_2) \cdots V_{|w_N\rangle}(z_N)\Big>\ . 
+ \Big< V_1(z_1) V_2(z_2) \cdots V_N(z_N)\Big>\ . 
 \end{align}
 Correlation functions are assumed to depend linearly on fields: in particular, this implies $\partial_{z_1}\left<  V_1(z_1) \cdots \right> = \left< \partial_{z_1} V_1(z_1) \cdots \right>$.
 All the assumptions and results of Section \ref{sec:fope} may be understood as constraints on correlation functions. 
@@ -638,7 +637,7 @@ In two-dimensional CFT, there are other observables that we will not consider, s
 
 \subsubsection{Conformal symmetry constraints}
 
-In order to derive the crossing symmetry constraints for an $N$-point function of primary fields $Z$, it is convenient to consider the $N+1$-point function $Z(y)$ that also includes the energy-momentum tensor $T(y)$:
+In order to derive the conformal symmetry constraints for an $N$-point function of primary fields $Z$, it is convenient to consider the $N+1$-point function $Z(y)$ that also includes the energy-momentum tensor $T(y)$:
 \begin{align}
  Z = \left< \prod_{i=1}^N V_{\Delta_i}(z_i)\right> \quad , \quad Z(y) = \left< T(y)\prod_{i=1}^N V_{\Delta_i}(z_i)\right>\ .
 \end{align}
@@ -668,7 +667,7 @@ In particular, considering the transformation $z\mapsto \frac{1}{z}$ leads to $V
  V_\Delta(\infty) = \lim_{z\to\infty} z^{2\Delta}V_\Delta(z)\ . 
  \label{vdi}
 \end{align}
-The global Ward identities are valid not only for primary fields, but also for \textbf{global primary fields} (also called quasi-primary fields): $L_0$-eigenvectors that are annihilated by $L_1$ but not necessarily by $L_{n\geq 2}$. According to the OPE $T(y)T(z)$ \eqref{tt}, the energy-momentum tensor is a global primary field of dimension $\Delta=2$, and the resulting behaviour at infinity is consistent with our assumption \eqref{tinf}. 
+The global Ward identities are valid not only for primary fields, but also for \textbf{global primary fields} (also called quasi-primary fields): $L_0$-eigenvectors that are annihilated by $L_1$ but not necessarily by $L_{n\geq 2}$. According to the OPE $T(y)T(z)$ \eqref{tt}, the energy-momentum tensor is a global primary field of dimension $\Delta=2$, and the resulting behaviour at infinity \eqref{vdi} is consistent with our assumption \eqref{tinf}. 
 
 Let us solve the global Ward identities in the cases $N=1,2,3,4$. We have $3$ linear differential equations in the $N$ variables $z_i$, and we write their solutions up to $z_i$-independent prefactors:
 \begin{itemize}
@@ -676,7 +675,7 @@ Let us solve the global Ward identities in the cases $N=1,2,3,4$. We have $3$ li
  \begin{align}
   \left<V_{\Delta_1}(z_1)\right>\propto \delta_{\Delta_1,0}\ . 
  \end{align}
- \item \boxed{$N=2$}\ : Similarly, there are more Ward identities than variables in $Z$, leading to $Z\neq 0\implies \Delta_1=\Delta_2$, and to the solution
+ \item \boxed{$N=2$}\ : Again, there are more Ward identities than variables, leading to $Z\neq 0\implies \Delta_1=\Delta_2$, and to the solution
  \begin{align}
  \Big< V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \Big> \propto \delta_{\Delta_1,\Delta_2} z_{12}^{-2\Delta_1} \ .
  \label{2pt}
@@ -697,7 +696,7 @@ A four-point function is therefore completely determined by its dependence on $1
  \Big< V_{\Delta_1}(z) V_{\Delta_2}(0)V_{\Delta_3}(\infty)V_{\Delta_4}(1) \Big> \propto G(z)\ . 
 \end{align}
 \end{itemize}
-In addition to global Ward identities, there are \textbf{local Ward identities}, which follow from $\oint_\infty dy\ \epsilon(y)Z(y)=0$, where $\epsilon(y)$ is a meromorphic function such that $\epsilon(y)\underset{y\to\infty}{=}O(y^2)$, with poles at $y=z_i$. Local Ward identities allow us to determine correlation functions of descendant fields from the corresponding correlation functions of primary fields, thereby justifying of focus on primary fields. In the case $\epsilon(y) = \frac{1}{(y-z_1)^{n-1}}$ with $n\geq -1$, using the expressions \eqref{zy} for $Z(y)$ and \eqref{lvtv} for $L_{-n}V_{\Delta_1}(z_1)$, we obtain the Ward identity
+In addition to global Ward identities, there are \textbf{local Ward identities}, which follow from $\oint_\infty dy\ \epsilon(y)Z(y)=0$, where $\epsilon(y)$ is a meromorphic function such that $\epsilon(y)\underset{y\to\infty}{=}O(y^2)$, with poles at $y=z_i$. Local Ward identities allow us to determine correlation functions of descendant fields from the corresponding correlation functions of primary fields, thereby justifying our focus on primary fields. In the case $\epsilon(y) = \frac{1}{(y-z_1)^{n-1}}$ with $n\geq -1$, using the expressions \eqref{zy} for $Z(y)$ and \eqref{lvtv} for $L_{-n}V_{\Delta_1}(z_1)$, we obtain the Ward identity
 \begin{align}
  \left<L_{-n}V_{\Delta_1}(z_1)\prod_{j=2}^N V_{\Delta_j}(z_j)\right> = \sum_{j=2}^N \left(-\frac{1}{z_{j1}^{n-1}}\frac{\partial}{\partial z_j} +\frac{n-1}{z_{j1}^n} \Delta_j\right) \left<\prod_{j=1}^N V_{\Delta_j}(z_j)\right>\ . 
  \label{lwi}
@@ -706,14 +705,16 @@ If $n\geq 2$ this is a local Ward identity, while for $n=-1,0,1$ we recover glob
 
 \subsubsection{Single-valuedness and chiral factorization}
 
-We assume that correlation functions are single-valued functions on the Riemann sphere. However, correlation functions are of the type of $z^\Delta$, which is multivalued unless $\Delta\in\mathbb{Z}$. Single-valued functions like $|z|^{2\Delta}=z^\Delta\bar{z}^\Delta$ are not written in terms of powers of $z$, but also involve $\bar z$. In the literature, the notation $f(z,\bar z)$ is sometimes used for arbitrary functions of $z$, with $f(z)$ reserved to locally holomorphic functions, i.e. functions such that $\frac{\partial}{\partial \bar z} f(z) =0$. We will not use the notation $f(z,\bar z)$, which is redundant since $\bar z$ is itself a function of $z$. However, the generators $\ell_n$ \eqref{lpz} of local conformal transformations are only valid when acting on locally holomorphic functions: for more general functions, the generators are 
+We assume that correlation functions are single-valued functions on the Riemann sphere. However, correlation functions are of the type of $z^\Delta$, which is multivalued unless $\Delta\in\mathbb{Z}$. Single-valued functions like $|z|^{2\Delta}=z^\Delta\bar{z}^\Delta$ are not written in terms of powers of $z$, but also involve $\bar z$. In the literature, the notation $f(z,\bar z)$ is sometimes used for arbitrary functions of $z$, with $f(z)$ reserved to locally holomorphic functions, i.e. functions such that $\frac{\partial}{\partial \bar z} f(z) =0$. We will not use the notation $f(z,\bar z)$, which is redundant since $\bar z$ is itself a function of $z$. 
+
+The generators $\ell_n$ \eqref{lpz} of local conformal transformations are only valid when acting on locally holomorphic functions: for more general functions, the generators are 
 \begin{align}
  \ell_n +\bar{\ell}_n \quad , \quad i(\bar\ell_n -\bar \ell_n)\  .
  \label{epbe}
 \end{align}
 In fact we want the algebra of conformal transformations to act on a complex vector space: the space of complex-valued functions on $\overline{\mathbb{C}}$ for the Witt algebra, the space of states of the CFT for the Virasoro algebra. We should therefore complexify our symmetry algebra, and we obtain two copies of the Virasoro algebra: a \textbf{left-moving or holomorphic} Virasoro algebra $\mathfrak{V}$ with generators $L_n$, and a \textbf{right-moving or antiholomorphic} Virasoro algebra $\bar{\mathfrak{V}}$ with generators $\bar{L}_n$. In the case of the algebra of global conformal transformations, we start with the 6-dimensional real Lie algebra $\mathfrak{sl}_2(\mathbb{C})$, with generators \eqref{epbe} with $n=-1,0,1$, and the complexification yields $\mathfrak{sl}_2(\mathbb{C})^\mathbb{C} = \mathfrak{sl}_2(\mathbb{C})\times \mathfrak{sl}_2(\mathbb{C})$.
 
-In Sections \eqref{sec:vir} and \eqref{sec:ope}, we have been doing \textbf{chiral CFT}, which means considering $\mathfrak{V}$ only. In a full CFT, the symmetry algebra is the \textbf{conformal algebra} $\mathfrak{V}\times \bar{\mathfrak{V}}$, where for simplicity we assume that the left and right central charges are equal. When it comes to representations, Verma modules of $\mathfrak{V}\times \bar{\mathfrak{V}}$ are simply $\mathcal{V}_\Delta\otimes \bar{\mathcal{V}}_{\bar \Delta}$, where we write a bar over representations of $\bar{\mathfrak{V}}$. There are also representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$ that are not themselves factorized. We will encounter such representations in Section \ref{sec:log}. 
+In Sections \ref{sec:vir} and \ref{sec:ope}, we have been doing \textbf{chiral CFT}, which means considering $\mathfrak{V}$ only. In a full CFT, the symmetry algebra is the \textbf{conformal algebra} $\mathfrak{V}\times \bar{\mathfrak{V}}$, where for simplicity we assume that the left and right central charges are equal. When it comes to representations, Verma modules of $\mathfrak{V}\times \bar{\mathfrak{V}}$ are simply $\mathcal{V}_\Delta\otimes \bar{\mathcal{V}}_{\bar \Delta}$, where we write a bar over representations of $\bar{\mathfrak{V}}$. There are also representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$ that are not themselves factorized. We will encounter such representations in Section \ref{sec:log}. 
 
 Fields now belong to representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$, and they obey $\frac{\partial}{\partial \bar z} V(z) = \bar L_{-1} V(z)$, which is the antiholomorphic version of Eq. \eqref{pvlv}. This allows us to define a right-moving energy-momentum tensor $\bar T(y) = \sum_{n\in\mathbb{Z}} \frac{\bar L_n^{(z)}}{(\bar y-\bar z)^{n+2}}$. While $T$ is locally holomorphic, $\bar T$ is locally antiholomorphic:
 \begin{align}
@@ -761,7 +762,8 @@ Let us systematically use OPEs for simplifying correlation functions. Knowing th
 \begin{align}
  V_1(z_1)V_2(z_2) = \sum_{k\in\mathcal{S}} C_{12}^k \left|z_{12}^{\Delta_k-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} z_{12}^{|L|}f_{\Delta_1,\Delta_2}^{\Delta_k,L}\right|^2 V_k(z_2)\ ,
 \end{align}
-where we assume that all fields are primaries or descendants thereof, and redefine the spectrum $\mathcal{S}$ as a basis of primaries. Let us insert this OPE in a three-point function, and focus on the leading terms as $z_1\to z_2$. Using the 2-point function \eqref{2ptb}, we obtain
+where the basis $\mathcal{L}$ of creation operators was defined in Eq. \eqref{lcm},
+we assume that all fields are primaries or descendants thereof, and we abuse the notation $\mathcal{S}$ by using it for a basis of primaries rather than for the space of states. Let us insert this OPE in a three-point function, and focus on the leading terms as $z_1\to z_2$. Using the 2-point function \eqref{2ptb}, we obtain
 \begin{align}
   \Big< V_1(z_1)V_2(z_2)V_3(z_3) \Big> \underset{z_1\to z_2}{\sim} 
   \left|z_{12}^{\Delta_3-\Delta_1-\Delta_2}z_{23}^{-2\Delta_3}\right|^2 
@@ -770,10 +772,13 @@ where we assume that all fields are primaries or descendants thereof, and redefi
 \end{align}
 Comparing with the 3-point function \eqref{3ptc}, this implies a relation between the 2-point, 3-point and OPE structure constants, 
 \begin{align}
- \boxed{C_{123} = C_{12}^k B_{k3}}\ .
+ C_{123} = \sum_{k\in\mathcal{S}\left|\substack{\Delta_3=\Delta_k\\ \bar{\Delta}_3=\bar\Delta_k}\right. } C_{12}^k B_{k3}\ .
+\end{align}
+If the basis of fields is such that $B_{ij}=\delta_{ij}B_i$, and in particular if two different primary fields never share the same conformal dimensions, the sum over $k$ reduces to one term, and the relation reduces to
+\begin{align}
+ \boxed{C_{123} = C_{12}^3B_{3}} \ .
  \label{ccb}
 \end{align}
-If the basis of fields is such that $B_{ij}=\delta_{ij}B_i$, and in particular if two different primary fields never share the same conformal dimensions, the sum over $k$ reduces to one term, and the relation reduces to $C_{123} = C_{12}^3B_{3}$. 
 
 Inserting the OPE in the four-point function $\left<V_1(z)V_2(0)V_3(\infty)V_4(1)\right>$, we obtain a linear combination of 3-point functions of the type $\left<L\bar{L}V_k(0) V_3(\infty)V_4(1)\right>$ with $L,\bar L\in\mathcal{L}$. Deducing 3-point functions of descendants from 3-point functions of primaries using local Ward identities, we can in principle compute the ratios
 \begin{align}
@@ -838,7 +843,7 @@ Our conformal blocks are chirally factorized into Virasoro blocks because of our
 \end{align}
 Given 4 fields $V_1,V_2,V_3,V_4$, this is a system of infinitely many equations (parametrized by the cross-ratio $z$) for the spectrum $\mathcal{S}$ and the 4-point structure constants $D_k^{(x)}$. The difficulty of solving these equations depends on what we know (or assume) on these objects. Let us discuss 3 scenarios:
 \begin{enumerate}
- \item We know the \textbf{CFT data}: the spectrm $\mathcal{S}$ and the 2-point and 3-point structure constants $B,C$. This determines the OPEs, and crossing symmetry of arbitrary 4-point functions is equivalent to the associativity of the OPE, and therefore to the consistency of the CFT on the sphere. In this scenario, we have to check that the crossing symmetry equations are obeyed, not to solve them.
+ \item We know the \textbf{CFT data}: the spectrm $\mathcal{S}$ and the 2-point and 3-point structure constants $B,C$. This determines the OPEs. Crossing symmetry of arbitrary 4-point functions is equivalent to the associativity of the OPE, and therefore to the consistency of the CFT on the sphere. In this scenario, we do not solve the crossing symmetry equations, but only check that they are obeyed by a given solution.
  \item We know the spectrum but not the structure constants. Using the factorization of 4-point structure constants into 3-point structure constants (see Table \eqref{stu}), crossing symmetry is a system of nonlinear equations for the 3-point structure constants.
  \item We know the conformal dimensions that appear in the spectrum, but not how many fields of a given dimensions exist. Then crossing symmetry is a system of linear equations for the 4-point structure constants, viewed as functions of conformal dimensions. But we cannot distinguish two fields with the same dimension, or factorize 4-point structure constants into 3-point structure constants. 
 \end{enumerate}
