@@ -123,6 +123,7 @@ This course will introduce two-dimensional CFT in the bootstrap approach, and sk
  \item Conformal bootstrap methods, analytic and numerical. Generic and degenerate conformal blocks. Crossing symmetry equations and their solutions. 
  \item Exactly known structure constants. Analytic properties of correlation functions. 
 \end{itemize}
+self-contained 
 \end{abstract}
 
 \vspace{5mm}
@@ -173,7 +174,7 @@ Brownian loop soup: presumably has higher symmetry.
 
 %\end{tcolorbox}
 
-\section{Basic objects of two-dimensional CFT}
+\section{Basic objects of two-dimensional CFT}\label{sec:bo}
 
 In this section we introduce conformal symmetry, fields, operator product expansions, and correlation functions. In particular, we will focus on the two ingredients of exact solvability: \textit{local} conformal symmetry and \textit{degenerate} fields. We begin with the Virasoro algebra, which describes local conformal transformations. 
 
@@ -412,7 +413,7 @@ A primary state $V_{\Delta_{(r,s)}}$ has the same dimension as $V_{\langle r,s\r
 
 \subsection{Fields and operator product expansions}\label{sec:fope}
 
-The fundamental objects of conformal field theory are fields. In quantum field theory, all states can be obtained by acting on the vacuum state with fields: this is called the \textbf{state-field correspondence} or operator-state correspondence. In conformal field theory, the correspondence is bijective, and allows us to identify the space of fields with the \textbf{space of states} (or spectrum) $\mathcal{S}$ --- a vector space on which the Virasoro algebra acts. To a state $V$, the correspondence associates a field $V(z)$, which depends on a position $z\in\overline{\mathbb{C}}$ in the Riemann sphere. Primary states, descendant states and degenerate states respectively give rise to \textbf{primary fields}, \textbf{descendant fields} and \textbf{degenerate fields}.
+The fundamental objects of conformal field theory are fields. In quantum field theory, all states can be obtained by acting on the vacuum state with fields: this is called the \textbf{state-field correspondence} or operator-state correspondence. In conformal field theory, the correspondence is bijective, and allows us to identify the space of fields with the \textbf{space of states} or \textbf{spectrum} $\mathcal{S}$ --- a vector space on which the Virasoro algebra acts. To a state $V$, the correspondence associates a field $V(z)$, which depends on a position $z\in\overline{\mathbb{C}}$ in the Riemann sphere. Primary states, descendant states and degenerate states respectively give rise to \textbf{primary fields}, \textbf{descendant fields} and \textbf{degenerate fields}.
 
 In the bootstrap approach, which is axiomatic rather than constructive, we need not define fields. Rather, we use fields as convenient notations for stating properties of correlation functions, which we will introduce in Section \ref{sec:cor}. 
 
@@ -635,7 +636,7 @@ In two-dimensional CFT, there are other observables that we will not consider, s
  \item Entanglement entropy. 
 \end{itemize}
 
-\subsubsection{Conformal symmetry constraints}
+\subsubsection{Conformal symmetry constraints}\label{sec:csc}
 
 In order to derive the conformal symmetry constraints for an $N$-point function of primary fields $Z$, it is convenient to consider the $N+1$-point function $Z(y)$ that also includes the energy-momentum tensor $T(y)$:
 \begin{align}
@@ -852,15 +853,52 @@ We will encounter Scenario 1 in Liouville theory, and Scenario 3 in loop models.
 
 \section{Sketching exactly solvable CFTs}\label{sec:sesc}
 
-\subsection{Spectrum and symmetries}
+Historically, the spectrums and fusion rules of solvable CFTs have been derived by studying the torus partition function. The torus partition function is a simple object that only depends and the spectrum, and not on the structure constants. It can be computed either by solving modular invariance equations, or constructively via a path integral or a lattice sum. And in rational CFTs, the modular invariance equations involve the modular S-matrix, which also allows us to determine the fusion rules via the Verlinde formula \cite{fms97}.
 
-Use deg. fields rather than torus partition fct. We lose Verlinde formula for fusion rules but we get them otherwise. Our method is more elementary and flexible, can extend CFTs. Degeneracy of fields can be hard to deduce from partition fct. 
+Here, we will follow a different approach, based on exploiting the fusion rules of degenerate fields. This approach is technically simpler. We do not lose in generality, because all known exactly solvable CFTs have degenerate fields. And this approach is more flexible: in many cases, adding fields to the spectrum is consistent with fusion rules, but breaks modular invariance. For example, in the Ising model, the modular invariant torus partition function only involves three primary fields, and excludes disorder fields, as well as the fields that are needed for computing connectivities of clusters.
+
+\subsection{Spectrum and symmetries}
 
 \subsubsection{What is a CFT? What is a spectrum?}
 
-What is a CFT? symmetry algebra has fields that may not belong to the space of states. Space of states not very well defined when continuum. 
+We define a \textbf{conformal field theory} as a set of correlation functions that obey the assumptions of Section \ref{sec:bo}, most importantly Virasoro symmetry, the commutativity of fields, the existence of OPEs, and single-valuedness. We already know that on the sphere, defining a conformal field theory is equivalent to giving a spectrum and 2-point and 3-point structure constants such that crossing symmetry is obeyed.
+
+This definition works very well in \textbf{rational CFTs}, i.e. CFTs whose spectrums are made of finitely many primary fields and their descendants. However, in more general CFTs, the notion of the spectrum becomes more fuzzy. To say why, let us introduce various spectrums associated to various objects:
+\begin{align}
+ \begin{array}{|c|c|l|}
+  \hline 
+  \text{Object} & \text{Spectrum}  & \text{Definition or constraint}
+  \\
+  \hline \hline 
+  V_1V_2 & \text{OPE spectrum } \mathcal{S}_{12} & V_1V_2 \sim \sum_{k\in \mathcal{S}_{12}} V_k 
+  \\
+  \hline 
+  \left<V_1V_2V_3V_4\right> & \text{Channel spectrum } \mathcal{S}^{(s)} &  \mathcal{S}^{(s)}= \mathcal{S}_{12}\cap \mathcal{S}_{34}
+  \\
+  \hline 
+  \text{CFT} & \text{Physical spectrum } \mathcal{S} &  i,j\in\mathcal{S}\implies \mathcal{S}_{i,j}\subset \mathcal{S}  
+  \\
+  \hline 
+  \widetilde{\text{CFT}} & \text{Extended spectrum } \widetilde{\mathcal{S}} & \mathcal{S}\subset \widetilde{\mathcal{S}}\ , \quad i,j\in\widetilde{\mathcal{S}}\implies \mathcal{S}_{i,j}\subset \widetilde{\mathcal{S}}
+  \\
+  \hline 
+ \end{array}
+ \label{specs}
+\end{align}
+The physical spectrum is made of the fields whose correlation functions we are interested in. Our constraint is that this spectrum be \textbf{closed under OPEs}, which is necessary for the CFT to be consistent. We also introduce extended spectrums as larger spectrums that are also closed under OPEs. There are various reasons for considering extended spectrums:
+\begin{itemize}
+ \item In Section \ref{sec:csc}, we have used the energy-momentum tensor $T$ for deriving Ward identities. However, in Liouville theory, $T$ does not belong to the physical spectrum. Nevertheless, it always makes sense to insert $T$ in correlation functions, because it is a descendant of the identity field. 
+ \item In the $O(n)$ model, we will use the degenerate field $V_{\langle 1,2\rangle}$ for constraining correlation functions, even though it does not belong to the physical spectrum. Correlation functions that involve $V_{\langle 1,2\rangle}$ are not single-valued: they belong to an extended CFT that obeys relaxed assumptions. 
+ \item The spectrum of Liouville theory is continuous, so that the OPE gives rise to an integral over the real momentums of primary fields. Since the integrand is meromorphic, the integration contour can be deformed in the complex plane. This leads to an extended spectrum of complex momentums. 
+ \item In loop models, although the spectrum is discrete, it is interesting to consider correlation functions of fields with arbitrary complex conformal dimensions. 
+\end{itemize}
+
 
 \subsubsection{How many degenerate fields?}
+
+Subsets of deg. fields closed under fusion. 
+
+Closure of physical and extended spectrums. Degenerate fields may belong to extended CFT. 
 
 If only one: depends on $\beta^2$, not $c$.
 
@@ -870,14 +908,14 @@ A \textbf{spinless field} is a primary field whose spin vanishes. Spinless field
 
 \textbf{diagonal field}
 
-
+Diagonal CFT. 
 
 \subsection{CFTs with 1 degenerate field}
 
 Study monodromies of 4-point function with $V_{\langle 1,2\rangle}$ (not single valued) leads to $r_1+r_2+r_3\in\mathbb{Z}$. Applies also to D-series MM, explains conservation of diagonality.
 
 
-Maximal spectrum is $O(n)$. Cannot really argue for Potts, but does not matter much. Anyway, at this stage, we know nothing about global symmetry.
+Maximal space of states is $O(n)$. Cannot really argue for Potts, but does not matter much. Anyway, at this stage, we know nothing about global symmetry.
 
 \subsection{CFTs with 2 degenerate fields}
 
@@ -944,7 +982,7 @@ We need log reps. Can deduce them from non-log using degenerate fields. Issue is
 
 To get log reps we need associativity of OPE of degenerate field. We might say that this does not belong to the chiral, algebraic part of the review. However, to get conformal blocks we need associativity of OPEs of the energy-momentum tensor. Again, interchiral point of view changes things! And we need bootstrap axioms, including single-valuedness? 
 
-Emergence of logarithms: $\Delta_{P+\frac{\beta}{2}}-\Delta_{P-\frac{\beta}{2}} = \beta P$ integer $\implies P=P_{(0,s)}$. This calculation is a diagonal version of the argument about integer spin that leads to non-diagonal $O(n)$ spectrum.
+Emergence of logarithms: $\Delta_{P+\frac{\beta}{2}}-\Delta_{P-\frac{\beta}{2}} = \beta P$ integer $\implies P=P_{(0,s)}$. This calculation is a diagonal version of the argument about integer spin that leads to non-diagonal $O(n)$ space of states.
 
 In $V_{\langle 1,2\rangle}V^N_{(r,0)} = \sum_\pm V^N_{(r,\pm 1)}$ it is not just spins but also dimensions that differ by integers. 
 
