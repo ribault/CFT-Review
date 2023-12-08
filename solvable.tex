@@ -124,6 +124,8 @@ This course will introduce two-dimensional CFT in the bootstrap approach, and sk
  \item Exactly known structure constants. Analytic properties of correlation functions. 
 \end{itemize}
 self-contained 
+
+Mostly generic central charge, then take limits
 \end{abstract}
 
 \vspace{5mm}
@@ -168,6 +170,11 @@ Words in bold are defined.
 
 
 Brownian loop soup: presumably has higher symmetry.
+
+Historically, the spectrums and fusion rules of solvable CFTs have been derived by studying the torus partition function. The torus partition function is a simple object that only depends and the spectrum, and not on the structure constants. It can be computed either by solving modular invariance equations, or constructively via a path integral or a lattice sum. And in rational CFTs, the modular invariance equations involve the modular S-matrix, which also allows us to determine the fusion rules via the Verlinde formula \cite{fms97}.
+
+Here, we will follow a simpler approach, based on exploiting the fusion rules of degenerate fields. We do not lose in generality, because all known exactly solvable CFTs have degenerate fields. And we gain in flexibility: in many cases, adding fields to the spectrum is consistent with fusion rules, but breaks modular invariance. For example, in the Ising model, the modular invariant torus partition function only involves three primary fields, and excludes disorder fields, as well as the fields that are needed for computing connectivities of clusters.
+
 
 \subsection*{Acknowledgements}
 
@@ -288,6 +295,7 @@ Solving CFTs will lead to fairly complicated formulas, which would become even m
 To get rid of the square root, we rewrite the central charge in terms a the parameter $\beta$ such that 
 \begin{align}
  \boxed{c = 1- 6\left(\beta - \beta^{-1}\right)^2 } \ .
+ \label{cb}
 \end{align}
 Then the conformal dimensions \eqref{dpm} become 
 $
@@ -396,20 +404,22 @@ By an abuse of terminology, we say that $\frac{\mathcal{R}}{\mathcal{R}_{X{}}}$ 
 
 If $\mathcal{R}$ has several null vectors, we can define various quotient representations by setting some null vectors to zero. A \textbf{degenerate representation} is a representation that has at least one vanishing null vector. A degenerate representation is partly degenerate if it has some non-vanishing null vectors, and fully degenerate if all null vectors vanish. Partly degenerate representations play an important role in CFTs with extended chiral algebras, such as conformal Toda theories \cite{fl07c}. But all degenerate representations that we will consider will be fully degenerate. 
 
-For $r,s\in\mathbb{N}^*$, let us call $\mathcal{R}_{\langle r,s\rangle}$ the fully degenerate quotient of the Verma module $\mathcal{V}_{\Delta_{\langle r,s\rangle}}$. If $\beta^2\in \mathbb{C}-\mathbb{Q}$, we simply have 
+For $r,s\in\mathbb{N}^*$, let us call $\mathcal{R}^d_{\langle r,s\rangle}$ the quotient of the Verma module $\mathcal{V}_{\Delta_{\langle r,s\rangle}}$ where the null vector $L_{\langle r,s\rangle}V_{\Delta_{(r,s)}}$ vanishes:
 \begin{align}
- \mathcal{R}_{\langle r,s\rangle} \ \underset{\beta^2\in \mathbb{C}-\mathbb{Q}}{=}\ \frac{\mathcal{V}_{\Delta_{\langle r,s\rangle}}}{\mathcal{V}_{\Delta_{\langle r,-s\rangle}}}\ . 
+ \mathcal{R}^d_{\langle r,s\rangle} 
+ =\frac{\mathcal{V}_{\Delta_{\langle r,s\rangle}}}{\mathcal{V}_{\Delta_{\langle r,-s\rangle}}}\ . 
  \label{rvv}
 \end{align}
-If $\beta^2\in \mathbb{Q}$, the fully degenerate quotient can generally not be obtained by setting one null vector to zero, but it is always enough to set two null vectors to zero, with all other null vectors being descendants of these two. Schematically,
+If $\beta^2\in \mathbb{C}-\mathbb{Q}$, the Verma module $\mathcal{V}_{\Delta_{\langle r,s\rangle}}$ in general has several null vectors, and $\mathcal{R}^d_{\langle r,s\rangle}$ may be partly degenerate. Let us call $\mathcal{R}^f_{\langle r,s\rangle}$ the fully degenerate quotient of  $\mathcal{V}_{\Delta_{\langle r,s\rangle}}$: this quotient can generally not be obtained by setting one null vector to zero, but it is always enough to set two null vectors to zero, with all other null vectors being descendants of these two. Schematically,
 \begin{align}
- \mathcal{R}_{\langle r,s\rangle} = \frac{\mathcal{V}_{\Delta_{\langle r,s\rangle}}}{\mathcal{V}_{\Delta_{\langle r_1,-s_1\rangle}}+ \mathcal{V}_{\Delta_{\langle r_2,-s_2\rangle}}}\ .
+ \mathcal{R}^f_{\langle r,s\rangle} = \frac{\mathcal{V}_{\Delta_{\langle r,s\rangle}}}{\mathcal{V}_{\Delta_{\langle r_1,-s_1\rangle}}+ \mathcal{V}_{\Delta_{\langle r_2,-s_2\rangle}}}\ .
 \end{align}
-We define the \textbf{degenerate state} $V_{\langle r,s\rangle}$ as the primary state of the degenerate representation $\mathcal{R}_{\langle r,s\rangle}$, which obeys the null vector equation
+We define the \textbf{degenerate state} $V^d_{\langle r,s\rangle}$ and \textbf{fully degenerate state} $V^f_{\langle r,s\rangle}=V^f_{\langle r_1,s_1\rangle}=V^f_{\langle r_2,s_2\rangle}$ as the primary states of the representation $\mathcal{R}^d_{\langle r,s\rangle}$ and 
+$\mathcal{R}^f_{\langle r,s\rangle}$. These states obey the null vector equation
 \begin{align}
-L_{\langle r, s\rangle} V_{\langle r,s\rangle} = 0\ .
+L_{\langle r, s\rangle} V^d_{\langle r,s\rangle} = L_{\langle r, s\rangle} V^f_{\langle r,s\rangle} = 0\ .
 \end{align}
-A primary state $V_{\Delta_{(r,s)}}$ has the same dimension as $V_{\langle r,s\rangle}$, but does not necessarily obey the null vector equation. 
+The primary state $V_{\Delta_{(r,s)}}$ has the same dimension as $V^d_{\langle r,s\rangle}$ and $V^f_{\langle r,s\rangle}$, but does not necessarily obey the null vector equation. 
 
 \subsection{Fields and operator product expansions}\label{sec:fope}
 
@@ -476,7 +486,7 @@ Comparing this with Eq. \eqref{lvtv} applied to $I(z)$, we find
 \begin{align}
  L_{n\geq -1} I(z) = 0 \quad , \quad T(z) = L_{-2}I(z)\ .
 \end{align}
-In particular, the identity field is a degenerate primary field of conformal dimension zero, with a vanishing null vector at level $1$, i.e. $I(z) \propto V_{\langle 1,1\rangle}(z)$. And the energy-momentum tensor is a descendant of that field.
+In particular, the identity field is a degenerate primary field of conformal dimension zero, with a vanishing null vector at level $1$, i.e. $I(z) \propto V^d_{\langle 1,1\rangle}(z)$. And the energy-momentum tensor is a descendant of that field.
 OPEs that involve the energy-momentum tensor provide a way of rewriting not only the definition of primary fields \eqref{tvd}, but also the commutation relations of the Virasoro algebra itself: 
 \begin{align}
  T(y)T(z) = \frac{\frac{c}{2}}{(y-z)^4} + \frac{2T(z)}{(y-z)^2} + \frac{\partial T(z)}{y-z} + O(1)\ .
@@ -542,34 +552,34 @@ The form of the dependence on $z_1,z_2$ provides an a posteriori justification f
 
 \subsubsection{Fusion rules and fusion products}\label{sec:dope}
 
-The appearance of poles in OPE coefficients is a hint that when degenerate conformal dimensions $(\Delta_{(r,s)})_{r,s\in\mathbb{N}^*}$ are involved, there are constraints on the fields that can appear in a given OPE. Let us derive these constraints in the simplest case $\Delta_{(1,1)}=0$. There are two types of primary fields of dimension $0$: the non-degenerate field $V_0$, which generates the Verma module $\mathcal{V}_0$, and the degenerate field $V_{\langle 1,1\rangle}$, which obeys the null vector equation $L_{-1}V_{\langle 1,1\rangle}=\partial V_{\langle 1,1\rangle}=0$ and generates the degenerate representation $\mathcal{R}_{\langle 1,1\rangle}$. While the OPE $V_0V_{\Delta_2}$ is just a special case of the OPE \eqref{prope}, 
-the OPE $V_{\langle 1,1\rangle}V_{\Delta_2}$ also obeys 
+The appearance of poles in OPE coefficients is a hint that when degenerate conformal dimensions $(\Delta_{(r,s)})_{r,s\in\mathbb{N}^*}$ are involved, there are constraints on the fields that can appear in a given OPE. Let us derive these constraints in the simplest case $\Delta_{(1,1)}=0$. There are two types of primary fields of dimension $0$: the non-degenerate field $V_0$, which generates the Verma module $\mathcal{V}_0$, and the degenerate field $V^d_{\langle 1,1\rangle}$, which obeys the null vector equation $L_{-1}V^d_{\langle 1,1\rangle}=\partial V^d_{\langle 1,1\rangle}=0$ and generates the degenerate representation $\mathcal{R}^d_{\langle 1,1\rangle}$. While the OPE $V_0V_{\Delta_2}$ is just a special case of the OPE \eqref{prope}, 
+the OPE $V^d_{\langle 1,1\rangle}V_{\Delta_2}$ also obeys 
 \begin{align}
- 0 = \frac{\partial}{\partial z_1} V_{\langle 1,1\rangle}(z_1)V_{\Delta_2}(z_2) \supset C_{\langle 1,1\rangle,\Delta_2}^{\Delta} \frac{\partial}{\partial z_1} z_{12}^{\Delta-\Delta_2} \left(V_\Delta(z_2) +\cdots \right) \ ,
+ 0 = \frac{\partial}{\partial z_1} V^d_{\langle 1,1\rangle}(z_1)V_{\Delta_2}(z_2) \supset C_{\langle 1,1\rangle,\Delta_2}^{\Delta} \frac{\partial}{\partial z_1} z_{12}^{\Delta-\Delta_2} \left(V_\Delta(z_2) +\cdots \right) \ ,
 \end{align}
-therefore $V_\Delta$ may appear only provided $\Delta=\Delta_2$. This agrees with the remark (in Section \ref{sec:ope}) that $V_{\langle 1,1\rangle}$ is proportional to the identity field. 
+therefore $V_\Delta$ may appear only provided $\Delta=\Delta_2$. This agrees with the remark (in Section \ref{sec:ope}) that $V^d_{\langle 1,1\rangle}$ is proportional to the identity field. 
 
-Then let us study the subtler question of whether $V_0$ or $V_{\langle 1,1\rangle}$ may appear in the OPE $V_{\Delta_1}V_{\Delta_2}$. In the case of $V_0$, the pole of $f^{L_{-1}}$ \eqref{fl1} means that our normalization condition $f^1=1$ was wrong: we in fact have $f^1=0$ while $f^{L_{-1}}\neq 0$. Therefore, the non-vanishing null vector $L_{-1}V_0$ may appear in the OPE, together with its descendants, while $V_0$ itself and its other descendants give vanishing contributions. In the case of $V_{\langle 1,1\rangle}$ however, the null vector vanishes, and no descendant of $V_{\langle 1,1\rangle}$ may appear --- unless the left-hand side of the OPE Ward identity \eqref{dddv} vanishes, which happens if $\Delta_1=\Delta_2$. 
+Then let us study the subtler question of whether $V_0$ or $V^d_{\langle 1,1\rangle}$ may appear in the OPE $V_{\Delta_1}V_{\Delta_2}$. In the case of $V_0$, the pole of $f^{L_{-1}}$ \eqref{fl1} means that our normalization condition $f^1=1$ was wrong: we in fact have $f^1=0$ while $f^{L_{-1}}\neq 0$. Therefore, the non-vanishing null vector $L_{-1}V_0$ may appear in the OPE, together with its descendants, while $V_0$ itself and its other descendants give vanishing contributions. In the case of $V^d_{\langle 1,1\rangle}$ however, the null vector vanishes, and no descendant of $V^d_{\langle 1,1\rangle}$ may appear --- unless the left-hand side of the OPE Ward identity \eqref{dddv} vanishes, which happens if $\Delta_1=\Delta_2$. 
 
 Let us introduce the \textbf{fusion rules} as a convenient notation for writing constraints on OPEs, by omitting everything but the primary fields:
 \begin{align}
- V_{\langle 1,1\rangle} V_{\Delta} = V_\Delta \quad , \quad V_{\Delta_1} V_{\Delta_2} \ni V_{\langle 1,1\rangle} \implies \Delta_1=\Delta_2\ . 
+ V^d_{\langle 1,1\rangle} V_{\Delta} = V_\Delta \quad , \quad V_{\Delta_1} V_{\Delta_2} \ni V^d_{\langle 1,1\rangle} \implies \Delta_1=\Delta_2\ . 
 \end{align}
 In terms of representations of the Virasoro algebra, this may be rewritten in terms of a \textbf{fusion product} such that 
 \begin{align}
- \mathcal{R}_{\langle 1,1\rangle} \times \mathcal{V}_\Delta = \mathcal{V}_\Delta \quad , \quad \dim\text{Hom}\left(\mathcal{V}_{\Delta_1}\times \mathcal{V}_{\Delta_2}, \mathcal{R}_{\langle 1,1\rangle}\right) = \delta_{\Delta_1,\Delta_2}\ ,
+ \mathcal{R}^d_{\langle 1,1\rangle} \times \mathcal{V}_\Delta = \mathcal{V}_\Delta \quad , \quad \dim\text{Hom}\left(\mathcal{V}_{\Delta_1}\times \mathcal{V}_{\Delta_2}, \mathcal{R}^d_{\langle 1,1\rangle}\right) = \delta_{\Delta_1,\Delta_2}\ ,
  \label{rtv}
 \end{align}
 where $\text{Hom}(\mathcal{R},\mathcal{R}')$ is the space of linear maps from $\mathcal{R}$ to $\mathcal{R}'$ that commute with the action of the Virasoro algebra. 
 Such a fusion product can be algebraically defined \cite{gab99}. It differs from the tensor product, in particular its definition involves the fields' positions, although the resulting product does not. Just like OPEs, the fusion product is commutative and associative. Moreover, as we just saw in the case of Verma modules, we have an isomorphism
 \begin{align}
- \text{Hom}\left(\mathcal{R},\mathcal{R}'\right) \simeq \text{Hom}\left(\mathcal{R}\times\mathcal{R}',\mathcal{R}_{\langle 1,1\rangle}\right)\ . 
+ \text{Hom}\left(\mathcal{R},\mathcal{R}'\right) \simeq \text{Hom}\left(\mathcal{R}\times\mathcal{R}',\mathcal{R}^d_{\langle 1,1\rangle}\right)\ . 
  \label{hrr}
 \end{align}
 
 \subsubsection{Fusion products of degenerate representations}
 
-Thanks to the isomorphism \eqref{hrr}, we can find the fusion rules of $V_{\langle 2,1\rangle}$ by studying whether it may appear in an OPE $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$. This amounts to finding whether the two-dimensional linear system \eqref{el1c}, \eqref{el2c} has a solution, even though it is of rank one. With the help of Eq. \eqref{l1c}, \eqref{l2c}, this condition boils down to 
+Thanks to the isomorphism \eqref{hrr}, we can find the fusion rules of $V^d_{\langle 2,1\rangle}$ by studying whether it may appear in an OPE $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$. This amounts to finding whether the two-dimensional linear system \eqref{el1c}, \eqref{el2c} has a solution, even though it is of rank one. With the help of Eq. \eqref{l1c}, \eqref{l2c}, this condition boils down to 
 \begin{align}
  \left(4\Delta_{\langle 2,1\rangle}+2\right) \left(\Delta_{\langle 2,1\rangle}+¨2\Delta_1-\Delta_2\right) = 3\left(\Delta_{\langle 2,1\rangle}+\Delta_1-\Delta_2\right)\left(\Delta_{\langle 2,1\rangle}+1+\Delta_1-\Delta_2\right)\ .
 \end{align}
@@ -577,44 +587,44 @@ Using the expression \eqref{ars} for $\Delta_{\langle 2,1\rangle}$, and replacin
 \begin{align}
  \prod_{\pm,\pm}\left(\tfrac{\beta}{2}\pm P_1\pm P_2\right) = 0\ . 
 \end{align}
-This leads to the fusion rules of $V_{\langle 2,1\rangle}$, from which the fusion rules of $V_{\langle 1,2\rangle}$ are deduced by $\beta\to \beta^{-1}$. We write these fusion rules in terms of fusion products, where we index Verma modules by their momentums:
+This leads to the fusion rules of $V^d_{\langle 2,1\rangle}$, from which the fusion rules of $V^d_{\langle 1,2\rangle}$ are deduced by $\beta\to \beta^{-1}$. We write these fusion rules in terms of fusion products, where we index Verma modules by their momentums:
 \begin{align}
- \boxed{\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{V}_P = \sum_\pm \mathcal{V}_{P\pm \frac{\beta}{2}}} \quad, \quad \boxed{\mathcal{R}_{\langle 1,2\rangle}\times \mathcal{V}_P = \sum_\pm \mathcal{V}_{P\pm \frac{1}{2\beta}}}\ . 
+ \boxed{\mathcal{R}^d_{\langle 2,1\rangle}\times \mathcal{V}_P = \sum_\pm \mathcal{V}_{P\pm \frac{\beta}{2}}} \quad, \quad \boxed{\mathcal{R}^d_{\langle 1,2\rangle}\times \mathcal{V}_P = \sum_\pm \mathcal{V}_{P\pm \frac{1}{2\beta}}}\ . 
  \label{rvvp}
 \end{align}
-From these simple formulas, all the discrete spectrums of Section \ref{sec:sesc} will follow. For the moment, let us deduce the fusion products of higher degenerate representations $\mathcal{R}_{\langle r,s\rangle}$, using the associativity of the fusion product. We start with the remark that a highest-weight representation $\mathcal{R}$ is degenerate if and only if its fusion product with any Verma module $\mathcal{R}\times \mathcal{V}_P$ has finitely many terms:
+From these simple formulas, all the discrete spectrums of Section \ref{sec:sesc} will follow. For the moment, let us deduce the fusion products of higher degenerate representations $\mathcal{R}^d_{\langle r,s\rangle}$, using the associativity of the fusion product. We start with the remark that a highest-weight representation $\mathcal{R}$ is degenerate if and only if its fusion product with any Verma module $\mathcal{R}\times \mathcal{V}_P$ has finitely many terms:
 \begin{itemize}
- \item If $\mathcal{R}=\mathcal{R}_{\langle r,s\rangle}$ is degenerate, the condition that $V_{\langle r,s\rangle}$ may appear in the OPE $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$ leads to polynomial equations of order $rs$ on $\Delta_1,\Delta_2$, just as we saw in the case $(r,s)=(2,1)$. These equations may be interpreted as conditions on residues of OPE coefficients,
+ \item If $\mathcal{R}=\mathcal{R}^d_{\langle r,s\rangle}$ is degenerate, the condition that $V^d_{\langle r,s\rangle}$ may appear in the OPE $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$ leads to polynomial equations of order $rs$ on $\Delta_1,\Delta_2$, just as we saw in the case $(r,s)=(2,1)$. These equations may be interpreted as conditions on residues of OPE coefficients,
  \begin{align}
-  V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset V_{\langle r,s\rangle} \quad \implies \quad \forall L\in \mathcal{L},\ \underset{\Delta=\Delta_{(r,s)}}{\operatorname{Res}} f^{\Delta,L}_{\Delta_1,\Delta_2} = 0\ .
+  V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset V^d_{\langle r,s\rangle} \quad \implies \quad \forall L\in \mathcal{L},\ \underset{\Delta=\Delta_{(r,s)}}{\operatorname{Res}} f^{\Delta,L}_{\Delta_1,\Delta_2} = 0\ .
   \label{resf}
  \end{align}
  (If the residues vanish for $|L|=rs$, then they vanish for all $L\in\mathcal{L}$.)
  \item If $\mathcal{R}$ is not degenerate, the corresponding primary field may appear in any OPE of the type $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$, because the OPE Ward identities have a solution. 
 \end{itemize}
 It follows that a fusion product of degenerate representations is itself a sum of degenerate representations. 
-For example, according to Eq. \eqref{rvvp}, the product $\mathcal{R}_{\langle 2,1\rangle}\times\mathcal{R}_{\langle 2,1\rangle}$ is the sum of two representations of momentums $\{P_{(2,1)} \pm \frac{\beta}{2}\} = \{P_{(1,1)},P_{(3,1)}\}$. These representations must be degenerate, therefore $\mathcal{R}_{\langle 2,1\rangle}\times\mathcal{R}_{\langle 2,1\rangle}=\mathcal{R}_{\langle 1,1\rangle}+\mathcal{R}_{\langle 3,1\rangle}$. By associativity of $\mathcal{R}_{\langle 2,1\rangle}\times\mathcal{R}_{\langle 2,1\rangle}\times \mathcal{V}_P$, we then deduce 
+For example, according to Eq. \eqref{rvvp}, the product $\mathcal{R}^d_{\langle 2,1\rangle}\times\mathcal{R}^d_{\langle 2,1\rangle}$ is the sum of two representations of momentums $\{P_{(2,1)} \pm \frac{\beta}{2}\} = \{P_{(1,1)},P_{(3,1)}\}$. These representations must be degenerate, therefore $\mathcal{R}^d_{\langle 2,1\rangle}\times\mathcal{R}^d_{\langle 2,1\rangle}=\mathcal{R}^d_{\langle 1,1\rangle}+\mathcal{R}^d_{\langle 3,1\rangle}$. By associativity of $\mathcal{R}^d_{\langle 2,1\rangle}\times\mathcal{R}^d_{\langle 2,1\rangle}\times \mathcal{V}_P$, we then deduce 
 $
- \mathcal{R}_{\langle 3,1\rangle} \times \mathcal{V}_P = \mathcal{V}_{P-\beta}+\mathcal{V}_P+\mathcal{V}_{P+\beta}
+ \mathcal{R}^d_{\langle 3,1\rangle} \times \mathcal{V}_P = \mathcal{V}_{P-\beta}+\mathcal{V}_P+\mathcal{V}_{P+\beta}
 $. Iterating this reasoning over $r$ or $s$, we obtain 
 \begin{align}
- \mathcal{R}_{\langle 2,1\rangle}\times \mathcal{R}_{\langle r,s\rangle} 
- \underset{r\geq 2}{=} \sum_\pm \mathcal{R}_{\langle r\pm 1,s\rangle} 
+ \mathcal{R}^d_{\langle 2,1\rangle}\times \mathcal{R}^d_{\langle r,s\rangle} 
+ \underset{r\geq 2}{=} \sum_\pm \mathcal{R}^d_{\langle r\pm 1,s\rangle} 
  \quad , \quad 
- \mathcal{R}_{\langle 1,2\rangle}\times \mathcal{R}_{\langle r,s\rangle} 
- \underset{s\geq 2}{=}\sum_\pm \mathcal{R}_{\langle r,s\pm 1\rangle} \ .
+ \mathcal{R}^d_{\langle 1,2\rangle}\times \mathcal{R}^d_{\langle r,s\rangle} 
+ \underset{s\geq 2}{=}\sum_\pm \mathcal{R}^d_{\langle r,s\pm 1\rangle} \ .
  \label{rrrs}
 \end{align}
 This allows us to find the fusion product of any degenerate representation with a Verma module, by iteration over $r$ and $s$:
 \begin{align}
- \boxed{\mathcal{R}_{\langle r,s\rangle}\times \mathcal{V}_P = \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}} \mathcal{V}_{P+i\beta +j\beta^{-1}}}\ ,
+ \boxed{\mathcal{R}^d_{\langle r,s\rangle}\times \mathcal{V}_P = \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}} \mathcal{V}_{P+i\beta +j\beta^{-1}}}\ ,
  \label{rrsvp}
 \end{align}
 where the sums run by increments of $1$. Since this sum has $rs$ terms, the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$ must have a null vector at level $rs$, a result that we admitted in Section \ref{sec:nvvm}, and which we now derived using fusion products. Fusion can even be used to compute the null vectors themselves \cite{fms97}. 
 
-We can then find the fusion product $\mathcal{R}_{\langle r_1,s_1\rangle}\times \mathcal{R}_{\langle r_2,s_2\rangle}$, either by again iterating over $r_1$ and $s_1$, or by summing the degenerate representations whose momentums appear in both  $\mathcal{R}_{\langle r_1,s_1\rangle}\times \mathcal{V}_{P_{(r_2,s_2)}}$ and $\mathcal{R}_{\langle r_2,s_2\rangle}\times \mathcal{V}_{P_{(r_1,s_1)}}$:
+We can then find the fusion product $\mathcal{R}^d_{\langle r_1,s_1\rangle}\times \mathcal{R}^d_{\langle r_2,s_2\rangle}$, either by again iterating over $r_1$ and $s_1$, or by summing the degenerate representations whose momentums appear in both  $\mathcal{R}^d_{\langle r_1,s_1\rangle}\times \mathcal{V}_{P_{(r_2,s_2)}}$ and $\mathcal{R}^d_{\langle r_2,s_2\rangle}\times \mathcal{V}_{P_{(r_1,s_1)}}$:
 \begin{align}
-  \boxed{\mathcal{R}_{\langle r_1,s_1 \rangle} \times \mathcal{R}_{\langle r_2,s_2 \rangle} = \sum_{r\overset{2}{=}|r_1-r_2|+1}^{r_1+r_2-1}\ \sum_{s\overset{2}{=}|s_1-s_2|+1}^{s_1+s_2-1} \mathcal{R}_{\langle r,s \rangle}}\ ,
+  \boxed{\mathcal{R}^d_{\langle r_1,s_1 \rangle} \times \mathcal{R}^d_{\langle r_2,s_2 \rangle} = \sum_{r\overset{2}{=}|r_1-r_2|+1}^{r_1+r_2-1}\ \sum_{s\overset{2}{=}|s_1-s_2|+1}^{s_1+s_2-1} \mathcal{R}^d_{\langle r,s \rangle}}\ ,
   \label{rrsr}
 \end{align}
 where the sums now run by increments of $2$. 
@@ -853,11 +863,9 @@ We will encounter Scenario 1 in Liouville theory, and Scenario 3 in loop models.
 
 \section{Sketching exactly solvable CFTs}\label{sec:sesc}
 
-Historically, the spectrums and fusion rules of solvable CFTs have been derived by studying the torus partition function. The torus partition function is a simple object that only depends and the spectrum, and not on the structure constants. It can be computed either by solving modular invariance equations, or constructively via a path integral or a lattice sum. And in rational CFTs, the modular invariance equations involve the modular S-matrix, which also allows us to determine the fusion rules via the Verlinde formula \cite{fms97}.
+In this section we derive the spectrums and fusion rules of exactly solvable CFTs. We begin with a discussion of notions of a CFT and its spectrum. We then introduce a classification of CFTs based on the number of independent degenerate fields, before focussing on CFTs with 1 and then 2 degenerate fields.
 
-Here, we will follow a different approach, based on exploiting the fusion rules of degenerate fields. This approach is technically simpler. We do not lose in generality, because all known exactly solvable CFTs have degenerate fields. And this approach is more flexible: in many cases, adding fields to the spectrum is consistent with fusion rules, but breaks modular invariance. For example, in the Ising model, the modular invariant torus partition function only involves three primary fields, and excludes disorder fields, as well as the fields that are needed for computing connectivities of clusters.
-
-\subsection{Spectrum and symmetries}
+\subsection{Spectrum and degenerate fields}
 
 \subsubsection{What is a CFT? What is a spectrum?}
 
@@ -888,21 +896,49 @@ This definition works very well in \textbf{rational CFTs}, i.e. CFTs whose spect
 The physical spectrum is made of the fields whose correlation functions we are interested in. Our constraint is that this spectrum be \textbf{closed under OPEs}, which is necessary for the CFT to be consistent. We also introduce extended spectrums as larger spectrums that are also closed under OPEs. There are various reasons for considering extended spectrums:
 \begin{itemize}
  \item In Section \ref{sec:csc}, we have used the energy-momentum tensor $T$ for deriving Ward identities. However, in Liouville theory, $T$ does not belong to the physical spectrum. Nevertheless, it always makes sense to insert $T$ in correlation functions, because it is a descendant of the identity field. 
- \item In the $O(n)$ model, we will use the degenerate field $V_{\langle 1,2\rangle}$ for constraining correlation functions, even though it does not belong to the physical spectrum. Correlation functions that involve $V_{\langle 1,2\rangle}$ are not single-valued: they belong to an extended CFT that obeys relaxed assumptions. 
+ \item In the $O(n)$ model, we will use the degenerate field $V^d_{\langle 1,2\rangle}$ for constraining correlation functions, even though it does not belong to the physical spectrum. Correlation functions that involve $V^d_{\langle 1,2\rangle}$ are not single-valued: they belong to an extended CFT that obeys weaker assumptions. 
  \item The spectrum of Liouville theory is continuous, so that the OPE gives rise to an integral over the real momentums of primary fields. Since the integrand is meromorphic, the integration contour can be deformed in the complex plane. This leads to an extended spectrum of complex momentums. 
  \item In loop models, although the spectrum is discrete, it is interesting to consider correlation functions of fields with arbitrary complex conformal dimensions. 
 \end{itemize}
-
+We will say that \textbf{a field exists} if it belongs to some extended spectrum, i.e. if it can be consistently added to our CFT. 
 
 \subsubsection{How many degenerate fields?}
 
-Subsets of deg. fields closed under fusion. 
+In general, OPEs of degenerate fields produce more degenerate fields. We assume that the sets of degenerate fields in $\mathcal{S}$ and $\widetilde{\mathcal{S}}$ are closed under the fusion rules \eqref{rrsr}. If for example we repeatedly fuse $V^d_{\langle 5,2\rangle}$ with itself, we obtain all $V^d_{\langle r,s\rangle}$ with $(r,s)\in (2\mathbb{N}+1)\times \mathbb{N}^*$. For each one of the two Kac indices $r,s$, allowing one even value implies allowing all values in $\mathbb{N}^*$, and allowing one odd value except $1$ implies allowing all odd values. Modulo $r\leftrightarrow s$, this leads to 7 possible sets of degenerate fields, which we characterize by whether or not they contain $V^d_{\langle 1,1\rangle}, V^d_{\langle 2,1\rangle},V^d_{\langle 3,1\rangle},V^d_{\langle 1,2\rangle}$ and $V^d_{\langle 1,3\rangle}$:
+\begin{align}
+ %\begin{array}{c}
+  \emptyset \quad \left\{V^d_{\langle 1,1\rangle}\right\}  \quad \left\{V^d_{\langle 1,3\rangle}\right\} \quad \left\{V^d_{\langle 1,2\rangle}\right\} 
+  % \\
+  \quad 
+  \left\{V^d_{\langle 3,1\rangle},V^d_{\langle 1,3\rangle}\right\} \quad 
+  \left\{V^d_{\langle 3,1\rangle},V^d_{\langle 1,2\rangle}\right\} \quad 
+  \left\{V^d_{\langle 2,1\rangle},V^d_{\langle 1,2\rangle}\right\} 
+ %\end{array}
+ \label{degsets}
+\end{align}
+In particular, the set that is generated by $\{V^d_{\langle 2,1\rangle},V^d_{\langle 1,2\rangle}\} $ is the full set of degenerate fields $\{V^d_{\langle r,s\rangle}\}_{r,s\in\mathbb{N}^*}$. For our purposes, it is enough to distinguish 3 types of CFTs:
+\begin{itemize}
+ \item CFTs with two degenerate fields, in the sense that both $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$ exist. 
+ \item CFTs with one degenerate field $V^d_{\langle 1,2\rangle}$. Because the invariance under $\beta\to \beta^{-1}$ is broken by choosing $V^d_{\langle 1,2\rangle}$ rather than $V^d_{\langle 2,1\rangle}$, such CFTs depend on $\beta^2$ \eqref{cb} rather than on the central charge $c$. 
+ \item CFTs with no nontrivial degenerate field, where only $V^d_{\langle 1,1\rangle}$ exists.
+\end{itemize}
+We will not consider CFTs where $V^d_{\langle 1,3\rangle}$ exists but not $V^d_{\langle 1,2\rangle}$. 
+When it comes to the spectrum, the situation is more diverse, and pretty much all sets of degenerate fields \eqref{degsets} can occur. 
 
-Closure of physical and extended spectrums. Degenerate fields may belong to extended CFT. 
+For $\beta^2\in\mathbb{Q}$, the situation is more complicated, because we have to distinguish fully degenerate fields from partly degenerate fields. And the fully degenerate fields $V^f_{\langle 2,1\rangle}$ and $V^f_{\langle 1,2\rangle}$ are not independent, as follows from the identities
+\begin{align}
+ \beta^2 =\frac{q}{p}>0 \implies V^f_{\langle p-1,1\rangle} = V^f_{\langle 1,q-1\rangle} \quad , \quad  \beta^2 =-\frac{q}{p}<0 \implies V^f_{\langle p+1,1\rangle} = V^f_{\langle 1,q+1\rangle}\ . 
+\end{align}
+We will not attempt to classify all possible sets of degenerate fields. We will simply indicate which degenerate fields exist on a cases by case basis. 
 
-If only one: depends on $\beta^2$, not $c$.
+Degenerate fields are so important that it has been proposed to formally extend the conformal algebra into an \textbf{interchiral algebra}, which also includes the degenerate fields \cite{grs12}. While we will not systematically use this concept, we will find it convenient to introduce interchiral conformal blocks in Section \ref{sec:icb}. 
 
 \subsubsection{Diagonal and non-diagonal fields}
+
+Motivated by the single-valuedness of correlation functions, we have made the assumption \eqref{siz} that conformal spins are integer. A simple way to satisfy this assumption is to have fields of spin zero, also known as \textbf{spinless fields}. However, whenever degenerate fields exist, we will use the slightly different notion of a \textbf{diagonal field}: a spinless field whose OPEs with degenerate fields only produces spinless fields. Conversely, a \textbf{non-diagonal field} is a field that either has nonzero spin, or is related to fields with nonzero spins by taking OPEs with degenerate fields. A \textbf{diagonal CFT} is a CFT whose spectrum only involves diagonal fields.  
+
+
+Diagonal degenerate fields 
 
 A \textbf{spinless field} is a primary field whose spin vanishes. Spinless fields are often called diagonal, but in Section \ref{sec:sesc} we will define diagonal fields as a subclass of spinless fields. 
 
@@ -910,19 +946,25 @@ A \textbf{spinless field} is a primary field whose spin vanishes. Spinless field
 
 Diagonal CFT. 
 
+Parametrize $(r,s)$ 
+
+Closure under degenerate fusion implies that fields exist. Stronger that closure under OPE. We now require terms to appear in OPE. Problem: diagonal vs non-diagonal? can formulate it using $(r,s)$ parametrization.
+
 \subsection{CFTs with 1 degenerate field}
 
-Study monodromies of 4-point function with $V_{\langle 1,2\rangle}$ (not single valued) leads to $r_1+r_2+r_3\in\mathbb{Z}$. Applies also to D-series MM, explains conservation of diagonality.
+Study monodromies of 4-point function with $V^d_{\langle 1,2\rangle}$ (not single valued) leads to $r_1+r_2+r_3\in\mathbb{Z}$. Applies also to D-series MM, explains conservation of diagonality.
 
 
 Maximal space of states is $O(n)$. Cannot really argue for Potts, but does not matter much. Anyway, at this stage, we know nothing about global symmetry.
+
+E-series
 
 \subsection{CFTs with 2 degenerate fields}
 
 
 Start with GMM. Then focus on rational central charge, get MM. If we take limit, we presumably get log-MM. 
 
-Get D-series, can we get E-series? 
+Get D-series, can we get E-series? Maybe yes, with vanishing of struct. csts explaining disappearance of some fields? 
 
 Deduce Liouville with $c\leq 1$ by taking a limit. Then get Liouville for generic $c$. Other limits of diag CFT: RWT. Limit of non-diagonal MM.
 
@@ -958,6 +1000,14 @@ Do we want a synthetic table of known solutions?
 \end{itemize}
 
 
+\subsection{Remarks}
+
+Compute vanishings of ratios of structure constants in $V^d_{\langle 2,1\rangle}V_P$. 
+
+For $P=P_{(0,n)}$ with $n\in\mathbb{N}$ we find only $V_{P_{(-1,n)}}$ i.e. the coef of $V_{P_{(1,n)}}$ vanishes. For $n>0$, this is a consequence of Virasoro symmetry i.e. appearance of NV whose fusion rules would be violated. For $n=0$ this does not follow from Virasoro symmetry: interpret as interchiral phenomenon?
+
+For $P=P_{(1,n)}$ with $n\in\mathbb{N}$ we find only $V_{P_{(2,n)}}$ i.e. the coef of $V_{P_{(0,n)}}$ vanishes. Now, Virasoro symmetry is not responsible. In fact it would be perfectly consistent to have $V_{P_{(0,n)}}$ alone, the OPE coefs are not divergent. The problem is purely interchiral: it is about the ratio of coefs in an interchiral module, not in a Virasoro module. 
+
 \section{Numerical bootstrap}
 
 Synthesis of what precedes?
@@ -967,6 +1017,8 @@ Notion of interchiral symmetry. Liouville 4pt is only one interchiral block? Sam
 Sketch method. Start with Zamolodchikov recursion.
 
 \subsection{Virasoro conformal blocks and Zamolodchikov's recursion}
+
+\subsection{Interchiral blocks} \label{sec:icb}
 
 
 \section{Logarithmic representations and fields} \label{sec:log}
@@ -984,7 +1036,7 @@ To get log reps we need associativity of OPE of degenerate field. We might say t
 
 Emergence of logarithms: $\Delta_{P+\frac{\beta}{2}}-\Delta_{P-\frac{\beta}{2}} = \beta P$ integer $\implies P=P_{(0,s)}$. This calculation is a diagonal version of the argument about integer spin that leads to non-diagonal $O(n)$ space of states.
 
-In $V_{\langle 1,2\rangle}V^N_{(r,0)} = \sum_\pm V^N_{(r,\pm 1)}$ it is not just spins but also dimensions that differ by integers. 
+In $V^d_{\langle 1,2\rangle}V^N_{(r,0)} = \sum_\pm V^N_{(r,\pm 1)}$ it is not just spins but also dimensions that differ by integers. 
 
 Need we assume that $V^N_{(r,0)}$ is the limit of diagonal fields? Why would we not get $V_{P_{(r,0)}}$? Are there two ways to take the limit? See OPE coefficients. 
 
