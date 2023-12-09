@@ -902,7 +902,7 @@ The physical spectrum is made of the fields whose correlation functions we are i
 \end{itemize}
 We will say that \textbf{a field exists} if it belongs to some extended spectrum, i.e. if it can be consistently added to our CFT. 
 
-\subsubsection{How many degenerate fields?}
+\subsubsection{How many degenerate fields?}\label{sec:hmdf}
 
 In general, OPEs of degenerate fields produce more degenerate fields. We assume that the sets of degenerate fields in $\mathcal{S}$ and $\widetilde{\mathcal{S}}$ are closed under the fusion rules \eqref{rrsr}. If for example we repeatedly fuse $V^d_{\langle 5,2\rangle}$ with itself, we obtain all $V^d_{\langle r,s\rangle}$ with $(r,s)\in (2\mathbb{N}+1)\times \mathbb{N}^*$. For each one of the two Kac indices $r,s$, allowing one even value implies allowing all values in $\mathbb{N}^*$, and allowing one odd value except $1$ implies allowing all odd values. Modulo $r\leftrightarrow s$, this leads to 7 possible sets of degenerate fields, which we characterize by whether or not they contain $V^d_{\langle 1,1\rangle}, V^d_{\langle 2,1\rangle},V^d_{\langle 3,1\rangle},V^d_{\langle 1,2\rangle}$ and $V^d_{\langle 1,3\rangle}$:
 \begin{align}
@@ -935,20 +935,35 @@ Degenerate fields are so important that it has been proposed to formally extend 
 
 \subsubsection{Diagonal and non-diagonal fields}
 
-Motivated by the single-valuedness of correlation functions, we have made the assumption \eqref{siz} that conformal spins are integer. A simple way to satisfy this assumption is to have fields of spin zero, also known as \textbf{spinless fields}. However, whenever degenerate fields exist, we will use the slightly different notion of a \textbf{diagonal field}: a spinless field whose OPEs with degenerate fields only produces spinless fields. Conversely, a \textbf{non-diagonal field} is a field that either has nonzero spin, or is related to fields with nonzero spins by taking OPEs with degenerate fields. A \textbf{diagonal CFT} is a CFT whose spectrum only involves diagonal fields.  
+Motivated by the single-valuedness of correlation functions, we have made the assumption \eqref{siz} that conformal spins are integer. A simple way to satisfy this assumption is to have fields of spin zero, i.e. \textbf{spinless fields}. However, whenever degenerate fields exist, we will use the slightly different notion of a \textbf{diagonal field}: a spinless field whose OPEs with degenerate fields only produces spinless fields. Conversely, a \textbf{non-diagonal field} is a field that either has nonzero spin, or is related to fields with nonzero spins by taking OPEs with degenerate fields. A \textbf{diagonal CFT} is a CFT whose spectrum only involves diagonal fields.  
+
+We assume that the degenerate fields that we discussed in Section \ref{sec:hmdf} are diagonal. (In minimal models, there can also exist non-diagonal degenerate fields.) For diagonal primary fields that are not degenerate, we will use the notation $V_P$, where $P\in\mathbb{C}$ is the momentum. The OPE of a diagonal degenerate field with $V_P$ is determined by the fusion rules \eqref{rvvp}, and the requirement that only spinless primary fields can appear:
+\begin{align}
+ \boxed{V^d_{\langle 2,1\rangle} V_P \sim \sum_\pm V_{P\pm\frac{\beta}{2}}} \quad , \quad \boxed{V^d_{\langle 1,2\rangle} V_P \sim \sum_\pm V_{P\pm\frac{1}{2\beta}}} \ . 
+ \label{vpope}
+\end{align}
+Non-diagonal fields are in principle parametrized by their left and right momentums $P,\bar P$. We rewrite these momentums as $P_{(r,s)}, P_{(r,-s)}$, where $r,s\in\mathbb{C}$ are the Kac indices defined by Eq. \eqref{prs}, and call $V_{(r,s)}$ our non-diagonal primary field. According to Eq. \eqref{drms}, the conformal spin of this field is 
+\begin{align}
+ \boxed{S_{(r,s)}= rs} \ . 
+\end{align}
+Using Kac indices as parameters simplifies OPEs with degenerate fields: according to the fusion rules \eqref{rvvp}, the only primary fields that can appear in the OPE $V^d_{\langle 2,1\rangle}V_{(r,s)}$ are 
+\begin{align}
+ V^d_{\langle 2,1\rangle}V_{(r,s)} \subset \sum_\pm V_{(r\pm 1,s)} + \sum_\pm V_{(r,s\pm \beta^2)}\ . 
+\end{align}
+However, assuming all fields have integer spins, the two terms on the right-hand side cannot coexist. Consider indeed the spin differences:
+\begin{align}
+ S_{(r\pm 1,s)} - S_{(r,s)} = \pm s \quad , \quad S_{(r,s\pm \beta^2)} - S_{(r,s)} = \pm r\beta^2
+\end{align}
+If $s\in\mathbb{Z}$ and $r\beta^2\in\mathbb{Z}$ then $rs\beta^2=S_{(r,s)}\beta^2\in\mathbb{Z}$, therefore $\beta^2\in\mathbb{Q}$. Keeping the central charge generic, 
+
+then assume generic c results still hold at rational c. 
 
 
-Diagonal degenerate fields 
 
-A \textbf{spinless field} is a primary field whose spin vanishes. Spinless fields are often called diagonal, but in Section \ref{sec:sesc} we will define diagonal fields as a subclass of spinless fields. 
-
-\textbf{diagonal field}
-
-Diagonal CFT. 
-
-Parametrize $(r,s)$ 
 
 Closure under degenerate fusion implies that fields exist. Stronger that closure under OPE. We now require terms to appear in OPE. Problem: diagonal vs non-diagonal? can formulate it using $(r,s)$ parametrization.
+
+end with table of possible fields  and their dimensions 
 
 \subsection{CFTs with 1 degenerate field}
 
