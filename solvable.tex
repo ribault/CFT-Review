@@ -946,26 +946,35 @@ Non-diagonal fields are in principle parametrized by their left and right moment
 \begin{align}
  \boxed{S_{(r,s)}= rs} \ . 
 \end{align}
-Using Kac indices as parameters simplifies OPEs with degenerate fields: according to the fusion rules \eqref{rvvp}, the only primary fields that can appear in the OPE $V^d_{\langle 2,1\rangle}V_{(r,s)}$ are 
+Using Kac indices as parameters will simplifies OPEs with degenerate fields. According to the fusion rules \eqref{rvvp}, the primary fields that can appear in the OPE $V^d_{\langle 2,1\rangle}V_{(r,s)}$ and $V^d_{\langle 1,2\rangle}V_{(r,s)}$ are 
 \begin{align}
- V^d_{\langle 2,1\rangle}V_{(r,s)} \subset \sum_\pm V_{(r\pm 1,s)} + \sum_\pm V_{(r,s\pm \beta^2)}\ . 
+ V^d_{\langle 2,1\rangle}V_{(r,s)} &\subset \sum_\pm V_{(r\pm 1,s)} + \sum_\pm V_{(r,s\pm \beta^2)}\ ,
+ \label{vtovrs}
+ \\
+ V^d_{\langle 1,2\rangle}V_{(r,s)} &\subset \sum_\pm V_{(r\pm \beta^{-2},s)} + \sum_\pm V_{(r,s\pm 1)}\ .
+ \label{votvrs}
 \end{align}
-However, assuming all fields have integer spins, the two terms on the right-hand side cannot coexist. Consider indeed the spin differences:
+Since all fields have half-integer spins, the following spin differences are also half-integer whenever the corresponding fields exist: 
 \begin{align}
- S_{(r\pm 1,s)} - S_{(r,s)} = \pm s \quad , \quad S_{(r,s\pm \beta^2)} - S_{(r,s)} = \pm r\beta^2
+ S_{(r\pm 1,s)} - S_{(r,s)} = \pm s &\quad , \quad S_{(r,s\pm \beta^2)} - S_{(r,s)} = \pm r\beta^2\ ,
+ \\
+ S_{(r\pm \beta^{-2},s)} - S_{(r,s)} = \pm s\beta^{-2} &\quad , \quad S_{(r,s\pm 1)} - S_{(r,s)} = \pm r\ . 
 \end{align}
-If $s\in\mathbb{Z}$ and $r\beta^2\in\mathbb{Z}$ then $rs\beta^2=S_{(r,s)}\beta^2\in\mathbb{Z}$, therefore $\beta^2\in\mathbb{Q}$. Keeping the central charge generic, 
+We now assume that $\beta^2\notin \mathbb{Q}$, and remember $rs\in\frac12\mathbb{Z}$. It follows that $V_{(r\pm 1,s)}$ and $V_{(r,s\pm 1)}$ can coexist neither with $V_{(r,s\pm \beta^2)}$ nor with $V_{(r\pm \beta^{-2},s)}$. Therefore, the OPEs $V^d_{\langle 2,1\rangle}V_{(r,s)}$ and $V^d_{\langle 1,2\rangle}V_{(r,s)}$ each contain at most two primary fields, out of the four that are allowed by fusion rules. For notational simplicity, we choose these two primary fields as follows: 
+\begin{align}
+ \boxed{V^d_{\langle 2,1\rangle}V_{(r,s)} \sim \sum_\pm V_{(r\pm 1,s)}} \quad ,\quad
+ \boxed{V^d_{\langle 1,2\rangle}V_{(r,s)} \sim \sum_\pm V_{(r,s\pm 1)}}\ . 
+ \label{vdvrs}
+\end{align}
+While they were derived under the assumption $\beta^2\notin \mathbb{Q}$, we will assume that these OPEs are valid for any value of the central charge. 
 
-then assume generic c results still hold at rational c. 
-
-
-
-
-Closure under degenerate fusion implies that fields exist. Stronger that closure under OPE. We now require terms to appear in OPE. Problem: diagonal vs non-diagonal? can formulate it using $(r,s)$ parametrization.
-
-end with table of possible fields  and their dimensions 
+end with table of possible fields  and their dimensions and Vir repres? But non-diag fields could be log, or deg, need to remain agnostic here. 
 
 \subsection{CFTs with 1 degenerate field}
+
+Closure under degenerate fusion implies that fields exist. Stronger that closure under OPE. We now require terms to appear in OPE except in the presence of null vectors.
+
+$r=0$ same as diagonal. 
 
 Study monodromies of 4-point function with $V^d_{\langle 1,2\rangle}$ (not single valued) leads to $r_1+r_2+r_3\in\mathbb{Z}$. Applies also to D-series MM, explains conservation of diagonality.
 
