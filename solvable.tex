@@ -865,13 +865,13 @@ We will encounter Scenario 1 in Liouville theory, and Scenario 3 in loop models.
 
 \section{Sketching exactly solvable CFTs}\label{sec:sesc}
 
-In this section we derive the spectrums and fusion rules of exactly solvable CFTs. We begin with a discussion of notions of a CFT and its spectrum. We then introduce a classification of CFTs based on the number of independent degenerate fields, before focussing on CFTs with 1 and then 2 degenerate fields.
+In this section we derive the spectrums and fusion rules of exactly solvable CFTs. We begin with a general discussion of CFTs, their spectrums, and the consequences of having degenerate fields. 
 
 \subsection{Spectrum and degenerate fields}
 
 \subsubsection{What is a CFT? What is a spectrum?}
 
-We define a \textbf{conformal field theory} as a set of correlation functions that obey the assumptions of Section \ref{sec:bo}, most importantly Virasoro symmetry, the commutativity of fields, the existence of OPEs, and single-valuedness. We already know that on the sphere, defining a conformal field theory is equivalent to giving a spectrum and 2-point and 3-point structure constants such that crossing symmetry is obeyed.
+We define a \textbf{conformal field theory} as a set of correlation functions that obey the assumptions of Section \ref{sec:bo}, most importantly Virasoro symmetry, the commutativity of fields, the existence of OPEs, and single-valuedness. We already know that on the sphere, a conformal field theory is characterized by a spectrum and 2-point and 3-point structure constants such that crossing symmetry is obeyed.
 
 This definition works very well in \textbf{rational CFTs}, i.e. CFTs whose spectrums are made of finitely many primary fields and their descendants. However, in more general CFTs, the notion of the spectrum becomes more fuzzy. To say why, let us introduce various spectrums associated to various objects:
 \begin{align}
@@ -895,17 +895,12 @@ This definition works very well in \textbf{rational CFTs}, i.e. CFTs whose spect
  \end{array}
  \label{specs}
 \end{align}
-A basic condition for an OPE \eqref{tope} to converge is that the total conformal dimension be bounded from below over the OPE spectrum,
-\begin{align}
- \boxed{\inf_{k\in \mathcal{S}_{12}}\left(\Delta_k+\bar\Delta_k\right) > -\infty} \ . 
-\end{align}
-The physical spectrum is made of the fields whose correlation functions we are interested in. Our constraint on the physical spectrum is called \textbf{closure under OPEs}. This constraint means that if a field appears in an OPE (or a fortiori in a channel spectrum), then its correlation functions exist. 
-We also introduce extended spectrums as larger spectrums that are also closed under OPEs. There are various reasons for considering extended spectrums:
+The \textbf{physical spectrum} is made of the fields whose correlation functions we are interested in. Our constraint on the physical spectrum is called \textbf{closure under OPEs}. This constraint means that if a field appears in an OPE (or a fortiori in a channel spectrum), then its correlation functions exist. 
+We also introduce \textbf{extended spectrums} as larger spectrums that are also closed under OPEs. There are various reasons for considering extended spectrums:
 \begin{itemize}
  \item In Section \ref{sec:csc}, we have used the energy-momentum tensor $T$ for deriving Ward identities. However, in Liouville theory, $T$ does not belong to the physical spectrum. Nevertheless, it always makes sense to insert $T$ in correlation functions, because it is a descendant of the identity field. 
  \item In the $O(n)$ model, we will use the degenerate field $V^d_{\langle 1,2\rangle}$ for constraining correlation functions, even though it does not belong to the physical spectrum. Correlation functions that involve $V^d_{\langle 1,2\rangle}$ are not single-valued: they belong to an extended CFT that obeys weaker assumptions. 
  \item The spectrum of Liouville theory is continuous, so that the OPE gives rise to an integral over the real momentums of primary fields. Since the integrand is meromorphic, the integration contour can be deformed in the complex plane. This leads to an extended spectrum of complex momentums. 
- \item In loop models, although the spectrum is discrete, it is interesting to consider correlation functions of fields with arbitrary complex conformal dimensions. 
 \end{itemize}
 We will say that \textbf{a field exists} if it belongs to some extended spectrum, i.e. if it can be consistently added to our CFT. 
 
@@ -978,6 +973,8 @@ According to Eq. \eqref{drms}, the conformal spin of $V_{(r,s)}$ is
 \end{align}
 Then $V_{(r,s)}$ generates the Verma module $\mathcal{V}_{P_{(r,s)}} \otimes \bar{\mathcal{V}}_{P_{(r,-s)}}$, unless that module has null vectors, which occurs if $r,s\in\mathbb{Z}^*$, and also for other values of $r,s$ if $\beta^2\in\mathbb{Q}$. If there are null vectors, $V_{(r,s)}$ may generate a degenerate representation, or belong to a logarithmic representation. We will discuss such cases as they arise.  
 
+\subsubsection{Degenerate OPEs and their consequences}
+
 The OPE of a diagonal degenerate field with $V_P$ is determined by the fusion rules \eqref{rvvp}, and the requirement that only spinless primary fields can appear:
 \begin{align}
  \boxed{V^d_{\langle 2,1\rangle} V_P \sim \sum_\pm V_{P\pm\frac{\beta}{2}}} \quad , \quad \boxed{V^d_{\langle 1,2\rangle} V_P \sim \sum_\pm V_{P\pm\frac{1}{2\beta}}} \ . 
@@ -1005,43 +1002,65 @@ We now assume that $\beta^2\notin \mathbb{Q}$, and remember $rs\in\frac12\mathbb
  \boxed{V^d_{\langle 1,2\rangle}V_{(r,s)} \sim \sum_\pm V_{(r,s\pm 1)}}\ . 
  \label{vdvrs}
 \end{align}
-While they were derived under the assumption $\beta^2\notin \mathbb{Q}$, we will assume that these OPEs are valid for any value of the central charge. The OPEs \eqref{vdvrs} and \eqref{vpope} indicate which primary fields can appear: we now assume that in each one of these OPEs, the two fields that can appear do appear. Since the spectrum must be closed under OPEs, this assumption allows degenerate fields to constrain the spectrum $\mathcal{S}$ or extended spectrum $\widetilde{\mathcal{S}}$. In CFTs with 1 or 2 degenerate fields, $V^d_{\langle 1,2\rangle}\in\widetilde{\mathcal{S}}$, therefore $V_{(r,s)}\in\widetilde{\mathcal{S}}\implies V_{(r,s\pm 1)}\in\widetilde{\mathcal{S}}$. 
+While they were derived under the assumption $\beta^2\notin \mathbb{Q}$, we will assume that these OPEs are valid for any value of the central charge. 
+
+The OPEs \eqref{vdvrs} and \eqref{vpope} indicate which primary fields can appear: we now assume that in each one of these OPEs, the two fields that can appear do appear. 
+Together with the closure of the spectrum under OPEs, this leads to constraints on non-diagonal fields. If indeed $V^d_{\langle 1,2\rangle}\in\widetilde{\mathcal{S}}$, then $V_{(r,s)}\in\widetilde{\mathcal{S}}\implies V_{(r,s\pm 1)}\in\widetilde{\mathcal{S}}$. 
  Requiring that the conformal spin \eqref{srs} remains half-integer unders $s\to s\pm 1$, we obtain
- \begin{align}
-  \boxed{r\in \frac12\mathbb{Z}}\ .
-  \label{rihz}
- \end{align}
-\iffalse
-\begin{align}
- \begin{array}{|c|c|c|c|c|}
- \hline 
-  \text{Spectrum} & \text{Degenerate field} & \text{Shifts} & \text{Spins} & \text{Constraint} 
-  \\
-  \hline \hline 
-  \mathcal{S} & V^d_{\langle 1,3\rangle} & s\to s\pm 2 &   S\in \mathbb{Z} & r\in\frac12\mathbb{Z} 
-  \\
-  \hline 
-  \mathcal{S}\text{ or }\widetilde{\mathcal{S}}  & V^d_{\langle 1,2\rangle} & s\to s\pm 1&  S\in \mathbb{Z} & r\in\mathbb{Z} 
- \\
- \hline 
- \widetilde{\mathcal{S}}  & V^d_{\langle 1,2\rangle}& s\to s\pm 1 &  S\in \frac12\mathbb{Z} & r\in\frac12\mathbb{Z} 
- \\
- \hline 
- \end{array}
- \label{rcon}
-\end{align}
-\fi
+ $r\in \frac12 \mathbb{Z}$ 
 Moreover, let us  consider the correlation function $\left<V^d_{\langle 1,2\rangle}\prod_{i=1}^NV_{(r_i,s_i)}\right>$. 
-The monodromy of $V^d_{\langle 1,2\rangle}$  around $V_{(r_i,s_i)}$ is $e^{2\pi ir_i}\in \{1,-1\}$, as determined by the OPE \eqref{prope} and the differences of spins \eqref{sdiff2}. Each one of these monodromies may be nontrivial, but their product must be $1$. Therefore, the first Kac index is conserved modulo integers,
+The monodromy of $V^d_{\langle 1,2\rangle}$  around $V_{(r_i,s_i)}$ is $e^{2\pi ir_i}\in \{1,-1\}$, as determined by the OPE \eqref{prope} and the differences of spins \eqref{sdiff2}. Each one of these monodromies may be nontrivial, but their product must be $1$. Therefore, the first Kac index is conserved modulo integers, and we find 
 \begin{align}
- \boxed{\sum_{i=1}^N r_i  \in \mathbb{Z}}\ . 
+ \boxed{V^d_{\langle 1,2\rangle}\in\widetilde{\mathcal{S}} \quad \implies\quad  r\in \frac12\mathbb{Z} \quad , \quad \sum_{i=1}^N r_i  \in \mathbb{Z}}\ . 
  \label{sriz}
 \end{align}
+Similarly, the existence of $V^d_{\langle 2,1\rangle}$ leads to constraints on the second Kac index of non-diagonal fields $V_{(r,s)}$,
+\begin{align}
+ \boxed{V^d_{\langle 2,1\rangle}\in\widetilde{\mathcal{S}} \quad \implies\quad  s\in \frac12\mathbb{Z} \quad , \quad \sum_{i=1}^N s_i  \in \mathbb{Z}}\ . 
+ \label{ssiz}
+\end{align}
+Finally, a necessary condition for an OPE $V_1V_2\sim \sum_{k\in\mathcal{S}_{12}}V_k$ \eqref{tope} to converge is that the total conformal dimension be bounded from below over the OPE spectrum $\mathcal{S}_{12}$,
+\begin{align}
+ \boxed{\inf_{k\in \mathcal{S}_{12}}\left(\Delta_k+\bar\Delta_k\right) > -\infty} \ . 
+\end{align}
+The total conformal dimension of a non-diagonal field $V_{(r,s)}$ is 
+\begin{align}
+ \Delta_{(r,s)}+\Delta_{(r,-s)} = \frac12\left[ r^2\beta^{2} + s^2\beta^{-2}  -\left(\beta-\beta^{-1}\right)^2\right]\ .
+\end{align}
+If $V^d_{\langle 1,2\rangle}$ exists, then the OPE \eqref{vdvrs} increments $s$ by one unit, therefore $s$ is unbounded in real part i.e. $\sup_{V_{(r,s)}\in \widetilde{\mathcal{S}}} \left(\Re s\right) = \infty$. Assuming that this holdes not only for the extended spectrum $\widetilde{\mathcal{S}}$ but also for some OPE spectrum $\mathcal{S}_{12}$, we deduce $\Re\beta^{-2}>0$, or equivalently 
+\begin{align}
+ \boxed{\Re\beta^2 > 0 \quad \text{i.e.} \quad \Re c < 13}\ .
+ \label{rbp}
+\end{align}
+This constraint holds for all known non-diagonal CFTs with at least 1 degenerate field. 
 
+\subsection{Diagonal CFTs with 2 degenerate fields}
 
-\subsection{CFTs with 1 degenerate field}
+\subsubsection{Generalized minimal models}
 
-\subsubsection{Loop models}
+\subsubsection{Liouville theory}
+
+Limit of GMM, get correct spectrum. Runkel--Watts-type: can we get it as limit GMM? Or do we need MM?
+
+Summary of limits for CFTs with 2 deg. fields? 
+
+Can we see whether in Liouville theory fields with deg. dimensions are actually deg.? For $c\leq 1$, guess not deg. from MM limit. For other $c$, need to know about poles of struct. csts. So answer is probably no. 
+
+\subsubsection{A-series minimal models}
+
+Fusion rules. Limit from GMM subtle at the level of correlation functions, could get log-MM. 
+
+\subsection{Non-diagonal CFTs with 2 degenerate fields}
+
+\subsubsection{D-series minimal models}
+
+Conservation of diagonality from \eqref{sriz}.
+
+\subsubsection{E-series minimal models}
+
+\subsubsection{Non-rational CFTs}
+
+\subsection{Loop models}
 
 As their name indicates, critical loop models were originally defined as critical limits of statistical models that describe non-intersecting loops in our two-dimensional space. Starting with the Ising models, many statistical models can be reformulated in terms of loops, and more models can be directly constructed from loops. But there is a lot of choice about which observables to include in the model. In the Ising model, if we consider only local observables, we obtain a minimal model in the critical limit. If we also consider non-local observables such as cluster connectivities, we obtain a much richer CFT. Deciding which fields to include in the spectrum is therefore not easy, but also not very important, as long as we can extend the spectrum when needed. 
 
@@ -1062,9 +1081,6 @@ What if $V_{(r,s)}$ is spinless i.e. $rs=0$? The field $V_{(r,0)}$ is in fact no
 \end{align}
 For clarity, we will mostly write $V_P$ for diagonal fields. However, results that are derived for $V_{(r,s)}$ also apply to diagonal fields, starting with Eq. \eqref{sriz}.
 
-constraint on $c$.
-
-
 Loop CFT: all non-diag fields, all diag fields. 
 
 $O(n)$: take all non-diag fields, add as many deg. fields as possible. $V^d_{\langle 1,3\rangle}V_{(r,s)}=V_{(r,s-2)}+V_{(r,s)}+V_{(r,s+2)}$
@@ -1074,21 +1090,13 @@ $U(n)$:  assume $V^d_{\langle 1,2\rangle}$, this restricts non-diag fields.
 Potts: Add one diag. field in addition, remove some non-diag. 
 
 
+\subsection{Other CFTs}
 
-\subsubsection{E-series minimal models}
+Log-MM? 
 
-\subsubsection{Logarithmic minimal models}
+Ashkin--Teller, free boson. 
+ 
 
-\subsection{CFTs with 2 degenerate fields}
-
-
-Start with GMM. Then focus on rational central charge, get MM. If we take limit, we presumably get log-MM. 
-
-Get D-series. Conservation of diagonality from \eqref{sriz}.
-
-Deduce Liouville with $c\leq 1$ by taking a limit. Then get Liouville for generic $c$. Other limits of diag CFT: RWT. Limit of non-diagonal MM.
-
-Summary of limits for CFTs with 2 deg. fields? Can we see whether in Liouville theory fields with deg. dimensions are actually deg.? For $c\leq 1$, guess not deg. from MM limit. For other $c$, need to know about poles of struct. csts. So answer is probably no. 
 
 \section{Degenerate four-point functions}
 
