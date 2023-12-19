@@ -1041,7 +1041,7 @@ This constraint holds for all known non-diagonal CFTs with at least 1 degenerate
 
 For $\beta^2\in\mathbb{C}^*-\mathbb{Q}$, we define the \textbf{generalized minimal model (GMM)} as the CFT whose spectrum of primary fields is made of all diagonal degenerate fields:
 \begin{align}
- \mathcal{S}^\text{GMM} = \left\{ V^d_{\langle r,s\rangle}\right\}_{r,s\in\mathbb{N}^*} \ . 
+ \boxed{\mathcal{S}^\text{GMM} = \left\{ V^d_{\langle r,s\rangle}\right\}_{r,s\in\mathbb{N}^*}} \ . 
 \end{align}
 This spectrum is manifestly closed under the degenerate fusion rules \eqref{rrsr}. The set of conformal dimensions is in general not bounded from below:
 \begin{align}
@@ -1066,18 +1066,23 @@ If we apply the limit to both fields in the OPE $V^d_{\langle r_1,s_1\rangle}V^d
  \boxed{V_{P_1}V_{P_2} \sim \frac12 \int_\mathbb{R} dP\ V_P} \ ,
  \label{idpv}
 \end{align}
-where the factor $\frac12$ is here because $V_P$ and $V_{-P}$ are equivalent. Now, remember from Section \ref{sec:csope} that OPE coefficients have poles when the momentum $P$ becomes degenerate. The integral in the OPE $V_{P_1}V_{P_2}$ is therefore formally divergent. We may fear that the integral is only a fancy notation for indicating that the OPE $V^d_{\langle r_1,s_1\rangle}V^d_{\langle r_2,s_2\rangle}$ has a finite limit that does not depend on how we send the indices to infinity. However, it turns out that the integral can be regularized without going back to degenerate fields, by simply shifting the integration line into the complex plane:
+where the factor $\frac12$ is here because $V_P$ and $V_{-P}$ are equivalent. Now, remember from Section \ref{sec:csope} that OPE coefficients have poles when the momentum $P$ becomes degenerate, and these poles are dense in the real line. The integral in the OPE $V_{P_1}V_{P_2}$ is therefore formally divergent. We may fear that the integral is only a fancy notation for indicating that the OPE $V^d_{\langle r_1,s_1\rangle}V^d_{\langle r_2,s_2\rangle}$ has a finite limit that does not depend on how we send the indices to infinity. However, it turns out that the integral can be regularized without going back to degenerate fields, by simply shifting the integration line into the complex plane:
 \begin{align}
  V_{P_1}V_{P_2} \sim \frac12 \int_{\mathbb{R}+i\epsilon} dP\ V_P\ .
  \label{ireg}
 \end{align}
-Let us call \textbf{Liouville theory with $c\leq 1$} the resulting CFT, where $c\leq 1 \iff \beta^2\in\mathbb{R}_{>0}$ is obtained by analytic continuation from the original set $\beta^2\in\mathbb{R}_{>0}-\mathbb{Q}$. The spectrum of primary fields is formally
+Let us call \textbf{Liouville theory} the resulting CFT. The spectrum of primary fields is formally
 \begin{align}
- \mathcal{S}^\text{Liouville $c\leq 1$} = \frac12 \left\{ V_P\right\}_{P\in \mathbb{R}}\ .
+ \boxed{\mathcal{S}^\text{Liouville} = \frac12 \left\{ V_P\right\}_{P\in \mathbb{R}}}\ .
 \end{align}
-The regularized OPE \eqref{ireg} require that we extend the spectrum to fields with arbitrary complex momentums. This will turn out to be possible because correlation functions are analytic in $P$. 
+The regularized OPE \eqref{ireg} requires that we extend the spectrum to $\frac12 \left\{ V_P\right\}_{P\in \mathbb{C}}$. This will turn out to be possible because correlation functions are analytic in $P$. 
 
-Analytic continuation in $c$? No, but...
+For the moment, we have defined Liouville theory for $\beta^2\in\mathbb{R}_{>0}-\mathbb{Q}$. By taking limits, we can extend it to the half-line $c\leq 1$ i.e. $\beta^2\in\mathbb{R}_{>0}$. But we cannot do an analytically continuation the rest of the complex $c$-plane, because of the poles of OPE coefficients. These poles lie on the real $P$-line if $c\leq 1$, but as soon as $c$ strays from this half-line, the poles spread out in the comple $P$-plane, and cross the integration line $\mathbb{R}+i\epsilon$ for any $\epsilon>0$:
+
+Figure
+
+
+
 
 Extended CFT includes Liouville and GMM! 
 
