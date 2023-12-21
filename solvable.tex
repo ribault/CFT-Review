@@ -865,7 +865,7 @@ We will encounter Scenario 1 in Liouville theory, and Scenario 3 in loop models.
 
 \section{Sketching exactly solvable CFTs}\label{sec:sesc}
 
-In this section we derive the spectrums and fusion rules of exactly solvable CFTs. We begin with a general discussion of CFTs, their spectrums, and the consequences of having degenerate fields. 
+In this section we derive the spectrums and fusion rules of exactly solvable CFTs. We begin with a general discussion of CFTs, their spectrums, and the consequences of having degenerate fields. Historically, the CFTs we will discuss have been discovered using a variety of techniques: the modular bootstrap for minimal models \cite{fms97}, the Lagrangian approach for Liouville theory with $c\geq 25$ \cite{zz95}, lattice constructions for the $O(n)$ and Potts models \cite{fsz87}, the numerical bootstrap for Liouville theory with $c\leq 1$ \cite{rs15}. Here we recover their spectrums from considerations about Virasoro representations and their fusion rules. 
 
 \subsection{Spectrum and degenerate fields}
 
@@ -1149,22 +1149,69 @@ To any degenerate representation of the Virasoro algebra, we can associate a dia
 To the best of our knowledge, there is no known counterexample to this conjecture (and no proof either). 
 From the fusion rules \eqref{rrsr}, no nontrivial finite set of simply degenerate representations can be closed under fusion. We therefore need multiply degenerate representations, which implies $\beta^2\in\mathbb{Q}$.  
 
-Let us start with the case $\beta^2=-\frac{q}{p}<0$ with $p,q\in\mathbb{N}^*$ coprime. Let us repeatedly fuse $\mathcal{R}^f_{\langle 2, 1\rangle}$ with itself, and assume that all resulting representations are fully degenerate. We therefore obtain a subset of $\left\{\mathcal{R}^f_{\langle r,1\rangle}\right\}_{r\in\mathbb{N}^*}$. To see whether this subset is finite, we examine the restrictions on fusion rules that come from the existence of multiple vanishing null vectors. The first representation with two null vectors is $\mathcal{R}^f_{\langle p+1,1\rangle}=\mathcal{R}^f_{\langle 1,q+1\rangle}$. Due to the second null vector, there is only one term in 
+Let us start with the case $\beta^2=-\frac{q}{p}<0$ with $p,q\in\mathbb{N}^*$ coprime. The representation $\mathcal{R}^d_{\langle 2, 1\rangle}$ is simply degenerate. Repeatedly fusing it with itself, do we obtain finitely many representations? The answer is no, for two reasons: 
+\begin{enumerate}
+ \item We do not obtain fully degenerate representations.
+ \item Even if we did, this would not prevent us from generating infinitely many representations.
+\end{enumerate}
+To see this, let us observe that $r=p+1$ is the lowest index such that the Verma module $\mathcal{V}_{P_{(r,1)}}$ has two null vectors, and gives rise to the doubly degenerate quotient
 \begin{align}
-\mathcal{R}^f_{\langle 2, 1\rangle}\times \mathcal{R}^f_{\langle p+1,1\rangle} = \mathcal{R}^f_{\langle p+2,1\rangle}=\mathcal{R}^f_{\langle 2,q+1\rangle}\ ,
+ \mathcal{R}^f_{\langle p+1,1\rangle}=\mathcal{R}^f_{\langle 1,q+1\rangle}\ .
 \end{align}
-i.e. the term $\mathcal{R}^f_{\langle p,1\rangle}$ from Eq. \eqref{rrrs} is absent. But this does not prevent repeated fusion with $\mathcal{R}^f_{\langle 2, 1\rangle}$ from generating representations with ever higher $r$. Therefore, there are no diagonal, rational CFTs with $\beta^2<0$. 
+From Eq. \eqref{rrsvp}, the fusion product of this representation with a generic Verma module is 
+\begin{align}
+ \mathcal{R}^f_{\langle p+1,1\rangle} \times \mathcal{V}_P = \sum_{\pm} \mathcal{V}_{P\pm \frac12\sqrt{pq}}\ ,
+\end{align}
+where $\{P\pm \frac12\sqrt{pq}\}_\pm = \{P+i\beta\}_{i=-\frac{p}{2},\cdots, \frac{p}{2}} \cap \{P+j\beta\}_{j=-\frac{q}{2},\cdots, \frac{q}{2}}$. However, by associativity, the fusion product $\mathcal{R}^d_{\langle 2, 1\rangle}\times \mathcal{R}^d_{\langle p, 1\rangle}\times \mathcal{V}_P$ is a sum of $2p$ Verma modules, and cannot agree with $\left(\mathcal{R}^d_{\langle p-1, 1\rangle}+\mathcal{R}^f_{\langle p+1, 1\rangle}\right)\times \mathcal{V}_P$, which would be a sum of $p+1$ modules. In fact, using Eq. \eqref{drms}, we find 
+\begin{align}
+\Delta_{(p-1,1)}-\Delta_{(p+1,1)} = \Delta_{(-1,q+1)}-\Delta_{(1,q+1)}=q+1 \in \mathbb{N}\ ,
+\end{align}
+which suggests that the product $\mathcal{R}^d_{\langle 2, 1\rangle}\times \mathcal{R}^d_{\langle p, 1\rangle}$ is in fact a logarithmic representation, see Section \ref{sec:log}. What if we started with $\mathcal{R}^f_{\langle p+1,1\rangle}$? Fusing it with itself, we obtain $\mathcal{R}^f_{\langle p+1,1\rangle}\times \mathcal{R}^f_{\langle p+1,1\rangle} = \mathcal{R}^d_{\langle 1,1\rangle} + \mathcal{R}^f_{\langle p+1,q+1\rangle}$. 
+% Rk: Identity rep is apparently absent from \mathcal{R}^f_{\langle p+1,1\rangle}\times \mathcal{R}^f_{\langle 1,q+1\rangle} if we trust generic c degenerate fusion rules, but in fact it is present! 
+Again, the two resulting representations have dimensions that differ by an integer, so they might in fact be combined into a single logarithmic representation. Anyway, since $\mathcal{R}^f_{\langle p+1,q+1\rangle} = \mathcal{R}^f_{\langle 2p+1,1\rangle}$, we see that repeated fusion produces conformal dimensions of the type $\Delta_{(r,1)}$, with no bound on $r$. 
 
-We therefore write $\beta^2 = \frac{q}{p}>0$ with $p,q\in\mathbb{N}^*$ coprime.
+We therefore focus on the case $\beta^2 = \frac{q}{p}>0$ with $p,q\in\mathbb{N}^*$ coprime. For simplicity, we will only study the representations that are generated by $\mathcal{R}^f_{\langle 2,1\rangle}$ and $\mathcal{R}^f_{\langle 1,2\rangle}$. This is enough for recovering the known A-series minimal models, but not for investigating other diagonal, rational CFTs that might exist on the sphere. 
+Let us show that $\mathcal{R}^f_{\langle 2,1\rangle}$ and $\mathcal{R}^f_{\langle 1,2\rangle}$ generate the representations $\mathcal{R}^f_{\langle r,s\rangle}$  whose indices belong to the \textbf{Kac table} 
+\begin{align}
+ (r, s) \in [1, p-1] \times [1, q-1] \ .
+ \label{kac}
+\end{align}
+This amounts to showing that $\mathcal{R}^f_{\langle r_1,s_1\rangle} \times \mathcal{R}^f_{\langle r_2,s_2\rangle}$ only involves representations with indices in the Kac table, and that these representations are fully degenerate. We will use the 
+$\mathbb{Z}_2$ symmetry of the Kac table,
+\begin{align}
+ \mathcal{R}^f_{\langle r,s\rangle} = \mathcal{R}^f_{\langle p-r,q-s\rangle}\ , 
+ \label{prqs}
+\end{align}
+which implies that $\mathcal{R}^f_{\langle r,s\rangle}$ has vanishing null vectors at levels $rs$ and $(p-r)(q-s)$. These vanishing null vectors imply the fusion rules \eqref{rrsr}
+\begin{align}
+ \mathcal{R}^f_{\langle r_1,s_1\rangle} \times \mathcal{R}^f_{\langle r_2,s_2\rangle} &\subset \sum_{r\overset{2}{=} |r_1-r_2|+1}^{r_1+r_2-1}\sum_{s\overset{2}{=} |s_1-s_2|+1}^{s_1+s_2-1} \mathcal{R}^d_{\langle r,s\rangle} \ , 
+ \\
+ \mathcal{R}^f_{\langle r_1,s_1\rangle} \times \mathcal{R}^f_{\langle r_2,s_2\rangle} &\subset \sum_{r'\overset{2}{=} |r_1-r_2|+1}^{2p-r_1-r_2-1} \sum_{s'\overset{2}{=} |s_1-s_2|+1}^{2q-s_1-s_2-1}\mathcal{R}^d_{\langle r',s'\rangle} \ , 
+\end{align}
+where $\mathcal{R}^d_{\langle r,s\rangle}$ is a representation that may or may not be fully degenerate. Now, $\mathcal{R}^d_{\langle r,s\rangle} = \mathcal{R}^d_{\langle r',s'\rangle}$ implies $(r,s)=(r',s')$ or $(r,s)=(p-r',q-s')$, but the second equality is impossible due to parity: since $p$ and $q$ are coprime, one of them must be odd, say $p$, but $r\equiv r'\equiv |r_1-r_2|+1\bmod 2$. We therefore obtain the fusion rules 
+\begin{align}
+ \boxed{\mathcal{R}^f_{\langle r_1,s_1\rangle} \times \mathcal{R}^f_{\langle r_2,s_2\rangle} = \sum_{r\overset{2}{=} |r_1-r_2|+1}^{\min(r_1+r_2,2p-r_1-r_2)-1}\sum_{s\overset{2}{=} |s_1-s_2|+1}^{\min(s_1+s_2,2q-s_1-s_2)-1} \mathcal{R}^f_{\langle r,s\rangle}} \ , 
+\end{align}
+where we anticipate that we only obtain fully degenerate representation. To show this, it is enough to realize that a Kac table representation is fully degenerate if and only if its fusion with a generic Verma module $\mathcal{V}_P$ is zero. From Eq. \eqref{rrsvp}, 
+\begin{align}
+ \mathcal{R}^f_{\langle r,s\rangle}\times \mathcal{V}_P \subset \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}} \mathcal{V}_{P+i\beta +j\beta^{-1}} \cap \sum_{i'=-\frac{p-r-1}{2}}^{\frac{p-r-1}{2}} \sum_{j'=-\frac{q-s-1}{2}}^{\frac{q-s-1}{2}} \mathcal{V}_{P+i'\beta +j'\beta^{-1}}\ .
+\end{align}
+For generic $P$, we have 
+\begin{align}
+\mathcal{V}_{P+i\beta +j\beta^{-1}}=\mathcal{V}_{P+i'\beta +j'\beta^{-1}}\implies i\beta +j\beta^{-1} = i'\beta +j'\beta^{-1} \implies 2(i-i')q = 2(j'-j)p\ . 
+\end{align}
+But parity forbids $(i,j)=(i',j')$, since $p$ or $q$ is odd. And we have $2|i-i'|<p$ and $2|j-j'|<q$, so our equality cannot be satisfied. Therefore,
+\begin{align}
+ \mathcal{R}^f_{\langle r,s\rangle}\times \mathcal{V}_P = 0 \ . 
+\end{align}
+Therefore, by associativity of the fusion product, the product of two fully degenerate representations is again a combination of fully degenerate representations.
 
+We therefore define the A-series minimal model MM$_{p,q}$ by its spectrum, made of fully degenerate fields in the Kac table:
+\begin{align}
+ \boxed{\mathcal{S}^{\text{MM}_{p,q}} = \frac12\left\{ V^f_{\langle r,s\rangle} \right\}_{(r,s)\in [1, p-1] \times [1, q-1]} \quad \text{with} \quad 2\leq p<q\ \text{ coprime}}\ .
+\end{align}
+The factor $\frac12$ accounts for the $\mathbb{Z}_2$ symmetry \eqref{prqs}. We assume $p<q$ because MM$_{p, q}=$MM$_{q,p}$, and $2\leq p$ for the Kac table to be non-empty.
 
-If positive get Kac table by argument of \cite{rib14}. Do we take arbitrary $r,s$ in argument, or restrict to Kac table? 
-
-
-
-Fusion rules. 
-
-Trivial rational diagonal CFTs: identity CFT, submodels. 
 
 \subsubsection{Runkel--Watts-type CFTs}\label{sec:rwt}
 
