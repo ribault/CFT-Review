@@ -1058,6 +1058,7 @@ Generalized minimal models exist only on the sphere. In particular, their torus 
 Let us consider the spectrum of a generalized minimal model with $\beta^2\in\mathbb{R}_{>0}-\mathbb{Q}$. The momentums $P_{(r,s)}$ \eqref{prs} are dense in the real line, i.e. $\overline{\left\{ P_{(r,s)}\right\}_{r,s\in\mathbb{N}^*}} = \mathbb{R}$. Any diagonal field with a real momentum can therefore be obtained as a limit of degenerate fields,
 \begin{align}
  \forall P\in\mathbb{R}\ , \quad V_P = \lim_{\substack{r,s\to\infty \\ P_{(r,s)}\to P}} V^d_{\langle r,s\rangle}\ .
+ \label{vplim}
 \end{align}
 We assume that the resulting fields are only characterized by their conformal dimensions. This implies that $V_P$ does not depend on how exactly we take the limit, and also that $V_P$ and $V_{-P}$ are equivalent, since they are related by reflection. The study of correlation functions in Section \eqref{sec:dfpf} will justify this assumption.
 
@@ -1191,16 +1192,14 @@ which implies that $\mathcal{R}^f_{\langle r,s\rangle}$ has vanishing null vecto
 where $\mathcal{R}^d_{\langle r,s\rangle}$ is a representation that may or may not be fully degenerate. Now, $\mathcal{R}^d_{\langle r,s\rangle} = \mathcal{R}^d_{\langle r',s'\rangle}$ implies $(r,s)=(r',s')$ or $(r,s)=(p-r',q-s')$, but the second equality is impossible due to parity: since $p$ and $q$ are coprime, one of them must be odd, say $p$, but $r\equiv r'\equiv |r_1-r_2|+1\bmod 2$. We therefore obtain the fusion rules 
 \begin{align}
  \boxed{\mathcal{R}^f_{\langle r_1,s_1\rangle} \times \mathcal{R}^f_{\langle r_2,s_2\rangle} = \sum_{r\overset{2}{=} |r_1-r_2|+1}^{\min(r_1+r_2,2p-r_1-r_2)-1}\sum_{s\overset{2}{=} |s_1-s_2|+1}^{\min(s_1+s_2,2q-s_1-s_2)-1} \mathcal{R}^f_{\langle r,s\rangle}} \ , 
+ \label{rfrf}
 \end{align}
 where we anticipate that we only obtain fully degenerate representation. To show this, it is enough to realize that a Kac table representation is fully degenerate if and only if its fusion with a generic Verma module $\mathcal{V}_P$ is zero. From Eq. \eqref{rrsvp}, 
 \begin{align}
  \mathcal{R}^f_{\langle r,s\rangle}\times \mathcal{V}_P \subset \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}} \mathcal{V}_{P+i\beta +j\beta^{-1}} \cap \sum_{i'=-\frac{p-r-1}{2}}^{\frac{p-r-1}{2}} \sum_{j'=-\frac{q-s-1}{2}}^{\frac{q-s-1}{2}} \mathcal{V}_{P+i'\beta +j'\beta^{-1}}\ .
 \end{align}
-For generic $P$, we have 
-\begin{align}
-\mathcal{V}_{P+i\beta +j\beta^{-1}}=\mathcal{V}_{P+i'\beta +j'\beta^{-1}}\implies i\beta +j\beta^{-1} = i'\beta +j'\beta^{-1} \implies 2(i-i')q = 2(j'-j)p\ . 
-\end{align}
-But parity forbids $(i,j)=(i',j')$, since $p$ or $q$ is odd. And we have $2|i-i'|<p$ and $2|j-j'|<q$, so our equality cannot be satisfied. Therefore,
+The modules $\mathcal{V}_{P+i\beta +j\beta^{-1}}$ and $\mathcal{V}_{P+i'\beta +j'\beta^{-1}}$ coincide if and only if their momentums are opposite or equal. If they are opposite, $P=-P_{(i+i',j+j')}$ must belong to the (reflected) Kac table, so it is not generic. If they are equal, we have $i\beta +j\beta^{-1} = i'\beta +j'\beta^{-1}$ i.e. $2(i-i')q = 2(j'-j)p$. 
+But parity forbids $(i,j)=(i',j')$, since $p$ or $q$ is odd. And we have $2|i-i'|<p$ and $2|j-j'|<q$, so our equality cannot be satisfied, and 
 \begin{align}
  \mathcal{R}^f_{\langle r,s\rangle}\times \mathcal{V}_P = 0 \ . 
 \end{align}
@@ -1215,7 +1214,47 @@ The factor $\frac12$ accounts for the $\mathbb{Z}_2$ symmetry \eqref{prqs}. We a
 
 \subsubsection{Runkel--Watts-type CFTs}\label{sec:rwt}
 
-Derive fusion from MM fusion rules. (Does not work from GMM, it seems.) Then claim limit from Liouville.
+Let us consider a limit of A-series minimal models where $\frac{q}{p}\to \beta_0^2>0$. The Kac table becomes infinite, and 
+\begin{align}
+ \lim_{\frac{q}{p}\to \beta_0^2} \mathcal{S}^{\text{MM}_{p,q}} = \mathcal{S}^\text{GMM}\ . 
+\end{align}
+This makes it possible to simultaneously send the momentums $P_{(r,s)}$ to arbitrary values $P\in\mathbb{R}$, just as in Eq. \eqref{vplim}. Therefore, Liouville theory with $c\leq 1$ is not only a limit of generalized minimal models, but also a limit of minimal models. However, if $\beta_0^2\in\mathbb{Q}$, it is also possible to fine-tune the behaviour of $p,q,r,s$ such that constraints from the minimal model's fusion rules survive in the limit. As a result, we can obtain not only Liouville theory with its trivial OPE \eqref{idpv}, but also another diagonal CFT with a continuous spectrum, called a \textbf{Runkel--Watts-type theory} after the original example at $c=1$, discovered by Runkel and Watts \cite{rw01}. 
+
+To begin with, we write $\beta_0^2 = \frac{q_0}{p_0}$ with $p_0$ and $q_0$ coprime integers, equivalently $\mathbb{Z}\beta_0+\mathbb{Z}\beta_0^{-1}=\frac{1}{\sqrt{p_0q_0}}\mathbb{Z}$. There exist infinitely many pairs $(p,q)\in \mathbb{N}^2$ such that 
+\begin{align}
+ qp_0-pq_0 = 1 \ .
+\end{align}
+Choosing such pairs amounts to fine-tuning the values of $p, q$, because there are many other ways to satisfy $\lim_{p,q\to\infty}\frac{q}{p}= \frac{q_0}{p_0}$, which is equivalent to $qp_0-pq_0 \ll p$. For fixed $r,s$, we compute the momentum
+\begin{align}
+ P_{(r,s)} = \frac{1}{2\sqrt{p_0q_0}}\left[rq_0-sp_0+ \frac12\left(\frac{r}{p}+\frac{s}{q}\right) + O\left(\frac{1}{p^2}\right)\right]\ . 
+ \label{prsrwt}
+\end{align}
+We now fine-tune $r,s$ such that 
+\begin{align}
+ \lim(rq_0-sp_0), \lim\frac{r}{p} , \lim\frac{s}{q} <\infty \quad , \quad \lim\frac{r}{p} = \lim\frac{s}{q} \ . 
+\end{align}
+To achieve this fine-tuning, it is enough to set
+\begin{align}
+ \left\{\begin{array}{l} r = r_0 + k p_0\ , \\ s = s_0 + k q_0\ , \end{array}\right. \quad  \text{with} \quad k = O(p)\in \mathbb{N}\ .
+\end{align}
+This leads to 
+\begin{align}
+ \lim P_{(r,s)} =  \frac{1}{2\sqrt{p_0q_0}}\left(n+f\right)\quad \text{with} \quad \left\{\begin{array}{l} n =r_0q_0 - s_0p_0 \in \mathbb{Z} \ , \\ f =  \lim\frac{r}{p} = \lim\frac{s}{q} \in (0, 1) \ . \end{array}\right.
+\end{align}
+Now what happens to the minimal model fusion rules $\mathcal{R}^f_{\langle r_1,s_1\rangle} \times \mathcal{R}^f_{\langle r_2,s_2\rangle}$ \eqref{rfrf} when we apply our limit to both representations? Let us examine the momentums \eqref{prsrwt} of the resulting representations $\mathcal{R}^f_{\langle r,s\rangle}$. The combination $n=rq_0-sp_0$ takes integer values such that $n\equiv n_1+n_2+p_0+q_0\bmod 2$, while 
+both $\frac{r}{p}$ and $\frac{s}{q}$, and therefore also $f=\frac12\left(\frac{r}{p}+\frac{s}{q}\right)$, are evenly distributed in the interval $(|f_1-f_2|, \min(f_1+f_2,2-f_1-f_2))$. Writing the primary fields as $V_{n,f} = \lim V_{(r,s)}^f$, we thus find the OPE
+\begin{align}
+ \boxed{V_{n_1,f_1}V_{n_2,f_2} \sim \sum_{n\in n_1+n_2+p_0+q_0+2\mathbb{Z}}
+\int_{|f_1-f_2|}^{\min (f_1+f_2,2-f_1-f_2)} df\ V_{n, f}}\ .
+\end{align}
+Of course, $V_{n,f}$ is just another notation for the diagonal field $V_P$, with $n,f$ the integer and fractional parts of $2\sqrt{p_0q_0}P$. The reflection relation is now $(n,f)\to (-n-1,1-f)$. 
+The resulting Runkel--Watts-type CFT has the same spectrum as Liouville theory \eqref{sliou} $
+ \mathcal{S}^{\text{RWT}_{p_0,q_0}} = \frac12 \left\{ V_P\right\}_{P\in \mathbb{R}}$. In contrast to Liouville theory, the momentums cannot be continued to complex values, where the OPE would no longer make sense. Notice however that if $f_1\neq f_2$, the OPE does not produce fields with degenerate momentums, i.e. fields of the type $V_{n,0}$. So there is no need to regularize the integral over $f$. Alternatively, the OPE may be written in a manifestly reflection-invariant way using the momentums $P_i$ \cite{rs15},
+ \begin{align}
+  \left<\prod_{i=1}^3 V_{P_i}\right>\neq 0 \implies \prod_{\pm,\pm} \sin\pi\left(\tfrac{p_0+q_0}{2}+\sqrt{p_0q_0}(P_1\pm P_2\pm P_3)\right) < 0 \ .
+  \label{rwtz}
+ \end{align}
+It turns out that Runkel--Watts-type theories can also be obtained as limits of Liouville theory with $\beta^2\in \mathbb{C}-\mathbb{R}$ \cite{mce07}. The limit of Liouville theory for $\beta^2\to \beta_0^2>0$ generally does not make sense, but it exists if $\beta_0^2$ is rational and the momentums are real. In this limit, the condition \eqref{rwtz} emerges from the three-point structure constants of Liouville theory. 
 
 New subsection for summarizing arrows? Copy figure from \cite{rib14}. Change color for arrows that depend on structure constants, including stating that we can get deg. fields from Liouville theory. 
 
