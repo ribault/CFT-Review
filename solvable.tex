@@ -181,9 +181,9 @@ Here, we will follow a simpler approach, based on exploiting the fusion rules of
 
 %\end{tcolorbox}
 
-\section{Basic objects of two-dimensional CFT}\label{sec:bo}
+\section{Basics of two-dimensional CFT}\label{sec:bo}
 
-In this section we introduce conformal symmetry, fields, operator product expansions, and correlation functions. In particular, we will focus on the two ingredients of exact solvability: \textit{local} conformal symmetry and \textit{degenerate} fields. We begin with the Virasoro algebra, which describes local conformal transformations. 
+In this section we introduce conformal symmetry, fields, operator product expansions, and correlation functions. In particular, we emphasize the two ingredients of exact solvability: \textit{local} conformal symmetry and \textit{degenerate} fields. We begin with the Virasoro algebra, which describes local conformal transformations. 
 
 \subsection{The Virasoro algebra and its representations}\label{sec:vir}
 
@@ -197,7 +197,7 @@ because it transforms the metric into itself, up to a scalar factor:
 Let us define the \textbf{Witt algebra} as the Lie algebra of infinitesimal conformal transformations on $\mathbb{C}^*= \mathbb{C}-\{0\}$. This algebra describes local conformal symmetry for quantum field theory on the Riemann sphere, as can be argued in two alternative ways:
 \begin{itemize}
  \item Transformations need not be defined at $z=\infty$ because they are local, and can be singular at $z=0$ if we insert a field at that point.
- \item Holomorphic functions on $\mathbb{C}^*$ are equivalent to holomorphic functions on a neighbourhood of the circle $|z|=1$, which can be interpreted as a Euclidean time slice where the states of our theory live. 
+ \item Holomorphic functions on $\mathbb{C}^*$ are equivalent to holomorphic functions on a neighbourhood of the circle $|z|=1$. In radial quantization, this circle is interpreted as a Euclidean time slice where the states of our theory live. 
 \end{itemize}
 The Witt algebra is infinite-dimensional, with the basis 
 \begin{align}
@@ -286,12 +286,12 @@ where $a^{L_{-1}^2}$ and $a^{L_{-2}}$ are complex coefficients. It is easy to sh
 L_2 X{} &= \left(6\Delta a^{L_{-1}^2}+(4\Delta+\tfrac12 c) a^{L_{-2}}\right)V_\Delta\ .
 \label{l2c}
 \end{align}
-Therefore, the condition $L_1X{}=L_2 X{}=0$ for $X{}$ to be a null vector boil down to a system of two linear equations for the coefficients $(a^{L_{-1}^2},a^{L_{-2}})$. The vanishing of that system's determinant determines the conformal dimension $\Delta$ as a function of the central charge $c$,
+Therefore, the conditions $L_1X{}=L_2 X{}=0$ for $X{}$ to be a null vector boil down to a system of two linear equations for the coefficients $(a^{L_{-1}^2},a^{L_{-2}})$. The vanishing of that system's determinant determines the conformal dimension $\Delta$ as a function of the central charge $c$,
 \begin{align}
  \Delta = \frac{1}{16}\left( 5-c\pm\sqrt{(c-1)(c-25)} \right) \ .
  \label{dpm}
 \end{align}
-Solving CFTs will lead to fairly complicated formulas, which would become even more complicated if we tolerated a square root at this early and elementary stage.
+Solving CFTs will lead to fairly complicated formulas, which would become even more complicated if we tolerated a square root at this early stage.
 To get rid of the square root, we rewrite the central charge in terms a the parameter $\beta$ such that 
 \begin{align}
  \boxed{c = 1- 6\left(\beta - \beta^{-1}\right)^2 } \ .
@@ -327,12 +327,12 @@ To write $\Delta_{(r, s)}$ for any $r,s\in\mathbb{N}^*$, we rewrite the conforma
  \boxed{\Delta = \frac{c-1}{24} + P^2}\ .
  \label{dp}
 \end{align}
-The conformal dimension is invariant under the \textbf{reflection} $P\to -P$. The dimensions $\Delta_{(r, s)}$ correspond to the momentums 
+We can rewrite Verma modules as $\mathcal{V}_P=\mathcal{V}_{-P}$, although the parameter $P$ is redundant due to the invariance under the \textbf{reflection} $P\to -P$. The dimensions $\Delta_{(r, s)}$ correspond to the momentums 
 \begin{align}
  \boxed{P_{(r, s)} = \frac12\left(r\beta -s\beta^{-1}\right)}\ ,
  \label{prs}
 \end{align}
-and it follows that the null vector $|\chi_{\langle r,s\rangle}\rangle$ is a primary state of dimension
+and it follows that the null vector $L_{\langle r,s\rangle} V_{\Delta_{(r, s)}}$ is a primary state of dimension
 \begin{align}
  \Delta_{(r, s)} + rs = \Delta_{(r, -s)}\ , 
  \label{drms}
@@ -344,7 +344,7 @@ For $\beta^2\in\mathbb{C}-\mathbb{Q}$, the Verma module $\mathcal{V}_\Delta$ has
  \Delta_{(r+p,s+q)} = \Delta_{(r,s)}\ ,
  \label{rpsq}
 \end{align}
-which together with $\Delta_{(r,s)}=\Delta_{(-r,-s)}$ implies infinitely many coincidences of the type $\Delta_{(r,s)}=\Delta_{(r_1,s_1)}$. 
+which together with $\Delta_{(r,s)}=\Delta_{(-r,-s)}$ implies infinitely many coincidences of the type $\Delta_{(r,s)}=\Delta_{(r_1,s_1)}$ with $r_1,s_1\in\mathbb{Z}$. 
 Whenever $r_1,s_1>0$, the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$ has a null vector $L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. 
 Moreover, if we apply the identity \eqref{rpsq} to the dimension $\Delta_{(r_1,-s_1)}$ \eqref{drms} of that null vector, we find that it is itself of the type $\Delta_{\langle r_2,s_2\rangle}$. If $r_2,s_2>0$, this leads to another null vector $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. It turns out that all null vectors of Verma modules are of the type $L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$ or $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. In particular,
 \begin{align}
@@ -358,6 +358,9 @@ To see this, let $\epsilon,\eta\in\{+,-\}$ be the signs such that $P_{(-r_1,s_1)
  \begin{array}{|c||c|c|c|}
   \hline 
   \text{Value of }\beta^2 & \mathbb{C}-\mathbb{Q} & \mathbb{Q}_{>0} & \mathbb{Q}_{<0}
+  \\
+  \hline 
+  \text{Value of }c & \text{generic} & c\leq 1 , c\in\mathbb{Q} &  c\geq 25, c\in\mathbb{Q}
   \\
   \hline 
   \#\text{null vectors in } \mathcal{V}_{\Delta_{(r, s)}} & 1 & \infty & \text{finite} 
@@ -402,7 +405,7 @@ $\Delta_{(r,s)}$, together with the vector $(p, q)$ of Eq. \eqref{rpsq} as a red
 When a representation $\mathcal{R}$ has a null vector $X{}=LV{}$, this allows us to define a quotient representation $\frac{\mathcal{R}}{\mathcal{R}_{X{}}}$ by setting the null vector to zero. 
 By an abuse of terminology, we say that $\frac{\mathcal{R}}{\mathcal{R}_{X{}}}$ has a \textbf{vanishing null vector}, which really means that the primary state $V{}$ obeys the \textbf{null vector equation} $LV{}=0$. On the other hand, $\mathcal{R}$ itself has a non-vanishing null vector $X{}$. 
 
-If $\mathcal{R}$ has several null vectors, we can define various quotient representations by setting some null vectors to zero. A \textbf{degenerate representation} is a representation that has at least one vanishing null vector. A degenerate representation is partly degenerate if it has some non-vanishing null vectors, and fully degenerate if all null vectors vanish. Partly degenerate representations play an important role in CFTs with extended chiral algebras, such as conformal Toda theories \cite{fl07c}. But all degenerate representations that we will consider will be fully degenerate. 
+If $\mathcal{R}$ has several null vectors, we can define various quotient representations by setting some null vectors to zero. A \textbf{degenerate representation} is a representation that has at least one vanishing null vector. A degenerate representation is partly degenerate if it has some non-vanishing null vectors, and \textbf{fully degenerate} if all null vectors vanish. Partly degenerate representations play an important role in CFTs with extended chiral algebras, such as conformal Toda theories \cite{fl07c}. But most degenerate representations that we will consider will be fully degenerate. 
 
 For $r,s\in\mathbb{N}^*$, let us call $\mathcal{R}^d_{\langle r,s\rangle}$ the quotient of the Verma module $\mathcal{V}_{\Delta_{\langle r,s\rangle}}$ where the null vector $L_{\langle r,s\rangle}V_{\Delta_{(r,s)}}$ vanishes:
 \begin{align}
