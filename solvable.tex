@@ -426,7 +426,7 @@ The primary state $V_{\Delta_{(r,s)}}$ has the same dimension as $V^d_{\langle r
 
 \subsection{Fields and operator product expansions}\label{sec:fope}
 
-The fundamental objects of conformal field theory are fields. In quantum field theory, all states can be obtained by acting on the vacuum state with fields: this is called the \textbf{state-field correspondence} or operator-state correspondence. In conformal field theory, the correspondence is bijective, and allows us to identify the space of fields with the \textbf{space of states} or \textbf{spectrum} $\mathcal{S}$ --- a vector space on which the Virasoro algebra acts. To a state $V$, the correspondence associates a field $V(z)$, which depends on a position $z\in\overline{\mathbb{C}}$ in the Riemann sphere. Primary states, descendant states and degenerate states respectively give rise to \textbf{primary fields}, \textbf{descendant fields} and \textbf{degenerate fields}.
+The fundamental objects of conformal field theory are fields. In quantum field theory, all states can be obtained by acting on the vacuum state with fields: this is called the \textbf{state-field correspondence} or operator-state correspondence. In conformal field theory, the correspondence is bijective, and allows us to identify the space of fields with the \textbf{space of states} or \textbf{spectrum}  --- a vector space on which the Virasoro algebra acts. To a state $V$, the correspondence associates a field $V(z)$, which depends on a position $z\in\overline{\mathbb{C}}$ in the Riemann sphere. Primary states, descendant states and degenerate states respectively give rise to \textbf{primary fields}, \textbf{descendant fields} and \textbf{degenerate fields}.
 
 In the bootstrap approach, which is axiomatic rather than constructive, we need not define fields. Rather, we use fields as convenient notations for stating properties of correlation functions, which we will introduce in Section \ref{sec:cor}. 
 
@@ -459,20 +459,21 @@ The formal Laurent series is then called the \textbf{energy-momentum tensor},
  T(y)V(z) = \sum_{n\in\mathbb{Z}} \frac{L_n V(z)}{(y-z)^{n+2}}\quad , \quad L_n V(z) = \frac{1}{2\pi i} \oint_{z}dy\ (y-z)^{n+1} T(y)V(z)\ .
  \label{lvtv}
 \end{align}
-However, we will shortly interpret $T(y)$ as a field, and $T(y)V(z)$ as an operator product expansion of two fields. For the moment, let us apply this equation to a primary field $V_\Delta(z)$. Using Eq. \eqref{pvlv} and writing the regular terms as $O(1)$, we obtain a new form of the definition of a primary field of dimension $\Delta$,
+However, we will shortly interpret $T(y)$ as a field, and $T(y)V(z)$ as an operator product expansion of two fields. For the moment, let us apply this equation to a primary field $V_\Delta(z)$. Using Eq. \eqref{pvlv} and writing the regular terms as $O(1)$, we obtain
 \begin{align}
- \boxed{T(y)V_\Delta(z) = \frac{\Delta}{(y-z)^2} V_\Delta(z) + \frac{1}{y-z} \frac{\partial}{\partial z} V_\Delta(z) + O(1)}\ . 
+ \boxed{T(y)V_\Delta(z) = \frac{\Delta}{(y-z)^2} V_\Delta(z) + \frac{1}{y-z} \frac{\partial}{\partial z} V_\Delta(z) + O(1)}\ .
  \label{tvd}
 \end{align}
+This is equivalent to the statement that $V_\Delta(z)$ is a primary field of dimension $\Delta$.
 
 \subsubsection{Operator product expansions}\label{sec:ope}
 
-The fundamental axiom of conformal field theory, which underlies the conformal bootstrap approach, is the existence of \textbf{operator product expansions (OPEs)}. This axiom states that there exists a bilinear product on the space of fields. Given a basis $(V_k)_k$ of the space of states $\mathcal{S}$, this reads 
+The fundamental axiom of conformal field theory, which underlies the conformal bootstrap approach, is the existence of \textbf{operator product expansions (OPEs)}. This axiom states that there exists a bilinear product on the space of fields. Given a basis $(V_k)_k$ of the space of states, this reads 
 \begin{align}
   \boxed{V_1(z_1)V_2(z_2) = \sum_k C^k_{12}(z_1,z_2) V_k(z_2)}\ ,
   \label{ope}
  \end{align}
-for some \textbf{OPE coefficients} $C^k_{12}(z_1,z_2)$. Operator product expansions generally exist in quantum field theory, but they are particularly powerful in conformal field theory because they are supposed to hold for any $z_1$ in a finite neighbourhood of $z_2$ (but $z_1\neq z_2$), and not just asymptotically as $z_1\to z_2$. The finite neighbourhood in question may depend on the correlation function in which we perform the OPE, and also on the basis $(V_k)_k$. 
+for some \textbf{OPE coefficients} $C^k_{12}(z_1,z_2)$. Operator product expansions generally exist in quantum field theory, but they are particularly useful in conformal field theory because they are supposed to hold for any $z_1$ in a finite neighbourhood of $z_2$ (but $z_1\neq z_2$), and not just asymptotically as $z_1\to z_2$. The finite neighbourhood in question may depend on the correlation function in which we perform the OPE, and also on the basis $(V_k)_k$. 
 
 We further assume that the product of fields is commutative,
 \begin{align}
@@ -489,13 +490,11 @@ Comparing this with Eq. \eqref{lvtv} applied to $I(z)$, we find
 \begin{align}
  L_{n\geq -1} I(z) = 0 \quad , \quad T(z) = L_{-2}I(z)\ .
 \end{align}
-In particular, the identity field is a degenerate primary field of conformal dimension zero, with a vanishing null vector at level $1$, i.e. $I(z) \propto V^d_{\langle 1,1\rangle}(z)$. And the energy-momentum tensor is a descendant of that field.
-OPEs that involve the energy-momentum tensor provide a way of rewriting not only the definition of primary fields \eqref{tvd}, but also the commutation relations of the Virasoro algebra itself: 
+In particular, the identity field is a degenerate primary field of conformal dimension zero, with a vanishing null vector at level $1$, i.e. $I(z) \propto V^d_{\langle 1,1\rangle}(z)$. And the energy-momentum tensor is a descendant of that field. The commutation relations of the Virasoro algebra \eqref{vir} are equivalent to the OPE
 \begin{align}
  T(y)T(z) = \frac{\frac{c}{2}}{(y-z)^4} + \frac{2T(z)}{(y-z)^2} + \frac{\partial T(z)}{y-z} + O(1)\ .
 \label{tt}
 \end{align}
-Via the definition \eqref{tl} of $T(y)$, this OPE is indeed equivalent to the commutation relations \eqref{vir}.
 
 \subsubsection{Conformal symmetry constraints on OPEs}\label{sec:csope}
 
@@ -525,7 +524,7 @@ $f^{1}=1$. Let us illustrate this claim by deriving the first few coefficients $
  (\Delta+\Delta_1-\Delta_2)V_\Delta(z_2) = f^{L_{-1}} L_1L_{-1}V_\Delta(z_2)=2\Delta f^{L_{-1}}V_\Delta(z_2)\ .
  \label{dddv}
 \end{align}
-This determines $f^{L_{-1}}$, except if its coefficient vanishes, which occurs if and only if there is a null vector at level one in the Verma module $\mathcal{V}_\Delta$, i.e. if and only if $\Delta=\Delta_{(1,1)}=0$. In the resulting expression, the null vector manifests itself as a simple pole at $\Delta=0$:
+This determines $f^{L_{-1}}$, except if $\Delta=0$, i.e. if there is a null vector at level one in the Verma module $\mathcal{V}_\Delta$. In the resulting expression, the null vector manifests itself as a simple pole at $\Delta=0$:
 \begin{align}
  f^{L_{-1}} = \frac{\Delta+\Delta_1-\Delta_2}{2\Delta}\ . 
  \label{fl1}
@@ -568,13 +567,14 @@ Let us introduce the \textbf{fusion rules} as a convenient notation for writing 
 \begin{align}
  V^d_{\langle 1,1\rangle} V_{\Delta} = V_\Delta \quad , \quad V_{\Delta_1} V_{\Delta_2} \ni V^d_{\langle 1,1\rangle} \implies \Delta_1=\Delta_2\ . 
 \end{align}
-In terms of representations of the Virasoro algebra, this may be rewritten in terms of a \textbf{fusion product} such that 
+This may be reformulated in terms of 
+the \textbf{fusion product} of representations of the Virasoro algebra:
 \begin{align}
  \mathcal{R}^d_{\langle 1,1\rangle} \times \mathcal{V}_\Delta = \mathcal{V}_\Delta \quad , \quad \dim\text{Hom}\left(\mathcal{V}_{\Delta_1}\times \mathcal{V}_{\Delta_2}, \mathcal{R}^d_{\langle 1,1\rangle}\right) = \delta_{\Delta_1,\Delta_2}\ ,
  \label{rtv}
 \end{align}
 where $\text{Hom}(\mathcal{R},\mathcal{R}')$ is the space of linear maps from $\mathcal{R}$ to $\mathcal{R}'$ that commute with the action of the Virasoro algebra. 
-Such a fusion product can be algebraically defined \cite{gab99}. It differs from the tensor product, in particular its definition involves the fields' positions, although the resulting product does not. Just like OPEs, the fusion product is commutative and associative. Moreover, as we just saw in the case of Verma modules, we have an isomorphism
+The fusion product can be algebraically defined \cite{gab99}. It differs from the tensor product, in particular its definition involves the fields' positions, although the resulting product does not. Just like OPEs, the fusion product is commutative and associative. Moreover, as we just saw in the case of Verma modules, we have an isomorphism
 \begin{align}
  \text{Hom}\left(\mathcal{R},\mathcal{R}'\right) \simeq \text{Hom}\left(\mathcal{R}\times\mathcal{R}',\mathcal{R}^d_{\langle 1,1\rangle}\right)\ . 
  \label{hrr}
@@ -635,7 +635,7 @@ where the sums now run by increments of $2$.
 
 \subsection{Correlation functions}\label{sec:cor}
 
-Correlation functions are observables of quantum field theory: quantities that we can in principle compute, and compare with experimental data. We will focus on $N$-point functions on the Riemann sphere: functions of $N$ distinct positions $z_1,z_2,\dots, z_N\in \overline{\mathbb{C}}$, which are written in terms of $n$ fields as 
+Correlation functions are observables of quantum field theory: quantities that we can in principle compute, and compare with experimental data. We will focus on $N$-point functions on the Riemann sphere: functions of $N$ distinct positions $z_1,z_2,\dots, z_N\in \overline{\mathbb{C}}$, which are written in terms of $N$ fields as 
 \begin{align}
  \Big< V_1(z_1) V_2(z_2) \cdots V_N(z_N)\Big>\ . 
 \end{align}
@@ -685,27 +685,27 @@ The global Ward identities are valid not only for primary fields, but also for \
 
 Let us solve the global Ward identities in the cases $N=1,2,3,4$. We have $3$ linear differential equations in the $N$ variables $z_i$, and we write their solutions up to $z_i$-independent prefactors:
 \begin{itemize}
- \item \boxed{$N=1$}\ : The identities amount to $\partial_{z_1} Z = \Delta_1 Z=0$, and their solution is 
+ \item $\boxed{N=1}$\ : The identities amount to $\partial_{z_1} Z = \Delta_1 Z=0$, and their solution is 
  \begin{align}
   \left<V_{\Delta_1}(z_1)\right>\propto \delta_{\Delta_1,0}\ . 
  \end{align}
- \item \boxed{$N=2$}\ : Again, there are more Ward identities than variables, leading to $Z\neq 0\implies \Delta_1=\Delta_2$, and to the solution
+ \item $\boxed{N=2}$\ : Again, there are more Ward identities than variables, leading to $Z\neq 0\implies \Delta_1=\Delta_2$, and to the solution
  \begin{align}
  \Big< V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \Big> \propto \delta_{\Delta_1,\Delta_2} z_{12}^{-2\Delta_1} \ .
  \label{2pt}
 \end{align}
-\item \boxed{$N=3$}\ : With as many Ward identities as variables, we have a unique solution with no constraints on the conformal dimensions:
+\item $\boxed{N=3}$\ : With as many Ward identities as variables, we have a unique solution with no constraints on the conformal dimensions:
 \begin{align}
  \left< \prod_{i=1}^3 V_{\Delta_i}(z_i) \right> \propto z_{12}^{\Delta_3-\Delta_1-\Delta_2} z_{13}^{\Delta_2-\Delta_1-\Delta_3} z_{23}^{\Delta_1-\Delta_2-\Delta_3}\ .
  \label{3pt}
 \end{align}
-\item \boxed{$N=4$}\ : The solution involves an arbitrary function $G(z)$ of the cross-ratio $z=\frac{z_{12}z_{34}}{z_{13}z_{24}}$:
+\item $\boxed{N=4}$\ : The solution involves an arbitrary function $G(z)$ of the cross-ratio $z=\frac{z_{12}z_{34}}{z_{13}z_{24}}$:
 \begin{align}
  \left< \prod_{i=1}^4 V_{\Delta_i}(z_i) \right> 
  \propto z_{13}^{-2\Delta_1} z_{23}^{\Delta_1-\Delta_2-\Delta_3+\Delta_4} z_{24}^{-\Delta_1-\Delta_2+\Delta_3-\Delta_4} z_{34}^{\Delta_1+\Delta_2-\Delta_3-\Delta_4} G\left(\frac{z_{12}z_{34}}{z_{13}z_{24}}\right)\ .
  \label{4pt}
 \end{align}
-A four-point function is therefore completely determined by its dependence on $1$ of its $4$ variables. In particular, it can be convenient to choose the fixed values $(z_1,z_2,z_3)=(0,\infty,1)$. Using Eq. \eqref{vdi}, this leads to 
+A four-point function is therefore completely determined by its dependence on $1$ of its $4$ variables. In particular, it can be convenient to set $3$ positions to the fixed values $(z_2,z_3,z_4)=(0,\infty,1)$. Using Eq. \eqref{vdi}, this leads to 
 \begin{align}
  \Big< V_{\Delta_1}(z) V_{\Delta_2}(0)V_{\Delta_3}(\infty)V_{\Delta_4}(1) \Big> \propto G(z)\ . 
 \end{align}
@@ -728,7 +728,7 @@ The generators $\ell_n$ \eqref{lpz} of local conformal transformations are only 
 \end{align}
 In fact we want the algebra of conformal transformations to act on a complex vector space: the space of complex-valued functions on $\overline{\mathbb{C}}$ for the Witt algebra, the space of states of the CFT for the Virasoro algebra. We should therefore complexify our symmetry algebra, and we obtain two copies of the Virasoro algebra: a \textbf{left-moving or holomorphic} Virasoro algebra $\mathfrak{V}$ with generators $L_n$, and a \textbf{right-moving or antiholomorphic} Virasoro algebra $\bar{\mathfrak{V}}$ with generators $\bar{L}_n$. In the case of the algebra of global conformal transformations, we start with the 6-dimensional real Lie algebra $\mathfrak{sl}_2(\mathbb{C})$, with generators \eqref{epbe} with $n=-1,0,1$, and the complexification yields $\mathfrak{sl}_2(\mathbb{C})^\mathbb{C} = \mathfrak{sl}_2(\mathbb{C})\times \mathfrak{sl}_2(\mathbb{C})$.
 
-In Sections \ref{sec:vir} and \ref{sec:ope}, we have been doing \textbf{chiral CFT}, which means considering $\mathfrak{V}$ only. In a full CFT, the symmetry algebra is the \textbf{conformal algebra} $\mathfrak{V}\times \bar{\mathfrak{V}}$, where for simplicity we assume that the left and right central charges are equal. When it comes to representations, Verma modules of $\mathfrak{V}\times \bar{\mathfrak{V}}$ are simply $\mathcal{V}_\Delta\otimes \bar{\mathcal{V}}_{\bar \Delta}$, where we write a bar over representations of $\bar{\mathfrak{V}}$. There are also representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$ that are not themselves factorized. We will encounter such representations in Section \ref{sec:log}. 
+In Sections \ref{sec:vir} and \ref{sec:fope}, we have been doing \textbf{chiral CFT}, which means considering $\mathfrak{V}$ only. In a full CFT, the symmetry algebra is the \textbf{conformal algebra} $\mathfrak{V}\times \bar{\mathfrak{V}}$, where for simplicity we assume that the left and right central charges are equal. When it comes to representations, Verma modules of $\mathfrak{V}\times \bar{\mathfrak{V}}$ are simply $\mathcal{V}_\Delta\otimes \bar{\mathcal{V}}_{\bar \Delta}$, where we write a bar over representations of $\bar{\mathfrak{V}}$. There are also representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$ that are not themselves factorized. We will encounter such representations in Section \ref{sec:log}. 
 
 Fields now belong to representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$, and they obey $\frac{\partial}{\partial \bar z} V(z) = \bar L_{-1} V(z)$, which is the antiholomorphic version of Eq. \eqref{pvlv}. This allows us to define a right-moving energy-momentum tensor $\bar T(y) = \sum_{n\in\mathbb{Z}} \frac{\bar L_n^{(z)}}{(\bar y-\bar z)^{n+2}}$. While $T$ is locally holomorphic, $\bar T$ is locally antiholomorphic:
 \begin{align}
@@ -779,7 +779,7 @@ Let us systematically use OPEs for simplifying correlation functions. Knowing th
  \label{tope}
 \end{align}
 where the basis $\mathcal{L}$ of creation operators was defined in Eq. \eqref{lcm},
-we assume that all fields are primaries or descendants thereof, and we abuse the notation $\mathcal{S}$ by using it for a basis of primaries rather than for the space of states. Let us insert this OPE in a three-point function, and focus on the leading terms as $z_1\to z_2$. Using the 2-point function \eqref{2ptb}, we obtain
+we assume that all fields are primaries or descendants thereof, with $\mathcal{S}$ a basis of primaries. Let us insert this OPE in a three-point function, and focus on the leading terms as $z_1\to z_2$. Using the 2-point function \eqref{2ptb}, we obtain
 \begin{align}
   \Big< V_1(z_1)V_2(z_2)V_3(z_3) \Big> \underset{z_1\to z_2}{\sim} 
   \left|z_{12}^{\Delta_3-\Delta_1-\Delta_2}z_{23}^{-2\Delta_3}\right|^2 
@@ -815,7 +815,7 @@ The $s$-channel decomposition \eqref{sdec} reduces the 4-point function to a com
  \begin{array}{|r||c|c|c|}
   \hline 
   \text{Channel} & s & t & u
-  \\ \hline\hline 
+  \\ \hline
   \text{OPE} & V_1(z)V_2(0) & V_1(z)V_4(1) & V_1(z)V_3(\infty)
   \\ \hline 
   \text{4-point} & D^{(s)}_k = C_{12}^k C_{k34} & D^{(t)}_k = C_{41}^k C_{k23} & D^{(u)}_k = C_{13}^k C_{k42}
