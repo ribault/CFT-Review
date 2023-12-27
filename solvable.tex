@@ -1200,11 +1200,11 @@ But parity forbids $(i,j)=(i',j')$, since $p$ or $q$ is odd. And we have $2|i-i'
 \end{align}
 Therefore, by associativity of the fusion product, the product of two fully degenerate representations is again a combination of fully degenerate representations.
 
-We therefore define the A-series minimal model MM$_{p,q}$ by its spectrum, made of fully degenerate fields in the Kac table:
+We therefore define the A-series minimal model AMM$_{p,q}$ by its spectrum, made of fully degenerate fields in the Kac table:
 \begin{align}
- \boxed{\mathcal{S}^{\text{MM}_{p,q}} = \frac12\left\{ V^f_{\langle r,s\rangle} \right\}_{(r,s)\in [1, p-1] \times [1, q-1]} \quad \text{with} \quad 2\leq p<q\ \text{ coprime}}\ .
+ \boxed{\mathcal{S}^{\text{AMM}_{p,q}} = \frac12\left\{ V^f_{\langle r,s\rangle} \right\}_{(r,s)\in [1, p-1] \times [1, q-1]} \quad \text{with} \quad 2\leq p<q\ \text{ coprime}}\ .
 \end{align}
-The factor $\frac12$ accounts for the $\mathbb{Z}_2$ symmetry \eqref{prqs}. We assume $p<q$ because MM$_{p, q}=$MM$_{q,p}$, and $2\leq p$ for the Kac table to be non-empty.
+The factor $\frac12$ accounts for the $\mathbb{Z}_2$ symmetry \eqref{prqs}. We assume $p<q$ because AMM$_{p, q}=$AMM$_{q,p}$, and $2\leq p$ for the Kac table to be non-empty.
 
 
 \subsubsection{Runkel--Watts-type CFTs}\label{sec:rwt}
@@ -1212,12 +1212,12 @@ The factor $\frac12$ accounts for the $\mathbb{Z}_2$ symmetry \eqref{prqs}. We a
 Let us consider a limit of A-series minimal models where $\frac{q}{p}\to \beta_0^2>0$. We first take the Kac table indices to be fixed. 
 The Kac table becomes infinite, which suggests 
 \begin{align}
- \lim_{\substack{\frac{q}{p}\to \beta_0^2\\ r,s\text{ fixed}}} \text{MM}_{p,q} = \text{GMM}\ . 
+ \lim_{\substack{\frac{q}{p}\to \beta_0^2\\ r,s\text{ fixed}}} \text{AMM}_{p,q} = \text{GMM}\ . 
  \label{mm-gmm}
 \end{align}
 Since we obtain arbitrary degenerate fields $V^d_{\langle r,s\rangle}$ in the limit, it is also possible to send the indices $r,s$ to infinity, and therefore to send the momentums $P_{(r,s)}$ to arbitrary values $P\in\mathbb{R}$, just as in Eq. \eqref{vplim}. Therefore, Liouville theory with $c\leq 1$ is not only a limit of generalized minimal models, but also a limit of minimal models:
 \begin{align}
- \lim_{\substack{\frac{q}{p}\to \beta_0^2\\ P_{(r,s)}\to P}} \text{MM}_{p,q} = \text{Liouville}\ . 
+ \lim_{\substack{\frac{q}{p}\to \beta_0^2\\ P_{(r,s)}\to P}} \text{AMM}_{p,q} = \text{Liouville}\ . 
  \label{mm-liou}
 \end{align}
 However, if $\beta_0^2\in\mathbb{Q}$, it is also possible to fine-tune the behaviour of $p,q,r,s$ such that constraints from the minimal model's fusion rules survive in the limit. As a result, we can obtain not only Liouville theory with its trivial OPE \eqref{idpv}, but also another diagonal CFT with the same continuous spectrum but a non-trivial OPE, called a \textbf{Runkel--Watts-type theory} after the original example at $c=1$, discovered by Runkel and Watts \cite{rw01}. 
@@ -1305,6 +1305,29 @@ Potts: Add one diag. field in addition, remove some non-diag.
 
 \subsection{Summary/Other CFTs}
 
+\begin{align}
+ \begin{array}{|c|c|c|c|c|}
+  \hline 
+  \text{CFT} & \beta^2 & V_P & V^{d/f}_{\langle r,s\rangle} & V_{(r,s)}
+  \\
+  \hline \hline 
+  \text{GMM} & \mathbb{C}-\mathbb{Q} & \emptyset & \mathbb{N}^*\times \mathbb{N}^* &  \emptyset 
+  \\
+  \hline 
+  \text{Liouville} & \mathbb{C} &  \mathbb{R} & \emptyset & \emptyset
+  \\
+  \hline
+  \text{AMM} & \frac{q}{p} > 0 &  \emptyset &  [1,p-1]\times [1,q-1] & \emptyset
+  \\
+  \hline 
+  \text{RWT} & \frac{q}{p} > 0 &  \mathbb{R} & \emptyset & \emptyset
+  \\
+  \hline 
+  \widetilde{\text{Liouville}} & \mathbb{C} & \mathbb{C} & \mathbb{N}^*\times \mathbb{N}^* & \emptyset
+  \\
+  \hline 
+ \end{array}
+\end{align}
 
 
 In the case of diagonal CFTs with 2 degenerate fields, we have used limits for defining Liouville theory with $c\leq 1$ as well as Runkel--Watts-type theories. Let us summarize these limits, together with other limits that were discussed 
@@ -1319,7 +1342,7 @@ in Section \ref{sec:diag}, and also other limits that relate Liouville theory, (
 \node at (26, 11) {$\beta^2\in \mathbb{C}-\mathbb{R}$};
 \node[left] at (-6.5, 7) {Discrete};
 \node[left] at (-6.5, -7) {Continuous};
-\draw (0, 7) node[draw, fill = white] (mm) {MM};
+\draw (0, 7) node[draw, fill = white] (mm) {AMM};
 \draw (13, 7) node[draw, fill = white] (gmm1) {GMM};
 \draw (26, 7) node[draw, fill = white] (gmm2) {GMM};
 \draw (0, -7) node[draw, fill = white] (rwt) {RWT};
@@ -1342,9 +1365,9 @@ in Section \ref{sec:diag}, and also other limits that relate Liouville theory, (
 \end{align}
 Somewhat subjectively, we have distinguished limits that are straightforward (full arrows) from limits that are subtle (dashed arrows). The subtle limits are:
 \begin{itemize}
- \item $\boxed{\text{MM}\to \text{RWT}}$ (Section \ref{sec:rwt}): This involves fine-tuning the parameters $p,q$ of the minimal models, as well as the parameters $r,s$ of the primary fields.
+ \item $\boxed{\text{AMM}\to \text{RWT}}$ (Section \ref{sec:rwt}): This involves fine-tuning the parameters $p,q$ of the minimal models, as well as the parameters $r,s$ of the primary fields.
   \item $\boxed{\text{Liouville}\to \text{RWT}}$ (Section \ref{sec:rwt}): This requires a detailed analysis of structure constants. 
- \item $\boxed{\text{GMM}\to \text{MM}}$ (\cite{rib18}): This requires a detailed analysis of correlation functions, and only some of the GMM correlation functions tend to MM correlation functions. 
+ \item $\boxed{\text{GMM}\to \text{AMM}}$ (\cite{rib18}): This requires a detailed analysis of correlation functions, and only some of the GMM correlation functions tend to AMM correlation functions. 
  \item $\boxed{\text{Liouville}\to \text{GMM}}$ (Section \ref{sec:essc}): This requires a detailed analysis of correlation functions.
 \end{itemize}
 
@@ -1387,7 +1410,7 @@ Do we want a synthetic table of known solutions?
 \end{itemize}
 
 
-See whether in Liouville theory fields with deg. dimensions are actually deg. For $c\leq 1$, guess not deg. from MM limit. For other $c$, need to know about poles of struct. csts. So answer is probably no. Postpone the problem to analysis of correl. 
+See whether in Liouville theory fields with deg. dimensions are actually deg. For $c\leq 1$, guess not deg. from AMM limit. For other $c$, need to know about poles of struct. csts. So answer is probably no. Postpone the problem to analysis of correl. 
 
 \subsection{Remarks}
 
