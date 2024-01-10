@@ -116,16 +116,24 @@
 
 
 \begin{abstract}
-This course will introduce two-dimensional CFT in the bootstrap approach, and sketch the known exactly solvable CFTs with no extended chiral symmetry.
-\begin{itemize}
- \item The Virasoro algebra, its representations, Ward identities, fusion rules.
- \item (Generalized) minimal models, Liouville theory, logarithmic minimal models, the $O(n)$ model and more general loop models. Taking limits in the central charge and/or in conformal dimensions. 
- \item Conformal bootstrap methods, analytic and numerical. Generic and degenerate conformal blocks. Crossing symmetry equations and their solutions. 
- \item Exactly known structure constants. Analytic properties of correlation functions. 
-\end{itemize}
-self-contained 
+In this course, we review two-dimensional CFT in the bootstrap approach, and sketch the known exactly solvable CFTs with no extended chiral symmetry: Liouville theory, (generalized) minimal models, limits thereof, and loop models, including the $O(n)$, Potts and $U(n)$ models. 
 
-Mostly generic central charge, then take limits
+Exact solvability relies on local conformal symmetry, and on the existence of degenerate fields: we explain how these assumptions constrain the spectrum and correlation functions. We discuss the crossing symmetry equations, and how they can be solved analytically or numerically, leading to  
+analytic formulas for structure constants. 
+
+In the case of loop models, we review the combinatorial description of correlation functions, inspired by the lattice construction of statistical models. We sketch what remains to be done for solving the models. 
+
+% Nothing on log CFT. 
+
+The plan is: 
+\begin{enumerate}
+ \item The Virasoro algebra and its representations. Fields and operator product expansions.
+ \item Fusion rules and fusion products. Correlation functions and Ward identities. Crossing symmetry and conformal blocks. 
+ \item Defining a CFT. Diagonal and non-diagonal fields, degenerate fields. Exactly solvable CFTs and their spectrums. 
+ \item Degenerate 4-point functions. Analytic formulas for 2-point and 3-point structure constants. 
+ \item Computing conformal blocks. Numerical bootstrap.
+ \item Correlation functions in loop models. 
+\end{enumerate}
 \end{abstract}
 
 \vspace{5mm}
@@ -1311,19 +1319,19 @@ Potts: Add one diag. field in addition, remove some non-diag.
   \text{CFT} & \beta^2 & V_P & V^{d/f}_{\langle r,s\rangle} & V_{(r,s)}
   \\
   \hline \hline 
-  \text{GMM} & \mathbb{C}-\mathbb{Q} & \emptyset & \mathbb{N}^*\times \mathbb{N}^* &  \emptyset 
+  \text{GMM} & \mathbb{C}-\mathbb{Q} & - & \mathbb{N}^*\times \mathbb{N}^* &  - 
   \\
   \hline 
-  \text{Liouville} & \mathbb{C} &  \mathbb{R} & \emptyset & \emptyset
+  \text{Liouville} & \mathbb{C} &  \mathbb{R} & - & -
   \\
   \hline
-  \text{AMM} & \frac{q}{p} > 0 &  \emptyset &  [1,p-1]\times [1,q-1] & \emptyset
+  \text{AMM} & \frac{q}{p} > 0 &  - &  [1,p-1]\times [1,q-1] & -
   \\
   \hline 
-  \text{RWT} & \frac{q}{p} > 0 &  \mathbb{R} & \emptyset & \emptyset
+  \text{RWT} & \frac{q}{p} > 0 &  \mathbb{R} & - & -
   \\
   \hline 
-  \widetilde{\text{Liouville}} & \mathbb{C} & \mathbb{C} & \mathbb{N}^*\times \mathbb{N}^* & \emptyset
+  \widetilde{\text{Liouville}} & \mathbb{C} & \mathbb{C} & \mathbb{N}^*\times \mathbb{N}^* & -
   \\
   \hline 
  \end{array}
