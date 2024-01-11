@@ -1271,7 +1271,25 @@ It turns out that Runkel--Watts-type theories can also be obtained as limits of 
 
 \subsubsection{D-series minimal models}
 
-Conservation of diagonality from \eqref{sriz}.
+Let us look for rational, non-diagonal CFTs, built from the same representations as A-series minimal models: fully degenerate representations with indices in the Kac table \eqref{kac}, with $\beta^2=\frac{q}{p}\in\mathbb{Q}_{>0}$. For any non-diagonal field $V_{(r,s)}$, we require that the left and right dimensions $\Delta_{(r,\pm s)}$ both coincide with dimensions from the Kac table. To achieve this, a simple ansatz is 
+\begin{align}
+ (r,s) \in \Big[\left(-\tfrac{p}{2},\tfrac{p}{2}\right) \cap \left(\mathbb{Z}+\tfrac{p}{2}\right)\Big] \times \Big[\left(-\tfrac{q}{2},\tfrac{q}{2}\right) \cap \left(\mathbb{Z}+\tfrac{q}{2}\right)\Big] \ . 
+\end{align}
+This amounts to taking advantage of the identity $\Delta_{(r,s)}=\Delta_{(r+\frac{p}{2},s+\frac{q}{2})}$ for centering the Kac table at $(r,s)=(0,0)$, which makes it invariant under $(r,s)\to (r,-s)$. It remains to impose the integer spin condition $rs\in\mathbb{Z}$. If $p,q$ are both odd, no field has integer spin. Without loss of generality, we therefore assume 
+\begin{align}
+ p \text{ even} \quad , \quad q \text{ odd , }
+\end{align}
+and the integer spin condition reduces to $r\in 2\mathbb{Z}$. This completes the determination of the non-diagonal sector. 
+
+Non-diagonal fields have $s\in \mathbb{Z}+\frac12$, and by Eq. \eqref{ssiz}, the OPE of two non-diagonal fields involves fields with $s\in \mathbb{Z}$, which must therefore be diagonal. We assume that any representation that appears in the diagonal sector can be obtained by fusing two representations from the non-diagonal sector. Since $r\in 2\mathbb{Z}$ in the non-diagonal sector, the diagonal sector therefore involves representations $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}+1$, and the spectrum is 
+\begin{align}
+ \boxed{\mathcal{S}^{\text{DMM}_{p,q}} = \frac12\left\{ V^f_{\langle r,s\rangle} \right\}_{\substack{(r,s)\in [1, p-1] \times [1, q-1]\\ r\in 2\mathbb{N}+1}} 
+ \cup \frac12\left\{V_{(r,s)} \right\}_{\substack{(r,s)\in (-\frac{p}{2},\frac{p}{2})\times (-\frac{q}{2},\frac{q}{2})\\ (r,s)\in 2\mathbb{Z}\times (\mathbb{Z}+\frac12)}}
+}\ .
+\end{align}
+indicate values of $p,q$. 
+
+does not depend on $p\bmod 4$. Field with multiplicity. No indication that fully deg. non-diag. fields. 
 
 \subsubsection{E-series minimal models}
 
