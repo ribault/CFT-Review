@@ -1353,11 +1353,9 @@ Postpone fusion rules: search for simple derivation. Or accept that some vanishi
 
 \subsection{Loop models}
 
-Critical loop models were originally defined as critical limits of statistical models that describe non-intersecting loops in a two-dimensional space. Starting with the Ising model, many statistical models can be reformulated in terms of loops, and more models can be directly constructed from loops. But there is a lot of choice about which observables to include in the model. In the Ising model, if we consider only local observables, we obtain a minimal model in the critical limit. If we also consider non-local observables such as cluster connectivities, we obtain a much richer CFT. For applications to statistical physics, it is not important to define a consistent CFT: what matters is that we can compute correlation functions, which are then interpreted as probabilities. 
+Critical loop models were originally defined as critical limits of statistical models that describe non-intersecting loops in a two-dimensional space. Starting with the Ising model, many statistical models can be reformulated in terms of loops, and more models can be directly constructed from loops. But there is a lot of choice about which observables to include in the model. In the Ising model, if we consider only local observables, we obtain the minimal model $\text{AMM}_{3,4}$ in the critical limit. If we also consider non-local observables such as cluster connectivities, we obtain a much richer CFT. For applications to statistical physics, what matters is less to define a consistent CFT than to compute correlation functions, which are then interpreted as probabilities. We will sketch a few consistent CFTs in Section \ref{sec:models}, but our main focus will be on correlation functions, which will be the subject of Section \ref{sec:cloop}.
 
-Global symmetries and lattice models are outside the scope of this text. Section \ref{sec:cloop} for correl.
-
-Here we will propose a simple extended spectrum that will include all the known loop models, based on the assumption that there exists one degenerate field. 
+To begin with, we will now propose a simple extended spectrum that will include all the known loop models, based on the assumption that there exists one degenerate field. 
 
 \subsubsection{Extended spectrum}
 
@@ -1371,7 +1369,7 @@ We therefore include all degenerate fields that are generated from $V^d_{\langle
  \label{sP}
 \end{align}
 On the other hand, $V_{(r,0)}$ is a genuinely non-diagonal field, whose fusion rules differ from those of the diagonal field with the same dimensions $V_{\frac12\beta r}$. 
-If $r$ is integer, the condition for the second index of $V_{(r,s)}$ reduces to the integer spin condition $s\in\frac{1}{r}\mathbb{Z}$. If however $r$ is half-integer, fusion with $V^d_{\langle 1,2\rangle}$ \eqref{vdvrs} forces us to allow half-integer spins, so that $s\in \frac{1}{r}\mathbb{Z} + \mathbb{Z} = \frac{1}{2r}\mathbb{Z}$. 
+If $r$ is integer, the condition for the second index of $V_{(r,s)}$ reduces to the integer spin condition $s\in\frac{1}{r}\mathbb{Z}$. If however $r$ is half-integer, fusion with $V^d_{\langle 1,2\rangle}$ \eqref{vdvrs} forces us to allow half-integer spins, and $s\in \frac{1}{r}\mathbb{Z} + \mathbb{Z} = \frac{1}{2r}\mathbb{Z}$. 
 
 Our simple extended spectrum hides important subtleties: 
 \begin{itemize}
@@ -1413,7 +1411,9 @@ Each one of these models has
   n = -2\cos\left(\pi \beta^2\right) \quad , \quad Q = 4\cos^2\left(\pi \beta^2\right)\ .
  \end{align}
 \end{itemize}
-Degenerate fields transform trivially under global symmetries... Pseudo-puzzle of $V_{(2, 0)}$ singlet.
+Degenerate fields are invariant under global symmetries, while other fields can transform in non-trivial representations \cite{jrs22}. For example, in the $O(n)$ model, the fields $V_{(\frac12,0)},V_{(1,0)}$ and $V_{(1,1)}$ transform under $O(n)$ as a vector, a symmetric 2-tensor and an antisymmetric 2-tensor respectively. There are two fields of the type $V_{(\frac32,0)}$, which transform as symmetric and antisymmetric 3-tensors. And for $r\geq 52$, it also happens that several different fields have the same conformal dimensions and behaviour under $O(n)$. The situation is similar in the $U(n)$ and Potts models: let us only mention that the diagonal non-degenerate fields $V_{P_{(0,s)}}$ of the Potts model transform in the standard  representation of $S_Q$, whose dimension is $Q-1$. 
+
+A puzzle has arisen in the $O(n)$ model, when it was found that there is one field $V_{(2,0)}$ that is invariant under $O(n)$ \cite{gz20}. From the point of view of the renormalization group flow triggered by the field $V^d_{\langle 1,3\rangle}$, this field is \textit{dangerously irrelevant}, i.e. it becomes relevant along the flow, and could prevent the flow from reaching the dense phase from the dilute phase. But numerical studies show that the flow does reach the dense phase. The puzzle is resolved by noticing that $V^d_{\langle 1,3\rangle}$ is degenerate, and cannot produce the non-diagonal field $V_{(2,0)}$ by repeated fusion, even if $O(n)$ symmetry would allow it \cite{js23}. Therefore, it is global symmetry itself that is \textit{dangerously irrelevant} to the understanding of this flow. 
 
 The $O(n)$, $U(n)$ and Potts CFTs were originally defined as critical limits of statistical lattice models. In each case, the lattice model has a critical limit under some conditions on $n$ or $Q$. If these parameters are assumed to be real, the conditions are $n\in (-2,2)$ or $Q\in (0,4)$, equivalently $c\in (-2,1)$. The region of criticality actually extends into the complex $c$-plane, although it is much smaller than the half-plane $\Re c<13$ \cite{bjjz22}. Outside that region, certain fields become relevant, so the models may become multicritical. Moreover, the $O(n)$ lattice model has a dilute and a dense phase, and each phase gives rise to a different CFT in the critical limit. As a result, there can exist two different $O(n)$ CFTs with the same central charge, related by $\beta \to\beta^{-1}$. Similar phenomenons also occurs in the $U(n)$ and Potts models.
 
