@@ -1037,7 +1037,7 @@ The total conformal dimension of a non-diagonal field $V_{(r,s)}$ is
 \begin{align}
  \Delta_{(r,s)}+\Delta_{(r,-s)} = \frac12\left[ r^2\beta^{2} + s^2\beta^{-2}  -\left(\beta-\beta^{-1}\right)^2\right]\ .
 \end{align}
-If $V^d_{\langle 1,2\rangle}$ exists, then the OPE \eqref{vdvrs} increments $s$ by one unit, therefore $s$ is unbounded in real part i.e. $\sup_{V_{(r,s)}\in \widetilde{\mathcal{S}}} \left(\Re s\right) = \infty$. Assuming that this holdes not only for the extended spectrum $\widetilde{\mathcal{S}}$ but also for some OPE spectrum $\mathcal{S}_{12}$, we deduce $\Re\beta^{-2}>0$, or equivalently 
+If $V^d_{\langle 1,2\rangle}$ exists, then the OPE \eqref{vdvrs} increments $s$ by one unit, therefore $s$ is unbounded in real part i.e. $\sup_{V_{(r,s)}\in \widetilde{\mathcal{S}}} \left(\Re s\right) = \infty$. Assuming that this holds not only for the extended spectrum $\widetilde{\mathcal{S}}$ but also for some OPE spectrum $\mathcal{S}_{12}$, we deduce $\Re\beta^{-2}>0$, or equivalently 
 \begin{align}
  \boxed{\Re\beta^2 > 0 \quad \text{i.e.} \quad \Re c < 13}\ .
  \label{rbp}
@@ -1353,33 +1353,69 @@ Postpone fusion rules: search for simple derivation. Or accept that some vanishi
 
 \subsection{Loop models}
 
-As their name indicates, critical loop models were originally defined as critical limits of statistical models that describe non-intersecting loops in our two-dimensional space. Starting with the Ising models, many statistical models can be reformulated in terms of loops, and more models can be directly constructed from loops. But there is a lot of choice about which observables to include in the model. In the Ising model, if we consider only local observables, we obtain a minimal model in the critical limit. If we also consider non-local observables such as cluster connectivities, we obtain a much richer CFT. Deciding which fields to include in the spectrum is therefore not easy, but also not very important, as long as we can extend the spectrum when needed. 
+Critical loop models were originally defined as critical limits of statistical models that describe non-intersecting loops in a two-dimensional space. Starting with the Ising model, many statistical models can be reformulated in terms of loops, and more models can be directly constructed from loops. But there is a lot of choice about which observables to include in the model. In the Ising model, if we consider only local observables, we obtain a minimal model in the critical limit. If we also consider non-local observables such as cluster connectivities, we obtain a much richer CFT. For applications to statistical physics, it is not important to define a consistent CFT: what matters is that we can compute correlation functions, which are then interpreted as probabilities. 
 
-Here, we will define an extended spectrum that contains all the fields that are known to appear in loop models, and that have half-integer spins. Three known models give rise to integer-spin subsets of this spectrum: the $O(n)$ model, the $U(n)$ model and the Potts model. Each one of these models has
+Global symmetries and lattice models are outside the scope of this text. Section \ref{sec:cloop} for correl.
+
+Here we will propose a simple extended spectrum that will include all the known loop models, based on the assumption that there exists one degenerate field. 
+
+\subsubsection{Extended spectrum}
+
+Let the extended spectrum $\widetilde{S}^\text{loop}$ be the largest possible set of primary fields with half-integer spins, such that $V^d_{\langle 1,2\rangle}\in \widetilde{S}^\text{loop}$:
+\begin{align}
+ \boxed{\widetilde{S}^\text{loop} = \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in\mathbb{N}^*}  \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \frac12\mathbb{N}^*\\ s\in\frac{1}{r}\mathbb{Z}+\mathbb{Z}}}\bigcup \left\{ V_P\right\}_{P\in\mathbb{C}} } \ .
+\end{align}
+We therefore include all degenerate fields that are generated from $V^d_{\langle 1,2\rangle}$ by fusion, and all possible diagonal fields. When it comes to non-diagonal fields, the first index $r$ must be half-integer according to Eq. \eqref{sriz}. The symmetry $V_{(r,s)}=V_{(-r,-s)}$ allows us to assume $r\geq 0$, and the sector $r=0$ would be redundant with the diagonal sector, since 
+\begin{align}
+ V_{(0,s)} = V_{\frac12\beta^{-1}s}  \quad \text{i.e.} \quad V_P = V_{(0,2\beta P)} \ .
+ \label{sP}
+\end{align}
+On the other hand, $V_{(r,0)}$ is a genuinely non-diagonal field, whose fusion rules differ from those of the diagonal field with the same dimensions $V_{\frac12\beta r}$. 
+If $r$ is integer, the condition for the second index of $V_{(r,s)}$ reduces to the integer spin condition $s\in\frac{1}{r}\mathbb{Z}$. If however $r$ is half-integer, fusion with $V^d_{\langle 1,2\rangle}$ \eqref{vdvrs} forces us to allow half-integer spins, so that $s\in \frac{1}{r}\mathbb{Z} + \mathbb{Z} = \frac{1}{2r}\mathbb{Z}$. 
+
+Our simple extended spectrum hides important subtleties: 
 \begin{itemize}
- \item a modular-invariant torus partition function,
- \item a group of global symmetries that commutes with conformal symmetry. 
+ \item We characterize fields by their conformal dimensions, but there could be several independent fields with the same dimensions, in other words there could be nontrivial field multiplicities. This is known to occur in the loop models of Section \ref{sec:models}, where the multiplicities are described in terms of representations of global symmetry groups.  
+ \item We only write primary fields, but this is not always enough to determine the corresponding representations of the conformal algebra. For $(r,s)\in \mathbb{N}^*\times \mathbb{Z}^*$, the primary field $V_{(r,s)}$ has a null vector, and the Verma module $\mathcal{V}_{\Delta_{(r,s)}}\otimes\bar{\mathcal{V}}_{\Delta_{(r,-s)}}$ is not the only representation that includes $V_{(r,s)}$. In principle this does not introduce ambiguities, because $V_{(r,s)}$ can be obtained by repeated fusion of $V^d_{\langle 1,2\rangle}$ with $V_{(r,0)}$, and $V_{(r,0)}$ can only generate a Verma module. Nevertheless, deducing the action of conformal symmetry on $V_{(r,s)}$ is a nontrivial problem, which will be solved in Section \ref{sec:log}. It will turn out that $V_{(r,s)}$ and $V_{(r,-s)}$ both belong to one logarithmic indecomposable representation, which is not left-right factorized. 
 \end{itemize}
 
-not worry too much about spectrum of CFT, but about spectrum of correl fct. 
+\subsubsection{Fusion rules and dependence on the central charge}
 
-deg field implies unbounded $s$. We also want $s$ very small to not have minimal model or suchlike. This implies unbounded $r$. 
+In loop models, the existence of the degenerate field $V^d_{\langle 1,2\rangle}$ implies the conservation of $r$ modulo integers \eqref{sriz}. Moreover, we know the OPEs that involve $V^d_{\langle 1,2\rangle}$ itself, namely Eqs. \eqref{vpope} and \eqref{vdvrs}. The existence of non-diagonal fields together with $V^d_{\langle 1,2\rangle}$ leads to the half-plane constraint $\Re c<13$ \eqref{rbp} on the central charge. And the asymmetry between the two Kac indices $r,s$ means that loop models really depend on $\beta^2$ \eqref{cb}, not on $c$. 
 
-What if $V_{(r,s)}$ is spinless i.e. $rs=0$? The field $V_{(r,0)}$ is in fact non-diagonal, because its OPE with $V^d_{\langle 1,2\rangle}$ yields fields $V_{(r,\pm 1)}$ that have nonzero spins. On the other hand, $V_{(0,s)}$ is in fact an alternative notation for a diagonal field,
+We now make an assumption that has 3 different formulations:
+\begin{enumerate}
+ \item Any OPE spectrum is discrete.
+ \item Loop models do not include Liouville theory. 
+ \item Correlation functions are locally analytic in the central charge over the whole domain $\Re c<13$.
+\end{enumerate}
+These fomulations are equivalent because a continous OPE spectrum would produce non-analyticities on the line $c\leq 1$, as we saw in the context of Liouville theory in Section \ref{sec:liou}. Admittedly, it is only a conjecture that discreteness of the OPEs implies analyticity of correlation functions.
+
+
+\subsubsection{$O(n)$ model, $U(n)$ model, Potts model}\label{sec:models}
+
+Three known models give rise to integer-spin subsets of the extended spectrum $\widetilde{S}^\text{loop}$: the $O(n)$ model, the $U(n)$ model and the Potts model. 
+Their spectrums are 
 \begin{align}
- V_{(0,s)} = V_{\frac12 s\beta^{-1}}  \quad \iff \quad V_P = V_{(0, 2\beta P)}\ . 
- \label{vosvp}
+\mathcal{S}^{O(n)} &= \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in 2\mathbb{N}+1} \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \frac12\mathbb{N}^*\\ s\in\frac{1}{r}\mathbb{Z}}}  \ ,
+ \\
+ \mathcal{S}^{U(n)} &= \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in\mathbb{N}^*} \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \mathbb{N}^*\\ s\in\frac{1}{r}\mathbb{Z}}}  \ ,
+ \\
+ \mathcal{S}^\text{Potts} &= \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in\mathbb{N}^*} \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \mathbb{N}+2\\ s\in\frac{1}{r}\mathbb{Z}}} \bigcup  \left\{ V_{P_{(0,s)}}\right\}_{s\in \mathbb{N}+\frac12}\ .
 \end{align}
-For clarity, we will mostly write $V_P$ for diagonal fields. However, results that are derived for $V_{(r,s)}$ also apply to diagonal fields, starting with Eq. \eqref{sriz}.
+The spectrums of the $O(n)$ and $U(n)$ models are natural constructions: starting with $\widetilde{S}^\text{loop}$, we remove diagonal fields and fields with half-integer spins, and further remove degenerate or non-diagonal fields such that the resulting spectrum is closed under fusion. On the other hand, the Potts spectrum has no simple explanation in our formalism. We can only remark that it is very close to the $U(n)$ spectrum, from which it is obtained by removing the non-diagonal fields $\left\{V_{(1,s)}\right\}_{s\in\mathbb{Z}}$ and adding the diagonal fields $\left\{ V_{P_{(0,s)}}\right\}_{s\in \mathbb{N}+\frac12}$. 
 
-Loop CFT: all non-diag fields, all diag fields. 
+Each one of these models has
+\begin{itemize}
+ \item a modular-invariant torus partition function,
+ \item a group of global symmetries that commutes with conformal symmetry: the orthogonal group $O(n)$, the unitary group $U(n)$, or the symmetric group $S_Q$ in the case of the Potts model, with 
+ \begin{align}
+  n = -2\cos\left(\pi \beta^2\right) \quad , \quad Q = 4\cos^2\left(\pi \beta^2\right)\ .
+ \end{align}
+\end{itemize}
+Degenerate fields transform trivially under global symmetries... Pseudo-puzzle of $V_{(2, 0)}$ singlet.
 
-$O(n)$: take all non-diag fields, add as many deg. fields as possible. $V^d_{\langle 1,3\rangle}V_{(r,s)}=V_{(r,s-2)}+V_{(r,s)}+V_{(r,s+2)}$
-
-$U(n)$:  assume $V^d_{\langle 1,2\rangle}$, this restricts non-diag fields.
-
-Potts: Add one diag. field in addition, remove some non-diag. 
-
+The $O(n)$, $U(n)$ and Potts CFTs were originally defined as critical limits of statistical lattice models. In each case, the lattice model has a critical limit under some conditions on $n$ or $Q$. If these parameters are assumed to be real, the conditions are $n\in (-2,2)$ or $Q\in (0,4)$, equivalently $c\in (-2,1)$. The region of criticality actually extends into the complex $c$-plane, although it is much smaller than the half-plane $\Re c<13$ \cite{bjjz22}. Outside that region, certain fields become relevant, so the models may become multicritical. Moreover, the $O(n)$ lattice model has a dilute and a dense phase, and each phase gives rise to a different CFT in the critical limit. As a result, there can exist two different $O(n)$ CFTs with the same central charge, related by $\beta \to\beta^{-1}$. Similar phenomenons also occurs in the $U(n)$ and Potts models.
 
 \subsection{Summary/Other CFTs}
 
@@ -1506,10 +1542,13 @@ Notion of interchiral symmetry. Liouville 4pt is only one interchiral block? Sam
 
 Sketch method. Start with Zamolodchikov recursion.
 
+Permutation symmetry: must assume that the fields are indeed the same, what if we have multiplicities? 
+
 \subsection{Virasoro conformal blocks and Zamolodchikov's recursion}
 
 \subsection{Interchiral blocks} \label{sec:icb}
 
+\section{Correlation functions in loop models} \label{sec:cloop}
 
 \section{Logarithmic representations and fields} \label{sec:log}
 
