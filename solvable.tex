@@ -1342,14 +1342,6 @@ Generalized D-series minimal models can be solved for $\beta^2\in \mathbb{R}_{>0
 Like Liouville theory, generalized D-series minimal models cannot be analytically continued beyond $\beta^2\in \mathbb{R}_{>0}$. However, we can define these models by their spectrums in the range $\Re\beta^2>0$ \eqref{rbp}, assuming that they exist. There is indeed evidence that they exist \cite{mr17}, although they have not been fully solved, and the OPEs \eqref{vrsvrs} may include discrete terms in addition to the integral \cite{rib19}. 
 
 
-\subsubsection{E-series minimal models}
-
-There exist additional minimal models for $\beta^2=\frac{q}{p}$ with $p=12, 18, 30$.
-They have finitely many primary fields, which belong to fully degenerate representations from the Kac table. 
-However, we do not know how to derive them from the study of fusion rules. 
-In fact, determining the non-chiral fusion rules of E-series minimal models seems to be an open problem. 
-
-
 \subsection{Loop models}
 
 Critical loop models were originally defined as critical limits of statistical models that describe non-intersecting loops in a two-dimensional space. Starting with the Ising model, many statistical models can be reformulated in terms of loops, and more models can be directly constructed from loops. But there is a lot of choice about which observables to include in the model. In the Ising model, if we consider only local observables, we obtain the minimal model $\text{AMM}_{3,4}$ in the critical limit. If we also consider non-local observables such as cluster connectivities, we obtain a much richer CFT. For applications to statistical physics, what matters is less to define a consistent CFT than to compute correlation functions, which are then interpreted as probabilities. We will sketch a few consistent CFTs in Section \ref{sec:models}, but our main focus will be on correlation functions, which will be the subject of Section \ref{sec:cloop}.
@@ -1416,35 +1408,67 @@ A puzzle has arisen in the $O(n)$ model, when it was found that there is one fie
 
 The $O(n)$, $U(n)$ and Potts CFTs were originally defined as critical limits of statistical lattice models. In each case, the lattice model has a critical limit under some conditions on $n$ or $Q$. If these parameters are assumed to be real, the conditions are $n\in (-2,2)$ or $Q\in (0,4)$, equivalently $c\in (-2,1)$. The region of criticality actually extends into the complex $c$-plane, although it is much smaller than the half-plane $\Re c<13$ \cite{bjjz22}. Outside that region, certain fields become relevant, so the models may become multicritical. Moreover, the $O(n)$ lattice model has a dilute and a dense phase, and each phase gives rise to a different CFT in the critical limit. As a result, there can exist two different $O(n)$ CFTs with the same central charge, related by $\beta \to\beta^{-1}$. Similar phenomenons also occurs in the $U(n)$ and Potts models.
 
-\subsection{Summary/Other CFTs}
+\subsection{Completing the picture}
 
+\subsubsection{Summary of spectrums}
+
+For each CFT, we indicate the values of $\beta^2$, of the Kac indices of degenerate fields, of the indices of non-diagonal fields, and of the momentums of diagonal fields:
 \begin{align}
  \begin{array}{|c|c|c|c|c|}
   \hline 
-  \text{CFT} & \beta^2 & V_P & V^{d/f}_{\langle r,s\rangle} & V_{(r,s)}
+  \text{CFT} & \beta^2  & V^{d/f}_{\langle r,s\rangle} & V_{(r,s)} & V_P
   \\
   \hline \hline 
-  \text{GMM} & \mathbb{C}-\mathbb{Q} & - & \mathbb{N}^*\times \mathbb{N}^* &  - 
+  \text{GMM} & \mathbb{C}-\mathbb{Q}  & \mathbb{N}^*\times \mathbb{N}^* &  - & -
   \\
   \hline 
-  \text{Liouville} & \mathbb{C} &  \mathbb{R} & - & -
+  \text{Liouville} & \mathbb{C}^*  & - & - &  \mathbb{R}
   \\
   \hline 
-  \widetilde{\text{Liouville}} & \mathbb{C} & \mathbb{C} & \mathbb{N}^*\times \mathbb{N}^* & -
+  \widetilde{\text{Liouville}} & \mathbb{C}^*  & \mathbb{N}^*\times \mathbb{N}^* & - & \mathbb{C}
   \\
   \hline
-  \text{AMM} & \frac{q}{p} > 0 &  - &  [1,p-1]\times [1,q-1] & -
+  \text{AMM} & \frac{q}{p} > 0  & 
+  \begingroup\renewcommand*{\arraystretch}{1}
+  \begin{array}{c} \mathbb{N}\times \mathbb{N}\\  (0,p)\times (0,q)\end{array}\endgroup & - &  -
   \\
   \hline 
-  \text{RWT} & \frac{q}{p} > 0 &  \mathbb{R} & - & -
+  \text{RWT} & \frac{q}{p} > 0  & - & - &  \mathbb{R}
+  \\
+  \hline \hline 
+  \text{DMM} & \begingroup\renewcommand*{\arraystretch}{1}
+  \begin{array}{c}\frac{q}{p} > 0 \\ p \in 2\mathbb{N} \end{array}\endgroup
+  & \begingroup\renewcommand*{\arraystretch}{1}
+  \begin{array}{c}
+  (2\mathbb{N}+1)\times \mathbb{N} \\ (0,p)\times (0,q)\end{array}\endgroup
+  &  \begingroup\renewcommand*{\arraystretch}{1}
+  \begin{array}{c} 2\mathbb{Z}\times (\mathbb{Z}+\frac12) \\ (-\frac{p}{2},\frac{p}{2})\times (-\frac{q}{2},\frac{q}{2}) \end{array}\endgroup & - 
+  \\
+  \hline 
+  \text{GDMM} & \mathbb{C}_{\Re >0} & - & 2\mathbb{Z}\times (\mathbb{Z}+\frac12) & \mathbb{R} 
+  \\
+  \hline\hline 
+  \widetilde{\text{Loop}} & \mathbb{C}_{\Re >0} & \{1\}\times \mathbb{N}^* & \frac12\mathbb{N}^* \times (\frac{1}{r}\mathbb{Z} + \mathbb{Z}) & \mathbb{C} 
+  \\
+  \hline 
+  O(n) & \mathbb{C}_{\Re >0} & \{1\}\times(2\mathbb{N}+1) &  \frac12\mathbb{N}^* \times \frac{1}{r}\mathbb{Z} & - 
+  \\
+  \hline 
+  U(n) & \mathbb{C}_{\Re >0} & \{1\}\times \mathbb{N}^* &  \mathbb{N}^* \times \frac{1}{r}\mathbb{Z} & - 
+  \\
+  \hline 
+  \text{Potts} & \mathbb{C}_{\Re >0} & \{1\}\times \mathbb{N}^* &  (\mathbb{N}+2) \times \frac{1}{r}\mathbb{Z} & 
+  \{P_{(0,s)}\}_{s\in\mathbb{N}+\frac12}
   \\
   \hline 
  \end{array}
+ \label{sostab}
 \end{align}
 
+\subsubsection{Limits of diagonal CFTs}
 
-In the case of diagonal CFTs with 2 degenerate fields, we have used limits for defining Liouville theory with $c\leq 1$ as well as Runkel--Watts-type theories. Let us summarize these limits, together with other limits that were discussed 
-in Section \ref{sec:diag}, and also other limits that relate Liouville theory, (generalized) minimal models, and Runkel--Watts-type theories: 
+Taking limits played an important role in deriving some of the CFTs of Section \ref{sec:diag}. 
+Let us summarize the limits that relate Liouville theory, (generalized) minimal models, and Runkel--Watts-type theories: 
 \begin{align}
 \begin{tikzpicture}[scale = .25, baseline=(current  bounding  box.center)]
 \fill[red!50, rounded corners = 10] (-6, -10) rectangle (6, 10);
@@ -1484,15 +1508,17 @@ Somewhat subjectively, we have distinguished limits that are straightforward (fu
  \item $\boxed{\text{Liouville}\to \text{GMM}}$ (Section \ref{sec:essc}): This requires a detailed analysis of correlation functions.
 \end{itemize}
 
+\subsubsection{Other exactly solvable CFTs}
 
-
-Summary table of CFTs, spectrums, features. Main features for classifying: diagonal? deg. fields? influence of deg. fields on spectrum or structure constants? degree of diagonality: values of $r$ for non-diagonal fields? Denominators for $s$? 
-
-Other CFTs: here or intro? 
-
-Log-MM: not well-understood. Presumably, limit of GMM. 
-
-Ashkin--Teller, free boson: not clear how many degenerate fields. Fusion of deg. field $V^d_{\langle 1, 3\rangle}$: only one field appears, violating assumption, and violating $r\in\frac12\mathbb{Z}$. Better understood from affine symmetry. Cannot derive spectrum from Virasoro symmetry. 
+Let us mention a few other solvable CFTs:
+\begin{itemize}
+ \item \textbf{E-series minimal models} exist for $\beta^2=\frac{q}{p}$ with $p=12, 18, 30$ \cite{fms97}. They have finitely many primary fields, which belong to fully degenerate representations from the Kac table. 
+They have two independent degenerate fields of the type $\{V^f_{\langle r,1\rangle},V^f_{\langle 1,2\rangle}$ with $r=4,5,7$. 
+However, we do not know how to derive their known spectrums from the study of fusion rules. 
+Solving E-series minimal models is apparently still an open problem. 
+\item \textbf{Logarithmic minimal models} are believed to exist for $\beta^2\in \mathbb{Q}_{>0}$ \cite{prz06}. Their primary fields belong to the extended Kac table, i.e. they have integer Kac indices. Their spectrums include logarithmic representations. Their spectrums and fusion rules are however not fully known. It is in fact not clear how many such CFTs exist at any allowed central charge. Probably, they can be obtained as limits of generalized minimal models. 
+\item At $c=1$, the \textbf{compactified free boson} and its $\mathbb{Z}_2$ orbifold the \textbf{Ashkin--Teller model} are better understood in terms of an extended symmetry algebra (an abelian affine Lie algebra), although they can also be solved in terms of Virasoro symmetry only \cite{nr21}. They have a degenerate field $V^f_{\langle 1, 3\rangle}=V^f_{\langle 3,1\rangle}$, which however behaves as the identity field under fusion with non-diagonal fields. As a result, the constraints \eqref{sriz} are not obeyed. These models have a continuous parameter: the compactification radius $R$. For a special value of $R$, the compactified free boson is a $c\to 1$ limit of the $O(n)$ model, and the Ashkin--Teller model is a $c\to 1$ limit of the Potts model.
+\end{itemize}
 
 
 \section{Analytic bootstrap}\label{sec:ab}
