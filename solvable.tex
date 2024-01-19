@@ -429,6 +429,7 @@ We define the \textbf{degenerate state} $V^d_{\langle r,s\rangle}$ and \textbf{f
 $\mathcal{R}^f_{\langle r,s\rangle}$. These states obey the null vector equation
 \begin{align}
 L_{\langle r, s\rangle} V^d_{\langle r,s\rangle} = L_{\langle r, s\rangle} V^f_{\langle r,s\rangle} = 0\ .
+\label{lvdz}
 \end{align}
 The primary state $V_{\Delta_{(r,s)}}$ has the same dimension as $V^d_{\langle r,s\rangle}$ and $V^f_{\langle r,s\rangle}$, but does not necessarily obey the null vector equation. 
 
@@ -1523,9 +1524,95 @@ Solving E-series minimal models is apparently still an open problem.
 
 \section{Analytic bootstrap}\label{sec:ab}
 
-Could be interpreted as using OPE associativity for $V^{deg}VV$ just like we did for $TVV$ and getting constraints on interchiral descendants. 
+In Section \ref{sec:csope}, we have worked out how local conformal symmetry constrains operator product expansions. This was done by using the associativity of operator products of the type $TVV$, where $T$ is the energy-momentum tensor. The result was that in the OPE $VV$, the contribution of descendant fields are determined by the contributions of primary fields. Similarly, we will now study how degenerate fields constrain structure constants, by using the associativity of 
+operator products of the type $V^d_{\langle 2,1\rangle}VV$ or $V^d_{\langle 1,2\rangle}VV$.  
+This will determine how structure constants behave under momentum shifts of the type $P\to P\pm \beta$ or $P\to P\pm \beta^{-1}$. 
 
-\subsection{BPZ equations and their solutions}
+\subsection{Degenerate 4-point functions}
+
+Associativity of OPEs is equivalent to crossing symmetry of 4-point functions, so let us consider a 4-point function that involves a degenerate field. Since fusion products of degenerate representations \eqref{rrsvp} are finite, our 4-point function is a combination of finitely many conformal blocks in any one of the 3 channels $s,t,u$. This makes crossing symmetry equations particularly simple, and allows them to be solved analytically. 
+Any degenerate field $V^d_{\langle r,s\rangle}$ can be obtained from the 2 basic degenerate fields $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$ by fusion, therefore the crossing symmetry equations for $\left<V^d_{\langle r,s\rangle}V_1V_2V_3\right>$ in principle follow from the cases $(r,s)=(2,1)$ and $(r,s)=(1,2)$. 
+
+\subsubsection{BPZ equations}
+
+As we have seen in Section \ref{sec:cor}, for any creation operator $L\in\mathcal{L}$, local conformal symmetry determines descendant correlation functions $\left<LV_0\cdots \right>$ in terms of the corresponding primary correlation functions $\left<V_0\cdots \right>$.
+In the case of 4-point functions, we have 
+\begin{align}
+ \Big<LV_0(z)V_1(0)V_2(\infty)V_3(1)\Big> = P_L(z,\partial_z) \Big<V_0(z)V_1(0)V_2(\infty)V_3(1)\Big>\ ,
+\end{align}
+where $P_L(z,\partial_z)$ is a differential polynomial whose degree in $\partial_z$ is the level $|L|$ of the descendant field. If now our field is degenerate $V_0= V^d_{\langle r,s\rangle}$, then the null vector equation $L_{\langle r,s\rangle}V^d_{\langle r,s\rangle}=0$ \eqref{lvdz} leads to a differential equation of order $rs$,
+\begin{align}
+ P_{L_{\langle r,s\rangle}}(z,\partial_z) \Big<V^d_{\langle r,s\rangle}(z)V_1(0)V_2(\infty)V_3(1)\Big> = 0\ .
+\end{align}
+This is called a \textbf{Belavin--Polyakov--Zamolodchikov equation} or \textbf{BPZ equation}.  
+Let us derive the BPZ equation for a 4-point function  of the degenerate field $V_{\langle 2,1\rangle}$, together with 3 other primary fields:
+\begin{align}
+ G(z)=\Big<V_{\langle 2,1\rangle}(z)V_{1}(0)V_{2}(\infty)V_{3}(1)\Big>\ .
+ \label{goz}
+\end{align}
+The case of $V_{\langle 1,2\rangle}$ can then be obtained by $\beta\to \beta^{-1}$. The relevant creation operator is $L_{\langle 2,1\rangle} = L_{-1}^2 -\beta^2L_{-2}$ \eqref{ars}, and the insertion of $L_{-2}$ is in principle determined by the local Ward identity \eqref{lwi}. However, this identity involves derivatives in the positions of $V_{i}$, which are now fixed to $0,\infty,1$. We could eliminate these derivatives using global Ward identities. A technical trick to do this is to rewrite the local Ward identity as $G_\infty(z) = G_{z}(z) + G_0(z) + G_1(z)$, where we define
+\begin{align}
+ G_{z_0}(z) = \frac{1}{2\pi i} \oint_{z_0} \frac{y(y-1)}{y-z} \Big< T(y)V_{\langle 2,1\rangle}(z)V_{1}(0)V_{2}(\infty)V_{3}(1)\Big> \ .
+\end{align}
+To compute this, we use the OPE $T(y)V_\Delta(z)$ \eqref{tvd}: in the case $z=\infty$, using a global conformal transformation $z\to \frac{1}{z}$ and the definition \eqref{vdi} of $V_\Delta(\infty)$, this OPE becomes $T(y)V_\Delta(\infty) = \frac{\Delta}{y^2} V_\Delta(\infty) + O(\frac{1}{y})$. We find 
+\begin{align}
+ G_\infty(z) &= \Delta_2 G(z) \quad , \quad G_0(z) = \frac{\Delta_1}{z}G(z)\quad , \quad G_1(z) = \frac{\Delta_3}{1-z}G(z)\ ,
+ \\
+ G_z(z) &= \left(\Delta_{\langle 2,1\rangle} + (2z-1)\partial_z\right) G(z) + z(z-1)\Big<L_{-2}V_{\langle 2,1\rangle}(z)V_{1}(0)V_{2}(\infty)V_{3}(1)\Big>
+ \ .
+\end{align}
+Combining our rewritten local Ward identity with the null vector equation $L_{\langle 2,1\rangle}V^d_{\langle 2,1\rangle}=0$, and using $L_{-1}^2 V^d_{\langle 2,1\rangle}(z) = \partial_z^2 V^d_{\langle 2,1\rangle}(z)$ \eqref{pvlv}, we obtain the BPZ equation 
+\begin{align}
+ \left(\frac{z(z-1)}{\beta^2}\frac{\partial^2}{\partial z^2} + (2z-1)\frac{\partial}{\partial z} + \frac{\Delta_1}{z} + \Delta_{\langle 2,1\rangle}-\Delta_2  +\frac{\Delta_3}{1-z} \right) G(z) = 0 \ .
+\end{align}
+
+\subsubsection{Hypergeometric conformal blocks}
+
+According to the degenerate fusion rule \eqref{rvvp}, the decomposition of $G(z)$ into $s$-channel left-moving conformal blocks is a combination of two blocks with momentums $P_1\pm \frac{\beta}{2}$. The situation is similar in the $t$- and $u$-channels, and we write the resulting blocks as $\mathcal{F}^{(x)}_\pm(z)$ with $x\in\{s,t,u\}$:
+\begin{align}
+\mathcal{F}^{(s)}_\pm = 
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
+\draw (-1,2) node [left] {$2$} -- (0,0) -- node [above] {$P_1\pm\frac{\beta}{2}$} (4,0) -- (5,2) node [right] {$3$};
+\draw (-1,-2) node [left] {$1$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$4$};
+\end{tikzpicture}
+\quad 
+\mathcal{F}^{(t)}_\pm = 
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
+ \draw (-2,3) node [left] {$2$} -- (0,2) -- node [left] {$P_3\pm\frac{\beta}{2}$} (0,-2) -- (-2, -3) node [left] {$1$};
+\draw (0,2) -- (2,3) node [right] {$3$};
+\draw (0,-2) -- (2, -3) node [right] {$4$};
+\end{tikzpicture}
+\quad 
+\mathcal{F}^{(u)}_\pm = 
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
+\draw (-2,1) node [left] {$2$} -- (0,0) -- node [left] {$P_2\pm \frac{\beta}{2}$} (0,-4) ;
+\draw (0,0)-- (2,-5) node [right] {$4$};
+\draw (-2,-5) node [left] {$1$} -- (0,-4);
+\draw (0,-4) -- (2,1) node [right] {$3$};
+\end{tikzpicture} 
+\end{align}
+The conformal blocks provide 3 bases $\left\{\mathcal{F}^{(x)}_\pm(z)\right\}_\pm$ of solutions of the BPZ equation. Each solution is characterized by its asymptotic behaviour \eqref{stu} in a limit $z\to z_0$ with $z_0\in\{0,\infty,1\}$. Using the definition \eqref{dp} of the momentum, we compute 
+\begin{align}
+ \delta=\Delta\left(P+\tfrac{\beta}{2}\right) - \Delta(P) -\Delta_{\langle 2,1\rangle} = \beta P + \tfrac{1-\beta^2}{2}\ .
+\end{align}
+If $\varphi(z) = z^{\delta_1}(1-z)^{\delta_3}$, we deduce that the differential equation for $\varphi^{-1}(z) G(z)$ has holomorphic solutions near $z=0$ and near $z=1$, namely $\varphi(z)\mathcal{F}^{(s)}_+(z)$ and $\varphi(z)\mathcal{F}^{(t)}_+(z)$ respectively. By a tedious but straightforward calculation, we find that the equation for $\varphi^{-1}(z) G(z)$ is a \textbf{hypergeometric differential equation} 
+\begin{align}
+ \left(z(1-z)\frac{\partial^2}{\partial z^2} + \left[C-(A+B+1)\right]\frac{\partial}{\partial z} -AB\right) \varphi^{-1}(z) G(z) = 0 \ , 
+\end{align}
+with the parameters 
+\begin{align}
+ \{A,B\} = \left\{\beta(P_1\pm P_2+P_3)+\tfrac12\right\}_\pm \quad , \quad  C=2\beta P_1-1\ .
+\end{align}
+
+write the solutions in $s$, $t$ channels, why not $u$ for completeness
+
+\subsubsection{Degenerate fusing matrices}
+
+\subsubsection{Single-valuedness and crossing symmetry}
+
+\subsection{Shift equations for structure constants}
+
 
 Non-diagonal, simplify it as much as possible. Non-diagonal solution. 
 
@@ -1533,9 +1620,7 @@ Loop weights are invariant under shifts, left undetermined.
 
 $s\to s+1$ shift equations can be violated, cf Potts model. $s\to s+2$ may be derived from $(1,2)$ deg. field but are always obeyed if $(1,3)$ exists. 
 
-Do not try to rederive monodromies of BPZ equations! 
-
-\subsection{Exact solutions for structure constants}\label{sec:essc}
+\subsection{Solutions of shift equations}\label{sec:essc}
 
 Deduce analytic properties of correlation functions, and limits of CFTs. 
 
@@ -1590,7 +1675,7 @@ To get log reps we need associativity of OPE of degenerate field. We might say t
 
 Emergence of logarithms: $\Delta_{P+\frac{\beta}{2}}-\Delta_{P-\frac{\beta}{2}} = \beta P$ integer $\implies P=P_{(0,s)}$. This calculation is a diagonal version of the argument about integer spin that leads to non-diagonal $O(n)$ space of states.
 
-In $V^d_{\langle 1,2\rangle}V^N_{(r,0)} = \sum_\pm V^N_{(r,\pm 1)}$ it is not just spins but also dimensions that differ by integers. 
+In $V^d_{\langle 1,2\rangle}V^N_{(r,0)} = \sum_\pm V^N_{(r,\pm 1)}$ it is not just spins but also dimensions that differ by integers. Study singularities of OPE coefficients. 
 
 Need we assume that $V^N_{(r,0)}$ is the limit of diagonal fields? Why would we not get $V_{P_{(r,0)}}$? Are there two ways to take the limit? See OPE coefficients. 
 
