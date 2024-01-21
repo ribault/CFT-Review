@@ -1554,7 +1554,7 @@ The case of $V_{\langle 1,2\rangle}$ can then be obtained by $\beta\to \beta^{-1
 \begin{align}
  G_{z_0}(z) = \frac{1}{2\pi i} \oint_{z_0} \frac{y(y-1)}{y-z} \Big< T(y)V_{\langle 2,1\rangle}(z)V_{1}(0)V_{2}(\infty)V_{3}(1)\Big> \ .
 \end{align}
-To compute this, we use the OPE $T(y)V_\Delta(z)$ \eqref{tvd}: in the case $z=\infty$, using a global conformal transformation $z\to \frac{1}{z}$ and the definition \eqref{vdi} of $V_\Delta(\infty)$, this OPE becomes $T(y)V_\Delta(\infty) = \frac{\Delta}{y^2} V_\Delta(\infty) + O(\frac{1}{y})$. We find 
+We then compute $G_{z_0}(z)$ using the OPE $T(y)V_\Delta(z_0)$ \eqref{tvd}. The case $T(y)V_\Delta(\infty) = \frac{\Delta}{y^2} V_\Delta(\infty) + O(\frac{1}{y})$ is obtained from the case $z_0\in\mathbb{C}$ using the global conformal transformation $z\to \frac{1}{z}$ and the definition \eqref{vdi} of $V_\Delta(\infty)$. We find 
 \begin{align}
  G_\infty(z) &= \Delta_2 G(z) \quad , \quad G_0(z) = \frac{\Delta_1}{z}G(z)\quad , \quad G_1(z) = \frac{\Delta_3}{1-z}G(z)\ ,
  \\
@@ -1604,10 +1604,20 @@ with the parameters
 \begin{align}
  \{A,B\} = \left\{\beta(P_1\pm P_2+P_3)+\tfrac12\right\}_\pm \quad , \quad  C=2\beta P_1-1\ .
 \end{align}
+This allows us to write our conformal blocks in terms of the \textbf{hypergeometric function} ${}_2F_1$,
+\begin{align}
+ \mathcal{F}_+^{(s)}(z) &= z^{\beta P_1 +\frac{1-\beta^2}{2}}(1-z)^{\beta P_3 + \frac{1-\beta^2}{2}} {}_2F_1\left(\tfrac12+ \beta P_{123},\tfrac12+\beta P_{13}^2,1+2\beta P_1,z\right) \ , 
+ \\
+ \mathcal{F}_+^{(t)}(z) &= z^{\beta P_1 +\frac{1-\beta^2}{2}}(1-z)^{\beta P_3 + \frac{1-\beta^2}{2}} {}_2F_1\left(\tfrac12+ \beta P_{123},\tfrac12+\beta P_{13}^2,1+2\beta P_3,1-z\right) \ , 
+ \\
+ \mathcal{F}_+^{(u)}(z) &= 
+\end{align}
+
+
 
 write the solutions in $s$, $t$ channels, why not $u$ for completeness
 
-\subsubsection{Degenerate fusing matrices}
+
 
 \subsubsection{Single-valuedness and crossing symmetry}
 
