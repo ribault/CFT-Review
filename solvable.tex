@@ -1547,7 +1547,7 @@ where $P_L(z,\partial_z)$ is a differential polynomial whose degree in $\partial
 This is called a \textbf{Belavin--Polyakov--Zamolodchikov equation} or \textbf{BPZ equation}.  
 Let us derive the BPZ equation for a 4-point function  of the degenerate field $V_{\langle 2,1\rangle}$, together with 3 other primary fields:
 \begin{align}
- G(z)=\Big<V_{\langle 2,1\rangle}(z)V_{1}(0)V_{2}(\infty)V_{3}(1)\Big>\ .
+ G(z)=\Big<V_{\langle 2,1\rangle}^d(z)V_{1}(0)V_{2}(\infty)V_{3}(1)\Big>\ .
  \label{goz}
 \end{align}
 The case of $V_{\langle 1,2\rangle}$ can then be obtained by $\beta\to \beta^{-1}$. The relevant creation operator is $L_{\langle 2,1\rangle} = L_{-1}^2 -\beta^2L_{-2}$ \eqref{ars}, and the insertion of $L_{-2}$ is in principle determined by the local Ward identity \eqref{lwi}. However, this identity involves derivatives in the positions of $V_{i}$, which are now fixed to $0,\infty,1$. We could eliminate these derivatives using global Ward identities. A technical trick to do this is to rewrite the local Ward identity as $G_\infty(z) = G_{z}(z) + G_0(z) + G_1(z)$, where we define
@@ -1617,6 +1617,7 @@ Let us write
 the change of bases that relates the $s$- and $t$-channel conformal blocks as 
 \begin{align}
  \mathcal{F}^{(s)}_{\epsilon_1} = \sum_{\epsilon_3\pm} F_{\epsilon_1,\epsilon_3} \mathcal{F}^{(t)}_{\epsilon_3}\ , 
+ \label{fsfft}
 \end{align}
 where the size two matrix $\left(F_{\epsilon_1,\epsilon_3}\right)_{\epsilon_1,\epsilon_3=\pm}$ is a \textbf{degenerate fusing matrix}. This matrix has the coefficients 
 \begin{align}
@@ -1631,7 +1632,36 @@ and the determinant
 
 \subsubsection{Crossing symmetry}
 
-decomp 4 pt into left and right blocks. Use OPEs. Valid also for diag. fields by $s=0$. Beware convention for $\bar P_{(r,s)}$.
+We will now assemble hypergeometric conformal blocks into crossing-symmetry 4-point functions. We assume that fusion with $V_{\langle 2,1\rangle}$ acts diagonally on $V_1,V_2,V_3$, i.e. the left and right momentums $P_i,\bar P_i$ are shifted by the same amount $\frac{\beta}{2}$ or $-\frac{\beta}{2}$. (The case where they are shifted by opposite amounts is equivalent, and can be obtained by $\bar P_i\to -\bar P_i$.) This assumption is fulfilled by diagonal fields $V_P$, but also by non-diagonal fields $V_{(r,s)}$ with momentums of the type $(P,\bar P)= (P_{(r,s)},P_{(r,-s)})$. 
+Then the degenerate 4-point function \eqref{goz} decomposes into degenerate $x$-channel conformal blocks as 
+\begin{align}
+ \Big<V_{\langle 2,1\rangle}^dV_{1}V_{2}V_{3}\Big> 
+ = \sum_\pm d^{(x)}_\pm \left|\mathcal{F}^{(x)}_\pm \right|^2  
+ \ . 
+\end{align}
+Crossing symmetry is the equality of the three decompositions $x=s,t,u$, and leads to relations between the degenerate four-point structure constants $d^{(x)}_\pm$. In particular, applying the change of bases \eqref{fsfft} to the $s$-channel decomposition, and comparing with the $t$-channel decomposition, we obtain 
+\begin{align}
+ \forall \epsilon,\bar\epsilon \in \{+,-\}\ , \qquad \sum_\pm d_\pm^{(s)} F_{\pm,\epsilon}\bar F_{\pm, \bar\epsilon} = \delta_{\epsilon,\bar\epsilon} d_\epsilon^{(t)}\ . 
+ \label{feeb}
+\end{align}
+The two cases $\epsilon = -\bar\epsilon$ give us two linear relations between $d^{(s)}_+$ and $d^{(s)}_-$, whose compatibility amounts to 
+\begin{align}
+ \frac{F_{++}F_{--}}{F_{+-}F_{-+}} = \frac{\bar F_{++}\bar F_{--}}{\bar F_{+-}\bar F_{-+}}\ .
+ \label{ffff}
+\end{align}
+With our degenerate fusing matrix \eqref{fee}, we find 
+\begin{align}
+ \frac{F_{++}F_{--}}{F_{+-}F_{-+}} = \prod_\pm \frac{\cos \pi \beta(P_1\pm P_2-P_3)}{\cos \pi \beta(P_1\pm P_2+P_3)}\ . 
+\end{align}
+Thanks to the conservation of the second Kac index $s=\beta(\bar P-P)$ modulo integers \eqref{ssiz}, this expression satisfies the compatibility condition \eqref{ffff}. Then the crossing symmetry relations \eqref{feeb} determine all the structure constants $d^{(s)}_\pm,d^{(t)}_\pm$ in terms of one of them,
+\begin{align}
+ \frac{d^{(s)}_-}{d^{(s)}_+} &= -\frac{F_{++}\bar F_{+-}}{F_{-+}\bar F_{--}} \ ,
+ \label{dr1}
+ \\
+ \frac{d^{(t)}_+}{d^{(s)}_+} &= \frac{F_{++}}{\bar F_{--}} \det \bar F\ .
+ \label{dr2}
+\end{align}
+
 
 
 \subsection{Shift equations for structure constants}
