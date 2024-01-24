@@ -1632,7 +1632,7 @@ and the determinant
 
 \subsubsection{Crossing symmetry}
 
-We will now assemble hypergeometric conformal blocks into crossing-symmetry 4-point functions. We assume that fusion with $V_{\langle 2,1\rangle}$ acts diagonally on $V_1,V_2,V_3$, i.e. the left and right momentums $P_i,\bar P_i$ are shifted by the same amount $\frac{\beta}{2}$ or $-\frac{\beta}{2}$. (The case where they are shifted by opposite amounts is equivalent, and can be obtained by $\bar P_i\to -\bar P_i$.) This assumption is fulfilled by diagonal fields $V_P$, but also by non-diagonal fields $V_{(r,s)}$ with momentums of the type $(P,\bar P)= (P_{(r,s)},P_{(r,-s)})$. 
+We will now assemble hypergeometric conformal blocks into crossing-symmetric 4-point functions. We assume that fusion with $V_{\langle 2,1\rangle}$ acts diagonally on $V_1,V_2,V_3$, i.e. the left and right momentums $P_i,\bar P_i$ are shifted by the same amount $\frac{\beta}{2}$ or $-\frac{\beta}{2}$. (The case where they are shifted by opposite amounts is equivalent, and can be obtained by $\bar P_i\to -\bar P_i$.) This assumption is fulfilled by diagonal fields $V_P$, but also by non-diagonal fields $V_{(r,s)}$ with momentums of the type $(P,\bar P)= (P_{(r,s)},P_{(r,-s)})$. 
 Then the degenerate 4-point function \eqref{goz} decomposes into degenerate $x$-channel conformal blocks as 
 \begin{align}
  \Big<V_{\langle 2,1\rangle}^dV_{1}V_{2}V_{3}\Big> 
@@ -1655,13 +1655,39 @@ With our degenerate fusing matrix \eqref{fee}, we find
 \end{align}
 Thanks to the conservation of the second Kac index $s=\beta(\bar P-P)$ modulo integers \eqref{ssiz}, this expression satisfies the compatibility condition \eqref{ffff}. Then the crossing symmetry relations \eqref{feeb} determine all the structure constants $d^{(s)}_\pm,d^{(t)}_\pm$ in terms of one of them,
 \begin{align}
- \frac{d^{(s)}_-}{d^{(s)}_+} &= -\frac{F_{++}\bar F_{+-}}{F_{-+}\bar F_{--}} \ ,
- \label{dr1}
- \\
- \frac{d^{(t)}_+}{d^{(s)}_+} &= \frac{F_{++}}{\bar F_{--}} \det \bar F\ .
- \label{dr2}
+ \frac{d^{(s)}_-}{d^{(s)}_+} = -\frac{F_{++}\bar F_{+-}}{F_{-+}\bar F_{--}}\quad , \quad 
+ \frac{d^{(t)}_+}{d^{(s)}_+} = \frac{F_{++}}{\bar F_{--}} \det \bar F \quad , \quad 
+ \frac{d^{(t)}_-}{d^{(s)}_+} = -\frac{\bar F_{+-}}{F_{-+}} \det F\ .
 \end{align}
-
+Explicitly, these relations read 
+\begin{multline}
+  \frac{d^{(s)}_-}{d^{(s)}_+} = -\frac{\Gamma(1+2\beta P_1)}{\Gamma(1-2\beta P_1)}\frac{\Gamma(1+2\beta\bar P_1)}{\Gamma(1-2\beta\bar P_1)} \frac{(-)^{2s_2}}{\pi^4}
+  \prod_{\epsilon_2,\epsilon_3=\pm}
+ \cos\left(\pi\beta\left(P_1+\epsilon_2P_2+\epsilon_3 P_3\right)\right)
+ \\ \times
+ \Gamma\left(\tfrac12 -\beta(P_1+\epsilon_2P_2+\epsilon_3 P_3)\right) \Gamma\left(\tfrac12 -\beta(\bar P_1+\epsilon_2 \bar P_2+\epsilon_3 \bar P_3)\right)  ,
+ \label{dmdp}
+\end{multline}
+\begin{align}
+ \frac{d^{(t)}_+}{d^{(s)}_+} = \frac{\Gamma\left(1+2\beta P_1\right)}{\Gamma\left(-2\beta\bar P_1\right)} 
+ \frac{\Gamma\left(-2\beta P_3\right)}{\Gamma\left(1+2\beta\bar P_3\right)} 
+ \prod_\pm \frac{\Gamma\left(\frac12 -\beta\bar P_1 \pm \beta\bar P_2 +\beta\bar P_3\right)}{\Gamma\left(\frac12+\beta P_1 \pm \beta P_2 -\beta P_3\right)}\ ,
+ \label{dpdp}
+\end{align}
+\begin{align}
+ \frac{d^{(t)}_-}{d^{(s)}_+} = \frac{\Gamma\left(1+2\beta \bar P_1\right)}{\Gamma\left(-2\beta P_1\right)} 
+ \frac{\Gamma\left(2\beta \bar P_3\right)}{\Gamma\left(1-2\beta P_3\right)} 
+ \prod_\pm \frac{\Gamma\left(\frac12 -\beta P_1 \pm \beta P_2 -\beta P_3\right)}{\Gamma\left(\frac12+\beta \bar P_1 \pm \beta \bar P_2 +\beta \bar P_3\right)}\ .
+ \label{dtdp}
+\end{align}
+We will also need the first relation for 4-point functions of the type $\left<V_{\langle 2,1\rangle}^d VV_{\langle 2,1\rangle}^d V\right>$, where 2 of the fields are degenerate and the remaining 2 are equal. Then the first relation reduces to 
+\begin{align}
+\frac{d^{(s)}_-}{d^{(s)}_+} =
+-\frac{\Gamma\left(1+2\beta P\right)}{\Gamma\left(1-2\beta P\right)} \frac{\Gamma\left(1+2\beta \bar P\right)}{\Gamma\left(1-2\beta \bar P\right)} 
+ \frac{\Gamma\left(\beta^{-2}-2\beta P\right)\Gamma\left(1-\beta^{-2}-2\beta P\right)}{\Gamma\left(\beta^{-2}+2\beta \bar P\right)\Gamma\left(1-\beta^{-2}+2\beta \bar P\right)}\ .
+ \label{ddb}
+\end{align}
+To conclude, we have seen that crossing symmetry allows us to determine degenerate 4-point functions up to an overall constant factor, by imposing relations on 4-point structure constants. Next we will deduce shift equations for the 2-point and 3-point structure constants. 
 
 
 \subsection{Shift equations for structure constants}
