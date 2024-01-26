@@ -1692,13 +1692,17 @@ To conclude, we have seen that crossing symmetry allows us to determine degenera
 
 \subsection{Shift equations for structure constants}
 
-\subsubsection{Structure constants and their invariant combinations}
+\subsubsection{Degenerate and non-degenerate structure constants}
 
 Let us write the degenerate 4-point structure constants $d^{(x)}_\pm$ in terms of 2-point structure constants $B_{ij}=\delta_{ij}B_i$ and 3-point structure constants $C_{ijk}$. We also need to introduce degenerate OPE structure constants $c_i^\pm$ such that 
 \begin{align}
 V_{\langle 2,1\rangle}^d V_i \sim c^+_i V_{i^+} + c^-_i V_{i^-}\ ,
 \end{align}
-where we use the notation $i^\pm$ for the labels of the primary fields that appear in the degenerate OPE. 
+where we use the notation $i^\pm$ for the labels of the primary fields that appear in the degenerate OPE. Eq. \eqref{ccb} allows to rewrite $c_i^\pm$ in terms of 2-point and 3-point structure constants; using moreover the permutation relation \eqref{b21}, we find 
+\begin{align}
+ c_i^- B_{i^-} = (-)^{s_i} c^+_{i^-} B_i\ .
+ \label{cbcb}
+\end{align}
 With these notations, the 4-point structure constants are:
 \begin{align}
  \begin{tikzpicture}[baseline=(base), very thick, scale = .4]
@@ -1739,21 +1743,28 @@ In order to deduce equations for the structure constants $B_i,C_{ijk}$, it may s
 \begin{align}
  V_i(z) \to \lambda_i V_i(z)\ .
 \end{align}
-This amounts to 
+For a quantity to be meaningful, it must be invariant under renormalizations. And invariant combinations of structure constants do not involve $c_i^\pm$. For example, the $s$-channel 4-point structure constant $D^{(s)}_k = \frac{C_{12k}C_{k34}}{B_k}$ is invariant under renormalization of the channel field $V_k$, and $D^{(s)}_{k^+}$ is a combination of degenerate 4-point structure constants \eqref{cs}, such that the contributions of $c_k^+$ cancel. 
+
+It is however not practical to only work with renormalization-invariant combinations of structure constants. In particular, the invariant $\frac{C_{123}}{\sqrt{B_1B_2B_3}}$ involves a square root, and suffers from the corresponding sign ambiguity. Instead, we will use field renormalizations to choose $c_i^+$, from which $c_i^-$ is then deduced using Eq. \eqref{cbcb}. While the choice of $c_i^+$ is in principle arbitrary, in practice it is guided by the simplicity of the resulting equations for $B_i,C_{ijk}$. In a CFT with two degenerate fields $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$, the degenerate OPE coefficients for the two fields can however not be chosen independently. (See \cite[Exercise 3.2]{rib14} for the case of Liouville theory.)  
+
+Having chosen $c^+_i$, it can be convenient to determine $c^-_i$ explicitly, instead of eliminating it in favour of $B_i$. To do this, notice that Eq. \eqref{cbcb} implies $\frac{B_{i^-}}{B_{i^+}} = \frac{c_i^+}{c_i^-}\frac{c_{i^-}^+}{c_{i^+}^-}$. In the case of the 4-point function $\left<V_{\langle 2,1\rangle}^d V_iV_{\langle 2,1\rangle}^d V_i\right>$, Eq. \eqref{cs} gives us $\frac{d^{(s)}_-}{d^{(s)}_+}=\frac{(c_i^-)^2}{(c_i^+)^2} \frac{B_{i^-}}{B_{i^+}}$. Eliminating the 2-point structure constants, we obtain the relation
+\begin{align}
+ \frac{d^{(s)}_-}{d^{(s)}_+}=\frac{c_i^-}{c_{i^+}^-} \frac{c_{i^-}^+}{c_i^+}\ ,  
+ \label{ddcccc}
+\end{align}
+whose left-hand side is explicitly known by Eq. \eqref{ddb}. If we know $c_i^+$, this relation constrains $c_i^-$, without determining it. But any $c_i^-$ is OK due to leftover field normalization?? no, leftover normalization is periodic, would not change $c_i^-$ at all. 
 
 
-normalization, reflection invariance, reflection coef, analyticity
 
-norm inv. implies reflection inv.
+\subsubsection{Choice of normalization and shift equations}
 
-combine two shifts when needed. 
+We choose the degenerate OPE coefficients 
+\begin{align}
+ c^+ = \beta^{2\beta(P+\bar P)} \frac{\Gamma(-2\beta P)}{\Gamma(1+2\beta \bar P)} \quad , \quad c^- = \beta^{-2\beta(P+\bar P)} \frac{\Gamma(2\beta P)}{\Gamma(1-2\beta \bar P)}\  . 
+ \label{cpcm}
+\end{align}
+While the choice of $c^+$ is arbitrary, 
 
-careful study in Liouville theory \cite{rib14}
-
-More practical: solve for dependence on 3 fields, the rest follows. 
-
-
-\subsubsection{Explicit shift equations}
 
 Give generic coefs $c_\pm$, some modifs in some cases.
 
