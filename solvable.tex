@@ -14,8 +14,6 @@
 
 \usepackage{centernot}
 
-\usepackage{underbracket}
-
 \usepackage[nottoc]{tocbibind}
 
 \usepackage{pgf}
@@ -1684,7 +1682,7 @@ We will also need the first relation for 4-point functions of the type $\left<V_
 \begin{align}
 \frac{d^{(s)}_-}{d^{(s)}_+} =
 -\frac{\Gamma\left(1+2\beta P_1\right)}{\Gamma\left(1-2\beta P_1\right)} \frac{\Gamma\left(1+2\beta \bar P_1\right)}{\Gamma\left(1-2\beta \bar P_1\right)} 
- \frac{\Gamma\left(\beta^{-2}-2\beta P_1\right)\Gamma\left(1-\beta^{-2}-2\beta P_1\right)}{\Gamma\left(\beta^{-2}+2\beta \bar P_1\right)\Gamma\left(1-\beta^{-2}+2\beta \bar P_1\right)}\ .
+ \frac{\Gamma\left(\beta^2-2\beta P_1\right)\Gamma\left(1-\beta^2-2\beta P_1\right)}{\Gamma\left(\beta^2+2\beta \bar P_1\right)\Gamma\left(1-\beta^2+2\beta \bar P_1\right)}\ .
  \label{ddb}
 \end{align}
 To conclude, we have seen that crossing symmetry allows us to determine degenerate 4-point functions up to an overall constant factor, by imposing relations on 4-point structure constants. Next we will deduce shift equations for the 2-point and 3-point structure constants. 
@@ -1785,14 +1783,35 @@ Combining the crossing symmetry equation \eqref{dmdp}, \eqref{dpdp} and \eqref{d
 \\
 \frac{B_{1^-}}{B_{1^+}} &=
 \beta^{4\beta (P_1+\bar P_1)} 
- \frac{\Gamma\left(\beta^{-2}-2\beta P_1\right)\Gamma\left(1-\beta^{-2}-2\beta P_1\right)}{\Gamma\left(\beta^{-2}+2\beta \bar P_1\right)\Gamma\left(1-\beta^{-2}+2\beta \bar P_1\right)}\ .
+ \frac{\Gamma\left(\beta^2-2\beta P_1\right)\Gamma\left(1-\beta^2-2\beta P_1\right)}{\Gamma\left(\beta^2+2\beta \bar P_1\right)\Gamma\left(1-\beta^2+2\beta \bar P_1\right)}\ .
  \label{sh-b}
 \end{align}
 These are called \textbf{shift equations}, because they determine how structure constants behave when the momentums $P_i,\bar P_i$ of fields are shifted by $\pm \frac{\beta}{2}$. The second equation makes sense provided $s_i\in \mathbb{Z}$, whereas the other equations are valid under the more general condition $s_i\in \frac12 \mathbb{Z}$ \eqref{ssiz}. With our choice of degenerate OPE structure constants, the shift equations do not involve Gamma functions that depend on only one of the momentums. 
 
-
+In Liouville theory with $c\notin (-\infty,1]$ and in non-diagonal CFTs with 2 degenerate fields, we will have to use slighly modified shift equations, obtained by choosing slighly different degenerate OPE structure constants. Moreover, we have only written shift equations that follow from the existence of $V^d_{\langle 2,1\rangle}$: the case of $V^d_{\langle 1,2\rangle}$ can then be deduced by $\beta \to \beta^{-1}$.
 
 \subsection{Solutions of shift equations}\label{sec:essc}
+
+Since shift equations produce Gamma functions, their solutions should be written in terms of \textbf{Barnes' double Gamma function}, defined by 
+\begin{align}
+\frac{\Gamma_\beta(x+\beta)}{\Gamma_\beta(x)} = \sqrt{2\pi}\frac{\beta^{\beta x-\frac12}}{\Gamma(\beta x)}
+\quad , \quad 
+\frac{\Gamma_\beta(x+\beta^{-1})}{\Gamma_\beta(x)} = \sqrt{2\pi}\frac{\beta^{\frac12-\beta^{-1}x}}{\Gamma(\beta^{-1}x)} \ .
+\label{gshift}
+\end{align}
+
+introduce double Gamma function, its poles, just mention $\Upsilon_\beta$ without using it 
+
+\subsubsection{Diagonal CFTs with 2 degenerate fields}
+
+Uniqueness for Liouville, depending on $\beta$. 
+
+\subsubsection{Non-diagonal CFTs with 2 degenerate fields}
+
+\subsubsection{Loop models}
+
+
+\subsubsection{Temporary notes}
 
 Deduce analytic properties of correlation functions, and limits of CFTs. 
 
