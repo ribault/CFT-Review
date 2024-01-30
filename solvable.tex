@@ -12,6 +12,8 @@
 
 \usepackage{amsmath,amssymb,amsfonts}
 
+\usepackage{empheq}
+
 \usepackage{centernot}
 
 \usepackage[nottoc]{tocbibind}
@@ -1766,30 +1768,35 @@ which obey Eq. \eqref{ddcccc} thanks to $s_i=\beta(\bar P_i-P_i) \in \frac12\mat
 
 \subsubsection{Explicit shift equations}
 
-Combining the crossing symmetry equation \eqref{dmdp}, \eqref{dpdp} and \eqref{ddb} with the determination \eqref{cs} of degenerate 4pt structure constants and the choice \eqref{cpcm} of degenerate OPE structure constants, we obtain the shift equations 
-\begin{align}
-\frac{C_{1^-23}}{C_{1^+23}} &= 
+Combining the crossing symmetry equation \eqref{dmdp}, and \eqref{ddb} with the determination \eqref{cs} of degenerate 4pt structure constants and the choice \eqref{cpcm} of degenerate OPE structure constants, we obtain
+\begin{empheq}[box = \fbox]{multline}
+\frac{C_{1^-23}}{C_{1^+23}} = 
  \frac{(-)^{2s_2}}{\pi^4} \beta^{4\beta (P_1+\bar P_1)}
   \prod_{\epsilon_2,\epsilon_3=\pm}
  \cos\left(\pi\beta\left(P_1+\epsilon_2P_2+\epsilon_3 P_3\right)\right)
- \nonumber
- \\ & \qquad\times 
+ \\ \times 
  \Gamma\left(\tfrac12 -\beta(P_1+\epsilon_2P_2+\epsilon_3 P_3)\right) \Gamma\left(\tfrac12 -\beta(\bar P_1+\epsilon_2 \bar P_2+\epsilon_3 \bar P_3)\right)  \ ,
  \label{sh-mp}
-\\
- \frac{C_{123^+}}{C_{1^+23}} &= 
- (-)^{s_3} \beta^{2\beta(P_1+\bar P_1-P_3-\bar P_3)}
- \prod_\pm \frac{\Gamma\left(\frac12 -\beta\bar P_1 \pm \beta\bar P_2 +\beta\bar P_3\right)}{\Gamma\left(\frac12+\beta P_1 \pm \beta P_2 -\beta P_3\right)}\ ,
- \label{sh-pp}
-\\
-\frac{B_{1^-}}{B_{1^+}} &=
+\end{empheq}
+\begin{align}
+\boxed{\frac{B_{1^-}}{B_{1^+}} =
 \beta^{8\beta (P_1+\bar P_1)} 
  \frac{\Gamma(-2\beta P_1)}{\Gamma(2\beta P_1)} \frac{\Gamma(1-2\beta \bar P_1)}{\Gamma(1+2\beta \bar P_1)}
- \frac{\Gamma\left(\beta^2-2\beta P_1\right)\Gamma\left(1-\beta^2-2\beta P_1\right)}{\Gamma\left(\beta^2+2\beta \bar P_1\right)\Gamma\left(1-\beta^2+2\beta \bar P_1\right)}\ .
+ \frac{\Gamma\left(\beta^2-2\beta P_1\right)\Gamma\left(1-\beta^2-2\beta P_1\right)}{\Gamma\left(\beta^2+2\beta \bar P_1\right)\Gamma\left(1-\beta^2+2\beta \bar P_1\right)}}\ .
  \label{sh-b}
 \end{align}
-These are called \textbf{shift equations}, because they determine how structure constants behave when the momentums $P_i,\bar P_i$ of fields are shifted by $\pm \frac{\beta}{2}$. The second equation makes sense provided $s_i\in \mathbb{Z}$, whereas the other equations are valid under the more general condition $s_i\in \frac12 \mathbb{Z}$ \eqref{ssiz}. With our choice of degenerate OPE structure constants, the shift equations do not involve Gamma functions that depend on only one of the momentums. 
-
+These are called \textbf{shift equations}, because they determine how structure constants behave when the momentums $P_1,\bar P_1$ of fields are shifted by $\beta$, under the condition $s_i\in \frac12 \mathbb{Z}$ \eqref{ssiz}. In a CFT whose spectrum is invariant under shifts by $\frac{\beta}{2}$ and therefore $s_i\in\mathbb{Z}$, we also have more refined shift equations: an equation for the 3-point structure constant, deduced from Eq. \eqref{dpdp},
+\begin{align}
+ \boxed{\frac{C_{123^+}}{C_{1^+23}} = 
+ (-)^{s_3} \beta^{2\beta(P_1+\bar P_1-P_3-\bar P_3)}
+ \prod_\pm \frac{\Gamma\left(\frac12 -\beta\bar P_1 \pm \beta\bar P_2 +\beta\bar P_3\right)}{\Gamma\left(\frac12+\beta P_1 \pm \beta P_2 -\beta P_3\right)}}\ ,
+ \label{sh-pp}
+\end{align}
+and an equation for the 2-point structure constant, deduced from Eq. \eqref{cbcb}:
+\begin{align}
+ \boxed{\frac{B_1}{B_{1^+}} =  (-)^{s_1}\beta^{4\beta (P_1+\bar P_1)+2\beta^2}\frac{\Gamma(-2\beta P_1)}{\Gamma(1+2\beta \bar P_1)}\frac{\Gamma(1-\beta^2-2\beta\bar P_1)}{\Gamma(\beta^2+2\beta P_1)} }\ .
+ \label{sh-bb}
+\end{align}
 In Liouville theory with $c\notin (-\infty,1]$ and in non-diagonal CFTs with 2 degenerate fields, we will have to use slighly modified shift equations, obtained by choosing slighly different degenerate OPE structure constants. Moreover, we have only written shift equations that follow from the existence of $V^d_{\langle 2,1\rangle}$: the case of $V^d_{\langle 1,2\rangle}$ can then be deduced by $\beta \to \beta^{-1}$.
 
 \subsection{Solutions of shift equations}\label{sec:essc}
@@ -1811,13 +1818,17 @@ If $\beta^2\in \mathbb{Q}_{>0}$, this factor must be constant on the real $P_i$-
  \boxed{B_{P_1} = \prod_{\pm,\pm}\Gamma_\beta^{-1}\left(\beta^{\pm 1}\pm 2P_1\right)} \ \  , \ \ \boxed{C_{P_1,P_2,P_3} =\prod_{\pm,\pm,\pm} \Gamma_\beta^{-1}\left(\tfrac{\beta+\beta^{-1}}{2} \pm P_1\pm P_2\pm P_3\right)}\ . 
  \label{bc}
 \end{align}
-These expressions indeed obey the shift equations \eqref{sh-mp}-\eqref{sh-b} with $s_i=0$ and $P_i=\bar P_i$. And they are invariant under $\beta \to \beta^{-1}$, so they also obey the shift equations from $V^d_{\langle 1,2\rangle}$. 
+These expressions indeed obey the shift equations \eqref{sh-mp}-\eqref{sh-bb} with $s_i=0$ and $P_i=\bar P_i$. And they are invariant under $\beta \to \beta^{-1}$, so they also obey the shift equations from $V^d_{\langle 1,2\rangle}$. 
 Curiously, the 2-point and 3-point functions can be analytically continued beyond the half-line $c\in (-\infty ,1]$, while $n\geq 4$-point functions cannot, as follows from our discussion of the OPE in Section \ref{sec:liou}. 
 
-The expressions \eqref{bc} for 2-point and 3-point structure constants are also valid in generalized minimal models, and in A-series minimal models. 
+The expressions \eqref{bc} for 2-point and 3-point structure constants are also valid in generalized minimal models, and in A-series minimal models. In such models, solutions of shift equations are unique, up to a field-independent factor. In the case of the 2-point structure constant $B_{P_{(r,s)}}$, this is because the Kac indices $r,s$ are integer, and Eq. \eqref{sh-bb} governs how $B_{P_{(r,s)}}$ changes under $r\to r+1$. In the case of the 3-point structure constant $C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}$, our shift equations \eqref{sh-mp} and \eqref{sh-pp}, together with the invariance under permutations of the 3 fields, determine all integer shifts that preserve $r_1+r_2+r_3\bmod 2$. But the fusion rules \eqref{rrsr} imply that the 3-point structure constant exists only if $r_1+r_2+r_3\equiv 1\bmod 2$, and can therefore be deduced from $C_{P_{(1,1)},P_{(1,1)},P_{(1,1)}}$ using shift equations. This implies in particular that the double Gamma functions can be replaced with products of Gamma functions. (See \cite[Section 3.2.1]{rib14} for explicit expressions.) This makes the 3-point structure constants well-defined for any $\beta\in \mathbb{C}^*$, including in the regime $\beta\in i\mathbb{R}$ where $\Gamma_\beta$ is not defined.
 
+In (generalized) minimal models, the structure constants are always non-vanishing, even though the function $\Gamma_\beta^{-1}$ has zeros. For the 3-point structure constant, this is again because of the fusion rules. 
+The factor $\Gamma_\beta^{-1}\left(\frac{1+\sum_i\epsilon_ir_i}{2}\beta + \frac{1-\sum_i \epsilon_is_i}{2}\beta^{-1}\right)$ (with $\epsilon_i\in \{+,-\}$) of $C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}$ would indeed vanish if the two integers $\frac{1+\sum_i\epsilon_ir_i}{2}$ and $\frac{1-\sum_i \epsilon_is_i}{2}$ were both negative, but the fusion rules imply that the three integers $\sum_i\epsilon_i,\sum_i\epsilon_ir_i,\sum_i\epsilon_is_i$ all have the same (nonzero) sign. Conversely, if the fusion rules are violated, then $C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}$ vanishes in some cases, but not in some others. This has been a source of puzzlement \cite{zam05}. In the bootstrap approach, there is no puzzle, because structure constants make sense only provided fusion rules are obeyed. 
 
-AMM: source of confusion that fusion rules not automatic. 
+change of normalization, identity, etc. 
+
+Liouville generic $c$, change deg. struct csts, introduce $b$, modified double Gamma. Say something on GMM later? need deg. limit
 
 \subsubsection{Non-diagonal CFTs with 2 degenerate fields}
 
