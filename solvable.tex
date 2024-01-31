@@ -1466,7 +1466,7 @@ For each CFT, we indicate the values of $\beta^2$, of the Kac indices of degener
  \label{sostab}
 \end{align}
 
-\subsubsection{Limits of diagonal CFTs}
+\subsubsection{Limits of diagonal CFTs}\label{sec:lod}
 
 Taking limits played an important role in deriving some of the CFTs of Section \ref{sec:diag}. 
 Let us summarize the limits that relate Liouville theory, (generalized) minimal models, and Runkel--Watts-type theories: 
@@ -1826,9 +1826,9 @@ The expressions \eqref{bc} for 2-point and 3-point structure constants are also 
 In (generalized) minimal models, the structure constants are always non-vanishing, even though the function $\Gamma_\beta^{-1}$ has zeros. For the 3-point structure constant, this is again because of the fusion rules. 
 The factor $\Gamma_\beta^{-1}\left(\frac{1+\sum_i\epsilon_ir_i}{2}\beta + \frac{1-\sum_i \epsilon_is_i}{2}\beta^{-1}\right)$ (with $\epsilon_i\in \{+,-\}$) of $C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}$ would indeed vanish if the two integers $\frac{1+\sum_i\epsilon_ir_i}{2}$ and $\frac{1-\sum_i \epsilon_is_i}{2}$ were both negative, but the fusion rules imply that the three integers $\sum_i\epsilon_i,\sum_i\epsilon_ir_i,\sum_i\epsilon_is_i$ all have the same (nonzero) sign. Conversely, if the fusion rules are violated, then $C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}$ vanishes in some cases, but not in some others. This has been a source of puzzlement \cite{zam05}. In the bootstrap approach, there is no puzzle, because structure constants make sense only provided fusion rules are obeyed. 
 
-We have chosen normalizations such that the structure constants \eqref{bc} have simple expressions, and are holomorphic functions of $\beta,P_i$. In (generalized) minimal models, it is common to choose normalizations such that $V^d_{\langle 1,1\rangle}$ is the identity field, and such that 2-point functions are trivial. Calling $\hat{B}_{\langle r_1,s_1\rangle},\hat{C}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle \langle r_3,s_3\rangle}$ the corresponding structure constants, these conditions amount to 
+We have chosen normalizations such that the structure constants \eqref{bc} have simple expressions, and are holomorphic functions of $\beta,P_i$. In (generalized) minimal models, it is common to choose normalizations such that $V^d_{\langle 1,1\rangle}$ is the identity field, and such that 2-point functions are trivial. Calling $\tilde{B}_{\langle r_1,s_1\rangle},\tilde{C}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle \langle r_3,s_3\rangle}$ the corresponding structure constants, these conditions amount to 
 \begin{align}
- \hat{B}_{\langle r_1,s_1\rangle} = \hat{C}_{\langle 1,1\rangle\langle r_2,s_2\rangle \langle r_2,s_2\rangle} = 1\ .
+ \tilde{B}_{\langle r_1,s_1\rangle} = \tilde{C}_{\langle 1,1\rangle\langle r_2,s_2\rangle \langle r_2,s_2\rangle} = 1\ .
 \end{align}
 Such normalizations exists, thanks to the identity 
 \begin{align}
@@ -1836,17 +1836,49 @@ Such normalizations exists, thanks to the identity
 \end{align}
 Our conditions are therefore fulfilled by 
 \begin{align}
- \hat{C}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle \langle r_3,s_3\rangle} 
+ \tilde{C}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle \langle r_3,s_3\rangle} 
  = \frac{C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}}{C_{P_{(1,1)},P_{(1,1)},P_{(1,1)}}}
  \frac{B_{P_{(1,1)}}^\frac32}
  {\sqrt{B_{P_{(r_1,s_1)}}B_{P_{(r_2,s_2)}} B_{P_{(r_3,s_3)}}}}\ .
 \end{align}
-For example, in the Ising minimal model at $\beta^2=\frac34$, the nontrivial structure constant is $\hat{C}_{\langle 2,1\rangle\langle 2,1\rangle\langle 1,2\rangle}=\frac12$. 
+For example, in the Ising minimal model at $\beta^2=\frac34$, the nontrivial structure constant is $\tilde{C}_{\langle 2,1\rangle\langle 2,1\rangle\langle 1,2\rangle}=\frac12$. In this case, the double Gamma functions not only combine into Gamma functions, but further simplify into a rational number. 
 
-Finally, let us focus on Liouville theory with $c\in \mathbb{C}\backslash (-\infty,1]$. This includes the half-line $c\in [25,\infty)$ i.e. $\beta\in i\mathbb{R}^*$, where the function $\Gamma_\beta$ is not defined. In fact, the powers of $\beta$ in our degenerate OPE structure constants \eqref{cpcm} are also not defined. 
+Finally, let us focus on Liouville theory with $c\in \mathbb{C}\backslash (-\infty,1]$. This includes the half-line $c\in [25,\infty)$ i.e. $\beta\in i\mathbb{R}^*$, where the function $\Gamma_\beta$ is not defined.
+Instead, we should use the function $\hat{\Gamma}_\beta(x) = \frac{1}{\Gamma_{i\beta}(i\beta -ix)}$, which obeys shift equations that are very similar to the equations \eqref{gshift} for $\Gamma_\beta(x)$: 
+\begin{align}
+ \frac{\hat\Gamma_\beta(x+\beta)}{\hat\Gamma_\beta(x)} = \sqrt{2\pi}\frac{(i\beta)^{\beta x-\frac12}}{\Gamma(\beta x)}
+\quad , \quad 
+\frac{\hat\Gamma_\beta(x+\beta^{-1})}{\hat\Gamma_\beta(x)} = \sqrt{2\pi}(i\beta)^{\frac12-\beta^{-1}x}\Gamma(1-\beta^{-1}x) \ .
+\label{hgshift}
+\end{align}
+Since we now have powers of $i\beta$ instead of $\beta$, we need to slightly modify the degenerate OPE structure constants \eqref{cpcm}, for example $c_i^+ = \beta^{4\beta P_i}\frac{\Gamma(-2\beta P_i)}{\Gamma(1+2\beta P_i)} \to (i\beta)^{4\beta P_i}\frac{\Gamma(-2\beta P_i)}{\Gamma(1+2\beta P_i)}$. The shift equations for structure constants \eqref{sh-mp}-\eqref{sh-bb} are similarly modified. Their solutions $\hat B_{P_1},\hat C_{P_1,P_2,P_3}$ are obtained from $B_{P_1},C_{P_1,P_2,P_3}$ \eqref{bc} by $\Gamma_\beta \to \hat\Gamma_\beta$. Explicitly,
+\begin{align}
+ \boxed{\hat B_{P_1} = \prod_\pm \Gamma_b\left(\pm 2iP_1\right)\Gamma_b\left(Q\pm 2iP_1\right)} \quad , \quad 
+ \boxed{\hat C_{P_1,P_2,P_3} = \prod_{\pm,\pm,\pm} \Gamma_b\left(\tfrac{Q}{2} \pm iP_1\pm iP_2\pm iP_3\right)}\ ,
+ \label{bci}
+\end{align}
+where we use the notations 
+\begin{align}
+ b = i\beta \quad , \quad Q = b + b^{-1} \ . 
+ \label{bQ}
+\end{align}
+By a change of normalization, the 2-point and 3-point structure constants become 
+\begin{align}
+ \hat B^\text{DOZZ}_{P_1} = \frac{\Gamma_b\left(- 2iP_1\right)\Gamma_b\left(Q+ 2iP_1\right)}{\Gamma_b\left( 2iP_1\right)\Gamma_b\left(Q- 2iP_1\right)} \quad , \quad 
+ \hat C^\text{DOZZ}_{P_1,P_2,P_3} = \frac{\prod_{\pm,\pm,\pm} \Gamma_b\left(\tfrac{Q}{2} \pm iP_1\pm iP_2\pm iP_3\right)}{\prod_{k=1}^3 \Gamma_b(2iP_k)\Gamma_b(Q-2iP_k)}\ ,
+ \label{dozz}
+\end{align}
+which are the expressions found by Dorn--Otto and Zamolodchikov--Zamolodchikov when first solving Liouville theory: in particular, their formula for the 3-point structure constant is called the \textbf{DOZZ formula}. In this normalization, the 2-point structure constant coincides with the \textbf{reflection coefficient}, i.e. it obeys the relations 
+\begin{align}
+ \hat B^\text{DOZZ}_{P_1}B^\text{DOZZ}_{-P_1}=1 \quad , \quad  \hat C^\text{DOZZ}_{P_1,P_2,P_3} = B^\text{DOZZ}_{P_1}\hat C^\text{DOZZ}_{-P_1,P_2,P_3} \quad , \quad V_{P_1} = B^\text{DOZZ}_{P_1} V_{-P_1}\ . 
+\end{align}
+A remarkable property of Liouville theory in the DOZZ normalization is that degenerate fields are limits of non-degenerate fields,
+\begin{align}
+ \lim_{P\to P_{(r,s)}} V_P = V^d_{\langle r,s\rangle} \ .
+\end{align}
+This relation is natural in the path integral construction of Liouville theory \cite{zz95}, but not necessarily in the bootstrap approach: it is not true in Liouville theory with $c\in (-\infty 1]$, and for $c\in\mathbb{C}\backslash (-\infty,1]$ it requires a particular normalization. It is thanks to this relation that generalized minimal models can be obtained as limits of Liouville theory, as announced in Section \ref{sec:lod}. This relation follows from the analytic properties of the structure constants. 
 
-
-Liouville generic $c$, change deg. struct csts, introduce $b$, modified double Gamma. Say something on GMM later? need deg. limit
+apparently get zero in limit but look at OPE. Do it for simplest case? 
 
 \subsubsection{Non-diagonal CFTs with 2 degenerate fields}
 
