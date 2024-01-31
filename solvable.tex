@@ -1875,10 +1875,17 @@ which are the expressions found by Dorn--Otto and Zamolodchikov--Zamolodchikov w
 A remarkable property of Liouville theory in the DOZZ normalization is that degenerate fields are limits of non-degenerate fields,
 \begin{align}
  \lim_{P\to P_{(r,s)}} V_P = V^d_{\langle r,s\rangle} \ .
+ \label{limvp}
 \end{align}
-This relation is natural in the path integral construction of Liouville theory \cite{zz95}, but not necessarily in the bootstrap approach: it is not true in Liouville theory with $c\in (-\infty 1]$, and for $c\in\mathbb{C}\backslash (-\infty,1]$ it requires a particular normalization. It is thanks to this relation that generalized minimal models can be obtained as limits of Liouville theory, as announced in Section \ref{sec:lod}. This relation follows from the analytic properties of the structure constants. 
-
-apparently get zero in limit but look at OPE. Do it for simplest case? 
+This relation is natural in the path integral construction of Liouville theory \cite{zz95}, but not necessarily in the bootstrap approach: it is not true in Liouville theory with $c\in (-\infty, 1]$, and for $c\in\mathbb{C}\backslash (-\infty,1]$ it requires a particular normalization. It is thanks to this relation that generalized minimal models can be obtained as limits of Liouville theory, as announced in Section \ref{sec:lod}. This relation follows from the analytic properties of the structure constants, as we will now show in the case $(r,s)=(1,1)$. (See \cite[Section 3.1.5]{rib14} for the general case $r,s\in\mathbb{N}^*$.) Since $2iP_{(1,1)}=Q$ and $\Gamma_b(x)$ has a pole at $x=0$, we have $\hat C^\text{DOZZ}_{P_{(1,1)},P_2,P_3} = 0$ and it may seem that $\lim_{P_1\to P_{(1,1)}} V_{P_1} = 0$. However, it is not so easy to take the limit of the OPE 
+\begin{align}
+V_{P_1}V_{P_2} \sim \frac12 \int_{\mathbb{R}}dP\ \frac{\hat C^\text{DOZZ}_{P_1,P_2,P}}{\hat B^\text{DOZZ}_{P}}V_P\ , 
+\end{align}
+because of the poles of $\hat C^\text{DOZZ}_{P_1,P_2,P}$. In particular, as functions of $P$, each one of the two factors $\Gamma_b(\frac{Q}{2}-iP_1\pm (iP_2-iP))$ has a pole at $P= P_2$ in the limit $P_1\to P_{(1,1)}$, one coming from above the real $P$-line and one from below. As a result, the limit of the integral is not zero: 
+\begin{align}
+ \lim_{P_1\to P_{(1,1)}}V_{P_1}V_{P_2} \sim \lim_{P_1\to P_{(1,1)}}  \underset{P=P_2}{\operatorname{Res}}\frac{\hat C^\text{DOZZ}_{P_1,P_2,P}}{\hat B^\text{DOZZ}_{P}}V_P=V_{P_2}\ ,
+\end{align}
+which implies Eq. \eqref{limvp}. 
 
 \subsubsection{Non-diagonal CFTs with 2 degenerate fields}
 
