@@ -1900,6 +1900,48 @@ which implies that $V_{P_1}$ tends to the identity field $V^d_{\langle 1,1\rangl
 
 \subsubsection{Non-diagonal CFTs with 2 degenerate fields}
 
+Let us start with the 2-point structure constants, which can be straightforwardly determined by solving shift equations. For diagonal fields, the same expression $B_{P_1}$ \eqref{bc} as in $c\leq 1$ Liouville theory is still valid. For non-diagonal fields with $r\in 2\mathbb{Z}$ and $s\in\mathbb{Z}+\frac12$, we find a similar expression,
+\begin{align}
+ \boxed{B_{(r,s)} = (-)^\frac{r}{2} \prod_\pm \Gamma_\beta^{-1}\left(\beta\pm 2P\right)\Gamma_\beta^{-1}\left(\beta^{-1}\pm 2\bar P\right)}\ ,
+ \label{nbrs}
+\end{align}
+with $\{P,\bar P\}=\{P_{(r,s)},P_{(r,-s)}\}$. (The formula is invariant under $P\leftrightarrow \bar P$.)
+The sign prefactor is needed for obeying the $r\to r+2$ shift equation \eqref{sh-b}. When it comes to the second Kac index, $B_{(r,s)}$ obeys
+\begin{align}
+ \frac{B_{(r,s)}}{B_{(r,s+1)}} = \beta^{-4\beta^{-1}(P+\bar P)-2\beta^{-2}} \frac{\Gamma(-2\beta^{-1}P)}{\Gamma(1+2\beta^{-1}\bar P)} \frac{\Gamma(1-\beta^{-2}-2\beta^{-1}\bar P)}{\Gamma(\beta^{-2}+2\beta^{-1} P)} \ ,
+\end{align}
+with $(P, \bar P)=(P_{(r,-s)},-P_{(r,s)})$, so that the shift $s\to s+1$ corresponds to $(P,\bar P)\to (P+\frac{\beta^{-1}}{2},\bar P+\frac{\beta^{-1}}{2})$. This agrees with the shift equation \eqref{sh-bb}, after the transformation $\beta \to \beta^{-1}$. 
+
+Let us move to 3-point structure constants. Due to the conservation of diagonality \eqref{ddd}, there are only two cases, with either $0$ or $2$ of the $3$ fields being non-diagonal. Let us begin with the latter case. We introduce the ansatz 
+\begin{align}
+ \boxed{C_{P_1,(r_2,s_2),(r_3,s_3)} = (-)^{\frac{r_2}{2}}\prod_{\pm,\pm}
+ \Gamma_\beta^{-1}\left(\tfrac{\beta+\beta^{-1}}{2}+P_1 \pm P_2\pm P_3\right) 
+ \Gamma_\beta^{-1}\left(\tfrac{\beta+\beta^{-1}}{2}-P_1 \pm \bar P_2\pm \bar P_3\right)}\ .
+ \label{cdnn}
+\end{align}
+Here the sign prefactor ensures the correct behaviour under permutations \eqref{b21}. Moreover, we have 
+\begin{align}
+ \frac{C_{P_{(1,1)},(r,s),(r,s)}}{B_{(r,s)}} = \text{constant} \quad ,\quad 
+ C_{P_1,(r_2,s_2),(r_3,s_3)}=C_{-P_1,(r_2,s_2),(r_3,s_3)} \ .
+ \label{cpcmp}
+\end{align}
+The second identity is equivalent to the invariance of $C_{P_1,(r_2,s_2),(r_3,s_3)}$ under $(P_2,P_3)\leftrightarrow (\bar P_2,\bar P_3)$. To prove it, we introduce the \textbf{double Sine function}
+\begin{align}
+ S_\beta(x) = \frac{\Gamma_\beta(x)}{\Gamma_\beta(\beta + \beta^{-1}-x)}\quad \implies \quad \frac{S_\beta(x+\beta)}{S_\beta(x)} = 2\sin(\pi\beta x)\ .
+ \label{sb}
+\end{align}
+This function obeys the identity 
+\begin{align}
+ r,s\in\mathbb{Z} \implies \frac{\prod_\pm S_\beta\left(\frac{\beta+\beta^{-1}}{2} +P \pm P_{(r,s)}\right)}{\prod_\pm S_\beta\left(\frac{\beta+\beta^{-1}}{2} +P \pm P_{(r,-s)}\right)} =(-)^{rs}\ .
+ \label{dsr}
+\end{align}
+Applying this to $P=P_1$ and $(r,s)=(r_2\pm r_3,s_2\pm s_3)$, we obtain the second identity in Eq. \eqref{cpcmp}.
+
+Having worked out the basic properties of our ansatz \eqref{cdnn}, let us check whether it obeys the shift equations. 
+
+Check that later change of deg. OPE coefs will not modify shift eqn for 2pt. 
+
+
 Generalized D-series minimal models can be solved for $\beta^2\in \mathbb{R}_{>0}$ by taking the limit of D-series minimal models' correlation functions. However, it was found that the three-point structure constant for three diagonal fields is not a function of the momentums, but a distribution \cite{rib19}. 
 
 
