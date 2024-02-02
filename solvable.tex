@@ -1358,6 +1358,7 @@ To begin with, we will now propose a simple extended spectrum that will include 
 Let the extended spectrum $\widetilde{S}^\text{loop}$ be made of all primary fields with half-integer spins that are compatible with the degenerate field $V^d_{\langle 1,2\rangle}$:
 \begin{align}
  \boxed{\widetilde{S}^\text{loop} = \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in\mathbb{N}^*}  \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \frac12\mathbb{N}^*\\ s\in\frac{1}{r}\mathbb{Z}+\mathbb{Z}}}\bigcup \left\{ V_P\right\}_{P\in\mathbb{C}} } \ .
+ \label{sloop}
 \end{align}
 We therefore include all degenerate fields that are generated from $V^d_{\langle 1,2\rangle}$ by fusion, and all possible diagonal fields. When it comes to non-diagonal fields, the first index $r$ must be half-integer according to Eq. \eqref{sriz}. The symmetry $V_{(r,s)}=V_{(-r,-s)}$ allows us to assume $r\geq 0$, and the sector $r=0$ would be redundant with the diagonal sector, since 
 \begin{align}
@@ -1960,9 +1961,22 @@ The sum over $n$ is divergent, but it converges when inserted in the $s$-channel
 
 \subsubsection{Loop models}
 
-shift equations insufficient by far. Weights are invariant
+In the loop models' extended spectrum $\widetilde{S}^\text{loop}$ \eqref{sloop}, it is clear that shift equations do not determine the structure constants. First consider the non-diagonal fields $V_{(r,s)}$. The spectrum $\widetilde{S}^\text{loop}$ does not include the degenerate field $V_{\langle 2,1\rangle}^d$, whose shift equations would constrain the dependence on $r$. We only have $V^d_{\langle 1,2\rangle}$, whose shift equations determine how structure constants behave under $s\to s+2$, whereas $s$ takes fractional values. Second, consider the diagonal fields $V_P$. The shift equations from $V^d_{\langle 1,2\rangle}$ determine how structure constants behave under $P\to P+\beta^{-1}$. 
 
-Find one nice solution, remaining equations simple. Plus conjecture: polynoms (modulo subracting poles). 
+Let us nevertheless look for simple solutions of the shift equations. As an ansatz, we introduce the \textbf{reference structure constants} $B^\text{ref}$ and $C^\text{ref}$, 
+
+write them, 2-point a bit tricky
+
+3-point: diag. special case $r=0$. 2-point not really. 
+
+solve shift eqn modulo signs: normalized structure constants
+
+Arbitrary function of the \textbf{loop weight} 
+\begin{align}
+ \boxed{w = 2\cos(2\pi\beta P)}\ .
+\end{align}
+
+Conjecture: polynoms (modulo subracting poles). 
 
 Properties: permutation etc.
 
