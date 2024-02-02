@@ -1314,7 +1314,7 @@ The corresponding CFT may be called a fermionic minimal model \cite{rw20}. The f
 \end{align}
 It can be checked that for these fusion rules, the D-series minimal model is a closed subsector of its fermionic extension. Curiously, the diagonal field $V^f_{\langle \frac{p}{2}, s\rangle}$ has the same conformal dimensions as the non-diagonal field $V_{(0,s-\frac{q}{2})}$. However, these two fields have very different fusion rules. 
 
-\subsubsection{Generalized D-series minimal models}
+\subsubsection{Generalized D-series minimal models}\label{sec:gdmm}
 
 Let us consider a limit of D-series minimal models where $\frac{q}{p}\to \beta^2>0$. There is a natural way of taking the limit of the non-diagonal sector, which is to assume that non-diagonal fields $V_{(r,s)}$ have fixed indices:
 \begin{align}
@@ -1892,9 +1892,9 @@ This relation is natural in the path integral construction of Liouville theory \
 \begin{align}
 V_{P_1}V_{P_2} \sim \frac12 \int_{\mathbb{R}}dP\ \frac{\hat C^\text{DOZZ}_{P_1,P_2,P}}{\hat B^\text{DOZZ}_{P}}V_P\ , 
 \end{align}
-because of the poles of $\hat C^\text{DOZZ}_{P_1,P_2,P}$. In particular, as functions of $P$, each one of the two factors $\Gamma_b(\frac{Q}{2}-iP_1\pm (iP_2-iP))$ has a pole at $P= P_2$ in the limit $P_1\to P_{(1,1)}$, one coming from above the real $P$-line and one from below. As a result, the limit of the integral is not zero: 
+because of the poles of $\hat C^\text{DOZZ}_{P_1,P_2,P}$. In particular, each factor $\Gamma_b(\frac{Q}{2}-iP_1\pm (iP_2-iP))$ has a pole at $P= P_2\pm (P_{(1,1)}-P_1)$. In the limit $P_1\to P_{(1,1)}$, these two poles coincide at $P=P_2$, with one pole coming from above the real $P$-line and one from below. As a result, the limit of the integral is not zero: 
 \begin{align}
- \lim_{P_1\to P_{(1,1)}}V_{P_1}V_{P_2} \sim \lim_{P_1\to P_{(1,1)}}  \underset{P=P_2}{\operatorname{Res}}\frac{\hat C^\text{DOZZ}_{P_1,P_2,P}}{\hat B^\text{DOZZ}_{P}}V_P=V_{P_2}\ ,
+ \lim_{P_1\to P_{(1,1)}}V_{P_1}V_{P_2} \sim \lim_{P_1\to P_{(1,1)}}  \underset{P=P_1+P_2-P_{(1,1)}}{\operatorname{Res}}\frac{\hat C^\text{DOZZ}_{P_1,P_2,P}}{\hat B^\text{DOZZ}_{P}}V_P=V_{P_2}\ ,
 \end{align}
 which implies that $V_{P_1}$ tends to the identity field $V^d_{\langle 1,1\rangle}$. 
 
@@ -1914,7 +1914,7 @@ with $(P, \bar P)=(P_{(r,-s)},-P_{(r,s)})$, so that the shift $s\to s+1$ corresp
 
 Let us move to 3-point structure constants. Due to the conservation of diagonality \eqref{ddd}, there are only two cases, with either $0$ or $2$ of the $3$ fields being non-diagonal. Let us begin with the latter case. We introduce the ansatz 
 \begin{align}
- \boxed{C_{P_1,(r_2,s_2),(r_3,s_3)} = (-)^{\frac{r_2}{2}}\prod_{\pm,\pm}
+ \boxed{C_{P_1,(r_2,s_2),(r_3,s_3)} = (-)^{\frac{r_3}{2}}\prod_{\pm,\pm}
  \Gamma_\beta^{-1}\left(\tfrac{\beta+\beta^{-1}}{2}+P_1 \pm P_2\pm P_3\right) 
  \Gamma_\beta^{-1}\left(\tfrac{\beta+\beta^{-1}}{2}-P_1 \pm \bar P_2\pm \bar P_3\right)}\ ,
  \label{cdnn}
@@ -1937,16 +1937,36 @@ This function obeys the identity
 \end{align}
 Applying this to $P=P_1$ and $(r,s)=(r_2\pm r_3,s_2\pm s_3)$, we obtain the second identity in Eq. \eqref{cpcmp}.
 
-Having worked out the basic properties of our ansatz \eqref{cdnn}, let us check whether it obeys the shift equations. The spectrum \eqref{sdmm} of D-series minimal models is invariant under $s\to s+1$, both in the diagonal and non-diagonal sectors. Therefore, we have to check the two shift equations \eqref{sh-mp} and \eqref{sh-pp} with $\beta\to\beta^{-1}$, where the shifted field(s) may be diagonal or non-diagonal. This is straightforward, if we remember $r_2,r_3\in 2\mathbb{Z}$, leading to the needed identities for products of Gamma functions. 
+Having worked out the basic properties of our ansatz \eqref{cdnn}, let us check whether it obeys the shift equations. The spectrum \eqref{sdmm} of D-series minimal models is invariant under $s\to s+1$, both in the diagonal and non-diagonal sectors. Therefore, when it comes to the shifts from $V^d_{\langle 1,2\rangle}$, we have to check the two shift equations \eqref{sh-mp} and \eqref{sh-pp} with $\beta\to\beta^{-1}$, where the shifted fields may be diagonal or non-diagonal. This is straightforward, if we remember $r_2,r_3\in 2\mathbb{Z}$, leading to the needed identities for products of Gamma functions. We will now deal with the subtler case of the shifts from $V^d_{\langle 2,1\rangle}$. The spectrum of D-series minimal models is invariant under $r\to r+2$ but not $r\to r+1$, so we only have to deal with the shift equation \eqref{sh-mp}. If we shift a non-diagonal field, our ansatz \eqref{cdnn} behaves as 
+\begin{align}
+ \frac{C_{(r_1-1,s_1),(r_2,s_2),P_3}}{C_{(r_1+1,s_1),(r_2,s_2),P_3}} = - \beta^{4\beta(P_1+\bar P_1)}\frac{\prod_{\pm,\pm} \Gamma(\frac12-\beta \bar P_1\pm \beta\bar P_2\pm \beta P_3)}{\prod_{\pm,\pm} \Gamma(\frac12+\beta P_1\pm \beta P_2\pm \beta P_3)}\ , 
+\end{align}
+where the overall sign comes from $\prod_\pm \frac{\cos \pi\beta(P_1\pm P_2-P_3)}{\cos\pi\beta(\bar P_1\pm \bar P_2-P_3)} = \prod_\pm (-1)^{s_1\pm s_2} = -1$. This agrees with Eq. \eqref{sh-mp} with $\bar P_3=P_3$ and $(-)^{2s_2}=-1$. If we now shift the diagonal field, our ansatz leads to 
+\begin{align}
+ \frac{C_{P_1-\frac{\beta}{2},(r_2,s_2),(r_3,s_3)}}{C_{P_1+\frac{\beta}{2},(r_2,s_2),(r_3,s_3)}} =\beta^{4\beta(P_1+\bar P_1)}\frac{\prod_{\pm,\pm} \Gamma(\frac12-\beta P_1\pm \beta\bar P_2\pm \beta \bar P_3)}{\prod_{\pm,\pm} \Gamma(\frac12+\beta P_1\pm \beta P_2\pm \beta P_3)}\ .
+\end{align}
+Now this differs from Eq. \eqref{sh-mp} with $\bar P_1=P_1$ by an overall sign. This sign is not fatal to our ansatz, which we now save by flipping one of the degenerate OPE structure constants for $V^d_{\langle 2,1\rangle}V_{P_i}$, i.e. we do $c^-_i \to -c^-_i$ in Eq. \eqref{cpcm}. This corrects ths sign of Eq. \eqref{sh-mp}, but leaves the other shift equations unchanged. (Eq. \eqref{sh-bb} would be changed, but it does not make sense in a D-series minimal model.) This leads to sign prefactors in the diagonal 3-point structure constant for D-series minimal models:
+\begin{align}
+ \boxed{C^\text{DMM}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle\langle r_3,s_3\rangle} = (-)^\frac{r_1+r_2+r_3+1}{2} C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}}\ , 
+ \label{cdmm}
+\end{align}
+where $C_{P_1,P_2,P_3}$ is given in Eq. \eqref{bc}.
 
-Check that later change of deg. OPE coefs will not modify shift eqn for 2pt. 
-
-
-Generalized D-series minimal models can be solved for $\beta^2\in \mathbb{R}_{>0}$ by taking the limit of D-series minimal models' correlation functions. However, it was found that the three-point structure constant for three diagonal fields is not a function of the momentums, but a distribution \cite{rib19}. 
-
+Now that we know the structure constants for D-series minimal models, let us deduce generalized D-series minimal models. As argued in Section \ref{sec:gdmm}, this amounts to taking the limit $P_{(r_1,s_1)}\to P_1\in\mathbb{R}$ in the diagonal sector. This is easily done in the cases of $B_{P_1}$ and $C_{P_1,(r_2,s_2),(r_3,s_3)}$, which are meromorphic functions of $P_1$, and are therefore valid in minimal models and in the limit. When it comes to the diagonal 3-point structure constant \eqref{cdmm}, the sign prefactor does not have a smooth limit, and the structure constant turns out to be a distribution \cite{rib19},
+\begin{align}
+ \boxed{C^\text{GDMM}_{P_1,P_2,P_3} = \beta C_{P_1,P_2,P_3}\sum_{n\in\mathbb{Z}}(-)^n \frac{\prod_{i=1}^3 \cos(2\pi n\beta P_i)}{\cos(\pi n\beta^2)}}\ .
+\end{align}
+The sum over $n$ is divergent, but it converges when inserted in the $s$-channel decomposition of a correlation function with non-diagonal fields, for example $\left<V_{P_1}V_{P_2}V_{(r_3,s_3)}V_{(s_4,s_4)}\right>$. 
 
 \subsubsection{Loop models}
 
+shift equations insufficient by far. Weights are invariant
+
+Find one nice solution, remaining equations simple. Plus conjecture: polynoms (modulo subracting poles). 
+
+Properties: permutation etc.
+
+Compare reference struct. cst to A-series, D-series (quickly done!).
 
 \subsubsection{Temporary notes}
 
@@ -1961,10 +1981,11 @@ Do we want a synthetic table of known solutions?
  \item Parity $\forall i, (r_i,s_i)\to (r_i,-s_i)$, reflection $(r_i,s_i)\to (-r_i,-s_i)$
 \end{itemize}
 
-
-See whether in Liouville theory fields with deg. dimensions are actually deg. For $c\leq 1$, guess not deg. from AMM limit. For other $c$, need to know about poles of struct. csts. So answer is probably no. Postpone the problem to analysis of correl. 
+Summary table? 
 
 \subsection{Remarks}
+
+Move to logarithmic section? Dismiss? 
 
 Compute vanishings of ratios of structure constants in $V^d_{\langle 2,1\rangle}V_P$. 
 
