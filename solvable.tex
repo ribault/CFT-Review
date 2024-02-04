@@ -1820,7 +1820,11 @@ Since shift equations produce Gamma functions, their solutions should be written
 \frac{\Gamma_\beta(x+\beta^{-1})}{\Gamma_\beta(x)} = \sqrt{2\pi}\frac{\beta^{\frac12-\beta^{-1}x}}{\Gamma(\beta^{-1}x)} \ .
 \label{gshift}
 \end{align}
-The double Gamma function also obeys $\Gamma_\beta(x)= \Gamma_{\beta^{-1}}(x)$. It is a meromorphic function of $x\in\mathbb{C}$, with simple poles for $x\in -\beta\mathbb{N}-\beta^{-1}\mathbb{N}$ and no zeros. It is also a meromorphic function of $\beta\in \mathbb{C}\backslash i\mathbb{R}$. 
+The double Gamma function also obeys $\Gamma_\beta(x)= \Gamma_{\beta^{-1}}(x)$. It is a meromorphic function of $x\in\mathbb{C}$, with simple poles for $x\in -\beta\mathbb{N}-\beta^{-1}\mathbb{N}$ and no zeros. It is also a meromorphic function of $\beta\in \mathbb{C}\backslash i\mathbb{R}$. We will often use the following consequence of Eq. \eqref{gshift}:
+\begin{align}
+ \frac{\prod_\pm \Gamma_\beta\left(x \pm (y-\frac{\beta}{2})\right)}{\prod_\pm \Gamma_\beta\left(x \pm (y+\frac{\beta}{2})\right)} = \beta^{-2\beta y}\frac{\Gamma\left(\beta x+\beta y - \frac12 \beta^2\right)}{\Gamma\left(\beta x-\beta y -\frac12 \beta^2\right)}\ . 
+\end{align}
+
 
 \subsubsection{Diagonal CFTs with 2 degenerate fields}
 
@@ -1963,11 +1967,19 @@ The sum over $n$ is divergent, but it converges when inserted in the $s$-channel
 
 In the loop models' extended spectrum $\widetilde{S}^\text{loop}$ \eqref{sloop}, it is clear that shift equations do not determine the structure constants. First consider the non-diagonal fields $V_{(r,s)}$. The spectrum $\widetilde{S}^\text{loop}$ does not include the degenerate field $V_{\langle 2,1\rangle}^d$, whose shift equations would constrain the dependence on $r$. We only have $V^d_{\langle 1,2\rangle}$, whose shift equations determine how structure constants behave under $s\to s+2$, whereas $s$ takes fractional values. Second, consider the diagonal fields $V_P$. The shift equations from $V^d_{\langle 1,2\rangle}$ determine how structure constants behave under $P\to P+\beta^{-1}$. 
 
-Let us nevertheless look for simple solutions of the shift equations. As an ansatz, we introduce the \textbf{reference structure constants} $B^\text{ref}$ and $C^\text{ref}$, 
+Let us nevertheless look for simple solutions of the shift equations. As an ansatz, we introduce the \textbf{reference structure constants} 
+\begin{align}
+\boxed{C^\text{ref}_{(r_1,s_1)(r_2,s_2)(r_3,s_3)} =\prod_{\epsilon_1,\epsilon_2,\epsilon_3=\pm} \Gamma_\beta^{-1} \left(\tfrac{\beta+\beta^{-1}}{2} + \tfrac{\beta}{2}\left|\textstyle{\sum_i} \epsilon_ir_i\right| + \tfrac{\beta^{-1}}{2}\textstyle{\sum_i} \epsilon_is_i\right)}\ .
+ \label{cref}
+\end{align}
+This expression is also supposed to be valid if some of the fields are diagonal, via the identification $V_P = V_{(0,2\beta P)}$ \eqref{sP}. If all fields are diagonal, it reduces to $C_{P_1,P_2,P_3}$ \eqref{bc}. For reference 2-point structure constants of non-diagonal fields, we define 
+\begin{align}
+ \boxed{B^\text{ref}_{(r,s)} = \frac{(-)^{rs}}{2\sin\left(\pi(\text{frac}(r)+s)\right)\sin\left(\pi(r+\beta^{-2}s)\right)}\prod_{\pm,\pm}\Gamma_\beta^{-1}\left(\beta\pm \beta r \pm \beta^{-1}s\right)} \ ,
+ \label{bref}
+ \end{align}
+ where $\text{frac}(r)\in\{0,\frac12\}$ is the fractional part of $r\in\frac12\mathbb{N}^*$. This is formally ill-defined if $r\in\mathbb{N}^*$ and $s\in\mathbb{Z}$, but can be regularized by taking a limit from generic values of $s$. We have $B^\text{ref}_{(0,2\beta P)} = \frac{1}{2\sin(2\pi\beta P)^2}B_P$, but we find it more convenient to set $B^\text{ref}_P = B_P$ for diagonal fields.
 
-write them, 2-point a bit tricky
-
-3-point: diag. special case $r=0$. 2-point not really. 
+ 
 
 solve shift eqn modulo signs: normalized structure constants
 
@@ -1976,7 +1988,7 @@ Arbitrary function of the \textbf{loop weight}
  \boxed{w = 2\cos(2\pi\beta P)}\ .
 \end{align}
 
-Conjecture: polynoms (modulo subracting poles). 
+Conjecture: polynoms (modulo subtracting poles). 
 
 Properties: permutation etc.
 
