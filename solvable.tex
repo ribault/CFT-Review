@@ -2009,34 +2009,31 @@ then the shift equations amount to \cite{nrj23}
                        \end{array}\right. 
 \label{tppt}
 \end{align}
-Let us focus in particular on diagonal fields. If $r_1=0$, then $r_2\equiv r_3\bmod\mathbb{Z}$, and Eq. \eqref{tpt} reduces to the invariance of $C^\text{norm}$ under $s_1\to s_1+2$. 
-
-
-Arbitrary function of the \textbf{loop weight} (need reflection!)
+Let us focus in particular on diagonal fields. If $r_1=0$, then $r_2\equiv r_3\bmod\mathbb{Z}$, and Eq. \eqref{tpt} reduces to the invariance of $C^\text{norm}$ under $s_1\to s_1+2$. As a function of the momentum $P$ of a diagonal field, $C^\text{norm}$ is therefore periodic with period $\beta^{-1}$, and it is also even by reflection invariance \eqref{refl}. So it is a function of the \textbf{loop weight}
 \begin{align}
  \boxed{w = 2\cos(2\pi\beta P)}\ .
+ \label{wP}
 \end{align}
+There is a conjecture that $C^\text{norm}$ is in fact a polynom of loop weights, and that its dependence on the central charge is in fact polynomial in the \textbf{contractible loop weight}
+\begin{align}
+ \boxed{n= w\left(P_{(1,1)}\right) = -2\cos(\pi \beta^2)} \ .
+ \label{ncb}
+\end{align}
+(This is the same $n$ as in the $O(n)$ model \eqref{nQ}.) In Section \ref{sec:cloop} we will formulate this conjecture in more detail. 
 
-Conjecture: polynoms (modulo subtracting poles). 
-
-Properties: permutation etc.
-
-Compare reference struct. cst to A-series, D-series (quickly done!).
+Even if the conjecture only applies to loop models, it is interesting to compute the normalized 3-point structure constant associated to $C_{P_1,(r_2,s_2),(r_3,s_3)}$ \eqref{cdnn} from (generalized) D-series minimal models:
+\begin{align}
+ C^\text{norm}_{P_1,(r_2,s_2),(r_3,s_3)} = (-)^{\frac{s_2+s_3}{2}} \prod_\pm \prod_{i=-\frac{|r_2\pm r_3|-1}{2}}^{\frac{|r_2\pm r_3|-1}{2}} 2\cos \pi(\beta P_1+\beta^2i) \ ,
+\end{align}
+where the product over $i$ runs by steps of $1$. Since $r_2,r_3\in\mathbb{Z}+\frac12$, there is one $i=0$ factor, which is $2\cos(\pi \beta P_1)$. The rest of the product can be written in terms of 
+\begin{align}
+ 4\cos \pi(\beta P_1+\beta^2i)\cos \pi(\beta P_1-\beta^2i) = 2\cos(2\pi\beta P_1)+2\cos(2\pi i \beta^2)\ , 
+\end{align}
+which for $i\in\frac12\mathbb{Z}^*$ is polynomial in loop weights. 
 
 \subsubsection{Temporary notes}
 
-Deduce analytic properties of correlation functions, and limits of CFTs. 
-
 Do we want a synthetic table of known solutions? 
-
-\begin{itemize}
-\item Invariance of $C_{(r_1,s_1)(r_2,s_2)(r_3,s_3)}$ under permutations of $1,2,3$
-\item Reduction to $C_{P_1,P_2,P_3}$ if $\forall i, r_i=0$ 
- \item $V_{\langle 1,2\rangle}^d$ shift equations $\implies$ $s_i\to s_i+2$  
- \item Parity $\forall i, (r_i,s_i)\to (r_i,-s_i)$, reflection $(r_i,s_i)\to (-r_i,-s_i)$
-\end{itemize}
-
-Summary table? 
 
 \subsection{Remarks}
 
