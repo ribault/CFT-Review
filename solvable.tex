@@ -956,6 +956,14 @@ According to Eq. \eqref{drms}, the conformal spin of $V_{(r,s)}$ is
 \end{align}
 Then $V_{(r,s)}$ generates the Verma module $\mathcal{V}_{P_{(r,s)}} \otimes \bar{\mathcal{V}}_{P_{(r,-s)}}$, unless that module has null vectors, which occurs if $r,s\in\mathbb{Z}^*$, and also for other values of $r,s$ if $\beta^2\in\mathbb{Q}$. If there are null vectors, $V_{(r,s)}$ may generate a degenerate representation, or belong to a logarithmic representation. We will discuss such cases as they arise.  
 
+Our labelling of fields is redundant, because the reflection $P\to -P$ leaved the conformal dimension \eqref{dp} invariant. We therefore assume the \textbf{reflection relations}
+\begin{align}
+ V_{P} = V_{-P} \quad , \quad V_{(r,s)} = V_{(-r,-s)} \ . 
+ \label{refl}
+\end{align}
+In some cases we will allow a nontrivial \textbf{reflection coefficient} $R_P$ such that $V_P=R_P V_{-P}$. 
+
+
 \subsubsection{How many degenerate fields?}\label{sec:hmdf}
 
 In general, OPEs of degenerate fields produce more degenerate fields. We assume that the sets of degenerate fields in $\mathcal{S}$ and $\widetilde{\mathcal{S}}$ are closed under the fusion rules \eqref{rrsr}. If for example we repeatedly fuse $V^d_{\langle 5,2\rangle}$ with itself, we obtain all $V^d_{\langle r,s\rangle}$ with $(r,s)\in (2\mathbb{N}+1)\times \mathbb{N}^*$. For each one of the two Kac indices $r,s$, allowing one even value implies allowing all values in $\mathbb{N}^*$, and allowing one odd value except $1$ implies allowing all odd values. Modulo $r\leftrightarrow s$, this leads to 7 possible sets of degenerate fields, which we characterize by whether or not they contain $V^d_{\langle 1,1\rangle}, V^d_{\langle 2,1\rangle},V^d_{\langle 3,1\rangle},V^d_{\langle 1,2\rangle}$ and $V^d_{\langle 1,3\rangle}$:
@@ -1706,18 +1714,27 @@ To conclude, we have seen that crossing symmetry allows us to determine degenera
 
 \subsection{Shift equations for structure constants}
 
-\subsubsection{Degenerate and non-degenerate structure constants}
+\subsubsection{Degenerate structure constants}
 
 Let us write the degenerate 4-point structure constants $d^{(x)}_\pm$ in terms of 2-point structure constants $B_{ij}=\delta_{ij}B_i$ and 3-point structure constants $C_{ijk}$. We also need to introduce degenerate OPE structure constants $c_i^\pm$ such that 
 \begin{align}
 V_{\langle 2,1\rangle}^d V_i \sim c^+_i V_{i^+} + c^-_i V_{i^-}\ ,
 \end{align}
-where we use the notation $i^\pm$ for the labels of the primary fields that appear in the degenerate OPE. Eq. \eqref{ccb} allows us to rewrite $c_i^\pm$ in terms of 2-point and 3-point structure constants; using moreover the permutation relation \eqref{b21}, we find 
+where we use the notation $i^\pm$ for the labels of the primary fields that appear in the degenerate OPE. 
+The reflection relation \eqref{refl} determines $c_i^-$ from $c_i^+$:
 \begin{align}
- c_i^- B_{i^-} = (-)^{s_i} c^+_{i^-} B_i\ .
+ c_i^- = c^+_{-i}\ ,
+ \label{cim}
+\end{align}
+where we use the notation $-i$ for the label of a reflected field. 
+Moreover,
+Eq. \eqref{ccb} allows us to rewrite $c_i^\pm$ in terms of 2-point and 3-point structure constants; using the permutation relation \eqref{b21}, we deduce 
+\begin{align}
+ c_i^- B_{i^-} = (-)^{s_i} c^+_{i^-} B_i\quad , \quad \frac{B_{i^-}}{B_{i^+}} =(-)^{2s_i} \frac{c_i^+}{c_i^-}\frac{c_{i^-}^+}{c_{i^+}^-}\ ,
  \label{cbcb}
 \end{align}
-With these notations, the 4-point structure constants are:
+where the second equation is obtained from the first one, applied to $i$ and $i^+$. (For $s_i\in\mathbb{Z}+\frac12$ the sign prefactor comes from resolving the sign ambiguity of $(-)^{s_i}$.)
+With these notations, the degenerate 4-point structure constants are:
 \begin{align}
  \begin{tikzpicture}[baseline=(base), very thick, scale = .4]
  \coordinate (base) at (0, -5);
@@ -1751,34 +1768,25 @@ With these notations, the 4-point structure constants are:
 \end{tikzpicture} 
 \label{cs}
 \end{align}
-Notice that the OPEs $V^d_{\langle 2,1\rangle}V_3$ and $V_3V^d_{\langle 2,1\rangle}$ are related by a permutation, under which the OPE structure constant picks a factor $(-)^{S_3+S_{3^\pm}} = (-)^{s_3}$, according to Eq. \eqref{b21}. This explains the sign factor in $d^{(t)}_\pm$.
-
-If we want to determine $B_i,C_{ijk}$, what do we do with $c^\pm_i$? In the bootstrap approach, we are free to perform field renormalizations using arbitrary constant coefficients $\lambda_i$,
-\begin{align}
- V_i(z) \to \lambda_i V_i(z)\ .
-\end{align}
-For a quantity to be meaningful, it must be invariant under renormalizations. And invariant combinations of structure constants do not involve $c_i^\pm$. For example, the $s$-channel 4-point structure constant $D^{(s)}_k = \frac{C_{12k}C_{k34}}{B_k}$ is invariant under renormalization of the channel field $V_k$, and $D^{(s)}_{k^+}$ is a combination of degenerate 4-point structure constants \eqref{cs}, such that the contributions of $c_k^+$ cancel. 
-
-It is however not practical to only work with renormalization-invariant combinations of structure constants. In particular, the invariant $\frac{C_{123}}{\sqrt{B_1B_2B_3}}$ involves a square root, and suffers from the corresponding sign ambiguity. Instead, we will choose $c_i^\pm$ before solving for $B_i,C_{ijk}$. Under field renormalizations, structure constants behave as 
-\begin{align}
- B_i \to \lambda_i^2 B_i \quad ,\quad C_{ijk}\to \lambda_i\lambda_j\lambda_k C_{ijk} \quad , \quad c_i^\pm \to \lambda_{\langle 2,1\rangle} \frac{\lambda_i}{\lambda_{i^\pm}}\ . 
-\end{align}
-Therefore, we can choose $c_i^+$ arbitrarily, after which $c_i^-$ is fixed up to a constant. To get a relation between $c_i^-$ and $c_i^+$, first notice that Eq. \eqref{cbcb} implies $\frac{B_{i^-}}{B_{i^+}} =(-)^{2s_i} \frac{c_i^+}{c_i^-}\frac{c_{i^-}^+}{c_{i^+}^-}$, where for $s_i\in\mathbb{Z}+\frac12$ the sign prefactor 
-comes from resolving the sign ambiguity of $(-)^{s_i}$ in Eq. \eqref{cbcb}.
-Then, in the case of the 4-point function $\left<V_{\langle 2,1\rangle}^d V_iV_{\langle 2,1\rangle}^d V_i\right>$, Eq. \eqref{cs} gives us $\frac{d^{(s)}_-}{d^{(s)}_+}=\frac{(c_i^-)^2}{(c_i^+)^2} \frac{B_{i^-}}{B_{i^+}}$. Eliminating the 2-point structure constants, we obtain the relation
+Notice that the OPEs $V^d_{\langle 2,1\rangle}V_3$ and $V_3V^d_{\langle 2,1\rangle}$ are related by a permutation, under which the OPE structure constant picks a factor $(-)^{S_3+S_{3^\pm}} = (-)^{s_3}$, according to Eq. \eqref{b21}. This explains the sign factor in $d^{(t)}_\pm$. In the case of the 4-point function $\left<V_{\langle 2,1\rangle}^d V_iV_{\langle 2,1\rangle}^d V_i\right>$, Eq. \eqref{cs} gives us $\frac{d^{(s)}_-}{d^{(s)}_+}=\frac{(c_i^-)^2}{(c_i^+)^2} \frac{B_{i^-}}{B_{i^+}}$. Using Eq. \eqref{cbcb} for eliminating the 2-point structure constants, we obtain the relation
 \begin{align}
  \frac{d^{(s)}_-}{d^{(s)}_+}= (-)^{2s_i}\frac{c_i^-}{c_{i^+}^-} \frac{c_{i^-}^+}{c_i^+}\ ,  
  \label{ddcccc}
 \end{align}
-whose left-hand side is explicitly known by Eq. \eqref{ddb}. Knowing $c_i^+$, this relation constrains $c_i^-$, but does not fully determine it. Worse, in a CFT with two degenerate fields $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$, the degenerate OPE coefficients for the two fields cannot be chosen independently. (See \cite[Exercise 3.2]{rib14} for the case of Liouville theory.)  
+whose left-hand side is explicitly known by Eq. \eqref{ddb}.
 
-Therefore, in principle, it is not easy to determine $c_i^\pm$. However, in practice, it is not hard to adjust $c_i^\pm$ such that the equations for $B_i,C_{ijk}$ have a solution, and such that this solution is simple.
-We choose
+If we want to determine $B_i,C_{ijk}$, what do we do with $c^\pm_i$? In the bootstrap approach, we are free to perform \textbf{field renormalizations} using arbitrary constant coefficients $\lambda_i$,
+\begin{align}
+ V_i(z) \to \lambda_i V_i(z)\quad \implies \quad B_i \to \lambda_i^2B_i \ , \ C_{ijk}\to \lambda_i\lambda_j\lambda_k C_{ijk}\ .
+ \label{vlv}
+\end{align}
+For a quantity to be meaningful, it must be invariant under field renormalizations. And invariant combinations of structure constants do not involve $c_i^\pm$. For example, the $s$-channel 4-point structure constant $D^{(s)}_k = \frac{C_{12k}C_{k34}}{B_k}$ is invariant under renormalization of the channel field $V_k$, and $D^{(s)}_{k^+}$ is a combination of degenerate 4-point structure constants \eqref{cs}, such that the contributions of $c_k^+$ cancel. 
+It is however not practical to only work with renormalization-invariant combinations of structure constants. In particular, the invariant $\frac{C_{123}}{\sqrt{B_1B_2B_3}}$ involves a square root, and suffers from the corresponding sign ambiguity. Instead, we propose
 \begin{align}
  c^+_i = \beta^{2\beta(P_i+\bar P_i)} \frac{\Gamma(-2\beta P_i)}{\Gamma(1+2\beta \bar P_i)} \quad , \quad c^-_i = \beta^{-2\beta(P_i+\bar P_i)} \frac{\Gamma(2\beta P_i)}{\Gamma(1-2\beta \bar P_i)}\ ,
  \label{cpcm}
 \end{align}
-which obey Eq. \eqref{ddcccc} thanks to $s_i=\beta(\bar P_i-P_i) \in \frac12\mathbb{Z}$. 
+This obeys the reflection relation \eqref{cim}. This also obeys Eq. \eqref{ddcccc}, thanks to $s_i=\beta(\bar P_i-P_i) \in \frac12\mathbb{Z}$. The existence and uniqueness of $c_i^\pm$ are subtle issues: in particular, in a CFT with two degenerate fields $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$, the degenerate OPE coefficients for the two fields are related. (See \cite[Exercise 3.2]{rib14} for the case of Liouville theory.) Our determination of $c_i^\pm$ will be validated by the existence of solutions of the shift equations for $B_i,C_{ijk}$. In special cases, we will however have to choose $c_i^\pm$ differently, after relaxing the reflection relation. 
 
 
 \subsubsection{Explicit shift equations}
@@ -1834,7 +1842,9 @@ If $\beta^2\notin \mathbb{Q}$, this factor must be constant on the real $P_i$-li
  \boxed{B_{P_1} = \prod_{\pm,\pm}\Gamma_\beta^{-1}\left(\beta^{\pm 1}\pm 2P_1\right)} \ \  , \ \ \boxed{C_{P_1,P_2,P_3} =\prod_{\pm,\pm,\pm} \Gamma_\beta^{-1}\left(\tfrac{\beta+\beta^{-1}}{2} \pm P_1\pm P_2\pm P_3\right)}\ . 
  \label{bc}
 \end{align}
-These expressions indeed obey the shift equations \eqref{sh-mp}-\eqref{sh-bb} with $s_i=0$ and $P_i=\bar P_i$. And they are invariant under $\beta \to \beta^{-1}$, so they also obey the shift equations from $V^d_{\langle 1,2\rangle}$. 
+These expressions indeed obey the shift equations \eqref{sh-mp}-\eqref{sh-bb} with $s_i=0$ and $P_i=\bar P_i$.
+They are invariant under $P_i\to -P_i$, i.e. they obey the reflection relation \eqref{refl}.
+And they are invariant under $\beta \to \beta^{-1}$, so they also obey the shift equations from $V^d_{\langle 1,2\rangle}$. 
 Curiously, the 2-point and 3-point functions can be analytically continued beyond the half-line $c\in (-\infty ,1]$, while $n$-point functions with $n\geq 4$ cannot, as follows from our discussion of the OPE in Section \ref{sec:liou}. 
 
 The expressions \eqref{bc} for 2-point and 3-point structure constants are also valid in generalized minimal models, and in A-series minimal models. In such models, solutions of shift equations are unique, up to a field-independent factor. In the case of the 2-point structure constant $B_{P_{(r,s)}}$, this is because the Kac indices $r,s$ are integer, and Eq. \eqref{sh-bb} governs how $B_{P_{(r,s)}}$ changes under $r\to r+1$. In the case of the 3-point structure constant $C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}$, our shift equations \eqref{sh-mp} and \eqref{sh-pp}, together with the invariance under permutations of the 3 fields, determine all integer shifts that preserve $r_1+r_2+r_3\bmod 2$. But the fusion rules \eqref{rrsr} imply that the 3-point structure constant exists only if $r_1+r_2+r_3\equiv 1\bmod 2$, and can therefore be deduced from $C_{P_{(1,1)},P_{(1,1)},P_{(1,1)}}$ using shift equations. This implies in particular that the double Gamma functions can be replaced with products of Gamma functions. (See \cite[Section 3.2.1]{rib14} for explicit expressions.) This makes the 3-point structure constants well-defined for any $\beta\in \mathbb{C}^*$, including in the regime $\beta\in i\mathbb{R}$ where $\Gamma_\beta$ is not defined.
@@ -1878,13 +1888,13 @@ where we use the notations
  b = i\beta \quad , \quad Q = b + b^{-1} \ . 
  \label{bQ}
 \end{align}
-By a change of normalization, the 2-point and 3-point structure constants become 
+By a field renormalization \eqref{vlv}, the 2-point and 3-point structure constants become 
 \begin{align}
  \hat B^\text{DOZZ}_{P_1} = \frac{\Gamma_b\left(- 2iP_1\right)\Gamma_b\left(Q+ 2iP_1\right)}{\Gamma_b\left( 2iP_1\right)\Gamma_b\left(Q- 2iP_1\right)} \quad , \quad 
  \hat C^\text{DOZZ}_{P_1,P_2,P_3} = \frac{\prod_{\pm,\pm,\pm} \Gamma_b\left(\tfrac{Q}{2} \pm iP_1\pm iP_2\pm iP_3\right)}{\prod_{k=1}^3 \Gamma_b(2iP_k)\Gamma_b(Q-2iP_k)}\ ,
  \label{dozz}
 \end{align}
-which are the expressions found by Dorn--Otto and Zamolodchikov--Zamolodchikov when first solving Liouville theory: in particular, their formula for the 3-point structure constant is called the \textbf{DOZZ formula}. In this normalization, the 2-point structure constant coincides with the \textbf{reflection coefficient}, i.e. it obeys the relations 
+which are the expressions found by Dorn--Otto and Zamolodchikov--Zamolodchikov when first solving Liouville theory: in particular, their formula for the 3-point structure constant is called the \textbf{DOZZ formula}. In this normalization, the 2-point structure constant coincides with the reflection coefficient, i.e. it obeys the relations 
 \begin{align}
  \hat B^\text{DOZZ}_{P_1}B^\text{DOZZ}_{-P_1}=1 \quad , \quad  \hat C^\text{DOZZ}_{P_1,P_2,P_3} = B^\text{DOZZ}_{P_1}\hat C^\text{DOZZ}_{-P_1,P_2,P_3} \quad , \quad V_{P_1} = B^\text{DOZZ}_{P_1} V_{-P_1}\ . 
 \end{align}
@@ -1950,7 +1960,8 @@ where the overall sign comes from $\prod_\pm \frac{\cos \pi\beta(P_1\pm P_2-P_3)
 \begin{align}
  \frac{C_{P_1-\frac{\beta}{2},(r_2,s_2),(r_3,s_3)}}{C_{P_1+\frac{\beta}{2},(r_2,s_2),(r_3,s_3)}} =\beta^{4\beta(P_1+\bar P_1)}\frac{\prod_{\pm,\pm} \Gamma(\frac12-\beta P_1\pm \beta\bar P_2\pm \beta \bar P_3)}{\prod_{\pm,\pm} \Gamma(\frac12+\beta P_1\pm \beta P_2\pm \beta P_3)}\ .
 \end{align}
-Now this differs from Eq. \eqref{sh-mp} with $\bar P_1=P_1$ by an overall sign. This sign is not fatal to our ansatz, which we now save by flipping one of the degenerate OPE structure constants for $V^d_{\langle 2,1\rangle}V_{P_i}$, i.e. we do $c^-_i \to -c^-_i$ in Eq. \eqref{cpcm}. This corrects ths sign of Eq. \eqref{sh-mp}, but leaves the other shift equations unchanged. (Eq. \eqref{sh-bb} would be changed, but it does not make sense in a D-series minimal model.) This leads to sign prefactors in the diagonal 3-point structure constant for D-series minimal models:
+Now this ratio differs from Eq. \eqref{sh-mp} with $\bar P_1=P_1$ by an overall sign. We now cancel this sign by doing the field renormalization $V^d_{\langle r,s\rangle}\to (-)^{\frac{r+1}{2}} V^d_{\langle r,s\rangle}$ in  D-series minimal models.  
+This renormalization leaves the other shift equations unchanged. (Eq. \eqref{sh-bb} would be changed, but it does not make sense in a D-series minimal model.) We therefore obtain a sign prefactor in the diagonal 3-point structure constant:
 \begin{align}
  \boxed{C^\text{DMM}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle\langle r_3,s_3\rangle} = (-)^\frac{r_1+r_2+r_3+1}{2} C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}}\ , 
  \label{cdmm}
@@ -1979,11 +1990,29 @@ This expression is also supposed to be valid if some of the fields are diagonal,
  \end{align}
  where $\text{frac}(r)\in\{0,\frac12\}$ is the fractional part of $r\in\frac12\mathbb{N}^*$. This is formally ill-defined if $r\in\mathbb{N}^*$ and $s\in\mathbb{Z}$, but can be regularized by taking a limit from generic values of $s$. We have $B^\text{ref}_{(0,2\beta P)} = \frac{1}{2\sin(2\pi\beta P)^2}B_P$, but we find it more convenient to set $B^\text{ref}_P = B_P$ for diagonal fields.
 
- 
+ The reference 2-point structure constant obeys the shift equation \eqref{sh-b}. Moreover, if $r\in \mathbb{N}^*$, we have
+ \begin{align}
+  \frac{B_{(r,s)}}{B_{(r,s+1)}} = (-)^r \beta^{-4\beta^{-2}s-2\beta^{-2}} \frac{\Gamma(-r-\beta^{-2}s)}{\Gamma(1-r+\beta^{-2}s)} \frac{\Gamma(1-\beta^{-2}+r-\beta^{-2}s)}{\Gamma(\beta^{-2}+r+\beta^{-2}s)}\ ,
+ \end{align}
+which obeys the shift equation \eqref{sh-bb} with $\beta\to\beta^{-1}$ and $(P_1,\bar P_1)=\left(P_{(r,-s)},-P_{(r,s)}\right)$. On the other hand, the reference 3-point structure constant only obeys the shift equations \eqref{sh-mp}, \eqref{sh-pp} and permutation equation \eqref{b21} up to signs. Let us define the normalized 3-point structure constant 
+\begin{align}
+ C^\text{norm} = \frac{C}{C^\text{ref}}\ , 
+\end{align}
+then the shift equations amount to \cite{nrj23}
+\begin{align}
+ \frac{C^\text{norm}_{(r_1,s_1+1)(r_2,s_2)(r_3,s_3)}}{C^\text{norm}_{(r_1,s_1-1)(r_2,s_2)(r_3,s_3)}} &\ =\  (-)^{2r_3}(-)^{\max(2r_1, 2r_2, 2r_3,r_1+r_2+r_3)} \ ,
+ \label{tpt}
+ \\
+ \frac{C^\text{norm}_{(r_1,s_1+1)(r_2,s_2)(r_3,s_3)}}{C^\text{norm}_{(r_1,s_1)(r_2,s_2)(r_3,s_3+1)}} &\underset{r_i\in\mathbb{N}^*}{=} 
+ \left\{\begin{array}{ll} (-)^{r_1+r_2} &\text{ if } r_2\geq |r_1-r_3|\ ,
+                        \\ (-)^{r_3} &\text{ else}\ .
+                       \end{array}\right. 
+\label{tppt}
+\end{align}
+Let us focus in particular on diagonal fields. If $r_1=0$, then $r_2\equiv r_3\bmod\mathbb{Z}$, and Eq. \eqref{tpt} reduces to the invariance of $C^\text{norm}$ under $s_1\to s_1+2$. 
 
-solve shift eqn modulo signs: normalized structure constants
 
-Arbitrary function of the \textbf{loop weight} 
+Arbitrary function of the \textbf{loop weight} (need reflection!)
 \begin{align}
  \boxed{w = 2\cos(2\pi\beta P)}\ .
 \end{align}
