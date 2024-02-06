@@ -12,6 +12,8 @@
 
 \usepackage{amsmath,amssymb,amsfonts}
 
+\usepackage[table]{xcolor}
+
 \usepackage{centernot}
 
 \usepackage[nottoc]{tocbibind}
@@ -1852,9 +1854,9 @@ The expressions \eqref{bc} for 2-point and 3-point structure constants are also 
 In (generalized) minimal models, the structure constants are always non-vanishing, even though the function $\Gamma_\beta^{-1}$ has zeros. For the 3-point structure constant, this is again because of the fusion rules. 
 The factor $\Gamma_\beta^{-1}\left(\frac{1+\sum_i\epsilon_ir_i}{2}\beta + \frac{1-\sum_i \epsilon_is_i}{2}\beta^{-1}\right)$ (with $\epsilon_i\in \{+,-\}$) of $C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}$ would indeed vanish if the 2 integers $\frac{1+\sum_i\epsilon_ir_i}{2}$ and $\frac{1-\sum_i \epsilon_is_i}{2}$ were both negative, but the fusion rules imply that the 3 integers $\sum_i\epsilon_i,\sum_i\epsilon_ir_i,\sum_i\epsilon_is_i$ all have the same (nonzero) sign. Conversely, if the fusion rules are violated, then $C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}$ vanishes in some cases, but not in some others. This has been a source of puzzlement \cite{zam05}. In the bootstrap approach, there is no puzzle, because structure constants make sense only provided fusion rules are obeyed. 
 
-We have chosen normalizations such that the structure constants \eqref{bc} have simple expressions, and are holomorphic functions of $\beta,P_i$. In (generalized) minimal models, it is common to choose normalizations such that $V^d_{\langle 1,1\rangle}$ is the identity field, and such that 2-point functions are trivial. Calling $\tilde{B}_{\langle r_1,s_1\rangle},\tilde{C}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle \langle r_3,s_3\rangle}$ the corresponding structure constants, these conditions amount to 
+We have chosen normalizations such that the structure constants \eqref{bc} have simple expressions, and are holomorphic functions of $\beta,P_i$. In (generalized) minimal models, it is common to choose normalizations such that $V^d_{\langle 1,1\rangle}$ is the identity field, and such that 2-point functions are trivial. Calling $\widetilde{B}_{\langle r_1,s_1\rangle},\widetilde{C}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle \langle r_3,s_3\rangle}$ the corresponding structure constants, these conditions amount to 
 \begin{align}
- \tilde{B}_{\langle r_1,s_1\rangle} = \tilde{C}_{\langle 1,1\rangle\langle r_2,s_2\rangle \langle r_2,s_2\rangle} = 1\ .
+ \widetilde{B}_{\langle r_1,s_1\rangle} = \widetilde{C}_{\langle 1,1\rangle\langle r_2,s_2\rangle \langle r_2,s_2\rangle} = 1\ .
 \end{align}
 Such normalizations exists, thanks to the identity 
 \begin{align}
@@ -1862,12 +1864,13 @@ Such normalizations exists, thanks to the identity
 \end{align}
 Our conditions are therefore fulfilled by 
 \begin{align}
- \tilde{C}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle \langle r_3,s_3\rangle} 
+ \widetilde{C}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle \langle r_3,s_3\rangle} 
  = \frac{C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}}{C_{P_{(1,1)},P_{(1,1)},P_{(1,1)}}}
  \frac{B_{P_{(1,1)}}^\frac32}
  {\sqrt{B_{P_{(r_1,s_1)}}B_{P_{(r_2,s_2)}} B_{P_{(r_3,s_3)}}}}\ .
+ \label{wtc}
 \end{align}
-For example, in the Ising minimal model at $\beta^2=\frac34$, the nontrivial structure constant is $\tilde{C}_{\langle 2,1\rangle\langle 2,1\rangle\langle 1,2\rangle}=\frac12$. In this case, the double Gamma functions not only combine into Gamma functions, but further simplify into a rational number. 
+For example, in the Ising minimal model at $\beta^2=\frac34$, the nontrivial structure constant is $\widetilde{C}_{\langle 2,1\rangle\langle 2,1\rangle\langle 1,2\rangle}=\frac12$. In this case, the double Gamma functions not only combine into Gamma functions, but further simplify into a rational number. 
 
 Finally, let us focus on Liouville theory with $c\in \mathbb{C}\backslash (-\infty,1]$. This includes the half-line $c\in [25,\infty)$ i.e. $\beta\in i\mathbb{R}^*$, where the function $\Gamma_\beta$ is not defined.
 Instead, we should use the function $\hat{\Gamma}_\beta(x) = \frac{1}{\Gamma_{i\beta}(i\beta -ix)}$, which obeys shift equations that are very similar to the equations \eqref{gshift} for $\Gamma_\beta(x)$: 
@@ -1971,8 +1974,11 @@ where $C_{P_1,P_2,P_3}$ is given in Eq. \eqref{bc}.
 Now that we know the structure constants for D-series minimal models, let us deduce generalized D-series minimal models. As argued in Section \ref{sec:gdmm}, this amounts to taking the limit $P_{(r_1,s_1)}\to P_1\in\mathbb{R}$ in the diagonal sector. This is easily done in the cases of $B_{P_1}$ and $C_{P_1,(r_2,s_2),(r_3,s_3)}$, which are meromorphic functions of $P_1$, and are therefore valid in minimal models and in the limit. When it comes to the diagonal 3-point structure constant \eqref{cdmm}, the sign prefactor does not have a smooth limit, and the structure constant turns out to be a distribution \cite{rib19},
 \begin{align}
  \boxed{C^\text{GDMM}_{P_1,P_2,P_3} = \beta C_{P_1,P_2,P_3}\sum_{n\in\mathbb{Z}}(-)^n \frac{\prod_{i=1}^3 \cos(2\pi n\beta P_i)}{\cos(\pi n\beta^2)}}\ .
+ \label{cgdmm}
 \end{align}
 The sum over $n$ is divergent, but it converges when inserted in the $s$-channel decomposition of a correlation function with non-diagonal fields, for example $\left<V_{P_1}V_{P_2}V_{(r_3,s_3)}V_{(s_4,s_4)}\right>$. 
+
+Without the field renormalization $V^d_{\langle r,s\rangle}\to (-)^{\frac{r+1}{2}} V^d_{\langle r,s\rangle}$, would we have obtained a smooth diagonal 3-point structure constant $C_{P_1,P_2,P_3}$, and a distribution in the non-diagonal sector? Of course not: renormalizations cannot make a difference. To see this, we may study the 4-point function $\left<V_{P_1}V_{P_2}V_{(r_3,s_3)}V_{(r_4,s_4)}\right>$ in the $s$-channel: whatever the normalization, the 4-point structure constant has a factor $C^\text{GDMM}_{P_1,P_2,P_s}$ in the limit. Our field renormalization only makes this clearer at the level of 3-point structure constants. 
 
 \subsubsection{Loop models}
 
@@ -2023,27 +2029,62 @@ There is a conjecture that $C^\text{norm}$ is in fact a polynom of loop weights,
 
 Even if the conjecture only applies to loop models, it is interesting to compute the normalized 3-point structure constant associated to $C_{P_1,(r_2,s_2),(r_3,s_3)}$ \eqref{cdnn} from (generalized) D-series minimal models:
 \begin{align}
- C^\text{norm}_{P_1,(r_2,s_2),(r_3,s_3)} = (-)^{\frac{s_2+s_3}{2}} \prod_\pm \prod_{i=-\frac{|r_2\pm r_3|-1}{2}}^{\frac{|r_2\pm r_3|-1}{2}} 2\cos \pi(\beta P_1+\beta^2i) \ ,
+ C^\text{norm}_{P_1,(r_2,s_2),(r_3,s_3)} = (-)^{\frac{r_3}{2}}(-)^{\frac{s_2+s_3}{2}} \prod_\pm \prod_{j=-\frac{|r_2\pm r_3|-1}{2}}^{\frac{|r_2\pm r_3|-1}{2}} 2\cos \pi(\beta P_1+\beta^2j) \ ,
 \end{align}
-where the product over $i$ runs by steps of $1$. Since $r_2,r_3\in\mathbb{Z}+\frac12$, there is one $i=0$ factor, which is $2\cos(\pi \beta P_1)$. The rest of the product can be written in terms of 
+where the product over $j$ runs by steps of $1$. Since $r_2,r_3\in\mathbb{Z}+\frac12$, there is one $j=0$ factor, which is $2\cos(\pi \beta P_1)$. The rest of the product can be written in terms of 
 \begin{align}
- 4\cos \pi(\beta P_1+\beta^2i)\cos \pi(\beta P_1-\beta^2i) = 2\cos(2\pi\beta P_1)+2\cos(2\pi i \beta^2)\ , 
+ 4\cos \pi(\beta P_1+\beta^2j)\cos \pi(\beta P_1-\beta^2j) = 2\cos(2\pi\beta P_1)+2\cos(2\pi \beta^2j)\ , 
 \end{align}
-which for $i\in\frac12\mathbb{Z}^*$ is polynomial in loop weights. 
+which for $j\in\frac12\mathbb{Z}^*$ is polynomial in loop weights. 
 
-\subsubsection{Temporary notes}
+\subsubsection{Summary table}\label{sec:table}
 
-Do we want a synthetic table of known solutions? 
+Let us summarize the solutions of shift equations for 2-point and 3-point structure constants. For each solution we indicate to which models it applies. Lighter green means an alternative field normalization. In the models' names, ``(G)MM'' means A-series minimal models and generalized minimal models, and ``Liou'' means Liouville theory. 
+\begin{center}
+\begin{tabular}{|l|c|c|c|c|c|c|c|}
+\hline 
+ Constants & Eqs. & (G)MM & Liou$_{c\leq 1}$ & Liou & DMM & GDMM & Loop 
+ \\
+ \hline
+  $B_{P_1}$ & \eqref{bc} & \cellcolor{green} & \cellcolor{green} &  & \cellcolor{green} & \cellcolor{green} & \cellcolor{green} 
+  \\
+  \hline 
+  $C_{P_1,P_2,P_3}$& \eqref{bc} & \cellcolor{green} & \cellcolor{green} &  &  &  & \cellcolor{green} 
+  \\
+  \hline 
+  $\widetilde{C}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle\langle r_3,s_3\rangle}$ & \eqref{wtc} & \cellcolor{green!20} & & & & & 
+  \\
+  \hline 
+  $\hat{B}_{P_1},\hat{C}_{P_1,P_2,P_3}$ &  \eqref{bci} & & & \cellcolor{green} & & & 
+  \\
+  \hline 
+  $\hat{B}^\text{DOZZ}_{P_1},\hat{C}^\text{DOZZ}_{P_1,P_2,P_3}$ & \eqref{dozz} & & & \cellcolor{green!20} & & &
+  \\
+  \hline 
+  $B_{(r,s)}$ & \eqref{nbrs} & & & & \cellcolor{green} & \cellcolor{green} & 
+  \\
+  \hline 
+  $C_{P_1,(r_2,s_2),(r_3,s_3)}$ & \eqref{cdnn} & & & & \cellcolor{green} & \cellcolor{green} & 
+  \\
+  \hline 
+  $C^\text{DMM}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle\langle r_3,s_3\rangle}$ & \eqref{cdmm} &
+  & & & \cellcolor{green} & & 
+  \\
+  \hline 
+  $C^\text{GDMM}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle\langle r_3,s_3\rangle}$ & \eqref{cgdmm} &
+  & & & & \cellcolor{green} & 
+  \\
+  \hline 
+  $B^\text{ref}_{(r,s)}$ & \eqref{bref} & & & & & & \cellcolor{green}
+  \\
+  \hline 
+  $C^\text{ref}_{(r_1,s_1)(r_2,s_2)(r_3,s_3)}$ & \eqref{cref} & & & & & & \cellcolor{green}
+  \\
+  \hline 
+\end{tabular}
+\end{center}
 
-\subsection{Remarks}
-
-Move to logarithmic section? Dismiss? 
-
-Compute vanishings of ratios of structure constants in $V^d_{\langle 2,1\rangle}V_P$. 
-
-For $P=P_{(0,n)}$ with $n\in\mathbb{N}$ we find only $V_{P_{(-1,n)}}$ i.e. the coef of $V_{P_{(1,n)}}$ vanishes. For $n>0$, this is a consequence of Virasoro symmetry i.e. appearance of NV whose fusion rules would be violated. For $n=0$ this does not follow from Virasoro symmetry: interpret as interchiral phenomenon?
-
-For $P=P_{(1,n)}$ with $n\in\mathbb{N}$ we find only $V_{P_{(2,n)}}$ i.e. the coef of $V_{P_{(0,n)}}$ vanishes. Now, Virasoro symmetry is not responsible. In fact it would be perfectly consistent to have $V_{P_{(0,n)}}$ alone, the OPE coefs are not divergent. The problem is purely interchiral: it is about the ratio of coefs in an interchiral module, not in a Virasoro module. 
+% Reproduce all the formulas here? 
 
 \section{Numerical bootstrap}
 
@@ -2079,6 +2120,11 @@ Emergence of logarithms: $\Delta_{P+\frac{\beta}{2}}-\Delta_{P-\frac{\beta}{2}} 
 In $V^d_{\langle 1,2\rangle}V^N_{(r,0)} = \sum_\pm V^N_{(r,\pm 1)}$ it is not just spins but also dimensions that differ by integers. Study singularities of OPE coefficients. 
 
 Need we assume that $V^N_{(r,0)}$ is the limit of diagonal fields? Why would we not get $V_{P_{(r,0)}}$? Are there two ways to take the limit? See OPE coefficients. 
+
+Compute vanishings of ratios of structure constants in $V^d_{\langle 2,1\rangle}V_P$. 
+For $P=P_{(0,n)}$ with $n\in\mathbb{N}$ we find only $V_{P_{(-1,n)}}$ i.e. the coef of $V_{P_{(1,n)}}$ vanishes. For $n>0$, this is a consequence of Virasoro symmetry i.e. appearance of NV whose fusion rules would be violated. For $n=0$ this does not follow from Virasoro symmetry: interpret as interchiral phenomenon?
+
+For $P=P_{(1,n)}$ with $n\in\mathbb{N}$ we find only $V_{P_{(2,n)}}$ i.e. the coef of $V_{P_{(0,n)}}$ vanishes. Now, Virasoro symmetry is not responsible. In fact it would be perfectly consistent to have $V_{P_{(0,n)}}$ alone, the OPE coefs are not divergent. The problem is purely interchiral: it is about the ratio of coefs in an interchiral module, not in a Virasoro module. 
 
 \bibliographystyle{cft}
 \bibliography{cft}
