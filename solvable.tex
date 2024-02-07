@@ -203,7 +203,7 @@ because it transforms the metric into itself, up to a scalar factor:
 \begin{align}
  dzd\bar z\to dfd\bar f = |f'(z)|^2 dzd\bar z\ .
 \end{align}
-Let us define the \textbf{Witt algebra} as the Lie algebra of infinitesimal conformal transformations on $\mathbb{C}^*= \mathbb{C}-\{0\}$. This algebra describes local conformal symmetry for quantum field theory on the Riemann sphere, as can be argued in two alternative ways:
+Let us define the \textbf{Witt algebra} as the Lie algebra of infinitesimal conformal transformations on $\mathbb{C}^*= \mathbb{C}\backslash \{0\}$. This algebra describes local conformal symmetry for quantum field theory on the Riemann sphere, as can be argued in two alternative ways:
 \begin{itemize}
  \item Transformations need not be defined at $z=\infty$ because they are local, and can be singular at $z=0$ if we insert a field at that point.
  \item Holomorphic functions on $\mathbb{C}^*$ are equivalent to holomorphic functions on a neighbourhood of the circle $|z|=1$. In radial quantization, this circle is interpreted as a Euclidean time slice where the states of our theory live. 
@@ -348,7 +348,7 @@ and it follows that the null vector $L_{\langle r,s\rangle} V_{\Delta_{(r, s)}}$
 \end{align}
 We will provide a derivation of $P_{(r, s)}$ using operator product expansions in Section \ref{sec:dope}. On the other hand, the expressions of $L_{\langle r,s\rangle} $ are complicated and not particularly useful. 
 
-For $\beta^2\in\mathbb{C}-\mathbb{Q}$, the Verma module $\mathcal{V}_\Delta$ has a null vector if and only if $\Delta=\Delta_{(r, s)}$ for some $r,s\in\mathbb{N}^*$, in which case it has only one null vector. For $\beta^2\in\mathbb{Q}$ however, a Verma module can have several null vectors. If $\beta^2 = \frac{q}{p}$ with $p,q$ coprime integers, we indeed have the identity
+For $\beta^2\in\mathbb{C}\backslash \mathbb{Q}$, the Verma module $\mathcal{V}_\Delta$ has a null vector if and only if $\Delta=\Delta_{(r, s)}$ for some $r,s\in\mathbb{N}^*$, in which case it has only one null vector. For $\beta^2\in\mathbb{Q}$ however, a Verma module can have several null vectors. If $\beta^2 = \frac{q}{p}$ with $p,q$ coprime integers, we indeed have the identity
 \begin{align}
  \Delta_{(r+p,s+q)} = \Delta_{(r,s)}\ ,
  \label{rpsq}
@@ -366,7 +366,7 @@ To see this, let $\epsilon,\eta\in\{+,-\}$ be the signs such that $P_{(-r_1,s_1)
 \begin{align}
  \begin{array}{|c||c|c|c|}
   \hline 
-  \text{Value of }\beta^2 & \mathbb{C}-\mathbb{Q} & \mathbb{Q}_{>0} & \mathbb{Q}_{<0}
+  \text{Value of }\beta^2 & \mathbb{C}\backslash \mathbb{Q} & \mathbb{Q}_{>0} & \mathbb{Q}_{<0}
   \\
   \hline 
   \text{Value of }c & \text{generic} & c\leq 1 , c\in\mathbb{Q} &  c\geq 25, c\in\mathbb{Q}
@@ -457,7 +457,7 @@ Applying Eq. \eqref{pvlv} to $L_n^{(z)} V(z)$, we find how the Virasoro generato
 \end{align}
 This can be rewritten as the $z$-independence of a formal Laurent series that combines all the generators $(L_n^{(z)})_{n\in\mathbb{Z}}$, 
 \begin{align}
- \frac{\partial}{\partial z} \sum_{n\in\mathbb{Z}} \frac{L_n^{(z)}}{(y-z)^{n+2}} = 0\ ,\qquad (\forall y\in\mathbb{C}-\{z\})\ .
+ \frac{\partial}{\partial z} \sum_{n\in\mathbb{Z}} \frac{L_n^{(z)}}{(y-z)^{n+2}} = 0\ ,\qquad (\forall y\in\mathbb{C}\backslash \{z\})\ .
 \end{align}
 The formal Laurent series is then called the \textbf{energy-momentum tensor}, 
 \begin{align}
@@ -1058,7 +1058,7 @@ This constraint holds for all known non-diagonal CFTs with at least 1 degenerate
 
 \subsubsection{Generalized minimal models}\label{sec:gmm}
 
-For $\beta^2\in\mathbb{C}^*-\mathbb{Q}$, we define the \textbf{generalized minimal model (GMM)} as the CFT whose spectrum of primary fields is made of all diagonal degenerate fields:
+For $\beta^2\in\mathbb{C}^*\backslash\mathbb{Q}$, we define the \textbf{generalized minimal model (GMM)} as the CFT whose spectrum of primary fields is made of all diagonal degenerate fields:
 \begin{align}
  \boxed{\mathcal{S}^\text{GMM} = \left\{ V^d_{\langle r,s\rangle}\right\}_{r,s\in\mathbb{N}^*}} \ . 
 \end{align}
@@ -1070,11 +1070,11 @@ However, thanks to the degenerate fusion rules \eqref{rrsr}, any OPE spectrum is
 
 For $\beta^2\in \mathbb{Q}$, as we will see in Section \ref{sec:amm}, there exist A-series minimal models, whose spectrums contain finitely many diagonal degenerate fields. There may well exist other CFTs whose primary fields are diagonal and (partly or fully) degenerate. One way to explore this issue is to take limits of GMM correlation functions as $\beta^2\to \beta^2_0\in \mathbb{Q}$. This can give rise to logarithmic correlation functions \cite{rib18}, suggesting the appearance of logarithmic representations of the conformal algebra. 
 
-Generalized minimal models exist only on the sphere. In particular, their torus partition functions are infinite: if $\beta^2\in\mathbb{C}-\mathbb{R}$, this is because $\left\{ \Delta_{(r,s)}\right\}_{r,s\in\mathbb{N}^*}$ is not bounded from below. Nevertheless, GMMs are interesting because they are very simple and natural CFTs, which give rise to various other CFTs in certain limits --- starting with Liouville theory.
+Generalized minimal models exist only on the sphere. In particular, their torus partition functions are infinite: if $\beta^2\in\mathbb{C}\backslash \mathbb{R}$, this is because $\left\{ \Delta_{(r,s)}\right\}_{r,s\in\mathbb{N}^*}$ is not bounded from below. Nevertheless, GMMs are interesting because they are very simple and natural CFTs, which give rise to various other CFTs in certain limits --- starting with Liouville theory.
 
 \subsubsection{Liouville theory}\label{sec:liou}
 
-Let us consider the spectrum of a generalized minimal model with $\beta^2\in\mathbb{R}_{>0}-\mathbb{Q}$. The momentums $P_{(r,s)}$ \eqref{prs} are dense in the real line, i.e. $\overline{\left\{ P_{(r,s)}\right\}_{r,s\in\mathbb{N}^*}} = \mathbb{R}$. Any diagonal field with a real momentum can therefore be obtained as a limit of degenerate fields,
+Let us consider the spectrum of a generalized minimal model with $\beta^2\in\mathbb{R}_{>0}\backslash\mathbb{Q}$. The momentums $P_{(r,s)}$ \eqref{prs} are dense in the real line, i.e. $\overline{\left\{ P_{(r,s)}\right\}_{r,s\in\mathbb{N}^*}} = \mathbb{R}$. Any diagonal field with a real momentum can therefore be obtained as a limit of degenerate fields,
 \begin{align}
  \forall P\in\mathbb{R}\ , \quad V_P = \lim_{\substack{r,s\to\infty \\ P_{(r,s)}\to P}} V^d_{\langle r,s\rangle}\ .
  \label{vplim}
@@ -1098,7 +1098,7 @@ Let us call \textbf{Liouville theory} the resulting CFT. The spectrum of primary
 \end{align}
 The regularized OPE \eqref{ireg} requires that we extend the spectrum to complex momentums. This will turn out to be possible, because correlation functions are analytic in $P$. 
 
-For the moment, we have defined Liouville theory for $\beta^2\in\mathbb{R}_{>0}-\mathbb{Q}$. By taking limits, we can extend it to the half-line $c\leq 1$ i.e. $\beta^2\in\mathbb{R}_{>0}$. But we cannot do an analytic continuation the rest of the complex $c$-plane, because of the poles of OPE coefficients. These poles lie on the real $P$-line if $c\leq 1$, but as soon as $c$ strays from this half-line, the poles spread out in the complex $P$-plane, and cross the integration line $\mathbb{R}+i\epsilon$ for any $\epsilon>0$. In the following figures, we draw the regions where poles are found in blue, and the poles $\pm P_{(1,1)}$ as blue circles; the integration line is in red: 
+For the moment, we have defined Liouville theory for $\beta^2\in\mathbb{R}_{>0}\backslash\mathbb{Q}$. By taking limits, we can extend it to the half-line $c\leq 1$ i.e. $\beta^2\in\mathbb{R}_{>0}$. But we cannot do an analytic continuation the rest of the complex $c$-plane, because of the poles of OPE coefficients. These poles lie on the real $P$-line if $c\leq 1$, but as soon as $c$ strays from this half-line, the poles spread out in the complex $P$-plane, and cross the integration line $\mathbb{R}+i\epsilon$ for any $\epsilon>0$. In the following figures, we draw the regions where poles are found in blue, and the poles $\pm P_{(1,1)}$ as blue circles; the integration line is in red: 
 \begin{align}
  \newcommand{\polewedge}[3]{
 \begin{scope}[#1]
@@ -1141,7 +1141,7 @@ For the moment, we have defined Liouville theory for $\beta^2\in\mathbb{R}_{>0}-
  \end{tikzpicture}
  \vspace{3mm}
  \\
-\beta^2>0 & \beta^2\in\mathbb{C}-\mathbb{R} & \beta^2<0
+\beta^2>0 & \beta^2\in\mathbb{C}\backslash \mathbb{R} & \beta^2<0
 \end{array}
 \end{align}
 We nevertheless define Liouville theory for $c\in\mathbb{C}\backslash (-\infty,1]$ by the spectrum \eqref{sliou} and OPE \eqref{idpv}, where we no longer need to shift the integration line. 
@@ -1268,14 +1268,18 @@ both $\frac{r}{p}$ and $\frac{s}{q}$, and therefore also $x=\frac12\left(\frac{r
  \boxed{V_{n_1,x_1}V_{n_2,x_2} \sim \sum_{n\in n_1+n_2+p_0+q_0+2\mathbb{Z}}
 \int_{|x_1-x_2|}^{\min (x_1+x_2,2-x_1-x_2)} dx\ V_{n, x}}\ .
 \end{align}
-Of course, $V_{n,x}$ is just another notation for the diagonal field $V_P$, with $n,x$ the integer and fractional parts of $2\sqrt{p_0q_0}P$. The reflection relation $V_P=V_{-P}$ is now $V_{n,x}=V_{-n-1,1-x}$. 
+Of course, $V_{n,x}$ is just another notation for the diagonal field $V_P$, with $n,x$ the integer and fractional parts of $2\sqrt{p_0q_0}P$:
+\begin{align}
+ P=\frac{n+x}{2\sqrt{p_0q_0}} \quad , \quad n=\Big\lfloor 2\sqrt{p_0q_0}P \Big\rfloor \quad , \quad x = \Big\{2\sqrt{p_0q_0}P \Big\}\ .
+\end{align}
+The reflection relation $V_P=V_{-P}$ is now $V_{n,x}=V_{-n-1,1-x}$. 
 The resulting Runkel--Watts-type CFT has the same spectrum as Liouville theory \eqref{sliou} $
  \mathcal{S}^{\text{RWT}_{p_0,q_0}} = \frac12 \left\{ V_P\right\}_{P\in \mathbb{R}}$. In contrast to Liouville theory, the momentums cannot be continued to complex values, where the OPE would no longer make sense. Notice however that if $x_1\neq x_2$, the OPE does not produce fields with degenerate momentums, i.e. fields of the type $V_{n,0}$. So there is no need to regularize the integral over $x$. Alternatively, the OPE may be written in a manifestly reflection-invariant way using the momentums $P_i$ \cite{rs15},
  \begin{align}
   \left<\prod_{i=1}^3 V_{P_i}\right>\neq 0 \implies \prod_{\pm,\pm} \sin\pi\left(\tfrac{p_0+q_0}{2}+\sqrt{p_0q_0}(P_1\pm P_2\pm P_3)\right) < 0 \ .
   \label{rwtz}
  \end{align}
-It turns out that Runkel--Watts-type theories can also be obtained as limits of Liouville theory with $\beta^2\in \mathbb{C}-\mathbb{R}$ \cite{mce07}. The limit of Liouville theory for $\beta^2\to \beta_0^2>0$ generally does not make sense, but it exists if $\beta_0^2$ is rational and the momentums are real. In this limit, the condition \eqref{rwtz} emerges from the three-point structure constants of Liouville theory. 
+It turns out that Runkel--Watts-type theories can also be obtained as limits of Liouville theory with $\beta^2\in \mathbb{C}\backslash \mathbb{R}$ \cite{mce07}. The limit of Liouville theory for $\beta^2\to \beta_0^2>0$ generally does not make sense, but it exists if $\beta_0^2$ is rational and the momentums are real. In this limit, the condition \eqref{rwtz} emerges from the three-point structure constants of Liouville theory. 
 
 
 \subsection{Non-diagonal CFTs with 2 degenerate fields}
@@ -1286,16 +1290,16 @@ Let us look for rational, non-diagonal CFTs, built from the same representations
 \begin{align}
  (r,s) \in \Big[\left(-\tfrac{p}{2},\tfrac{p}{2}\right) \cap \left(\mathbb{Z}+\tfrac{p}{2}\right)\Big] \times \Big[\left(-\tfrac{q}{2},\tfrac{q}{2}\right) \cap \left(\mathbb{Z}+\tfrac{q}{2}\right)\Big] \ . 
 \end{align}
-This amounts to taking advantage of the identity $\Delta_{(r,s)}=\Delta_{(r+\frac{p}{2},s+\frac{q}{2})}$ for centering the Kac table at $(r,s)=(0,0)$, which makes it invariant under $(r,s)\to (r,-s)$. It remains to impose the integer spin condition $rs\in\mathbb{Z}$. If $p,q$ are both odd, no field has integer spin. Without loss of generality, we therefore assume $p\in 2\mathbb{N}^*$ and $q\in 2\mathbb{N}+1$, 
+This amounts to taking advantage of the identity $\Delta_{(r,s)}=\Delta_{(r+\frac{p}{2},s+\frac{q}{2})}$ for centering the Kac table at $(r,s)=(0,0)$, which makes the table invariant under $(r,s)\to (r,-s)$. It remains to impose the integer spin condition $rs\in\mathbb{Z}$. If $p,q$ are both odd, no field has integer spin. Without loss of generality, we therefore assume $p\in 2\mathbb{N}^*$ and $q\in 2\mathbb{N}+1$, 
 and the integer spin condition reduces to $r\in 2\mathbb{Z}$. This completes the determination of the non-diagonal sector. 
 
-Non-diagonal fields have $s\in \mathbb{Z}+\frac12$, and by Eq. \eqref{ssiz}, the OPE of two non-diagonal fields involves fields with $s\in \mathbb{Z}$, which must therefore be diagonal. In fact, the conservation of $s\bmod \mathbb{Z}$ (with $s=0$ for diagonal fields) reduces to the \textbf{conservation of diagonality}:
+Since non-diagonal fields have $s\in \mathbb{Z}+\frac12$, the conservation of $s\bmod \mathbb{Z}$ \eqref{ssiz} (with $s=0$ for diagonal fields) reduces to the \textbf{conservation of diagonality}:
 \begin{align}
 D\times D = D \quad , \quad D\times N = N \quad , \quad N\times N = D \ ,
 \label{ddd}
 \end{align}
 where $D$ stands for diagonal and $N$ for non-diagonal fields. 
-Moreover, we assume that any representation that appears in the diagonal sector can be obtained by fusing two representations from the non-diagonal sector. Since $r\in 2\mathbb{Z}$ in the non-diagonal sector, the diagonal sector therefore involves representations $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}+1$, and the spectrum is 
+Moreover, we assume that any representation that appears in the diagonal sector can be obtained by fusing two representations from the non-diagonal sector. By the degenerate fusion rules \eqref{rrsr}, the diagonal sector involves representations $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}+1$, and the spectrum is 
 \begin{align}
  \boxed{\mathcal{S}^{\text{DMM}_{p,q}} = \frac12\left\{ V^f_{\langle r,s\rangle} \right\}_{\substack{(r,s)\in (0,p) \times (0,q)\\ (r,s)\in (2\mathbb{N}+1)\times \mathbb{N}}} 
  \bigcup 
@@ -1316,13 +1320,13 @@ where the lower bounds $p\geq 6$ and $q\geq 3$ ensure that the non-diagonal sect
 \end{align}
 The corresponding CFT may be called a fermionic minimal model \cite{rw20}. The fusion rules are obtained by combining the fully degenerate fusion rules \eqref{rfrf} with the conservation of diagonality:
 \begin{align}
- V^f_{\langle r_1,s_1\rangle}V_{(r_2,s_2)} &\sim \sum_{r\overset{2}{=}\max(r_1-r_2-p,r_2-r_1)+1}^{\min(r_1+r_2,p-r_1-r_2)-1} \sum_{s\overset{2}{=}\max(s_1-s_2-q,s_2-s_1)+1}^{\min(s_1+s_2,q-s_1-s_2)-1} V_{(r,s)} \ ,
+ V^f_{\langle r_1,s_1\rangle}V_{(r_2,s_2)} &\sim \sum_{r\overset{2}{=}\max(r_2-r_1,r_1-r_2-p)+1}^{\min(r_1+r_2,p-r_1-r_2)-1} \sum_{s\overset{2}{=}\max(s_2-s_1,s_1-s_2-q)+1}^{\min(s_1+s_2,q-s_1-s_2)-1} V_{(r,s)} \ ,
  \label{vfvn}
  \\
  V_{(r_1,s_1)} V_{(r_2,s_2)} & \sim \sum_{r\overset{2}{=}|r_1-r_2|+1}^{p-|r_1+r_2|-1} \sum_{s\overset{2}{=}|s_1-s_2|+1}^{q-|s_1+s_2|-1} V^f_{\langle r,s\rangle}\ . 
  \label{vnvn}
 \end{align}
-It can be checked that for these fusion rules, the D-series minimal model is a closed subsector of its fermionic extension. Curiously, the diagonal field $V^f_{\langle \frac{p}{2}, s\rangle}$ has the same conformal dimensions as the non-diagonal field $V_{(0,s-\frac{q}{2})}$. However, these two fields have very different fusion rules. 
+It can be checked that for these fusion rules, the D-series minimal model is a closed subsector of its fermionic extension. Curiously, the diagonal field $V^f_{\langle \frac{p}{2}, s\rangle}$ has the same conformal dimensions as the non-diagonal field $V_{(0,s-\frac{q}{2})}$. However, these two fields have different fusion rules. 
 
 \subsubsection{Generalized D-series minimal models}\label{sec:gdmm}
 
@@ -1367,16 +1371,15 @@ To begin with, we will now propose a simple extended spectrum that will include 
 
 Let the extended spectrum $\widetilde{S}^\text{loop}$ be made of all primary fields with half-integer spins that are compatible with the degenerate field $V^d_{\langle 1,2\rangle}$:
 \begin{align}
- \boxed{\widetilde{S}^\text{loop} = \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in\mathbb{N}^*}  \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \frac12\mathbb{N}^*\\ s\in\frac{1}{r}\mathbb{Z}+\mathbb{Z}}}\bigcup \left\{ V_P\right\}_{P\in\mathbb{C}} } \ .
+ \boxed{\widetilde{S}^\text{loop} = \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in\mathbb{N}^*}  \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \frac12\mathbb{N}^*\\ s\in\frac{1}{2r}\mathbb{Z}}}\bigcup \left\{ V_P\right\}_{P\in\mathbb{C}} } \ .
  \label{sloop}
 \end{align}
-We therefore include all degenerate fields that are generated from $V^d_{\langle 1,2\rangle}$ by fusion, and all possible diagonal fields. When it comes to non-diagonal fields, the first index $r$ must be half-integer according to Eq. \eqref{sriz}. The symmetry $V_{(r,s)}=V_{(-r,-s)}$ allows us to assume $r\geq 0$, and the sector $r=0$ would be redundant with the diagonal sector, since 
+We therefore include all degenerate fields that are generated from $V^d_{\langle 1,2\rangle}$ by fusion, and all possible diagonal fields. When it comes to non-diagonal fields, the first index $r$ must be half-integer according to Eq. \eqref{sriz}. The reflection relation $V_{(r,s)}=V_{(-r,-s)}$ \eqref{refl} allows us to assume $r\geq 0$, and the sector $r=0$ is redundant with the diagonal sector, since 
 \begin{align}
  V_{(0,s)} = V_{\frac12\beta^{-1}s}  \quad \text{i.e.} \quad V_P = V_{(0,2\beta P)} \ .
  \label{sP}
 \end{align}
 On the other hand, $V_{(r,0)}$ is a genuinely non-diagonal field, whose fusion rules differ from those of the diagonal field with the same dimensions $V_{\frac12\beta r}$. 
-If $r$ is integer, the condition for the second index of $V_{(r,s)}$ reduces to the integer spin condition $s\in\frac{1}{r}\mathbb{Z}$. If however $r$ is half-integer, fusion with $V^d_{\langle 1,2\rangle}$ \eqref{vdvrs} forces us to allow half-integer spins, and $s\in \frac{1}{r}\mathbb{Z} + \mathbb{Z} = \frac{1}{2r}\mathbb{Z}$. 
 
 Our simple extended spectrum hides important subtleties: 
 \begin{itemize}
@@ -1401,12 +1404,12 @@ In addition to our assumption that OPEs are discrete, known constraints on fusio
  \item The degenerate field $V^d_{\langle 1,2\rangle}$ implies the conservation of $r$ modulo integers \eqref{sriz}.
  \item OPEs that involve $V^d_{\langle 1,2\rangle}$ are given by Eqs. \eqref{vpope} and \eqref{vdvrs}.
 \end{itemize}
-The basic expectation is that in any OPE, any field that is not excluded by these constraints appears. This will turn out to be true for non-diagonal field. For diagonal fields, the situation is more subtle, as we will see in Section \ref{sec:cloop}.
+The basic expectation is that in any OPE, any field that is not excluded by these constraints appears. This will turn out to be true for non-diagonal fields. For diagonal fields, the situation is more subtle, as we will see in Section \ref{sec:cloop}.
 
 
 \subsubsection{$O(n)$ model, $U(n)$ model, Potts model}\label{sec:models}
 
-Three known models give rise to integer-spin subsets of the extended spectrum $\widetilde{S}^\text{loop}$: the $O(n)$ model, the $U(n)$ model and the Potts model. 
+Three known models give rise to integer-spin subsets of the extended spectrum $\widetilde{S}^\text{loop}$. 
 Their spectrums are 
 \begin{align}
 \mathcal{S}^{O(n)} &= \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in 2\mathbb{N}+1} \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \frac12\mathbb{N}^*\\ s\in\frac{1}{r}\mathbb{Z}}}  \ ,
@@ -1415,18 +1418,19 @@ Their spectrums are
  \\
  \mathcal{S}^\text{Potts} &= \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in\mathbb{N}^*} \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \mathbb{N}+2\\ s\in\frac{1}{r}\mathbb{Z}}} \bigcup  \left\{ V_{P_{(0,s)}}\right\}_{s\in \mathbb{N}+\frac12}\ .
 \end{align}
-The spectrums of the $O(n)$ and $U(n)$ models are natural constructions: starting with $\widetilde{S}^\text{loop}$, we remove diagonal fields and fields with half-integer spins, and further remove degenerate or non-diagonal fields such that the resulting spectrum is closed under fusion. On the other hand, the Potts spectrum has no simple explanation in our formalism. We can only remark that it is very close to the $U(n)$ spectrum, from which it is obtained by removing the non-diagonal fields $\left\{V_{(1,s)}\right\}_{s\in\mathbb{Z}}$ and adding the diagonal fields $\left\{ V_{P_{(0,s)}}\right\}_{s\in \mathbb{N}+\frac12}$. 
+The spectrums of the $O(n)$ and $U(n)$ models are natural constructions: we start with a degenerate field $V^d\in\{V^d_{\langle 1,3\rangle},V^d_{\langle 1,2\rangle}\}$, and add non-diagonal fields $V_{(r,s)}\in\widetilde{S}^\text{loop}$ such that $V_{(r,s)}$ and the fields that appear in $V^dV_{(r,s)}$ have integer spins. 
+On the other hand, the Potts spectrum has no simple explanation in our formalism. We can only remark that it is obtained from the $U(n)$ spectrum by removing the non-diagonal fields $\left\{V_{(1,s)}\right\}_{s\in\mathbb{Z}}$ and adding the diagonal fields $\left\{ V_{P_{(0,s)}}\right\}_{s\in \mathbb{N}+\frac12}$. 
 
 Each one of these models has
 \begin{itemize}
  \item a modular-invariant torus partition function,
- \item a group of global symmetries that commutes with conformal symmetry: the orthogonal group $O(n)$, the unitary group $U(n)$, or the symmetric group $S_Q$ in the case of the Potts model, with 
+ \item a group of global symmetries that commutes with conformal symmetry: the orthogonal group $O(n)$, the unitary group $U(n)$, or the symmetric group $S_Q$ in the case of the Potts model. The parameters of these groups can take arbitrary complex values \cite{gnjrs21, br19}
  \begin{align}
   n = -2\cos\left(\pi \beta^2\right) \quad , \quad Q = 4\cos^2\left(\pi \beta^2\right)\ .
   \label{nQ}
  \end{align}
 \end{itemize}
-Degenerate fields are invariant under global symmetries, while other fields can transform in non-trivial representations \cite{jrs22}. For example, in the $O(n)$ model, the fields $V_{(\frac12,0)},V_{(1,0)}$ and $V_{(1,1)}$ transform under $O(n)$ as a vector, a symmetric 2-tensor and an antisymmetric 2-tensor respectively. There are two fields of the type $V_{(\frac32,0)}$, which transform as symmetric and antisymmetric 3-tensors. And for $r\geq \frac52$, it also happens that several different fields have the same conformal dimensions and behaviour under $O(n)$. The situation is similar in the $U(n)$ and Potts models: let us only mention that the diagonal non-degenerate fields $V_{P_{(0,s)}}$ of the Potts model transform in the standard  representation of $S_Q$, whose dimension is $Q-1$. 
+Degenerate fields are invariant under global symmetries, while other fields can transform in non-trivial representations \cite{jrs22}. For example, in the $O(n)$ model, the fields $V_{(\frac12,0)},V_{(1,0)}$ and $V_{(1,1)}$ transform under $O(n)$ as a vector, a symmetric 2-tensor and an antisymmetric 2-tensor respectively. There are two fields of the type $V_{(\frac32,0)}$, which transform as symmetric and antisymmetric 3-tensors. And for $r\geq \frac52$, it also happens that several different fields have the same conformal dimensions and the same behaviour under $O(n)$. The situation is similar in the $U(n)$ and Potts models: let us only mention that the diagonal non-degenerate fields $V_{P_{(0,s)}}$ of the Potts model transform in the standard  representation of $S_Q$, whose dimension is $Q-1$. 
 
 A puzzle has arisen in the $O(n)$ model, when it was found that there is one field $V_{(2,0)}$ that is invariant under $O(n)$ \cite{gz20}. From the point of view of the renormalization group flow triggered by the field $V^d_{\langle 1,3\rangle}$, this field is \textit{dangerously irrelevant}, i.e. it becomes relevant along the flow, and could prevent the flow from reaching the dense phase from the dilute phase. But numerical studies show that the flow does reach the dense phase. The puzzle is resolved by noticing that $V^d_{\langle 1,3\rangle}$ is degenerate, and cannot produce the non-diagonal field $V_{(2,0)}$ by repeated fusion, even if $O(n)$ symmetry would allow it \cite{js23}. Therefore, it is global symmetry itself that is \textit{dangerously irrelevant} to the understanding of this flow. 
 
@@ -1444,7 +1448,7 @@ For each CFT, we indicate the values of $\beta^2$, of the Kac indices of degener
   \text{CFT} & \beta^2  & V^{d/f}_{\langle r,s\rangle} & V_{(r,s)} & V_P
   \\
   \hline \hline 
-  \text{GMM} & \mathbb{C}-\mathbb{Q}  & \mathbb{N}^*\times \mathbb{N}^* &  - & -
+  \text{GMM} & \mathbb{C}\backslash \mathbb{Q}  & \mathbb{N}^*\times \mathbb{N}^* &  - & -
   \\
   \hline 
   \text{Liouville} & \mathbb{C}^*  & - & - &  \mathbb{R}
@@ -1501,7 +1505,7 @@ Let us summarize the limits that relate Liouville theory, (generalized) minimal 
 \fill[blue!30, rounded corners = 10] (20, -10) rectangle (32, 10);
 \node at (0, 11) {$\beta^2\in\mathbb{Q}_{>0}$};
 \node at (13, 11) {$\beta^2\in\mathbb{R}_{>0}$};
-\node at (26, 11) {$\beta^2\in \mathbb{C}-\mathbb{R}$};
+\node at (26, 11) {$\beta^2\in \mathbb{C}\backslash \mathbb{R}$};
 \node[left] at (-6.5, 7) {Discrete};
 \node[left] at (-6.5, -7) {Continuous};
 \draw (0, 7) node[draw, fill = white] (mm) {AMM};
@@ -1538,10 +1542,10 @@ Somewhat subjectively, we have distinguished limits that are straightforward (fu
 Let us mention a few other solvable CFTs:
 \begin{itemize}
  \item \textbf{E-series minimal models} exist for $\beta^2=\frac{q}{p}$ with $p=12, 18, 30$ \cite{fms97}. They have finitely many primary fields, which belong to fully degenerate representations from the Kac table. 
-They have two independent degenerate fields of the type $\{V^f_{\langle r,1\rangle},V^f_{\langle 1,2\rangle}$ with $r=4,5,7$. 
+They have two independent degenerate fields $\left\{V^f_{\langle r,1\rangle},V^f_{\langle 1,2\rangle}\right\}$ with $r=4,5,7$. 
 However, we do not know how to derive their known spectrums from the study of fusion rules. 
 Solving E-series minimal models is apparently still an open problem. 
-\item \textbf{Logarithmic minimal models} are believed to exist for $\beta^2\in \mathbb{Q}_{>0}$ \cite{prz06}. Their primary fields belong to the extended Kac table, i.e. they have integer Kac indices. Their spectrums include logarithmic representations. Their spectrums and fusion rules are however not fully known. It is in fact not clear how many such CFTs exist at any given central charge. Presumably, they can be obtained as limits of generalized minimal models. 
+\item \textbf{Logarithmic minimal models} are believed to exist for $\beta^2\in \mathbb{Q}_{>0}$ \cite{prz06}. Their primary fields belong to the extended Kac table, i.e. they have integer Kac indices. Their spectrums include logarithmic representations. Their spectrums and fusion rules are not fully known. It is in fact not clear how many such CFTs exist at any given central charge. Presumably, they can be obtained as limits of generalized minimal models. 
 \item At $c=1$, the \textbf{compactified free boson} and its $\mathbb{Z}_2$ orbifold the \textbf{Ashkin--Teller model} are better understood in terms of an extended symmetry algebra (an abelian affine Lie algebra), although they can also be solved in terms of Virasoro symmetry only \cite{nr21}. They have a degenerate field $V^f_{\langle 1, 3\rangle}=V^f_{\langle 3,1\rangle}$, which however behaves as the identity field under fusion with non-diagonal fields. As a result, the constraints \eqref{sriz} are not obeyed. These models have a continuous parameter: the compactification radius $R$. For a special value of $R$, the compactified free boson is a $c\to 1$ limit of the $O(n)$ model, and the Ashkin--Teller model is a $c\to 1$ limit of the Potts model.
 \end{itemize}
 
@@ -1550,12 +1554,12 @@ Solving E-series minimal models is apparently still an open problem.
 
 In Section \ref{sec:csope}, we have worked out how local conformal symmetry constrains operator product expansions. This was done by using the associativity of operator products of the type $TVV$, where $T$ is the energy-momentum tensor. The result was that in the OPE $VV$, the contribution of descendant fields are determined by the contributions of primary fields. Similarly, we will now study how degenerate fields constrain structure constants, by using the associativity of 
 operator products of the type $V^d_{\langle 2,1\rangle}VV$ or $V^d_{\langle 1,2\rangle}VV$.  
-This will determine how structure constants behave under momentum shifts of the type $P\to P\pm \beta$ or $P\to P\pm \beta^{-1}$. 
+This will determine how structure constants behave under momentum shifts of the type $P\to P+ \beta$ or $P\to P+ \beta^{-1}$. 
 
 \subsection{Degenerate 4-point functions}
 
 Associativity of OPEs is equivalent to crossing symmetry of 4-point functions, so let us consider a 4-point function that involves a degenerate field. Since fusion products of degenerate representations \eqref{rrsvp} are finite, our 4-point function is a combination of finitely many conformal blocks in any one of the 3 channels $s,t,u$. This makes crossing symmetry equations particularly simple, and allows them to be solved analytically. 
-And since any degenerate field $V^d_{\langle r,s\rangle}$ can be obtained from the 2 basic degenerate fields $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$ by fusion, the crossing symmetry equations for $\left<V^d_{\langle r,s\rangle}V_1V_2V_3\right>$ follow from the cases $(r,s)=(2,1)$ and $(r,s)=(1,2)$. 
+And since any degenerate field $V^d_{\langle r,s\rangle}$ can be obtained from the 2 basic degenerate fields $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$ by fusion, the crossing symmetry equations for $\left<V^d_{\langle r,s\rangle}V_1V_2V_3\right>$ follow from the 2 cases $(r,s)=(2,1)$ and $(r,s)=(1,2)$, which are related to one another by $\beta\to \beta^{-1}$.  
 
 \subsubsection{BPZ equations}
 
@@ -1574,7 +1578,7 @@ Let us derive the BPZ equation for a 4-point function  of the degenerate field $
  G(z)=\Big<V_{\langle 2,1\rangle}^d(z)V_{1}(0)V_{2}(\infty)V_{3}(1)\Big>\ .
  \label{goz}
 \end{align}
-The case of $V_{\langle 1,2\rangle}$ can then be obtained by $\beta\to \beta^{-1}$. The relevant creation operator is $L_{\langle 2,1\rangle} = L_{-1}^2 -\beta^2L_{-2}$ \eqref{ars}, and the insertion of $L_{-2}$ is in principle determined by the local Ward identity \eqref{lwi}. However, this identity involves derivatives in the positions of $V_{i}$, which are now fixed to $0,\infty,1$. We could eliminate these derivatives using global Ward identities. A technical trick to do this is to rewrite the local Ward identity as $G_\infty(z) = G_{z}(z) + G_0(z) + G_1(z)$, where we define
+The relevant creation operator is $L_{\langle 2,1\rangle} = L_{-1}^2 -\beta^2L_{-2}$ \eqref{ars}, and the insertion of $L_{-2}$ is in principle determined by the local Ward identity \eqref{lwi}. However, this identity involves derivatives in the positions of $V_{i}$, which are now fixed to $0,\infty,1$. We can eliminate these derivatives using global Ward identities. A technical trick to do this is to rewrite the local Ward identity as $G_\infty(z) = G_{z}(z) + G_0(z) + G_1(z)$, where we define
 \begin{align}
  G_{z_0}(z) = \frac{1}{2\pi i} \oint_{z_0} \frac{y(y-1)}{y-z} \Big< T(y)V_{\langle 2,1\rangle}(z)V_{1}(0)V_{2}(\infty)V_{3}(1)\Big> \ .
 \end{align}
@@ -1638,7 +1642,7 @@ This allows us to write our conformal blocks in terms of the \textbf{hypergeomet
 \end{align}
 where we used the notations $P_{123}=P_1+P_2+P_3$ and $P_{12}^3 = P_1+P_2-P_3$. The block $\mathcal{F}^{(x)}_-$ is obtained from $\mathcal{F}^{(x)}_+$ by $P_i\to -P_i$ where $i=1,3,2$ for $x=s,t,u$. 
 Let us write 
-the change of bases that relates the $s$- and $t$-channel conformal blocks as 
+the change of basis that relates the $s$- and $t$-channel conformal blocks as 
 \begin{align}
  \mathcal{F}^{(s)}_{\epsilon_1} = \sum_{\epsilon_3\pm} F_{\epsilon_1,\epsilon_3} \mathcal{F}^{(t)}_{\epsilon_3}\ , 
  \label{fsfft}
@@ -1653,7 +1657,7 @@ and the determinant
  \det F = -\frac{P_1}{P_3}\ .
  \label{detf}
 \end{align}
-The degenerate fusing matrix is built from \textbf{Euler's Gamma function} $\Gamma(x)$, which is a meromorphic function of $x\in\mathbb{C}$ with simple poles for $x\in -\mathbb{N}$ and no zeros, and which obeys $\Gamma(x+1)=x\Gamma(x)$ and $\Gamma(x)\Gamma(1-x)=\frac{\pi}{\sin(\pi x)}$. 
+The degenerate fusing matrix is built from \textbf{Euler's Gamma function} $\Gamma(x)$: a meromorphic function of $x\in\mathbb{C}$ with simple poles for $x\in -\mathbb{N}$ and no zeros, which obeys $\Gamma(x+1)=x\Gamma(x)$ and $\Gamma(x)\Gamma(1-x)=\frac{\pi}{\sin(\pi x)}$. 
 
 \subsubsection{Crossing symmetry}
 
@@ -1665,7 +1669,7 @@ Then the degenerate 4-point function \eqref{goz} decomposes into degenerate $x$-
  \ ,
 \end{align}
 where we use the modulus squared notation \eqref{fdz2}.
-Crossing symmetry is the equality of the three decompositions $x=s,t,u$, and leads to relations between the degenerate four-point structure constants $d^{(x)}_\pm$. In particular, applying the change of bases \eqref{fsfft} to the $s$-channel decomposition, and comparing with the $t$-channel decomposition, we obtain 
+Crossing symmetry is the equality of the three decompositions $x=s,t,u$, and leads to relations between the degenerate four-point structure constants $d^{(x)}_\pm$. In particular, applying the change of basis \eqref{fsfft} to the $s$-channel decomposition, and comparing with the $t$-channel decomposition, we obtain 
 \begin{align}
  \forall \epsilon,\bar\epsilon \in \{+,-\}\ , \qquad \sum_\pm d_\pm^{(s)} F_{\pm,\epsilon}\bar F_{\pm, \bar\epsilon} = \delta_{\epsilon,\bar\epsilon} d_\epsilon^{(t)}\ . 
  \label{feeb}
@@ -1716,9 +1720,9 @@ To conclude, we have seen that crossing symmetry allows us to determine degenera
 
 \subsection{Shift equations for structure constants}
 
-\subsubsection{Degenerate structure constants}
+\subsubsection{Degenerate OPE structure constants}
 
-Let us write the degenerate 4-point structure constants $d^{(x)}_\pm$ in terms of 2-point structure constants $B_{ij}=\delta_{ij}B_i$ and 3-point structure constants $C_{ijk}$. We also need to introduce degenerate OPE structure constants $c_i^\pm$ such that 
+Let us write the degenerate 4-point structure constants $d^{(x)}_\pm$ in terms of 2-point structure constants $B_{ij}=\delta_{ij}B_i$ and 3-point structure constants $C_{ijk}$. We also need to introduce \textbf{degenerate OPE structure constants} $c_i^\pm$ such that 
 \begin{align}
 V_{\langle 2,1\rangle}^d V_i \sim c^+_i V_{i^+} + c^-_i V_{i^-}\ ,
 \end{align}
@@ -1735,7 +1739,7 @@ Eq. \eqref{ccb} allows us to rewrite $c_i^\pm$ in terms of 2-point and 3-point s
  c_i^- B_{i^-} = (-)^{s_i} c^+_{i^-} B_i\quad , \quad \frac{B_{i^-}}{B_{i^+}} =(-)^{2s_i} \frac{c_i^+}{c_i^-}\frac{c_{i^-}^+}{c_{i^+}^-}\ ,
  \label{cbcb}
 \end{align}
-where the second equation is obtained from the first one, applied to $i$ and $i^+$. (For $s_i\in\mathbb{Z}+\frac12$ the sign prefactor comes from resolving the sign ambiguity of $(-)^{s_i}$.)
+where the second equation is obtained from the first one, applied to $i$ and $i^+$. 
 With these notations, the degenerate 4-point structure constants are:
 \begin{align}
  \begin{tikzpicture}[baseline=(base), very thick, scale = .4]
@@ -1770,7 +1774,7 @@ With these notations, the degenerate 4-point structure constants are:
 \end{tikzpicture} 
 \label{cs}
 \end{align}
-Notice that the OPEs $V^d_{\langle 2,1\rangle}V_3$ and $V_3V^d_{\langle 2,1\rangle}$ are related by a permutation, under which the OPE structure constant picks a factor $(-)^{S_3+S_{3^\pm}} = (-)^{s_3}$, according to Eq. \eqref{b21}. This explains the sign factor in $d^{(t)}_\pm$. In the case of the 4-point function $\left<V_{\langle 2,1\rangle}^d V_iV_{\langle 2,1\rangle}^d V_i\right>$, Eq. \eqref{cs} gives us $\frac{d^{(s)}_-}{d^{(s)}_+}=\frac{(c_i^-)^2}{(c_i^+)^2} \frac{B_{i^-}}{B_{i^+}}$. Using Eq. \eqref{cbcb} for eliminating the 2-point structure constants, we obtain the relation
+Notice that the OPEs $V^d_{\langle 2,1\rangle}V_3$ and $V_3V^d_{\langle 2,1\rangle}$ are related by a permutation, under which the OPE structure constant picks a factor $(-)^{S_3-S_{3^\pm}} = (-)^{s_3}$, according to Eq. \eqref{b21}. This explains the sign factor in $d^{(t)}_\pm$. In the case of the 4-point function $\left<V_{\langle 2,1\rangle}^d V_iV_{\langle 2,1\rangle}^d V_i\right>$, Eq. \eqref{cs} gives us $\frac{d^{(s)}_-}{d^{(s)}_+}=\frac{(c_i^-)^2}{(c_i^+)^2} \frac{B_{i^-}}{B_{i^+}}$. Using Eq. \eqref{cbcb} for eliminating the 2-point structure constants, we obtain the relation
 \begin{align}
  \frac{d^{(s)}_-}{d^{(s)}_+}= (-)^{2s_i}\frac{c_i^-}{c_{i^+}^-} \frac{c_{i^-}^+}{c_i^+}\ ,  
  \label{ddcccc}
@@ -1788,7 +1792,7 @@ It is however not practical to only work with renormalization-invariant combinat
  c^+_i = \beta^{2\beta(P_i+\bar P_i)} \frac{\Gamma(-2\beta P_i)}{\Gamma(1+2\beta \bar P_i)} \quad , \quad c^-_i = \beta^{-2\beta(P_i+\bar P_i)} \frac{\Gamma(2\beta P_i)}{\Gamma(1-2\beta \bar P_i)}\ ,
  \label{cpcm}
 \end{align}
-This obeys the reflection relation \eqref{cim}. This also obeys Eq. \eqref{ddcccc}, thanks to $s_i=\beta(\bar P_i-P_i) \in \frac12\mathbb{Z}$. The existence and uniqueness of $c_i^\pm$ are subtle issues: in particular, in a CFT with two degenerate fields $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$, the degenerate OPE coefficients for the two fields are related. (See \cite[Exercise 3.2]{rib14} for the case of Liouville theory.) Our determination of $c_i^\pm$ will be validated by the existence of solutions of the shift equations for $B_i,C_{ijk}$. In special cases, we will however have to choose $c_i^\pm$ differently, after relaxing the reflection relation. 
+This obeys the reflection relation \eqref{cim}. This also obeys Eq. \eqref{ddcccc}, thanks to $s_i=\beta(\bar P_i-P_i) \in \frac12\mathbb{Z}$. The existence and uniqueness of $c_i^\pm$ are subtle issues: in particular, in a CFT with two degenerate fields $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$, the degenerate OPE coefficients for the two fields are related. (See \cite[Exercise 3.2]{rib14} for the case of Liouville theory.) Our determination of $c_i^\pm$ will be validated by the existence of solutions of the shift equations for $B_i,C_{ijk}$. 
 
 
 \subsubsection{Explicit shift equations}
@@ -1807,7 +1811,7 @@ Combining the crossing symmetry equation \eqref{dmdp}, and \eqref{ddb} with the 
  \frac{\Gamma\left(\beta^2-2\beta P_1\right)\Gamma\left(1-\beta^2-2\beta P_1\right)}{\Gamma\left(\beta^2+2\beta \bar P_1\right)\Gamma\left(1-\beta^2+2\beta \bar P_1\right)}}\ .
  \label{sh-b}
 \end{align}
-These are called \textbf{shift equations}, because they determine how structure constants behave when the momentums $P_1,\bar P_1$ of fields are shifted by $\beta$, under the condition $s_i\in \frac12 \mathbb{Z}$ \eqref{ssiz}. If the spectrum is invariant under shifts by $\frac{\beta}{2}$, which implies $s_i\in\mathbb{Z}$, we also have more refined shift equations: an equation for the 3-point structure constant, deduced from Eq. \eqref{dpdp},
+These are called \textbf{shift equations}, because they determine how structure constants behave when the momentums $P_1,\bar P_1$ of fields are shifted by $\beta$, under the condition $s_i\in \frac12 \mathbb{Z}$ \eqref{ssiz}. If $s_i\in\mathbb{Z}$, then not only $S_{i^-}-S_{i^+}\in\mathbb{Z}$ but also $S_{i}-S_{i^+}\in\mathbb{Z}$, and we also have more refined shift equations: an equation for the 3-point structure constant, deduced from Eq. \eqref{dpdp},
 \begin{align}
  \boxed{\frac{C_{123^+}}{C_{1^+23}} = 
  (-)^{s_3} \beta^{2\beta(P_1+\bar P_1-P_3-\bar P_3)}
@@ -1819,7 +1823,7 @@ and an equation for the 2-point structure constant, deduced from Eq. \eqref{cbcb
  \boxed{\frac{B_1}{B_{1^+}} =  (-)^{s_1}\beta^{4\beta (P_1+\bar P_1)+2\beta^2}\frac{\Gamma(-2\beta P_1)}{\Gamma(1+2\beta \bar P_1)}\frac{\Gamma(1-\beta^2-2\beta\bar P_1)}{\Gamma(\beta^2+2\beta P_1)} }\ .
  \label{sh-bb}
 \end{align}
-In Liouville theory with $c\notin (-\infty,1]$ and in non-diagonal CFTs with 2 degenerate fields, we will have to use slighly modified shift equations, obtained by choosing slighly different degenerate OPE structure constants. Moreover, we have only written shift equations that follow from the existence of $V^d_{\langle 2,1\rangle}$: the case of $V^d_{\langle 1,2\rangle}$ can then be deduced by $\beta \to \beta^{-1}$.
+In Liouville theory with $c\notin (-\infty,1]$ and in non-diagonal CFTs with 2 degenerate fields, we will have to use slighly modified shift equations, obtained by choosing slighly different degenerate OPE structure constants $c_i^\pm$, which is made possible by relaxing the reflection relation. 
 
 \subsection{Solutions of shift equations}\label{sec:essc}
 
@@ -1838,8 +1842,10 @@ The double Gamma function also obeys $\Gamma_\beta(x)= \Gamma_{\beta^{-1}}(x)$. 
 
 \subsubsection{Diagonal CFTs with 2 degenerate fields}
 
-Let us start with Liouville theory for $c\in (-\infty ,1]$ i.e. $\beta^2\in\mathbb{R}_{>0}$. The shift equations determine the structure constants $B_{P_1},C_{P_1,P_2,P_3}$ modulo a factor that is invariant under $P_i\to P_i+\beta$ and $P_i\to P_i+\beta^{-1}$. 
-If $\beta^2\notin \mathbb{Q}$, this factor must be constant on the real $P_i$-line. Assuming meromorphicity in $P_i$, the factor is constant on the complex $P_i$-plane. And assuming continuity in $\beta$, the structure constants are unique on $c\in (-\infty,1]$ modulo an unimportant $P_i$-independent factor. The unique solutions for $B_{P_1}$ and $C_{P_1,P_2,P_3}$ turn out to be holomorphic functions of $P_i\in\mathbb{C}$ and $\beta\in \mathbb{C}\backslash i\mathbb{R}$:
+Let us start with Liouville theory for $c\in (-\infty ,1]$ i.e. $\beta^2\in\mathbb{R}_{>0}$. 
+We assume that the structure constants are meromorphic functions of the momentums, and continuous functions of $\beta$. 
+The shift equations determine the structure constants $B_{P_1},C_{P_1,P_2,P_3}$ modulo a factor that is invariant under $P_i\to P_i+\beta$ and $P_i\to P_i+\beta^{-1}$. 
+If $\beta^2\notin \mathbb{Q}$, this factor must be constant on the complex $P_i$-plane. By continuity in $\beta$, the structure constants are unique on $c\in (-\infty,1]$ modulo an unimportant $P_i$-independent factor. The unique solutions for $B_{P_1}$ and $C_{P_1,P_2,P_3}$ turn out to be holomorphic functions of $P_i\in\mathbb{C}$ and $\beta\in \mathbb{C}\backslash i\mathbb{R}$:
 \begin{align}
  \boxed{B_{P_1} = \prod_{\pm,\pm}\Gamma_\beta^{-1}\left(\beta^{\pm 1}\pm 2P_1\right)} \ \  , \ \ \boxed{C_{P_1,P_2,P_3} =\prod_{\pm,\pm,\pm} \Gamma_\beta^{-1}\left(\tfrac{\beta+\beta^{-1}}{2} \pm P_1\pm P_2\pm P_3\right)}\ . 
  \label{bc}
@@ -1847,7 +1853,7 @@ If $\beta^2\notin \mathbb{Q}$, this factor must be constant on the real $P_i$-li
 These expressions indeed obey the shift equations \eqref{sh-mp}-\eqref{sh-bb} with $s_i=0$ and $P_i=\bar P_i$.
 They are invariant under $P_i\to -P_i$, i.e. they obey the reflection relation \eqref{refl}.
 And they are invariant under $\beta \to \beta^{-1}$, so they also obey the shift equations from $V^d_{\langle 1,2\rangle}$. 
-Curiously, the 2-point and 3-point functions can be analytically continued beyond the half-line $c\in (-\infty ,1]$, while $n$-point functions with $n\geq 4$ cannot, as follows from our discussion of the OPE in Section \ref{sec:liou}. 
+Remarkably, the 2-point and 3-point functions can be analytically continued beyond the half-line $c\in (-\infty ,1]$, while $n$-point functions with $n\geq 4$ cannot, as follows from our discussion of the OPE in Section \ref{sec:liou}. 
 
 The expressions \eqref{bc} for 2-point and 3-point structure constants are also valid in generalized minimal models, and in A-series minimal models. In such models, solutions of shift equations are unique, up to a field-independent factor. In the case of the 2-point structure constant $B_{P_{(r,s)}}$, this is because the Kac indices $r,s$ are integer, and Eq. \eqref{sh-bb} governs how $B_{P_{(r,s)}}$ changes under $r\to r+1$. In the case of the 3-point structure constant $C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}$, our shift equations \eqref{sh-mp} and \eqref{sh-pp}, together with the invariance under permutations of the 3 fields, determine all integer shifts that preserve $r_1+r_2+r_3\bmod 2$. But the fusion rules \eqref{rrsr} imply that the 3-point structure constant exists only if $r_1+r_2+r_3\equiv 1\bmod 2$, and can therefore be deduced from $C_{P_{(1,1)},P_{(1,1)},P_{(1,1)}}$ using shift equations. This implies in particular that the double Gamma functions can be replaced with products of Gamma functions. (See \cite[Section 3.2.1]{rib14} for explicit expressions.) This makes the 3-point structure constants well-defined for any $\beta\in \mathbb{C}^*$, including in the regime $\beta\in i\mathbb{R}$ where $\Gamma_\beta$ is not defined.
 
@@ -1899,7 +1905,7 @@ By a field renormalization \eqref{vlv}, the 2-point and 3-point structure consta
 \end{align}
 which are the expressions found by Dorn--Otto and Zamolodchikov--Zamolodchikov when first solving Liouville theory: in particular, their formula for the 3-point structure constant is called the \textbf{DOZZ formula}. In this normalization, the 2-point structure constant coincides with the reflection coefficient, i.e. it obeys the relations 
 \begin{align}
- \hat B^\text{DOZZ}_{P_1}B^\text{DOZZ}_{-P_1}=1 \quad , \quad  \hat C^\text{DOZZ}_{P_1,P_2,P_3} = B^\text{DOZZ}_{P_1}\hat C^\text{DOZZ}_{-P_1,P_2,P_3} \quad , \quad V_{P_1} = B^\text{DOZZ}_{P_1} V_{-P_1}\ . 
+ \hat B^\text{DOZZ}_{P_1}\hat B^\text{DOZZ}_{-P_1}=1 \quad , \quad  \hat C^\text{DOZZ}_{P_1,P_2,P_3} = \hat B^\text{DOZZ}_{P_1}\hat C^\text{DOZZ}_{-P_1,P_2,P_3} \quad , \quad V_{P_1} = \hat B^\text{DOZZ}_{P_1} V_{-P_1}\ . 
 \end{align}
 A remarkable property of Liouville theory in the DOZZ normalization is that degenerate fields are limits of non-degenerate fields,
 \begin{align}
@@ -1910,15 +1916,15 @@ This relation is natural in the path integral construction of Liouville theory \
 \begin{align}
 V_{P_1}V_{P_2} \sim \frac12 \int_{\mathbb{R}}dP\ \frac{\hat C^\text{DOZZ}_{P_1,P_2,P}}{\hat B^\text{DOZZ}_{P}}V_P\ , 
 \end{align}
-because of the poles of $\hat C^\text{DOZZ}_{P_1,P_2,P}$. In particular, each factor $\Gamma_b(\frac{Q}{2}-iP_1\pm (iP_2-iP))$ has a pole at $P= P_2\pm (P_{(1,1)}-P_1)$. In the limit $P_1\to P_{(1,1)}$, these two poles coincide at $P=P_2$, with one pole coming from above the real $P$-line and one from below. As a result, the limit of the integral is not zero: 
+because of the poles of $\hat C^\text{DOZZ}_{P_1,P_2,P}$. In particular, each factor $\Gamma_b(\frac{Q}{2}-iP_1\pm (iP_2-iP))$ has a pole at $P= P_2\pm (P_{(1,1)}-P_1)$. In the limit $P_1\to P_{(1,1)}$, these two poles coincide at $P=P_2$, with one pole coming from above the integration line and one from below. As a result, the limit of the integral is not zero: 
 \begin{align}
  \lim_{P_1\to P_{(1,1)}}V_{P_1}V_{P_2} \sim \lim_{P_1\to P_{(1,1)}}  \underset{P=P_1+P_2-P_{(1,1)}}{\operatorname{Res}}\frac{\hat C^\text{DOZZ}_{P_1,P_2,P}}{\hat B^\text{DOZZ}_{P}}V_P=V_{P_2}\ ,
 \end{align}
-which implies that $V_{P_1}$ tends to the identity field $V^d_{\langle 1,1\rangle}$. 
+which implies Eq. \eqref{limvp} in the case $(r,s)=(1,1)$. 
 
 \subsubsection{Non-diagonal CFTs with 2 degenerate fields}
 
-Let us start with the 2-point structure constants, which can be straightforwardly determined by solving shift equations. For diagonal fields, the same expression $B_{P_1}$ \eqref{bc} as in $c\leq 1$ Liouville theory is still valid. For non-diagonal fields with $r\in 2\mathbb{Z}$ and $s\in\mathbb{Z}+\frac12$, we find a similar expression,
+Let us start with the 2-point structure constants, which can be straightforwardly determined by solving shift equations. For diagonal fields, the same expression $B_{P_1}$ \eqref{bc} as in $c\leq 1$ Liouville theory is still valid. For non-diagonal fields $V_{(r,s)}$ with $r\in 2\mathbb{Z}$ and $s\in\mathbb{Z}+\frac12$, we find 
 \begin{align}
  \boxed{B_{(r,s)} = (-)^\frac{r}{2} \prod_\pm \Gamma_\beta^{-1}\left(\beta\pm 2P\right)\Gamma_\beta^{-1}\left(\beta^{-1}\pm 2\bar P\right)}\ ,
  \label{nbrs}
@@ -1948,14 +1954,14 @@ The second identity is equivalent to the invariance of $C_{P_1,(r_2,s_2),(r_3,s_
  S_\beta(x) = \frac{\Gamma_\beta(x)}{\Gamma_\beta(\beta + \beta^{-1}-x)}\quad \implies \quad \frac{S_\beta(x+\beta)}{S_\beta(x)} = 2\sin(\pi\beta x)\ .
  \label{sb}
 \end{align}
-This function obeys the identity 
+The double Sine function obeys the identity 
 \begin{align}
  r,s\in\mathbb{Z} \implies \frac{\prod_\pm S_\beta\left(\frac{\beta+\beta^{-1}}{2} +P \pm P_{(r,s)}\right)}{\prod_\pm S_\beta\left(\frac{\beta+\beta^{-1}}{2} +P \pm P_{(r,-s)}\right)} =(-)^{rs}\ .
  \label{dsr}
 \end{align}
 Applying this to $P=P_1$ and $(r,s)=(r_2\pm r_3,s_2\pm s_3)$, we obtain the second identity in Eq. \eqref{cpcmp}.
 
-Having worked out the basic properties of our ansatz \eqref{cdnn}, let us check whether it obeys the shift equations. The spectrum \eqref{sdmm} of D-series minimal models is invariant under $s\to s+1$, both in the diagonal and non-diagonal sectors. Therefore, when it comes to the shifts from $V^d_{\langle 1,2\rangle}$, we have to check the two shift equations \eqref{sh-mp} and \eqref{sh-pp} with $\beta\to\beta^{-1}$, where the shifted fields may be diagonal or non-diagonal. This is straightforward, if we remember $r_2,r_3\in 2\mathbb{Z}$, leading to the needed identities for products of Gamma functions. We will now deal with the subtler case of the shifts from $V^d_{\langle 2,1\rangle}$. The spectrum of D-series minimal models is invariant under $r\to r+2$ but not $r\to r+1$, so we only have to deal with the shift equation \eqref{sh-mp}. If we shift a non-diagonal field, our ansatz \eqref{cdnn} behaves as 
+Having worked out the basic properties of our ansatz \eqref{cdnn}, let us check whether it obeys the shift equations. The spectrum \eqref{sdmm} of D-series minimal models is invariant under $s\to s+1$, both in the diagonal and non-diagonal sectors. Therefore, when it comes to the shifts from $V^d_{\langle 1,2\rangle}$, we have to check the two shift equations \eqref{sh-mp} and \eqref{sh-pp} with $\beta\to\beta^{-1}$ and $r_i\leftrightarrow s_i$, where the shifted fields may be diagonal or non-diagonal. This is straightforward, if we remember $r_2,r_3\in 2\mathbb{Z}$, leading to trivial sign factors $(-)^{r_i}=1$. We will now deal with the subtler case of the shifts from $V^d_{\langle 2,1\rangle}$. The spectrum of D-series minimal models is invariant under $r\to r+2$ but not $r\to r+1$, so we only have to deal with the shift equation \eqref{sh-mp}. If we shift a non-diagonal field, our ansatz \eqref{cdnn} behaves as 
 \begin{align}
  \frac{C_{(r_1-1,s_1),(r_2,s_2),P_3}}{C_{(r_1+1,s_1),(r_2,s_2),P_3}} = - \beta^{4\beta(P_1+\bar P_1)}\frac{\prod_{\pm,\pm} \Gamma(\frac12-\beta \bar P_1\pm \beta\bar P_2\pm \beta P_3)}{\prod_{\pm,\pm} \Gamma(\frac12+\beta P_1\pm \beta P_2\pm \beta P_3)}\ , 
 \end{align}
@@ -1963,15 +1969,16 @@ where the overall sign comes from $\prod_\pm \frac{\cos \pi\beta(P_1\pm P_2-P_3)
 \begin{align}
  \frac{C_{P_1-\frac{\beta}{2},(r_2,s_2),(r_3,s_3)}}{C_{P_1+\frac{\beta}{2},(r_2,s_2),(r_3,s_3)}} =\beta^{4\beta(P_1+\bar P_1)}\frac{\prod_{\pm,\pm} \Gamma(\frac12-\beta P_1\pm \beta\bar P_2\pm \beta \bar P_3)}{\prod_{\pm,\pm} \Gamma(\frac12+\beta P_1\pm \beta P_2\pm \beta P_3)}\ .
 \end{align}
-Now this ratio differs from Eq. \eqref{sh-mp} with $\bar P_1=P_1$ by an overall sign. We now cancel this sign by doing the field renormalization $V^d_{\langle r,s\rangle}\to (-)^{\frac{r+1}{2}} V^d_{\langle r,s\rangle}$ in  D-series minimal models.  
-This renormalization leaves the other shift equations unchanged. (Eq. \eqref{sh-bb} would be changed, but it does not make sense in a D-series minimal model.) We therefore obtain a sign prefactor in the diagonal 3-point structure constant:
+Now this ratio differs from Eq. \eqref{sh-mp} with $\bar P_1=P_1$ by an overall sign. Let us cancel this sign in D-series minimal models. Since diagonal fields are in fact degenerate, they can be labelled by Kac indices, and subjected to the field renormalization 
+$V^d_{\langle r,s\rangle}\to (-)^{\frac{r+1}{2}} V^d_{\langle r,s\rangle}$. 
+This renormalization flips the sign of Eq. \eqref{sh-mp}, while leaving the other shift equations unchanged. (Eq. \eqref{sh-bb} would be changed, but it does not make sense in a D-series minimal model.) As a result of this renormalization, we obtain a sign prefactor in the diagonal 3-point structure constant:
 \begin{align}
  \boxed{C^\text{DMM}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle\langle r_3,s_3\rangle} = (-)^\frac{r_1+r_2+r_3+1}{2} C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}}\ , 
  \label{cdmm}
 \end{align}
 where $C_{P_1,P_2,P_3}$ is given in Eq. \eqref{bc}.
 
-Now that we know the structure constants for D-series minimal models, let us deduce generalized D-series minimal models. As argued in Section \ref{sec:gdmm}, this amounts to taking the limit $P_{(r_1,s_1)}\to P_1\in\mathbb{R}$ in the diagonal sector. This is easily done in the cases of $B_{P_1}$ and $C_{P_1,(r_2,s_2),(r_3,s_3)}$, which are meromorphic functions of $P_1$, and are therefore valid in minimal models and in the limit. When it comes to the diagonal 3-point structure constant \eqref{cdmm}, the sign prefactor does not have a smooth limit, and the structure constant turns out to be a distribution \cite{rib19},
+Now that we know the structure constants for D-series minimal models, let us deduce generalized D-series minimal models. As argued in Section \ref{sec:gdmm}, this amounts to taking the limit $P_{(r_1,s_1)}\to P_1\in\mathbb{R}$ in the diagonal sector. This is easily done in the cases of $B_{P_1}$ and $C_{P_1,(r_2,s_2),(r_3,s_3)}$, which are meromorphic functions of $P_1$, and are therefore valid in minimal models and in the limit. When it comes to the diagonal 3-point structure constant \eqref{cdmm}, the sign prefactor does not have a smooth limit, and the structure constant becomes a distribution in the limit \cite{rib19},
 \begin{align}
  \boxed{C^\text{GDMM}_{P_1,P_2,P_3} = \beta C_{P_1,P_2,P_3}\sum_{n\in\mathbb{Z}}(-)^n \frac{\prod_{i=1}^3 \cos(2\pi n\beta P_i)}{\cos(\pi n\beta^2)}}\ .
  \label{cgdmm}
@@ -1982,8 +1989,11 @@ Without the field renormalization $V^d_{\langle r,s\rangle}\to (-)^{\frac{r+1}{2
 
 \subsubsection{Loop models}
 
-In the loop models' extended spectrum $\widetilde{S}^\text{loop}$ \eqref{sloop}, it is clear that shift equations do not determine the structure constants. First consider the non-diagonal fields $V_{(r,s)}$. The spectrum $\widetilde{S}^\text{loop}$ does not include the degenerate field $V_{\langle 2,1\rangle}^d$, whose shift equations would constrain the dependence on $r$. We only have $V^d_{\langle 1,2\rangle}$, whose shift equations determine how structure constants behave under $s\to s+2$, whereas $s$ takes fractional values. Second, consider the diagonal fields $V_P$. The shift equations from $V^d_{\langle 1,2\rangle}$ determine how structure constants behave under $P\to P+\beta^{-1}$. 
-
+In the loop models' extended spectrum $\widetilde{S}^\text{loop}$ \eqref{sloop}, it is clear that shift equations do not determine the structure constants:
+\begin{itemize}
+ \item In the case of non-diagonal fields $V_{(r,s)}$, the dependence on $r$ is not constrained, because the spectrum $\widetilde{S}^\text{loop}$ does not include the degenerate field $V_{\langle 2,1\rangle}^d$. We only have $V^d_{\langle 1,2\rangle}$, whose shift equations determine how structure constants behave under $s\to s+2$, whereas $s$ takes fractional values.
+ \item In the case of diagonal fields $V_P$, the shift equations from $V^d_{\langle 1,2\rangle}$ determine how structure constants behave under $P\to P+\beta^{-1}$. 
+\end{itemize}
 Let us nevertheless look for simple solutions of the shift equations. As an ansatz, we introduce the \textbf{reference structure constants} 
 \begin{align}
 \boxed{C^\text{ref}_{(r_1,s_1)(r_2,s_2)(r_3,s_3)} =\prod_{\epsilon_1,\epsilon_2,\epsilon_3=\pm} \Gamma_\beta^{-1} \left(\tfrac{\beta+\beta^{-1}}{2} + \tfrac{\beta}{2}\left|\textstyle{\sum_i} \epsilon_ir_i\right| + \tfrac{\beta^{-1}}{2}\textstyle{\sum_i} \epsilon_is_i\right)}\ .
@@ -1991,10 +2001,10 @@ Let us nevertheless look for simple solutions of the shift equations. As an ansa
 \end{align}
 This expression is also supposed to be valid if some of the fields are diagonal, via the identification $V_P = V_{(0,2\beta P)}$ \eqref{sP}. If all fields are diagonal, it reduces to $C_{P_1,P_2,P_3}$ \eqref{bc}. For reference 2-point structure constants of non-diagonal fields, we define 
 \begin{align}
- \boxed{B^\text{ref}_{(r,s)} = \frac{(-)^{rs}}{2\sin\left(\pi(\text{frac}(r)+s)\right)\sin\left(\pi(r+\beta^{-2}s)\right)}\prod_{\pm,\pm}\Gamma_\beta^{-1}\left(\beta\pm \beta r \pm \beta^{-1}s\right)} \ ,
+ \boxed{B^\text{ref}_{(r,s)} = \frac{(-)^{rs}}{2\sin\left(\pi(\{r\}+s)\right)\sin\left(\pi(r+\beta^{-2}s)\right)}\prod_{\pm,\pm}\Gamma_\beta^{-1}\left(\beta\pm \beta r \pm \beta^{-1}s\right)} \ ,
  \label{bref}
  \end{align}
- where $\text{frac}(r)\in\{0,\frac12\}$ is the fractional part of $r\in\frac12\mathbb{N}^*$. This is formally ill-defined if $r\in\mathbb{N}^*$ and $s\in\mathbb{Z}$, but can be regularized by taking a limit from generic values of $s$. We have $B^\text{ref}_{(0,2\beta P)} = \frac{1}{2\sin(2\pi\beta P)^2}B_P$, but we find it more convenient to set $B^\text{ref}_P = B_P$ for diagonal fields.
+ where $\{r\}\in\{0,\frac12\}$ is the fractional part of $r\in\frac12\mathbb{N}^*$. This is formally ill-defined if $r\in\mathbb{N}^*$ and $s\in\mathbb{Z}$, but can be regularized by taking a limit from generic values of $s$. We have $B^\text{ref}_{(0,2\beta P)} = \frac{1}{2\sin(2\pi\beta P)^2}B_P$, but we find it more convenient to set $B^\text{ref}_P = B_P$ for diagonal fields.
 
  The reference 2-point structure constant obeys the shift equation \eqref{sh-b}. Moreover, if $r\in \mathbb{N}^*$, we have
  \begin{align}
@@ -2041,44 +2051,44 @@ which for $j\in\frac12\mathbb{Z}^*$ is polynomial in loop weights.
 
 Let us summarize the solutions of shift equations for 2-point and 3-point structure constants. For each solution we indicate to which models it applies. Lighter green means an alternative field normalization. In the models' names, ``(G)MM'' means A-series minimal models and generalized minimal models, and ``Liou'' means Liouville theory. 
 \begin{center}
-\begin{tabular}{|l|c|c|c|c|c|c|c|}
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
 \hline 
- Constants & Eqs. & (G)MM & Liou$_{c\leq 1}$ & Liou & DMM & GDMM & Loop 
+ Constants & Eqs. & (G)MM & Liou$_{c\leq 1}$ & RWT & Liou & DMM & GDMM & Loop 
  \\
  \hline
-  $B_{P_1}$ & \eqref{bc} & \cellcolor{green} & \cellcolor{green} &  & \cellcolor{green} & \cellcolor{green} & \cellcolor{green} 
+  $B_{P_1}$ & \eqref{bc} & \cellcolor{green} & \cellcolor{green} & \cellcolor{green} &  & \cellcolor{green} & \cellcolor{green} & \cellcolor{green} 
   \\
   \hline 
-  $C_{P_1,P_2,P_3}$& \eqref{bc} & \cellcolor{green} & \cellcolor{green} &  &  &  & \cellcolor{green} 
+  $C_{P_1,P_2,P_3}$& \eqref{bc} & \cellcolor{green} & \cellcolor{green} & \cellcolor{green} &  &  &  & \cellcolor{green} 
   \\
   \hline 
-  $\widetilde{C}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle\langle r_3,s_3\rangle}$ & \eqref{wtc} & \cellcolor{green!20} & & & & & 
+  $\widetilde{C}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle\langle r_3,s_3\rangle}$ & \eqref{wtc} & \cellcolor{green!20} & & & & & & 
   \\
   \hline 
-  $\hat{B}_{P_1},\hat{C}_{P_1,P_2,P_3}$ &  \eqref{bci} & & & \cellcolor{green} & & & 
+  $\hat{B}_{P_1},\hat{C}_{P_1,P_2,P_3}$ &  \eqref{bci} & & & & \cellcolor{green} & & & 
   \\
   \hline 
-  $\hat{B}^\text{DOZZ}_{P_1},\hat{C}^\text{DOZZ}_{P_1,P_2,P_3}$ & \eqref{dozz} & & & \cellcolor{green!20} & & &
+  $\hat{B}^\text{DOZZ}_{P_1},\hat{C}^\text{DOZZ}_{P_1,P_2,P_3}$ & \eqref{dozz} & & & & \cellcolor{green!20} & & &
   \\
   \hline 
-  $B_{(r,s)}$ & \eqref{nbrs} & & & & \cellcolor{green} & \cellcolor{green} & 
+  $B_{(r,s)}$ & \eqref{nbrs} & & & & & \cellcolor{green} & \cellcolor{green} & 
   \\
   \hline 
-  $C_{P_1,(r_2,s_2),(r_3,s_3)}$ & \eqref{cdnn} & & & & \cellcolor{green} & \cellcolor{green} & 
+  $C_{P_1,(r_2,s_2),(r_3,s_3)}$ & \eqref{cdnn} & & & & & \cellcolor{green} & \cellcolor{green} & 
   \\
   \hline 
   $C^\text{DMM}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle\langle r_3,s_3\rangle}$ & \eqref{cdmm} &
-  & & & \cellcolor{green} & & 
+  & & & & \cellcolor{green} & & 
   \\
   \hline 
   $C^\text{GDMM}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle\langle r_3,s_3\rangle}$ & \eqref{cgdmm} &
-  & & & & \cellcolor{green} & 
+  & & & & & \cellcolor{green} & 
   \\
   \hline 
-  $B^\text{ref}_{(r,s)}$ & \eqref{bref} & & & & & & \cellcolor{green}
+  $B^\text{ref}_{(r,s)}$ & \eqref{bref} & & & & & & & \cellcolor{green}
   \\
   \hline 
-  $C^\text{ref}_{(r_1,s_1)(r_2,s_2)(r_3,s_3)}$ & \eqref{cref} & & & & & & \cellcolor{green}
+  $C^\text{ref}_{(r_1,s_1)(r_2,s_2)(r_3,s_3)}$ & \eqref{cref} & & & & & & & \cellcolor{green}
   \\
   \hline 
 \end{tabular}
@@ -2089,6 +2099,9 @@ Let us summarize the solutions of shift equations for 2-point and 3-point struct
 \section{Numerical bootstrap}
 
 Synthesis of what precedes?
+
+Proving crossing symmetry: formal proofs in some cases. Get rest of diagonal CFTs by taking limits. 
+Need numerics. 
 
 Notion of interchiral symmetry. Liouville 4pt is only one interchiral block? Same for MM, including non-diagonal. Distinguish double interchiral from simple interchiral, cf nb of deg. fields. 
 
@@ -2101,6 +2114,8 @@ Permutation symmetry: must assume that the fields are indeed the same, what if w
 \subsection{Interchiral blocks} \label{sec:icb}
 
 \section{Correlation functions in loop models} \label{sec:cloop}
+
+Only integer spins.
 
 \section{Logarithmic representations and fields} \label{sec:log}
 
