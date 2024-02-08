@@ -152,40 +152,19 @@ The plan is:
 
 \section{Introduction}
 
-Sketch map of CFTs according to symmetry: deg. fields, no deg. fields, local conf. sym, global conf. sym.
+Can no longer write book on CFT which would be only about 2d. But exact solvability still only 2d. Known techniques rely on local conformal symmetry (infinite-dimensional) and degenerate fields (finite OPEs). Bootstrap, analytic and numerical. Exact solution means analytic expression for 3-point structure constants. Here: CFTs that are presumed to be solvable, not necessarily solved. Low central charge, good reason for that (half-plane), high $c$ a challenge. 
 
-CFTs that are exactly solvable with known methods = bootstrap, analytic and numerical. Only Virasoro. Do not characterize with twist gap, as symmetry cannot be inferred from spectrum: chiral symmetry fields might be absent from spectrum. Also, affine abelian symmetry can be present in spectrum but absent in interactions. (Is there a strong statement that unitary CFTs do not have these pathologies?)
+Focus on CFTs whose chiral symmetry algebra is only Virasoro. How do we see chiral symmetry? In spectrum: current may or may not appear, what matters is integer gaps in spectrum: if we knew only about global conf. sym. we would detect local sym. by seeing infinite families of integer-spaced primaries. If we had higher that Virasoro we would see Virasoro primaries whose dimensions differ by integers, or simple fractions (parafermionic symmetry). Not only in spectrum: we also want symmetry in interactions, selection rules from Ward identities. Cf Coulomb gas methos: affine abelian algebra but no conserved momentum. \textbf{Extended chiral algebra}: our methods would apply. 
 
-Forget Coulomb gas, a dead end. For correl fct, applies only if we have two deg. fields? But used to find spectrum of $O(n)$ etc. Larger symmetry allows many generalizations, but tend to be always more complicated. (Liouville not solved from WZW, quite the opposite.) No modular bootstrap. 
+Methods: forget Coulomb gas, a dead end. For correl fct, applies only if we have two deg. fields? But used to find spectrum of $O(n)$ etc.  Historically, the spectrums and fusion rules of solvable CFTs have been derived by studying the torus partition function. The torus partition function is a simple object that only depends and the spectrum, and not on the structure constants. It can be computed either by solving modular invariance equations, or constructively via a path integral or a lattice sum. And in rational CFTs, the modular invariance equations involve the modular S-matrix, which also allows us to determine the fusion rules via the Verlinde formula \cite{fms97}.
+Here, we will follow a simpler approach, based on exploiting the fusion rules of degenerate fields. We do not lose in generality, because all known exactly solvable CFTs have degenerate fields. And we gain in flexibility: in many cases, adding fields to the spectrum is consistent with fusion rules, but breaks modular invariance. For example, in the Ising model, the modular invariant torus partition function only involves three primary fields, and excludes disorder fields, as well as the fields that are needed for computing connectivities of clusters. Focus on correlation functions: notion of extended spectrum, incompatible with modular invariance. Spectrum not so fundamental, can get it otherwise. 
 
-Exact solution means analytic expression for 3-point structure constants. Here: CFTs that are presumed to be solvable, not necessarily solved. 
+This review: simple derivations of results preferred to conceptual aspects. Calculations not done in detail but all doable with a few exceptions. Not formulated as exercises unlike \cite{rib16} and \cite{rib14}. Main difference with these texts: focus on non-diagonal CFTs, particularly loop models. 
 
-Focus on correl fct: no modular bootstrap, no KPZ. These methods are efficient at getting the spectrum but we can get it otherwise. 
-
-This review: only necessary calculations. Derive the recursion for blocks? hard part is coef $R_{r,s}$ but it obeys simple shift equations. Rewrite it in terms of Upsilon functions, and somehow derive it from Liouville theory! But cancellation of double poles hard to argue? And need to determine sign, since we get square of $R_{r,s}$. We can choose any value of the continuous parameters including $c$, but is there a value that makes $R_{r,s}$ simple enough? And what about the $\Delta\to\infty$ prefactors? See Yin et al? See Appendix D of \cite{msz15} for the pillow geometry that underlies the variable $q$.
-
-Use low central charge notations ($\beta$ not $b$) because more examples. Rare are solved CFTs with large $c$.
-
-define somewhere \textbf{extended chiral algebra}
-
-Nothing about unitarity?
-
-Higher equations of motion in Liouville theory, summarized in Artemev--Belavin. Relevant to log CFT? 
-
-Relation with \cite{rib16}.
-
-Words in bold are defined.
-
-
-Brownian loop soup: presumably has higher symmetry.
-
-Historically, the spectrums and fusion rules of solvable CFTs have been derived by studying the torus partition function. The torus partition function is a simple object that only depends and the spectrum, and not on the structure constants. It can be computed either by solving modular invariance equations, or constructively via a path integral or a lattice sum. And in rational CFTs, the modular invariance equations involve the modular S-matrix, which also allows us to determine the fusion rules via the Verlinde formula \cite{fms97}.
-
-Here, we will follow a simpler approach, based on exploiting the fusion rules of degenerate fields. We do not lose in generality, because all known exactly solvable CFTs have degenerate fields. And we gain in flexibility: in many cases, adding fields to the spectrum is consistent with fusion rules, but breaks modular invariance. For example, in the Ising model, the modular invariant torus partition function only involves three primary fields, and excludes disorder fields, as well as the fields that are needed for computing connectivities of clusters.
-
-Need to do calculations, they are not done in great detail but they are doable. 
 
 \subsection*{Acknowledgements}
+
+Course organizers. Collaborators. 
 
 
 %\end{tcolorbox}
@@ -2098,28 +2077,81 @@ Let us summarize the solutions of shift equations for 2-point and 3-point struct
 
 \section{Numerical bootstrap}
 
-Synthesis of what precedes?
+Consistency of CFT: crossing symmetry of 4-point fct, OPE associativity. Torus 1-point in principle. 
 
-Proving crossing symmetry: formal proofs in some cases. Get rest of diagonal CFTs by taking limits. 
-Need numerics. 
 
-Notion of interchiral symmetry. Liouville 4pt is only one interchiral block? Same for MM, including non-diagonal. Distinguish double interchiral from simple interchiral, cf nb of deg. fields. 
+\subsection{Crossing symmetry of 4-point functions}
 
-Sketch method. Start with Zamolodchikov recursion.
+\subsubsection{Achievements and limitations of analytic approaches}
 
-Permutation symmetry: must assume that the fields are indeed the same, what if we have multiplicities? 
+Case of our CFTs: proof in Liouville theory, minimal models. Take limits, deduce RWT, Liouville $c\leq 1$, GDMM. F-matrix \cite{ebe23}, relation to 3-point \cite{rib14, run99}. 
+
+Here: numerics. Some cases inaccessible to analytic methods. 
+Formulas for blocks (or sums thereof) complicated.
+Get numbers for correlation functions. 
+
+\subsubsection{Various flavours of numerics}
+
+Various styles of numerical bootstrap, all assuming we know (or guess) spectrum analytically:  
+\begin{itemize}
+ \item Checking crossing sym. when we know struct. csts. Can be reassuring. Allows us to actually compute 4pt functions. 
+ \item Counting solutions: their existence, dimension of space. Check spectrum, deduce fusion rules. 
+ \item Determining struct. csts numerically or even analytically. 
+\end{itemize}
+
+\subsubsection{Factorization of 4-point structure constants}
+
+Factorization of structure constants. Pb of field multiplicities, of fusion multiplicities. 
 
 \subsection{Virasoro conformal blocks and Zamolodchikov's recursion}
 
+Derive the recursion for blocks? hard part is coef $R_{r,s}$ but it obeys simple shift equations. Rewrite it in terms of Upsilon functions, and somehow derive it from Liouville theory! But cancellation of double poles hard to argue? And need to determine sign, since we get square of $R_{r,s}$. We can choose any value of the continuous parameters including $c$, but is there a value that makes $R_{r,s}$ simple enough? And what about the $\Delta\to\infty$ prefactors? See Yin et al? See Appendix D of \cite{msz15} for the pillow geometry that underlies the variable $q$.
+
 \subsection{Interchiral blocks} \label{sec:icb}
+
+Notion of interchiral symmetry. Liouville 4pt is only one interchiral block? Same for MM, including non-diagonal. Distinguish double interchiral from simple interchiral, cf nb of deg. fields. 
+
+\subsection{Linear equations for 4-point structure constants}
+
+3 channels. 
+
+Symmetries, relations between 4-point structure constants. 
+
+Permutation symmetry: must assume that the fields are indeed the same, what if we have multiplicities? 
+
+\subsection{Numerical implementation}
+
+Truncating spectrum, blocks.
+
+Random positions.
+
+Deviations. Detection of solutions. Counting of solutions.
 
 \section{Correlation functions in loop models} \label{sec:cloop}
 
 Only integer spins.
 
+\subsection{Statistical sums over loop ensembles}
+
+And combinatorial maps 
+
+\subsection{Conformal field theory interpretation}
+
+Predict conformal spin? Or just match sets of parameters? 
+
+Loop weight invariant under shifts, but CFT not invariant, discussion of criticality 
+
+\subsection{Analytic properties of structure constants}
+
+Poles and their cancellations. Degrees of polynomials 
+
+\subsection{Examples of 4-point structure constants}
+
 \section{Logarithmic representations and fields} \label{sec:log}
 
-Reread my results on limits of 4pt functions, try to infer general rules on appearance of logarithms, depending on fusion rules?
+Higher equations of motion in Liouville theory, summarized in Artemev--Belavin. Relevant to log CFT? 
+
+Reread results on limits of 4pt functions, try to infer general rules on appearance of logarithms, depending on fusion rules?
 
 Logarithmic fields?
 
