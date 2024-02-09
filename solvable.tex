@@ -845,14 +845,9 @@ In order to write these decompositions in greater generality, let us define the 
 Our conformal blocks are chirally factorized into Virasoro blocks because of our assumption that all fields are primaries or descendants. However, representations of the conformal algebra that are not factorized give rise to blocks that are also not factorized: this is the case with the logarithmic representations of Section \ref{sec:log}. We now write the \textbf{crossing symmetry equations} as the equality between the 3 decompositions of a four-point function into structure constants and conformal blocks:
 \begin{align}
  \boxed{\sum_{k\in\mathcal{S}} D_k^{(s)} \mathcal{G}^{(s)}_{\Delta_k} = \sum_{k\in\mathcal{S}} D_k^{(t)} \mathcal{G}^{(t)}_{\Delta_k} = \sum_{k\in\mathcal{S}} D_k^{(u)} \mathcal{G}^{(u)}_{\Delta_k}} \ . 
+ \label{seteu}
 \end{align}
-Given 4 fields $V_1,V_2,V_3,V_4$, this is a system of infinitely many equations (parametrized by the cross-ratio $z$) for the spectrum $\mathcal{S}$ and the 4-point structure constants $D_k^{(x)}$. The difficulty of solving these equations depends on what we know (or assume) on these objects. Let us discuss 3 scenarios:
-\begin{enumerate}
- \item We know the \textbf{CFT data}: the spectrm $\mathcal{S}$ and the 2-point and 3-point structure constants $B,C$. This determines the OPEs. Crossing symmetry of arbitrary 4-point functions is equivalent to the associativity of the OPE, and therefore to the consistency of the CFT on the sphere. In this scenario, we do not solve the crossing symmetry equations, but only check that they are obeyed by a given solution.
- \item We know the spectrum but not the structure constants. Using the factorization of 4-point structure constants into 3-point structure constants (see Table \eqref{stu}), crossing symmetry is a system of nonlinear equations for the 3-point structure constants.
- \item We know the conformal dimensions that appear in the spectrum, but not how many fields of a given dimensions exist. Then crossing symmetry is a system of linear equations for the 4-point structure constants, viewed as functions of conformal dimensions. But we cannot distinguish two fields with the same dimension, or factorize 4-point structure constants into 3-point structure constants. 
-\end{enumerate}
-We will encounter Scenario 1 in Liouville theory, and Scenario 3 in loop models.
+Given 4 fields $V_1,V_2,V_3,V_4$, this is a system of infinitely many equations (parametrized by the cross-ratio $z$) for the spectrum $\mathcal{S}$ and the 4-point structure constants $D_k^{(x)}$. Alternatively, we can take the unknowns to be the \textbf{CFT data}: the spectrum and the 2-point and 3-point structure constants. CFT data determine OPEs, and crossing symmetry of all 4-point functions is equivalent to the associativity of OPEs, and therefore to the consistency of the CFT on the sphere. 
 
 
 \section{Sketching exactly solvable CFTs}\label{sec:sesc}
@@ -2077,29 +2072,33 @@ Let us summarize the solutions of shift equations for 2-point and 3-point struct
 
 \section{Numerical bootstrap}
 
-In the analytic bootstrap approach of Section \ref{sec:ab}, we have used the crossing symmetry of 4-point functions that include degenerate fields, and deduced constraints on 2-point and 3-point structure constants. These constraints uniquely determined the structure constants in CFTs with 2 degenerate fields but not in loop models. In all cases, the existence of consistent CFTs requires the crossing symmetry of arbitrary 4-point functions. In the absence of degenerate fields, crossing symmetry equations involve infinite sums and are hard to deal with analytically. We will thus need to solve them numerically. This will not prevent us from deducing exact results for structure constants. 
+In the analytic bootstrap approach of Section \ref{sec:ab}, we have used the crossing symmetry of 4-point functions that include degenerate fields, and deduced constraints on 2-point and 3-point structure constants. However, in a consistent CFT, arbitrary 4-point functions must be crossing symmetric. In the absence of degenerate fields, crossing symmetry equations involve infinite sums and are hard to deal with analytically. We will thus need to solve them numerically. This will not prevent us from deducing exact results for structure constants. 
 
-\subsection{Crossing symmetry of 4-point functions}
+\subsection{Approaches to crossing symmetry}
 
 \subsubsection{Achievements and limitations of analytic approaches}
 
-Liouville proofs: Teschner, proba.
+It is not easy to directly evaluate the crossing symmetry equations \eqref{seteu}: conformal blocks are complicated, and their sums are even more complicated. Another approach is to construct 4-point functions in channel-independent ways, and then show that they can be decomposed into conformal blocks. This has led to analytic proofs of crossing symmetry in CFTs that can be constructed by perturbing a free bosonic CFT: 
+\begin{itemize}
+ \item In A-series minimal models, 4-point functions can be constructed as Coulomb gas integrals \cite{df84}.
+ \item In Liouville theory with $c\geq 25$, 4-point functions can be constructed from chiral vertex operators \cite{tes03b}.
+ \item Again in Liouville theory with $c\geq 25$, 4-point functions can be constructed as expectation values in a probabilistic Gaussian free field theory \cite{ckrv05}. 
+\end{itemize}
+From these cases, all diagonal CFTs with 2 degenerate fields can be obtained by analytic continuation and taking limits \eqref{lims}, although mathematical rigor is lost in the process. In particular, the probabilistic construction only makes sense for $c\geq 25$. 
 
-MM proof: Dotsenko--Fateev integrals? 
+In this text we will focus on a numerical approach to crossing symmetry, based on directly computing 4-point functions. This approach is applicable to any CFT whose spectrum is exactly known, and therefore to all the exactly solvable CFTs that we have considered. 
 
-Formal proofs based on F-matrix
-
-Then take limits \eqref{lims} 
-
-Case of our CFTs: proof in Liouville theory, minimal models. Take limits, deduce RWT, Liouville $c\leq 1$, GDMM. F-matrix \cite{ebe23}, relation to 3-point \cite{rib14, run99}. 
-
-Various issues and limitations: on the central charge in particular. Direct numerical check easy...
-
-Here: numerics. Some cases inaccessible to analytic methods. 
-Formulas for blocks (or sums thereof) complicated.
-Get numbers for correlation functions. 
 
 \subsubsection{Various flavours of numerics}
+
+Assuming that we exactly know the spectrum, the situation depends on what we know about structure constants (inputs), and what we want to determine (outputs). 
+\begin{enumerate}
+ \item \textbf{We know the structure constants.} All that remains is to test crossing symmetry of 4-point functions, by numerically computing them in various channels. This has been done in Liouville theory \cite{zz95, rs15}, generalized minimal models \cite{rs15}, Runkel--Watts-type CFTs \cite{rs15}, and generalized D-series minimal models  with $c\leq 1$ \cite{rib19}. 
+ \item \textbf{We do not know the structure constants, and only want to check the spectrum.} 
+ We view crossing symmetry as a system of linear equations for 4-point structure constants. The very existence of solutions is a strong test on the spectrum. The OPE spectrums that are relevant to 4-point connectivities in the Potts model have been tested in this way \cite{hjs20, nr20}, after having been predicted using lattice methods \cite{js18}. This also works for computing the 4-point functions themselves \cite{prs16, prs19}, or checking individual structure constants that may be known \cite{nr20}, spaces of solutions. Combinatorial maps paper also an example. 
+ \item We know the conformal dimensions that appear in the spectrum, but not how many fields of a given dimensions exist. Then crossing symmetry is a system of linear equations for the 4-point structure constants, viewed as functions of conformal dimensions. But we cannot distinguish two fields with the same dimension, or factorize 4-point structure constants into 3-point structure constants. 
+ \item Using the factorization of 4-point structure constants into 3-point structure constants (see Table \eqref{stu}), crossing symmetry is a system of nonlinear equations for the 3-point structure constants.
+\end{enumerate}
 
 Various styles of numerical bootstrap, all assuming we know (or guess) spectrum analytically:  
 \begin{itemize}
@@ -2107,6 +2106,9 @@ Various styles of numerical bootstrap, all assuming we know (or guess) spectrum 
  \item Counting solutions: their existence, dimension of space. Check spectrum, deduce fusion rules. 
  \item Determining struct. csts numerically or even analytically. 
 \end{itemize}
+
+
+We will encounter Scenario 1 in Liouville theory, and Scenario 3 in loop models.
 
 \subsubsection{Factorization of 4-point structure constants}
 
@@ -2129,6 +2131,8 @@ Symmetries, relations between 4-point structure constants.
 Permutation symmetry: must assume that the fields are indeed the same, what if we have multiplicities? 
 
 \subsection{Numerical implementation}
+
+Choice of parameters: $c$
 
 Truncating spectrum, blocks.
 
