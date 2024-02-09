@@ -760,7 +760,7 @@ Unless stated otherwise, we will assume that spins are integer:
  \label{siz}
 \end{align}
 
-\subsubsection{Crossing symmetry and conformal blocks}
+\subsubsection{Crossing symmetry and conformal blocks}\label{sec:cscb}
 
 Let us systematically use OPEs for simplifying correlation functions. Knowing the contribution \eqref{prope} of left-moving descendants of primary fields, the complete OPE of two primary fields reads 
 \begin{align}
@@ -779,11 +779,12 @@ Comparing with the 3-point function \eqref{3ptc}, this implies a relation betwee
 \begin{align}
  C_{123} = \sum_{k\in\mathcal{S}\left|\substack{\Delta_3=\Delta_k\\ \bar{\Delta}_3=\bar\Delta_k}\right. } C_{12}^k B_{k3}\ .
 \end{align}
-If the basis of fields is such that $B_{ij}=\delta_{ij}B_i$, and in particular if two different primary fields never share the same conformal dimensions, the sum over $k$ reduces to one term, and the relation reduces to
+If the basis of fields is such that $B_{ij}=\delta_{ij}B_i$, the sum over $k$ reduces to one term, and the relation reduces to
 \begin{align}
  \boxed{C_{123} = C_{12}^3B_{3}} \ .
  \label{ccb}
 \end{align}
+This is the case in particular if \textbf{field multiplicities} are trivial. i.e. if two different primary fields never share the same conformal dimensions.
 
 Inserting the OPE in the four-point function $\left<V_1(z)V_2(0)V_3(\infty)V_4(1)\right>$, we obtain a linear combination of 3-point functions of the type $\left<L\bar{L}V_k(0) V_3(\infty)V_4(1)\right>$ with $L,\bar L\in\mathcal{L}$. Deducing 3-point functions of descendants from 3-point functions of primaries using local Ward identities, we can in principle compute the ratios
 \begin{align}
@@ -1300,7 +1301,7 @@ The corresponding CFT may be called a fermionic minimal model \cite{rw20}. The f
  V_{(r_1,s_1)} V_{(r_2,s_2)} & \sim \sum_{r\overset{2}{=}|r_1-r_2|+1}^{p-|r_1+r_2|-1} \sum_{s\overset{2}{=}|s_1-s_2|+1}^{q-|s_1+s_2|-1} V^f_{\langle r,s\rangle}\ . 
  \label{vnvn}
 \end{align}
-It can be checked that for these fusion rules, the D-series minimal model is a closed subsector of its fermionic extension. Curiously, the diagonal field $V^f_{\langle \frac{p}{2}, s\rangle}$ has the same conformal dimensions as the non-diagonal field $V_{(0,s-\frac{q}{2})}$. However, these two fields have different fusion rules. 
+It can be checked that for these fusion rules, the D-series minimal model is a closed subsector of its fermionic extension. Curiously, the diagonal field $V^f_{\langle \frac{p}{2}, s\rangle}$ has the same conformal dimensions as the non-diagonal field $V_{(0,s-\frac{q}{2})}$: this an instance of a nontrivial field multiplicity. However, these two fields have different fusion rules. 
 
 \subsubsection{Generalized D-series minimal models}\label{sec:gdmm}
 
@@ -2089,30 +2090,57 @@ From these cases, all diagonal CFTs with 2 degenerate fields can be obtained by 
 In this text we will focus on a numerical approach to crossing symmetry, based on directly computing 4-point functions. This approach is applicable to any CFT whose spectrum is exactly known, and therefore to all the exactly solvable CFTs that we have considered. 
 
 
-\subsubsection{Various flavours of numerics}
+\subsubsection{Various flavours of numerics}\label{sec:vfn}
 
-Assuming that we exactly know the spectrum, the situation depends on what we know about structure constants (inputs), and what we want to determine (outputs). 
-\begin{enumerate}
- \item \textbf{We know the structure constants.} All that remains is to test crossing symmetry of 4-point functions, by numerically computing them in various channels. This has been done in Liouville theory \cite{zz95, rs15}, generalized minimal models \cite{rs15}, Runkel--Watts-type CFTs \cite{rs15}, and generalized D-series minimal models  with $c\leq 1$ \cite{rib19}. 
- \item \textbf{We do not know the structure constants, and only want to check the spectrum.} 
- We view crossing symmetry as a system of linear equations for 4-point structure constants. The very existence of solutions is a strong test on the spectrum. The OPE spectrums that are relevant to 4-point connectivities in the Potts model have been tested in this way \cite{hjs20, nr20}, after having been predicted using lattice methods \cite{js18}. This also works for computing the 4-point functions themselves \cite{prs16, prs19}, or checking individual structure constants that may be known \cite{nr20}, spaces of solutions. Combinatorial maps paper also an example. 
- \item We know the conformal dimensions that appear in the spectrum, but not how many fields of a given dimensions exist. Then crossing symmetry is a system of linear equations for the 4-point structure constants, viewed as functions of conformal dimensions. But we cannot distinguish two fields with the same dimension, or factorize 4-point structure constants into 3-point structure constants. 
- \item Using the factorization of 4-point structure constants into 3-point structure constants (see Table \eqref{stu}), crossing symmetry is a system of nonlinear equations for the 3-point structure constants.
-\end{enumerate}
+We consider a 4-point function $\left<V_1V_2V_3V_4\right>$, where the 4 primary fields are characterized by their conformal dimensions.
+We assume that we exactly know the spectrum in each channel. If we do not know the structure constants, we view crossing symmetry as a system of linear equations \eqref{seteu} for the 4-point structure constants, normalized by the condition $D_{k_0}^{(s)}=1$. 
 
-Various styles of numerical bootstrap, all assuming we know (or guess) spectrum analytically:  
-\begin{itemize}
- \item Checking crossing sym. when we know struct. csts. Can be reassuring. Allows us to actually compute 4pt functions. 
- \item Counting solutions: their existence, dimension of space. Check spectrum, deduce fusion rules. 
- \item Determining struct. csts numerically or even analytically. 
-\end{itemize}
+In the following diagram, we sketch what we can learn from numerically solving crossing symmetry, and give examples from exactly solvable CFTs. Potts connectivities are 4-point functions of the type $\Big<V_{P_{(0,\frac12)}}^4\Big>$, which have been an important testing ground for numerical bootstrap techniques. 
+\begin{center}
+ \begin{tikzpicture}[baseline=(base), scale = .5]
+% \coordinate (base) at (0, -4);
+\node [right] at (7.5, -15) {$\bullet$ Potts connectivities \cite{nr20}, loop models \cite{rib22, nrj23}};
+ \node [right] at (7.5, -14) {Compute 4-point structure constants};
+\draw [ultra thick, -latex] (4.5, -6) -- (4.5, -14) -- (7.5, -14);
+ \node [right] at (7.5, -12.5) {$\bullet$ Potts connectivities \cite{prs16, prs19}};
+ \node [right] at (7.5, -11.5) {Compute 4-point function};
+ \draw [ultra thick, -latex] (4.5, -6) -- (4.5, -11.5) -- (7.5, -11.5);
+\node [right] at (4.5, -8) {Yes};
+  \node [right] at (7.5, -10) {$\bullet$ Potts connectivities \cite{hjs20, nr20}};
+ \node [right] at (7.5, -9) {Correct spectrum!};
+ \draw [ultra thick, -latex] (4.5, -6) -- (4.5, -9) -- (7.5, -9);
+ \node [right] at (11, -7) {$\bullet$ $O(n)$ model \cite{gnjrs21}, Potts model \cite{niv22}, loop models \cite{gjnrs23}};
+ \node [right] at (11, -6) {Determine the dimension of the space of solutions};
+ \draw [ultra thick, -latex] (8.8, -6) -- node[above]{No} (11, -6);
+\draw (0, -6) node[right, draw, fill = red!10] {Is the solution unique?};
+ \draw [ultra thick, -latex] (4.5, -3.6) -- node[right]{Yes} (4.5, -5.3);
+ \draw (18, -3) node[right] {Wrong spectrum!};
+\draw [ultra thick, -latex] (15.4, -3) -- node[above]{No} (18, -3);
+\draw [ultra thick, -latex] (4.5, -.6) -- node[right]{No} (4.5, -2.3);
+\draw (0, -3) node[right, draw, fill = red!10] {Does crossing symmetry have a solution?};
+\draw (14.5, 0) node[right] {Check crossing symmetry};
+\draw (14.5, -1) node[right] {$\bullet$ Liouville \cite{zz95, rs15}, RWT \cite{rs15}, GDMM${}_{c\leq 1}$ \cite{rib19}};
+\draw [ultra thick, -latex] (12, 0) -- node[above]{Yes} (14.5, 0);
+\draw (0, 0) node[right, draw, fill = red!10] {Are structure constants known?};
+ \end{tikzpicture}
+\end{center}
 
-
-We will encounter Scenario 1 in Liouville theory, and Scenario 3 in loop models.
 
 \subsubsection{Factorization of 4-point structure constants}
 
-Factorization of structure constants. Pb of field multiplicities, of fusion multiplicities. 
+In order to solve a CFT, we should not only determine 4-point structure constants, but also factorize them into 2-point and 3-point structure constants. Factorization is simple enough if field multiplicities are trivial. However, there are nontrivial field multiplicities in D-series minimal models and in loop models. 
+This complicates factorization, because conformal blocks only depend on conformal dimensions. Solving the crossing symmetry equations \eqref{seteu} does not quite give us access to factorized 4-point structure constants $D^{(s)}_k = C^k_{12}C_{k34}$ \eqref{stu}, but to coefficients of conformal blocks:
+\begin{align}
+ D^{(s)}_{\Delta,\bar\Delta} = \sum_{k\in\mathcal{S}^{(s)}\left|\substack{\Delta_k=\Delta\\ \bar{\Delta}_k=\bar\Delta}\right.} C^k_{12}C_{k34} \ .
+\end{align}
+This is a sum of as many terms as the multiplicity of the primary field $V_{\Delta,\bar\Delta}$ in the $s$-channel spectrum $\mathcal{S}^{(s)}$. Therefore, factorization only constrains 4-point structure constants if we know field multiplicities. In principle, knowing the spectrum means knowing field multiplicities. In practice however, in loop models, we know the spectrum of conformal dimensions without knowing the multiplicities. 
+
+If the multiplicity $m(V_{\Delta,\bar\Delta})$ of $V_{\Delta,\bar\Delta}$ in the full spectrum is finite, it can in principle be determined from the values of $D^{(s)}_{\Delta,\bar\Delta}$ for all possible 4-point functions $\left<V_{k_1}V_{k_2}V_{k_3}V_{k_4}\right>$: 
+\begin{align}
+ m\left(V_{\Delta,\bar\Delta}\right) = \text{rank}\left(\left.D^{(s)}_{\Delta,\bar\Delta}\right|_{\left<V_{k_1}V_{k_2}V_{k_3}V_{k_4}\right>}\right)_{k_i\in\mathcal{S}}\ .
+\end{align}
+In practice, it may be enough to study a few 4-point functions for guessing a given multiplicity. This has been done in a few examples of diagonal 4-point functions in loop models \cite{rib22}.
+
 
 \subsection{Virasoro conformal blocks and Zamolodchikov's recursion}
 
