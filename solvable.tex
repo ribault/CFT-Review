@@ -152,19 +152,31 @@ The plan is:
 
 \section{Introduction}
 
-Can no longer write book on CFT which would be only about 2d. But exact solvability still only 2d. Known techniques rely on local conformal symmetry (infinite-dimensional) and degenerate fields (finite OPEs). Bootstrap, analytic and numerical. Exact solution means analytic expression for 3-point structure constants. Here: CFTs that are presumed to be solvable, not necessarily solved. Low central charge, good reason for that (half-plane). Plenty of applications including \cite{jcpb23}. High $c$ a challenge, applications to gravity.  
+In 1997, di Francesco, Mathieu and Sénéchal wrote a book called Conformal field theory \cite{fms97}, which dealt almost exclusively with \textit{two-dimensional} conformal field theory. Nowadays, fortunately, a book with that title could say a lot on CFT in higher dimensions. However, when it comes to CFTs that we can solve exactly, we are back to two dimensions, because of two main reasons:
+\begin{itemize}
+ \item In two dimensions, the algebra of conformal transformations is infinite-dimensional. 
+ \item In some two-dimensional CFTs, there exist degenerate fields: fields whose OPEs with other fields have finitely many terms, modulo conformal symmetry. 
+\end{itemize}
+This gives us access to powerful bootstrap techniques, analytic and numerical. In contrast, in higher dimensions, numerical bootstrap techniques rely on the assumption of unitarity. Not only this restricts the CFTs that can be addressed, but also this leads to inequalities rather than equalities, making it harder to reach exact results. 
 
-Focus on CFTs whose chiral symmetry algebra is only Virasoro. How do we see chiral symmetry? In spectrum: current may or may not appear, what matters is integer gaps in spectrum: if we knew only about global conf. sym. we would detect local sym. by seeing infinite families of integer-spaced primaries. If we had higher that Virasoro we would see Virasoro primaries whose dimensions differ by integers, or simple fractions (parafermionic symmetry). Not only in spectrum: we also want symmetry in interactions, selection rules from Ward identities. Cf Coulomb gas methos: affine abelian algebra but no conserved momentum. \textbf{Extended chiral algebra}: our methods would apply. 
+Even in two dimensions, solvable CFTs are very special cases. Starting from a simple CFTs and following a renormalization group flow, you can easily end up at a fixed point whose CFT is completely intractable. We will deal first of all with CFTs that are considered solved, in that we exactly know the three-point structure constants, and can compute any correlation function to arbitrary precision:
+\begin{itemize}
+ \item Liouville theory,
+ \item (generalized) minimal models, and limits thereof. 
+\end{itemize}
+We will also propose a unified treatment of loop models, which are not solved but are believed to be solvable, because we have sufficiently many exact results. By loop models we mean a large class of CFTs, with various global symmetry groups, which describe critical limits of various statistical models in various phases, and have various applications: percolation, polymers, and more recently active hydraulics \cite{jcpb23}. 
+Solvable CFTs have fewer applications to gravity: in particular, any CFT dual to three-dimensional gravity should exist in the large central charge limit, which corresponds to the classical limit of gravity; but there are strong technical reasons why non-trivial solvable CFTs must have small central charges. (See Section \ref{sec:dotc}.) 
 
-Methods: forget Coulomb gas, a dead end. For correl fct, applies only if we have two deg. fields? But used to find spectrum of $O(n)$ etc.  Historically, the spectrums and fusion rules of solvable CFTs have been derived by studying the torus partition function. The torus partition function is a simple object that only depends and the spectrum, and not on the structure constants. It can be computed either by solving modular invariance equations, or constructively via a path integral or a lattice sum. And in rational CFTs, the modular invariance equations involve the modular S-matrix, which also allows us to determine the fusion rules via the Verlinde formula \cite{fms97}.
-Here, we will follow a simpler approach, based on exploiting the fusion rules of degenerate fields. We do not lose in generality, because all known exactly solvable CFTs have degenerate fields. And we gain in flexibility: in many cases, adding fields to the spectrum is consistent with fusion rules, but breaks modular invariance. For example, in the Ising model, the modular invariant torus partition function only involves three primary fields, and excludes disorder fields, as well as the fields that are needed for computing connectivities of clusters. Focus on correlation functions: notion of extended spectrum, incompatible with modular invariance. Spectrum not so fundamental, can get it otherwise. 
+There are other solved or solvable CFTs that we will not mention, because they have \textbf{extended chiral algebras}, which means extra local symmetries in addition to conformal symmetry. Some CFTs of that type can be solved with the methods that we will explain, for example certain Wess--Zumino--Witten models. 
 
-This review: simple derivations of results preferred to conceptual aspects. Calculations not done in detail but all doable with a few exceptions. Not formulated as exercises unlike \cite{rib16} and \cite{rib14}. Main difference with these texts: focus on non-diagonal CFTs, particularly loop models. 
+When a CFT is solvable, it can typically be solved in several different ways. In this text, we will only use the conformal bootstrap approach, and omit other historically relevant techniques such as Coulomb gas integrals, and the modular bootstrap. We believe that the conformal bootstrap approach is technically simpler, more general, and more powerful. In particular, our main objects are correlation functions on the sphere, and we do not have a rigid notion of which fields belong to a CFT. For example, in the Ising model, we can introduce disorder fields or compute cluster connectivities, without having to worry about modular invariance of the torus partition function. 
+
+We are not claiming that our approach is always mathematically rigorous and conceptually transparent: our main concern is to provide simple derivations of non-trivial results, without introducing too many auxiliary objects that are later discarded. The calculations are not all done in detail but they should be doable with reasonable effort. Readers who want formal exercises are directed to earlier texts in the same spirit: the minimal review \cite{rib16}, and the more extended review \cite{rib14}. However, these texts do not cover loop models.
 
 
 \subsection*{Acknowledgements}
 
-Course organizers. Collaborators. 
+Course organizers. Collaborators. Jesper Jacobsen.
 
 
 %\end{tcolorbox}
@@ -967,7 +979,7 @@ For $\beta^2\in\mathbb{Q}$, we have to distinguish fully degenerate fields from 
 \end{align}
 Degenerate fields are so important that it has been proposed to formally extend the conformal algebra into an \textbf{interchiral algebra}, which also includes the degenerate fields \cite{grs12}. While we will not systematically use this concept, we will find it convenient to introduce interchiral conformal blocks in Section \ref{sec:icb}. 
 
-\subsubsection{Degenerate OPEs and their consequences}
+\subsubsection{Degenerate OPEs and their consequences}\label{sec:dotc}
 
 The OPE of $V^d_{\langle 2,1\rangle}$ or $V^d_{\langle 1,2\rangle}$ with a given primary field is constrained by the fusion rules \eqref{rvvp}, which allow 2 left-moving momentums and 2 right-moving momentums, for a total of 4 representations.  In the case of a diagonal field $V_P$, the requirement that only spinless primary fields appear single out 2 of the 4 possibilities:
 \begin{align}
@@ -2139,7 +2151,8 @@ If the multiplicity $m(V_{\Delta,\bar\Delta})$ of $V_{\Delta,\bar\Delta}$ in the
 \begin{align}
  m\left(V_{\Delta,\bar\Delta}\right) = \text{rank}\left(\left.D^{(s)}_{\Delta,\bar\Delta}\right|_{\left<V_{k_1}V_{k_2}V_{k_3}V_{k_4}\right>}\right)_{k_i\in\mathcal{S}}\ .
 \end{align}
-In practice, it may be enough to study a few 4-point functions for guessing a given multiplicity. This has been done in a few examples of diagonal 4-point functions in loop models \cite{rib22}.
+In principle it is impossible to compute the rank of an infinite matrix, but 
+in practice it may be enough to study a few 4-point functions for guessing a given multiplicity. This has been done in a few examples of diagonal 4-point functions in loop models \cite{rib22}.
 
 
 \subsection{Virasoro conformal blocks and Zamolodchikov's recursion}
@@ -2170,21 +2183,54 @@ Deviations. Detection of solutions. Counting of solutions.
 
 \section{Correlation functions in loop models} \label{sec:cloop}
 
-Only integer spins.
+Only integer spins, no deg. fields.
 
 \subsection{Statistical sums over loop ensembles}
 
-And combinatorial maps 
+Loop ensembles: lattice or probabilistic, we are agnostic. Both approaches have advantages: lattice can get finite sums, nice algebras, some exact results at finite $L$. Probabilitic approach has manifest conformal symmetry. 
+
+Non-intersecting loops with certain weights. In partition function, all loops have same weight by conformal symmetry. Then introduce fields, diagonal or not. Weight factors as allowed by conformal symmetry. Combinatorial maps. 
+
+Case of the $O(n)$ model (just restrict possible diagonal fields), $U(n)$ model (just assume even numbers of loops, 2 diagonal fields), Potts model (focus on clusters, unnatural constraints). 
+
 
 \subsection{Conformal field theory interpretation}
 
-Predict conformal spin? Or just match sets of parameters? 
+\subsubsection{Parameters / Fields}
 
-Loop weight invariant under shifts, but CFT not invariant, discussion of criticality 
+Find relation of parameters. Historic arguments give correct relations but are complicated and not very convincing. See for example Appendix A of \cite{grz18}, which debate an old argument by Kondev based on a map to free bosonic fields, and try to patch it with the help of the torus partition function. 
+
+Our argument is to first identify the parameters of $V_{(r,s)}$ with Kac indices, then deduce the relation between loop weights and momentums for diagonal fields, and finally get the central charge. 
+
+Focus on $V_{(r,s)}$ as defined on the lattice. Under a rotation $\delta\theta$ of the reference direction, the weight of this operator takes a factor $e^{-irs\delta\theta}$. Compare with the behaviour of a primary field \eqref{zgc}: for $\left[\begin{smallmatrix} a & b \\ c & d \end{smallmatrix}\right] = \left[\begin{smallmatrix} e^{\frac{i}{2}\delta\theta} & 0 \\ 0 & e^{-\frac{i}{2}\delta\theta} \end{smallmatrix}\right]\in SL_2(\mathbb{C})$, a field of spin $S$ picks a factor $e^{-iS\delta\theta}$. (Say it there??) Therefore, $V_{(r,s)}$ has conformal spin $rs$. 
+
+Next we assume it is primary. \textcolor{red}{It would be good to prove it.} Argument about not generating fields with lower dimension by conformal transformations? Show that local conformal dimension on some domain only produces geometrical prefactor in correlation functions? But this prefactor depends on left and right dimensions, how could we determine them? 
+
+Now $V_{(r,s)}$ is parametrized by $r\in \frac12 \mathbb{N}^*$, which is conserved modulo integers (cf connecting half-segments), and has spin $rs$. We deduce that it is a non-diagonal field with Kac indices $r,s$ in a CFT where $V^d_{\langle 1,2\rangle}$ exists. 
+
+Next we consider a field that gives a weight $w$ to loops around it. We also assume that it is primary. Since $w$ is a continuous parameter, this must be a diagonal field: we want to determine the relation between $w$ and $P$. 
+From the case of $V_{(r,s)}$ we know that under a rotation by $\delta\theta$, an individual loop strand picks a factor $e^{\frac{i}{2} s\delta\theta}$. For a closed loop, i.e. $\delta\theta=2\pi$, we therefore find $e^{i\pi s}$. But we have to add the two possible orientations, so the weight is $w=2\cos(\pi s)$. Accepting the identification $V_P = V_{(0, 2 \beta P)}$ from CFT, we deduce $w(P)$. 
+
+It remains to determine the parameter $n$, which is the weight of contractible loops. This is simply $n=2\cos(2\pi P_{(1,1)})$. 
+
+\subsubsection{Correlation functions}
+
+Weights of closed loops, and channel fields. 
+
+Loop weight invariant under shifts, but CFT not invariant, discussion of criticality and values of the central charge and loop weights. 
+
+Given some fields, space of bootstrap solutions and combinatorial maps. Combinatorial defects interpretation: preserves decomposition into blocks, explains why no OPE in usual sense. 
+
+\subsubsection{Specific loop models}
+
+Cases of $O(n)$, Potts etc: modified counting of solutions, need to forbid or allow some maps based on deg. fields fusion rules etc. 
 
 \subsection{Analytic properties of structure constants}
 
-Poles and their cancellations. Degrees of polynomials 
+Poles and their cancellations. Polynomials are natural in statistical model but valid only after stripping off non-polynomial structure constants. 
+
+Signature of maps, trying to match individual bootstrap solutions. Degrees of polynomials. Triogonometric coefficients. 
+
 
 \subsection{Examples of 4-point structure constants}
 
