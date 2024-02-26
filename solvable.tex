@@ -2190,17 +2190,16 @@ We will now take a short break from CFT, and build correlation functions as stat
 
 \subsubsection{Sums over configurations of non-intersecting loops}
 
-Let us consider an ensemble $\mathcal{E}$ of non-intersecting closed loops on a Riemann surface $\Sigma$. 
-There are several possible constructions of such ensembles that give rise to a conformal field theory in some limit:
-\begin{itemize}
- \item We could discretize $\Sigma$, and draw the loops on the resulting graph. The resulting ensemble $\mathcal{E}$ is then finite. Conformal symmetry emerges in the limit where the graph size tends to infinity. 
- \item We could use a conformal loop ensemble, 
-\end{itemize}
+In statistical physics, there exist loop models with correlation functions of the type
+\begin{align}
+ Z(\mathcal{E}) = \sum_{E\in\mathcal{E}} W(E)\ , 
+\end{align}
+where $\mathcal{E}$ is an ensemble of non-intersecting closed loops on the Riemann sphere $\overline{\mathbb{C}}$, and $W$ is a weight function. The easiest way to define $\mathcal{E}$ may be to discretize $\overline{\mathbb{C}}$, and draw the loops on the resulting graph: then then ensemble $\mathcal{E}$ is finite, and the number of loops per configuration $E$ is also finite: $|\mathcal{E}|, |E|<\infty$. 
+However, we then have to show that $Z(\mathcal{E})$ has a well-defined limit when the graph size tends to infinity, and that conformal symmetry emerges in that limit. Alternatively, it is possible to define a conformal loop ensemble $\mathcal{E}$ without discretizing $\overline{\mathbb{C}}$, then $|\mathcal{E}|=|E|=\infty$. 
+ 
+We will remain agnostic on the precise definition of $\mathcal{E}$. We will only assume that numbers of loops are finite, $|E|<\infty$. 
 
-
-
-
-Loop ensembles: lattice or probabilistic, we are agnostic. Both approaches have advantages: lattice can get finite sums, nice algebras, some exact results at finite $L$. Probabilitic approach has manifest conformal symmetry. 
+product of weights of loops. All loops have same weight. But in fact $W(E)$ also depends on nb of lattice edges in loops. 
 
 Non-intersecting loops with certain weights. In partition function, all loops have same weight by conformal symmetry. 
 
