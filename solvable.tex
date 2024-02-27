@@ -2191,18 +2191,18 @@ We will now take a short break from CFT, and build correlation functions as stat
 
 \subsubsection{Sums over configurations of non-intersecting loops}
 
-In statistical physics, there exist loop models with correlation functions of the type
+In statistical physics, loop models have correlation functions of the type
 \begin{align}
  Z(\mathcal{E}) = \sum_{E\in\mathcal{E}} W(E)\ , 
 \end{align}
 where $\mathcal{E}$ is an ensemble of non-intersecting closed loops on the Riemann sphere $\overline{\mathbb{C}}$, and $W$ is a weight function. The easiest way to define $\mathcal{E}$ may be to discretize $\overline{\mathbb{C}}$, and draw the loops on the resulting graph: then then ensemble $\mathcal{E}$ is finite, and the number of loops per configuration $E$ is also finite: $|\mathcal{E}|, |E|<\infty$. 
 However, we then have to show that $Z(\mathcal{E})$ has a well-defined limit when the graph size tends to infinity, and that conformal symmetry emerges in that limit. Alternatively, it is possible to define a conformal loop ensemble $\mathcal{E}$ without discretizing $\overline{\mathbb{C}}$, then $|\mathcal{E}|=|E|=\infty$. 
  
-We will remain agnostic on the precise definition of $\mathcal{E}$. We will only assume that numbers of loops are finite, $|E|<\infty$. 
-
-product of weights of loops. All loops have same weight. But in fact $W(E)$ also depends on nb of lattice edges in loops. 
-
-Non-intersecting loops with certain weights. In partition function, all loops have same weight by conformal symmetry. 
+We will remain agnostic on the precise definition of $\mathcal{E}$, and only assume that numbers of loops are finite, $|E|<\infty$. We assume that the energy $\log W(E)$ is extensive: then the weight of a configuration is a product of weights of individual loops $w(\ell)$. On the sphere, all loops are topologically the same, and must all have the same weight by conformal symmetry: 
+\begin{align}
+ W(E) = \prod_{\ell \in E } w(\ell) = n^{|E|}\ ,
+\end{align}
+where $n$ is the \textbf{loop weight}. 
 
 
 \subsubsection{Open loops and combinatorial maps}
@@ -2214,6 +2214,8 @@ Then introduce fields, diagonal or not. Weight factors as allowed by conformal s
 \subsubsection{Cases of the $O(n)$, $U(n)$ and Potts models}
 
 Case of the $O(n)$ model (just restrict possible diagonal fields), $U(n)$ model (just assume even numbers of loops, 2 diagonal fields), Potts model (focus on clusters, unnatural constraints). 
+
+Relate $n$ with loop weight.
 
 
 \subsection{Conformal field theory interpretation}
