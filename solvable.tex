@@ -152,10 +152,10 @@ The plan is:
 
 \section{Introduction}
 
-In 1997, di Francesco, Mathieu and Sénéchal wrote a book called Conformal field theory \cite{fms97}, which dealt almost exclusively with \textit{two-dimensional} conformal field theory. Nowadays, fortunately, a book with that title could say a lot on CFT in higher dimensions. However, when it comes to CFTs that we can solve exactly, we are back to two dimensions, because of two main reasons:
+In 1997, di Francesco, Mathieu and Sénéchal wrote a book called Conformal field theory \cite{fms97}, which dealt almost exclusively with \textit{two-dimensional} conformal field theory. Today, a book with that title would be expected to also cover CFT in $d\geq 3$. However, when it comes to CFTs that we can solve exactly, we are back to $d=2$, because exact solvability relies on two ingredients:
 \begin{itemize}
- \item In two dimensions, the algebra of conformal transformations is infinite-dimensional. 
- \item In some two-dimensional CFTs, there exist degenerate fields: fields whose OPEs with other fields have finitely many terms, modulo conformal symmetry. 
+ \item An infinite-dimensional algebra of conformal transformations --- but in $d\geq 3$ the algebra is finite-dimensional. 
+ \item Degenerate fields: fields whose OPEs with other fields have finitely many terms, modulo conformal symmetry. 
 \end{itemize}
 This gives us access to powerful bootstrap techniques, analytic and numerical. In contrast, in higher dimensions, numerical bootstrap techniques rely on the assumption of unitarity. Not only this restricts the CFTs that can be addressed, but also this leads to inequalities rather than equalities, making it harder to reach exact results. 
 
@@ -165,18 +165,18 @@ Even in two dimensions, solvable CFTs are very special cases. Starting from a si
  \item (generalized) minimal models, and limits thereof. 
 \end{itemize}
 We will also propose a unified treatment of loop models, which are not solved but are believed to be solvable, because we have sufficiently many exact results. By loop models we mean a large class of CFTs, with various global symmetry groups, which describe critical limits of various statistical models in various phases, and have various applications: percolation, polymers, and more recently active hydraulics \cite{jcpb23}. 
-Solvable CFTs have fewer applications to gravity: in particular, any CFT dual to three-dimensional gravity should exist in the large central charge limit, which corresponds to the classical limit of gravity; but there are strong technical reasons why non-trivial solvable CFTs must have small central charges. (See Section \ref{sec:dotc}.) 
+The known solvable CFTs have fewer applications to gravity: in particular, any CFT holographically dual to three-dimensional gravity should exist in the large central charge limit, which corresponds to the classical limit of gravity; but there are strong technical reasons why non-trivial solvable CFTs must have small central charges. (See Section \ref{sec:dotc}.) 
 
-There are other solved or solvable CFTs that we will not mention, because they have extended chiral algebras, which means extra local symmetries in addition to conformal symmetry. Some CFTs of that type can be solved with the methods that we will explain, for example certain Wess--Zumino--Witten models. 
+There are other solved or solvable CFTs that we will not mention, because they have extended chiral algebras, which means extra local symmetries in addition to conformal symmetry. Some CFTs of that type can be solved with the methods that we will cover, for example certain Wess--Zumino--Witten models. 
 
 When a CFT is solvable, it can typically be solved in several different ways. In this text, we will only use the conformal bootstrap approach, and omit other historically relevant techniques such as Coulomb gas integrals, and the modular bootstrap. We believe that the conformal bootstrap approach is technically simpler, more general, and more powerful. In particular, our main objects are correlation functions on the sphere, and we do not have a rigid notion of which fields belong to a CFT. For example, in the Ising model, we can introduce disorder fields or compute cluster connectivities, without having to worry about modular invariance of the torus partition function. 
 
-We are not claiming that our approach is always mathematically rigorous and conceptually transparent: our main concern is to provide simple derivations of non-trivial results, without introducing too many auxiliary objects that are later discarded. The calculations are not all done in detail but they should be doable with reasonable effort. Readers who want formal exercises are directed to earlier texts in the same spirit: the minimal review \cite{rib16}, and the more extended review \cite{rib14}. However, these texts do not cover loop models.
+We are not claiming that our approach is always mathematically rigorous: our main concern is to provide simple derivations of non-trivial results, without introducing too many auxiliary objects that are later discarded. The calculations are not all done in detail but they should be doable with reasonable effort. Readers who want formal exercises are directed to earlier texts in the same spirit: the minimal review \cite{rib16}, and the more extended review \cite{rib14}. However, these texts do not cover loop models.
 
 
 \subsection*{Acknowledgements}
 
-Course organizers. Collaborators. Jesper Jacobsen.
+This text was initially written as lecture notes for a course given at IPhT Saclay in March-April 2024. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica. I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop models and related subjects. Moreover, I am grateful to Jesper Jacobsen for stimulating discussions. 
 
 
 %\end{tcolorbox}
@@ -189,17 +189,13 @@ In this section we introduce conformal symmetry, fields, operator product expans
 
 \subsubsection{The Virasoro algebra}
 
-Let us consider the Riemann sphere $\overline{\mathbb{C}}=\mathbb{C}\cup \{\infty\}$, equipped with the metric $ds^2 = dzd\bar z$. By definition, a \textbf{conformal transformation} of a Riemannian manifold is a transformation that preserves angles. On any open subset of the Riemann sphere, a map $z\to f(z)$ is conformal if and only if it is holomorphic. It is indeed straightforward to show that any holomorphic map is conformal,
-because it transforms the metric into itself, up to a scalar factor: 
+Let us consider the Riemann sphere $\overline{\mathbb{C}}=\mathbb{C}\cup \{\infty\}$, equipped with the metric $ds^2 = dzd\bar z$. By definition, a \textbf{conformal transformation} of a Riemannian manifold is a transformation that preserves angles. On any open subset of the Riemann sphere, any holomorphic map $z\to f(z)$ is conformal, because it transforms the metric into itself, up to a scalar factor: 
 \begin{align}
  dzd\bar z\to dfd\bar f = |f'(z)|^2 dzd\bar z\ .
 \end{align}
-Let us define the \textbf{Witt algebra} as the Lie algebra of infinitesimal conformal transformations on $\mathbb{C}^*= \mathbb{C}\backslash \{0\}$. This algebra describes local conformal symmetry for quantum field theory on the Riemann sphere, as can be argued in two alternative ways:
-\begin{itemize}
- \item Transformations need not be defined at $z=\infty$ because they are local, and can be singular at $z=0$ if we insert a field at that point.
- \item Holomorphic functions on $\mathbb{C}^*$ are equivalent to holomorphic functions on a neighbourhood of the circle $|z|=1$. In radial quantization, this circle is interpreted as a Euclidean time slice where the states of our theory live. 
-\end{itemize}
-The Witt algebra is infinite-dimensional, with the basis 
+Conversely, any conformal map is holomorphic. 
+In a quantum field theory on the Riemann sphere, states live on a Euclidean time slice $|z|=1$, so we consider conformal transformations of that circle, equivalently of $\mathbb{C}^*= \mathbb{C}\backslash \{0\}$.
+Let the \textbf{Witt algebra} be the algebra of infinitesimal conformal transformation of $\mathbb{C}^*$: this algebra is infinite-dimensional, with the basis 
 \begin{align}
  \left(\ell_n\right)_{n\in\mathbb{Z}}  \quad \text{with} \quad \ell_n = -z^{n+1}\frac{\partial}{\partial z}\ ,
  \label{lpz}
@@ -223,7 +219,7 @@ Now, in a quantum theory, symmetries act projectively on states. And projective 
 
 \subsubsection{Highest-weight representations}\label{sec:hwr}
 
-In a conformal field theory, the space of states is a representation of the Virasoro algebra, and can be decomposed into indecomposable representations. But which indecomposable representations are physically relevant? To answer this question, we will focus on the properties of the generator $L_0$ of the Virasoro algebra. Conceptually, this is because $L_0$ can be interpreted as the energy operator. Technically, since $L_0$ generates dilations, it controls the convergence of operator product expansions, as we will see in Section \ref{sec:csope}. More specifically, a necessary condition for convergence is that the eigenvalues of $L_0$ be bounded from below in any indecomposable representation. We will always assume that this condition holds.
+In a conformal field theory, the space of states is a representation of the Virasoro algebra, and can be decomposed into indecomposable representations. But which indecomposable representations are physically relevant? To answer this question, we will focus on the properties of the dilation generator $L_0$ of the Virasoro algebra. Conceptually, this is because $L_0$ can be interpreted as the energy operator. Technically, this is because $L_0$ controls the convergence of operator product expansions, as we will see in Section \ref{sec:csope}. More specifically, a necessary condition for convergence is that the eigenvalues of $L_0$ be bounded from below in any indecomposable representation. We will always assume that this condition holds.
 
 The eigenvalues of $L_0$ are called \textbf{conformal dimensions}. Under the action of the Virasoro generator $L_n$, the conformal dimension decreases by $n$. For any vector $V$ in a representation of the Virasoro algebra, we indeed have 
 \begin{align}
@@ -238,9 +234,9 @@ Let us introduce a basis of \textbf{creation operators},
  \mathcal{L} = \left\{\prod_{i=1}^k L_{-n_i} \right\}_{k\in\mathbb{N},\ 0<n_1\leq \dots \leq n_k}==\left\{1, L_{-1}, L_{-1}^2, L_{-2},\cdots \right\}\ .
  \label{lcm}
 \end{align}
-Any state of the type $L V{}$ with $L\in\mathcal{L}$ is called a \textbf{descendant state} of that primary state. Let  $N=|L|=\sum_{i=1}^k n_i \in\mathbb{N}$ be the  \textbf{level} of that state, then its conformal dimension is $\Delta+N$. By extension, a linear combination of descendant states is also called a descendant state. 
+Any state of the type $L V{}$ with $L\in\mathcal{L}$ is called a \textbf{descendant state} of the primary state $V$. Let  $N=|L|=\sum_{i=1}^k n_i \in\mathbb{N}$ be the  \textbf{level} of that state, then its conformal dimension is $\Delta+N$. By extension, a linear combination of descendant states is also called a descendant state. 
 
-A primary state $V{} \in \mathcal{R}$ generates a subrepresentation $\mathcal{R}_{V{}}= \text{Span}(LV{})_{L\in\mathcal{L}}\subset\mathcal{R}$, which is the space of its descendant states. If the states $(LV{})_{L\in\mathcal{L}}$ are linearly independent, then $\mathcal{R}_{V{}}$ is called the \textbf{Verma module} $\mathcal{V}_\Delta$. More generally, $\mathcal{R}_{V{}}$ is a quotient of $\mathcal{V}_\Delta$ by a subrepresentation (trivial or not): such quotients are called \textbf{highest-weight representations}. In such a representation, $L_0$ is diagonalizable. 
+A primary state $V{} \in \mathcal{R}$ generates a subrepresentation $\mathcal{R}_{V{}}= \text{Span}(LV{})_{L\in\mathcal{L}}\subset\mathcal{R}$, which is the space of its descendant states. If the states $(LV{})_{L\in\mathcal{L}}$ are linearly independent, then $\mathcal{R}_{V{}}$ is called the \textbf{Verma module} $\mathcal{V}_\Delta$. If not, $\mathcal{R}_{V{}}$ is a quotient of $\mathcal{V}_\Delta$ by a subrepresentation: such quotients are called \textbf{highest-weight representations}. In such a representation, $L_0$ is diagonalizable. 
 Let us sketch a Verma module by displaying all its basis states up to the level $N=3$, with arrows representing the action of the Virasoro generators $L_{-1},L_{-2},L_{-3}$:
 \begin{align}
  \begin{tikzpicture}[scale = .25, baseline=(current  bounding  box.center)]
@@ -264,6 +260,7 @@ Let us sketch a Verma module by displaying all its basis states up to the level 
   \draw[-latex] (2) -- (12);
  \end{tikzpicture}
 \end{align}
+We do not display $L_{-2}L_{-1}V = L_{-1}L_{-2}V -L_{-3}V$, as it is a combination of already displayed states. 
 
 \subsubsection{Null vectors of Verma modules}\label{sec:nvvm}
 
@@ -327,7 +324,7 @@ To write $\Delta_{(r, s)}$ for any $r,s\in\mathbb{N}^*$, we rewrite the conforma
  \boxed{\Delta = \frac{c-1}{24} + P^2}\ .
  \label{dp}
 \end{align}
-We can rewrite Verma modules as $\mathcal{V}_P=\mathcal{V}_{-P}$, although the parameter $P$ is redundant due to the invariance under the \textbf{reflection} $P\to -P$. The dimensions $\Delta_{(r, s)}$ correspond to the momentums 
+We can rewrite Verma modules as $\mathcal{V}_P=\mathcal{V}_{-P}$, where the parameter $P$ is redundant due to the invariance under the \textbf{reflection} $P\to -P$. The dimensions $\Delta_{(r, s)}$ correspond to the momentums 
 \begin{align}
  \boxed{P_{(r, s)} = \frac12\left(r\beta -s\beta^{-1}\right)}\ ,
  \label{prs}
@@ -503,13 +500,17 @@ For technical simplicity, we focus on an OPE of two primary fields. In that OPE,
 \begin{align}
  V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset \sum_{L\in \mathcal{L}} C_{\Delta_1,\Delta_2}^{\Delta, L}(z_1,z_2) LV_\Delta(z_2) \ ,
 \end{align}
-where $\mathcal{L}$ \eqref{lcm} is the set of creation operators. On both sides of the OPE, we insert $\frac{1}{2\pi i}\oint_{z_1,z_2} dy (y-z_2)^{n+1}T(y)$ with $n\geq -1$, where the integration contour encloses both $z_1$ and $z_2$. Using Eqs. \eqref{lvtv} and \eqref{tvd}, we find
+where $\mathcal{L}$ \eqref{lcm} is the set of creation operators. On both sides of the OPE, we insert $\frac{1}{2\pi i}\oint_{z_1,z_2} dy (y-z_2)^{n+1}T(y)$, where the integration contour encloses both $z_1$ and $z_2$. Using Eqs. \eqref{lvtv} and \eqref{tvd}, we find
 \begin{align}
  \left(L_n^{(z_2)} +z_{12}^{n+1}\partial_{z_1} + (n+1)z_{12}^n\Delta_1\right) V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset \sum_{L\in \mathcal{L}} C_{\Delta_1,\Delta_2}^{\Delta, L}(z_1,z_2)L_nLV_\Delta(z_2) \ .
 \end{align}
-We distinguish three cases:
+We focus on three cases:
 \begin{itemize}
- \item $\boxed{n=-1}$\ : We use Eq. \eqref{pvlv} for $V_{\Delta_2}(z_2)$ and $LV_{\Delta}(z_2)$, and perform the OPE again on the left-hand side. This leads to $(\partial_{z_1}+\partial_{z_2})C^{\Delta,L}_{\Delta_1,\Delta_2}(z_1,z_2)=0$, i.e. translation invariance of the OPE coefficients.
+ \item $\boxed{n=-1}$\ : We use Eq. \eqref{pvlv} for $V_{\Delta_2}(z_2)$ and $LV_{\Delta}(z_2)$, and perform the OPE again on the left-hand side:
+ \begin{align}
+ \left(\partial_{z_1}+\partial_{z_2}\right) \sum_{L\in \mathcal{L}} C_{\Delta_1,\Delta_2}^{\Delta, L}(z_1,z_2)LV_\Delta(z_2) = \sum_{L\in \mathcal{L}} C_{\Delta_1,\Delta_2}^{\Delta, L}(z_1,z_2)\partial_{z_2} LV_\Delta(z_2) \ .
+ \end{align}
+ This leads to $(\partial_{z_1}+\partial_{z_2})C^{\Delta,L}_{\Delta_1,\Delta_2}(z_1,z_2)=0$, i.e. translation invariance of the OPE coefficients.
  \item $\boxed{n=0}$\ : We use $L_0LV_{\Delta}(z_2)= (\Delta+|L|) V_{\Delta}(z_2)$, and perform the OPE again on the left-hand side. This leads to $(z_{12}\partial_{z_1}+\Delta_1+\Delta_2-\Delta-|L|)C^{\Delta,L}_{\Delta_1,\Delta_2}(z_1,z_2) = 0$, and we deduce the dependence of OPE coefficients on $z_1,z_2$:
  \begin{align}
   C^{\Delta,L}_{\Delta_1,\Delta_2}(z_1,z_2) = z_{12}^{\Delta+|L|-\Delta_1-\Delta_2} C^{\Delta,L}_{\Delta_1,\Delta_2}\ . 
@@ -538,7 +539,7 @@ Similarly, the level two coefficients $f^{L_{-1}^2},f^{L_{-2}}$ are determined b
  (\Delta+2\Delta_1-\Delta_2)V_\Delta  &=L_2W \ .
  \label{el2c}
 \end{align}
-This is a system of linear equations for $f^{L_{-1}^2},f^{L_{-2}}$, whose homogeneous part is the condition that $W$ be a null vector. Thererfore, the determinant vanishes if and only if $\Delta\in \left\{\Delta_{(2,1)},\Delta_{(1,2)}\right\}$. Otherwise, the solution is unique. 
+This is a system of linear equations for $f^{L_{-1}^2},f^{L_{-2}}$, whose homogeneous part is the condition that $W$ be a null vector \eqref{l1c}, \eqref{l2c}. Thererfore, the determinant vanishes if and only if $\Delta\in \left\{\Delta_{(2,1)},\Delta_{(1,2)}\right\}$. Otherwise, the solution is unique. 
 
 To summarize, the contributions of $V_\Delta$ and its descendants in an OPE of two primary fields read
 \begin{align}
