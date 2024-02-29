@@ -20,12 +20,17 @@
 
 \usepackage{pgf}
 \usepackage{tikz}
+\usetikzlibrary{shapes.misc}
+\tikzset{cross/.style={cross out, draw=black, thick, fill=none, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt}, cross/.default={3pt}}
+\newcommand{\uvertex}{
+\coordinate (base) at (0, 1);
+\draw (0, 0) node[fill, circle, minimum size = 2mm, inner sep = 0]{};
+  \draw (3, 0) node [cross]{};
+  \draw (0, 3) node[fill, circle, minimum size = 2mm, inner sep = 0]{};
+  \draw (3, 3) node[fill, circle, minimum size = 2mm, inner sep = 0]{};
+}
 
 \usepackage{multirow}
-
-\usepackage{pgf}
-\usepackage{tikz}
-%\usetikzlibrary{calc}
 
 \usepackage{xcolor}
 
@@ -152,14 +157,19 @@ The plan is:
 
 \section{Introduction}
 
+\subsubsection*{Exact solvability in CFT}
+
 In 1997, di Francesco, Mathieu and Sénéchal wrote a book called Conformal field theory \cite{fms97}, which dealt almost exclusively with \textit{two-dimensional} conformal field theory. Today, a book with that title would be expected to also cover CFT in $d\geq 3$. However, when it comes to CFTs that we can solve exactly, we are back to $d=2$, because exact solvability relies on two ingredients:
 \begin{itemize}
  \item An infinite-dimensional algebra of conformal transformations --- but in $d\geq 3$ the algebra is finite-dimensional. 
  \item Degenerate fields: fields whose OPEs with other fields have finitely many terms, modulo conformal symmetry. 
 \end{itemize}
 This gives us access to powerful bootstrap techniques, analytic and numerical. In contrast, in higher dimensions, numerical bootstrap techniques rely on the assumption of unitarity. Not only this restricts the CFTs that can be addressed, but also this leads to inequalities rather than equalities, making it harder to reach exact results. 
+Even in two dimensions, solvable CFTs are very special cases. Starting from a simple CFTs and following a renormalization group flow, you can easily end up at a fixed point whose CFT is completely intractable. 
 
-Even in two dimensions, solvable CFTs are very special cases. Starting from a simple CFTs and following a renormalization group flow, you can easily end up at a fixed point whose CFT is completely intractable. We will deal first of all with CFTs that are considered solved, in that we exactly know the three-point structure constants, and can compute any correlation function to arbitrary precision:
+\subsubsection*{Solvable CFTs}
+
+We will deal first of all with CFTs that are considered solved, in that we exactly know the three-point structure constants, and can compute any correlation function to arbitrary precision:
 \begin{itemize}
  \item Liouville theory,
  \item (generalized) minimal models, and limits thereof. 
@@ -169,6 +179,8 @@ The known solvable CFTs have fewer applications to gravity: in particular, any C
 
 There are other solved or solvable CFTs that we will not mention, because they have extended chiral algebras, which means extra local symmetries in addition to conformal symmetry. Some CFTs of that type can be solved with the methods that we will cover, for example certain Wess--Zumino--Witten models. 
 
+\subsubsection*{Solving CFTs}
+
 When a CFT is solvable, it can typically be solved in several different ways. In this text, we will only use the conformal bootstrap approach, and omit other historically relevant techniques such as Coulomb gas integrals, and the modular bootstrap. We believe that the conformal bootstrap approach is technically simpler, more general, and more powerful. In particular, our main objects are correlation functions on the sphere, and we do not have a rigid notion of which fields belong to a CFT. For example, in the Ising model, we can introduce disorder fields or compute cluster connectivities, without having to worry about modular invariance of the torus partition function. 
 
 We are not claiming that our approach is always mathematically rigorous: our main concern is to provide simple derivations of non-trivial results, without introducing too many auxiliary objects that are later discarded. The calculations are not all done in detail but they should be doable with reasonable effort. Readers who want formal exercises are directed to earlier texts in the same spirit: the minimal review \cite{rib16}, and the more extended review \cite{rib14}. However, these texts do not cover loop models.
@@ -176,7 +188,7 @@ We are not claiming that our approach is always mathematically rigorous: our mai
 
 \subsection*{Acknowledgements}
 
-This text was initially written as lecture notes for a course given at IPhT Saclay in March-April 2024. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica. I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop models and related subjects. Moreover, I am grateful to Jesper Jacobsen for stimulating discussions. 
+This text was initially written as lecture notes for a course given at IPhT Saclay in March-April 2024. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica. I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop models and related subjects. Moreover, I am grateful to Jesper Jacobsen for helpful discussions. 
 
 
 %\end{tcolorbox}
@@ -2205,14 +2217,142 @@ We will remain agnostic on the precise definition of $\mathcal{E}$, and only ass
 where $n$ is the \textbf{loop weight}. 
 
 
+\subsubsection{Loops and vertices}
+
+Our correlation function $Z(\mathcal{E})$ is the analog of a 0-point function in CFT. In order to have analogs of an $N$-point function, 
+we introduce $N$ punctures on our sphere with positions $z_1,\dots, z_N$. 
+Without violating conformal symmetry, we can let the weight of a loop depend on how the loop splits $\{z_1,\dots, z_N\}$ into two subsets, i.e. on the loop's combinatorial properties. It cannot however depend on the loop's topology in $\overline{\mathbb{C}}\backslash \{z_1,\dots, z_N\}$, because we want $Z(\mathcal{E})$ to be a single-valued function of $z_1,\dots, z_N$. For example, in the case $N=4$, the following two loops are topologically different but combinatorially equivalent, and must therefore have the same weight: 
+\begin{align}
+\begin{tikzpicture}[baseline=(base), scale = .4]
+\coordinate (base) at (0, 1);
+ \draw (0, 0) node[cross]{};
+  \draw (3, 0) node[cross]{};
+  \draw (0, 3) node[cross]{};
+  \draw (3, 3) node[cross]{};
+ \draw[red, thick] (-.5, -.5) to [out = -45, in = -45] (3.7, 4) to [out = 135, in = 90] (-.6, 2.8) to [out = -90, in = 135] (3.5, 3.5) to [out = -45, in = 135] (-.5, -.5);
+\end{tikzpicture}
+\qquad \qquad \qquad 
+\begin{tikzpicture}[baseline=(base), scale = .4]
+\coordinate (base) at (0, 1);
+ \draw (0, 0) node[cross]{};
+  \draw (3, 0) node[cross]{};
+  \draw (0, 3) node[cross]{};
+  \draw (3, 3) node[cross]{};
+ \draw[red, thick] (0, -.6) to [out = 0, in = 0] (0, 3.6) to [out = 180, in = 180] (0, -.6);
+\end{tikzpicture}
+\end{align}
+This leads to 8 combinatorially inequivalent classes of loops, with 8 different weights: contractible loops with weight $n$, $i$-loops around the vertex at $z_i$ with weight $w_i$, and $s$-loops, $t$-loops, $u$-loops that split the 4 vertices in pairs:
+\begin{align}
+ \begin{tikzpicture}[baseline=(base), scale = .6]
+\coordinate (base) at (0, 1);
+ \draw (0, -.2) node[cross]{};
+  \draw (3, -.2) node[cross]{};
+  \draw (0, 2.6) node[cross]{};
+  \draw (3, 2.6) node[cross]{};
+  \draw[red, thick] (0, -.2) circle [radius = .4]; 
+   \draw[red, thick] (3, -.2) circle [radius = .4]; 
+    \draw[red, thick] (0, 2.6) circle [radius = .4]; 
+   \draw[red, thick] (3, 2.6) circle [radius = .4]; 
+   \draw[blue, thick] (0, -.8) to [out = 0, in = 0] (0, 3.8) to [out = 180, in = 180] (0, -.8);
+   \draw[blue, thick] (-1.4, 0) to [out = 90, in = 90] (3.8, 0) to [out = -90, in = -90] cycle;
+   \draw[blue, thick] (-1, 4) to [out = 45, in = 135] (2.4, 2.4) to [out = -45, in = 45] (4, -1) to
+   [out = -135, in = -45] (.6, .6) to [out = 135, in = -135] cycle;
+   \draw[thick, green!60!black] (6, 1) circle [radius = 1.3];
+   \node[blue] at (-1.9, 1.5) {$w_s$};
+   \node[blue] at (-1.9, -.5) {$w_t$};
+   \node[blue] at (-1.9, 3.5) {$w_u$};
+   \node[green!60!black] at (7.7, 1) {$n$};
+   \node[red] at (0, .5) {$w_1$};
+   \node[red] at (0, 3.3) {$w_2$};
+    \node[red] at (3, .5) {$w_4$};
+   \node[red] at (3, 3.3) {$w_3$};
+  \end{tikzpicture}
+\end{align}
+Since loops do not intersect, a configuration $E$ that contains $s$-loops has no $t$-loops and $u$-loops. 
+
 \subsubsection{Open loops and combinatorial maps}
 
-Our correlation function $Z(\mathcal{E})$ only depends on the loop weight, and is the analog of a 0-point function in CFT. In order to have analogs of an $N$-point function, 
-we introduce $N$ punctures on our sphere with positions $z_1,\dots, z_N$. 
-Without violating conformal symmetry, we can assume that the weight of a loop depends on how the loop splits $\{z_1,\dots, z_N\}$ into two subsets, i.e. on the loop's combinatorial properties. It cannot however depend on the loop's topology in $\overline{\mathbb{C}}\backslash \{z_1,\dots, z_N\}$, because we want $Z(\mathcal{E})$ to be a single-valued function of $z_1,\dots, z_N$. To illustrate this point, let us consider the case $N=4$ and draw two loops that are topologically different but combinatorially equivalent, and must therefore have the same weight: 
+We also introduce another type of punctures, where open loops can end. Such a puncture has a valency $2r\in\mathbb{N}^*$, with $r=0$ corresponding to the previously introduced weight-changing punctures. In the presence of $N$ punctures, the number of open loops is 
+\begin{align}
+ \sum_{i=1}^N r_i \in \mathbb{N} \ . 
+ \label{srin}
+\end{align}
+Conformal symmetry allows us to specify how vertices are related by open loops: this information is called a combinatorial map \cite{gjnrs23}. For example, in the presence of punctures of valencies $3,2,1,0$, there exist 4 combinatorial maps:
+\begin{align}
+  \begin{tikzpicture}[baseline=(base), scale = .4]
+   \uvertex 
+   \draw (0, 0) -- (0, 3);
+   \draw (0, 0) to [out = 60, in = -150] (3, 3) to [out = -120, in = 30] (0, 0);
+  \end{tikzpicture}
+\qquad \qquad 
+\begin{tikzpicture}[baseline=(base), scale = .4]
+   \uvertex 
+   \draw (0, 3) -- (0, 0) -- (3, 3);
+   \draw (0, 0) to [out = -30, in = -135] (3.5, -0.5) to [out = 45, in = -60] (3, 3);
+  \end{tikzpicture}
+  \qquad  \qquad 
+\begin{tikzpicture}[baseline=(base), scale = .4]
+   \uvertex 
+   \draw (0, 3) -- (3, 3) -- (0, 0);
+   \draw (0, 0) to [out = 20, in = 90] (3.5, 0) to [out = -90, in = -20] (0, 0);
+  \end{tikzpicture}
+  \qquad  \qquad 
+\begin{tikzpicture}[baseline=(base), scale = .4]
+   \uvertex 
+   \draw (0, 0) to [out = 70, in = 0] (0, 3.5) to [out = 180, in = 110] (0, 0);
+   \draw (0, 0) -- (0, 3);
+   \draw (3, 3) to [out = -70, in = 0] (3, -.5) to [out = 180, in = -110] (3, 3);
+  \end{tikzpicture}
+  \label{4maps}
+\end{align}
+Notice that we forbid open loops that can be pulled inside punctures, as they are indistinguishable from contractible loops. This is the reason why we do not count the following map, where the bottom left vertex would have valency $1$ and not $3$:
+\begin{align}
+ \begin{tikzpicture}[baseline=(base), scale = .4]
+   \uvertex 
+   \draw (0, 3) -- (3, 3) -- (0, 0);
+   \draw (0, 0) to [out = 20, in = 90] (2, 0) to [out = -90, in = -20] (0, 0);
+  \end{tikzpicture}
+\end{align}
+To a combinatorial map $M$, we associate the ensemble $\mathcal{E}_M$ of configurations of non-intersecting open and closed loops, such that the open loops connect the punctures according to $M$. The map $M$ dictates which types of closed loops can exist: for example, the last map in Eq. \eqref{4maps} allows closed loops with weights $n,w_4,w_s$. The weights of open loops are again constrained by conformal symmetry, which allows them to depend on the relative angles of open loops at vertices. More precisely, at any puncture we have a weight factor that depends on an angular momentum $s$,
+\begin{align}
+ \boxed{w_{(r,s)}(\{\theta_k\}) = \exp \left\{\tfrac{i}{2} s\textstyle{\sum}_{k=1}^{2r}\theta_{k}\right\}}\ .
+ \label{wrs}¨
+\end{align}
+where the angles are measured with respect to a reference direction, and a reference open loop whose angle is $\theta_1$:
+\begin{align}
+ \theta_{k}\in [\theta_{1}, \theta_{1}+2\pi)
+\qquad \qquad 
+ \begin{tikzpicture}[baseline=(base), scale = .5]
+  \coordinate (base) at (0, 0);
+  \draw [domain=0:410,variable=\t,smooth,samples=35,red,-latex]
+        plot ({90-\t}: {1.6- \t/1000});
+  \draw[-latex, red] (0, 2.4) arc (90:10:2.4);
+  \draw[-latex, red] (0, 2) arc (90:-60:2);
+  \draw (0, 0) node[fill, circle, minimum size = 2mm, inner sep = 0]{};
+  \foreach\t in {10, 40, 120, 150, 230, 300}{
+  \draw (0, 0) -- ++(\t:3);
+  }
+  \draw[ultra thick, blue, dashed] (0, 0) -- ++(90:3);
+  \draw[ultra thick] (0, 0) -- ++(10:3);
+  \node[right] at ++(10:3) {$\theta_{1}$};
+  \node[right] at ++(300:3) {$\theta_{2}$};
+  \node[right] at ++(40:3) {$\theta_{2r}$};
+ \end{tikzpicture}
+ \label{titt}
+\end{align}
+The reference direction would define each angle modulo $2\pi$. Thanks to the reference open loop and the cyclic ordering of open loops around the vertex, our angles are actually defined modulo a collective shift $(\theta_k) \to (\theta_k+2\pi)$. This shift leaves our weight factor invariant provided 
+\begin{align}
+ rs\in \mathbb{Z}\ . 
+\end{align}
+And it can be checked that
+under a change of reference direction or reference open loop, the weight of a configuration $E$ changes by an $E$-independent factor.
 
+We define correlation functions that depend on the punctures $z_1,\dots,z_N$ with their parameters $(r_1,s_1),\dots, (r_N,s_N)$, on the map $M$ and on the weights of closed loops $w_k$:
+\begin{align}
+ Z\Big(\{z_i\},\{(r_i,s_i)\},\{w_k\}\Big|\mathcal{E}_M\Big) =\sum_{E\in\mathcal{E}_M} \prod_{i=1}^N w_{(r_i,s_i)}(E) \prod_{\ell\in E} w(\ell) \ , 
+\end{align}
+where the last product is over closed loops, with $w(\ell)\in\{w_k\}$. 
 
-Then introduce fields, diagonal or not. Weight factors as allowed by conformal symmetry. Combinatorial maps. 
 
 \subsubsection{Cases of the $O(n)$, $U(n)$ and Potts models}
 
