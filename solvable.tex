@@ -188,7 +188,7 @@ We are not claiming that our approach is always mathematically rigorous: our mai
 
 \subsection*{Acknowledgements}
 
-This text was initially written as lecture notes for a course given at IPhT Saclay in March-April 2024. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica. I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop models and related subjects. Moreover, I am grateful to Jesper Jacobsen for helpful discussions. 
+This text was initially written as lecture notes for a course given at IPhT Saclay in March-April 2024. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica. I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop models and related subjects. Moreover, I am grateful to Jesper Jacobsen and Paul Roux for helpful discussions. 
 
 
 %\end{tcolorbox}
@@ -500,11 +500,12 @@ Comparing this with Eq. \eqref{lvtv} applied to $I(z)$, we find
 \begin{align}
  L_{n\geq -1} I(z) = 0 \quad , \quad T(z) = L_{-2}I(z)\ .
 \end{align}
-In particular, the identity field is a degenerate primary field of conformal dimension zero, with a vanishing null vector at level $1$, i.e. $I(z) \propto V^d_{\langle 1,1\rangle}(z)$. And the energy-momentum tensor is a descendant of that field. The commutation relations of the Virasoro algebra \eqref{vir} are equivalent to the OPE
+In particular, the identity field is a degenerate primary field of conformal dimension zero, with a vanishing null vector at level $1$, i.e. $I(z) \propto V^d_{\langle 1,1\rangle}(z)$. And from the expression of $T(z)$ as a descendant of that field, we deduce
 \begin{align}
  T(y)T(z) = \frac{\frac{c}{2}}{(y-z)^4} + \frac{2T(z)}{(y-z)^2} + \frac{\partial T(z)}{y-z} + O(1)\ .
 \label{tt}
 \end{align}
+This OPE is equivalent to the commutation relations of the Virasoro algebra \eqref{vir}.
 
 \subsubsection{Conformal symmetry constraints on OPEs}\label{sec:csope}
 
@@ -2344,8 +2345,7 @@ The reference direction would define each angle modulo $2\pi$. Thanks to the ref
 \begin{align}
  rs\in \mathbb{Z}\ . 
 \end{align}
-And it can be checked that
-under a change of reference direction or reference open loop, the weight of a configuration $E$ changes by an $E$-independent factor.
+Under a change of reference direction or reference open loop, the weight of a configuration $E$ changes by an $E$-independent factor.
 
 We define correlation functions that depend on the punctures $z_1,\dots,z_N$ with their parameters $(r_1,s_1),\dots, (r_N,s_N)$, on the map $M$ and on the weights of closed loops $w_k$:
 \begin{align}
@@ -2356,9 +2356,35 @@ where the last product is over closed loops, with $w(\ell)\in\{w_k\}$.
 
 \subsubsection{Cases of the $O(n)$, $U(n)$ and Potts models}
 
-Case of the $O(n)$ model (just restrict possible diagonal fields), $U(n)$ model (just assume even numbers of loops, 2 diagonal fields), Potts model (focus on clusters, unnatural constraints). 
+In the $O(n)$ model, there are no weight-changing punctures. All closed loops have the same weight $n$, whether or not they are contractible. On the other hand,  
+all possible loop-ending punctures are allowed. 
 
-Relate $n$ with loop weight.
+In the $U(n)$ model, we add the restriction that all loops (closed and open) can be oriented such that any two neighbouring loops have opposite orientations. Equivalently, the Riemann sphere should be bicolorable, with each loop separating two regions of different colors. This allows only punctures with even valencies $2r\in 2\mathbb{N}^*$:
+\begin{align}
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .4]
+ \clip (-4, -4) rectangle (4, 4);
+  \filldraw[thick, fill = red!30] (0, 0) to [out = 100, in = -120] (0, 2) to [out = 60, in = -150] (0, 4.2) -- (4.2, 4.2) -- (4.2, 1) to [out = 160, in = 60] (2, 1.5) to [out = -120, in = 20] (0, 0);
+  \filldraw[thick, fill = red!30] (0, 0) to [out = -20, in = 80] (1, -2) to [out = -100, in = 130] (2, -4.2) -- (-3.5, -4.2) to [out = 50, in = -40] (-3, -2) to [out = 120, in = -110] (0, 0);
+  \filldraw[thick, fill = red!30] (-3.5, 2) to [out = 90, in = 120] (-1.5, 3) to [out = -60, in = -80] (-2.5, 1.5) to [out = 100, in = -90] (-3.5, 2);
+   \draw (0, 0) node[fill, circle, minimum size = 2mm, inner sep = 0]{};
+ \end{tikzpicture}
+\end{align}
+The Potts model is the same as the $U(n)$ model, except that the fundamental geometrical objects are clusters instead of loops, with loops forming the boundaries of clusters. In general, loops and clusters are equivalent: in the above example, the puncture of valency 4 is the point where two different clusters meet. We have banned open loops that can be pulled inside punctures, and such loops would indeed lead to a miscounting of clusters, as in the following configuration where we have a squeezed cluster rather than the meeting of two different clusters:
+\begin{align}
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .4]
+  \clip (-4, -4) rectangle (4, 4);
+  \filldraw[thick, fill = red!30] (0, 0) to [out = 100, in = -120] (0, 2) to [out = 60, in = -150] (0, 4.2) -- (4.2, 4.2) -- (4.2, -4.2) -- (-3.5, -4.2) to [out = 50, in = -40] (-3, -2) to [out = 120, in = -110] (0, 0) to [out = -50, in = -80] (2.5, -.5) to [out = 100, in = 35] (0, 0);
+   \draw (0, 0) node[fill, circle, minimum size = 2mm, inner sep = 0]{};
+ \end{tikzpicture}
+\end{align}
+However, there is a subtle difference between loops and clusters in the case of a puncture of valency 2. In the Potts model, we would like this puncture to sit at the boundary of a cluster, which allows configurations such as the following: 
+\begin{align}
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .4]
+  \filldraw[thick, fill = red!30] (0, 0) to [out = -90, in = -80] (3, -.5) to [out = 100, in = 55] (0, 0);
+   \draw (0, 0) node[fill, circle, minimum size = 2mm, inner sep = 0]{};
+ \end{tikzpicture}
+\end{align}
+To ensure that our puncture is at the boundary of a cluster, the correct condition is no closed loop goes around the puncture. Therefore, the Potts model has punctures with valencies $2r\in 2(\mathbb{N}+2)$, and weight-changing punctures of weight $w=0$.
 
 
 \subsection{Conformal field theory interpretation}
@@ -2394,6 +2420,10 @@ Given some fields, space of bootstrap solutions and combinatorial maps. Combinat
 \subsubsection{Specific loop models}
 
 Cases of $O(n)$, Potts etc: modified counting of solutions, need to forbid or allow some maps based on deg. fields fusion rules etc. 
+
+Pb of $n$ vs $-n$ in Potts, $U(n)$ and degenerate fields. Gamsa--Cardy operators. Degenerate fields do have nontrivial correlators! But $s\to s+2$ same weight, how do we distinguish energy operator from identity in loop model?
+
+How do we see that a field is degenerate in the loop model? In the CFT deg. fields have special OPEs. But in the loop model their weight is a special value of a continuous parameter: what happens to the argument that single-valuedness excludes $V_{\langle 1,2\rangle}^d$ from the $O(n)$ model? 
 
 \subsection{Analytic properties of structure constants}
 
