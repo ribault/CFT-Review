@@ -8,7 +8,7 @@
 
 \usepackage[top=20mm,bottom=20mm,left=25mm,right=25mm]{geometry}
 
-%\usepackage{showkeys}
+\usepackage{showkeys}
 
 \usepackage{amsmath,amssymb,amsfonts}
 
@@ -121,12 +121,12 @@
 
 
 \begin{abstract}
-In this course, we review two-dimensional CFT in the bootstrap approach, and sketch the known exactly solvable CFTs with no extended chiral symmetry: Liouville theory, (generalized) minimal models, limits thereof, and loop models, including the $O(n)$, Potts and $U(n)$ models. 
+In this course, we review two-dimensional CFT in the bootstrap approach, and sketch the known exactly solvable CFTs with no extended chiral symmetry: Liouville theory, (generalized) minimal models, limits thereof, and loop CFTs, including the $O(n)$, Potts and $U(n)$ CFTs. 
 
 Exact solvability relies on local conformal symmetry, and on the existence of degenerate fields: we explain how these assumptions constrain the spectrum and correlation functions. We discuss the crossing symmetry equations, and how they can be solved analytically or numerically, leading to  
 analytic formulas for structure constants. 
 
-In the case of loop models, we review the combinatorial description of correlation functions, inspired by the lattice construction of statistical models. We sketch what remains to be done for solving the models. 
+In the case of loop CFTs, we review the combinatorial description of correlation functions, inspired by the lattice construction of statistical models. We sketch what remains to be done for solving the models. 
 
 % Nothing on log CFT. 
 
@@ -137,7 +137,7 @@ The plan is:
  \item Defining a CFT. Diagonal and non-diagonal fields, degenerate fields. Exactly solvable CFTs and their spectrums. 
  \item Degenerate 4-point functions. Analytic formulas for 2-point and 3-point structure constants. 
  \item Computing conformal blocks. Numerical bootstrap.
- \item Correlation functions in loop models. 
+ \item Correlation functions in loop CFTs. 
 \end{enumerate}
 \end{abstract}
 
@@ -174,7 +174,7 @@ We will deal first of all with CFTs that are considered solved, in that we exact
  \item Liouville theory,
  \item (generalized) minimal models, and limits thereof. 
 \end{itemize}
-We will also propose a unified treatment of loop models, which are not solved but are believed to be solvable, because we have sufficiently many exact results. By loop models we mean a large class of CFTs, with various global symmetry groups, which describe critical limits of various statistical models in various phases, and have various applications: percolation, polymers, and more recently active hydraulics \cite{jcpb23}. 
+We will also propose a unified treatment of loop CFTs, which are not solved but are believed to be solvable, because we have sufficiently many exact results. By loop CFTs we mean a large class of CFTs, with various global symmetry groups, which describe critical limits of various statistical models in various phases, and have various applications: percolation, polymers, and more recently active hydraulics \cite{jcpb23}. 
 The known solvable CFTs have fewer applications to gravity: in particular, any CFT holographically dual to three-dimensional gravity should exist in the large central charge limit, which corresponds to the classical limit of gravity; but there are strong technical reasons why non-trivial solvable CFTs must have small central charges. (See Section \ref{sec:dotc}.) 
 
 There are other solved or solvable CFTs that we will not mention, because they have extended chiral algebras, which means extra local symmetries in addition to conformal symmetry. Some CFTs of that type can be solved with the methods that we will cover, for example certain Wess--Zumino--Witten models. 
@@ -183,12 +183,12 @@ There are other solved or solvable CFTs that we will not mention, because they h
 
 When a CFT is solvable, it can typically be solved in several different ways. In this text, we will only use the conformal bootstrap approach, and omit other historically relevant techniques such as Coulomb gas integrals, and the modular bootstrap. We believe that the conformal bootstrap approach is technically simpler, more general, and more powerful. In particular, our main objects are correlation functions on the sphere, and we do not have a rigid notion of which fields belong to a CFT. For example, in the Ising model, we can introduce disorder fields or compute cluster connectivities, without having to worry about modular invariance of the torus partition function. 
 
-We are not claiming that our approach is always mathematically rigorous: our main concern is to provide simple derivations of non-trivial results, without introducing too many auxiliary objects that are later discarded. The calculations are not all done in detail but they should be doable with reasonable effort. Readers who want formal exercises are directed to earlier texts in the same spirit: the minimal review \cite{rib16}, and the more extended review \cite{rib14}. However, these texts do not cover loop models.
+We are not claiming that our approach is always mathematically rigorous: our main concern is to provide simple derivations of non-trivial results, without introducing too many auxiliary objects that are later discarded. The calculations are not all done in detail but they should be doable with reasonable effort. Readers who want formal exercises are directed to earlier texts in the same spirit: the minimal review \cite{rib16}, and the more extended review \cite{rib14}. However, these texts do not cover loop CFTs.
 
 
 \subsection*{Acknowledgements}
 
-This text was initially written as lecture notes for a course given at IPhT Saclay in March-April 2024. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica. I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop models and related subjects. Moreover, I am grateful to Jesper Jacobsen and Paul Roux for helpful discussions. 
+This text was initially written as lecture notes for a course given at IPhT Saclay in March-April 2024. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica. I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop CFTs and related subjects. Moreover, I am grateful to Jesper Jacobsen and Paul Roux for helpful discussions. 
 
 
 %\end{tcolorbox}
@@ -1362,11 +1362,11 @@ The OPEs of this CFT are determined by the conservation of diagonality: in addit
 Like Liouville theory, generalized D-series minimal models cannot be analytically continued beyond $\beta^2\in \mathbb{R}_{>0}$. However, we can define these models by their spectrums in the range $\Re\beta^2>0$ \eqref{rbp}, assuming that they exist. There is indeed evidence that they exist \cite{mr17}, although they have not been fully solved, and the OPEs \eqref{vrsvrs} may include discrete terms in addition to the integral \cite{rib19}. 
 
 
-\subsection{Loop models}
+\subsection{Loop CFTs}
 
 Critical loop models were originally defined as critical limits of statistical models that describe non-intersecting loops in a two-dimensional space. Starting with the Ising model, many statistical models can be reformulated in terms of loops, and more models can be directly constructed from loops. But there is a lot of choice about which observables to include in the model. In the Ising model, if we consider only local observables, we obtain the minimal model $\text{AMM}_{4,3}$ in the critical limit. If we also consider non-local observables such as cluster connectivities, we obtain a much richer CFT. For applications to statistical physics, what matters is less to define a consistent CFT than to compute correlation functions, which are then interpreted as probabilities. We will sketch a few consistent CFTs in Section \ref{sec:models}, but our main focus will be on correlation functions, which will be the subject of Section \ref{sec:cloop}.
 
-To begin with, we will now propose a simple extended spectrum that will include all the known loop models, based on the assumption that there exists one degenerate field. 
+To begin with, we will now propose a simple extended spectrum that will include all the known loop CFTs, based on the assumption that there exists one degenerate field. 
 
 \subsubsection{Extended spectrum}
 
@@ -1384,18 +1384,18 @@ On the other hand, $V_{(r,0)}$ is a genuinely non-diagonal field, whose fusion r
 
 Our simple extended spectrum hides important subtleties: 
 \begin{itemize}
- \item We characterize fields by their conformal dimensions, but there could be several independent fields with the same dimensions, in other words there could be nontrivial field multiplicities. This is known to occur in the loop models of Section \ref{sec:models}, where the multiplicities are described in terms of representations of global symmetry groups.  
+ \item We characterize fields by their conformal dimensions, but there could be several independent fields with the same dimensions, in other words there could be nontrivial field multiplicities. This is known to occur in the loop CFTs of Section \ref{sec:models}, where the multiplicities are described in terms of representations of global symmetry groups.  
  \item Knowing which primary fields belong to $\widetilde{S}^\text{loop}$ is not enough for determining how the conformal algebra acts on $\widetilde{S}^\text{loop}$. For $(r,s)\in \mathbb{N}^*\times \mathbb{Z}^*$, the primary field $V_{(r,s)}$ has a null vector, and the Verma module $\mathcal{V}_{\Delta_{(r,s)}}\otimes\bar{\mathcal{V}}_{\Delta_{(r,-s)}}$ is not the only representation that includes $V_{(r,s)}$. The correct representation can be determined by starting with $V_{(r,0)}\in \mathcal{V}_{\Delta_{(r,0)}}\otimes\bar{\mathcal{V}}_{\Delta_{(r,0)}}$, and repeatedly taking OPEs with $V^d_{\langle 1,2\rangle}$, see Section \ref{sec:log}. It turns out that $V_{(r,s)}$ and $V_{(r,-s)}$ both belong to the same logarithmic indecomposable representation, which is not left-right factorized. 
 \end{itemize}
 
 \subsubsection{Dependence on the central charge and fusion rules}
 
-In loop models, the existence of non-diagonal fields together with $V^d_{\langle 1,2\rangle}$ leads to the half-plane constraint $\Re c<13$ \eqref{rbp} on the central charge. And the asymmetry between the two Kac indices $r,s$ means that loop models really depend on $\beta^2$ \eqref{cb}, not on $c$. 
+In loop CFTs, the existence of non-diagonal fields together with $V^d_{\langle 1,2\rangle}$ leads to the half-plane constraint $\Re c<13$ \eqref{rbp} on the central charge. And the asymmetry between the two Kac indices $r,s$ means that loop CFTs really depend on $\beta^2$ \eqref{cb}, not on $c$. 
 
 We now make an assumption that has 3 different formulations:
 \begin{enumerate}
  \item Any OPE spectrum is discrete.
- \item Loop models do not include Liouville theory. 
+ \item Loop CFTs do not include Liouville theory. 
  \item Correlation functions are meromorphic in $\beta$ over the whole domain $\Re c<13$.
 \end{enumerate}
 These fomulations are equivalent because a continous OPE spectrum would produce non-analyticities on the line $c\leq 1$, as we saw in the context of Liouville theory in Section \ref{sec:liou}. Admittedly, it is only a conjecture that discreteness of the OPEs implies that correlation functions are meromorphic.
@@ -1408,7 +1408,7 @@ In addition to our assumption that OPEs are discrete, known constraints on fusio
 The basic expectation is that in any OPE, any field that is not excluded by these constraints appears. This will turn out to be true for non-diagonal fields. For diagonal fields, the situation is more subtle, as we will see in Section \ref{sec:cloop}.
 
 
-\subsubsection{$O(n)$ model, $U(n)$ model, Potts model}\label{sec:models}
+\subsubsection{$O(n)$ CFT, $U(n)$ CFT, Potts CFT}\label{sec:models}
 
 Three known models give rise to integer-spin subsets of the extended spectrum $\widetilde{S}^\text{loop}$. 
 Their spectrums are 
@@ -1422,21 +1422,21 @@ Their spectrums are
 The spectrums of the $O(n)$ and $U(n)$ models are natural constructions: we start with a degenerate field $V^d\in\{V^d_{\langle 1,3\rangle},V^d_{\langle 1,2\rangle}\}$, and add non-diagonal fields $V_{(r,s)}\in\widetilde{S}^\text{loop}$ such that $V_{(r,s)}$ and the fields that appear in $V^dV_{(r,s)}$ have integer spins. 
 On the other hand, the Potts spectrum has no simple explanation in our formalism. We can only remark that it is obtained from the $U(n)$ spectrum by removing the non-diagonal fields $\left\{V_{(1,s)}\right\}_{s\in\mathbb{Z}}$ and adding the diagonal fields $\left\{ V_{P_{(0,s)}}\right\}_{s\in \mathbb{N}+\frac12}$. 
 
-Each one of these models has
+Each one of these CFTs has
 \begin{itemize}
  \item a modular-invariant torus partition function,
- \item a group of global symmetries that commutes with conformal symmetry: the orthogonal group $O(n)$, the unitary group $U(n)$, or the symmetric group $S_Q$ in the case of the Potts model. The parameters of these groups can take arbitrary complex values \cite{gnjrs21, br19}
+ \item a group of global symmetries that commutes with conformal symmetry: the orthogonal group $O(n)$, the unitary group $U(n)$, or the symmetric group $S_Q$ in the case of the Potts CFT. The parameters of these groups can take arbitrary complex values \cite{gnjrs21, br19}
  \begin{align}
   n = -2\cos\left(\pi \beta^2\right) \quad , \quad Q = 4\cos^2\left(\pi \beta^2\right)\ .
   \label{nQ}
  \end{align}
 \end{itemize}
-Degenerate fields are invariant under global symmetries, while other fields can transform in non-trivial representations \cite{jrs22}. For example, in the $O(n)$ model, the fields $V_{(\frac12,0)},V_{(1,0)}$ and $V_{(1,1)}$ transform under $O(n)$ as a vector, a symmetric 2-tensor and an antisymmetric 2-tensor respectively. There are two fields of the type $V_{(\frac32,0)}$, which transform as symmetric and antisymmetric 3-tensors. And for $r\geq \frac52$, it also happens that several different fields have the same conformal dimensions and the same behaviour under $O(n)$. The situation is similar in the $U(n)$ and Potts models: let us only mention that the diagonal non-degenerate fields $V_{P_{(0,s)}}$ of the Potts model transform in the standard  representation of $S_Q$, whose dimension is $Q-1$. 
+Degenerate fields are invariant under global symmetries, while other fields can transform in non-trivial representations \cite{jrs22}. For example, in the $O(n)$ CFT, the fields $V_{(\frac12,0)},V_{(1,0)}$ and $V_{(1,1)}$ transform under $O(n)$ as a vector, a symmetric 2-tensor and an antisymmetric 2-tensor respectively. There are two fields of the type $V_{(\frac32,0)}$, which transform as symmetric and antisymmetric 3-tensors. And for $r\geq \frac52$, it also happens that several different fields have the same conformal dimensions and the same behaviour under $O(n)$. The situation is similar in the $U(n)$ and Potts CFTs: let us only mention that the diagonal non-degenerate fields $V_{P_{(0,s)}}$ of the Potts CFT transform in the standard  representation of $S_Q$, whose dimension is $Q-1$. 
 
-A puzzle has arisen in the $O(n)$ model, when it was found that there is one field $V_{(2,0)}$ that is invariant under $O(n)$ \cite{gz20}. From the point of view of the renormalization group flow triggered by the field $V^d_{\langle 1,3\rangle}$, this field is \textit{dangerously irrelevant}, i.e. it becomes relevant along the flow, and could prevent the flow from reaching the dense phase from the dilute phase. But numerical studies show that the flow does reach the dense phase. The puzzle is resolved by noticing that $V^d_{\langle 1,3\rangle}$ is degenerate, and cannot produce the non-diagonal field $V_{(2,0)}$ by repeated fusion, even if $O(n)$ symmetry would allow it \cite{js23}. Therefore, it is global symmetry itself that is \textit{dangerously irrelevant} to the understanding of this flow. 
+A puzzle has arisen in the $O(n)$ CFT, when it was found that there is one field $V_{(2,0)}$ that is invariant under $O(n)$ \cite{gz20}. From the point of view of the renormalization group flow triggered by the field $V^d_{\langle 1,3\rangle}$, this field is \textit{dangerously irrelevant}, i.e. it becomes relevant along the flow, and could prevent the flow from reaching the dense phase from the dilute phase. But numerical studies show that the flow does reach the dense phase. The puzzle is resolved by noticing that $V^d_{\langle 1,3\rangle}$ is degenerate, and cannot produce the non-diagonal field $V_{(2,0)}$ by repeated fusion, even if $O(n)$ symmetry would allow it \cite{js23}. Therefore, it is global symmetry itself that is \textit{dangerously irrelevant} to the understanding of this flow. 
 
 The $O(n)$, $U(n)$ and Potts CFTs were originally defined as critical limits of statistical lattice models. In each case, the lattice model has a critical limit under some conditions on $n$ or $Q$. If these parameters are assumed to be real, the conditions are $n\in (-2,2)$ or $Q\in (0,4)$, equivalently $c\in (-2,1)$. The region of criticality actually extends into the complex $c$-plane, although it is much smaller than the half-plane $\Re c<13$ \cite{bjjz22}. Outside that region, certain fields become relevant, so the models may become multicritical. Moreover, the $O(n)$ lattice model has a dilute and a dense phase, and each phase gives rise to a different CFT in the critical limit. Each phase has its own value of $\beta^2$, given by solving Eq. \eqref{nQ} with $\beta^2\in (0,1)$ (dense phase) or $\beta^2\in (1,2)$ (dilute phase), if we assume $n\in (-2,2)$. 
-As a result, there can exist two different $O(n)$ CFTs with the same central charge but different values of $n$, related by $\beta \to\beta^{-1}$. Similar phenomenons also occurs in the $U(n)$ and Potts models.
+As a result, there can exist two different $O(n)$ CFTs with the same central charge but different values of $n$, related by $\beta \to\beta^{-1}$. Similar phenomenons also occurs in the $U(n)$ and Potts CFTs.
 
 \subsection{Completing the picture}
 
@@ -1547,7 +1547,7 @@ They have two independent degenerate fields $\left\{V^f_{\langle r,1\rangle},V^f
 However, we do not know how to derive their known spectrums from the study of fusion rules. 
 Solving E-series minimal models is apparently still an open problem. 
 \item \textbf{Logarithmic minimal models} are believed to exist for $\beta^2\in \mathbb{Q}_{>0}$ \cite{prz06}. Their primary fields belong to the extended Kac table, i.e. they have integer Kac indices. Their spectrums include logarithmic representations. Their spectrums and fusion rules are not fully known. It is in fact not clear how many such CFTs exist at any given central charge. Presumably, they can be obtained as limits of generalized minimal models. 
-\item At $c=1$, the \textbf{compactified free boson} and its $\mathbb{Z}_2$ orbifold the \textbf{Ashkin--Teller model} are better understood in terms of an extended symmetry algebra (an abelian affine Lie algebra), although they can also be solved in terms of Virasoro symmetry only \cite{nr21}. They have a degenerate field $V^f_{\langle 1, 3\rangle}=V^f_{\langle 3,1\rangle}$, which however behaves as the identity field under fusion with non-diagonal fields. As a result, the constraints \eqref{sriz} are not obeyed. These models have a continuous parameter: the compactification radius $R$. For a special value of $R$, the compactified free boson is a $c\to 1$ limit of the $O(n)$ model, and the Ashkin--Teller model is a $c\to 1$ limit of the Potts model.
+\item At $c=1$, the \textbf{compactified free boson} and its $\mathbb{Z}_2$ orbifold the \textbf{Ashkin--Teller model} are better understood in terms of an extended symmetry algebra (an abelian affine Lie algebra), although they can also be solved in terms of Virasoro symmetry only \cite{nr21}. They have a degenerate field $V^f_{\langle 1, 3\rangle}=V^f_{\langle 3,1\rangle}$, which however behaves as the identity field under fusion with non-diagonal fields. As a result, the constraints \eqref{sriz} are not obeyed. These models have a continuous parameter: the compactification radius $R$. For a special value of $R$, the compactified free boson is a $c\to 1$ limit of the $O(n)$ CFT, and the Ashkin--Teller model is a $c\to 1$ limit of the Potts CFT.
 \end{itemize}
 
 
@@ -1988,9 +1988,9 @@ The sum over $n$ is divergent, but it converges when inserted in the $s$-channel
 
 Without the field renormalization $V^d_{\langle r,s\rangle}\to (-)^{\frac{r+1}{2}} V^d_{\langle r,s\rangle}$, would we have obtained a smooth diagonal 3-point structure constant $C_{P_1,P_2,P_3}$, and a distribution in the non-diagonal sector? Of course not: renormalizations cannot make a difference. To see this, we may study the 4-point function $\left<V_{P_1}V_{P_2}V_{(r_3,s_3)}V_{(r_4,s_4)}\right>$ in the $s$-channel: whatever the normalization, the 4-point structure constant has a factor $C^\text{GDMM}_{P_1,P_2,P_s}$ in the limit. Our field renormalization only makes this clearer at the level of 3-point structure constants. 
 
-\subsubsection{Loop models}
+\subsubsection{Loop CFTs}
 
-In the loop models' extended spectrum $\widetilde{S}^\text{loop}$ \eqref{sloop}, it is clear that shift equations do not determine the structure constants:
+In the loop CFTs' extended spectrum $\widetilde{S}^\text{loop}$ \eqref{sloop}, it is clear that shift equations do not determine the structure constants:
 \begin{itemize}
  \item In the case of non-diagonal fields $V_{(r,s)}$, the dependence on $r$ is not constrained, because the spectrum $\widetilde{S}^\text{loop}$ does not include the degenerate field $V_{\langle 2,1\rangle}^d$. We only have $V^d_{\langle 1,2\rangle}$, whose shift equations determine how structure constants behave under $s\to s+2$, whereas $s$ takes fractional values.
  \item In the case of diagonal fields $V_P$, the shift equations from $V^d_{\langle 1,2\rangle}$ determine how structure constants behave under $P\to P+\beta^{-1}$. 
@@ -2036,9 +2036,9 @@ There is a conjecture that $C^\text{norm}$ is in fact a polynom of loop weights,
  \boxed{n= w\left(P_{(1,1)}\right) = -2\cos(\pi \beta^2)} \ .
  \label{ncb}
 \end{align}
-(This is the same $n$ as in the $O(n)$ model \eqref{nQ}.) In Section \ref{sec:cloop} we will formulate this conjecture in more detail. 
+(This is the same $n$ as in the $O(n)$ CFT \eqref{nQ}.) In Section \ref{sec:cloop} we will formulate this conjecture in more detail. 
 
-Even if the conjecture only applies to loop models, it is interesting to compute the normalized 3-point structure constant associated to $C_{P_1,(r_2,s_2),(r_3,s_3)}$ \eqref{cdnn} from (generalized) D-series minimal models:
+Even if the conjecture only applies to loop CFTs, it is interesting to compute the normalized 3-point structure constant associated to $C_{P_1,(r_2,s_2),(r_3,s_3)}$ \eqref{cdnn} from (generalized) D-series minimal models:
 \begin{align}
  C^\text{norm}_{P_1,(r_2,s_2),(r_3,s_3)} = (-)^{\frac{r_3}{2}}(-)^{\frac{s_2+s_3}{2}} \prod_\pm \prod_{j=-\frac{|r_2\pm r_3|-1}{2}}^{\frac{|r_2\pm r_3|-1}{2}} 2\cos \pi(\beta P_1+\beta^2j) \ ,
 \end{align}
@@ -2125,7 +2125,7 @@ In the following diagram, we sketch what we can learn from numerically solving c
 \begin{center}
  \begin{tikzpicture}[baseline=(base), scale = .5]
 % \coordinate (base) at (0, -4);
-\node [right] at (7.5, -15) {$\bullet$ Potts connectivities \cite{nr20}, loop models \cite{rib22, nrj23}};
+\node [right] at (7.5, -15) {$\bullet$ Potts connectivities \cite{nr20}, loop CFTs \cite{rib22, nrj23}};
  \node [right] at (7.5, -14) {Compute 4-point structure constants};
 \draw [ultra thick, -latex] (4.5, -6) -- (4.5, -14) -- (7.5, -14);
  \node [right] at (7.5, -12.5) {$\bullet$ Potts connectivities \cite{prs16, prs19}};
@@ -2135,7 +2135,7 @@ In the following diagram, we sketch what we can learn from numerically solving c
   \node [right] at (7.5, -10) {$\bullet$ Potts connectivities \cite{hjs20, nr20}};
  \node [right] at (7.5, -9) {Correct spectrum!};
  \draw [ultra thick, -latex] (4.5, -6) -- (4.5, -9) -- (7.5, -9);
- \node [right] at (11, -7) {$\bullet$ $O(n)$ model \cite{gnjrs21}, Potts model \cite{niv22}, loop models \cite{gjnrs23}};
+ \node [right] at (11, -7) {$\bullet$ $O(n)$ CFT \cite{gnjrs21}, Potts CFT \cite{niv22}, loop CFTs \cite{gjnrs23}};
  \node [right] at (11, -6) {Determine the dimension of the space of solutions};
  \draw [ultra thick, -latex] (8.8, -6) -- node[above]{No} (11, -6);
 \draw (0, -6) node[right, draw, fill = red!10] {Is the solution unique?};
@@ -2154,19 +2154,19 @@ In the following diagram, we sketch what we can learn from numerically solving c
 
 \subsubsection{Factorization of 4-point structure constants}
 
-In order to solve a CFT, we should not only determine 4-point structure constants, but also factorize them into 2-point and 3-point structure constants. Factorization is simple enough if field multiplicities are trivial. However, there are nontrivial field multiplicities in D-series minimal models and in loop models. 
+In order to solve a CFT, we should not only determine 4-point structure constants, but also factorize them into 2-point and 3-point structure constants. Factorization is simple enough if field multiplicities are trivial. However, there are nontrivial field multiplicities in D-series minimal models and in loop CFTs. 
 This complicates factorization, because conformal blocks only depend on conformal dimensions. Solving the crossing symmetry equations \eqref{seteu} does not quite give us access to factorized 4-point structure constants $D^{(s)}_k = C^k_{12}C_{k34}$ \eqref{stu}, but to coefficients of conformal blocks:
 \begin{align}
  D^{(s)}_{\Delta,\bar\Delta} = \sum_{k\in\mathcal{S}^{(s)}\left|\substack{\Delta_k=\Delta\\ \bar{\Delta}_k=\bar\Delta}\right.} C^k_{12}C_{k34} \ .
 \end{align}
-This is a sum of as many terms as the multiplicity of the primary field $V_{\Delta,\bar\Delta}$ in the $s$-channel spectrum $\mathcal{S}^{(s)}$. Therefore, factorization only constrains 4-point structure constants if we know field multiplicities. In principle, knowing the spectrum means knowing field multiplicities. In practice however, in loop models, we know the spectrum of conformal dimensions without knowing the multiplicities. 
+This is a sum of as many terms as the multiplicity of the primary field $V_{\Delta,\bar\Delta}$ in the $s$-channel spectrum $\mathcal{S}^{(s)}$. Therefore, factorization only constrains 4-point structure constants if we know field multiplicities. In principle, knowing the spectrum means knowing field multiplicities. In practice however, in loop CFTs, we know the spectrum of conformal dimensions without knowing the multiplicities. 
 
 If the multiplicity $m(V_{\Delta,\bar\Delta})$ of $V_{\Delta,\bar\Delta}$ in the full spectrum is finite, it can in principle be determined from the values of $D^{(s)}_{\Delta,\bar\Delta}$ for all possible 4-point functions $\left<V_{k_1}V_{k_2}V_{k_3}V_{k_4}\right>$: 
 \begin{align}
  m\left(V_{\Delta,\bar\Delta}\right) = \text{rank}\left(\left.D^{(s)}_{\Delta,\bar\Delta}\right|_{\left<V_{k_1}V_{k_2}V_{k_3}V_{k_4}\right>}\right)_{k_i\in\mathcal{S}}\ .
 \end{align}
 In principle it is impossible to compute the rank of an infinite matrix, but 
-in practice it may be enough to study a few 4-point functions for guessing a given multiplicity. This has been done in a few examples of diagonal 4-point functions in loop models \cite{rib22}.
+in practice it may be enough to study a few 4-point functions for guessing a given multiplicity. This has been done in a few examples of diagonal 4-point functions in loop CFTs \cite{rib22}.
 
 
 \subsection{Virasoro conformal blocks and Zamolodchikov's recursion}
@@ -2196,7 +2196,7 @@ Random positions.
 Deviations. Detection of solutions. Counting of solutions.
 
 
-\section{Correlation functions in loop models} \label{sec:cloop}
+\section{Correlation functions in loop CFTs} \label{sec:cloop}
 
 We will now take a short break from CFT, and build correlation functions as statistical sums over loop ensembles. This will motivate the introduction of combinatorial maps, which give rise to a basis of solutions of crossing symmetry. We can then forget about the statistical sums, which are not fundamental or universal quantities, while keeping the combinatorial maps, which are intrinsic features of the CFT.
 
@@ -2218,7 +2218,7 @@ We will remain agnostic on the precise definition of $\mathcal{E}$, and only ass
 where $n$ is the \textbf{loop weight}. 
 
 
-\subsubsection{Loops and vertices}
+\subsubsection{Loops and punctures}
 
 Our correlation function $Z(\mathcal{E})$ is the analog of a 0-point function in CFT. In order to have analogs of an $N$-point function, 
 we introduce $N$ punctures on our sphere with positions $z_1,\dots, z_N$. 
@@ -2350,6 +2350,7 @@ Under a change of reference direction or reference open loop, the weight of a co
 We define correlation functions that depend on the punctures $z_1,\dots,z_N$ with their parameters $(r_1,s_1),\dots, (r_N,s_N)$, on the map $M$ and on the weights of closed loops $w_k$:
 \begin{align}
  Z\Big(\{z_i\},\{(r_i,s_i)\},\{w_k\}\Big|\mathcal{E}_M\Big) =\sum_{E\in\mathcal{E}_M} \prod_{i=1}^N w_{(r_i,s_i)}(E) \prod_{\ell\in E} w(\ell) \ , 
+ \label{zbig}
 \end{align}
 where the last product is over closed loops, with $w(\ell)\in\{w_k\}$. 
 
@@ -2369,7 +2370,7 @@ In the $U(n)$ model, we add the restriction that all loops (closed and open) can
    \draw (0, 0) node[fill, circle, minimum size = 2mm, inner sep = 0]{};
  \end{tikzpicture}
 \end{align}
-The Potts model is the same as the $U(n)$ model, except that the fundamental geometrical objects are clusters instead of loops, with loops forming the boundaries of clusters. In general, loops and clusters are equivalent: in the above example, the puncture of valency 4 is the point where two different clusters meet. We have banned open loops that can be pulled inside punctures, and such loops would indeed lead to a miscounting of clusters, as in the following configuration where we have a squeezed cluster rather than the meeting of two different clusters:
+The Potts model is the same as the $U(n)$ model, except that the fundamental geometrical objects are clusters instead of loops, with loops forming the boundaries of clusters. In general, loops and clusters are equivalent: in the above example, a puncture of valency 4 is a point where 2 large clusters meet, where a cluster is large if it cannot be pulled inside the puncture. For example, in the following situation where an open loop can be pulled inside the puncture, we have a squeezed cluster rather than the meeting of two different clusters:
 \begin{align}
  \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .4]
   \clip (-4, -4) rectangle (4, 4);
@@ -2377,26 +2378,32 @@ The Potts model is the same as the $U(n)$ model, except that the fundamental geo
    \draw (0, 0) node[fill, circle, minimum size = 2mm, inner sep = 0]{};
  \end{tikzpicture}
 \end{align}
-However, there is a subtle difference between loops and clusters in the case of a puncture of valency 2. In the Potts model, we would like this puncture to sit at the boundary of a cluster, which allows configurations such as the following: 
+However, there is a subtle difference between loops and clusters in the case of a puncture of valency 2. In the following two examples, which are equivalent in the loop model, the puncture belongs to a large cluster in the first case but not in the second one: 
 \begin{align}
  \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .4]
-  \filldraw[thick, fill = red!30] (0, 0) to [out = -90, in = -80] (3, -.5) to [out = 100, in = 55] (0, 0);
+  \fill[red!30] (-2, -3) rectangle (5, 2);
+  \filldraw[thick, fill = white] (0, 0) to [out = -90, in = -80] (3, -.5) to [out = 100, in = 55] (0, 0);
    \draw (0, 0) node[fill, circle, minimum size = 2mm, inner sep = 0]{};
+   \filldraw[thick, fill = red!30] (10, 0) to [out = -90, in = -80] (13, -.5) to [out = 100, in = 55] (10, 0);
+   \draw (10, 0) node[fill, circle, minimum size = 2mm, inner sep = 0]{};
  \end{tikzpicture}
 \end{align}
-To ensure that our puncture is at the boundary of a cluster, the correct condition is no closed loop goes around the puncture. Therefore, the Potts model has punctures with valencies $2r\in 2(\mathbb{N}+2)$, and weight-changing punctures of weight $w=0$.
+The correct condition for a puncture to belong to one large cluster is in fact that no closed loop goes around that puncture. 
+Therefore, the Potts model has punctures with valencies $2r\in 2(\mathbb{N}+2)$, and weight-changing punctures of weight $w=0$.
 
 
-\subsection{Conformal field theory interpretation}
+\subsection{Relation with loop CFTs}
 
+The claim that loop CFTs describe the critical limit of loop models is supported by a large body of work, including very precise numerical results. However, it is not easy to derive it with simple arguments. In fact, it is already tricky to derive the relation between the central charge $c$ and the contractible loop weight $n$. Historical arguments give the correct relation but are complicated and not always conceptually compelling. See for example Appendix A of \cite{grz18} for a discussion of Kondev's original argument, which relies on a shaky construction using a free boson, and for an attempt to patch the argument's perceived flaws with the help 
+of the torus partition function. 
 
-Correl fct of fields with integer spins, not deg.
+We will now propose an approach that starts with relating non-diagonal primary fields $V_{(r,s)}$ with loop-ending punctures. This is relatively straightforward, because both objects have discrete parameters. We will then deduce the relation between diagonal fields $V_P$ and weight-changing punctures, and finally the relation between the central charge and the contractible loop weight. 
+This approach avoids the introduction of auxiliary or complicated objects, with the hope of being reasonably clear and simple. 
 
-\subsubsection{Parameters / Fields}
+\subsubsection{Relations between punctures and primary fields}
 
-Find relation of parameters. Historic arguments give correct relations but are complicated and not very convincing. See for example Appendix A of \cite{grz18}, which debate an old argument by Kondev based on a map to free bosonic fields, and try to patch it with the help of the torus partition function. 
+Our starting assumption is that in the critical limit, a loop-ending puncture tends to a primary field of a loop CFT. We have used the same notations $r,s$ for these punctures' parameters as for the parameters of non-diagonal fields $V_{(r,s)}$: let us show that this notational coincidence is justified by an identification of parameters. To begin with, in the CFT, as a result of the existence of the degenerate field $V^d_{\langle 1,2\rangle}$, the first Kac index $r$ is half-integer, and conserved modulo $\mathbb{Z}$, see Eq. \eqref{sriz}. For a loop-ending puncture, $2r$ is the valency, and it obeys the same constraints, see Eq. \eqref{srin}. Moreover, in the CFT, $rs$ is the conformal spin, and it is integer for bosonic fields...
 
-Our argument is to first identify the parameters of $V_{(r,s)}$ with Kac indices, then deduce the relation between loop weights and momentums for diagonal fields, and finally get the central charge. 
 
 Focus on $V_{(r,s)}$ as defined on the lattice. Under a rotation $\delta\theta$ of the reference direction, the weight of this operator takes a factor $e^{-irs\delta\theta}$. Compare with the behaviour of a primary field \eqref{zgc}: for $\left[\begin{smallmatrix} a & b \\ c & d \end{smallmatrix}\right] = \left[\begin{smallmatrix} e^{\frac{i}{2}\delta\theta} & 0 \\ 0 & e^{-\frac{i}{2}\delta\theta} \end{smallmatrix}\right]\in SL_2(\mathbb{C})$, a field of spin $S$ picks a factor $e^{-iS\delta\theta}$. (Say it there??) Therefore, $V_{(r,s)}$ has conformal spin $rs$. 
 
@@ -2423,7 +2430,7 @@ Cases of $O(n)$, Potts etc: modified counting of solutions, need to forbid or al
 
 Pb of $n$ vs $-n$ in Potts, $U(n)$ and degenerate fields. Gamsa--Cardy operators. Degenerate fields do have nontrivial correlators! But $s\to s+2$ same weight, how do we distinguish energy operator from identity in loop model?
 
-How do we see that a field is degenerate in the loop model? In the CFT deg. fields have special OPEs. But in the loop model their weight is a special value of a continuous parameter: what happens to the argument that single-valuedness excludes $V_{\langle 1,2\rangle}^d$ from the $O(n)$ model? 
+How do we see that a field is degenerate in the loop CFT? In the CFT deg. fields have special OPEs. But in the loop model their weight is a special value of a continuous parameter: what happens to the argument that single-valuedness excludes $V_{\langle 1,2\rangle}^d$ from the $O(n)$ model? 
 
 \subsection{Analytic properties of structure constants}
 
