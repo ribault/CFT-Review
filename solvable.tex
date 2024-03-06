@@ -749,17 +749,25 @@ Fields now belong to representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$,
 \begin{align}
  \partial_{\bar z} T(z) = 0 \quad , \quad \partial_z \bar T(z) = 0 \ . 
 \end{align}
-Let $V_i(z)$ be a field that is primary with respect to the conformal algebra, with the left dimension $\Delta_i$ and the right dimension $\bar\Delta_i$. The difference of these dimensions is called the \textbf{conformal spin}
+Let $V_{\Delta,\bar\Delta}(z)$ be a field that is primary with respect to the conformal algebra, with the left dimension $\Delta$ and the right dimension $\bar\Delta$. The difference of these dimensions is called the \textbf{conformal spin}
 \begin{align}
- S_i = \Delta_i -\bar\Delta_i\ . 
+ S = \Delta -\bar\Delta\ . 
  \label{sdd} 
+\end{align}
+According to Eq. \eqref{zgc}, 
+under a rotation $z\mapsto e^{i\theta}z$, corresponding to a global conformal transformation $\left(\begin{smallmatrix} a & b \\ c & d\end{smallmatrix}\right)= \left(\begin{smallmatrix} e^{\frac{i}{2}\theta} & 0 \\ 0 &  e^{-\frac{i}{2}\theta}\end{smallmatrix}\right)$, a primary field transforms as 
+\begin{align}
+ V_{\Delta,\bar\Delta}(z) \to  e^{iS\theta} V_{\Delta,\bar\Delta}\left(e^{i\theta} z\right) \ .
+ \label{veis}
 \end{align}
 In order to write correlation functions, let us define the \textbf{modulus squared notation} 
 \begin{align}
  \left| f(\Delta, z)\right|^2 = f(\Delta, z)f(\bar\Delta,\bar z)\ ,
  \label{fdz2}
 \end{align}
-where $z,\bar z$ are complex conjugates, while $\Delta,\bar\Delta$ are generally not. The solution of the left- and right-moving global Ward identities for 2-point functions is the modulus squared of Eq. \eqref{2pt},
+where $z,\bar z$ are complex conjugates, while $\Delta,\bar\Delta$ are generally not. 
+For simplicity we write $V_i$ for a primary field of dimensions $\Delta_i,\bar\Delta_i$.
+The solution of the left- and right-moving global Ward identities for 2-point functions is the modulus squared of Eq. \eqref{2pt},
 \begin{align}
 \boxed{ \Big< V_1(z_1)V_2(z_2) \Big> = B_{12} \left|\delta_{\Delta_1,\Delta_2} z_{12}^{-2\Delta_1}\right|^2} \ ,
 \label{2ptb}
@@ -2394,35 +2402,34 @@ Therefore, the Potts model has punctures with valencies $2r\in 2(\mathbb{N}+2)$,
 
 \subsection{Relation with loop CFTs}
 
-The claim that loop CFTs describe the critical limit of loop models is supported by a large body of work, including very precise numerical results. However, it is not easy to derive it with simple arguments. In fact, it is already tricky to derive the relation between the central charge $c$ and the contractible loop weight $n$. Historical arguments give the correct relation but are complicated and not always conceptually compelling. See for example Appendix A of \cite{grz18} for a discussion of Kondev's original argument, which relies on a shaky construction using a free boson, and for an attempt to patch the argument's perceived flaws with the help 
-of the torus partition function. 
+The claim that loop CFTs describe the critical limit of loop models is supported by a large body of work, including very precise numerical results. However, it is not easy to derive it with simple arguments. In fact, it is already tricky to derive the relation between the central charge $c$ and the contractible loop weight $n$. Historical arguments give the correct relation but are complicated and not always conceptually compelling. See for example Appendix A of \cite{grz18} for a discussion of Kondev's original argument, which relies on a shaky construction using a free boson, and for an attempt to patch the argument's perceived flaws with the help of the torus partition function. 
 
-We will now propose an approach that starts with relating non-diagonal primary fields $V_{(r,s)}$ with loop-ending punctures. This is relatively straightforward, because both objects have discrete parameters. We will then deduce the relation between diagonal fields $V_P$ and weight-changing punctures, and finally the relation between the central charge and the contractible loop weight. 
-This approach avoids the introduction of auxiliary or complicated objects, with the hope of being reasonably clear and simple. 
+We will now propose an argument that starts with relating non-diagonal primary fields $V_{(r,s)}$ with loop-ending punctures. This is relatively straightforward, because both objects have discrete parameters. We will then deduce the relation between diagonal fields $V_P$ and weight-changing punctures, and finally the relation between the central charge and the contractible loop weight. 
+This argument avoids the introduction of auxiliary or complicated objects, with the hope of being reasonably clear and simple. 
 
 \subsubsection{Relations between punctures and primary fields}
 
-Our starting assumption is that in the critical limit, a loop-ending puncture tends to a primary field of a loop CFT. We have used the same notations $r,s$ for these punctures' parameters as for the parameters of non-diagonal fields $V_{(r,s)}$: let us show that this notational coincidence is justified by an identification of parameters. To begin with, in the CFT, as a result of the existence of the degenerate field $V^d_{\langle 1,2\rangle}$, the first Kac index $r$ is half-integer, and conserved modulo $\mathbb{Z}$, see Eq. \eqref{sriz}. For a loop-ending puncture, $2r$ is the valency, and it obeys the same constraints, see Eq. \eqref{srin}. Moreover, in the CFT, $rs$ is the conformal spin, and it is integer for bosonic fields...
+Our starting assumption is that in the critical limit, a loop-ending puncture tends to a primary field of a loop CFT. We have used the same notations $r,s$ for these punctures' parameters as for the parameters of non-diagonal fields $V_{(r,s)}$. Let us show that this is justified by an identification of parameters:
+\begin{itemize}
+ \item In the CFT, as a result of the existence of the degenerate field $V^d_{\langle 1,2\rangle}$, the first Kac index $r$ is half-integer, and conserved modulo $\mathbb{Z}$, see Eq. \eqref{sriz}. For a loop-ending puncture, $2r$ is the valency, and it obeys the same constraints, see Eq. \eqref{srin}.
+ \item In the CFT, $rs$ is the conformal spin, and it is integer for bosonic fields. Under a rotation around the puncture, which we interpret as $\theta_k\mapsto \theta_k + \theta$, the weight factor \eqref{wrs} picks a factor $e^{irs\theta}$: according to Eq. \eqref{veis}, this means that our loop-ending puncture has the conformal spin $rs$. 
+\end{itemize}
+Therefore, a loop-ending puncture can be identified with a non-diagonal primary field $V_{(r,s)}$ in a CFT where $V^d_{\langle 1,2\rangle}$ exists. 
 
+Next, let us consider a weight-changing puncture of weight $w$. We again assume that it tends to a primary field. Since $w$ is a continuous parameter, this must be a diagonal field. To determine its momentum, let us use the idea \eqref{sP} that a diagonal field is a non-diagonal field with $r=0$. The analogous idea for punctures is that the weight $w$ of a closed loop is related to the weight factor \eqref{wrs} associated to a rotation $\theta = 2\pi$. In fact, since our closed loop is not oriented, we have to add the rotations by $2\pi$ and $-2\pi$, and we find $w=2\cos(\pi s)$, i.e. Eq. \eqref{wP}. 
 
-Focus on $V_{(r,s)}$ as defined on the lattice. Under a rotation $\delta\theta$ of the reference direction, the weight of this operator takes a factor $e^{-irs\delta\theta}$. Compare with the behaviour of a primary field \eqref{zgc}: for $\left[\begin{smallmatrix} a & b \\ c & d \end{smallmatrix}\right] = \left[\begin{smallmatrix} e^{\frac{i}{2}\delta\theta} & 0 \\ 0 & e^{-\frac{i}{2}\delta\theta} \end{smallmatrix}\right]\in SL_2(\mathbb{C})$, a field of spin $S$ picks a factor $e^{-iS\delta\theta}$. (Say it there??) Therefore, $V_{(r,s)}$ has conformal spin $rs$. 
-
-Next we assume it is primary. \textcolor{red}{It would be good to prove it.} Argument about not generating fields with lower dimension by conformal transformations? Show that local conformal dimension on some domain only produces geometrical prefactor in correlation functions? But this prefactor depends on left and right dimensions, how could we determine them? 
-
-Now $V_{(r,s)}$ is parametrized by $r\in \frac12 \mathbb{N}^*$, which is conserved modulo integers (cf connecting half-segments), and has spin $rs$. We deduce that it is a non-diagonal field with Kac indices $r,s$ in a CFT where $V^d_{\langle 1,2\rangle}$ exists. 
-
-Next we consider a field that gives a weight $w$ to loops around it. We also assume that it is primary. Since $w$ is a continuous parameter, this must be a diagonal field: we want to determine the relation between $w$ and $P$. 
-From the case of $V_{(r,s)}$ we know that under a rotation by $\delta\theta$, an individual loop strand picks a factor $e^{\frac{i}{2} s\delta\theta}$. For a closed loop, i.e. $\delta\theta=2\pi$, we therefore find $e^{i\pi s}$. But we have to add the two possible orientations, so the weight is $w=2\cos(\pi s)$. Accepting the identification $V_P = V_{(0, 2 \beta P)}$ from CFT, we deduce $w(P)$. 
-
-It remains to determine the parameter $n$, which is the weight of contractible loops. This is simply $n=2\cos(2\pi P_{(1,1)})$. 
+Finally, the identity field $V^d_{\langle 1,1\rangle}$ should not change the weight of loops. Assuming that 
+the corresponding loop weight is computed from Eq. \eqref{wP} with $P=P_{(1,1)}$, we obtain the expression \eqref{ncb} for the contractible loop weight $n$ in terms of the central charge. We do not discuss the loop model interpretation of the non-trivial degenerate fields $V^d_{\langle 1,s\geq 2\rangle}$, because we will not study their correlation functions. These fields cannot simply correspond to weight-changing punctures, since  the weight associated to $P=P_{(1,3)}$ is again $n$. 
 
 \subsubsection{Correlation functions}
 
-Weights of closed loops, and channel fields. 
+Single-valued. Solutions of crossing symmetry. All independent. Predict dimension of space of solutions. 
+
+Weights of closed loops, and channel fields. Combinatorial defects interpretation: preserves decomposition into blocks, explains why no OPE in usual sense.
 
 Loop weight invariant under shifts, but CFT not invariant, discussion of criticality and values of the central charge and loop weights. 
 
-Given some fields, space of bootstrap solutions and combinatorial maps. Combinatorial defects interpretation: preserves decomposition into blocks, explains why no OPE in usual sense. 
+ 
 
 \subsubsection{Specific loop models}
 
