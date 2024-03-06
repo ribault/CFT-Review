@@ -530,13 +530,18 @@ We focus on three cases:
  \end{align}
 \item $\boxed{n\geq 1}$\ : We use $L_n^{(z_2)}V_{\Delta_2}(z_2)=0$, and perform the OPE again on the left-hand side. The action of the differential operator on the OPE coefficients is now known, and we find 
 \begin{align}
- \sum_{L\in\mathcal{L}} C^{\Delta,L}_{\Delta_1,\Delta_2}z_{12}^{|L|+n}(\Delta+|L|+n\Delta_1-\Delta_2) LV_{\Delta}(z_2)= \sum_{L\in\mathcal{L}} C^{\Delta,L}_{\Delta_1,\Delta_2}z_{12}^{|L|}L_n LV_{\Delta}(z_2)\ .
+ \sum_{L\in\mathcal{L}} C^{\Delta,L}_{\Delta_1,\Delta_2}z_{12}^{|L|+n}(\Delta+|L|+n\Delta_1-\Delta_2) LV_{\Delta}= \sum_{L\in\mathcal{L}} C^{\Delta,L}_{\Delta_1,\Delta_2}z_{12}^{|L|}L_n LV_{\Delta}\ .
+\end{align}
+Extracting the coefficient of $z_{12}^N$ for some $N\in\mathbb{N}$, we find 
+\begin{align}
+ (\Delta+N-n+n\Delta_1-\Delta_2)\sum_{|L|=N-n} C^{\Delta,L}_{\Delta_1,\Delta_2}LV_{\Delta} = L_n \sum_{|L|=N}C^{\Delta,L}_{\Delta_1,\Delta_2} LV_{\Delta}\ .
+ \label{opew}
 \end{align}
 \end{itemize}
-This leads to a system of linear equations for the OPE coefficients $C^{\Delta,L}_{\Delta_1,\Delta_2}$, called \textbf{OPE Ward identities}. It turns out that for $\Delta\notin \left\{\Delta_{(r,s)}\right\}_{r,s\in\mathbb{N}^*}$, this system has a unique solution $\left(f^{\Delta,L}_{\Delta_1,\Delta_2}\right)_{L\in\mathcal{L}}=\left(f^L\right)_{L\in\mathcal{L}}$, assuming that the coefficient of the primary field is normalized as
-$f^{1}=1$. Let us illustrate this claim by deriving the first few coefficients $f^{L_{-1}},f^{L_{-1}^2},f^{L_{-2}}$. Let us write the term of order $O(z_{12})$ of the $n=1$ OPE Ward identity, i.e. $L=1$ on the left and $L=L_{-1}$ on the right:
+This leads to a system of linear equations for the OPE coefficients $C^{\Delta,L}_{\Delta_1,\Delta_2}$, called \textbf{OPE Ward identities}. For $\Delta\notin \left\{\Delta_{(r,s)}\right\}_{r,s\in\mathbb{N}^*}$, this system has a unique solution $\left(f^{\Delta,L}_{\Delta_1,\Delta_2}\right)_{L\in\mathcal{L}}=\left(f^L\right)_{L\in\mathcal{L}}$, assuming that the coefficient of the primary field is normalized as
+$f^{1}=1$. Let us illustrate this claim by deriving the first few coefficients $f^{L_{-1}},f^{L_{-1}^2},f^{L_{-2}}$. In the case $N=n=1$, Eq. \eqref{opew} reduces to
 \begin{align}
- (\Delta+\Delta_1-\Delta_2)V_\Delta(z_2) = f^{L_{-1}} L_1L_{-1}V_\Delta(z_2)=2\Delta f^{L_{-1}}V_\Delta(z_2)\ .
+ (\Delta+\Delta_1-\Delta_2)V_\Delta = f^{L_{-1}} L_1L_{-1}V_\Delta=2\Delta f^{L_{-1}}V_\Delta\ .
  \label{dddv}
 \end{align}
 This determines $f^{L_{-1}}$, except if $\Delta=0$, i.e. if there is a null vector at level one in the Verma module $\mathcal{V}_\Delta$. In the resulting expression, the null vector manifests itself as a simple pole at $\Delta=0$:
@@ -544,7 +549,7 @@ This determines $f^{L_{-1}}$, except if $\Delta=0$, i.e. if there is a null vect
  f^{L_{-1}} = \frac{\Delta+\Delta_1-\Delta_2}{2\Delta}\ . 
  \label{fl1}
 \end{align}
-Similarly, the level two coefficients $f^{L_{-1}^2},f^{L_{-2}}$ are determined by the $O(z_{12}^2)$ terms in the $n=1,2$ OPE Ward identities. For $W = \left(f^{L_{-1}^2}L_{-1}^2 + f^{L_{-2}}L_{-2}\right) V_\Delta$, these equations read 
+Similarly, the level two coefficients $f^{L_{-1}^2},f^{L_{-2}}$ are determined by the case $N=2$ with $n=1,2$. For $W = \left(f^{L_{-1}^2}L_{-1}^2 + f^{L_{-2}}L_{-2}\right) V_\Delta$, these equations read 
 \begin{align}
  (\Delta+1+\Delta_1-\Delta_2)f^{L_{-1}}L_{-1}V_\Delta  &= L_1W\ ,
  \label{el1c}
@@ -569,14 +574,14 @@ The form of the dependence on $z_1,z_2$ provides an a posteriori justification f
 
 \subsubsection{Fusion rules and fusion products}\label{sec:dope}
 
-The appearance of poles in OPE coefficients is a hint that when degenerate conformal dimensions $(\Delta_{(r,s)})_{r,s\in\mathbb{N}^*}$ are involved, there are constraints on the fields that can appear in a given OPE. Let us derive these constraints in the simplest case $\Delta_{(1,1)}=0$. There are two types of primary fields of dimension $0$: the non-degenerate field $V_0$, which generates the Verma module $\mathcal{V}_0$, and the degenerate field $V^d_{\langle 1,1\rangle}$, which obeys the null vector equation $L_{-1}V^d_{\langle 1,1\rangle}=\partial V^d_{\langle 1,1\rangle}=0$ and generates the degenerate representation $\mathcal{R}^d_{\langle 1,1\rangle}$. While the OPE $V_0V_{\Delta_2}$ is just a special case of the OPE \eqref{prope}, 
-the OPE $V^d_{\langle 1,1\rangle}V_{\Delta_2}$ also obeys 
+Because of the poles in OPE coefficients, there are constraints on the fields that can appear in OPEs. Let us focus on the pole at $\Delta_{(1,1)}=0$. There are two types of primary fields of dimension $0$: the non-degenerate field $V_0$, which generates the Verma module $\mathcal{V}_0$, and the degenerate field $V^d_{\langle 1,1\rangle}$, which obeys the null vector equation $L_{-1}V^d_{\langle 1,1\rangle}=\partial V^d_{\langle 1,1\rangle}=0$ and generates the degenerate representation $\mathcal{R}^d_{\langle 1,1\rangle}$. Can $V_0$ appear in the OPE $V_{\Delta_1}V_{\Delta_2}$? The pole of $f^{L_{-1}}$ \eqref{fl1} means that our normalization condition $f^1=1$ was wrong: we in fact have $f^1=0$ while $f^{L_{-1}}\neq 0$. Therefore, the non-vanishing null vector $L_{-1}V_0$ may appear in the OPE, together with its descendants, while $V_0$ itself and its other descendants give vanishing contributions. In the case of $V^d_{\langle 1,1\rangle}$ however, the null vector vanishes, and no descendant of $V^d_{\langle 1,1\rangle}$ may appear --- unless the left-hand side of the OPE Ward identity \eqref{dddv} vanishes, which happens if $\Delta_1=\Delta_2$. 
+
+On the other hand, the OPE $V_0V_{\Delta_2}$ is just a special case of the OPE \eqref{prope}.
+But the OPE $V^d_{\langle 1,1\rangle}V_{\Delta_2}$ must obey 
 \begin{align}
  0 = \frac{\partial}{\partial z_1} V^d_{\langle 1,1\rangle}(z_1)V_{\Delta_2}(z_2) \supset C_{\langle 1,1\rangle,\Delta_2}^{\Delta} \frac{\partial}{\partial z_1} z_{12}^{\Delta-\Delta_2} \left(V_\Delta(z_2) +\cdots \right) \ ,
 \end{align}
 therefore $V_\Delta$ may appear only provided $\Delta=\Delta_2$. This agrees with the remark (in Section \ref{sec:ope}) that $V^d_{\langle 1,1\rangle}$ is proportional to the identity field. 
-
-Then let us study the subtler question of whether $V_0$ or $V^d_{\langle 1,1\rangle}$ may appear in the OPE $V_{\Delta_1}V_{\Delta_2}$. In the case of $V_0$, the pole of $f^{L_{-1}}$ \eqref{fl1} means that our normalization condition $f^1=1$ was wrong: we in fact have $f^1=0$ while $f^{L_{-1}}\neq 0$. Therefore, the non-vanishing null vector $L_{-1}V_0$ may appear in the OPE, together with its descendants, while $V_0$ itself and its other descendants give vanishing contributions. In the case of $V^d_{\langle 1,1\rangle}$ however, the null vector vanishes, and no descendant of $V^d_{\langle 1,1\rangle}$ may appear --- unless the left-hand side of the OPE Ward identity \eqref{dddv} vanishes, which happens if $\Delta_1=\Delta_2$. 
 
 Let us introduce the \textbf{fusion rules} as a convenient notation for writing constraints on OPEs, by omitting everything but the primary fields:
 \begin{align}
@@ -725,7 +730,7 @@ A four-point function is therefore completely determined by its dependence on $1
  \Big< V_{\Delta_1}(z) V_{\Delta_2}(0)V_{\Delta_3}(\infty)V_{\Delta_4}(1) \Big> \propto G(z)\ . 
 \end{align}
 \end{itemize}
-In addition to global Ward identities, there are \textbf{local Ward identities}, which follow from $\oint_\infty dy\ \epsilon(y)Z(y)=0$, where $\epsilon(y)$ is a meromorphic function such that $\epsilon(y)\underset{y\to\infty}{=}O(y^2)$, with poles at $y=z_i$. Local Ward identities allow us to determine correlation functions of descendant fields from the corresponding correlation functions of primary fields, thereby justifying our focus on primary fields. In the case $\epsilon(y) = \frac{1}{(y-z_1)^{n-1}}$ with $n\geq -1$, using the expressions \eqref{zy} for $Z(y)$ and \eqref{lvtv} for $L_{-n}V_{\Delta_1}(z_1)$, we obtain the Ward identity
+In addition to global Ward identities, there are \textbf{local Ward identities}, which follow from $\oint_\infty dy\ \epsilon(y)Z(y)=0$, where $\epsilon(y)$ is a meromorphic function such that $\epsilon(y)\underset{y\to\infty}{=}O(y^2)$, with poles at $y=z_i$. Local Ward identities allow us to determine correlation functions of descendant fields from the corresponding correlation functions of primary fields. In the case $\epsilon(y) = \frac{1}{(y-z_1)^{n-1}}$ with $n\geq -1$, using the expressions \eqref{zy} for $Z(y)$ and \eqref{lvtv} for $L_{-n}V_{\Delta_1}(z_1)$, we obtain the Ward identity
 \begin{align}
  \left<L_{-n}V_{\Delta_1}(z_1)\prod_{j=2}^N V_{\Delta_j}(z_j)\right> = \sum_{j=2}^N \left(-\frac{1}{z_{j1}^{n-1}}\frac{\partial}{\partial z_j} +\frac{n-1}{z_{j1}^n} \Delta_j\right) \left<\prod_{j=1}^N V_{\Delta_j}(z_j)\right>\ . 
  \label{lwi}
