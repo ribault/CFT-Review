@@ -8,7 +8,7 @@
 
 \usepackage[top=20mm,bottom=20mm,left=25mm,right=25mm]{geometry}
 
-\usepackage{showkeys}
+%\usepackage{showkeys}
 
 \usepackage{amsmath,amssymb,amsfonts}
 
@@ -803,7 +803,7 @@ Unless stated otherwise, we will assume that spins are integer:
 
 Let us systematically use OPEs for simplifying correlation functions. Knowing the contribution \eqref{prope} of left-moving descendants of primary fields, the complete OPE of two primary fields reads 
 \begin{align}
- V_1(z_1)V_2(z_2) = \sum_{k\in\mathcal{S}} C_{12}^k \left|z_{12}^{\Delta_k-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} z_{12}^{|L|}f_{\Delta_1,\Delta_2}^{\Delta_k,L}\right|^2 V_k(z_2)\ ,
+ V_1(z_1)V_2(z_2) = \sum_{k\in\mathcal{S}} C_{12}^k \left|z_{12}^{\Delta_k-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} z_{12}^{|L|}f_{\Delta_1,\Delta_2}^{\Delta_k,L}\right|^2 L\bar L V_k(z_2)\ ,
  \label{tope}
 \end{align}
 where the basis $\mathcal{L}$ of creation operators was defined in Eq. \eqref{lcm},
@@ -814,18 +814,12 @@ we assume that all fields are primaries or descendants thereof, with $\mathcal{S
   \sum_{k\in\mathcal{S}\left|\substack{\Delta_3=\Delta_k\\ \bar{\Delta}_3=\bar\Delta_k}\right. }
   C_{12}^k B_{k3}\ .
 \end{align}
-Comparing with the 3-point function \eqref{3ptc}, this implies a relation between the 2-point, 3-point and OPE structure constants, 
-\begin{align}
- C_{123} = \sum_{k\in\mathcal{S}\left|\substack{\Delta_3=\Delta_k\\ \bar{\Delta}_3=\bar\Delta_k}\right. } C_{12}^k B_{k3}\ .
-\end{align}
-If the basis of fields is such that $B_{ij}=\delta_{ij}B_i$, the sum over $k$ reduces to one term, and the relation reduces to
+Comparing with the 3-point function \eqref{3ptc}, this implies a relation between the 2-point, 3-point and OPE structure constants. Assuming for simplicity $B_{ij}=\delta_{ij}B_i$, the relation is 
 \begin{align}
  \boxed{C_{123} = C_{12}^3B_{3}} \ .
  \label{ccb}
 \end{align}
-This is the case in particular if \textbf{field multiplicities} are trivial. i.e. if two different primary fields never share the same conformal dimensions.
-
-Inserting the OPE in the four-point function $\left<V_1(z)V_2(0)V_3(\infty)V_4(1)\right>$, we obtain a linear combination of 3-point functions of the type $\left<L\bar{L}V_k(0) V_3(\infty)V_4(1)\right>$ with $L,\bar L\in\mathcal{L}$. Deducing 3-point functions of descendants from 3-point functions of primaries using local Ward identities, we can in principle compute the ratios
+If we now insert the OPE in the four-point function $\left<V_1(z)V_2(0)V_3(\infty)V_4(1)\right>$, we obtain a linear combination of 3-point functions of the type $\left<L\bar{L}V_k(0) V_3(\infty)V_4(1)\right>$ with $L,\bar L\in\mathcal{L}$. Deducing 3-point functions of descendants from 3-point functions of primaries using local Ward identities, we can in principle compute the ratios
 \begin{align}
  g^L_{\Delta_1,\Delta_2,\Delta_3} = \frac{\left< LV_{\Delta_1}(0) V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right>}{\left< V_{\Delta_1}(0) V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right>}\ .
 \end{align}
@@ -892,7 +886,14 @@ Given 4 fields $V_1,V_2,V_3,V_4$, this is a system of infinitely many equations 
 
 \section{Sketching exactly solvable CFTs}\label{sec:sesc}
 
-In this section we derive the spectrums and fusion rules of exactly solvable CFTs. We begin with a general discussion of CFTs, their spectrums, and the consequences of having degenerate fields. Historically, the CFTs we will discuss have been discovered using a variety of techniques: the modular bootstrap for minimal models \cite{fms97}, the Lagrangian approach for Liouville theory with $c\geq 25$ \cite{zz95}, lattice constructions for the $O(n)$ and Potts models \cite{fsz87}, the numerical bootstrap for Liouville theory with $c\leq 1$ \cite{rs15}. Here we recover their spectrums from assumptions about Virasoro representations and their fusion rules. Although our assumptions are simple, they are not unique or inevitable, and it can be interesting to relax or modify them. These assumptions could also be useful for exploring CFTs with extended symmetry algebras. 
+In this section we derive the spectrums and fusion rules of exactly solvable CFTs. We begin with a general discussion of CFTs, their spectrums, and the consequences of having degenerate fields. Historically, the CFTs we will discuss have been discovered using a variety of techniques: 
+\begin{itemize}
+ \item the modular bootstrap for minimal models \cite{fms97},
+ \item the Lagrangian approach for Liouville theory with $c\geq 25$ \cite{zz95},
+ \item lattice constructions for the $O(n)$ and Potts models \cite{fsz87},
+ \item the numerical bootstrap for Liouville theory with $c\leq 1$ \cite{rs15}.
+\end{itemize}
+Here we recover their spectrums from assumptions about Virasoro representations and their fusion rules. Although our assumptions are simple, they are not unique or inevitable, and it can be interesting to relax or modify them. These assumptions could also be useful for exploring CFTs with extended symmetry algebras. 
 
 \subsection{Spectrum and degenerate fields}
 
@@ -926,7 +927,7 @@ The \textbf{physical spectrum} is made of the fields whose correlation functions
 We also introduce \textbf{extended spectrums} as larger spectrums that are also closed under OPEs. There are various reasons for considering extended spectrums:
 \begin{itemize}
  \item In Section \ref{sec:csc}, we have used the energy-momentum tensor $T$ for deriving Ward identities. However, in Liouville theory, $T$ does not belong to the physical spectrum. Nevertheless, it always makes sense to insert $T$ in correlation functions, because it is a descendant of the identity field. 
- \item In the $O(n)$ model and in Liouville theory, we will use the degenerate field $V^d_{\langle 1,2\rangle}$ for constraining correlation functions, even though it does not belong to the physical spectrum. Correlation functions that involve $V^d_{\langle 1,2\rangle}$ are not single-valued: they belong to an extended CFT that obeys weaker assumptions. 
+ \item In the $O(n)$ model and in Liouville theory, we will use the degenerate field $V^d_{\langle 1,2\rangle}$ for constraining correlation functions, even though it does not belong to the physical spectrum. Correlation functions of the $O(n)$ model that involve $V^d_{\langle 1,2\rangle}$ are not single-valued: they belong to an extended CFT that obeys weaker assumptions. 
  \item The spectrum of Liouville theory is continuous, so that the OPE gives rise to an integral over the real momentums of primary fields. Since the integrand is meromorphic, the integration contour can be deformed in the complex plane. This leads to an extended spectrum of complex momentums. 
 \end{itemize}
 We will say that \textbf{a field exists} if it belongs to some extended spectrum, i.e. if it can be consistently added to our CFT. 
@@ -1340,7 +1341,7 @@ The corresponding CFT may be called a fermionic minimal model \cite{rw20}. The f
  V_{(r_1,s_1)} V_{(r_2,s_2)} & \sim \sum_{r\overset{2}{=}|r_1-r_2|+1}^{p-|r_1+r_2|-1} \sum_{s\overset{2}{=}|s_1-s_2|+1}^{q-|s_1+s_2|-1} V^f_{\langle r,s\rangle}\ . 
  \label{vnvn}
 \end{align}
-It can be checked that for these fusion rules, the D-series minimal model is a closed subsector of its fermionic extension. Curiously, the diagonal field $V^f_{\langle \frac{p}{2}, s\rangle}$ has the same conformal dimensions as the non-diagonal field $V_{(0,s-\frac{q}{2})}$: this an instance of a nontrivial field multiplicity. However, these two fields have different fusion rules. 
+It can be checked that for these fusion rules, the D-series minimal model is a closed subsector of its fermionic extension. Curiously, the diagonal field $V^f_{\langle \frac{p}{2}, s\rangle}$ has the same conformal dimensions as the non-diagonal field $V_{(0,s-\frac{q}{2})}$: this an instance of a nontrivial \textbf{field multiplicity}. However, these two fields have different fusion rules. 
 
 \subsubsection{Generalized D-series minimal models}\label{sec:gdmm}
 
