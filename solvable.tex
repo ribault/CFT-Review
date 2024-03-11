@@ -2432,7 +2432,12 @@ the corresponding loop weight is computed from Eq. \eqref{wP} with $P=P_{(1,1)}$
 
 \subsubsection{Correlation functions}
 
-According to our identification of punctures with primary fields, the loop model $N$-point function \eqref{zbig} should correspond to a loop CFT $N$-point function of the type $\left<\prod_{i=1}^N V_{(r_i,s_i)}\right>$, which should be single-valued and crossing-symmetric. In the case $N=4$, the $s$-channel spectrum that appears in the crossing symmetry equation is 
+According to our identification of punctures with primary fields, the loop model $N$-point function \eqref{zbig} should correspond to a loop CFT $N$-point function of the type $\left<\prod_{i=1}^N V_{(r_i,s_i)}\right>$, which should be single-valued and crossing-symmetric. In any channel, the spectrum that appears in the crossing symmetry equations is made of 
+\begin{itemize}
+ \item all non-diagonal fields that are allowed by the conservation of $r\bmod 1$,
+ \item if integer values of $r$ are allowed, all diagonal fields that have the correct loop weight \eqref{wP}. 
+\end{itemize}
+For example, in the case $N=4$, the $s$-channel spectrum that appears in the crossing symmetry equation is 
 \begin{align}
 \renewcommand{\arraystretch}{1.5} 
  \mathcal{S}^{(s)} = 
@@ -2444,19 +2449,19 @@ According to our identification of punctures with primary fields, the loop model
         \end{array}
 \right.
 \end{align}
-where the diagonal fields take all possible momentums that correspond to the loop weight $w_s=2\cos(2\pi \beta P_s)$ \eqref{wP}. 
+where the diagonal fields take all possible momentums that correspond to the loop weight $w_s=2\cos(2\pi \beta P_s)$. 
 
-space of solutions to be defined more precisely incl. channel spectrums. 
+The crossing symmetry equations for $\left<\prod_{i=1}^N V_{(r_i,s_i)}\right>$, with the spectrums that we just sketched, define a vector space of solutions. 
+The conjecture is that each combinatorial map corresponds to a solution, and that these solutions form a basis of the space of solutions \cite{gjnrs23}. 
+For example, the existence of the 4 combinatorial maps
+\eqref{4maps} implies that for any allowed values of the parameters $s_1,s_2,s_3,P_4$, the space of 4-point of the type $\left<V_{(\frac32,s_1)}V_{(1,s_2)}V_{(\frac12,s_3)}V_{P_4}\right>$ has dimension 4. 
 
-The conjecture is that each combinatorial map corresponds to a solution, and that the resulting solution form a basis of 
-
-All independent. Predict dimension of space of solutions. 
-
-Remaining puzzles: interpret extra parameters (not one to one), relate individual maps. 
-
-Weights of closed loops, and channel fields. Combinatorial defects interpretation: preserves decomposition into blocks, explains why no OPE in usual sense.
-
+Values of parameters: non-rational $\beta^2$? Statement on basis of solutions true for all allowed values. But relation with statistical model limited to critical region, cite equation for  this region! Case of momentum: region not known...
 Loop weight invariant under shifts, but CFT not invariant, discussion of criticality and values of the central charge and loop weights. 
+
+Combinatorial defects interpretation: preserves decomposition into blocks, explains why no OPE in usual sense.
+
+Relate individual maps: signature of a combinatorial map. 
 
  
 
