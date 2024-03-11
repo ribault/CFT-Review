@@ -8,7 +8,7 @@
 
 \usepackage[top=20mm,bottom=20mm,left=25mm,right=25mm]{geometry}
 
-%\usepackage{showkeys}
+\usepackage{showkeys}
 
 \usepackage{amsmath,amssymb,amsfonts}
 
@@ -1428,10 +1428,13 @@ Three known models give rise to integer-spin subsets of the extended spectrum $\
 Their spectrums are 
 \begin{align}
 \mathcal{S}^{O(n)} &= \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in 2\mathbb{N}+1} \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \frac12\mathbb{N}^*\\ s\in\frac{1}{r}\mathbb{Z}}}  \ ,
+\label{son}
  \\
  \mathcal{S}^{U(n)} &= \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in\mathbb{N}^*} \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \mathbb{N}^*\\ s\in\frac{1}{r}\mathbb{Z}}}  \ ,
+ \label{sun}
  \\
  \mathcal{S}^\text{Potts} &= \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in\mathbb{N}^*} \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \mathbb{N}+2\\ s\in\frac{1}{r}\mathbb{Z}}} \bigcup  \left\{ V_{P_{(0,s)}}\right\}_{s\in \mathbb{N}+\frac12}\ .
+ \label{spotts}
 \end{align}
 The spectrums of the $O(n)$ and $U(n)$ models are natural constructions: we start with a degenerate field $V^d\in\{V^d_{\langle 1,3\rangle},V^d_{\langle 1,2\rangle}\}$, and add non-diagonal fields $V_{(r,s)}\in\widetilde{S}^\text{loop}$ such that $V_{(r,s)}$ and the fields that appear in $V^dV_{(r,s)}$ have integer spins. 
 On the other hand, the Potts spectrum has no simple explanation in our formalism. We can only remark that it is obtained from the $U(n)$ spectrum by removing the non-diagonal fields $\left\{V_{(1,s)}\right\}_{s\in\mathbb{Z}}$ and adding the diagonal fields $\left\{ V_{P_{(0,s)}}\right\}_{s\in \mathbb{N}+\frac12}$. 
@@ -2222,7 +2225,7 @@ In statistical physics, loop models have correlation functions of the type
 \begin{align}
  Z(\mathcal{E}) = \sum_{E\in\mathcal{E}} W(E)\ , 
 \end{align}
-where $\mathcal{E}$ is an ensemble of non-intersecting closed loops on the Riemann sphere $\overline{\mathbb{C}}$, and $W$ is a weight function. The easiest way to define $\mathcal{E}$ may be to discretize $\overline{\mathbb{C}}$, and draw the loops on the resulting graph: then then ensemble $\mathcal{E}$ is finite, and the number of loops per configuration $E$ is also finite: $|\mathcal{E}|, |E|<\infty$. 
+where $\mathcal{E}$ is an ensemble of non-intersecting closed loops on the Riemann sphere $\overline{\mathbb{C}}$, and $W$ is a weight function. The easiest way to define $\mathcal{E}$ may be to discretize $\overline{\mathbb{C}}$, and draw the loops on the resulting graph: then the ensemble $\mathcal{E}$ is finite, and the number of loops per configuration $E$ is also finite: $|\mathcal{E}|, |E|<\infty$. 
 However, we then have to show that $Z(\mathcal{E})$ has a well-defined limit when the graph size tends to infinity, and that conformal symmetry emerges in that limit. Alternatively, it is possible to define a conformal loop ensemble $\mathcal{E}$ without discretizing $\overline{\mathbb{C}}$, then $|\mathcal{E}|=|E|=\infty$. 
  
 We will remain agnostic on the precise definition of $\mathcal{E}$, and only assume that numbers of loops are finite, $|E|<\infty$. We assume that the energy $\log W(E)$ is extensive: then the weight of a configuration is a product of weights of individual loops $w(\ell)$. On the sphere, all loops are topologically the same, and must all have the same weight by conformal symmetry: 
@@ -2232,7 +2235,7 @@ We will remain agnostic on the precise definition of $\mathcal{E}$, and only ass
 where $n$ is the \textbf{loop weight}. 
 
 
-\subsubsection{Loops and punctures}
+\subsubsection{Weight-changing punctures}
 
 Our correlation function $Z(\mathcal{E})$ is the analog of a 0-point function in CFT. In order to have analogs of an $N$-point function, 
 we introduce $N$ punctures on our sphere with positions $z_1,\dots, z_N$. 
@@ -2285,7 +2288,7 @@ This leads to 8 combinatorially inequivalent classes of loops, with 8 different 
 \end{align}
 Since loops do not intersect, a configuration $E$ that contains $s$-loops has no $t$-loops and $u$-loops. 
 
-\subsubsection{Open loops and combinatorial maps}
+\subsubsection{Loop-ending punctures and combinatorial maps}
 
 We also introduce another type of punctures, where open loops can end. Such a puncture has a valency $2r\in\mathbb{N}^*$, with $r=0$ corresponding to the previously introduced weight-changing punctures. In the presence of $N$ punctures, the number of open loops is 
 \begin{align}
@@ -2361,7 +2364,7 @@ The reference direction would define each angle modulo $2\pi$. Thanks to the ref
 \end{align}
 Under a change of reference direction or reference open loop, the weight of a configuration $E$ changes by an $E$-independent factor.
 
-We define correlation functions that depend on the punctures $z_1,\dots,z_N$ with their parameters $(r_1,s_1),\dots, (r_N,s_N)$, on the map $M$ and on the weights of closed loops $w_k$:
+We define correlation functions that depend on the punctures $z_1,\dots,z_N$ with their parameters $(r_1,s_1),\dots, (r_N,s_N)$, on the map $M$ and on the weights of closed loops $\{w_k\}$:
 \begin{align}
  Z\Big(\{z_i\},\{(r_i,s_i)\},\{w_k\}\Big|\mathcal{E}_M\Big) =\sum_{E\in\mathcal{E}_M} \prod_{i=1}^N w_{(r_i,s_i)}(E) \prod_{\ell\in E} w(\ell) \ , 
  \label{zbig}
@@ -2384,7 +2387,7 @@ In the $U(n)$ model, we add the restriction that all loops (closed and open) can
    \draw (0, 0) node[fill, circle, minimum size = 2mm, inner sep = 0]{};
  \end{tikzpicture}
 \end{align}
-The Potts model is the same as the $U(n)$ model, except that the fundamental geometrical objects are clusters instead of loops, with loops forming the boundaries of clusters. In general, loops and clusters are equivalent: in the above example, a puncture of valency 4 is a point where 2 large clusters meet, where a cluster is large if it cannot be pulled inside the puncture. For example, in the following situation where an open loop can be pulled inside the puncture, we have a squeezed cluster rather than the meeting of two different clusters:
+The Potts model is the same as the $U(n)$ model, except that the fundamental geometrical objects are clusters instead of loops, with loops forming the boundaries of clusters. In general, loops and clusters are equivalent: in the above example, a puncture of valency 4 is a point where 2 large clusters meet, where a cluster is large if it cannot be pulled inside the puncture. In the following example, an open loop can be pulled inside the puncture, and we have a squeezed cluster rather than the meeting of two different clusters:
 \begin{align}
  \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .4]
   \clip (-4, -4) rectangle (4, 4);
@@ -2429,7 +2432,27 @@ the corresponding loop weight is computed from Eq. \eqref{wP} with $P=P_{(1,1)}$
 
 \subsubsection{Correlation functions}
 
-Single-valued. Solutions of crossing symmetry. All independent. Predict dimension of space of solutions. 
+According to our identification of punctures with primary fields, the loop model $N$-point function \eqref{zbig} should correspond to a loop CFT $N$-point function of the type $\left<\prod_{i=1}^N V_{(r_i,s_i)}\right>$, which should be single-valued and crossing-symmetric. In the case $N=4$, the $s$-channel spectrum that appears in the crossing symmetry equation is 
+\begin{align}
+\renewcommand{\arraystretch}{1.5} 
+ \mathcal{S}^{(s)} = 
+ \left\{\begin{array}{ll} 
+          \left\{V_{(r,s)}\right\}_{\substack{r\in \frac12+\mathbb{N} \\ s\in\frac{1}{r}\mathbb{Z}}} & \text{ if } r_1+r_2\equiv \frac12 \bmod 1 \ , 
+          \\
+          \left\{V_{(r,s)}\right\}_{\substack{r\in \mathbb{N}^* \\ s\in\frac{1}{r}\mathbb{Z}}}
+          \cup \left\{V_{P_s+k\beta^{-1}}\right\}_{k\in\mathbb{Z}} & \text{ if } r_1+r_2\equiv 0 \bmod 1 \ , 
+        \end{array}
+\right.
+\end{align}
+where the diagonal fields take all possible momentums that correspond to the loop weight $w_s=2\cos(2\pi \beta P_s)$ \eqref{wP}. 
+
+space of solutions to be defined more precisely incl. channel spectrums. 
+
+The conjecture is that each combinatorial map corresponds to a solution, and that the resulting solution form a basis of 
+
+All independent. Predict dimension of space of solutions. 
+
+Remaining puzzles: interpret extra parameters (not one to one), relate individual maps. 
 
 Weights of closed loops, and channel fields. Combinatorial defects interpretation: preserves decomposition into blocks, explains why no OPE in usual sense.
 
