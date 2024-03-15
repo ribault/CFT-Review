@@ -1462,7 +1462,6 @@ Each one of these CFTs has
 \end{itemize}
 Degenerate fields are invariant under global symmetries, while other fields can transform in non-trivial representations \cite{jrs22}. For example, in the $O(n)$ CFT, the fields $V_{(\frac12,0)},V_{(1,0)}$ and $V_{(1,1)}$ transform under $O(n)$ as a vector, a symmetric 2-tensor and an antisymmetric 2-tensor respectively. There are two fields of the type $V_{(\frac32,0)}$, which transform as symmetric and antisymmetric 3-tensors. And for $r\geq \frac52$, it also happens that several different fields have the same conformal dimensions and the same behaviour under $O(n)$. The situation is similar in the $U(n)$ and Potts CFTs: let us only mention that the diagonal non-degenerate fields $V_{P_{(0,s)}}$ of the Potts CFT transform in the standard  representation of $S_Q$, whose dimension is $Q-1$. 
 
-A puzzle has arisen in the $O(n)$ CFT, when it was found that there is one field $V_{(2,0)}$ that is invariant under $O(n)$ \cite{gz20}. From the point of view of the renormalization group flow triggered by the field $V^d_{\langle 1,3\rangle}$, this field is \textit{dangerously irrelevant}, i.e. it becomes relevant along the flow, and could prevent the flow from reaching the dense phase from the dilute phase. But numerical studies show that the flow does reach the dense phase. The puzzle is resolved by noticing that $V^d_{\langle 1,3\rangle}$ is degenerate, and cannot produce the non-diagonal field $V_{(2,0)}$ by repeated fusion, even if $O(n)$ symmetry would allow it \cite{js23}. Therefore, it is global symmetry itself that is \textit{dangerously irrelevant} to the understanding of this flow. 
 
 \subsection{Completing the picture}
 
@@ -2491,12 +2490,29 @@ $
  $.
  In the $O(n)$ model, all diagonal fields are degenerate, and their fusion rules would forbid this solution, since $V^d_{\langle 1,s\rangle}\notin V_{(\frac32,s_1)}V_{(\frac12,s_2)}$. In the Potts model on the other hand, the spectrum includes degenerate fields of weights $n,-n$ and diagonal fields of weight $0$. In some 4-point functions, diagonal fields with different weights can propagate in the same channel, leading to more solutions than maps. 
  
-\subsubsection{Values of the central charge}
+\subsubsection{Critical limits}
+
+Starting from a statistical model on a finite lattice, the large lattice limit may give rise to a conformal field theory, provided the lattice couplings are set to certain critical values. 
+
+Plenty of it is non-universal: lattice, interaction strength, rules for drawing loops on lattice.
+
+Focus on universal features and values of central charge: criticality lines. 
+
+
+Loop CFTs are defined for the whole range of values of $\beta^2$ \eqref{rbp} that are allowed for non-diagonal CFTs with one degenerate fields. However, the corresponding statistical lattice models exist on a smaller range. This is first because the relation between $\beta^2$ and the models' parameters $n,Q$ is not bijective, and maps the strip $0<\Re \beta^2\leq 1$ to the full complex $n$-plane. Furthermore, not all complex values of $n,Q$ are possible, if we want the models to have a critical limit. However, the CFT gives us hints about which values are possible.
+
+To reach the critical limit from a lattice model, we must pay attention to which fields are relevant $\Re(\Delta+\bar\Delta)<2$, marginal $\Re(\Delta+\bar\Delta)=2$, or irrelevant $\Re(\Delta+\bar\Delta)>2$.
+Only relevant fields can influence whether the renormalization group flow reaches a critical limit. Therefore, the boundary of the region of criticality is expected to correspond to some field becoming relevant. A subtlety is that the appearance of a relevant field is not necessarily fatal: depending on the model's precise formulation, and in particular on which symmetries are preserved, the relevant field may or may not influence the flow. 
+
+Some universal results: plot marginality lines. Focus on deg. fields because most studied and also do not generate the others so not destabilization of the flow by dangerously irrelevant opeartors. Also, non-diag. fields often forbidden by this or that symmetry/assumption? 
+
+A puzzle has arisen in the $O(n)$ CFT, when it was found that there is one field $V_{(2,0)}$ that is invariant under $O(n)$ \cite{gz20}. From the point of view of the renormalization group flow triggered by the field $V^d_{\langle 1,3\rangle}$, this field is \textit{dangerously irrelevant}, i.e. it becomes relevant along the flow, and could prevent the flow from reaching the dense phase from the dilute phase. But numerical studies show that the flow does reach the dense phase. The puzzle is resolved by noticing that $V^d_{\langle 1,3\rangle}$ is degenerate, and cannot produce the non-diagonal field $V_{(2,0)}$ by repeated fusion, even if $O(n)$ symmetry would allow it \cite{js23}. Therefore, it is global symmetry itself that is \textit{dangerously irrelevant} to the understanding of this flow. 
+
 
 The $O(n)$, $U(n)$ and Potts CFTs were originally defined as critical limits of statistical lattice models. In each case, the lattice model has a critical limit under some conditions on $n$ or $Q$. If these parameters are assumed to be real, the conditions are $n\in (-2,2)$ or $Q\in (0,4)$, equivalently $c\in (-2,1)$. The region of criticality actually extends into the complex $c$-plane, although it is much smaller than the half-plane $\Re c<13$ \cite{bjjz22}. Outside that region, certain fields become relevant, so the models may become multicritical. Moreover, the $O(n)$ lattice model has a dilute and a dense phase, and each phase gives rise to a different CFT in the critical limit. Each phase has its own value of $\beta^2$, given by solving Eq. \eqref{nQ} with $\beta^2\in (0,1)$ (dense phase) or $\beta^2\in (1,2)$ (dilute phase), if we assume $n\in (-2,2)$. 
 As a result, there can exist two different $O(n)$ CFTs with the same central charge but different values of $n$, related by $\beta \to\beta^{-1}$. Similar phenomenons also occurs in the $U(n)$ and Potts CFTs.
 
-Values of parameters: non-rational $\beta^2$? Statement on basis of solutions true for all allowed values. But relation with statistical model limited to critical region, cite equation for  this region! Case of momentum: region not known...
+Case of momentum: region not known...
 Loop weight invariant under shifts, but CFT not invariant, discussion of criticality and values of the central charge and loop weights. $\Re\Delta_{(1,3)}>1$. 
 
 Pb of $n$ vs $-n$ in Potts, $U(n)$ and degenerate fields. Gamsa--Cardy operators. Degenerate fields do have nontrivial correlators! But $s\to s+2$ same weight, how do we distinguish energy operator from identity in loop model?
