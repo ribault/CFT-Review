@@ -2492,19 +2492,51 @@ $
  
 \subsubsection{Critical limits}
 
-Starting from a statistical model on a finite lattice, the large lattice limit may give rise to a conformal field theory, provided the lattice couplings are set to certain critical values. 
+Starting from a statistical model on a finite lattice, the large lattice limit may give rise to a conformal field theory, provided the lattice couplings are set to certain critical values. The same loop CFT can arise as the critical limit of statistical models with various lattice geometries, various rules for drawing loops on the lattice, and various parameters. These various non-universal features are forgotten in the critical limit, and we say that all these models belong to the same \textbf{universality class}. 
 
-Plenty of it is non-universal: lattice, interaction strength, rules for drawing loops on lattice.
+Nevertheless, the existence of relevant fields in the CFT influences
+the behaviour of the statistical models along renormalization group flows. A primary field is called \textbf{relevant} if $\Re(\Delta+\bar\Delta)<2$, \textbf{marginal} if $\Re(\Delta+\bar\Delta)=2$, or \textbf{irrelevant} if $\Re(\Delta+\bar\Delta)>2$. Typically, the critical limit exists only provided some fields are irrelevant. Since the 
+dimensions of primary fields depend on the parameter $n$ or $Q$, there exist \textbf{critical regions} in the complex $n$-plane or $Q$-plane where a given model has a critical limit, and the boundary of these regions are \textbf{marginality lines}, where a field becomes marginal. Crossing a marginality line does not always spell doom for the critcial limit however: in particular, a relevant field may be prevented from derailing the flow by some symmetry. 
 
-Focus on universal features and values of central charge: criticality lines. 
+Let us plot the marginality lines of a few primary fields, which will give us an idea on how critical regions can look like. We focus on degenerate diagonal fields $V^d_{\langle r,s\rangle}$, which transform trivially under the global symmetries of the $O(n)$, $U(n)$ and Potts models, and therefore have a chance of derailing the flow. The marginality line of $V^d_{\langle r,s\rangle}$ is
+\begin{align}
+ M_{(r,s)} = \left\{\Re\Delta_{(r,s)} = 1 \right\} = \left\{\Re \left(P_{(r+1,s-1)}P_{(r-1,s+1)}\right) = 0\right\} \ . 
+\end{align}
+In the complex $\beta^2$-half-plane, the line $M_{(1,s)}=\left\{\Re\beta^{-2}=\frac{2}{s-1}\right\}$ is a circle with a center at $\beta^2=\frac{s-1}{4}$, which goes through the origin. The field $V^d_{(1,s)}$ is irrelevant inside the circle, and relevant outside. Here we plot the circles for $s=2,3,\dots, 9$ in the right half-plane \eqref{rbp}, with dashed lines for the even values, which do not appear in the $O(n)$ CFT:
+\begin{align}
+ \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = 3.5]
+ \draw [-latex] (-.3, 0) -- (2.6, 0) node[below]{$\beta^2$};
+ \node at (-.5, -.5) {$O(n)$ model:};
+ \node[draw, fill = black!5] at (.5, -.5) {dense};
+ \node[draw] at (1.5, -.5) {dilute};
+ \node[draw, fill = green!5] at (2.5, -.5) {multicritical};
+ \clip (-.3, -.3) -- (-.3, 1.3) -- (2.4, 1.3) -- (2.4, -.3) -- cycle;
+ \fill [color = green!5] (0, -1.3) -- (2.4, -1.3) -- (2.4, 1.3) -- (0, 1.3) -- cycle;
+  \fill [color = white] (1, 0) circle [radius = 1];
+ \fill [color = black!5] (.5, 0) circle [radius = .5];
+ \fill [color = black!25] (0, -1.3) -- (-.3, -1.3) -- (-.3, 1.3) -- (0, 1.3) -- cycle;
+ \draw[ultra thick, red] (0, -1.3) -- (0, 1.3);
+ \draw[thick] (.5, -1.3) -- (.5, 1.3);
+ \draw[thick] (1, -1.3) -- (1, 1.3);
+ \draw[thick] (1.5, -1.3) -- (1.5, 1.3);
+ \draw[thick] (2, -1.3) -- (2, 1.3);
+  \draw [-latex] (-.3, 0) -- (0, 0) node [below left] {$0$} -- (1, 0) node [below left] {$1$} -- (2, 0) node[below left] {$2$} -- (2.6, 0);
+   \draw [ultra thick, red] (0, 0) -- (1, 0); 
+  \foreach \s in {2,4,6,8}{
+  \draw [ultra thick, dashed, blue] ({(\s-1)/4}, 0) circle [radius = (\s-1)/4];
+  \draw [ultra thick, blue] ({\s/4}, 0) circle [radius = \s/4];
+  }
+ \node at (1, 0) [fill, circle, scale = .5] {};
+ \node at (0, 0) [fill, circle, scale = .5] {};
+ \end{tikzpicture} 
+\end{align}
+When it comes to the complex $n$-plane, we first notice that the relation \eqref{ncb} maps any strip $k<\Re \beta^2\leq k+1$ to the full complex $n$-plane. 
+This is one reason why the same CFT can describe various phases of various statistical models. For example, the $O(n)$ model's dense phase is usually defined for $\beta^2\in (0,1)$, and the dilute phase for $\beta^2\in (1,2)$, with $\beta^2>2$ corresponding to multicritical phases. These phases can be extended to the complex $\beta^2$-plane, by taking marginality lines as phase boundaries. 
 
 
-Loop CFTs are defined for the whole range of values of $\beta^2$ \eqref{rbp} that are allowed for non-diagonal CFTs with one degenerate fields. However, the corresponding statistical lattice models exist on a smaller range. This is first because the relation between $\beta^2$ and the models' parameters $n,Q$ is not bijective, and maps the strip $0<\Re \beta^2\leq 1$ to the full complex $n$-plane. Furthermore, not all complex values of $n,Q$ are possible, if we want the models to have a critical limit. However, the CFT gives us hints about which values are possible.
+then map to $n$-plane more messy. From dilute go to another $n$-plane and meet dense at marginality line. 
 
-To reach the critical limit from a lattice model, we must pay attention to which fields are relevant $\Re(\Delta+\bar\Delta)<2$, marginal $\Re(\Delta+\bar\Delta)=2$, or irrelevant $\Re(\Delta+\bar\Delta)>2$.
-Only relevant fields can influence whether the renormalization group flow reaches a critical limit. Therefore, the boundary of the region of criticality is expected to correspond to some field becoming relevant. A subtlety is that the appearance of a relevant field is not necessarily fatal: depending on the model's precise formulation, and in particular on which symmetries are preserved, the relevant field may or may not influence the flow. 
 
-Some universal results: plot marginality lines. Focus on deg. fields because most studied and also do not generate the others so not destabilization of the flow by dangerously irrelevant opeartors. Also, non-diag. fields often forbidden by this or that symmetry/assumption? 
 
 A puzzle has arisen in the $O(n)$ CFT, when it was found that there is one field $V_{(2,0)}$ that is invariant under $O(n)$ \cite{gz20}. From the point of view of the renormalization group flow triggered by the field $V^d_{\langle 1,3\rangle}$, this field is \textit{dangerously irrelevant}, i.e. it becomes relevant along the flow, and could prevent the flow from reaching the dense phase from the dilute phase. But numerical studies show that the flow does reach the dense phase. The puzzle is resolved by noticing that $V^d_{\langle 1,3\rangle}$ is degenerate, and cannot produce the non-diagonal field $V_{(2,0)}$ by repeated fusion, even if $O(n)$ symmetry would allow it \cite{js23}. Therefore, it is global symmetry itself that is \textit{dangerously irrelevant} to the understanding of this flow. 
 
