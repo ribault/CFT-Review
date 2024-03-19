@@ -2532,7 +2532,7 @@ In the complex $\beta^2$-half-plane, the line $M_{(1,s)}=\left\{\Re\beta^{-2}=\f
  \end{tikzpicture} 
 \end{align}
 When it comes to the complex $n$-plane, we first notice that the relation \eqref{ncb} maps any strip $k<\Re \beta^2\leq k+1$ to the full complex $n$-plane. 
-This is one reason why the same CFT can describe various phases of various statistical models. For example, the $O(n)$ model's dense phase is usually defined for $\beta^2\in (0,1)$, and the dilute phase for $\beta^2\in (1,2)$, with $\beta^2>2$ corresponding to multicritical phases. These phases can be extended to the complex $\beta^2$-plane, by taking marginality lines as phase boundaries. Let us now plot the marginality lines in the $n$-plane that corresponds to $0<\Re \beta^2<1$. Via analytic continuation through the green line, this plane is related to the plane that corresponds to $1<\Re\beta^2<2$:
+This is one reason why the same CFT can describe various phases of various statistical models. For example, the $O(n)$ model's dense phase is usually defined for $\beta^2\in (0,1)$, and the dilute phase for $\beta^2\in (1,2)$, with $\beta^2>2$ corresponding to multicritical phases. These phases can be extended to the complex $\beta^2$-plane, by taking marginality lines as phase boundaries. Let us now plot the marginality lines in the $n$-plane that corresponds to $0<\Re \beta^2<1$:
 \newcommand{\margs}[2]{
 \draw[domain = {-2/(#1-1)}:{2/(#1-1)}, smooth, variable = \t, #2]
 plot({-2*cos(pi/2*(#1-1)*\t r)*cosh(pi/2*(#1-1)*sqrt(abs(\t)-\t*\t)}, {2*sin(pi/2*(#1-1)*\t r)*sinh(pi/2*(#1-1)*sqrt(abs(\t)-\t*\t)});
@@ -2561,28 +2561,14 @@ plot({-2*cos(pi/2*(#1-1)*\t r)*cosh(pi/2*(#1-1)*sqrt(abs(\t)-\t*\t)}, {2*sin(pi/
 \margs{9}{ultra thick, blue}
 \end{tikzpicture}
 \end{align}
+Numerical investigations of the zeros of partition functions suggest that the gray region within the criticality line $M_{(1,3)}$ is indeed the critical region of certain lattice loop models \cite{bjjz22}. 
 
-
-
-
-
-
-then map to $n$-plane more messy. From dilute go to another $n$-plane and meet dense at marginality line. 
-
-not discuss ground state but could be $V_{(2,0)}, V^d_{\langle 1,1\rangle}, V_{P_{(0,\frac12)}}$.
+\textcolor{red}{Ground state could be $V_{(2,0)}, V^d_{\langle 1,1\rangle}, V_{P_{(0,\frac12)}}$. Influence on critical limit?}
 
 A puzzle has arisen in the $O(n)$ CFT, when it was found that there is one field $V_{(2,0)}$ that is invariant under $O(n)$ \cite{gz20}. From the point of view of the renormalization group flow triggered by the field $V^d_{\langle 1,3\rangle}$, this field is \textit{dangerously irrelevant}, i.e. it becomes relevant along the flow, and could prevent the flow from reaching the dense phase from the dilute phase. But numerical studies show that the flow does reach the dense phase. The puzzle is resolved by noticing that $V^d_{\langle 1,3\rangle}$ is degenerate, and cannot produce the non-diagonal field $V_{(2,0)}$ by repeated fusion, even if $O(n)$ symmetry would allow it \cite{js23}. Therefore, it is global symmetry itself that is \textit{dangerously irrelevant} to the understanding of this flow. 
 
+If we now consider correlation functions, the existence of a critical limit might depend on the case, and in particular on the weights $w$ of weight-changing punctures. And which diagonal fields $V_P$ do we obtain in the limit? Since the relation \eqref{wP} between $w$ and $P$ is not bijective, the answer is not obvious. 
 
-The $O(n)$, $U(n)$ and Potts CFTs were originally defined as critical limits of statistical lattice models. In each case, the lattice model has a critical limit under some conditions on $n$ or $Q$. If these parameters are assumed to be real, the conditions are $n\in (-2,2)$ or $Q\in (0,4)$, equivalently $c\in (-2,1)$. The region of criticality actually extends into the complex $c$-plane, although it is much smaller than the half-plane $\Re c<13$ \cite{bjjz22}. Outside that region, certain fields become relevant, so the models may become multicritical. Moreover, the $O(n)$ lattice model has a dilute and a dense phase, and each phase gives rise to a different CFT in the critical limit. Each phase has its own value of $\beta^2$, given by solving Eq. \eqref{nQ} with $\beta^2\in (0,1)$ (dense phase) or $\beta^2\in (1,2)$ (dilute phase), if we assume $n\in (-2,2)$. 
-As a result, there can exist two different $O(n)$ CFTs with the same central charge but different values of $n$, related by $\beta \to\beta^{-1}$. Similar phenomenons also occurs in the $U(n)$ and Potts CFTs.
-
-Case of momentum: region not known...
-Loop weight invariant under shifts, but CFT not invariant, discussion of criticality and values of the central charge and loop weights. $\Re\Delta_{(1,3)}>1$. 
-
-Pb of $n$ vs $-n$ in Potts, $U(n)$ and degenerate fields. Gamsa--Cardy operators. Degenerate fields do have nontrivial correlators! But $s\to s+2$ same weight, how do we distinguish energy operator from identity in loop model?
-
-How do we see that a field is degenerate in the loop CFT? In the CFT deg. fields have special OPEs. But in the loop model their weight is a special value of a continuous parameter: what happens to the argument that single-valuedness excludes $V_{\langle 1,2\rangle}^d$ from the $O(n)$ model? 
 
 \subsection{Analytic properties of structure constants}
 
