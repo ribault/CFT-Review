@@ -8,7 +8,7 @@
 
 \usepackage[top=20mm,bottom=20mm,left=25mm,right=25mm]{geometry}
 
-%\usepackage{showkeys}
+\usepackage{showkeys}
 
 \usepackage{amsmath,amssymb,amsfonts}
 
@@ -1009,10 +1009,6 @@ In order to solve CFTs, the existence of degenerate fields matters much more tha
  \item \textbf{CFTs with 2 degenerate fields}, in the sense that both $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$ exist. 
  \item \textbf{CFTs with 1 degenerate field} $V^d_{\langle 1,2\rangle}$. Because the invariance under $\beta\to \beta^{-1}$ is broken by choosing $V^d_{\langle 1,2\rangle}$ rather than $V^d_{\langle 2,1\rangle}$, such CFTs depend on $\beta^2$ \eqref{cb} rather than on the central charge $c$. 
 \end{itemize}
-For $\beta^2\in\mathbb{Q}$, we have to distinguish fully degenerate fields from partly degenerate fields. And the fully degenerate fields $V^f_{\langle 2,1\rangle}$ and $V^f_{\langle 1,2\rangle}$ are not independent, as follows from the identities
-\begin{align}
- \beta^2 =\frac{q}{p}>0 \implies V^f_{\langle p-1,1\rangle} = V^f_{\langle 1,q-1\rangle} \quad , \quad  \beta^2 =-\frac{q}{p}<0 \implies V^f_{\langle p+1,1\rangle} = V^f_{\langle 1,q+1\rangle}\ . 
-\end{align}
 Degenerate fields are so important that it has been proposed to formally extend the conformal algebra into an \textbf{interchiral algebra}, which also includes the degenerate fields \cite{grs12}. While we will not systematically use this concept, we will find it convenient to introduce interchiral blocks in Section \ref{sec:icb}. 
 
 \subsubsection{Degenerate OPEs and their consequences}\label{sec:dotc}
@@ -1088,15 +1084,11 @@ For $\beta^2\in\mathbb{C}^*\backslash\mathbb{Q}$, we define the \textbf{generali
 \begin{align}
  \boxed{\mathcal{S}^\text{GMM} = \left\{ V^d_{\langle r,s\rangle}\right\}_{r,s\in\mathbb{N}^*}} \ . 
 \end{align}
-The set of conformal dimensions is in general not bounded from below:
-\begin{align}
- \inf_{r,s\in\mathbb{N}^*}\left(\Re\Delta_{(r,s)}\right) = \left\{\begin{array}{ll} \frac{c-1}{24} &\text{ if } \beta^2 \in \mathbb{R}^*\ , \\ -\infty & \text{ else }. \end{array}\right. 
-\end{align}
-However, thanks to the degenerate fusion rules \eqref{rrsr}, any OPE spectrum is finite, and therefore respects the convergence condition \eqref{iddb}.
+Thanks to the degenerate fusion rules \eqref{rrsr}, any OPE spectrum is finite, and therefore respects the convergence condition \eqref{iddb}.
 
 For $\beta^2\in \mathbb{Q}$, the degenerate dimensions $\Delta_{(r,s)}$ are not all different, and there is no GMM. However, there exist other CFTs whose primary fields are diagonal and (partly or fully) degenerate, starting with A-series minimal models. One way to explore this issue is to take limits of GMM correlation functions as $\beta^2\to \beta^2_0\in \mathbb{Q}$. This can give rise not only to minimal model correlation functions, but also to logarithmic correlation functions \cite{rib18}, suggesting the existence of non-minimal CFTs. 
 
-Generalized minimal models exist only on the sphere. In particular, their torus partition functions are infinite: if $\beta^2\in\mathbb{C}\backslash \mathbb{R}$, this is because $\left\{ \Delta_{(r,s)}\right\}_{r,s\in\mathbb{N}^*}$ is not bounded from below. Nevertheless, GMMs are interesting because they are very simple and natural CFTs, which give rise to various other CFTs in certain limits --- starting with Liouville theory.
+Generalized minimal models exist only on the sphere. In particular, their torus partition functions are infinite, because $\lim_{r,s\to\infty} \Delta_{(r,s)}\neq +\infty$. Nevertheless, GMMs are interesting because they are very simple and natural CFTs, which give rise to various other CFTs in certain limits --- starting with Liouville theory.
 
 \subsubsection{Liouville theory}\label{sec:liou}
 
@@ -1431,8 +1423,6 @@ In addition to our assumption that OPEs are discrete, known constraints on fusio
  \item The degenerate field $V^d_{\langle 1,2\rangle}$ implies the conservation of $r$ modulo integers \eqref{sriz}.
  \item OPEs that involve $V^d_{\langle 1,2\rangle}$ are given by Eqs. \eqref{vpope} and \eqref{vdvrs}.
 \end{itemize}
-The basic expectation is that in any OPE, any non-diagonal field that is not excluded by these constraints appears. For diagonal fields, our constraints are weak. We postpone the full determination of OPEs to Section \ref{sec:cloop}.
-
 
 \subsubsection{$O(n)$ CFT, $U(n)$ CFT, Potts CFT}\label{sec:models}
 
@@ -1460,7 +1450,7 @@ Each one of these CFTs has
   \label{nQ}
  \end{align}
 \end{itemize}
-Degenerate fields are invariant under global symmetries, while other fields can transform in non-trivial representations \cite{jrs22}. For example, in the $O(n)$ CFT, the fields $V_{(\frac12,0)},V_{(1,0)}$ and $V_{(1,1)}$ transform under $O(n)$ as a vector, a symmetric 2-tensor and an antisymmetric 2-tensor respectively. There are two fields of the type $V_{(\frac32,0)}$, which transform as symmetric and antisymmetric 3-tensors. And for $r\geq \frac52$, it also happens that several different fields have the same conformal dimensions and the same behaviour under $O(n)$. The situation is similar in the $U(n)$ and Potts CFTs: let us only mention that the diagonal non-degenerate fields $V_{P_{(0,s)}}$ of the Potts CFT transform in the standard  representation of $S_Q$, whose dimension is $Q-1$. 
+Degenerate fields are invariant under global symmetries, while other fields can transform in non-trivial representations \cite{jrs22}. For example, in the $O(n)$ CFT, the fields $V_{(\frac12,0)},V_{(1,0)}$ and $V_{(1,1)}$ transform under $O(n)$ as a vector, a symmetric 2-tensor and an antisymmetric 2-tensor respectively. There are two fields of the type $V_{(\frac32,0)}$, which transform as symmetric and antisymmetric 3-tensors. And for $r\geq \frac52$, it also happens that several different fields have the same conformal dimensions and the same behaviour under $O(n)$, for example there are 2 fields of type $V_{(\frac52,0)}$ that transform in the irreducible representation corresponding to the Young diagram $(2,1)$. The situation is similar in the $U(n)$ and Potts CFTs: let us only mention that the diagonal non-degenerate fields $V_{P_{(0,s)}}$ of the Potts CFT transform in the standard  representation of $S_Q$, whose dimension is $Q-1$. 
 
 
 \subsection{Completing the picture}
@@ -1572,7 +1562,7 @@ They have two independent degenerate fields $\left\{V^f_{\langle r,1\rangle},V^f
 However, we do not know how to derive their known spectrums from the study of fusion rules. 
 Solving E-series minimal models is apparently still an open problem. 
 \item \textbf{Logarithmic minimal models} are believed to exist for $\beta^2\in \mathbb{Q}_{>0}$ \cite{prz06}. Their primary fields belong to the extended Kac table, i.e. they have integer Kac indices. Their spectrums include logarithmic representations. Their spectrums and fusion rules are not fully known. It is in fact not clear how many such CFTs exist at any given central charge. Presumably, they can be obtained as limits of generalized minimal models. 
-\item At $c=1$, the \textbf{compactified free boson} and its $\mathbb{Z}_2$ orbifold the \textbf{Ashkin--Teller model} are better understood in terms of an extended symmetry algebra (an abelian affine Lie algebra), although they can also be solved in terms of Virasoro symmetry only \cite{nr21}. They have a degenerate field $V^f_{\langle 1, 3\rangle}=V^f_{\langle 3,1\rangle}$, which however behaves as the identity field under fusion with non-diagonal fields. As a result, the constraints \eqref{sriz} are not obeyed. These models have a continuous parameter: the compactification radius $R$. For a special value of $R$, the compactified free boson is a $c\to 1$ limit of the $O(n)$ CFT, and the Ashkin--Teller model is a $c\to 1$ limit of the Potts CFT.
+\item At $c=1$, the \textbf{compactified free boson} and its $\mathbb{Z}_2$ orbifold the \textbf{Ashkin--Teller model} are better understood in terms of an extended symmetry algebra (an abelian affine Lie algebra), although they can also be solved in terms of Virasoro symmetry only \cite{nr21}. They have a degenerate field $V^f_{\langle 1, 3\rangle}=V^f_{\langle 3,1\rangle}$, which however behaves as the identity field under fusion with non-diagonal fields. As a result, the constraints \eqref{sriz} are not obeyed. These models have a continuous parameter: the compactification radius $R\in\mathbb{C}^*$. For a special value of $R$, the compactified free boson is a $c\to 1$ limit of the $O(n)$ CFT, and the Ashkin--Teller model is a $c\to 1$ limit of the Potts CFT. Compactified free bosons also exist for $c\in\mathbb{C}$, but then $R$ is quantized \cite{rib14}. 
 \end{itemize}
 
 
@@ -1805,20 +1795,20 @@ Notice that the OPEs $V^d_{\langle 2,1\rangle}V_3$ and $V_3V^d_{\langle 2,1\rang
  \frac{d^{(s)}_-}{d^{(s)}_+}= (-)^{2s_i}\frac{c_i^-}{c_{i^+}^-} \frac{c_{i^-}^+}{c_i^+}\ ,  
  \label{ddcccc}
 \end{align}
-whose left-hand side is explicitly known by Eq. \eqref{ddb}.
-
-If we want to determine $B_i,C_{ijk}$, what do we do with $c^\pm_i$? In the bootstrap approach, we are free to perform \textbf{field renormalizations} using arbitrary constant coefficients $\lambda_i$,
-\begin{align}
- V_i(z) \to \lambda_i V_i(z)\quad \implies \quad B_i \to \lambda_i^2B_i \ , \ C_{ijk}\to \lambda_i\lambda_j\lambda_k C_{ijk}\ .
- \label{vlv}
-\end{align}
-For a quantity to be meaningful, it must be invariant under field renormalizations. And invariant combinations of structure constants do not involve $c_i^\pm$. For example, the $s$-channel 4-point structure constant $D^{(s)}_k = \frac{C_{12k}C_{k34}}{B_k}$ is invariant under renormalization of the channel field $V_k$, and $D^{(s)}_{k^+}$ is a combination of degenerate 4-point structure constants \eqref{cs}, such that the contributions of $c_k^+$ cancel. 
-It is however not practical to only work with renormalization-invariant combinations of structure constants. In particular, the invariant $\frac{C_{123}}{\sqrt{B_1B_2B_3}}$ involves a square root, and suffers from the corresponding sign ambiguity. Instead, we propose
+whose left-hand side is explicitly known by Eq. \eqref{ddb}. It can be checked that the following expressions obey this relation (using $s_i=\beta(\bar P_i-P_i) \in \frac12\mathbb{Z}$), and also obey the reflection relation \eqref{cim}: 
 \begin{align}
  c^+_i = \beta^{2\beta(P_i+\bar P_i)} \frac{\Gamma(-2\beta P_i)}{\Gamma(1+2\beta \bar P_i)} \quad , \quad c^-_i = \beta^{-2\beta(P_i+\bar P_i)} \frac{\Gamma(2\beta P_i)}{\Gamma(1-2\beta \bar P_i)}\ ,
  \label{cpcm}
 \end{align}
-This obeys the reflection relation \eqref{cim}. This also obeys Eq. \eqref{ddcccc}, thanks to $s_i=\beta(\bar P_i-P_i) \in \frac12\mathbb{Z}$. The existence and uniqueness of $c_i^\pm$ are subtle issues: in particular, in a CFT with two degenerate fields $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$, the degenerate OPE coefficients for the two fields are related. (See \cite[Exercise 3.2]{rib14} for the case of Liouville theory.) Our determination of $c_i^\pm$ will be validated by the existence of solutions of the shift equations for $B_i,C_{ijk}$. 
+This solution is far from unique, because in the bootstrap approach we are always free to perform \textbf{field renormalizations} using arbitrary constant coefficients $\lambda_i$,
+\begin{align}
+ V_i(z) \to \lambda_i V_i(z)\quad \implies \quad c_i^\pm \to \lambda_{\langle 2,1\rangle}\frac{\lambda_i}{\lambda_{i^\pm}}c_i^\pm \ , \  B_i \to \lambda_i^2B_i \ , \ C_{ijk}\to \lambda_i\lambda_j\lambda_k C_{ijk}\ .
+ \label{vlv}
+\end{align}
+Instead of choosing a solution for $c_i^\pm$, and therefore a particular field normalization, 
+we could work with renormalization-invariant quantities, which cannot involve $c_i^\pm$. For example, the $s$-channel 4-point structure constant $D^{(s)}_k = \frac{C_{12k}C_{k34}}{B_k}$ is invariant under renormalization of the channel field $V_k$, and $D^{(s)}_{k^+}$ is a combination of degenerate 4-point structure constants \eqref{cs}, such that the contributions of $c_k^+$ cancel. 
+
+In a CFT with two degenerate fields $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$, the degenerate OPE coefficients for the two fields are related. (See \cite[Exercise 3.2]{rib14} for the case of Liouville theory.) Our determination of $c_i^\pm$ will be validated by the existence of solutions of the shift equations for $B_i,C_{ijk}$. 
 
 
 \subsubsection{Explicit shift equations}
@@ -1849,7 +1839,6 @@ and an equation for the 2-point structure constant, deduced from Eq. \eqref{cbcb
  \boxed{\frac{B_1}{B_{1^+}} =  (-)^{s_1}\beta^{4\beta (P_1+\bar P_1)+2\beta^2}\frac{\Gamma(-2\beta P_1)}{\Gamma(1+2\beta \bar P_1)}\frac{\Gamma(1-\beta^2-2\beta\bar P_1)}{\Gamma(\beta^2+2\beta P_1)} }\ .
  \label{sh-bb}
 \end{align}
-In Liouville theory with $c\notin (-\infty,1]$ and in non-diagonal CFTs with 2 degenerate fields, we will have to use slighly modified shift equations, obtained by choosing slighly different degenerate OPE structure constants $c_i^\pm$, which is made possible by relaxing the reflection relation. 
 
 \subsection{Solutions of shift equations}\label{sec:essc}
 
@@ -1912,7 +1901,7 @@ Instead, we should use the function $\hat{\Gamma}_\beta(x) = \frac{1}{\Gamma_{i\
 \frac{\hat\Gamma_\beta(x+\beta^{-1})}{\hat\Gamma_\beta(x)} = \sqrt{2\pi}(i\beta)^{\frac12-\beta^{-1}x}\Gamma(1-\beta^{-1}x) \ .
 \label{hgshift}
 \end{align}
-Since we now have powers of $i\beta$ instead of $\beta$, we need to slightly modify the degenerate OPE structure constants \eqref{cpcm}, for example $c_i^+ = \beta^{4\beta P_i}\frac{\Gamma(-2\beta P_i)}{\Gamma(1+2\beta P_i)} \to (i\beta)^{4\beta P_i}\frac{\Gamma(-2\beta P_i)}{\Gamma(1+2\beta P_i)}$. The shift equations for structure constants \eqref{sh-mp}-\eqref{sh-bb} are similarly modified. Their solutions $\hat B_{P_1},\hat C_{P_1,P_2,P_3}$ are obtained from $B_{P_1},C_{P_1,P_2,P_3}$ \eqref{bc} by $\Gamma_\beta \to \hat\Gamma_\beta$. Explicitly,
+Since we now have powers of $i\beta$ instead of $\beta$, we need to slightly modify the degenerate OPE structure constants \eqref{cpcm}, for example $c_i^+ = \beta^{4\beta P_i}\frac{\Gamma(-2\beta P_i)}{\Gamma(1+2\beta P_i)} \to (i\beta)^{4\beta P_i}\frac{\Gamma(-2\beta P_i)}{\Gamma(1+2\beta P_i)}$. The shift equations for structure constants \eqref{sh-mp}-\eqref{sh-bb} are similarly modified, i.e. $\beta^y \to (i\beta)^y$. Their solutions $\hat B_{P_1},\hat C_{P_1,P_2,P_3}$ are obtained from $B_{P_1},C_{P_1,P_2,P_3}$ \eqref{bc} by $\Gamma_\beta \to \hat\Gamma_\beta$. Explicitly,
 \begin{align}
  \boxed{\hat B_{P_1} = \prod_\pm \Gamma_b\left(\pm 2iP_1\right)\Gamma_b\left(Q\pm 2iP_1\right)} \quad , \quad 
  \boxed{\hat C_{P_1,P_2,P_3} = \prod_{\pm,\pm,\pm} \Gamma_b\left(\tfrac{Q}{2} \pm iP_1\pm iP_2\pm iP_3\right)}\ ,
