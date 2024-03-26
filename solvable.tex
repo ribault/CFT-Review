@@ -627,7 +627,6 @@ From these simple formulas, all the discrete spectrums of Section \ref{sec:sesc}
  \item If $\mathcal{R}=\mathcal{R}^d_{\langle r,s\rangle}$ is degenerate, the condition that $V^d_{\langle r,s\rangle}$ may appear in the OPE $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$ leads to polynomial equations of order $rs$ on $\Delta_1,\Delta_2$, just as we saw in the case $(r,s)=(2,1)$. These equations may be interpreted as conditions on residues of OPE coefficients,
  \begin{align}
   V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset V^d_{\langle r,s\rangle} \quad \implies \quad \forall L\in \mathcal{L},\ \underset{\Delta=\Delta_{(r,s)}}{\operatorname{Res}} f^{\Delta,L}_{\Delta_1,\Delta_2} = 0\ .
-  \label{resf}
  \end{align}
  (If the residues vanish for $|L|=rs$, then they vanish for all $L\in\mathcal{L}$.)
  \item If $\mathcal{R}$ is not degenerate, the corresponding primary field may appear in any OPE of the type $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$, because the OPE Ward identities have a solution. 
@@ -2183,9 +2182,24 @@ In principle it is impossible to compute the rank of an infinite matrix, but
 in practice it may be enough to study a few 4-point functions for guessing a given multiplicity. This has been done in a few examples of diagonal 4-point functions in loop CFTs \cite{rib22}.
 
 
-\subsection{Virasoro conformal blocks and Zamolodchikov's recursion}
+\subsection{Virasoro blocks and Zamolodchikov's recursion}
+
+
+As we saw in Section \ref{sec:csope}, 
+the OPE coefficient $f^{\Delta, L}_{\Delta_1,\Delta_2}$ for the contribution of the descendant field $LV_\Delta$ to the OPE $V_{\Delta_1}V_{\Delta_2}$ 
+has a simple pole at $\Delta=\Delta_{(r,s)}$ for $r,s\in\mathbb{N}^*$ with $rs\leq |L|$. 
+Since such coefficients appear in the expression \eqref{fsl} for a Virasoro block as a sum over creation operators $L\in\mathcal{L}$, 
+the block itself has a simple pole at $\Delta=\Delta_{(r,s)}$ for any $r,s\in\mathbb{N}^*$. This pole comes from the existence of a null vector at level $rs$ in the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$, and this null vector is a primary state of dimension $\Delta_{(r,-s)}$. The residue of the block at this pole is the sum of the contributions of the null vector and its descendant states, therefore it is itself a Virasoro block,
+\begin{align}
+ \underset{\Delta=\Delta_{(r,s)}}{\operatorname{Res}} \mathcal{F}_\Delta(z) = R_{r,s}\mathcal{F}_{\Delta_{(r,-s)}}(z)\ ,
+ \label{resf}
+\end{align}
+where the coefficient $R_{r,s}$ is called a \textbf{Virasoro block residue}. 
+
 
 Derive the recursion for blocks? hard part is coef $R_{r,s}$ but it obeys simple shift equations. Rewrite it in terms of Upsilon functions, and somehow derive it from Liouville theory! But cancellation of double poles hard to argue? And need to determine sign, since we get square of $R_{r,s}$. We can choose any value of the continuous parameters including $c$, but is there a value that makes $R_{r,s}$ simple enough? And what about the $\Delta\to\infty$ prefactors? See Yin et al? See Appendix D of \cite{msz15} for the pillow geometry that underlies the variable $q$.
+
+
 
 \subsection{Interchiral blocks} \label{sec:icb}
 
@@ -2447,6 +2461,7 @@ For example, in the case $N=4$, the $s$-channel spectrum that appears in the cro
           \cup \left\{V_{P_s+k\beta^{-1}}\right\}_{k\in\mathbb{Z}} & \text{ if } r_1+r_2\equiv 0 \bmod 1 \ , 
         \end{array}
 \right.
+\label{ss}
 \end{align}
 where the diagonal fields take all possible momentums that correspond to the loop weight $w_s=2\cos(2\pi \beta P_s)$. 
 
@@ -2463,7 +2478,11 @@ $
   \draw (0, 0) to [out = 70, in = 0] (0, 3.5) to [out = 180, in = 110] (0, 0);
  \end{tikzpicture}
  $
-has signature $(\sigma_s,\sigma_t,\sigma_u)=(0,2,2)$. The conjectured criterion is that the corresponding solution obeys $r<\sigma_x\implies D^{(x)}_{(r,s)}=0$. In some cases, including our example, this uniquely determines the solution.
+has signature $(\sigma_s,\sigma_t,\sigma_u)=(0,2,2)$. The conjectured criterion is that the corresponding solution obeys 
+\begin{align}
+ r<\sigma_x\implies D^{(x)}_{(r,s)}=0\ .
+\end{align}
+In some cases, including our example, this uniquely determines the solution.
 
 How do we interpret the dependence of the $s$-channel spectrum on a channel weight $w_s$? The $s$-channel spectrum of a 4-point function should only depend on the 4 fields $V_{(r_i,s_i)}$. For $w_s\neq n$, the dependence on $w_s$ is conjectured to be a manifestation of the presence of an $s$-channel combinatorial defect \cite{rib22}. In the presence of this defect, $s$-channel diagonal fields $V_{P_s}$ such that $w(P_s)=w_s$ appear in the $s$-channel spectrum, and the structure constants of non-diagonal fields may depend on $w_s$. By combinatorial defect we mean a defect that only depends on which punctures are inside or outside the defect. This implies that the defect is topological, but the converse is not true, see Figure \eqref{tvsc}. In the $O(n)$ CFT on the torus, adding combinatorial defect would not spoil modular invariance, but the partition function would become a function of the defect's weight. 
 
@@ -2477,7 +2496,7 @@ $
   \draw (0, 0) to [out = 70, in = 0] (0, 3.5) to [out = 180, in = 110] (0, 0);
  \end{tikzpicture}
  $.
- In the $O(n)$ model, all diagonal fields are degenerate, and their fusion rules would forbid this solution, since $V^d_{\langle 1,s\rangle}\notin V_{(\frac32,s_1)}V_{(\frac12,s_2)}$. In the Potts model on the other hand, the spectrum includes degenerate fields of weights $n,-n$ and diagonal fields of weight $0$. In some 4-point functions, diagonal fields with different weights can propagate in the same channel, leading to more solutions than maps. 
+ In the $O(n)$ model, all diagonal fields are degenerate, and their fusion rules would forbid this solution, since $V^d_{\langle 1,s\rangle}\notin V_{(\frac32,s_1)}V_{(\frac12,s_2)}$ \cite{gnjrs21}. In the Potts model on the other hand, the spectrum includes degenerate fields of weights $n,-n$ and diagonal fields of weight $0$. In some 4-point functions, diagonal fields with different weights can propagate in the same channel, leading to more solutions than maps \cite{niv22}. 
  
 \subsubsection{Critical limits}
 
@@ -2560,6 +2579,26 @@ If we now consider correlation functions, the existence of a critical limit migh
 
 
 \subsection{Analytic properties of structure constants}
+
+Whenever a 4-point combinatorial map corresponds to a unique solution of crossing symmetry, numerical bootstrap calculations can give us numerical data for the corresponding 4-point structure constants. From these data, we would like to infer exact expressions. To do this, we will constrain structure constants by making assumptions on their analytic properties. 
+For each structure constant, it will remain to determine a polynomial in loop weights.
+
+\subsubsection{Analyticity in the channel momentum}
+
+We consider a 4-point function of the type $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$ with $r_1+r_2\equiv 0\bmod 1$. The corresponding $s$-channel spectrum \eqref{ss} includes a series of diagonal fields with momentums in $P_s+\beta^{-1}\mathbb{Z}$. 
+
+remember that fct of $w_s$ but technically simpler to study dependence on $P_s$. 
+
+Decompose into blocks, normalize using ref. 4pt structure constant.
+
+Assume full analyticity in $w_s$ and also in $P_s$, natural from loop model but two caveats: not quite clear why it does not apply to other weights, and it applies term by term in channel expansion.
+
+Look at poles of blocks and structure constants. 
+
+Focus on some block. Residues of double poles must cancel in diag. terms already. Get formula for block residues! There remain simple poles, can be cancelled against non-diag. blocks. Get formula for log. blocks! 
+
+\subsubsection{Polynomials in loop weights} 
+
 
 Poles and their cancellations. Polynomials are natural in statistical model but valid only after stripping off non-polynomial structure constants. 
 
