@@ -8,7 +8,7 @@
 
 \usepackage[top=20mm,bottom=20mm,left=25mm,right=25mm]{geometry}
 
-\usepackage{showkeys}
+%\usepackage{showkeys}
 
 \usepackage{amsmath,amssymb,amsfonts}
 
@@ -195,7 +195,7 @@ We are not claiming that our approach is always mathematically rigorous: our mai
 
 \subsection*{Acknowledgements}
 
-This text was initially written as lecture notes for a course given at IPhT Saclay in March-April 2024. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica. I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop CFTs and related subjects. Moreover, I am grateful to Jesper Jacobsen, Paul Roux and Hubert Saleur for helpful discussions. 
+This text was initially written as lecture notes for a course given at IPhT Saclay in March-April 2024. Video recordings are available on \href{https://www.youtube.com/playlist?list=PLrLctLPAdPNtD7yFOcfdNx2J-A_CE1svr}{IPhT-TV}. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica. I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop CFTs and related subjects. Moreover, I am grateful to Jesper Jacobsen, Paul Roux and Hubert Saleur for helpful discussions. 
 
 
 %\end{tcolorbox}
@@ -1963,17 +1963,17 @@ whose sign prefactor ensures the correct behaviour under permutations \eqref{b21
  C_{P_1,(r_2,s_2),(r_3,s_3)}=C_{-P_1,(r_2,s_2),(r_3,s_3)} \ .
  \label{cpcmp}
 \end{align}
-The second identity is equivalent to the invariance of $C_{P_1,(r_2,s_2),(r_3,s_3)}$ under $(P_2,P_3)\leftrightarrow (\bar P_2,\bar P_3)$. To prove it, we notice that it can be rewritten in terms of the \textbf{double Sine function}
+To prove the second identity, it is convenient to rewrite it in terms of the \textbf{double Sine function}
 \begin{align}
  S_\beta(x) = \frac{\Gamma_\beta(x)}{\Gamma_\beta(\beta + \beta^{-1}-x)}\quad \implies \quad \frac{S_\beta(x+\beta)}{S_\beta(x)} = 2\sin(\pi\beta x)\ .
  \label{sb}
 \end{align}
-The double Sine function obeys the identity 
+The second identity can then be deduced from the identity 
 \begin{align}
- r,s\in\mathbb{Z} \implies \frac{\prod_\pm S_\beta\left(\frac{\beta+\beta^{-1}}{2} +P \pm P_{(r,s)}\right)}{\prod_\pm S_\beta\left(\frac{\beta+\beta^{-1}}{2} +P \pm P_{(r,-s)}\right)} =(-)^{rs}\ .
+ r,s\in\mathbb{Z} \implies \frac{\prod_\pm S_\beta\left(\frac{\beta+\beta^{-1}}{2} +P \pm P_{(r,s)}\right)}{\prod_\pm S_\beta\left(\frac{\beta+\beta^{-1}}{2} +P \pm P_{(r,-s)}\right)} =(-)^{rs}\ ,
  \label{dsr}
 \end{align}
-Applying this to $P=P_1$ and $(r,s)=(r_2\pm r_3,s_2\pm s_3)$, we obtain the second identity in Eq. \eqref{cpcmp}.
+applied to $P=P_1$ and $(r,s)=(r_2\pm r_3,s_2\pm s_3)$.
 
 Having worked out the basic properties of our ansatz \eqref{cdnn}, let us check whether it obeys the shift equations. The spectrum \eqref{sdmm} of D-series minimal models is invariant under $s\to s+1$, both in the diagonal and non-diagonal sectors. Therefore, when it comes to the shifts from $V^d_{\langle 1,2\rangle}$, we have to check the two shift equations \eqref{sh-mp} and \eqref{sh-pp} with $\beta\to\beta^{-1}$ and $r_i\leftrightarrow s_i$, where the shifted fields may be diagonal or non-diagonal. This is straightforward, if we remember $r_2,r_3\in 2\mathbb{Z}$, leading to trivial sign factors $(-)^{r_i}=1$. We will now deal with the subtler case of the shifts from $V^d_{\langle 2,1\rangle}$. The spectrum of D-series minimal models is invariant under $r\to r+2$ but not $r\to r+1$, so we only have to deal with the shift equation \eqref{sh-mp}. If we shift a non-diagonal field, our ansatz \eqref{cdnn} behaves as 
 \begin{align}
@@ -2095,7 +2095,7 @@ Let us summarize the solutions of shift equations for 2-point and 3-point struct
   & & & & \cellcolor{green} & & 
   \\
   \hline 
-  $C^\text{GDMM}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle\langle r_3,s_3\rangle}$ & \eqref{cgdmm} &
+  $C^\text{GDMM}_{P_1,P_2,P_3}$ & \eqref{cgdmm} &
   & & & & & \cellcolor{green} & 
   \\
   \hline 
@@ -2118,7 +2118,7 @@ In the analytic bootstrap approach of Section \ref{sec:ab}, we have used the cro
 
 \subsubsection{Achievements and limitations of analytic approaches}
 
-It is not easy to directly evaluate the crossing symmetry equations \eqref{seteu}: conformal blocks are complicated, and their sums are even more complicated. Another approach is to construct 4-point functions in channel-independent ways, and then show that they can be decomposed into conformal blocks. This has led to analytic proofs of crossing symmetry in CFTs that can be constructed by perturbing a free bosonic CFT: 
+It is not easy to directly evaluate the crossing symmetry equations \eqref{seteu}: conformal blocks are complicated, and their sums are even more complicated. Another approach is to construct 4-point functions in channel-independent ways, and then show that they can be decomposed into conformal blocks. This has led to analytic proofs of crossing symmetry in CFTs that can be constructed by perturbing a free bosonic CFT:
 \begin{itemize}
  \item In A-series minimal models, 4-point functions can be constructed as Coulomb gas integrals \cite{df84}.
  \item In Liouville theory with $c\geq 25$, 4-point functions can be constructed from chiral vertex operators \cite{tes03b}.
@@ -2176,7 +2176,7 @@ This is a sum of as many terms as the multiplicity of the primary field $V_{\Del
 
 If the multiplicity $m(V_{\Delta,\bar\Delta})$ of $V_{\Delta,\bar\Delta}$ in the full spectrum is finite, it can in principle be determined from the values of $D^{(s)}_{\Delta,\bar\Delta}$ for all possible 4-point functions $\left<V_{k_1}V_{k_2}V_{k_3}V_{k_4}\right>$: 
 \begin{align}
- m\left(V_{\Delta,\bar\Delta}\right) = \text{rank}\left(\left.D^{(s)}_{\Delta,\bar\Delta}\right|_{\left<V_{k_1}V_{k_2}V_{k_3}V_{k_4}\right>}\right)_{k_i\in\mathcal{S}}\ .
+ m\left(V_{\Delta,\bar\Delta}\right) = \text{rank}\left(\left.D^{(s)}_{\Delta,\bar\Delta}\right|_{\left<V_{k_1}V_{k_2}V_{k_3}V_{k_4}\right>}\right)_{(k_1,k_2),(k_3,k_4)\in\mathcal{S}^2\times \mathcal{S}^2}\ .
 \end{align}
 In principle it is impossible to compute the rank of an infinite matrix, but 
 in practice it may be enough to study a few 4-point functions for guessing a given multiplicity. This has been done in a few examples of diagonal 4-point functions in loop CFTs \cite{rib22}.
@@ -2378,16 +2378,13 @@ Under a change of reference direction or reference open loop, the weight of a co
 
 We define correlation functions that depend on the punctures $z_1,\dots,z_N$ with their parameters $(r_1,s_1),\dots, (r_N,s_N)$, on the map $M$ and on the weights of closed loops $\{w_k\}$:
 \begin{align}
- Z\Big(\{z_i\},\{(r_i,s_i)\},\{w_k\}\Big|\mathcal{E}_M\Big) =\sum_{E\in\mathcal{E}_M} \prod_{i=1}^N w_{(r_i,s_i)}(E) \prod_{\ell\in E} w(\ell) \ , 
+ Z\Big(\{z_i\},\{(r_i,s_i)\},\{w_k\}\Big|\mathcal{E}_M\Big) =\sum_{E\in\mathcal{E}_M} \prod_{i=1}^N w_{(r_i,s_i)}(E) \prod_{\substack{\ell\in E\\ \ell \text{ closed}}} w(\ell) \ .
  \label{zbig}
 \end{align}
-where the last product is over closed loops, with $w(\ell)\in\{w_k\}$. 
-
 
 \subsubsection{Cases of the $O(n)$, $U(n)$ and Potts models}\label{sec:coup}
 
-In the $O(n)$ model, there are no weight-changing punctures. All closed loops have the same weight $n$, whether or not they are contractible. On the other hand,  
-all possible loop-ending punctures are allowed. 
+In the $O(n)$ model, all possible loop-ending punctures are allowed. But there are no weight-changing punctures: all closed loops have the same weight $n$, whether or not they are contractible. The sum over loop configurations is obtained by reformulating a model of spins on a lattice, where each spin is an $n$-dimensional vector that transforms in the fundamental representation of the group $O(n)$. 
 
 In the $U(n)$ model, we add the restriction that all loops (closed and open) can be oriented such that any two neighbouring loops have opposite orientations. Equivalently, the Riemann sphere should be bicolorable, with each loop separating two regions of different colors. This allows only punctures with even valencies $2r\in 2\mathbb{N}^*$:
 \begin{align}
@@ -2445,7 +2442,7 @@ $n=w(P_{(1,1)})$, which boils down to the expression \eqref{ncb} for the contrac
 
 \subsubsection{Correlation functions}
 
-According to our identification of punctures with primary fields, the loop model $N$-point function \eqref{zbig} should correspond to a loop CFT $N$-point function of the type $\left<\prod_{i=1}^N V_{(r_i,s_i)}\right>$, which should be single-valued and crossing-symmetric. In any channel, the spectrum that appears in the crossing symmetry equations is made of 
+According to our identification of punctures with primary fields, the loop model $N$-point function \eqref{zbig} corresponds to a loop CFT $N$-point function of the type $\left<\prod_{i=1}^N V_{(r_i,s_i)}\right>$, which is single-valued and crossing-symmetric. In any channel, the spectrum that appears in the crossing symmetry equations is made of 
 \begin{itemize}
  \item all non-diagonal fields that are allowed by the conservation of $r\bmod 1$,
  \item if integer values of $r$ are allowed, all diagonal fields that have the correct loop weight \eqref{wP}. 
@@ -2487,7 +2484,7 @@ In some cases, including our example, this uniquely determines the solution.
 How do we interpret the dependence of the $s$-channel spectrum on a channel weight $w_s$? The $s$-channel spectrum of a 4-point function should only depend on the 4 fields $V_{(r_i,s_i)}$. For $w_s\neq n$, the dependence on $w_s$ is conjectured to be a manifestation of the presence of an $s$-channel combinatorial defect \cite{rib22}. In the presence of this defect, $s$-channel diagonal fields $V_{P_s}$ such that $w(P_s)=w_s$ appear in the $s$-channel spectrum, and the structure constants of non-diagonal fields may depend on $w_s$. By combinatorial defect we mean a defect that only depends on which punctures are inside or outside the defect. This implies that the defect is topological, but the converse is not true, see Figure \eqref{tvsc}. In the $O(n)$ CFT on the torus, adding combinatorial defect would not spoil modular invariance, but the partition function would become a function of the defect's weight. 
 
 In particular CFTs, there may exist more or fewer solutions than combinatorial maps. 
-For example, the following map corresponds to a solution with one $s$-channel diagonal field:
+For example, the map 
 $
 \begin{tikzpicture}[baseline=(base), scale = .25]
  \vertices
@@ -2495,7 +2492,8 @@ $
   \draw (3, 0) -- (3, 3);
   \draw (0, 0) to [out = 70, in = 0] (0, 3.5) to [out = 180, in = 110] (0, 0);
  \end{tikzpicture}
- $.
+ $
+corresponds to a solution with one $s$-channel diagonal field.
  In the $O(n)$ model, all diagonal fields are degenerate, and their fusion rules would forbid this solution, since $V^d_{\langle 1,s\rangle}\notin V_{(\frac32,s_1)}V_{(\frac12,s_2)}$ \cite{gnjrs21}. In the Potts model on the other hand, the spectrum includes degenerate fields of weights $n,-n$ and diagonal fields of weight $0$. In some 4-point functions, diagonal fields with different weights can propagate in the same channel, leading to more solutions than maps \cite{niv22}. 
  
 \subsubsection{Critical limits}
