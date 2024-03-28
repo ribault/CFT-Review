@@ -2502,9 +2502,9 @@ $
 
 Starting from a statistical model on a finite lattice, the large lattice limit may give rise to a conformal field theory, provided the lattice couplings are set to certain critical values. The same loop CFT can arise as the critical limit of statistical models with various lattice geometries, various rules for drawing loops on the lattice, and various parameters. These various non-universal features are forgotten in the critical limit, and we say that all these models belong to the same \textbf{universality class}. 
 
-Nevertheless, the existence of relevant fields in the CFT influences
-the behaviour of the statistical models along renormalization group flows. A primary field is called \textbf{relevant} if $\Re(\Delta+\bar\Delta)<2$, \textbf{marginal} if $\Re(\Delta+\bar\Delta)=2$, or \textbf{irrelevant} if $\Re(\Delta+\bar\Delta)>2$. Typically, the critical limit exists only provided some fields are irrelevant. Since the 
-dimensions of primary fields depend on the parameter $n$ or $Q$, there exist \textbf{critical regions} in the complex $n$-plane or $Q$-plane where a given model has a critical limit, and the boundary of these regions are \textbf{marginality lines}, where a field becomes marginal. Crossing a marginality line does not always spell doom for the critcial limit however: in particular, a relevant field may be prevented from derailing the flow by some symmetry. 
+Nevertheless, the existence of relevant fields in the CFT influences the critical limit. A primary field is called \textbf{relevant} if $\Re(\Delta+\bar\Delta)<2$, \textbf{marginal} if $\Re(\Delta+\bar\Delta)=2$, or \textbf{irrelevant} if $\Re(\Delta+\bar\Delta)>2$. 
+Any given lattice model has a finite set of couplings, which correspond to relevant fields of the CFT, and have to be tuned to their critical values for the critical limit to exist. If another field becomes relevant, the critical limit ceases to exist, unless it is protected by some symmetry. Since the 
+dimensions of primary fields depend on the parameter $n$ or $Q$, there exist \textbf{critical regions} in the complex $n$-plane or $Q$-plane where a given model has a critical limit, and the boundary of these regions are \textbf{marginality lines}, where a field becomes marginal. 
 
 Let us plot the marginality lines of a few primary fields, which will give us an idea on how critical regions can look like. We focus on degenerate diagonal fields $V^d_{\langle r,s\rangle}$, which transform trivially under the global symmetries of the $O(n)$, $U(n)$ and Potts models, and therefore have a chance of derailing the flow. The marginality line of $V^d_{\langle r,s\rangle}$ is
 \begin{align}
@@ -2540,7 +2540,9 @@ In the complex $\beta^2$-half-plane, the line $M_{(1,s)}=\left\{\Re\beta^{-2}=\f
  \end{tikzpicture} 
 \end{align}
 When it comes to the complex $n$-plane, we first notice that the relation \eqref{ncb} maps any strip $k<\Re \beta^2\leq k+1$ to the full complex $n$-plane. 
-This is one reason why the same CFT can describe various phases of various statistical models. For example, the $O(n)$ model's dense phase is usually defined for $\beta^2\in (0,1)$, and the dilute phase for $\beta^2\in (1,2)$, with $\beta^2>2$ corresponding to multicritical phases. These phases can be extended to the complex $\beta^2$-plane, by taking marginality lines as phase boundaries. Let us now plot the marginality lines in the $n$-plane that corresponds to $0<\Re \beta^2<1$:
+This is one reason why the same CFT can describe various phases of various statistical models. For example, the $O(n)$ model's dense phase is usually defined for $\beta^2\in (0,1)$, and the dilute phase for $\beta^2\in (1,2)$, with $\beta^2>2$ corresponding to multicritical phases. The $O(n)$ model has one lattice coupling, corresponding to $V^d_{\langle 1,3\rangle}$. In the dense phase, that field is irrelevant, and the critical limit is obtained for a range of values of the coupling. In the dilute phase it is relevant, and the critical limit is obtained for the critical value of the coupling. In multicritical phases, criticality can only be obtained by adding extra couplings to the model, and fine-tuning their values. 
+
+These phases can be extended to the complex $\beta^2$-plane, by taking marginality lines as phase boundaries. Let us now plot the marginality lines in the $n$-plane that corresponds to $0<\Re \beta^2<1$:
 \newcommand{\margs}[2]{
 \draw[domain = {-2/(#1-1)}:{2/(#1-1)}, smooth, variable = \t, #2]
 plot({-2*cos(pi/2*(#1-1)*\t r)*cosh(pi/2*(#1-1)*sqrt(abs(\t)-\t*\t)}, {2*sin(pi/2*(#1-1)*\t r)*sinh(pi/2*(#1-1)*sqrt(abs(\t)-\t*\t)});
@@ -2569,13 +2571,12 @@ plot({-2*cos(pi/2*(#1-1)*\t r)*cosh(pi/2*(#1-1)*sqrt(abs(\t)-\t*\t)}, {2*sin(pi/
 \margs{9}{ultra thick, blue}
 \end{tikzpicture}
 \end{align}
-Numerical investigations of the zeros of partition functions suggest that the gray region within the criticality line $M_{(1,3)}$ is indeed the critical region of certain lattice loop models \cite{bjjz22}. 
-
-\textcolor{red}{Ground state could be $V_{(2,0)}, V^d_{\langle 1,1\rangle}, V_{P_{(0,\frac12)}}$. Influence on critical limit?}
+Numerical investigations of the zeros of the partition function suggest that the gray region within the criticality line $M_{(1,3)}$ is indeed the critical region of certain lattice loop models \cite{bjjz22}. 
+In fact, in the critical limit, zeros of the partition function condense not only on criticality lines, but also inside critical regions, on lines where the ground state changes. The \textbf{ground state}, i.e. the state with the lowest dimension (in real part), can be $V^d_{\langle 1,1\rangle}, V_{(1, 0)}, V_{(2,0)}$ or $V_{P_{(0,\frac12)}}$, depending on $\beta^2$ and on the model. On a line where the two lowest states have the same dimension, the free energy is singular. 
 
 A puzzle has arisen in the $O(n)$ CFT, when it was found that there is one field $V_{(2,0)}$ that is invariant under $O(n)$ \cite{gz20}. From the point of view of the renormalization group flow triggered by the field $V^d_{\langle 1,3\rangle}$, this field is \textit{dangerously irrelevant}, i.e. it becomes relevant along the flow, and could prevent the flow from reaching the dense phase from the dilute phase. But numerical studies show that the flow does reach the dense phase. The puzzle is resolved by noticing that $V^d_{\langle 1,3\rangle}$ is degenerate, and cannot produce the non-diagonal field $V_{(2,0)}$ by repeated fusion, even if $O(n)$ symmetry would allow it \cite{js23}. Therefore, it is global symmetry itself that is \textit{dangerously irrelevant} to the understanding of this flow. 
 
-If we now consider correlation functions, the existence of a critical limit might depend on the case, and in particular on the weights $w$ of weight-changing punctures. And which diagonal fields $V_P$ do we obtain in the limit? Since the relation \eqref{wP} between $w$ and $P$ is not bijective, the answer is not obvious. 
+If we now consider correlation functions, the existence of a critical limit might depend on the case, and in particular on the weights $w$ of weight-changing punctures. And which diagonal fields $V_P$ do we obtain in the limit? Since the relation \eqref{wP} between $w$ and $P$ is not bijective, the answer is not obvious. (A simple possibility would be $0\leq \Re(\beta P)\leq \frac12$.) 
 
 
 \subsection{Analytic properties of structure constants}
@@ -2585,24 +2586,46 @@ For each structure constant, it will remain to determine a polynomial in loop we
 
 \subsubsection{Analyticity in the channel momentum}
 
-We consider a 4-point function of the type $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$ with $r_1+r_2\equiv 0\bmod 1$. The corresponding $s$-channel spectrum \eqref{ss} includes a series of diagonal fields with momentums in $P_s+\beta^{-1}\mathbb{Z}$. 
+We consider a 4-point function of the type $Z(P)=\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$ with $r_1+r_2\equiv 0\bmod 1$, whose $s$-channel spectrum \eqref{ss} includes diagonal fields with momentums in $P+\beta^{-1}\mathbb{Z}$. Decomposing into $s$-channel conformal blocks, we find 
+\begin{align}
+ Z(P) = \sum_{k\in\mathbb{Z}} D_{P+k\beta^{-1}} \left|\mathcal{F}_{P+k\beta^{-1}}\right|^2 +\sum_{r=1}^\infty \sum_{s\in\frac{1}{r}\mathbb{Z}} D_{(r,s)}(P) \mathcal{G}_{(r,s)}\ .
+\end{align}
+Besides the Virasoro blocks $\mathcal{F}_P$, this involves conformal blocks $\mathcal{G}_{(r,s)}$ that gather the contributions of non-diagonal primary fields $V_{(r,s)}$ and their descendants, with $s\notin\mathbb{Z}\implies \mathcal{G}_{(r,s)} = \mathcal{F}_{P_{(r,s)}}\bar{\mathcal{F}}_{P_{(r,-s)}}$. 
 
-remember that fct of $w_s$ but technically simpler to study dependence on $P_s$. 
+Analytic bootstrap equations from the existence of $V^d_{\langle 1,2\rangle}$ imply $Z(P)=Z(P+\beta^{-1})$, so $Z(P)$ is in fact a function of the loop weight $w(P)$ \eqref{wP}, but we find it more convenient to write it as a function of $P$. In particular, we have $D_{(r,s)}(P)=D_{(r,s)}(P+\beta^{-1})$. Moreover, the analytic bootstrap equations 
+determine how $D_P$ behaves under $P\to P+\beta^{-1}$. Let us assume that diagonal structure constants are reference structure constants,
+\begin{align}
+ D_P = \frac{C^\text{ref}_{P(r_1,s_1)(r_2,s_2)}C^\text{ref}_{P(r_3,s_3)(r_4,s_4)}}{B_P}\ ,
+\end{align}
+where $B_P$ is given in Eq. \eqref{bc} and $C^\text{ref}$ in Eq. \eqref{cref}. For any given 4-point function $Z(P)$, this assumption only amounts to an overall choice of normalization. 
 
-Decompose into blocks, normalize using ref. 4pt structure constant.
+Then we further assume that $Z(P)$ is a holomorphic function of $P\in\mathbb{C}$. This assumption is natural from the point of view of loop models, where $Z(P)$ is the critical limit of polynomials in loop weights.  This is a non-trivial assumption, because the diagonal terms are known to have poles, which must therefore cancel. Let us work out what these cancellations imply. 
 
-Assume full analyticity in $w_s$ and also in $P_s$, natural from loop model but two caveats: not quite clear why it does not apply to other weights, and it applies term by term in channel expansion.
+To begin with, the Virasoro block $\mathcal{F}_P$ has a simple pole at $P=P_{(r,s)}$ with $r,s\in \mathbb{N}^*$, so that $\left|\mathcal{F}_P\right|^2$ has a double pole, with a residue proportional to $\left|\mathcal{F}_{P_{(r,-s)}}\right|^2$. Now, $\lim_{P\to P_{(r,s)}} Z(P)$ involves another contribution proportional to $\left|\mathcal{F}_{P_{(r,-s)}}\right|^2$, from the term $k=s$. And the structure constant $D_{P+s\beta^{-1}}$ does have a double pole at $P=P_{(r,s)}$, because $B_P$ has a double zero at $P=P_{(r,-s)}$. The cancellation of the double poles requires 
+\begin{align}
+ \frac{R_{r,s}\bar{R}_{r,s}}{4P_{(r,s)}^2} + \underset{P=P_{(r,-s)}}{\operatorname{Res}^{(2)}} D_P = 0 \ .
+\end{align}
+It can be checked that this equation is satisfied by the conformal block residues $R_{r,s}$. In fact, this equation could be used for determining $R_{r,s}$ up to an overall sign. 
 
-Look at poles of blocks and structure constants. 
+Since double poles cancel, $Z(P)$ only has simple poles, and our holomorphicity assumption implies $\operatorname{Res}_{P=P_{(r,s)}}Z(P)=0$ for any $(r,s)\in \mathbb{N}^*\times\mathbb{Z}$. At $P=P_{(r,0)}$, $B_P$ has a simple zero, and $D_P\left|\mathcal{F}_P\right|^2$ has a simple pole with a residue proportional to $\left|\mathcal{F}_{P_{(r,0)}}\right|^2$. This is  cancelled by the term $D_{(r,0)}(P) \mathcal{G}_{(r,0)}$, provided $D_{(r,0)}(P)$ has a simple pole, and 
+\begin{align}
+  \underset{P=P_{(r,0)}}{\operatorname{Res}} D_{(r,0)}(P) + \underset{P=P_{(r,0)}}{\operatorname{Res}}D_P = 0 \ .
+\end{align}
+Finally, let us consider the simple pole of $\left|\mathcal{F}_{P}\right|^2$ at $P=P_{(r,s)}$ with $r,s\in \mathbb{N}^*$. The residue at this pole involves terms in $\mathcal{F}_{P_{(r,s)}}\bar{\mathcal{F}}_{P_{(r,-s)}}$ and $\mathcal{F}_{P_{(r,-s)}}\bar{\mathcal{F}}_{P_{(r,s)}}$. From $D_{P+s\beta^{-1}} \left|\mathcal{F}_{P+s\beta^{-1}}\right|^2$, we also have terms in $\left.\frac{\partial}{\partial P}\left|\mathcal{F}_{P}\right|^2\right|_{P=P_{(r,-s)}}$ and $\left|\mathcal{F}_{P_{(r,-s)}}\right|^2$. All these terms must cancel against $\underset{P=P_{(r,s)}}{\operatorname{Res}} \left( D_{(r,s)}(P)\mathcal{G}_{(r,s)} + D_{(r,-s)}(P)\mathcal{G}_{(r,-s)}\right)$. However, there is no canonical way to separate these terms into contributions to $\mathcal{G}_{(r,s)}$ and $\mathcal{G}_{(r,-s)}$. Rather, their sum is a logarithmic block, which sums up the contributions of all the states in one indecomposable representation that includes both primary fields $V_{(r,s)}$ and $V_{(r,-s)}$. By convention we call $\mathcal{G}_{(r,s)}$ this logarithmic block, and set $\mathcal{G}_{(r,-s)}=0$. Our holomorphicity assumption determines $\mathcal{G}_{(r,s)}$, and requires 
+\begin{align}
+ \underset{P=P_{(r,s)}}{\operatorname{Res}} D_{(r,s)}(P) + \frac{\bar R_{r,s}}{2P_{(r,s)}} D_{P_{(r,s)}} = 0\ .
+\end{align}
 
-Focus on some block. Residues of double poles must cancel in diag. terms already. Get formula for block residues! There remain simple poles, can be cancelled against non-diag. blocks. Get formula for log. blocks! 
 
 \subsubsection{Polynomials in loop weights} 
 
+Compare with $D^\text{ref}$
+\begin{align}
+ D_{(r,s)}(w) =  D_{(r,s)}^\text{ref} \left(d_{(r,s)}(w)  - \frac{(-)^{(r+1)s}\rho^{r,s}_{(r_1,s_1)(r_2,s_2)}\rho^{r,s}_{(r_4,s_4)(r_3,s_3)}}{w-w(P_{(r,s)})}\right) \ .  
+\end{align}
+Give $\rho$. Why poly: cf absolute value. 
 
-Poles and their cancellations. Polynomials are natural in statistical model but valid only after stripping off non-polynomial structure constants. 
-
-Signature of maps, trying to match individual bootstrap solutions. Degrees of polynomials. Triogonometric coefficients. 
+Signature of maps, trying to match individual bootstrap solutions. Degrees of polynomials. Trigonometric coefficients. 
 
 
 \subsection{Examples of 4-point structure constants}
