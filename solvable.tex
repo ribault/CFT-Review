@@ -16,7 +16,9 @@
 
 \usepackage{centernot}
 
-\usepackage[nottoc]{tocbibind}
+%\usepackage[nottoc]{tocbibind}
+
+\newcommand{\aline}{\hspace{1cm}\hfil\rule{0.93\textwidth}{.4pt}}
 
 \usepackage{pgf}
 \usepackage{tikz}
@@ -2466,7 +2468,7 @@ The crossing symmetry equations for $\left<\prod_{i=1}^N V_{(r_i,s_i)}\right>$, 
 The conjecture is that each combinatorial map corresponds to a solution, and that these solutions form a basis of the space of solutions \cite{gjnrs23}. 
 For example, the existence of the 4 combinatorial maps
 \eqref{4maps} implies that for any allowed values of the parameters $s_1,s_2,s_3,P_4$, the space of 4-point functions of the type $\left<V_{(\frac32,s_1)}V_{(1,s_2)}V_{(\frac12,s_3)}V_{P_4}\right>$ has dimension 4. 
-We do not know which solution corresponds to which map, but we have a helpful criterion. In a channel $x\in\{s,t,u\}$, we define the signature $\sigma_x\in\frac12\mathbb{N}$ of a map as half the minimum number of lines that are crossed by an $x$-loop. For example, the map 
+We do not know which solution corresponds to which map, but we have a helpful criterion. In a channel $x\in\{s,t,u\}$, we define the \textbf{signature} $\sigma_x\in\frac12\mathbb{N}$ of a map as half the minimum number of lines that are crossed by an $x$-loop. For example, the map 
 $
 \begin{tikzpicture}[baseline=(base), scale = .25]
  \vertices
@@ -2590,7 +2592,7 @@ We consider a 4-point function of the type $Z(P)=\left<\prod_{i=1}^4 V_{(r_i,s_i
 \end{align}
 Besides the Virasoro blocks $\mathcal{F}_P$, this involves conformal blocks $\mathcal{G}_{(r,s)}$ that gather the contributions of non-diagonal primary fields $V_{(r,s)}$ and their descendants, with $s\notin\mathbb{Z}\implies \mathcal{G}_{(r,s)} = \mathcal{F}_{P_{(r,s)}}\bar{\mathcal{F}}_{P_{(r,-s)}}$. 
 
-Analytic bootstrap equations from the existence of $V^d_{\langle 1,2\rangle}$ imply $Z(P)=Z(P+\beta^{-1})$, so $Z(P)$ is in fact a function of the loop weight $w(P)$ \eqref{wP}, but we find it more convenient to write it as a function of $P$. In particular, we have $D_{(r,s)}(P)=D_{(r,s)}(P+\beta^{-1})$. Moreover, the analytic bootstrap equations 
+Analytic bootstrap equations from the existence of $V^d_{\langle 1,2\rangle}$ imply $Z(P)=Z(P+\beta^{-1})$, so $Z(P)$ is in fact a function of the channel weight $w(P)$ \eqref{wP}, but we find it more convenient to write it as a function of $P$. In particular, we have $D_{(r,s)}(P)=D_{(r,s)}(P+\beta^{-1})$. Moreover, the analytic bootstrap equations 
 determine how $D_P$ behaves under $P\to P+\beta^{-1}$. Let us assume that diagonal structure constants are reference structure constants,
 \begin{align}
  D_P = \frac{C^\text{ref}_{P(r_1,s_1)(r_2,s_2)}C^\text{ref}_{P(r_3,s_3)(r_4,s_4)}}{B_P}\ ,
@@ -2617,11 +2619,11 @@ $\mathcal{F}_{P_{(r,s)}}\bar{\mathcal{F}}_{P_{(r,-s)}}$, which is also present i
 \end{align}
 In fact, the equation $\operatorname{Res}_{P=P_{(r,s)}}Z(P)=0$ with $r,s\in \mathbb{N}^*$ leads to the determination of the conformal block $\mathcal{G}_{(r,s)}$, which turns out to be logarithmic. 
 
-\subsubsection{Logarithmic conformal blocks}
+\subsubsection{Logarithmic conformal blocks}\label{sec:log}
 
 The residue $\operatorname{Res}_{P=P_{(r,s)}}D_P\left|\mathcal{F}_{P}\right|^2$ 
 involves a number of terms, which cannot be canonically separated into the blocks 
-$\mathcal{G}_{(r,s)}$ and $\mathcal{G}_{(r,-s)}$. Rather, this residue is a logarithmic conformal block, which sums up the contributions of all the states in one indecomposable representation that includes both primary fields $V_{(r,s)}$ and $V_{(r,-s)}$. By convention we call $\mathcal{G}_{(r,s)}$ this logarithmic conformal block, and set $\mathcal{G}_{(r,-s)}=0$, so that 
+$\mathcal{G}_{(r,s)}$ and $\mathcal{G}_{(r,-s)}$. Rather, this residue is a logarithmic conformal block, which sums up the contributions of all the states in one indecomposable representation that includes both primary fields $V_{(r,s)}$ and $V_{(r,-s)}$, see \cite{nr20} for more detail on that indecomposable representation. By convention we call $\mathcal{G}_{(r,s)}$ the logarithmic conformal block, and set $\mathcal{G}_{(r,-s)}=0$, so that 
 \begin{align}
  \mathcal{G}_{(r,s)} = \frac{2P_{(r,s)}}{\bar R_{r,s} D_{P_{(r,s)}}} \left( \operatorname{Res}_{P=P_{(r,s)}} + \operatorname{Res}_{P=P_{(r,-s)}}\right)D_P\left|\mathcal{F}_{P}\right|^2 \ . 
 \end{align}
@@ -2647,45 +2649,215 @@ The logarithmic nature of the block $\mathcal{G}_{(r,s)}$ comes from the asympto
 This is a combination of the blocks for the Verma modules of $V_{(r,s)}$ and $V_{(r,-s)}$, with a relative coefficient that is dictated by the shift equations from $V^d_{\langle 1,2\rangle}$. 
 
 
-
 \subsubsection{Polynomials in loop weights} 
 
-Compare with $D^\text{ref}$
+For a combinatorial map $M$, let us write the $s$-channel 4-point structure constants $D_{(r,s)}$ after factoring out the reference 4-point structure constant 
 \begin{align}
- D_{(r,s)}(w) =  D_{(r,s)}^\text{ref} \left(d_{(r,s)}(w)  - \frac{(-)^{(r+1)s}\rho^{r,s}_{(r_1,s_1)(r_2,s_2)}\rho^{r,s}_{(r_4,s_4)(r_3,s_3)}}{w-w(P_{(r,s)})}\right) \ .  
+ D_{(r,s)}^\text{ref} = \frac{C^\text{ref}_{(r,s)(r_1,s_1)(r_2,s_2)} C^\text{ref}_{(r,s)(r_3,s_3)(r_4,s_4)}}{B^\text{ref}_{(r,s)}}\ , 
 \end{align}
-Give $\rho$. Why poly: cf absolute value. 
-
-Signature of maps, trying to match individual bootstrap solutions. Degrees of polynomials. Trigonometric coefficients. 
+which is a combination of the reference 2-point \eqref{bref} and 3-point \eqref{cref} structure constants. If $M$ has a vanishing $s$-channel signature $\sigma=0$, then $D_{(r,s)}$ depends on the weight $w$ of $s$-channel loops. Furthermore, if $s\in\mathbb{Z}$, then $D_{(r,s)}$ has a pole at $w=w(P_{(r,s)})$, whose residue is determined by our assumption that the 4-point function is holomorphic as a function of $w$. We therefore write 
+\begin{align}
+ D_{(r,s)} =  D_{(r,s)}^\text{ref} \left(d_{(r,s)}  - \delta_{\sigma,0}\delta_{s\in\mathbb{Z}}\frac{(-)^{(r+1)s}\rho^{r,s}_{(r_1,s_1)(r_2,s_2)}\rho^{r,s}_{(r_4,s_4)(r_3,s_3)}}{w-w(P_{(r,s)})}\right) \ ,
+\end{align}
+where $d_{(r,s)}$ is a holomorphic function of $w$ and we have expressed the residue of the pole in terms of the quantity
+\begin{align}
+\rho^{r,s}_{(r_1,s_1)(r_2,s_2)}= (-)^{s\min(r,|r_1-r_2|)\delta_{r_1<r_2}} \prod_\pm \prod_{j\overset{1}{=}-\frac{r-1-|r_1\pm r_2|}{2}}^{\frac{r-1-|r_1\pm r_2|}{2}} 2\cos\pi\left(j\beta^2+\tfrac{s-s_1\mp s_2}{2}\right)\ . 
+ \label{rhop}
+\end{align}
+The crucial observation is that $\rho^{r,s}$ is a polynomial in $n$. Moreover, if $r_1=0$ or $r_2=0$, it is also a polynomial in the corresponding loop weight $w_1$ or $w_2$. This leads us to conjecture that $d_{(r,s)}$ is a polynomial in $n$, in the weights $w_i$, and in the $s$-channel weight $w$. 
+Thanks to this conjecture, we can extract analytic expressions for $d_{(r,s)}$ from numerical results for $D_{(r,s)}$. 
 
 
 \subsection{Examples of 4-point structure constants}
 
-\section{Logarithmic representations and fields} \label{sec:log}
+Many more examples in \cite{nrj23}. 
 
-Higher equations of motion in Liouville theory, summarized in Artemev--Belavin. Relevant to log CFT? 
+Display the combinatorial maps! 
 
-Reread results on limits of 4pt functions, try to infer general rules on appearance of logarithms, depending on fusion rules?
+\subsubsection{Case of $\left<\prod_{i=1}^4 V_{P_i}\right>$}
 
-Logarithmic fields?
+We have a unique solution of crossing symmetry for any 4 fields $V_{P_i}$ and channel fields $V_{P_s},V_{P_t},V_{P_u}$. Due to their invariances $D^{(x)}_{(r,s)}=D^{(x)}_{(r,s+2)}$ and $D^{(x)}_{(r,s)}=D^{(x)}_{(r,-s)}$, we need only write structure constants for $0\leq s\leq 1$.
+\begin{subequations}
+\begin{align}
+& d_\text{diag}^{(s,t,u)} = 1\ ,
+\\
+& d_{(1, 0)}^{(s)} = w_t+w_u \quad , \quad d_{(1,0)}^{(t)}= w_s+w_u \quad ,\quad d_{(1,0)}^{(u)} = w_s+w_t\ ,
+ \\
+& d_{(1, 1)}^{(s)} = w_u-w_t \quad , \quad d_{(1,1)}^{(t)}= w_u-w_s \quad ,\quad d_{(1,1)}^{(u)} = w_s-w_t\ .
+\end{align}
+\begin{multline}
+ 2d^{(s)}_{(2, 0)} = (n^2-4)\left[w_t^2 + w_u^2 +2w_s -4\right]
+ -(n-2)(w_t+w_u)(w_1+w_2)(w_4+w_3)
+ \\
+ -(n+2)(w_t-w_u)(w_1-w_2)(w_4-w_3)\ ,
+ \label{q2,0}
+\end{multline}
+\begin{multline}
+ 2d^{(s)}_{(2,\frac12)} = n^2(w_u^2 - w_t^2) +n(w_t-w_u)(w_1+w_2)(w_4+w_3) 
+ \\
+ +n(w_t+w_u)(w_1-w_2)(w_4-w_3)\ ,
+ \label{q2,12}
+\end{multline}
+\begin{multline}
+2d^{(s)}_{(2, 1)} = (n^2-4)\left[w_t^2 + w_u^2 -2w_s -4\right] 
+-(n+2)(w_t+w_u)(w_1+w_2)(w_4+w_3)
+\\
+-(n-2)(w_t-w_u)(w_1-w_2)(w_4-w_3)\ ,
+ \label{q2,1}
+\end{multline}
+\end{subequations}
+Formulas for $d^{(s,t,u)}_{(3,*)}$ are known but rather complicated.
 
-Criterion for $b^2\in\mathbb{Q}$ limit to become logarithmic? For 4pt function, criterion about vanishing of residues, which depends on fusion rules being obeyed for NV? In MM case we completely escape log. reps, criterion should account for that.  
-For $c>25$, what happens to GMM at rational $b^2$? Concidences of dimensions boil down to $\Delta_{(r,s)}-\Delta_{(r,-s)} \in \mathbb{Z}$ modulo $(p, -q)$. 
+\subsubsection{Case of $\left<V_{(\frac12, 0)}^4\right>$}
 
-We need log reps. Can deduce them from non-log using degenerate fields. Issue is conceptually less important if we adopt interchiral symmetry, since logarithms only appear for interchiral descendants. 
+There is a unique solution for any choice of a diagonal field $V_{P_s}$ in the $s$-channel, with no diagonal fields in the other channels. Structure constants depend on $n$ and on $w_s=2\cos(2\pi\beta P_s)$. They are known up to $r=4$ in the $s$-channel and $r=3$ in the $t,u$-channels.
+\begin{subequations}
+\label{011}
+\begin{align}
+ d^{(s)}_\text{diag} &= 1 
+ \ , \\
+ d^{(s)}_{(2, 0)} &=n^2 -4
+\ ,\\
+ d^{(s)}_{(2, 1)} &= -(n^2 - 4)
+  \ ,\\
+3d^{(s)}_{(3, 0)} &= -8n^2(n-2)^2(n+2)
+\ ,\\
+3d^{(s)}_{(3,  \frac23)} &= 4(n^2 - 1)(n^2 - 3)(n - 2)
+\ , \\
+2d^{(s)}_{(4, 0)} &=  n^2(n - 2)^3(n+1)^2(n+ 2)
+\nonumber
+\\&\hspace{3cm}
+\times
+\left[
+w_s(n+2)^2(n-1)^2
++2n^4 -6n^2 -8n + 16
+\right]
+\ , \\
+2d^{(s)}_{(4, \frac12)}
+&=
+-n^3(n^2-2)(n^2-3)
+\nonumber
+\\&\hspace{1.5cm}
+\times
+\left[w_sn(n^2-2)(n^2-3)-4n^4+4n^3+8n^2+4n-16\right]
+\, , \\
+2d^{(s)}_{(4,1)} &=
+n^2(n^2-4)^3(n-1)^2\left[w_s (n+1)^2 -2n^2-8n-10\right]
+\ .
+\end{align}
+\aline
+\begin{align}
+ d^{(t)}_{(1,0)} &= 1 
+ \ , \\
+ d^{(t)}_{(1,1)} &= -1 
+ \ , \\
+ 2d^{(t)}_{(2, 0)} &= (n - 2)\left[w_s(n + 2) - 8\right]
+  \ ,\\
+2d^{(t)}_{(2, \frac12)} &= -n(w_sn-4)
+  \ ,\\
+2d^{(t)}_{(2, 1)} &=  w_s(n^2-4)
+\ ,\\
+3d^{(t)}_{(3, 0)} &=  n^2(n-2)^2
+\left[
+w^2_s(n+2)^2 - 4w_s(n+2)+ n^2 +8
+\right]
+\ ,\\
+3d^{(t)}_{(3,  \frac13)} &= 
+-(n-1)^2(n + 1)
+\nonumber
+\\
+&\hspace{-0.5cm}
+\times
+\left[
+(n^2 - 3)(n + 1)w^2_s
+-2(n+1)(2n - 3)w_s
+-2(n-2)(n^2+4n+1)
+\right]
+\ , \\
+3d^{(t)}_{(3,  \frac23)} &= 
+(n^2 - 3)(n^2 - 1)
+\left[w^2_s(n^2-1)-2w_s(2n-1)-2(n+1)(n-2)
+\right]
+\ , \\
+3d^{(t)}_{(3, 1)} &= 
+-(n^2 - 4)^2
+\left[
+w^2_sn^2 -4w_sn + (n+2)^2
+\right]
+\ .
+\end{align}
+\end{subequations}
 
-To get log reps we need associativity of OPE of degenerate field. We might say that this does not belong to the chiral, algebraic part of the review. However, to get conformal blocks we need associativity of OPEs of the energy-momentum tensor. Again, interchiral point of view changes things! And we need bootstrap axioms, including single-valuedness? 
+\subsubsection{Case of $\left<V_{(\frac32,0)}V_{(1,1)}V_{(1,0)}V_{(\frac12,0)}\right>$}
 
-Emergence of logarithms: $\Delta_{P+\frac{\beta}{2}}-\Delta_{P-\frac{\beta}{2}} = \beta P$ integer $\implies P=P_{(0,s)}$. This calculation is a diagonal version of the argument about integer spin that leads to non-diagonal $O(n)$ space of states.
+In this case the space of solutions of crossing symmetry is $5$-dimensional. Let us display one of the solutions, characterized by the vanishing of some structure constants (in fact $\sigma = (\frac32, 2,\frac12)$).
+We write the structure constants with $r\leq 3$. We use the golden ratio $\varphi = \frac{1+\sqrt{5}}{2} = 2\cos\left(\frac{\pi}{5}\right)$.
 
-In $V^d_{\langle 1,2\rangle}V^N_{(r,0)} = \sum_\pm V^N_{(r,\pm 1)}$ it is not just spins but also dimensions that differ by integers. Study singularities of OPE coefficients. 
+\begin{subequations}
+\label{3221}
+\begin{align}
+d^{(s)}_{(\frac12,0)}
+&= 0\ ,
+\\
+3d^{(s)}_{(\frac32, 0)}
+&= n + 2
+\ , \\
+3d^{(s)}_{(\frac32, \frac23)}
+&= -2(n -1 )
+\ , \\
+5d^{(s)}_{(\frac52, \frac25)}
+&= 4\cos\left(\tfrac{\pi}{10}\right)\left[-n^4+4n^2-2 + \varphi(n+1)(n^2-3)\right]
+\ ,\\
+5
+d^{(s)}_{(\frac52, \frac45)}
+&= 4\cos\left(\tfrac{3\pi}{10}\right)
+\left[n^4 - 4n^2 +2 +\varphi^{-1}(n + 1)(n^2 - 3)\right]
+\ .
+\end{align}
+\aline
+\begin{align}
+d_{(1,0)}^{(t)} &= d^{(t)}_{(1,1)} = d^{(t)}_{(2,0)} = d^{(t)}_{(3,0)}=0 \ ,
+\\
+2d_{(2, \frac12)}^{(t)}
+& = \sqrt{2}n^2
+\ ,\\
+d_{(2, 1)}^{(t)}
+&=n^2 - 4
+\ ,\\
+3d_{(3, \frac13)}^{(t)}
+&=
+(n -4)(n-1)(n+1)^2(n^2 - 3)
+\ , \\
+3d_{(3, \frac23)}^{(t)}
+&=
+\sqrt{3}(n^2 - 1)^2(n + 2)(n -3)
+\ , \\
+3d_{(3, 1)}^{(t)}
+&=
+2n^2(n^2 - 4)^2
+\ .
+\end{align}
+\aline
+\begin{align}
+d^{(u)}_{(\frac12, 0)}
+&=1
+\ , \\
+d^{(u)}_{(\frac32,0)} &= d^{(u)}_{(\frac52,0)} = 0\ ,
+\\
+3d^{(u)}_{(\frac32, \frac23)}
+&= -2\sqrt{3}
+\ , \\
+5d^{(u)}_{(\frac52, \frac25)}
+&= 4\cos\left(\tfrac{\pi}{10}\right)\left[n^2-2+\varphi\right]
+\ ,\\
+5
+d^{(s)}_{(\frac52, \frac45)}
+&= 4\cos\left(\tfrac{3\pi}{10}\right)
+\left[-n^2+2+\varphi^{-1}\right]
+\ .
+\end{align}
+\end{subequations}
 
-Need we assume that $V^N_{(r,0)}$ is the limit of diagonal fields? Why would we not get $V_{P_{(r,0)}}$? Are there two ways to take the limit? See OPE coefficients. 
-
-Compute vanishings of ratios of structure constants in $V^d_{\langle 2,1\rangle}V_P$. 
-For $P=P_{(0,n)}$ with $n\in\mathbb{N}$ we find only $V_{P_{(-1,n)}}$ i.e. the coef of $V_{P_{(1,n)}}$ vanishes. For $n>0$, this is a consequence of Virasoro symmetry i.e. appearance of NV whose fusion rules would be violated. For $n=0$ this does not follow from Virasoro symmetry: interpret as interchiral phenomenon?
-
-For $P=P_{(1,n)}$ with $n\in\mathbb{N}$ we find only $V_{P_{(2,n)}}$ i.e. the coef of $V_{P_{(0,n)}}$ vanishes. Now, Virasoro symmetry is not responsible. In fact it would be perfectly consistent to have $V_{P_{(0,n)}}$ alone, the OPE coefs are not divergent. The problem is purely interchiral: it is about the ratio of coefs in an interchiral module, not in a Virasoro module. 
 
 \bibliographystyle{cft}
 \bibliography{cft}
