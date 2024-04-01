@@ -2601,7 +2601,8 @@ Then we further assume that $Z(P)$ is a holomorphic function of $P\in\mathbb{C}$
 
 To begin with, the Virasoro block $\mathcal{F}_P$ has a simple pole at $P=P_{(r,s)}$ with $r,s\in \mathbb{N}^*$, so that $\left|\mathcal{F}_P\right|^2$ has a double pole, with a residue proportional to $\left|\mathcal{F}_{P_{(r,-s)}}\right|^2$. Now, $\lim_{P\to P_{(r,s)}} Z(P)$ involves another contribution proportional to $\left|\mathcal{F}_{P_{(r,-s)}}\right|^2$, from the term $k=s$. And the structure constant $D_{P+s\beta^{-1}}$ does have a double pole at $P=P_{(r,s)}$, because $B_P$ has a double zero at $P=P_{(r,-s)}$. The cancellation of the double poles requires 
 \begin{align}
- \frac{R_{r,s}\bar{R}_{r,s}}{4P_{(r,s)}^2} + \underset{P=P_{(r,-s)}}{\operatorname{Res}^{(2)}} D_P = 0 \ .
+ \frac{R_{r,s}\bar{R}_{r,s}}{4P_{(r,s)}^2}D_{P_{(r,s)}} + \lim_{P\to P_{(r,-s)}}\left(P-P_{(r,-s)}\right)^2 D_P = 0 \ .
+ \label{dpld}
 \end{align}
 It can be checked that this equation is satisfied by the conformal block residues $R_{r,s}$. In fact, this equation could be used for determining $R_{r,s}$ up to an overall sign. 
 
@@ -2609,10 +2610,42 @@ Since double poles cancel, $Z(P)$ only has simple poles, and our holomorphicity 
 \begin{align}
   \underset{P=P_{(r,0)}}{\operatorname{Res}} D_{(r,0)}(P) + \underset{P=P_{(r,0)}}{\operatorname{Res}}D_P = 0 \ .
 \end{align}
-Finally, let us consider the simple pole of $\left|\mathcal{F}_{P}\right|^2$ at $P=P_{(r,s)}$ with $r,s\in \mathbb{N}^*$. The residue at this pole involves terms in $\mathcal{F}_{P_{(r,s)}}\bar{\mathcal{F}}_{P_{(r,-s)}}$ and $\mathcal{F}_{P_{(r,-s)}}\bar{\mathcal{F}}_{P_{(r,s)}}$. From $D_{P+s\beta^{-1}} \left|\mathcal{F}_{P+s\beta^{-1}}\right|^2$, we also have terms in $\left.\frac{\partial}{\partial P}\left|\mathcal{F}_{P}\right|^2\right|_{P=P_{(r,-s)}}$ and $\left|\mathcal{F}_{P_{(r,-s)}}\right|^2$. All these terms must cancel against $\underset{P=P_{(r,s)}}{\operatorname{Res}} \left( D_{(r,s)}(P)\mathcal{G}_{(r,s)} + D_{(r,-s)}(P)\mathcal{G}_{(r,-s)}\right)$. However, there is no canonical way to separate these terms into contributions to $\mathcal{G}_{(r,s)}$ and $\mathcal{G}_{(r,-s)}$. Rather, their sum is a logarithmic block, which sums up the contributions of all the states in one indecomposable representation that includes both primary fields $V_{(r,s)}$ and $V_{(r,-s)}$. By convention we call $\mathcal{G}_{(r,s)}$ this logarithmic block, and set $\mathcal{G}_{(r,-s)}=0$. Our holomorphicity assumption determines $\mathcal{G}_{(r,s)}$, and requires 
+Finally, let us consider the simple pole of $\left|\mathcal{F}_{P}\right|^2$ at $P=P_{(r,s)}$ with $r,s\in \mathbb{N}^*$. The residue at this pole includes the term 
+$\mathcal{F}_{P_{(r,s)}}\bar{\mathcal{F}}_{P_{(r,-s)}}$, which is also present in $\mathcal{G}_{(r,s)}$, so that we must have 
 \begin{align}
  \underset{P=P_{(r,s)}}{\operatorname{Res}} D_{(r,s)}(P) + \frac{\bar R_{r,s}}{2P_{(r,s)}} D_{P_{(r,s)}} = 0\ .
 \end{align}
+In fact, the equation $\operatorname{Res}_{P=P_{(r,s)}}Z(P)=0$ with $r,s\in \mathbb{N}^*$ leads to the determination of the conformal block $\mathcal{G}_{(r,s)}$, which turns out to be logarithmic. 
+
+\subsubsection{Logarithmic conformal blocks}
+
+The residue $\operatorname{Res}_{P=P_{(r,s)}}D_P\left|\mathcal{F}_{P}\right|^2$ 
+involves a number of terms, which cannot be canonically separated into the blocks 
+$\mathcal{G}_{(r,s)}$ and $\mathcal{G}_{(r,-s)}$. Rather, this residue is a logarithmic conformal block, which sums up the contributions of all the states in one indecomposable representation that includes both primary fields $V_{(r,s)}$ and $V_{(r,-s)}$. By convention we call $\mathcal{G}_{(r,s)}$ this logarithmic conformal block, and set $\mathcal{G}_{(r,-s)}=0$, so that 
+\begin{align}
+ \mathcal{G}_{(r,s)} = \frac{2P_{(r,s)}}{\bar R_{r,s} D_{P_{(r,s)}}} \left( \operatorname{Res}_{P=P_{(r,s)}} + \operatorname{Res}_{P=P_{(r,-s)}}\right)D_P\left|\mathcal{F}_{P}\right|^2 \ . 
+\end{align}
+More explicitly, using Eq. \eqref{dpld}, this can be expressed as 
+\begin{multline}
+  \mathcal{G}_{(r,s)} = \left(\mathcal{F}^\text{reg}_{P_{(r,s)}} -\frac{R_{r,s}}{2P_{(r,s)}} \mathcal{F}'_{P_{(r,-s)}}\right) \bar{\mathcal{F}}_{P_{(r,-s)}} 
+  + \frac{R_{r,s}}{\bar{R}_{r,s}} \mathcal{F}_{P_{(r,-s)}} \left(\bar{\mathcal{F}}^\text{reg}_{P_{(r,s)}} -\frac{\bar R_{r,s}}{2P_{(r,s)}} \bar{\mathcal{F}}'_{P_{(r,-s)}}\right)
+  \\
+  + \frac{R_{r,s}}{2P_{(r,s)}} \left( \frac{D'_{P_{(r,s)}}}{D_{P_{(r,s)}}} - \lim_{P\to P_{(r,-s)}}\left[\frac{2}{P-P_{(r,-s)}} +\frac{D'_P}{D_P}\right]\right)
+  \left|\mathcal{F}_{P_{(r,-s)}}\right|^2 
+  \ ,
+\end{multline}
+where we define the regularized Virasoro block at its pole $P=P_{(r,s)}$ by 
+\begin{align}
+ \mathcal{F}_P = \frac{R_{r,s}}{2P_{(r,s)}(P-P_{(r,s)})} \mathcal{F}_{P_{(r,-s)}} + \mathcal{F}^\text{reg}_{P_{(r,s)}} + O(P-P_{(r,s)}) \ . 
+\end{align}
+The logarithmic nature of the block $\mathcal{G}_{(r,s)}$ comes from the asymptotic behaviour $\mathcal{F}_P(z)\underset{z\to 0}{\propto} z^{P^2} $ \eqref{stu} of Virasoro blocks. When taking derivatives in $P$, or regularizing near a pole, this power-like prefactor gives rise to terms in $\log z$. Logarithmic terms are however absent if $R_{r,s}=\bar R_{r,s}=0$, which occurs if degenerate fusion rules allow the degenerate field $V^d_{\langle r,s\rangle}$ to propagate in the $s$-channel of our 4-point function. In this case, the logarithmic block reduces to 
+\begin{align}
+ \mathcal{G}_{(r,s)} \underset{R_{r,s}=\bar R_{r,s}=0}{=} 
+ \mathcal{F}_{P_{(r,s)}}  \bar{\mathcal{F}}_{P_{(r,-s)}} + 
+ \frac{R_{r,s}}{\bar{R}_{r,s}} \mathcal{F}_{P_{(r,-s)}} \bar{\mathcal{F}}_{P_{(r,s)}} \ .
+\end{align}
+This is a combination of the blocks for the Verma modules of $V_{(r,s)}$ and $V_{(r,-s)}$, with a relative coefficient that is dictated by the shift equations from $V^d_{\langle 1,2\rangle}$. 
+
 
 
 \subsubsection{Polynomials in loop weights} 
