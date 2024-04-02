@@ -8,7 +8,7 @@
 
 \usepackage[top=20mm,bottom=20mm,left=25mm,right=25mm]{geometry}
 
-%\usepackage{showkeys}
+\usepackage{showkeys}
 
 \usepackage{amsmath,amssymb,amsfonts}
 
@@ -18,7 +18,7 @@
 
 %\usepackage[nottoc]{tocbibind}
 
-\newcommand{\aline}{\hspace{1cm}\hfil\rule{0.93\textwidth}{.4pt}}
+\newcommand{\aline}{\hspace{.5cm}\hfil\rule{0.93\textwidth}{.4pt}}
 
 \usepackage{pgf}
 \usepackage{tikz}
@@ -30,6 +30,13 @@
   \draw (3, 0) node [cross]{};
   \draw (0, 3) node[fill, circle, minimum size = 2mm, inner sep = 0]{};
   \draw (3, 3) node[fill, circle, minimum size = 2mm, inner sep = 0]{};
+}
+\newcommand{\qvertex}{
+\coordinate (base) at (0, 1);
+\draw (0, 0) node [cross]{};
+  \draw (3, 0) node [cross]{};
+  \draw (0, 3) node[cross]{};
+  \draw (3, 3) node[cross]{};
 }
 \newcommand{\vertices}{
 \coordinate (base) at (0, 1);
@@ -2173,6 +2180,7 @@ In order to solve a CFT, we should not only determine 4-point structure constant
 This complicates factorization, because conformal blocks only depend on conformal dimensions. Solving the crossing symmetry equations \eqref{seteu} does not quite give us access to factorized 4-point structure constants $D^{(s)}_k = C^k_{12}C_{k34}$ \eqref{stu}, but to coefficients of conformal blocks:
 \begin{align}
  D^{(s)}_{\Delta,\bar\Delta} = \sum_{k\in\mathcal{S}^{(s)}\left|\substack{\Delta_k=\Delta\\ \bar{\Delta}_k=\bar\Delta}\right.} C^k_{12}C_{k34} \ .
+ \label{dcc}
 \end{align}
 This is a sum of as many terms as the multiplicity of the primary field $V_{\Delta,\bar\Delta}$ in the $s$-channel spectrum $\mathcal{S}^{(s)}$. Therefore, factorization only constrains 4-point structure constants if we know field multiplicities. In principle, knowing the spectrum means knowing field multiplicities. In practice however, in loop CFTs, we know the spectrum of conformal dimensions without knowing the multiplicities. 
 
@@ -2670,13 +2678,37 @@ Thanks to this conjecture, we can extract analytic expressions for $d_{(r,s)}$ f
 
 \subsection{Examples of 4-point structure constants}
 
-Many more examples in \cite{nrj23}. 
+\DeclareRobustCommand\picz{
+$
+\begin{tikzpicture}[baseline=(base), scale = .25]
+ \qvertex;
+ \end{tikzpicture}
+ $
+}
+\DeclareRobustCommand\pice{
+$
+\begin{tikzpicture}[baseline=(base), scale = .25]
+  \vertices
+  \draw (0, 0) -- (0, 3);
+  \draw (3, 0) -- (3, 3);
+ \end{tikzpicture}
+$}
+\DeclareRobustCommand\picj{
+$
+\begin{tikzpicture}[baseline=(base), scale = .25]
+  \vertices
+  \draw (0, 0) -- (3, 3) to [out = -120, in = 30] (0, 0);
+  \draw (0,0) -- (0, 3);
+  \draw (0, 3) to [out = 30, in = 135] (3.5, 3.5) to [out = -45, in =60] (3, 0);
+ \end{tikzpicture}
+ $}
 
-Display the combinatorial maps! 
+We will now write the first few 4-point structure constants for 4-point functions that correspond to the combinatorial maps \picz\ , \pice\ and \picj . 
+More examples can be found in \cite{nrj23}. 
 
-\subsubsection{Case of $\left<\prod_{i=1}^4 V_{P_i}\right>$}
+\subsubsection[Case of $\left<\prod_{i=1}^4 V_{P_i}\right>$]{Case of $\left<\prod_{i=1}^4 V_{P_i}\right>$ \picz}
 
-We have a unique solution of crossing symmetry for any 4 fields $V_{P_i}$ and channel fields $V_{P_s},V_{P_t},V_{P_u}$. Due to their invariances $D^{(x)}_{(r,s)}=D^{(x)}_{(r,s+2)}$ and $D^{(x)}_{(r,s)}=D^{(x)}_{(r,-s)}$, we need only write structure constants for $0\leq s\leq 1$.
+We have a unique solution of crossing symmetry for any 4 fields $V_{P_i}$ and channel fields $V_{P_s},V_{P_t},V_{P_u}$. Due to their invariances $d^{(x)}_{(r,s)}=d^{(x)}_{(r,s+2)}$ and $d^{(x)}_{(r,s)}=d^{(x)}_{(r,-s)}$, we need only write structure constants for $0\leq s\leq 1$:
 \begin{subequations}
 \begin{align}
 & d_\text{diag}^{(s,t,u)} = 1\ ,
@@ -2708,13 +2740,18 @@ We have a unique solution of crossing symmetry for any 4 fields $V_{P_i}$ and ch
 \end{subequations}
 Formulas for $d^{(s,t,u)}_{(3,*)}$ are known but rather complicated.
 
-\subsubsection{Case of $\left<V_{(\frac12, 0)}^4\right>$}
+In the diagonal 4-point function $\left<\prod_{i=1}^4 V_{P_i}\right>$, it is particularly easy to study the factorization \eqref{dcc} of 4-point structure constants into 3-point structure constants. In particular, we see that $d^{(s)}_{(2,*)}$ is a sum of 3 factorized terms. Due to pole terms, $D^{(s)}_{(2,0)}$ and $D^{(s)}_{(2,1)}$ are sums of 4 terms, while $D^{(s)}_{(2,\frac12)}$ is still a sum of 3 terms. 
 
-There is a unique solution for any choice of a diagonal field $V_{P_s}$ in the $s$-channel, with no diagonal fields in the other channels. Structure constants depend on $n$ and on $w_s=2\cos(2\pi\beta P_s)$. They are known up to $r=4$ in the $s$-channel and $r=3$ in the $t,u$-channels.
+\subsubsection[Case of $\left<V_{(\frac12, 0)}^4\right>$]{Case of $\left<V_{(\frac12, 0)}^4\right>$ \pice}
+
+We now have a diagonal field $V_{P_s}$ in the $s$-channel, but no diagonal fields in the other channels. Structure constants depend on $n$ and on $w_s$. 
+They are known up to $r=4$ in the $s$-channel and $r=3$ in the $t,u$-channels. By symmetry under $V_1\leftrightarrow V_2$, we have $rs\equiv 1\bmod 2\implies D^{(s)}_{(r,s)} = 0$:
 \begin{subequations}
 \label{011}
 \begin{align}
  d^{(s)}_\text{diag} &= 1 
+ \ , \\
+ d^{(s)}_{(1,0)} &=  0 
  \ , \\
  d^{(s)}_{(2, 0)} &=n^2 -4
 \ ,\\
@@ -2788,11 +2825,9 @@ w^2_sn^2 -4w_sn + (n+2)^2
 \end{align}
 \end{subequations}
 
-\subsubsection{Case of $\left<V_{(\frac32,0)}V_{(1,1)}V_{(1,0)}V_{(\frac12,0)}\right>$}
+\subsubsection[Case of $\left<V_{(\frac32,0)}V_{(1,1)}V_{(1,0)}V_{(\frac12,0)}\right>$]{Case of $\left<V_{(\frac32,0)}V_{(1,1)}V_{(1,0)}V_{(\frac12,0)}\right>$ \picj}
 
-In this case the space of solutions of crossing symmetry is $5$-dimensional. Let us display one of the solutions, characterized by the vanishing of some structure constants (in fact $\sigma = (\frac32, 2,\frac12)$).
-We write the structure constants with $r\leq 3$. We use the golden ratio $\varphi = \frac{1+\sqrt{5}}{2} = 2\cos\left(\frac{\pi}{5}\right)$.
-
+In this case there are no channel diagonal fields, and the structure constants only depend on $n$. To write the structure constants with $r\leq 3$, we use the golden ratio $\varphi = \frac{1+\sqrt{5}}{2} = 2\cos\left(\frac{\pi}{5}\right)$:
 \begin{subequations}
 \label{3221}
 \begin{align}
@@ -2857,7 +2892,7 @@ d^{(s)}_{(\frac52, \frac45)}
 \ .
 \end{align}
 \end{subequations}
-
+The coefficients of these polynomials are trigonometric numbers, related to the values of the second Kac index. 
 
 \bibliographystyle{cft}
 \bibliography{cft}
