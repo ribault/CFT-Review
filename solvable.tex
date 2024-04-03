@@ -2201,10 +2201,10 @@ has a simple pole at $\Delta=\Delta_{(r,s)}$ for $r,s\in\mathbb{N}^*$ with $rs\l
 Since such coefficients appear in the expression \eqref{fsl} for a Virasoro block as a sum over creation operators $L\in\mathcal{L}$, 
 the block itself has a simple pole at $\Delta=\Delta_{(r,s)}$ for any $r,s\in\mathbb{N}^*$. This pole comes from the existence of a null vector at level $rs$ in the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$, and this null vector is a primary state of dimension $\Delta_{(r,-s)}$. The residue of the block at this pole is the sum of the contributions of the null vector and its descendant states, therefore it is itself a Virasoro block,
 \begin{align}
- \underset{\Delta=\Delta_{(r,s)}}{\operatorname{Res}} \mathcal{F}_\Delta(z) = R_{r,s}\mathcal{F}_{\Delta_{(r,-s)}}(z)\ ,
+ \underset{\Delta=\Delta_{(r,s)}}{\operatorname{Res}} \mathcal{F}_\Delta(z) = 2P_{(r,s)}R_{r,s}\mathcal{F}_{\Delta_{(r,-s)}}(z)\ ,
  \label{resf}
 \end{align}
-where the coefficient $R_{r,s}$ is called a \textbf{Virasoro block residue}. 
+where the coefficient $R_{r,s}$ is called a \textbf{Virasoro block residue}, and we include the factor $2P_{(r,s)}$ for later convenience, see Eq. \eqref{freg}. 
 
 
 Derive the recursion for blocks? hard part is coef $R_{r,s}$ but it obeys simple shift equations. Rewrite it in terms of Upsilon functions, and somehow derive it from Liouville theory! But cancellation of double poles hard to argue? And need to determine sign, since we get square of $R_{r,s}$. We can choose any value of the continuous parameters including $c$, but is there a value that makes $R_{r,s}$ simple enough? And what about the $\Delta\to\infty$ prefactors? See Yin et al? See Appendix D of \cite{msz15} for the pillow geometry that underlies the variable $q$.
@@ -2430,10 +2430,9 @@ Therefore, the Potts model has punctures with valencies $2r\in 2(\mathbb{N}+2)$,
 
 \subsection{Relation with loop CFTs}
 
-The claim that loop CFTs describe the critical limit of loop models is supported by a large body of work, including very precise numerical results. However, it is not easy to derive it with simple arguments. In fact, it is already tricky to derive the relation between the central charge $c$ and the contractible loop weight $n$. Historical arguments give the correct relation but are complicated and not always conceptually compelling. See for example Appendix A of \cite{grz18} for a discussion of Kondev's original argument, which relies on a shaky construction using a free boson, and for an attempt to patch the argument's perceived flaws with the help of the torus partition function. 
+The claim that loop CFTs describe the critical limit of loop models is supported by a large body of work, including direct numerical checks. However, it is not easy to derive it. In fact, it is already tricky to derive the relation between the central charge $c$ and the contractible loop weight $n$. See for example Appendix A of \cite{grz18} for a discussion of Kondev's original argument, which relies on a shaky construction using a free boson, and for an attempt to patch the argument's perceived flaws with the help of the torus partition function. 
 
 We will now propose an argument that starts with relating non-diagonal primary fields $V_{(r,s)}$ with loop-ending punctures. This is relatively straightforward, because both objects have discrete parameters. We will then deduce the relation between diagonal fields $V_P$ and weight-changing punctures, and finally the relation between the central charge and the contractible loop weight. 
-This argument avoids the introduction of auxiliary or complicated objects, with the hope of being reasonably clear and simple. 
 
 \subsubsection{Relations between punctures and primary fields}
 
@@ -2452,12 +2451,12 @@ $n=w(P_{(1,1)})$, which boils down to the expression \eqref{ncb} for the contrac
 
 \subsubsection{Correlation functions}
 
-According to our identification of punctures with primary fields, the loop model $N$-point function \eqref{zbig} corresponds to a loop CFT $N$-point function of the type $\left<\prod_{i=1}^N V_{(r_i,s_i)}\right>$, which is single-valued and crossing-symmetric. In any channel, the spectrum that appears in the crossing symmetry equations is made of 
+According to our identification of punctures with primary fields, the loop model $N$-point function \eqref{zbig} corresponds to a loop CFT $N$-point function of the type $\left<\prod_{i=1}^N V_{(r_i,s_i)}\right>$. In the bootstrap approach, this $N$-point function is defined as a single-valued solution of crossing symmetry equations, where the spectrum (in any channel) is made of 
 \begin{itemize}
  \item all non-diagonal fields that are allowed by the conservation of $r\bmod 1$,
  \item if integer values of $r$ are allowed, all diagonal fields that have the correct loop weight \eqref{wP}. 
 \end{itemize}
-For example, in the case $N=4$, the $s$-channel spectrum that appears in the crossing symmetry equation is 
+For example, in the case $N=4$, the $s$-channel spectrum is 
 \begin{align}
 \renewcommand{\arraystretch}{1.5} 
  \mathcal{S}^{(s)} = 
@@ -2472,8 +2471,11 @@ For example, in the case $N=4$, the $s$-channel spectrum that appears in the cro
 \end{align}
 where the diagonal fields take all possible momentums that correspond to the loop weight $w_s=2\cos(2\pi \beta P_s)$. 
 
-The crossing symmetry equations for $\left<\prod_{i=1}^N V_{(r_i,s_i)}\right>$, with the spectrums that we just sketched, define a vector space of solutions. 
-The conjecture is that each combinatorial map corresponds to a solution, and that these solutions form a basis of the space of solutions \cite{gjnrs23}. 
+The crossing symmetry equations for $\left<\prod_{i=1}^N V_{(r_i,s_i)}\right>$, with the spectrums that we just sketched, define a vector space $\mathcal{Z}$ of solutions. 
+We conjecture that each combinatorial map $M$ corresponds to a solution $Z_M = \lim_\text{critical} Z(\mathcal{E}_M)$, and that these solutions form a basis of the space of solutions \cite{gjnrs23}:
+\begin{align}
+ \mathcal{Z} = \operatorname{Span}\left\{ Z_M\right\}_{M}\  .
+\end{align}
 For example, the existence of the 4 combinatorial maps
 \eqref{4maps} implies that for any allowed values of the parameters $s_1,s_2,s_3,P_4$, the space of 4-point functions of the type $\left<V_{(\frac32,s_1)}V_{(1,s_2)}V_{(\frac12,s_3)}V_{P_4}\right>$ has dimension 4. 
 We do not know which solution corresponds to which map, but we have a helpful criterion. In a channel $x\in\{s,t,u\}$, we define the \textbf{signature} $\sigma_x\in\frac12\mathbb{N}$ of a map as half the minimum number of lines that are crossed by an $x$-loop. For example, the map 
@@ -2514,7 +2516,7 @@ Nevertheless, the existence of relevant fields in the CFT influences the critica
 Any given lattice model has a finite set of couplings, which correspond to relevant fields of the CFT, and have to be tuned to their critical values for the critical limit to exist. If another field becomes relevant, the critical limit ceases to exist, unless it is protected by some symmetry. Since the 
 dimensions of primary fields depend on the parameter $n$ or $Q$, there exist \textbf{critical regions} in the complex $n$-plane or $Q$-plane where a given model has a critical limit, and the boundary of these regions are \textbf{marginality lines}, where a field becomes marginal. 
 
-Let us plot the marginality lines of a few primary fields, which will give us an idea on how critical regions can look like. We focus on degenerate diagonal fields $V^d_{\langle r,s\rangle}$, which transform trivially under the global symmetries of the $O(n)$, $U(n)$ and Potts models, and therefore have a chance of derailing the flow. The marginality line of $V^d_{\langle r,s\rangle}$ is
+Let us plot the marginality lines of a few primary fields, which will give us an idea on how critical regions can look like. For simplicity, we focus on degenerate diagonal fields $V^d_{\langle 1,s\rangle}$. In the $O(n)$, $U(n)$ and Potts models, these fields are invariant under the global symmetry, which therefore does not protect the critical limit from the corresponding couplings. The marginality line of $V^d_{\langle r,s\rangle}$ is
 \begin{align}
  M_{(r,s)} = \left\{\Re\Delta_{(r,s)} = 1 \right\} = \left\{\Re \left(P_{(r+1,s-1)}P_{(r-1,s+1)}\right) = 0\right\} \ . 
 \end{align}
@@ -2589,7 +2591,7 @@ If we now consider correlation functions, the existence of a critical limit migh
 
 \subsection{Analytic properties of structure constants}
 
-Whenever a 4-point combinatorial map corresponds to a unique solution of crossing symmetry, numerical bootstrap calculations can give us numerical data for the corresponding 4-point structure constants. From these data, we would like to infer exact expressions. To do this, we will constrain structure constants by making assumptions on their analytic properties. 
+Whenever crossing symmetry equations have a unique solution, numerical bootstrap calculations can give us numerical data for the corresponding 4-point structure constants. From these data, we would like to infer exact expressions. To do this, we will constrain structure constants by making assumptions on their analytic properties. 
 For each structure constant, it will remain to determine a polynomial in loop weights.
 
 \subsubsection{Analyticity in the channel momentum}
@@ -2607,47 +2609,48 @@ determine how $D_P$ behaves under $P\to P+\beta^{-1}$. Let us assume that diagon
 \end{align}
 where $B_P$ is given in Eq. \eqref{bc} and $C^\text{ref}$ in Eq. \eqref{cref}. For any given 4-point function $Z(P)$, this assumption only amounts to an overall choice of normalization. 
 
-Then we further assume that $Z(P)$ is a holomorphic function of $P\in\mathbb{C}$. This assumption is natural from the point of view of loop models, where $Z(P)$ is the critical limit of polynomials in loop weights.  This is a non-trivial assumption, because the diagonal terms are known to have poles, which must therefore cancel. Let us work out what these cancellations imply. 
-
-To begin with, the Virasoro block $\mathcal{F}_P$ has a simple pole at $P=P_{(r,s)}$ with $r,s\in \mathbb{N}^*$, so that $\left|\mathcal{F}_P\right|^2$ has a double pole, with a residue proportional to $\left|\mathcal{F}_{P_{(r,-s)}}\right|^2$. Now, $\lim_{P\to P_{(r,s)}} Z(P)$ involves another contribution proportional to $\left|\mathcal{F}_{P_{(r,-s)}}\right|^2$, from the term $k=s$. And the structure constant $D_{P+s\beta^{-1}}$ does have a double pole at $P=P_{(r,s)}$, because $B_P$ has a double zero at $P=P_{(r,-s)}$. The cancellation of the double poles requires 
+Then we further assume that $Z(P)$ is a holomorphic function of $P\in\mathbb{C}$. This assumption is natural from the point of view of loop models, where $Z(P)$ is the critical limit of polynomials in loop weights.  This is a non-trivial assumption, because the diagonal terms are known to have poles, which must therefore cancel. 
+To begin with, according to Eq. \eqref{resf}, the Virasoro block $\mathcal{F}_P$ has a simple pole at $P=P_{(r,s)}$ with $r,s\in \mathbb{N}^*$, so that 
 \begin{align}
- \frac{R_{r,s}\bar{R}_{r,s}}{4P_{(r,s)}^2}D_{P_{(r,s)}} + \lim_{P\to P_{(r,-s)}}\left(P-P_{(r,-s)}\right)^2 D_P = 0 \ .
+ \mathcal{F}_P = \frac{R_{r,s}}{P-P_{(r,s)}} \mathcal{F}_{P_{(r,-s)}} + \mathcal{F}^\text{reg}_{P_{(r,s)}} + O(P-P_{(r,s)}) \ . 
+ \label{freg}
+\end{align}
+Therefore, $\left|\mathcal{F}_P\right|^2$ has a double pole, with a residue proportional to $\left|\mathcal{F}_{P_{(r,-s)}}\right|^2$. Now, $\lim_{P\to P_{(r,s)}} Z(P)$ involves another contribution proportional to $\left|\mathcal{F}_{P_{(r,-s)}}\right|^2$, from the term $k=s$. And the structure constant $D_{P+s\beta^{-1}}$ does have a double pole at $P=P_{(r,s)}$, because $B_P$ has a double zero at $P=P_{(r,-s)}$. The cancellation of the double poles requires 
+\begin{align}
+ R_{r,s}\bar{R}_{r,s}D_{P_{(r,s)}} + \lim_{P\to P_{(r,-s)}}\left(P-P_{(r,-s)}\right)^2 D_P = 0 \ .
  \label{dpld}
 \end{align}
 It can be checked that this equation is satisfied by the conformal block residues $R_{r,s}$. In fact, this equation could be used for determining $R_{r,s}$ up to an overall sign. 
-
-Since double poles cancel, $Z(P)$ only has simple poles, and our holomorphicity assumption implies $\operatorname{Res}_{P=P_{(r,s)}}Z(P)=0$ for any $(r,s)\in \mathbb{N}^*\times\mathbb{Z}$. At $P=P_{(r,0)}$, $B_P$ has a simple zero, and $D_P\left|\mathcal{F}_P\right|^2$ has a simple pole with a residue proportional to $\left|\mathcal{F}_{P_{(r,0)}}\right|^2$. This is  cancelled by the term $D_{(r,0)}(P) \mathcal{G}_{(r,0)}$, provided $D_{(r,0)}(P)$ has a simple pole, and 
+Simple poles must cancel too, i.e. $\operatorname{Res}_{P=P_{(r,s)}}Z(P)=0$ for any $(r,s)\in \mathbb{N}^*\times\mathbb{Z}$. At $P=P_{(r,0)}$, $B_P$ has a simple zero, and $D_P\left|\mathcal{F}_P\right|^2$ has a simple pole with a residue proportional to $\left|\mathcal{F}_{P_{(r,0)}}\right|^2$. This is  cancelled by the term $D_{(r,0)}(P) \mathcal{G}_{(r,0)}$, provided $D_{(r,0)}(P)$ has a simple pole, and 
 \begin{align}
   \underset{P=P_{(r,0)}}{\operatorname{Res}} D_{(r,0)}(P) + \underset{P=P_{(r,0)}}{\operatorname{Res}}D_P = 0 \ .
 \end{align}
 Finally, let us consider the simple pole of $\left|\mathcal{F}_{P}\right|^2$ at $P=P_{(r,s)}$ with $r,s\in \mathbb{N}^*$. The residue at this pole includes the term 
-$\mathcal{F}_{P_{(r,s)}}\bar{\mathcal{F}}_{P_{(r,-s)}}$, which is also present in $\mathcal{G}_{(r,s)}$, so that we must have 
+$\mathcal{F}_{P_{(r,s)}}^\text{reg}\bar{\mathcal{F}}_{P_{(r,-s)}}$, which is also present in $\mathcal{G}_{(r,s)}$, so that we must have 
 \begin{align}
- \underset{P=P_{(r,s)}}{\operatorname{Res}} D_{(r,s)}(P) + \frac{\bar R_{r,s}}{2P_{(r,s)}} D_{P_{(r,s)}} = 0\ .
+ \underset{P=P_{(r,s)}}{\operatorname{Res}} D_{(r,s)}(P) + \bar R_{r,s} D_{P_{(r,s)}} = 0\ .
+ \label{rdp}
 \end{align}
 In fact, the equation $\operatorname{Res}_{P=P_{(r,s)}}Z(P)=0$ with $r,s\in \mathbb{N}^*$ leads to the determination of the conformal block $\mathcal{G}_{(r,s)}$, which turns out to be logarithmic. 
 
 \subsubsection{Logarithmic conformal blocks}\label{sec:log}
 
-The residue $\operatorname{Res}_{P=P_{(r,s)}}D_P\left|\mathcal{F}_{P}\right|^2$ 
+For $r,s\in\mathbb{N}^*$, the residue $\operatorname{Res}_{P=P_{(r,s)}}D_P\left|\mathcal{F}_{P}\right|^2$ 
 involves a number of terms, which cannot be canonically separated into the blocks 
-$\mathcal{G}_{(r,s)}$ and $\mathcal{G}_{(r,-s)}$. Rather, this residue is a logarithmic conformal block, which sums up the contributions of all the states in one indecomposable representation that includes both primary fields $V_{(r,s)}$ and $V_{(r,-s)}$, see \cite{nr20} for more detail on that indecomposable representation. By convention we call $\mathcal{G}_{(r,s)}$ the logarithmic conformal block, and set $\mathcal{G}_{(r,-s)}=0$, so that 
+$\mathcal{G}_{(r,s)}$ and $\mathcal{G}_{(r,-s)}$. Rather, this residue is a logarithmic conformal block, which sums up the contributions of all the states in one indecomposable representation that includes both primary fields $V_{(r,s)}$ and $V_{(r,-s)}$, see \cite{nr20} for more detail on that representation. By convention we call $\mathcal{G}_{(r,s)}$ the logarithmic conformal block, and set $\mathcal{G}_{(r,-s)}=0$, so that 
 \begin{align}
- \mathcal{G}_{(r,s)} = \frac{2P_{(r,s)}}{\bar R_{r,s} D_{P_{(r,s)}}} \left( \operatorname{Res}_{P=P_{(r,s)}} + \operatorname{Res}_{P=P_{(r,-s)}}\right)D_P\left|\mathcal{F}_{P}\right|^2 \ . 
+ \mathcal{G}_{(r,s)} = \frac{1}{\bar R_{r,s} D_{P_{(r,s)}}} \left( \operatorname{Res}_{P=P_{(r,s)}} + \operatorname{Res}_{P=P_{(r,-s)}}\right)D_P\left|\mathcal{F}_{P}\right|^2 \ . 
 \end{align}
 More explicitly, using Eq. \eqref{dpld}, this can be expressed as 
 \begin{multline}
-  \mathcal{G}_{(r,s)} = \left(\mathcal{F}^\text{reg}_{P_{(r,s)}} -\frac{R_{r,s}}{2P_{(r,s)}} \mathcal{F}'_{P_{(r,-s)}}\right) \bar{\mathcal{F}}_{P_{(r,-s)}} 
-  + \frac{R_{r,s}}{\bar{R}_{r,s}} \mathcal{F}_{P_{(r,-s)}} \left(\bar{\mathcal{F}}^\text{reg}_{P_{(r,s)}} -\frac{\bar R_{r,s}}{2P_{(r,s)}} \bar{\mathcal{F}}'_{P_{(r,-s)}}\right)
+  \mathcal{G}_{(r,s)} = \left(\mathcal{F}^\text{reg}_{P_{(r,s)}} -R_{r,s} \mathcal{F}'_{P_{(r,-s)}}\right) \bar{\mathcal{F}}_{P_{(r,-s)}} 
+  + \frac{R_{r,s}}{\bar{R}_{r,s}} \mathcal{F}_{P_{(r,-s)}} \left(\bar{\mathcal{F}}^\text{reg}_{P_{(r,s)}} -\bar R_{r,s} \bar{\mathcal{F}}'_{P_{(r,-s)}}\right)
   \\
-  + \frac{R_{r,s}}{2P_{(r,s)}} \left( \frac{D'_{P_{(r,s)}}}{D_{P_{(r,s)}}} - \lim_{P\to P_{(r,-s)}}\left[\frac{2}{P-P_{(r,-s)}} +\frac{D'_P}{D_P}\right]\right)
+  + R_{r,s} \left( \frac{D'_{P_{(r,s)}}}{D_{P_{(r,s)}}} - \lim_{P\to P_{(r,-s)}}\left[\frac{2}{P-P_{(r,-s)}} +\frac{D'_P}{D_P}\right]\right)
   \left|\mathcal{F}_{P_{(r,-s)}}\right|^2 
   \ ,
 \end{multline}
-where we define the regularized Virasoro block at its pole $P=P_{(r,s)}$ by 
-\begin{align}
- \mathcal{F}_P = \frac{R_{r,s}}{2P_{(r,s)}(P-P_{(r,s)})} \mathcal{F}_{P_{(r,-s)}} + \mathcal{F}^\text{reg}_{P_{(r,s)}} + O(P-P_{(r,s)}) \ . 
-\end{align}
+where the regularized Virasoro block at its pole $P=P_{(r,s)}$ was defined in Eq. \eqref{freg}.
 The logarithmic nature of the block $\mathcal{G}_{(r,s)}$ comes from the asymptotic behaviour $\mathcal{F}_P(z)\underset{z\to 0}{\propto} z^{P^2} $ \eqref{stu} of Virasoro blocks. When taking derivatives in $P$, or regularizing near a pole, this power-like prefactor gives rise to terms in $\log z$. Logarithmic terms are however absent if $R_{r,s}=\bar R_{r,s}=0$, which occurs if degenerate fusion rules allow the degenerate field $V^d_{\langle r,s\rangle}$ to propagate in the $s$-channel of our 4-point function. In this case, the logarithmic block reduces to 
 \begin{align}
  \mathcal{G}_{(r,s)} \underset{R_{r,s}=\bar R_{r,s}=0}{=} 
@@ -2667,12 +2670,12 @@ which is a combination of the reference 2-point \eqref{bref} and 3-point \eqref{
 \begin{align}
  D_{(r,s)} =  D_{(r,s)}^\text{ref} \left(d_{(r,s)}  - \delta_{\sigma,0}\delta_{s\in\mathbb{Z}}\frac{(-)^{(r+1)s}\rho^{r,s}_{(r_1,s_1)(r_2,s_2)}\rho^{r,s}_{(r_4,s_4)(r_3,s_3)}}{w-w(P_{(r,s)})}\right) \ ,
 \end{align}
-where $d_{(r,s)}$ is a holomorphic function of $w$ and we have expressed the residue of the pole in terms of the quantity
+where $d_{(r,s)}$ is a holomorphic function of $w$, and the residue of the pole has been computed using Eq. \eqref{rdp}, and expressed in terms of the quantity
 \begin{align}
 \rho^{r,s}_{(r_1,s_1)(r_2,s_2)}= (-)^{s\min(r,|r_1-r_2|)\delta_{r_1<r_2}} \prod_\pm \prod_{j\overset{1}{=}-\frac{r-1-|r_1\pm r_2|}{2}}^{\frac{r-1-|r_1\pm r_2|}{2}} 2\cos\pi\left(j\beta^2+\tfrac{s-s_1\mp s_2}{2}\right)\ . 
  \label{rhop}
 \end{align}
-The crucial observation is that $\rho^{r,s}$ is a polynomial in $n$. Moreover, if $r_1=0$ or $r_2=0$, it is also a polynomial in the corresponding loop weight $w_1$ or $w_2$. This leads us to conjecture that $d_{(r,s)}$ is a polynomial in $n$, in the weights $w_i$, and in the $s$-channel weight $w$. 
+The crucial observation is that $\rho^{r,s}$ is a polynomial in $n$. Moreover, if $r_1=0$ or $r_2=0$, it is also a polynomial in the corresponding loop weight $w_1$ or $w_2$. This leads us to conjecture that $d_{(r,s)}$ is a polynomial in $n$, in the weights $w_i$, and in the $s$-channel weight $w$: not only in the case $\sigma=0, s\in\mathbb{Z}$ where $D_{(r,s)}$ depends on a channel weight and has a pole, but in all cases. 
 Thanks to this conjecture, we can extract analytic expressions for $d_{(r,s)}$ from numerical results for $D_{(r,s)}$. 
 
 
@@ -2740,7 +2743,7 @@ We have a unique solution of crossing symmetry for any 4 fields $V_{P_i}$ and ch
 \end{subequations}
 Formulas for $d^{(s,t,u)}_{(3,*)}$ are known but rather complicated.
 
-In the diagonal 4-point function $\left<\prod_{i=1}^4 V_{P_i}\right>$, it is particularly easy to study the factorization \eqref{dcc} of 4-point structure constants into 3-point structure constants. In particular, we see that $d^{(s)}_{(2,*)}$ is a sum of 3 factorized terms. Due to pole terms, $D^{(s)}_{(2,0)}$ and $D^{(s)}_{(2,1)}$ are sums of 4 terms, while $D^{(s)}_{(2,\frac12)}$ is still a sum of 3 terms. 
+In the diagonal 4-point function $\left<\prod_{i=1}^4 V_{P_i}\right>$, it is particularly easy to study the factorization \eqref{dcc} of 4-point structure constants into 3-point structure constants. In particular, we see that $d^{(s)}_{(2,*)}$ is a sum of 3 factorized terms. Due to pole terms, $D^{(s)}_{(2,0)}$ and $D^{(s)}_{(2,1)}$ are sums of 4 terms, while $D^{(s)}_{(2,\frac12)}$ is still a sum of 3 terms. And the presence of several terms is not due to combinatorial defects: in the case $w_s=w_t=w_u=n$ where the defects are absent, $D^{(s)}_{(2,*)}$ loses only 1 term. 
 
 \subsubsection[Case of $\left<V_{(\frac12, 0)}^4\right>$]{Case of $\left<V_{(\frac12, 0)}^4\right>$ \pice}
 
