@@ -8,7 +8,7 @@
 
 \usepackage[top=20mm,bottom=20mm,left=25mm,right=25mm]{geometry}
 
-\usepackage{showkeys}
+%\usepackage{showkeys}
 
 \usepackage{amsmath,amssymb,amsfonts}
 
@@ -2430,7 +2430,7 @@ Therefore, the Potts model has punctures with valencies $2r\in 2(\mathbb{N}+2)$,
 
 \subsection{Relation with loop CFTs}
 
-The claim that loop CFTs describe the critical limit of loop models is supported by a large body of work, including direct numerical checks. However, it is not easy to derive it. In fact, it is already tricky to derive the relation between the central charge $c$ and the contractible loop weight $n$. See for example Appendix A of \cite{grz18} for a discussion of Kondev's original argument, which relies on a shaky construction using a free boson, and for an attempt to patch the argument's perceived flaws with the help of the torus partition function. 
+The claim that loop CFTs describe the critical limit of loop models is supported by a large body of work, including direct numerical checks. However, it is not easy to derive it. In fact, it is already tricky to derive the relation between the central charge $c$ and the contractible loop weight $n$. See for example Appendix A of \cite{grz18} for a discussion of Kondev's original argument, and for an attempt to patch its perceived flaws with the help of the torus partition function. 
 
 We will now propose an argument that starts with relating non-diagonal primary fields $V_{(r,s)}$ with loop-ending punctures. This is relatively straightforward, because both objects have discrete parameters. We will then deduce the relation between diagonal fields $V_P$ and weight-changing punctures, and finally the relation between the central charge and the contractible loop weight. 
 
@@ -2493,7 +2493,7 @@ has signature $(\sigma_s,\sigma_t,\sigma_u)=(0,2,2)$. The conjectured criterion 
 \end{align}
 In some cases, including our example, this uniquely determines the solution.
 
-How do we interpret the dependence of the $s$-channel spectrum on a channel weight $w_s$? The $s$-channel spectrum of a 4-point function should only depend on the 4 fields $V_{(r_i,s_i)}$. For $w_s\neq n$, the dependence on $w_s$ is conjectured to be a manifestation of the presence of an $s$-channel combinatorial defect \cite{rib22}. In the presence of this defect, $s$-channel diagonal fields $V_{P_s}$ such that $w(P_s)=w_s$ appear in the $s$-channel spectrum, and the structure constants of non-diagonal fields may depend on $w_s$. By combinatorial defect we mean a defect that only depends on which punctures are inside or outside the defect. This implies that the defect is topological, but the converse is not true, see Figure \eqref{tvsc}. In the $O(n)$ CFT on the torus, adding combinatorial defect would not spoil modular invariance, but the partition function would become a function of the defect's weight. 
+How do we interpret the dependence of the $s$-channel spectrum on a channel weight $w_s$? The $s$-channel spectrum of a 4-point function should only depend on the 4 fields $V_{(r_i,s_i)}$. For $w_s\neq n$, the dependence on $w_s$ is conjectured to be a manifestation of the presence of an $s$-channel combinatorial defect \cite{rib22}. In the presence of this defect, $s$-channel diagonal fields $V_{P_s}$ such that $w(P_s)=w_s$ appear in the $s$-channel spectrum, and the structure constants of non-diagonal fields may depend on $w_s$. By combinatorial defect we mean a defect that only depends on which punctures are inside or outside the defect. This implies that the defect is topological, but not all topological defects are combinatorial, see Figure \eqref{tvsc}. In the $O(n)$ CFT on the torus, adding combinatorial defect would not spoil modular invariance, but the partition function would become a function of the defect's weight. 
 
 In particular CFTs, there may exist more or fewer solutions than combinatorial maps. 
 For example, the map 
@@ -2512,8 +2512,8 @@ corresponds to a solution with one $s$-channel diagonal field.
 
 Starting from a statistical model on a finite lattice, the large lattice limit may give rise to a conformal field theory, provided the lattice couplings are set to certain critical values. The same loop CFT can arise as the critical limit of statistical models with various lattice geometries, various rules for drawing loops on the lattice, and various parameters. These various non-universal features are forgotten in the critical limit, and we say that all these models belong to the same \textbf{universality class}. 
 
-Nevertheless, the existence of relevant fields in the CFT influences the critical limit. A primary field is called \textbf{relevant} if $\Re(\Delta+\bar\Delta)<2$, \textbf{marginal} if $\Re(\Delta+\bar\Delta)=2$, or \textbf{irrelevant} if $\Re(\Delta+\bar\Delta)>2$. 
-Any given lattice model has a finite set of couplings, which correspond to relevant fields of the CFT, and have to be tuned to their critical values for the critical limit to exist. If another field becomes relevant, the critical limit ceases to exist, unless it is protected by some symmetry. Since the 
+The existence of relevant fields in the CFT influences the critical limit. A primary field is called \textbf{relevant} if $\Re(\Delta+\bar\Delta)<2$, \textbf{marginal} if $\Re(\Delta+\bar\Delta)=2$, or \textbf{irrelevant} if $\Re(\Delta+\bar\Delta)>2$. 
+Any given lattice model has a finite set of couplings, which correspond to relevant fields of the CFT, and have to be tuned to their critical values for the critical limit to exist. If there are relevant fields that do not correspond to any coupling, the critical limit ceases to exist, unless it is protected by some symmetry. Since the 
 dimensions of primary fields depend on the parameter $n$ or $Q$, there exist \textbf{critical regions} in the complex $n$-plane or $Q$-plane where a given model has a critical limit, and the boundary of these regions are \textbf{marginality lines}, where a field becomes marginal. 
 
 Let us plot the marginality lines of a few primary fields, which will give us an idea on how critical regions can look like. For simplicity, we focus on degenerate diagonal fields $V^d_{\langle 1,s\rangle}$. In the $O(n)$, $U(n)$ and Potts models, these fields are invariant under the global symmetry, which therefore does not protect the critical limit from the corresponding couplings. The marginality line of $V^d_{\langle r,s\rangle}$ is
@@ -2609,7 +2609,7 @@ determine how $D_P$ behaves under $P\to P+\beta^{-1}$. Let us assume that diagon
 \end{align}
 where $B_P$ is given in Eq. \eqref{bc} and $C^\text{ref}$ in Eq. \eqref{cref}. For any given 4-point function $Z(P)$, this assumption only amounts to an overall choice of normalization. 
 
-Then we further assume that $Z(P)$ is a holomorphic function of $P\in\mathbb{C}$. This assumption is natural from the point of view of loop models, where $Z(P)$ is the critical limit of polynomials in loop weights.  This is a non-trivial assumption, because the diagonal terms are known to have poles, which must therefore cancel. 
+Then we further assume that $Z(P)$ is a holomorphic function of $P\in\mathbb{C}$. From the point of view of loop models, this is a natural assumption, because $Z(P)$ is the critical limit of polynomials in loop weights. From the point of view of the CFT, this is a non-trivial assumption, because the diagonal terms have poles, which must therefore cancel. 
 To begin with, according to Eq. \eqref{resf}, the Virasoro block $\mathcal{F}_P$ has a simple pole at $P=P_{(r,s)}$ with $r,s\in \mathbb{N}^*$, so that 
 \begin{align}
  \mathcal{F}_P = \frac{R_{r,s}}{P-P_{(r,s)}} \mathcal{F}_{P_{(r,-s)}} + \mathcal{F}^\text{reg}_{P_{(r,s)}} + O(P-P_{(r,s)}) \ . 
@@ -2650,7 +2650,8 @@ More explicitly, using Eq. \eqref{dpld}, this can be expressed as
   \left|\mathcal{F}_{P_{(r,-s)}}\right|^2 
   \ ,
 \end{multline}
-where the regularized Virasoro block at its pole $P=P_{(r,s)}$ was defined in Eq. \eqref{freg}.
+where the derivatives are with respect to $P$, and
+$\mathcal{F}^\text{reg}_{P_{(r,s)}}$ was defined in Eq. \eqref{freg}.
 The logarithmic nature of the block $\mathcal{G}_{(r,s)}$ comes from the asymptotic behaviour $\mathcal{F}_P(z)\underset{z\to 0}{\propto} z^{P^2} $ \eqref{stu} of Virasoro blocks. When taking derivatives in $P$, or regularizing near a pole, this power-like prefactor gives rise to terms in $\log z$. Logarithmic terms are however absent if $R_{r,s}=\bar R_{r,s}=0$, which occurs if degenerate fusion rules allow the degenerate field $V^d_{\langle r,s\rangle}$ to propagate in the $s$-channel of our 4-point function. In this case, the logarithmic block reduces to 
 \begin{align}
  \mathcal{G}_{(r,s)} \underset{R_{r,s}=\bar R_{r,s}=0}{=} 
@@ -2670,7 +2671,7 @@ which is a combination of the reference 2-point \eqref{bref} and 3-point \eqref{
 \begin{align}
  D_{(r,s)} =  D_{(r,s)}^\text{ref} \left(d_{(r,s)}  - \delta_{\sigma,0}\delta_{s\in\mathbb{Z}}\frac{(-)^{(r+1)s}\rho^{r,s}_{(r_1,s_1)(r_2,s_2)}\rho^{r,s}_{(r_4,s_4)(r_3,s_3)}}{w-w(P_{(r,s)})}\right) \ ,
 \end{align}
-where $d_{(r,s)}$ is a holomorphic function of $w$, and the residue of the pole has been computed using Eq. \eqref{rdp}, and expressed in terms of the quantity
+where $d_{(r,s)}$ is a holomorphic function of $w$ if $\sigma>0$, and the residue of the pole has been computed using Eq. \eqref{rdp}, and expressed in terms of the quantity
 \begin{align}
 \rho^{r,s}_{(r_1,s_1)(r_2,s_2)}= (-)^{s\min(r,|r_1-r_2|)\delta_{r_1<r_2}} \prod_\pm \prod_{j\overset{1}{=}-\frac{r-1-|r_1\pm r_2|}{2}}^{\frac{r-1-|r_1\pm r_2|}{2}} 2\cos\pi\left(j\beta^2+\tfrac{s-s_1\mp s_2}{2}\right)\ . 
  \label{rhop}
