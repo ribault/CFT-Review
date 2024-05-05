@@ -185,15 +185,15 @@ Even in two dimensions, solvable CFTs are very special cases. Starting from a si
 
 \subsubsection*{Solvable CFTs}
 
-We will deal first of all with CFTs that are considered solved, in that we exactly know the three-point structure constants, and can compute any correlation function to arbitrary precision:
+We will first deal with CFTs that are considered solved, in that we exactly know the three-point structure constants, and can compute any correlation function to arbitrary precision:
 \begin{itemize}
  \item Liouville theory,
  \item (generalized) minimal models, and limits thereof. 
 \end{itemize}
-We will also propose a unified treatment of loop CFTs, which are not solved but are believed to be solvable, because we have sufficiently many exact results. By loop CFTs we mean a large class of CFTs, with various global symmetry groups, which describe critical limits of various statistical models in various phases, and have various applications: percolation, polymers, and more recently active hydraulics \cite{jcpb23}. 
-The known solvable CFTs have fewer applications to gravity: in particular, any CFT holographically dual to three-dimensional gravity should exist in the large central charge limit, which corresponds to the classical limit of gravity; but there are strong technical reasons why non-trivial solvable CFTs must have small central charges. (See Section \ref{sec:dotc}.) 
+We will also propose a unified treatment of loop CFTs, which are not solved but are believed to be solvable, because we have sufficiently many exact results. By loop CFTs we mean a large class of CFTs, with various global symmetry groups, which describe critical limits of various statistical models in various phases. The known solvable CFTs have many applications to statistical physics, in particular to percolation, to polymers, and more recently to active hydraulics \cite{jcpb23}. 
+However, applications to quantum gravity are fewer. Any CFT holographically dual to three-dimensional gravity should exist in the large central charge limit, which corresponds to the classical limit of gravity; but there are strong technical reasons why non-trivial solvable CFTs must have small central charges. (See Section \ref{sec:dotc}.) 
 
-There are other solved or solvable CFTs that we will not mention, because they have extended chiral algebras, which means extra local symmetries in addition to conformal symmetry. Some CFTs of that type can be solved with the methods that we will cover, for example certain Wess--Zumino--Witten models. 
+There are other solved or solvable CFTs that we will not mention, because they have extended chiral algebras, which means extra local symmetries in addition to conformal symmetry. Some CFTs of that type can be solved using the methods that we will cover, for example certain Wess--Zumino--Witten models. 
 
 \subsubsection*{Solving CFTs}
 
@@ -2177,8 +2177,13 @@ In principle it is impossible to compute the rank of an infinite matrix, but
 in practice it may be enough to study a few 4-point functions for guessing a given multiplicity. This has been done in a few examples of diagonal 4-point functions in loop CFTs \cite{rib22}.
 
 
-\subsection{Virasoro blocks and Zamolodchikov's recursion}
+\subsection{Computation of Virasoro blocks}
 
+In order to solve crossing symmetry equations numerically, we need an efficient way to compute Virasoro blocks. It is possible to compute Virasoro blocks from their definition \eqref{sdec}, but this is awfully pedestrian and inefficient. We will now review the much more efficient recursive representation due to Alexey Zamolodchikov \cite{zam87b}, in the case of 4-point $s$-channel blocks on the sphere. (For $N$-point blocks on arbitrary Riemann surfaces, see \cite{ccy17}.)  
+
+The idea of the recursive representation is to characterize Virasoro blocks by their analytic properties as functions of the channel dimension, in particular their poles, residues, and behaviour at infinity. 
+
+\subsubsection{Poles and residues}
 
 As we saw in Section \ref{sec:csope}, 
 the OPE coefficient $f^{\Delta, L}_{\Delta_1,\Delta_2}$ for the contribution of the descendant field $LV_\Delta$ to the OPE $V_{\Delta_1}V_{\Delta_2}$ 
@@ -2191,10 +2196,17 @@ the block itself has a simple pole at $\Delta=\Delta_{(r,s)}$ for any $r,s\in\ma
 \end{align}
 where the coefficient $R_{r,s}$ is called a \textbf{Virasoro block residue}, and we include the factor $2P_{(r,s)}$ for later convenience, see Eq. \eqref{freg}. 
 
+Write in terms of chiral 2-point and 3-point functions of descendants. Combination is invariant under renormalization of $L_{\langle r,s\rangle}$. Deduce 2-point from 3-point.
 
-Derive the recursion for blocks? hard part is coef $R_{r,s}$ but it obeys simple shift equations. Rewrite it in terms of Upsilon functions, and somehow derive it from Liouville theory! But cancellation of double poles hard to argue? And need to determine sign, since we get square of $R_{r,s}$. We can choose any value of the continuous parameters including $c$, but is there a value that makes $R_{r,s}$ simple enough? And what about the $\Delta\to\infty$ prefactors? See Yin et al? See Appendix D of \cite{msz15} for the pillow geometry that underlies the variable $q$.
+To determine these chiral correlators, bootstrap similar to structure constants, using degenerate fields. Degenerate coefficients similarly ignored. 
 
+Solution: write as double Gamma or as big product. 
 
+\subsubsection{Behaviour for large channel dimensions}
+
+See Yin et al? See Appendix D of \cite{msz15} for the pillow geometry that underlies the variable $q$.
+
+\subsubsection{Zamolodchikov's recursive representation}
 
 \subsection{Interchiral blocks} \label{sec:icb}
 
