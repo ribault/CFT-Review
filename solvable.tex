@@ -2206,11 +2206,43 @@ where $g^L$ was defined in Eq. \eqref{gl}, and we recall from Section \ref{sec:n
 \begin{align}
  b^{r,s} = c^{r,s}\left(P_{(1,1)}, P_{(r,-s)}\right)  \left.\frac{\partial}{\partial P} c^{r,s}\left(P,P_{(1,1)}\right)\right|_{P=P_{(r,s)}}\ . 
 \end{align}
-This reduces the problem to determining $c^{r,s}$. To do this, let us find how $c^{r,s}$ behaves under $r\to r+2$ and $s\to s+2$, using a chiral version of the analytic bootstrap of Section \ref{sec:ab}. 
+This reduces the problem to determining $c^{r,s}$. To do this, let us find how $c^{r,s}$ behaves under $r\to r+1$ from the fusion transformation \eqref{fsfft} of degenerate 4-point conformal blocks. The idea is to compare the fusion transformations for 4-point functions of the type $\left<V^d_{\langle 2,1\rangle}V_{P_{(r,-s)}}V_{P_1}V_{P_2}\right>$ and $\left<V^d_{\langle 2,1\rangle}V_{P_{(r,s)}}V_{P_1}V_{P_2}\right>$. More precisely, let us compare the coefficients $F_{++}$ and $\widetilde{F}_{++}$ that relate the following conformal blocks:
+\begin{align}
+  \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
+\draw (-1,2) node [left] {$P_{(r,-s)}$} -- (0,0) -- node [above] {$P_{(r+1,-s)}$} (4,0) -- (5,2) node [right] {$P_1$};
+\draw (-1,-2) node [left] {$\langle 2,1\rangle\!$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$P_2$};
+\end{tikzpicture}
+\quad \overset{F_{++}}{\longrightarrow} \quad 
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
+ \draw (-2,3) node [left] {$P_{(r,-s)}$} -- (0,2) -- node [left] {$P_2+\frac{\beta}{2}$} (0,-2) -- (-2, -3) node [left] {$\langle 2,1\rangle\!$};
+\draw (0,2) -- (2,3) node [right] {$P_1$};
+\draw (0,-2) -- (2, -3) node [right] {$P_2$};
+\end{tikzpicture}
+\end{align}
+\begin{align}
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
+\draw (-1,2) node [left] {$P_{(r,s)}$} -- (0,0) -- node [above] {$P_{(r+1,s)}$} (4,0) -- (5,2) node [right] {$P_1$};
+\draw (-1,-2) node [left] {$\langle 2,1\rangle\!$} -- (0,0);
+\draw (4,0) -- (5,-2) node [right] {$P_2$};
+\end{tikzpicture}
+\quad \overset{\widetilde{F}_{++}}{\longrightarrow} \quad 
+\begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
+ \draw (-2,3) node [left] {$P_{(r,s)}$} -- (0,2) -- node [left] {$P_2+\frac{\beta}{2}$} (0,-2) -- (-2, -3) node [left] {$\langle 2,1\rangle\!$};
+\draw (0,2) -- (2,3) node [right] {$P_1$};
+\draw (0,-2) -- (2, -3) node [right] {$P_2$};
+\end{tikzpicture}
+\end{align}
+The relation $V_{P_{(r,-s)}}\propto L_{\langle r,s\rangle}V_{P_{(r,s)}}$ leads to a relation between $F_{++}$ and $\widetilde{F}_{++}$. In fact, it may seem that these two coefficients coincide, since the fusion transformation of a descendant block is the same as for the corresponding primary block. However, the coefficient $F_{++}$ is only valid for blocks that are normalized such that their asymptotics are as in Eq. \eqref{stu}. In order to correctly normalize blocks that involve descendant fields $L_{\langle r,s\rangle}V_{P_{(r,s)}}$ and/or $L_{\langle r+1,s\rangle}V_{P_{(r+1,s)}}$, we must multiply them with factors of the type $c^{r,s}$. As a result, we have 
+\begin{align}
+ \frac{c^{r+1,s}(P_1,P_2)}{c^{r,s}(P_1,P_2+\frac{\beta}{2})} \propto \frac{\widetilde{F}_{++}}{F_{++}} \propto \beta^{-2s}\frac{\prod_{\pm} \Gamma(\frac12+\beta P_{(r,-s)} \pm \beta P_1 -\beta P_2)}{\prod_{\pm} \Gamma(\frac12+\beta P_{(r,s)} \pm \beta P_1 -\beta P_2)} \ , 
+ \label{cros}
+\end{align}
+where we use the expression \eqref{fee} for $F_{++}$ and $\widetilde{F}_{++}$. By $\propto$ we mean that equalities are modulo $P_1,P_2$-independent factors. Unlike the residue $R_{r,s}$, such factors are not invariant under renormalizations $L_{\langle r,s\rangle} \to \lambda_{r,s}(\beta)L_{\langle r,s\rangle}$. We have used this freedom, and chosen factors that will make $c^{r,s}$ simple. 
 
-To determine these chiral correlators, bootstrap similar to structure constants, using degenerate fields. Degenerate coefficients similarly ignored. 
+To solve the shift equation \eqref{cros}, and the analogous equation for $\frac{c^{r,s+1}}{c ^{r,s}}$, we first determine $c^{1,1}(P_1,P_2) =\prod_\pm (P_1\pm P_2) $ from Eq. Need to assemble block to first order right after Eq. \eqref{fsl}. Sign of shift equation?
 
-Solution: write as double Gamma or as big product. 
+Either double Gamma or big product. Write $c^{r,s}$ deduce $b^{r,s}$. 
 
 \subsubsection{Behaviour for large channel dimensions}
 
