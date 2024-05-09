@@ -2257,6 +2257,7 @@ where the second expression uses the double Gamma function \eqref{gshift}. As a 
  \label{brs}
 \end{align}
 % In fact we get 3 residues out of which 2 cancel.
+While the product formulas are adequate for numerically computing the conformal block residues $R_{r,s}$, the expressions in terms of the double Gamma function are convenient for elucidating their relations with structure constants of exactly solvable CFTs, such as Eq. \eqref{dpld}.
 
 \subsubsection{Behaviour for large channel dimensions}
 
@@ -2676,13 +2677,14 @@ To begin with, according to Eq. \eqref{resf}, the Virasoro block $\mathcal{F}_P$
  \mathcal{F}_P = \frac{R_{r,s}}{P-P_{(r,s)}} \mathcal{F}_{P_{(r,-s)}} + \mathcal{F}^\text{reg}_{P_{(r,s)}} + O(P-P_{(r,s)}) \ . 
  \label{freg}
 \end{align}
-Therefore, $\left|\mathcal{F}_P\right|^2$ has a double pole, with a residue proportional to $\left|\mathcal{F}_{P_{(r,-s)}}\right|^2$. Now, $\lim_{P\to P_{(r,s)}} Z(P)$ involves another contribution proportional to $\left|\mathcal{F}_{P_{(r,-s)}}\right|^2$, from the term $k=s$. And the structure constant $D_{P+s\beta^{-1}}$ does have a double pole at $P=P_{(r,s)}$, because $B_P$ has a double zero at $P=P_{(r,-s)}$. The cancellation of the double poles requires 
+Therefore, $\left|\mathcal{F}_P\right|^2$ has a double pole, with a residue proportional to $\left|\mathcal{F}_{P_{(r,-s)}}\right|^2$. Now, $\lim_{P\to P_{(r,s)}} Z(P)$ involves another contribution proportional to $\left|\mathcal{F}_{P_{(r,-s)}}\right|^2$, from the term $k=s$. And the structure constant $D_{P+s\beta^{-1}}$ does have a double pole at $P=P_{(r,s)}$, because $B_P$ has a double zero at $P=P_{(r,-s)}$. The cancellation of the double poles of $Z(P)$ requires 
 \begin{align}
  R_{r,s}\bar{R}_{r,s}D_{P_{(r,s)}} + \lim_{P\to P_{(r,-s)}}\left(P-P_{(r,-s)}\right)^2 D_P = 0 \ .
  \label{dpld}
 \end{align}
-It can be checked that this equation is satisfied by the conformal block residues $R_{r,s}$. In fact, this equation could be used for determining $R_{r,s}$ up to an overall sign. 
-Simple poles must cancel too, i.e. $\operatorname{Res}_{P=P_{(r,s)}}Z(P)=0$ for any $(r,s)\in \mathbb{N}^*\times\mathbb{Z}$. At $P=P_{(r,0)}$, $B_P$ has a simple zero, and $D_P\left|\mathcal{F}_P\right|^2$ has a simple pole with a residue proportional to $\left|\mathcal{F}_{P_{(r,0)}}\right|^2$. This is  cancelled by the term $D_{(r,0)}(P) \mathcal{G}_{(r,0)}$, provided $D_{(r,0)}(P)$ has a simple pole, and 
+It can be checked that this equation is satisfied by the conformal block residues $R_{r,s}$ \eqref{rrs}. This equation is relevant not only to loop CFTs, but also to (generalized) minimal models \cite{rib18}.
+
+Simple poles of $Z(P)$ must cancel too, i.e. $\operatorname{Res}_{P=P_{(r,s)}}Z(P)=0$ for any $(r,s)\in \mathbb{N}^*\times\mathbb{Z}$. At $P=P_{(r,0)}$, $B_P$ has a simple zero, and $D_P\left|\mathcal{F}_P\right|^2$ has a simple pole with a residue proportional to $\left|\mathcal{F}_{P_{(r,0)}}\right|^2$. This is  cancelled by the term $D_{(r,0)}(P) \mathcal{G}_{(r,0)}$, provided $D_{(r,0)}(P)$ has a simple pole, and 
 \begin{align}
   \underset{P=P_{(r,0)}}{\operatorname{Res}} D_{(r,0)}(P) + \underset{P=P_{(r,0)}}{\operatorname{Res}}D_P = 0 \ .
 \end{align}
