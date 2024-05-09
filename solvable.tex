@@ -2192,21 +2192,25 @@ has a simple pole at $\Delta=\Delta_{(r,s)}$ for $r,s\in\mathbb{N}^*$ with $rs\l
 Since such coefficients appear in the expression \eqref{fsl} for a Virasoro block as a sum over creation operators $L\in\mathcal{L}$, 
 the block itself has a simple pole at $\Delta=\Delta_{(r,s)}$ for any $r,s\in\mathbb{N}^*$. This pole comes from the existence of a null vector at level $rs$ in the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$, and this null vector is a primary state of dimension $\Delta_{(r,-s)}$. The residue of the block at this pole is the sum of the contributions of the null vector and its descendant states, therefore it is itself a Virasoro block,
 \begin{align}
- \underset{P=P_{(r,s)}}{\operatorname{Res}} \mathcal{F}_P(z) = R_{r,s}\mathcal{F}_{P_{(r,-s)}}(z)\ ,
+ \boxed{\underset{P=P_{(r,s)}}{\operatorname{Res}} \mathcal{F}_P(z) = R_{r,s}\mathcal{F}_{P_{(r,-s)}}(z)}\ ,
  \label{resf}
 \end{align}
-where the coefficient $R_{r,s}$ is called a \textbf{Virasoro block residue}, and we use the momentum $P$ rather than the conformal dimension $\Delta$. 
-
-By definition, the Virasoro block residue is a combination of correlation functions of descendant states, 
+where the coefficient $R_{r,s}$ is called a \textbf{Virasoro block residue}, and we use the momentum $P$ rather than the conformal dimension $\Delta$. We will derive an expression of the type 
 \begin{align}
- R_{r,s} = \frac{g^{L_{\langle r,s\rangle}}_{P_{(r,s)},P_1,P_2}\,
- g^{L_{\langle r,s\rangle}}_{P_{(r,s)},P_3,P_4}}{ \left.\frac{\partial}{\partial P} \frac{\left<L_{\langle r,s\rangle} V_P L_{\langle r,s\rangle} V_P \right>}{\left<V_PV_P\right>}\right|_{P=P_{(r,s)}}}\equiv \frac{c^{r,s}(P_1,P_2)c^{r,s}(P_3,P_4)}{b^{r,s}}\ , 
+R_{r,s} = \frac{c^{r,s}(P_1,P_2)c^{r,s}(P_3,P_4)}{b^{r,s}}\ , 
+ \label{rrs}
 \end{align}
-where $g^L$ was defined in Eq. \eqref{gl}, and we recall from Section \ref{sec:nvvm} that $L_{\langle r,s\rangle}$ is the creation operator such that $V_{P_{(r,-s)}}\propto L_{\langle r,s\rangle}V_{P_{(r,s)}}$ is the null vector of the reducible Verma module $\mathcal{V}_{P_{(r,s)}}$. Now, since $\Delta_{(1,1)}=0$, $c^{r,s}(P_{(1,1)},P)$ is in fact a ratio of 2-point functions, which can be used for writing 
+where we will find the expressions \eqref{crs} and \eqref{brs} for $c^{r,s}$ and $b^{r,s}$.
+For the moment, let us define these quantities: according to the definition of $R_{r,s}$, they are combinations of correlation functions of descendant states, 
+\begin{align}
+ c^{r,s}(P_1,P_2) = g^{L_{\langle r,s\rangle}}_{P_{(r,s)},P_1,P_2} \quad , \quad b^{r,s} =\left.\frac{\partial}{\partial P} \frac{\left<L_{\langle r,s\rangle} V_P L_{\langle r,s\rangle} V_P \right>}{\left<V_PV_P\right>}\right|_{P=P_{(r,s)}}\ . 
+\end{align}
+Here $g^L$ was defined in Eq. \eqref{gl}, and we recall from Section \ref{sec:nvvm} that $L_{\langle r,s\rangle}$ is the creation operator such that $V_{P_{(r,-s)}}\propto L_{\langle r,s\rangle}V_{P_{(r,s)}}$ is the null vector of the reducible Verma module $\mathcal{V}_{P_{(r,s)}}$. Now, since $\Delta_{(1,1)}=0$, $c^{r,s}(P_{(1,1)},P)$ is in fact a ratio of 2-point functions, which can be used for writing 
 \begin{align}
  b^{r,s} = c^{r,s}\left(P_{(1,1)}, P_{(r,-s)}\right)  \left.\frac{\partial}{\partial P} c^{r,s}\left(P,P_{(1,1)}\right)\right|_{P=P_{(r,s)}}\ . 
+ \label{bcdc}
 \end{align}
-This reduces the problem to determining $c^{r,s}$. To do this, let us find how $c^{r,s}$ behaves under $r\to r+1$ from the fusion transformation \eqref{fsfft} of degenerate 4-point conformal blocks. The idea is to compare the fusion transformations for 4-point functions of the type $\left<V^d_{\langle 2,1\rangle}V_{P_{(r,-s)}}V_{P_1}V_{P_2}\right>$ and $\left<V^d_{\langle 2,1\rangle}V_{P_{(r,s)}}V_{P_1}V_{P_2}\right>$. More precisely, let us compare the coefficients $F_{++}$ and $\widetilde{F}_{++}$ that relate the following conformal blocks:
+This reduces the problem to determining $c^{r,s}$. To do this, let us find how $c^{r,s}$ behaves under $r\to r+1$ from the fusion transformation \eqref{fsfft} of degenerate 4-point conformal blocks. The idea is to compare the fusion transformations for 4-point functions of the types $\left<V^d_{\langle 2,1\rangle}V_{P_{(r,-s)}}V_{P_1}V_{P_2}\right>$ and $\left<V^d_{\langle 2,1\rangle}V_{P_{(r,s)}}V_{P_1}V_{P_2}\right>$. More precisely, let us compare the coefficients $F_{++}$ and $\widetilde{F}_{++}$ that relate the following conformal blocks:
 \begin{align}
   \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
 \draw (-1,2) node [left] {$P_{(r,-s)}$} -- (0,0) -- node [above] {$P_{(r+1,-s)}$} (4,0) -- (5,2) node [right] {$P_1$};
@@ -2240,9 +2244,19 @@ The relation $V_{P_{(r,-s)}}\propto L_{\langle r,s\rangle}V_{P_{(r,s)}}$ leads t
 \end{align}
 where we use the expression \eqref{fee} for $F_{++}$ and $\widetilde{F}_{++}$. By $\propto$ we mean that equalities are modulo $P_1,P_2$-independent factors. Unlike the residue $R_{r,s}$, such factors are not invariant under renormalizations $L_{\langle r,s\rangle} \to \lambda_{r,s}(\beta)L_{\langle r,s\rangle}$. We have used this freedom, and chosen factors that will make $c^{r,s}$ simple. 
 
-To solve the shift equation \eqref{cros}, and the analogous equation for $\frac{c^{r,s+1}}{c ^{r,s}}$, we first determine $c^{1,1}(P_1,P_2) =\prod_\pm (P_1\pm P_2) $ from Eq. Need to assemble block to first order right after Eq. \eqref{fsl}. Sign of shift equation?
-
-Either double Gamma or big product. Write $c^{r,s}$ deduce $b^{r,s}$. 
+To solve the shift equation \eqref{cros}, and the analogous equation for $\frac{c^{r,s+1}}{c ^{r,s}}$, we initialize the recursion by determining $c^{1,1}(P_1,P_2) =\prod_\pm (P_1\pm P_2) $ from Eq. \eqref{fl1}. We then find 
+\begin{align}
+ c^{r,s}(P_1,P_2) = \prod_{j\overset{2}{=}1-r}^{r-1} \prod_{k\overset{2}{=}1-s}^{s-1} \prod_\pm \left(P_2\pm P_1+ P_{(j,k)}\right) = \frac{\prod_{\pm,\pm}\Gamma_\beta\left(\frac{\beta+\beta^{-1}}{2} +P_2\pm P_1 \pm P_{(r,s)}\right)}
+ {\prod_{\pm,\pm}\Gamma_\beta\left(\frac{\beta+\beta^{-1}}{2} +P_2\pm P_1 \pm P_{(r,-s)}\right)}\ , 
+ \label{crs}
+\end{align}
+where the second expression uses the double Gamma function \eqref{gshift}. As a result of Eq. \eqref{dsr}, we have $c^{r,s}(P_2,P_1)=(-)^{rs} c^{r,s}(P_1,P_2)$ and therefore $c^{r,s}(P_1,-P_2)=c^{r,s}(P_1,P_2)$. From Eq. \eqref{bcdc}, we then deduce 
+\begin{align}
+ b^{r,s} = \frac{-(-)^{rs}}{2P_{(0,0)}} \prod_{j=1-r}^r\prod_{k=1-s}^s 2P_{(j,k)} = -
+ \frac{\prod_\pm \Gamma_\beta\left(\beta \pm 2P_{(r,s)}\right)}{\Gamma_\beta\left(\beta+2P_{(r,-s)}\right)\operatorname{Res}_{\beta-2P_{(r,-s)}}\Gamma_\beta}\ .
+ \label{brs}
+\end{align}
+% In fact we get 3 residues out of which 2 cancel.
 
 \subsubsection{Behaviour for large channel dimensions}
 
