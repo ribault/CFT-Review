@@ -763,7 +763,7 @@ The generators $\ell_n$ \eqref{lpz} of local conformal transformations are only 
 \end{align}
 In fact we want the algebra of conformal transformations to act on a complex vector space: the space of complex-valued functions on $\overline{\mathbb{C}}$ for the Witt algebra, the space of states of the CFT for the Virasoro algebra. We should therefore complexify our symmetry algebra, and we obtain two copies of the Virasoro algebra: a \textbf{left-moving or holomorphic} Virasoro algebra $\mathfrak{V}$ with generators $L_n$, and a \textbf{right-moving or antiholomorphic} Virasoro algebra $\bar{\mathfrak{V}}$ with generators $\bar{L}_n$. In the case of the algebra of global conformal transformations, we start with the 6-dimensional real Lie algebra $\mathfrak{sl}_2(\mathbb{C})$, with generators \eqref{epbe} with $n=-1,0,1$, and the complexification yields $\mathfrak{sl}_2(\mathbb{C})^\mathbb{C} = \mathfrak{sl}_2(\mathbb{C})\times \mathfrak{sl}_2(\mathbb{C})$.
 
-In Sections \ref{sec:vir} and \ref{sec:fope}, we have been doing \textbf{chiral CFT}, which means considering $\mathfrak{V}$ only. In a full CFT, the symmetry algebra is the \textbf{conformal algebra} $\mathfrak{V}\times \bar{\mathfrak{V}}$, where for simplicity we assume that the left and right central charges are equal. When it comes to representations, Verma modules of $\mathfrak{V}\times \bar{\mathfrak{V}}$ are simply $\mathcal{V}_\Delta\otimes \bar{\mathcal{V}}_{\bar \Delta}$, where we write a bar over representations of $\bar{\mathfrak{V}}$. There are also representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$ that are not themselves factorized. We will encounter such representations in Section \ref{sec:log}. 
+In Sections \ref{sec:vir} and \ref{sec:fope}, we have been doing \textbf{chiral CFT}, which means considering $\mathfrak{V}$ only. In a full CFT, the symmetry algebra is the \textbf{conformal algebra} $\mathfrak{V}\times \bar{\mathfrak{V}}$, where for simplicity we assume that the left and right central charges are equal. When it comes to representations, Verma modules of $\mathfrak{V}\times \bar{\mathfrak{V}}$ are simply $\mathcal{V}_\Delta\otimes \bar{\mathcal{V}}_{\bar \Delta}$, where we write a bar over representations of $\bar{\mathfrak{V}}$. There also exist representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$ that are not themselves factorized, in particular logarithmic representations \cite{nr20}. 
 
 Fields now belong to representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$, and they obey $\frac{\partial}{\partial \bar z} V(z) = \bar L_{-1} V(z)$, which is the antiholomorphic version of Eq. \eqref{pvlv}. This allows us to define a right-moving energy-momentum tensor $\bar T(y) = \sum_{n\in\mathbb{Z}} \frac{\bar L_n^{(z)}}{(\bar y-\bar z)^{n+2}}$. While $T$ is locally holomorphic, $\bar T$ is locally antiholomorphic:
 \begin{align}
@@ -898,7 +898,7 @@ In order to write these decompositions in greater generality, let us define the 
  \mathcal{G}^{(x)}_{\Delta,\bar\Delta} = \left|\mathcal{F}_{\Delta}^{(x)}\right|^2\ , \qquad (x=s,t,u)\ . 
  \label{gf2}
 \end{align}
-Our conformal blocks are chirally factorized into Virasoro blocks because of our assumption that all fields are primaries or descendants. However, representations of the conformal algebra that are not factorized give rise to blocks that are also not factorized: this is the case with the logarithmic representations of Section \ref{sec:log}. We now write the \textbf{crossing symmetry equations} as the equality between the 3 decompositions of a four-point function into structure constants and conformal blocks:
+Our conformal blocks are chirally factorized into Virasoro blocks because of our assumption that all fields are primaries or descendants. However, representations of the conformal algebra that are not factorized give rise to blocks that are also not factorized: this is the case with the logarithmic blocks of Section \ref{sec:log}. We now write the \textbf{crossing symmetry equations} as the equality between the 3 decompositions of a four-point function into structure constants and conformal blocks:
 \begin{align}
  \boxed{\sum_{k\in\mathcal{S}} D_k^{(s)} \mathcal{G}^{(s)}_{\Delta_k,\bar\Delta_k} = \sum_{k\in\mathcal{S}} D_k^{(t)} \mathcal{G}^{(t)}_{\Delta_k,\bar\Delta_k} = \sum_{k\in\mathcal{S}} D_k^{(u)} \mathcal{G}^{(u)}_{\Delta_k,\bar\Delta_k}} \ . 
  \label{seteu}
@@ -1214,7 +1214,7 @@ The fully degenerate nature of $\mathcal{R}^f_{\langle 2p+1,1\rangle}$ follows f
  \mathcal{R}^f_{\langle p+1,1\rangle} \times \mathcal{V}_P = \sum_{\pm} \mathcal{V}_{P\pm \frac12\sqrt{pq}}\ ,
 \end{align}
 which follows from Eq. \eqref{rrsvp}, with $\{P\pm \frac12\sqrt{pq}\}_\pm = \{P+i\beta\}_{i=-\frac{p}{2},\cdots, \frac{p}{2}} \cap \{P+j\beta\}_{j=-\frac{q}{2},\cdots, \frac{q}{2}}$. 
-The two resulting representations in Eq. \eqref{rfppo} have dimensions that differ by an integer, so they might in fact be combined into a single logarithmic representation, see Section \ref{sec:log}. The point is that by repeatedly fusing $V^f_{\langle p+1,1\rangle}$ with itself, we can obtain primary states of dimensions $\Delta_{(r,1)}$ with no bound on $r$. 
+The two resulting representations in Eq. \eqref{rfppo} have dimensions that differ by an integer, so they might in fact be combined into a single logarithmic representation. The point is that by repeatedly fusing $V^f_{\langle p+1,1\rangle}$ with itself, we can obtain primary states of dimensions $\Delta_{(r,1)}$ with no bound on $r$. 
 
 We therefore focus on the case $\beta^2 = \frac{q}{p}>0$ with $p,q\in\mathbb{N}^*$ coprime. For simplicity, we will only study the representations that are generated by $\mathcal{R}^f_{\langle 2,1\rangle}$ and $\mathcal{R}^f_{\langle 1,2\rangle}$. This is enough for recovering the known A-series minimal models, but not for investigating other diagonal, rational CFTs that might exist on the sphere. 
 Let us show that $\mathcal{R}^f_{\langle 2,1\rangle}$ and $\mathcal{R}^f_{\langle 1,2\rangle}$ generate the representations $\mathcal{R}^f_{\langle r,s\rangle}$  whose indices belong to the \textbf{Kac table} 
@@ -1416,7 +1416,7 @@ On the other hand, $V_{(r,0)}$ is a genuinely non-diagonal field, whose fusion r
 Our simple extended spectrum hides important subtleties: 
 \begin{itemize}
  \item We characterize fields by their conformal dimensions, but there could be several independent fields with the same dimensions, in other words there could be nontrivial field multiplicities. This is known to occur in the loop CFTs of Section \ref{sec:models}, where the multiplicities are described in terms of representations of global symmetry groups.  
- \item Knowing which primary fields belong to $\widetilde{S}^\text{loop}$ is not enough for determining how the conformal algebra acts on $\widetilde{S}^\text{loop}$. For $(r,s)\in \mathbb{N}^*\times \mathbb{Z}^*$, the primary field $V_{(r,s)}$ has a null vector, and the Verma module $\mathcal{V}_{\Delta_{(r,s)}}\otimes\bar{\mathcal{V}}_{\Delta_{(r,-s)}}$ is not the only representation that includes $V_{(r,s)}$. The correct representation can be determined by starting with $V_{(r,0)}\in \mathcal{V}_{\Delta_{(r,0)}}\otimes\bar{\mathcal{V}}_{\Delta_{(r,0)}}$, and repeatedly taking OPEs with $V^d_{\langle 1,2\rangle}$, see Section \ref{sec:log}. It turns out that $V_{(r,s)}$ and $V_{(r,-s)}$ both belong to the same logarithmic indecomposable representation, which is not left-right factorized. 
+ \item Knowing which primary fields belong to $\widetilde{S}^\text{loop}$ is not enough for determining how the conformal algebra acts on $\widetilde{S}^\text{loop}$. For $(r,s)\in \mathbb{N}^*\times \mathbb{Z}^*$, the primary field $V_{(r,s)}$ has a null vector, and the Verma module $\mathcal{V}_{\Delta_{(r,s)}}\otimes\bar{\mathcal{V}}_{\Delta_{(r,-s)}}$ is not the only representation that includes $V_{(r,s)}$. The correct representation can be determined by starting with $V_{(r,0)}\in \mathcal{V}_{\Delta_{(r,0)}}\otimes\bar{\mathcal{V}}_{\Delta_{(r,0)}}$, and repeatedly taking OPEs with $V^d_{\langle 1,2\rangle}$. It turns out that $V_{(r,s)}$ and $V_{(r,-s)}$ both belong to the same logarithmic indecomposable representation, which is not left-right factorized  \cite{nr20}. 
 \end{itemize}
 
 \subsubsection{Dependence on the central charge and fusion rules}
@@ -2267,11 +2267,11 @@ See Yin et al? See Appendix D of \cite{msz15} for the pillow geometry that under
 
 As we have seen in Section \ref{sec:ab}, degenerate fields play a crucial role by constraining structure constants via shift equations. This suggests that we could extend the conformal algebra into an  \textbf{interchiral algebra}, which would also include degenerate fields \cite{grs12}. In the same way as the conformal algebra is generated by the energy-momentum tensors $T,\bar T$, leading to conformal Ward identities, an interchiral algebra would be generated by $T,\bar T,V^d_{\langle 1,2\rangle}$ or $T,\bar T,V^d_{\langle 2,1\rangle},V^d_{\langle 1,2\rangle}$, and we would consider shift equations as interchiral Ward identities. 
 
-For conceptual completeness, we will first construct the interchiral algebra as a Lie algebra, and discuss its representations. We will then discuss interchiral blocks, which are all we need for the numerical bootstrap.
+For conceptual completeness, we will first construct the interchiral algebra that corresponds to $V^d_{\langle 1,2\rangle}$, and discuss its representations. We will then discuss interchiral blocks, which are what we need for the numerical bootstrap.
 
 \subsubsection{The interchiral algebra and its representations}
 
-By definition, the interchiral algebra is supposed to shift momentums of primary fields. We therefore need to replace the Virasoro generator $L_0$, whose eigenvalues are conformal dimensions, with a generator whose eigenvalues are momentums. This can be done by rewriting the Virasoro algebra in terms of an abelian affine Lie algebra $\hat{\mathfrak{u}}_1$. The algebra $\hat{\mathfrak{u}}_1$ is the chiral symmetry algebra of free bosonic CFTs, which a $\mathfrak{u}_1$ symmetry, and where the momentum is conserved. 
+By definition, the interchiral algebra is supposed to shift momentums of primary fields. We therefore need to replace the Virasoro generator $L_0$, whose eigenvalues are conformal dimensions, with a generator whose eigenvalues are momentums. This can be done by rewriting the Virasoro algebra in terms of an abelian affine Lie algebra $\hat{\mathfrak{u}}_1$. The algebra $\hat{\mathfrak{u}}_1$ is the chiral symmetry algebra of free bosonic CFTs, which have a $\mathfrak{u}_1$ symmetry, and where the momentum is conserved. 
 However, this algebra can also be used for studying non-free CFTs, giving rise to Coulomb gas techniques. (See \cite[Section 4.1]{rib14} for a quick review.)
 
 The algebra $\hat{\mathfrak{u}}_1$ has generators $(J_n)_{n\in\mathbb{Z}}$ and relations 
@@ -2292,21 +2292,41 @@ where $\beta$ was defined from $c$ in Eq. \eqref{cb}. Let us define an affine pr
 \end{align}
 Then $V_P$ is also a Virasoro primary state, whose conformal dimension is computed from the last two terms of Eq. \eqref{lzj}, reproducing Eq. \eqref{dp}. 
 
-Now, let us extend the conformal algebra $\mathfrak{V}\times \bar{\mathfrak{V}}$ by adding a generator $D$ such that 
+Now, let us extend the algebra $\hat{\mathfrak{u}}_1\times \overline{\hat{\mathfrak{u}}_1}$ by adding a generator $D$ such that 
 \begin{align}
  [J_0,D] = [\bar J_0,D] = \beta^{-1}D \quad , \quad [J_{n\neq 0},D]=[\bar J_{n\neq 0},D]=0 \ .
 \end{align}
 We can deduce the commutation relations of $D$ with Virasoro generators,
 \begin{align}
- [L_0, D] =  \  , \ [L_{n\neq 0},D] =\ .
+ [L_n,D] =2\beta^{-1}DJ_n +\delta_{n,0}D \quad , \quad [\bar L_n,D] =2\beta^{-1}D\bar J_n +\delta_{n,0}D\ .
 \end{align}
-is $n=0$ really special?
+Due to the generator $D$, the algebra is no longer chirally factorized into a left-moving and a right-moving factor: this is why it is called interchiral. We could have preserved chiral factorization by defining independent left-moving and right-moving generators $D,\bar D$, but such generators would produce states with spins that are not half-integer. 
 
-resulting alg not factorized could have had $\bar D$ but it makes no sense to shift only left/right so we do not want 2 indep generators. 
+We consider representations of the interchiral algebra such that $D^{-1}$ exists. For $V_P$ a diagonal affine primary state and $k\in\mathbb{Z}$, we have $D^{k}V_P = V_{P+k\beta^{-1}}$. Therefore, the representation that is obtained by acting on $V_P$ with the interchiral algebra is the following combination of Verma modules of the Virasoro algebra:
+\begin{align}
+ \widetilde{\mathcal{V}}_P = \bigoplus_{k\in\mathbb{Z}} \mathcal{V}_{P+k\beta^{-1}}\otimes \overline{\mathcal{V}}_{P+k\beta^{-1}}\ . 
+ \label{wvp}
+\end{align}
+When it comes to degenerate fields $V_{\langle r,s\rangle}^d$ with $r,s\in\mathbb{N}^*$, we have $D^k V_{\langle r,s\rangle}^d = \delta_{s+2k>0} V^d_{\langle r,s+2k\rangle}$. In particular, fields of the type $V_{\langle r,1\rangle}^d,V_{\langle r,2\rangle}^d$ are interchiral primaries, in the sense that they are annihilated by $D^{-1}$. Acting on interchiral primary fields with the interchiral algebra, we obtain the representations
+\begin{align}
+ \widetilde{\mathcal{R}}^d_{\langle r,1\rangle} = \bigoplus_{s\in 2\mathbb{N}+1} \mathcal{R}^d_{\langle r, s\rangle} \otimes \overline{\mathcal{R}}^d_{\langle r, s\rangle} 
+ \quad ,\quad 
+\widetilde{\mathcal{R}}^d_{\langle r,2\rangle} = \bigoplus_{s\in 2\mathbb{N}^*} \mathcal{R}^d_{\langle r, s\rangle} \otimes \overline{\mathcal{R}}^d_{\langle r, s\rangle}\ . 
+ \end{align}
+Finally, let us consider diagonal primary fields. By convention we assume that the left and right momentums of $V_{(r,s)}$ are $(P,\bar P)=(P_{(r,s)},P_{(-r,s)})$, so that $D^k V_{(r,s)} = V_{(r,s+2k)}$. This gives rise to interchiral representations of the type 
+\begin{align}
+ \widetilde{\mathcal{V}}_{(r,s)} = \bigoplus_{k\in\mathbb{Z}} \mathcal{V}_{P_{(r,s+2k)}}\otimes \overline{\mathcal{V}}_{P_{(-r,s+2k)}}\ . 
+\end{align}
+Using interchiral symmetry rather than conformal symmetry, spectrums \eqref{sostab} can be rewritten in terms of a smaller number of larger representations. In particular, each spectrum of an A-series or D-series minimal model is a combination of 4 (or fewer) interchiral representations. 
 
 \subsubsection{Interchiral blocks}
 
-Blocks useful in bootstrap if discrete spectrum. Not really in CFTs with 2 deg. fields such as MM: full correlator. Will focus on loop CFTs.
+Just like a Virasoro block is the sum of contributions of states in a representation of the Virasoro algebra, an \textbf{interchiral block} is associated to a representation of the interchiral algebra. For example, in the case of the representation $\widetilde{\mathcal{V}}_P$ \eqref{wvp}, the interchiral block $\widetilde{\mathcal{G}}_P$ is a linear combination of the conformal blocks $\left|\mathcal{F}_P\right|^2$, where the coefficients are dictated by shift equations. 
+
+In any 4-point function of an A-series or D-series minimal model, all $s$-channel 4-point structure constants are related by shift equations, and the 4-point function involves a single $s$-channel interchiral block. In minimal models, interchiral blocks are therefore not very useful, as they only differ from correlation functions by overall constants. On the other hand, when solving crossing symmetry equations in loop CFTs, using interchiral blocks reduces the number of unknown structure constants. We will therefore focus on computing the interchiral blocks that are relevant to loop CFTs, i.e. the interchiral blocks that package the shift equations from the degenerate field $V^d_{\langle 1,2\rangle}$.  
+
+
+
 
 Rewrite shift equation with abs. 
 
