@@ -2316,6 +2316,7 @@ When it comes to degenerate fields $V_{\langle r,s\rangle}^d$ with $r,s\in\mathb
 Finally, let us consider non-diagonal primary fields. By convention we assume that the left and right momentums of $V_{(r,s)}$ are $(P,\bar P)=(P_{(r,s)},P_{(-r,s)})$, so that $D^k V_{(r,s)} = V_{(r,s+2k)}$. This gives rise to interchiral representations of the type 
 \begin{align}
  \widetilde{\mathcal{V}}_{(r,s)} = \bigoplus_{k\in\mathbb{Z}} \mathcal{V}_{P_{(r,s+2k)}}\otimes \overline{\mathcal{V}}_{P_{(-r,s+2k)}}\ . 
+ \label{wvrs}
 \end{align}
 Using interchiral symmetry rather than conformal symmetry, spectrums \eqref{sostab} can be rewritten in terms of a smaller number of larger representations. In particular, each spectrum of an A-series or D-series minimal model is a combination of 4 (or fewer) interchiral representations. 
 
@@ -2329,10 +2330,15 @@ Just like a Virasoro block is the sum of contributions of states in a representa
 
 In any 4-point function of an A-series or D-series minimal model, all $s$-channel 4-point structure constants are related by shift equations, and the 4-point function involves a single $s$-channel interchiral block. In minimal models, interchiral blocks are therefore not very useful, as they only differ from correlation functions by overall constants. On the other hand, when solving crossing symmetry equations in loop CFTs, using interchiral blocks reduces the number of unknown structure constants. We will therefore focus on computing the interchiral blocks that are relevant to loop CFTs, i.e. the interchiral blocks that package the shift equations from the degenerate field $V^d_{\langle 1,2\rangle}$.  
 
+Let us compute $s$-channel interchiral blocks for a 4-point function of the type $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$, remembering that this also covers diagonal fields thanks to Eq. \eqref{sP}. In terms of Virasoro blocks, the interchiral block for the $s$-channel interchiral representation $\widetilde{\mathcal{V}}_{(r,s)}$ \eqref{wvrs} reads 
+\begin{align}
+ \widetilde{\mathcal{G}}_{(r,s)} = \sum_{k\in \mathbb{Z}} \frac{D^{(s)}_{(r,s+2k)}}{D^{(s)}_{(r,s)}} \mathcal{F}_{P_{(r,s+2k)}} \bar{\mathcal{F}}_{P_{(-r,s+2k)}}\ . 
+\end{align}
+To make this explicit, it remains to compute the ratios of 4-point structure constants. This is in principle a straightforward consequence of the shift equations for 3-point structure constants \eqref{sh-mp}. However, for certain values of the parameters, these shift equations 
+are finite after cancelling poles from the numerator and denominator. This problem can be avoided by writing the shift equations differently. In fact, in shifts of the reference 3-point structure constant $C^\text{ref}$ \eqref{cref}, no cancelling poles occur, thanks to the absolute values. The price to pay is that $C^\text{ref}$ only solves shift equations up to signs, see Eq. \eqref{tpt}. 
 
 
-
-Rewrite shift equation with abs. 
+Case of log blocks, text violating causality. Or say it there! 
 
 \subsection{Linear equations for 4-point structure constants}
 
