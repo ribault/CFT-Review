@@ -2008,9 +2008,14 @@ For reference 2-point structure constants of diagonal fields, we simply set $B^\
  \boxed{B^\text{ref}_{(r,s)} = \frac{(-)^{rs}}{2\sin\left(\pi(\{r\}+s)\right)\sin\left(\pi(r+\beta^{-2}s)\right)}\prod_{\pm,\pm}\Gamma_\beta^{-1}\left(\beta\pm \beta r \pm \beta^{-1}s\right)} \ ,
  \label{bref}
  \end{align}
- where $\{r\}\in\{0,\frac12\}$ is the fractional part of $r\in\frac12\mathbb{N}^*$. This is formally ill-defined if $r\in\mathbb{N}^*$ and $s\in\mathbb{Z}$, but can be regularized by taking a limit from generic values of $s$. This expression differs from the expected $C^\text{ref}_{(0,2\beta P_{(1,1)})(r,s)(r,s)}$ \eqref{bicii} by a factor which is invariant under shifts $s\to s+2$ modulo signs, 
+ where $\{r\}\in\{0,\frac12\}$ is the fractional part of $r\in\frac12\mathbb{N}^*$. This is formally ill-defined if $r\in\mathbb{N}^*$ and $s\in\mathbb{Z}$, but can be regularized by taking a limit from generic values of $s$. This expression differs from what we would expect from the relation \eqref{bicii} between 2-point and 3-point structure constants,
  \begin{align}
-  \frac{B_{(r,s)}}{C^\text{ref}_{(0,2\beta P_{(1,1)})(r,s)(r,s)}} = 
+  C^\text{ref}_{(0,2\beta P_{(1,1)})(r,s)(r,s)} =  \prod_\pm \Gamma_\beta^{-2}\left(\beta^{\pm 1}\right)\Gamma_\beta^{-1}\left(\beta^{\pm 1}+2P_{(r,s)}\right)\Gamma_\beta^{-1}\left(\beta^{\pm 1}+2P_{(r,-s)}\right)  \ .
+  \label{cref0}
+ \end{align}
+The ratio is invariant under shifts $s\to s+2$, except for the overall factor $(-)^{rs}$:
+ \begin{align}
+  \frac{B^\text{ref}_{(r,s)}}{C^\text{ref}_{(0,2\beta P_{(1,1)})(r,s)(r,s)}} = 
   \frac{(-)^{rs} 4^r}{2\sin\left(\pi(\{r\}+s)\right)}
   \prod_\pm \Gamma_\beta^{2}(\beta^{\pm 1})
   \prod_{j\overset{1}{=}1-r}^{r-1} \sin\pi(\beta^2j+s) \ .
