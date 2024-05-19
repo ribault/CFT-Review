@@ -2330,12 +2330,30 @@ Just like a Virasoro block is the sum of contributions of states in a representa
 
 In any 4-point function of an A-series or D-series minimal model, all $s$-channel 4-point structure constants are related by shift equations, and the 4-point function involves a single $s$-channel interchiral block. In minimal models, interchiral blocks are therefore not very useful, as they only differ from correlation functions by overall constants. On the other hand, when solving crossing symmetry equations in loop CFTs, using interchiral blocks reduces the number of unknown structure constants. We will therefore focus on computing the interchiral blocks that are relevant to loop CFTs, i.e. the interchiral blocks that package the shift equations from the degenerate field $V^d_{\langle 1,2\rangle}$.  
 
-Let us compute $s$-channel interchiral blocks for a 4-point function of the type $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$, remembering that this also covers diagonal fields thanks to Eq. \eqref{sP}. In terms of Virasoro blocks, the interchiral block for the $s$-channel interchiral representation $\widetilde{\mathcal{V}}_{(r,s)}$ \eqref{wvrs} reads 
+Let us compute $s$-channel interchiral blocks for the 4-point function $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$. In terms of Virasoro blocks, the interchiral block for the $s$-channel interchiral representation $\widetilde{\mathcal{V}}_{(r,s)}$ \eqref{wvrs} reads 
 \begin{align}
  \widetilde{\mathcal{G}}_{(r,s)} = \sum_{k\in \mathbb{Z}} \frac{D^{(s)}_{(r,s+2k)}}{D^{(s)}_{(r,s)}} \mathcal{F}_{P_{(r,s+2k)}} \bar{\mathcal{F}}_{P_{(-r,s+2k)}}\ . 
+ \label{gtrs}
 \end{align}
-To make this explicit, it remains to compute the ratios of 4-point structure constants. This is in principle a straightforward consequence of the shift equations for 3-point structure constants \eqref{sh-mp}. However, for certain values of the parameters, these shift equations 
-are finite after cancelling poles from the numerator and denominator. This problem can be avoided by writing the shift equations differently. In fact, in shifts of the reference 3-point structure constant $C^\text{ref}$ \eqref{cref}, no cancelling poles occur, thanks to the absolute values. The price to pay is that $C^\text{ref}$ only solves shift equations up to signs, see Eq. \eqref{tpt}. 
+To make this explicit, it remains to compute the ratios of 4-point structure constants. This is in principle a straightforward consequence of the shift equation for the 3-point structure constant \eqref{sh-mp}. However, for certain values of the parameters, this shift equation 
+is finite after cancelling poles from the numerator and denominator. Such cancellations can be avoided by writing the shift equations differently. In fact, in shifts of the reference 3-point structure constant $C^\text{ref}$ \eqref{cref}, no cancelling poles occur. The price to pay is that $C^\text{ref}$ only solves shift equations up to signs, see Eq. \eqref{tpt}. Taking these signs into account, the shift equation \eqref{sh-mp} may be rewritten as 
+\begin{multline}
+ \frac{C_{(r_1,s_1-1)(r_2,s_2)(r_3,s_3)}}{C_{(r_1,s_1+1)(r_2,s_2)(r_3,s_3)}} = (-)^{2r_3}(-)^{\max(2r_1,2r_2,2r_3,r_1+r_2+r_3)} \beta^{-4\beta^{-2}s_1} 
+ \\ \times 
+ \prod_{\epsilon_2,\epsilon_3=\pm} 
+ \frac{\Gamma\left(\frac12 + |\epsilon_2r_2+\epsilon_3 r_3-r_1| + \frac{\beta^{-2}}{2}(\epsilon_2s_2+\epsilon_3s_3-s_1)\right)}{\Gamma\left(\frac12 + |\epsilon_2r_2+\epsilon_3 r_3+r_1| + \frac{\beta^{-2}}{2}(\epsilon_2s_2+\epsilon_3s_3+s_1)\right)}\ ,
+\end{multline}
+where $2r_i, r_1+r_2+r_3\in\mathbb{Z}$ from Eq. \eqref{sriz}. The shift equation for the 2-point structure constant follows from the 3-point case via Eq. \eqref{bicii},
+\begin{align}
+ \frac{B_{(r,s-1)}}{B_{(r,s+1)}} = (-)^{2r} \beta^{-8\beta^{-2}s} \prod_{a\in \{0,1,\beta^{-2},1-\beta^{-2}\}} \frac{\Gamma(a+r-\beta^{-2}s)}{\Gamma(a+r+\beta^{-2}s)}\ . 
+\end{align}
+From these shift equations, we can assemble shift equations for 
+\begin{align}
+ D_{(r,s)}^{(s)} = \frac{C_{(r_1,s_1)(r_2,s_2)(r,s)}C_{(r,s)(r_3,s_3)(r_4,s_4)}}{B_{(r,s)}}\ , 
+\end{align}
+and therefore the coefficients of the interchiral block $ \widetilde{\mathcal{G}}_{(r,s)}$ \eqref{gtrs}. 
+
+check no poles. Deg. case. 
 
 
 Case of log blocks, text violating causality. Or say it there! 
