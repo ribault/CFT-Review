@@ -2331,13 +2331,13 @@ This fusion should also explain algebraically what is special with having $D$ sh
 
 \subsubsection{Interchiral blocks}
 
-Just like a Virasoro block is the sum of contributions of states in a representation of the Virasoro algebra, an \textbf{interchiral block} is associated to a representation of the interchiral algebra. For example, in the case of the representation $\widetilde{\mathcal{V}}_P$ \eqref{wvp}, the interchiral block $\widetilde{\mathcal{G}}_P$ is a linear combination of the conformal blocks $\left|\mathcal{F}_P\right|^2$, where the coefficients are dictated by shift equations. 
+Just like a Virasoro block is the sum of contributions of states in a representation of the Virasoro algebra, an \textbf{interchiral block} is associated to a representation of the interchiral algebra. For example, in the case of the representation $\widetilde{\mathcal{V}}_P$ \eqref{wvp}, the interchiral block $\widetilde{\mathcal{F}}_P$ is a linear combination of the conformal blocks $\left|\mathcal{F}_P\right|^2$, where the coefficients are dictated by shift equations. 
 
 In any 4-point function of an A-series or D-series minimal model, all $s$-channel 4-point structure constants are related by shift equations, and the 4-point function involves a single $s$-channel interchiral block. In minimal models, interchiral blocks are therefore not very useful, as they only differ from correlation functions by overall constants. On the other hand, when solving crossing symmetry equations in loop CFTs, using interchiral blocks reduces the number of unknown structure constants. We will therefore focus on computing the interchiral blocks that are relevant to loop CFTs, i.e. the interchiral blocks that package the shift equations from the degenerate field $V^d_{\langle 1,2\rangle}$.  
 
 Let us compute $s$-channel interchiral blocks for the 4-point function $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$. In terms of Virasoro blocks, the interchiral block for the $s$-channel interchiral representation $\widetilde{\mathcal{V}}_{(r,s)}$ \eqref{wvrs} reads 
 \begin{align}
- \widetilde{\mathcal{G}}_{(r,s)} = \sum_{k\in \mathbb{Z}} \frac{D^{(s)}_{(r,s+2k)}}{D^{(s)}_{(r,s)}} \mathcal{F}_{P_{(r,s+2k)}} \bar{\mathcal{F}}_{P_{(-r,s+2k)}}\ . 
+ \widetilde{\mathcal{F}}_{(r,s)} = \sum_{k\in \mathbb{Z}} \frac{D^{(s)}_{(r,s+2k)}}{D^{(s)}_{(r,s)}} \mathcal{F}_{P_{(r,s+2k)}} \bar{\mathcal{F}}_{P_{(-r,s+2k)}}\ . 
  \label{gtrs}
 \end{align}
 To make this explicit, it remains to compute the ratios of 4-point structure constants. This is in principle a straightforward consequence of the shift equation for the 3-point structure constant \eqref{sh-mp}. However, for certain values of the parameters, this shift equation 
@@ -2358,23 +2358,18 @@ From these shift equations, we can assemble shift equations for
 \begin{align}
  D_{(r,s)}^{(s)} = \frac{C_{(r_1,s_1)(r_2,s_2)(r,s)}C_{(r,s)(r_3,s_3)(r_4,s_4)}}{B_{(r,s)}}\ , 
 \end{align}
-and therefore the coefficients of the interchiral block $ \widetilde{\mathcal{G}}_{(r,s)}$ \eqref{gtrs}. 
+and therefore the coefficients of the interchiral block $ \widetilde{\mathcal{F}}_{(r,s)}$ \eqref{gtrs}. 
 
 The shifts of 2-point and 3-point structure constants are combinations of Gamma functions, and $\Gamma(x)$ has poles for $x\in -\mathbb{N}$.
-If all involved fields are non-diagonal, i.e. of the type $V_{(r,s)}$ with $r\in\frac12\mathbb{N}^*$ and $s\in\frac{1}{2r}\mathbb{Z}$, the arguments of the Gamma functions are not in $-\mathbb{N}$ (assuming $\beta^2\notin \mathbb{Q}$), and the shifts are finite. If however diagonal fields are involved, i.e. fields of the type $V_{(0,2\beta P)}$ with $P\in \mathbb{C}$, then we can hit the poles of one or more Gamma functions. We will consider such cases as accidental and not discuss them further, except when the $s$-channel field is a degenerate field $V^d_{\langle 1,s\rangle}$ with $s\in\mathbb{N}^*$. 
-
-In this case, the 2-point ratio \eqref{bshift} is infinite if and only if $s\in \{0,1\}$, i.e. for the shifts $P_{(1,1)}\to P_{(1,-1)}$ and $P_{(1,2)}\to P_{(1,0)}$. This means that the interchiral block does not contain terms for fields with momentums $P_{(1,-1)}$ and $P_{(1,0)}$, consistently with the fact that these fields are not degenerate. Similarly, the 3-point ratio \eqref{cshift} for $\left<V^d_{\langle 1,s\rangle}V_{(r_1,s_1)}V_{(r_2,s_2)}\right>$ vanishes for $r_1=r_2$ and $|s_1-s_2|=s$. This means that the interchiral block does not contain a term for $V^d_{\langle 1,|s_1-s_2|-1\rangle}$, consistently with the fusion rule \eqref{vdvrs}. Our 4-point function can have $s$-channel degenerate fields if and only if 
+If all involved fields are non-diagonal, i.e. of the type $V_{(r,s)}$ with $r\in\frac12\mathbb{N}^*$ and $s\in\frac{1}{2r}\mathbb{Z}$, the arguments of the Gamma functions are never in $-\mathbb{N}$ (assuming $\beta^2\notin \mathbb{Q}$), and the shifts are finite. If however diagonal fields are involved, i.e. fields of the type $V_{(0,2\beta P)}$ with $P\in \mathbb{C}$, then we can hit the poles of one or more Gamma functions. We will consider such cases as accidental and not discuss them further, except when the $s$-channel field is a degenerate field $V^d_{\langle 1,s\rangle}\sim V_{(0,-\beta^2+s)}$ with $s\in\mathbb{N}^*$. 
+In this case, the 3-point ratio \eqref{cshift} for $\left<V^d_{\langle 1,s\rangle}V_{(r_1,s_1)}V_{(r_2,s_2)}\right>$ vanishes if $r_1=r_2$ and $|s_1-s_2|=s$. This means that the interchiral block does not contain a term for $V^d_{\langle 1,|s_1-s_2|-1\rangle}$, consistently with the fusion rule \eqref{vdvrs}. Our 4-point function can have $s$-channel degenerate fields if and only if 
 \begin{align}
  r_1=r_2 \quad , \quad r_3=r_4 \quad , \quad s_1-s_2,s_3-s_4\in \mathbb{Z} \quad , \quad s_3-s_4\equiv s_3-s_4\bmod 2\ , 
 \end{align}
 in which case the degenerate interchiral block is 
 \begin{align}
- \widetilde{\mathcal{G}}^d = \sum_{k\in 2\mathbb{N}} \frac{D^{(s)}_{(1,s_0+2k)}}{D^{(s)}_{(1,s_0)}}\left| \mathcal{F}_{P_{(1,s_0+2k)}} \right|^2\ ,  \quad \text{with} \quad s_0 =  \max(|s_1-s_2|,|s_3-s_4|)+1\ . 
+ \widetilde{\mathcal{F}}^d = \sum_{k\in 2\mathbb{N}} \frac{D^{(s)}_{(1,s_0+2k)}}{D^{(s)}_{(1,s_0)}}\left| \mathcal{F}_{P_{(1,s_0+2k)}} \right|^2\ ,  \quad \text{with} \quad s_0 =  \max(|s_1-s_2|,|s_3-s_4|)+1\ . 
 \end{align}
-
-
-
-Case of log blocks, text violating causality. Or say it there! 
 
 \subsection{Linear equations for 4-point structure constants}
 
