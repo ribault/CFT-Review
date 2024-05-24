@@ -59,6 +59,21 @@ Then the pillow geometry can be uniquely deduced from the block. The pillow is i
 
 \section{Pillow geometry}
 
+The pillow is 
+\begin{align}
+ \left\{x,y\in \overline{\mathbb{C}}^2\middle| y^2=x(x-1)(x-z) \right\}\bmod (y\to -y)
+\end{align}
+The pillow metric is $dud\bar u$ where $u$ is defined by 
+\begin{align}
+ du = \frac{1}{\theta_3(q)^2} \frac{dx}{y}
+\end{align}
+Here $dx^2$ is the flat metric on the Riemann sphere $\overline{\mathbb{C}}$. The pillow is a flat torus, with the curvature concentrated at the 4 singularities $x=0,1,z,\infty$. The normalization factor $\theta_3(q)^2$ is determined by the condition that the $s$-cycle of the torus has length $2\pi$. By $s$-cycle we mean a cycle that separates $0,z$ from $1,\infty$:
+\begin{align}
+ 2\pi = \oint du \quad \implies \quad 2\pi\theta_3(q)^2 = \oint \frac{dx}{y}
+\end{align}
+
+(Check: is this really a holo integral?)
+
 
 Deduce $\Omega(q)$ in \eqref{fd}. Factorized.
 
