@@ -1,0 +1,33 @@
+
+\documentclass[12pt,a4paper]{article}
+
+\RequirePackage[l2tabu, orthodox]{nag}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\newcommand \versionno{\jobname.tex}
+
+\usepackage[margin=20mm]{geometry}
+
+\usepackage{showkeys}
+
+\usepackage[colorlinks=true,linktoc=all,linkcolor=black,citecolor=red,urlcolor=blue]{hyperref}
+
+\begin{document}
+
+\typeout{}\typeout{\versionno}\typeout{} \begin{center} \fbox{\texttt{\versionno\ -- } {\small \today\ }} \end{center}
+
+\vspace{2mm}
+
+\begin{center}
+ \textit{ \Huge Conformal blocks and the pillow geometry}
+\end{center}
+
+%\tableofcontents
+
+\bibliographystyle{cft}
+\bibliography{cft}
+
+\end{document}
+
