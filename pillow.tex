@@ -8,6 +8,8 @@
 
 \newcommand \versionno{\jobname.tex}
 
+\usepackage{amsmath,amssymb,amsfonts,amscd,latexsym,amsthm}
+
 \usepackage[margin=20mm]{geometry}
 
 \usepackage{showkeys}
@@ -24,7 +26,41 @@
  \textit{ \Huge Conformal blocks and the pillow geometry}
 \end{center}
 
-%\tableofcontents
+\tableofcontents
+
+\section{Introduction}
+
+The aim of this note is to provide a derivation of Zamolodchikov's formula for sphere 4-point blocks by recursion in the channel dimension. Zamolodchikov's original derivation \cite{zam87b} is based on the heavy asymptotic limit. Several steps in the derivation are hard to justify, starting with the appearance of a differential equation. Moreover, it seems overly complicated to use the heavy limit, when we are really interested in the limit where the channel dimension is large, while the other dimensions and the central charge are finite. 
+
+An geometrical interpretation of Zamolodchikov's formula was proposed in \cite{msz15}, in terms of the pillow geometry. Here we would like to use this interpretation for deriving the formula. By deriving we mean proving although not with full mathematical rigor: in particular, we assume without proof that the conformal blocks exist and that the recursion converges. By deriving we also mean justifying as simply as possible where the formulas come from. Ideally this would involve uniquely characterizing the pillow geometry in terms of properties that imply that blocks are ``nice'' in the pillow coordinates. 
+
+It is relatively easy to determine the poles and residues of the $s$-channel conformal block $\mathcal{F}_\Delta$ as a function of the channel dimension $\Delta$. To prove the recursion, it remains to determine the $\Delta\to\infty$ asymptotic behaviour. The basic property that we need is 
+\begin{align}
+ \log \mathcal{F}_\Delta = O(\Delta)
+\end{align}
+This is not obvious at all from the pedestrian $z$-expansion of the block, which is of the type 
+\begin{align}
+ \mathcal{F}_\Delta = z^{\Delta-\Delta_1-\Delta_2}\sum_{k=0}^\infty O(\Delta^k) z^k 
+\end{align}
+Taking the log must therefore lead to cancellations of terms in $O(\Delta^{j\geq 2})$. To order $z^k$ we need $k-1$ cancellations. This is already nontrivial in the case $k=2$. A direct pedestrian approach to all orders looks doomed. Maybe it would be feasible in the AGT representation of blocks, but we are looking for a more elementary approach. 
+
+We want to prove that the block is of the type 
+\begin{align}
+ \mathcal{F}_\Delta = (16q)^\Delta \Omega(q)S_\Delta(q) \qquad \text{with} \qquad S_\Delta(q) =  1 + \sum_{k=1}^\infty c_k q^k 
+ \label{fd}
+\end{align}
+The property of the series $S_\Delta$ that we need can be formulated in several ways:
+\begin{itemize}
+ \item $\lim_{\Delta\to \infty} c_k = 0$
+ \item Bulk fields are negligible as $\Delta\to\infty$, i.e. $\lim_{\Delta\to\infty} S_\Delta(q)$ is $\Delta_i$-independent (and can therefore be computed at $\Delta_i=0$). 
+\end{itemize}
+Then the pillow geometry can be uniquely deduced from the block. The pillow is indeed characterized by $q(z)= \frac{1}{16} \exp \lim_{\Delta\to \infty} \frac{\log \mathcal{F}_\Delta}{\Delta}$. 
+
+
+\section{Pillow geometry}
+
+
+Deduce $\Omega(q)$ in \eqref{fd}. Factorized.
 
 \bibliographystyle{cft}
 \bibliography{cft}
