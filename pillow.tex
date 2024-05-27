@@ -122,6 +122,42 @@ In pillow coordinates, we therefore expect
  h_L = \frac{\left< LV_{\Delta}(0)V_{\Delta_1}(\pi(\tau+1))V_{\Delta_2}(\pi\tau)\right>}{\left< V_{\Delta}(0)V_{\Delta_1}(\pi(\tau+1))V_{\Delta_2}(\pi\tau)\right>}
 \end{align}
 
+\section{Second-order terms}
+
+Let us compute 
+\begin{align}
+ c_2 = \frac{R_{1,1}^2}{\Delta} +\frac{R_{1,2}}{\Delta-\Delta_{(1,2)}} + \frac{R_{2,1}}{\Delta-\Delta_{(2,1)}}
+\end{align}
+with the residues 
+\begin{align}
+ R_{1,1} = \tfrac12 (\Delta_1-\Delta_2)(\Delta_4-\Delta_3) 
+ \end{align}
+ \begin{multline}
+   R_{2,1} = \frac{1}{4(\beta^4-1)}\left[(\Delta_2-\Delta_1)^2 -\tfrac12 \beta^2(\Delta_1+\Delta_2) -\tfrac{1}{16}(\beta^2-2)(3\beta^2-2)\right] 
+   \\
+\times \left[(\Delta_3-\Delta_4)^2 -\tfrac12 \beta^2(\Delta_3+\Delta_4) -\tfrac{1}{16}(\beta^2-2)(3\beta^2-2)\right] 
+ \end{multline}
+ where $c=13-6\beta^2-6\beta^{-2}$ is the central charge. 
+We want to reduce $c_2$ to the same denominator. We compute 
+\begin{multline}
+ R_{2,1}+R_{1,2} = -\frac14 (\Delta_2-\Delta_1)^2(\Delta_3-\Delta_4)^2 +\frac{1}{16}(\Delta_1+\Delta_2)(\Delta_3+\Delta_4) 
+ \\
+ +\frac{1}{64} \left[(\Delta_2-\Delta_1)^2+(\Delta_3-\Delta_4)^2\right] -\frac{1}{256}(c+3)(\Delta_1+\Delta_2+\Delta_3+\Delta_4) + \frac{1}{4096}(c+1)(c+5)
+\end{multline}
+\begin{multline}
+ 4\left[\Delta_{(1,2)}R_{2,1}+\Delta_{(2,1)}R_{1,2}\right] = \frac{c-9}{8} (\Delta_2-\Delta_1)^2(\Delta_3-\Delta_4)^2 
+ \\
+ +\frac38 \left[(\Delta_1+\Delta_2)(\Delta_3-\Delta_4)^2+(\Delta_3+\Delta_4)(\Delta_1-\Delta_2)^2\right] 
+ -\frac18(\Delta_1+\Delta_2)(\Delta_3+\Delta_4) 
+ \\
+ -\frac{c}{32}\left[(\Delta_2-\Delta_1)^2+(\Delta_3-\Delta_4)^2\right] +\frac{c}{128}(\Delta_1+\Delta_2+\Delta_3+\Delta_4) + \frac{c(1-c)}{2048}
+\end{multline}
+This leads to 
+\begin{multline}
+ (\Delta-\Delta_{(2,1)})(\Delta-\Delta_{(1,2)}) c_2 = R_{1,1}^2\frac{2+\frac{c}{4\Delta}}{4} + \cdots \\
+\end{multline}
+
+
 
 
 
