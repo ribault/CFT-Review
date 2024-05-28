@@ -67,6 +67,7 @@ The pillow is
 The pillow metric is $dud\bar u$ where $u\equiv u+2\pi \equiv u+2\pi\tau$ is defined by 
 \begin{align}
  du = \frac{1}{\theta_3(q)^2} \frac{dx}{y} \quad \text{with} \quad q=e^{i\pi\tau}
+ \label{dudx}
 \end{align}
 Here $dx^2$ is the flat metric on the Riemann sphere $\overline{\mathbb{C}}$. The pillow is a flat torus, with the curvature concentrated at the 4 singularities $x=0,1,z,\infty$. The normalization factor $\theta_3(q)^2$ is determined by the condition that the $s$-cycle of the torus has length $2\pi$. By $s$-cycle we mean a cycle that separates $0,z$ from $1,\infty$:
 \begin{align}
@@ -85,41 +86,58 @@ The correspondence between coordinates acts as:
    \hline 
  \end{array}
 \end{align}
+Special cases of the relations between $q,\tau,z$:
+\begin{align}
+ \renewcommand{\arraystretch}{1.5}
+ \begin{array}{|c||c|c|c|}
+ \hline 
+  z & 0 & 1 & \infty 
+  \\
+  \hline 
+  q & 0 & 1 & i 
+  \\
+  \hline 
+  \tau & i\infty & 0 & 1 
+  \\
+  \hline 
+ \end{array}
+\end{align}
 The factor $\Omega(q)$ in \eqref{fd} is deduced from the conformal transformation to $x,y\to u$. This explains in particular why it is factorized as a function of $\Delta_i$. 
 
 \section{Ward identities}
 
-In the $z$-coordinate, the behaviour \eqref{fk} of the block's coefficients follows from their calculation from Ward identities. Schematically, we have 
+In the $z$-coordinate, the behaviour \eqref{fk} of the block's coefficients follows from their calculation from Ward identities:
 \begin{align}
- f_k = \sum_{|L|=k} \frac{g_L(\Delta,\Delta_1,\Delta_2)g_L(\Delta,\Delta_4,\Delta_3)}{b_L(\Delta)} 
+ f_k = \sum_{|L|=|L'|=k} G^{-1}_{L,L'}(\Delta) g_L(\Delta,\Delta_1,\Delta_2)g_{L'}(\Delta,\Delta_4,\Delta_3)
 \end{align}
 where the sum is over creation operators $L=\prod_{i=1}^m L_{-n_i}$ of level $k=\sum n_i$, with 
 \begin{align}
- \deg_\Delta b_L = \deg_\Delta g_L =m\leq k
+ \deg_\Delta g_L = m\leq k
 \end{align}
 For example, at level $k=1$, we have 
 \begin{align}
- g_{L_{-1}} = \Delta + \Delta_1-\Delta_2 \quad , \quad b_{L_{-1}} = 2\Delta 
+ g_{L_{-1}} = \Delta + \Delta_1-\Delta_2 \quad , \quad G^{-1}_{L_{-1},L_{-1}} = \frac{1}{2\Delta} 
 \end{align}
 We expect that the coefficients $c_k$ of the $q$-expansion \eqref{fd} can be similarly computed as sums over a basis of a Verma module, 
 \begin{align}
- c_k = \sum_{|L|=k} \frac{h_L(\Delta,\Delta_1,\Delta_2)h_L(\Delta,\Delta_4,\Delta_3)}{b_L(\Delta)} 
+ c_k = \sum_{|L|=|L'|=k} G^{-1}_{L,L'}(\Delta) h_L(\Delta,\Delta_1,\Delta_2)h_L(\Delta,\Delta_4,\Delta_3)
 \end{align}
-where now we expect 
-\begin{align}
- \deg_\Delta h_L = 0 
-\end{align}
-Is the denominator really $b_L(\Delta)$ again? 
-
 How do we compute $g_L,h_L$? In the case of $g_L$, we have 
 \begin{align}
  g_L = \frac{\left< LV_{\Delta}(0)V_{\Delta_1}(1)V_{\Delta_2}(\infty)\right>}{\left< V_{\Delta}(0)V_{\Delta_1}(1)V_{\Delta_2}(\infty)\right>}
 \end{align}
-This is a sphere 3-point function, because by cutting the sphere along an $s$-loop, we again obtain two spheres. However, by cutting the pillow along an $s$-loop, we only obtain two half-pillows. A half-pillow 
+This is a sphere 3-point function, as a result of sending $z\to 0$ in a sphere 4-point function. In the pillow, the corresponding limit is $\tau\to i\infty$, leading to an infinite cylinder quotiented by $\mathbb{Z}_2$. 
 
-In pillow coordinates, we therefore expect
+Proposed relation between the infinite half-pillow and the $x$-sphere:
 \begin{align}
- h_L = \frac{\left< LV_{\Delta}(0)V_{\Delta_1}(\pi(\tau+1))V_{\Delta_2}(\pi\tau)\right>}{\left< V_{\Delta}(0)V_{\Delta_1}(\pi(\tau+1))V_{\Delta_2}(\pi\tau)\right>}
+ du = \frac{dx}{\sqrt{x(1-x)}} = \frac{2dx}{\sin u} \quad , \quad 4x(1-x) = \sin^2u \quad , \quad x = \cos^2\tfrac{u}{2}
+\end{align}
+But this is the $z\to\infty$ limit of Eq. \eqref{dudx}, instead of $z\to 0$! 
+
+
+In pillow coordinates, we expect
+\begin{align}
+ h_L = \frac{\left< LV_{\Delta}(i\infty)V_{\Delta_1}(0)V_{\Delta_2}(\pi)\right>}{\left< V_{\Delta}(i\infty)V_{\Delta_1}(0)V_{\Delta_2}(\pi)\right>}
 \end{align}
 
 \section{Second-order terms}
@@ -154,7 +172,7 @@ We want to reduce $c_2$ to the same denominator. We compute
 \end{multline}
 This leads to 
 \begin{multline}
- (\Delta-\Delta_{(2,1)})(\Delta-\Delta_{(1,2)}) c_2 = R_{1,1}^2\frac{2+\frac{c}{4\Delta}}{4} + \cdots \\
+ (\Delta-\Delta_{(2,1)})(\Delta-\Delta_{(1,2)}) c_2 = R_{1,1}^2\frac{2+\frac{c}{4\Delta}}{4} + \cdots d \\
 \end{multline}
 
 
