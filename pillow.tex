@@ -128,6 +128,7 @@ G^{-1} = \frac{1}{16(\Delta-\Delta_{(2,1)})(\Delta-\Delta_{(1,2)})} \begin{bmatr
 We expect that the coefficients $c_k$ of the $q$-expansion \eqref{fd} can be similarly computed as sums over a basis of a Verma module, 
 \begin{align}
  c_k = \sum_{|L|=|L'|=k} G^{-1}_{L,L'}(\Delta) h_L(\Delta,\Delta_1,\Delta_2)h_L(\Delta,\Delta_4,\Delta_3)
+ \label{ghh}
 \end{align}
 How do we compute $g_L,h_L$? In the case of $g_L$, we have 
 \begin{align}
@@ -170,7 +171,7 @@ This is $\Delta$-independent for $n$ odd but not for $n$ even. Should $\Delta$ r
 \begin{align}
  h_{L_{-1}^2} = 4(\Delta_1-\Delta_2)(\Delta+\Delta_1-\Delta_2)
 \end{align}
-
+Problem: $h_{L_{-2}},h_{L_{-1}^2} = O(\Delta)$ would lead to $c_2 = O(\Delta)$. 
 
 \section{Second-order terms}
 
@@ -178,37 +179,51 @@ Let us compute
 \begin{align}
  c_2 = \frac{R_{1,1}^2}{\Delta} +\frac{R_{1,2}}{\Delta-\Delta_{(1,2)}} + \frac{R_{2,1}}{\Delta-\Delta_{(2,1)}}
 \end{align}
-with the residues 
+We introduce the notations 
 \begin{align}
- R_{1,1} = \tfrac12 (\Delta_1-\Delta_2)(\Delta_4-\Delta_3) 
+ \gamma = (\Delta_1-\Delta_2)^2 \ , \ \sigma = \Delta_1+\Delta_2 \ , \ \bar\gamma = (\Delta_4-\Delta_3)^2 \ , \ \bar\sigma = \Delta_4+\Delta_3 
+\end{align}
+and the modulus square notation $|f|^2 = f\bar f$. 
+We compute the residues 
+\begin{align}
+ R_{1,1} = \tfrac12 (\Delta_1-\Delta_2)(\Delta_4-\Delta_3)  = \tfrac12 |\gamma| 
  \end{align}
- \begin{multline}
-   R_{2,1} = \frac{1}{4(\beta^4-1)}\left[(\Delta_2-\Delta_1)^2 -\tfrac12 \beta^2(\Delta_1+\Delta_2) -\tfrac{1}{16}(\beta^2-2)(3\beta^2-2)\right] 
+ \begin{align}
+   R_{2,1} &= \frac{1}{4(\beta^4-1)}\left[(\Delta_2-\Delta_1)^2 -\tfrac12 \beta^2(\Delta_1+\Delta_2) -\tfrac{3}{16}\beta^4+\tfrac12\beta^2-\tfrac14\right] 
    \\
-\times \left[(\Delta_3-\Delta_4)^2 -\tfrac12 \beta^2(\Delta_3+\Delta_4) -\tfrac{1}{16}(\beta^2-2)(3\beta^2-2)\right] 
- \end{multline}
+ & \hspace{2cm} \times \left[(\Delta_3-\Delta_4)^2 -\tfrac12 \beta^2(\Delta_3+\Delta_4) -\tfrac{3}{16}\beta^4+\tfrac12\beta^2-\tfrac14\right] 
+ \\
+  &= \frac{1}{4(\beta^4-1)}\left|\gamma -\tfrac12 \beta^2 \sigma -\tfrac{3}{16}\beta^4+\tfrac12\beta^2-\tfrac14\right|^2 
+ \end{align}
  where $c=13-6\beta^2-6\beta^{-2}$ is the central charge. 
 We want to reduce $c_2$ to the same denominator. We compute 
+\begin{align}
+ 8(R_{2,1}+R_{1,2})= -2 |\gamma|^2 +\tfrac{1}{2}|\sigma|^2
+ +\tfrac{1}{8} (\gamma+\bar\gamma) -\tfrac{c+3}{32}(\sigma+\bar\sigma) + \tfrac{(c+1)(c+5)}{512}
+\end{align}
+\begin{align}
+ 12(\beta^2R_{1,2}+\beta^{-2}R_{2,1}) = \tfrac{c-13}{2}|\gamma|^2 +\tfrac32(\sigma\bar\gamma+\bar\sigma\gamma)+\tfrac{1-c}{8}(\gamma+\bar\gamma) -\tfrac{3}{32}(\sigma+\bar\sigma)+\tfrac{7c+5}{512}
+\end{align}
+\begin{align}
+ (\Delta-\Delta_{(2,1)})(\Delta-\Delta_{(1,2)}) = \Delta^2 + \tfrac{c-5}{8}\Delta + \tfrac{c}{16}
+\end{align}
 \begin{multline}
- R_{2,1}+R_{1,2} = -\frac14 (\Delta_2-\Delta_1)^2(\Delta_3-\Delta_4)^2 +\frac{1}{16}(\Delta_1+\Delta_2)(\Delta_3+\Delta_4) 
+ 16(\Delta-\Delta_{(2,1)})(\Delta-\Delta_{(1,2)}) c_2 = |\gamma|^2\left(4\Delta + \tfrac{c-5}{2} + \tfrac{c}{4\Delta}\right)
  \\
- +\frac{1}{64} \left[(\Delta_2-\Delta_1)^2+(\Delta_3-\Delta_4)^2\right] -\frac{1}{256}(c+3)(\Delta_1+\Delta_2+\Delta_3+\Delta_4) + \frac{1}{4096}(c+1)(c+5)
-\end{multline}
-\begin{multline}
- 4\left[\Delta_{(1,2)}R_{2,1}+\Delta_{(2,1)}R_{1,2}\right] = \frac{c-9}{8} (\Delta_2-\Delta_1)^2(\Delta_3-\Delta_4)^2 
- \\
- +\frac38 \left[(\Delta_1+\Delta_2)(\Delta_3-\Delta_4)^2+(\Delta_3+\Delta_4)(\Delta_1-\Delta_2)^2\right] 
- -\frac18(\Delta_1+\Delta_2)(\Delta_3+\Delta_4) 
- \\
- -\frac{c}{32}\left[(\Delta_2-\Delta_1)^2+(\Delta_3-\Delta_4)^2\right] +\frac{c}{128}(\Delta_1+\Delta_2+\Delta_3+\Delta_4) + \frac{c(1-c)}{2048}
+ +8(2\Delta+1)(R_{2,1}+R_{1,2}) -12(\beta^2R_{1,2}+\beta^{-2}R_{2,1})
 \end{multline}
 This leads to 
 \begin{multline}
- (\Delta-\Delta_{(2,1)})(\Delta-\Delta_{(1,2)}) c_2 = R_{1,1}^2\frac{2+\frac{c}{4\Delta}}{4} + \cdots d \\
+ 16(\Delta-\Delta_{(2,1)})(\Delta-\Delta_{(1,2)}) c_2 = \left(2+\frac{c}{4\Delta}\right)|\gamma|^2 
+ -\tfrac32(\gamma\bar\sigma + \bar\gamma\sigma)+\tfrac{c-1}{8}(\gamma+\bar\gamma)+\tfrac{3}{32}(\sigma+\bar\sigma)-\tfrac{7c+5}{512}
+ \\
+ + (2\Delta+1)\left[\tfrac12|\sigma|^2 +\tfrac18 (\gamma+\bar\gamma) -\tfrac{c+3}{32}(\sigma+\bar\sigma)+\tfrac{(c+1)(c+5)}{512}\right] \\
 \end{multline}
-
-
-
+This is not the type \eqref{ghh} with $\Delta$-independent $h_L$. If it was, we would have to explain how the $c$-dependence arises from the Ward identities. To bring it closer we can rewrite it as 
+\begin{multline}
+ 16(\Delta-\Delta_{(2,1)})(\Delta-\Delta_{(1,2)}) c_2 = \left(2+\frac{c}{4\Delta}\right)|\gamma|^2  -\Re\left[(\gamma-\tfrac{1}{16})(3\bar \sigma +\tfrac{1-c}{4})\right] +\tfrac{c-13}{512}
+ \\ + (2\Delta+1)\left[\tfrac12 \left|\sigma -\tfrac{c+3}{16}\right|^2 +\tfrac14\Re\gamma -\tfrac{1}{128}\right]
+\end{multline}
 
 
 
