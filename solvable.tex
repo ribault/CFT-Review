@@ -1467,7 +1467,39 @@ Each one of these CFTs has
   \label{nQ}
  \end{align}
 \end{itemize}
-Degenerate fields are invariant under global symmetries, while other fields can transform in non-trivial representations \cite{jrs22, rjrs24}. For example, in the $O(n)$ CFT, the fields $V_{(\frac12,0)},V_{(1,0)}$ and $V_{(1,1)}$ transform under $O(n)$ as a vector, a symmetric 2-tensor and an antisymmetric 2-tensor respectively. There are two fields of the type $V_{(\frac32,0)}$, which transform as symmetric and antisymmetric 3-tensors. And for $r\geq \frac52$, it also happens that several different fields have the same conformal dimensions and the same behaviour under $O(n)$, for example there are 2 fields of type $V_{(\frac52,0)}$ that transform in the irreducible representation corresponding to the Young diagram $(2,1)$. The situation is similar in the $U(n)$ and Potts CFTs: let us only mention that the diagonal non-degenerate fields $V_{P_{(0,s)}}$ of the Potts CFT transform in the standard  representation of $S_Q$, whose dimension is $Q-1$. 
+Degenerate fields are invariant under global symmetries, while other fields can transform in non-trivial representations \cite{jrs22, rjrs24}. 
+
+For example, in the $O(n)$ CFT, the fields $V_{(\frac12,0)},V_{(1,0)}$ and $V_{(1,1)}$ transform under $O(n)$ as a vector, a symmetric 2-tensor and an antisymmetric 2-tensor respectively. There are two fields of the type $V_{(\frac32,0)}$, which transform as symmetric and antisymmetric 3-tensors. Let us diplay the behaviour of these fields and a few more, while writing finite-dimensional irreducible representations of $O(n)$ as Young diagrams:
+\begin{subequations}
+\label{von}
+\begin{align}
+ V_{(\frac12,0)} &: [1]\ , \label{lhz}
+ \\
+ V_{(1,0)} &: [2]\ ,
+ \\
+ V_{(1,1)} &: [11]\ , \label{loo}
+ \\
+ V_{(\frac32,0)}&: [3]+[111]\ ,
+\label{l320}
+\\
+V_{(\frac32,\frac23)} &: [21]\ ,
+\label{l3223}
+\\
+V_{(2,0)}&: [4]+[22]+[211]+[2]+[]\ ,
+\label{l20}
+\\
+V_{(2,\frac12)}& : [31]+[211]+[11]\ ,
+\\
+V_{(2,1)} &: [31]+[22]+[1111]+[2]\ ,
+\label{l21}
+\\
+V_{(\frac52,0)} &: [5]+[32]+2[311]+[221]+[11111]+[3]+2[21]+[111]+[1]\ .
+\label{l52}
+\end{align}
+\end{subequations}
+In particular, there are 2 fields of type $V_{(\frac52,0)}$ that transform in the irreducible representation $[311]$, and also 2 fields that transform in $[21]$. This is a first hint that field multiplicities become larger as the first index of $V_{(r,s)}$ increases. 
+
+The situation is similar in the $U(n)$ and Potts CFTs: let us only mention that the diagonal non-degenerate fields $V_{P_{(0,s)}}$ of the Potts CFT transform in the standard  representation of $S_Q$, whose dimension is $Q-1$. 
 
 
 \subsection{Completing the picture}
@@ -3070,6 +3102,49 @@ d^{(s)}_{(\frac52, \frac45)}
 \end{align}
 \end{subequations}
 The coefficients of these polynomials are trigonometric numbers, related to the values of the second Kac index. 
+
+\subsection{What about global symmetry groups?}
+
+As we stated in Section \ref{sec:models}, the $O(n)$, $U(n)$ and Potts CFTs have global symmetries, described by the groups $O(n)$, $U(n)$ and $S_Q$ respectively. Usually, in physics, we would expect such unbroken symmetries to have a strong influence. Models with different symmetry groups would behave differently, and we would formulate our analysis in group-theoretic language: spectrums as representations, correlation functions as invariant tensors. 
+
+However, the $O(n)$, $U(n)$ and Potts CFTs share many conformal dimensions and even some correlation functions.
+Surely this is because they are all formulated in terms of similar loop ensembles, see Section \ref{sec:coup}.
+Moreover, if we decompose the spectrum of the $O(n)$ CFT into of $O(n)$ representations, as we sketched in Eq. \eqref{von}, we find that a primary field $V_{(r,s)}$ with a given conformal dimension generally does not transform in an irreducible representation, but in a larger representation. This is a hint that the model's global symmetry is larger than the group $O(n)$. 
+
+The origin of this larger symmetry is the requirement that loops do not intersect, as can be seen in the context of lattice models \cite{jrs22}. The lattice $O(n)$ model describes the dynamics of a periodic spin chain of length $L\in\mathbb{N}$, whose space of states is $\mathcal{H}_L=\left(\mathbb{R}^n\right)^{\otimes L}$. In the linear group $GL(\mathcal{H}_L)$, the commutant of $O(n)$ is the Brauer algebra $\mathcal{B}_L$, a diagram algebra where loops are allowed to intersect. Forbidding intersections, we would obtain a subalgebra of $\mathcal{B}_L$. The commutant of that subalgebra is larger than $O(n)$, and may be thought of as the symmetry algebra of the lattice $O(n)$ model.
+
+Invariant tensors of $O(n)$ can be represented in terms of loops that encode contractions of indices: for example, given 4 vectors $v_1,v_2,v_3,v_4\in \mathbb{R}^n$, we can build the 3 invariants 
+\begin{align}
+\begin{tikzpicture}[baseline=(base), scale = .4]
+  \vertices
+  \draw (0, 0) node [left]{$1$} -- (0, 3) node[left]{$2$};
+  \draw (3, 0) node [right]{$4$} -- (3, 3) node[right]{$3$};
+  \node at (1.5, -2) {$(v_1\cdot v_2)(v_3\cdot v_4)$};
+ \end{tikzpicture}
+ \hspace{2cm}
+ \begin{tikzpicture}[baseline=(base), scale = .4]
+  \vertices
+ \draw (0, 3) -- (3, 3) ;
+ \draw (0,0) -- (3,0);
+ \node at (1.5, -2) {$(v_1\cdot v_4)(v_2\cdot v_3)$};
+ \end{tikzpicture}
+ \hspace{2cm}
+ \begin{tikzpicture}[baseline=(base), scale = .4]
+  \vertices
+ \draw (0, 3) -- (3, 0) ;
+  \draw (3, 3) -- (0, 0);
+  \node at (1.5, -2) {$(v_1\cdot v_3)(v_2\cdot v_4)$};
+ \end{tikzpicture}
+\end{align}
+where $(v_i\cdot v_j)$ is the scalar product of two elements of the vector representation $\mathbb{R}^n$ of $O(n)$, in other words the image of $v_i\otimes v_j$ under the equivariant map from $\mathbb{R}^n\otimes \mathbb{R}^n$ to the identity representation. In order to represent all invariant tensors, we must allow loops to intersect: the geometry of the plane where we draw the loops is not relevant to representation theory. Forbidding intersections amounts to eliminating the invariant tensors that violate the larger symmetry. 
+
+When it comes to a 4-point function $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$, the number of 4-point invariant tensors is larger than the number of solutions of crossing symmetry (= the number of combinatorial maps). If $\sum r_i = 2, 3$ these numbers actually coincide, while if $\sum r_i\geq 4$ the inequality becomes strict in most cases (for example, $6>5$ for $\big\langle V_{(\frac32,0)}^2V_{(\frac12,0)}^2\big\rangle$), as the number of solutions grows much slower with $\sum r_i$ \cite{gjnrs23}. The reason for this slower growth is not only that the symmetry is larger than $O(n)$, but also that an OPE of 2 primary fields has no reason to include all the primary fields that are allowed by $O(n)$ symmetry, 
+
+In $d\geq 3$ dimensions, the $O(n)$ and $U(n)$ models can still be formulated in terms of loops, but the question of whether two loops intersect makes no sense macroscopically. The case $d\geq 3$ is therefore similar to the case $d=2$ with intersecting loops, and we expect no larger symmetry. For any conformal dimension that appears in the spectrum, we expect that there exists one primary field that transforms in an irreducible representation of $O(n)$ or $U(n)$. On the other hand, for any irreducible representation of $O(n)$ or $U(n)$, we expect that there exists infinitely many primary fields, whose conformal dimensions are all different.
+Moreover, in the Potts model, the boundaries of clusters are no longer loops, and we do not expect the Potts model to share non-trivial conformal dimensions with the $O(n)$ or $U(n)$ model. 
+
+
+
 
 \bibliographystyle{cft}
 \bibliography{cft}
