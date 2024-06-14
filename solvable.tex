@@ -869,8 +869,8 @@ The $s$-channel decomposition \eqref{sdec} reduces the 4-point function to a com
   \\ \hline 
   \text{4-point} & D^{(s)}_k = C_{12}^k C_{k34} & D^{(t)}_k = C_{41}^k C_{k23} & D^{(u)}_k = C_{13}^k C_{k42}
 \\ \hline 
-  \text{Asymptotics} & \mathcal{F}^{(s)}_{\Delta}\underset{z\to 0}{\sim} z^{\Delta-\Delta_1-\Delta_2} & \mathcal{F}^{(t)}_{\Delta}\underset{z\to 1}{\sim} (1-z)^{\Delta-\Delta_1-\Delta_4}
-  & \mathcal{F}^{(u)}_\Delta  \underset{z\to \infty}{\sim} \left(\tfrac{1}{z}\right)^{\Delta+\Delta_1-\Delta_3}
+  \text{Asymptotics} & {\scriptstyle \mathcal{F}^{(s)}_{\Delta}(z)\ \underset{z\to 0}{\sim}\ z^{\Delta-\Delta_1-\Delta_2}} & {\scriptstyle\mathcal{F}^{(t)}_{\Delta}(z)\ \underset{z\to 1}{\sim}\ (1-z)^{\Delta-\Delta_1-\Delta_4}}
+  & {\scriptstyle\mathcal{F}^{(u)}_\Delta(z)\  \underset{z\to \infty}{\sim}\ \left(\tfrac{1}{z}\right)^{\Delta+\Delta_1-\Delta_3}}
   \\
   \hline 
 \text{Diagram} & 
@@ -899,12 +899,12 @@ The $s$-channel decomposition \eqref{sdec} reduces the 4-point function to a com
 \end{align}
 In order to write these decompositions in greater generality, let us define the $x$-channel \textbf{conformal blocks} as 
 \begin{align}
- \mathcal{G}^{(x)}_{\Delta,\bar\Delta} = \left|\mathcal{F}_{\Delta}^{(x)}\right|^2\ , \qquad (x=s,t,u)\ . 
+ \mathcal{G}^{(x)}_{\Delta,\bar\Delta}(z) = \left|\mathcal{F}_{\Delta}^{(x)}(z)\right|^2\ , \qquad (x=s,t,u)\ . 
  \label{gf2}
 \end{align}
 Our conformal blocks are chirally factorized into Virasoro blocks because of our assumption that all fields are primaries or descendants. However, representations of the conformal algebra that are not factorized give rise to blocks that are also not factorized: this is the case with the logarithmic blocks of Section \ref{sec:log}. We now write the \textbf{crossing symmetry equations} as the equality between the 3 decompositions of a four-point function into structure constants and conformal blocks:
 \begin{align}
- \boxed{\sum_{k\in\mathcal{S}} D_k^{(s)} \mathcal{G}^{(s)}_{\Delta_k,\bar\Delta_k} = \sum_{k\in\mathcal{S}} D_k^{(t)} \mathcal{G}^{(t)}_{\Delta_k,\bar\Delta_k} = \sum_{k\in\mathcal{S}} D_k^{(u)} \mathcal{G}^{(u)}_{\Delta_k,\bar\Delta_k}} \ . 
+ \boxed{\forall z\in \overline{\mathbb{C}}\backslash\{0,1,\infty\} \ , \quad \sum_{k\in\mathcal{S}} D_k^{(s)} \mathcal{G}^{(s)}_{\Delta_k,\bar\Delta_k}(z) = \sum_{k\in\mathcal{S}} D_k^{(t)} \mathcal{G}^{(t)}_{\Delta_k,\bar\Delta_k}(z) = \sum_{k\in\mathcal{S}} D_k^{(u)} \mathcal{G}^{(u)}_{\Delta_k,\bar\Delta_k}(z)} \ . 
  \label{seteu}
 \end{align}
 Given 4 fields $V_1,V_2,V_3,V_4$, this is a system of infinitely many equations (parametrized by the cross-ratio $z$) for the spectrum $\mathcal{S}$ and the 4-point structure constants $D_k^{(x)}$. Alternatively, we can take the unknowns to be the \textbf{CFT data}: the spectrum and the 2-point and 3-point structure constants. CFT data determine OPEs, and crossing symmetry of all 4-point functions is equivalent to the associativity of OPEs, and therefore to the consistency of the CFT on the sphere. 
@@ -943,7 +943,7 @@ This definition works very well in \textbf{rational CFTs}, i.e. CFTs whose spect
   \text{CFT} & \text{Physical spectrum } \mathcal{S} &  i,j\in\mathcal{S}\implies \mathcal{S}_{i,j}\subset \mathcal{S}  
   \\
   \hline 
-  \widetilde{\text{CFT}} & \text{Extended spectrum } \widetilde{\mathcal{S}} & \mathcal{S}\subset \widetilde{\mathcal{S}}\ , \quad i,j\in\widetilde{\mathcal{S}}\implies \mathcal{S}_{i,j}\subset \widetilde{\mathcal{S}}
+  \widehat{\text{CFT}} & \text{Extended spectrum } \widehat{\mathcal{S}} & \mathcal{S}\subset \widehat{\mathcal{S}}\ , \quad i,j\in\widehat{\mathcal{S}}\implies \mathcal{S}_{i,j}\subset \widehat{\mathcal{S}}
   \\
   \hline 
  \end{array}
@@ -962,7 +962,7 @@ We will say that \textbf{a field exists} if it belongs to some extended spectrum
 
 Motivated by the single-valuedness of correlation functions, we have made the assumption \eqref{siz} that conformal spins are integer. In extended spectrums, we may relax this assumption to the half-integer spin condition \eqref{sihz}:
 \begin{align}
- i\in\mathcal{S}\implies S_i\in\mathbb{Z} \quad , \quad i \in \widetilde{\mathcal{S}}\implies S_i\in\frac12\mathbb{Z}\ . 
+ i\in\mathcal{S}\implies S_i\in\mathbb{Z} \quad , \quad i \in \widehat{\mathcal{S}}\implies S_i\in\frac12\mathbb{Z}\ . 
 \end{align}
 A simple way to satisfy these assumptions is to have fields of spin zero, i.e. \textbf{spinless fields}. However, whenever degenerate fields exist, we will use the slightly different notion of a \textbf{diagonal field}: a spinless field whose OPEs with degenerate fields only produces spinless fields. Conversely, a \textbf{non-diagonal field} is a field that either has nonzero spin, or is related to fields with nonzero spins by taking OPEs with degenerate fields. A \textbf{diagonal CFT} is a CFT whose spectrum only involves diagonal fields.  
 
@@ -1060,19 +1060,19 @@ We now assume that $\beta^2\notin \mathbb{Q}$, and remember $rs\in\frac12\mathbb
 While they were derived under the assumption $\beta^2\notin \mathbb{Q}$, we will assume that these OPEs are valid for any value of the central charge. 
 
 The OPEs \eqref{vdvrs} and \eqref{vpope} indicate which primary fields can appear: we now assume that in each one of these OPEs, the two fields that can appear do appear. 
-Together with the closure of the spectrum under OPEs, this leads to constraints on non-diagonal fields. If indeed $V^d_{\langle 1,2\rangle}\in\widetilde{\mathcal{S}}$, then $V_{(r,s)}\in\widetilde{\mathcal{S}}\implies V_{(r,s\pm 1)}\in\widetilde{\mathcal{S}}$. 
+Together with the closure of the spectrum under OPEs, this leads to constraints on non-diagonal fields. If indeed $V^d_{\langle 1,2\rangle}\in\widehat{\mathcal{S}}$, then $V_{(r,s)}\in\widehat{\mathcal{S}}\implies V_{(r,s\pm 1)}\in\widehat{\mathcal{S}}$. 
  Requiring that the conformal spin \eqref{srs} remains half-integer under $s\to s\pm 1$, we obtain
  $r\in \frac12 \mathbb{Z}$.
 Moreover, let us  consider the correlation function $\left<V^d_{\langle 1,2\rangle}\prod_{i=1}^NV_{(r_i,s_i)}\right>$. 
 The monodromy of $V^d_{\langle 1,2\rangle}$  around $V_{(r_i,s_i)}$ is $e^{2\pi ir_i}\in \{1,-1\}$, as determined by the OPE \eqref{tope} and the differences of spins \eqref{sdiff2}. These monodromies may be nontrivial, since we do not require correlation functions to be single-valued in an extended CFT. 
 But the product of monodromies must be $1$, which implies 
 \begin{align}
- \boxed{V^d_{\langle 1,2\rangle}\in\widetilde{\mathcal{S}} \quad \implies\quad  r\in \frac12\mathbb{Z} \quad , \quad \sum_{i=1}^N r_i  \in \mathbb{Z}}\ . 
+ \boxed{V^d_{\langle 1,2\rangle}\in\widehat{\mathcal{S}} \quad \implies\quad  r\in \frac12\mathbb{Z} \quad , \quad \sum_{i=1}^N r_i  \in \mathbb{Z}}\ . 
  \label{sriz}
 \end{align}
 Similarly, the existence of $V^d_{\langle 2,1\rangle}$ leads to constraints on the second Kac index of non-diagonal fields $V_{(r,s)}$,
 \begin{align}
- \boxed{V^d_{\langle 2,1\rangle}\in\widetilde{\mathcal{S}} \quad \implies\quad  s\in \frac12\mathbb{Z} \quad , \quad \sum_{i=1}^N s_i  \in \mathbb{Z}}\ . 
+ \boxed{V^d_{\langle 2,1\rangle}\in\widehat{\mathcal{S}} \quad \implies\quad  s\in \frac12\mathbb{Z} \quad , \quad \sum_{i=1}^N s_i  \in \mathbb{Z}}\ . 
  \label{ssiz}
 \end{align}
 These constraints also apply in the presence of diagonal fields, if we set $r=s=0$ for any diagonal field. 
@@ -1086,7 +1086,7 @@ The total conformal dimension of a non-diagonal field $V_{(r,s)}$ is
 \begin{align}
  \Delta_{(r,s)}+\Delta_{(r,-s)} = \frac12\left[ r^2\beta^{2} + s^2\beta^{-2}  -\left(\beta-\beta^{-1}\right)^2\right]\ .
 \end{align}
-If $V^d_{\langle 1,2\rangle}$ exists, then the OPE \eqref{vdvrs} increments $s$ by one unit, therefore $s$ is unbounded in real part i.e. $\sup_{V_{(r,s)}\in \widetilde{\mathcal{S}}} \left(\Re s\right) = \infty$. Assuming that this holds not only for the extended spectrum $\widetilde{\mathcal{S}}$ but also for some OPE spectrum $\mathcal{S}_{12}$, we deduce $\Re\beta^{-2}>0$, or equivalently 
+If $V^d_{\langle 1,2\rangle}$ exists, then the OPE \eqref{vdvrs} increments $s$ by one unit, therefore $s$ is unbounded in real part i.e. $\sup_{V_{(r,s)}\in \widehat{\mathcal{S}}} \left(\Re s\right) = \infty$. Assuming that this holds not only for the extended spectrum $\widehat{\mathcal{S}}$ but also for some OPE spectrum $\mathcal{S}_{12}$, we deduce $\Re\beta^{-2}>0$, or equivalently 
 \begin{align}
  \boxed{\Re\beta^2 > 0 \quad \text{i.e.} \quad \Re c < 13}\ .
  \label{rbp}
@@ -1182,7 +1182,7 @@ For the moment, we have defined Liouville theory for $\beta^2\in\mathbb{R}_{>0}\
 We nevertheless define Liouville theory for $c\in\mathbb{C}\backslash (-\infty,1]$ by the spectrum \eqref{sliou} and OPE \eqref{idpv}, where we no longer need to shift the integration line. 
 We also assume that correlation functions are analytic in momentums and in the central charge, and that degenerate fields exist, so that we have the extended spectrum
 \begin{align}
- \boxed{ \widetilde{\mathcal{S}}^\text{Liouville} = \frac12 \left\{ V_P\right\}_{P\in \mathbb{C}} \cup \left\{ V^d_{\langle r,s\rangle}\right\}_{r,s\in\mathbb{N}^*} }\ .
+ \boxed{ \widehat{\mathcal{S}}^\text{Liouville} = \frac12 \left\{ V_P\right\}_{P\in \mathbb{C}} \cup \left\{ V^d_{\langle r,s\rangle}\right\}_{r,s\in\mathbb{N}^*} }\ .
  \label{stliou}
 \end{align}
 The resulting extended CFT therefore includes a generalized minimal model. 
@@ -1349,7 +1349,7 @@ where the non-diagonal fields $V_{(r,s)}$ are fully degenerate. This is valid fo
 \end{align}
 where the lower bounds $p\geq 6$ and $q\geq 3$ ensure that the non-diagonal sector contains fields with nonzero spins. If we allow spins to be half-integer, we obtain the extended spectrum
 \begin{align}
- \widetilde{\mathcal{S}}^{\text{DMM}_{p,q}} = \frac12\left\{ V^f_{\langle r,s\rangle} \right\}_{\substack{(r,s)\in (0,p) \times (0,q)\\ (r,s)\in \mathbb{N}\times \mathbb{N}}} 
+ \widehat{\mathcal{S}}^{\text{DMM}_{p,q}} = \frac12\left\{ V^f_{\langle r,s\rangle} \right\}_{\substack{(r,s)\in (0,p) \times (0,q)\\ (r,s)\in \mathbb{N}\times \mathbb{N}}} 
  \bigcup 
  \frac12\left\{V_{(r,s)} \right\}_{\substack{(r,s)\in (-\frac{p}{2},\frac{p}{2})\times (-\frac{q}{2},\frac{q}{2})\\ (r,s)\in \mathbb{Z}\times (\mathbb{Z}+\frac12)}}
 \ .
@@ -1405,9 +1405,9 @@ To begin with, we will now propose a simple extended spectrum that will include 
 
 \subsubsection{Extended spectrum}
 
-Let the extended spectrum $\widetilde{S}^\text{loop}$ be made of all primary fields with half-integer spins that are compatible with the degenerate field $V^d_{\langle 1,2\rangle}$:
+Let the extended spectrum $\widehat{S}^\text{loop}$ be made of all primary fields with half-integer spins that are compatible with the degenerate field $V^d_{\langle 1,2\rangle}$:
 \begin{align}
- \boxed{\widetilde{S}^\text{loop} = \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in\mathbb{N}^*}  \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \frac12\mathbb{N}^*\\ s\in\frac{1}{2r}\mathbb{Z}}}\bigcup \left\{ V_P\right\}_{P\in\mathbb{C}} } \ .
+ \boxed{\widehat{\mathcal{S}}^\text{loop} = \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in\mathbb{N}^*}  \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \frac12\mathbb{N}^*\\ s\in\frac{1}{2r}\mathbb{Z}}}\bigcup \left\{ V_P\right\}_{P\in\mathbb{C}} } \ .
  \label{sloop}
 \end{align}
 We therefore include all degenerate fields that are generated from $V^d_{\langle 1,2\rangle}$ by fusion, and all possible diagonal fields. When it comes to non-diagonal fields, the first index $r$ must be half-integer according to Eq. \eqref{sriz}. The reflection relation $V_{(r,s)}=V_{(-r,-s)}$ \eqref{refl} allows us to assume $r\geq 0$, and the sector $r=0$ is redundant with the diagonal sector, since 
@@ -1415,12 +1415,24 @@ We therefore include all degenerate fields that are generated from $V^d_{\langle
  V_{(0,s)} = V_{\frac12\beta^{-1}s}  \quad \text{i.e.} \quad V_P = V_{(0,2\beta P)} \ .
  \label{sP}
 \end{align}
-On the other hand, $V_{(r,0)}$ is a genuinely non-diagonal field, whose fusion rules differ from those of the diagonal field with the same dimensions $V_{\frac12\beta r}$. 
-
+On the other hand, $V_{(r,0)}$ is a genuinely non-diagonal field, whose fusion with $V^d_{\langle 1,2\rangle}$ differs from that of the diagonal field with the same dimensions $V_{\frac12\beta r}$. 
+Non-diagonal fields with integer spins include:
+\begin{subequations}
+\label{vex}
+\begin{align}
+ & V_{(\frac12, 0)}, V_{(\frac12,\pm 2)}, V_{(\frac12, \pm 4)}, \dots
+ \\
+ & V_{(1,0)}, V_{(1,\pm 1)}, V_{(1,\pm 2)}, \dots 
+ \\
+ & V_{(\frac32, 0)}, V_{(\frac32, \pm\frac23)}, V_{(\frac32,\pm \frac43)} , V_{(\frac32,\pm 2)}, \dots 
+ \\
+ & V_{(2, 0)}, V_{(2,\pm\frac12)}, V_{(2,\pm 1)}, V_{(2,\pm\frac32)}, \dots 
+\end{align}
+\end{subequations}
 Our simple extended spectrum hides important subtleties: 
 \begin{itemize}
  \item We characterize fields by their conformal dimensions, but there could be several independent fields with the same dimensions, in other words there could be nontrivial field multiplicities. This is known to occur in the loop CFTs of Section \ref{sec:models}, where the multiplicities are described in terms of representations of global symmetry groups.  
- \item Knowing which primary fields belong to $\widetilde{S}^\text{loop}$ is not enough for determining how the conformal algebra acts on $\widetilde{S}^\text{loop}$. For $(r,s)\in \mathbb{N}^*\times \mathbb{Z}^*$, the primary field $V_{(r,s)}$ has a null vector, and the Verma module $\mathcal{V}_{\Delta_{(r,s)}}\otimes\bar{\mathcal{V}}_{\Delta_{(r,-s)}}$ is not the only representation that includes $V_{(r,s)}$. The correct representation can be determined by starting with $V_{(r,0)}\in \mathcal{V}_{\Delta_{(r,0)}}\otimes\bar{\mathcal{V}}_{\Delta_{(r,0)}}$, and repeatedly taking OPEs with $V^d_{\langle 1,2\rangle}$. It turns out that $V_{(r,s)}$ and $V_{(r,-s)}$ both belong to the same logarithmic indecomposable representation, which is not left-right factorized  \cite{nr20}. 
+ \item Knowing which primary fields belong to $\widehat{S}^\text{loop}$ is not enough for determining how the conformal algebra acts on $\widehat{S}^\text{loop}$. For $(r,s)\in \mathbb{N}^*\times \mathbb{Z}^*$, the primary field $V_{(r,s)}$ has a null vector, and the Verma module $\mathcal{V}_{\Delta_{(r,s)}}\otimes\bar{\mathcal{V}}_{\Delta_{(r,-s)}}$ is not the only representation that includes $V_{(r,s)}$. The correct representation can be determined by starting with $V_{(r,0)}\in \mathcal{V}_{\Delta_{(r,0)}}\otimes\bar{\mathcal{V}}_{\Delta_{(r,0)}}$, and repeatedly taking OPEs with $V^d_{\langle 1,2\rangle}$. It turns out that $V_{(r,s)}$ and $V_{(r,-s)}$ both belong to the same logarithmic indecomposable representation, which is not left-right factorized  \cite{nr20}. 
 \end{itemize}
 
 \subsubsection{Dependence on the central charge and fusion rules}
@@ -1443,7 +1455,7 @@ In addition to our assumption that OPEs are discrete, known constraints on fusio
 
 \subsubsection{$O(n)$ CFT, $U(n)$ CFT, Potts CFT}\label{sec:models}
 
-Three known models give rise to integer-spin subsets of the extended spectrum $\widetilde{S}^\text{loop}$. 
+Three known models give rise to integer-spin subsets of the extended spectrum $\widehat{S}^\text{loop}$. 
 Their spectrums are 
 \begin{align}
 \mathcal{S}^{O(n)} &= \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in 2\mathbb{N}+1} \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \frac12\mathbb{N}^*\\ s\in\frac{1}{r}\mathbb{Z}}}  \ ,
@@ -1455,7 +1467,7 @@ Their spectrums are
  \mathcal{S}^\text{Potts} &= \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in\mathbb{N}^*} \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \mathbb{N}+2\\ s\in\frac{1}{r}\mathbb{Z}}} \bigcup  \left\{ V_{P_{(0,s)}}\right\}_{s\in \mathbb{N}+\frac12}\ .
  \label{spotts}
 \end{align}
-The spectrums of the $O(n)$ and $U(n)$ models are natural constructions: we start with a degenerate field $V^d\in\{V^d_{\langle 1,3\rangle},V^d_{\langle 1,2\rangle}\}$, and add non-diagonal fields $V_{(r,s)}\in\widetilde{S}^\text{loop}$ such that $V_{(r,s)}$ and the fields that appear in $V^dV_{(r,s)}$ have integer spins. 
+The spectrums of the $O(n)$ and $U(n)$ models are natural constructions: we start with a degenerate field $V^d\in\{V^d_{\langle 1,3\rangle},V^d_{\langle 1,2\rangle}\}$, and add non-diagonal fields $V_{(r,s)}\in\widehat{S}^\text{loop}$ such that $V_{(r,s)}$ and the fields that appear in $V^dV_{(r,s)}$ have integer spins. 
 On the other hand, the Potts spectrum has no simple explanation in our formalism. We can only remark that it is obtained from the $U(n)$ spectrum by removing the non-diagonal fields $\left\{V_{(1,s)}\right\}_{s\in\mathbb{Z}}$ and adding the diagonal fields $\left\{ V_{P_{(0,s)}}\right\}_{s\in \mathbb{N}+\frac12}$, see Section \ref{sec:coup} for a justification from statistical physics.  
 
 Each one of these CFTs has
@@ -1519,7 +1531,7 @@ For each CFT, we indicate the values of $\beta^2$, of the Kac indices of degener
   \text{Liouville} & \mathbb{C}^*  & - & - &  \mathbb{R}
   \\
   \hline 
-  \widetilde{\text{Liouville}} & \mathbb{C}^*  & \mathbb{N}^*\times \mathbb{N}^* & - & \mathbb{C}
+  \widehat{\text{Liouville}} & \mathbb{C}^*  & \mathbb{N}^*\times \mathbb{N}^* & - & \mathbb{C}
   \\
   \hline
   \text{AMM} & \frac{q}{p} > 0  & 
@@ -1542,7 +1554,7 @@ For each CFT, we indicate the values of $\beta^2$, of the Kac indices of degener
   \text{GDMM} & \left\{\Re\beta^2>0\right\} & - & 2\mathbb{Z}\times (\mathbb{Z}+\frac12) & \mathbb{R} 
   \\
   \hline\hline 
-  \widetilde{\text{Loop}} & \left\{\Re\beta^2>0\right\} & \{1\}\times \mathbb{N}^* & \frac12\mathbb{N}^* \times \frac{1}{2r}\mathbb{Z}  & \mathbb{C} 
+  \widehat{\text{Loop}} & \left\{\Re\beta^2>0\right\} & \{1\}\times \mathbb{N}^* & \frac12\mathbb{N}^* \times \frac{1}{2r}\mathbb{Z}  & \mathbb{C} 
   \\
   \hline 
   O(n) & \left\{\Re\beta^2>0\right\} & \{1\}\times(2\mathbb{N}+1) &  \frac12\mathbb{N}^* \times \frac{1}{r}\mathbb{Z} & - 
@@ -2028,9 +2040,9 @@ with $\{P,\bar P\}=\{P_{(r,s)},P_{(r,-s)}\}$. (The formula is invariant under $P
 
 \subsubsection{Loop CFTs}
 
-In the loop CFTs' extended spectrum $\widetilde{S}^\text{loop}$ \eqref{sloop}, it is clear that shift equations do not determine the structure constants:
+In the loop CFTs' extended spectrum $\widehat{S}^\text{loop}$ \eqref{sloop}, it is clear that shift equations do not determine the structure constants:
 \begin{itemize}
- \item In the case of non-diagonal fields $V_{(r,s)}$, the dependence on $r$ is not constrained, because the spectrum $\widetilde{S}^\text{loop}$ does not include the degenerate field $V_{\langle 2,1\rangle}^d$. We only have $V^d_{\langle 1,2\rangle}$, whose shift equations determine how structure constants behave under $s\to s+2$, whereas $s$ takes fractional values.
+ \item In the case of non-diagonal fields $V_{(r,s)}$, the dependence on $r$ is not constrained, because the spectrum $\widehat{S}^\text{loop}$ does not include the degenerate field $V_{\langle 2,1\rangle}^d$. We only have $V^d_{\langle 1,2\rangle}$, whose shift equations determine how structure constants behave under $s\to s+2$, whereas $s$ takes fractional values.
  \item In the case of diagonal fields $V_P$, the shift equations from $V^d_{\langle 1,2\rangle}$ determine how structure constants behave under $P\to P+\beta^{-1}$. 
 \end{itemize}
 Let us nevertheless look for simple solutions of the shift equations. As an ansatz, we introduce the \textbf{reference structure constant} 
@@ -2199,7 +2211,7 @@ In the following diagram, we sketch what we can learn from numerically solving c
 \end{center}
 
 
-\subsubsection{Factorization of 4-point structure constants}
+\subsubsection{Factorization of 4-point structure constants}\label{sec:factor}
 
 In order to solve a CFT, we should not only determine 4-point structure constants, but also factorize them into 2-point and 3-point structure constants. Factorization is simple enough if field multiplicities are trivial. However, there are nontrivial field multiplicities in D-series minimal models and in loop CFTs. 
 This complicates factorization, because conformal blocks only depend on conformal dimensions. Solving the crossing symmetry equations \eqref{seteu} does not quite give us access to factorized 4-point structure constants $D^{(s)}_k = C^k_{12}C_{k34}$ \eqref{stu}, but to coefficients of conformal blocks:
@@ -2302,6 +2314,45 @@ While the product formulas are adequate for numerically computing the conformal 
 
 See Yin et al? See Appendix D of \cite{msz15} for the pillow geometry that underlies the variable $q$.
 
+$S_3$ subgroup of global conformal group that permutes $z=0,1,\infty$. 
+
+
+\begin{align}
+ \renewcommand{\arraystretch}{1.5}
+ \begin{array}{|r||c|c|c|c|c|c|}
+  \hline 
+  \text{Map} & z & \frac{z}{z-1} & \frac{1}{z} & 1-z & \frac{1}{1-z} & 1-\frac{1}{z} 
+  \\
+  \hline 
+  \text{Order} & 1  & 2 & 2 & 2 & 3 & 3
+  \\
+  \hline 
+  \text{Fixed points} & \overline{\mathbb{C}} & 0, 2 & 1 , -1 & \infty, \frac12 & e^{\pm i\frac{\pi}{3}} & e^{\pm i\frac{\pi}{3}}
+  \\
+  \hline 
+ \end{array}
+ \label{S3}
+\end{align}
+
+
+
+\begin{align}
+ \renewcommand{\arraystretch}{1.5}
+ \begin{array}{|c||c|c|c|c|c|c|c|}
+  \hline 
+  z & 0 & 1 & \infty & 2 & -1 & \frac12 & e^{\pm i\frac{\pi}{3}}
+  \\
+  \hline 
+  q & 0,\pm i & 1 & -1 & \pm ie^{-\frac{\pi}{2}} & -e^{-\pi} & e^{-\pi} & \pm ie^{-\frac{\pi}{2}\sqrt{3}}
+  \\
+  \hline 
+ \end{array}
+ \label{zqval}
+\end{align}
+
+
+
+
 \subsubsection{Zamolodchikov's recursive representation}
 
 \subsection{Interchiral symmetry} \label{sec:icb}
@@ -2369,11 +2420,11 @@ This fusion should also explain algebraically what is special with having $D$ sh
 
 Just like a Virasoro block is the sum of contributions of states in a representation of the Virasoro algebra, an \textbf{interchiral block} is associated to a representation of the interchiral algebra. For example, in the case of the representation $\widetilde{\mathcal{V}}_P$ \eqref{wvp}, the interchiral block $\widetilde{\mathcal{F}}_P$ is a linear combination of the conformal blocks $\left|\mathcal{F}_P\right|^2$, where the coefficients are dictated by shift equations. 
 
-In any 4-point function of an A-series or D-series minimal model, all $s$-channel 4-point structure constants are related by shift equations, and the 4-point function involves a single $s$-channel interchiral block. In minimal models, interchiral blocks are therefore not very useful, as they only differ from correlation functions by overall constants. On the other hand, when solving crossing symmetry equations in loop CFTs, using interchiral blocks reduces the number of unknown structure constants. We will therefore focus on computing the interchiral blocks that are relevant to loop CFTs, i.e. the interchiral blocks that package the shift equations from the degenerate field $V^d_{\langle 1,2\rangle}$.  
+In any 4-point function of an A-series or D-series minimal model, all $s$-channel 4-point structure constants are related by shift equations, and the 4-point function involves a single $s$-channel interchiral block. In minimal models, interchiral blocks only differ from correlation functions by overall constants. On the other hand, when solving crossing symmetry equations in loop CFTs, using interchiral blocks reduces the number of unknown structure constants. We will focus on computing the interchiral blocks that are relevant to loop CFTs, i.e. the interchiral blocks that package the shift equations from the degenerate field $V^d_{\langle 1,2\rangle}$.  
 
 Let us compute $s$-channel interchiral blocks for the 4-point function $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$. In terms of Virasoro blocks, the interchiral block for the $s$-channel interchiral representation $\widetilde{\mathcal{V}}_{(r,s)}$ \eqref{wvrs} reads 
 \begin{align}
- \widetilde{\mathcal{F}}_{(r,s)} = \sum_{k\in \mathbb{Z}} \frac{D^{(s)}_{(r,s+2k)}}{D^{(s)}_{(r,s)}} \mathcal{F}_{P_{(r,s+2k)}} \bar{\mathcal{F}}_{P_{(-r,s+2k)}}\ . 
+ \widetilde{\mathcal{G}}_{(r,s)} = \sum_{k\in \mathbb{Z}} \frac{D^{(s)}_{(r,s+2k)}}{D^{(s)}_{(r,s)}} \mathcal{F}_{P_{(r,s+2k)}} \bar{\mathcal{F}}_{P_{(-r,s+2k)}}\ . 
  \label{gtrs}
 \end{align}
 To make this explicit, it remains to compute the ratios of 4-point structure constants. This is in principle a straightforward consequence of the shift equation for the 3-point structure constant \eqref{sh-mp}. However, for certain values of the parameters, this shift equation 
@@ -2404,18 +2455,57 @@ In this case, the 3-point ratio \eqref{cshift} for $\left<V^d_{\langle 1,s\rangl
 \end{align}
 in which case the degenerate interchiral block is 
 \begin{align}
- \widetilde{\mathcal{F}}^d = \sum_{k\in 2\mathbb{N}} \frac{D^{(s)}_{(1,s_0+2k)}}{D^{(s)}_{(1,s_0)}}\left| \mathcal{F}_{P_{(1,s_0+2k)}} \right|^2\ ,  \quad \text{with} \quad s_0 =  \max(|s_1-s_2|,|s_3-s_4|)+1\ . 
+ \widetilde{\mathcal{G}}^d = \sum_{k\in 2\mathbb{N}} \frac{D^{(s)}_{(1,s_0+2k)}}{D^{(s)}_{(1,s_0)}}\left| \mathcal{F}_{P_{(1,s_0+2k)}} \right|^2\ ,  \quad \text{with} \quad s_0 =  \max(|s_1-s_2|,|s_3-s_4|)+1\ . 
 \end{align}
 
-\subsection{Linear equations for 4-point structure constants}
 
-3 channels. 
+\subsection{Numerically solving crossing symmetry}
+
+Assuming we know the spectrum $\mathcal{S}$, the 
+crossing symmetry equations \eqref{seteu} form a system of linear equations for the 4-point structure constants $D^{(x)}_k$. There are infinitely many unknowns if the spectrum is infinite. There are also infinitely many equations: two for each value of the cross-ratio $z\in \overline{\mathbb{C}}\backslash\{0,1,\infty\}$. For numerical calculations on a computer, we need a truncation to a system of finitely many equations with finitely many unknowns. Symmetries, starting with interchiral symmetry, can also be used for reducing the number of unknowns. 
+
+Our truncation is based on ignoring fields whose total conformal dimension exceeds a given number $\Lambda$. From the $\Lambda$-dependence of the solutions of the truncated system, we can see whether they converge towards a solution of the original system. And we can also infer the dimension of the space of solutions. 
+
+\subsubsection{Reducing the number of unknowns}
+
+As we saw in Section \ref{sec:icb}, the interchiral symmetry associated to the degenerate field $V^d_{\langle 1,2\rangle}$ determines how 4-point structure constants $D^{(x)}_{(r,s)}$ behave under $s\to s+2$. This allows us to rewrite the crossing symmetry equations \eqref{seteu} as 
+\begin{align}
+ \forall z\in \overline{\mathbb{C}}\backslash\{0,1,\infty\} \ , \quad \sum_{k\in\widetilde{\mathcal{S}}} D_k^{(s)} \widetilde{\mathcal{G}}^{(s)}_{\Delta_k,\bar\Delta_k}(z) = \sum_{k\in\widetilde{\mathcal{S}}} D_k^{(t)} \widetilde{\mathcal{G}}^{(t)}_{\Delta_k,\bar\Delta_k}(z) = \sum_{k\in\widetilde{\mathcal{S}}} D_k^{(u)} \widetilde{\mathcal{G}}^{(u)}_{\Delta_k,\bar\Delta_k}(z)\ ,
+\end{align}
+where $\widetilde{\mathcal{G}}^{(x)}_{\Delta,\bar\Delta}$ is now an interchiral block \eqref{gtrs}, and $\widetilde{\mathcal{S}}=\left.\mathcal{S}\right|_{-1<s\leq 1}$ is a reduced spectrum. In loop CFTs, the reduced spectrum is still infinite, but for any given value of $r\in\frac12\mathbb{N}^*$ it contains only $2r$ non-diagonal fields $V_{(r,s)}$ with integer spins, and their list Eq. \eqref{vex} reduces to 
+\begin{subequations}
+\label{vexr}
+\begin{align}
+ & V_{(\frac12, 0)},
+ \\
+ & V_{(1,0)}, V_{(1,1)}, 
+ \\
+ & V_{(\frac32, 0)}, V_{(\frac32, \pm\frac23)}, 
+ \\
+ & V_{(2, 0)}, V_{(2,\pm\frac12)}, V_{(2,1)}.
+\end{align}
+\end{subequations}
+
+
+
+Linear relations from symmetry.
 
 Symmetries, relations between 4-point structure constants. 
 
 Permutation symmetry: must assume that the fields are indeed the same, what if we have multiplicities? 
 
-\subsection{Numerical implementation}
+Or just refer to \cite{nrj23}
+
+Taking interchiral symmetry into account
+
+forget interchiral for simplicity, no big deal to add it, just one layer of complexity
+
+Core = Vir blocks
+
+\subsubsection{Truncating to a finite system}
+
+
+\subsubsection{Studying one solution}
 
 Choice of parameters: $c$
 
@@ -2423,8 +2513,9 @@ Truncating spectrum, blocks.
 
 Random positions.
 
-Deviations. Detection of solutions. Counting of solutions.
+Deviations. Detection of solutions. 
 
+\subsubsection{Counting solutions}
 
 \section{Correlation functions in loop CFTs} \label{sec:cloop}
 
