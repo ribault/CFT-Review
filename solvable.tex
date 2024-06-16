@@ -2472,7 +2472,7 @@ As we saw in Section \ref{sec:icb}, the interchiral symmetry associated to the d
 \begin{align}
  \forall z\in \overline{\mathbb{C}}\backslash\{0,1,\infty\} \ , \quad \sum_{k\in\widetilde{\mathcal{S}}} D_k^{(s)} \widetilde{\mathcal{G}}^{(s)}_{\Delta_k,\bar\Delta_k}(z) = \sum_{k\in\widetilde{\mathcal{S}}} D_k^{(t)} \widetilde{\mathcal{G}}^{(t)}_{\Delta_k,\bar\Delta_k}(z) = \sum_{k\in\widetilde{\mathcal{S}}} D_k^{(u)} \widetilde{\mathcal{G}}^{(u)}_{\Delta_k,\bar\Delta_k}(z)\ ,
 \end{align}
-where $\widetilde{\mathcal{G}}^{(x)}_{\Delta,\bar\Delta}$ is now an interchiral block \eqref{gtrs}, and $\widetilde{\mathcal{S}}=\left.\mathcal{S}\right|_{-1<s\leq 1}$ is a reduced spectrum. In loop CFTs, the reduced spectrum is still infinite, but for any given value of $r\in\frac12\mathbb{N}^*$ it contains only $2r$ non-diagonal fields $V_{(r,s)}$ with integer spins, and their list Eq. \eqref{vex} reduces to 
+where $\widetilde{\mathcal{G}}^{(x)}_{\Delta,\bar\Delta}$ is now an interchiral block \eqref{gtrs}, and $\widetilde{\mathcal{S}}=\left.\mathcal{S}\right|_{-1<s\leq 1}$ is a reduced spectrum. In loop CFTs, the reduced spectrum is still infinite, but the list \eqref{vex} of non-diagonal fields $V_{(r,s)}$ with integer spins reduces to $2r$ fields for any given value of $r\in\frac12\mathbb{N}^*$:
 \begin{subequations}
 \label{vexr}
 \begin{align}
@@ -2486,7 +2486,15 @@ where $\widetilde{\mathcal{G}}^{(x)}_{\Delta,\bar\Delta}$ is now an interchiral 
 \end{align}
 \end{subequations}
 
+In addition to interchiral symmetry, some 4-point functions $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$ also have discrete $\mathbb{Z}_2$ symmetries that reduce the number of unknowns. We will sketch the ideas here, and refer the reader to \cite[Section 2.4]{nrj23} for technical details. 
 
+The \textbf{parity transformation} $z\to \bar z$ exchanges the left- and right-moving Virasoro algebras, and therefore acts on non-diagonal fields as $V_{(r,s)}\to V_{(r,-s)}$. If our 4-point function is parity-invariant i.e. if $s_i=0$, then the space of solutions of crossing symmetry equations decomposes into a parity-even subspace (with $D^{(x)}_{(r,s)}=D^{(x)}_{(r,-s)}$) and a parity-odd subspace (with $D^{(x)}_{(r,s)}=-D^{(x)}_{(r,-s)}$). More generally, if our 4-point function is parity-invariant modulo interchiral symmetry i.e. $s_i\in\mathbb{Z}$, then the parity induces a $\mathbb{Z}_2$ action on the space of solutions. This action is in general more complicated than $D^{(x)}_{(r,s)}\mapsto D^{(x)}_{(r,-s)}$, and its eigenvalues do not have a simple behaviour (even or odd) under $z\to \bar z$. Nevertheless, focussing on an eigenspace still reduces the number of unknowns by roughly half. 
+
+The permutation $z_1\leftrightarrow z_2$ is a symmetry of the crossing symmetry equations provided $(r_1,s_1)=(r_2,s_2)$. Again, this allows us to decompose the space of solutions into permutation-even and permutation-odd subspaces. Of course, if the fields $V_{r_1,s_1)$ and $V_{(r_2,s_2)}$ are actually identical, then only permutation-even solutions are relevant. However, if we allow non-trivial field multiplicities, then these fields may differ while having the same conformal dimensions, and permutation-odd solutions may also be relevant. In practice, the action of our permutation on 4-point structure constants is sensitive on
+
+
+
+It may also happen that our two fields have the same dimensions modulo interchiral symmetry, in which case 
 
 Linear relations from symmetry.
 
@@ -2494,13 +2502,6 @@ Symmetries, relations between 4-point structure constants.
 
 Permutation symmetry: must assume that the fields are indeed the same, what if we have multiplicities? 
 
-Or just refer to \cite{nrj23}
-
-Taking interchiral symmetry into account
-
-forget interchiral for simplicity, no big deal to add it, just one layer of complexity
-
-Core = Vir blocks
 
 \subsubsection{Truncating to a finite system}
 
