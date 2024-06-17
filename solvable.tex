@@ -2462,13 +2462,26 @@ in which case the degenerate interchiral block is
 \subsection{Numerically solving crossing symmetry}
 
 Assuming we know the spectrum $\mathcal{S}$, the 
-crossing symmetry equations \eqref{seteu} form a system of linear equations for the 4-point structure constants $D^{(x)}_k$. There are infinitely many unknowns if the spectrum is infinite. There are also infinitely many equations: two for each value of the cross-ratio $z\in \overline{\mathbb{C}}\backslash\{0,1,\infty\}$. For numerical calculations on a computer, we need a truncation to a system of finitely many equations with finitely many unknowns. Symmetries, starting with interchiral symmetry, can also be used for reducing the number of unknowns. 
+crossing symmetry equations \eqref{seteu} form a system of linear equations for the 4-point structure constants $D^{(x)}_k$. There are infinitely many unknowns if the spectrum is infinite. There are also infinitely many equations: two for each value of the cross-ratio $z\in \overline{\mathbb{C}}\backslash\{0,1,\infty\}$. For numerical calculations on a computer, we need a truncation to a system of finitely many equations with finitely many unknowns. Symmetries, including interchiral symmetry, can also be used for reducing the number of unknowns. 
 
 Our truncation is based on ignoring fields whose total conformal dimension exceeds a given number $\Lambda$. From the $\Lambda$-dependence of the solutions of the truncated system, we can see whether they converge towards a solution of the original system. And we can also infer the dimension of the space of solutions. 
 
 \subsubsection{Reducing the number of unknowns}
 
-As we saw in Section \ref{sec:icb}, the interchiral symmetry associated to the degenerate field $V^d_{\langle 1,2\rangle}$ determines how 4-point structure constants $D^{(x)}_{(r,s)}$ behave under $s\to s+2$. This allows us to rewrite the crossing symmetry equations \eqref{seteu} as 
+Some 4-point functions $\left<\prod_{i=1}^4 V_{\Delta_i,\bar\Delta_i}\right>$ have discrete $\mathbb{Z}_2$ symmetries that reduce the number of unknowns. We will sketch the ideas here, and refer the reader to \cite[Section 2.4]{nrj23} for technical details:
+\begin{itemize}
+ \item The \textbf{parity transformation} $z\to \bar z$ exchanges the left- and right-moving Virasoro algebras, and therefore acts on non-diagonal fields as $V_{\Delta,\bar\Delta}\to V_{\bar\Delta,\Delta}$. If our 4-point function is parity-invariant i.e. if $\Delta_i=\bar\Delta_i$, then the space of solutions of crossing symmetry equations decomposes into a parity-even subspace with $D^{(x)}_{\Delta,\bar\Delta}=D^{(x)}_{\bar\Delta,\Delta}$, and a parity-odd subspace with $D^{(x)}_{\Delta,\bar\Delta}=-D^{(x)}_{\bar\Delta,\Delta}$. 
+ \item If $(\Delta_1,\bar\Delta_1)=(\Delta_2,\bar\Delta_2)$ in our 4-point function, then 
+the permutation $z_1\leftrightarrow z_2$ is a symmetry of the crossing symmetry equations. Again, this allows us to decompose the space of solutions into permutation-even and permutation-odd subspaces. Of course, if the fields $V_{\Delta_1,\bar\Delta_1}$ and $V_{\Delta_2,\bar\Delta_2}$ are actually identical, then only permutation-even solutions are relevant. However, if we allow non-trivial field multiplicities, then these two fields may differ while having the same conformal dimensions, and permutation-odd solutions may also be relevant. 
+Our permutation acts on 4-point structure constants as 
+\begin{align}
+\left(D^{(s)}_{\Delta,\bar\Delta},D^{(t)}_{\Delta,\bar\Delta},D^{(u)}_{\Delta,\bar\Delta}\right) \mapsto \left((-)^{S}D^{(s)}_{\Delta,\bar\Delta},(-)^{S+S_1+S_3}D^{(u)}_{\Delta,\bar\Delta},(-)^{S+S_1+S_3}D^{(t)}_{\Delta,\bar\Delta}\right)\ ,
+\end{align}
+so that permutation-even solutions only involve $s$-channel fields with even conformal spins $S\in 2\mathbb{Z}$. 
+\end{itemize}
+
+Let us now assume that the degenerate field $V^d_{\langle 1,2\rangle}$ exists. 
+As we saw in Section \ref{sec:icb}, this determines how 4-point structure constants $D^{(x)}_{(r,s)}$ behave under $s\to s+2$, and we can rewrite the crossing symmetry equations \eqref{seteu} as 
 \begin{align}
  \forall z\in \overline{\mathbb{C}}\backslash\{0,1,\infty\} \ , \quad \sum_{k\in\widetilde{\mathcal{S}}} D_k^{(s)} \widetilde{\mathcal{G}}^{(s)}_{\Delta_k,\bar\Delta_k}(z) = \sum_{k\in\widetilde{\mathcal{S}}} D_k^{(t)} \widetilde{\mathcal{G}}^{(t)}_{\Delta_k,\bar\Delta_k}(z) = \sum_{k\in\widetilde{\mathcal{S}}} D_k^{(u)} \widetilde{\mathcal{G}}^{(u)}_{\Delta_k,\bar\Delta_k}(z)\ ,
 \end{align}
@@ -2485,26 +2498,14 @@ where $\widetilde{\mathcal{G}}^{(x)}_{\Delta,\bar\Delta}$ is now an interchiral 
  & V_{(2, 0)}, V_{(2,\pm\frac12)}, V_{(2,1)}.
 \end{align}
 \end{subequations}
-
-In addition to interchiral symmetry, some 4-point functions $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$ also have discrete $\mathbb{Z}_2$ symmetries that reduce the number of unknowns. We will sketch the ideas here, and refer the reader to \cite[Section 2.4]{nrj23} for technical details. 
-
-The \textbf{parity transformation} $z\to \bar z$ exchanges the left- and right-moving Virasoro algebras, and therefore acts on non-diagonal fields as $V_{(r,s)}\to V_{(r,-s)}$. If our 4-point function is parity-invariant i.e. if $s_i=0$, then the space of solutions of crossing symmetry equations decomposes into a parity-even subspace (with $D^{(x)}_{(r,s)}=D^{(x)}_{(r,-s)}$) and a parity-odd subspace (with $D^{(x)}_{(r,s)}=-D^{(x)}_{(r,-s)}$). More generally, if our 4-point function is parity-invariant modulo interchiral symmetry i.e. $s_i\in\mathbb{Z}$, then the parity induces a $\mathbb{Z}_2$ action on the space of solutions. This action is in general more complicated than $D^{(x)}_{(r,s)}\mapsto D^{(x)}_{(r,-s)}$, and its eigenvalues do not have a simple behaviour (even or odd) under $z\to \bar z$. Nevertheless, focussing on an eigenspace still reduces the number of unknowns by roughly half. 
-
-The permutation $z_1\leftrightarrow z_2$ is a symmetry of the crossing symmetry equations provided $(r_1,s_1)=(r_2,s_2)$. Again, this allows us to decompose the space of solutions into permutation-even and permutation-odd subspaces. Of course, if the fields $V_{r_1,s_1)$ and $V_{(r_2,s_2)}$ are actually identical, then only permutation-even solutions are relevant. However, if we allow non-trivial field multiplicities, then these fields may differ while having the same conformal dimensions, and permutation-odd solutions may also be relevant. In practice, the action of our permutation on 4-point structure constants is sensitive on
-
-
-
-It may also happen that our two fields have the same dimensions modulo interchiral symmetry, in which case 
-
-Linear relations from symmetry.
-
-Symmetries, relations between 4-point structure constants. 
-
-Permutation symmetry: must assume that the fields are indeed the same, what if we have multiplicities? 
+Then a 4-point function $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$ is parity-invariant if $s_i\in\mathbb{Z}$. More generally, it is parity-invariant 
+modulo interchiral symmetry if $s_i\in\mathbb{Z}$, and permutation-invariant modulo interchiral symmetry if $r_1=r_2$ and $s_1-s_2\in 2\mathbb{Z}$. In such cases, our $\mathbb{Z}_2$ invariance still induces a $\mathbb{Z}_2$ action on the space of solutions, and focussing on an eigenspace of that action still reduces the number of unknowns by roughly half. However, eigenvalues no longer have a simple behaviour under $z\to \bar z$ or $z_1\leftrightarrow z_2$.
 
 
 \subsubsection{Truncating to a finite system}
 
+
+Random positions.
 
 \subsubsection{Studying one solution}
 
@@ -2512,7 +2513,7 @@ Choice of parameters: $c$
 
 Truncating spectrum, blocks.
 
-Random positions.
+
 
 Deviations. Detection of solutions. 
 
