@@ -498,12 +498,13 @@ This is equivalent to the statement that $V_\Delta(z)$ is a primary field of dim
 
 \subsubsection{Operator product expansions}\label{sec:ope}
 
-The fundamental axiom of conformal field theory, which underlies the conformal bootstrap approach, is the existence of \textbf{operator product expansions (OPEs)}. This axiom states that there exists a bilinear product on the space of fields. Given a basis $(V_k)_k$ of the space of states, this reads 
+The fundamental axiom of conformal field theory, which underlies the conformal bootstrap approach, is the existence of \textbf{operator product expansions (OPEs)}. This axiom states that there exists a bilinear product on the space of fields, 
 \begin{align}
   \boxed{V_1(z_1)V_2(z_2) = \sum_k C^k_{12}(z_1,z_2) V_k(z_2)}\ ,
   \label{ope}
  \end{align}
-for some \textbf{OPE coefficients} $C^k_{12}(z_1,z_2)$. Operator product expansions generally exist in quantum field theory, but they are particularly useful in conformal field theory because they are supposed to hold for any $z_1$ in a finite neighbourhood of $z_2$ (but $z_1\neq z_2$), and not just asymptotically as $z_1\to z_2$. The finite neighbourhood in question may depend on the correlation function in which we perform the OPE, and also on the basis $(V_k)_k$. 
+ for some family $(V_k)_k$ of linearly independent states, and 
+some \textbf{OPE coefficients} $C^k_{12}(z_1,z_2)$. Operator product expansions generally exist in quantum field theory, but they are particularly useful in conformal field theory because they are supposed to hold for any $z_1$ in a finite neighbourhood of $z_2$ (but $z_1\neq z_2$), and not just asymptotically as $z_1\to z_2$. The finite neighbourhood in question may depend on the correlation function in which we perform the OPE, and also on the basis $(V_k)_k$. 
 
 We further assume that the product of fields is commutative,
 \begin{align}
@@ -819,7 +820,7 @@ Unless stated otherwise, we will assume that spins are integer:
 \end{align}
 Finally, notice that $\left<V_1V_2\right> = \left<IV_1V_2\right>$, where $I$ is the identity field. Assuming for simplicity $B_{ij}=\delta_{ij}B_i$, this implies 
 \begin{align}
- B_i = C_{Iii}\ .
+ \boxed{B_i = C_{Iii}}\ .
  \label{bicii}
 \end{align}
 
@@ -828,11 +829,11 @@ Finally, notice that $\left<V_1V_2\right> = \left<IV_1V_2\right>$, where $I$ is 
 
 Let us systematically use OPEs for simplifying correlation functions. Knowing the contribution \eqref{prope} of left-moving descendants of primary fields, the complete OPE of two primary fields reads 
 \begin{align}
- V_1(z_1)V_2(z_2) = \sum_{k\in\mathcal{S}} C_{12}^k \left|z_{12}^{\Delta_k-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} z_{12}^{|L|}f_{\Delta_1,\Delta_2}^{\Delta_k,L}\right|^2 L\bar L V_k(z_2)\ ,
+ V_1(z_1)V_2(z_2) = \sum_{k\in\mathcal{S}^{12}} C_{12}^k \left|z_{12}^{\Delta_k-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} z_{12}^{|L|}f_{\Delta_1,\Delta_2}^{\Delta_k,L}\right|^2 L\bar L V_k(z_2)\ ,
  \label{tope}
 \end{align}
 where the basis $\mathcal{L}$ of creation operators was defined in Eq. \eqref{lcm},
-we assume that all fields are primaries or descendants thereof, with $\mathcal{S}$ a basis of primaries. Let us insert this OPE in a three-point function, and focus on the leading terms as $z_1\to z_2$. Using the 2-point function \eqref{2ptb}, we obtain
+we assume that all fields are primaries or descendants thereof, and the \textbf{OPE spectrum} $\mathcal{S}^{12}$ is the set of primary fields that appear in our OPE. Let us insert this OPE in a three-point function, and focus on the leading terms as $z_1\to z_2$. Using the 2-point function \eqref{2ptb}, we obtain
 \begin{align}
   \Big< V_1(z_1)V_2(z_2)V_3(z_3) \Big> \underset{z_1\to z_2}{\sim} 
   \left|z_{12}^{\Delta_3-\Delta_1-\Delta_2}z_{23}^{-2\Delta_3}\right|^2 
@@ -851,10 +852,10 @@ If we now insert the OPE in the four-point function $\left<V_1(z)V_2(0)V_3(\inft
 \end{align}
 This allows us to write our 4-point function as 
 \begin{align}
- \boxed{\Big<V_1(z)V_2(0)V_3(\infty)V_4(1)\Big> = \sum_{k\in\mathcal{S}} C_{12}^k C_{k34} \left|\mathcal{F}^{(s)}_{\Delta_k}\left(c\middle|\Delta_1,\Delta_2,\Delta_3,\Delta_4\middle|z\right)\right|^2}  \ ,
+ \boxed{\Big<V_1(z)V_2(0)V_3(\infty)V_4(1)\Big> = \sum_{k\in\mathcal{S}^{(s)}} C_{12}^k C_{k34} \left|\mathcal{F}^{(s)}_{\Delta_k}\left(c\middle|\Delta_1,\Delta_2,\Delta_3,\Delta_4\middle|z\right)\right|^2}  \ ,
  \label{sdec}
 \end{align}
-where we introduce the \textbf{$s$-channel Virasoro blocks}, which are known (in principle) functions of $z$ as well as the central charge and conformal dimensions:
+where we introduce the $s$-\textbf{channel spectrum} $\mathcal{S}^{(s)}= \mathcal{S}^{12}\cap \mathcal{S}^{34}$, and the $s$-channel \textbf{Virasoro blocks}, which are known (in principle) functions of $z$ as well as the central charge and conformal dimensions:
 \begin{align}
  \mathcal{F}_{\Delta}^{(s)}\left(c\middle|\Delta_1,\Delta_2,\Delta_3,\Delta_4\middle|z\right) = z^{\Delta-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} z^{|L|} f_{\Delta_1,\Delta_2}^{\Delta,L}g^L_{\Delta,\Delta_3,\Delta_4}\ ,
  \label{fsl}
@@ -904,7 +905,10 @@ In order to write these decompositions in greater generality, let us define the 
 \end{align}
 Our conformal blocks are chirally factorized into Virasoro blocks because of our assumption that all fields are primaries or descendants. However, representations of the conformal algebra that are not factorized give rise to blocks that are also not factorized: this is the case with the logarithmic blocks of Section \ref{sec:log}. We now write the \textbf{crossing symmetry equations} as the equality between the 3 decompositions of a four-point function into structure constants and conformal blocks:
 \begin{align}
- \boxed{\forall z\in \overline{\mathbb{C}}\backslash\{0,1,\infty\} \ , \quad \sum_{k\in\mathcal{S}} D_k^{(s)} \mathcal{G}^{(s)}_{\Delta_k,\bar\Delta_k}(z) = \sum_{k\in\mathcal{S}} D_k^{(t)} \mathcal{G}^{(t)}_{\Delta_k,\bar\Delta_k}(z) = \sum_{k\in\mathcal{S}} D_k^{(u)} \mathcal{G}^{(u)}_{\Delta_k,\bar\Delta_k}(z)} \ . 
+ \boxed{\forall z\in \overline{\mathbb{C}}\backslash\{0,1,\infty\} \ , \quad 
+ \sum_{k\in\mathcal{S}^{(s)}} D_k^{(s)} \mathcal{G}^{(s)}_{\Delta_k,\bar\Delta_k}(z) 
+ = \sum_{k\in\mathcal{S}^{(t)}} D_k^{(t)} \mathcal{G}^{(t)}_{\Delta_k,\bar\Delta_k}(z) 
+ = \sum_{k\in\mathcal{S}^{(u)}} D_k^{(u)} \mathcal{G}^{(u)}_{\Delta_k,\bar\Delta_k}(z)} \ . 
  \label{seteu}
 \end{align}
 Given 4 fields $V_1,V_2,V_3,V_4$, this is a system of infinitely many equations (parametrized by the cross-ratio $z$) for the spectrum $\mathcal{S}$ and the 4-point structure constants $D_k^{(x)}$. Alternatively, we can take the unknowns to be the \textbf{CFT data}: the spectrum and the 2-point and 3-point structure constants. CFT data determine OPEs, and crossing symmetry of all 4-point functions is equivalent to the associativity of OPEs, and therefore to the consistency of the CFT on the sphere. 
@@ -927,23 +931,23 @@ Here we recover their spectrums from assumptions about Virasoro representations 
 
 We define a \textbf{conformal field theory} as a set of correlation functions that obey the assumptions of Section \ref{sec:bo}, most importantly Virasoro symmetry, the commutativity of fields, the existence of OPEs, and single-valuedness. We already know that on the sphere, a conformal field theory is characterized by a spectrum and 2-point and 3-point structure constants such that crossing symmetry is obeyed.
 
-This definition works very well in \textbf{rational CFTs}, i.e. CFTs whose spectrums are made of finitely many primary fields and their descendants. However, in more general CFTs, the notion of the spectrum becomes fuzzy. To say why, let us introduce various spectrums associated to various objects. By an abuse of terminology, we call spectrum a basis of primary fields: 
+This definition works very well in \textbf{rational CFTs}, i.e. CFTs whose spectrums are made of finitely many primary fields and their descendants. However, in more general CFTs, the notion of the spectrum becomes fuzzy. To say why, let us compare various spectrums associated to various objects. By an abuse of terminology, we call spectrum a basis of primary fields: 
 \begin{align}
  \begin{array}{|c|c|l|}
   \hline 
   \text{Object} & \text{Spectrum}  & \text{Definition or constraint}
   \\
   \hline \hline 
-  V_1V_2 & \text{OPE spectrum } \mathcal{S}_{12} & V_1V_2 \sim \sum_{k\in \mathcal{S}_{12}} V_k 
+  V_1V_2 & \text{OPE spectrum } \mathcal{S}^{12} & V_1V_2 \sim \sum_{k\in \mathcal{S}^{12}} V_k 
   \\
   \hline 
-  \left<V_1V_2V_3V_4\right> & \text{Channel spectrum } \mathcal{S}^{(s)} &  \mathcal{S}^{(s)}= \mathcal{S}_{12}\cap \mathcal{S}_{34}
+  \left<V_1V_2V_3V_4\right> & \text{Channel spectrum } \mathcal{S}^{(s)} &  \mathcal{S}^{(s)}= \mathcal{S}^{12}\cap \mathcal{S}^{34}
   \\
   \hline 
-  \text{CFT} & \text{Physical spectrum } \mathcal{S} &  i,j\in\mathcal{S}\implies \mathcal{S}_{i,j}\subset \mathcal{S}  
+  \text{CFT} & \text{Physical spectrum } \mathcal{S} &  i,j\in\mathcal{S}\implies \mathcal{S}^{ij}\subset \mathcal{S}  
   \\
   \hline 
-  \widehat{\text{CFT}} & \text{Extended spectrum } \widehat{\mathcal{S}} & \mathcal{S}\subset \widehat{\mathcal{S}}\ , \quad i,j\in\widehat{\mathcal{S}}\implies \mathcal{S}_{i,j}\subset \widehat{\mathcal{S}}
+  \widehat{\text{CFT}} & \text{Extended spectrum } \widehat{\mathcal{S}} & \mathcal{S}\subset \widehat{\mathcal{S}}\ , \quad i,j\in\widehat{\mathcal{S}}\implies \mathcal{S}^{ij}\subset \widehat{\mathcal{S}}
   \\
   \hline 
  \end{array}
@@ -1077,16 +1081,16 @@ Similarly, the existence of $V^d_{\langle 2,1\rangle}$ leads to constraints on t
 \end{align}
 These constraints also apply in the presence of diagonal fields, if we set $r=s=0$ for any diagonal field. 
 
-Finally, a necessary condition for an OPE $V_1V_2\sim \sum_{k\in\mathcal{S}_{12}}V_k$ \eqref{tope} to converge is that the total conformal dimension be bounded from below over the OPE spectrum $\mathcal{S}_{12}$,
+Finally, a necessary condition for an OPE $V_1V_2\sim \sum_{k\in\mathcal{S}^{12}}V_k$ \eqref{tope} to converge is that the total conformal dimension be bounded from below over the OPE spectrum $\mathcal{S}^{12}$,
 \begin{align}
- \boxed{\inf_{k\in \mathcal{S}_{12}}\Re\left(\Delta_k+\bar\Delta_k\right) > -\infty} \ . 
+ \boxed{\inf_{k\in \mathcal{S}^{12}}\Re\left(\Delta_k+\bar\Delta_k\right) > -\infty} \ . 
  \label{iddb}
 \end{align}
 The total conformal dimension of a non-diagonal field $V_{(r,s)}$ is 
 \begin{align}
  \Delta_{(r,s)}+\Delta_{(r,-s)} = \frac12\left[ r^2\beta^{2} + s^2\beta^{-2}  -\left(\beta-\beta^{-1}\right)^2\right]\ .
 \end{align}
-If $V^d_{\langle 1,2\rangle}$ exists, then the OPE \eqref{vdvrs} increments $s$ by one unit, therefore $s$ is unbounded in real part i.e. $\sup_{V_{(r,s)}\in \widehat{\mathcal{S}}} \left(\Re s\right) = \infty$. Assuming that this holds not only for the extended spectrum $\widehat{\mathcal{S}}$ but also for some OPE spectrum $\mathcal{S}_{12}$, we deduce $\Re\beta^{-2}>0$, or equivalently 
+If $V^d_{\langle 1,2\rangle}$ exists, then the OPE \eqref{vdvrs} increments $s$ by one unit, therefore $s$ is unbounded in real part i.e. $\sup_{V_{(r,s)}\in \widehat{\mathcal{S}}} \left(\Re s\right) = \infty$. Assuming that this holds not only for the extended spectrum $\widehat{\mathcal{S}}$ but also for some OPE spectrum $\mathcal{S}^{12}$, we deduce $\Re\beta^{-2}>0$, or equivalently 
 \begin{align}
  \boxed{\Re\beta^2 > 0 \quad \text{i.e.} \quad \Re c < 13}\ .
  \label{rbp}
@@ -2312,6 +2316,13 @@ While the product formulas are adequate for numerically computing the conformal 
 
 \subsubsection{Behaviour for large channel dimensions}
 
+
+\begin{align}
+ \mathcal{F}_\Delta(q) = (16q)^\Delta \times \cdots 
+ \label{fdq}
+\end{align}
+
+
 See Yin et al? See Appendix D of \cite{msz15} for the pillow geometry that underlies the variable $q$.
 
 $S_3$ subgroup of global conformal group that permutes $z=0,1,\infty$. 
@@ -2351,9 +2362,13 @@ $S_3$ subgroup of global conformal group that permutes $z=0,1,\infty$.
 \end{align}
 
 
+\subsubsection{Zamolodchikov's recursive representation}\label{sec:zrr}
 
+\begin{align}
+ H_\Delta(q) = 
+ \label{hdq}
+\end{align}
 
-\subsubsection{Zamolodchikov's recursive representation}
 
 \subsection{Interchiral symmetry} \label{sec:icb}
 
@@ -2483,9 +2498,9 @@ so that permutation-even solutions only involve $s$-channel fields with even con
 Let us now assume that the degenerate field $V^d_{\langle 1,2\rangle}$ exists. 
 As we saw in Section \ref{sec:icb}, this determines how 4-point structure constants $D^{(x)}_{(r,s)}$ behave under $s\to s+2$, and we can rewrite the crossing symmetry equations \eqref{seteu} as 
 \begin{align}
- \forall z\in \overline{\mathbb{C}}\backslash\{0,1,\infty\} \ , \quad \sum_{k\in\widetilde{\mathcal{S}}} D_k^{(s)} \widetilde{\mathcal{G}}^{(s)}_{\Delta_k,\bar\Delta_k}(z) = \sum_{k\in\widetilde{\mathcal{S}}} D_k^{(t)} \widetilde{\mathcal{G}}^{(t)}_{\Delta_k,\bar\Delta_k}(z) = \sum_{k\in\widetilde{\mathcal{S}}} D_k^{(u)} \widetilde{\mathcal{G}}^{(u)}_{\Delta_k,\bar\Delta_k}(z)\ ,
+ \forall z\in \overline{\mathbb{C}}\backslash\{0,1,\infty\} \ , \quad \sum_{k\in\widetilde{\mathcal{S}}^{(s)}} D_k^{(s)} \widetilde{\mathcal{G}}^{(s)}_{\Delta_k,\bar\Delta_k}(z) = \sum_{k\in\widetilde{\mathcal{S}}^{(t)}} D_k^{(t)} \widetilde{\mathcal{G}}^{(t)}_{\Delta_k,\bar\Delta_k}(z) = \sum_{k\in\widetilde{\mathcal{S}}^{(u)}} D_k^{(u)} \widetilde{\mathcal{G}}^{(u)}_{\Delta_k,\bar\Delta_k}(z)\ ,
 \end{align}
-where $\widetilde{\mathcal{G}}^{(x)}_{\Delta,\bar\Delta}$ is now an interchiral block \eqref{gtrs}, and $\widetilde{\mathcal{S}}=\left.\mathcal{S}\right|_{-1<s\leq 1}$ is a reduced spectrum. In loop CFTs, the reduced spectrum is still infinite, but the list \eqref{vex} of non-diagonal fields $V_{(r,s)}$ with integer spins reduces to $2r$ fields for any given value of $r\in\frac12\mathbb{N}^*$:
+where $\widetilde{\mathcal{G}}^{(x)}_{\Delta,\bar\Delta}$ is now an interchiral block \eqref{gtrs}, and $\widetilde{\mathcal{S}}^{(x)}=\left.\mathcal{S}^{(x)}\right|_{-1<s\leq 1}$ is a reduced spectrum. In loop CFTs, the reduced spectrum is still infinite, but the list \eqref{vex} of non-diagonal fields $V_{(r,s)}$ with integer spins reduces to $2r$ fields for any given value of $r\in\frac12\mathbb{N}^*$:
 \begin{subequations}
 \label{vexr}
 \begin{align}
@@ -2504,15 +2519,37 @@ modulo interchiral symmetry if $s_i\in\mathbb{Z}$, and permutation-invariant mod
 
 \subsubsection{Truncating to a finite system}
 
+Given a spectrum $\mathcal{S}$ and a cutoff $\Lambda \in \mathbb{R}_+$, let us define the truncated spectrum  
+\begin{align}
+ \mathcal{S}_\Lambda = \left\{ k\in \mathcal{S}\middle| \Re\left(\Delta_k+\bar\Delta_k\right)<\Lambda \right\} \ . 
+ \label{sl}
+\end{align}
+We assume that truncated channel spectrums $\mathcal{S}^{(x)}_\Lambda$ are finite, i.e. there are finitely many primary states in each channel. Unlike the condition \eqref{iddb} that OPE spectrums be bounded from below, this is not required by consistency of the CFT: for example, in Liouville theory, truncated spectrums are continuous for $\Lambda>\Re\left(\frac{c-1}{12}\right)$. Our finiteness condition in only necessary for our numerical method to apply. Moreover, we need to assume that the terms that we truncate out tend to zero as $\Lambda\to +\infty$. In Liouville theory, it can be shown that $D^{(x)}_\Delta \left|\mathcal{F}^{(x)}_\Delta(q)\right|^2 \underset{\Delta\to+\infty}{\propto} |q|^{2\Delta}$ with $|q|<1$ \cite{rs15}, as a consequence of the behaviour of Virasoro blocks \eqref{fdq} and of structure constants. In loop CFTs, a similar behaviour is observed numerically.
 
-Random positions.
+The truncation scheme remains the same if we use interchiral blocks rather than conformal blocks: in each interchiral block, we keep only the conformal blocks whose total conformal dimension obeys the cutoff \eqref{sl}. 
+
+We then have to approximate conformal blocks so that they can be computed in finite time. Virasoro blocks are defined as infinite series, and their recursive representation also leads to an infinite series, see Section \ref{sec:zrr}. In principle, in order to make errors of the same order of magnitude as when truncating the spectrum, we should use the same cutoff $\Lambda$, now applied to descendant states rather than primary states. This means that in the series $H_\Delta(q)$ \eqref{hdq}, we should keep the term of order $q^N$ provided 
+\begin{align}
+ \Re\left(\Delta +\bar\Delta\right) + N + \bar N <\Lambda\ . 
+\end{align}
+However, it is impractical to perform correlated truncations of the left-moving and right-moving blocks, with truncation parameters that moreover depend on the channel dimensions $\Delta,\bar\Delta$. In practice, the lowest dimension $\min_{k\in\mathcal{S}}\Re\left(\Delta_k+\bar\Delta_k\right)$ is typically not far from zero, and we simply truncate all blocks to order $\Lambda$, i.e. we keep terms such that 
+\begin{align}
+ N,\bar N < \Lambda \ . 
+\end{align}
+
+Finally, now that we have a finite number of unknowns, we can afford to use only finitely many equations. One commonly-used possibility is to expand the crossing symmetry equations near a point $z_0$, and to keep finitely many terms in the expansion. In order to solve the bootstrap equations that involve only the $s$-channel and $t$-channel decompositions, it is natural to use $z_0=\frac12$, as this is the finite fixed point of $z\mapsto 1-z$. In order to solve our 3-channel bootstrap equations, $z_0 = e^{i\frac{\pi}{3}}$ would be more natural, see Table \eqref{S3}. Another possibility is to refrain from expanding around a point, and to use a number of different values of $z$ instead. These values should be chosen reasonably far from one another, from the singularities $z=0,1,\infty$, and also from the real line $z\in\mathbb{R}$, where the conformal blocks $\mathcal{G}^{(x)}_{\Delta,\bar\Delta}$ and $\mathcal{G}^{(x)}_{\bar\Delta,\Delta}$ coincide. Under these conditions, we can draw these values randomly, resulting in a finite set $Z_\Lambda$.
+
+After these truncations and approximations, the crossing symmetry equations \eqref{seteu} reduce to a finite system of the type 
+\begin{align}
+ \forall z\in Z_\Lambda\ , \quad 
+ \sum_{k\in\mathcal{S}^{(s)}_\Lambda} D_k^{(s)} \mathcal{G}^{(s)}_{\Lambda|\Delta_k,\bar\Delta_k}(z) 
+ = \sum_{k\in\mathcal{S}^{(t)}_\Lambda} D_k^{(t)} \mathcal{G}^{(t)}_{\Lambda|\Delta_k,\bar\Delta_k}(z) 
+ = \sum_{k\in\mathcal{S}^{(u)}_\Lambda} D_k^{(u)} \mathcal{G}^{(u)}_{\Lambda|\Delta_k,\bar\Delta_k}(z)\ .
+ \label{fziz}
+\end{align}
+After choosing a normalization, for example $D_{k_0}^{(s)}=1$, this system would generically have a unique solution if it had as many equations as unknowns, i.e. if $|Z_\Lambda|=\sum_{x\in\{s,t,u\}}\left|\mathcal{S}^{(x)}_\Lambda\right|-1$. For numerical stability, it does not hurt to make the system slightly overdetermined.
 
 \subsubsection{Studying one solution}
-
-Choice of parameters: $c$
-
-Truncating spectrum, blocks.
-
 
 
 Deviations. Detection of solutions. 
