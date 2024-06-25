@@ -763,7 +763,9 @@ If $n\geq 2$ this is a local Ward identity, while for $n=-1,0,1$ we recover glob
 
 \subsubsection{Single-valuedness and chiral factorization}
 
-We assume that correlation functions are single-valued functions on the Riemann sphere. However, correlation functions are of the type of $z^\Delta$, which is multivalued unless $\Delta\in\mathbb{Z}$. Single-valued functions like $|z|^{2\Delta}=z^\Delta\bar{z}^\Delta$ are not written in terms of powers of $z$, but also involve $\bar z$. In the literature, the notation $f(z,\bar z)$ is sometimes used for arbitrary functions of $z$, with $f(z)$ reserved to locally holomorphic functions, i.e. functions such that $\frac{\partial}{\partial \bar z} f(z) =0$. We will not use the notation $f(z,\bar z)$, which is redundant since $\bar z$ is itself a function of $z$. 
+We assume that correlation functions are \myindex{single-valued}\index{single-valuedness} on the Riemann sphere. Equivalently, we assume that any two fields are \myindex{mutually local}\index{mutual locality}, i.e. that they have trivial monodromies around each other: $V_1(ze^{2\pi i})V_2(0)=V_1(z)V_2(0)$. 
+
+The correlation functions of Section \ref{sec:csc} are of the form $z^\Delta$, which is multivalued unless $\Delta\in\mathbb{Z}$. Single-valued functions like $|z|^{2\Delta}=z^\Delta\bar{z}^\Delta$ are not written in terms of powers of $z$, but also involve $\bar z$. In the literature, the notation $f(z,\bar z)$ is sometimes used for arbitrary functions of $z$, with $f(z)$ reserved to locally holomorphic functions, i.e. functions such that $\frac{\partial}{\partial \bar z} f(z) =0$. We will not use the notation $f(z,\bar z)$, which is redundant since $\bar z$ is itself a function of $z$. 
 
 The generators $\ell_n$ \eqref{lpz} of local conformal transformations are only valid when acting on locally holomorphic functions: for more general functions, the generators are 
 \begin{align}
@@ -772,7 +774,7 @@ The generators $\ell_n$ \eqref{lpz} of local conformal transformations are only 
 \end{align}
 In fact we want the algebra of conformal transformations to act on a complex vector space: the space of complex-valued functions on $\overline{\mathbb{C}}$ for the Witt algebra, the space of states of the CFT for the Virasoro algebra. We should therefore complexify our symmetry algebra, and we obtain two copies of the Virasoro algebra: a \myindex{left-moving}  Virasoro algebra\index{left-moving} $\mathfrak{V}$ with generators $L_n$, and a \myindex{right-moving} Virasoro algebra\index{right-moving} $\bar{\mathfrak{V}}$ with generators $\bar{L}_n$. In the case of the algebra of global conformal transformations, we start with the 6-dimensional real Lie algebra $\mathfrak{sl}_2(\mathbb{C})$, with generators \eqref{epbe} with $n=-1,0,1$, and the complexification yields $\mathfrak{sl}_2(\mathbb{C})^\mathbb{C} = \mathfrak{sl}_2(\mathbb{C})\times \mathfrak{sl}_2(\mathbb{C})$.
 
-In Sections \ref{sec:vir} and \ref{sec:fope}, we have been doing \myindex{chiral CFT}\index{CFT!chiral---}, which means considering $\mathfrak{V}$ only. In a full CFT, the symmetry algebra is the \myindex{conformal algebra} $\mathfrak{V}\times \bar{\mathfrak{V}}$, where for simplicity we assume that the left and right central charges are equal. When it comes to representations, Verma modules of $\mathfrak{V}\times \bar{\mathfrak{V}}$ are simply $\mathcal{V}_\Delta\otimes \bar{\mathcal{V}}_{\bar \Delta}$, where we write a bar over representations of $\bar{\mathfrak{V}}$. There also exist representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$ that are not themselves factorized, in particular logarithmic representations \cite{nr20}. 
+In Sections \ref{sec:vir} and \ref{sec:fope}, we have been doing \myindex{chiral CFT}\index{CFT!chiral---}, which means considering $\mathfrak{V}$ only. In a full CFT, the symmetry algebra is the \myindex{conformal algebra}\index{conformal algebra} $\mathfrak{V}\times \bar{\mathfrak{V}}$, where for simplicity we assume that the left and right central charges are equal. When it comes to representations, Verma modules of $\mathfrak{V}\times \bar{\mathfrak{V}}$ are simply $\mathcal{V}_\Delta\otimes \bar{\mathcal{V}}_{\bar \Delta}$, where we write a bar over representations of $\bar{\mathfrak{V}}$. There also exist representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$ that are not themselves factorized, in particular logarithmic representations \cite{nr20}. 
 
 Fields now belong to representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$, and they obey $\frac{\partial}{\partial \bar z} V(z) = \bar L_{-1} V(z)$, which is the antiholomorphic version of Eq. \eqref{pvlv}. This allows us to define a right-moving energy-momentum tensor $\bar T(y) = \sum_{n\in\mathbb{Z}} \frac{\bar L_n^{(z)}}{(\bar y-\bar z)^{n+2}}$. While $T$ is locally holomorphic, $\bar T$ is locally antiholomorphic:
 \begin{align}
@@ -927,7 +929,7 @@ In this section we derive the spectrums and fusion rules of exactly solvable CFT
  \item lattice constructions for the $O(n)$ and Potts models \cite{fsz87},
  \item the numerical bootstrap for Liouville theory with $c\leq 1$ \cite{rs15}.
 \end{itemize}
-Here we recover their spectrums from assumptions about Virasoro representations and their fusion rules. Although our assumptions are simple, they are not unique or inevitable, and it can be interesting to relax or modify them. These assumptions could also be useful for exploring CFTs with extended symmetry algebras. 
+Here we recover their spectrums from assumptions about Virasoro representations, their fusion rules, and single-valuedness of correlation functions. Although our assumptions are simple, they are not unique or inevitable, and it can be interesting to relax or modify them. This approach can also be used in CFTs with extended symmetry algebras, see for example \cite{bp24}.
 
 \subsection{Spectrum and degenerate fields}
 
@@ -964,7 +966,7 @@ We also introduce \myindex{extended spectrums}\index{spectrum!extended---} as la
  \item In the $O(n)$ model and in Liouville theory, we will use the degenerate field $V^d_{\langle 1,2\rangle}$ for constraining correlation functions, even though it does not belong to the physical spectrum. Correlation functions of the $O(n)$ model that involve $V^d_{\langle 1,2\rangle}$ are not single-valued: they belong to an extended CFT that obeys weaker assumptions. 
  \item The spectrum of Liouville theory is continuous, so that the OPE gives rise to an integral over the real momentums of primary fields. Since the integrand is meromorphic, the integration contour can be deformed in the complex plane. This leads to an extended spectrum of complex momentums. 
 \end{itemize}
-We will say that \myindex{a field exists} if it belongs to some extended spectrum, i.e. if it can be consistently added to our CFT. 
+We will say that \myindex{a field exists}\index{existence (of a field)} if it belongs to some extended spectrum, i.e. if it can be consistently added to our CFT. 
 
 \subsubsection{Diagonal and non-diagonal fields}
 
@@ -1067,18 +1069,16 @@ We now assume that $\beta^2\notin \mathbb{Q}$, and remember $rs\in\frac12\mathbb
 \end{align}
 While they were derived under the assumption $\beta^2\notin \mathbb{Q}$, we will assume that these OPEs are valid for any value of the central charge. 
 
-The OPEs \eqref{vdvrs} and \eqref{vpope} indicate which primary fields can appear: we now assume that in each one of these OPEs, the two fields that can appear do appear. 
-Together with the closure of the spectrum under OPE, this leads to constraints on non-diagonal fields. If indeed $V^d_{\langle 1,2\rangle}\in\widehat{\mathcal{S}}$, then $V_{(r,s)}\in\widehat{\mathcal{S}}\implies V_{(r,s\pm 1)}\in\widehat{\mathcal{S}}$. 
- Requiring that the conformal spin \eqref{srs} remains half-integer under $s\to s\pm 1$, we obtain
- $r\in \frac12 \mathbb{Z}$.
-Moreover, let us  consider the correlation function $\left<V^d_{\langle 1,2\rangle}\prod_{i=1}^NV_{(r_i,s_i)}\right>$. 
-The monodromy of $V^d_{\langle 1,2\rangle}$  around $V_{(r_i,s_i)}$ is $e^{2\pi ir_i}\in \{1,-1\}$, as determined by the OPE \eqref{tope} and the differences of spins \eqref{sdiff2}. These monodromies may be nontrivial, since we do not require correlation functions to be single-valued in an extended CFT. 
-But the product of monodromies must be $1$, which implies 
+The OPEs \eqref{vdvrs} and \eqref{vpope} indicate which primary fields can appear: we now assume that in each one of these OPEs, the two fields that can appear do appear, i.e.  $V^d_{\langle 1,2\rangle},V_{(r,s)}\in\widehat{\mathcal{S}}\implies V_{(r,s\pm 1)}\in\widehat{\mathcal{S}}$. 
+This implies that the conformal spin \eqref{srs} remains half-integer under $s\to s\pm 1$, therefore
+$r\in \frac12 \mathbb{Z}$. Moreover, the OPE \eqref{tope} implies that the monodromy of $V^d_{\langle 1,2\rangle}$ around $V_{(r,s)}$ is $e^{2\pi ir}\in \{1,-1\}$.
+In the $N+1$-point function $\left<V^d_{\langle 1,2\rangle}\prod_{i=1}^NV_{(r_i,s_i)}\right>$,
+the product of the monodromies of $V^d_{\langle 1,2\rangle}$ must be $1$, therefore $\sum_{i=1}^N r_i  \in \mathbb{Z}$. This conclusion also holds for $N$-point functions of the type $\left<\prod_{i=1}^NV_{(r_i,s_i)}\right>$, which may be deduced from our $N+1$-point function using an OPE. Therefore, if $V^d_{\langle 1,2\rangle}$ exists, then the first Kac index of non-diagonal fields $V_{(r,s)}$ is half-integer and conserved modulo integers:
 \begin{align}
  \boxed{V^d_{\langle 1,2\rangle}\in\widehat{\mathcal{S}} \quad \implies\quad  r\in \frac12\mathbb{Z} \quad , \quad \sum_{i=1}^N r_i  \in \mathbb{Z}}\ . 
  \label{sriz}
 \end{align}
-Similarly, the existence of $V^d_{\langle 2,1\rangle}$ leads to constraints on the second Kac index of non-diagonal fields $V_{(r,s)}$,
+Similarly, if $V^d_{\langle 2,1\rangle}$ exists, then the same is true for the second Kac index,
 \begin{align}
  \boxed{V^d_{\langle 2,1\rangle}\in\widehat{\mathcal{S}} \quad \implies\quad  s\in \frac12\mathbb{Z} \quad , \quad \sum_{i=1}^N s_i  \in \mathbb{Z}}\ . 
  \label{ssiz}
@@ -1105,7 +1105,7 @@ This constraint holds for all known non-diagonal CFTs with at least 1 degenerate
 
 \subsubsection{Generalized minimal models}\label{sec:gmm}
 
-For $\beta^2\in\mathbb{C}^*\backslash\mathbb{Q}$, we define the \myindex{generalized minimal model (GMM)}\index{minimal model!generalized---} as the CFT whose spectrum of primary fields is made of all diagonal degenerate fields:
+For $\beta^2\in\mathbb{C}^*\backslash\mathbb{Q}$, we define the \myindex{generalized minimal model (GMM)}\index{minimal model!generalized---}\index{GMM} as the CFT whose spectrum of primary fields is made of all diagonal degenerate fields:
 \begin{align}
  \boxed{\mathcal{S}^\text{GMM} = \left\{ V^d_{\langle r,s\rangle}\right\}_{r,s\in\mathbb{N}^*}} \ . 
 \end{align}
@@ -1134,7 +1134,7 @@ where the factor $\frac12$ is because $V_P=V_{-P}$. Now, remember from Section \
  V_{P_1}V_{P_2} \sim \frac12 \int_{\mathbb{R}+i\epsilon} dP\ V_P\ .
  \label{ireg}
 \end{align}
-Let us call \myindex{Liouville theory} the resulting CFT. The spectrum of primary fields is formally
+Let us call \myindex{Liouville theory}\index{Liouville theory} the resulting CFT. The spectrum of primary fields is formally
 \begin{align}
  \boxed{\mathcal{S}^\text{Liouville} = \frac12 \left\{ V_P\right\}_{P\in \mathbb{R}}}\ .
  \label{sliou}
@@ -1261,7 +1261,7 @@ But parity forbids $(i,j)=(i',j')$, since $p$ or $q$ is odd. And we have $2|i-i'
 \end{align}
 Therefore, by associativity of the fusion product, the product of two fully degenerate representations is again a combination of fully degenerate representations.
 
-We therefore define the \myindex{A-series minimal model}\index{minimal model!A-series} AMM$_{p,q}$ by its spectrum, made of fully degenerate fields in the Kac table:
+We therefore define the \myindex{A-series minimal model}\index{minimal model!A-series---} AMM$_{p,q}$ by its spectrum, made of fully degenerate fields in the Kac table:
 \begin{align}
  \boxed{\mathcal{S}^{\text{AMM}_{p,q}} = \frac12\left\{ V^f_{\langle r,s\rangle} \right\}_{(r,s)\in K_{p,q}} \quad \text{with} \quad 2\leq p<q\ \text{ coprime}}\ .
  \label{samm}
@@ -1343,7 +1343,7 @@ D\times D = D \quad , \quad D\times N = N \quad , \quad N\times N = D \ ,
 \end{align}
 where $D$ stands for diagonal and $N$ for non-diagonal fields. 
 Moreover, we assume that the diagonal sector is generated by taking OPEs of non-diagonal fields. 
-By the degenerate fusion rules \eqref{rrsr}, the diagonal sector involves representations $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}+1$. We therefore define a \myindex{D-series minimal model}\index{minimal model!D-series} $\text{DMM}_{p,q}$ by the spectrum
+By the degenerate fusion rules \eqref{rrsr}, the diagonal sector involves representations $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}+1$. We therefore define a \myindex{D-series minimal model}\index{minimal model!D-series---} $\text{DMM}_{p,q}$ by the spectrum
 \begin{align}
  \boxed{\mathcal{S}^{\text{DMM}_{p,q}} = \frac12\left\{ V^f_{\langle r,s\rangle} \right\}_{\substack{(r,s)\in K_{p, q}\\ r\equiv 1\bmod 2}} 
  \bigcup 
@@ -1362,7 +1362,7 @@ where the lower bounds $p\geq 6$ and $q\geq 3$ ensure that the non-diagonal sect
  \frac12\left\{V_{(r,s)} \right\}_{\substack{(r,s)\in (-\frac{p}{2},\frac{p}{2})\times (-\frac{q}{2},\frac{q}{2})\\ (r,s)\in \mathbb{Z}\times (\mathbb{Z}+\frac12)}}
 \ .
 \end{align}
-The corresponding CFT may be called a fermionic minimal model \cite{rw20}. The fusion rules are obtained by combining the fully degenerate fusion rules \eqref{rfrf} with the conservation of diagonality:
+The corresponding CFT may be called a \myindex{fermionic minimal model}\index{minimal model!fermionic---} \cite{rw20}. The fusion rules are obtained by combining the fully degenerate fusion rules \eqref{rfrf} with the conservation of diagonality:
 \begin{align}
  V^f_{\langle r_1,s_1\rangle}V_{(r_2,s_2)} &\sim \sum_{r\overset{2}{=}\max(r_2-r_1,r_1-r_2-p)+1}^{\min(r_1+r_2,p-r_1-r_2)-1} \sum_{s\overset{2}{=}\max(s_2-s_1,s_1-s_2-q)+1}^{\min(s_1+s_2,q-s_1-s_2)-1} V_{(r,s)} \ ,
  \label{vfvn}
@@ -1370,7 +1370,7 @@ The corresponding CFT may be called a fermionic minimal model \cite{rw20}. The f
  V_{(r_1,s_1)} V_{(r_2,s_2)} & \sim \sum_{r\overset{2}{=}|r_1-r_2|+1}^{p-|r_1+r_2|-1} \sum_{s\overset{2}{=}|s_1-s_2|+1}^{q-|s_1+s_2|-1} V^f_{\langle r,s\rangle}\ . 
  \label{vnvn}
 \end{align}
-It can be checked that for these fusion rules, the D-series minimal model is a closed subsector of its fermionic extension. Curiously, the diagonal field $V^f_{\langle \frac{p}{2}, s\rangle}$ has the same conformal dimensions as the non-diagonal field $V_{(0,s-\frac{q}{2})}$: this an instance of a nontrivial \myindex{field multiplicity}\index{field!---multiplicity}. However, these two fields have different fusion rules. 
+The D-series minimal model is a subtheory of its fermionic extension, i.e. its spectrum is closed under fusion. Curiously, the diagonal field $V^f_{\langle \frac{p}{2}, s\rangle}$ has the same conformal dimensions as the non-diagonal field $V_{(0,s-\frac{q}{2})}$: this an instance of a nontrivial \myindex{field multiplicity}\index{field!---multiplicity}. However, these two fields have different fusion rules. 
 
 \subsubsection{Generalized D-series minimal models}\label{sec:gdmm}
 
@@ -1397,7 +1397,7 @@ where the imaginary shift $i\epsilon$ is here for avoiding poles of OPE coeffici
 \begin{align}
 \boxed{\mathcal{S}^{\text{GDMM}_{\beta^2}} = \frac12 \left\{V_P\right\}_{P\in \mathbb{R}} \bigcup  \frac12\left\{V_{(r,s)} \right\}_{ (r,s)\in 2\mathbb{Z}\times (\mathbb{Z}+\frac12)}  }\ ,
 \end{align}
-and we call the corresponding CFT a \myindex{generalized D-series minimal model}\index{minimal model!generalized D-series---}. Due to the lack of $r\leftrightarrow s$ symmetry in the non-diagonal sector, this theory depends on $\beta^2$ rather than the central charge $c$, i.e. it is not invariant under $\beta \to \beta^{-1}$. 
+and we call the corresponding CFT a \myindex{generalized D-series minimal model}\index{minimal model!generalized D-series---}\index{GDMM}. Due to the lack of $r\leftrightarrow s$ symmetry in the non-diagonal sector, this theory depends on $\beta^2$ rather than the central charge $c$, i.e. it is not invariant under $\beta \to \beta^{-1}$. 
 The OPEs of this CFT are determined by the conservation of diagonality: in addition to the OPEs of two non-diagonal fields \eqref{vrsvrs} and the OPE of two diagonal fields \eqref{idpv}, we have the mixed OPE 
 \begin{align}
  V_{(r_1,s_1)}V_P \sim \frac12 \sum_{r\in 2\mathbb{Z}}\sum_{s\in \mathbb{Z}+\frac12} V_{(r,s)} \ . 
@@ -1880,17 +1880,31 @@ In a CFT with two degenerate fields $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle
 Combining the crossing symmetry equation \eqref{dmdp}, and \eqref{ddb} with the determination \eqref{cs} of degenerate 4pt structure constants and the choice \eqref{cpcm} of degenerate OPE structure constants, we obtain
 \begin{align}
  \boxed{\frac{C_{1^-23}}{C_{1^+23}} = 
- (-)^{2s_2}\beta^{4\beta (P_1+\bar P_1)} \frac{\prod_{\pm,\pm}\Gamma\left(\tfrac12 -\beta\bar P_1\pm\beta \bar P_2\pm\beta \bar P_3)\right)}{\prod_{\pm,\pm}
+ (-)^{2s_2}\beta^{4\beta^2r_1} \frac{\prod_{\pm,\pm}\Gamma\left(\tfrac12 -\beta\bar P_1\pm\beta \bar P_2\pm\beta \bar P_3)\right)}{\prod_{\pm,\pm}
  \Gamma\left(\tfrac12 +\beta P_1\pm \beta P_2\pm\beta P_3)\right)}} \ ,
  \label{sh-mp}
 \end{align}
-These are called \myindex{shift equations}, because they determine how structure constants behave when the momentums $P_1,\bar P_1$ of fields are shifted by $\beta$, under the condition $s_i\in \frac12 \mathbb{Z}$ \eqref{ssiz}. If $s_i\in\mathbb{Z}$, then not only $S_{i^-}-S_{i^+}\in\mathbb{Z}$ but also $S_{i}-S_{i^+}\in\mathbb{Z}$, and we also have the more refined shift equation, deduced from Eq. \eqref{dpdp},
+This is called a \myindex{shift equation}\index{shift equation}, because it determines how structure constants behave when the momentums $P_1,\bar P_1$ of a field are shifted by $\beta$, under the condition $s_i\in \frac12 \mathbb{Z}$ \eqref{ssiz}. If $s_i\in\mathbb{Z}$, then not only $S_{i^-}-S_{i^+}\in\mathbb{Z}$ but also $S_{i}-S_{i^+}\in\mathbb{Z}$, and we also have the more refined shift equation, deduced from Eq. \eqref{dpdp},
 \begin{align}
  \boxed{\frac{C_{123^+}}{C_{1^+23}} = 
- (-)^{s_3} \beta^{2\beta(P_1+\bar P_1-P_3-\bar P_3)}
+ (-)^{s_3} \beta^{2\beta^2(r_1-r_3)}
  \frac{ \prod_\pm\Gamma\left(\frac12 -\beta\bar P_1 \pm \beta\bar P_2 +\beta\bar P_3\right)}{ \prod_\pm\Gamma\left(\frac12+\beta P_1 \pm \beta P_2 -\beta P_3\right)}}\ .
  \label{sh-pp}
 \end{align}
+Our two shift equations were associated to the degenerate field $V^d_{\langle 2,1\rangle}$. To obtain the shift equations associated to $V^d_{\langle 1,2\rangle}$ instead, we may perform the substitutions $\beta\to \beta^{-1}$ and $r\leftrightarrow s$, which imply $(P,\bar P)\to (-P,\bar P)$. We obtain 
+\begin{align}
+ \frac{C_{1^-23}}{C_{1^+23}} = 
+ (-)^{2r_2}\beta^{-4\beta^{-2}s_1} \frac{\prod_{\pm,\pm}\Gamma\left(\tfrac12 -\beta\bar P_1\pm\beta \bar P_2\pm\beta \bar P_3)\right)}{\prod_{\pm,\pm}
+ \Gamma\left(\tfrac12 -\beta P_1\pm \beta P_2\pm\beta P_3)\right)} \ ,
+ \label{sh-mp2}
+\end{align}
+\begin{align}
+\frac{C_{123^+}}{C_{1^+23}} = 
+ (-)^{s_3} \beta^{-2\beta^2(s_1-s_3)}
+ \frac{ \prod_\pm\Gamma\left(\frac12 -\beta\bar P_1 \pm \beta\bar P_2 +\beta\bar P_3\right)}{ \prod_\pm\Gamma\left(\frac12-\beta P_1 \pm \beta P_2 -\beta P_3\right)}\ .
+ \label{sh-pp2}
+\end{align}
+
 
 \subsection{Solutions of shift equations}\label{sec:essc}
 
@@ -1922,7 +1936,7 @@ If $\beta^2\notin \mathbb{Q}$, this factor must be constant on the complex $P_i$
 \end{align}
 The expression for $C_{P_1,P_2,P_3}$ obeys the shift equation \eqref{sh-mp} with $s_i=0$ and $P_i=\bar P_i$.
 It is invariant under $P_i\to -P_i$, i.e. it obeys the reflection relation \eqref{refl}.
-And it is invariant under $\beta \to \beta^{-1}$, so it also obeys the shift equation from $V^d_{\langle 1,2\rangle}$. 
+And it is invariant under $\beta \to \beta^{-1}$, so it also obeys the shift equation \eqref{sh-mp2}. 
 Remarkably, the 2-point and 3-point functions can be analytically continued beyond the half-line $c\in (-\infty ,1]$, while $N$-point functions with $N`\geq 4$ cannot, as follows from our discussion of the OPE in Section \ref{sec:liou}. 
 
 The expressions \eqref{bc} for 2-point and 3-point structure constants are also valid in generalized minimal models, and in A-series minimal models. In such models, solutions of shift equations are unique, up to a field-independent factor. In the case of $C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}$, our shift equations \eqref{sh-mp} and \eqref{sh-pp}, together with the invariance under permutations of the 3 fields, determine all integer shifts that preserve $r_1+r_2+r_3\bmod 2$. But the fusion rules \eqref{rrsr} imply that the 3-point structure constant exists only if $r_1+r_2+r_3\equiv 1\bmod 2$, and can therefore be deduced from $C_{P_{(1,1)},P_{(1,1)},P_{(1,1)}}$ using shift equations. This implies in particular that the double Gamma functions can be replaced with products of Gamma functions. (See \cite[Section 3.2.1]{rib14} for explicit expressions.) This makes the 3-point structure constants well-defined for any $\beta\in \mathbb{C}^*$, including in the regime $\beta\in i\mathbb{R}$ where $\Gamma_\beta$ is not defined.
@@ -2013,13 +2027,13 @@ where we introduced the \myindex{double Sine function}\index{double Sine functio
  S_\beta(x) = \frac{\Gamma_\beta(x)}{\Gamma_\beta(\beta + \beta^{-1}-x)}\quad \implies \quad \frac{S_\beta(x+\beta)}{S_\beta(x)} = 2\sin(\pi\beta x)\ .
  \label{sb}
 \end{align}
-Having worked out the basic properties of our ansatz \eqref{cdnn}, let us check whether it obeys the shift equations. The spectrum \eqref{sdmm} of D-series minimal models is invariant under $s\to s+1$, both in the diagonal and non-diagonal sectors. Therefore, when it comes to the shifts from $V^d_{\langle 1,2\rangle}$, we have to check the two shift equations \eqref{sh-mp} and \eqref{sh-pp} with $\beta\to\beta^{-1}$ and $r_i\leftrightarrow s_i$, where the shifted fields may be diagonal or non-diagonal. This is straightforward, if we remember $r_2,r_3\in 2\mathbb{Z}$, leading to trivial sign factors $(-)^{r_i}=1$. We will now deal with the subtler case of the shifts from $V^d_{\langle 2,1\rangle}$. The spectrum of D-series minimal models is invariant under $r\to r+2$ but not $r\to r+1$, so we only have to deal with the shift equation \eqref{sh-mp}. If we shift a non-diagonal field, our ansatz \eqref{cdnn} behaves as 
+Having worked out the basic properties of our ansatz \eqref{cdnn}, let us check whether it obeys the shift equations. The spectrum \eqref{sdmm} of D-series minimal models is invariant under $s\to s+1$, both in the diagonal and non-diagonal sectors. Therefore, when it comes to the shifts from $V^d_{\langle 1,2\rangle}$, we have to check the two shift equations \eqref{sh-mp2} and \eqref{sh-pp2}. This is straightforward, if we remember $r_2,r_3\in 2\mathbb{Z}$, leading to trivial sign factors $(-)^{r_i}=1$. We will now deal with the subtler case of the shifts from $V^d_{\langle 2,1\rangle}$. The spectrum of D-series minimal models is invariant under $r\to r+2$ but not $r\to r+1$, so we only have to deal with the shift equation \eqref{sh-mp}. If we shift a non-diagonal field, our ansatz \eqref{cdnn} behaves as 
 \begin{align}
- \frac{C_{(r_1-1,s_1),(r_2,s_2),P_3}}{C_{(r_1+1,s_1),(r_2,s_2),P_3}} = - \beta^{4\beta(P_1+\bar P_1)}\frac{\prod_{\pm,\pm} \Gamma(\frac12-\beta \bar P_1\pm \beta\bar P_2\pm \beta P_3)}{\prod_{\pm,\pm} \Gamma(\frac12+\beta P_1\pm \beta P_2\pm \beta P_3)}\ , 
+ \frac{C_{(r_1-1,s_1),(r_2,s_2),P_3}}{C_{(r_1+1,s_1),(r_2,s_2),P_3}} = - \beta^{4\beta^2r_1}\frac{\prod_{\pm,\pm} \Gamma(\frac12-\beta \bar P_1\pm \beta\bar P_2\pm \beta P_3)}{\prod_{\pm,\pm} \Gamma(\frac12+\beta P_1\pm \beta P_2\pm \beta P_3)}\ , 
 \end{align}
 where the overall sign comes from $\prod_\pm \frac{\cos \pi\beta(P_1\pm P_2-P_3)}{\cos\pi\beta(\bar P_1\pm \bar P_2-P_3)} = \prod_\pm (-1)^{s_1\pm s_2} = -1$. This agrees with Eq. \eqref{sh-mp} with $\bar P_3=P_3$ and $(-)^{2s_2}=-1$. If we now shift the diagonal field, our ansatz leads to 
 \begin{align}
- \frac{C_{P_1-\frac{\beta}{2},(r_2,s_2),(r_3,s_3)}}{C_{P_1+\frac{\beta}{2},(r_2,s_2),(r_3,s_3)}} =\beta^{4\beta(P_1+\bar P_1)}\frac{\prod_{\pm,\pm} \Gamma(\frac12-\beta P_1\pm \beta\bar P_2\pm \beta \bar P_3)}{\prod_{\pm,\pm} \Gamma(\frac12+\beta P_1\pm \beta P_2\pm \beta P_3)}\ .
+ \frac{C_{P_1-\frac{\beta}{2},(r_2,s_2),(r_3,s_3)}}{C_{P_1+\frac{\beta}{2},(r_2,s_2),(r_3,s_3)}} =\beta^{8\beta P_1}\frac{\prod_{\pm,\pm} \Gamma(\frac12-\beta P_1\pm \beta\bar P_2\pm \beta \bar P_3)}{\prod_{\pm,\pm} \Gamma(\frac12+\beta P_1\pm \beta P_2\pm \beta P_3)}\ .
 \end{align}
 Now this ratio differs from Eq. \eqref{sh-mp} with $\bar P_1=P_1$ by an overall sign. Let us cancel this sign in D-series minimal models. Since diagonal fields are in fact degenerate, they can be labelled by Kac indices, and subjected to the field renormalization 
 $V^d_{\langle r,s\rangle}\to (-)^{\frac{r+1}{2}} V^d_{\langle r,s\rangle}$. 
@@ -2048,7 +2062,7 @@ with $\{P,\bar P\}=\{P_{(r,s)},P_{(r,-s)}\}$. (The formula is invariant under $P
 
 \subsubsection{Loop CFTs}
 
-In the loop CFTs' extended spectrum $\widehat{S}^\text{loop}$ \eqref{sloop}, it is clear that shift equations do not determine the structure constants:
+From the structure of the loop CFTs' extended spectrum $\widehat{S}^\text{loop}$ \eqref{sloop}, it is clear that shift equations cannot completely determine the structure constants:
 \begin{itemize}
  \item In the case of non-diagonal fields $V_{(r,s)}$, the dependence on $r$ is not constrained, because the spectrum $\widehat{S}^\text{loop}$ does not include the degenerate field $V_{\langle 2,1\rangle}^d$. We only have $V^d_{\langle 1,2\rangle}$, whose shift equations determine how structure constants behave under $s\to s+2$, whereas $s$ takes fractional values.
  \item In the case of diagonal fields $V_P$, the shift equations from $V^d_{\langle 1,2\rangle}$ determine how structure constants behave under $P\to P+\beta^{-1}$. 
@@ -2064,21 +2078,22 @@ For reference 2-point structure constants of diagonal fields, we simply set $B^\
  \boxed{B^\text{ref}_{(r,s)} = \frac{(-)^{rs}}{2\sin\left(\pi(\{r\}+s)\right)\sin\left(\pi(r+\beta^{-2}s)\right)}\prod_{\pm,\pm}\Gamma_\beta^{-1}\left(\beta\pm \beta r \pm \beta^{-1}s\right)} \ ,
  \label{bref}
  \end{align}
- where $\{r\}\in\{0,\frac12\}$ is the fractional part of $r\in\frac12\mathbb{N}^*$. This is formally ill-defined if $r\in\mathbb{N}^*$ and $s\in\mathbb{Z}$, but can be regularized by taking a limit from generic values of $s$. This expression differs from what we would expect from the relation \eqref{bicii} between 2-point and 3-point structure constants,
+ where $\{r\}\in\{0,\frac12\}$ is the fractional part of $r\in\frac12\mathbb{N}^*$. This is formally ill-defined if $r\in\mathbb{N}^*$ and $s\in\mathbb{Z}$, but can be regularized by taking a limit from generic values of $s$. 
+ From the relation \eqref{bicii} between 2-point and 3-point structure constants, we would have expected $B^\text{ref}_{(r,s)}$ to coincide with 
  \begin{align}
-  C^\text{ref}_{(0,2\beta P_{(1,1)})(r,s)(r,s)} =  \prod_\pm \Gamma_\beta^{-2}\left(\beta^{\pm 1}\right)\Gamma_\beta^{-1}\left(\beta^{\pm 1}+2P_{(r,s)}\right)\Gamma_\beta^{-1}\left(\beta^{\pm 1}+2P_{(r,-s)}\right)  \ .
+  C^\text{ref}_{(0,2\beta P_{(1,1)})(r,s)(r,s)} =  \prod_\pm \Gamma_\beta^{-2}\left(\beta^{\pm 1}\right)\prod_{\pm,\pm}\Gamma_\beta^{-1}\left(\beta^{\pm 1}+\beta r \pm \beta^{-1}s\right)  \ .
   \label{cref0}
  \end{align}
-The ratio is invariant under shifts $s\to s+2$, except the sign factor $(-)^{rs}$:
+This differs from $B^\text{ref}_{(r,s)}$ by a factor that is invariant under shifts $s\to s+2$, except the sign factor $(-)^{rs}$:
  \begin{align}
   \frac{B^\text{ref}_{(r,s)}}{C^\text{ref}_{(0,2\beta P_{(1,1)})(r,s)(r,s)}} = 
   \frac{(-)^{rs} 4^r}{2\sin\left(\pi(\{r\}+s)\right)}
   \prod_\pm \Gamma_\beta^{2}(\beta^{\pm 1})
   \prod_{j\overset{1}{=}1-r}^{r-1} \sin\pi(\beta^2j+s) \ .
  \end{align}
-In particular, we then have $B^\text{ref}_{(0,2\beta P)} = \frac{1}{2\sin(2\pi\beta P)^2}B_P$.
+In particular, we have $B^\text{ref}_{(0,2\beta P)} = \frac{1}{2\sin(2\pi\beta P)^2}B_P$.
 
-The reference 3-point structure constant only obeys the shift equations \eqref{sh-mp}, \eqref{sh-pp} and permutation equation \eqref{b21} up to signs. Let us define the normalized 3-point structure constant 
+The reference 3-point structure constant only obeys the shift equations \eqref{sh-mp2}, \eqref{sh-pp2} and permutation equation \eqref{b21} up to signs. Let us define the normalized 3-point structure constant 
 \begin{align}
  C^\text{norm} = \frac{C}{C^\text{ref}}\ , 
 \end{align}
@@ -2446,8 +2461,8 @@ Let us compute $s$-channel interchiral blocks for the 4-point function $\left<\p
  \widetilde{\mathcal{G}}_{(r,s)} = \sum_{k\in \mathbb{Z}} \frac{D^{(s)}_{(r,s+2k)}}{D^{(s)}_{(r,s)}} \mathcal{F}_{P_{(r,s+2k)}} \bar{\mathcal{F}}_{P_{(-r,s+2k)}}\ . 
  \label{gtrs}
 \end{align}
-To make this explicit, it remains to compute the ratios of 4-point structure constants. This is in principle a straightforward consequence of the shift equation for the 3-point structure constant \eqref{sh-mp}. However, for certain values of the parameters, this shift equation 
-is finite after cancelling poles from the numerator and denominator. Such cancellations can be avoided by writing the shift equations differently. In fact, in shifts of the reference 3-point structure constant $C^\text{ref}$ \eqref{cref}, no cancelling poles occur. The price to pay is that $C^\text{ref}$ only solves shift equations up to signs, see Eq. \eqref{tpt}. Taking these signs into account, the shift equation \eqref{sh-mp} may be rewritten as 
+To make this explicit, it remains to compute the ratios of 4-point structure constants. This is in principle a straightforward consequence of the shift equation for the 3-point structure constant \eqref{sh-mp2}. However, for certain values of the parameters, this shift equation 
+is finite after cancelling poles from the numerator and denominator. Such cancellations can be avoided by writing the shift equations differently. In fact, in shifts of the reference 3-point structure constant $C^\text{ref}$ \eqref{cref}, no cancelling poles occur. The price to pay is that $C^\text{ref}$ only solves shift equations up to signs, see Eq. \eqref{tpt}. Taking these signs into account, the shift equation \eqref{sh-mp2} may be rewritten as 
 \begin{multline}
  \frac{C_{(r_1,s_1-1)(r_2,s_2)(r_3,s_3)}}{C_{(r_1,s_1+1)(r_2,s_2)(r_3,s_3)}} = (-)^{2r_3}(-)^{\max(2r_1,2r_2,2r_3,r_1+r_2+r_3)} \beta^{-4\beta^{-2}s_1} 
  \\ \times 
