@@ -215,6 +215,8 @@ We are not claiming that our approach is always mathematically rigorous: our mai
 
 This text was initially written as lecture notes for a course given at IPhT Saclay in March-April 2024. Video recordings are available on \href{https://www.youtube.com/playlist?list=PLrLctLPAdPNtD7yFOcfdNx2J-A_CE1svr}{IPhT-TV}. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica. I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop CFTs and related subjects. Moreover, I am grateful to Victor Godet, Jesper Jacobsen, Paul Roux, Hubert Saleur and Xi Yin for helpful discussions and correspondence. 
 
+% Send for reading to B. Muehlmann (part on Zamolodchikov recursion)
+
 %\end{tcolorbox}
 
 \section{Basics of two-dimensional CFT}\label{sec:bo}
@@ -2591,12 +2593,16 @@ In statistical physics, loop models have correlation functions of the type
 \begin{align}
  Z(\mathcal{E}) = \sum_{E\in\mathcal{E}} W(E)\ , 
 \end{align}
-where $\mathcal{E}$ is an ensemble of non-intersecting closed loops on the Riemann sphere $\overline{\mathbb{C}}$, and $W$ is a weight function. The easiest way to define $\mathcal{E}$ may be to discretize $\overline{\mathbb{C}}$, and draw the loops on the resulting graph: then the ensemble $\mathcal{E}$ is finite, and the number of loops per configuration $E$ is also finite: $|\mathcal{E}|, |E|<\infty$. 
-However, we then have to show that $Z(\mathcal{E})$ has a well-defined limit when the graph size tends to infinity, and that conformal symmetry emerges in that limit. Alternatively, it is possible to define a conformal loop ensemble $\mathcal{E}$ without discretizing $\overline{\mathbb{C}}$, then $|\mathcal{E}|=|E|=\infty$. 
- 
-We will remain agnostic on the precise definition of $\mathcal{E}$, and only assume that numbers of loops are finite, $|E|<\infty$. We assume that the energy $\log W(E)$ is extensive: then the weight of a configuration is a product of weights of individual loops $w(\ell)$. On the sphere, all loops are topologically the same, and must all have the same weight by conformal symmetry: 
+where $E$ is a set of non-intersecting closed loops on the Riemann sphere $\overline{\mathbb{C}}$, belonging to an ensemble $\mathcal{E}$, and $W$ is a weight function. 
+
+If we discretize $\overline{\mathbb{C}}$ and replace it with a finite lattice, the ensemble $\mathcal{E}$ becomes finite, and each configuration $E$ is made of finitely many loops: $|\mathcal{E}|, |E|<\infty$. Then the sum $Z(\mathcal{E})$ is manifestly finite, and can be numerically evaluated on a computer. The price to pay for the lattice discretization is that conformal symmetry is broken, and reemerges only in a large lattice size limit --- provided $Z(\mathcal{E})$ does have a limit. 
+
+An alternative is the mathematical notion of a conformal loop ensemble, which is an infinite ensemble $\mathcal{E}$ of configurations of infinitely many loops: $|\mathcal{E}|=|E|=\infty$. This ensemble is conformally invariant by construction. 
+
+We will not need a precise definition of a loop ensemble: we only assume $|E|<\infty$ for technical simplicity. We assume that the energy $\log W(E)$ is extensive: then the weight of a configuration is a product of weights of individual loops $w(\ell)$. On the sphere, all loops are topologically the same, and must have the same weight by conformal symmetry. Therefore,
 \begin{align}
  W(E) = \prod_{\ell \in E } w(\ell) = n^{|E|}\ ,
+ \label{woe}
 \end{align}
 where $n$ is the \myindex{contractible loop weight}\index{loop weight!contractible---}. 
 
@@ -2901,7 +2907,7 @@ In the complex $\beta^2$-half-plane, the line $M_{(1,s)}=\left\{\Re\beta^{-2}=\f
  \end{tikzpicture} 
 \end{align}
 When it comes to the complex $n$-plane, we first notice that the relation \eqref{ncb} maps any strip $k<\Re \beta^2\leq k+1$ to the full complex $n$-plane. 
-This is one reason why the same CFT can describe various phases of various statistical models. For example, the $O(n)$ model's dense phase is usually defined for $\beta^2\in (0,1)$, and the dilute phase for $\beta^2\in (1,2)$, with $\beta^2>2$ corresponding to multicritical phases. The $O(n)$ model has one lattice coupling, corresponding to $V^d_{\langle 1,3\rangle}$. In the dense phase, that field is irrelevant, and the critical limit is obtained for a range of values of the coupling. In the dilute phase it is relevant, and the critical limit is obtained for the critical value of the coupling. In multicritical phases, criticality can only be obtained by adding extra couplings to the model, and fine-tuning their values. 
+This is one reason why the same CFT can describe various phases of various statistical models. For example, the $O(n)$ model's dense phase is usually defined for $\beta^2\in (0,1)$, and the dilute phase for $\beta^2\in (1,2)$, with $\beta^2>2$ corresponding to multicritical phases. The $O(n)$ model has one lattice coupling $K$, contributing a factor $K^{\#\{\text{occupied edges}\}}$ to the weight function \eqref{woe}, and corresponding to the field $V^d_{\langle 1,3\rangle}$. In the dense phase, that field is irrelevant, and the critical limit is obtained for a range of values of the coupling. In the dilute phase it is relevant, and the critical limit is obtained for the critical value of the coupling, which is $K_c = \frac{1}{\sqrt{2+\sqrt{2-n}}}$ for the honeycomb lattice. In multicritical phases, criticality can only be achieved by adding extra couplings to the model, and fine-tuning their values. 
 
 These phases can be extended to the complex $\beta^2$-plane, by taking marginality lines as phase boundaries. Let us now plot the marginality lines in the $n$-plane that corresponds to $0<\Re \beta^2<1$:
 \newcommand{\margs}[2]{
