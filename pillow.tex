@@ -104,7 +104,9 @@ Special cases of the relations between $q,\tau,z$:
 \end{align}
 The factor $\Omega(q)$ in \eqref{fd} is deduced from the conformal transformation to $x,y\to u$. This explains in particular why it is factorized as a function of $\Delta_i$. 
 
-\section{Ward identities}
+\section{Sum over states}
+
+\subsection{Principle}
 
 In the $z$-coordinate, the behaviour \eqref{fk} of the block's coefficients follows from their calculation from Ward identities:
 \begin{align}
@@ -125,11 +127,28 @@ G^{-1} = \frac{1}{16(\Delta-\Delta_{(2,1)})(\Delta-\Delta_{(1,2)})} \begin{bmatr
 \begin{align}
  g = \begin{bmatrix} (\Delta+\Delta_1-\Delta_2)(\Delta+\Delta_1-\Delta_2+1) \\ \Delta+2\Delta_1-\Delta_2 \end{bmatrix}
 \end{align}
-We expect that the coefficients $c_k$ of the $q$-expansion \eqref{fd} can be similarly computed as sums over a basis of a Verma module, 
+According to \cite[Eq. (7.11)]{msz15}, the series 
 \begin{align}
- c_k = \sum_{|L|=|L'|=k} G^{-1}_{L,L'}(\Delta) h_L(\Delta,\Delta_1,\Delta_2)h_L(\Delta,\Delta_4,\Delta_3)
+ \widetilde{S}_\Delta(q) =  \prod_{k=1}^\infty\left(1-q^{2k}\right)^{-\frac12} S_\Delta(q)  = 1+\sum_{k=1}^\infty \tilde{c}_k (16q)^k = 1 + c_1 (16q) + \left(c_2+\tfrac{1}{512}\right) (16q)^2 + \cdots 
+\end{align}
+is a sum over a basis of a Verma module, i.e. 
+\begin{align}
+ \tilde{c}_k = \sum_{|L|=|L'|=k} G^{-1}_{L,L'}(\Delta) h_L(\Delta,\Delta_1,\Delta_2)h_L(\Delta,\Delta_4,\Delta_3)
  \label{ghh}
 \end{align}
+The challenge is to prove 
+\begin{align}
+ \lim_{\Delta\to \infty} \left(1+\sum_{k=1}^\infty \tilde{c}_k (16q)^k\right) = \prod_{k=1}^\infty\left(1-q^{2k}\right)^{-\frac12}
+\end{align}
+The fact that the limit does not depend on $c$ suggests that only $h_{L_{-1}^j}$ survive in the limit. We seem to have 
+\begin{align}
+ G_{L_{-1}^j,L_{-1}^j} = j! (2\Delta)_j \quad , \quad 
+ G^{-1}_{L_{-1}^j,L_{-1}^j} \underset{\Delta\to \infty}{\sim} \frac{1}{j!2^j\Delta^j}
+\end{align}
+
+
+\subsection{Ward identities}
+
 How do we compute $g_L,h_L$? In the case of $g_L$, we have 
 \begin{align}
  g_L = \frac{\left< LV_{\Delta}(0)V_{\Delta_1}(1)V_{\Delta_2}(\infty)\right>}{\left< V_{\Delta}(0)V_{\Delta_1}(1)V_{\Delta_2}(\infty)\right>}
@@ -146,44 +165,31 @@ In the infinite half-pillow, we expect
 \begin{align}
  h_L = \frac{\left< LV_{\Delta}(i\infty)V_{\Delta_1}(0)V_{\Delta_2}(\pi)\right>}{\left< V_{\Delta}(i\infty)V_{\Delta_1}(0)V_{\Delta_2}(\pi)\right>}
 \end{align}
-It seems that for $n\geq -1$ we have 
+
+Proposed calculation of $h_{L_{-n}}$: use a function $g_n(u)=\sum_{k\in\mathbb{Z}}g_k e^{iku} $ on the half-pillow such that $g_k=0$ unless $k=n$ or $k<0$. After conformal transformation to the sphere with 3 punctures, this corresponds to a polynomial $f_n(x)$ of degree $n+1$ that vanishes at $x=0,1$, for example 
 \begin{align}
- L_{-n} V_\Delta(i\infty) = \oint_\infty e^{inu} T(u) V_\Delta(i\infty)
+ f_1(x) = x(1-x) \quad , \quad f_2(x) = x(1-x)\left(x-\tfrac12\right) \quad ,\quad f_3(x) = x(1-x)\left(x^2-x+\tfrac{3}{16}\right)
 \end{align}
-This equation cannot be valid for $n\leq -2$, or we would get too many Ward identities. Similarly, on the sphere, we cannot compute $L_2 V_\Delta(\infty) =0$ as a contour integral involving powers of $y-z_0$. (How would we choose $z_0$?) Naively doing contour integrals without regards for the integration measure or for the $\mathbb{Z}_2$ quotient, we get the Ward identities
-\begin{align}
- 0 &= -(\Delta_1-\Delta_2) + L_{-1}^{(0)} - L_{-1}^{(\pi)}
- \label{ze}
- \\
- i\Delta &= L_{-1}^{(0)} + L_{-1}^{(\pi)} 
- \\
- L_{-1}^{(\infty)} &= (\Delta_1-\Delta_2) + L_{-1}^{(0)} - L_{-1}^{(\pi)}
- \\
- L_{-n}^{(\infty)} &= n(\Delta_1+(-)^n\Delta_2) + L_{-1}^{(0)} +(-)^n L_{-1}^{(\pi)}
-\end{align}
-This leads to 
-\begin{align}
- h_{L_{-n}} = \left\{\begin{array}{ll} (\Delta+n\Delta_1-n\Delta_2)  & (n \text{ even}) 
-                      \\ (n+1)(\Delta_1-\Delta_2) & (n \text{ odd})
-                     \end{array}\right.
-\end{align}
-This is $\Delta$-independent for $n$ odd but not for $n$ even. Should $\Delta$ really be $\Delta-\frac{c}{24}$? We also compute $h_{L_{-1}^2}$: to do this the lhs of Eq. \eqref{ze} has to be replaced with $2\Delta$, and we find 
-\begin{align}
- h_{L_{-1}^2} = 4(\Delta_1-\Delta_2)(\Delta+\Delta_1-\Delta_2)
-\end{align}
-Problem: $h_{L_{-2}},h_{L_{-1}^2} = O(\Delta)$ would lead to $c_2 = O(\Delta)$. 
+A priori this leads to $h_{L_{-n}}$ being a function of $\Delta_1,\Delta_2$, independent from $\Delta$.
+However, the Schwarzian term in the conformal transformation of $T$ should add some $c$-dependence if $n\geq 2$. Moreover, $\Delta$-dependence may appear when computing $h_{\prod_j L_{-n_j}}$. 
 
 \section{Second-order terms}
 
-Let us compute 
-\begin{align}
- c_2 = \frac{R_{1,1}^2}{\Delta} +\frac{R_{1,2}}{\Delta-\Delta_{(1,2)}} + \frac{R_{2,1}}{\Delta-\Delta_{(2,1)}}
-\end{align}
+\subsection{Calculation}
+
 We introduce the notations 
 \begin{align}
  \gamma = (\Delta_1-\Delta_2)^2 \ , \ \sigma = \Delta_1+\Delta_2 \ , \ \bar\gamma = (\Delta_4-\Delta_3)^2 \ , \ \bar\sigma = \Delta_4+\Delta_3 
 \end{align}
 and the modulus square notation $|f|^2 = f\bar f$. 
+We have 
+\begin{align}
+ c_1 = \frac{R_{1,1}}{\Delta} = \frac{|\gamma|}{2\Delta}
+\end{align}
+Let us also compute 
+\begin{align}
+ c_2 = \frac{R_{1,1}^2}{\Delta} +\frac{R_{1,2}}{\Delta-\Delta_{(1,2)}} + \frac{R_{2,1}}{\Delta-\Delta_{(2,1)}}
+\end{align}
 We compute the residues 
 \begin{align}
  R_{1,1} = \tfrac12 (\Delta_1-\Delta_2)(\Delta_4-\Delta_3)  = \tfrac12 |\gamma| 
@@ -219,13 +225,26 @@ This leads to
  \\
  + (2\Delta+1)\left[\tfrac12|\sigma|^2 +\tfrac18 (\gamma+\bar\gamma) -\tfrac{c+3}{32}(\sigma+\bar\sigma)+\tfrac{(c+1)(c+5)}{512}\right] \\
 \end{multline}
-This is not of the type \eqref{ghh} with $\Delta$-independent $h_L$. If it was, we would have to explain how the $c$-dependence arises from the Ward identities. To bring it closer we can rewrite it as 
+which may be rewritten as 
 \begin{multline}
- 16(\Delta-\Delta_{(2,1)})(\Delta-\Delta_{(1,2)}) c_2 = \left(2+\frac{c}{4\Delta}\right)|\gamma|^2  -\Re\left[(\gamma-\tfrac{1}{16})(3\bar \sigma +\tfrac{1-c}{4})\right] +\tfrac{c-13}{512}
- \\ + (2\Delta+1)\left[\tfrac12 \left|\sigma -\tfrac{c+3}{16}\right|^2 +\tfrac14\Re\gamma -\tfrac{1}{128}\right]
+ 16(\Delta-\Delta_{(2,1)})(\Delta-\Delta_{(1,2)}) \left(c_2+\tfrac{1}{512}\right) 
+ \\
+ = \left(2+\frac{c}{4\Delta}\right)\left|\gamma+\tfrac{\Delta}{8}\right|^2 
+ -3\Re\left(\gamma+\tfrac{\Delta}{8}\right)\left(\bar\sigma-\tfrac{c}{16}\right)
+ +\left(\Delta+\tfrac12\right)\left|\sigma-\tfrac{c}{16}\right|^2 
 \end{multline}
 
+\subsection{Interpretation}
 
+Up to $O(q^2)$, the explicit calculation agrees with Eq. \eqref{ghh}, provided
+\begin{align}
+ h_{L_{-1}} &= \Delta_1-\Delta_2
+ \\
+ h_{L_{-1}^2} &= (\Delta_1-\Delta_2)^2 +\frac{\Delta}{8}
+ \\
+ h_{L_{-2}} &= \Delta_1+\Delta_2-\frac{c}{16}
+\end{align}
+Notice that $\frac{c}{16}$ is the dimension of twist fields for a conical defect of angle $\pi$, this may not be a coincidence. 
 
 \bibliographystyle{cft}
 \bibliography{cft}
