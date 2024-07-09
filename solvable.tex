@@ -2491,9 +2491,12 @@ in which case the degenerate interchiral block is
 \subsection{Numerically solving crossing symmetry}
 
 Assuming we know the spectrum $\mathcal{S}$, the 
-crossing symmetry equations \eqref{seteu} form a system of linear equations for the 4-point structure constants $D^{(x)}_k$. There are infinitely many unknowns if the spectrum is infinite. There are also infinitely many equations: two for each value of the cross-ratio $z\in \overline{\mathbb{C}}\backslash\{0,1,\infty\}$. For numerical calculations on a computer, we need a truncation to a system of finitely many equations with finitely many unknowns. Symmetries, including interchiral symmetry, can also be used for reducing the number of unknowns. 
-
-Our truncation is based on ignoring fields whose total conformal dimension exceeds a given number $\Lambda$. From the $\Lambda$-dependence of the solutions of the truncated system, we can see whether they converge towards a solution of the original system. And we can also infer the dimension of the space of solutions. 
+crossing symmetry equations \eqref{seteu} form a system of linear equations for the 4-point structure constants $D^{(x)}_k$. There are infinitely many unknowns if the spectrum is infinite. There are also infinitely many equations: two for each value of the cross-ratio $z\in \overline{\mathbb{C}}\backslash\{0,1,\infty\}$. The number of solutions of crossing symmetry is 
+\begin{align}
+ \mathcal{N} = \dim\left\{\left(D^{(x)}_k\right)_{k,x}\middle|\text{crossing symmetry is obeyed}\right\}\ . 
+ \label{nsol}
+\end{align}
+For numerical calculations on a computer, we need a system of finitely many equations with finitely many unknowns. Symmetries, including interchiral symmetry, can be used for reducing the number of unknowns, but do not make this number finite. We therefore need to truncate the system, by ignoring fields whose total conformal dimension exceeds a given number $\Lambda$. From the $\Lambda$-dependence of the solutions of the truncated system, we can see whether they converge towards a solution of the original system. And we can also infer the dimension of the space of solutions. 
 
 \subsubsection{Reducing the number of unknowns}
 
@@ -2561,14 +2564,42 @@ After these truncations and approximations, the crossing symmetry equations \eqr
  = \sum_{k\in\mathcal{S}^{(u)}_\Lambda} D_k^{(u)} \mathcal{G}^{(u)}_{\Lambda|\Delta_k,\bar\Delta_k}(z)\ .
  \label{fziz}
 \end{align}
-After choosing a normalization, for example $D_{k_0}^{(s)}=1$, this system would generically have a unique solution if it had as many equations as unknowns, i.e. if $|Z_\Lambda|=\sum_{x\in\{s,t,u\}}\left|\mathcal{S}^{(x)}_\Lambda\right|-1$. For numerical stability, it does not hurt to make the system slightly overdetermined.
+After choosing a normalization, for example $D_{k_0}^{(s)}=1$, we choose $Z_\Lambda$ such that $1+|Z_\Lambda|=\sum_{x\in\{s,t,u\}}\left|\mathcal{S}^{(x)}_\Lambda\right|$, so that the system has as many equations as unknowns. Then there is a unique solution $\left(D_k^{(x)|\Lambda,Z_\Lambda}\right)_{k,x}$.
 
 \subsubsection{Studying one solution}
 
+In principle, the solutions $\left(D_k^{(x)|\Lambda,Z_\Lambda}\right)_{k,x}$ of the truncated system converge towards an exact solution $\left(D_k^{(x)}\right)_{k,x}$ of crossing symmetry provided 
+\begin{align}
+ \forall k,x,Z_\Lambda\ , \quad \lim_{\Lambda\to \infty} D_k^{(x)|\Lambda,Z_\Lambda} = D_k^{(x)}\ .
+\end{align}
+However, it is computationally expensive to use large values of the cutoff $\Lambda$ in order to test convergence. In practice, we instead diagnose convergence by studying how strongly $D_k^{(x)|\Lambda,Z_\Lambda}$ depend on $Z_\Lambda$. To do this quantitatively, we introduce the \myindex{relative deviation}\index{relative deviation} of a structure constant for two choices $Z_\Lambda^{(1)},Z_\Lambda^{(2)}$ of sets of points:
+\begin{align}
+ \epsilon_k^{(x)|\Lambda} = \left| 1- \frac{D_k^{(x)|\Lambda,Z^{(1)}_\Lambda}}{D_k^{(x)|\Lambda,Z^{(2)}_\Lambda}}\right|\ .
+\end{align}
+While the relative deviation depends on $Z_\Lambda^{(1)},Z_\Lambda^{(2)}$, we are only interested in its order of magnitude, which typically does not, so we omit this dependence in the notation $\epsilon_k^{(x)|\Lambda}$.
+When computing relative deviations, we encounter the following situations, depending on the number $\mathcal{N}$ \eqref{nsol} of solutions of crossing symmetry: 
+\begin{align}
+\renewcommand{\arraystretch}{1.5}
+ \begin{tabular}{|l|l|}
+ \hline 
+  Situation & Relative deviation 
+  \\
+  \hline \hline 
+  $\mathcal{N}\neq 1$ & $\log \epsilon_k^{(x)|\Lambda} \sim -2$
+  \\
+  \hline 
+  $\mathcal{N}=1$, $D_k^{(x)}\neq 0$ & $\log \epsilon_k^{(x)|\Lambda} \sim \Delta_k+\bar\Delta_k - \Lambda$
+  \\
+  \hline 
+  $\mathcal{N}=1$, $D_k^{(x)}=0$ & $\log \epsilon_k^{(x)|\Lambda} \sim 0$
+  \\
+  \hline 
+ \end{tabular}
+\end{align}
+If there is no solution or if there are several solutions, relative deviations remain quite large, irrespective of $\Lambda$. A unique solution leads to small relative deviations, but only for structure constants that are nonzero.
 
-Deviations. Detection of solutions. 
 
-Relative, absolute deviations. Explicit example of a table of deviations. Vanishing structure constants. 
+Explicit example of a table of deviations.
 
 \subsubsection{Counting solutions}
 
