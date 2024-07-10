@@ -869,7 +869,7 @@ The $s$-channel decomposition \eqref{sdec} reduces the 4-point function to a com
   \\ \hline
   \text{OPE} & V_1(z)V_2(0) & V_1(z)V_4(1) & V_1(z)V_3(\infty)
   \\ \hline 
-  \text{4-point} & D^{(s)}_k = C_{12}^k C_{k34} & D^{(t)}_k = C_{41}^k C_{k23} & D^{(u)}_k = C_{13}^k C_{k42}
+  \text{4-point} & D^{(s)}_k = C_{12}^k C_{k34} & D^{(t)}_k = C_{41}^k C_{k23} & D^{(u)}_k = C_{31}^k C_{k42}
 \\ \hline 
   \text{Asymptotics} & {\scriptstyle \mathcal{F}^{(s)}_{\Delta}(z)\ \underset{z\to 0}{\sim}\ z^{\Delta-\Delta_1-\Delta_2}} & {\scriptstyle\mathcal{F}^{(t)}_{\Delta}(z)\ \underset{z\to 1}{\sim}\ (1-z)^{\Delta-\Delta_1-\Delta_4}}
   & {\scriptstyle\mathcal{F}^{(u)}_\Delta(z)\  \underset{z\to \infty}{\sim}\ \left(\tfrac{1}{z}\right)^{\Delta+\Delta_1-\Delta_3}}
@@ -889,11 +889,10 @@ The $s$-channel decomposition \eqref{sdec} reduces the 4-point function to a com
 \end{tikzpicture}
 & 
 \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .3]
-\draw (-2,1) node [left] {$2$} -- (0,0) -- node [left] {$k$} (0,-4) ;
-\draw (0,0)-- (2,-5) node [right] {$4$};
-\draw (-2,-5) node [left] {$1$} -- (0,-4);
-\draw (0,-4) -- (2,1) node [right] {$3$};
-\end{tikzpicture} 
+\draw (-1,2) node [left] {$2$} -- (0,0) -- node [above] {$k$} (4,0) -- (5,2) node [right] {$3$};
+\draw (-1,-2) node [left] {$1$} -- (4,0);
+\draw (0,0) -- (5,-2) node [right] {$4$};
+\end{tikzpicture}
   \\
   \hline 
  \end{array}
