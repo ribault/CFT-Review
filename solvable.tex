@@ -36,10 +36,10 @@
 \tikzset{cross/.style={cross out, draw=black, thick, fill=none, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt}, cross/.default={3pt}}
 \newcommand{\uvertex}{
 \coordinate (base) at (0, 1);
-\draw (0, 0) node[fill, circle, minimum size = 2mm, inner sep = 0]{};
+\draw (0, 0) node[fill, circle, minimum size = 1.3mm, inner sep = 0]{};
   \draw (3, 0) node [cross]{};
-  \draw (0, 3) node[fill, circle, minimum size = 2mm, inner sep = 0]{};
-  \draw (3, 3) node[fill, circle, minimum size = 2mm, inner sep = 0]{};
+  \draw (0, 3) node[fill, circle, minimum size = 1.3mm, inner sep = 0]{};
+  \draw (3, 3) node[fill, circle, minimum size = 1.3mm, inner sep = 0]{};
 }
 \newcommand{\qvertex}{
 \coordinate (base) at (0, 1);
@@ -2594,65 +2594,97 @@ When computing relative deviations, we encounter the following situations, depen
   \\
   \hline 
  \end{tabular}
+ \label{les}
 \end{align}
 If there is no solution or if there are several solutions, relative deviations remain quite large, irrespective of $\Lambda$. A unique solution leads to small relative deviations, but only for structure constants that are nonzero.
 
+For example, consider the 4-point function $\left<V_{(\frac32,\frac23)}V_{\frac12,0)}V_{(1,0)}V_{P_{(0,\frac{4+i}{10})}}\right>$ at $\beta = \frac{5}{4+i}$. Taking interchiral symmetry into account, we write the spectrums
 \begin{align}
-\renewcommand{\arraystretch}{1.1}
- \begin{array}{|l|r|r|}
+ \widetilde{S}^{(s)} = \left\{V_{P_{(0,\frac{1+i}{10})}}\right\}\cup \left\{V_{(r,s)}\right\}_{\substack{r\in\mathbb{N}^*\\ s\in \frac{1}{r}\mathbb{Z} \\ -1<s\leq 1 }} \quad ,\quad \widetilde{S}^{(t)}=\widetilde{S}^{(u)} = \left\{V_{(r,s)}\right\}_{\substack{r\in \frac52+\mathbb{N}\\ s\in \frac{1}{r}\mathbb{Z} \\ -1<s\leq 1 }}\ ,
+\end{align}
+and impose the normalization condition $D^{(s)}_{P_{(0,\frac{1+i}{10})}}=1$. The resulting crossing symmetry equations have a unique solution: we will justify this in Section \ref{sec:cf}, where that solution is characterized by the combinatorial map 
+$
+\begin{tikzpicture}[baseline=(base), scale = .25]
+   \uvertex 
+   \draw (0, 0) to [out = 70, in = 0] (0, 3.5) to [out = 180, in = 110] (0, 0);
+   \draw (0, 0) -- (0, 3);
+   \draw (3, 3) to [out = -70, in = 0] (3, -.5) to [out = 180, in = -110] (3, 3);
+  \end{tikzpicture}
+$
+and the signature $\sigma = (0,\frac52,\frac52)$. We will now display numerical data, obtained with the following numerical parameters:
+\begin{align}
+\renewcommand{\arraystretch}{1.3}
+ \begin{array}{|r|c|c|}
   \hline 
-  (r, s) & \epsilon_{(r,s)}^{(s)|30}  & \Re D_{(r,s)}^{(s)|30} 
+  \Lambda & 30 & 70 
   \\
   \hline 
-  (1,0)&    10^{-18} &  \underline{0.835858557220692784}792 \\
-(1,1)&    10^{-18} & -\underline{0.944165038467493446}147\\
-(2,0)&    10^{-14} & -\underline{0.0011893356520367}3777\\
-(2,\frac12)&    0.3 & -1.21147269262699\times 10^{-16}\\
-(2,1)&    0.3 & 4.99187095111020\times 10^{-17}\\
-(2,-\frac12)&    0.3 & 1.25237256541221\times 10^{-16}\\
-(3,0)&    10^{-6} & \underline{9.84485}847601752\times 10^{-10}\\
-(3,\frac13)&    0.6 & -5.74736982467510\times 10^{-15}\\
-(3,\frac23)&    0.4& 7.01620439899040\times 10^{-15}\\
-(3,1)&    0.3 & -5.44191922150011\times 10^{-15}\\
-(3,-\frac13)&    0.8 & 1.07388354002910\times 10^{-14}\\
-(3,-\frac23)&    0.5 & -1.6038800197982\times 10^{-14}\\
-(4,0)&    2 & 5.03706865497229\times 10^{-11}\\
-(4,\frac14)&    1.8 & 1.30119782124619\times 10^{-11}
-\\
-\hline \hline 
- (r, s) & \epsilon_{(r,s)}^{(t)|30}  & \Re D_{(r,s)}^{(t)|30} 
-\\
-\hline 
-(\frac52,0)&    10^{-14}&  -\underline{0.0010412053694212}4585 \\
-(\frac52,\frac25)&    10^{-14}&  \underline{0.0017166502423150}3582\\
-(\frac52,\frac45)&    10^{-14}&  \underline{0.0059313459276285}2052\\
-(\frac52,-\frac25)&    1.8 & -2.97931525390506\times 10^{-16}\\
-(\frac52,-\frac45)&    1.7 & 2.37906874707515\times 10^{-16}\\
-(\frac72,0)&    10^{-7}&  \underline{0.000003232162}50954141\\
-(\frac72,\frac27)&    10^{-7}&  \underline{0.000003169649}86457358\\
-(\frac72,\frac47)&    10^{-7}&  \underline{0.000002044085}78740659\\
-(\frac72,-\frac27)&    1.2 & 1.32378198677384\times 10^{-13}\\
-(\frac72,-\frac47)&    1.3 & -2.5787960841892\times 10^{-13}\\
-(\frac72,-\frac67)  &  1.3 & 2.88260109815161\times 10^{-13}\\
-(\frac92,0) &   0.5  & 9.99751044956889\times 10^{-9}\\
-(\frac92,\frac29) &    0.5 & 5.4083524879818\times 10^{-9}
-\\
-\hline 
+  \#\text{digits} & 24 & 56 
+  \\
+  \hline
+  \text{running time} & \sim 200s & \sim 4200s
+  \\
+  \hline 
  \end{array}
 \end{align}
-
-
+Times are indicated for Python code \cite{rn23} running on an old desktop computer. For each value of $\Lambda$, we display the real parts of $s$- and $t$-channel structure constants together with their relative deviations, for all $r\leq \frac72$ as well as $(r,s)\in\left\{(4,0),(4,\frac14),(\frac92,0),(\frac92,\frac29)\right\}$:
 \begin{align}
 \renewcommand{\arraystretch}{1.1}
- \begin{array}{|l|r|r|}
+ \begin{array}{|l||r|r||r|r|}
   \hline 
-  (r, s) & \epsilon_{(r,s)}^{(s)|30}  & \Re D_{(r,s)}^{(s)|30} 
+  (r, s) & \epsilon_{(r,s)}^{(s)|30}  & \Re D_{(r,s)}^{(s)|30} & \epsilon_{(r,s)}^{(s)|70}& \Re D_{(r,s)}^{(s)|70}
   \\
   \hline 
+(1,0) &    10^{-18} &  \underline{0.82242208337639668}719 & 10^{-45} &  0.82242208337639669048 \\
+(1,1) &    10^{-17} &  -\underline{1.45489355316066448}03 &  10^{-45} &  -1.4548935531606644841 \\
+(2,0) &    10^{-13} &  -\underline{0.0005823102081532}698 &  10^{-40} &  -0.0005823102081533416 \\
+(2,\frac12) &    1.4 &  -8.9601788211935\times 10^{-17} &   1.8 & -8.924630755397\times 10^{-44} \\
+(2,1) &    10^{-13} &  \underline{0.000592788853931}72 & 10^{-40} &  0.00059278885393164\\
+(2,-\frac12) &    1.3 &  4.7020237099170\times 10^{-17} &  1.7 & -2.961377839207\times 10^{-44} \\
+(3,0) &    10^{-6} &  -\underline{5.6619}023163079\times 10^{-11} &  10^{-32} &  -5.6619788484916 \times 10^{-11}\\
+(3,\frac13) &    1.5 &  6.8733214151865\times 10^{-15} &  2.4  & 1.3028663659915\times 10^{-41} \\
+(3,\frac23) &    1.2 &  4.2685780225150\times 10^{-15} &  2.4  & -1.45320554160523\times 10^{-43} \\
+(3,1) &    10^{-6} &  \underline{1.47299}16053293\times 10^{-9} &  10^{-33} &  1.4730032519748\times 10^{-9} \\
+(3,-\frac13) &    1 &  -1.9732803811763\times 10^{-15} &  1  & -2.1375702240518\times 10^{-41} \\
+(3,-\frac23) &    1 &  -8.3839892985966\times 10^{-15} & 0.9 &  -6.7477400595850\times 10^{-42} \\
+(4,0) &    0.6 &  4.9465341395038\times 10^{-10} &  10^{-19} &  -2.5225903605711\times 10^{-17} \\
+(4,\frac14) &    0.6 &  -3.7885783283454\times 10^{-9} &  1.4 &  -2.95230287596625\times 10^{-35} \\
+\hline \hline 
+ (r, s) & \epsilon_{(r,s)}^{(t)|30}  & \Re D_{(r,s)}^{(t)|30} & \epsilon_{(r,s)}^{(t)|70}  & \Re D_{(r,s)}^{(t)|70} 
+\\
+\hline 
+(\frac52,0) &    10^{-14} &  -\underline{0.0028701010781127}2060 &  10^{-43} &  -0.00287010107811285690 \\
+(\frac52,\frac25) &    10^{-14} &  -\underline{0.0040384970890702}9441 &  10^{-43} &  -0.00403849708907038200 \\
+(\frac52,\frac45) &    10^{-14} &  \underline{0.001531792632911}45239 &  10^{-42} &  0.00153179263291161481 \\
+(\frac52,-\frac25) &    10^{-14} &  \underline{0.003524120330565}7769 &  10^{-43} &  0.0035241203305659808 \\
+(\frac52,-\frac45) &    10^{-14} & \underline{0.0069570147283432}9452 &  10^{-43} & 0.006957014728343194327917 \\
+(\frac72,0) &    10^{-8} &  \underline{0.000004444583}14475906 &  10^{-35} &  0.00000444458367504768 \\
+(\frac72,\frac27) &    10^{-8} &  \underline{0.000004121521}383854464 &   10^{-35} &  0.000004121520804451911 \\
+(\frac72,\frac47) &    10^{-8} &  \underline{0.000003513910}538266622 &  10^{-35} &  0.000003513910885535083 \\
+(\frac72,\frac67) &    10^{-8} &  \underline{0.0000028787942}66748157 &  10^{-35} &  0.000002878794192189494 \\
+(\frac72,-\frac27) &    10^{-8} &  \underline{0.000004029073}578395895 &   10^{-35} &  0.000004029073277638004 \\
+(\frac72,-\frac47) &    10^{-8} &  \underline{0.0000029308939}45610566 &   10^{-35} &  0.000002930894076496366 \\
+(\frac72,-\frac67) &    10^{-8} &  \underline{0.0000017184668}36222695 &  10^{-35} &  0.000001718466769985650\\
+(\frac92,0) &    0.5 &  2.2616940515940\times 10^{-8} &  10^{-23} &  3.230122853228 \times 10^{-12}\\
+(\frac92,\frac29) &    0.5  & -3.5998726869265\times 10^{-8} &  10^{-23} &  3.298879973039\times 10^{-12} \\
+\hline 
 \end{array}
 \end{align}
+Let us interpret these results:
+\begin{itemize}
+ \item
+ Whenever a relative deviation is small, which in the case $\Lambda=30$ means $\leq 10^{-6}$, we expect that we obtain an approximation of the corresponding structure constant. For example, $\epsilon_{(\frac72,\frac27)}^{(t)|30}\sim 10^{-8}$ suggests that $D_{(\frac72,-\frac27)}^{(t)|30}$ gives about $8$ correct digits of the exact solution $D_{(\frac72,-\frac27)}^{(t)}$. This is confirmed by comparing with $D_{(\frac72,-\frac27)}^{(t)|70}$, which has the same $7$ leading nonzero digits. In all $\Lambda = 30$ results, we have underlined the digits that agree with $\Lambda = 70$ results: the number of correct digits is always accurately estimated by the relative deviation. 
+ \item
+ When a relative deviation is $O(1)$, we have either a vanishing structure constant, or a non-vanishing structure constant that can only be estimated with a larger cutoff. The $\Lambda =30$ results
+ indicate that $D^{(s)}_{(3,\frac13)}=0$, because $V_{(3,0)}$ and $V_{(3,\frac13)}$ have similar total conformal dimensions, so according to Table \eqref{les} they should have similar deviations if $D^{(s)}_{(3,\frac13)}\neq 0$. This is confirmed by the $\Lambda = 70$ results $\epsilon_{(3,\frac13)}^{(s)|70} = O(1)$ and $D_{(3,\frac13)}^{(s)|70} \ll D_{(3,\frac13)}^{(s)|30}$.
+ Similarly, the $\Lambda = 30$ results are enough for concluding $D^{(s)}_{(2,\pm\frac12)} =D^{(s)}_{(3,\pm \frac13)} = D^{(s)}_{(3,\pm \frac23)}=0$.
+ \item
+ In the cases $\epsilon^{(s)|30}_{(4,\star )},\epsilon^{(t)|30}_{(\frac92,\star)} = O(1)$, the $\Lambda =30$ results are not enough for knowing whether the corresponding structure constants vanish. The $\Lambda =70$ results show that $D^{(s)}_{(4,s)} = 0 \iff s \notin \mathbb{Z}$ and $D^{(t)}_{(\frac92,\star)} \neq 0$. Based on all these results, it is natural to conjecture $\forall r,s,\ D^{(s)}_{(r,s)} = 0 \iff s \notin \mathbb{Z}$.
+\end{itemize}
 
-Explicit example of a table of deviations. Point out 2 origins of large deviations. Underline digits that are confirmed by higher precision. Ideally, higher precision determines more structure constants. 
+
+
+
 
 \subsubsection{Counting solutions}
 
@@ -2877,7 +2909,7 @@ Finally, the identity field $V^d_{\langle 1,1\rangle}$ should not change the wei
 the corresponding loop weight is still given by Eq. \eqref{wP}, we obtain 
 $n=w(P_{(1,1)})$, which boils down to the expression \eqref{ncb} for the contractible loop weight $n$ in terms of the central charge. We do not discuss the loop model interpretation of the non-trivial degenerate fields $V^d_{\langle 1,s\geq 2\rangle}$, because we will not study their correlation functions. These fields cannot simply correspond to weight-changing punctures, if only because $w(P_{(1,3)})=w(P_{(1,1)})=n$. 
 
-\subsubsection{Correlation functions}
+\subsubsection{Correlation functions}\label{sec:cf}
 
 According to our identification of punctures with primary fields, the loop model $N$-point function \eqref{zbig} corresponds to a loop CFT $N$-point function of the type $\left<\prod_{i=1}^N V_{(r_i,s_i)}\right>$. In the bootstrap approach, $N$-point functions are defined as single-valued solutions of crossing symmetry equations. To write these equations, we need to know the spectrum in any channel. Given a combinatorial map $M$, we conjecture that the spectrum is 
 \begin{align}
