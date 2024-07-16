@@ -2175,7 +2175,7 @@ Let us summarize the solutions of shift equations for 2-point and 3-point struct
 
 \section{Numerical bootstrap}
 
-In the analytic bootstrap approach of Section \ref{sec:ab}, we have used the crossing symmetry of 4-point functions that include degenerate fields, and deduced constraints on 2-point and 3-point structure constants. However, in a consistent CFT, arbitrary 4-point functions must be crossing symmetric. In the absence of degenerate fields, crossing symmetry equations involve infinite sums and are hard to deal with analytically. We will thus need to solve them numerically. This will not prevent us from deducing exact results for structure constants. 
+In the analytic bootstrap approach of Section \ref{sec:ab}, we have used the crossing symmetry of 4-point functions that include degenerate fields, and deduced constraints on 2-point and 3-point structure constants. However, in a consistent CFT, arbitrary 4-point functions must be crossing symmetric. In the absence of degenerate fields, crossing symmetry equations involve infinite sums and are hard to deal with analytically. We will thus need to solve them numerically. 
 
 \subsection{Approaches to crossing symmetry}
 
@@ -2189,8 +2189,8 @@ It is not easy to directly evaluate the crossing symmetry equations \eqref{seteu
 \end{itemize}
 From these cases, all diagonal CFTs with 2 degenerate fields can be obtained by analytic continuation and taking limits \eqref{lims}, although mathematical rigor is lost in the process. In particular, the probabilistic construction only makes sense for $c\geq 25$. 
 
-In this text we will focus on a numerical approach to crossing symmetry, based on directly computing 4-point functions. This approach is applicable to any CFT whose spectrum is exactly known, and therefore to all the exactly solvable CFTs that we have considered. 
-
+In this text we will focus on a numerical approach to crossing symmetry. This approach is applicable to any CFT whose spectrum is exactly known, and therefore to all the exactly solvable CFTs that we have considered. 
+A similar approach is also applicable to integrable conformal gauge theories such as $\mathcal{N}=4$ super-Yang--Mills theory in 4 dimensions; these gauge theories however have spectrums that are much denser than in our 2-dimensional CFTs, requiring more sophisticated tools \cite{cgjp22}.
 
 \subsubsection{Various flavours of numerics}\label{sec:vfn}
 
@@ -2492,7 +2492,7 @@ in which case the degenerate interchiral block is
 Assuming we know the spectrum $\mathcal{S}$, the 
 crossing symmetry equations \eqref{seteu} form a system of linear equations for the 4-point structure constants $D^{(x)}_k$. There are infinitely many unknowns if the spectrum is infinite. There are also infinitely many equations: two for each value of the cross-ratio $z\in \overline{\mathbb{C}}\backslash\{0,1,\infty\}$. The number of solutions of crossing symmetry is 
 \begin{align}
- \mathcal{N} = \dim\left\{\left(D^{(x)}_k\right)_{k,x}\middle|\text{crossing symmetry is obeyed}\right\}\ . 
+ \mathcal{N} = \dim\left\{\left(D^{(x)}_k\right)_{k,x}\middle|\text{crossing symmetry is obeyed}\right\}\in \mathbb{N}\cup \{\infty\}\ . 
  \label{nsol}
 \end{align}
 For numerical calculations on a computer, we need a system of finitely many equations with finitely many unknowns. Symmetries, including interchiral symmetry, can be used for reducing the number of unknowns, but do not make this number finite. We therefore need to truncate the system, by ignoring fields whose total conformal dimension exceeds a given number $\Lambda$. From the $\Lambda$-dependence of the solutions of the truncated system, we can see whether they converge towards a solution of the original system. And we can also infer the dimension of the space of solutions. 
@@ -2565,7 +2565,7 @@ After these truncations and approximations, the crossing symmetry equations \eqr
 \end{align}
 After choosing a normalization, for example $D_{k_0}^{(s)}=1$, we choose $Z_\Lambda$ such that $1+|Z_\Lambda|=\sum_{x\in\{s,t,u\}}\left|\mathcal{S}^{(x)}_\Lambda\right|$, so that the system has as many equations as unknowns. Then there is a unique solution $\left(D_k^{(x)|\Lambda,Z_\Lambda}\right)_{k,x}$.
 
-\subsubsection{Studying one solution}
+\subsubsection{Studying one solution}\label{sec:sos}
 
 In principle, the solutions $\left(D_k^{(x)|\Lambda,Z_\Lambda}\right)_{k,x}$ of the truncated system converge towards an exact solution $\left(D_k^{(x)}\right)_{k,x}$ of crossing symmetry provided 
 \begin{align}
@@ -2683,12 +2683,18 @@ Let us interpret these results:
 \end{itemize}
 
 
-
-
-
 \subsubsection{Counting solutions}
 
-Singular values method: not very systematic in practice! 
+We would like to determine the dimension $\mathcal{N}$ \eqref{nsol} of the space of solutions, and to find a basis of solutions. 
+
+If we view the system of crossing symmetry equations as an infinite matrix $\mathcal{C}$, then $\mathcal{N}$ is the number of singular values of $\mathcal{C}$ that vanish. Can we deduce $\mathcal{N}$ from the matrix $\mathcal{C}_\Lambda$ of a truncated system? The truncation has two effects on the set of singular values: making the set finite, and making the vanishing elements nonzero but tiny. Therefore, if $\mathcal{N}<\infty$, then $\mathcal{N}$ is the number of \textit{tiny} singular values of $\mathcal{C}_\Lambda$ for $\Lambda$ \textit{large enough}. But large matrices tend to have many small singular values, which tend to zero as $\Lambda\to \infty$. The tiny singular values tend to zero faster than the others, but we do not have a quantitative criterion for characterizing them. (See \cite{gjnrs23} for examples.) 
+
+In practice, instead of studying singular values, we count solutions by a rather pedestrian method, which does not require high values of $\Lambda$. The idea is to add $\mathcal{N}$ equations to the crossing symmetry equations. Then the solution becomes unique, leading to small relative deviations as in Section \ref{sec:sos}. Without loss of generality, we may use additional equations of the type $D^{(x)}_k=0$, in addition to the normalization condition $D^{(s)}_k=1$. This is equivalent to removing primary fields from the spectrum, until we have small relative deviations. When this is achieved, we have $\mathcal{N}\leq \mathcal{R}+1$, where $\mathcal{R}$ is the number of removed fields. We have an inequality rather than an equality, because it may happen that some of our additional equations are in fact obeyed by all solutions, and are therefore redundant with crossing symmetry equations. To eliminate this possibility, we should test whether removing all $\mathcal{R}$ primary fields is necessary for having small relative deviations. If the set of removed fields is minimal, then $\mathcal{N}= \mathcal{R}+1$.
+
+The method of removing primary fields is computationally cheap, because it only involves deleting columns of the matrix $\mathcal{C}_\Lambda$, without recomputing $\mathcal{C}_\Lambda$, or changing the cutoff $\Lambda$. This method is however pedestrian, because it involves inspecting relative deviations for various sets of removed fields, and determining a minimal set by trial and error. It would be nice to find a simple way of determining $\mathcal{N}$ from $\mathcal{C}_\Lambda$. 
+
+The method of removing primary fields can also work if $\mathcal{N}=\infty$. For example, in the case of 4-point connectivities in the Potts CFT, using only the first equation in \eqref{seteu} (i.e. leaving the $u$-channel unconstrained) leads to an infinite-dimensional space of solutions, instead of the finite-dimensional spaces that otherwise occur in loop CFTs. Nevertheless, it is possible to determine a basis of solutions, where each element corresponds to a set of removed fields that is infinite before truncation \cite{nr20}.
+
 
 \section{Correlation functions in loop CFTs} \label{sec:cloop}
 
