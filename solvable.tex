@@ -2331,7 +2331,7 @@ Let us explicitly write these quantities for $rs\leq 4$. Since $c^{r,s},b^{r,s}$
 \begin{align}
  \prod_{\pm,\pm}\left(P_2\pm P_1\pm \ell\beta\right) = \left(\Delta_1-\Delta_2\right)^2 -2\ell^2\beta^2\left(\Delta_1+\Delta_2-1\right) +\ell^2(\ell^2-1)\beta^4-\ell^2\ ,
 \end{align}
-we find 
+where conformal dimensions and momentums are related by Eq. \eqref{dp}, we find 
 \begin{subequations}
 \begin{align}
  c^{1,1}(P_1,P_2) &= \Delta_1-\Delta_2\ ,
@@ -2348,9 +2348,10 @@ we find
  +\tfrac{(c-1)(c-25)}{144}\left(\Delta_1+\Delta_2-1\right)^2
  -\left(1+\tfrac{(c-1)(c-25)}{96}\right)\left(\Delta_1-\Delta_2\right)^2
  \\
- -\tfrac{(c-1)(c-13)(c-25)}{1152}\left(\Delta_1+\Delta_2-1\right) + \tfrac{(c-1)(c-9)(c-17)(c-25)}{36864}\ .
+ -\tfrac{(c-1)(c-13)(c-25)}{1152}\left(\Delta_1+\Delta_2-1\right) + \tfrac{(c-1)(c-9)(c-17)(c-25)}{36864}\ ,
 \end{multline}
 \end{subequations}
+where the central charge $c$ is given by Eq. \eqref{cb}.
 And we have 
 \begin{subequations}
  \begin{align}
@@ -3126,12 +3127,12 @@ where $B_P$ is given in Eq. \eqref{bc} and $C^\text{ref}$ in Eq. \eqref{cref}. F
 Then we further assume that $Z(P)$ is a holomorphic function of $P\in\mathbb{C}$. From the point of view of loop models, this is a natural assumption, because $Z(P)$ is the critical limit of polynomials in loop weights. From the point of view of the CFT, this is a non-trivial assumption, because the diagonal terms have poles, which must therefore cancel. 
 To begin with, according to Eq. \eqref{resf}, the Virasoro block $\mathcal{F}_P$ has a simple pole at $P=P_{(r,s)}$ with $r,s\in \mathbb{N}^*$, so that 
 \begin{align}
- \mathcal{F}_P = \frac{R_{r,s}}{P-P_{(r,s)}} \mathcal{F}_{P_{(r,-s)}} + \mathcal{F}^\text{reg}_{P_{(r,s)}} + O(P-P_{(r,s)}) \ . 
+ \mathcal{F}_P = \frac{R^{\#}_{r,s}}{P-P_{(r,s)}} \mathcal{F}_{P_{(r,-s)}} + \mathcal{F}^\text{reg}_{P_{(r,s)}} + O(P-P_{(r,s)}) \qquad \text{with} \qquad R^{\#}_{r,s} = 2P_{(r,s)}R_{r,s}\ .
  \label{freg}
 \end{align}
 Therefore, $\left|\mathcal{F}_P\right|^2$ has a double pole, with a residue proportional to $\left|\mathcal{F}_{P_{(r,-s)}}\right|^2$. Now, $\lim_{P\to P_{(r,s)}} Z(P)$ involves another contribution proportional to $\left|\mathcal{F}_{P_{(r,-s)}}\right|^2$, from the term $k=s$. And the structure constant $D_{P+s\beta^{-1}}$ does have a double pole at $P=P_{(r,s)}$, because $B_P$ has a double zero at $P=P_{(r,-s)}$. The cancellation of the double poles of $Z(P)$ requires 
 \begin{align}
- R_{r,s}\bar{R}_{r,s}D_{P_{(r,s)}} + \lim_{P\to P_{(r,-s)}}\left(P-P_{(r,-s)}\right)^2 D_P = 0 \ .
+ R^{\#}_{r,s}\bar{R}^{\#}_{r,s}D_{P_{(r,s)}} + \lim_{P\to P_{(r,-s)}}\left(P-P_{(r,-s)}\right)^2 D_P = 0 \ .
  \label{dpld}
 \end{align}
 It can be checked that this equation is satisfied by the Virasoro block residues $R_{r,s}$ \eqref{rrs}. This equation is relevant not only to loop CFTs, but also to (generalized) minimal models \cite{rib18}.
@@ -3143,7 +3144,7 @@ Simple poles of $Z(P)$ must cancel too, i.e. $\operatorname{Res}_{P=P_{(r,s)}}Z(
 Finally, let us consider the simple pole of $\left|\mathcal{F}_{P}\right|^2$ at $P=P_{(r,s)}$ with $r,s\in \mathbb{N}^*$. The residue at this pole includes the term 
 $\mathcal{F}_{P_{(r,s)}}^\text{reg}\bar{\mathcal{F}}_{P_{(r,-s)}}$, which is also present in $\mathcal{G}_{(r,s)}$, so that we must have 
 \begin{align}
- \underset{P=P_{(r,s)}}{\operatorname{Res}} D_{(r,s)}(P) + \bar R_{r,s} D_{P_{(r,s)}} = 0\ .
+ \underset{P=P_{(r,s)}}{\operatorname{Res}} D_{(r,s)}(P) + \bar R^{\#}_{r,s} D_{P_{(r,s)}} = 0\ .
  \label{rdp}
 \end{align}
 In fact, the equation $\operatorname{Res}_{P=P_{(r,s)}}Z(P)=0$ with $r,s\in \mathbb{N}^*$ leads to the determination of the conformal block $\mathcal{G}_{(r,s)}$, which turns out to be logarithmic. 
@@ -3154,26 +3155,26 @@ For $r,s\in\mathbb{N}^*$, the residue $\operatorname{Res}_{P=P_{(r,s)}}D_P\left|
 involves a number of terms, which cannot be canonically separated into the blocks 
 $\mathcal{G}_{(r,s)}$ and $\mathcal{G}_{(r,-s)}$. Rather, this residue is a logarithmic conformal block, which sums up the contributions of all the states in one indecomposable representation that includes both primary fields $V_{(r,s)}$ and $V_{(r,-s)}$, see \cite{nr20} for more detail on that representation. By convention we call $\mathcal{G}_{(r,s)}$ the logarithmic conformal block, and set $\mathcal{G}_{(r,-s)}=0$, so that 
 \begin{align}
- \mathcal{G}_{(r,s)} = \frac{1}{\bar R_{r,s} D_{P_{(r,s)}}} \left( \operatorname{Res}_{P=P_{(r,s)}} + \operatorname{Res}_{P=P_{(r,-s)}}\right)D_P\left|\mathcal{F}_{P}\right|^2 \ . 
+ \mathcal{G}_{(r,s)} = \frac{1}{\bar R^{\#}_{r,s} D_{P_{(r,s)}}} \left( \operatorname{Res}_{P=P_{(r,s)}} + \operatorname{Res}_{P=P_{(r,-s)}}\right)D_P\left|\mathcal{F}_{P}\right|^2 \ . 
 \end{align}
 More explicitly, using Eq. \eqref{dpld}, this can be expressed as 
 \begin{multline}
-  \mathcal{G}_{(r,s)} = \left(\mathcal{F}^\text{reg}_{P_{(r,s)}} -R_{r,s} \mathcal{F}'_{P_{(r,-s)}}\right) \bar{\mathcal{F}}_{P_{(r,-s)}} 
-  + \frac{R_{r,s}}{\bar{R}_{r,s}} \mathcal{F}_{P_{(r,-s)}} \left(\bar{\mathcal{F}}^\text{reg}_{P_{(r,s)}} -\bar R_{r,s} \bar{\mathcal{F}}'_{P_{(r,-s)}}\right)
+  \mathcal{G}_{(r,s)} = \left(\mathcal{F}^\text{reg}_{P_{(r,s)}} -R^{\#}_{r,s} \mathcal{F}'_{P_{(r,-s)}}\right) \bar{\mathcal{F}}_{P_{(r,-s)}} 
+  + \frac{R^{\#}_{r,s}}{\bar{R}^{\#}_{r,s}} \mathcal{F}_{P_{(r,-s)}} \left(\bar{\mathcal{F}}^\text{reg}_{P_{(r,s)}} -\bar R^{\#}_{r,s} \bar{\mathcal{F}}'_{P_{(r,-s)}}\right)
   \\
-  + R_{r,s} \left( \frac{D'_{P_{(r,s)}}}{D_{P_{(r,s)}}} - \lim_{P\to P_{(r,-s)}}\left[\frac{2}{P-P_{(r,-s)}} +\frac{D'_P}{D_P}\right]\right)
+  + R^{\#}_{r,s} \left( \frac{D'_{P_{(r,s)}}}{D_{P_{(r,s)}}} - \lim_{P\to P_{(r,-s)}}\left[\frac{2}{P-P_{(r,-s)}} +\frac{D'_P}{D_P}\right]\right)
   \left|\mathcal{F}_{P_{(r,-s)}}\right|^2 
   \ ,
 \end{multline}
 where the derivatives are with respect to $P$, and
 $\mathcal{F}^\text{reg}_{P_{(r,s)}}$ was defined in Eq. \eqref{freg}.
-The logarithmic nature of the block $\mathcal{G}_{(r,s)}$ comes from the asymptotic behaviour $\mathcal{F}_P(z)\underset{z\to 0}{\propto} z^{P^2} $ \eqref{stu} of Virasoro blocks. When taking derivatives in $P$, or regularizing near a pole, this power-like prefactor gives rise to terms in $\log z$. Logarithmic terms are however absent if $R_{r,s}=\bar R_{r,s}=0$, which occurs if degenerate fusion rules allow the degenerate field $V^d_{\langle r,s\rangle}$ to propagate in the $s$-channel of our 4-point function. In this case, the logarithmic block reduces to 
+The logarithmic nature of the block $\mathcal{G}_{(r,s)}$ comes from the asymptotic behaviour $\mathcal{F}_P(z)\underset{z\to 0}{\propto} z^{P^2} $ \eqref{stu} of Virasoro blocks. When taking derivatives in $P$, or regularizing near a pole, this power-like prefactor gives rise to terms in $\log z$. Logarithmic terms are however absent if $R^{\#}_{r,s}=\bar R^{\#}_{r,s}=0$, which occurs if degenerate fusion rules allow the degenerate field $V^d_{\langle r,s\rangle}$ to propagate in the $s$-channel of our 4-point function. In this case, the logarithmic block reduces to 
 \begin{align}
- \mathcal{G}_{(r,s)} \underset{R_{r,s}=\bar R_{r,s}=0}{=} 
+ \mathcal{G}_{(r,s)} \underset{R^{\#}_{r,s}=\bar R^{\#}_{r,s}=0}{=} 
  \mathcal{F}_{P_{(r,s)}}  \bar{\mathcal{F}}_{P_{(r,-s)}} + 
- \frac{R_{r,s}}{\bar{R}_{r,s}} \mathcal{F}_{P_{(r,-s)}} \bar{\mathcal{F}}_{P_{(r,s)}} \ .
+ \frac{R^{\#}_{r,s}}{\bar{R}^{\#}_{r,s}} \mathcal{F}_{P_{(r,-s)}} \bar{\mathcal{F}}_{P_{(r,s)}} \ .
 \end{align}
-This is a combination of the blocks for the Verma modules of $V_{(r,s)}$ and $V_{(r,-s)}$. Their relative coefficient $\frac{R_{r,s}}{\vphantom{\tilde{|}}\bar{R}_{r,s}}$ can be determined either by taking a limit in $s_i$ with $r_i$ fixed \cite{gnjrs21}, or by using the shift equations \eqref{cshift}, \eqref{bshift}. 
+This is a combination of the blocks for the Verma modules of $V_{(r,s)}$ and $V_{(r,-s)}$. Their relative coefficient $\frac{R^{\#}_{r,s}}{\vphantom{\tilde{|}}\bar{R}^{\#}_{r,s}}$ can be determined either by taking a limit in $s_i$ with $r_i$ fixed \cite{gnjrs21}, or by using the shift equations \eqref{cshift}, \eqref{bshift}. 
 Just like Virasoro blocks, logarithmic blocks can be combined into interchiral blocks of the type 
 \begin{align}
  \widetilde{\mathcal{G}}_{(r,s_0)} = \sum_{k\in 2\mathbb{N}} \frac{D^{(s)}_{(r,s_0+2k)}}{D^{(s)}_{(r,s_0)}} \mathcal{G}_{(r,s_0+2k)}\ , 
