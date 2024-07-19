@@ -2248,7 +2248,7 @@ in practice it may be enough to study a few 4-point functions for guessing a giv
 
 \subsection{Computation of Virasoro blocks}
 
-In order to solve crossing symmetry equations numerically, we need an efficient way to compute Virasoro blocks. It is possible to compute Virasoro blocks from their definition \eqref{sdec}, but this is awfully pedestrian and inefficient. We will now review the much more efficient recursive representation due to Alexey Zamolodchikov \cite{zam87b}, in the case of 4-point $s$-channel blocks on the sphere. (For $N$-point blocks on arbitrary Riemann surfaces, see \cite{ccy17}.)  
+In order to solve crossing symmetry equations numerically, we need an efficient way to compute Virasoro blocks. It is possible to compute Virasoro blocks from their definition \eqref{sdec}, but this is awfully inefficient. We will now review the more efficient recursive representation due to Alexey Zamolodchikov \cite{zam87b}, in the case of 4-point $s$-channel blocks on the sphere. (For $N$-point blocks on arbitrary Riemann surfaces, see \cite{ccy17}.)  
 
 The idea of the recursive representation is to characterize Virasoro blocks by their analytic properties as functions of the channel dimension, in particular their poles, residues, and behaviour at infinity. 
 
@@ -2370,11 +2370,34 @@ And we have
 
 \subsubsection{Behaviour for large channel dimensions}
 
-
+Let us describe the behaviour of the Virasoro block $\mathcal{F}_\Delta(z)$ as $\Delta\to \infty$, before explaining how this behaviour can be derived. We replace the cross-ratio $z$ with the \myindex{nome}\index{nome} $q$, a function of $z$ built from the hypergeometric function: 
 \begin{align}
- \mathcal{F}_\Delta(q) = (16q)^\Delta \times \cdots 
+ \boxed{q=e^{i\pi \tau}} \quad \text{with} \quad \boxed{\tau = i \frac{{}_2F_1(\frac12,\frac12,1,1-z)}{{}_2F_1(\frac12,\frac12,1,z)}}\ .
+\end{align}
+The inverse relation is 
+\begin{align}
+ z = \frac{\theta_2^4(q)}{\theta_3^4(q)} \quad , \quad 1-z = \frac{\theta_4^4(q)}{\theta_3^4(q)}\ ,
+\end{align}
+where $\theta_k(q)$ are 
+\myindex{Jacobi theta functions}\index{Jacobi theta function} 
+\begin{align}
+ \theta_2(q) = 2q^{\frac14}\sum_{n=0}^\infty q^{n(n+1)} \quad , \quad \theta_3(q) = \sum_{n=0}^\infty q^{n^2}\quad , \quad \theta_4(q) = \sum_{n=0}^\infty (-1)^n q^{n^2} \ ,
+\end{align}
+which obey the identity 
+\begin{align}
+ \sum_{k=2,3,4}(-1)^k \theta_k^4(q) = 0 \ . 
+\end{align}
+The Virasoro block may then be rewritten as a prefactor, times a power series $H_\Delta(q)$, which has a trivial asymptotic behaviour:
+\begin{align}
+ \boxed{\mathcal{F}_\Delta(q) = (16q)^{\Delta-\frac{c-1}{24}} \left[\prod_{k=2,3,4} \left(\theta_k^{-4}(q)\right)^{\Delta_k-\frac{c-1}{24}+(-1)^k \Delta_1} \right] H_\Delta(q)}\ ,
  \label{fdq}
 \end{align}
+\begin{align}
+ \text{where} \quad \boxed{H_\Delta(q) = 1 + \sum_{N=0}^\infty h_N(\Delta)(16q)^N}  \quad , \quad \boxed{\lim_{\Delta\to\infty} H_\Delta(q) = 1}\ . 
+ \label{hdq}
+\end{align}
+
+Geometry of $z$-$q$ relation. 
 
 
 See Yin et al? See Appendix D of \cite{msz15} for the pillow geometry that underlies the variable $q$.
@@ -2420,7 +2443,7 @@ $S_3$ subgroup of global conformal group that permutes $z=0,1,\infty$.
 
 \begin{align}
  H_\Delta(q) = 
- \label{hdq}
+ \label{hrec}
 \end{align}
 
 
