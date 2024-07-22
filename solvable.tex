@@ -32,6 +32,7 @@
 
 \usepackage{pgf}
 \usepackage{tikz}
+\usetikzlibrary{shapes}
 \usetikzlibrary{shapes.misc}
 \tikzset{cross/.style={cross out, draw=black, thick, fill=none, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt}, cross/.default={3pt}}
 \newcommand{\uvertex}{
@@ -2368,9 +2369,9 @@ And we have
 \end{subequations}
 
 
-\subsubsection{Behaviour for large channel dimensions}
+\subsubsection{The nome}
 
-Let us describe the behaviour of the Virasoro block $\mathcal{F}_\Delta(z)$ as $\Delta\to \infty$, before explaining how this behaviour can be derived. We replace the cross-ratio $z$ with the \myindex{nome}\index{nome} $q$, a function of $z$ built from the hypergeometric function: 
+In order to write Zamolodchikov's recursive representation for Virasoro blocks, and their large $\Delta$ asymptotics, it is convenient to replace the cross-ratio $z$ with the \myindex{nome}\index{nome} $q$, a function of $z$ built from the hypergeometric function: 
 \begin{align}
  \boxed{q=e^{i\pi \tau}} \quad \text{with} \quad \boxed{\tau = i \frac{{}_2F_1(\frac12,\frac12,1,1-z)}{{}_2F_1(\frac12,\frac12,1,z)}}\ .
 \end{align}
@@ -2387,24 +2388,15 @@ which obey the identity
 \begin{align}
  \sum_{k=2,3,4}(-1)^k \theta_k^4(q) = 0 \ . 
 \end{align}
-The Virasoro block may then be rewritten as a prefactor, times a power series $H_\Delta(q)$, which has a trivial asymptotic behaviour:
+This implies in particular the relation 
 \begin{align}
- \boxed{\mathcal{F}_\Delta(q) = (16q)^{\Delta-\frac{c-1}{24}} \left[\prod_{k=2,3,4} \left(\theta_k^{-4}(q)\right)^{\Delta_k-\frac{c-1}{24}+(-1)^k \Delta_1} \right] H_\Delta(q)}\ ,
- \label{fdq}
+ q\left(\tfrac{z}{z-1}\right) = -q(z)\ , 
 \end{align}
+as well as the asymptotic behaviour 
 \begin{align}
- \text{where} \quad \boxed{H_\Delta(q) = 1 + \sum_{N=0}^\infty h_N(\Delta)(16q)^N}  \quad , \quad \boxed{\lim_{\Delta\to\infty} H_\Delta(q) = 1}\ . 
- \label{hdq}
+ z(q) \underset{q\to 0}{=} 16q + 128q^2 +O\left(q^3\right) \quad ,\quad q(z)\underset{z\to 0} = \frac{z}{16} + \frac{z^2}{32} + O\left(z^3\right)\ . 
 \end{align}
-
-Geometry of $z$-$q$ relation. 
-
-
-See Yin et al? See Appendix D of \cite{msz15} for the pillow geometry that underlies the variable $q$.
-
-$S_3$ subgroup of global conformal group that permutes $z=0,1,\infty$. 
-
-
+Let us plot how the map $q(z)$ acts on a few features of the complex $z$-plane. The features in question are related to the $S_3$ subgroup of global conformal transformations that permutes $z=0,1,\infty$, called the crossing symmetry group in \cite{lsswy15}. The elements of this group are the following 6 global conformal maps:
 \begin{align}
  \renewcommand{\arraystretch}{1.5}
  \begin{array}{|r||c|c|c|c|c|c|}
@@ -2424,20 +2416,113 @@ $S_3$ subgroup of global conformal group that permutes $z=0,1,\infty$.
 
 
 
+
 \begin{align}
  \renewcommand{\arraystretch}{1.5}
- \begin{array}{|c||c|c|c|c|c|c|c|}
+ \begin{array}{|r||c|c|c|c|c|c|c|c|}
   \hline 
-  z & 0 & 1 & \infty & 2 & -1 & \frac12 & e^{\pm i\frac{\pi}{3}}
+  z & 0 & 0 & 1 & \infty & 2 & -1 & \frac12 & e^{\pm i\frac{\pi}{3}}
   \\
   \hline 
-  q & 0,\pm i & 1 & -1 & \pm ie^{-\frac{\pi}{2}} & -e^{-\pi} & e^{-\pi} & \pm ie^{-\frac{\pi}{2}\sqrt{3}}
+  q & 0 & \pm i & 1 & -1 & \pm ie^{-\frac{\pi}{2}} & -e^{-\pi} & e^{-\pi} & \pm ie^{-\frac{\pi}{2}\sqrt{3}}
   \\
   \hline 
+  \text{Symbol} & 
+  \begin{tikzpicture}
+   \draw(0, 0) node[fill, circle, minimum size = 1.4mm, inner sep = 0]{};
+  \end{tikzpicture}
+ & & 
+ \begin{tikzpicture}
+   \draw(0, 0) node[fill, circle, minimum size = 1.4mm, inner sep = 0]{};
+  \end{tikzpicture}
+ & 
+ \begin{tikzpicture}
+   \node at (0, 0) [draw, circle, minimum size = 1.4mm, inner sep = 0]{};
+ \end{tikzpicture}
+ & 
+ \begin{tikzpicture}
+   \node at (0, 0) [blue, fill, star, star points = 4, star point ratio = .2, scale = .7] {};
+ \end{tikzpicture}
+ & 
+ \begin{tikzpicture}
+  \node at (0, 0) [blue, fill, draw, kite, kite vertex angles = 50, scale = .25] {};
+ \end{tikzpicture}
+ & 
+ \begin{tikzpicture}
+  \node at (0, 0) [blue, draw, kite, kite vertex angles = 50, scale = .25] {};
+ \end{tikzpicture}
+ &  
+ \begin{tikzpicture}
+  \node at (0, 0) [green!70!black, fill, star, star points = 3, star point ratio = .2, scale = .7]{};
+  \node at (.8, 0) [rotate = 180, green!70!black, fill, star, star points = 3, star point ratio = .2, scale = .7]{};
+ \end{tikzpicture}
+ \\
+ \hline 
  \end{array}
  \label{zqval}
 \end{align}
 
+\begin{align}
+ \begin{tikzpicture}[baseline=(base), scale = 1.2]
+  \coordinate (base) at (0, 0);
+  \fill[red!7] (-1.6, -1.6) rectangle (2.6, 1.6);
+  \draw (2.6, 1.2) -- (2.2, 1.2) -- (2.2, 1.6);
+  \node at (2.4, 1.4) {$z$};¨
+  \draw[red] (0, 0) circle [radius = 1];
+  \draw[red] (1, 0) circle [radius = 1];
+  \draw[red] (.5, -1.6) -- (.5, 1.6);
+  \draw[thick] (1, 0) node[fill, circle, minimum size = 1.4mm, inner sep = 0]{} -- (2.6, 0);
+  \draw[ultra thick, dashed, red] (-1.6, 0) -- (1, 0);
+  \node[below] at (1, 0){$1$};
+  \node[below] at (0, 0){$0$};
+  \draw(0, 0) node[fill, circle, minimum size = 1.4mm, inner sep = 0]{};
+  \node at (.5, 0) [blue, draw, kite, kite vertex angles = 50, scale = .25] {};
+  \node at (-1, 0) [blue, fill, draw, kite, kite vertex angles = 50, scale = .25] {};
+  \node at (2, 0) [blue, fill, star, star points = 4, star point ratio = .2, scale = .7] {};
+  \node at (.5, .866) [green!70!black, fill, star, star points = 3, star point ratio = .2, scale = .7]{};
+  \node at (.5, -.866) [rotate = 180, green!70!black, fill, star, star points = 3, star point ratio = .2, scale = .7]{};
+ \end{tikzpicture}
+ \quad 
+ \begin{tikzpicture}[baseline=(base), scale = 5]
+ \coordinate (base) at (0, 0);
+ \draw (1, .3) -- (.9, .3) -- (.9, .4);
+ \node at (.95, .35) {$q$};
+  \filldraw[fill = red!7] (-1, 0) to [out = 0, in = 180] (0, .208) to [out = 0, in = 180] (1, 0) to [out = 180, in =0] (0, -.208) to [out = 180, in =0] (-1, 0);
+  \draw[red] (0, -.208) -- (0, .208);
+  \draw[red] (-.93, 0) to [out = 0, in = 150] (0, .066) to [out = -30, in = 90] (.043, 0) to [out = -90, in = 30] (0, -.066) to [out = -150, in = 0] (-.93, 0);
+  \draw[red] (.93, 0) to [out = 180, in = 30] (0, .066) to [out = -150, in = 90] (-.043, 0) to [out = -90, in = 150] (0, -.066) to [out = -30, in = 180] (.93, 0);
+  \draw[ultra thick, dashed, red] (-.9, 0) -- (.9, 0);
+  \draw(0, 0) node[fill, circle, minimum size = 1.4mm, inner sep = 0]{};
+  \draw(1, 0) node[fill, circle, minimum size = 1.4mm, inner sep = 0]{};
+  \node[below] at (1, 0) {$1$};
+  \node at (-.09, -.13) {$0$};
+  \draw[-latex] (-.06, -.09) -- (-.015, -.022);
+  \node at (-1, 0) [draw, circle, minimum size = 1.4mm, inner sep = 0]{};
+  \node at (0, .208) [blue, fill, star, star points = 4, star point ratio = .2, scale = .7] {};
+  \node at (0, -.208) [blue, fill, star, star points = 4, star point ratio = .2, scale = .7] {};
+  \node at (0, .066) [green!70!black, fill, star, star points = 3, star point ratio = .2, scale = .7]{};
+  \node at (0, -.066) [rotate = 180, green!70!black, fill, star, star points = 3, star point ratio = .2, scale = .7]{};
+   \node at (.043, 0) [blue, draw, kite, kite vertex angles = 50, scale = .25] {};
+  \node at (-.043, 0) [blue, fill, draw, kite, kite vertex angles = 50, scale = .25] {};
+ \end{tikzpicture}
+\end{align}
+
+
+\subsubsection{Behaviour for large channel dimensions}
+
+
+Let us describe the behaviour of the Virasoro block $\mathcal{F}_\Delta(z)$ as $\Delta\to \infty$, before explaining how this behaviour can be derived.
+The Virasoro block may be rewritten as a prefactor, times a power series $H_\Delta(q)$, which has a trivial asymptotic behaviour:
+\begin{align}
+ \boxed{\mathcal{F}_\Delta(q) = (16q)^{\Delta-\frac{c-1}{24}} \left[\prod_{k=2,3,4} \left(\theta_k^{-4}(q)\right)^{\Delta_k-\frac{c-1}{24}+(-1)^k \Delta_1} \right] H_\Delta(q)}\ ,
+ \label{fdq}
+\end{align}
+\begin{align}
+ \text{where} \quad \boxed{H_\Delta(q) = 1 + \sum_{N=0}^\infty h_N(\Delta)(16q)^N}  \quad , \quad \boxed{\lim_{\Delta\to\infty} H_\Delta(q) = 1}\ . 
+ \label{hdq}
+\end{align}
+
+See Appendix D of \cite{msz15} for the pillow geometry that underlies the variable $q$.
 
 \subsubsection{Zamolodchikov's recursive representation}\label{sec:zrr}
 
