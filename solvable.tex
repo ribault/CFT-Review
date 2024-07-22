@@ -2489,14 +2489,14 @@ Let us plot how the map $q(z)$ acts on a few features of the complex $z$-plane. 
  \node at (.95, .35) {$q$};
   \filldraw[fill = red!7] (-1, 0) to [out = 0, in = 180] (0, .208) to [out = 0, in = 180] (1, 0) to [out = 180, in =0] (0, -.208) to [out = 180, in =0] (-1, 0);
   \draw[red] (0, -.208) -- (0, .208);
-  \draw[red] (-.93, 0) to [out = 0, in = 150] (0, .066) to [out = -30, in = 90] (.043, 0) to [out = -90, in = 30] (0, -.066) to [out = -150, in = 0] (-.93, 0);
-  \draw[red] (.93, 0) to [out = 180, in = 30] (0, .066) to [out = -150, in = 90] (-.043, 0) to [out = -90, in = 150] (0, -.066) to [out = -30, in = 180] (.93, 0);
+  \draw[red] (-.93, 0) to [in = 180, out = 0] (-.115, .0893) to [out = 0, in = 150] (0, .066) to [out = -30, in = 90] (.043, 0) to [out = -90, in = 30] (0, -.066) to [out = -150, in = 0] (-.115, -.0893) to [out = 180, in = 0] (-.93, 0);
+  \draw[red] (.93, 0) to [in = 0, out = 180] (.115, .0893) to [out = 180, in = 30] (0, .066) to [out = -150, in = 90] (-.043, 0) to [out = -90, in = 150] (0, -.066) to [out = -30, in = 180] (.115, -.0893) to [out = 0, in = 180] (.93, 0);
   \draw[ultra thick, dashed, red] (-.9, 0) -- (.9, 0);
   \draw(0, 0) node[fill, circle, minimum size = 1.4mm, inner sep = 0]{};
   \draw(1, 0) node[fill, circle, minimum size = 1.4mm, inner sep = 0]{};
   \node[below] at (1, 0) {$1$};
-  \node at (-.09, -.13) {$0$};
-  \draw[-latex] (-.06, -.09) -- (-.015, -.022);
+  \node at (-.1, -.145) {$0$};
+  \draw[-latex] (-.07, -.105) -- (-.015, -.022);
   \node at (-1, 0) [draw, circle, minimum size = 1.4mm, inner sep = 0]{};
   \node at (0, .208) [blue, fill, star, star points = 4, star point ratio = .2, scale = .7] {};
   \node at (0, -.208) [blue, fill, star, star points = 4, star point ratio = .2, scale = .7] {};
