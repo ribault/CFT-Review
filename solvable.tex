@@ -2396,7 +2396,7 @@ as well as the asymptotic behaviour
 \begin{align}
  z(q) \underset{q\to 0}{=} 16q + 128q^2 +O\left(q^3\right) \quad ,\quad q(z)\underset{z\to 0} = \frac{z}{16} + \frac{z^2}{32} + O\left(z^3\right)\ . 
 \end{align}
-Let us plot how the map $q(z)$ acts on a few features of the complex $z$-plane. The features in question are related to the $S_3$ subgroup of global conformal transformations that permutes $z=0,1,\infty$, called the crossing symmetry group in \cite{lsswy15}. The elements of this group are the following 6 global conformal maps:
+Let us describe how the map $q(z)$ acts on a few features of the complex $z$-plane. The features in question are related to the $S_3$ subgroup of global conformal transformations that permutes $z=0,1,\infty$, called the crossing symmetry group in \cite{lsswy15}. The elements of this group are the following 6 global conformal maps:
 \begin{align}
  \renewcommand{\arraystretch}{1.5}
  \begin{array}{|r||c|c|c|c|c|c|}
@@ -2413,25 +2413,65 @@ Let us plot how the map $q(z)$ acts on a few features of the complex $z$-plane. 
  \end{array}
  \label{S3}
 \end{align}
-
-
-
-
-\begin{align}
- \renewcommand{\arraystretch}{1.5}
- \begin{array}{|r||c|c|c|c|c|c|c|c|}
+We will now plot these fixed points in the complex $z$-plane, and plot their images in $q(\mathbb{C})$. We also plot the circles $|z|=1,|1-z|=1$ and the line $\left|\frac{z}{z-1}\right|=1$, and their images, which split $\mathbb{C}$ and $q(\mathbb{C})$ into 6 fundamental domains of $S_3$:
+\begin{multline}
+ \begin{tikzpicture}[baseline=(base), scale = 1.2]
+  \coordinate (base) at (0, 0);
+  \fill[red!7] (-1.6, -1.6) rectangle (2.6, 1.6);
+  \draw (2.6, 1.2) -- (2.2, 1.2) -- (2.2, 1.6);
+  \node at (2.4, 1.4) {$z$};¨
+  \draw[red] (0, 0) circle [radius = 1];
+  \draw[red] (1, 0) circle [radius = 1];
+  \draw[red] (.5, -1.6) -- (.5, 1.6);
+  \draw[thick] (1, 0) node[fill, circle, minimum size = 1.4mm, inner sep = 0]{} -- (2.6, 0);
+  \draw[ultra thick, dashed, red] (-1.6, 0) -- (1, 0);
+  \node[below] at (1, 0){$1$};
+  \node[below] at (0, 0){$0$};
+  \draw(0, 0) node[fill, circle, minimum size = 1.4mm, inner sep = 0]{};
+  \node at (.5, 0) [blue, draw, kite, kite vertex angles = 50, scale = .25] {};
+  \node at (-1, 0) [blue, fill, draw, kite, kite vertex angles = 50, scale = .25] {};
+  \node at (2, 0) [blue, fill, star, star points = 4, star point ratio = .2, scale = .7] {};
+  \node at (.5, .866) [green!70!black, fill, star, star points = 3, star point ratio = .2, scale = .7]{};
+  \node at (.5, -.866) [rotate = 180, green!70!black, fill, star, star points = 3, star point ratio = .2, scale = .7]{};
+ \end{tikzpicture}
+ \ \ 
+ \begin{tikzpicture}[baseline=(base), scale = 5]
+ \coordinate (base) at (0, 0);
+ \draw (1, .3) -- (.9, .3) -- (.9, .4);
+ \node at (.95, .35) {$q$};
+  \filldraw[fill = red!7] (-1, 0) to [out = 0, in = 180] (0, .208) to [out = 0, in = 180] (1, 0) to [out = 180, in =0] (0, -.208) to [out = 180, in =0] (-1, 0);
+  \draw[red] (0, -.208) -- (0, .208);
+  \draw[red] (-.93, 0) to [in = 180, out = 0] (-.115, .0893) to [out = 0, in = 150] (0, .066) to [out = -30, in = 90] (.043, 0) to [out = -90, in = 30] (0, -.066) to [out = -150, in = 0] (-.115, -.0893) to [out = 180, in = 0] (-.93, 0);
+  \draw[red] (.93, 0) to [in = 0, out = 180] (.115, .0893) to [out = 180, in = 30] (0, .066) to [out = -150, in = 90] (-.043, 0) to [out = -90, in = 150] (0, -.066) to [out = -30, in = 180] (.115, -.0893) to [out = 0, in = 180] (.93, 0);
+  \draw[ultra thick, dashed, red] (-.9, 0) -- (.9, 0);
+  \draw(0, 0) node[fill, circle, minimum size = 1.4mm, inner sep = 0]{};
+  \draw(1, 0) node[fill, circle, minimum size = 1.4mm, inner sep = 0]{};
+  \node[below] at (1, 0) {$1$};
+  \node at (-.1, -.145) {$0$};
+  \draw[-latex] (-.07, -.105) -- (-.015, -.022);
+  \node at (-1, 0) [draw, circle, minimum size = 1.4mm, inner sep = 0]{};
+  \node at (0, .208) [blue, fill, star, star points = 4, star point ratio = .2, scale = .7] {};
+  \node at (0, -.208) [blue, fill, star, star points = 4, star point ratio = .2, scale = .7] {};
+  \node at (0, .066) [green!70!black, fill, star, star points = 3, star point ratio = .2, scale = .7]{};
+  \node at (0, -.066) [rotate = 180, green!70!black, fill, star, star points = 3, star point ratio = .2, scale = .7]{};
+   \node at (.043, 0) [blue, draw, kite, kite vertex angles = 50, scale = .25] {};
+  \node at (-.043, 0) [blue, fill, draw, kite, kite vertex angles = 50, scale = .25] {};
+ \end{tikzpicture}
+\\
+\renewcommand{\arraystretch}{1.5}
+ \begin{array}{|r||c|c|c|c|c|c|c|}
   \hline 
-  z & 0 & 0 & 1 & \infty & 2 & -1 & \frac12 & e^{\pm i\frac{\pi}{3}}
+  z & 0 &  1 & \infty & 2 & -1 & \frac12 & e^{\pm i\frac{\pi}{3}}
   \\
   \hline 
-  q & 0 & \pm i & 1 & -1 & \pm ie^{-\frac{\pi}{2}} & -e^{-\pi} & e^{-\pi} & \pm ie^{-\frac{\pi}{2}\sqrt{3}}
+  q & 0 & 1 & -1 & \pm ie^{-\frac{\pi}{2}} & -e^{-\pi} & e^{-\pi} & \pm ie^{-\frac{\pi}{2}\sqrt{3}}
   \\
   \hline 
   \text{Symbol} & 
   \begin{tikzpicture}
    \draw(0, 0) node[fill, circle, minimum size = 1.4mm, inner sep = 0]{};
   \end{tikzpicture}
- & & 
+ & 
  \begin{tikzpicture}
    \draw(0, 0) node[fill, circle, minimum size = 1.4mm, inner sep = 0]{};
   \end{tikzpicture}
@@ -2459,54 +2499,11 @@ Let us plot how the map $q(z)$ acts on a few features of the complex $z$-plane. 
  \\
  \hline 
  \end{array}
+ \qquad\qquad
  \label{zqval}
-\end{align}
-
-\begin{align}
- \begin{tikzpicture}[baseline=(base), scale = 1.2]
-  \coordinate (base) at (0, 0);
-  \fill[red!7] (-1.6, -1.6) rectangle (2.6, 1.6);
-  \draw (2.6, 1.2) -- (2.2, 1.2) -- (2.2, 1.6);
-  \node at (2.4, 1.4) {$z$};¨
-  \draw[red] (0, 0) circle [radius = 1];
-  \draw[red] (1, 0) circle [radius = 1];
-  \draw[red] (.5, -1.6) -- (.5, 1.6);
-  \draw[thick] (1, 0) node[fill, circle, minimum size = 1.4mm, inner sep = 0]{} -- (2.6, 0);
-  \draw[ultra thick, dashed, red] (-1.6, 0) -- (1, 0);
-  \node[below] at (1, 0){$1$};
-  \node[below] at (0, 0){$0$};
-  \draw(0, 0) node[fill, circle, minimum size = 1.4mm, inner sep = 0]{};
-  \node at (.5, 0) [blue, draw, kite, kite vertex angles = 50, scale = .25] {};
-  \node at (-1, 0) [blue, fill, draw, kite, kite vertex angles = 50, scale = .25] {};
-  \node at (2, 0) [blue, fill, star, star points = 4, star point ratio = .2, scale = .7] {};
-  \node at (.5, .866) [green!70!black, fill, star, star points = 3, star point ratio = .2, scale = .7]{};
-  \node at (.5, -.866) [rotate = 180, green!70!black, fill, star, star points = 3, star point ratio = .2, scale = .7]{};
- \end{tikzpicture}
- \quad 
- \begin{tikzpicture}[baseline=(base), scale = 5]
- \coordinate (base) at (0, 0);
- \draw (1, .3) -- (.9, .3) -- (.9, .4);
- \node at (.95, .35) {$q$};
-  \filldraw[fill = red!7] (-1, 0) to [out = 0, in = 180] (0, .208) to [out = 0, in = 180] (1, 0) to [out = 180, in =0] (0, -.208) to [out = 180, in =0] (-1, 0);
-  \draw[red] (0, -.208) -- (0, .208);
-  \draw[red] (-.93, 0) to [in = 180, out = 0] (-.115, .0893) to [out = 0, in = 150] (0, .066) to [out = -30, in = 90] (.043, 0) to [out = -90, in = 30] (0, -.066) to [out = -150, in = 0] (-.115, -.0893) to [out = 180, in = 0] (-.93, 0);
-  \draw[red] (.93, 0) to [in = 0, out = 180] (.115, .0893) to [out = 180, in = 30] (0, .066) to [out = -150, in = 90] (-.043, 0) to [out = -90, in = 150] (0, -.066) to [out = -30, in = 180] (.115, -.0893) to [out = 0, in = 180] (.93, 0);
-  \draw[ultra thick, dashed, red] (-.9, 0) -- (.9, 0);
-  \draw(0, 0) node[fill, circle, minimum size = 1.4mm, inner sep = 0]{};
-  \draw(1, 0) node[fill, circle, minimum size = 1.4mm, inner sep = 0]{};
-  \node[below] at (1, 0) {$1$};
-  \node at (-.1, -.145) {$0$};
-  \draw[-latex] (-.07, -.105) -- (-.015, -.022);
-  \node at (-1, 0) [draw, circle, minimum size = 1.4mm, inner sep = 0]{};
-  \node at (0, .208) [blue, fill, star, star points = 4, star point ratio = .2, scale = .7] {};
-  \node at (0, -.208) [blue, fill, star, star points = 4, star point ratio = .2, scale = .7] {};
-  \node at (0, .066) [green!70!black, fill, star, star points = 3, star point ratio = .2, scale = .7]{};
-  \node at (0, -.066) [rotate = 180, green!70!black, fill, star, star points = 3, star point ratio = .2, scale = .7]{};
-   \node at (.043, 0) [blue, draw, kite, kite vertex angles = 50, scale = .25] {};
-  \node at (-.043, 0) [blue, fill, draw, kite, kite vertex angles = 50, scale = .25] {};
- \end{tikzpicture}
-\end{align}
-
+ \end{multline}
+In the $z$-plane, the branch cut of the hypergeometric function is taken to be $(1,\infty)$, whose image is the boundary of $q(\mathbb{C})$. The whole complex $z$-plane is mapped into a domain that is much smaller than the unit disc $|q|<1$: as a result, conformal blocks tend to converge faster as power series in $q$ than in $z$.
+ 
 
 \subsubsection{Behaviour for large channel dimensions}
 
