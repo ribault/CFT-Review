@@ -253,7 +253,7 @@ Now, in a quantum theory, symmetries act projectively on states. And projective 
 
 In a conformal field theory, the space of states is a representation of the Virasoro algebra, and can be decomposed into indecomposable representations. But which indecomposable representations are physically relevant? To answer this question, we will focus on the properties of the dilation generator $L_0$ of the Virasoro algebra. Conceptually, this is because $L_0$ can be interpreted as the energy operator. Technically, this is because $L_0$ controls the convergence of operator product expansions, as we will see in Section \ref{sec:csope}. More specifically, a necessary condition for convergence is that the eigenvalues of $L_0$ be bounded from below in any indecomposable representation. We will always assume that this condition holds.
 
-The eigenvalues of $L_0$ are called \myindex{conformal dimensions}\index{conformal dimension}. Under the action of the Virasoro generator $L_n$, the conformal dimension decreases by $n$. For any vector $V$ in a representation of the Virasoro algebra, we indeed have 
+The eigenvalues of $L_0$ are called \myindex{conformal dimensions}\index{conformal!---dimension}. Under the action of the Virasoro generator $L_n$, the conformal dimension decreases by $n$. For any vector $V$ in a representation of the Virasoro algebra, we indeed have 
 \begin{align}
  L_0V{} = \Delta V{} \quad \Rightarrow\quad  L_0 L_nV{} = L_nL_0V{} + [L_0, L_n] V{}  = (\Delta-n)L_nV{} \ .
 \end{align}
@@ -770,13 +770,13 @@ The generators $\ell_n$ \eqref{lpz} of local conformal transformations are only 
 \end{align}
 In fact we want the algebra of conformal transformations to act on a complex vector space: the space of complex-valued functions on $\overline{\mathbb{C}}$ for the Witt algebra, the space of states of the CFT for the Virasoro algebra. We should therefore complexify our symmetry algebra, and we obtain two copies of the Virasoro algebra: a \myindex{left-moving}  Virasoro algebra\index{left-moving} $\mathfrak{V}$ with generators $L_n$, and a \myindex{right-moving} Virasoro algebra\index{right-moving} $\bar{\mathfrak{V}}$ with generators $\bar{L}_n$. In the case of the algebra of global conformal transformations, we start with the 6-dimensional real Lie algebra $\mathfrak{sl}_2(\mathbb{C})$, with generators \eqref{epbe} with $n=-1,0,1$, and the complexification yields $\mathfrak{sl}_2(\mathbb{C})^\mathbb{C} = \mathfrak{sl}_2(\mathbb{C})\times \mathfrak{sl}_2(\mathbb{C})$.
 
-In Sections \ref{sec:vir} and \ref{sec:fope}, we have been doing \myindex{chiral CFT}\index{CFT!chiral---}, which means considering $\mathfrak{V}$ only. In a full CFT, the symmetry algebra is the \myindex{conformal algebra}\index{conformal algebra} $\mathfrak{V}\times \bar{\mathfrak{V}}$, where for simplicity we assume that the left and right central charges are equal. When it comes to representations, Verma modules of $\mathfrak{V}\times \bar{\mathfrak{V}}$ are simply $\mathcal{V}_\Delta\otimes \bar{\mathcal{V}}_{\bar \Delta}$, where we write a bar over representations of $\bar{\mathfrak{V}}$. There also exist representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$ that are not themselves factorized, in particular logarithmic representations \cite{nr20}. 
+In Sections \ref{sec:vir} and \ref{sec:fope}, we have been doing \myindex{chiral CFT}\index{CFT!chiral---}, which means considering $\mathfrak{V}$ only. In a full CFT, the symmetry algebra is the \myindex{conformal algebra}\index{conformal!---algebra} $\mathfrak{V}\times \bar{\mathfrak{V}}$, where for simplicity we assume that the left and right central charges are equal. When it comes to representations, Verma modules of $\mathfrak{V}\times \bar{\mathfrak{V}}$ are simply $\mathcal{V}_\Delta\otimes \bar{\mathcal{V}}_{\bar \Delta}$, where we write a bar over representations of $\bar{\mathfrak{V}}$. There also exist representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$ that are not themselves factorized, in particular logarithmic representations \cite{nr20}. 
 
 Fields now belong to representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$, and they obey $\frac{\partial}{\partial \bar z} V(z) = \bar L_{-1} V(z)$, which is the antiholomorphic version of Eq. \eqref{pvlv}. This allows us to define a right-moving energy-momentum tensor $\bar T(y) = \sum_{n\in\mathbb{Z}} \frac{\bar L_n^{(z)}}{(\bar y-\bar z)^{n+2}}$. While $T$ is locally holomorphic, $\bar T$ is locally antiholomorphic:
 \begin{align}
  \partial_{\bar z} T(z) = 0 \quad , \quad \partial_z \bar T(z) = 0 \ . 
 \end{align}
-Let $V_{\Delta,\bar\Delta}(z)$ be a field that is primary with respect to the conformal algebra, with the left dimension $\Delta$ and the right dimension $\bar\Delta$. The difference of these dimensions is called the \myindex{conformal spin}\index{conformal spin}
+Let $V_{\Delta,\bar\Delta}(z)$ be a field that is primary with respect to the conformal algebra, with the left dimension $\Delta$ and the right dimension $\bar\Delta$. The difference of these dimensions is called the \myindex{conformal spin}\index{conformal!---spin}
 \begin{align}
  S = \Delta -\bar\Delta\ . 
  \label{sdd} 
@@ -936,7 +936,7 @@ Here we recover their spectrums from assumptions about Virasoro representations,
 
 \subsubsection{What is a CFT? What is a spectrum?}
 
-We define a \myindex{conformal field theory}\index{conformal field theory} as a set of correlation functions that obey the assumptions of Section \ref{sec:bo}, most importantly Virasoro symmetry, the commutativity of fields, the existence of OPEs, and single-valuedness. We already know that on the sphere, a conformal field theory is characterized by a spectrum and 2-point and 3-point structure constants such that crossing symmetry is obeyed.
+We define a \myindex{conformal field theory}\index{conformal!---field theory} as a set of correlation functions that obey the assumptions of Section \ref{sec:bo}, most importantly Virasoro symmetry, the commutativity of fields, the existence of OPEs, and single-valuedness. We already know that on the sphere, a conformal field theory is characterized by a spectrum and 2-point and 3-point structure constants such that crossing symmetry is obeyed.
 
 This definition works very well in \myindex{rational CFTs}\index{CFT!rational---}, i.e. CFTs whose spectrums are made of finitely many primary fields and their descendants. However, in more general CFTs, the notion of the spectrum becomes fuzzy. To say why, let us compare various spectrums associated to various objects. By an abuse of terminology, we call spectrum a basis of primary fields: 
 \begin{align}
@@ -2255,7 +2255,7 @@ in practice it may be enough to study a few 4-point functions for guessing a giv
 
 \subsection{Computation of Virasoro blocks}
 
-In order to solve crossing symmetry equations numerically, we need an efficient way to compute Virasoro blocks. It is possible to compute Virasoro blocks from their definition \eqref{sdec}, but this is awfully inefficient. We will now review the more efficient recursive representation due to Alexey Zamolodchikov \cite{zam87b}, in the case of 4-point $s$-channel blocks on the sphere. (For $N$-point blocks on arbitrary Riemann surfaces, see \cite{ccy17}.)  
+In order to solve crossing symmetry equations numerically, we need an efficient way to compute Virasoro blocks. It is possible to compute Virasoro blocks from their definition \eqref{sdec}, but this is awfully inefficient. We will now review the more efficient recursive representation due to Alexey Zamolodchikov \cite{zam87b}, in the case of 4-point $s$-channel blocks on the sphere. The $t$-channel and $u$-channel blocks can then be deduced using Eq. \eqref{stotu}. For $N$-point blocks on arbitrary Riemann surfaces, see \cite{ccy17}.
 
 The idea of the recursive representation is to characterize Virasoro blocks by their analytic properties as functions of the channel dimension, in particular their poles, residues, and behaviour at infinity. 
 
@@ -2529,11 +2529,43 @@ See Appendix D of \cite{msz15} for the pillow geometry that underlies the variab
 
 \subsubsection{Zamolodchikov's recursive representation}\label{sec:zrr}
 
+From the poles and residues \eqref{resf} of the Virasoro block $\mathcal{F}_\Delta(z)$, we deduce the poles and residues of the power series $H_\Delta(q)$ \eqref{fdq},
 \begin{align}
- H_\Delta(q) = 
+ \underset{\Delta=\Delta_{(r,s)}}{\operatorname{Res}} H_\Delta(q) = (16q)^{rs} R_{r,s}H_{\Delta_{(r,-s)}}(q)\ .
+\end{align}
+Since we moreover know its large $\Delta$ asymptotic behaviour \eqref{hdq}, we can rewrite $H_\Delta(q)$ as a sum over its poles,
+\begin{align}
+ \boxed{H_\Delta(q) = 1 + \sum_{r,s=1}^\infty \frac{(16q)^{rs} R_{r,s}}{\Delta-\Delta_{(r,s)}} H_{\Delta_{(r,-s)}}(q)}\ . 
  \label{hrec}
 \end{align}
+Together with Eq. \eqref{fdq}, this is called \myindex{Zamolodchikov's recursive representation}\index{Zamolodchikov's recursive representation} of Virasoro blocks. (There is another recursive representation for $\mathcal{F}_\Delta(z)$, obtained by summing over its poles as function of $c$ instead of $\Delta$: to distinguish the two representations, we may call them the $\Delta$-recursion and the $c$-recursion.)
 
+The recursive reprentation completely determines the series $H_\Delta(q)$, order by order in powers of $16q$. Let us write the first 4 coefficients, using $\Delta_{(1,1)}=0$ and Eq. \eqref{drms} for simplifying some expressions: 
+\begin{subequations}
+\begin{align}
+ h_1(\Delta) &= \frac{R_{1,1}}{\Delta}\ , 
+ \\
+ h_2(\Delta) &= \frac{R_{1,1}^2}{\Delta} + \frac{R_{2,1}}{\Delta-\Delta_{(2,1)}}+\frac{R_{1,2}}{\Delta-\Delta_{(1,2)}} \ , 
+ \end{align}
+ \begin{multline}
+ h_3(\Delta) = \frac{R_{1,1}^3}{\Delta} + \frac{\left(3\Delta-\Delta_{(2,1)}\Delta_{(2,-1)}\right)R_{1,1}R_{2,1}}{\Delta(\Delta-\Delta_{(2,1)})(1-\Delta_{(2,1)})\Delta_{(2,-1)}}  
+ \\
+ + \frac{\left(3\Delta-\Delta_{(1,2)}\Delta_{(1,-2)}\right)R_{1,1}R_{1,2}}{\Delta(\Delta-\Delta_{(1,2)})(1-\Delta_{(1,2)})\Delta_{(1,-2)}} 
+ + \frac{R_{3,1}}{\Delta-\Delta_{(3,1)}} +\frac{R_{1,3}}{\Delta-\Delta_{(1,3)}} 
+ \ ,
+\end{multline}
+\begin{multline}
+ h_4(\Delta) = \frac{R_{1,1}^4}{\Delta} + \frac{\left(4\Delta - \Delta_{(2,1)}(\Delta_{(2,-1)}+1)\right)R_{1,1}^2 R_{2,1}}{\Delta(\Delta-\Delta_{(2,1)})(1-\Delta_{(2,1)})\Delta_{(2,-1)}} + \frac{\left(4\Delta-\Delta_{(1,2)}(\Delta_{(1,-2)}+1)\right)R_{1,1}^2R_{1,2}}{\Delta(\Delta-\Delta_{(1,2)})(1-\Delta_{(1,2)})\Delta_{(1,-2)}} 
+ \\
+ + \frac{R_{2,1}^2}{2(\Delta-\Delta_{(2,1)})} + \frac{\left(4\Delta-(\Delta_{(2,1)}-\Delta_{(1,2)})^2 -2(\Delta_{(2,1)}+\Delta_{(1,2)})\right)R_{2,1}R_{1,2}}{(\Delta-\Delta_{(2,1)})(\Delta-\Delta_{(1,2)})(\Delta_{(2,-1)}-\Delta_{(1,2)})(\Delta_{(1,-2)}-\Delta_{(2,1)})} 
+ \\
+ + \frac{R_{1,2}^2}{2(\Delta-\Delta_{(1,2)})} + \frac{\left(4\Delta-\Delta_{(3,1)}\Delta_{(3,-1)}\right)R_{1,1}R_{3,1}}{\Delta(\Delta-\Delta_{(3,1)})(1-\Delta_{(3,1)})\Delta_{(3,-1)}}  
+ + \frac{\left(4\Delta-\Delta_{(1,3)}\Delta_{(1,-3)}\right)R_{1,1}R_{1,3}}{\Delta(\Delta-\Delta_{(1,3)})(1-\Delta_{(1,3)})\Delta_{(1,-3)}} 
+\\
++  \frac{R_{4,1}}{\Delta-\Delta_{(4,1)}}+\frac{R_{2,2}}{\Delta-\Delta_{(2,2)}} +\frac{R_{1,4}}{\Delta-\Delta_{(1,4)}} \ .
+\end{multline}
+\end{subequations}
+In the recursive representation, some properties of the blocks are not manifest. In particular, $h_N(\Delta)$ is a meromorphic function of the central charge, whose poles depend on $\Delta$. However, the recursive representation writes $h_N(\Delta)$ as a sum of terms that are not always invariant under $\beta\to \beta^{-1}$, and therefore not meromorphic in $c$. Moreover, due to the denominator of $R_{r,s}$ \eqref{rrs}, and also due to factors of the type $\frac{1}{\Delta_{(r,-s)}-\Delta_{(r',s')}}$, these terms have $\Delta$-independent poles at rational values of $\beta^2$. As a result, the recursive representation is only valid if $\beta^2\notin\mathbb{Q}$. Finding a recursive representation for $\beta^2\in \mathbb{Q}$ is an open problem, whose simplest incarnation is in the case of 1-point Virasoro blocks on the torus \cite{sto22}. 
 
 \subsection{Interchiral symmetry} \label{sec:icb}
 
@@ -2841,8 +2873,19 @@ We would like to determine the dimension $\mathcal{N}$ \eqref{nsol} of the space
 
 If we view the system of crossing symmetry equations as an infinite matrix $\mathcal{C}$, then $\mathcal{N}$ is the number of singular values of $\mathcal{C}$ that vanish. Can we deduce $\mathcal{N}$ from the matrix $\mathcal{C}_\Lambda$ of a truncated system? The truncation has two effects on the set of singular values: making the set finite, and making the vanishing elements nonzero but tiny. Therefore, if $\mathcal{N}<\infty$, then $\mathcal{N}$ is the number of \textit{tiny} singular values of $\mathcal{C}_\Lambda$ for $\Lambda$ \textit{large enough}. But large matrices tend to have many small singular values, which tend to zero as $\Lambda\to \infty$. The tiny singular values tend to zero faster than the others, but we do not have a quantitative criterion for characterizing them. (See \cite{gjnrs23} for examples.) 
 
-In practice, instead of studying singular values, we count solutions by a rather pedestrian method, which does not require high values of $\Lambda$. To begin with, we can find whether $\mathcal{N}>0$ by examining how a solution $\left(D_k^{(x)|\Lambda,Z_\Lambda}\right)_{k,x}$ of the truncated system \eqref{fziz} behaves at $z_0\notin Z_\Lambda$. If $\mathcal{N}=0$, we expect a rather large discrepancy between the three channels, of the order $\max_{k\in \mathcal{S}_\Lambda^{(s)}} \left(\epsilon_k^{(s)|\Lambda} D_k^{(s)|\Lambda,Z_\Lambda}\mathcal{G}^{(s)}_{\Lambda|\Delta_k\bar\Delta_k}(z_0)\right) $. This means that in this case the deviation $\epsilon_k^{(s)|\Lambda}$ measures the failure of crossing symmetry. If on the other hand $\mathcal{N}>1$, then the large deviation only reflects the existence of several solutions, and the three channels should agree up to a small discrepancy that is due to our truncation of the system, typically $\ll \max_{k\in \mathcal{S}_\Lambda^{(s)}} \left(D_k^{(s)|\Lambda,Z_\Lambda}\mathcal{G}^{(s)}_{\Lambda|\Delta_k\bar\Delta_k}(z_0)\right) $.
-
+In practice, instead of studying singular values, we count solutions by a rather pedestrian method, which does not require high values of $\Lambda$. To begin with, let us determine whether $\mathcal{N}>0$. For a solution $\left(D_k^{(x)|\Lambda,Z_\Lambda}\right)_{k,x}$ of the truncated system \eqref{fziz}, let $Z^{(x)}_\Lambda(z)$ be the corresponding $x$-channel 4-point function. For $z_0\notin Z_\Lambda$, we compute the violation of crossing symmetry 
+\begin{align}
+ \delta_\Lambda(z_0) = \max_{x\in\{t,u\}} \left|Z^{(x)}_\Lambda(z_0)-Z^{(s)}_\Lambda(z_0)\right|\ . 
+\end{align}
+We expect this violation to be small if $\mathcal{N}>0$, and larger if $\mathcal{N}=0$. To state this  quantitatively, we introduce the quantity 
+\begin{align}
+ \eta_\Lambda = \max_{k\in \mathcal{S}_\Lambda^{(s)}} \left|\epsilon_k^{(s)|\Lambda} D_k^{(s)|\Lambda,Z_\Lambda}\mathcal{G}^{(s)}_{\Lambda|\Delta_k\bar\Delta_k}(z_0)\right| \ .
+\end{align}
+Then we expect
+\begin{itemize}
+ \item $\mathcal{N}=0\implies \delta_\Lambda(z_0) = O(\eta_\Lambda)$: the large deviation $\epsilon_k^{(s)|\Lambda}$ measures the failure of crossing symmetry.
+ \item $\mathcal{N}>1\implies \delta_\Lambda(z_0) \ll \eta_\Lambda$: the large deviation reflects the existence of several solutions, and the three channels should agree up to a small discrepancy that is due to our truncation of the system. 
+\end{itemize}
 Once we know that $\mathcal{N}>1$, the idea is to add $\mathcal{N}$ equations to the crossing symmetry equations. Then the solution becomes unique, leading to small relative deviations as in Section \ref{sec:sos}. Without loss of generality, we may use additional equations of the type $D^{(x)}_k=0$, in addition to the normalization condition $D^{(s)}_k=1$. This is equivalent to removing primary fields from the spectrum, until we have small relative deviations. When this is achieved, we have $\mathcal{N}\leq \mathcal{R}+1$, where $\mathcal{R}$ is the number of removed fields. We have an inequality rather than an equality, because it may happen that some of our additional equations are in fact obeyed by all solutions, and are therefore redundant with crossing symmetry equations. To eliminate this possibility, we should test whether removing all $\mathcal{R}$ primary fields is necessary for having small relative deviations. If the set of removed fields is minimal, then $\mathcal{N}= \mathcal{R}+1$.
 
 The method of removing primary fields is computationally cheap, because it only involves deleting columns of the matrix $\mathcal{C}_\Lambda$, without recomputing $\mathcal{C}_\Lambda$, or changing the cutoff $\Lambda$. This method is however pedestrian, because it involves inspecting relative deviations for various sets of removed fields, and determining a minimal set by trial and error. It would be nice to find a simple way of determining $\mathcal{N}$ from $\mathcal{C}_\Lambda$. 
