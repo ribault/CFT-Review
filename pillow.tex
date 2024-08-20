@@ -12,7 +12,7 @@
 
 \usepackage[margin=20mm]{geometry}
 
-%\usepackage{showkeys}
+\usepackage{showkeys}
 
 \usepackage[colorlinks=true,linktoc=all,linkcolor=black,citecolor=red,urlcolor=blue]{hyperref}
 
@@ -111,7 +111,8 @@ The factor $\Omega(q)$ in \eqref{fd} is deduced from the conformal transformatio
 In the $z$-coordinate, the behaviour \eqref{fk} of the block's coefficients follows from their calculation from Ward identities:
 \begin{align}
  f_k = \sum_{|L|=|L'|=k} G^{-1}_{L,L'}(\Delta) g_L(\Delta,\Delta_1,\Delta_2)g_{L'}(\Delta,\Delta_4,\Delta_3)
-\end{align}
+\label{fke}
+ \end{align}
 where the sum is over creation operators $L=\prod_{i=1}^m L_{-n_i}$ of level $k=\sum n_i$, with 
 \begin{align}
  \deg_\Delta g_L = m\leq k
@@ -237,6 +238,8 @@ which may be rewritten as
 \subsection{Interpretation}
 
 Up to $O(q^2)$, the explicit calculation agrees with Eq. \eqref{ghh}, provided
+\begin{subequations}
+ \label{hl}
 \begin{align}
  h_{L_{-1}} &= \Delta_1-\Delta_2
  \\
@@ -244,7 +247,54 @@ Up to $O(q^2)$, the explicit calculation agrees with Eq. \eqref{ghh}, provided
  \\
  h_{L_{-2}} &= \Delta_1+\Delta_2-\frac{c}{16}
 \end{align}
+\end{subequations}
 Notice that $\frac{c}{16}$ is the dimension of twist fields for a conical defect of angle $\pi$, this may not be a coincidence. 
+
+\section{Oscillator representation}
+
+A proof of exponentiation of Virasoro blocks in the heavy limit was proposed, using the oscillator representation of the Virasoro algebra \cite{bdk19}. The oscillator representation provides a basis of a Verma module such that the Gram matrix $G$ is diagonal: using this basis, properties of blocks reduce to properties of 3-point functions of descendants $h_L$ in Eq. \eqref{ghh}. The argument of \cite{bdk19} seems to apply straightforwardly to the limit $\Delta\to\infty$ we are interested in, not just to the heavy limit. Most probably, it also applies to the more general limits of \cite{al24}. 
+
+The oscillator representation amounts to rewriting the Virasoro algebra in terms of an abelian affine Lie algebra: 
+\begin{align}
+ [J_m,J_n] = -\frac12 n\delta_{m+n,0}\ . 
+\end{align}
+\begin{align}
+ L_n &= \sum_{m\in{\mathbb{Z}}} J_{n-m}J_m + Q(n+1)J_n\ , \qquad (n\neq 0)\ ,
+\label{lnj}
+\\
+L_0 &=2\sum_{m=1}^\infty J_{-m}J_m +J_0^2+QJ_0 \ ,
+\label{lzj}
+\end{align}
+\begin{align}
+ Q = \beta -\beta^{-1} \quad , \quad c = 1-6Q^2
+\end{align}
+An affine primary field $V_\alpha$ such that $J_0V_\alpha = \alpha V_\alpha$ is also a Virasoro primary, with 
+\begin{align}
+ \Delta = \alpha(\alpha + Q)
+\end{align}
+We define the conjugation 
+\begin{align}
+ J_n^* = -J_{-n}-Q\delta_{n,0} \implies L_n^* = L_{-n} \quad , \quad \alpha^*=-Q-\alpha
+\end{align}
+The diagonal matrix elements of the Gram matrix are 
+\begin{align}
+ G_{J_{-1}} = \left<\alpha\middle|J_{-1}^*J_{-1}\middle|\alpha\right>= -\frac12  \quad , \quad G_{J_{-2}} = -1 \quad ,\quad G_{J_{-1}^2} = \frac12
+\end{align}
+The relation between the oscillator basis and the Virasoro basis of a Verma module is 
+\begin{align}
+ J_{-1} = \frac{1}{2\alpha} L_{-1} \quad , \quad J_{-1}^2 = \frac{(2\alpha-Q)L_{-1}^2 -2\alpha L_{-2}}{2\alpha(2\alpha-\beta)(2\alpha+\beta^{-1})} \quad , \quad J_{-2} = \frac{4\alpha^2 L_{-2}-L_{-1}^2}{2\alpha(2\alpha-\beta)(2\alpha+\beta^{-1})}
+ \label{jl}
+\end{align}
+We can compute the coefficient $f_1$ \eqref{fke} as 
+\begin{align}
+ f_1 = G_{J_{-1}}^{-1} g_{J_{-1}} g_{J_{-1}}^* = \frac{-2}{4\alpha(-Q-\alpha)}(\Delta+\Delta_1-\Delta_2)(\Delta+\Delta_4-\Delta_3)
+\end{align}
+Let us use the oscillator basis in the pillow geometry. In the large $\alpha$ limit, we compute $h_{J_{-2}},h_{J_{-1}^2}$ from $h_{L_{-2}},h_{L_{-1}^2}$ \eqref{hl} using Eq. \eqref{jl}, and we find 
+\begin{align}
+ h_{J_{-2}} = O(\alpha^{-1}) \quad , \quad \lim_{\alpha\to \infty} h_{J_{-1}^2} = \frac{1}{32}
+\end{align}
+where the nonzero limit comes from $h_{L_{-1}^2}$. We therefore find $\lim \tilde{c}_2 = \frac{1}{512}$ as expected. 
+
 
 \bibliographystyle{cft}
 \bibliography{cft}
