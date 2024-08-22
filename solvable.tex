@@ -270,7 +270,6 @@ Any state of the type $L V{}$ with $L\in\mathcal{L}$ is called a \myindex{descen
 
 A primary state $V{} \in \mathcal{R}$ generates a subrepresentation $\mathcal{R}_{V{}}= \text{Span}(LV{})_{L\in\mathcal{L}}\subset\mathcal{R}$, which is the space of its descendant states. If the states $(LV{})_{L\in\mathcal{L}}$ are linearly independent, then $\mathcal{R}_{V{}}$ is called the \myindex{Verma module}\index{Verma module} $\mathcal{V}_\Delta$. If not, $\mathcal{R}_{V{}}$ is a quotient of $\mathcal{V}_\Delta$ by a subrepresentation: such quotients are called \myindex{highest-weight representations}\index{highest-weight representation}. In such a representation, $L_0$ is diagonalizable. 
 Let us sketch a Verma module by displaying all its basis states up to the level $N=4$, with arrows representing the action of the Virasoro generators $L_{-1},L_{-2},L_{-3},L_{-4}$:
-\begin{align}
  \begin{align}
  \begin{tikzpicture}[scale = .3, baseline=(current  bounding  box.center)]
   \draw[-latex, very thick] (20, 0) -- (20, -27) node [right] {$N$};
@@ -303,8 +302,7 @@ Let us sketch a Verma module by displaying all its basis states up to the level 
   \draw[-latex] (3) -- (13);
  \end{tikzpicture}
 \end{align}
-\end{align}
-Notice that states such as 
+States such as 
 $L_{-2}L_{-1}V = L_{-1}L_{-2}V -L_{-3}V$ are linear combination of elements of our basis, and are therefore not displayed.
 
 \subsubsection{Null vectors of Verma modules}\label{sec:nvvm}
@@ -342,23 +340,63 @@ To get rid of the square root, we rewrite the central charge in terms a the para
 Then the conformal dimensions \eqref{dpm} become 
 $
  \Delta = -\frac12 + \frac34\beta^{\pm 2}
-$. The price to pay for this simplification is that the four values $\beta,-\beta,\beta^{-1},-\beta^{-1}$ all correspond to the same central charge. 
+$, and the corresponding null vectors are $X\propto \left(L_{-1}^2 -\beta^{\pm 2}L_{-2}\right)V_\Delta$.
+The price to pay for this simplification is that the four values $\beta,-\beta,\beta^{-1},-\beta^{-1}$ all correspond to the same central charge. 
 
-More generally, there is an infinite family of conformal dimensions $(\Delta_{(r, s)})_{r,s\in\mathbb{N}^*}$ such that $\mathcal{V}_{\Delta_{(r, s)}}$ has a null vector $L_{\langle r,s\rangle} V_{\Delta_{(r, s)}}$ at level $N=rs$. Let us summarize the cases $N=1,2$ in these notations:
+More generally, there is an infinite family of conformal dimensions $(\Delta_{(r, s)})_{r,s\in\mathbb{N}^*}$ such that $\mathcal{V}_{\Delta_{(r, s)}}$ has a null vector $L_{\langle r,s\rangle} V_{\Delta_{(r, s)}}$ at level $N=rs$. Let us summarize the cases $N=1,2,3,4$ in these notations:
 \begin{align}
-\begin{array}{|c|c|c|c|}
+\renewcommand{\arraystretch}{1.5}
+\begin{array}{|c|c|c|l|}
 \hline 
-N & (r, s) & \Delta_{(r, s)} &  L_{\langle r,s\rangle} 
+N & \langle r,s\rangle & \Delta_{\langle r,s\rangle} & L_{\langle r,s\rangle} 
 \\
 \hline\hline
-1 & (1, 1) & 0 &  L_{-1}
+1 & \langle 1,1\rangle & 0  & L_{-1}
 \\
 \hline
 \multirow{2}{*}{2} & 
-(2, 1) & -\frac12 + \frac34 \beta^{2}  & L_{-1}^2 -\beta^{2} L_{-2}
+\langle 2,1\rangle & -\frac12 +\frac{3}{4} \beta^2  & L_{-1}^2 -\beta^2 L_{-2}
 \\
 \cline{2-4}
-& (1, 2) & -\frac12 + \frac34 \beta^{-2} & L_{-1}^2 -\beta^{-2} L_{-2} 
+& \langle 1,2\rangle & -\frac12 + \frac{3}{4}\beta^{-2}  & L_{-1}^2 -\beta^{-2} L_{-2} 
+\\
+\hline
+\multirow{2}{*}{3} &
+\langle 3,1 \rangle &  -1 +2 \beta^2  &L_{-1}^3 -4\beta^2 L_{-1}L_{-2}+2\beta^2(\beta^2+1)L_{-3}
+\\
+\cline{2-4}
+& \langle 1,3 \rangle &  -1 +2 \beta^{-2}  &L_{-1}^3 -4\beta^{-2} L_{-1}L_{-2}+2\beta^{-2}(\beta^{-2}+1)L_{-3}
+\\
+\hline
+\multirow{5}{*}{4} &
+\langle 4,1 \rangle &  -\frac32 +\frac{15}{4} \beta^2  & 
+\begin{array}{r}
+ L_{-1}^4 -10\beta^2L_{-1}^2L_{-2} 
+ +2\beta^2\left(12\beta^2+5\right) L_{-1}L_{-3}
+  \\
+  +9\beta^4 L_{-2}^2 
+ -6\beta^2\left(6\beta^4+4\beta^2+1\right)L_{-4}
+\end{array}
+\\
+\cline{2-4}
+& \langle 2,2\rangle & \frac34\left(\beta-\beta^{-1}\right)^2 & 
+\begin{array}{l}
+L_{-1}^4-2\left(\beta^2+\beta^{-2}\right)L_{-1}^2L_{-2} 
++\left(\beta^2-\beta^{-2}\right)^2 L_{-2}^2
+\\ 
++2\left(1+\left(\beta+\beta^{-1}\right)^2\right) L_{-1}L_{-3} 
+ -2\left(\beta+\beta^{-1}\right)^2 L_{-4}
+\end{array}
+\\
+\cline{2-4}
+& \langle 1,4 \rangle &  -\frac32 +\frac{15}{4} \beta^{-2} &
+\begin{array}{r}
+ L_{-1}^4 -10\beta^{-2}L_{-1}^2L_{-2} 
+ +2\beta^{-2}\left(12\beta^{-2}+5\right) L_{-1}L_{-3}
+  \\
+  +9\beta^{-4} L_{-2}^2 
+ -6\beta^{-2}\left(6\beta^{-4}+4\beta^{-2}+1\right)L_{-4}
+\end{array}
 \\
 \hline
 \end{array}
