@@ -140,11 +140,7 @@ is a sum over a basis of a Verma module, i.e.
 The challenge is to prove 
 \begin{align}
  \lim_{\Delta\to \infty} \left(1+\sum_{k=1}^\infty \tilde{c}_k (16q)^k\right) = \prod_{k=1}^\infty\left(1-q^{2k}\right)^{-\frac12}
-\end{align}
-The fact that the limit does not depend on $c$ suggests that only $h_{L_{-1}^j}$ survive in the limit. We seem to have 
-\begin{align}
- G_{L_{-1}^j,L_{-1}^j} = j! (2\Delta)_j \quad , \quad 
- G^{-1}_{L_{-1}^j,L_{-1}^j} \underset{\Delta\to \infty}{\sim} \frac{1}{j!2^j\Delta^j}
+ \label{ltc}
 \end{align}
 
 
@@ -256,7 +252,7 @@ A proof of exponentiation of Virasoro blocks in the heavy limit was proposed, us
 
 The oscillator representation amounts to rewriting the Virasoro algebra in terms of an abelian affine Lie algebra: 
 \begin{align}
- [J_m,J_n] = -\frac12 n\delta_{m+n,0}\ . 
+ [J_m,J_n] = -\frac12 n\delta_{m+n,0}\quad , \quad Q = \beta -\beta^{-1} \quad , \quad c = 1-6Q^2
 \end{align}
 \begin{align}
  L_n &= \sum_{m\in{\mathbb{Z}}} J_{n-m}J_m + Q(n+1)J_n\ , \qquad (n\neq 0)\ ,
@@ -264,9 +260,6 @@ The oscillator representation amounts to rewriting the Virasoro algebra in terms
 \\
 L_0 &=2\sum_{m=1}^\infty J_{-m}J_m +J_0^2+QJ_0 \ ,
 \label{lzj}
-\end{align}
-\begin{align}
- Q = \beta -\beta^{-1} \quad , \quad c = 1-6Q^2
 \end{align}
 An affine primary field $V_\alpha$ such that $J_0V_\alpha = \alpha V_\alpha$ is also a Virasoro primary, with 
 \begin{align}
@@ -291,9 +284,34 @@ We can compute the coefficient $f_1$ \eqref{fke} as
 \end{align}
 Let us use the oscillator basis in the pillow geometry. In the large $\alpha$ limit, we compute $h_{J_{-2}},h_{J_{-1}^2}$ from $h_{L_{-2}},h_{L_{-1}^2}$ \eqref{hl} using Eq. \eqref{jl}, and we find 
 \begin{align}
- h_{J_{-2}} = O(\alpha^{-1}) \quad , \quad \lim_{\alpha\to \infty} h_{J_{-1}^2} = \frac{1}{32}
+ \lim_{\alpha\to \infty} h_{J_{-2}} = 0 \quad , \quad \lim_{\alpha\to \infty} h_{J_{-1}^2} = \frac{1}{32}
+ \label{lims}
 \end{align}
 where the nonzero limit comes from $h_{L_{-1}^2}$. We therefore find $\lim \tilde{c}_2 = \frac{1}{512}$ as expected. 
+More generally we define 
+\begin{align}
+ \mathcal{J} = \prod_i J_{-k_i}^{n_i}  \quad \implies \quad |\mathcal{J}| = \sum_i n_ik_i \quad , \quad 
+ H_\mathcal{J} = \lim_{\alpha\to \infty} h_\mathcal{J}
+\end{align}
+We compute 
+\begin{align}
+ G_\mathcal{J} = \prod_i G_{J_{-k_i}^{n_i}} \quad \text{with} \quad G_{J_{-k}^n} = 
+ \left(-\frac{k}{2}\right)^{n} n! 
+\end{align}
+and we conjecture 
+\begin{align}
+ H_{\prod_i J_{-k_i}^{n_i}} = \prod_i H_{J_{-k_i}^{n_i}} 
+\quad , \quad 
+ H_{J_{-k}^{2n+1}} = 0 \quad , \quad H_{J_{-k}^{2n}} = \pm \frac{(2n)!}{n!} \left(\frac{k}{4^{2k+1}}\right)^n 
+\label{hj}
+ \end{align}
+ in agreement with Eq. \eqref{lims}. 
+Then we compute 
+\begin{align}
+ \sum_\mathcal{J} G_\mathcal{J}^{-1} H_\mathcal{J}^2 (16q)^{|\mathcal{J}|} = \prod_{k=1}^\infty \sum_{n=0}^\infty G^{-1}_{J_{-k}^{2n}} H_{J_{-k}^{2n}}^2 (16q)^{2kn} 
+ = \prod_{k=1}^\infty \sum_{n=0}^\infty \frac{(2n)!}{(2^nn!)^2} q^{2kn} = \prod_{k=1}^\infty \left(1-q^{2k}\right)^{-\frac12}
+\end{align}
+Therefore, Eq. \eqref{ltc} follows from the conjecture \eqref{hj}, which was in fact crafted for that purpose. To prove the conjecture, it does not seem that the free bosonic theory can help, since in that theory our limit makes no sense, due to momentum conservation. 
 
 
 \bibliographystyle{cft}
