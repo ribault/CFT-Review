@@ -269,30 +269,43 @@ Let us introduce a basis of \myindex{creation operators}\index{creation operator
 Any state of the type $L V{}$ with $L\in\mathcal{L}$ is called a \myindex{descendant state}\index{descendant!---state} of the primary state $V$. Let  $N=|L|=\sum_{i=1}^k n_i \in\mathbb{N}$ be the  \myindex{level}\index{level} of that state, then its conformal dimension is $\Delta+N$. By extension, a linear combination of descendant states is also called a descendant state. 
 
 A primary state $V{} \in \mathcal{R}$ generates a subrepresentation $\mathcal{R}_{V{}}= \text{Span}(LV{})_{L\in\mathcal{L}}\subset\mathcal{R}$, which is the space of its descendant states. If the states $(LV{})_{L\in\mathcal{L}}$ are linearly independent, then $\mathcal{R}_{V{}}$ is called the \myindex{Verma module}\index{Verma module} $\mathcal{V}_\Delta$. If not, $\mathcal{R}_{V{}}$ is a quotient of $\mathcal{V}_\Delta$ by a subrepresentation: such quotients are called \myindex{highest-weight representations}\index{highest-weight representation}. In such a representation, $L_0$ is diagonalizable. 
-Let us sketch a Verma module by displaying all its basis states up to the level $N=3$, with arrows representing the action of the Virasoro generators $L_{-1},L_{-2},L_{-3}$:
+Let us sketch a Verma module by displaying all its basis states up to the level $N=4$, with arrows representing the action of the Virasoro generators $L_{-1},L_{-2},L_{-3},L_{-4}$:
 \begin{align}
- \begin{tikzpicture}[scale = .25, baseline=(current  bounding  box.center)]
-  \draw[-latex, very thick] (20, 0) -- (20, -21) node [right] {$N$};
-  \foreach \x in {0, ..., 3}
+ \begin{align}
+ \begin{tikzpicture}[scale = .3, baseline=(current  bounding  box.center)]
+  \draw[-latex, very thick] (20, 0) -- (20, -27) node [right] {$N$};
+  \foreach \x in {0, ..., 4}
   {
   \draw [dotted] (-20, {-6*\x}) -- (20, {-6*\x}) node [right] {${\x}$};
   }
-  \node[fill = white] at (0, 0) (0) {$V{}$};
-  \node[fill = white] at (-4,-6) (1) {$L_{-1}V{}$};
-  \node[fill = white] at (-8, -12) (11) {$L_{-1}^2V{}$};
-  \node[fill = white] at (-12, -18) (111) {$L_{-1}^3V{}$};
-  \node[fill = white] at (0,-12) (2) {$L_{-2}V{}$};
-  \node[fill = white] at (0,-18) (12) {$L_{-1}L_{-2}V{}$};
-  \node[fill = white] at (8,-18) (3) {$L_{-3}V{}$};
+  \node[fill = white] at (0, 0) (0) {$1$};
+  \node[fill = white] at (-3,-6) (1) {$L_{-1}$};
+  \node[fill = white] at (-6, -12) (11) {$L_{-1}^2$};
+  \node[fill = white] at (-9, -18) (111) {$L_{-1}^3$};
+  \node[fill = white] at (-12, -24) (1111) {$L_{-1}^4$};
+  \node[fill = white] at (0,-12) (2) {$L_{-2}$};
+  \node[fill = white] at (-3,-18) (12) {$L_{-1}L_{-2}$};
+  \node[fill = white] at (-6,-24) (112) {$L_{-1}^2L_{-2}$};
+  \node[fill = white] at (0,-24) (22) {$L_{-2}^2$};
+  \node[fill = white] at (6,-18) (3) {$L_{-3}$};
+  \node[fill = white] at (6,-24) (13) {$L_{-1}L_{-3}$};
+  \node[fill = white] at (12,-24) (4) {$L_{-4}$};
   \draw[-latex] (0) -- (1);
   \draw[-latex] (1) -- (11);
   \draw[-latex] (11) -- (111);
+  \draw[-latex] (111) -- (1111);
   \draw[-latex] (0) -- (2);
   \draw[-latex] (0) -- (3);
+  \draw[-latex] (0) -- (4);
   \draw[-latex] (2) -- (12);
+  \draw[-latex] (12) -- (112);
+  \draw[-latex] (2) -- (22);
+  \draw[-latex] (3) -- (13);
  \end{tikzpicture}
 \end{align}
-We do not display $L_{-2}L_{-1}V = L_{-1}L_{-2}V -L_{-3}V$, as it is a combination of already displayed states. 
+\end{align}
+Notice that states such as 
+$L_{-2}L_{-1}V = L_{-1}L_{-2}V -L_{-3}V$ are linear combination of elements of our basis, and are therefore not displayed.
 
 \subsubsection{Null vectors of Verma modules}\label{sec:nvvm}
 
