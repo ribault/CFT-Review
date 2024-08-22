@@ -417,7 +417,7 @@ and it follows that the null vector $L_{\langle r,s\rangle} V_{\Delta_{(r, s)}}$
  \Delta_{(r, s)} + rs = \Delta_{(r, -s)}\ , 
  \label{drms}
 \end{align}
-We will provide a derivation of $P_{(r, s)}$ using operator product expansions in Section \ref{sec:dope}. On the other hand, the expressions of $L_{\langle r,s\rangle} $ are complicated and not particularly useful. 
+We will provide a derivation of $P_{(r, s)}$ using operator product expansions in Section \ref{sec:dope}. On the other hand, the expressions of $L_{\langle r,s\rangle} $ for $rs\geq 3$ are complicated and not particularly useful \cite{fms97}.
 
 For $\beta^2\in\mathbb{C}\backslash \mathbb{Q}$, the Verma module $\mathcal{V}_\Delta$ has a null vector if and only if $\Delta=\Delta_{(r, s)}$ for some $r,s\in\mathbb{N}^*$, in which case it has only one null vector. For $\beta^2\in\mathbb{Q}$ however, a Verma module can have several null vectors. If $\beta^2 = \frac{q}{p}$ with $p,q$ coprime integers, we indeed have the identity
 \begin{align}
@@ -629,8 +629,16 @@ Similarly, the level two coefficients $f^{L_{-1}^2},f^{L_{-2}}$ are determined b
  (\Delta+2\Delta_1-\Delta_2)V_\Delta  &=L_2W \ .
  \label{el2c}
 \end{align}
-This is a system of linear equations for $f^{L_{-1}^2},f^{L_{-2}}$, whose homogeneous part is the condition that $W$ be a null vector \eqref{l1c}, \eqref{l2c}. Thererfore, the determinant vanishes if and only if $\Delta\in \left\{\Delta_{(2,1)},\Delta_{(1,2)}\right\}$. Otherwise, the solution is unique. 
-
+This leads to a system of linear equations for $f^{L_{-1}^2},f^{L_{-2}}$, whose homogeneous part is the condition that $W$ be a null vector \eqref{l1c}, \eqref{l2c}. Thererfore, the determinant vanishes if and only if $\Delta\in \left\{\Delta_{(2,1)},\Delta_{(1,2)}\right\}$. Otherwise, the unique solution is
+\begin{align}
+ \left[\begin{smallmatrix}
+ f^{L_{-1}^2} \\ f^{L_{-2}} 
+ \end{smallmatrix}\right]
+=
+   \frac{1}{16(\Delta-\Delta_{(2,1)})(\Delta-\Delta_{(1,2)})}
+\left[\begin{smallmatrix} 2+\frac{c}{4\Delta} & -3 \\ -3 & 4\Delta+2 \end{smallmatrix}\right]
+\left[\begin{smallmatrix} (\Delta+\Delta_1-\Delta_2)(\Delta+\Delta_1-\Delta_2+1) \\ \Delta+2\Delta_1-\Delta_2 \end{smallmatrix}\right] \ .
+ \end{align}
 To summarize, the contributions of $V_\Delta$ and its descendants in an OPE of two primary fields read
 \begin{align}
  \boxed{V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset  C_{\Delta_1,\Delta_2}^{\Delta} z_{12}^{\Delta-\Delta_1-\Delta_2} \Bigg(V_\Delta(z_2) +\sum_{L\in \mathcal{L}-\{1\}}z_{12}^{|L|} f^{\Delta,L}_{\Delta_1,\Delta_2} LV_\Delta(z_2)\Bigg)}
@@ -721,7 +729,11 @@ We can then find the fusion product $\mathcal{R}^d_{\langle r_1,s_1\rangle}\time
   \boxed{\mathcal{R}^d_{\langle r_1,s_1 \rangle} \times \mathcal{R}^d_{\langle r_2,s_2 \rangle} = \sum_{r\overset{2}{=}|r_1-r_2|+1}^{r_1+r_2-1}\ \sum_{s\overset{2}{=}|s_1-s_2|+1}^{s_1+s_2-1} \mathcal{R}^d_{\langle r,s \rangle}}\ ,
   \label{rrsr}
 \end{align}
-where the sums now run by increments of $2$. 
+where the sums now run by increments of $2$. The number of terms is $\min(r_1,r_2)\min(s_1,s_2)$. For example,
+\begin{align}
+ \mathcal{R}^d_{\langle 5,2\rangle}\times \mathcal{R}^d_{\langle 3,3\rangle} = \mathcal{R}^d_{\langle 3,2\rangle} + \mathcal{R}^d_{\langle 5, 2\rangle} + \mathcal{R}^d_{\langle 7,2\rangle} +\mathcal{R}^d_{\langle 3,4\rangle}+\mathcal{R}^d_{\langle 5,4\rangle} + \mathcal{R}^d_{\langle 7,4\rangle} \ .
+\end{align}
+
 
 
 \subsection{Correlation functions}\label{sec:cor}
@@ -898,10 +910,16 @@ Comparing with the 3-point function \eqref{3ptc}, this implies a relation betwee
  \boxed{C_{123} = C_{12}^3B_{3}} \ .
  \label{ccb}
 \end{align}
-If we now insert the OPE in the four-point function $\left<V_1(z)V_2(0)V_3(\infty)V_4(1)\right>$, we obtain a linear combination of 3-point functions of the type $\left<L\bar{L}V_k(0) V_3(\infty)V_4(1)\right>$ with $L,\bar L\in\mathcal{L}$. Deducing 3-point functions of descendants from 3-point functions of primaries using local Ward identities, we can in principle compute the ratios
+If we now insert the OPE in the four-point function $\left<V_1(z)V_2(0)V_3(\infty)V_4(1)\right>$, we obtain a linear combination of 3-point functions of the type $\left<L\bar{L}V_k(0) V_3(\infty)V_4(1)\right>$ with $L,\bar L\in\mathcal{L}$. Deducing 3-point functions of descendants from 3-point functions of primaries using local Ward identities, we can compute the ratios
 \begin{align}
- g^L_{\Delta_1,\Delta_2,\Delta_3} = \frac{\left< LV_{\Delta_1}(0) V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right>}{\left< V_{\Delta_1}(0) V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right>}\ .
+ g^L_{\Delta_1,\Delta_2,\Delta_3} = \frac{\left< LV_{\Delta_1}(0) V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right>}{\left< V_{\Delta_1}(0) V_{\Delta_2}(\infty)V_{\Delta_3}(1)\right>}\ ,
  \label{gl}
+\end{align}
+which depend on $\Delta_1,\Delta_2,\Delta_3$ but not on the central charge. For example, 
+\begin{align}
+ g^{L_{-1}}_{\Delta_1,\Delta_2,\Delta_3}&= \Delta_1-\Delta_2+\Delta_3 \quad , \quad g^{L_{-2}}_{\Delta_1,\Delta_2,\Delta_3}= \Delta_1-\Delta_2+2\Delta_3 \ , 
+ \\
+ g^{L_{-1}^2}_{\Delta_1,\Delta_2,\Delta_3}&= \left(\Delta_1-\Delta_2+\Delta_3\right)\left(\Delta_1-\Delta_2+\Delta_3+1\right) \ .
 \end{align}
 This allows us to write our 4-point function as 
 \begin{align}
@@ -1302,7 +1320,7 @@ where $\mathcal{R}^d_{\langle r,s\rangle}$ is a representation that may or may n
  \boxed{\mathcal{R}^f_{\langle r_1,s_1\rangle} \times \mathcal{R}^f_{\langle r_2,s_2\rangle} = \sum_{r\overset{2}{=} |r_1-r_2|+1}^{\min(r_1+r_2,2p-r_1-r_2)-1}\sum_{s\overset{2}{=} |s_1-s_2|+1}^{\min(s_1+s_2,2q-s_1-s_2)-1} \mathcal{R}^f_{\langle r,s\rangle}} \ , 
  \label{rfrf}
 \end{align}
-where $(r,s)\in K_{p,q}$. To show that $\mathcal{R}^f_{\langle r,s\rangle}$ is fully degenerate, it is enough to realize that a Kac table representation is fully degenerate if and only if its fusion with a generic Verma module $\mathcal{V}_P$ is zero. From Eq. \eqref{rrsvp}, 
+where $(r,s)\in K_{p,q}$. The number of terms is $\min(r_1,r_2,p-r_1,p-r_2)\min(s_1,s_2,q-s_1,q-s_2)$. To show that $\mathcal{R}^f_{\langle r,s\rangle}$ is fully degenerate, it is enough to realize that a Kac table representation is fully degenerate if and only if its fusion with a generic Verma module $\mathcal{V}_P$ is zero. From Eq. \eqref{rrsvp}, 
 \begin{align}
  \mathcal{R}^f_{\langle r,s\rangle}\times \mathcal{V}_P \subset \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}} \mathcal{V}_{P+i\beta +j\beta^{-1}} \cap \sum_{i'=-\frac{p-r-1}{2}}^{\frac{p-r-1}{2}} \sum_{j'=-\frac{q-s-1}{2}}^{\frac{q-s-1}{2}} \mathcal{V}_{P+i'\beta +j'\beta^{-1}}\ .
 \end{align}
