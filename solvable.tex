@@ -1504,7 +1504,33 @@ where the lower bounds $p\geq 6$ and $q\geq 3$ ensure that the non-diagonal sect
  \frac12\left\{V_{(r,s)} \right\}_{\substack{(r,s)\in (-\frac{p}{2},\frac{p}{2})\times (-\frac{q}{2},\frac{q}{2})\\ (r,s)\in \mathbb{Z}\times (\mathbb{Z}+\frac12)}}
 \ .
 \end{align}
-The corresponding CFT may be called a \myindex{fermionic minimal model}\index{minimal model!fermionic---} \cite{rw20}. The fusion rules are obtained by combining the fully degenerate fusion rules \eqref{rfrf} with the conservation of diagonality:
+The corresponding CFT may be called a \myindex{fermionic minimal model}\index{minimal model!fermionic---} $\widehat{\text{DMM}}_{p,q}$ \cite{rw20}. The numbers of primary fields in these minimal models are:
+\begin{align}
+ \begin{array}{|c||c|c|c|c|}
+ \hline 
+  \multirow{2}{*}{Model} & \multirow{2}{*}{AMM$_{p,q}$} & \multicolumn{2}{|c|}{\text{DMM}_{p,q}} 
+   & \multirow{2}{*}{$\widehat{\text{DMM}}_{p,q}$}
+  \\
+  \cline{3-4}
+  & & p\equiv 0\bmod 4 & p\equiv 2\bmod 4 & 
+  \\
+  \hline \hline 
+  \text{Diagonal} & \frac12(p-1)(q-1) & \multicolumn{2}{|c|}{\frac14 p(q-1)} & \frac12 (p-1)(q-1) 
+  \\
+  \hline 
+  \text{Non-diagonal} & 0  & \frac14(p-2)(q-1) &
+  \frac14p(q-1) 
+  & \frac12 (p-1)(q-1) 
+  \\
+  \hline 
+  \text{Total} & \frac12(p-1)(q-1) & 
+   \frac12(p-1)(q-1) &
+  \frac12 p(q-1) & (p-1)(q-1)
+  \\
+  \hline 
+ \end{array}
+\end{align}
+The fusion rules of D-series and fermionic minimal models are obtained by combining the fully degenerate fusion rules \eqref{rfrf} with the conservation of diagonality:
 \begin{align}
  V^f_{\langle r_1,s_1\rangle}V_{(r_2,s_2)} &\sim \sum_{r\overset{2}{=}\max(r_2-r_1,r_1-r_2-p)+1}^{\min(r_1+r_2,p-r_1-r_2)-1} \sum_{s\overset{2}{=}\max(s_2-s_1,s_1-s_2-q)+1}^{\min(s_1+s_2,q-s_1-s_2)-1} V_{(r,s)} \ ,
  \label{vfvn}
@@ -1514,7 +1540,7 @@ The corresponding CFT may be called a \myindex{fermionic minimal model}\index{mi
 \end{align}
 The D-series minimal model is a subtheory of its fermionic extension, i.e. its spectrum is closed under fusion. Curiously, the diagonal field $V^f_{\langle \frac{p}{2}, s\rangle}$ has the same conformal dimensions as the non-diagonal field $V_{(0,s-\frac{q}{2})}$: this an instance of a nontrivial \myindex{field multiplicity}\index{field!---multiplicity}. However, these two fields have different OPEs. 
 
-For example, let us compare the diagonal and non-diagonal minimal models AMM$_{6,5}$ and DMM$_{6,5}$, which both have $c= \frac45$, and describe some observables of the tetracritical Ising model and of the critical 3-state Potts model respectively. The Virasoro representations that appear in the spectrums of both models belong to the Kac table $K_{6,5}$. Each entry in the table correspond to a primary field of AMM$_{6,5}$. However, since $p=6\equiv 2\bmod 4$, both sectors of DMM$_{6,5}$ are built from representations $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}+!$. We indicate this in the Kac table by having the $r\in 2\mathbb{N}+!$ columns both boxed (for the diagonal sector) and highlighted (for the non-diagonal sector):
+For example, let us compare the diagonal and non-diagonal minimal models AMM$_{6,5}$ and DMM$_{6,5}$, which both have $c= \frac45$, and describe some observables of the tetracritical Ising model and of the critical 3-state Potts model respectively. The Virasoro representations that appear in the spectrums of both models belong to the Kac table $K_{6,5}$. Each entry in the table correspond to a primary field of AMM$_{6,5}$. Since $p=6\equiv 2\bmod 4$, both sectors of DMM$_{6,5}$ are built from representations $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}+!$. We indicate this in the Kac table by having the $r\in 2\mathbb{N}+!$ columns both boxed (for the diagonal sector) and highlighted (for the non-diagonal sector):
 \begin{align}
 \text{AMM}_{6,5}\ \&\ \text{DMM}_{6,5} \ : \qquad 
  \begin{tikzpicture}[baseline=(current  bounding  box.center)]
@@ -1568,8 +1594,45 @@ We therefore have the coincidences of conformal dimensions $V_{(0,\frac12)}\sime
 \begin{align}
  V^f_{\langle 3,1\rangle} V^f_{\langle 3,1\rangle} \sim V^f_{\langle 1,1\rangle} + V^f_{\langle 3, 1\rangle} + V^f_{\langle 5,1\rangle} \quad , \quad V^f_{\langle 3,1\rangle}V_{(0,\frac32)} \sim V_{(2,-\frac32)} + V_{(0,\frac32)} + V_{(2,\frac32)}\ . 
 \end{align}
-
-
+As another example, let us compare the diagonal and non-diagonal minimal models AMM$_{8,5}$ and DMM$_{8,5}$, which both have $c=-\frac{7}{20}$. The Virasoro representations that appear in the spectrums of both models belong to the Kac table $K_{8,5}$. Each entry in the table correspond to a primary field of AMM$_{8,5}$. Since $p=8\equiv 0\bmod 4$, the diagonal sector of DMM$_{8,5}$ is built from representations $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}+!$ (boxed), while the non-diagonal sector is built from $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}$ (highlighted):
+\begin{align}
+\text{AMM}_{8,5}\ \&\ \text{DMM}_{8,5} \ : \qquad 
+\begin{tikzpicture}[baseline=(current  bounding  box.center)]
+  \kac{8}{5};
+  \foreach\r in {1,3,5,7}{
+  \draw[red, ultra thick] (\r-.4, .6) rectangle (\r+.4, 4.4);
+  }
+  \foreach\r in {2, 4, 6}{
+  \fill[red!10!white] (\r-.4, .6) rectangle (\r+.4, 4.4);
+  }
+  \thiskac{1}{1}{0};
+  \thiskac{2}{1}{-\frac{1}{32}};
+  \thiskac{3}{1}{\frac14};
+  \thiskac{4}{1}{\frac{27}{32}};
+  \thiskac{5}{1}{\frac{7}{4}};
+  \thiskac{6}{1}{\frac{95}{32}};
+  \thiskac{7}{1}{\frac{9}{2}};
+  \thiskac{1}{2}{\frac{7}{10}};
+  \thiskac{2}{2}{\frac{27}{160}};
+  \thiskac{3}{2}{-\frac{1}{20}};
+  \thiskac{4}{2}{\frac{7}{160}};
+  \thiskac{5}{2}{\frac{9}{20}};
+  \thiskac{6}{2}{\frac{187}{160}};
+  \thiskac{7}{2}{\frac{11}{5}};
+ \end{tikzpicture}
+\end{align}
+The diagonal model AMM$_{8,5}$ has 14 primary fields $V^f_{\langle r,s\rangle}$ with $r=1,\dots,7$ and $s=1,2$. The non-diagonal model DMM$_{8,5}$ also has 14 primary fields: the 8 diagonal fields $V^f_{\langle 1,1\rangle},V^f_{\langle 3,1\rangle}, V^f_{\langle 5,1\rangle},V^f_{\langle 7,1\rangle},V^f_{\langle 1,2\rangle},V^f_{\langle 3,2\rangle}, V^f_{\langle 5,2\rangle},V^f_{\langle 7,2\rangle}$, and 6 non-diagonal fields:
+\begin{align}
+  \begin{array}{|c||c|c|c|c|c|c|}
+  \hline 
+  \text{Field} & V_{(0,\frac12)} & V_{(0,\frac32)} & V_{(2,-\frac32)} & V_{(2,-\frac12)} & V_{(2,\frac12)} & V_{(2,\frac32)} 
+  \\
+  \hline
+  \text{Indices} & \langle 4,2\rangle\langle 4,2\rangle & \langle 4,1\rangle\langle 4,1\rangle &  \langle 6,1\rangle\langle 2,1\rangle & \langle 6,2\rangle\langle 2,2\rangle  & \langle 2,2\rangle\langle 6,2\rangle  &  \langle 2,1\rangle\langle 6,1\rangle
+  \\
+  \hline 
+ \end{array}
+\end{align}
 
 \subsubsection{Generalized D-series minimal models}\label{sec:gdmm}
 
