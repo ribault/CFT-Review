@@ -2771,12 +2771,10 @@ We will now plot these fixed points in the complex $z$-plane, and plot their ima
  \end{multline}
 In the $z$-plane, the branch cut of the hypergeometric function is taken to be $(1,\infty)$, whose image is the boundary of $q(\mathbb{C})$. The whole complex $z$-plane is mapped into a domain that is much smaller than the unit disc $|q|<1$: as a result, conformal blocks tend to converge faster as power series in $q$ than in $z$.
  
+\subsubsection{Zamolodchikov's recursive representation}\label{sec:zrr}
 
-\subsubsection{Behaviour for large channel dimensions}
-
-
-Let us describe the behaviour of the Virasoro block $\mathcal{F}_\Delta(z)$ as $\Delta\to \infty$, before explaining how this behaviour can be derived.
-The Virasoro block may be rewritten as a prefactor, times a power series $H_\Delta(q)$, which has a trivial asymptotic behaviour:
+As a function of the nome, the Virasoro block 
+may be rewritten as a prefactor, times a power series $H_\Delta(q)$, which has a trivial asymptotic behaviour:
 \begin{align}
  \boxed{\mathcal{F}_\Delta(q) = (16q)^{\Delta-\frac{c-1}{24}} \left[\prod_{k=2,3,4} \left(\theta_k^{-4}(q)\right)^{\Delta_k-\frac{c-1}{24}+(-1)^k \Delta_1} \right] H_\Delta(q)}\ ,
  \label{fdq}
@@ -2785,11 +2783,9 @@ The Virasoro block may be rewritten as a prefactor, times a power series $H_\Del
  \text{where} \quad \boxed{H_\Delta(q) = 1 + \sum_{N=0}^\infty h_N(\Delta)(16q)^N}  \quad , \quad \boxed{\lim_{\Delta\to\infty} H_\Delta(q) = 1}\ . 
  \label{hdq}
 \end{align}
-
-See Appendix D of \cite{msz15} for the pillow geometry that underlies the variable $q$.
-
-\subsubsection{Zamolodchikov's recursive representation}\label{sec:zrr}
-
+These formulas mean that 
+$\log \mathcal{F}_\Delta(q) \underset{\Delta\to\infty}{=} O(\Delta)$, and that the $O(\Delta)$ and $O(1)$ terms have simple expressions in terms of the nome. 
+In Section \ref{sec:bld}, we will sketch why this is the case. For the moment, let us complete the determination of the Virasoro block.
 From the poles and residues \eqref{resf} of the Virasoro block $\mathcal{F}_\Delta(z)$, we deduce the poles and residues of the power series $H_\Delta(q)$ \eqref{fdq},
 \begin{align}
  \underset{\Delta=\Delta_{(r,s)}}{\operatorname{Res}} H_\Delta(q) = (16q)^{rs} R_{r,s}H_{\Delta_{(r,-s)}}(q)\ .
@@ -2827,6 +2823,15 @@ The recursive reprentation completely determines the series $H_\Delta(q)$, order
 \end{multline}
 \end{subequations}
 In the recursive representation, some properties of the blocks are not manifest. In particular, $h_N(\Delta)$ is a meromorphic function of the central charge, whose poles depend on $\Delta$. However, the recursive representation writes $h_N(\Delta)$ as a sum of terms that are not always invariant under $\beta\to \beta^{-1}$, and therefore not meromorphic in $c$. Moreover, due to the denominator of $R_{r,s}$ \eqref{rrs}, and also due to factors of the type $\frac{1}{\Delta_{(r,-s)}-\Delta_{(r',s')}}$, these terms have $\Delta$-independent poles at rational values of $\beta^2$. As a result, the recursive representation is only valid if $\beta^2\notin\mathbb{Q}$. Finding a recursive representation for $\beta^2\in \mathbb{Q}$ is an open problem, whose simplest incarnation is in the case of 1-point Virasoro blocks on the torus \cite{sto22}. 
+
+\subsubsection{Behaviour for large channel dimensions} \label{sec:bld}
+
+The asymptotic behaviour \eqref{fdq}, \eqref{hdq} of Virasoro blocks in the limit $\Delta\to\infty$ is the most important piece of the derivation of Zamolodchikov's recursive representation. As far as we know, there is no complete derivation of this behaviour in the literature: in particular, Zamolodchikov's original argument \cite{zam87b} is elliptic. However, there are ideas that could well lead to a derivation: the algebraic idea of exponentiation, which states that $\log\mathcal{F}_\Delta$ grows only linearly in $\Delta$, and the pillow geometry, which explains the relevance of the nome. 
+
+
+
+
+See Appendix D of \cite{msz15} for the pillow geometry that underlies the variable $q$.
 
 \subsection{Interchiral symmetry} \label{sec:icb}
 
