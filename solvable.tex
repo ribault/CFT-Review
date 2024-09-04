@@ -629,7 +629,7 @@ Similarly, the level two coefficients $f^{L_{-1}^2},f^{L_{-2}}$ are determined b
  (\Delta+2\Delta_1-\Delta_2)V_\Delta  &=L_2W \ .
  \label{el2c}
 \end{align}
-This leads to a system of linear equations for $f^{L_{-1}^2},f^{L_{-2}}$, whose homogeneous part is the condition that $W$ be a null vector \eqref{l1c}, \eqref{l2c}. Thererfore, the determinant vanishes if and only if $\Delta\in \left\{\Delta_{(2,1)},\Delta_{(1,2)}\right\}$. Otherwise, the unique solution is
+This leads to a system of linear equations for $f^{L_{-1}^2},f^{L_{-2}}$, whose homogeneous part is the condition that $W$ be a null vector \eqref{l1c}, \eqref{l2c}. Therefore, the determinant vanishes if and only if $\Delta\in \left\{\Delta_{(2,1)},\Delta_{(1,2)}\right\}$. Otherwise, the unique solution is
 \begin{align}
  \left[\begin{smallmatrix}
  f^{L_{-1}^2} \\ f^{L_{-2}} 
@@ -638,6 +638,7 @@ This leads to a system of linear equations for $f^{L_{-1}^2},f^{L_{-2}}$, whose 
    \frac{1}{16(\Delta-\Delta_{(2,1)})(\Delta-\Delta_{(1,2)})}
 \left[\begin{smallmatrix} 2+\frac{c}{4\Delta} & -3 \\ -3 & 4\Delta+2 \end{smallmatrix}\right]
 \left[\begin{smallmatrix} (\Delta+\Delta_1-\Delta_2)(\Delta+\Delta_1-\Delta_2+1) \\ \Delta+2\Delta_1-\Delta_2 \end{smallmatrix}\right] \ .
+\label{fl112}
  \end{align}
 To summarize, the contributions of $V_\Delta$ and its descendants in an OPE of two primary fields read
 \begin{align}
@@ -918,8 +919,10 @@ If we now insert the OPE in the four-point function $\left<V_1(z)V_2(0)V_3(\inft
 which depend on $\Delta_1,\Delta_2,\Delta_3$ but not on the central charge. For example, 
 \begin{align}
  g^{L_{-1}}_{\Delta_1,\Delta_2,\Delta_3}&= \Delta_1-\Delta_2+\Delta_3 \quad , \quad g^{L_{-2}}_{\Delta_1,\Delta_2,\Delta_3}= \Delta_1-\Delta_2+2\Delta_3 \ , 
+ \label{gl12}
  \\
  g^{L_{-1}^2}_{\Delta_1,\Delta_2,\Delta_3}&= \left(\Delta_1-\Delta_2+\Delta_3\right)\left(\Delta_1-\Delta_2+\Delta_3+1\right) \ .
+ \label{gl11}
 \end{align}
 This allows us to write our 4-point function as 
 \begin{align}
@@ -928,8 +931,18 @@ This allows us to write our 4-point function as
 \end{align}
 where we introduce the $s$-\myindex{channel spectrum}\index{spectrum!channel---} $\mathcal{S}^{(s)}= \mathcal{S}^{12}\cap \mathcal{S}^{34}$, and the $s$-channel \myindex{Virasoro blocks}\index{block!Virasoro---}, which are known (in principle) functions of $z$ as well as the central charge and conformal dimensions:
 \begin{align}
- \mathcal{F}_{\Delta}^{(s)}\left(c\middle|\Delta_1,\Delta_2,\Delta_3,\Delta_4\middle|z\right) = z^{\Delta-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} z^{|L|} f_{\Delta_1,\Delta_2}^{\Delta,L}g^L_{\Delta,\Delta_3,\Delta_4}\ ,
+ \mathcal{F}_{\Delta}^{(s)}\left(c\middle|\Delta_1,\Delta_2,\Delta_3,\Delta_4\middle|z\right) = z^{\Delta-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} z^{|L|} f_{\Delta_1,\Delta_2}^{\Delta,L}g^L_{\Delta,\Delta_3,\Delta_4}\equiv z^{\Delta-\Delta_1-\Delta_2}\sum_{N=1}^\infty f_N(\Delta)z^N \ ,
  \label{fsl}
+\end{align}
+where the first few coefficients may be assembled from Eqs. \eqref{fl1}, \eqref{fl112}, \eqref{gl12}, \eqref{gl11}:
+\begin{align}
+& f_0(\Delta) = 1 \quad , \quad f_1(\Delta) = \frac{(\Delta+\Delta_1-\Delta_2)(\Delta+\Delta_4-\Delta_3)}{2\Delta} \ ,
+\\
+& f_2(\Delta) =  \frac{\left[\begin{smallmatrix} (\Delta+\Delta_4-\Delta_3)(\Delta+\Delta_4-\Delta_3+1) \\ \Delta+2\Delta_4-\Delta_3 \end{smallmatrix}\right]^T
+\left[\begin{smallmatrix} 2+\frac{c}{4\Delta} & -3 \\ -3 & 4\Delta+2 \end{smallmatrix}\right]
+\left[\begin{smallmatrix} (\Delta+\Delta_1-\Delta_2)(\Delta+\Delta_1-\Delta_2+1) \\ \Delta+2\Delta_1-\Delta_2 \end{smallmatrix}\right]}{16(\Delta-\Delta_{(2,1)})(\Delta-\Delta_{(1,2)})}
+ \ .
+ \label{f2d}
 \end{align}
 The $s$-channel decomposition \eqref{sdec} reduces the 4-point function to a combination of model-dependent structure constants, and universal Virasoro blocks. Repeatedly using OPEs, any $N$-point function can likewise be decomposed into $N$-point Virasoro blocks. However, these decompositions are not unique. In the case $N=4$, there are 3 possible decompositions, called the \myindex{$s$-channel}\index{channel!$s$-, $t$-, $u$-}, \myindex{$t$-channel} and \myindex{$u$-channel} decompositions, depending on which OPE we perform. For each channel, let us write the relevant OPE, the \myindex{4-point structure constants}\index{structure constant!4-point---} that appear as coefficients, the asymptotics of the Virasoro blocks, and a diagram that represents the decomposition:
 \begin{align}
@@ -2513,6 +2526,108 @@ If the multiplicity $m(V_{\Delta,\bar\Delta})$ of $V_{\Delta,\bar\Delta}$ in the
 In principle it is impossible to compute the rank of an infinite matrix, but 
 in practice it may be enough to study a few 4-point functions for guessing a given multiplicity. This has been done in a few examples of diagonal 4-point functions in loop CFTs \cite{rib22}.
 
+\subsection{Interchiral symmetry} \label{sec:icb}
+
+As we have seen in Section \ref{sec:ab}, degenerate fields play a crucial role by constraining structure constants via shift equations. This suggests that we could extend the conformal algebra into an  \myindex{interchiral algebra}\index{interchiral!---algebra}, which would also include degenerate fields \cite{grs12}. In the same way as the conformal algebra is generated by the energy-momentum tensors $T,\bar T$, leading to conformal Ward identities, an interchiral algebra would be generated by $T,\bar T,V^d_{\langle 1,2\rangle}$ or $T,\bar T,V^d_{\langle 2,1\rangle},V^d_{\langle 1,2\rangle}$, and we would consider shift equations as interchiral Ward identities. 
+
+For conceptual completeness, we will first construct the interchiral algebra that corresponds to $V^d_{\langle 1,2\rangle}$, and discuss its representations. We will then discuss interchiral blocks, which are what we need for the numerical bootstrap.
+
+\subsubsection{The interchiral algebra and its representations}
+
+By definition, the interchiral algebra is supposed to shift momentums of primary fields. We therefore need to replace the Virasoro generator $L_0$, whose eigenvalues are conformal dimensions, with a generator whose eigenvalues are momentums. This can be done by rewriting the Virasoro algebra in terms of an \myindex{abelian affine Lie algebra $\hat{\mathfrak{u}}_1$}\index{abelian affine Lie algebra $\hat{\mathfrak{u}}_1$}. The algebra $\hat{\mathfrak{u}}_1$ is the chiral symmetry algebra of free bosonic CFTs, which have a $\mathfrak{u}_1$ symmetry, and where the momentum is conserved. 
+However, this algebra can also be used for studying non-free CFTs, giving rise to Coulomb gas techniques. (See \cite[Section 4.1]{rib14} for a quick review.)
+
+The algebra $\hat{\mathfrak{u}}_1$ has generators $(J_n)_{n\in\mathbb{Z}}$ and relations 
+\begin{align}
+ [J_m,J_n] = -\frac12 n\delta_{m+n,0}\ . 
+\end{align}
+For any $c\in\mathbb{C}$, a Virasoro algebra $\mathfrak{V}$ with central charge $c$ can be constructed as a subalgebra of the universal enveloping algebra of $\hat{\mathfrak{u}}_1$:
+\begin{align}
+ L_n &= \sum_{m\in{\mathbb{Z}}} J_{n-m}J_m + \left(\beta-\beta^{-1}\right)(n+1)J_n\ , \qquad (n\neq 0)\ ,
+\label{lnj}
+\\
+L_0 &=2\sum_{m=1}^\infty J_{-m}J_m +J_0^2+\left(\beta-\beta^{-1}\right)J_0 \ ,
+\label{lzj}
+\end{align}
+where $\beta$ was defined from $c$ in Eq. \eqref{cb}. Let us define an affine primary state $V_P$ of momentum $P$ by 
+\begin{align}
+ J_0 V_P  = \left(P-\tfrac12\left(\beta-\beta^{-1}\right) \right) V_P \quad , \quad J_{n>0} V_P = 0\ .
+\end{align}
+Then $V_P$ is also a Virasoro primary state, whose conformal dimension is computed from the last two terms of Eq. \eqref{lzj}, reproducing Eq. \eqref{dp}. 
+
+Now, let us extend the algebra $\hat{\mathfrak{u}}_1\times \overline{\hat{\mathfrak{u}}_1}$ by adding a generator $D$ such that 
+\begin{align}
+ [J_0,D] = [\bar J_0,D] = \beta^{-1}D \quad , \quad [J_{n\neq 0},D]=[\bar J_{n\neq 0},D]=0 \ .
+\end{align}
+We can deduce the commutation relations of $D$ with Virasoro generators,
+\begin{align}
+ [L_n,D] =2\beta^{-1}DJ_n +\delta_{n,0}D \quad , \quad [\bar L_n,D] =2\beta^{-1}D\bar J_n +\delta_{n,0}D\ .
+\end{align}
+Due to the generator $D$, the algebra is no longer chirally factorized into a left-moving and a right-moving factor: this is why it is called interchiral. We could have preserved chiral factorization by defining independent left-moving and right-moving generators $D,\bar D$, but such generators would produce states with spins that are not half-integer. 
+
+We consider representations of the interchiral algebra such that $D^{-1}$ exists. For $V_P$ a diagonal affine primary state and $k\in\mathbb{Z}$, we have $D^{k}V_P = V_{P+k\beta^{-1}}$. Therefore, the representation that is obtained by acting on $V_P$ with the interchiral algebra is the following combination of Verma modules of the Virasoro algebra:
+\begin{align}
+ \widetilde{\mathcal{V}}_P = \bigoplus_{k\in\mathbb{Z}} \mathcal{V}_{P+k\beta^{-1}}\otimes \overline{\mathcal{V}}_{P+k\beta^{-1}}\ . 
+ \label{wvp}
+\end{align}
+When it comes to degenerate fields $V_{\langle r,s\rangle}^d$ with $r,s\in\mathbb{N}^*$, we have $D^k V_{\langle r,s\rangle}^d = \delta_{s+2k>0} V^d_{\langle r,s+2k\rangle}$. In particular, fields of the type $V_{\langle r,1\rangle}^d,V_{\langle r,2\rangle}^d$ are interchiral primaries, in the sense that they are annihilated by $D^{-1}$. Acting on interchiral primary fields with the interchiral algebra, we obtain the representations
+\begin{align}
+ \widetilde{\mathcal{R}}^d_{\langle r,1\rangle} = \bigoplus_{s\in 2\mathbb{N}+1} \mathcal{R}^d_{\langle r, s\rangle} \otimes \overline{\mathcal{R}}^d_{\langle r, s\rangle} 
+ \quad ,\quad 
+\widetilde{\mathcal{R}}^d_{\langle r,2\rangle} = \bigoplus_{s\in 2\mathbb{N}^*} \mathcal{R}^d_{\langle r, s\rangle} \otimes \overline{\mathcal{R}}^d_{\langle r, s\rangle}\ . 
+ \end{align}
+Finally, let us consider non-diagonal primary fields. By convention we assume that the left and right momentums of $V_{(r,s)}$ are $(P,\bar P)=(P_{(r,s)},P_{(-r,s)})$, so that $D^k V_{(r,s)} = V_{(r,s+2k)}$. This gives rise to interchiral representations of the type 
+\begin{align}
+ \widetilde{\mathcal{V}}_{(r,s)} = \bigoplus_{k\in\mathbb{Z}} \mathcal{V}_{P_{(r,s+2k)}}\otimes \overline{\mathcal{V}}_{P_{(-r,s+2k)}}\ . 
+ \label{wvrs}
+\end{align}
+Using interchiral symmetry rather than conformal symmetry, spectrums \eqref{sostab} can be rewritten in terms of a smaller number of larger representations. In particular, each spectrum of an A-series or D-series minimal model is a combination of 4 (or fewer) interchiral representations. It would be interesting to reformulate the definition and classification of minimal models in terms of the representation theory of an interchiral algebra.  
+
+We stop short of deriving shift equations from the interchiral algebra, because we know no such derivation. The crucial missing piece is the fusion of interchiral representations. 
+This fusion should also explain algebraically what is special with having $D$ shift momentums by $\beta$ or $\beta^{-1}$, as opposed to other numbers. Even though its technical machinery is not known, interchiral symmetry can be a useful concept: for example, we may ask which boundary conditions break or preserve this symmetry. 
+
+
+\subsubsection{Interchiral blocks}
+
+Just like a Virasoro block is the sum of contributions of states in a representation of the Virasoro algebra, an \myindex{interchiral block}\index{block!interchiral---}\index{interchiral!---block} is associated to a representation of the interchiral algebra. For example, in the case of the representation $\widetilde{\mathcal{V}}_P$ \eqref{wvp}, the interchiral block $\widetilde{\mathcal{F}}_P$ is a linear combination of the conformal blocks $\left|\mathcal{F}_P\right|^2$, where the coefficients are dictated by shift equations. 
+
+In any 4-point function of an A-series or D-series minimal model, all $s$-channel 4-point structure constants are related by shift equations, and the 4-point function involves a single $s$-channel interchiral block. In minimal models, interchiral blocks only differ from correlation functions by overall constants. On the other hand, when solving crossing symmetry equations in loop CFTs, using interchiral blocks reduces the number of unknown structure constants. We will focus on computing the interchiral blocks that are relevant to loop CFTs, i.e. the interchiral blocks that package the shift equations from the degenerate field $V^d_{\langle 1,2\rangle}$.  
+
+Let us compute $s$-channel interchiral blocks for the 4-point function $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$. In terms of Virasoro blocks, the interchiral block for the $s$-channel interchiral representation $\widetilde{\mathcal{V}}_{(r,s)}$ \eqref{wvrs} reads 
+\begin{align}
+ \widetilde{\mathcal{G}}_{(r,s)} = \sum_{k\in \mathbb{Z}} \frac{D^{(s)}_{(r,s+2k)}}{D^{(s)}_{(r,s)}} \mathcal{F}_{P_{(r,s+2k)}} \bar{\mathcal{F}}_{P_{(-r,s+2k)}}\ . 
+ \label{gtrs}
+\end{align}
+To make this explicit, it remains to compute the ratios of 4-point structure constants. This is in principle a straightforward consequence of the shift equation for the 3-point structure constant \eqref{sh-mp2}. However, for certain values of the parameters, this shift equation 
+is finite after cancelling poles from the numerator and denominator. Such cancellations can be avoided by writing the shift equations differently. In fact, in shifts of the reference 3-point structure constant $C^\text{ref}$ \eqref{cref}, no cancelling poles occur. The price to pay is that $C^\text{ref}$ only solves shift equations up to signs, see Eq. \eqref{tpt}. Taking these signs into account, the shift equation \eqref{sh-mp2} may be rewritten as 
+\begin{multline}
+ \frac{C_{(r_1,s_1-1)(r_2,s_2)(r_3,s_3)}}{C_{(r_1,s_1+1)(r_2,s_2)(r_3,s_3)}} = (-)^{2r_3}(-)^{\max(2r_1,2r_2,2r_3,r_1+r_2+r_3)} \beta^{-4\beta^{-2}s_1} 
+ \\ \times 
+ \prod_{\epsilon_2,\epsilon_3=\pm} 
+ \frac{\Gamma\left(\frac12 + |\epsilon_2r_2+\epsilon_3 r_3-r_1| + \frac{\beta^{-2}}{2}(\epsilon_2s_2+\epsilon_3s_3-s_1)\right)}{\Gamma\left(\frac12 + |\epsilon_2r_2+\epsilon_3 r_3+r_1| + \frac{\beta^{-2}}{2}(\epsilon_2s_2+\epsilon_3s_3+s_1)\right)}\ ,
+ \label{cshift}
+\end{multline}
+where $2r_i, r_1+r_2+r_3\in\mathbb{Z}$ from Eq. \eqref{sriz}. The shift equation for the 2-point structure constant follows from the 3-point case via Eq. \eqref{bicii},
+\begin{align}
+ \frac{B_{(r,s-1)}}{B_{(r,s+1)}} = (-)^{2r} \beta^{-8\beta^{-2}s} \prod_{a\in \{0,1,\beta^{-2},1-\beta^{-2}\}} \frac{\Gamma(a+r-\beta^{-2}s)}{\Gamma(a+r+\beta^{-2}s)}\ . 
+ \label{bshift}
+\end{align}
+From these shift equations, we can assemble shift equations for 
+\begin{align}
+ D_{(r,s)}^{(s)} = \frac{C_{(r_1,s_1)(r_2,s_2)(r,s)}C_{(r,s)(r_3,s_3)(r_4,s_4)}}{B_{(r,s)}}\ , 
+\end{align}
+and therefore the coefficients of the interchiral block $ \widetilde{\mathcal{F}}_{(r,s)}$ \eqref{gtrs}. 
+
+The shifts of 2-point and 3-point structure constants are combinations of Gamma functions, and $\Gamma(x)$ has poles for $x\in -\mathbb{N}$.
+If all involved fields are non-diagonal, i.e. of the type $V_{(r,s)}$ with $r\in\frac12\mathbb{N}^*$ and $s\in\frac{1}{2r}\mathbb{Z}$, the arguments of the Gamma functions are never in $-\mathbb{N}$ (assuming $\beta^2\notin \mathbb{Q}$), and the shifts are finite. If however diagonal fields are involved, i.e. fields of the type $V_{(0,2\beta P)}$ with $P\in \mathbb{C}$, then we can hit the poles of one or more Gamma functions. We will consider such cases as accidental and not discuss them further, except when the $s$-channel field is a degenerate field $V^d_{\langle 1,s\rangle}\sim V_{(0,-\beta^2+s)}$ with $s\in\mathbb{N}^*$. 
+In this case, the 3-point ratio \eqref{cshift} for $\left<V^d_{\langle 1,s\rangle}V_{(r_1,s_1)}V_{(r_2,s_2)}\right>$ vanishes if $r_1=r_2$ and $|s_1-s_2|=s$. This means that the interchiral block does not contain a term for $V^d_{\langle 1,|s_1-s_2|-1\rangle}$, consistently with the fusion rule \eqref{vdvrs}. Our 4-point function can have $s$-channel degenerate fields if and only if 
+\begin{align}
+ r_1=r_2 \quad , \quad r_3=r_4 \quad , \quad s_1-s_2,s_3-s_4\in \mathbb{Z} \quad , \quad s_3-s_4\equiv s_3-s_4\bmod 2\ , 
+\end{align}
+in which case the degenerate interchiral block is 
+\begin{align}
+ \widetilde{\mathcal{G}}^d = \sum_{k\in 2\mathbb{N}} \frac{D^{(s)}_{(1,s_0+2k)}}{D^{(s)}_{(1,s_0)}}\left| \mathcal{F}_{P_{(1,s_0+2k)}} \right|^2\ ,  \quad \text{with} \quad s_0 =  \max(|s_1-s_2|,|s_3-s_4|)+1\ . 
+\end{align}
 
 \subsection{Computation of Virasoro blocks}
 
@@ -2826,115 +2941,15 @@ In the recursive representation, some properties of the blocks are not manifest.
 
 \subsubsection{Behaviour for large channel dimensions} \label{sec:bld}
 
-The asymptotic behaviour \eqref{fdq}, \eqref{hdq} of Virasoro blocks in the limit $\Delta\to\infty$ is the most important piece of the derivation of Zamolodchikov's recursive representation. As far as we know, there is no complete derivation of this behaviour in the literature: in particular, Zamolodchikov's original argument \cite{zam87b} is elliptic. However, there are ideas that could well lead to a derivation: the algebraic idea of exponentiation, which states that $\log\mathcal{F}_\Delta$ grows only linearly in $\Delta$, and the pillow geometry, which explains the relevance of the nome. 
+The asymptotic behaviour \eqref{fdq}, \eqref{hdq} of Virasoro blocks in the limit $\Delta\to\infty$ is the most important piece of the derivation of Zamolodchikov's recursive representation. As far as we know, there is no complete derivation of this behaviour in the literature: in particular, Zamolodchikov's original argument \cite{zam87b} is elliptic. However, there are ideas that could well lead to a derivation: the algebraic idea of \myindex{exponentiation}\index{exponentiation of Virasoro blocks}, which states that $\log\mathcal{F}_\Delta$ grows only linearly in $\Delta$, and the conformal map to the pillow geometry, which explains the relevance of the nome. 
 
+In the expansion \eqref{fsl} of the Virasoro block as powers of $z$, the second-order coefficient \eqref{f2d} behaves as $f_2(\Delta)= O(\Delta^2)$, and higher-order coefficients involve higher powers of $\Delta$. 
+The linear growth of $\log\mathcal{F}_\Delta$ is therefore a non-trivial phenomenon, resulting from cancellations of faster-growing contributions to $\mathcal{F}_\Delta$. Virasoro blocks exponentiate also in limits where $c\to\infty$ while $\Delta,\Delta_i\to \infty$, starting with the \myindex{heavy limit}\index{heavy limit} where $\frac{\Delta}{c},\frac{\Delta_i}{c}$ are kept fixed \cite{al24}. 
 
+Exponentiation is not easy to deduce from the computation of blocks as sums over Virasoro descendants, which leads to expressions for their coefficients in terms of two vectors and one matrix, see Eq. \eqref{f2d} for the case of the $O(z^2)$ coefficient. The matrix for the $O(z^N)$ coefficient is the inverse of the Gram matrix $\Big[\left<LV_\Delta L'V_{\Delta}\right>\Big]_{\substack{L,L'\in\mathcal{L}\\ |L|=|L'|= N}}$, which is quite complicated. To prove exponentiation, it is better to sum over another basis of the Verma module $\mathcal{V}_\Delta$, namely the \myindex{oscillator basis}\index{oscillator basis} of descendants for the abelian affine Lie algebra $\hat{\mathfrak{u}}_1$, which is related to the Virasoro algebra by Eq. \eqref{lnj}. The advantage is that the Gram matrix for $\hat{\mathfrak{u}}_1$ is diagonal, and can easily be computed and inverted. This has led to a proof of exponentiation in the heavy limit \cite{bdk19}, which can be generalized to other limits, including the limit $\Delta\to \infty$ we are interested in. 
 
+Once we know that Virasoro blocks exponentiate, it remains to compute the terms in $O(\Delta)$ and $O(1)$ of $\log \mathcal{F}_\Delta$. According to Eq. \eqref{fdq}, these terms are (relatively) simple functions of the nome. We will now review a geometrical interpretation of these functions \cite{msz15}, which suggests how they could be derived. 
 
-See Appendix D of \cite{msz15} for the pillow geometry that underlies the variable $q$.
-
-\subsection{Interchiral symmetry} \label{sec:icb}
-
-As we have seen in Section \ref{sec:ab}, degenerate fields play a crucial role by constraining structure constants via shift equations. This suggests that we could extend the conformal algebra into an  \myindex{interchiral algebra}\index{interchiral!---algebra}, which would also include degenerate fields \cite{grs12}. In the same way as the conformal algebra is generated by the energy-momentum tensors $T,\bar T$, leading to conformal Ward identities, an interchiral algebra would be generated by $T,\bar T,V^d_{\langle 1,2\rangle}$ or $T,\bar T,V^d_{\langle 2,1\rangle},V^d_{\langle 1,2\rangle}$, and we would consider shift equations as interchiral Ward identities. 
-
-For conceptual completeness, we will first construct the interchiral algebra that corresponds to $V^d_{\langle 1,2\rangle}$, and discuss its representations. We will then discuss interchiral blocks, which are what we need for the numerical bootstrap.
-
-\subsubsection{The interchiral algebra and its representations}
-
-By definition, the interchiral algebra is supposed to shift momentums of primary fields. We therefore need to replace the Virasoro generator $L_0$, whose eigenvalues are conformal dimensions, with a generator whose eigenvalues are momentums. This can be done by rewriting the Virasoro algebra in terms of an abelian affine Lie algebra $\hat{\mathfrak{u}}_1$. The algebra $\hat{\mathfrak{u}}_1$ is the chiral symmetry algebra of free bosonic CFTs, which have a $\mathfrak{u}_1$ symmetry, and where the momentum is conserved. 
-However, this algebra can also be used for studying non-free CFTs, giving rise to Coulomb gas techniques. (See \cite[Section 4.1]{rib14} for a quick review.)
-
-The algebra $\hat{\mathfrak{u}}_1$ has generators $(J_n)_{n\in\mathbb{Z}}$ and relations 
-\begin{align}
- [J_m,J_n] = -\frac12 n\delta_{m+n,0}\ . 
-\end{align}
-For any $c\in\mathbb{C}$, a Virasoro algebra $\mathfrak{V}$ with central charge $c$ can be constructed as a subalgebra of the universal enveloping algebra of $\hat{\mathfrak{u}}_1$:
-\begin{align}
- L_n &= \sum_{m\in{\mathbb{Z}}} J_{n-m}J_m + \left(\beta-\beta^{-1}\right)(n+1)J_n\ , \qquad (n\neq 0)\ ,
-\label{lnj}
-\\
-L_0 &=2\sum_{m=1}^\infty J_{-m}J_m +J_0^2+\left(\beta-\beta^{-1}\right)J_0 \ ,
-\label{lzj}
-\end{align}
-where $\beta$ was defined from $c$ in Eq. \eqref{cb}. Let us define an affine primary state $V_P$ of momentum $P$ by 
-\begin{align}
- J_0 V_P  = \left(P-\tfrac12\left(\beta-\beta^{-1}\right) \right) V_P \quad , \quad J_{n>0} V_P = 0\ .
-\end{align}
-Then $V_P$ is also a Virasoro primary state, whose conformal dimension is computed from the last two terms of Eq. \eqref{lzj}, reproducing Eq. \eqref{dp}. 
-
-Now, let us extend the algebra $\hat{\mathfrak{u}}_1\times \overline{\hat{\mathfrak{u}}_1}$ by adding a generator $D$ such that 
-\begin{align}
- [J_0,D] = [\bar J_0,D] = \beta^{-1}D \quad , \quad [J_{n\neq 0},D]=[\bar J_{n\neq 0},D]=0 \ .
-\end{align}
-We can deduce the commutation relations of $D$ with Virasoro generators,
-\begin{align}
- [L_n,D] =2\beta^{-1}DJ_n +\delta_{n,0}D \quad , \quad [\bar L_n,D] =2\beta^{-1}D\bar J_n +\delta_{n,0}D\ .
-\end{align}
-Due to the generator $D$, the algebra is no longer chirally factorized into a left-moving and a right-moving factor: this is why it is called interchiral. We could have preserved chiral factorization by defining independent left-moving and right-moving generators $D,\bar D$, but such generators would produce states with spins that are not half-integer. 
-
-We consider representations of the interchiral algebra such that $D^{-1}$ exists. For $V_P$ a diagonal affine primary state and $k\in\mathbb{Z}$, we have $D^{k}V_P = V_{P+k\beta^{-1}}$. Therefore, the representation that is obtained by acting on $V_P$ with the interchiral algebra is the following combination of Verma modules of the Virasoro algebra:
-\begin{align}
- \widetilde{\mathcal{V}}_P = \bigoplus_{k\in\mathbb{Z}} \mathcal{V}_{P+k\beta^{-1}}\otimes \overline{\mathcal{V}}_{P+k\beta^{-1}}\ . 
- \label{wvp}
-\end{align}
-When it comes to degenerate fields $V_{\langle r,s\rangle}^d$ with $r,s\in\mathbb{N}^*$, we have $D^k V_{\langle r,s\rangle}^d = \delta_{s+2k>0} V^d_{\langle r,s+2k\rangle}$. In particular, fields of the type $V_{\langle r,1\rangle}^d,V_{\langle r,2\rangle}^d$ are interchiral primaries, in the sense that they are annihilated by $D^{-1}$. Acting on interchiral primary fields with the interchiral algebra, we obtain the representations
-\begin{align}
- \widetilde{\mathcal{R}}^d_{\langle r,1\rangle} = \bigoplus_{s\in 2\mathbb{N}+1} \mathcal{R}^d_{\langle r, s\rangle} \otimes \overline{\mathcal{R}}^d_{\langle r, s\rangle} 
- \quad ,\quad 
-\widetilde{\mathcal{R}}^d_{\langle r,2\rangle} = \bigoplus_{s\in 2\mathbb{N}^*} \mathcal{R}^d_{\langle r, s\rangle} \otimes \overline{\mathcal{R}}^d_{\langle r, s\rangle}\ . 
- \end{align}
-Finally, let us consider non-diagonal primary fields. By convention we assume that the left and right momentums of $V_{(r,s)}$ are $(P,\bar P)=(P_{(r,s)},P_{(-r,s)})$, so that $D^k V_{(r,s)} = V_{(r,s+2k)}$. This gives rise to interchiral representations of the type 
-\begin{align}
- \widetilde{\mathcal{V}}_{(r,s)} = \bigoplus_{k\in\mathbb{Z}} \mathcal{V}_{P_{(r,s+2k)}}\otimes \overline{\mathcal{V}}_{P_{(-r,s+2k)}}\ . 
- \label{wvrs}
-\end{align}
-Using interchiral symmetry rather than conformal symmetry, spectrums \eqref{sostab} can be rewritten in terms of a smaller number of larger representations. In particular, each spectrum of an A-series or D-series minimal model is a combination of 4 (or fewer) interchiral representations. It would be interesting to reformulate the definition and classification of minimal models in terms of the representation theory of an interchiral algebra.  
-
-We stop short of deriving shift equations from the interchiral algebra, because we know no such derivation. The crucial missing piece is the fusion of interchiral representations. 
-This fusion should also explain algebraically what is special with having $D$ shift momentums by $\beta$ or $\beta^{-1}$, as opposed to other numbers. Even though its technical machinery is not known, interchiral symmetry can be a useful concept: for example, we may ask which boundary conditions break or preserve this symmetry. 
-
-
-\subsubsection{Interchiral blocks}
-
-Just like a Virasoro block is the sum of contributions of states in a representation of the Virasoro algebra, an \myindex{interchiral block}\index{block!interchiral---}\index{interchiral!---block} is associated to a representation of the interchiral algebra. For example, in the case of the representation $\widetilde{\mathcal{V}}_P$ \eqref{wvp}, the interchiral block $\widetilde{\mathcal{F}}_P$ is a linear combination of the conformal blocks $\left|\mathcal{F}_P\right|^2$, where the coefficients are dictated by shift equations. 
-
-In any 4-point function of an A-series or D-series minimal model, all $s$-channel 4-point structure constants are related by shift equations, and the 4-point function involves a single $s$-channel interchiral block. In minimal models, interchiral blocks only differ from correlation functions by overall constants. On the other hand, when solving crossing symmetry equations in loop CFTs, using interchiral blocks reduces the number of unknown structure constants. We will focus on computing the interchiral blocks that are relevant to loop CFTs, i.e. the interchiral blocks that package the shift equations from the degenerate field $V^d_{\langle 1,2\rangle}$.  
-
-Let us compute $s$-channel interchiral blocks for the 4-point function $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$. In terms of Virasoro blocks, the interchiral block for the $s$-channel interchiral representation $\widetilde{\mathcal{V}}_{(r,s)}$ \eqref{wvrs} reads 
-\begin{align}
- \widetilde{\mathcal{G}}_{(r,s)} = \sum_{k\in \mathbb{Z}} \frac{D^{(s)}_{(r,s+2k)}}{D^{(s)}_{(r,s)}} \mathcal{F}_{P_{(r,s+2k)}} \bar{\mathcal{F}}_{P_{(-r,s+2k)}}\ . 
- \label{gtrs}
-\end{align}
-To make this explicit, it remains to compute the ratios of 4-point structure constants. This is in principle a straightforward consequence of the shift equation for the 3-point structure constant \eqref{sh-mp2}. However, for certain values of the parameters, this shift equation 
-is finite after cancelling poles from the numerator and denominator. Such cancellations can be avoided by writing the shift equations differently. In fact, in shifts of the reference 3-point structure constant $C^\text{ref}$ \eqref{cref}, no cancelling poles occur. The price to pay is that $C^\text{ref}$ only solves shift equations up to signs, see Eq. \eqref{tpt}. Taking these signs into account, the shift equation \eqref{sh-mp2} may be rewritten as 
-\begin{multline}
- \frac{C_{(r_1,s_1-1)(r_2,s_2)(r_3,s_3)}}{C_{(r_1,s_1+1)(r_2,s_2)(r_3,s_3)}} = (-)^{2r_3}(-)^{\max(2r_1,2r_2,2r_3,r_1+r_2+r_3)} \beta^{-4\beta^{-2}s_1} 
- \\ \times 
- \prod_{\epsilon_2,\epsilon_3=\pm} 
- \frac{\Gamma\left(\frac12 + |\epsilon_2r_2+\epsilon_3 r_3-r_1| + \frac{\beta^{-2}}{2}(\epsilon_2s_2+\epsilon_3s_3-s_1)\right)}{\Gamma\left(\frac12 + |\epsilon_2r_2+\epsilon_3 r_3+r_1| + \frac{\beta^{-2}}{2}(\epsilon_2s_2+\epsilon_3s_3+s_1)\right)}\ ,
- \label{cshift}
-\end{multline}
-where $2r_i, r_1+r_2+r_3\in\mathbb{Z}$ from Eq. \eqref{sriz}. The shift equation for the 2-point structure constant follows from the 3-point case via Eq. \eqref{bicii},
-\begin{align}
- \frac{B_{(r,s-1)}}{B_{(r,s+1)}} = (-)^{2r} \beta^{-8\beta^{-2}s} \prod_{a\in \{0,1,\beta^{-2},1-\beta^{-2}\}} \frac{\Gamma(a+r-\beta^{-2}s)}{\Gamma(a+r+\beta^{-2}s)}\ . 
- \label{bshift}
-\end{align}
-From these shift equations, we can assemble shift equations for 
-\begin{align}
- D_{(r,s)}^{(s)} = \frac{C_{(r_1,s_1)(r_2,s_2)(r,s)}C_{(r,s)(r_3,s_3)(r_4,s_4)}}{B_{(r,s)}}\ , 
-\end{align}
-and therefore the coefficients of the interchiral block $ \widetilde{\mathcal{F}}_{(r,s)}$ \eqref{gtrs}. 
-
-The shifts of 2-point and 3-point structure constants are combinations of Gamma functions, and $\Gamma(x)$ has poles for $x\in -\mathbb{N}$.
-If all involved fields are non-diagonal, i.e. of the type $V_{(r,s)}$ with $r\in\frac12\mathbb{N}^*$ and $s\in\frac{1}{2r}\mathbb{Z}$, the arguments of the Gamma functions are never in $-\mathbb{N}$ (assuming $\beta^2\notin \mathbb{Q}$), and the shifts are finite. If however diagonal fields are involved, i.e. fields of the type $V_{(0,2\beta P)}$ with $P\in \mathbb{C}$, then we can hit the poles of one or more Gamma functions. We will consider such cases as accidental and not discuss them further, except when the $s$-channel field is a degenerate field $V^d_{\langle 1,s\rangle}\sim V_{(0,-\beta^2+s)}$ with $s\in\mathbb{N}^*$. 
-In this case, the 3-point ratio \eqref{cshift} for $\left<V^d_{\langle 1,s\rangle}V_{(r_1,s_1)}V_{(r_2,s_2)}\right>$ vanishes if $r_1=r_2$ and $|s_1-s_2|=s$. This means that the interchiral block does not contain a term for $V^d_{\langle 1,|s_1-s_2|-1\rangle}$, consistently with the fusion rule \eqref{vdvrs}. Our 4-point function can have $s$-channel degenerate fields if and only if 
-\begin{align}
- r_1=r_2 \quad , \quad r_3=r_4 \quad , \quad s_1-s_2,s_3-s_4\in \mathbb{Z} \quad , \quad s_3-s_4\equiv s_3-s_4\bmod 2\ , 
-\end{align}
-in which case the degenerate interchiral block is 
-\begin{align}
- \widetilde{\mathcal{G}}^d = \sum_{k\in 2\mathbb{N}} \frac{D^{(s)}_{(1,s_0+2k)}}{D^{(s)}_{(1,s_0)}}\left| \mathcal{F}_{P_{(1,s_0+2k)}} \right|^2\ ,  \quad \text{with} \quad s_0 =  \max(|s_1-s_2|,|s_3-s_4|)+1\ . 
-\end{align}
 
 
 \subsection{Numerically solving crossing symmetry}
@@ -3246,7 +3261,7 @@ We also introduce another type of punctures, where open loops can end. Such a pu
  \sum_{i=1}^N r_i \in \mathbb{N} \ . 
  \label{srin}
 \end{align}
-Conformal symmetry allows us to specify how vertices are related by open loops: this information is called a combinatorial map \cite{gjnrs23}. For example, in the presence of punctures of valencies $3,2,1,0$, there exist 4 combinatorial maps:
+Conformal symmetry allows us to specify how vertices are related by open loops: this information is called a \myindex{combinatorial map}\index{combinatorial map} \cite{gjnrs23}. For example, in the presence of punctures of valencies $3,2,1,0$, there exist 4 combinatorial maps:
 \begin{align}
   \begin{tikzpicture}[baseline=(base), scale = .4]
    \uvertex 
@@ -3385,7 +3400,7 @@ According to our identification of punctures with primary fields, the loop model
  \mathcal{S}^{(x)} = \left\{V_{(r,s)}\right\}_{\substack{r\in \sigma^{(x)}+\mathbb{N} \\ s\in\frac{1}{r}\mathbb{Z}}}\ ,
  \label{sxs}
 \end{align}
-where we define the map's $x$-channel \myindex{signature}\index{signature} $\sigma^{(x)}\in\frac12\mathbb{N}$ as half the minimum number of lines in $M$ that are crossed by an $x$-loop. For example, the map 
+where we define the map's $x$-channel \myindex{signature}\index{combinatorial map!signature of a---} $\sigma^{(x)}\in\frac12\mathbb{N}$ as half the minimum number of lines in $M$ that are crossed by an $x$-loop. For example, the map 
 $
 \begin{tikzpicture}[baseline=(base), scale = .25]
  \vertices
