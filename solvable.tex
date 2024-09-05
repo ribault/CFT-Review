@@ -2759,16 +2759,18 @@ In order to write Zamolodchikov's recursive representation for Virasoro blocks, 
 \end{align}
 The inverse relation is 
 \begin{align}
- z = \frac{\theta_2^4(q)}{\theta_3^4(q)} \quad , \quad 1-z = \frac{\theta_4^4(q)}{\theta_3^4(q)}\ ,
+ z = \frac{\theta_2^4(q)}{\theta_3^4(q)} \quad , \quad 1-z = \frac{\theta_4^4(q)}{\theta_3^4(q)}\quad ,\quad 
+ {}_2F_1\left(\tfrac12,\tfrac12,1,z\right) =\frac{\pi}{2}\theta_3^2(q)\ , 
 \end{align}
 where $\theta_k(q)$ are 
 \myindex{Jacobi theta functions}\index{Jacobi theta function} 
 \begin{align}
- \theta_2(q) = 2q^{\frac14}\sum_{n=0}^\infty q^{n(n+1)} \quad , \quad \theta_3(q) = \sum_{n=0}^\infty q^{n^2}\quad , \quad \theta_4(q) = \sum_{n=0}^\infty (-1)^n q^{n^2} \ ,
+ \theta_2(q) = \sum_{n=-\infty}^\infty q^{(n+\frac12)^2} \quad , \quad \theta_3(q) = \sum_{n=-\infty}^\infty q^{n^2}\quad , \quad \theta_4(q) = \sum_{n=-\infty}^\infty (-1)^n q^{n^2} \ ,
 \end{align}
-which obey the identity 
+which obey the identities 
 \begin{align}
- \sum_{k=2,3,4}(-1)^k \theta_k^4(q) = 0 \ . 
+ \sum_{k=2,3,4}(-1)^k \theta_k^4(q) = 0 \quad , \quad \prod_{k=2,3,4} \theta_k(q) = 2q^\frac14\prod_{m=1}^\infty \left(1-q^{2m}\right)^3\ . 
+ \label{thetaids}
 \end{align}
 This implies in particular the relation 
 \begin{align}
@@ -2946,11 +2948,13 @@ The asymptotic behaviour \eqref{fdq}, \eqref{hdq} of Virasoro blocks in the limi
 In the expansion \eqref{fsl} of the Virasoro block as powers of $z$, the second-order coefficient \eqref{f2d} behaves as $f_2(\Delta)= O(\Delta^2)$, and higher-order coefficients involve higher powers of $\Delta$. 
 The linear growth of $\log\mathcal{F}_\Delta$ is therefore a non-trivial phenomenon, resulting from cancellations of faster-growing contributions to $\mathcal{F}_\Delta$. Virasoro blocks exponentiate also in limits where $c\to\infty$ while $\Delta,\Delta_i\to \infty$, starting with the \myindex{heavy limit}\index{heavy limit} where $\frac{\Delta}{c},\frac{\Delta_i}{c}$ are kept fixed \cite{al24}. 
 
-Exponentiation is not easy to deduce from the computation of blocks as sums over Virasoro descendants, which leads to expressions for their coefficients in terms of two vectors and one matrix, see Eq. \eqref{f2d} for the case of the $O(z^2)$ coefficient. The matrix for the $O(z^N)$ coefficient is the inverse of the Gram matrix $\Big[\left<LV_\Delta L'V_{\Delta}\right>\Big]_{\substack{L,L'\in\mathcal{L}\\ |L|=|L'|= N}}$, which is quite complicated. To prove exponentiation, it is better to sum over another basis of the Verma module $\mathcal{V}_\Delta$, namely the \myindex{oscillator basis}\index{oscillator basis} of descendants for the abelian affine Lie algebra $\hat{\mathfrak{u}}_1$, which is related to the Virasoro algebra by Eq. \eqref{lnj}. The advantage is that the Gram matrix for $\hat{\mathfrak{u}}_1$ is diagonal, and can easily be computed and inverted. This has led to a proof of exponentiation in the heavy limit \cite{bdk19}, which can be generalized to other limits, including the limit $\Delta\to \infty$ we are interested in. 
+Exponentiation is not easy to deduce from the computation of blocks as sums over Virasoro descendants, which leads to expressions for their coefficients in terms of two vectors and one matrix, see Eq. \eqref{f2d} for the case of the $O(z^2)$ coefficient. It is better to sum over another basis of the Verma module $\mathcal{V}_\Delta$, namely the \myindex{oscillator basis}\index{oscillator basis} of descendants for the abelian affine Lie algebra $\hat{\mathfrak{u}}_1$, which is related to the Virasoro algebra by Eq. \eqref{lnj}. Since $\hat{\mathfrak{u}}_1$ is abelian, the corresponding matrix is diagonal, and easy to compute. This has led to a proof of exponentiation in the heavy limit \cite{bdk19}, which can be generalized to other limits, including the limit $\Delta\to \infty$ we are interested in. 
 
 Once we know that Virasoro blocks exponentiate, it remains to compute the terms in $O(\Delta)$ and $O(1)$ of $\log \mathcal{F}_\Delta$. According to Eq. \eqref{fdq}, these terms are (relatively) simple functions of the nome. We will now review a geometrical interpretation of these functions \cite{msz15}, which suggests how they could be derived. 
 
 
+
+Conclusion: could complete argument, easier for torus 1pt, no geometrical complications. 
 
 \subsection{Numerically solving crossing symmetry}
 
