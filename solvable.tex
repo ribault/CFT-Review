@@ -196,7 +196,7 @@ We will first deal with CFTs that are considered solved, in that we exactly know
 \end{itemize}
 We will also propose a unified treatment of loop CFTs, which are not solved but are believed to be solvable, because we have sufficiently many exact results. By loop CFTs we mean a large class of CFTs, with various global symmetry groups, which describe critical limits of various statistical models in various phases. The known solvable CFTs have many applications to statistical physics, in particular to percolation, to polymers, and more recently to active hydraulics \cite{jcpb23}. Liouville theory and minimal models have well-known applications to quantum gravity in two dimensions. Applications of non-diagonal solvable CFTs such as loop CFTs to quantum gravity in three dimensions are limited by the bound on the central charge $\Re c < 13$. (See Section \ref{sec:dotc}.) A CFT that would be holographically dual to quantum gravity in three-dimensional Anti-de Sitter space would need to exist for $c\to+\infty$, while for three-dimensional de Sitter space we would need $\Re c = 13$ \cite{god24}. 
 
-There are other solved or solvable CFTs that we will not mention, because they have extended chiral algebras, which means extra local symmetries in addition to conformal symmetry. Some CFTs of that type can be solved using the methods that we will cover, for example certain Wess--Zumino--Witten models. 
+There are other solved or solvable CFTs that we will not mention, because they have extended chiral algebras, which imply extra local symmetries in addition to conformal symmetry. Some CFTs of that type can be solved using the methods that we will cover, for example certain Wess--Zumino--Witten models. 
 
 \subsubsection*{Solving CFTs}
 
@@ -207,7 +207,7 @@ We are not claiming that our approach is always mathematically rigorous: our mai
 
 \subsection*{Acknowledgements}
 
-This text was initially written as lecture notes for a course given at IPhT Saclay in March-April 2024. Video recordings are available on \href{https://www.youtube.com/playlist?list=PLrLctLPAdPNtD7yFOcfdNx2J-A_CE1svr}{IPhT-TV}. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica. I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop CFTs and related subjects. Moreover, I am grateful to Victor Godet, Jesper Jacobsen, Paul Roux, Hubert Saleur and Xi Yin for helpful discussions and correspondence. 
+This text is based on lecture notes for a course given at IPhT Saclay in March-April 2024. Video recordings are available on \href{https://www.youtube.com/playlist?list=PLrLctLPAdPNtD7yFOcfdNx2J-A_CE1svr}{IPhT-TV}. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica. I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop CFTs and related subjects. Moreover, I am grateful to Victor Godet, Jesper Jacobsen, Paul Roux, Hubert Saleur and Xi Yin for helpful discussions and correspondence. 
 
 % Send for reading to B. Muehlmann (part on Zamolodchikov recursion)
 
@@ -1853,6 +1853,7 @@ For each CFT, we indicate the values of $\beta^2$, of the Kac indices of degener
  \end{array}
  \label{sostab}
 \end{align}
+In the case of loop models, this picture is most probably not complete. In addition to the extended spectrum of $\widehat{\text{Loop}}$, it is possible to defined a backbone field: a diagonal primary field whose conformal dimension does not have a simple expression in terms of Kac indices \cite{nqsz23}. In fact, from its dimension, it looks like this field may not be compatible with the existence of any degenerate field. On the other hand, when studying correlation functions, we will see that the degenerate field $V^d_{\langle 2,1\rangle}$, which is absent from our extended spectrum, seems to play a role in the CFT, see Section \ref{sec:cod}. 
 
 \subsubsection{Limits of diagonal CFTs}\label{sec:lod}
 
@@ -2760,7 +2761,7 @@ In order to write Zamolodchikov's recursive representation for Virasoro blocks, 
 The inverse relation is 
 \begin{align}
  z = \frac{\theta_2^4(q)}{\theta_3^4(q)} \quad , \quad 1-z = \frac{\theta_4^4(q)}{\theta_3^4(q)}\quad ,\quad 
- {}_2F_1\left(\tfrac12,\tfrac12,1,z\right) =\frac{\pi}{2}\theta_3^2(q)\ , 
+ {}_2F_1\left(\tfrac12,\tfrac12,1,z\right) =\theta_3^2(q)\ , 
 \end{align}
 where $\theta_k(q)$ are 
 \myindex{Jacobi theta functions}\index{Jacobi theta function} 
@@ -2950,11 +2951,44 @@ The linear growth of $\log\mathcal{F}_\Delta$ is therefore a non-trivial phenome
 
 Exponentiation is not easy to deduce from the computation of blocks as sums over Virasoro descendants, which leads to expressions for their coefficients in terms of two vectors and one matrix, see Eq. \eqref{f2d} for the case of the $O(z^2)$ coefficient. It is better to sum over another basis of the Verma module $\mathcal{V}_\Delta$, namely the \myindex{oscillator basis}\index{oscillator basis} of descendants for the abelian affine Lie algebra $\hat{\mathfrak{u}}_1$, which is related to the Virasoro algebra by Eq. \eqref{lnj}. Since $\hat{\mathfrak{u}}_1$ is abelian, the corresponding matrix is diagonal, and easy to compute. This has led to a proof of exponentiation in the heavy limit \cite{bdk19}, which can be generalized to other limits, including the limit $\Delta\to \infty$ we are interested in. 
 
-Once we know that Virasoro blocks exponentiate, it remains to compute the terms in $O(\Delta)$ and $O(1)$ of $\log \mathcal{F}_\Delta$. According to Eq. \eqref{fdq}, these terms are (relatively) simple functions of the nome. We will now review a geometrical interpretation of these functions \cite{msz15}, which suggests how they could be derived. 
+Once we know that Virasoro blocks exponentiate, it remains to compute the terms in $O(\Delta)$ and $O(1)$ of $\log \mathcal{F}_\Delta$. According to Eq. \eqref{fdq}, these terms are (relatively) simple functions of the nome. We will now review a geometrical interpretation of these functions \cite{msz15}, which suggests how they could be derived. The idea is to flatten the four-punctured sphere into a \myindex{pillow}\index{pillow}, i.e. a double cover of a parallelogram of size $\pi\times \pi \tau$ or equivalently a $\mathbb{Z}_2$ quotient of a torus of size $2\pi\times 2\pi\tau$, such that the four punctures are mapped to the pillow's corners:
+\begin{align}
+ \begin{tikzpicture}[scale = .5, baseline=(base)]
+ \coordinate (base) at (0, 0);
+  \draw [thick, red] plot [domain = 0:-180, smooth] ({4*cos(\x)}, {sin(\x)});
+  \draw [thick, red, dashed] plot [domain = 0:180, smooth] ({4*cos(\x)}, {sin(\x)});
+  \draw (0, 0) circle [radius = 4];
+  \draw (-1.8,-2) node [fill, circle, minimum size = 1.6mm, inner sep = 0]{} node[below left] {$0$};
+  \draw (2.8, -1.8) node [fill, circle, minimum size = 1.6mm, inner sep = 0]{} node[below left] {$z$};
+  \draw (-1.5, 2.5) node [fill, circle, minimum size = 1.6mm, inner sep = 0]{} node[below left] {$\infty$};
+  \draw (2.4, 1.9) node [fill, circle, minimum size = 1.6mm, inner sep = 0]{} node[below left] {$1$};
+  \draw (0, -5) node {$x$-sphere $\overline{\mathbb{C}}$};
+ \end{tikzpicture}
+ \hspace{2cm}
+ \begin{tikzpicture}[scale = .5, baseline=(base)]
+ \coordinate (base) at (0, 0);
+  \draw [thick, red] (-3, 0) to [out = -5, in = -175] (4, 0);
+   \draw [thick, red, dashed] (-3, 0) to [out = 5, in = 175] (4, 0);
+  \draw (-4, -3) node [below left] {$0$} node [fill, circle, minimum size = 1.6mm, inner sep = 0]{} -- (-2,3) node [above left] {$\pi\tau$} node [fill, circle, minimum size = 1.6mm, inner sep = 0]{} -- (5, 3) node [above right] {$\pi(\tau +1)$} node [fill, circle, minimum size = 1.6mm, inner sep = 0]{} -- (3, -3) node [below right] {$\pi$} node [fill, circle, minimum size = 1.6mm, inner sep = 0]{} -- cycle; 
+  \draw (.5, -5) node {$u$-pillow $\left. \frac{\mathbb{C}}{2\pi\mathbb{Z}+2\pi\tau\mathbb{Z}}\right/\left(u\to -u\right)$};
+ \end{tikzpicture}
+ \label{fig:pillow}
+\end{align}
+The relation between the coordinate $x$ on the sphere and the coordinate $u$ on the pillow is 
+\begin{align}
+ u(x) = \frac{1}{{}_2F_1\left(\tfrac12,\tfrac12,1,z\right)} \int_0^x \frac{dx'}{\sqrt{x'(x'-1)(x'-z)}} \ ,
+\end{align}
+where the $z$-dependent prefactor is such that $u(z)=\pi$, and the square root's sign ambiguity leads to the identification $u\sim -u$. To compute $s$-channel blocks on the pillow, we imagine that time runs upwards, so that constant time slices have length $2\pi$ (as drawn on Figure \eqref{fig:pillow}). Such a slice scans the whole pillow if time runs for a duration $\pi\tau$. This leads to the factor $e^{i\pi\tau\Delta}=q^\Delta$ in the conformal block, where the $s$-channel dimension $\Delta$ is an eigenvalue of the $s$-channel Hamiltonian. 
 
+The conformal transformation from the sphere to the pillow modifies conformal blocks, which get multiplied by $c,\Delta_i$-dependent factors. These factors must be regularized, because the transformation is singular, with the 4 fields sitting at the singularities \cite[Appendix D]{msz15}. In $\mathcal{F}_\Delta(q)$ \eqref{fdq}, these factors appear as exponentials of $\Delta_i$ with $i=1,2,3,4$, coming from the transformation of the 4 fields, and exponentials of $c$, coming from the Weyl anomaly. The regularized pillow Virasoro blocks are therefore 
+\begin{align}
+ \mathcal{F}_\Delta^\text{pillow}(q) = (16q)^{\Delta-\frac{c}{24}} \prod_{m=1}^\infty \left(1-q^{2m}\right)^{-\frac12} H_\Delta(q)\ , 
+ \label{fpillow} 
+\end{align}
+where we used Eq. \eqref{thetaids} for simplifying the $c,\Delta_i$-independent factors. 
 
-
-Conclusion: could complete argument, easier for torus 1pt, no geometrical complications. 
+Therefore, the derivation of the $\Delta\to\infty$ asymptotics of Virasoro blocks is surely easier on the pillow than on the sphere. When it comes to asymptotics, 4-point blocks on the pillow are very similar to 1-point blocks on the torus. 
+Moreover, the infinite product in Eq. \eqref{fpillow} might naturally emerge from a calculation using the oscillator basis. More fundamentally, it would be interesting to understand why blocks simplify in the pillow geometry, and whether this is the unique geometry with this property. 
 
 \subsection{Numerically solving crossing symmetry}
 
@@ -3671,12 +3705,13 @@ $
 We will now write the first few 4-point structure constants for 4-point functions that correspond to the combinatorial maps \picz\ , \pice\ and \picj . 
 More examples can be found in \cite{nrj23}. 
 
-\subsubsection[Case of $\left<\prod_{i=1}^4 V_{P_i}\right>$]{Case of $\left<\prod_{i=1}^4 V_{P_i}\right>$ \picz}
+\subsubsection[Case of $\left<\prod_{i=1}^4 V_{P_i}\right>$]{Case of $\left<\prod_{i=1}^4 V_{P_i}\right>$ \picz}\label{sec:cod}
 
 We have a unique solution of crossing symmetry for any 4 fields $V_{P_i}$ and channel fields $V_{P_s},V_{P_t},V_{P_u}$. Due to their invariances $d^{(x)}_{(r,s)}=d^{(x)}_{(r,s+2)}$ and $d^{(x)}_{(r,s)}=d^{(x)}_{(r,-s)}$, we need only write structure constants for $0\leq s\leq 1$:
 \begin{subequations}
 \begin{align}
 & d_\text{diag}^{(s,t,u)} = 1\ ,
+\label{ddiag}
 \\
 & d_{(1, 0)}^{(s)} = w_t+w_u \quad , \quad d_{(1,0)}^{(t)}= w_s+w_u \quad ,\quad d_{(1,0)}^{(u)} = w_s+w_t\ ,
  \\
@@ -3706,6 +3741,9 @@ We have a unique solution of crossing symmetry for any 4 fields $V_{P_i}$ and ch
 Formulas for $d^{(s,t,u)}_{(3,*)}$ are known but rather complicated.
 
 In the diagonal 4-point function $\left<\prod_{i=1}^4 V_{P_i}\right>$, it is particularly easy to study the factorization \eqref{dcc} of 4-point structure constants into 3-point structure constants. In particular, we see that $d^{(s)}_{(2,*)}$ is a sum of 3 factorized terms. Due to pole terms, $D^{(s)}_{(2,0)}$ and $D^{(s)}_{(2,1)}$ are sums of 4 terms, while $D^{(s)}_{(2,\frac12)}$ is still a sum of 3 terms. And the presence of several terms is not due to combinatorial defects: in the case $w_s=w_t=w_u=n$ where the defects are absent, $D^{(s)}_{(2,*)}$ loses only 1 term. 
+
+The trivial-looking result $d_\text{diag}^{(s,t,u)} = 1$ \eqref{ddiag} implies that the diagonal 3-point structure constant $C_{P_1,P_2,P_3}$ reduces to the reference 3-point structure constant, which for $c\leq 1$ coindices with Liouville theory's 3-point structure constant. This coincidence of structure constants between loop models and Liouville theory, in spite of their very different properties, has been a source of puzzlement \cite{ijs15, rib22}. Ultimately, the coincidence must be due to $C_{P_1,P_2,P_3}$ being the unique solution of 
+the shift equations from $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$. But in loop models, why would $C_{P_1,P_2,P_3}$ obey the shift equation from $V^d_{\langle 2,1\rangle}$? This field does not belong to the spectrum, and we cannot add it because its OPE with non-diagonal fields $V_{(r,s)}$ would generate fields with non-integer spins. In fact, this raises the more general issue of explaining why structure constants are built from the double Gamma function, which is characterized as the solution of 2 shift equations.
 
 \subsubsection[Case of $\left<V_{(\frac12, 0)}^4\right>$]{Case of $\left<V_{(\frac12, 0)}^4\right>$ \pice}
 
