@@ -210,7 +210,7 @@ We are not claiming that our approach is always mathematically rigorous: our mai
 
 \subsection*{Acknowledgements}
 
-This text is based on lecture notes for a course given at IPhT Saclay in March-April 2024. Video recordings are available on \href{https://www.youtube.com/playlist?list=PLrLctLPAdPNtD7yFOcfdNx2J-A_CE1svr}{IPhT-TV}. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica. I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop CFTs and related subjects. Moreover, I am grateful to Victor Godet, Jesper Jacobsen, Paul Roux, Hubert Saleur and Xi Yin for helpful discussions and correspondence. 
+This text is based on lecture notes for a course given at IPhT Saclay in March-April 2024. Video recordings are available on \href{https://www.youtube.com/playlist?list=PLrLctLPAdPNtD7yFOcfdNx2J-A_CE1svr}{IPhT-TV}. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica. I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop CFTs and related subjects. Moreover, I am grateful to Victor Godet, Jesper Jacobsen, Paul Roux, Ingo Runkel, Hubert Saleur and Xi Yin for helpful discussions and correspondence. 
 
 % Send for reading to B. Muehlmann (part on Zamolodchikov recursion)
 
@@ -683,6 +683,7 @@ The fusion product can be algebraically defined \cite{gab99}. It differs from th
  \text{Hom}\left(\mathcal{R},\mathcal{R}'\right) \simeq \text{Hom}\left(\mathcal{R}\times\mathcal{R}',\mathcal{R}^d_{\langle 1,1\rangle}\right)\ . 
  \label{hrr}
 \end{align}
+Given 3 representations $\mathcal{R},\mathcal{R}',\mathcal{R}''$, the number $\dim \text{Hom}\left(\mathcal{R}\times\mathcal{R}',\mathcal{R}''\right) \in \mathbb{N}$ is called the \myindex{fusion multiplicity}\index{fusion!---multiplicity} of $\mathcal{R}''$ in the fusion product $\mathcal{R}\times\mathcal{R}'$. A fusion multiplicity is called nontrivial if it is $\geq 2$. 
 
 \subsubsection{Fusion products of degenerate representations}
 
@@ -783,12 +784,14 @@ Equivalently, the behaviour of $Z$ under global conformal transformations \eqref
  = \prod_{i=1}^N (cz_i +d)^{2\Delta_i} \left< \prod_{i=1}^N V_{\Delta_i}(z_i) \right>\ .
  \label{zgc}
 \end{align}
-In particular, considering the transformation $z\mapsto \frac{1}{z}$ leads to $V_\Delta(z)\underset{z\to\infty}{=} O(z^{-2\Delta})$, which allows us to define 
+The global Ward identities are valid not only for primary fields, but also for quasi-primary fields: $L_0$-eigenvectors that are annihilated by $L_1$ but not necessarily by $L_{n\geq 2}$. According to the OPE $T(y)T(z)$ \eqref{tt}, the energy-momentum tensor is a quasi-primary field of dimension $\Delta=2$, and the resulting behaviour at infinity \eqref{vdi} is consistent with our assumption \eqref{tinf}. 
+
+In particular, applying Eq. \eqref{zgc} to the transformation $z\mapsto \frac{1}{z}$, we find $V_\Delta(z)\underset{z\to\infty}{=} O(z^{-2\Delta})$, which allows us to define 
 \begin{align}
  V_\Delta(\infty) = \lim_{z\to\infty} z^{2\Delta}V_\Delta(z)\ . 
  \label{vdi}
 \end{align}
-The global Ward identities are valid not only for primary fields, but also for quasi-primary fields: $L_0$-eigenvectors that are annihilated by $L_1$ but not necessarily by $L_{n\geq 2}$. According to the OPE $T(y)T(z)$ \eqref{tt}, the energy-momentum tensor is a quasi-primary field of dimension $\Delta=2$, and the resulting behaviour at infinity \eqref{vdi} is consistent with our assumption \eqref{tinf}. 
+To properly deal with fields at infinity, and also with more general geometries and local conformal transformations, we should introduce local coordinates in the neighbourhood of each field, see \cite[Section 6.2]{br21}. On the complex plane $\mathbb{C}$, we already have a canonical local coordinate near each point, so we will ignore this issue. 
 
 Let us solve the global Ward identities in the cases $N=1,2,3,4$. We have $3$ linear differential equations in the $N$ variables $z_i$, and we write their solutions up to $z_i$-independent prefactors:
 \begin{itemize}
@@ -2397,7 +2400,7 @@ There is a conjecture that $C^\text{norm}$ is in fact a polynom of loop weights,
  \boxed{n= w\left(P_{(1,1)}\right) = -2\cos(\pi \beta^2)} \ .
  \label{ncb}
 \end{align}
-(This is the same $n$ as in the $O(n)$ CFT \eqref{nQ}.) In Section \ref{sec:cloop} we will formulate this conjecture in more detail. 
+(This is the same $n$ as in the $O(n)$ CFT \eqref{nQ}.) In Section \ref{sec:plw} we will formulate this conjecture in more detail. 
 
 Even if the conjecture only applies to loop CFTs, it is interesting to compute the normalized 3-point structure constant associated to $C_{P_1,(r_2,s_2),(r_3,s_3)}$ \eqref{cdnn} from (generalized) D-series minimal models:
 \begin{align}
@@ -3659,7 +3662,7 @@ Just like Virasoro blocks, logarithmic blocks can be combined into interchiral b
 \end{align}
 where $s_0\in \{0,1\}$, and the ratios of 4-point structure constants are again determined by the shift equations \eqref{cshift}, \eqref{bshift}. 
 
-\subsubsection{Polynomials in loop weights} 
+\subsubsection{Polynomials in loop weights}\label{sec:plw}
 
 For a combinatorial map $M$, let us write the $s$-channel 4-point structure constants $D_{(r,s)}$ after factoring out the reference 4-point structure constant 
 \begin{align}
@@ -3678,7 +3681,7 @@ The crucial observation is that $\rho^{r,s}$ is a polynomial in $n$. Moreover, i
 Thanks to this conjecture, we can extract analytic expressions for $d_{(r,s)}$ from numerical results for $D_{(r,s)}$. 
 
 
-\subsection{Examples of 4-point structure constants}
+\subsection{Examples of 4-point structure constants}\label{sec:ex4pt}
 
 \DeclareRobustCommand\picz{
 $
@@ -3900,7 +3903,21 @@ d^{(s)}_{(\frac52, \frac45)}
 \end{subequations}
 The coefficients of these polynomials are trigonometric numbers, related to the values of the second Kac index. 
 
-\subsection{Global symmetries in $d=2$ and $d>2$}
+
+\subsection{Outlook}
+
+\subsubsection{Towards solving loop CFTs}
+
+In the conformal bootstrap approach, solving loop CFTs on the sphere means being able to compute $N$-point functions for any $N\in \mathbb{N}^*$. If OPEs exist, this problem reduces to knowing the 3-point structure constants. (See Section \ref{sec:cscb}.) However, most known results are for 4-point structure constants, as we saw in Section \ref{sec:ex4pt}. The factorization of 4-point into 3-point structure constants can in principle be explored numerically, as we discussed in Section \ref{sec:factor}. But a case-by-case analysis of factorization would be tedious and not necessarily very illuminating, so long we do not understand the underlying algebraic structure. 
+
+Since correlation functions correspond to combinatorial maps, factorization should be formulated in terms of combinatorial maps. However, 3-point combinatorial maps on the sphere correspond to 3-point functions, not to 3-point structure constants. A 3-point function $\left<\prod_{i=1}^3 V_{(r_i,s_i)}\right>$ only depends on the 3 fields' conformal dimensions, and for any $r_1,r_2,r_3\in \frac12\mathbb{N}$ such that $\sum r_i\in\mathbb{N}$ there exists exactly one 3-point combinatorial map on the sphere with vertices of valencies $2r_1,2r_2,2r_3$.
+On the other hand, 3-point structure constants may also depend on field multiplicities and fusion multiplicities. Since 4-point structure constants do not always factorize into products of 3-point structure constants, we know that some of these multiplicities are nontrivial. Therefore, 3-point structure constants should be described by richer combinatorial objects. 
+
+In fact, it is not even clear that OPEs exist in loop CFTs. As far as we know, there is no proof that OPEs exist from the statistical loop models. Hints: blocks, decomp. on known spectrum, not just basis of fct...
+
+Rational $\beta^2$ limit cf also Section \ref{sec:lod}. 
+
+\subsubsection{Global symmetries in $d=2$ and $d>2$}
 
 As we stated in Section \ref{sec:models}, the $O(n)$, $U(n)$ and Potts CFTs have global symmetries, described by the groups $O(n)$, $U(n)$ and $S_Q$ respectively. Usually, in physics, we would expect such unbroken symmetries to have a strong influence. Models with different symmetry groups would behave differently, and we would formulate our analysis in group-theoretic language: spectrums as representations, correlation functions as invariant tensors. 
 
@@ -3908,7 +3925,7 @@ However, the $O(n)$, $U(n)$ and Potts CFTs share many conformal dimensions and e
 This is because they are all formulated in terms of similar loop ensembles, see Section \ref{sec:coup}.
 Moreover, if we decompose the spectrum of the $O(n)$ CFT into $O(n)$ representations, as we sketched in Eq. \eqref{von}, we find that a primary field $V_{(r,s)}$ with a given conformal dimension generally does not transform in an irreducible representation, but in a larger representation. This shows that the model's global symmetry is larger than $O(n)$. 
 
-The origin of this larger symmetry is the requirement that loops do not intersect, as can be seen in the context of lattice models \cite{jrs22}. The lattice $O(n)$ model describes the dynamics of a periodic spin chain of length $L\in\mathbb{N}$, whose space of states is $\mathcal{H}_L=\left(\mathbb{R}^n\right)^{\otimes L}$. In the linear group $GL(\mathcal{H}_L)$, the commutant of $O(n)$ is the Brauer algebra $\mathcal{B}_L$, a diagram algebra where loops are allowed to intersect. Forbidding intersections, we would obtain a subalgebra of $\mathcal{B}_L$. The commutant of that subalgebra is larger than $O(n)$, and may be thought of as the symmetry algebra of the lattice $O(n)$ model.
+The origin of this larger symmetry is the requirement that loops do not intersect, as can be seen in the context of lattice models \cite{jrs22}. The lattice $O(n)$ model describes the dynamics of a periodic spin chain of length $L\in\mathbb{N}$, whose space of states is $\mathcal{H}_L=\left(\mathbb{R}^n\right)^{\otimes L}$. In the linear group $GL(\mathcal{H}_L)$, the commutant of $O(n)$ is the Brauer algebra $\mathcal{B}_L$, a diagram algebra where loops are allowed to intersect. Forbidding intersections, we would obtain a subalgebra of $\mathcal{B}_L$. The commutant of that subalgebra is larger than $O(n)$, and may be thought of as the global symmetry algebra of the lattice $O(n)$ model.
 
 Invariant tensors of $O(n)$ can be represented in terms of loops that encode contractions of indices: for example, given 4 vectors $v_1,v_2,v_3,v_4\in \mathbb{R}^n$, we can build the 3 invariants 
 \begin{align}
