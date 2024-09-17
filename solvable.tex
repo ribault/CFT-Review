@@ -187,8 +187,8 @@ In 1997, di Francesco, Mathieu and Sénéchal wrote a book called Conformal fiel
  \item An infinite-dimensional algebra of conformal transformations --- but in $d\geq 3$ the algebra is finite-dimensional. 
  \item Degenerate fields: fields whose OPEs with other fields have finitely many terms, modulo conformal symmetry. 
 \end{itemize}
-This gives us access to powerful bootstrap techniques, analytic and numerical. In contrast, in higher dimensions, numerical bootstrap techniques rely on the assumption of unitarity. Not only this restricts the CFTs that can be addressed, but also this leads to inequalities rather than equalities, making it harder to reach exact results. 
-Even in two dimensions, solvable CFTs are very special cases. Starting from a simple CFTs and following a renormalization group flow, you can easily end up at a fixed point whose CFT is intractable. 
+This gives us access to powerful bootstrap techniques, analytic and numerical. In contrast, in higher dimensions, numerical bootstrap techniques rely on the assumption of unitarity. Not only does this restrict the CFTs that can be addressed, but also this leads to inequalities rather than equalities, making it harder to reach exact results. 
+Even in two dimensions, solvable CFTs are very special cases. Starting from a simple CFT and following a renormalization group flow, you can easily end up at a fixed point whose CFT is intractable. 
 
 \subsubsection*{Solvable CFTs}
 
@@ -210,9 +210,14 @@ We are not claiming that our approach is always mathematically rigorous: our mai
 
 \subsection*{Acknowledgements}
 
-This text is based on lecture notes for a course given at IPhT Saclay in March-April 2024. Video recordings are available on \href{https://www.youtube.com/playlist?list=PLrLctLPAdPNtD7yFOcfdNx2J-A_CE1svr}{IPhT-TV}. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica. I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop CFTs and related subjects. Moreover, I am grateful to Victor Godet, Jesper Jacobsen, Paul Roux, Ingo Runkel, Hubert Saleur and Xi Yin for helpful discussions and correspondence. 
+\begin{itemize}
+ \item This text is based on lecture notes for a course given at IPhT Saclay in March-April 2024. Video recordings are available on \href{https://www.youtube.com/playlist?list=PLrLctLPAdPNtD7yFOcfdNx2J-A_CE1svr}{IPhT-TV}. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica. 
+ \item I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop CFTs and related subjects. 
+ \item I am grateful to Victor Godet, Jesper Jacobsen, Paul Roux, Ingo Runkel, Hubert Saleur and Xi Yin for helpful discussions and correspondence. 
+ \item I would like to thank Max Downing for comments and suggestions on the manuscript. 
+\end{itemize}
 
-% Send for reading to B. Muehlmann (part on Zamolodchikov recursion)
+% Send for reading to B. Muehlmann (part on Zamolodchikov recursion), Kay Wiese, Bernardo Zan.
 
 %\end{tcolorbox}
 
@@ -245,7 +250,9 @@ The corresponding Lie group is the group of \myindex{global conformal transforma
  z \mapsto \frac{az+b}{cz+d}\quad , \quad (a,b,c,d\in \mathbb{C},\ ad-bc\neq 0)\ .
  \label{abcd}
 \end{align}
-Now, in a quantum theory, symmetries act projectively on states. And projective representations of an algebra are equivalent to representations of that algebra's central extension. Therefore, the algebra that describes local conformal transformations in conformal field theory is the Witt algebra's central extension, called the Virasoro algebra. The \myindex{Virasoro algebra}\index{Virasoro algebra} $\mathfrak{V}$ has generators $(L_n)_{n\in\mathbb{Z}}$ that correspond to the Witt algebra generators, plus a central generator $\mathbf 1$. The commutation relations are 
+Now, in a quantum theory, symmetries act projectively on states. And projective representations of an algebra are equivalent to representations of that algebra's central extension. 
+% MD: elaborate?
+Therefore, the algebra that describes local conformal transformations in conformal field theory is the Witt algebra's central extension, called the Virasoro algebra. The \myindex{Virasoro algebra}\index{Virasoro algebra} $\mathfrak{V}$ has generators $(L_n)_{n\in\mathbb{Z}}$ that correspond to the Witt algebra generators, plus a central generator $\mathbf 1$. The commutation relations are 
  \begin{align}
   [\mathbf 1, L_n] = 0 \quad , \quad \boxed{[L_n,L_m] = (n-m)L_{n+m} +\frac{c}{12}(n-1)n(n+1)\delta_{n+m,0}\mathbf 1} \ .
   \label{vir}
@@ -335,7 +342,7 @@ Therefore, the conditions $L_1X{}=L_2 X{}=0$ for $X{}$ to be a null vector boil 
  \label{dpm}
 \end{align}
 Solving CFTs will lead to fairly complicated formulas, which would become even more complicated if we tolerated a square root at this early stage.
-To get rid of the square root, we rewrite the central charge in terms a the parameter $\beta$ such that 
+To get rid of the square root, we rewrite the central charge in terms of the parameter $\beta$ such that 
 \begin{align}
  \boxed{c = 1- 6\left(\beta - \beta^{-1}\right)^2 } \ .
  \label{cb}
@@ -429,7 +436,7 @@ For $\beta^2\in\mathbb{C}\backslash \mathbb{Q}$, the Verma module $\mathcal{V}_\
 \end{align}
 which together with $\Delta_{(r,s)}=\Delta_{(-r,-s)}$ implies infinitely many coincidences of the type $\Delta_{(r,s)}=\Delta_{(r_1,s_1)}$ with $r_1,s_1\in\mathbb{Z}$. 
 Whenever $r_1,s_1>0$, the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$ has a null vector $L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. 
-Moreover, if we apply the identity \eqref{rpsq} to the dimension $\Delta_{(r_1,-s_1)}$ \eqref{drms} of that null vector, we find that it is itself of the type $\Delta_{\langle r_2,s_2\rangle}$. If $r_2,s_2>0$, this leads to another null vector $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. It turns out that all null vectors of Verma modules are of the type $L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$ or $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. In particular,
+Moreover, using the identity \eqref{rpsq}, the dimension $\Delta_{(r_1,-s_1)}$ \eqref{drms} of that null vector may be rewritten as $\Delta_{\langle r_2,s_2\rangle}$ with $r_2,s_2>0$: in all cases if $pq>0$, in some cases if $pq<0$. Then this leads to another null vector $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. It turns out that all null vectors of Verma modules are of the type $L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$ or $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. In particular,
 \begin{align}
  \exists r_4,s_4\in \mathbb{N}^*\ , \ L_{\langle r_3,s_3\rangle}L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}} = L_{\langle r_4,s_4\rangle} V_{\Delta_{(r,s)}}\ .
  \label{lllel}
@@ -687,6 +694,7 @@ Given 3 representations $\mathcal{R},\mathcal{R}',\mathcal{R}''$, the number $\d
 
 \subsubsection{Fusion products of degenerate representations}
 
+% MD: clarify
 Thanks to the isomorphism \eqref{hrr}, we can find the fusion rules of $V^d_{\langle 2,1\rangle}$ by studying whether it may appear in an OPE $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$. This amounts to finding whether the two-dimensional linear system \eqref{el1c}, \eqref{el2c} has a solution, even though it is of rank one. With the help of Eq. \eqref{l1c}, \eqref{l2c}, this condition boils down to 
 \begin{align}
  \left(4\Delta_{\langle 2,1\rangle}+2\right) \left(\Delta_{\langle 2,1\rangle}+¨2\Delta_1-\Delta_2\right) = 3\left(\Delta_{\langle 2,1\rangle}+\Delta_1-\Delta_2\right)\left(\Delta_{\langle 2,1\rangle}+1+\Delta_1-\Delta_2\right)\ .
@@ -727,7 +735,7 @@ This allows us to find the fusion product of any degenerate representation with 
  \boxed{\mathcal{R}^d_{\langle r,s\rangle}\times \mathcal{V}_P = \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}} \mathcal{V}_{P+i\beta +j\beta^{-1}}}\ ,
  \label{rrsvp}
 \end{align}
-where the sums run by increments of $1$. Since this sum has $rs$ terms, the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$ must have a null vector at level $rs$, a result that we admitted in Section \ref{sec:nvvm}, and which we now derived using fusion products. Fusion can even be used to compute the null vectors themselves \cite{fms97}. 
+where the sums run by increments of $1$. Since this sum has $rs$ terms, the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$ must have a null vector at level $rs$, a result that we stated in Section \ref{sec:nvvm}, and which we now derived using fusion products. Fusion can even be used to compute the null vectors themselves \cite{fms97}. 
 
 We can then find the fusion product $\mathcal{R}^d_{\langle r_1,s_1\rangle}\times \mathcal{R}^d_{\langle r_2,s_2\rangle}$, either by again iterating over $r_1$ and $s_1$, or by summing the degenerate representations whose momentums appear in both  $\mathcal{R}^d_{\langle r_1,s_1\rangle}\times \mathcal{V}_{P_{(r_2,s_2)}}$ and $\mathcal{R}^d_{\langle r_2,s_2\rangle}\times \mathcal{V}_{P_{(r_1,s_1)}}$:
 \begin{align}
@@ -835,7 +843,7 @@ The correlation functions of Section \ref{sec:csc} are of the form $z^\Delta$, w
 
 The generators $\ell_n$ \eqref{lpz} of local conformal transformations are only valid when acting on locally holomorphic functions: for more general functions, the generators are 
 \begin{align}
- \ell_n +\bar{\ell}_n \quad , \quad i(\bar\ell_n -\bar \ell_n)\  .
+ \ell_n +\bar{\ell}_n \quad , \quad i(\ell_n -\bar \ell_n)\  .
  \label{epbe}
 \end{align}
 In fact we want the algebra of conformal transformations to act on a complex vector space: the space of complex-valued functions on $\overline{\mathbb{C}}$ for the Witt algebra, the space of states of the CFT for the Virasoro algebra. We should therefore complexify our symmetry algebra, and we obtain two copies of the Virasoro algebra: a \myindex{left-moving}  Virasoro algebra\index{left-moving} $\mathfrak{V}$ with generators $L_n$, and a \myindex{right-moving} Virasoro algebra\index{right-moving} $\bar{\mathfrak{V}}$ with generators $\bar{L}_n$. In the case of the algebra of global conformal transformations, we start with the 6-dimensional real Lie algebra $\mathfrak{sl}_2(\mathbb{C})$, with generators \eqref{epbe} with $n=-1,0,1$, and the complexification yields $\mathfrak{sl}_2(\mathbb{C})^\mathbb{C} = \mathfrak{sl}_2(\mathbb{C})\times \mathfrak{sl}_2(\mathbb{C})$.
@@ -987,7 +995,7 @@ The $s$-channel decomposition \eqref{sdec} reduces the 4-point function to a com
  \end{array}
  \label{stu}
 \end{align}
-The commutativity of the product of fields \eqref{comm} implies that 4-point function \eqref{4pt} are invariant under permutations of the 4 fields, and this determines how Virasoro blocks behave under permutations. In particular, $t$-channel and $u$-channel blocks can be deduced from $s$-channel blocks via the relations 
+The commutativity of the product of fields \eqref{comm} implies that the 4-point function \eqref{4pt} is invariant under permutations of the 4 fields, and this determines how Virasoro blocks behave under permutations. In particular, $t$-channel and $u$-channel blocks can be deduced from $s$-channel blocks via the relations 
 \begin{align}
  \mathcal{F}^{(t)}_\Delta(z) = \mathcal{F}^{(s)}_\Delta(\Delta_1,\Delta_4,\Delta_3,\Delta_2|1-z) \quad , \quad 
  \mathcal{F}^{(u)}_\Delta(z) = z^{-2\Delta_1}\mathcal{F}^{(s)}_\Delta(\Delta_1,\Delta_3,\Delta_2,\Delta_4|\tfrac{1}{z})\ .
@@ -1090,7 +1098,7 @@ Let us summarize the primary fields that we will consider, together with their m
  \end{array}
  \label{fields}
 \end{align}
-We parametrize non-diagonal primary fiels $V_{(r,s)}$ using the Kac indices defined by Eq. \eqref{prs}, instead of the left and right dimensions. 
+We parametrize non-diagonal primary fields $V_{(r,s)}$ using the Kac indices defined by Eq. \eqref{prs}, instead of the left and right dimensions. 
 According to Eq. \eqref{drms}, the conformal spin of $V_{(r,s)}$ is 
 \begin{align}
  \boxed{S_{(r,s)}= -rs} \ . 
@@ -1230,7 +1238,7 @@ Let us call \myindex{Liouville theory}\index{Liouville theory} the resulting CFT
 \end{align}
 The regularized OPE \eqref{ireg} requires that we extend the spectrum to complex momentums. This will turn out to be possible, because correlation functions are analytic in $P$. 
 
-For the moment, we have defined Liouville theory for $\beta^2\in\mathbb{R}_{>0}\backslash\mathbb{Q}$. By taking limits, we can extend it to the half-line $c\leq 1$ i.e. $\beta^2\in\mathbb{R}_{>0}$. But we cannot do an analytic continuation the rest of the complex $c$-plane, because of the poles of OPE coefficients. These poles lie on the real $P$-line if $c\leq 1$, but as soon as $c$ strays from this half-line, the poles spread out in the complex $P$-plane, and cross the integration line $\mathbb{R}+i\epsilon$ for any $\epsilon>0$. In the following figures, we draw the regions where poles are found in blue, and the poles $\pm P_{(1,1)}$ as blue circles; the integration line is in red: 
+For the moment, we have defined Liouville theory for $\beta^2\in\mathbb{R}_{>0}\backslash\mathbb{Q}$. By taking limits, we can extend it to the half-line $c\leq 1$ i.e. $\beta^2\in\mathbb{R}_{>0}$. But we cannot do an analytic continuation to the rest of the complex $c$-plane, because of the poles of OPE coefficients. These poles lie on the real $P$-line if $c\leq 1$, but as soon as $c$ strays from this half-line, the poles spread out in the complex $P$-plane, and cross the integration line $\mathbb{R}+i\epsilon$ for any $\epsilon>0$. In the following figures, we draw the regions where poles are found in blue, and the poles $\pm P_{(1,1)}$ as blue circles; the integration line is in red: 
 \begin{align}
  \newcommand{\polewedge}[3]{
 \begin{scope}[#1]
@@ -1312,9 +1320,9 @@ The degenerate fusion rules predict
 \end{align}
 The fully degenerate nature of $\mathcal{R}^f_{\langle 2p+1,1\rangle}$ follows from the associativity of $\mathcal{R}^f_{\langle p+1,1\rangle}\times \mathcal{R}^f_{\langle p+1,1\rangle}\times \mathcal{V}_P$, and from the fusion product
 \begin{align}
- \mathcal{R}^f_{\langle p+1,1\rangle} \times \mathcal{V}_P = \sum_{\pm} \mathcal{V}_{P\pm \frac12\sqrt{pq}}\ ,
+ \mathcal{R}^f_{\langle p+1,1\rangle} \times \mathcal{V}_P = \sum_{\pm} \mathcal{V}_{P\pm \frac12\sqrt{-pq}}\ ,
 \end{align}
-which follows from Eq. \eqref{rrsvp}, with $\{P\pm \frac12\sqrt{pq}\}_\pm = \{P+i\beta\}_{i=-\frac{p}{2},\cdots, \frac{p}{2}} \cap \{P+j\beta\}_{j=-\frac{q}{2},\cdots, \frac{q}{2}}$. 
+which follows from Eq. \eqref{rrsvp}, with $\{P\pm \frac12\sqrt{-pq}\}_\pm = \{P+i\beta\}_{i=-\frac{p}{2},\cdots, \frac{p}{2}} \cap \{P+j\beta^{-1}\}_{j=-\frac{q}{2},\cdots, \frac{q}{2}}$. 
 The two resulting representations in Eq. \eqref{rfppo} have dimensions that differ by an integer, so they might in fact be combined into a single logarithmic representation. The point is that by repeatedly fusing $V^f_{\langle p+1,1\rangle}$ with itself, we can obtain primary states of dimensions $\Delta_{(r,1)}$ with no bound on $r$. 
 
 We therefore focus on the case $\beta^2 = \frac{q}{p}>0$ with $p,q\in\mathbb{N}^*$ coprime. For simplicity, we will only study the representations that are generated by $\mathcal{R}^f_{\langle 2,1\rangle}$ and $\mathcal{R}^f_{\langle 1,2\rangle}$. This is enough for recovering the known A-series minimal models, but not for investigating other diagonal, rational CFTs that might exist on the sphere. 
@@ -1613,7 +1621,7 @@ We therefore have the coincidences of conformal dimensions $V_{(0,\frac12)}\sime
 \begin{align}
  V^f_{\langle 3,1\rangle} V^f_{\langle 3,1\rangle} \sim V^f_{\langle 1,1\rangle} + V^f_{\langle 3, 1\rangle} + V^f_{\langle 5,1\rangle} \quad , \quad V^f_{\langle 3,1\rangle}V_{(0,\frac32)} \sim V_{(2,-\frac32)} + V_{(0,\frac32)} + V_{(2,\frac32)}\ . 
 \end{align}
-As another example, let us compare the diagonal and non-diagonal minimal models AMM$_{8,5}$ and DMM$_{8,5}$, which both have $c=-\frac{7}{20}$. The Virasoro representations that appear in the spectrums of both models belong to the Kac table $K_{8,5}$. Each entry in the table correspond to a primary field of AMM$_{8,5}$. Since $p=8\equiv 0\bmod 4$, the diagonal sector of DMM$_{8,5}$ is built from representations $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}+!$ (boxed), while the non-diagonal sector is built from $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}$ (highlighted):
+As another example, let us compare the diagonal and non-diagonal minimal models AMM$_{8,5}$ and DMM$_{8,5}$, which both have $c=-\frac{7}{20}$. The Virasoro representations that appear in the spectrums of both models belong to the Kac table $K_{8,5}$. Each entry in the table correspond to a primary field of AMM$_{8,5}$. Since $p=8\equiv 0\bmod 4$, the diagonal sector of DMM$_{8,5}$ is built from representations $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}+1$ (boxed), while the non-diagonal sector is built from $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}$ (highlighted):
 \begin{align}
 \text{AMM}_{8,5}\ \&\ \text{DMM}_{8,5} \ : \qquad 
 \begin{tikzpicture}[baseline=(current  bounding  box.center)]
@@ -2137,7 +2145,7 @@ With these notations, the degenerate 4-point structure constants are:
 \end{tikzpicture} 
 \label{cs}
 \end{align}
-Notice that the OPEs $V^d_{\langle 2,1\rangle}V_i$ and $V_iV^d_{\langle 2,1\rangle}$ are related by a permutation, under which the OPE structure constant picks a factor $(-)^{S_i-S_{i^\pm}} = (-)^{s_i}$, according to Eq. \eqref{b21}. This explains the sign factors $(-)^{s_1}$ and $(-)^{s_3}$. In the case of the 4-point function $\left<V_{\langle 2,1\rangle}^d V_iV_{\langle 2,1\rangle}^d V_i\right>$, we obtain a constraint on the degenerate OPE structure constants,
+Notice that the OPEs $V^d_{\langle 2,1\rangle}V_i$ and $V_iV^d_{\langle 2,1\rangle}$ are related by a permutation, under which the OPE structure constant picks up a factor $(-)^{S_i-S_{i^\pm}} = (-)^{s_i}$, according to Eq. \eqref{b21}. This explains the sign factors $(-)^{s_1}$ and $(-)^{s_3}$. In the case of the 4-point function $\left<V_{\langle 2,1\rangle}^d V_iV_{\langle 2,1\rangle}^d V_i\right>$, we obtain a constraint on the degenerate OPE structure constants,
 \begin{align}
  \frac{d^{(s)}_-}{d^{(s)}_+}= (-)^{2s_i}\frac{c_i^-}{c_{i^+}^-} \frac{c_{i^-}^+}{c_i^+}\ ,  
  \label{ddcccc}
@@ -2147,7 +2155,7 @@ whose left-hand side is explicitly known by Eq. \eqref{ddb}. It can be checked t
  c^+_i = \beta^{2\beta(P_i+\bar P_i)} \frac{\Gamma(-2\beta P_i)}{\Gamma(1+2\beta \bar P_i)} \quad , \quad c^-_i = \beta^{-2\beta(P_i+\bar P_i)} \frac{\Gamma(2\beta P_i)}{\Gamma(1-2\beta \bar P_i)}\ ,
  \label{cpcm}
 \end{align}
-This solution is far from unique, because in the bootstrap approach we are always free to perform \myindex{field!---renormalizations}\index{field!---renormalization} using arbitrary constant coefficients $\lambda_i$,
+This solution is far from unique, because in the bootstrap approach we are always free to perform \myindex{field renormalizations}\index{field!---renormalization} using arbitrary constant coefficients $\lambda_i$,
 \begin{align}
  V_i(z) \to \lambda_i V_i(z)\quad \implies \quad c_i^\pm \to \lambda_{\langle 2,1\rangle}\frac{\lambda_i}{\lambda_{i^\pm}}c_i^\pm \ , \  B_i \to \lambda_i^2B_i \ , \ C_{ijk}\to \lambda_i\lambda_j\lambda_k C_{ijk}\ .
  \label{vlv}
@@ -2219,7 +2227,7 @@ If $\beta^2\notin \mathbb{Q}$, this factor must be constant on the complex $P_i$
 The expression for $C_{P_1,P_2,P_3}$ obeys the shift equation \eqref{sh-mp} with $s_i=0$ and $P_i=\bar P_i$.
 It is invariant under $P_i\to -P_i$, i.e. it obeys the reflection relation \eqref{refl}.
 And it is invariant under $\beta \to \beta^{-1}$, so it also obeys the shift equation \eqref{sh-mp2}. 
-Remarkably, the 2-point and 3-point functions can be analytically continued beyond the half-line $c\in (-\infty ,1]$, while $N$-point functions with $N`\geq 4$ cannot, as follows from our discussion of the OPE in Section \ref{sec:liou}. 
+Remarkably, the 2-point and 3-point functions can be analytically continued beyond the half-line $c\in (-\infty ,1]$, while $N$-point functions with $N\geq 4$ cannot, as follows from our discussion of the OPE in Section \ref{sec:liou}. 
 
 The expressions \eqref{bc} for 2-point and 3-point structure constants are also valid in generalized minimal models, and in A-series minimal models. In such models, solutions of shift equations are unique, up to a field-independent factor. In the case of $C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}$, our shift equations \eqref{sh-mp} and \eqref{sh-pp}, together with the invariance under permutations of the 3 fields, determine all integer shifts that preserve $r_1+r_2+r_3\bmod 2$. But the fusion rules \eqref{rrsr} imply that the 3-point structure constant exists only if $r_1+r_2+r_3\equiv 1\bmod 2$, and can therefore be deduced from $C_{P_{(1,1)},P_{(1,1)},P_{(1,1)}}$ using shift equations. This implies in particular that the double Gamma functions can be replaced with products of Gamma functions. (See \cite[Section 3.2.1]{rib14} for explicit expressions.) This makes the 3-point structure constants well-defined for any $\beta\in \mathbb{C}^*$, including in the regime $\beta\in i\mathbb{R}$ where $\Gamma_\beta$ is not defined.
 
@@ -3107,7 +3115,7 @@ When computing relative deviations, we encounter the following situations, depen
 \end{align}
 If there is no solution or if there are several solutions, relative deviations remain quite large, irrespective of $\Lambda$. A unique solution leads to small relative deviations, but only for structure constants that are nonzero.
 
-For example, consider the 4-point function $\left<V_{(\frac32,\frac23)}V_{\frac12,0)}V_{(1,0)}V_{P_{(0,\frac{4+i}{10})}}\right>$ at $\beta = \frac{5}{4+i}$. Taking interchiral symmetry into account, we write the spectrums
+For example, consider the 4-point function $\left<V_{(\frac32,\frac23)}V_{(\frac12,0)}V_{(1,0)}V_{P_{(0,\frac{4+i}{10})}}\right>$ at $\beta = \frac{5}{4+i}$. Taking interchiral symmetry into account, we write the spectrums
 \begin{align}
  \widetilde{S}^{(s)} = \left\{V_{P_{(0,\frac{1+i}{10})}}\right\}\cup \left\{V_{(r,s)}\right\}_{\substack{r\in\mathbb{N}^*\\ s\in \frac{1}{r}\mathbb{Z} \\ -1<s\leq 1 }} \quad ,\quad \widetilde{S}^{(t)}=\widetilde{S}^{(u)} = \left\{V_{(r,s)}\right\}_{\substack{r\in \frac52+\mathbb{N}\\ s\in \frac{1}{r}\mathbb{Z} \\ -1<s\leq 1 }}\ ,
 \end{align}
@@ -3427,7 +3435,7 @@ We will now propose an argument that starts with relating non-diagonal primary f
 Our starting assumption is that in the critical limit, a loop-ending puncture tends to a primary field of a loop CFT. We have used the same notations $r,s$ for these punctures' parameters as for the parameters of non-diagonal fields $V_{(r,s)}$. Let us show that this is justified by an identification of parameters:
 \begin{itemize}
  \item In the CFT, as a result of the existence of the degenerate field $V^d_{\langle 1,2\rangle}$, the first Kac index $r$ is half-integer, and conserved modulo $\mathbb{Z}$, see Eq. \eqref{sriz}. For a loop-ending puncture, $2r$ is the valency, and it obeys the same constraints, see Eq. \eqref{srin}.
- \item In the CFT, $rs$ is the conformal spin, and it is integer for bosonic fields. Under a rotation around the puncture, which we interpret as $\theta_k\mapsto \theta_k + \theta$, the weight factor \eqref{wrs} picks a factor $e^{irs\theta}$: according to Eq. \eqref{veis}, this means that our loop-ending puncture has the conformal spin $rs$. 
+ \item In the CFT, $rs$ is the conformal spin, and it is integer for bosonic fields. Under a rotation around the puncture, which we interpret as $\theta_k\mapsto \theta_k + \theta$, the weight factor \eqref{wrs} picks up a factor $e^{irs\theta}$: according to Eq. \eqref{veis}, this means that our loop-ending puncture has the conformal spin $rs$. 
 \end{itemize}
 Therefore, a loop-ending puncture can be identified with a non-diagonal primary field $V_{(r,s)}$ in a CFT where $V^d_{\langle 1,2\rangle}$ exists. 
 
@@ -3458,7 +3466,7 @@ has signature $(\sigma^{(s)},\sigma^{(t)},\sigma^{(u)})=(0,2,2)$. In a channel w
  \mathcal{S}^{(x)}_{r=0} = \left\{V_{P_x+k\beta^{-1}}\right\}_{k\in\mathbb{Z}}\ . 
  \label{srz}
 \end{align}
-Signatures lead to a natural partial ordering on combinatorial maps, with $M\geq M' \iff \forall x, \sigma^{(x)}(M)\geq \sigma^{(x)}(M')$. If $M$ is maximal for this ordering, we expect that the corresponding crossing symmetry equations have a one-dimensional space of solutions, proportional to $Z_M = \lim_\text{critical} Z(\mathcal{E}_M)$. However, if $M\geq M'$, then the equations for $M$ have at least two linearly independent solutions $Z_M,Z_{M'}$. This happens in particular if two maps have the same signature, for example 
+Signatures lead to a natural partial ordering on combinatorial maps, with $M\geq M' \iff \forall x, \sigma^{(x)}(M)\geq \sigma^{(x)}(M')$. If $M$ is maximal for this ordering, we expect that the corresponding crossing symmetry equations have a one-dimensional space of solutions, proportional to $Z_M = \lim_\text{critical} Z(\mathcal{E}_M)$. However, if $M> M'$, then the equations for $M$ have at least two linearly independent solutions $Z_M,Z_{M'}$. This happens in particular if two maps have the same signature, for example 
 $
 \begin{tikzpicture}[baseline=(base), scale = .25]
  \vertices
@@ -3914,7 +3922,7 @@ Since correlation functions correspond to combinatorial maps, factorization shou
 On the other hand, 3-point structure constants may also depend on field multiplicities and fusion multiplicities. Since 4-point structure constants do not always factorize into products of 3-point structure constants, we know that some of these multiplicities are nontrivial. Therefore, 3-point structure constants should be described by richer combinatorial objects. 
 
 In fact, it is not even clear that OPEs exist in loop CFTs. The fact that 4-point functions are combinations of conformal blocks is a necessary condition for the existence of OPEs, but it is not sufficient. This condition may seem empty at first sight, because conformal blocks form a basis of functions of the cross-ratio. However, only blocks that correspond to channel fields in the loop CFTs' spectrum appear, and this makes the condition nontrivial. This issue could be addressed more fundamentally by deducing the existence of OPEs from the definition of statistical loop models. Technically, this might be done by constructing lattice loop models, and studying the algebraic properties of the resulting diagram algebras, see \cite{im23} for work in that direction. 
-It is however not a priori clear whether OPEs survive the lattice discretization. 
+It is however not obvious that OPEs would survive the lattice discretization, if they existed in the CFT. 
 
 Rational $\beta^2$ limit cf also Section \ref{sec:lod}. 
 
