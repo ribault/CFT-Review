@@ -217,7 +217,7 @@ We are not claiming that our approach is always mathematically rigorous: our mai
  \item I would like to thank Max Downing for comments and suggestions on the manuscript. 
 \end{itemize}
 
-% Send for reading to B. Muehlmann (part on Zamolodchikov recursion), Kay Wiese, Bernardo Zan.
+% Send for reading to B. Muehlmann (part on Zamolodchikov recursion), Kay Wiese, Bernardo Zan, Xi Yin.
 
 %\end{tcolorbox}
 
@@ -2666,12 +2666,16 @@ where the coefficient $R_{r,s}$ is called a \myindex{Virasoro block residue}\ind
 \boxed{R_{r,s} = \frac{c^{r,s}(P_1,P_2)c^{r,s}(P_3,P_4)}{b^{r,s}}}\ , 
  \label{rrs}
 \end{align}
-where we will find the expressions \eqref{crs} and \eqref{brs} for $c^{r,s}$ and $b^{r,s}$.
-For the moment, let us define these quantities: according to the definition of $R_{r,s}$, they are combinations of correlation functions of descendant states, 
+where we will derive the explicit expressions \eqref{crs} and \eqref{brs} for $c^{r,s}$ and $b^{r,s}$.
+For the moment, let us define these quantities: they are combinations of correlation functions of descendant states, 
 \begin{align}
  c^{r,s}(P_1,P_2) = g^{L_{\langle r,s\rangle}}_{\Delta_{(r,s)},\Delta_1,\Delta_2} \quad , \quad b^{r,s} =\left.\frac{\partial}{\partial \Delta} \frac{\left<L_{\langle r,s\rangle} V_\Delta L_{\langle r,s\rangle} V_\Delta \right>}{\left<V_\Delta V_\Delta\right>}\right|_{\Delta=\Delta_{(r,s)}}\ . 
 \end{align}
-Here $g^L$ was defined in Eq. \eqref{gl}, and we recall from Section \ref{sec:nvvm} that $L_{\langle r,s\rangle}$ is the creation operator such that $V_{\Delta_{(r,-s)}}\propto L_{\langle r,s\rangle}V_{\Delta_{(r,s)}}$ is the null vector of the reducible Verma module $\mathcal{V}_{\Delta_{(r,s)}}$. Now, since $\Delta_{(1,1)}=0$, $c^{r,s}(P_{(1,1)},P)$ is in fact a ratio of 2-point functions, which can be used for writing 
+Here $g^L$ was defined in Eq. \eqref{gl}, and we recall from Section \ref{sec:nvvm} that $L_{\langle r,s\rangle}$ is the creation operator such that $V_{\Delta_{(r,-s)}}\propto L_{\langle r,s\rangle}V_{\Delta_{(r,s)}}$ is the null vector of the reducible Verma module $\mathcal{V}_{\Delta_{(r,s)}}$. 
+
+To derive Eq. \eqref{resf} from the expression \eqref{fsl} of a conformal block, 
+
+Now, since $\Delta_{(1,1)}=0$, $c^{r,s}(P_{(1,1)},P)$ is in fact a ratio of 2-point functions, which can be used for writing 
 \begin{align}
  b^{r,s} = c^{r,s}\left(P_{(1,1)}, P_{(r,-s)}\right)  \frac{1}{2P_{(r,s)}}\left.\frac{\partial}{\partial P} c^{r,s}\left(P,P_{(1,1)}\right)\right|_{P=P_{(r,s)}}\ . 
  \label{bcdc}
@@ -3001,8 +3005,7 @@ The conformal transformation from the sphere to the pillow modifies conformal bl
 \end{align}
 where we used Eq. \eqref{thetaids} for simplifying the $c,\Delta_i$-independent factors. 
 
-Therefore, the derivation of the $\Delta\to\infty$ asymptotics of Virasoro blocks is surely easier on the pillow than on the sphere. When it comes to asymptotics, 4-point blocks on the pillow are very similar to 1-point blocks on the torus. 
-Moreover, the infinite product in Eq. \eqref{fpillow} might naturally emerge from a calculation using the oscillator basis. More fundamentally, it would be interesting to understand why blocks simplify in the pillow geometry, and whether this is the unique geometry with this property. 
+Therefore, the derivation of the $\Delta\to\infty$ asymptotics of Virasoro blocks is surely easier on the pillow than on the sphere. The infinite product in Eq. \eqref{fpillow} might naturally emerge from a calculation using the oscillator basis. More fundamentally, it would be interesting to understand why blocks simplify in the pillow geometry, and whether this is the unique geometry with this property. 
 
 \subsection{Numerically solving crossing symmetry}
 
@@ -3921,10 +3924,9 @@ In the conformal bootstrap approach, solving loop CFTs on the sphere means being
 Since correlation functions correspond to combinatorial maps, factorization should be formulated in terms of combinatorial maps. However, 3-point combinatorial maps on the sphere correspond to 3-point functions, not to 3-point structure constants. A 3-point function $\left<\prod_{i=1}^3 V_{(r_i,s_i)}\right>$ only depends on the 3 fields' conformal dimensions, and for any $r_1,r_2,r_3\in \frac12\mathbb{N}$ such that $\sum r_i\in\mathbb{N}$ there exists exactly one 3-point combinatorial map on the sphere with vertices of valencies $2r_1,2r_2,2r_3$.
 On the other hand, 3-point structure constants may also depend on field multiplicities and fusion multiplicities. Since 4-point structure constants do not always factorize into products of 3-point structure constants, we know that some of these multiplicities are nontrivial. Therefore, 3-point structure constants should be described by richer combinatorial objects. 
 
-In fact, it is not even clear that OPEs exist in loop CFTs. The fact that 4-point functions are combinations of conformal blocks is a necessary condition for the existence of OPEs, but it is not sufficient. This condition may seem empty at first sight, because conformal blocks form a basis of functions of the cross-ratio. However, only blocks that correspond to channel fields in the loop CFTs' spectrum appear, and this makes the condition nontrivial. This issue could be addressed more fundamentally by deducing the existence of OPEs from the definition of statistical loop models. Technically, this might be done by constructing lattice loop models, and studying the algebraic properties of the resulting diagram algebras, see \cite{im23} for work in that direction. 
-It is however not obvious that OPEs would survive the lattice discretization, if they existed in the CFT. 
+In fact, it is not even clear that OPEs exist in loop CFTs. The fact that 4-point functions are combinations of conformal blocks is a necessary condition for the existence of OPEs, but it is not sufficient. This condition may seem empty at first sight, because conformal blocks form a basis of functions of the cross-ratio. However, only blocks that correspond to channel fields in the loop CFTs' spectrum appear, and this makes the condition nontrivial. More fundamentally, we may try to deduce the existence of OPEs from the definition of statistical loop models. Technically, this might be done by constructing lattice loop models, and studying the algebraic properties of the resulting diagram algebras, see \cite{im23} for work in that direction.    
 
-Rational $\beta^2$ limit cf also Section \ref{sec:lod}. 
+If and when loop models can be solved at generic central charge, there will remain the challenge of taking rational limits. Such limits are relevant to applications such as percolation ($\beta^2=\frac23$) or polymers ($\beta^2=\frac12$). These special cases are more difficult than the general case, because representations of the Virasoro algebra have more complicated structures, see for instance \cite{hs21}. Hints of these algebraic complications are visible in the fusion rules of degenerate representations, which are simpler for generic $\beta^2$ \eqref{rrrs} than for rational $\beta^2$ \eqref{rfrf}. In the case of a 4-point function, we know that conformal blocks diverge in the limit $\beta^2\to \frac{q}{p}\in\mathbb{Q}$, but we expect that the divergences cancel so that the 4-point function converges. When a linear combination of divergent blocks $\mathcal{G} = \sum_k D_k \mathcal{G}_k$ has a convergent sum, the interpretation is that the corresponding modules of the conformal algebra combine into a bigger indecomposable module in the limit. Such phenomenons also occur in CFTs with 2 degenerate fields, in particular in the limit GMM\,$\to$\,AMM of Section \ref{sec:lod}. 
 
 \subsubsection{Global symmetries in $d=2$ and $d>2$}
 
