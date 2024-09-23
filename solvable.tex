@@ -846,26 +846,34 @@ In particular, for any $L\in\mathcal{L}$ we can compute the ratio
  \label{gl}
 \end{align}
 which depends on $\Delta_1,\Delta_2,\Delta_3$ but not on the central charge. For example, 
+\begin{subequations}
+\label{gll}
 \begin{align}
  g^{L_{-1}}_{\Delta_1,\Delta_2,\Delta_3}&= \Delta_1-\Delta_2+\Delta_3 \quad , \quad g^{L_{-2}}_{\Delta_1,\Delta_2,\Delta_3}= \Delta_1-\Delta_2+2\Delta_3 \ , 
- \label{gl12}
  \\
  g^{L_{-1}^2}_{\Delta_1,\Delta_2,\Delta_3}&= \left(\Delta_1-\Delta_2+\Delta_3\right)\left(\Delta_1-\Delta_2+\Delta_3+1\right) \ .
- \label{gl11}
 \end{align}
-Let us show that these ratios are related to the universal OPE coefficients $f^{\Delta, L}_{\Delta_1,\Delta_2}$ \eqref{prope}. In principle, this is straightforward: we only have to use an OPE for reducing 3-point functions to 2-point functions. In practice, the presence of a field at $\infty$ forces us to choose a local coordinate near $z=\infty$. We choose the local coordinate $y=\frac{1}{z}$, which will lead to simpler results. In the 3-point function $\left< L'V_\Delta(0)V_{\Delta_2}(\infty)V_{\Delta_1}(1)\right>\propto g^{L'}_{\Delta,\Delta_2,\Delta_1}$, we write the OPE $V_{\Delta_1}(1)V_{\Delta_2}(\infty)$ as a linear combination of descendant fields $LV_{\Delta}(\infty) = L^{(\infty|0)}V_{\Delta}(\infty)$. This is a series in powers of $y_1-y_2=1$, which may seem large until we remember that the field $L'V_{\Delta}(0)$ is infinitely far away at $y=\infty$. We obtain
+\end{subequations}
+Let us show that these ratios are related to the universal OPE coefficients $f^{\Delta, L}_{\Delta_1,\Delta_2}$ \eqref{prope}. In principle, this is straightforward: we only have to use an OPE for reducing 3-point functions to 2-point functions. In practice, the presence of a field at $\infty$ forces us to choose a local coordinate near $z=\infty$. We choose the local coordinate $y=\frac{1}{z}$, which will lead to simpler results. In the 3-point function $\left< L'V_\Delta(0)V_{\Delta_2}(\infty)V_{\Delta_1}(1)\right>\propto g^{L'}_{\Delta,\Delta_2,\Delta_1}$, we write the OPE $V_{\Delta_1}(1)V_{\Delta_2}(\infty)$ as a linear combination of descendant fields $LV_{\Delta}(\infty) = L^{(\infty|0)}V_{\Delta}(\infty)$. This is a series in powers of $y_1-y_2=1$, which may seem large until we remember that the field $L'V_{\Delta}(0)$ is infinitely far away at $y=\infty$. 
+Assuming for simplicity $\left<V_\Delta(0) V_\Delta(\infty) \right>=1$, 
+we obtain
 \begin{align}
- g^{L'}_{\Delta,\Delta_2,\Delta_1}= \sum_{L\in\mathcal{L}} f^{\Delta,L}_{\Delta_1,\Delta_2} \frac{\left<L'V_\Delta(0) LV_\Delta(\infty) \right>}{\left<V_\Delta(0) V_\Delta(\infty) \right>} \ .
+ g^{L'}_{\Delta,\Delta_2,\Delta_1}= \sum_{L\in\mathcal{L}} f^{\Delta,L}_{\Delta_1,\Delta_2} \Big<L'V_\Delta(0) LV_\Delta(\infty) \Big> \ .
  \label{gfr}
 \end{align}
 By the definition \eqref{lnia} of descendant fields at $\infty$, the 2-point function may be rewritten as 
 \begin{align}
- \Big<L'V_\Delta(0) LV_\Delta(\infty) \Big> =  \Big<L^*L'V_\Delta(0) V_\Delta(\infty) \Big>\ ,
+ S_{L,L'}(\Delta)  = \Big<L'V_\Delta(0) LV_\Delta(\infty) \Big> =  \Big<L^*L'V_\Delta(0) V_\Delta(\infty) \Big> \ , 
+ \end{align}
+where we define $L^*_n = L_{-n}$ and $\left(L_mL_n\right)^* = L_{-n}L_{-m}$. This 2-point function vanishes if $|L|>|L'|$ because $V_\Delta$ is primary, and also if $|L|<|L'|$ because one field is at $\infty$. The symmetric bilinear form $(V,V')\mapsto \left<V'(0)V(\infty)\right>$ is called the \myindex{Shapovalov form}\index{Shapovalov form} on the Verma module $\mathcal{V}_\Delta$. Its  coefficients $S_{L,L'}(\Delta)$ depend on the central charge, vanish unless $|L|=|L'|$, and are such that $L^*L'V_\Delta = S_{L,L'}(\Delta) V_\Delta$. We finally obtain the relation 
+\begin{align}
+ g^{L'}_{\Delta,\Delta_2,\Delta_1}= \sum_{|L|=|L'|} f^{\Delta,L}_{\Delta_1,\Delta_2}S_{L,L'}(\Delta)\ . 
+ \label{gfs}
 \end{align}
-where we define $L^*_n = L_{-n}$ and $\left(L_mL_n\right)^* = L_{-n}L_{-m}$. This 2-point function vanishes if $|L|>|L'|$ because $V_\Delta$ is primary, and also if $|L|<|L'|$ because one field is at $\infty$. Therefore, the only nonzero contributions in Eq. \eqref{gfr} are for $|L|=|L'|$, a result we have anticipated when writing the denominator. 
+At level 2, this relation is visible in Eq. \eqref{fl112} and Eqs. \eqref{gll} for $f^L$ and $g^L$ respectively. 
 
 
-interpretation as Hermitian scalar product ... $L_0$ Hamiltonian ... unitarity ... need $c$ real ... not needed we only use descendants i.e. negative modes. 
+Basis for Hermitian scalar product ... $L_0$ Hamiltonian ... unitarity ... need $c$ real ... not needed we only use descendants i.e. negative modes. 
 
 
 % NB: to be continued
@@ -975,7 +983,7 @@ where we introduce the $s$-\myindex{channel spectrum}\index{spectrum!channel---}
  \mathcal{F}_{\Delta}^{(s)}\left(c\middle|\Delta_1,\Delta_2,\Delta_3,\Delta_4\middle|z\right) = z^{\Delta-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} z^{|L|} f_{\Delta_1,\Delta_2}^{\Delta,L}g^L_{\Delta,\Delta_3,\Delta_4}\equiv z^{\Delta-\Delta_1-\Delta_2}\sum_{N=1}^\infty f_N(\Delta)z^N \ ,
  \label{fsl}
 \end{align}
-where the first few coefficients may be assembled from Eqs. \eqref{fl1}, \eqref{fl112}, \eqref{gl12}, \eqref{gl11}:
+where the first few coefficients may be assembled from Eqs. \eqref{fl1}, \eqref{fl112}, \eqref{gll}:
 \begin{align}
 & f_0(\Delta) = 1 \quad , \quad f_1(\Delta) = \frac{(\Delta+\Delta_1-\Delta_2)(\Delta+\Delta_4-\Delta_3)}{2\Delta} \ ,
 \\
