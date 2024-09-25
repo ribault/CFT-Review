@@ -864,19 +864,17 @@ we obtain
 By the definition \eqref{lnia} of descendant fields at $\infty$, the 2-point function may be rewritten as 
 \begin{align}
  S_{L,L'}(\Delta)  = \Big<L'V_\Delta(0) LV_\Delta(\infty) \Big> =  \Big<L^*L'V_\Delta(0) V_\Delta(\infty) \Big> \ , 
+ \label{sll}
  \end{align}
-where we define $L^*_n = L_{-n}$ and $\left(L_mL_n\right)^* = L_{-n}L_{-m}$. This 2-point function vanishes if $|L|>|L'|$ because $V_\Delta$ is primary, and also if $|L|<|L'|$ because one field is at $\infty$. The symmetric bilinear form $(V,V')\mapsto \left<V'(0)V(\infty)\right>$ is called the \myindex{Shapovalov form}\index{Shapovalov form} on the Verma module $\mathcal{V}_\Delta$. Its  coefficients $S_{L,L'}(\Delta)$ depend on the central charge, vanish unless $|L|=|L'|$, and are such that $L^*L'V_\Delta = S_{L,L'}(\Delta) V_\Delta$. We finally obtain the relation 
+where we define the involution $L\mapsto L^*$ by $L^*_n = L_{-n}$ and $\left(LL'\right)^* = L'^*L^*$. This 2-point function vanishes if $|L|>|L'|$ because $V_\Delta$ is primary, and also if $|L|<|L'|$ because one field is at $\infty$. The symmetric bilinear form $(V,V')\mapsto \left<V'(0)V(\infty)\right>$ is called the \myindex{Shapovalov form}\index{Shapovalov form} on the Verma module $\mathcal{V}_\Delta$. Its  coefficients $S_{L,L'}(\Delta)$ depend on the central charge, vanish unless $|L|=|L'|$, and obey $|L|=|L'|\implies L^*L'V_\Delta = S_{L,L'}(\Delta) V_\Delta$. We finally obtain the relation 
 \begin{align}
- g^{L'}_{\Delta,\Delta_2,\Delta_1}= \sum_{|L|=|L'|} f^{\Delta,L}_{\Delta_1,\Delta_2}S_{L,L'}(\Delta)\ . 
+ g^{L'}_{\Delta,\Delta_2,\Delta_1}= \sum_{\substack{L\in\mathcal{L}\\ |L|=|L'|}} f^{\Delta,L}_{\Delta_1,\Delta_2}S_{L,L'}(\Delta)\ . 
  \label{gfs}
 \end{align}
 At level 2, this relation is visible in Eq. \eqref{fl112} and Eqs. \eqref{gll} for $f^L$ and $g^L$ respectively. 
 
+If $c\in\mathbb{R}$, we can extend the involution $L\mapsto L^*$ on $\mathcal{L}$ to an antilinear involution on the Virasoro algebra by assuming $(\lambda L)^* = \bar\lambda L^*$. This gives rise to a Hermitian form on $\mathcal{V}_\Delta$, whose matrix is again $S_{L,L'}(\Delta)$. The Verma module is called \myindex{unitary}\index{Verma module!unitary---} if that Hermitian form is positive definite.
 
-Basis for Hermitian scalar product ... $L_0$ Hamiltonian ... unitarity ... need $c$ real ... not needed we only use descendants i.e. negative modes. 
-
-
-% NB: to be continued
 
 \subsubsection{Single-valuedness and chiral factorization}
 
@@ -970,7 +968,7 @@ Comparing with the 3-point function \eqref{3ptc}, this implies a relation betwee
 \end{align}
 If we now insert the OPE in the four-point function $\left<V_1(z)V_2(0)V_3(\infty)V_4(1)\right>$, we obtain a linear combination of 3-point functions of the type 
 \begin{align}
- \left<L\bar{L}V_k(0) V_3(\infty)V_4(1)\right> = \left|g^L_{\Delta_k,\Delta_3,\Delta_4}\right|^2 \left<V_k(0) V_3(\infty)V_4(1)\right>\ ,
+ \Big<L\bar{L}V_k(0) V_3(\infty)V_4(1)\Big> = \left|g^L_{\Delta_k,\Delta_3,\Delta_4}\right|^2 \Big<V_k(0) V_3(\infty)V_4(1)\Big>\ ,
 \end{align}
 where the action of $L,\bar L\in\mathcal{L}$ gives rise to the factors $g^L$ \eqref{gl}, which are determined by conformal symmetry. 
 This allows us to write our 4-point function as 
@@ -978,12 +976,17 @@ This allows us to write our 4-point function as
  \boxed{\Big<V_1(z)V_2(0)V_3(\infty)V_4(1)\Big> = \sum_{k\in\mathcal{S}^{(s)}} C_{12}^k C_{k34} \left|\mathcal{F}^{(s)}_{\Delta_k}\left(c\middle|\Delta_1,\Delta_2,\Delta_3,\Delta_4\middle|z\right)\right|^2}  \ ,
  \label{sdec}
 \end{align}
-where we introduce the $s$-\myindex{channel spectrum}\index{spectrum!channel---} $\mathcal{S}^{(s)}= \mathcal{S}^{12}\cap \mathcal{S}^{34}$, and the $s$-channel \myindex{Virasoro blocks}\index{block!Virasoro---}, which are known (in principle) functions of $z$ as well as the central charge and conformal dimensions:
+where we introduce the $s$-\myindex{channel spectrum}\index{spectrum!channel---} $\mathcal{S}^{(s)}= \mathcal{S}^{12}\cap \mathcal{S}^{34}$, and the $s$-channel \myindex{Virasoro blocks}\index{block!Virasoro---}, which are known (in principle) functions of $z$ as well as the central charge and conformal dimensions, of the type
 \begin{align}
- \mathcal{F}_{\Delta}^{(s)}\left(c\middle|\Delta_1,\Delta_2,\Delta_3,\Delta_4\middle|z\right) = z^{\Delta-\Delta_1-\Delta_2}\sum_{L\in\mathcal{L}} z^{|L|} f_{\Delta_1,\Delta_2}^{\Delta,L}g^L_{\Delta,\Delta_3,\Delta_4}\equiv z^{\Delta-\Delta_1-\Delta_2}\sum_{N=1}^\infty f_N(\Delta)z^N \ ,
+ \mathcal{F}_{\Delta}^{(s)}\left(c\middle|\Delta_1,\Delta_2,\Delta_3,\Delta_4\middle|z\right) =  z^{\Delta-\Delta_1-\Delta_2}\sum_{N=1}^\infty f_N(\Delta)z^N \ .
  \label{fsl}
 \end{align}
-where the first few coefficients may be assembled from Eqs. \eqref{fl1}, \eqref{fl112}, \eqref{gll}:
+The OPE that we have taken leads to coefficients $f_N(\Delta)$ that are combinations of $f^L$ and $g^L$. Using the relation \eqref{gfs}, these coefficients can be rewritten more symmetrically in terms of $g^L$ alone, at the price of introducing the inverse Shapovalov form:
+\begin{align}
+ f_N(\Delta) = \sum_{\substack{L\in\mathcal{L} \\ |L|=N}} f_{\Delta_1,\Delta_2}^{\Delta,L}g^L_{\Delta,\Delta_3,\Delta_4} = \sum_{\substack{L,L'\in\mathcal{L} \\ |L|=|L'|=N}} g^{L'}_{\Delta,\Delta_2,\Delta_1} S_{L,L'}^{-1}(\Delta) g^L_{\Delta,\Delta_3,\Delta_4} \ ,
+ \label{fnd}
+\end{align}
+The first few coefficients may be assembled from Eqs. \eqref{fl1}, \eqref{fl112}, \eqref{gll}:
 \begin{align}
 & f_0(\Delta) = 1 \quad , \quad f_1(\Delta) = \frac{(\Delta+\Delta_1-\Delta_2)(\Delta+\Delta_4-\Delta_3)}{2\Delta} \ ,
 \\
@@ -1602,7 +1605,7 @@ The fusion rules of D-series and fermionic minimal models are obtained by combin
 \end{align}
 The D-series minimal model is a subtheory of its fermionic extension, i.e. its spectrum is closed under fusion. Curiously, the diagonal field $V^f_{\langle \frac{p}{2}, s\rangle}$ has the same conformal dimensions as the non-diagonal field $V_{(0,s-\frac{q}{2})}$: this an instance of a nontrivial \myindex{field multiplicity}\index{field!---multiplicity}. However, these two fields have different OPEs. 
 
-For example, let us compare the diagonal and non-diagonal minimal models AMM$_{6,5}$ and DMM$_{6,5}$, which both have $c= \frac45$, and describe some observables of the tetracritical Ising model and of the critical 3-state Potts model respectively. The Virasoro representations that appear in the spectrums of both models belong to the Kac table $K_{6,5}$. Each entry in the table correspond to a primary field of AMM$_{6,5}$. Since $p=6\equiv 2\bmod 4$, both sectors of DMM$_{6,5}$ are built from representations $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}+!$. We indicate this in the Kac table by having the $r\in 2\mathbb{N}+!$ columns both boxed (for the diagonal sector) and highlighted (for the non-diagonal sector):
+For example, let us compare the diagonal and non-diagonal minimal models AMM$_{6,5}$ and DMM$_{6,5}$, which both have $c= \frac45$, and describe some observables of the tetracritical Ising model and of the critical 3-state Potts model respectively. The Virasoro representations that appear in the spectrums of both models belong to the Kac table $K_{6,5}$. Each entry in the table correspond to a primary field of AMM$_{6,5}$. Since $p=6\equiv 2\bmod 4$, both sectors of DMM$_{6,5}$ are built from representations $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}+1$. We indicate this in the Kac table by having the $r\in 2\mathbb{N}+1$ columns both boxed (for the diagonal sector) and highlighted (for the non-diagonal sector):
 \begin{align}
 \text{AMM}_{6,5}\ \&\ \text{DMM}_{6,5} \ : \qquad 
  \begin{tikzpicture}[baseline=(current  bounding  box.center)]
@@ -2701,21 +2704,23 @@ where the coefficient $R_{r,s}$ is called a \myindex{Virasoro block residue}\ind
 \boxed{R_{r,s} = \frac{c^{r,s}(P_1,P_2)c^{r,s}(P_3,P_4)}{b^{r,s}}}\ , 
  \label{rrs}
 \end{align}
-where we will derive the explicit expressions \eqref{crs} and \eqref{brs} for $c^{r,s}$ and $b^{r,s}$.
-For the moment, let us define these quantities: they are combinations of correlation functions of descendant states, 
+with the quantities 
 \begin{align}
- c^{r,s}(P_1,P_2) = g^{L_{\langle r,s\rangle}}_{\Delta_{(r,s)},\Delta_1,\Delta_2} \quad , \quad b^{r,s} =\left.\frac{\partial}{\partial \Delta} \frac{\left<L_{\langle r,s\rangle} V_\Delta L_{\langle r,s\rangle} V_\Delta \right>}{\left<V_\Delta V_\Delta\right>}\right|_{\Delta=\Delta_{(r,s)}}\ . 
+ c^{r,s}(P_1,P_2) = g^{L_{\langle r,s\rangle}}_{\Delta_{(r,s)},\Delta_1,\Delta_2} \quad , \quad b^{r,s} =
+ S'_{L_{(r,s)},L_{(r,s)}}(\Delta_{(r,s)})\ .
 \end{align}
-Here $g^L$ was defined in Eq. \eqref{gl}, and we recall from Section \ref{sec:nvvm} that $L_{\langle r,s\rangle}$ is the creation operator such that $V_{\Delta_{(r,-s)}}\propto L_{\langle r,s\rangle}V_{\Delta_{(r,s)}}$ is the null vector of the reducible Verma module $\mathcal{V}_{\Delta_{(r,s)}}$. 
-
-To derive Eq. \eqref{resf} from the expression \eqref{fsl} of a conformal block, 
-
-Now, since $\Delta_{(1,1)}=0$, $c^{r,s}(P_{(1,1)},P)$ is in fact a ratio of 2-point functions, which can be used for writing 
+These quantities emerge from the coefficient $f_{rs}(\Delta)$ \eqref{fnd} of the Virasoro block at level $rs$. 
+Recall from Section \ref{sec:nvvm} that $L_{\langle r,s\rangle}$ is the creation operator such that $V_{\Delta_{(r,-s)}}\propto L_{\langle r,s\rangle}V_{\Delta_{(r,s)}}$ is the null vector of the reducible Verma module $\mathcal{V}_{\Delta_{(r,s)}}$. 
+Then $g^{L_{\langle r,s\rangle}}_{\Delta_{(r,s)},\Delta_1,\Delta_2}$ \eqref{gl} is finite, while $S_{L_{(r,s)},L}(\Delta)=S_{L,L_{(r,s)}}(\Delta)$ \eqref{sll} has a simple zero at $\Delta\to \Delta_{(r,s)}$ for any fixed $L$. It follows that $f_{rs}(\Delta)$ is dominated by the term $L=L'=L_{(r,s)}$, and $\operatorname{Res}_{\Delta=\Delta_{(r,s)}} S_{L_{(r,s)},L_{(r,s)}}^{-1}(\Delta) = \frac{1}{S'_{L_{(r,s)},L_{(r,s)}}(\Delta_{(r,s)})}$ does not depend on how we continue $L_{(r,s)}$ beyond $\Delta=\Delta_{(r,s)}$. Using the definition of the Shapovalov form as a 2-point function, we write
 \begin{align}
- b^{r,s} = c^{r,s}\left(P_{(1,1)}, P_{(r,-s)}\right)  \frac{1}{2P_{(r,s)}}\left.\frac{\partial}{\partial P} c^{r,s}\left(P,P_{(1,1)}\right)\right|_{P=P_{(r,s)}}\ . 
+ S_{L_{(r,s)},L_{(r,s)}}(\Delta) = \frac{ \left<L_{(r,s)}V_P(0)L_{(r,s)}V_P(\infty)\right>}{\left<V_P(0)L_{(r,s)}V_P(\infty)\right>} \Big<V_P(0)L_{(r,s)}V_P(\infty)\Big> \ . 
+\end{align}
+The first factor has a finite value at $P=P_{(r,s)}$, which coincides with $c^{r,s}(P_{(r,-s)},P_{(1,1)})$, because $P_{(1,1)}$ is the momentum of the identity field. The second factor has a simple zero, and behaves like $(-)^{rs} c^{r,s}(P, P_{(1,1)})$, where the sign prefactor comes from exchanging the positions of the two fields. As a result, we find an expression for $b^{r,s}$ in terms of $c^{r,s}$:
+\begin{align}
+ b^{r,s} = (-)^{rs} c^{r,s}\left(P_{(r,-s)},P_{(1,1)}\right)  \frac{1}{2P_{(r,s)}}\left.\frac{\partial}{\partial P} c^{r,s}\left(P,P_{(1,1)}\right)\right|_{P=P_{(r,s)}}\ . 
  \label{bcdc}
 \end{align}
-This reduces the problem to determining $c^{r,s}$. To do this, let us find how $c^{r,s}$ behaves under $r\to r+1$ from the fusion transformation \eqref{fsfft} of degenerate 4-point conformal blocks. The idea is to compare the fusion transformations for 4-point functions of the types $\left<V^d_{\langle 2,1\rangle}V_{P_{(r,-s)}}V_{P_1}V_{P_2}\right>$ and $\left<V^d_{\langle 2,1\rangle}V_{P_{(r,s)}}V_{P_1}V_{P_2}\right>$. More precisely, let us compare the coefficients $F_{++}$ and $\widetilde{F}_{++}$ that relate the following conformal blocks:
+To determine $c^{r,s}$, let us deduce how it behaves under $r\to r+1$ from the fusion transformation \eqref{fsfft} of degenerate 4-point conformal blocks. The idea is to compare the fusion transformations for 4-point functions of the types $\left<V^d_{\langle 2,1\rangle}V_{P_{(r,-s)}}V_{P_1}V_{P_2}\right>$ and $\left<V^d_{\langle 2,1\rangle}V_{P_{(r,s)}}V_{P_1}V_{P_2}\right>$. More precisely, let us compare the coefficients $F_{++}$ and $\widetilde{F}_{++}$ that relate the following conformal blocks:
 \begin{align}
   \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
 \draw (-1,2) node [left] {$P_{(r,-s)}$} -- (0,0) -- node [above] {$P_{(r+1,-s)}$} (4,0) -- (5,2) node [right] {$P_1$};
