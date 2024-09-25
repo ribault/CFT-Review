@@ -251,7 +251,6 @@ The corresponding Lie group is the group of \myindex{global conformal transforma
  \label{abcd}
 \end{align}
 Now, in a quantum theory, symmetries act projectively on states. And projective representations of an algebra are equivalent to representations of that algebra's central extension. 
-% MD: elaborate?
 Therefore, the algebra that describes local conformal transformations in conformal field theory is the Witt algebra's central extension, called the Virasoro algebra. The \myindex{Virasoro algebra}\index{Virasoro algebra} $\mathfrak{V}$ has generators $(L_n)_{n\in\mathbb{Z}}$ that correspond to the Witt algebra generators, plus a central generator $\mathbf 1$. The commutation relations are 
  \begin{align}
   [\mathbf 1, L_n] = 0 \quad , \quad \boxed{[L_n,L_m] = (n-m)L_{n+m} +\frac{c}{12}(n-1)n(n+1)\delta_{n+m,0}\mathbf 1} \ .
@@ -329,13 +328,14 @@ Therefore, $\mathcal{V}_\Delta$ has a null vector at level $1$ if and only if $\
  X{} = \left(a^{L_{-1}^2} L_{-1}^2 + a^{L_{-2}} L_{-2}\right) V_\Delta\ ,
 \end{align}
 where $a^{L_{-1}^2}$ and $a^{L_{-2}}$ are complex coefficients. It is easy to show that $L_{n\geq 3}X{}=0$, and we compute 
+\begin{subequations}
+\label{l1x}
 \begin{align}
  L_1X{} &= \left((4\Delta+2)a^{L_{-1}^2} + 3a^{L_{-2}}\right) L_{-1}V_\Delta\ ,
- \label{l1c}
 \\
 L_2 X{} &= \left(6\Delta a^{L_{-1}^2}+(4\Delta+\tfrac12 c) a^{L_{-2}}\right)V_\Delta\ .
-\label{l2c}
 \end{align}
+\end{subequations}
 Therefore, the conditions $L_1X{}=L_2 X{}=0$ for $X{}$ to be a null vector boil down to a system of two linear equations for the coefficients $(a^{L_{-1}^2},a^{L_{-2}})$. The vanishing of that system's determinant determines the conformal dimension $\Delta$ as a function of the central charge $c$,
 \begin{align}
  \Delta = \frac{1}{16}\left( 5-c\pm\sqrt{(c-1)(c-25)} \right) \ .
@@ -632,14 +632,15 @@ This determines $f^{L_{-1}}$, except if $\Delta=0$, i.e. if there is a null vect
  \label{fl1}
 \end{align}
 Similarly, the level two coefficients $f^{L_{-1}^2},f^{L_{-2}}$ are determined by the case $N=2$ with $n=1,2$. For $W = \left(f^{L_{-1}^2}L_{-1}^2 + f^{L_{-2}}L_{-2}\right) V_\Delta$, these equations read 
+\begin{subequations}
+\label{l1w}
 \begin{align}
  (\Delta+1+\Delta_1-\Delta_2)f^{L_{-1}}L_{-1}V_\Delta  &= L_1W\ ,
- \label{el1c}
  \\
  (\Delta+2\Delta_1-\Delta_2)V_\Delta  &=L_2W \ .
- \label{el2c}
 \end{align}
-This leads to a system of linear equations for $f^{L_{-1}^2},f^{L_{-2}}$, whose homogeneous part is the condition that $W$ be a null vector \eqref{l1c}, \eqref{l2c}. Therefore, the determinant vanishes if and only if $\Delta\in \left\{\Delta_{(2,1)},\Delta_{(1,2)}\right\}$. Otherwise, the unique solution is
+\end{subequations}
+This leads to a system of linear equations for $f^{L_{-1}^2},f^{L_{-2}}$, whose homogeneous part is the condition that $W$ be a null vector \eqref{l1x}. Therefore, the determinant vanishes if and only if $\Delta\in \left\{\Delta_{(2,1)},\Delta_{(1,2)}\right\}$. Otherwise, the unique solution is
 \begin{align}
  \left[\begin{smallmatrix}
  f^{L_{-1}^2} \\ f^{L_{-2}} 
@@ -687,15 +688,18 @@ the \myindex{fusion product}\index{fusion!---product} of representations of the 
 where $\text{Hom}(\mathcal{R},\mathcal{R}')$ is the space of linear maps from $\mathcal{R}$ to $\mathcal{R}'$ that commute with the action of the Virasoro algebra. 
 The fusion product can be algebraically defined \cite{gab99}. It differs from the tensor product, in particular its definition involves the fields' positions, although the resulting product does not. Just like OPEs, the fusion product is commutative and associative. Moreover, as we just saw in the case of Verma modules, we have an isomorphism
 \begin{align}
- \text{Hom}\left(\mathcal{R},\mathcal{R}'\right) \simeq \text{Hom}\left(\mathcal{R}\times\mathcal{R}',\mathcal{R}^d_{\langle 1,1\rangle}\right)\ . 
+ \text{Hom}\left(\mathcal{R},\mathcal{R}'\right) \simeq \text{Hom}\left(\mathcal{R}\times\mathcal{R}',\mathcal{R}^d_{\langle 1,1\rangle}\right)\ ,
+\end{align}
+which together with associativity implies 
+\begin{align}
+ \text{Hom}\left(\mathcal{R}\times\mathcal{R}',\mathcal{R}''\right) \simeq \text{Hom}\left(\mathcal{R}'\times\mathcal{R}'',\mathcal{R}\right)\ .
  \label{hrr}
 \end{align}
 Given 3 representations $\mathcal{R},\mathcal{R}',\mathcal{R}''$, the number $\dim \text{Hom}\left(\mathcal{R}\times\mathcal{R}',\mathcal{R}''\right) \in \mathbb{N}$ is called the \myindex{fusion multiplicity}\index{fusion!---multiplicity} of $\mathcal{R}''$ in the fusion product $\mathcal{R}\times\mathcal{R}'$. A fusion multiplicity is called nontrivial if it is $\geq 2$. 
 
 \subsubsection{Fusion products of degenerate representations}
 
-% MD: clarify
-Thanks to the isomorphism \eqref{hrr}, we can find the fusion rules of $V^d_{\langle 2,1\rangle}$ by studying whether it may appear in an OPE $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$. This amounts to finding whether the two-dimensional linear system \eqref{el1c}, \eqref{el2c} has a solution, even though it is of rank one. With the help of Eq. \eqref{l1c}, \eqref{l2c}, this condition boils down to 
+According to the isomorphism \eqref{hrr}, $V^d_{\langle 2,1\rangle} V_{\Delta_1} \ni V_{\Delta_2} \iff V_{\Delta_1}V_{\Delta_2} \ni V^d_{\langle 2,1\rangle} \iff $ the two-dimensional linear system \eqref{l1w} with $\Delta=\Delta_{(2,1)}$ has a solution, even though it is of rank one. With the help of Eq. \eqref{l1x}, this condition boils down to 
 \begin{align}
  \left(4\Delta_{\langle 2,1\rangle}+2\right) \left(\Delta_{\langle 2,1\rangle}+¨2\Delta_1-\Delta_2\right) = 3\left(\Delta_{\langle 2,1\rangle}+\Delta_1-\Delta_2\right)\left(\Delta_{\langle 2,1\rangle}+1+\Delta_1-\Delta_2\right)\ .
 \end{align}
@@ -792,20 +796,22 @@ Equivalently, the behaviour of $Z$ under global conformal transformations \eqref
  = \prod_{i=1}^N (cz_i +d)^{2\Delta_i} \left< \prod_{i=1}^N V_{\Delta_i}(z_i) \right>\ .
  \label{zgc}
 \end{align}
-The global Ward identities are valid not only for primary fields, but also for quasi-primary fields: $L_0$-eigenvectors that are annihilated by $L_1$ but not necessarily by $L_{n\geq 2}$. According to the OPE $T(y)T(z)$ \eqref{tt}, the energy-momentum tensor is a quasi-primary field of dimension $\Delta=2$, and the resulting behaviour at infinity \eqref{vdi} is consistent with our assumption \eqref{tinf}. 
+The global Ward identities are valid not only for primary fields, but also for quasi-primary fields: $L_0$-eigenvectors that are annihilated by $L_1$ but not necessarily by $L_{n\geq 2}$. According to the OPE $T(y)T(z)$ \eqref{tt}, the energy-momentum tensor is a quasi-primary field of dimension $\Delta=2$, and the resulting behaviour at $\infty$ \eqref{vdi} is consistent with our assumption \eqref{tinf}. 
 
 In particular, applying Eq. \eqref{zgc} to the transformation $z\mapsto \frac{1}{z}$, we find $V_\Delta(z)\underset{z\to\infty}{=} O(z^{-2\Delta})$, which allows us to define 
 \begin{align}
  V_\Delta(\infty) = \lim_{z\to\infty} z^{2\Delta}V_\Delta(z)\ . 
  \label{vdi}
 \end{align}
-We may define descendants of a field $V_\Delta(\infty)$, using a transformation of the type $z\mapsto \frac{1}{z-a}$, applied to correlation functions that involve $T$ and $V_\Delta$. 
+Assuming the correlation function in Eq. \eqref{zgc} involves $T=V_{\Delta=2}$, we also deduce a definition of descendant fields at $\infty$, 
 \begin{align}
- L_n^{(\infty|a)} V_\Delta(\infty) = \frac{1}{2\pi i} \oint_\infty dy\ (y-a)^{1-n} T(y)V_\Delta(\infty)\ .
+ L_n V_\Delta(\infty) = \frac{1}{2\pi i} \oint_\infty dy\ y^{1-n} T(y)V_\Delta(\infty)\ .
  \label{lnia}
 \end{align}
-(Compare with $L_n^{(z)}V_\Delta(z)$ \eqref{lvtv}.) 
-We interpret the dependence on $a\in\mathbb{C}$ as coming from our choice of the \myindex{local coordinate}\index{local coordinate} $\frac{1}{z-a}$ near $z=\infty$. There is indeed a canonical local coordinate near any point $z\in\mathbb{C}$, but not near $z=\infty$. In fact, we would also need local coordinates for dealing with more general geometries and local conformal transformations, see \cite[Section 6.2]{br21}. 
+(Compare with $L_nV_\Delta(z)$ \eqref{lvtv}.) 
+However, we could in fact use the transformation $z\mapsto \frac{1}{z-a}$ for any $a\in\mathbb{C}$, and obtain an $a$-dependent definition $ \frac{1}{2\pi i} \oint_\infty dy\ (y-a)^{1-n} T(y)V_\Delta(\infty)$. 
+We interpret $\frac{1}{z-a}$ as a \myindex{local coordinate}\index{local coordinate} near $z=\infty$. Correlation functions on general Riemann surfaces depend on choices of local coordinates, see \cite[Section 6.2]{br21}. In the case of the Riemann sphere, there is 
+a canonical local coordinate near any point $z\in\mathbb{C}$, but not near $z=\infty$. So we chose the local coordinate $\frac{1}{z}$ near $z=\infty$. 
 
 Let us solve the global Ward identities in the cases $N=1,2,3,4$. We have $3$ linear differential equations in the $N$ variables $z_i$, and we write their solutions up to $z_i$-independent prefactors:
 \begin{itemize}
@@ -854,7 +860,7 @@ which depends on $\Delta_1,\Delta_2,\Delta_3$ but not on the central charge. For
  g^{L_{-1}^2}_{\Delta_1,\Delta_2,\Delta_3}&= \left(\Delta_1-\Delta_2+\Delta_3\right)\left(\Delta_1-\Delta_2+\Delta_3+1\right) \ .
 \end{align}
 \end{subequations}
-Let us show that these ratios are related to the universal OPE coefficients $f^{\Delta, L}_{\Delta_1,\Delta_2}$ \eqref{prope}. In principle, this is straightforward: we only have to use an OPE for reducing 3-point functions to 2-point functions. In practice, the presence of a field at $\infty$ forces us to choose a local coordinate near $z=\infty$. We choose the local coordinate $y=\frac{1}{z}$, which will lead to simpler results. In the 3-point function $\left< L'V_\Delta(0)V_{\Delta_2}(\infty)V_{\Delta_1}(1)\right>\propto g^{L'}_{\Delta,\Delta_2,\Delta_1}$, we write the OPE $V_{\Delta_1}(1)V_{\Delta_2}(\infty)$ as a linear combination of descendant fields $LV_{\Delta}(\infty) = L^{(\infty|0)}V_{\Delta}(\infty)$. This is a series in powers of $y_1-y_2=1$, which may seem large until we remember that the field $L'V_{\Delta}(0)$ is infinitely far away at $y=\infty$. 
+Let us show that these ratios are related to the universal OPE coefficients $f^{\Delta, L}_{\Delta_1,\Delta_2}$ \eqref{prope}. In the 3-point function $\left< L'V_\Delta(0)V_{\Delta_2}(\infty)V_{\Delta_1}(1)\right>\propto g^{L'}_{\Delta,\Delta_2,\Delta_1}$, we write the OPE $V_{\Delta_1}(1)V_{\Delta_2}(\infty)$ as a linear combination of descendant fields $LV_{\Delta}(\infty)$. Since our local coordinate near $\infty$ is $y=\frac{1}{z}$, we obtain a series in powers of $y_1-y_2=1$, which may seem large until we remember that the field $L'V_{\Delta}(0)$ is infinitely far away at $y=\infty$. 
 Assuming for simplicity $\left<V_\Delta(0) V_\Delta(\infty) \right>=1$, 
 we obtain
 \begin{align}
@@ -1484,7 +1490,7 @@ The Kac table becomes infinite, which suggests
  \lim_{\substack{\frac{q}{p}\to \beta_0^2\\ r,s\text{ fixed}}} \text{AMM}_{p,q} = \text{GMM}\ . 
  \label{mm-gmm}
 \end{align}
-Since we obtain arbitrary degenerate fields $V^d_{\langle r,s\rangle}$ in the limit, it is also possible to send the indices $r,s$ to infinity, and therefore to send the momentums $P_{(r,s)}$ to arbitrary values $P\in\mathbb{R}$, just as in Eq. \eqref{vplim}. Therefore, Liouville theory with $c\leq 1$ is not only a limit of generalized minimal models, but also a limit of minimal models:
+Since we obtain arbitrary degenerate fields $V^d_{\langle r,s\rangle}$ in the limit, it is also possible to send the indices $r,s$ to $\infty$, and therefore to send the momentums $P_{(r,s)}$ to arbitrary values $P\in\mathbb{R}$, just as in Eq. \eqref{vplim}. Therefore, Liouville theory with $c\leq 1$ is not only a limit of generalized minimal models, but also a limit of minimal models:
 \begin{align}
  \lim_{\substack{\frac{q}{p}\to \beta_0^2\\ P_{(r,s)}\to P}} \text{AMM}_{p,q} = \text{Liouville}\ . 
  \label{mm-liou}
@@ -2686,7 +2692,7 @@ in which case the degenerate interchiral block is
 
 In order to solve crossing symmetry equations numerically, we need an efficient way to compute Virasoro blocks. It is possible to compute Virasoro blocks from their definition \eqref{sdec}, but this is awfully inefficient. We will now review the more efficient recursive representation due to Alexey Zamolodchikov \cite{zam87b}, in the case of 4-point $s$-channel blocks on the sphere. The $t$-channel and $u$-channel blocks can then be deduced using Eq. \eqref{stotu}. For $N$-point blocks on arbitrary Riemann surfaces, see \cite{ccy17}.
 
-The idea of the recursive representation is to characterize Virasoro blocks by their analytic properties as functions of the channel dimension, in particular their poles, residues, and behaviour at infinity. 
+The idea of the recursive representation is to characterize Virasoro blocks by their analytic properties as functions of the channel dimension, in particular their poles, residues, and behaviour at $\infty$. 
 
 \subsubsection{Poles and residues}
 
