@@ -10,7 +10,7 @@
 \WarningFilter[pdftoc]{hyperref}{Token not allowed in a PDF string}
 \ActivateWarningFilters[pdftoc]
 
-\usepackage[top=20mm,bottom=20mm,left=25mm,right=25mm]{geometry}
+\usepackage[top=18mm,bottom=18mm,left=25mm,right=25mm]{geometry}
 
 \usepackage{showkeys}
 
@@ -417,7 +417,7 @@ To write $\Delta_{(r, s)}$ for any $r,s\in\mathbb{N}^*$, we rewrite the conforma
  \boxed{\Delta = \frac{c-1}{24} + P^2}\ .
  \label{dp}
 \end{align}
-We can rewrite Verma modules as $\mathcal{V}_P=\mathcal{V}_{-P}$, where the parameter $P$ is redundant due to the invariance under the \myindex{reflection}\index{reflection} $P\to -P$. The dimensions $\Delta_{(r, s)}$ correspond to the momentums 
+We can rewrite Verma modules as $\mathcal{V}_P=\mathcal{V}_{-P}$, where the parameter $P$ is redundant due to the invariance of $\Delta$ under the \myindex{reflection}\index{reflection} $P\to -P$. The dimensions $\Delta_{(r, s)}$ correspond to the momentums 
 \begin{align}
  \boxed{P_{(r, s)} = \frac12\left(r\beta -s\beta^{-1}\right)}\ ,
  \label{prs}
@@ -427,23 +427,23 @@ and it follows that the null vector $L_{\langle r,s\rangle} V_{\Delta_{(r, s)}}$
  \Delta_{(r, s)} + rs = \Delta_{(r, -s)}\ , 
  \label{drms}
 \end{align}
-We will provide a derivation of $P_{(r, s)}$ using operator product expansions in Section \ref{sec:dope}. On the other hand, the expressions of $L_{\langle r,s\rangle} $ for $rs\geq 3$ are complicated and not particularly useful \cite{fms97}.
+We will provide a derivation of $P_{(r, s)}$ using operator product expansions in Section \ref{sec:dope}. On the other hand, the expressions of $L_{\langle r,s\rangle} $ for $rs\geq 3$ are complicated and not particularly useful, see \cite{ken92} or \cite[Appendix 8A]{fms97}.
 
 For $\beta^2\in\mathbb{C}\backslash \mathbb{Q}$, the Verma module $\mathcal{V}_\Delta$ has a null vector if and only if $\Delta=\Delta_{(r, s)}$ for some $r,s\in\mathbb{N}^*$, in which case it has only 1 null vector. For $\beta^2\in\mathbb{Q}$ however, a Verma module can have several null vectors. If $\beta^2 = \frac{q}{p}$ with $p,q$ coprime integers, we indeed have the identity
 \begin{align}
  \Delta_{(r+p,s+q)} = \Delta_{(r,s)}\ ,
  \label{rpsq}
 \end{align}
-which together with $\Delta_{(r,s)}=\Delta_{(-r,-s)}$ implies infinitely many coincidences of the type $\Delta_{(r,s)}=\Delta_{(r_1,s_1)}$ with $r_1,s_1\in\mathbb{Z}$. 
-Whenever $r_1,s_1>0$, the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$ has a null vector $L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. 
-Moreover, using the identity \eqref{rpsq}, the dimension $\Delta_{(r_1,-s_1)}$ \eqref{drms} of that null vector may be rewritten as $\Delta_{\langle r_2,s_2\rangle}$ with $r_2,s_2>0$: in all cases if $pq>0$, in some cases if $pq<0$. Then this leads to another null vector $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. It turns out that all null vectors of Verma modules are of the type $L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$ or $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. In particular,
+which together with $\Delta_{(r,s)}=\Delta_{(-r,-s)}$ implies coincidences of the type $\Delta_{(r,s)}=\Delta_{(r',s')}$ with $r',s'\in\mathbb{Z}$. 
+Given $r_1,s_1\in \mathbb{N}^*$, the reducible Verma module $\mathcal{V}_{\Delta_{(r_1,s_1)}}$ has a null vector $L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. If $pq>0$, or if $pq<0$ with $\left\lfloor \frac{r_1}{|p|}\right\rfloor \neq \left\lfloor \frac{s_1}{|q|}\right\rfloor$ and $\left\lceil \frac{r_1}{|p|}\right\rceil \neq \left\lceil \frac{s_1}{|q|}\right\rceil$, then the dimension $\Delta_{(r_1,-s_1)}$ \eqref{drms} of this null vector is of the type $\Delta_{\langle r_2,s_2\rangle}$ with $r_2,s_2\in\mathbb{N}^*$, leading to another null vector $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. 
+It turns out that all null vectors of Verma modules are of the type $L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$ or $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. In particular, given a null vector of the type $L_{\langle r_3,s_3\rangle}L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r_1,s_1)}}$, 
 \begin{align}
- \exists r_4,s_4\in \mathbb{N}^*\ , \ L_{\langle r_3,s_3\rangle}L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}} = L_{\langle r_4,s_4\rangle} V_{\Delta_{(r,s)}}\ .
+ \exists r_4,s_4\in \mathbb{N}^*\ , \ L_{\langle r_3,s_3\rangle}L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r_1,s_1)}} = L_{\langle r_4,s_4\rangle} V_{\Delta_{(r_4,s_4)}}\ .
  \label{lllel}
 \end{align}
 To see this, let $\epsilon,\eta\in\{+,-\}$ be the signs such that $P_{(-r_1,s_1)}=\epsilon P_{(r_2,s_2)}$ and $P_{(r_2,-s_2)}=\eta P_{(r_3,s_3)}$, and let $r_4=|\epsilon r_1-r_2+\eta r_3|$ and $s_4=|\epsilon s_1+s_2+\eta s_3|$, then $\sum_{i=1}^3 r_is_i=r_4s_4$, i.e. the 2 null vectors in Eq. \eqref{lllel} have the same level. 
 
- Numbers of null vectors depend a lot on the sign of $\beta^2$. If $\beta^2<0$, then $\{\Delta_{(r, s)}\}_{r,s\in\mathbb{N}^*}$ is bounded from above, and Eq. \eqref{drms} implies that a Verma module can only have finitely many null vectors. If $\beta^2>0$, then by Eq. \eqref{rpsq} the existence of a null vector implies the existence of infinitely many others: 
+To summarize, numbers of null vectors depend a lot on $\beta^2$. If $\beta^2<0$, then $\{\Delta_{(r, s)}\}_{r,s\in\mathbb{N}^*}$ is bounded from above, and Eq. \eqref{drms} implies that a Verma module can only have finitely many null vectors. If $\beta^2\in \mathbb{Q}_{>0}$, then by Eq. \eqref{rpsq} the existence of a null vector implies the existence of infinitely many others: 
 \begin{align}
  \begin{array}{|c||c|c|c|}
   \hline 
@@ -493,9 +493,9 @@ $\Delta_{(r,s)}$, together with the vector $(p, q)$ of Eq. \eqref{rpsq} as a red
 \subsubsection{Vanishing and non-vanishing null vectors}
 
 When a representation $\mathcal{R}$ has a null vector $X{}=LV{}$, this allows us to define a quotient representation $\frac{\mathcal{R}}{\mathcal{R}_{X{}}}$ by setting the null vector to zero. 
-By an abuse of terminology, we say that $\frac{\mathcal{R}}{\mathcal{R}_{X{}}}$ has a \myindex{vanishing null vector}\index{null vector!vanishing---}, which really means that the primary state $V{}$ obeys the \myindex{null vector equation}\index{null vector!---equation} $LV{}=0$. On the other hand, $\mathcal{R}$ itself has a non-vanishing null vector $X{}$. 
+By an abuse of terminology, we say that $\frac{\mathcal{R}}{\mathcal{R}_{X{}}}$ has a \myindex{vanishing null vector}\index{null vector!vanishing---}, which really means that its primary state $V{}$ obeys the \myindex{null vector equation}\index{null vector!---equation} $LV{}=0$. On the other hand, $\mathcal{R}$ itself has a non-vanishing null vector $X{}$. 
 
-If $\mathcal{R}$ has several null vectors, we can define various quotient representations by setting some null vectors to zero. A \myindex{degenerate representation}\index{degenerate!---representation} is a representation that has at least 1 vanishing null vector. A degenerate representation is partly degenerate if it has some non-vanishing null vectors, and \myindex{fully degenerate}\index{fully degenerate!---representation} if all null vectors vanish. Partly degenerate representations play an important role in CFTs with extended chiral algebras, such as conformal Toda theories \cite{fl07c}. But most degenerate representations that we will consider will be fully degenerate. 
+If $\mathcal{R}$ has several null vectors, we can define various quotient representations by setting some null vectors to zero. A \myindex{degenerate representation}\index{degenerate!---representation} is a representation that has at least 1 vanishing null vector. A degenerate representation is partly degenerate if it has some non-vanishing null vectors, and \myindex{fully degenerate}\index{fully degenerate!---representation} if all null vectors vanish. Partly degenerate representations play an important role in CFTs with extended chiral algebras, such as conformal Toda theories \cite{fl07c}. 
 
 For $r,s\in\mathbb{N}^*$, let us call $\mathcal{R}^d_{\langle r,s\rangle}$ the quotient of the Verma module $\mathcal{V}_{\Delta_{\langle r,s\rangle}}$ where the null vector $L_{\langle r,s\rangle}V_{\Delta_{(r,s)}}$ vanishes:
 \begin{align}
@@ -513,7 +513,9 @@ $\mathcal{R}^f_{\langle r,s\rangle}$. These states obey the null vector equation
 L_{\langle r, s\rangle} V^d_{\langle r,s\rangle} = L_{\langle r, s\rangle} V^f_{\langle r,s\rangle} = 0\ .
 \label{lvdz}
 \end{align}
-The primary state $V_{\Delta_{(r,s)}}$ has the same dimension as $V^d_{\langle r,s\rangle}$ and $V^f_{\langle r,s\rangle}$, but does not necessarily obey the null vector equation. 
+We use the notation $V_{\Delta_{(r,s)}}$ for a primary state that has the same dimension as $V^d_{\langle r,s\rangle}$ and $V^f_{\langle r,s\rangle}$, but does not necessarily obey the null vector equation. 
+
+\subsubsection{The Shapovalov form}
 
 \subsection{Fields and operator product expansions}\label{sec:fope}
 
