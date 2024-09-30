@@ -517,6 +517,29 @@ We use the notation $V_{\Delta_{(r,s)}}$ for a primary state that has the same d
 
 \subsubsection{The Shapovalov form}
 
+Let us define an involution on the Virasoro algebra by 
+\begin{align}
+ L^*_n = L_{-n} \ . 
+\end{align}
+This involution is a Lie algebra automorphism, as it obeys $[L_m,L_n]^* = -[L_m^*,L_n^*]$. It can be extended to the universal enveloping algebra by $\left(LL'\right)^* = L'^*L^*$. Using this involution, we define the \myindex{Shapovalov form}\index{Shapovalov form} on any highest-weight representation as the symmetric bilinear form such that 
+\begin{align}
+ \big(LV_\Delta\big| L'V_\Delta\big) = \left\{\begin{array}{ll} 0 & \text{if } |L|\neq |L'|\ , 
+                                                \\
+                                              S_{L,L'}(\Delta) & \text{if } |L|=|L'|\ , \quad \text{where} \quad L^*L'V_\Delta = S_{L,L'}(\Delta) V_\Delta\ .  
+                                             \end{array}\right.
+\label{shap}
+\end{align}
+At each level $N\in\mathbb{N}$, the Shapovalov form is described by a matrix that depends on $\Delta$ and $c$. In the cases $N=0,1,2$, these matrices are 
+\begin{align}
+ S_{1,1} = 1 \ \  , \ \   S_{L_{-1},L_{-1}} = 2\Delta \ \  , \ \  \begin{bmatrix} S_{L_{-1}^2,L_{-1}^2} & S_{L_{-1}^2,L_{-2}} \\ S_{L_{-1}^2,L_{-2}} & S_{L_{-2},L_{-2}}\end{bmatrix} = 
+ \begin{bmatrix} 4\Delta(2\Delta+1) & 6\Delta \\ 6\Delta & 4\Delta+\frac{c}{2}\end{bmatrix}\ .
+ \label{sh012}
+\end{align}
+The Shapovalov matrix at level $N$ is degenerate if and only if there is a null vector at a level $\leq N$, equivalently if and only if $\Delta\in \left\{\Delta_{(r,s)}\right\}_{rs\leq N}$. The inverse matrix has simple poles for $\Delta\in \left\{\Delta_{(r,s)}\right\}_{rs\leq N}$, and can be computed in terms of $\left\{L_{\langle r,s\rangle}\right\}_{rs\leq N}$ \cite{fqs24}.
+
+Using the same coefficients \eqref{shap}, we can define a sesquilinear form instead of a bilinear form. This sesquilinear form is Hermitian if its coefficients are real, i.e. if $\Delta,c\in\mathbb{R}$. Our highest-weight representation is called \myindex{unitary}\index{highest-weight representation!unitary---} if that Hermitian form is positive definite. Unitarity plays an important role in some applications of CFT, but it has no bearing on exact solvability, so we will not elaborate further on that subject. 
+
+
 \subsection{Fields and operator product expansions}\label{sec:fope}
 
 The fundamental objects of conformal field theory are fields. In quantum field theory, all states can be obtained by acting on the vacuum state with fields: this is called the \myindex{state-field correspondence}\index{state-field correspondence} or operator-state correspondence. In conformal field theory, the correspondence is bijective, and allows us to identify the space of fields with the \myindex{space of states}\index{space of states}  or \myindex{spectrum}\index{spectrum}  --- a vector space on which the Virasoro algebra acts. To a state $V$, the correspondence associates a field $V(z)$, which depends on a position $z\in\overline{\mathbb{C}}$ in the Riemann sphere. Primary states, descendant states and degenerate states respectively give rise to \myindex{primary fields}\index{primary!---field}, \myindex{descendant fields}\index{descendant!---field}\index{field!descendant---} and \myindex{degenerate fields}\index{degenerate!---field}.
