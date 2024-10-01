@@ -854,6 +854,7 @@ a canonical local coordinate near any point $z\in\mathbb{C}$, but not near $z=\i
 Let us solve the global Ward identities in the cases $N=1,2,3,4$. We have $3$ linear differential equations in the $N$ variables $z_i$, and we write their solutions up to $z_i$-independent prefactors:
 \begin{itemize}
  \item $\boxed{N=1}$\ : The identities amount to $\partial_{z_1} Z = \Delta_1 Z=0$, and their solution is 
+ \begin{subequations}
  \begin{align}
   \Big<V_{\Delta_1}(z_1)\Big>\propto \delta_{\Delta_1,0}\ . 
  \end{align}
@@ -873,6 +874,7 @@ Let us solve the global Ward identities in the cases $N=1,2,3,4$. We have $3$ li
  \propto z_{13}^{-2\Delta_1} z_{23}^{\Delta_1-\Delta_2-\Delta_3+\Delta_4} z_{24}^{-\Delta_1-\Delta_2+\Delta_3-\Delta_4} z_{34}^{\Delta_1+\Delta_2-\Delta_3-\Delta_4} G\left(\frac{z_{12}z_{34}}{z_{13}z_{24}}\right)\ .
  \label{4pt}
 \end{align}
+\end{subequations}
 A 4-point function is therefore completely determined by its dependence on $1$ of its $4$ variables. In particular, it can be convenient to set $3$ positions to the fixed values $(z_2,z_3,z_4)=(0,\infty,1)$, in which case
 \begin{align}
  \Big< V_{\Delta_1}(z) V_{\Delta_2}(0)V_{\Delta_3}(\infty)V_{\Delta_4}(1) \Big> \propto G(z)\ . 
@@ -1019,6 +1021,7 @@ The OPE that we have taken leads to coefficients $f_N(\Delta)$ that are combinat
  \label{fnd}
 \end{align}
 The first few coefficients may be assembled from Eqs. \eqref{fl12}, \eqref{sgl}:
+\begin{subequations}
 \begin{align}
 & f_0(\Delta) = 1 \quad , \quad f_1(\Delta) = \frac{(\Delta+\Delta_1-\Delta_2)(\Delta+\Delta_4-\Delta_3)}{2\Delta} \ ,
 \\
@@ -1028,6 +1031,7 @@ The first few coefficients may be assembled from Eqs. \eqref{fl12}, \eqref{sgl}:
  \ .
  \label{f2d}
 \end{align}
+\end{subequations}
 The $s$-channel decomposition \eqref{sdec} reduces the 4-point function to a combination of model-dependent structure constants, and universal Virasoro blocks. Repeatedly using OPEs, any $N$-point function can likewise be decomposed into $N$-point Virasoro blocks. However, these decompositions are not unique. In the case $N=4$, there are 3 possible decompositions, called the \myindex{$s$-channel}\index{channel!$s$-, $t$-, $u$-}, \myindex{$t$-channel} and \myindex{$u$-channel} decompositions, depending on which OPE we perform. For each channel, let us write the relevant OPE, the \myindex{4-point structure constants}\index{structure constant!4-point---} that appear as coefficients, the asymptotics of the Virasoro blocks, and a diagram that represents the decomposition:
 \begin{align}
  \begin{array}{|r||c|c|c|}
@@ -1186,8 +1190,8 @@ In some cases we will allow a nontrivial \myindex{reflection coefficient}\index{
 
 \subsubsection{Constraints from degenerate fields}\label{sec:dotc}
 
-We will now study how the existence of diagonal degenerate fields constrains the spectrum. To begin with, let us discuss which sets of diagonal degenerate fields can occur.
-We assume that the OPE of 2 diagonal degenerate fields yields all the diagonal degenerate fields that are allowed by the fusion rules \eqref{rrsr}. 
+We will now study how the existence of diagonal degenerate fields constrains the spectrum. To begin with, let us discuss which sets of degenerate fields can occur.
+We assume that the OPE of 2 degenerate fields yields all the degenerate fields that are allowed by the fusion rules \eqref{rrsr}. 
 If for example we repeatedly fuse $V^d_{\langle 5,2\rangle}$ with itself, we obtain all $V^d_{\langle r,s\rangle}$ with $(r,s)\in (2\mathbb{N}+1)\times \mathbb{N}^*$. For each one of the 2 Kac indices $r,s$, allowing 1 even value implies allowing all values in $\mathbb{N}^*$, and allowing 1 odd value except $1$ implies allowing all odd values. Modulo $r\leftrightarrow s$, this leads to 7 possible sets of degenerate fields, which we characterize by whether or not they contain $V^d_{\langle 1,1\rangle}, V^d_{\langle 2,1\rangle},V^d_{\langle 3,1\rangle},V^d_{\langle 1,2\rangle}$ and $V^d_{\langle 1,3\rangle}$:
 \begin{align}
  %\begin{array}{c}
@@ -1213,6 +1217,7 @@ The OPE of $V^d_{\langle 2,1\rangle}$ or $V^d_{\langle 1,2\rangle}$ with a given
  \label{vpope}
 \end{align}
 In the case of a non-diagonal field $V_{(r,s)}$, the 4 fields that can a priori appear are
+\begin{subequations}
 \begin{align}
  V^d_{\langle 2,1\rangle}V_{(r,s)} &\subset \sum_\pm V_{(r\pm 1,s)} + \sum_\pm V_{(r,s\pm \beta^2)}\ ,
  \label{vtovrs}
@@ -1220,7 +1225,9 @@ In the case of a non-diagonal field $V_{(r,s)}$, the 4 fields that can a priori 
  V^d_{\langle 1,2\rangle}V_{(r,s)} &\subset \sum_\pm V_{(r\pm \beta^{-2},s)} + \sum_\pm V_{(r,s\pm 1)}\ .
  \label{votvrs}
 \end{align}
+\end{subequations}
 Since all fields have half-integer spins, the following spin differences must also be half-integer whenever the corresponding fields exist: 
+\begin{subequations}
 \begin{align}
  S_{(r\pm 1,s)} - S_{(r,s)} = \mp s &\quad , \quad S_{(r,s\pm \beta^2)} - S_{(r,s)} = \mp r\beta^2\ ,
  \label{sdiff1}
@@ -1228,6 +1235,7 @@ Since all fields have half-integer spins, the following spin differences must al
  S_{(r\pm \beta^{-2},s)} - S_{(r,s)} = \mp s\beta^{-2} &\quad , \quad S_{(r,s\pm 1)} - S_{(r,s)} = \mp r\ . 
  \label{sdiff2}
 \end{align}
+\end{subequations}
 We now assume that $\beta^2\notin \mathbb{Q}$, and remember $rs\in\frac12\mathbb{Z}$. It follows that $V_{(r\pm 1,s)}$ and $V_{(r,s\pm 1)}$ can coexist neither with $V_{(r,s\pm \beta^2)}$ nor with $V_{(r\pm \beta^{-2},s)}$. Therefore, the OPEs $V^d_{\langle 2,1\rangle}V_{(r,s)}$ and $V^d_{\langle 1,2\rangle}V_{(r,s)}$ each contain at most 2 primary fields, out of the 4 that are allowed by fusion rules. For notational simplicity, we choose these 2 primary fields as follows: 
 \begin{align}
  \boxed{V^d_{\langle 2,1\rangle}V_{(r,s)} \sim \sum_\pm V_{(r\pm 1,s)}} \quad ,\quad
@@ -1237,10 +1245,11 @@ We now assume that $\beta^2\notin \mathbb{Q}$, and remember $rs\in\frac12\mathbb
 While they were derived under the assumption $\beta^2\notin \mathbb{Q}$, we will assume that these OPEs are valid for any value of the central charge. 
 
 The OPEs \eqref{vdvrs} and \eqref{vpope} indicate which primary fields can appear: we now assume that in each one of these OPEs, the 2 fields that can appear do appear, i.e.  $V^d_{\langle 1,2\rangle},V_{(r,s)}\in\widehat{\mathcal{S}}\implies V_{(r,s\pm 1)}\in\widehat{\mathcal{S}}$. 
-This implies that the conformal spin \eqref{srs} remains half-integer under $s\to s\pm 1$, therefore
+So the conformal spin \eqref{srs} must remain half-integer under $s\to s\pm 1$, therefore
 $r\in \frac12 \mathbb{Z}$. Moreover, the OPE \eqref{tope} implies that the monodromy of $V^d_{\langle 1,2\rangle}$ around $V_{(r,s)}$ is $e^{2\pi ir}\in \{1,-1\}$.
 In the $N+1$-point function $\left<V^d_{\langle 1,2\rangle}\prod_{i=1}^NV_{(r_i,s_i)}\right>$,
 the product of the monodromies of $V^d_{\langle 1,2\rangle}$ must be $1$, therefore $\sum_{i=1}^N r_i  \in \mathbb{Z}$. This conclusion also holds for $N$-point functions of the type $\left<\prod_{i=1}^NV_{(r_i,s_i)}\right>$, which may be deduced from our $N+1$-point function using an OPE. Therefore, if $V^d_{\langle 1,2\rangle}$ exists, then the first Kac index of non-diagonal fields $V_{(r,s)}$ is half-integer and conserved modulo integers:
+\begin{subequations}
 \begin{align}
  \boxed{V^d_{\langle 1,2\rangle}\in\widehat{\mathcal{S}} \quad \implies\quad  r\in \frac12\mathbb{Z} \quad , \quad \sum_{i=1}^N r_i  \in \mathbb{Z}}\ . 
  \label{sriz}
@@ -1250,6 +1259,7 @@ Similarly, if $V^d_{\langle 2,1\rangle}$ exists, then the same is true for the s
  \boxed{V^d_{\langle 2,1\rangle}\in\widehat{\mathcal{S}} \quad \implies\quad  s\in \frac12\mathbb{Z} \quad , \quad \sum_{i=1}^N s_i  \in \mathbb{Z}}\ . 
  \label{ssiz}
 \end{align}
+\end{subequations}
 These constraints also apply in the presence of diagonal fields, if we set $r=s=0$ for any diagonal field. 
 
 Finally, a necessary condition for an OPE $V_1V_2\sim \sum_{k\in\mathcal{S}^{12}}V_k$ \eqref{tope} to converge is that the total conformal dimension be bounded from below over the OPE spectrum $\mathcal{S}^{12}$,
@@ -1284,7 +1294,7 @@ Generalized minimal models exist only on the sphere. In particular, their torus 
 
 \subsubsection{Liouville theory}\label{sec:liou}
 
-Let us consider the spectrum of a generalized minimal model with $\beta^2\in\mathbb{R}_{>0}\backslash\mathbb{Q}$. The momentums $P_{(r,s)}$ \eqref{prs} are dense in the real line, i.e. $\text{closure}\big(\left\{ P_{(r,s)}\right\}_{r,s\in\mathbb{N}^*}\big) = \mathbb{R}$. Any diagonal field with a real momentum can therefore be obtained as a limit of degenerate fields,
+Let us consider the spectrum of a generalized minimal model with $\beta^2\in\mathbb{R}_{>0}\backslash\mathbb{Q}$. The momentums $P_{(r,s)}$ \eqref{prs} are dense in the real line, i.e. $\mathbb{R}=\text{closure}\big(\left\{ P_{(r,s)}\right\}_{r,s\in\mathbb{N}^*}\big)$. Any diagonal field with a real momentum can therefore be obtained as a limit of degenerate fields,
 \begin{align}
  \forall P\in\mathbb{R}\ , \quad V_P = \lim_{\substack{r,s\to\infty \\ P_{(r,s)}\to P}} V^d_{\langle r,s\rangle}\ .
  \label{vplim}
@@ -1354,7 +1364,7 @@ For the moment, we have defined Liouville theory for $\beta^2\in\mathbb{R}_{>0}\
 \beta^2>0 & \beta^2\in\mathbb{C}\backslash \mathbb{R} & \beta^2<0
 \end{array}
 \end{align}
-We nevertheless define Liouville theory for $c\in\mathbb{C}\backslash (-\infty,1]$ by the spectrum \eqref{sliou} and OPE \eqref{idpv}, where we no longer need to shift the integration line. 
+We nevertheless define Liouville theory for $\beta^2\in \mathbb{C}\backslash\mathbb{R}_{\geq 0}$ by the spectrum \eqref{sliou} and OPE \eqref{idpv}, where we no longer need to shift the integration line. 
 We also assume that correlation functions are analytic in momentums and in the central charge, and that degenerate fields exist, so that we have the extended spectrum
 \begin{align}
  \boxed{ \widehat{\mathcal{S}}^\text{Liouville} = \frac12 \left\{ V_P\right\}_{P\in \mathbb{C}} \cup \left\{ V^d_{\langle r,s\rangle}\right\}_{r,s\in\mathbb{N}^*} }\ .
@@ -1379,21 +1389,21 @@ To any degenerate representation of the Virasoro algebra, we can associate a dia
 To the best of our knowledge, there is no known counterexample to this conjecture (and no proof either). 
 From the fusion rules \eqref{rrsr}, no nontrivial finite set of simply degenerate representations can be closed under fusion. We therefore need multiply degenerate representations, which implies $\beta^2\in\mathbb{Q}$.  
 
-In the case $\beta^2=-\frac{q}{p}<0$, with $p,q\in\mathbb{N}^*$ coprime, there are no finite sets of degenerate representations that are closed under fusion. To look for such sets, we could focus on the simplest doubly degenerate representation, 
+In the case $\beta^2=-\frac{q}{p}<0$, with $p,q\in\mathbb{N}^*$ coprime, there are no finite sets of degenerate fields that are closed under OPEs. To look for such sets, we could focus on the simplest doubly degenerate field, 
 \begin{align}
- \mathcal{R}^f_{\langle p+1,1\rangle}=\mathcal{R}^f_{\langle 1,q+1\rangle}\ .
+ V^f_{\langle p+1,1\rangle}=V^f_{\langle 1,q+1\rangle}\ .
 \end{align}
-The degenerate fusion rules predict  
+% Writing fields rather than representations, because due to coincidences of dimensions modulo integers, the representations may well be logarithmic. 
+Repeated OPEs of this field with itself generate infinitely many fields of the type $V^f_{\langle kp+1,1\rangle}$ for any $k\in\mathbb{N}$, starting with 
 \begin{align}
- \mathcal{R}^f_{\langle p+1,1\rangle}\times \mathcal{R}^f_{\langle p+1,1\rangle} = \mathcal{R}^d_{\langle 1,1\rangle} + \mathcal{R}^f_{\langle 2p+1,1\rangle}\ .
+ V^f_{\langle p+1,1\rangle}V^f_{\langle p+1,1\rangle}\sim V^f_{\langle 1,1\rangle} + V^f_{\langle 2p+1,1\rangle}\ .
  \label{rfppo}
 \end{align}
-The fully degenerate nature of $\mathcal{R}^f_{\langle 2p+1,1\rangle}$ follows from the associativity of $\mathcal{R}^f_{\langle p+1,1\rangle}\times \mathcal{R}^f_{\langle p+1,1\rangle}\times \mathcal{V}_P$, and from the fusion product
+To show that we obtain fully degenerate fields, we can use OPE associativity, as well as OPEs with generic diagonal fields \eqref{rrsvp}, starting with 
 \begin{align}
- \mathcal{R}^f_{\langle p+1,1\rangle} \times \mathcal{V}_P = \sum_{\pm} \mathcal{V}_{P\pm \frac12\sqrt{-pq}}\ ,
+ V^f_{\langle p+1,1\rangle}  V_P \sim \sum_{\pm} V_{P\pm \frac12\sqrt{-pq}}\ ,
 \end{align}
-which follows from Eq. \eqref{rrsvp}, with $\{P\pm \frac12\sqrt{-pq}\}_\pm = \{P+i\beta\}_{i=-\frac{p}{2},\cdots, \frac{p}{2}} \cap \{P+j\beta^{-1}\}_{j=-\frac{q}{2},\cdots, \frac{q}{2}}$. 
-The 2 resulting representations in Eq. \eqref{rfppo} have dimensions that differ by an integer, so they might in fact be combined into a single logarithmic representation. The point is that by repeatedly fusing $V^f_{\langle p+1,1\rangle}$ with itself, we can obtain primary states of dimensions $\Delta_{(r,1)}$ with no bound on $r$. 
+where $\{P\pm \frac12\sqrt{-pq}\}_\pm = \{P+i\beta\}_{i=-\frac{p}{2},\cdots, \frac{p}{2}} \cap \{P+j\beta^{-1}\}_{j=-\frac{q}{2},\cdots, \frac{q}{2}}$. 
 
 We therefore focus on the case $\beta^2 = \frac{q}{p}>0$ with $p,q\in\mathbb{N}^*$ coprime. For simplicity, we will only study the representations that are generated by $\mathcal{R}^f_{\langle 2,1\rangle}$ and $\mathcal{R}^f_{\langle 1,2\rangle}$. This is enough for recovering the known A-series minimal models, but not for investigating other diagonal, rational CFTs that might exist on the sphere. 
 Let us show that $\mathcal{R}^f_{\langle 2,1\rangle}$ and $\mathcal{R}^f_{\langle 1,2\rangle}$ generate the representations $\mathcal{R}^f_{\langle r,s\rangle}$  whose indices belong to the \myindex{Kac table}\index{Kac table}
@@ -1401,23 +1411,25 @@ Let us show that $\mathcal{R}^f_{\langle 2,1\rangle}$ and $\mathcal{R}^f_{\langl
  \boxed{ K_{p, q}=  \big((0,p)\times (0,q)\big)\bigcap \big(\mathbb{N}\times \mathbb{N}\big) }\ .
  \label{kac}
 \end{align}
-This amounts to showing that $\mathcal{R}^f_{\langle r_1,s_1\rangle} \times \mathcal{R}^f_{\langle r_2,s_2\rangle}$ only involves representations with indices in the Kac table, and that these representations are fully degenerate. Using the vanishing null vectors of doubly degenerate representations of the type 
+We will in fact show that $\left\{\mathcal{R}^f_{\langle r,s\rangle}\right\}_{(r,s)\in K_{p, q}}$ is stable under fusion. Representations in this set are doubly degenerate, 
 \begin{align}
  \mathcal{R}^f_{\langle r,s\rangle} = \mathcal{R}^f_{\langle p-r,q-s\rangle}\ , 
  \label{prqs}
 \end{align}
-we obtain constraints on the fusion rules \eqref{rrsr}
+and this leads to the following constraints on fusion rules \eqref{rrsr}
+\begin{subequations}
 \begin{align}
  \mathcal{R}^f_{\langle r_1,s_1\rangle} \times \mathcal{R}^f_{\langle r_2,s_2\rangle} &\subset \sum_{r\overset{2}{=} |r_1-r_2|+1}^{r_1+r_2-1}\sum_{s\overset{2}{=} |s_1-s_2|+1}^{s_1+s_2-1} \mathcal{R}^d_{\langle r,s\rangle} \ , 
  \\
  \mathcal{R}^f_{\langle r_1,s_1\rangle} \times \mathcal{R}^f_{\langle r_2,s_2\rangle} &\subset \sum_{r'\overset{2}{=} |r_1-r_2|+1}^{2p-r_1-r_2-1} \sum_{s'\overset{2}{=} |s_1-s_2|+1}^{2q-s_1-s_2-1}\mathcal{R}^d_{\langle r',s'\rangle} \ , 
 \end{align}
+\end{subequations}
 where $\mathcal{R}^d_{\langle r,s\rangle}$ is a representation that may or may not be fully degenerate. Now, $\mathcal{R}^d_{\langle r,s\rangle} = \mathcal{R}^d_{\langle r',s'\rangle}$ implies $(r,s)=(r',s')$ or $(r,s)=(p-r',q-s')$, but the second equality is impossible due to parity: since $p$ and $q$ are coprime, one of them must be odd, say $p$, but $r\equiv r'\equiv |r_1-r_2|+1\bmod 2$. We therefore obtain the fusion rules 
 \begin{align}
  \boxed{\mathcal{R}^f_{\langle r_1,s_1\rangle} \times \mathcal{R}^f_{\langle r_2,s_2\rangle} = \sum_{r\overset{2}{=} |r_1-r_2|+1}^{\min(r_1+r_2,2p-r_1-r_2)-1}\sum_{s\overset{2}{=} |s_1-s_2|+1}^{\min(s_1+s_2,2q-s_1-s_2)-1} \mathcal{R}^f_{\langle r,s\rangle}} \ , 
  \label{rfrf}
 \end{align}
-where $(r,s)\in K_{p,q}$. The number of terms is $\min(r_1,r_2,p-r_1,p-r_2)\min(s_1,s_2,q-s_1,q-s_2)$. To show that $\mathcal{R}^f_{\langle r,s\rangle}$ is fully degenerate, it is enough to realize that a Kac table representation is fully degenerate if and only if its fusion with a generic Verma module $\mathcal{V}_P$ is zero. From Eq. \eqref{rrsvp}, 
+where we only generate Kac indices in the Kac table $(r,s)\in K_{p,q}$ as advertised. The number of terms is $\min(r_1,r_2,p-r_1,p-r_2)\min(s_1,s_2,q-s_1,q-s_2)$. To show that $\mathcal{R}^f_{\langle r,s\rangle}$ is fully degenerate, it is enough to realize that a Kac table representation is fully degenerate if and only if its fusion with a generic Verma module $\mathcal{V}_P$ is zero. From Eq. \eqref{rrsvp}, 
 \begin{align}
  \mathcal{R}^f_{\langle r,s\rangle}\times \mathcal{V}_P \subset \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}} \mathcal{V}_{P+i\beta +j\beta^{-1}} \cap \sum_{i'=-\frac{p-r-1}{2}}^{\frac{p-r-1}{2}} \sum_{j'=-\frac{q-s-1}{2}}^{\frac{q-s-1}{2}} \mathcal{V}_{P+i'\beta +j'\beta^{-1}}\ .
 \end{align}
@@ -1561,7 +1573,7 @@ The resulting Runkel--Watts-type CFT has the same spectrum as Liouville theory \
   \left<\prod_{i=1}^3 V_{P_i}\right>\neq 0 \implies \prod_{\pm,\pm} \sin\pi\left(\tfrac{p_0+q_0}{2}+\sqrt{p_0q_0}(P_1\pm P_2\pm P_3)\right) < 0 \ .
   \label{rwtz}
  \end{align}
-It turns out that Runkel--Watts-type theories can also be obtained as limits of Liouville theory with $\beta^2\in \mathbb{C}\backslash \mathbb{R}$ \cite{mce07}. The limit of Liouville theory for $\beta^2\to \beta_0^2>0$ generally does not make sense, but it exists if $\beta_0^2$ is rational and the momentums are real. In this limit, the condition \eqref{rwtz} emerges from the 3-point structure constants of Liouville theory. 
+It turns out that Runkel--Watts-type theories can also be obtained as limits of Liouville theory with $\beta^2\in \mathbb{C}\backslash \mathbb{R}$ \cite{sch03, mce07}. The limit of Liouville theory for $\beta^2\to \beta_0^2>0$ generally does not make sense, but it exists if $\beta_0^2$ is rational and the momentums are real. In this limit, the condition \eqref{rwtz} emerges from the 3-point structure constants of Liouville theory. 
 
 
 \subsection{Non-diagonal CFTs with 2 degenerate fields}
@@ -1628,6 +1640,7 @@ The corresponding CFT may be called a \myindex{fermionic minimal model}\index{mi
  \end{array}
 \end{align}
 The fusion rules of D-series and fermionic minimal models are obtained by combining the fully degenerate fusion rules \eqref{rfrf} with the conservation of diagonality:
+\begin{subequations}
 \begin{align}
  V^f_{\langle r_1,s_1\rangle}V_{(r_2,s_2)} &\sim \sum_{r\overset{2}{=}\max(r_2-r_1,r_1-r_2-p)+1}^{\min(r_1+r_2,p-r_1-r_2)-1} \sum_{s\overset{2}{=}\max(s_2-s_1,s_1-s_2-q)+1}^{\min(s_1+s_2,q-s_1-s_2)-1} V_{(r,s)} \ ,
  \label{vfvn}
@@ -1635,9 +1648,10 @@ The fusion rules of D-series and fermionic minimal models are obtained by combin
  V_{(r_1,s_1)} V_{(r_2,s_2)} & \sim \sum_{r\overset{2}{=}|r_1-r_2|+1}^{p-|r_1+r_2|-1} \sum_{s\overset{2}{=}|s_1-s_2|+1}^{q-|s_1+s_2|-1} V^f_{\langle r,s\rangle}\ . 
  \label{vnvn}
 \end{align}
-The D-series minimal model is a subtheory of its fermionic extension, i.e. its spectrum is closed under fusion. Curiously, the diagonal field $V^f_{\langle \frac{p}{2}, s\rangle}$ has the same conformal dimensions as the non-diagonal field $V_{(0,s-\frac{q}{2})}$: this an instance of a nontrivial \myindex{field multiplicity}\index{field!---multiplicity}. However, these 2 fields have different OPEs. 
+\end{subequations}
+Curiously, the diagonal field $V^f_{\langle \frac{p}{2}, s\rangle}$ has the same conformal dimensions as the non-diagonal field $V_{(0,s-\frac{q}{2})}$: this an instance of a nontrivial \myindex{field multiplicity}\index{field!---multiplicity}. However, these 2 fields have different OPEs. 
 
-For example, let us compare the diagonal and non-diagonal minimal models AMM$_{6,5}$ and DMM$_{6,5}$, which both have $c= \frac45$, and describe some observables of the tetracritical Ising model and of the critical 3-state Potts model respectively. The Virasoro representations that appear in the spectrums of both models belong to the Kac table $K_{6,5}$. Each entry in the table correspond to a primary field of AMM$_{6,5}$. Since $p=6\equiv 2\bmod 4$, both sectors of DMM$_{6,5}$ are built from representations $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}+1$. We indicate this in the Kac table by having the $r\in 2\mathbb{N}+1$ columns both boxed (for the diagonal sector) and highlighted (for the non-diagonal sector):
+For example, let us compare the diagonal and non-diagonal minimal models AMM$_{6,5}$ and DMM$_{6,5}$, which both have $c= \frac45$, and respectively describe observables of the tetracritical Ising model and of the critical 3-state Potts model. The Virasoro representations that appear in the spectrums of both models belong to the Kac table $K_{6,5}$. Each entry in the table correspond to a primary field of AMM$_{6,5}$. Since $p=6\equiv 2\bmod 4$, both sectors of DMM$_{6,5}$ are built from representations $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}+1$. We indicate this in the Kac table by having the $r\in 2\mathbb{N}+1$ columns both boxed (for the diagonal sector) and highlighted (for the non-diagonal sector):
 \begin{align}
 \text{AMM}_{6,5}\ \&\ \text{DMM}_{6,5} \ : \qquad 
  \begin{tikzpicture}[baseline=(current  bounding  box.center)]
@@ -1675,8 +1689,8 @@ In DMM$_{6,5}$, only 6 of these fields are present, and they are complemented by
   \\
   \hline 
  \end{array}
- \\
- & 
+ \nonumber
+ \\ & 
   \begin{array}{|c||c|c|c|c|c|c|}
   \hline 
   \text{Field} & V_{(0,\frac12)} & V_{(0,\frac32)} & V_{(2,-\frac32)} & V_{(2,-\frac12)} & V_{(2,\frac12)} & V_{(2,\frac32)} 
@@ -1756,7 +1770,7 @@ where the imaginary shift $i\epsilon$ is here for avoiding poles of OPE coeffici
 \begin{align}
 \boxed{\mathcal{S}^{\text{GDMM}_{\beta^2}} = \frac12 \left\{V_P\right\}_{P\in \mathbb{R}} \bigcup  \frac12\left\{V_{(r,s)} \right\}_{ (r,s)\in 2\mathbb{Z}\times (\mathbb{Z}+\frac12)}  }\ ,
 \end{align}
-and we call the corresponding CFT a \myindex{generalized D-series minimal model}\index{minimal model!generalized D-series---}\index{GDMM}. Due to the lack of $r\leftrightarrow s$ symmetry in the non-diagonal sector, this theory depends on $\beta^2$ rather than the central charge $c$, i.e. it is not invariant under $\beta \to \beta^{-1}$. 
+and we call the corresponding CFT a \myindex{generalized D-series minimal model}\index{minimal model!generalized D-series---}\index{GDMM}. Due to the lack of $r\leftrightarrow s$ symmetry in the non-diagonal sector, this theory depends on $\beta^2$ rather than the central charge, i.e. it is not invariant under $\beta \to \beta^{-1}$. 
 The OPEs of this CFT are determined by the conservation of diagonality: in addition to the OPEs of 2 non-diagonal fields \eqref{vrsvrs} and the OPE of 2 diagonal fields \eqref{idpv}, we have the mixed OPE 
 \begin{align}
  V_{(r_1,s_1)}V_P \sim \frac12 \sum_{r\in 2\mathbb{Z}}\sum_{s\in \mathbb{Z}+\frac12} V_{(r,s)} \ . 
@@ -1766,7 +1780,7 @@ Like Liouville theory, generalized D-series minimal models cannot be analyticall
 
 \subsection{Loop CFTs}
 
-Critical loop models were originally defined as critical limits of statistical models that describe non-intersecting loops in a 2d space. Starting with the Ising model, many statistical models can be reformulated in terms of loops, or directly constructed from loops. But there is a lot of choice about which observables to include in the model. In the Ising model, if we consider only local observables, we obtain the minimal model $\text{AMM}_{4,3}$ in the critical limit. If we also consider non-local observables such as cluster connectivities, we obtain a much richer CFT. For applications to statistical physics, what matters is less to define a consistent CFT than to compute correlation functions, which are then interpreted as probabilities. We will sketch a few consistent CFTs in Section \ref{sec:models}, but our main focus will be on correlation functions, which will be the subject of Section \ref{sec:cloop}.
+Critical loop models were originally defined as critical limits of statistical models that describe non-intersecting loops in a 2d space. Starting with the Ising model, many statistical models can be reformulated in terms of loops, or directly constructed from loops. But there is a lot of choice about which observables to include in the model. In the Ising model, if we consider only local observables, we obtain the minimal model $\text{AMM}_{4,3}$ in the critical limit. If we also consider non-local observables such as cluster connectivities, we obtain a much richer CFT. For applications to statistical physics, what matters is less to define a consistent CFT than to compute correlation functions, which are then interpreted in terms of probabilities. We will sketch a few consistent CFTs in Section \ref{sec:models}, but our main focus will be on correlation functions, which will be the subject of Section \ref{sec:cloop}.
 
 To begin with, we will now propose a simple extended spectrum that will include all the known loop CFTs, based on the assumption that there exists 1 degenerate field. 
 
@@ -1777,9 +1791,9 @@ Let the extended spectrum $\widehat{S}^\text{loop}$ be made of all primary field
  \boxed{\widehat{\mathcal{S}}^\text{loop} = \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in\mathbb{N}^*}  \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \frac12\mathbb{N}^*\\ s\in\frac{1}{2r}\mathbb{Z}}}\bigcup \left\{ V_P\right\}_{P\in\mathbb{C}} } \ .
  \label{sloop}
 \end{align}
-We therefore include all degenerate fields that are generated from $V^d_{\langle 1,2\rangle}$ by fusion, and all possible diagonal fields. When it comes to non-diagonal fields, the first index $r$ must be half-integer according to Eq. \eqref{sriz}. The reflection relation $V_{(r,s)}=V_{(-r,-s)}$ \eqref{refl} allows us to assume $r\geq 0$, and the sector $r=0$ is redundant with the diagonal sector, since 
+We include all degenerate fields that are generated from $V^d_{\langle 1,2\rangle}$ by fusion, and all possible diagonal fields. When it comes to non-diagonal fields, the first index $r$ must be half-integer according to Eq. \eqref{sriz}. The reflection relation $V_{(r,s)}=V_{(-r,-s)}$ \eqref{refl} allows us to assume $r\geq 0$, and the sector $r=0$ is redundant with the diagonal sector, since 
 \begin{align}
- V_{(0,s)} = V_{\frac12\beta^{-1}s}  \quad \text{i.e.} \quad V_P = V_{(0,2\beta P)} \ .
+ \boxed{V_{(0,s)} = V_{\frac12\beta^{-1}s}  \quad \text{i.e.} \quad V_P = V_{(0,2\beta P)}} \ .
  \label{sP}
 \end{align}
 On the other hand, $V_{(r,0)}$ is a genuinely non-diagonal field, whose fusion with $V^d_{\langle 1,2\rangle}$ differs from that of the diagonal field with the same dimensions $V_{\frac12\beta r}$. 
@@ -1814,10 +1828,10 @@ We now make an assumption that has 3 different formulations:
 \end{enumerate}
 These fomulations are equivalent because a continous OPE spectrum would produce non-analyticities on the line $c\leq 1$, as we saw in the context of Liouville theory in Section \ref{sec:liou}. Admittedly, it is only a conjecture that discreteness of the OPEs implies that correlation functions are meromorphic.
 
-In addition to our assumption that OPEs are discrete, known constraints on fusion rules are:
+In addition to our assumption that OPEs are discrete, the known constraints on fusion rules are:
 \begin{itemize}
- \item The degenerate field $V^d_{\langle 1,2\rangle}$ implies the conservation of $r$ modulo integers \eqref{sriz}.
- \item OPEs that involve $V^d_{\langle 1,2\rangle}$ are given by Eqs. \eqref{vpope} and \eqref{vdvrs}.
+\item OPEs that involve the degenerate field $V^d_{\langle 1,2\rangle}$ are given by Eqs. \eqref{vpope} and \eqref{vdvrs}, 
+ \item the first Kac index is conserved modulo integers \eqref{sriz}.
 \end{itemize}
 
 \subsubsection{$O(n)$ CFT, $U(n)$ CFT, Potts CFT}\label{sec:models}
@@ -1937,7 +1951,7 @@ For each CFT, we indicate the values of $\beta^2$, of the Kac indices of degener
  \end{array}
  \label{sostab}
 \end{align}
-In the case of loop models, this picture is most probably not complete. In addition to the extended spectrum of $\widehat{\text{Loop}}$, it is possible to defined a backbone field: a diagonal primary field whose conformal dimension does not have a simple expression in terms of Kac indices \cite{nqsz23}. In fact, from its dimension, it looks like this field may not be compatible with the existence of any degenerate field. On the other hand, when studying correlation functions, we will see that the degenerate field $V^d_{\langle 2,1\rangle}$, which is absent from our extended spectrum, seems to play a role in the CFT, see Section \ref{sec:cod}. 
+In the case of loop models, this picture is most probably not complete. In addition to the extended spectrum of $\widehat{\text{Loop}}$, it is possible to defined a backbone field: a diagonal primary field whose conformal dimension does not have a simple expression in terms of Kac indices \cite{nqsz23}. In fact, from its dimension, it looks like this field may not be compatible with the existence of any degenerate field. Moreover, when studying correlation functions, we will see that the degenerate field $V^d_{\langle 2,1\rangle}$, which is absent from our extended spectrum, seems to play a role in the CFT, see Section \ref{sec:cod}. 
 
 \subsubsection{Limits of diagonal CFTs}\label{sec:lod}
 
@@ -1951,8 +1965,8 @@ Let us summarize the limits that relate Liouville theory, (generalized) minimal 
 \node at (0, 11) {$\beta^2\in\mathbb{Q}_{>0}$};
 \node at (13, 11) {$\beta^2\in\mathbb{R}_{>0}$};
 \node at (26, 11) {$\beta^2\in \mathbb{C}\backslash \mathbb{R}$};
-\node[left] at (-6.5, 7) {Discrete};
-\node[left] at (-6.5, -7) {Continuous};
+\node[left] at (-6.5, 7) {Discrete spectrum};
+\node[left] at (-6.5, -7) {Continuous spectrum};
 \draw (0, 7) node[draw, fill = white] (mm) {AMM};
 \draw (13, 7) node[draw, fill = white] (gmm1) {GMM};
 \draw (26, 7) node[draw, fill = white] (gmm2) {GMM};
@@ -1979,7 +1993,7 @@ Somewhat subjectively, we have distinguished limits that are straightforward (fu
  \item $\boxed{\text{AMM}\to \text{RWT}}$ (Section \ref{sec:rwt}): This involves fine-tuning the parameters $p,q$ of the minimal models, as well as the parameters $r,s$ of the primary fields.
   \item $\boxed{\text{Liouville}\to \text{RWT}}$ (Section \ref{sec:rwt}): This requires a detailed analysis of structure constants. 
  \item $\boxed{\text{GMM}\to \text{AMM}}$ (\cite{rib18}): This requires a detailed analysis of correlation functions, and only some of the GMM correlation functions tend to AMM correlation functions. 
- \item $\boxed{\text{Liouville}\to \text{GMM}}$ (Section \ref{sec:essc}): This requires a detailed analysis of correlation functions.
+ \item $\boxed{\text{Liouville}\to \text{GMM}}$ (Section \ref{sec:dtdf}): This requires a detailed analysis of correlation functions.
 \end{itemize}
 
 \subsubsection{Other exactly solvable CFTs}
@@ -2281,7 +2295,7 @@ The double Gamma function also obeys $\Gamma_\beta(x)= \Gamma_{\beta^{-1}}(x)$. 
 \end{align}
 Using the double Gamma function, we will write solutions of the shift equations for 3-point structure constants. We will deduce solutions for 2-point structure constants using $B_i\propto C_{Iii}$ \eqref{bicii}, where the linear shift equations allow an $i$-independent factor. 
 
-\subsubsection{Diagonal CFTs with 2 degenerate fields}
+\subsubsection{Diagonal CFTs with 2 degenerate fields}\label{sec:dtdf}
 
 Let us start with Liouville theory for $c\in (-\infty ,1]$ i.e. $\beta^2\in\mathbb{R}_{>0}$. 
 We assume that the 3-point structure constant $C_{P_1,P_2,P_3}$ is a meromorphic function of the momentums, and a continuous function of $\beta$. 
