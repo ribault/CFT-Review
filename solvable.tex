@@ -936,9 +936,9 @@ under a rotation $z\mapsto e^{i\theta}z$, corresponding to a global conformal tr
  V_{\Delta,\bar\Delta}(z) \to  e^{iS\theta} V_{\Delta,\bar\Delta}\left(e^{i\theta} z\right) \ .
  \label{veis}
 \end{align}
-In order to write correlation functions, let us define the \myindex{modulus squared notation}\index{modulus squared notation} 
+In order to write correlation functions, let us define the \myindex{modulus squared notation}\index{modulus squared notation} for functions of the central charge, conformal dimensions, and positions,
 \begin{align}
- \left| f(\Delta, z)\right|^2 = f(\Delta, z)f(\bar\Delta,\bar z)\ ,
+ \left| f(c,\Delta, z)\right|^2 = f(c,\Delta, z)f(c,\bar\Delta,\bar z)\ ,
  \label{fdz2}
 \end{align}
 where $z,\bar z$ are complex conjugates, while $\Delta,\bar\Delta$ are generally not. 
@@ -2011,7 +2011,7 @@ Solving E-series minimal models is apparently still an open problem.
 
 \section{Analytic bootstrap}\label{sec:ab}
 
-In Section \ref{sec:csope}, we have worked out how local conformal symmetry constrains operator product expansions. This was done by using the associativity of operator products of the type $TVV$, where $T$ is the energy-momentum tensor. The result was that in the OPE $VV$, the contribution of descendant fields are determined by the contributions of primary fields. Similarly, we will now study how degenerate fields constrain structure constants, by using the associativity of 
+In Section \ref{sec:csope}, we have worked out how local conformal symmetry constrains operator product expansions. This was done by using the associativity of operator products of the type $TVV$, where $T$ is the energy-momentum tensor. Similarly, we will now study how degenerate fields constrain structure constants, by using the associativity of 
 operator products of the type $V^d_{\langle 2,1\rangle}VV$ or $V^d_{\langle 1,2\rangle}VV$.  
 This will determine how structure constants behave under momentum shifts of the type $P\to P+ \beta$ or $P\to P+ \beta^{-1}$. 
 
@@ -2037,17 +2037,19 @@ Let us derive the BPZ equation for a 4-point function  of the degenerate field $
  G(z)=\Big<V_{\langle 2,1\rangle}^d(z)V_{1}(0)V_{2}(\infty)V_{3}(1)\Big>\ .
  \label{goz}
 \end{align}
-The relevant creation operator is $L_{\langle 2,1\rangle} = L_{-1}^2 -\beta^2L_{-2}$ \eqref{ars}, and the insertion of $L_{-2}$ is in principle determined by the local Ward identity \eqref{lwi}. However, this identity involves derivatives in the positions of $V_{i}$, which are now fixed to $0,\infty,1$. We can eliminate these derivatives using global Ward identities. A technical trick to do this is to rewrite the local Ward identity as $G_\infty(z) = G_{z}(z) + G_0(z) + G_1(z)$, where we define
+The relevant creation operator is $L_{\langle 2,1\rangle} = L_{-1}^2 -\beta^2L_{-2}$ \eqref{ars}, and the insertion of $L_{-2}$ is determined by the local Ward identity \eqref{lwi}. However, this identity involves derivatives in the positions of $V_{i}$, which are now fixed to $0,\infty,1$. We can eliminate these derivatives using global Ward identities. A technical trick to do this is to rewrite the local Ward identity as $G_\infty(z) = G_{z}(z) + G_0(z) + G_1(z)$, where we define
 \begin{align}
  G_{z_0}(z) = \frac{1}{2\pi i} \oint_{z_0} \frac{y(y-1)}{y-z} \Big< T(y)V_{\langle 2,1\rangle}(z)V_{1}(0)V_{2}(\infty)V_{3}(1)\Big> \ .
 \end{align}
 We then compute $G_{z_0}(z)$ using the OPE $T(y)V_\Delta(z_0)$ \eqref{tvd}. The case $T(y)V_\Delta(\infty) = \frac{\Delta}{y^2} V_\Delta(\infty) + O(\frac{1}{y})$ is obtained from the case $z_0\in\mathbb{C}$ using the global conformal transformation $z\to \frac{1}{z}$ and the definition \eqref{vdi} of $V_\Delta(\infty)$. We find 
+\begin{subequations}
 \begin{align}
  G_\infty(z) &= \Delta_2 G(z) \quad , \quad G_0(z) = \frac{\Delta_1}{z}G(z)\quad , \quad G_1(z) = \frac{\Delta_3}{1-z}G(z)\ ,
  \\
  G_z(z) &= \left(\Delta_{\langle 2,1\rangle} + (2z-1)\partial_z\right) G(z) + z(z-1)\Big<L_{-2}V_{\langle 2,1\rangle}(z)V_{1}(0)V_{2}(\infty)V_{3}(1)\Big>
  \ .
 \end{align}
+\end{subequations}
 Combining our rewritten local Ward identity with the null vector equation $L_{\langle 2,1\rangle}V^d_{\langle 2,1\rangle}=0$, and using $L_{-1}^2 V^d_{\langle 2,1\rangle}(z) = \partial_z^2 V^d_{\langle 2,1\rangle}(z)$ \eqref{pvlv}, we obtain the BPZ equation 
 \begin{align}
  \left(\frac{z(z-1)}{\beta^2}\frac{\partial^2}{\partial z^2} + (2z-1)\frac{\partial}{\partial z} + \frac{\Delta_1}{z} + \Delta_{\langle 2,1\rangle}-\Delta_2  +\frac{\Delta_3}{1-z} \right) G(z) = 0 \ .
@@ -2079,11 +2081,12 @@ According to the degenerate fusion rule \eqref{rvvp}, the decomposition of $G(z)
 \draw (0,-4) -- (2,1) node [right] {$2$};
 \end{tikzpicture} 
 \end{align}
-The conformal blocks provide 3 bases $\left\{\mathcal{F}^{(x)}_\pm(z)\right\}_\pm$ of solutions of the BPZ equation. Each solution is characterized by its asymptotic behaviour \eqref{stu} in a limit $z\to z_0$ with $z_0\in\{0,\infty,1\}$. Using the definition \eqref{dp} of the momentum, we compute 
+The conformal blocks provide 3 bases $\left\{\mathcal{F}^{(x)}_\pm(z)\right\}_\pm$ of solutions of the BPZ equation. Each solution is characterized by its asymptotic behaviour \eqref{stu} in a limit $z\to z_0$ with $z_0\in\{0,\infty,1\}$. 
+For $z_0=0,1$ this behaviour is of the type $z^{\delta_1}$ and $(1-z)^{\delta_3}$, with exponents that we compute using Eq. \eqref{dp}:
 \begin{align}
- \delta=\Delta\left(P+\tfrac{\beta}{2}\right) - \Delta(P) -\Delta_{\langle 2,1\rangle} = \beta P + \tfrac{1-\beta^2}{2}\ .
+ \delta_i=\Delta\left(P_i+\tfrac{\beta}{2}\right) - \Delta(P_i) -\Delta_{\langle 2,1\rangle} = \beta P_i + \tfrac{1-\beta^2}{2}\ .
 \end{align}
-If $\varphi(z) = z^{\delta_1}(1-z)^{\delta_3}$, we deduce that the differential equation for $\varphi^{-1}(z) G(z)$ has holomorphic solutions near $z=0$ and near $z=1$, namely $\varphi(z)\mathcal{F}^{(s)}_+(z)$ and $\varphi(z)\mathcal{F}^{(t)}_+(z)$ respectively. By a tedious but straightforward calculation, we find that the equation for $\varphi^{-1}(z) G(z)$ is a \myindex{hypergeometric differential equation}\index{hypergeometric!---differential equation} 
+Introducing $\varphi(z) = z^{\delta_1}(1-z)^{\delta_3}$, we deduce that the differential equation for $\varphi^{-1}(z) G(z)$ has holomorphic solutions near $z=0$ and near $z=1$, namely $\varphi(z)\mathcal{F}^{(s)}_+(z)$ and $\varphi(z)\mathcal{F}^{(t)}_+(z)$ respectively. By a tedious but straightforward calculation, we find that the equation for $\varphi^{-1}(z) G(z)$ is a \myindex{hypergeometric differential equation}\index{hypergeometric!---differential equation} 
 \begin{align}
  \left(z(1-z)\frac{\partial^2}{\partial z^2} + \left[C-(A+B+1)\right]\frac{\partial}{\partial z} -AB\right) \varphi^{-1}(z) G(z) = 0 \ , 
 \end{align}
@@ -2092,6 +2095,7 @@ with the parameters
  \{A,B\} = \left\{\tfrac12+\beta(P_1\pm P_2+P_3)\right\}_\pm \quad , \quad  C=1+2\beta P_1\ .
 \end{align}
 This allows us to write our conformal blocks in terms of the \myindex{hypergeometric function}\index{hypergeometric!---function}  ${}_2F_1$,
+\begin{subequations}
 \begin{align}
  \mathcal{F}_+^{(s)}(z) &= z^{\beta P_1 +\frac{1-\beta^2}{2}}(1-z)^{\beta P_3 + \frac{1-\beta^2}{2}} {}_2F_1\left(\tfrac12+ \beta P_{123},\tfrac12+\beta P_{13}^2,1+2\beta P_1,z\right) \ , 
  \\
@@ -2099,6 +2103,7 @@ This allows us to write our conformal blocks in terms of the \myindex{hypergeome
  \\
  \mathcal{F}_+^{(u)}(z) &= z^{-\beta P_{23} -\frac{\beta^2}{2}}(z-1)^{\beta P_3 + \frac{1-\beta^2}{2}} {}_2F_1\left(\tfrac12+ \beta P_{123},\tfrac12+\beta P_{23}^1,1+2\beta P_2,\tfrac{1}{z}\right) \ , 
 \end{align}
+\end{subequations}
 where we used the notations $P_{123}=P_1+P_2+P_3$ and $P_{12}^3 = P_1+P_2-P_3$. The block $\mathcal{F}^{(x)}_-$ is obtained from $\mathcal{F}^{(x)}_+$ by $P_i\to -P_i$ where $i=1,3,2$ for $x=s,t,u$. 
 Let us write 
 the change of basis that relates the $s$- and $t$-channel conformal blocks as 
@@ -2149,6 +2154,7 @@ Thanks to the conservation of the second Kac index $s=\beta(\bar P-P)$ modulo in
  \frac{d^{(t)}_-}{d^{(s)}_+} = -\frac{\bar F_{+-}}{F_{-+}} \det F\ .
 \end{align}
 Explicitly, these relations read 
+\begin{subequations}
 \begin{align}
   \frac{d^{(s)}_-}{d^{(s)}_+} = -\frac{\Gamma(1+2\beta P_1)}{\Gamma(1-2\beta P_1)}\frac{\Gamma(1+2\beta\bar P_1)}{\Gamma(1-2\beta\bar P_1)} (-)^{2s_2}
  \frac{\prod_{\pm,\pm}\Gamma\left(\tfrac12 -\beta\bar P_1\pm\beta \bar P_2\pm\beta \bar P_3)\right)}{\prod_{\pm,\pm}
@@ -2167,20 +2173,21 @@ Explicitly, these relations read
   \frac{\prod_\pm\Gamma\left(\frac12 -\beta P_1 \pm \beta P_2 -\beta P_3\right)}{\prod_\pm\Gamma\left(\frac12+\beta \bar P_1 \pm \beta \bar P_2 +\beta \bar P_3\right)}\ .
  \label{dtdp}
 \end{align}
-Let us also write Eq. \eqref{dmdp} in the special case $\left<V_{\langle 2,1\rangle}^d V_1V_{\langle 2,1\rangle}^d V_1\right>$, where 2 of the fields are degenerate and the remaining 2 are equal:
+\end{subequations}
+We will also need Eq. \eqref{dmdp} in the special case $\left<V_{\langle 2,1\rangle}^d V_1V_{\langle 2,1\rangle}^d V_1\right>$, where 2 of the fields are degenerate and the remaining 2 are equal:
 \begin{align}
 \frac{d^{(s)}_-}{d^{(s)}_+} =
 -\frac{\Gamma\left(1+2\beta P_1\right)}{\Gamma\left(1-2\beta P_1\right)} \frac{\Gamma\left(1+2\beta \bar P_1\right)}{\Gamma\left(1-2\beta \bar P_1\right)} 
  \frac{\Gamma\left(\beta^2-2\beta P_1\right)\Gamma\left(1-\beta^2-2\beta P_1\right)}{\Gamma\left(\beta^2+2\beta \bar P_1\right)\Gamma\left(1-\beta^2+2\beta \bar P_1\right)}\ .
  \label{ddb}
 \end{align}
-To conclude, we have seen that crossing symmetry allows us to determine degenerate 4-point functions up to an overall constant factor, by imposing relations on 4-point structure constants. Next we will deduce shift equations for the 2-point and 3-point structure constants. 
+Therefore, crossing symmetry allows us to determine degenerate 4-point functions up to an overall constant factor, by imposing relations on 4-point structure constants. Next we will deduce shift equations for the 2-point and 3-point structure constants. 
 
 
 \subsection{Shift equations for structure constants}
 
 We will now derive shift equations for 3-point structure constants $C_{ijk}$. 
-When it comes to 2-point structure constants $B_{ij}=\delta_{ij}B_i$, shift equations and their solutions can be deduced using Eq. \eqref{bicii}. 
+When it comes to 2-point structure constants, shift equations and their solutions can be deduced using Eq. \eqref{bicii}. 
 
 \subsubsection{Degenerate OPE structure constants}
 
@@ -2212,7 +2219,7 @@ With these notations, the degenerate 4-point structure constants are:
 \draw (-1,2) node [left] {$1$} -- (0,0) -- node [above] {$1^\pm$} (4,0) -- (5,2) node [right] {$\langle 2,1\rangle$};
 \draw (-1,-2) node [left] {$\langle 2,1\rangle$} -- (0,0);
 \draw (4,0) -- (5,-2) node [right] {$1$};
-\node at (1.5, -5) {$d^{(s)}_\pm = \colorboxed{red}{c^\pm_1}\, \colorboxed{red}{(-)^{s_1}c^\mp_{1^\pm}}\, \colorboxed{red}{B_{1}} $};
+\node at (1.5, -5) {$d^{(s)}_\pm = \colorboxed{red}{c^\pm_1}\, \colorboxed{red}{e^{\mp i\pi s_1}c^\mp_{1^\pm}}\, \colorboxed{red}{B_{1}} $};
 \draw[dashed, ->, red] (-.2,-4) to [out=70, in=-70] (.2, -.3);
 \draw[dashed, ->, red] (6,-4) to [out=150, in=-130] (5, -2.2);
 \draw[dashed, ->, red] (3,-3.8) to [out=90, in=-110] (3.8, -.3);
@@ -2223,18 +2230,21 @@ With these notations, the degenerate 4-point structure constants are:
 \draw (-2,5) node [left] {$1$} -- (0,4) -- node [left] {$3^\pm$} (0,0) -- (-2,-1) node [left] {$\langle 2,1\rangle$};
 \draw (2, 5) node [right] {$2$} -- (0,4);
 \draw (0,0) -- (2,-1) node [right] {$3$};
-\node at (0, -4) {$d^{(t)}_\pm = \colorboxed{red}{(-)^{s_3}c_3^\pm}\, \colorboxed{red}{C_{123^\pm}}  $};
+\node at (0, -4) {$d^{(t)}_\pm = \colorboxed{red}{e^{\pm i\pi s_3}c_3^\pm}\, \colorboxed{red}{C_{123^\pm}}  $};
 \draw[dashed, ->, red] (0,-2.9) to [out=90, in=-70] (0, -.4);
 \draw[dashed, ->, red] (3,-3) to [out=50, in=-30] (.4, 3.8);
 \end{tikzpicture} 
 \label{cs}
 \end{align}
-Notice that the OPEs $V^d_{\langle 2,1\rangle}V_i$ and $V_iV^d_{\langle 2,1\rangle}$ are related by a permutation, under which the OPE structure constant picks up a factor $(-)^{S_i-S_{i^\pm}} = (-)^{s_i}$, according to Eq. \eqref{b21}. This explains the sign factors $(-)^{s_1}$ and $(-)^{s_3}$. In the case of the 4-point function $\left<V_{\langle 2,1\rangle}^d V_iV_{\langle 2,1\rangle}^d V_i\right>$, we obtain a constraint on the degenerate OPE structure constants,
+Notice that the OPEs $V^d_{\langle 2,1\rangle}V_i$ and $V_iV^d_{\langle 2,1\rangle}$ are related by a permutation, under which the OPE structure constant picks up a factor $e^{i\pi(S_i-S_{i^\pm})} = e^{i\pi s_i}$, using Eq. \eqref{sdiff1}. 
+This explains the factors $e^{\mp i\pi s_1}$ and $e^{\pm i\pi s_3}$, which we do not write as $(-)^{s_i}$ in order to allow $s_i\in\frac12\mathbb{Z}$ and not just $s_i\in \mathbb{Z}$.
+In the case of the 4-point function $\left<V_{\langle 2,1\rangle}^d V_iV_{\langle 2,1\rangle}^d V_i\right>$, we deduce the ratio 
 \begin{align}
- \frac{d^{(s)}_-}{d^{(s)}_+}= (-)^{2s_i}\frac{c_i^-}{c_{i^+}^-} \frac{c_{i^-}^+}{c_i^+}\ ,  
+ \frac{d^{(s)}_-}{d^{(s)}_+}= (-)^{2s_i}\frac{c_i^-}{c_{i^+}^-} \frac{c_{i^-}^+}{c_i^+}\ .
  \label{ddcccc}
 \end{align}
-whose left-hand side is explicitly known by Eq. \eqref{ddb}. It can be checked that the following expressions obey this relation (using $s_i=\beta(\bar P_i-P_i) \in \frac12\mathbb{Z}$), and also obey the reflection relation \eqref{cim}: 
+Since its left-hand side is explicitly known by Eq. \eqref{ddb}, this equation is a constraint on the degenerate OPE structure constants.
+It can be checked that the following expressions solves this constraint, and also obey the reflection relation \eqref{cim}: 
 \begin{align}
  c^+_i = \beta^{2\beta(P_i+\bar P_i)} \frac{\Gamma(-2\beta P_i)}{\Gamma(1+2\beta \bar P_i)} \quad , \quad c^-_i = \beta^{-2\beta(P_i+\bar P_i)} \frac{\Gamma(2\beta P_i)}{\Gamma(1-2\beta \bar P_i)}\ ,
  \label{cpcm}
@@ -2247,15 +2257,17 @@ This solution is far from unique, because in the bootstrap approach we are alway
 Instead of choosing a solution for $c_i^\pm$, and therefore a particular field normalization, 
 we could work with renormalization-invariant quantities, which cannot involve $c_i^\pm$. For example, the $s$-channel 4-point structure constant $D^{(s)}_k = \frac{C_{12k}C_{k34}}{B_k}$ is invariant under renormalization of the channel field $V_k$. Using the identity $c_i^- B_{i^-} = (-)^{s_i} c^+_{i^-} B_i$, which follows from Eqs. \eqref{b21} and \eqref{ccb}, it is possible to write $D^{(s)}_{k^+}$ as a combination of degenerate 4-point structure constants \eqref{cs}. 
 
-In a CFT with 2 degenerate fields $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$, the degenerate OPE coefficients for the 2 fields are related. (See \cite[Exercise 3.2]{rib14} for the case of Liouville theory.) Our determination of $c_i^\pm$ will be validated by the existence of solutions of the shift equations for $B_i,C_{ijk}$. 
+In a CFT with 2 degenerate fields, the associativity of OPEs of the type 
+$V^d_{\langle 2,1\rangle}V^d_{\langle 1,2\rangle}V_i$ leads to relations between 
+the degenerate OPE coefficients for the 2 degenerate fields. (See \cite[Exercise 3.2]{rib14} for the case of Liouville theory.) These relations are equivalent to the compatibility of the shift equations from $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$ for $B_i,C_{ijk}$. We will show their compatibility by finding solutions. 
 
 \subsubsection{Explicit shift equations}
 
 Combining the crossing symmetry equation \eqref{dmdp}, and \eqref{ddb} with the determination \eqref{cs} of degenerate 4pt structure constants and the choice \eqref{cpcm} of degenerate OPE structure constants, we obtain
 \begin{align}
  \boxed{\frac{C_{1^-23}}{C_{1^+23}} = 
- (-)^{2s_2}\beta^{4\beta^2r_1} \frac{\prod_{\pm,\pm}\Gamma\left(\tfrac12 -\beta\bar P_1\pm\beta \bar P_2\pm\beta \bar P_3)\right)}{\prod_{\pm,\pm}
- \Gamma\left(\tfrac12 +\beta P_1\pm \beta P_2\pm\beta P_3)\right)}} \ ,
+ (-)^{2s_2}\beta^{4\beta^2r_1} \frac{\prod_{\pm,\pm}\Gamma\left(\tfrac12 -\beta\bar P_1\pm\beta \bar P_2\pm\beta \bar P_3\right)}{\prod_{\pm,\pm}
+ \Gamma\left(\tfrac12 +\beta P_1\pm \beta P_2\pm\beta P_3\right)}} \ ,
  \label{sh-mp}
 \end{align}
 This is called a \myindex{shift equation}\index{shift equation}, because it determines how structure constants behave when the momentums $P_1,\bar P_1$ of a field are shifted by $\beta$, under the condition $s_i\in \frac12 \mathbb{Z}$ \eqref{ssiz}. If $s_i\in\mathbb{Z}$, then not only $S_{i^-}-S_{i^+}\in\mathbb{Z}$ but also $S_{i}-S_{i^+}\in\mathbb{Z}$, and we also have the more refined shift equation, deduced from Eq. \eqref{dpdp},
@@ -2268,8 +2280,8 @@ This is called a \myindex{shift equation}\index{shift equation}, because it dete
 Our 2 shift equations were associated to the degenerate field $V^d_{\langle 2,1\rangle}$. To obtain the shift equations associated to $V^d_{\langle 1,2\rangle}$ instead, we may perform the substitutions $\beta\to \beta^{-1}$ and $r\leftrightarrow s$, which imply $(P,\bar P)\to (-P,\bar P)$. We obtain 
 \begin{align}
  \frac{C_{1^-23}}{C_{1^+23}} = 
- (-)^{2r_2}\beta^{-4\beta^{-2}s_1} \frac{\prod_{\pm,\pm}\Gamma\left(\tfrac12 -\beta\bar P_1\pm\beta \bar P_2\pm\beta \bar P_3)\right)}{\prod_{\pm,\pm}
- \Gamma\left(\tfrac12 -\beta P_1\pm \beta P_2\pm\beta P_3)\right)} \ ,
+ (-)^{2r_2}\beta^{-4\beta^{-2}s_1} \frac{\prod_{\pm,\pm}\Gamma\left(\tfrac12 -\beta\bar P_1\pm\beta \bar P_2\pm\beta \bar P_3\right)}{\prod_{\pm,\pm}
+ \Gamma\left(\tfrac12 -\beta P_1\pm \beta P_2\pm\beta P_3\right)} \ ,
  \label{sh-mp2}
 \end{align}
 \begin{align}
@@ -2289,11 +2301,11 @@ Since shift equations produce Gamma functions, their solutions should be written
 \frac{\Gamma_\beta(x+\beta^{-1})}{\Gamma_\beta(x)} = \sqrt{2\pi}\frac{\beta^{\frac12-\beta^{-1}x}}{\Gamma(\beta^{-1}x)} \ .
 \label{gshift}
 \end{align}
-The double Gamma function also obeys $\Gamma_\beta(x)= \Gamma_{\beta^{-1}}(x)$. It is a meromorphic function of $x\in\mathbb{C}$, with simple poles for $x\in -\beta\mathbb{N}-\beta^{-1}\mathbb{N}$ and no zeros. It is also a meromorphic function of $\beta\in \mathbb{C}\backslash i\mathbb{R}$. We will often use the following consequence of Eq. \eqref{gshift}:
+The double Gamma function also obeys $\Gamma_\beta(x)= \Gamma_{\beta^{-1}}(x)$. It is a meromorphic function of $x\in\mathbb{C}$, with simple poles for $x\in -\beta\mathbb{N}-\beta^{-1}\mathbb{N}$ and no zeros. It is also a meromorphic function of $\beta\in \mathbb{C}\backslash i\mathbb{R}$. It can be convenient to use the following consequence of Eq. \eqref{gshift}:
 \begin{align}
  \frac{\prod_\pm \Gamma_\beta\left(x \pm (y-\frac{\beta}{2})\right)}{\prod_\pm \Gamma_\beta\left(x \pm (y+\frac{\beta}{2})\right)} = \beta^{-2\beta y}\frac{\Gamma\left(\beta x+\beta y - \frac12 \beta^2\right)}{\Gamma\left(\beta x-\beta y -\frac12 \beta^2\right)}\ . 
 \end{align}
-Using the double Gamma function, we will write solutions of the shift equations for 3-point structure constants. We will deduce solutions for 2-point structure constants using $B_i\propto C_{Iii}$ \eqref{bicii}, where the linear shift equations allow an $i$-independent factor. 
+Using the double Gamma function, we will write solutions of the shift equations for 3-point structure constants. We will deduce solutions for 2-point structure constants using $B_i\propto C_{Iii}$ \eqref{bicii}, where the shift equations allow an $i$-independent factor. 
 
 \subsubsection{Diagonal CFTs with 2 degenerate fields}\label{sec:dtdf}
 
@@ -2332,7 +2344,7 @@ These conditions are fulfilled by
 \end{align}
 For example, in the Ising minimal model at $\beta^2=\frac34$, the nontrivial structure constant is $\widetilde{C}_{\langle 2,1\rangle\langle 2,1\rangle\langle 1,2\rangle}=\frac12$. In this case, the double Gamma functions not only combine into Gamma functions, but further simplify into a rational number. 
 
-Finally, let us focus on Liouville theory with $c\in \mathbb{C}\backslash (-\infty,1]$. This includes the half-line $c\in [25,\infty)$ i.e. $\beta\in i\mathbb{R}^*$, where the function $\Gamma_\beta$ is not defined.
+Finally, let us consider Liouville theory with $c\in \mathbb{C}\backslash (-\infty,1]$. This includes the half-line $c\in [25,\infty)$ i.e. $\beta\in i\mathbb{R}^*$, where the function $\Gamma_\beta$ is not defined.
 Instead, we should use the function $\hat{\Gamma}_\beta(x) = \frac{1}{\Gamma_{i\beta}(i\beta -ix)}$, which obeys shift equations that are very similar to the equations \eqref{gshift} for $\Gamma_\beta(x)$: 
 \begin{align}
  \frac{\hat\Gamma_\beta(x+\beta)}{\hat\Gamma_\beta(x)} = \sqrt{2\pi}\frac{(i\beta)^{\beta x-\frac12}}{\Gamma(\beta x)}
@@ -2409,23 +2421,26 @@ where the overall sign comes from $\prod_\pm \frac{\cos \pi\beta(P_1\pm P_2-P_3)
 \begin{align}
  \frac{C_{P_1-\frac{\beta}{2},(r_2,s_2),(r_3,s_3)}}{C_{P_1+\frac{\beta}{2},(r_2,s_2),(r_3,s_3)}} =\beta^{8\beta P_1}\frac{\prod_{\pm,\pm} \Gamma(\frac12-\beta P_1\pm \beta\bar P_2\pm \beta \bar P_3)}{\prod_{\pm,\pm} \Gamma(\frac12+\beta P_1\pm \beta P_2\pm \beta P_3)}\ .
 \end{align}
-Now this ratio differs from Eq. \eqref{sh-mp} with $\bar P_1=P_1$ by an overall sign. Let us cancel this sign in D-series minimal models. Since diagonal fields are in fact degenerate, they can be labelled by Kac indices, and subjected to the field renormalization 
+Now this ratio differs from Eq. \eqref{sh-mp} with $\bar P_1=P_1$ by an overall sign. 
+In the case of D-series minimal models, 
+let us cancel this sign . Since diagonal fields are now degenerate, they can be labelled by Kac indices, and subjected to the field renormalization 
 $V^d_{\langle r,s\rangle}\to (-)^{\frac{r+1}{2}} V^d_{\langle r,s\rangle}$. 
-This renormalization flips the sign of Eq. \eqref{sh-mp}, while leaving the other shift equations unchanged. As a result of this renormalization, we obtain a sign prefactor in the diagonal 3-point structure constant:
+This renormalization flips the sign of Eq. \eqref{sh-mp}, while leaving the other shift equations unchanged. As a result, the ansatz \eqref{cdnn} is now a solution of the shift equations. On the other hand, $C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}$ is no longer a solution
+of the shift equations for the diagonal 3-point structure constant: the solution has an extra sign prefactor,
 \begin{align}
  \boxed{C^\text{DMM}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle\langle r_3,s_3\rangle} = (-)^\frac{r_1+r_2+r_3+1}{2} C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}}\ , 
  \label{cdmm}
 \end{align}
 where $C_{P_1,P_2,P_3}$ is given in Eq. \eqref{bc}.
 
-Now that we know the 3-point structure constants for D-series minimal models, let us deduce generalized D-series minimal models. As argued in Section \ref{sec:gdmm}, this amounts to taking the limit $P_{(r_1,s_1)}\to P_1\in\mathbb{R}$ in the diagonal sector. This is easily done in the case of $C_{P_1,(r_2,s_2),(r_3,s_3)}$, which is a meromorphic function of $P_1$, and is therefore valid in minimal models and in the limit. When it comes to the diagonal 3-point structure constant \eqref{cdmm}, the sign prefactor does not have a smooth limit, and the structure constant becomes a distribution in the limit \cite{rib19},
+Now that we know the 3-point structure constants for D-series minimal models, let us deduce generalized D-series minimal models. As argued in Section \ref{sec:gdmm}, this amounts to taking the limit $P_{(r_1,s_1)}\to P_1\in\mathbb{R}$ in the diagonal sector. This is easily done in the case of $C_{P_1,(r_2,s_2),(r_3,s_3)}$, which is a meromorphic function of $P_1$, and is therefore still valid in the limit. When it comes to the diagonal 3-point structure constant \eqref{cdmm}, the sign prefactor does not have a smooth limit, and the structure constant becomes a distribution in the limit \cite{rib19},
 \begin{align}
  \boxed{C^\text{GDMM}_{P_1,P_2,P_3} = \beta C_{P_1,P_2,P_3}\sum_{n\in\mathbb{Z}}(-)^n \frac{\prod_{i=1}^3 \cos(2\pi n\beta P_i)}{\cos(\pi n\beta^2)}}\ .
  \label{cgdmm}
 \end{align}
 The sum over $n$ is divergent, but it converges when inserted in the $s$-channel decomposition of a correlation function with non-diagonal fields, for example $\left<V_{P_1}V_{P_2}V_{(r_3,s_3)}V_{(s_4,s_4)}\right>$. 
 
-Without the field renormalization $V^d_{\langle r,s\rangle}\to (-)^{\frac{r+1}{2}} V^d_{\langle r,s\rangle}$, would we have obtained a smooth diagonal 3-point structure constant $C_{P_1,P_2,P_3}$, and a distribution in the non-diagonal sector? Of course not: renormalizations cannot make a difference. To see this, we may study the 4-point function $\left<V_{P_1}V_{P_2}V_{(r_3,s_3)}V_{(r_4,s_4)}\right>$ in the $s$-channel: whatever the normalization, the 4-point structure constant has a factor $C^\text{GDMM}_{P_1,P_2,P_s}$ in the limit. Our field renormalization only makes this clearer at the level of 3-point structure constants. 
+Without the field renormalization $V^d_{\langle r,s\rangle}\to (-)^{\frac{r+1}{2}} V^d_{\langle r,s\rangle}$, would we have obtained a smooth diagonal 3-point structure constant $C_{P_1,P_2,P_3}$, and a distribution in the non-diagonal sector? Of course not: renormalizations cannot make such a difference. To see this, we may study the 4-point function $\left<V_{P_1}V_{P_2}V_{(r_3,s_3)}V_{(r_4,s_4)}\right>$ in the $s$-channel: whatever the normalization, the 4-point structure constant has a factor $C^\text{GDMM}_{P_1,P_2,P_s}$ in the limit. Our field renormalization only makes this clearer at the level of 3-point structure constants. 
 
 Sign subtleties do not affect 2-point structure constants. For diagonal fields, the same expression $B_{P_1}$ \eqref{bc} as in $c\leq 1$ Liouville theory is still valid. For non-diagonal fields, we apply the relation $B_{(r,s)}\propto C_{P_{(1,1)},(r,s),(r,s)}$ to our ansatz \eqref{cdnn}, and find 
 \begin{align}
@@ -2443,9 +2458,10 @@ From the structure of the loop CFTs' extended spectrum $\widehat{S}^\text{loop}$
 \end{itemize}
 Let us nevertheless look for simple solutions of the shift equations. As an ansatz, we introduce the \myindex{reference structure constant}\index{structure constant!reference---}
 \begin{align}
-\boxed{C^\text{ref}_{(r_1,s_1)(r_2,s_2)(r_3,s_3)} =\prod_{\epsilon_1,\epsilon_2,\epsilon_3=\pm} \Gamma_\beta^{-1} \left(\tfrac{\beta+\beta^{-1}}{2} + \tfrac{\beta}{2}\left|\textstyle{\sum_i} \epsilon_ir_i\right| + \tfrac{\beta^{-1}}{2}\textstyle{\sum_i} \epsilon_is_i\right)}\ .
+\boxed{C^\text{ref}_{(r_1,s_1)(r_2,s_2)(r_3,s_3)} =\prod_{\epsilon_1,\epsilon_2,\epsilon_3=\pm} \Gamma_\beta^{-1} \left(\tfrac{\beta+\beta^{-1}}{2} + \tfrac{\beta}{2}\left|\textstyle{\sum_i} \epsilon_ir_i\right| + \tfrac{\beta^{-1}}{2}\textstyle{\sum_i} \epsilon_is_i\right)}\ ,
  \label{cref}
 \end{align}
+which is a product of double Gamma functions of combinations of Kac indices, involving the absolute value of $\sum_i\epsilon_i r_i$. 
 This expression is also supposed to be valid if some of the fields are diagonal, via the identification $V_P = V_{(0,2\beta P)}$ \eqref{sP}. If all fields are diagonal, it reduces to $C_{P_1,P_2,P_3}$ \eqref{bc}. 
 For reference 2-point structure constants of diagonal fields, we simply set $B^\text{ref}_P = B_P$. For non-diagonal fields, we define 
 \begin{align}
@@ -2487,12 +2503,12 @@ Let us focus in particular on diagonal fields. If $r_1=0$, then $r_2\equiv r_3\b
  \boxed{w(P) = 2\cos(2\pi\beta P)}\ .
  \label{wP}
 \end{align}
-There is a conjecture that $C^\text{norm}$ is in fact a polynom of loop weights, and that its dependence on the central charge is in fact polynomial in the \myindex{contractible loop weight}\index{loop weight!contractible---}
+We conjecture that $C^\text{norm}$ is in fact a polynom of loop weights, and that its dependence on the central charge is in fact polynomial in the \myindex{contractible loop weight}\index{loop weight!contractible---}
 \begin{align}
  \boxed{n= w\left(P_{(1,1)}\right) = -2\cos(\pi \beta^2)} \ .
  \label{ncb}
 \end{align}
-(This is the same $n$ as in the $O(n)$ CFT \eqref{nQ}.) In Section \ref{sec:plw} we will formulate this conjecture in more detail. 
+(This is the same $n$ as in the $O(n)$ CFT \eqref{nQ}.) In Section \ref{sec:plw} we will formulate this conjecture in more detail for 4-point structure constants. 
 
 Even if the conjecture only applies to loop CFTs, it is interesting to compute the normalized 3-point structure constant associated to $C_{P_1,(r_2,s_2),(r_3,s_3)}$ \eqref{cdnn} from (generalized) D-series minimal models:
 \begin{align}
