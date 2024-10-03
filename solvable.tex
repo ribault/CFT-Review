@@ -1454,7 +1454,8 @@ We therefore define the \myindex{A-series minimal model}\index{minimal model!A-s
  \boxed{\mathcal{S}^{\text{AMM}_{p,q}} = \frac12\left\{ V^f_{\langle r,s\rangle} \right\}_{(r,s)\in K_{p,q}} \quad \text{with} \quad 2\leq q<p \quad \text{and} \quad p, q \text{ coprime}}\ .
  \label{samm}
 \end{align}
-The factor $\frac12$ accounts for the $\mathbb{Z}_2$ symmetry \eqref{prqs}. We assume $q<p$ because AMM$_{p, q}=$AMM$_{q,p}$, and $2\leq q$ for the Kac table to be non-empty.
+The factor $\frac12$ accounts for the $\mathbb{Z}_2$ symmetry \eqref{prqs}. We assume $2\leq q$ for the Kac table to be non-empty, and 
+$q<p$ because AMM$_{p, q}=$AMM$_{q,p}$.
 
 \newcommand{\kac}[2]{
  \draw[latex-latex] (#1-.3, .5) -- (.5, .5) -- (.5, #2-.3);
@@ -2759,7 +2760,7 @@ in which case the degenerate interchiral block is
 
 In order to solve crossing symmetry equations numerically, we need an efficient way to compute Virasoro blocks. It is possible to compute Virasoro blocks from their definition \eqref{sdec}, but this is awfully inefficient. We will now review the more efficient recursive representation due to Alexey Zamolodchikov \cite{zam87b}, in the case of 4-point $s$-channel blocks on the sphere. The $t$-channel and $u$-channel blocks can then be deduced using Eq. \eqref{stotu}. For $N$-point blocks on arbitrary Riemann surfaces, see \cite{ccy17}.
 
-The idea of the recursive representation is to characterize Virasoro blocks by their analytic properties as functions of the channel dimension, in particular their poles, residues, and behaviour at $\infty$. 
+The idea of Zamolodchikov's recursion is to characterize Virasoro blocks by their analytic properties as functions of the channel dimension, in particular their poles, residues, and behaviour at $\infty$. 
 
 \subsubsection{Poles and residues}
 
@@ -2882,7 +2883,7 @@ And we have
 
 \subsubsection{The nome}
 
-In order to write Zamolodchikov's recursive representation for Virasoro blocks, and their large $\Delta$ asymptotics, it is convenient to replace the cross-ratio $z$ with the \myindex{nome}\index{nome} $q$, a function of $z$ built from the hypergeometric function: 
+In order to write Zamolodchikov's recursion for Virasoro blocks, and their large $\Delta$ asymptotics, it is convenient to replace the cross-ratio $z$ with the \myindex{nome}\index{nome} $q$, a function of $z$ built from the hypergeometric function: 
 \begin{align}
  \boxed{q=e^{i\pi \tau}} \quad \text{with} \quad \boxed{\tau = i \frac{{}_2F_1(\frac12,\frac12,1,1-z)}{{}_2F_1(\frac12,\frac12,1,z)}}\ .
 \end{align}
@@ -3017,7 +3018,7 @@ We will now plot these fixed points in the complex $z$-plane, and plot their ima
  \end{multline}
 In the $z$-plane, the branch cut of the hypergeometric function is taken to be $(1,\infty)$, whose image is the boundary of $q(\mathbb{C})$. The whole complex $z$-plane is mapped into a domain that is much smaller than the unit disc $|q|<1$: as a result, conformal blocks tend to converge faster as power series in $q$ than in $z$.
  
-\subsubsection{Zamolodchikov's recursive representation}\label{sec:zrr}
+\subsubsection{Zamolodchikov's recursion}\label{sec:zrr}
 
 As a function of the nome, the Virasoro block 
 may be rewritten as a prefactor, times a power series $H_\Delta(q)$, which has a trivial asymptotic behaviour:
@@ -3041,7 +3042,7 @@ Since we moreover know its large $\Delta$ asymptotic behaviour \eqref{hdq}, we c
  \boxed{H_\Delta(q) = 1 + \sum_{r,s=1}^\infty \frac{(16q)^{rs} R_{r,s}}{\Delta-\Delta_{(r,s)}} H_{\Delta_{(r,-s)}}(q)}\ . 
  \label{hrec}
 \end{align}
-Together with Eq. \eqref{fdq}, this is called \myindex{Zamolodchikov's recursive representation}\index{Zamolodchikov's recursive representation} of Virasoro blocks. (There is another recursive representation for $\mathcal{F}_\Delta(z)$, obtained by summing over its poles as function of $c$ instead of $\Delta$: to distinguish the 2 representations, we may call them the $\Delta$-recursion and the $c$-recursion.)
+Together with Eq. \eqref{fdq}, this is called \myindex{Zamolodchikov's recursion}\index{Zamolodchikov's recursion} for Virasoro blocks. (There is another recursion for $\mathcal{F}_\Delta(z)$, obtained by summing over its poles as function of $c$ instead of $\Delta$: to distinguish the 2 recursions, we may call them the $\Delta$-recursion and the $c$-recursion.)
 
 The recursive reprentation completely determines the series $H_\Delta(q)$, order by order in powers of $16q$. Let us write the first 4 coefficients, using $\Delta_{(1,1)}=0$ and Eq. \eqref{drms} for simplifying some expressions: 
 \begin{subequations}
@@ -3068,11 +3069,11 @@ The recursive reprentation completely determines the series $H_\Delta(q)$, order
 +  \frac{R_{4,1}}{\Delta-\Delta_{(4,1)}}+\frac{R_{2,2}}{\Delta-\Delta_{(2,2)}} +\frac{R_{1,4}}{\Delta-\Delta_{(1,4)}} \ .
 \end{multline}
 \end{subequations}
-In the recursive representation, some properties of the blocks are not manifest. In particular, $h_N(\Delta)$ is a meromorphic function of the central charge, whose poles depend on $\Delta$. However, the recursive representation writes $h_N(\Delta)$ as a sum of terms that are not always invariant under $\beta\to \beta^{-1}$, and therefore not meromorphic in $c$. Moreover, due to the denominator of $R_{r,s}$ \eqref{rrs}, and also due to factors of the type $\frac{1}{\Delta_{(r,-s)}-\Delta_{(r',s')}}$, these terms have $\Delta$-independent poles at rational values of $\beta^2$. As a result, the recursive representation is only valid if $\beta^2\notin\mathbb{Q}$. Finding a recursive representation for $\beta^2\in \mathbb{Q}$ is an open problem, whose simplest incarnation is in the case of 1-point Virasoro blocks on the torus \cite{sto22}. 
+In Zamolodchikov's recursion, some properties of the blocks are not manifest. In particular, $h_N(\Delta)$ is a meromorphic function of the central charge, whose poles depend on $\Delta$. However, the recursion writes $h_N(\Delta)$ as a sum of terms that are not always invariant under $\beta\to \beta^{-1}$, and therefore not meromorphic in $c$. Moreover, due to the denominator of $R_{r,s}$ \eqref{rrs}, and also due to factors of the type $\frac{1}{\Delta_{(r,-s)}-\Delta_{(r',s')}}$, these terms have $\Delta$-independent poles at rational values of $\beta^2$. As a result, the recursion is only valid if $\beta^2\notin\mathbb{Q}$. Finding a recursion for $\beta^2\in \mathbb{Q}$ is an open problem, whose simplest incarnation is in the case of 1-point Virasoro blocks on the torus \cite{sto22}. 
 
 \subsubsection{Behaviour for large channel dimensions} \label{sec:bld}
 
-The asymptotic behaviour \eqref{fdq}, \eqref{hdq} of Virasoro blocks in the limit $\Delta\to\infty$ is the most important piece of the derivation of Zamolodchikov's recursive representation. As far as we know, there is no complete derivation of this behaviour in the literature: in particular, Zamolodchikov's original argument \cite{zam87b} is elliptic. However, there are ideas that could well lead to a derivation: the algebraic idea of \myindex{exponentiation}\index{exponentiation of Virasoro blocks}, which states that $\log\mathcal{F}_\Delta$ grows only linearly in $\Delta$, and the conformal map to the pillow geometry, which explains the relevance of the nome. 
+The asymptotic behaviour \eqref{fdq}, \eqref{hdq} of Virasoro blocks in the limit $\Delta\to\infty$ is the most important piece of the derivation of Zamolodchikov's recursion. As far as we know, there is no complete derivation of this behaviour in the literature: in particular, Zamolodchikov's original argument \cite{zam87b} is elliptic. However, there are ideas that could well lead to a derivation: the algebraic idea of \myindex{exponentiation}\index{exponentiation of Virasoro blocks}, which states that $\log\mathcal{F}_\Delta$ grows only linearly in $\Delta$, and the conformal map to the pillow geometry, which explains the relevance of the nome. 
 
 In the expansion \eqref{fsl} of the Virasoro block as powers of $z$, the second-order coefficient \eqref{f2d} behaves as $f_2(\Delta)= O(\Delta^2)$, and higher-order coefficients involve higher powers of $\Delta$. 
 The linear growth of $\log\mathcal{F}_\Delta$ is therefore a non-trivial phenomenon, resulting from cancellations of faster-growing contributions to $\mathcal{F}_\Delta$. Virasoro blocks exponentiate also in limits where $c\to\infty$ while $\Delta,\Delta_i\to \infty$, starting with the \myindex{heavy limit}\index{heavy limit} where $\frac{\Delta}{c},\frac{\Delta_i}{c}$ are kept fixed \cite{al24}. 
@@ -3174,7 +3175,7 @@ We assume that truncated channel spectrums $\mathcal{S}^{(x)}_\Lambda$ are finit
 
 The truncation scheme remains the same if we use interchiral blocks rather than conformal blocks: in each interchiral block, we keep only the conformal blocks whose total conformal dimension obeys the cutoff \eqref{sl}. 
 
-We then have to approximate conformal blocks so that they can be computed in finite time. Virasoro blocks are defined as infinite series, and their recursive representation also leads to an infinite series, see Section \ref{sec:zrr}. In principle, in order to make errors of the same order of magnitude as when truncating the spectrum, we should use the same cutoff $\Lambda$, now applied to descendant states rather than primary states. This means that in the series $H_\Delta(q)$ \eqref{hdq}, we should keep the term of order $q^N$ provided 
+We then have to approximate conformal blocks so that they can be computed in finite time. Virasoro blocks are defined as infinite series, and Zamolodchikov's recursion also leads to an infinite series, see Section \ref{sec:zrr}. In principle, in order to make errors of the same order of magnitude as when truncating the spectrum, we should use the same cutoff $\Lambda$, now applied to descendant states rather than primary states. This means that in the series $H_\Delta(q)$ \eqref{hdq}, we should keep the term of order $q^N$ provided 
 \begin{align}
  \Re\left(\Delta +\bar\Delta\right) + N + \bar N <\Lambda\ . 
 \end{align}
