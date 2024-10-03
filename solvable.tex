@@ -540,7 +540,16 @@ At each level $N\in\mathbb{N}$, the Shapovalov form is described by a matrix tha
  \begin{bmatrix} 4\Delta(2\Delta+1) & 6\Delta \\ 6\Delta & 4\Delta+\frac{c}{2}\end{bmatrix}\ .
  \label{sh012}
 \end{align}
-The Shapovalov matrix at level $N$ is degenerate if and only if there is a null vector at a level $\leq N$, equivalently if and only if $\Delta\in \left\{\Delta_{(r,s)}\right\}_{rs\leq N}$. The inverse matrix has simple poles for $\Delta\in \left\{\Delta_{(r,s)}\right\}_{rs\leq N}$, and can be computed in terms of $\left\{L_{\langle r,s\rangle}\right\}_{rs\leq N}$ \cite{fqs24}.
+From its definition, it follows that the Shapovalov form has zeros: 
+\begin{align}
+ \forall L, L'\in \mathcal{L}\ , \quad S_{LL_{\langle r,s\rangle},L'}(\Delta_{(r,s)})=0 \ . 
+\end{align}
+For generic values of the central charge, these are simple zeros. This implies that the inverse Shapovalov matrix at level $N$ has simple poles for $\Delta\in \left\{\Delta_{(r,s)}\right\}_{rs\leq N}$. In a basis of level-$rs$ creation operators that includes $L_{\langle r,s\rangle}$, the level-$rs$ inverse Shapovalov matrix behaves as 
+\begin{align}
+ S^{-1}_{L,L'}(\Delta) \underset{\Delta\to \Delta_{(r,s)}} = \frac{1}{\Delta-\Delta_{(r,s)}} \frac{\delta_{L,L_{\langle r,s\rangle}}\delta_{L',L_{\langle r,s\rangle}}}{S'_{L_{\langle r,s\rangle},L_{\langle r,s\rangle}}(\Delta_{(r,s)})}  + O(1) \ . 
+ \label{smo}
+\end{align}
+In fact, the level-$N$ inverse Shapovalov matrix can be computed explicitly in terms of $\left\{L_{\langle r,s\rangle}\right\}_{rs\leq N}$ \cite{fqs24}.
 
 Using the same coefficients \eqref{shap}, we can define a sesquilinear form instead of a bilinear form. This sesquilinear form is Hermitian if its coefficients are real, i.e. if $\Delta,c\in\mathbb{R}$. Our highest-weight representation is called \myindex{unitary}\index{highest-weight representation!unitary---} if that Hermitian form is positive definite. Unitarity plays an important role in some applications of CFT, but it has no bearing on exact solvability, so we will not elaborate further on that subject. 
 
@@ -901,10 +910,10 @@ we obtain
 \end{align}
 By the definition \eqref{lnia} of descendant fields at $\infty$, the 2-point function coincides with the Shapovalov form, 
 \begin{align}
- S_{L,L'}(\Delta)  = \Big<L'V_\Delta(0) LV_\Delta(\infty) \Big> =  \Big<L^*L'V_\Delta(0) V_\Delta(\infty) \Big> \ , 
+ \boxed{S_{L,L'}(\Delta)  = \Big<L'V_\Delta(0) LV_\Delta(\infty) \Big> =  \Big<L^*L'V_\Delta(0) V_\Delta(\infty) \Big>} \ , 
  \label{sll}
  \end{align}
-which vanishes if $|L|>|L'|$ because $V_\Delta$ is primary, and also if $|L|<|L'|$ because 1 field is at $\infty$. So we recover the expression \eqref{sgl} of $g^L$ in terms of OPE coefficients and the Shapovalov form. 
+which vanishes if $|L|>|L'|$ because $V_\Delta$ is primary, and also if $|L|<|L'|$ because $LV_\Delta$ is at $\infty$. So we recover the expression \eqref{sgl} of $g^L$ in terms of OPE coefficients and the Shapovalov form. 
 
 \subsubsection{Single-valuedness and chiral factorization}
 
@@ -2571,7 +2580,7 @@ Let us summarize the solutions of shift equations for 2-point and 3-point struct
 
 \section{Numerical bootstrap}
 
-In the analytic bootstrap approach of Section \ref{sec:ab}, we have used the crossing symmetry of 4-point functions that include degenerate fields, and deduced constraints on 2-point and 3-point structure constants. However, in a consistent CFT, arbitrary 4-point functions must be crossing symmetric. In the absence of degenerate fields, crossing symmetry equations involve infinite sums and are hard to deal with analytically. We will thus need to solve them numerically. 
+In the analytic bootstrap approach of Section \ref{sec:ab}, we have used the crossing symmetry of 4-point functions that include degenerate fields, and deduced constraints on 2-point and 3-point structure constants. For 4-point functions without degenerate fields, crossing symmetry equations involve infinite sums and are hard to deal with analytically. We will thus need to solve them numerically. 
 
 \subsection{Approaches to crossing symmetry}
 
@@ -2591,7 +2600,7 @@ A similar approach is also applicable to integrable conformal gauge theories suc
 \subsubsection{Various flavours of numerics}\label{sec:vfn}
 
 We consider a 4-point function $\left<V_1V_2V_3V_4\right>$, where the 4 primary fields are characterized by their conformal dimensions.
-We assume that we exactly know the spectrum in each channel. If we do not know the structure constants, we view crossing symmetry as a system of linear equations \eqref{seteu} for the 4-point structure constants, normalized by the condition $D_{k_0}^{(s)}=1$. 
+We assume that we exactly know the spectrum in each channel. If we do not know the structure constants, we view crossing symmetry as a system of linear equations \eqref{seteu} for the 4-point structure constants, normalized by the condition $D_{k_0}^{(s)}=1$ for some $k_0$. 
 
 In the following diagram, we sketch what we can learn from numerically solving crossing symmetry, and give examples from exactly solvable CFTs. Potts connectivities are 4-point functions of the type $\Big<V_{P_{(0,\frac12)}}^4\Big>$, which have been an important testing ground for numerical bootstrap techniques. 
 \begin{center}
@@ -2657,6 +2666,7 @@ The algebra $\hat{\mathfrak{u}}_1$ has generators $(J_n)_{n\in\mathbb{Z}}$ and r
  [J_m,J_n] = -\frac12 n\delta_{m+n,0}\ . 
 \end{align}
 For any $c\in\mathbb{C}$, a Virasoro algebra $\mathfrak{V}$ with central charge $c$ can be constructed as a subalgebra of the universal enveloping algebra of $\hat{\mathfrak{u}}_1$:
+\begin{subequations}
 \begin{align}
  L_n &= \sum_{m\in{\mathbb{Z}}} J_{n-m}J_m + \left(\beta-\beta^{-1}\right)(n+1)J_n\ , \qquad (n\neq 0)\ ,
 \label{lnj}
@@ -2664,6 +2674,7 @@ For any $c\in\mathbb{C}$, a Virasoro algebra $\mathfrak{V}$ with central charge 
 L_0 &=2\sum_{m=1}^\infty J_{-m}J_m +J_0^2+\left(\beta-\beta^{-1}\right)J_0 \ ,
 \label{lzj}
 \end{align}
+\end{subequations}
 where $\beta$ was defined from $c$ in Eq. \eqref{cb}. Let us define an affine primary state $V_P$ of momentum $P$ by 
 \begin{align}
  J_0 V_P  = \left(P-\tfrac12\left(\beta-\beta^{-1}\right) \right) V_P \quad , \quad J_{n>0} V_P = 0\ .
@@ -2710,7 +2721,7 @@ In any 4-point function of an A-series or D-series minimal model, all $s$-channe
 
 Let us compute $s$-channel interchiral blocks for the 4-point function $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$. In terms of Virasoro blocks, the interchiral block for the $s$-channel interchiral representation $\widetilde{\mathcal{V}}_{(r,s)}$ \eqref{wvrs} reads 
 \begin{align}
- \widetilde{\mathcal{G}}_{(r,s)} = \sum_{k\in \mathbb{Z}} \frac{D^{(s)}_{(r,s+2k)}}{D^{(s)}_{(r,s)}} \mathcal{F}_{P_{(r,s+2k)}} \bar{\mathcal{F}}_{P_{(-r,s+2k)}}\ . 
+ \boxed{\widetilde{\mathcal{G}}_{(r,s)} = \sum_{k\in \mathbb{Z}} \frac{D^{(s)}_{(r,s+2k)}}{D^{(s)}_{(r,s)}} \mathcal{F}_{P_{(r,s+2k)}} \bar{\mathcal{F}}_{P_{(-r,s+2k)}}}\ . 
  \label{gtrs}
 \end{align}
 To make this explicit, it remains to compute the ratios of 4-point structure constants. This is in principle a straightforward consequence of the shift equation for the 3-point structure constant \eqref{sh-mp2}. However, for certain values of the parameters, this shift equation 
@@ -2734,14 +2745,14 @@ From these shift equations, we can assemble shift equations for
 and therefore the coefficients of the interchiral block $ \widetilde{\mathcal{F}}_{(r,s)}$ \eqref{gtrs}. 
 
 The shifts of 2-point and 3-point structure constants are combinations of Gamma functions, and $\Gamma(x)$ has poles for $x\in -\mathbb{N}$.
-If all involved fields are non-diagonal, i.e. of the type $V_{(r,s)}$ with $r\in\frac12\mathbb{N}^*$ and $s\in\frac{1}{2r}\mathbb{Z}$, the arguments of the Gamma functions are never in $-\mathbb{N}$ (assuming $\beta^2\notin \mathbb{Q}$), and the shifts are finite. If however diagonal fields are involved, i.e. fields of the type $V_{(0,2\beta P)}$ with $P\in \mathbb{C}$, then we can hit the poles of 1 or more Gamma functions. We will consider such cases as accidental and not discuss them further, except when the $s$-channel field is a degenerate field $V^d_{\langle 1,s\rangle}\sim V_{(0,-\beta^2+s)}$ with $s\in\mathbb{N}^*$. 
+If all involved fields are non-diagonal, i.e. of the type $V_{(r,s)}$ with $r\in\frac12\mathbb{N}^*$ and $s\in\frac{1}{2r}\mathbb{Z}$, the arguments of the Gamma functions are never in $-\mathbb{N}$ (assuming $\beta^2\notin \mathbb{Q}$), and the shifts are finite. If some fields are diagonal, i.e. of the type $V_{(0,2\beta P)}$ with $P\in \mathbb{C}$, then we can hit the poles of Gamma functions. We will consider such cases as accidental and not discuss them further, except when the $s$-channel field is a degenerate field $V^d_{\langle 1,s\rangle}\sim V_{(0,-\beta^2+s)}$ with $s\in\mathbb{N}^*$. 
 In this case, the 3-point ratio \eqref{cshift} for $\left<V^d_{\langle 1,s\rangle}V_{(r_1,s_1)}V_{(r_2,s_2)}\right>$ vanishes if $r_1=r_2$ and $|s_1-s_2|=s$. This means that the interchiral block does not contain a term for $V^d_{\langle 1,|s_1-s_2|-1\rangle}$, consistently with the fusion rule \eqref{vdvrs}. Our 4-point function can have $s$-channel degenerate fields if and only if 
 \begin{align}
  r_1=r_2 \quad , \quad r_3=r_4 \quad , \quad s_1-s_2,s_3-s_4\in \mathbb{Z} \quad , \quad s_3-s_4\equiv s_3-s_4\bmod 2\ , 
 \end{align}
 in which case the degenerate interchiral block is 
 \begin{align}
- \widetilde{\mathcal{G}}^d = \sum_{k\in 2\mathbb{N}} \frac{D^{(s)}_{(1,s_0+2k)}}{D^{(s)}_{(1,s_0)}}\left| \mathcal{F}_{P_{(1,s_0+2k)}} \right|^2\ ,  \quad \text{with} \quad s_0 =  \max(|s_1-s_2|,|s_3-s_4|)+1\ . 
+ \boxed{\widetilde{\mathcal{G}}^d = \sum_{k\in 2\mathbb{N}} \frac{D^{(s)}_{(1,s_0+2k)}}{D^{(s)}_{(1,s_0)}}\left| \mathcal{F}_{P_{(1,s_0+2k)}} \right|^2\ ,  \quad \text{with} \quad s_0 =  \max(|s_1-s_2|,|s_3-s_4|)+1}\ . 
 \end{align}
 
 \subsection{Computation of Virasoro blocks}
@@ -2752,28 +2763,23 @@ The idea of the recursive representation is to characterize Virasoro blocks by t
 
 \subsubsection{Poles and residues}
 
-As we saw in Section \ref{sec:csope}, 
-the OPE coefficient $f^{\Delta, L}_{\Delta_1,\Delta_2}$ for the contribution of the descendant field $LV_\Delta$ to the OPE $V_{\Delta_1}V_{\Delta_2}$ 
-has a simple pole at $\Delta=\Delta_{(r,s)}$ for $r,s\in\mathbb{N}^*$ with $rs\leq |L|$. 
-Since such coefficients appear in the expression \eqref{fsl} for a Virasoro block as a sum over creation operators $L\in\mathcal{L}$, 
-the block itself has a simple pole at $\Delta=\Delta_{(r,s)}$ for any $r,s\in\mathbb{N}^*$. This pole comes from the existence of a null vector at level $rs$ in the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$, and this null vector is a primary state of dimension $\Delta_{(r,-s)}$. The residue of the block at this pole is the sum of the contributions of the null vector and its descendant states, therefore it is itself a Virasoro block,
+As a function of the channel dimension $\Delta$, the $s$-channel Virasoro block $\mathcal{F}_\Delta(z)$ has a simple pole at any $\Delta=\Delta_{(r,s)}$ with $r,s\in\mathbb{N}^*$. 
+The pole is due to the existence of the null vector $L_{\langle r,s\rangle}V_{\Delta_{(r,s)}}$, which is a primary state of dimension $\Delta_{(r,-s)}$. The block's residue at this pole is the sum of the contributions of the null vector and its descendant states, therefore the residue is itself a Virasoro block,
 \begin{align}
- \boxed{\underset{\Delta=\Delta_{(r,s)}}{\operatorname{Res}} \mathcal{F}_\Delta(z) = R_{r,s}\mathcal{F}_{\Delta_{(r,-s)}}(z)}\ ,
+ \boxed{\underset{\Delta=\Delta_{(r,s)}}{\operatorname{Res}} \mathcal{F}_\Delta(z) = R_{r,s}\mathcal{F}_{\Delta_{(r,-s)}}(z)}\ .
  \label{resf}
 \end{align}
-where the coefficient $R_{r,s}$ is called a \myindex{Virasoro block residue}\index{block!---residue}. We will derive an expression of the type 
-\begin{align}
+The coefficient $R_{r,s}$ is called a \myindex{Virasoro block residue}\index{block!---residue}. 
+According to Eq. \eqref{fnd}, the block's coefficients can be written in terms of the inverse Shapovalov form, which has a pole with residue \eqref{smo}, and descendant 3-point functions \eqref{gl}, which are regular at $\Delta=\Delta_{(r,s)}$. This leads to the expression \begin{align}
 \boxed{R_{r,s} = \frac{c^{r,s}(P_1,P_2)c^{r,s}(P_3,P_4)}{b^{r,s}}}\ , 
  \label{rrs}
 \end{align}
-with the quantities 
+where the factors are 
 \begin{align}
  c^{r,s}(P_1,P_2) = g^{L_{\langle r,s\rangle}}_{\Delta_{(r,s)},\Delta_1,\Delta_2} \quad , \quad b^{r,s} =
  S'_{L_{(r,s)},L_{(r,s)}}(\Delta_{(r,s)})\ .
 \end{align}
-These quantities emerge from the coefficient $f_{rs}(\Delta)$ \eqref{fnd} of the Virasoro block at level $rs$. 
-Recall from Section \ref{sec:nvvm} that $L_{\langle r,s\rangle}$ is the creation operator such that $V_{\Delta_{(r,-s)}}\propto L_{\langle r,s\rangle}V_{\Delta_{(r,s)}}$ is the null vector of the reducible Verma module $\mathcal{V}_{\Delta_{(r,s)}}$. 
-Then $g^{L_{\langle r,s\rangle}}_{\Delta_{(r,s)},\Delta_1,\Delta_2}$ \eqref{gl} is finite, while $S_{L_{(r,s)},L}(\Delta)=S_{L,L_{(r,s)}}(\Delta)$ \eqref{sll} has a simple zero at $\Delta\to \Delta_{(r,s)}$ for any fixed $L$. It follows that $f_{rs}(\Delta)$ is dominated by the term $L=L'=L_{(r,s)}$, and $\operatorname{Res}_{\Delta=\Delta_{(r,s)}} S_{L_{(r,s)},L_{(r,s)}}^{-1}(\Delta) = \frac{1}{S'_{L_{(r,s)},L_{(r,s)}}(\Delta_{(r,s)})}$ does not depend on how we continue $L_{(r,s)}$ beyond $\Delta=\Delta_{(r,s)}$. Using the definition of the Shapovalov form as a 2-point function, we write
+Using the expression \eqref{sll} of the Shapovalov form as a 2-point function, we write
 \begin{align}
  S_{L_{(r,s)},L_{(r,s)}}(\Delta) = \frac{ \left<L_{(r,s)}V_P(0)L_{(r,s)}V_P(\infty)\right>}{\left<V_P(0)L_{(r,s)}V_P(\infty)\right>} \Big<V_P(0)L_{(r,s)}V_P(\infty)\Big> \ . 
 \end{align}
@@ -2782,7 +2788,8 @@ The first factor has a finite value at $P=P_{(r,s)}$, which coincides with $c^{r
  b^{r,s} = (-)^{rs} c^{r,s}\left(P_{(r,-s)},P_{(1,1)}\right)  \frac{1}{2P_{(r,s)}}\left.\frac{\partial}{\partial P} c^{r,s}\left(P,P_{(1,1)}\right)\right|_{P=P_{(r,s)}}\ . 
  \label{bcdc}
 \end{align}
-To determine $c^{r,s}$, let us deduce how it behaves under $r\to r+1$ from the fusion transformation \eqref{fsfft} of degenerate 4-point conformal blocks. The idea is to compare the fusion transformations for 4-point functions of the types $\left<V^d_{\langle 2,1\rangle}V_{P_{(r,-s)}}V_{P_1}V_{P_2}\right>$ and $\left<V^d_{\langle 2,1\rangle}V_{P_{(r,s)}}V_{P_1}V_{P_2}\right>$. More precisely, let us compare the coefficients $F_{++}$ and $\widetilde{F}_{++}$ that relate the following conformal blocks:
+To determine $c^{r,s}$, let us deduce how it behaves under $r\to r+1$ from the relation \eqref{fsfft} between $s$-channel and $t$-channel degenerate 4-point conformal blocks. The idea is to use this relation for 4-point functions of the types $\left<V^d_{\langle 2,1\rangle}V_{P_{(r,-s)}}V_{P_1}V_{P_2}\right>$ and $\left<V^d_{\langle 2,1\rangle}V_{P_{(r,s)}}V_{P_1}V_{P_2}\right>$. More precisely, let us compare the coefficients $F_{++}$ and $\widetilde{F}_{++}$ that relate the following conformal blocks:
+\begin{subequations}
 \begin{align}
   \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .4]
 \draw (-1,2) node [left] {$P_{(r,-s)}$} -- (0,0) -- node [above] {$P_{(r+1,-s)}$} (4,0) -- (5,2) node [right] {$P_1$};
@@ -2809,7 +2816,8 @@ To determine $c^{r,s}$, let us deduce how it behaves under $r\to r+1$ from the f
 \draw (0,-2) -- (2, -3) node [right] {$P_2$};
 \end{tikzpicture}
 \end{align}
-The relation $V_{P_{(r,-s)}}\propto L_{\langle r,s\rangle}V_{P_{(r,s)}}$ leads to a relation between $F_{++}$ and $\widetilde{F}_{++}$. In fact, it may seem that these 2 coefficients coincide, since the fusion transformation of a descendant block is the same as for the corresponding primary block. However, the coefficient $F_{++}$ is only valid for blocks that are normalized such that their asymptotics are as in Eq. \eqref{stu}. In order to correctly normalize blocks that involve descendant fields $L_{\langle r,s\rangle}V_{P_{(r,s)}}$ and/or $L_{\langle r+1,s\rangle}V_{P_{(r+1,s)}}$, we must multiply them with factors of the type $c^{r,s}$. As a result, we have 
+\end{subequations}
+The relation $V_{P_{(r,-s)}}\propto L_{\langle r,s\rangle}V_{P_{(r,s)}}$ leads to a relation between $F_{++}$ and $\widetilde{F}_{++}$. In fact, it may seem that these 2 coefficients coincide, since the relation \eqref{fsfft} is the same for a descendant block as for the corresponding primary block. However, the coefficient $F_{++}$ is only valid for blocks that are normalized such that their asymptotics are as in Eq. \eqref{stu}. In order to correctly normalize blocks that involve descendant fields $L_{\langle r,s\rangle}V_{P_{(r,s)}}$ and/or $L_{\langle r+1,s\rangle}V_{P_{(r+1,s)}}$, we must multiply them with factors of the type $c^{r,s}$. As a result, we have 
 \begin{align}
  \frac{c^{r+1,s}(P_1,P_2)}{c^{r,s}(P_1,P_2+\frac{\beta}{2})} \propto \frac{\widetilde{F}_{++}}{F_{++}} \propto \beta^{-2s}\frac{\prod_{\pm} \Gamma(\frac12+\beta P_{(r,-s)} \pm \beta P_1 -\beta P_2)}{\prod_{\pm} \Gamma(\frac12+\beta P_{(r,s)} \pm \beta P_1 -\beta P_2)} \ , 
  \label{cros}
@@ -3098,7 +3106,7 @@ The relation between the coordinate $x$ on the sphere and the coordinate $u$ on 
 \begin{align}
  u(x) = \frac{1}{{}_2F_1\left(\tfrac12,\tfrac12,1,z\right)} \int_0^x \frac{dx'}{\sqrt{x'(x'-1)(x'-z)}} \ ,
 \end{align}
-where the $z$-dependent prefactor is such that $u(z)=\pi$, and the square root's sign ambiguity leads to the identification $u\sim -u$. To compute $s$-channel blocks on the pillow, we imagine that time runs upwards, so that constant time slices have length $2\pi$ (as drawn on Figure \eqref{fig:pillow}). Such a slice scans the whole pillow if time runs for a duration $\pi\tau$. This leads to the factor $e^{i\pi\tau\Delta}=q^\Delta$ in the conformal block, where the $s$-channel dimension $\Delta$ is an eigenvalue of the $s$-channel Hamiltonian. 
+where the $z$-dependent prefactor is such that $u(z)=\pi$, and the square root's sign ambiguity leads to the identification $u\sim -u$. To compute $s$-channel blocks on the pillow, we imagine that time runs upwards, so that any constant time slice has length $2\pi$ (as drawn on Figure \eqref{fig:pillow}). Such a slice scans the whole pillow if time runs for a duration $\pi\tau$. This leads to the factor $e^{i\pi\tau\Delta}=q^\Delta$ in the conformal block, where the $s$-channel dimension $\Delta$ is an eigenvalue of the $s$-channel Hamiltonian. 
 
 The conformal transformation from the sphere to the pillow modifies conformal blocks, which get multiplied by $c,\Delta_i$-dependent factors. These factors must be regularized, because the transformation is singular, with the 4 fields sitting at the singularities \cite[Appendix D]{msz15}. In $\mathcal{F}_\Delta(q)$ \eqref{fdq}, these factors appear as exponentials of $\Delta_i$ with $i=1,2,3,4$, coming from the transformation of the 4 fields, and exponentials of $c$, coming from the Weyl anomaly. The regularized pillow Virasoro blocks are therefore 
 \begin{align}
@@ -3112,7 +3120,7 @@ Therefore, the derivation of the $\Delta\to\infty$ asymptotics of Virasoro block
 \subsection{Numerically solving crossing symmetry}
 
 Assuming we know the spectrum $\mathcal{S}$, the 
-crossing symmetry equations \eqref{seteu} form a system of linear equations for the 4-point structure constants $D^{(x)}_k$. There are infinitely many unknowns if the spectrum is infinite. There are also infinitely many equations: 2 for each value of the cross-ratio $z\in \overline{\mathbb{C}}\backslash\{0,1,\infty\}$. The number of solutions of crossing symmetry is 
+crossing symmetry equations \eqref{seteu} form a system of linear equations for the 4-point structure constants $D^{(x)}_k$. There are infinitely many unknowns if the spectrum is infinite. There are also infinitely many equations: 2 equations ($s=t$ and $t=u$) for each value of the cross-ratio $z\in \overline{\mathbb{C}}\backslash\{0,1,\infty\}$. The number of solutions of crossing symmetry is 
 \begin{align}
  \mathcal{N} = \dim\left\{\left(D^{(x)}_k\right)_{k,x}\middle|\text{crossing symmetry is obeyed}\right\}\in \mathbb{N}\cup \{\infty\}\ . 
  \label{nsol}
@@ -3151,8 +3159,8 @@ where $\widetilde{\mathcal{G}}^{(x)}_{\Delta,\bar\Delta}$ is now an interchiral 
  & V_{(2, 0)}, V_{(2,\pm\frac12)}, V_{(2,1)}.
 \end{align}
 \end{subequations}
-Then a 4-point function $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$ is parity-invariant if $s_i\in\mathbb{Z}$. More generally, it is parity-invariant 
-modulo interchiral symmetry if $s_i\in\mathbb{Z}$, and permutation-invariant modulo interchiral symmetry if $r_1=r_2$ and $s_1-s_2\in 2\mathbb{Z}$. In such cases, our $\mathbb{Z}_2$ invariance still induces a $\mathbb{Z}_2$ action on the space of solutions, and focussing on an eigenspace of that action still reduces the number of unknowns by roughly half. However, eigenvalues no longer have a simple behaviour under $z\to \bar z$ or $z_1\leftrightarrow z_2$.
+The 4-point function $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$ is parity-invariant if $r_is_i=0$. It is parity-invariant 
+modulo interchiral symmetry if $s_i\in\mathbb{Z}$, and permutation-invariant modulo interchiral symmetry if $r_1=r_2$ and $s_1-s_2\in 2\mathbb{Z}$. A $\mathbb{Z}_2$ invariance modulo interchiral symmetry still induces a $\mathbb{Z}_2$ action on the space of solutions, and focussing on an eigenspace of that action still reduces the number of unknowns by roughly half. However, eigenvalues no longer have a simple behaviour under $z\to \bar z$ or $z_1\leftrightarrow z_2$.
 
 
 \subsubsection{Truncating to a finite system}
@@ -3189,7 +3197,7 @@ After choosing a normalization, for example $D_{k_0}^{(s)}=1$, we choose $Z_\Lam
 
 \subsubsection{Studying one solution}\label{sec:sos}
 
-In principle, the solutions $\left(D_k^{(x)|\Lambda,Z_\Lambda}\right)_{k,x}$ of the truncated system converge towards an exact solution $\left(D_k^{(x)}\right)_{k,x}$ of crossing symmetry provided 
+In the limit $\Lambda\to \infty$, the solutions $\left(D_k^{(x)|\Lambda,Z_\Lambda}\right)_{k,x}$ of the truncated system converge towards an exact solution $\left(D_k^{(x)}\right)_{k,x}$ of crossing symmetry provided 
 \begin{align}
  \forall k,x,Z_\Lambda\ , \quad \lim_{\Lambda\to \infty} D_k^{(x)|\Lambda,Z_\Lambda} = D_k^{(x)}\ .
 \end{align}
@@ -3249,7 +3257,7 @@ and the signature $\sigma = (0,\frac52,\frac52)$. We will now display numerical 
   \hline 
  \end{array}
 \end{align}
-Times are indicated for Python code \cite{rn23} running on an old desktop computer. For each value of $\Lambda$, we display the real parts of $s$- and $t$-channel structure constants together with their relative deviations, for all $r\leq \frac72$ as well as $(r,s)\in\left\{(4,0),(4,\frac14),(\frac92,0),(\frac92,\frac29)\right\}$:
+Times are indicated for Python code \cite{rn23} running on an old desktop computer. For each value of $\Lambda$, we display the real parts of $s$- and $t$-channel structure constants together with their relative deviations, for all $r\leq \frac72$ as well as $(r,s)\in\left\{(4,0),(4,\frac14),(\frac92,0),(\frac92,\frac29)\right\}$. To save space, we show only about $15$ of the $24$ or $56$ digits:
 \begin{align}
 \renewcommand{\arraystretch}{1.1}
  \begin{array}{|l||r|r||r|r|}
@@ -3324,7 +3332,7 @@ Then we expect
  \item $\mathcal{N}=0\implies \delta_\Lambda(z_0) = O(\eta_\Lambda)$: the large deviation $\epsilon_k^{(s)|\Lambda}$ measures the failure of crossing symmetry.
  \item $\mathcal{N}>1\implies \delta_\Lambda(z_0) \ll \eta_\Lambda$: the large deviation reflects the existence of several solutions, and the 3 channels should agree up to a small discrepancy that is due to our truncation of the system. 
 \end{itemize}
-Once we know that $\mathcal{N}>1$, the idea is to add $\mathcal{N}$ equations to the crossing symmetry equations. Then the solution becomes unique, leading to small relative deviations as in Section \ref{sec:sos}. Without loss of generality, we may use additional equations of the type $D^{(x)}_k=0$, in addition to the normalization condition $D^{(s)}_k=1$. This is equivalent to removing primary fields from the spectrum, until we have small relative deviations. When this is achieved, we have $\mathcal{N}\leq \mathcal{R}+1$, where $\mathcal{R}$ is the number of removed fields. We have an inequality rather than an equality, because it may happen that some of our additional equations are in fact obeyed by all solutions, and are therefore redundant with crossing symmetry equations. To eliminate this possibility, we should test whether removing all $\mathcal{R}$ primary fields is necessary for having small relative deviations. If the set of removed fields is minimal, then $\mathcal{N}= \mathcal{R}+1$.
+Once we know that $\mathcal{N}>1$, the idea is to add $\mathcal{N}$ equations to the crossing symmetry equations. Then the solution becomes unique, leading to small relative deviations as in Section \ref{sec:sos}. Without loss of generality, we may use equations of the type $D^{(x)}_k=0$, in addition to the normalization condition $D^{(s)}_k=1$. This is equivalent to removing primary fields from the spectrum, until we have small relative deviations. When this is achieved, we have $\mathcal{N}\leq \mathcal{R}+1$, where $\mathcal{R}$ is the number of removed fields. We have an inequality rather than an equality, because it may happen that some of our additional equations are in fact obeyed by all solutions, and are therefore redundant with crossing symmetry equations. To eliminate this possibility, we should test whether removing all $\mathcal{R}$ primary fields is necessary for having small relative deviations. If the set of removed fields is minimal, then $\mathcal{N}= \mathcal{R}+1$.
 
 The method of removing primary fields is computationally cheap, because it only involves deleting columns of the matrix $\mathcal{C}_\Lambda$, without recomputing $\mathcal{C}_\Lambda$, or changing the cutoff $\Lambda$. This method is however pedestrian, because it involves inspecting relative deviations for various sets of removed fields, and determining a minimal set by trial and error. It would be nice to find a simple way of determining $\mathcal{N}$ from $\mathcal{C}_\Lambda$. 
 
