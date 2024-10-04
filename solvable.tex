@@ -3342,7 +3342,7 @@ The method of removing primary fields can also work if $\mathcal{N}=\infty$. For
 
 \section{Correlation functions in loop CFTs} \label{sec:cloop}
 
-We will now take a short break from CFT, and build correlation functions as statistical sums over loop ensembles. This will motivate the introduction of combinatorial maps, which give rise to a basis of solutions of crossing symmetry. We can then forget about the statistical sums, which are not fundamental or universal quantities, while keeping the combinatorial maps, which are intrinsic features of the CFT.
+We will now take a short break from CFT, and build correlation functions as statistical sums over loop ensembles. This will motivate the introduction of combinatorial maps, which give rise to a basis of solutions of crossing symmetry. We can then forget about the statistical sums, which are not universal objects, while keeping the combinatorial maps, which are intrinsic features of the CFT.
 
 \subsection{Statistical sums over loop ensembles}
 
@@ -3366,11 +3366,11 @@ We will not need a precise definition of a loop ensemble: we only assume $|E|<\i
 where $n$ is the \myindex{contractible loop weight}\index{loop weight!contractible---}. 
 
 
-\subsubsection{Weight-changing punctures}
+\subsubsection{Legless punctures}
 
 Our correlation function $Z(\mathcal{E})$ is the analog of a 0-point function in CFT. In order to have analogs of an $N$-point function, 
-we introduce $N$ punctures on our sphere with positions $z_1,\dots, z_N$. 
-Without violating conformal symmetry, we can let the weight of a loop depend on how the loop splits $\{z_1,\dots, z_N\}$ into 2 subsets, i.e. on the loop's combinatorial properties. It cannot however depend on the loop's topology in $\overline{\mathbb{C}}\backslash \{z_1,\dots, z_N\}$, because we want $Z(\mathcal{E})$ to be a single-valued function of $z_1,\dots, z_N$. For example, in the case $N=4$, the following 2 loops are topologically different but combinatorially equivalent, and must therefore have the same weight: 
+we introduce $N$ \myindex{legless punctures}\index{puncture!legless---} on our sphere with positions $z_1,\dots, z_N$, which will modify the weights of loops. 
+Without violating conformal symmetry, we can let the weight of a loop depend on how the loop splits the set $\{z_1,\dots, z_N\}$ into 2 subsets, i.e. on the loop's combinatorial properties. It cannot however depend on the loop's topology in $\overline{\mathbb{C}}\backslash \{z_1,\dots, z_N\}$, because we want $Z(\mathcal{E})$ to be a single-valued function of $z_1,\dots, z_N$. For example, in the case $N=4$, the following 2 loops are topologically different but combinatorially equivalent, and must therefore have the same weight: 
 \begin{align}
 \begin{tikzpicture}[baseline=(base), scale = .4]
 \coordinate (base) at (0, 1);
@@ -3391,7 +3391,7 @@ Without violating conformal symmetry, we can let the weight of a loop depend on 
 \end{tikzpicture}
 \label{tvsc}
 \end{align}
-This leads to 8 combinatorially inequivalent classes of loops, with 8 different weights: contractible loops with weight $n$, $i$-loops around the vertex at $z_i$ with weight $w_i$, and $s$-loops, $t$-loops, $u$-loops that split the 4 vertices in pairs:
+This leads to 8 combinatorially inequivalent classes of loops, with 8 different weights: contractible loops with weight $n$, $i$-loops around the puncture at $z_i$ with weight $w_i$, and $s$-loops, $t$-loops, $u$-loops that split the 4 punctures in pairs:
 \begin{align}
  \begin{tikzpicture}[baseline=(base), scale = .6]
 \coordinate (base) at (0, 1);
@@ -3418,16 +3418,16 @@ This leads to 8 combinatorially inequivalent classes of loops, with 8 different 
    \node[red] at (3, 3.3) {$w_3$};
   \end{tikzpicture}
 \end{align}
-Since loops do not intersect, a configuration $E$ that contains $s$-loops has no $t$-loops and $u$-loops. 
+Since loops do not intersect, a configuration $E$ that contains $s$-loops has no $t$-loops or $u$-loops. 
 
-\subsubsection{Loop-ending punctures and combinatorial maps}
+\subsubsection{Legged punctures and combinatorial maps}
 
-We also introduce another type of punctures, where open loops can end. Such a puncture has a valency $2r\in\mathbb{N}^*$, with $r=0$ corresponding to the previously introduced weight-changing punctures. In the presence of $N$ punctures, the number of open loops is 
+We also introduce \myindex{legged punctures}\index{puncture!legged---} (sometimes called watermelon operators), where open loops can end. Such a puncture has a valency $2r\in\mathbb{N}^*$, with $r=0$ corresponding to the previously introduced legless punctures. In the presence of $N$ punctures, the number of open loops is 
 \begin{align}
  \sum_{i=1}^N r_i \in \mathbb{N} \ . 
  \label{srin}
 \end{align}
-Conformal symmetry allows us to specify how vertices are related by open loops: this information is called a \myindex{combinatorial map}\index{combinatorial map} \cite{gjnrs23}. For example, in the presence of punctures of valencies $3,2,1,0$, there exist 4 combinatorial maps:
+Conformal symmetry allows us to specify how punctures are connected by open loops: this information is called a \myindex{combinatorial map}\index{combinatorial map} \cite{gjnrs23}. A combinatorial map is a graph whose vertices correspond to punctures, and whose edges correspond to open loops. For example, there exist 4 combinatorial maps with vertices of valencies $3,2,1,0$:
 \begin{align}
   \begin{tikzpicture}[baseline=(base), scale = .4]
    \uvertex 
@@ -3455,7 +3455,7 @@ Conformal symmetry allows us to specify how vertices are related by open loops: 
   \end{tikzpicture}
   \label{4maps}
 \end{align}
-Notice that we forbid open loops that can be pulled inside punctures, as they are indistinguishable from contractible loops. This is the reason why we do not count the following map, where the bottom left vertex would have valency $1$ and not $3$:
+Notice that we forbid edges that can be pulled inside vertices, as the corresponding open loops are indistinguishable from contractible loops. This is the reason why we do not count the following map:
 \begin{align}
  \begin{tikzpicture}[baseline=(base), scale = .4]
    \uvertex 
@@ -3463,7 +3463,7 @@ Notice that we forbid open loops that can be pulled inside punctures, as they ar
    \draw (0, 0) to [out = 20, in = 90] (2, 0) to [out = -90, in = -20] (0, 0);
   \end{tikzpicture}
 \end{align}
-To a combinatorial map $M$, we associate the ensemble $\mathcal{E}_M$ of configurations of non-intersecting open and closed loops, such that the open loops connect the punctures according to $M$. The map $M$ dictates which types of closed loops can exist: for example, the last map in Eq. \eqref{4maps} allows closed loops with weights $n,w_4,w_s$. The weights of open loops are again constrained by conformal symmetry, which allows them to depend on the relative angles of open loops at vertices. More precisely, at any puncture we have a weight factor that depends on an angular momentum $s$,
+To a combinatorial map $M$, we associate the ensemble $\mathcal{E}_M$ of configurations of non-intersecting open and closed loops, such that the open loops connect the punctures according to $M$. The map $M$ dictates which types of closed loops can exist: for example, the last map in Eq. \eqref{4maps} allows closed loops with weights $n,w_4,w_s$. Conformal symmetry allows the weight of a loop configuration to depend on the relative angles of open loops at punctures. More precisely, at any puncture we have a weight factor that depends on an angular momentum $s$,
 \begin{align}
  \boxed{w_{(r,s)}(E) = \exp \left\{\tfrac{i}{2} s\textstyle{\sum}_{k=1}^{2r}\theta_{k}\right\}}\ .
  \label{wrs}
@@ -3490,21 +3490,21 @@ where the angles are measured with respect to a reference direction, and a refer
  \end{tikzpicture}
  \label{titt}
 \end{align}
-The reference direction would define each angle modulo $2\pi$. Thanks to the reference open loop and the cyclic ordering of open loops around the vertex, our angles are actually defined modulo a collective shift $(\theta_k) \to (\theta_k+2\pi)$. This shift leaves our weight factor invariant provided 
+The reference direction would define each angle modulo $2\pi$. Thanks to the reference open loop and the cyclic ordering of open loops around the puncture, our angles are actually defined modulo a collective shift $(\theta_k) \to (\theta_k+2\pi)$. This shift leaves our weight factor invariant provided 
 \begin{align}
  rs\in \mathbb{Z}\ . 
 \end{align}
 Under a change of reference direction or reference open loop, the weight of a configuration $E$ changes by an $E$-independent factor.
 
-We define correlation functions that depend on the punctures $z_1,\dots,z_N$ with their parameters $(r_1,s_1),\dots, (r_N,s_N)$, on the map $M$ and on the weights of closed loops $\{w_k\}$:
+We therefore define correlation functions that depend on the punctures $z_1,\dots,z_N$ with their parameters $(r_1,s_1),\dots, (r_N,s_N)$, on the map $M$ and on the weights of closed loops $\{w_k\}$:
 \begin{align}
- Z\Big(\{z_i\},\{(r_i,s_i)\},\{w_k\}\Big|\mathcal{E}_M\Big) =\sum_{E\in\mathcal{E}_M} \prod_{i=1}^N w_{(r_i,s_i)}(E) \prod_{\substack{\ell\in E\\ \ell \text{ closed}}} w(\ell) \ .
+ \boxed{Z\Big(\{z_i\},\{(r_i,s_i)\},\{w_k\}\Big|\mathcal{E}_M\Big) =\sum_{E\in\mathcal{E}_M} \prod_{i=1}^N w_{(r_i,s_i)}(E) \prod_{\substack{\ell\in E\\ \ell \text{ closed}}} w(\ell)} \ .
  \label{zbig}
 \end{align}
 
 \subsubsection{Cases of the $O(n)$, $U(n)$ and Potts models}\label{sec:coup}
 
-In the $O(n)$ model, all possible loop-ending punctures are allowed. But there are no weight-changing punctures: all closed loops have the same weight $n$, whether or not they are contractible. The sum over loop configurations is obtained by reformulating a model of spins on a lattice, where each spin is an $n$-dimensional vector that transforms in the fundamental representation of the group $O(n)$. 
+In the $O(n)$ model, all possible legged punctures are allowed. But there are no legless punctures: all closed loops have the same weight $n$, whether or not they are contractible. The loop model is obtained by reformulating a model of spins on a lattice, where each spin is an $n$-dimensional vector that transforms in the fundamental representation of the group $O(n)$. 
 
 In the $U(n)$ model, we add the restriction that all loops (closed and open) can be oriented such that any 2 neighbouring loops have opposite orientations. Equivalently, the Riemann sphere should be bicolorable, with each loop separating 2 regions of different colors. This allows only punctures with even valencies $2r\in 2\mathbb{N}^*$:
 \begin{align}
@@ -3516,6 +3516,8 @@ In the $U(n)$ model, we add the restriction that all loops (closed and open) can
    \draw (0, 0) node[fill, circle, minimum size = 2mm, inner sep = 0]{};
  \end{tikzpicture}
 \end{align}
+Moreover, we introduce legless punctures that detect the color of the region they belong to. Since that color does not change if we add 2 closed loops around the puncture, the puncture's weight must obey $w^2=n^2$, therefore $w=-n$. 
+
 The Potts model is the same as the $U(n)$ model, except that the fundamental geometrical objects are clusters instead of loops, with loops forming the boundaries of clusters. In general, loops and clusters are equivalent: in the above example, a puncture of valency 4 is a point where 2 large clusters meet, where a cluster is large if it cannot be pulled inside the puncture. In the following example, an open loop can be pulled inside the puncture, and we have a squeezed cluster rather than the meeting of 2 different clusters:
 \begin{align}
  \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .4]
@@ -3535,38 +3537,40 @@ However, there is a subtle difference between loops and clusters in the case of 
  \end{tikzpicture}
 \end{align}
 The correct condition for a puncture to belong to 1 large cluster is in fact that no closed loop goes around that puncture. 
-Therefore, the Potts model has punctures with valencies $2r\in 2(\mathbb{N}+2)$, and weight-changing punctures of weight $w=0$.
+Therefore, the Potts model has punctures with valencies $2r\in 2(\mathbb{N}+2)$, and legless punctures of weight $w=0$.
 
 
 \subsection{Relation with loop CFTs}
 
-The claim that loop CFTs describe the critical limit of loop models is supported by a large body of work, including direct numerical checks. However, it is not easy to derive it. In fact, it is already tricky to derive the relation between the central charge $c$ and the contractible loop weight $n$. See for example Appendix A of \cite{grz18} for a discussion of Kondev's original argument, and for an attempt to patch its perceived flaws with the help of the torus partition function. 
+The claim that loop CFTs describe the critical limit of loop models is supported by a large body of work, including direct numerical checks. However, it is not easy to derive it. In fact, it is already tricky to derive the relation between the central charge $c$ and the contractible loop weight $n$. See for example \cite[Appendix A]{grz18} for a discussion of Kondev's original argument, and for an attempt to patch its perceived flaws with the help of the torus partition function. 
 
-We will now propose an argument that starts with relating non-diagonal primary fields $V_{(r,s)}$ with loop-ending punctures. This is relatively straightforward, because both objects have discrete parameters. We will then deduce the relation between diagonal fields $V_P$ and weight-changing punctures, and finally the relation between the central charge and the contractible loop weight. 
+We will now propose an argument that starts with relating non-diagonal primary fields $V_{(r,s)}$ with legged punctures. This is relatively straightforward, because both objects have discrete parameters. We will then deduce the relation between diagonal fields $V_P$ and legless punctures, and finally the relation between the central charge and the contractible loop weight. 
 
 \subsubsection{Relations between punctures and primary fields}
 
-Our starting assumption is that in the critical limit, a loop-ending puncture tends to a primary field of a loop CFT. We have used the same notations $r,s$ for these punctures' parameters as for the parameters of non-diagonal fields $V_{(r,s)}$. Let us show that this is justified by an identification of parameters:
+Our starting assumption is that in the critical limit, a legged puncture tends to a primary field of a loop CFT. We have used the same notation $r,s$ for these punctures' parameters as for the non-diagonal fields $V_{(r,s)}$. Let us justify this notation by showing that $r,s$ take the same values in the loop model as in the CFT:
 \begin{itemize}
- \item In the CFT, as a result of the existence of the degenerate field $V^d_{\langle 1,2\rangle}$, the first Kac index $r$ is half-integer, and conserved modulo $\mathbb{Z}$, see Eq. \eqref{sriz}. For a loop-ending puncture, $2r$ is the valency, and it obeys the same constraints, see Eq. \eqref{srin}.
- \item In the CFT, $rs$ is the conformal spin, and it is integer for bosonic fields. Under a rotation around the puncture, which we interpret as $\theta_k\mapsto \theta_k + \theta$, the weight factor \eqref{wrs} picks up a factor $e^{irs\theta}$: according to Eq. \eqref{veis}, this means that our loop-ending puncture has the conformal spin $rs$. 
+ \item In the CFT, as a result of the existence of the degenerate field $V^d_{\langle 1,2\rangle}$, the first Kac index $r$ is half-integer, and conserved modulo $\mathbb{Z}$, see Eq. \eqref{sriz}. For a legged puncture, $2r$ is the valency, and it obeys the same constraints, see Eq. \eqref{srin}.
+ \item In the CFT, $rs$ is the conformal spin, and it is integer for bosonic fields. Under a rotation around the puncture, which we interpret as $\theta_k\mapsto \theta_k + \theta$, the weight factor \eqref{wrs} picks up a factor $e^{irs\theta}$: according to Eq. \eqref{veis}, this means that our legged puncture has the conformal spin $rs$. 
 \end{itemize}
-Therefore, a loop-ending puncture can be identified with a non-diagonal primary field $V_{(r,s)}$ in a CFT where $V^d_{\langle 1,2\rangle}$ exists. 
+Therefore, a legged puncture can be identified with a non-diagonal primary field $V_{(r,s)}$ in a CFT where $V^d_{\langle 1,2\rangle}$ exists. 
 
-Next, let us consider a weight-changing puncture of weight $w$. We again assume that it tends to a primary field. Since $w$ is a continuous parameter, this must be a diagonal field. To determine its momentum, let us use the idea \eqref{sP} that a diagonal field is a non-diagonal field with $r=0$. The analogous idea for punctures is that the weight $w$ of a closed loop is related to the weight factor \eqref{wrs} associated to a rotation $\theta = 2\pi$. In fact, since our closed loop is not oriented, we have to add the rotations by $2\pi$ and $-2\pi$, and we find $w=2\cos(\pi s)$, which is equivalent to Eq. \eqref{wP}. 
+Next, let us consider a legless puncture of weight $w$. We again assume that it tends to a primary field. Since $w$ is a continuous parameter, this must be a diagonal field. To determine its momentum, let us use the idea \eqref{sP} that a diagonal field is a non-diagonal field with $r=0$. The analogous idea for punctures is that the weight $w$ of a closed loop is related to the weight factor \eqref{wrs} associated to a rotation $\theta = 2\pi$. In fact, since our closed loop is not oriented, we have to add the rotations by $2\pi$ and $-2\pi$, and we find $w=2\cos(\pi s)$, which is equivalent to Eq. \eqref{wP}. 
 
 Finally, the identity field $V^d_{\langle 1,1\rangle}$ should not change the weight of loops. Assuming that 
 the corresponding loop weight is still given by Eq. \eqref{wP}, we obtain 
-$n=w(P_{(1,1)})$, which boils down to the expression \eqref{ncb} for the contractible loop weight $n$ in terms of the central charge. We do not discuss the loop model interpretation of the non-trivial degenerate fields $V^d_{\langle 1,s\geq 2\rangle}$, because we will not study their correlation functions. These fields cannot simply correspond to weight-changing punctures, if only because $w(P_{(1,3)})=w(P_{(1,1)})=n$. 
+$n=w(P_{(1,1)})$, which boils down to the expression \eqref{ncb} for the contractible loop weight $n$ in terms of the central charge. We do not discuss the loop model interpretation of the non-trivial degenerate fields $V^d_{\langle 1,s\geq 2\rangle}$, because we will not study their correlation functions. These fields cannot simply correspond to legless punctures, if only because $w(P_{(1,3)})=w(P_{(1,1)})=n$. 
 
 \subsubsection{Correlation functions}\label{sec:cf}
 
-According to our identification of punctures with primary fields, the loop model $N$-point function \eqref{zbig} corresponds to a loop CFT $N$-point function of the type $\left<\prod_{i=1}^N V_{(r_i,s_i)}\right>$. In the bootstrap approach, $N$-point functions are defined as single-valued solutions of crossing symmetry equations. To write these equations, we need to know the spectrum in any channel. Given a combinatorial map $M$, we conjecture that the spectrum is 
+According to our identification of punctures with primary fields, the loop model $N$-point function \eqref{zbig} corresponds to a loop CFT $N$-point function of the type $\left<\prod_{i=1}^N V_{(r_i,s_i)}\right>$. In the bootstrap approach, $N$-point functions are defined as single-valued solutions of crossing symmetry equations. To write these equations, we need to know the spectrum in any channel. We introduce the following notations for spectrums:
 \begin{align}
- \mathcal{S}^{(x)} = \left\{V_{(r,s)}\right\}_{\substack{r\in \sigma^{(x)}+\mathbb{N} \\ s\in\frac{1}{r}\mathbb{Z}}}\ ,
+ \mathcal{S}_{\sigma} \underset{\sigma\in \frac12\mathbb{N}^*}{=} \left\{V_{(r,s)}\right\}_{\substack{r\in \sigma+\mathbb{N} \\ s\in\frac{1}{r}\mathbb{Z}}} \quad , \quad \mathcal{S}_0(P) = \left\{V_{P+k\beta^{-1}}\right\}_{k\in\mathbb{Z}} \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in\mathbb{N}^* \\ s\in\frac{1}{r}\mathbb{Z}}}\ .
  \label{sxs}
 \end{align}
-where we define the map's $x$-channel \myindex{signature}\index{combinatorial map!signature of a---} $\sigma^{(x)}\in\frac12\mathbb{N}$ as half the minimum number of lines in $M$ that are crossed by an $x$-loop. For example, the map 
+Let $\mathcal{Z}$ be the space of solutions of crossing symmetry for $\left<\prod_{i=1}^N V_{(r_i,s_i)}\right>$, where in each channel the spectrum is either $\mathcal{S}_0(P)$ or $\mathcal{S}_\frac12$, as determined by the conservation of $r\bmod 1$. This spectrum includes all non-diagonal fields that are allowed by the conservation of $r\bmod 1$, plus a family of diagonal fields whenever $r$ is integer. 
+
+Given a 4-point combinatorial map $M$, let us define the $x$-channel \myindex{signature}\index{combinatorial map!signature of a---} $\sigma^{(x)}\in\frac12\mathbb{N}$ as half the minimum number of lines in $M$ that are crossed by an $x$-loop. For example, the map 
 $
 \begin{tikzpicture}[baseline=(base), scale = .25]
  \vertices
@@ -3575,12 +3579,17 @@ $
   \draw (0, 0) to [out = 70, in = 0] (0, 3.5) to [out = 180, in = 110] (0, 0);
  \end{tikzpicture}
  $
-has signature $(\sigma^{(s)},\sigma^{(t)},\sigma^{(u)})=(0,2,2)$. In a channel where the signature vanishes, the spectrum includes an $r=0$ sector, which is made of all diagonal fields whose loop weight is $w_x=2\cos(2\pi\beta P_x)$:
+has signature $(\sigma^{(s)},\sigma^{(t)},\sigma^{(u)})=(0,2,2)$. Then let us define the spectrum $\mathcal{S}_M = (\mathcal{S}^{(s)}_M, \mathcal{S}^{(t)}_M, \mathcal{S}^{(u)}_M)= (\mathcal{S}_{\sigma^{(s)}},\mathcal{S}_{\sigma^{(t)}},\mathcal{S}_{\sigma^{(u)}})$.
+In the case $\sigma^{(x)}=0$, there can exist $x$-loops with weight $w_x=2\cos(2\pi\beta P_x)$, and we take the $x$-channel spectrum to be $\mathcal{S}_0(P_x)$. 
+
+We conjecture that each combinatorial map $M$ with vertices of valencies $(2r_1,\dots, 2r_N)$ corresponds to a solution $Z_M = \lim_\text{critical} Z(\mathcal{E}_M)$ of the crossing symmetry equations with spectrums $\mathcal{S}_M$, and that these solutions form a basis of the space of solutions \cite{gjnrs23}:
 \begin{align}
- \mathcal{S}^{(x)}_{r=0} = \left\{V_{P_x+k\beta^{-1}}\right\}_{k\in\mathbb{Z}}\ . 
- \label{srz}
+ \mathcal{Z} = \operatorname{Span}\left\{ Z_M\right\}_{M}\  .
 \end{align}
-Signatures lead to a natural partial ordering on combinatorial maps, with $M\geq M' \iff \forall x, \sigma^{(x)}(M)\geq \sigma^{(x)}(M')$. If $M$ is maximal for this ordering, we expect that the corresponding crossing symmetry equations have a 1d space of solutions, proportional to $Z_M = \lim_\text{critical} Z(\mathcal{E}_M)$. However, if $M> M'$, then the equations for $M$ have at least 2 linearly independent solutions $Z_M,Z_{M'}$. This happens in particular if 2 maps have the same signature, for example 
+For example, the existence of the 4 combinatorial maps
+\eqref{4maps} implies that for any allowed values of the parameters $s_1,s_2,s_3,P_4$, the space of 4-point functions of the type $\left<V_{(\frac32,s_1)}V_{(1,s_2)}V_{(\frac12,s_3)}V_{P_4}\right>$ has dimension 4. 
+
+A subtelty is that crossing symmetry equations for $Z_M$ may in fact have several linearly independent solutions. To see this, notice that signatures lead to a natural partial ordering on combinatorial maps, with $M\geq M' \iff \forall x, \sigma^{(x)}(M)\geq \sigma^{(x)}(M')$. If $M\geq M'$, then $\forall x, \ \mathcal{S}_M^{(x)} \subset \mathcal{S}_{M'}^{(x)}$, and both $Z_M,Z_{M'}$ solve the crossing symmetry equations with spectrum $\mathcal{S}_{M'}$. This happens in particular if 2 maps have the same signature, for example 
 $
 \begin{tikzpicture}[baseline=(base), scale = .25]
  \vertices
@@ -3595,21 +3604,9 @@ $ and $
   \draw (0, 0) -- (0, 3);
   \draw (0, 0) to [out = -30, in = -135] (3.5, -.5) to [out = 45, in = -80] (3, 3);
   \end{tikzpicture}
-$. 
+$. On the other hand, if $M$ is maximal for our ordering, we expect that the corresponding crossing symmetry equations have a 1d space of solutions, proportional to $Z_M$. 
 
-Given an $N$-point function $\left<\prod_{i=1}^N V_{(r_i,s_i)}\right>$, let us consider the space $\mathcal{Z}$ of solutions of crossing symmetry equations for spectrums that contain
-\begin{itemize}
- \item all non-diagonal fields that are allowed by the conservation of $r\bmod 1$,
- \item if integer values of $r$ are allowed, all diagonal fields with a given loop weight. 
-\end{itemize}
-We conjecture that each combinatorial map $M$ with vertices of valencies $(2r_1,\dots, 2r_N)$ corresponds to a solution $Z_M$, and that these solutions form a basis of the space of solutions \cite{gjnrs23}:
-\begin{align}
- \mathcal{Z} = \operatorname{Span}\left\{ Z_M\right\}_{M}\  .
-\end{align}
-For example, the existence of the 4 combinatorial maps
-\eqref{4maps} implies that for any allowed values of the parameters $s_1,s_2,s_3,P_4$, the space of 4-point functions of the type $\left<V_{(\frac32,s_1)}V_{(1,s_2)}V_{(\frac12,s_3)}V_{P_4}\right>$ has dimension 4. 
-
-How do we interpret the dependence of the $s$-channel spectrum on a channel weight $w_s$? The $s$-channel spectrum of a 4-point function should only depend on the 4 fields $V_{(r_i,s_i)}$. For $w_s\neq n$, the dependence on $w_s$ is conjectured to be a manifestation of the presence of an $s$-channel combinatorial defect \cite{rib22}. In the presence of this defect, $s$-channel diagonal fields $V_{P_s}$ such that $w(P_s)=w_s$ appear in the $s$-channel spectrum, and the structure constants of non-diagonal fields may depend on $w_s$. By combinatorial defect we mean a defect that only depends on which punctures are inside or outside the defect. This implies that the defect is topological, but not all topological defects are combinatorial, see Figure \eqref{tvsc}. In the $O(n)$ CFT on the torus, adding combinatorial defect would not spoil modular invariance, but the partition function would become a function of the defect's weight. 
+Can we interpret the elements of our space $\mathcal{Z}$ as $4$-point functions $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$? A potential puzzle is that the 4-point functions should only depend on the 4 fields $V_{(r_i,s_i)}$, whereas our solutions can depend on channel weights, for example on $w_s$ if $r_1+r_2\equiv 0 \bmod 1$. The proposed explanation is that our $4$-point functions involve not only 4 primary fields, but also a combinatorial defect with parameter $w_s$ \cite{rib22}. In the presence of this defect, $s$-channel diagonal fields $V_{P_s}$ such that $w(P_s)=w_s$ appear in the $s$-channel spectrum, and the structure constants of non-diagonal fields may depend on $w_s$. By combinatorial defect we mean a defect that only depends on which punctures are inside or outside the defect. This implies that the defect is topological, but not all topological defects are combinatorial, see Figure \eqref{tvsc}. In the $O(n)$ CFT on the torus, adding combinatorial defect would not spoil modular invariance, but the partition function would become a function of the defect's weight. 
 
 In particular CFTs, there may exist more or fewer solutions than combinatorial maps. 
 For example, the map 
@@ -3626,15 +3623,15 @@ corresponds to a solution with 1 $s$-channel diagonal field.
  
 \subsubsection{Critical limits}
 
-Starting from a statistical model on a finite lattice, the large lattice limit may give rise to a conformal field theory, provided the lattice couplings are set to certain critical values. The same loop CFT can arise as the critical limit of statistical models with various lattice geometries, various rules for drawing loops on the lattice, and various parameters. These various non-universal features are forgotten in the critical limit, and all these models belong to the same universality class. (See the book \cite{car96} for an excellent introduction to these concepts.) 
+Starting from a statistical model on a finite lattice, the large lattice limit may give rise to a conformal field theory, provided the lattice couplings are set to certain critical values. The same loop CFT can arise as the critical limit of statistical models with various lattice geometries, various rules for drawing loops on the lattice, and various parameters. These non-universal features are forgotten in the critical limit, and all these models belong to the same universality class. (See the book \cite{car96} for an excellent introduction to these concepts.) 
 
 The existence of relevant fields in the CFT influences the critical limit. A primary field is called \myindex{relevant}\index{field!relevant---} if $\Re(\Delta+\bar\Delta)<2$, \myindex{marginal}\index{field!marginal---} if $\Re(\Delta+\bar\Delta)=2$, or \myindex{irrelevant}\index{field!irrelevant---} if $\Re(\Delta+\bar\Delta)>2$. 
-Any given lattice model has a finite set of couplings, which correspond to relevant fields of the CFT, and have to be tuned to their critical values for the critical limit to exist. If there are relevant fields that do not correspond to any coupling, the critical limit ceases to exist, unless it is protected by some symmetry. Since the 
+Any given lattice model has a finite set of couplings, which correspond to relevant fields of the CFT, and have to be tuned to their critical values for the critical limit to exist. If there exist relevant fields that do not correspond to any coupling, the critical limit ceases to exist, unless it is protected by some symmetry. Since the 
 dimensions of primary fields depend on the parameter $n$ or $Q$, there exist \myindex{critical regions}\index{critical region} in the complex $n$-plane or $Q$-plane where a given model has a critical limit, and the boundary of these regions are \myindex{marginality lines}\index{marginality line}, where a field becomes marginal. 
 
 Let us plot the marginality lines of a few primary fields, which will give us an idea on how critical regions can look like. For simplicity, we focus on degenerate diagonal fields $V^d_{\langle 1,s\rangle}$. In the $O(n)$, $U(n)$ and Potts models, these fields are invariant under the global symmetry, which therefore does not protect the critical limit from the corresponding couplings. The marginality line of $V^d_{\langle r,s\rangle}$ is
 \begin{align}
- M_{(r,s)} = \left\{\Re\Delta_{(r,s)} = 1 \right\} = \left\{\Re \left(P_{(r+1,s-1)}P_{(r-1,s+1)}\right) = 0\right\} \ . 
+ M_{(r,s)} = \Big\{\Re\Delta_{(r,s)} = 1 \Big\} = \Big\{\Re \left(P_{(r+1,s-1)}P_{(r-1,s+1)}\right) = 0\Big\} \ . 
 \end{align}
 In the complex $\beta^2$-half-plane, the line $M_{(1,s)}=\left\{\Re\beta^{-2}=\frac{2}{s-1}\right\}$ is a circle with a center at $\beta^2=\frac{s-1}{4}$, which goes through the origin. The field $V^d_{(1,s)}$ is irrelevant inside the circle, and relevant outside. Here we plot the circles for $s=2,3,\dots, 9$ in the right half-plane \eqref{rbp}, with dashed lines for the even values, which do not appear in the $O(n)$ CFT:
 \begin{align}
@@ -3664,11 +3661,12 @@ In the complex $\beta^2$-half-plane, the line $M_{(1,s)}=\left\{\Re\beta^{-2}=\f
  \node at (1, 0) [fill, circle, scale = .5] {};
  \node at (0, 0) [fill, circle, scale = .5] {};
  \end{tikzpicture} 
+ \label{phases}
 \end{align}
 When it comes to the complex $n$-plane, we first notice that the relation \eqref{ncb} maps any strip $k<\Re \beta^2\leq k+1$ to the full complex $n$-plane. 
-This is one reason why the same CFT can describe various phases of various statistical models. For example, the $O(n)$ model's dense phase is usually defined for $\beta^2\in (0,1)$, and the dilute phase for $\beta^2\in (1,2)$, with $\beta^2>2$ corresponding to multicritical phases. The $O(n)$ model has 1 lattice coupling $K$, contributing a factor $K^{\#\{\text{occupied edges}\}}$ to the weight function \eqref{woe}, and corresponding to the field $V^d_{\langle 1,3\rangle}$. In the dense phase, that field is irrelevant, and the critical limit is obtained for a range of values of the coupling. In the dilute phase it is relevant, and the critical limit is obtained for the critical value of the coupling, which is $K_c = \frac{1}{\sqrt{2+\sqrt{2-n}}}$ for the honeycomb lattice. In multicritical phases, criticality can only be achieved by adding extra couplings to the model, and fine-tuning their values. 
+This is one reason why the same CFT can describe different phases of a statistical model. For example, the $O(n)$ model's dense phase is usually defined for $\beta^2\in (0,1)$, and the dilute phase for $\beta^2\in (1,2)$, with $\beta^2>2$ corresponding to multicritical phases. The $O(n)$ model has 1 lattice coupling $K$, contributing a factor $K^{\#\{\text{occupied edges}\}}$ to the weight function \eqref{woe}, and corresponding to the field $V^d_{\langle 1,3\rangle}$. In the dense phase, that field is irrelevant, and the critical limit is obtained for a range of values of the coupling. In the dilute phase it is relevant, and the critical limit is obtained for the critical value of the coupling, which is $K_c = \frac{1}{\sqrt{2+\sqrt{2-n}}}$ for the honeycomb lattice. In multicritical phases, criticality can only be achieved by adding extra couplings to the model, and fine-tuning their values. 
 
-These phases can be extended to the complex $\beta^2$-plane, by taking marginality lines as phase boundaries. Let us now plot the marginality lines in the $n$-plane that corresponds to $0<\Re \beta^2<1$:
+In the diagram \eqref{phases} we have extended these phases to the complex $\beta^2$-plane, by taking marginality lines as phase boundaries. Let us now plot the marginality lines in the $n$-plane that corresponds to $0<\Re \beta^2<1$:
 \newcommand{\margs}[2]{
 \draw[domain = {-2/(#1-1)}:{2/(#1-1)}, smooth, variable = \t, #2]
 plot({-2*cos(pi/2*(#1-1)*\t r)*cosh(pi/2*(#1-1)*sqrt(abs(\t)-\t*\t)}, {2*sin(pi/2*(#1-1)*\t r)*sinh(pi/2*(#1-1)*sqrt(abs(\t)-\t*\t)});
@@ -3702,7 +3700,7 @@ In fact, in the critical limit, zeros of the partition function condense not onl
 
 A puzzle has arisen in the $O(n)$ CFT, when it was found that there is 1 field $V_{(2,0)}$ that is invariant under $O(n)$ \cite{gz20}. From the point of view of the renormalization group flow triggered by the field $V^d_{\langle 1,3\rangle}$, this field is \textit{dangerously irrelevant}, i.e. it becomes relevant along the flow, and could prevent the flow from reaching the dense phase from the dilute phase. But numerical studies show that the flow does reach the dense phase. The puzzle is resolved by noticing that $V^d_{\langle 1,3\rangle}$ is degenerate, and cannot produce the non-diagonal field $V_{(2,0)}$ by repeated fusion, even if $O(n)$ symmetry would allow it \cite{js23}. Therefore, it is global symmetry itself that is \textit{dangerously irrelevant} to the understanding of this flow. 
 
-If we now consider correlation functions, the existence of a critical limit might depend on the case, and in particular on the weights $w$ of weight-changing punctures. And which diagonal fields $V_P$ do we obtain in the limit? Since the relation \eqref{wP} between $w$ and $P$ is not bijective, the answer is not obvious. (A simple possibility would be $0\leq \Re(\beta P)\leq \frac12$.) 
+If we now consider correlation functions, the existence of a critical limit might depend on the case, and in particular on the weights $w$ of legless punctures. And which diagonal fields $V_P$ do we obtain in the limit? Since the relation \eqref{wP} between $w$ and $P$ is not bijective, the answer is not obvious. (A simple possibility would be $0\leq \Re(\beta P)\leq \frac12$.) 
 
 
 \subsection{Analytic properties of structure constants}
@@ -3712,9 +3710,7 @@ For each structure constant, it will remain to determine a polynomial in loop we
 
 \subsubsection{Analyticity in the channel momentum}
 
-We consider the 4-point function $Z(P)=\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$, with an $s$-channel spectrum 
-\eqref{sxs} corresponding to the signature $\sigma^{(s)}=0$, including 
-diagonal fields of momentums $P+\beta^{-1}\mathbb{Z}$. The decomposition of $Z(P)$ into $s$-channel conformal blocks is therefore
+We consider the 4-point function $Z(P)=\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$, with an $s$-channel spectrum $\mathcal{S}_0(P)$ \eqref{sxs}. The decomposition of $Z(P)$ into $s$-channel conformal blocks is
 \begin{align}
  Z(P) = \sum_{k\in\mathbb{Z}} D_{P+k\beta^{-1}} \left|\mathcal{F}_{P+k\beta^{-1}}\right|^2 +\sum_{r=1}^\infty \sum_{s\in\frac{1}{r}\mathbb{Z}} D_{(r,s)}(P) \mathcal{G}_{(r,s)}\ .
 \end{align}
@@ -4078,7 +4074,7 @@ When it comes to a 4-point function $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$, 
 
 In $d\geq 3$ dimensions, the $O(n)$ and $U(n)$ models can still be formulated in terms of loops, but
 from a distance there is no way to tell whether 2 loops intersect or not. The case $d\geq 3$ is therefore similar to the case $d=2$ with intersecting loops, and we expect no larger symmetry. 
-In the critical $O(n)$ model for $d\geq 3$ or $d=2$ with intersecting loops, we expect that a vertex with a given valency $2r$ gives rise to the same fields as in the $O(n)$ CFT, transforming in the same irreducible $O(n)$ representations. However, all their conformal dimensions are modified, due to the breaking of the larger global symmetry, the breaking of interchiral symmetry, and if $d\geq 3$ the breaking of local conformal symmetry down to global conformal symmetry. As a result, for any conformal dimension that appears in the spectrum, we expect 1 primary field that transforms in an irreducible representation of $O(n)$. If we write a 4-point function as a linear combination of 4-point invariant tensors, the coefficients are all solutions of crossing symmetry, and have no reason to be linearly dependent. Therefore, we expect as many solutions of crossing symmetry as 4-point invariant tensors. 
+In the critical $O(n)$ model for $d\geq 3$ or $d=2$ with intersecting loops, we expect that a puncture with a given valency $2r$ gives rise to the same fields as in the $O(n)$ CFT, transforming in the same irreducible $O(n)$ representations. However, all their conformal dimensions are modified, due to the breaking of the larger global symmetry, the breaking of interchiral symmetry, and if $d\geq 3$ the breaking of local conformal symmetry down to global conformal symmetry. As a result, for any conformal dimension that appears in the spectrum, we expect 1 primary field that transforms in an irreducible representation of $O(n)$. If we write a 4-point function as a linear combination of 4-point invariant tensors, the coefficients are all solutions of crossing symmetry, and have no reason to be linearly dependent. Therefore, we expect as many solutions of crossing symmetry as 4-point invariant tensors. 
 
 In the $d\geq 3$ Potts model, the boundaries of clusters are not loops, but objects of dimension $d-1\geq 2$. Therefore, we do not expect the critical Potts model to share non-trivial conformal dimensions with the critical $O(n)$ and $U(n)$ models. 
 
