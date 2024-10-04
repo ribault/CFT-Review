@@ -12,7 +12,7 @@
 
 \usepackage[top=18mm,bottom=18mm,left=25mm,right=25mm]{geometry}
 
-\usepackage{showkeys}
+%\usepackage{showkeys}
 
 \usepackage{amsmath,amssymb,amsfonts}
 
@@ -556,7 +556,7 @@ Using the same coefficients \eqref{shap}, we can define a sesquilinear form inst
 
 \subsection{Fields and operator product expansions}\label{sec:fope}
 
-The fundamental objects of conformal field theory are fields. In quantum field theory, all states can be obtained by acting on the vacuum state with fields: this is called the \myindex{state-field correspondence}\index{state-field correspondence} or operator-state correspondence. In conformal field theory, the correspondence is bijective, and allows us to identify the space of fields with the \myindex{space of states}\index{space of states}  or \myindex{spectrum}\index{spectrum}  --- a vector space on which the Virasoro algebra acts. To a state $V$, the correspondence associates a field $V(z)$, which depends on a position $z\in\overline{\mathbb{C}}$ in the Riemann sphere. Primary states, descendant states and degenerate states respectively give rise to \myindex{primary fields}\index{primary!---field}, \myindex{descendant fields}\index{descendant!---field}\index{field!descendant---} and \myindex{degenerate fields}\index{degenerate!---field}.
+The fundamental objects of conformal field theory are fields. In quantum field theory, all states can be obtained by acting on the vacuum state with fields: this is called the \myindex{state-field correspondence}\index{state-field correspondence} or operator-state correspondence. In conformal field theory, the correspondence is bijective, and allows us to identify the space of fields with the \myindex{space of states}\index{space of states}  or \myindex{spectrum}\index{spectrum}  --- a vector space on which the Virasoro algebra acts. To a state $V$, the correspondence associates a field $V(z)$, which depends on a position $z\in\overline{\mathbb{C}}$ in the Riemann sphere. Primary states, descendant states and degenerate states respectively give rise to \myindex{primary fields}\index{primary!---field}\index{field!primary---}, \myindex{descendant fields}\index{descendant!---field}\index{field!descendant---} and \myindex{degenerate fields}\index{degenerate!---field}\index{field!degenerate---}.
 
 In the bootstrap approach, which is axiomatic rather than constructive, we need not define fields. Rather, we use fields as a convenient notation for stating properties of correlation functions, which we will introduce in Section \ref{sec:cor}. 
 
@@ -2727,7 +2727,9 @@ Let us compute $s$-channel interchiral blocks for the 4-point function $\left<\p
 \end{align}
 To make this explicit, it remains to compute the ratios of 4-point structure constants. This is in principle a straightforward consequence of the shift equation for the 3-point structure constant \eqref{sh-mp2}. However, for certain values of the parameters, this shift equation 
 is finite after cancelling poles from the numerator and denominator. Such cancellations can be avoided by writing the shift equations differently. In fact, in shifts of the reference 3-point structure constant $C^\text{ref}$ \eqref{cref}, no cancelling poles occur. The price to pay is that $C^\text{ref}$ only solves shift equations up to signs, see Eq. \eqref{tpt}. Taking these signs into account, the shift equation \eqref{sh-mp2} may be rewritten as 
-\begin{multline}
+\begin{subequations}
+ \label{cbshift}
+ \begin{multline}
  \frac{C_{(r_1,s_1-1)(r_2,s_2)(r_3,s_3)}}{C_{(r_1,s_1+1)(r_2,s_2)(r_3,s_3)}} = (-)^{2r_3}(-)^{\max(2r_1,2r_2,2r_3,r_1+r_2+r_3)} \beta^{-4\beta^{-2}s_1} 
  \\ \times 
  \prod_{\epsilon_2,\epsilon_3=\pm} 
@@ -2739,6 +2741,7 @@ where $2r_i, r_1+r_2+r_3\in\mathbb{Z}$ from Eq. \eqref{sriz}. The shift equation
  \frac{B_{(r,s-1)}}{B_{(r,s+1)}} = (-)^{2r} \beta^{-8\beta^{-2}s} \prod_{a\in \{0,1,\beta^{-2},1-\beta^{-2}\}} \frac{\Gamma(a+r-\beta^{-2}s)}{\Gamma(a+r+\beta^{-2}s)}\ . 
  \label{bshift}
 \end{align}
+\end{subequations}
 From these shift equations, we can assemble shift equations for 
 \begin{align}
  D_{(r,s)}^{(s)} = \frac{C_{(r_1,s_1)(r_2,s_2)(r,s)}C_{(r,s)(r_3,s_3)(r_4,s_4)}}{B_{(r,s)}}\ , 
@@ -3705,14 +3708,14 @@ If we now consider correlation functions, the existence of a critical limit migh
 
 \subsection{Analytic properties of structure constants}
 
-Whenever crossing symmetry equations have a unique solution, numerical bootstrap calculations can give us numerical data for the corresponding 4-point structure constants. From these data, we would like to infer exact expressions. To do this, we will constrain structure constants by making assumptions on their analytic properties. 
-For each structure constant, it will remain to determine a polynomial in loop weights.
+Whenever crossing symmetry equations have a unique solution, numerical bootstrap calculations can give us numerical data for the corresponding 4-point structure constants. From these data, we would like to infer exact expressions. To do this, we will constrain structure constants by making assumptions on their analytic properties. These assumptions will determine each structure constant up to a polynomial in loop weights.
 
 \subsubsection{Analyticity in the channel momentum}
 
 We consider the 4-point function $Z(P)=\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$, with an $s$-channel spectrum $\mathcal{S}_0(P)$ \eqref{sxs}. The decomposition of $Z(P)$ into $s$-channel conformal blocks is
 \begin{align}
  Z(P) = \sum_{k\in\mathbb{Z}} D_{P+k\beta^{-1}} \left|\mathcal{F}_{P+k\beta^{-1}}\right|^2 +\sum_{r=1}^\infty \sum_{s\in\frac{1}{r}\mathbb{Z}} D_{(r,s)}(P) \mathcal{G}_{(r,s)}\ .
+ \label{zop}
 \end{align}
 Besides the Virasoro blocks $\mathcal{F}_P$, this involves conformal blocks $\mathcal{G}_{(r,s)}$ that gather the contributions of non-diagonal primary fields $V_{(r,s)}$ and their descendants, with $s\notin\mathbb{Z}\implies \mathcal{G}_{(r,s)} = \mathcal{F}_{P_{(r,s)}}\bar{\mathcal{F}}_{P_{(r,-s)}}$. 
 
@@ -3720,6 +3723,7 @@ Analytic bootstrap equations from the existence of $V^d_{\langle 1,2\rangle}$ im
 determine how $D_P$ behaves under $P\to P+\beta^{-1}$. Let us assume that diagonal structure constants are reference structure constants,
 \begin{align}
  D_P = \frac{C^\text{ref}_{P(r_1,s_1)(r_2,s_2)}C^\text{ref}_{P(r_3,s_3)(r_4,s_4)}}{B_P}\ ,
+ \label{dccb}
 \end{align}
 where $B_P$ is given in Eq. \eqref{bc} and $C^\text{ref}$ in Eq. \eqref{cref}. For any given 4-point function $Z(P)$, this assumption only amounts to an overall choice of normalization. 
 
@@ -3767,18 +3771,18 @@ More explicitly, using Eq. \eqref{dpld}, this can be expressed as
 \end{multline}
 where the derivatives are with respect to $P$, and
 $\mathcal{F}^\text{reg}_{P_{(r,s)}}$ was defined in Eq. \eqref{freg}.
-The logarithmic nature of the block $\mathcal{G}_{(r,s)}$ comes from the asymptotic behaviour $\mathcal{F}_P(z)\underset{z\to 0}{\propto} z^{P^2} $ \eqref{stu} of Virasoro blocks. When taking derivatives in $P$, or regularizing near a pole, this power-like prefactor gives rise to terms in $\log z$. Logarithmic terms are however absent if $R^{\#}_{r,s}=\bar R^{\#}_{r,s}=0$, which occurs if degenerate fusion rules allow the degenerate field $V^d_{\langle r,s\rangle}$ to propagate in the $s$-channel of our 4-point function. In this case, the logarithmic block reduces to 
+The logarithmic nature of the block $\mathcal{G}_{(r,s)}$ comes from the asymptotic behaviour $\mathcal{F}_P(z)\underset{z\to 0}{\propto} z^{P^2} $ \eqref{stu} of Virasoro blocks. When taking derivatives in $P$, or regularizing near a pole, this power-like prefactor gives rise to terms in $\log z$. Logarithmic terms are however absent if $R^{\#}_{r,s}=\bar R^{\#}_{r,s}=0$, which occurs if fusion rules allow the degenerate field $V^d_{\langle r,s\rangle}$ to propagate in the $s$-channel of our 4-point function. In this case, the logarithmic block reduces to 
 \begin{align}
  \mathcal{G}_{(r,s)} \underset{R^{\#}_{r,s}=\bar R^{\#}_{r,s}=0}{=} 
  \mathcal{F}_{P_{(r,s)}}  \bar{\mathcal{F}}_{P_{(r,-s)}} + 
  \frac{R^{\#}_{r,s}}{\bar{R}^{\#}_{r,s}} \mathcal{F}_{P_{(r,-s)}} \bar{\mathcal{F}}_{P_{(r,s)}} \ .
 \end{align}
-This is a combination of the blocks for the Verma modules of $V_{(r,s)}$ and $V_{(r,-s)}$. Their relative coefficient $\frac{R^{\#}_{r,s}}{\vphantom{\tilde{|}}\bar{R}^{\#}_{r,s}}$ can be determined either by taking a limit in $s_i$ with $r_i$ fixed \cite{gnjrs21}, or by using the shift equations \eqref{cshift}, \eqref{bshift}. 
+This is a combination of the blocks for the Verma modules of $V_{(r,s)}$ and $V_{(r,-s)}$. Their relative coefficient $\frac{R^{\#}_{r,s}}{\vphantom{\tilde{|}}\bar{R}^{\#}_{r,s}}$ can be determined either by taking a limit in $s_i$ with $r_i$ fixed \cite{gnjrs21}, or by using the shift equations \eqref{cbshift}, applied to $\frac{R^{\#}_{r,s}}{\vphantom{\tilde{|}}\bar{R}^{\#}_{r,s}} = \frac{D_{(r,-s)}}{D_{(r,s)}}$. 
 Just like Virasoro blocks, logarithmic blocks can be combined into interchiral blocks of the type 
 \begin{align}
- \widetilde{\mathcal{G}}_{(r,s_0)} = \sum_{k\in 2\mathbb{N}} \frac{D^{(s)}_{(r,s_0+2k)}}{D^{(s)}_{(r,s_0)}} \mathcal{G}_{(r,s_0+2k)}\ , 
+ \widetilde{\mathcal{G}}_{(r,s_0)} = \sum_{k\in 2\mathbb{N}} \frac{D_{(r,s_0+2k)}}{D_{(r,s_0)}} \mathcal{G}_{(r,s_0+2k)}\ , 
 \end{align}
-where $s_0\in \{0,1\}$, and the ratios of 4-point structure constants are again determined by the shift equations \eqref{cshift}, \eqref{bshift}. 
+where $s_0\in \{0,1\}$, and the ratios of 4-point structure constants are again determined by the shift equations \eqref{cbshift}. 
 
 \subsubsection{Polynomials in loop weights}\label{sec:plw}
 
@@ -3786,16 +3790,16 @@ For a combinatorial map $M$, let us write the $s$-channel 4-point structure cons
 \begin{align}
  D_{(r,s)}^\text{ref} = \frac{C^\text{ref}_{(r,s)(r_1,s_1)(r_2,s_2)} C^\text{ref}_{(r,s)(r_3,s_3)(r_4,s_4)}}{B^\text{ref}_{(r,s)}}\ , 
 \end{align}
-which is a combination of the reference 2-point \eqref{bref} and 3-point \eqref{cref} structure constants. If $M$ has a vanishing $s$-channel signature $\sigma=0$, then $D_{(r,s)}$ depends on the weight $w$ of $s$-channel loops. Furthermore, if $s\in\mathbb{Z}$, then $D_{(r,s)}$ has a pole at $w=w(P_{(r,s)})$, whose residue is determined by our assumption that the 4-point function is holomorphic as a function of $w$. We therefore write 
+which is a combination of the reference 2-point \eqref{bref} and 3-point \eqref{cref} structure constants. If $M$ has a vanishing $s$-channel signature $\sigma=0$, then $D_{(r,s)}$ depends on the weight $w$ of $s$-channel loops. Furthermore, if $s\in\mathbb{Z}$, then $D_{(r,s)}$ has a pole at $w=w(P_{(r,s)})$, whose residue is determined by our assumption that the 4-point function is holomorphic as a function of $w$. Computing the residue using Eqs. \eqref{rdp} and \eqref{dccb}, we find 
 \begin{align}
  D_{(r,s)} =  D_{(r,s)}^\text{ref} \left(d_{(r,s)}  - \delta_{\sigma,0}\delta_{s\in\mathbb{Z}}\frac{(-)^{(r+1)s}\rho^{r,s}_{(r_1,s_1)(r_2,s_2)}\rho^{r,s}_{(r_4,s_4)(r_3,s_3)}}{w-w(P_{(r,s)})}\right) \ ,
 \end{align}
-where $d_{(r,s)}$ is a holomorphic function of $w$ if $\sigma=0$, and the residue of the pole has been computed using Eq. \eqref{rdp}, and expressed in terms of the quantity
+where $d_{(r,s)}$ is a holomorphic function of $w$ if $\sigma=0$, and we define
 \begin{align}
 \rho^{r,s}_{(r_1,s_1)(r_2,s_2)}= (-)^{s\min(r,|r_1-r_2|)\delta_{r_1<r_2}} \prod_\pm \prod_{j\overset{1}{=}-\frac{r-1-|r_1\pm r_2|}{2}}^{\frac{r-1-|r_1\pm r_2|}{2}} 2\cos\pi\left(j\beta^2+\tfrac{s-s_1\mp s_2}{2}\right)\ . 
  \label{rhop}
 \end{align}
-The crucial observation is that $\rho^{r,s}$ is a polynomial in $n$. Moreover, if $r_1=0$ or $r_2=0$, it is also a polynomial in the corresponding loop weight $w_1$ or $w_2$. This leads us to conjecture that $d_{(r,s)}$ is a polynomial in $n$, in the weights $w_i$, and in the $s$-channel weight $w$: not only in the case $\sigma=0, s\in\mathbb{Z}$ where $D_{(r,s)}$ depends on a channel weight and has a pole, but in all cases. 
+The crucial observation is that $\rho^{r,s}$ is a polynomial in $n$. Moreover, if $r_1=0$ or $r_2=0$, it is also a polynomial in the corresponding loop weight $w_1$ or $w_2$. This leads us to conjecture that $d_{(r,s)}$ is also a polynomial in $n$, in the weights $w_i$, and in the $s$-channel weight $w$: not only in the case $\sigma=0, s\in\mathbb{Z}$ where $D_{(r,s)}$ depends on a channel weight and has a pole, but in all cases. 
 Thanks to this conjecture, we can extract analytic expressions for $d_{(r,s)}$ from numerical results for $D_{(r,s)}$. 
 
 
@@ -3831,7 +3835,7 @@ More examples can be found in \cite{nrj23}.
 
 \subsubsection[Case of $\left<\prod_{i=1}^4 V_{P_i}\right>$]{Case of $\left<\prod_{i=1}^4 V_{P_i}\right>$ \picz}\label{sec:cod}
 
-We have a unique solution of crossing symmetry for any 4 fields $V_{P_i}$ and channel fields $V_{P_s},V_{P_t},V_{P_u}$. Due to their invariances $d^{(x)}_{(r,s)}=d^{(x)}_{(r,s+2)}$ and $d^{(x)}_{(r,s)}=d^{(x)}_{(r,-s)}$, we need only write structure constants for $0\leq s\leq 1$:
+We have a unique solution of crossing symmetry for any 4 fields $V_{P_i}$ and channel fields $V_{P_s},V_{P_t},V_{P_u}$. Due to their invariance under shifts $d^{(x)}_{(r,s)}=d^{(x)}_{(r,s+2)}$ and parity $d^{(x)}_{(r,s)}=d^{(x)}_{(r,-s)}$, we need only write structure constants for $0\leq s\leq 1$:
 \begin{subequations}
 \begin{align}
 & d_\text{diag}^{(s,t,u)} = 1\ ,
@@ -3867,12 +3871,12 @@ Formulas for $d^{(s,t,u)}_{(3,*)}$ are known but rather complicated.
 In the diagonal 4-point function $\left<\prod_{i=1}^4 V_{P_i}\right>$, it is particularly easy to study the factorization \eqref{dcc} of 4-point structure constants into 3-point structure constants. In particular, we see that $d^{(s)}_{(2,*)}$ is a sum of 3 factorized terms. Due to pole terms, $D^{(s)}_{(2,0)}$ and $D^{(s)}_{(2,1)}$ are sums of 4 terms, while $D^{(s)}_{(2,\frac12)}$ is still a sum of 3 terms. And the presence of several terms is not due to combinatorial defects: in the case $w_s=w_t=w_u=n$ where the defects are absent, $D^{(s)}_{(2,*)}$ loses only 1 term. 
 
 The trivial-looking result $d_\text{diag}^{(s,t,u)} = 1$ \eqref{ddiag} implies that the diagonal 3-point structure constant $C_{P_1,P_2,P_3}$ reduces to the reference 3-point structure constant, which for $c\leq 1$ coindices with Liouville theory's 3-point structure constant. This coincidence of structure constants between loop models and Liouville theory, in spite of their very different properties, has been a source of puzzlement \cite{ijs15, rib22}. Ultimately, the coincidence must be due to $C_{P_1,P_2,P_3}$ being the unique solution of 
-the shift equations from $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$. But in loop models, why would $C_{P_1,P_2,P_3}$ obey the shift equation from $V^d_{\langle 2,1\rangle}$? This field does not belong to the spectrum, and we cannot add it because its OPE with non-diagonal fields $V_{(r,s)}$ would generate fields with non-integer spins. In fact, this raises the more general issue of explaining why structure constants are built from the double Gamma function, which is characterized as the solution of 2 shift equations.
+the shift equations from $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$. But in loop models, why would $C_{P_1,P_2,P_3}$ obey the shift equation from $V^d_{\langle 2,1\rangle}$? This degenerate field does not belong to the spectrum, and we cannot add it because its OPE with non-diagonal fields $V_{(r,s)}$ would generate fields with non-integer spins. In fact, this raises the more general issue of explaining why structure constants are built from the double Gamma function, which is characterized as the solution of 2 shift equations.
 
 \subsubsection[Case of $\left<V_{(\frac12, 0)}^4\right>$]{Case of $\left<V_{(\frac12, 0)}^4\right>$ \pice}
 
 We now have a diagonal field $V_{P_s}$ in the $s$-channel, but no diagonal fields in the other channels. Structure constants depend on $n$ and on $w_s$. 
-They are known up to $r=4$ in the $s$-channel and $r=3$ in the $t,u$-channels. By symmetry under $V_1\leftrightarrow V_2$, we have $rs\equiv 1\bmod 2\implies D^{(s)}_{(r,s)} = 0$:
+They are known up to $r=4$ in the $s$-channel and $r=3$ in the $t,u$-channels. By invariance under the permutation $V_1\leftrightarrow V_2$, we have $rs\equiv 1\bmod 2\implies D^{(s)}_{(r,s)} = 0$:
 \begin{subequations}
 \label{011}
 \begin{align}
@@ -4033,7 +4037,7 @@ On the other hand, 3-point structure constants may also depend on field multipli
 
 In fact, it is not even clear that OPEs exist in loop CFTs. The fact that 4-point functions are combinations of conformal blocks is a necessary condition for the existence of OPEs, but it is not sufficient. This condition may seem empty at first sight, because conformal blocks form a basis of functions of the cross-ratio. However, only blocks that correspond to channel fields in the loop CFTs' spectrum appear, and this makes the condition nontrivial. More fundamentally, we may try to deduce the existence of OPEs from the definition of statistical loop models. Technically, this might be done by constructing lattice loop models, and studying the algebraic properties of the resulting diagram algebras, see \cite{im23} for work in that direction.    
 
-If and when loop models can be solved at generic central charge, there will remain the challenge of taking rational limits. Such limits are relevant to applications such as percolation ($\beta^2=\frac23$) or polymers ($\beta^2=\frac12$). These special cases are more difficult than the general case, because representations of the Virasoro algebra have more complicated structures, see for instance \cite{hs21}. Hints of these algebraic complications are visible in the fusion rules of degenerate representations, which are simpler for generic $\beta^2$ \eqref{rrrs} than for rational $\beta^2$ \eqref{rfrf}. In the case of a 4-point function, we know that conformal blocks diverge in the limit $\beta^2\to \frac{q}{p}\in\mathbb{Q}$, but we expect that the divergences cancel so that the 4-point function converges. When a linear combination of divergent blocks $\mathcal{G} = \sum_k D_k \mathcal{G}_k$ has a convergent sum, the interpretation is that the corresponding modules of the conformal algebra combine into a bigger indecomposable module in the limit. Such phenomenons also occur in CFTs with 2 degenerate fields, in particular in the limit GMM\,$\to$\,AMM of Section \ref{sec:lod}. 
+If and when loop models can be solved at generic central charge, there will remain the challenge of taking rational limits. Such limits are relevant to applications such as percolation ($\beta^2=\frac23$) or polymers ($\beta^2=\frac12$). These special cases are more difficult than the general case, because representations of the Virasoro algebra have more complicated structures, see for instance \cite{hs21}. Hints of these algebraic complications are visible in the fusion rules of degenerate representations, which are simpler for generic $\beta^2$ \eqref{rrrs} than for rational $\beta^2$ \eqref{rfrf}. In the case of a 4-point function, we know that conformal blocks diverge in the limit $\beta^2\to \frac{q}{p}\in\mathbb{Q}$, but we expect that the divergences cancel so that the 4-point function converges. When a linear combination of divergent blocks $\mathcal{G} = \sum_k D_k \mathcal{G}_k$ converges, the interpretation is that the corresponding modules of the conformal algebra combine into a bigger indecomposable module in the limit. Such phenomenons also occur in CFTs with 2 degenerate fields, in particular in the limit GMM\,$\to$\,AMM of Section \ref{sec:lod}. 
 
 \subsubsection{Global symmetries in $d=2$ and $d>2$}
 
