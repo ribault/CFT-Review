@@ -189,7 +189,7 @@ In 1997, di Francesco, Mathieu and Sénéchal wrote a book called Conformal fiel
 \end{itemize}
 This gives us access to powerful bootstrap techniques, analytic and numerical. But even in $d=2$, solvable CFTs are very special cases. Starting from a simple CFT and following a renormalization group flow, we can easily end up at a fixed point whose CFT is intractable.
 
-In $d\geq 3$, the conformal algebra is finite-dimensional. Degenerate fields also be constructed, under the name of weight-shifting operators \cite{kks17}. Under an OPE with a weight-shifting operator, the conformal dimension of a field is shifted by an integer. But except in particular CFTs such as generalized free theories, the spectrum is not stable under such shifts. So weight-shifting operators cannot be consistenly added to the CFT, and do not constrain it, although they are still useful for studying conformal blocks. The main bootstrap techniques in $d\geq 3$ are numerical instead, and rely on the assumption of unitarity. Not only this restricts the CFTs that can be addressed, but also this leads to inequalities rather than equalities, making it harder to reach exact results. 
+In $d\geq 3$, the conformal algebra is finite-dimensional. Degenerate fields can however be constructed, under the name of weight-shifting operators \cite{kks17}. Under an OPE with a weight-shifting operator, the conformal dimension of a field is shifted by an integer. But except in particular CFTs such as generalized free theories, the spectrum is not stable under such shifts. So weight-shifting operators cannot be consistenly added to the CFT, and do not constrain it, although they are still useful for studying conformal blocks. The main bootstrap techniques in $d\geq 3$ are numerical instead, and rely on the assumption of unitarity. Not only this restricts the CFTs that can be addressed, but also this leads to inequalities rather than equalities, making it harder to reach exact results. 
  
 
 \subsubsection*{Solvable CFTs}
@@ -207,19 +207,28 @@ There are other solved or solvable CFTs that we will not mention, because they h
 
 When a CFT is solvable, it can typically be solved in several different ways. In this text, we will only use the conformal bootstrap approach, and omit other historically relevant techniques such as Coulomb gas integrals, and the modular bootstrap. We believe that the conformal bootstrap approach is technically simpler, more general, and more powerful. In particular, our main objects are correlation functions on the sphere, and we do not have a rigid notion of which fields belong to a CFT. For example, in the Ising model, we can introduce disorder fields or compute cluster connectivities, without having to worry about modular invariance of the torus partition function. 
 
-We are not claiming that our approach is mathematically rigorous: our main concern is to provide simple derivations of non-trivial results, without introducing too many auxiliary objects that are later discarded. The calculations are not all done in detail in this text, but they are doable with reasonable effort. Readers who want formal exercises are directed to earlier texts in the same spirit: the minimal review \cite{rib16}, and the more extended review \cite{rib14}. However, these texts do not cover loop CFTs.
+Solving a CFT means determining its spectrum and structure constants. We deduce spectrums from assumptions such as 
+\begin{itemize}
+ \item the existence of degenerate fields,
+ \item singe-valuedness of correlation functions,
+ \item analyticity in the central charge or in conformal dimensions, which in particular allows us to find CFTs as limits of sequences of other CFTs. 
+\end{itemize}
+These assumptions also lead to constraints on structure constants, which may or may not be enough for determining them analytically. If they are not enough, we can determine structure constants numerically by solving crossing symmetry equations. And from sufficiently precise numerical results, we can deduce analytic formulas. 
 
+\subsubsection*{This text's approach}
 
-\subsection*{Acknowledgements}
+We strive to give simple derivations of non-trivial results, without introducing too many auxiliary objects that are later discarded. The calculations are not all done in detail in this text, but they are doable with reasonable effort. Readers who want formal exercises are directed to earlier texts in the same spirit: the minimal review \cite{rib16}, and the more extended review \cite{rib14}. However, these texts do not cover loop CFTs.
+
+Technical terms that are defined in this text can be found in the index. We also use standard terms that we do not define, because adequate definitions are easily found in Wikipedia or other resources. For example, the definitions of an \textit{irreducible representation}, an \textit{indecomposable representation} or a \textit{projective representation} are found in Wikipedia as the first results of searches for these terms. 
+
+\subsubsection*{Acknowledgements}
 
 \begin{itemize}
  \item This text is based on lecture notes for a course given at IPhT Saclay in March-April 2024. Video recordings are available on \href{https://www.youtube.com/playlist?list=PLrLctLPAdPNtD7yFOcfdNx2J-A_CE1svr}{IPhT-TV}. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica. 
  \item I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop CFTs and related subjects. 
  \item I am grateful to Victor Godet, Jesper Jacobsen, Paul Roux, Ingo Runkel, Hubert Saleur, Xi Yin and Bernardo Zan for helpful discussions and correspondence. 
- \item I would like to thank Max Downing and Kay Wiese for comments and suggestions on the manuscript. 
+ \item I would like to thank Max Downing, Kay Wiese and Rongvoram Nivesvivat for comments and suggestions on the manuscript. 
 \end{itemize}
-
-% Send for reading to B. Muehlmann (part on Zamolodchikov recursion), Kay Wiese, Bernardo Zan, Xi Yin, J. Jacobsen.
 
 %\end{tcolorbox}
 
@@ -317,6 +326,7 @@ Let us sketch a Verma module by displaying all its basis states up to the level 
   \draw[-latex] (2) -- (22);
   \draw[-latex] (3) -- (13);
  \end{tikzpicture}
+ \label{verma}
 \end{align}
 States such as 
 $L_{-2}L_{-1}V = L_{-1}L_{-2}V -L_{-3}V$ are linear combination of elements of our basis, and are therefore not displayed.
@@ -365,28 +375,28 @@ More generally, there is an infinite family of conformal dimensions $(\Delta_{(r
 \renewcommand{\arraystretch}{1.5}
 \begin{array}{|c|c|c|l|}
 \hline 
-N & \langle r,s\rangle & \Delta_{\langle r,s\rangle} & L_{\langle r,s\rangle} 
+N & (r,s) & \Delta_{(r,s)} & L_{\langle r,s\rangle} 
 \\
 \hline\hline
-1 & \langle 1,1\rangle & 0  & L_{-1}
+1 & (1,1) & 0  & L_{-1}
 \\
 \hline
 \multirow{2}{*}{2} & 
-\langle 2,1\rangle & -\frac12 +\frac{3}{4} \beta^2  & L_{-1}^2 -\beta^2 L_{-2}
+(2,1) & -\frac12 +\frac{3}{4} \beta^2  & L_{-1}^2 -\beta^2 L_{-2}
 \\
 \cline{2-4}
-& \langle 1,2\rangle & -\frac12 + \frac{3}{4}\beta^{-2}  & L_{-1}^2 -\beta^{-2} L_{-2} 
+& (1,2) & -\frac12 + \frac{3}{4}\beta^{-2}  & L_{-1}^2 -\beta^{-2} L_{-2} 
 \\
 \hline
 \multirow{2}{*}{3} &
-\langle 3,1 \rangle &  -1 +2 \beta^2  &L_{-1}^3 -4\beta^2 L_{-1}L_{-2}+2\beta^2(\beta^2+1)L_{-3}
+(3,1 ) &  -1 +2 \beta^2  &L_{-1}^3 -4\beta^2 L_{-1}L_{-2}+2\beta^2(\beta^2+1)L_{-3}
 \\
 \cline{2-4}
-& \langle 1,3 \rangle &  -1 +2 \beta^{-2}  &L_{-1}^3 -4\beta^{-2} L_{-1}L_{-2}+2\beta^{-2}(\beta^{-2}+1)L_{-3}
+& (1,3 ) &  -1 +2 \beta^{-2}  &L_{-1}^3 -4\beta^{-2} L_{-1}L_{-2}+2\beta^{-2}(\beta^{-2}+1)L_{-3}
 \\
 \hline
 \multirow{5}{*}{4} &
-\langle 4,1 \rangle &  -\frac32 +\frac{15}{4} \beta^2  & 
+(4,1 ) &  -\frac32 +\frac{15}{4} \beta^2  & 
 \begin{array}{r}
  L_{-1}^4 -10\beta^2L_{-1}^2L_{-2} 
  +2\beta^2\left(12\beta^2+5\right) L_{-1}L_{-3}
@@ -396,7 +406,7 @@ N & \langle r,s\rangle & \Delta_{\langle r,s\rangle} & L_{\langle r,s\rangle}
 \end{array}
 \\
 \cline{2-4}
-& \langle 2,2\rangle & \frac34\left(\beta-\beta^{-1}\right)^2 & 
+& (2,2) & \frac34\left(\beta-\beta^{-1}\right)^2 & 
 \begin{array}{l}
 L_{-1}^4-2\left(\beta^2+\beta^{-2}\right)L_{-1}^2L_{-2} 
 +\left(\beta^2-\beta^{-2}\right)^2 L_{-2}^2
@@ -406,7 +416,7 @@ L_{-1}^4-2\left(\beta^2+\beta^{-2}\right)L_{-1}^2L_{-2}
 \end{array}
 \\
 \cline{2-4}
-& \langle 1,4 \rangle &  -\frac32 +\frac{15}{4} \beta^{-2} &
+& (1,4 ) &  -\frac32 +\frac{15}{4} \beta^{-2} &
 \begin{array}{r}
  L_{-1}^4 -10\beta^{-2}L_{-1}^2L_{-2} 
  +2\beta^{-2}\left(12\beta^{-2}+5\right) L_{-1}L_{-3}
@@ -431,7 +441,7 @@ We can rewrite Verma modules as $\mathcal{V}_P=\mathcal{V}_{-P}$, where the para
 \end{align}
 and it follows that the null vector $L_{\langle r,s\rangle} V_{\Delta_{(r, s)}}$ is a primary state of dimension
 \begin{align}
- \Delta_{(r, s)} + rs = \Delta_{(r, -s)}\ , 
+ \boxed{\Delta_{(r, s)} + rs = \Delta_{(r, -s)}}\ , 
  \label{drms}
 \end{align}
 We will provide a derivation of $P_{(r, s)}$ using operator product expansions in Section \ref{sec:dope}. On the other hand, the expressions of $L_{\langle r,s\rangle} $ for $rs\geq 3$ are complicated and not particularly useful, see \cite{ken92} or \cite[Appendix 8A]{fms97}.
@@ -442,7 +452,7 @@ For $\beta^2\in\mathbb{C}\backslash \mathbb{Q}$, the Verma module $\mathcal{V}_\
  \label{rpsq}
 \end{align}
 which together with $\Delta_{(r,s)}=\Delta_{(-r,-s)}$ implies coincidences of the type $\Delta_{(r,s)}=\Delta_{(r',s')}$ with $r',s'\in\mathbb{Z}$. 
-Given $r_1,s_1\in \mathbb{N}^*$, the reducible Verma module $\mathcal{V}_{\Delta_{(r_1,s_1)}}$ has a null vector $L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. If $pq>0$, or if $pq<0$ with $\left\lfloor \frac{r_1}{|p|}\right\rfloor \neq \left\lfloor \frac{s_1}{|q|}\right\rfloor$ and $\left\lceil \frac{r_1}{|p|}\right\rceil \neq \left\lceil \frac{s_1}{|q|}\right\rceil$, then the dimension $\Delta_{(r_1,-s_1)}$ \eqref{drms} of this null vector is of the type $\Delta_{\langle r_2,s_2\rangle}$ with $r_2,s_2\in\mathbb{N}^*$, leading to another null vector $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. 
+Given $r_1,s_1\in \mathbb{N}^*$, the reducible Verma module $\mathcal{V}_{\Delta_{(r_1,s_1)}}$ has a null vector $L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. If $pq>0$, or if $pq<0$ with $\left\lfloor \frac{r_1}{|p|}\right\rfloor \neq \left\lfloor \frac{s_1}{|q|}\right\rfloor$ and $\left\lceil \frac{r_1}{|p|}\right\rceil \neq \left\lceil \frac{s_1}{|q|}\right\rceil$, then the dimension $\Delta_{(r_1,-s_1)}$ \eqref{drms} of this null vector is of the type $\Delta_{(r_2,s_2\rangle}$ with $r_2,s_2\in\mathbb{N}^*$, leading to another null vector $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. 
 It turns out that all null vectors of Verma modules are of the type $L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$ or $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. In particular, given a null vector of the type $L_{\langle r_3,s_3\rangle}L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r_1,s_1)}}$, 
 \begin{align}
  \exists r_4,s_4\in \mathbb{N}^*\ , \ L_{\langle r_3,s_3\rangle}L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r_1,s_1)}} = L_{\langle r_4,s_4\rangle} V_{\Delta_{(r_4,s_4)}}\ .
@@ -504,15 +514,15 @@ By an abuse of terminology, we say that $\frac{\mathcal{R}}{\mathcal{R}_{X{}}}$ 
 
 If $\mathcal{R}$ has several null vectors, we can define various quotient representations by setting some null vectors to zero. A \myindex{degenerate representation}\index{degenerate!---representation} is a representation that has at least 1 vanishing null vector. A degenerate representation is partly degenerate if it has some non-vanishing null vectors, and \myindex{fully degenerate}\index{fully degenerate!---representation} if all null vectors vanish. Partly degenerate representations play an important role in CFTs with extended chiral algebras, such as conformal Toda theories \cite{fl07c}. 
 
-For $r,s\in\mathbb{N}^*$, let us call $\mathcal{R}^d_{\langle r,s\rangle}$ the quotient of the Verma module $\mathcal{V}_{\Delta_{\langle r,s\rangle}}$ where the null vector $L_{\langle r,s\rangle}V_{\Delta_{(r,s)}}$ vanishes:
+For $r,s\in\mathbb{N}^*$, the level-$rs$ null vector $L_{\langle r,s\rangle}V_{\Delta_{(r,s)}}\in \mathcal{V}_{\Delta_{(r,s)}}$ is a primary state of dimension $\Delta_{(r,-s)}$, according to Eq. \eqref{drms}. Together with its descendants, this state generates a Verma module $\mathcal{V}_{\Delta_{(r,-s)}}\subset \mathcal{V}_{\Delta_{(r,s)}}$. Setting the null vector to zero, we obtain the degenerate representation 
 \begin{align}
  \mathcal{R}^d_{\langle r,s\rangle} 
- =\frac{\mathcal{V}_{\Delta_{\langle r,s\rangle}}}{\mathcal{V}_{\Delta_{\langle r,-s\rangle}}}\ . 
+ =\frac{\mathcal{V}_{\Delta_{(r,s)}}}{\mathcal{V}_{\Delta_{(r,-s)}}}\ . 
  \label{rvv}
 \end{align}
-If $\beta^2\in \mathbb{Q}$, the Verma module $\mathcal{V}_{\Delta_{\langle r,s\rangle}}$ in general has several null vectors, and $\mathcal{R}^d_{\langle r,s\rangle}$ may be partly degenerate. Let us call $\mathcal{R}^f_{\langle r,s\rangle}$ the fully degenerate quotient of  $\mathcal{V}_{\Delta_{\langle r,s\rangle}}$: this quotient can generally not be obtained by setting 1 null vector to zero, but it is always enough to set 2 null vectors to zero, with all other null vectors being descendants of these two. Schematically,
+If $\beta^2\in \mathbb{Q}$, the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$ in general has several null vectors, and $\mathcal{R}^d_{\langle r,s\rangle}$ may be partly degenerate. Let us call $\mathcal{R}^f_{\langle r,s\rangle}$ the fully degenerate quotient of  $\mathcal{V}_{\Delta_{(r,s)}}$: this quotient can generally not be obtained by setting 1 null vector to zero, but it is always enough to set 2 null vectors to zero, with all other null vectors being descendants of these two. Schematically,
 \begin{align}
- \mathcal{R}^f_{\langle r,s\rangle} = \frac{\mathcal{V}_{\Delta_{\langle r,s\rangle}}}{\mathcal{V}_{\Delta_{\langle r_1,-s_1\rangle}}+ \mathcal{V}_{\Delta_{\langle r_2,-s_2\rangle}}}\ .
+ \mathcal{R}^f_{\langle r,s\rangle} = \frac{\mathcal{V}_{\Delta_{(r,s)}}}{\mathcal{V}_{\Delta_{(r_1,-s_1)}}+ \mathcal{V}_{\Delta_{(r_2,-s_2)}}}\ .
 \end{align}
 We define the \myindex{degenerate state}\index{degenerate!---state} $V^d_{\langle r,s\rangle}$ and \myindex{fully degenerate state}\index{fully degenerate!---state} $V^f_{\langle r,s\rangle}=V^f_{\langle r_1,s_1\rangle}=V^f_{\langle r_2,s_2\rangle}$ as the primary states of the representation $\mathcal{R}^d_{\langle r,s\rangle}$ and 
 $\mathcal{R}^f_{\langle r,s\rangle}$. These states obey the null vector equation
@@ -521,6 +531,27 @@ L_{\langle r, s\rangle} V^d_{\langle r,s\rangle} = L_{\langle r, s\rangle} V^f_{
 \label{lvdz}
 \end{align}
 We use the notation $V_{\Delta_{(r,s)}}$ for a primary state that has the same dimension as $V^d_{\langle r,s\rangle}$ and $V^f_{\langle r,s\rangle}$, but does not necessarily obey the null vector equation. 
+
+A basis of the degenerate representation $\mathcal{R}^d_{\langle r,s\rangle}$ is formed by the descendant states $LV^d_{\langle r,s\rangle}$ such that the creation operator $L$ does not involve the Virasoro generator $L_{-rs}$. In the simplest example $(r,s)=(1,1)$, let us sketch $\mathcal{R}^d_{\langle 1,1\rangle}$ up to the level $N=4$, so that it may be compared to a Verma module \eqref{verma}:
+ \begin{align}
+ \begin{tikzpicture}[scale = .15, baseline=(current  bounding  box.center)]
+  \draw[-latex, very thick] (20, 0) -- (20, -28) node [right] {$N$};
+  \foreach \x in {0, ..., 4}
+  {
+  \draw [dotted] (-6, {-6*\x}) -- (20, {-6*\x}) node [right] {${\x}$};
+  }
+  \node[fill = white] at (0, 0) (0) {$1$};
+  \node[fill = white] at (0,-12) (2) {$L_{-2}$};
+  \node[fill = white] at (0,-24) (22) {$L_{-2}^2$};
+  \node[fill = white] at (6,-18) (3) {$L_{-3}$};
+  \node[fill = white] at (12,-24) (4) {$L_{-4}$};
+  \draw[-latex] (0) -- (2);
+  \draw[-latex] (0) -- (3);
+  \draw[-latex] (0) -- (4);
+  \draw[-latex] (2) -- (22);
+ \end{tikzpicture}
+ \label{r11}
+\end{align}
 
 \subsubsection{The Shapovalov form}
 
@@ -602,11 +633,11 @@ where we used Eq. \eqref{pvlv} and wrote the regular terms as $O(1)$.
 
 The fundamental axiom of conformal field theory, which underlies the conformal bootstrap approach, is the existence of \myindex{operator product expansions (OPEs)}\index{OPE}. This axiom states that there exists a bilinear product on the space of fields, 
 \begin{align}
-  \boxed{V_1(z_1)V_2(z_2) = \sum_k C^k_{12}(z_1,z_2) V_k(z_2)}\ ,
+  \boxed{V_1(z_1)V_2(z_2) = \sum_{k\in\mathcal{S}} C^k_{12}(z_1,z_2) V_k(z_2)}\ ,
   \label{ope}
  \end{align}
- for some family $(V_k)_k$ of linearly independent states, and 
-some functions $C^k_{12}(z_1,z_2)$ called \myindex{OPE coefficients}\index{OPE!---coefficient}. Operator product expansions generally exist in quantum field theory, but they are particularly useful in conformal field theory because they are supposed to hold for any $z_1$ in a finite neighbourhood of $z_2$ (but $z_1\neq z_2$), and not just asymptotically as $z_1\to z_2$. The finite neighbourhood in question may depend on the correlation function in which we perform the OPE, and also on the basis $(V_k)_k$. 
+ for some family $(V_k)_{k\in\mathcal{S}}$ of linearly independent states, and 
+some functions $C^k_{12}(z_1,z_2)$ called \myindex{OPE coefficients}\index{OPE!---coefficient}. Operator product expansions generally exist in quantum field theory, but they are particularly useful in conformal field theory because they are supposed to hold for any $z_1$ in a finite neighbourhood of $z_2$ (but $z_1\neq z_2$), and not just asymptotically as $z_1\to z_2$. The finite neighbourhood in question may depend on the correlation function in which we perform the OPE, and also on the basis $(V_k)_{k\in\mathcal{S}}$. 
 
 We further assume that the product of fields is commutative,
 \begin{align}
@@ -657,7 +688,7 @@ We focus on 3 cases:
 \end{align}
 Extracting the coefficient of $z_{12}^N$ for some $N\in\mathbb{N}$, we find 
 \begin{align}
- L_n W_N = \theta_{N,n}W_{N-n} \quad \text{with} \quad \left\{\begin{array}{l} W_N = \sum_{|L|=N}C^{\Delta,L}_{\Delta_1,\Delta_2} LV_{\Delta}\ , \\  \theta_{N,n} = \Delta+N-n+n\Delta_1-\Delta_2\ . \end{array}\right.
+ L_n W_N = \theta_{N,n}W_{N-n} \quad \text{with} \quad \left\{\begin{array}{l} W_N = \sum_{|L|=N}C^{\Delta,L}_{\Delta_1,\Delta_2} LV_{\Delta}\ , \\  \theta_{N,n} = N-n+n\Delta_1-\Delta_2 + \Delta\ . \end{array}\right.
  \label{opew}
 \end{align}
 \end{itemize}
@@ -698,7 +729,7 @@ Inverting the Shapovalov matrix \eqref{sh012}, we deduce
 The solution $\left(f^L\right)_{L\in\mathcal{L}}$ of the OPE Ward identities is unique if and only if the Shapovalov matrix is invertible, i.e. if and only if there is no null vector in the Verma module $\mathcal{V}_\Delta$. A null vector $L_{\langle r,s\rangle} V_{\Delta_{(r,s)}}$ at level $rs$ manifests itself as a simple pole at $\Delta=\Delta_{(r,s)}$ of the vectors $(f^L)_{L\in\mathcal{L}_N}$ for any $N\geq rs$.
 To summarize, the contributions of $V_\Delta$ and its descendants in an OPE of 2 primary fields read
 \begin{align}
- \boxed{V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset  C_{\Delta_1,\Delta_2}^{\Delta} z_{12}^{\Delta-\Delta_1-\Delta_2} \Bigg(V_\Delta(z_2) +\sum_{L\in \mathcal{L}-\{1\}}z_{12}^{|L|} f^{\Delta,L}_{\Delta_1,\Delta_2} LV_\Delta(z_2)\Bigg)}
+ \boxed{V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset  C_{\Delta_1,\Delta_2}^{\Delta} z_{12}^{\Delta-\Delta_1-\Delta_2} \Bigg(V_\Delta(z_2) +\sum_{L\in \mathcal{L}\backslash\{1\}}z_{12}^{|L|} f^{\Delta,L}_{\Delta_1,\Delta_2} LV_\Delta(z_2)\Bigg)}
  \ ,
  \label{prope}
 \end{align}
@@ -711,7 +742,7 @@ The form of the dependence on $z_1,z_2$ provides an a posteriori justification f
 
 \subsubsection{Fusion rules and fusion products}\label{sec:dope}
 
-Because of the poles in OPE coefficients, there are constraints on the fields that can appear in OPEs. Let us focus on the pole at $\Delta_{(1,1)}=0$. There are 2 types of primary fields of dimension $0$: the non-degenerate field $V_0$, which generates the Verma module $\mathcal{V}_0$, and the degenerate field $V^d_{\langle 1,1\rangle}$, which obeys the null vector equation $L_{-1}V^d_{\langle 1,1\rangle}=\partial V^d_{\langle 1,1\rangle}=0$ and generates the degenerate representation $\mathcal{R}^d_{\langle 1,1\rangle}$. 
+Because of the poles in OPE coefficients, there are constraints on the fields that can appear in OPEs. Let us focus on the pole at $\Delta_{(1,1)}=0$. There are 2 types of primary fields of dimension $0$: the non-degenerate field $V_0$, which generates the Verma module $\mathcal{V}_0$, and the degenerate field $V^d_{\langle 1,1\rangle}$, which obeys the null vector equation $L_{-1}V^d_{\langle 1,1\rangle}=\partial V^d_{\langle 1,1\rangle}=0$ and generates the degenerate representation $\mathcal{R}^d_{\langle 1,1\rangle}$ \eqref{r11}. 
 \begin{itemize}
  \item Can $V_0$ appear in the OPE $V_{\Delta_1}V_{\Delta_2}$? The pole of $f^{L_{-1}}$ \eqref{fl1} means we cannot impose the normalization condition $f^1=1$: we in fact have $f^1=0$ while $f^{L_{-1}}\neq 0$. Therefore, the non-vanishing null vector $L_{-1}V_0$ may appear in the OPE, together with its descendants, while $V_0$ itself and its other descendants give vanishing contributions. This situation is better interpreted as the appearance of $V_1$, not $V_0$.  
  \item In the case of $V^d_{\langle 1,1\rangle}$, the null vector vanishes, and no non-vanishing descendant of $V^d_{\langle 1,1\rangle}$ may appear --- unless $g^{L_{-1}}=0$ in Eq. \eqref{sgl}, which happens if $\Delta_1=\Delta_2$.
@@ -749,9 +780,9 @@ Given 3 representations $\mathcal{R},\mathcal{R}',\mathcal{R}''$, the number $\d
 
 According to the isomorphism \eqref{hrr}, $V^d_{\langle 2,1\rangle} V_{\Delta_1} \ni V_{\Delta_2} \iff V_{\Delta_1}V_{\Delta_2} \ni V^d_{\langle 2,1\rangle} \iff $ the 2-dimensional linear system \eqref{sgl} at $N=2$ with $\Delta=\Delta_{(2,1)}$ has a solution, even though it is of rank 1. Explicitly, this condition reads
 \begin{align}
- \left(4\Delta_{\langle 2,1\rangle}+2\right) \left(\Delta_{\langle 2,1\rangle}+¨2\Delta_1-\Delta_2\right) = 3\left(\Delta_{\langle 2,1\rangle}+\Delta_1-\Delta_2\right)\left(\Delta_{\langle 2,1\rangle}+1+\Delta_1-\Delta_2\right)\ .
+ \left(4\Delta_{(2,1)}+2\right) \left(\Delta_{(2,1)}+¨2\Delta_1-\Delta_2\right) = 3\left(\Delta_{(2,1)}+\Delta_1-\Delta_2\right)\left(\Delta_{(2,1)}+1+\Delta_1-\Delta_2\right)\ .
 \end{align}
-Using the expression \eqref{ars} for $\Delta_{\langle 2,1\rangle}$, and replacing conformal dimensions with momentums \eqref{dp}, this equation reduces to 
+Using the expression \eqref{ars} for $\Delta_{(2,1)}$, and replacing conformal dimensions with momentums \eqref{dp}, this equation reduces to 
 \begin{align}
  \prod_{\pm,\pm}\left(\tfrac{\beta}{2}\pm P_1\pm P_2\right) = 0\ . 
 \end{align}
@@ -1696,8 +1727,8 @@ In DMM$_{6,5}$, only 6 of these fields are present, and they are complemented by
   & V^f_{\langle 1,2\rangle} & V^f_{\langle 3,2\rangle} & V^f_{\langle 5,2\rangle} 
   \\
   \hline
-  \text{Indices} & \langle 1,1\rangle\langle 1,1\rangle & \langle 3,1\rangle\langle 3,1\rangle & \langle 5,1\rangle\langle 5,1\rangle & \langle 1,2\rangle\langle 1,2\rangle & \langle 3,2\rangle\langle 3,2\rangle &
-  \langle 5,2\rangle\langle 5,2\rangle 
+  \text{Indices} & (1,1)(1,1) & (3,1)(3,1) & (5,1)(5,1) & (1,2)(1,2) & (3,2)(3,2) &
+  (5,2)(5,2) 
   \\
   \hline 
  \end{array}
@@ -1708,7 +1739,7 @@ In DMM$_{6,5}$, only 6 of these fields are present, and they are complemented by
   \text{Field} & V_{(0,\frac12)} & V_{(0,\frac32)} & V_{(2,-\frac32)} & V_{(2,-\frac12)} & V_{(2,\frac12)} & V_{(2,\frac32)} 
   \\
   \hline
-  \text{Indices} & \langle 3,2\rangle\langle 3,2\rangle & \langle 3,1\rangle\langle 3,1\rangle &  \langle 5,1\rangle\langle 1,1\rangle & \langle 5,2\rangle\langle 1,2\rangle  & \langle 1,2\rangle\langle 5,2\rangle  &  \langle 1,1\rangle\langle 5,1\rangle
+  \text{Indices} & (3,2)(3,2) & (3,1)(3,1) &  (5,1)(1,1) & (5,2)(1,2)  & (1,2)(5,2)  &  (1,1)(5,1)
   \\
   \hline 
  \end{array}
@@ -2059,13 +2090,13 @@ We then compute $G_{z_0}(z)$ using the OPE $T(y)V_\Delta(z_0)$ \eqref{tvd}. The 
 \begin{align}
  G_\infty(z) &= \Delta_2 G(z) \quad , \quad G_0(z) = \frac{\Delta_1}{z}G(z)\quad , \quad G_1(z) = \frac{\Delta_3}{1-z}G(z)\ ,
  \\
- G_z(z) &= \left(\Delta_{\langle 2,1\rangle} + (2z-1)\partial_z\right) G(z) + z(z-1)\Big<L_{-2}V_{\langle 2,1\rangle}(z)V_{1}(0)V_{2}(\infty)V_{3}(1)\Big>
+ G_z(z) &= \left(\Delta_{(2,1)} + (2z-1)\partial_z\right) G(z) + z(z-1)\Big<L_{-2}V_{\langle 2,1\rangle}(z)V_{1}(0)V_{2}(\infty)V_{3}(1)\Big>
  \ .
 \end{align}
 \end{subequations}
 Combining our rewritten local Ward identity with the null vector equation $L_{\langle 2,1\rangle}V^d_{\langle 2,1\rangle}=0$, and using $L_{-1}^2 V^d_{\langle 2,1\rangle}(z) = \partial_z^2 V^d_{\langle 2,1\rangle}(z)$ \eqref{pvlv}, we obtain the BPZ equation 
 \begin{align}
- \left(\frac{z(z-1)}{\beta^2}\frac{\partial^2}{\partial z^2} + (2z-1)\frac{\partial}{\partial z} + \frac{\Delta_1}{z} + \Delta_{\langle 2,1\rangle}-\Delta_2  +\frac{\Delta_3}{1-z} \right) G(z) = 0 \ .
+ \left(\frac{z(z-1)}{\beta^2}\frac{\partial^2}{\partial z^2} + (2z-1)\frac{\partial}{\partial z} + \frac{\Delta_1}{z} + \Delta_{(2,1)}-\Delta_2  +\frac{\Delta_3}{1-z} \right) G(z) = 0 \ .
 \end{align}
 
 \subsubsection{Hypergeometric conformal blocks}
@@ -2097,7 +2128,7 @@ According to the degenerate fusion rule \eqref{rvvp}, the decomposition of $G(z)
 The conformal blocks provide 3 bases $\left\{\mathcal{F}^{(x)}_\pm(z)\right\}_\pm$ of solutions of the BPZ equation. Each solution is characterized by its asymptotic behaviour \eqref{stu} in a limit $z\to z_0$ with $z_0\in\{0,\infty,1\}$. 
 For $z_0=0,1$ this behaviour is of the type $z^{\delta_1}$ and $(1-z)^{\delta_3}$, with exponents that we compute using Eq. \eqref{dp}:
 \begin{align}
- \delta_i=\Delta\left(P_i+\tfrac{\beta}{2}\right) - \Delta(P_i) -\Delta_{\langle 2,1\rangle} = \beta P_i + \tfrac{1-\beta^2}{2}\ .
+ \delta_i=\Delta\left(P_i+\tfrac{\beta}{2}\right) - \Delta(P_i) -\Delta_{(2,1)} = \beta P_i + \tfrac{1-\beta^2}{2}\ .
 \end{align}
 Introducing $\varphi(z) = z^{\delta_1}(1-z)^{\delta_3}$, we deduce that the differential equation for $\varphi^{-1}(z) G(z)$ has holomorphic solutions near $z=0$ and near $z=1$, namely $\varphi(z)\mathcal{F}^{(s)}_+(z)$ and $\varphi(z)\mathcal{F}^{(t)}_+(z)$ respectively. By a tedious but straightforward calculation, we find that the equation for $\varphi^{-1}(z) G(z)$ is a \myindex{hypergeometric differential equation}\index{hypergeometric!---differential equation} 
 \begin{align}
@@ -2138,7 +2169,7 @@ The degenerate fusing matrix is built from Euler's \myindex{Gamma function}\inde
 
 \subsubsection{Crossing symmetry}
 
-We will now assemble hypergeometric conformal blocks into crossing-symmetric 4-point functions. We assume that fusion with $V_{\langle 2,1\rangle}$ acts diagonally on $V_1,V_2,V_3$, i.e. the left and right momentums $P_i,\bar P_i$ are shifted by the same amount $\frac{\beta}{2}$ or $-\frac{\beta}{2}$. (The case where they are shifted by opposite amounts is equivalent, and can be obtained by $\bar P_i\to -\bar P_i$.) This assumption is fulfilled by diagonal fields $V_P$, but also by non-diagonal fields $V_{(r,s)}$ with momentums of the type $(P,\bar P)= (P_{(r,s)},P_{(r,-s)})$. 
+We will now assemble hypergeometric conformal blocks into crossing-symmetric 4-point functions. We assume that fusion with $V^d_{\langle 2,1\rangle}$ acts diagonally on $V_1,V_2,V_3$, i.e. the left and right momentums $P_i,\bar P_i$ are shifted by the same amount $\frac{\beta}{2}$ or $-\frac{\beta}{2}$. (The case where they are shifted by opposite amounts is equivalent, and can be obtained by $\bar P_i\to -\bar P_i$.) This assumption is fulfilled by diagonal fields $V_P$, but also by non-diagonal fields $V_{(r,s)}$ with momentums of the type $(P,\bar P)= (P_{(r,s)},P_{(r,-s)})$. 
 Then the degenerate 4-point function \eqref{goz} decomposes into degenerate $x$-channel conformal blocks as 
 \begin{align}
  \Big<V_{\langle 2,1\rangle}^dV_{1}V_{2}V_{3}\Big> 
@@ -4067,7 +4098,7 @@ In fact, it is not even clear that OPEs exist in loop CFTs. The fact that 4-poin
 
 If and when loop models can be solved at generic central charge, there will remain the challenge of taking rational limits. Such limits are relevant to applications such as percolation ($\beta^2=\frac23$) or polymers ($\beta^2=\frac12$). These special cases are more difficult than the general case, because representations of the Virasoro algebra have more complicated structures, see for instance \cite{hs21}. Hints of these algebraic complications are visible in the fusion rules of degenerate representations, which are simpler for generic $\beta^2$ \eqref{rrrs} than for rational $\beta^2$ \eqref{rfrf}. In the case of a 4-point function, we know that conformal blocks diverge in the limit $\beta^2\to \frac{q}{p}\in\mathbb{Q}$, but we expect that the divergences cancel so that the 4-point function converges. When a linear combination of divergent blocks $\mathcal{G} = \sum_k D_k \mathcal{G}_k$ converges, the interpretation is that the corresponding modules of the conformal algebra combine into a bigger indecomposable module in the limit. Such phenomenons also occur in CFTs with 2 degenerate fields, in particular in the limit GMM\,$\to$\,AMM of Section \ref{sec:lod}. 
 
-\subsubsection{Global symmetries in $d=2$ and $d>2$}
+\subsubsection{Global symmetries in $d=2$ and $d\geq 3$}
 
 As we stated in Section \ref{sec:models}, the $O(n)$, $U(n)$ and Potts CFTs have global symmetries, described by the groups $O(n)$, $U(n)$ and $S_Q$ respectively. Usually, in physics, we would expect such unbroken symmetries to have a strong influence. Models with different symmetry groups would behave differently, and we would formulate our analysis in group-theoretic language: spectrums as representations, correlation functions as invariant tensors. 
 
