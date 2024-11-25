@@ -1,4 +1,3 @@
-% To do: U(n) -> PSU(n)? ReNewQuantum.
 
 \documentclass[12pt, a4paper]{article}
 
@@ -12,7 +11,7 @@
 
 \usepackage[top=18mm,bottom=18mm,left=25mm,right=25mm]{geometry}
 
-\usepackage{showkeys}
+%\usepackage{showkeys}
 
 \usepackage{amsmath,amssymb,amsfonts}
 
@@ -148,22 +147,12 @@
 
 
 \begin{abstract}
-We review 2d CFT in the bootstrap approach, and sketch the known exactly solvable CFTs with no extended chiral symmetry: Liouville theory, (generalized) minimal models, limits thereof, and loop CFTs, including the $O(n)$, Potts and $U(n)$ CFTs. 
+We review 2d CFT in the bootstrap approach, and sketch the known exactly solvable CFTs with no extended chiral symmetry: Liouville theory, (generalized) minimal models, limits thereof, and loop CFTs, including the $O(n)$, Potts and $PSU(n)$ CFTs. 
 
 Exact solvability relies on local conformal symmetry, and on the existence of degenerate fields. We show how these assumptions constrain the spectrum and correlation functions. We discuss how crossing symmetry equations can be solved analytically and/or numerically, leading to analytic expressions for structure constants in terms of the double Gamma function.  
 
-% In particular, we review the Ward identities and Virasoro blocks that follow from local conformal symmetry. And we formalize the existence of degenerate fields in terms of an interchiral algebra and interchiral blocks.  
-
-% Exact solvability also relies on analyticity assumptions for the dependence of correlation functions on the central charge and on the conformal dimensions of diagonal fields. In particular, we show how analyticity assumptions determine the logarithmic conformal blocks that appear in loop CFTs. 
-
-% Also mention generic complex central charge? analyticity whenever continuous variables.
-
-% We discuss how crossing symmetry equations can be solved analytically or numerically. 
-% Analytic solutions lead to shift equations for structure constants, which can be solved in terms of the double Gamma function. The numerical approach is needed when we have infinitely many linear equations for infinitely many unknowns: we review how to determine the space of solutions, and particular solutions. 
-
 In the case of loop CFTs, we sketch the corresponding statistical models, and derive the relation between statistical and CFT variables. We review the resulting combinatorial description of correlation functions, and discuss what remains to be done for solving the CFTs. 
 \end{abstract}
-% Last sentence not justified in text. Add subdivision to 5.5? Would be more or less recap of article... talk about backbone? already done elsewhere. 
 
 \clearpage
 
@@ -189,7 +178,7 @@ In 1997, di Francesco, Mathieu and Sénéchal wrote a book called Conformal fiel
 \end{itemize}
 This gives us access to powerful bootstrap techniques, analytic and numerical. But even in $d=2$, solvable CFTs are very special cases. Starting from a simple CFT and following a renormalization group flow, we can easily end up at a fixed point whose CFT is intractable.
 
-In $d\geq 3$, the conformal algebra is finite-dimensional. Degenerate fields can however be constructed, under the name of weight-shifting operators \cite{kks17}. Under an OPE with a weight-shifting operator, the conformal dimension of a field is shifted by an integer. But except in particular CFTs such as generalized free theories, the spectrum is not stable under such shifts. So weight-shifting operators cannot be consistenly added to the CFT, and do not constrain it, although they are still useful for studying conformal blocks. The main bootstrap techniques in $d\geq 3$ are numerical instead, and rely on the assumption of unitarity. Not only this restricts the CFTs that can be addressed, but also this leads to inequalities rather than equalities, making it harder to reach exact results. 
+In $d\geq 3$, the conformal algebra is finite-dimensional. Degenerate fields can however be constructed, under the name of weight-shifting operators \cite{kks17}. Under an OPE with a weight-shifting operator, the conformal dimension of a field is shifted by an integer. But except in particular CFTs such as generalized free theories, the spectrum is not stable under such shifts. So weight-shifting operators cannot be consistenly added to the CFT, and do not constrain it, although they are still useful for studying conformal blocks. The main bootstrap techniques in $d\geq 3$ are numerical instead, and rely on the assumption of unitarity. This not only restricts the CFTs that can be addressed, but also leads to inequalities rather than equalities, making it harder to reach exact results. 
  
 
 \subsubsection*{Solvable CFTs}
@@ -228,6 +217,7 @@ Technical terms that are defined in this text can be found in the index. We also
  \item I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop CFTs and related subjects. 
  \item I am grateful to Victor Godet, Jesper Jacobsen, Paul Roux, Ingo Runkel, Hubert Saleur, Xi Yin and Bernardo Zan for helpful discussions and correspondence. 
  \item I would like to thank Max Downing, Kay Wiese and Rongvoram Nivesvivat for comments and suggestions on the manuscript. 
+ \item This work is partly a result of the project ReNewQuantum, which received funding from the European Research Council.
 \end{itemize}
 
 %\end{tcolorbox}
@@ -277,7 +267,7 @@ The eigenvalues of $L_0$ are called \myindex{conformal dimensions}\index{conform
 \begin{align}
  L_0V{} = \Delta V{} \quad \Rightarrow\quad  L_0 L_nV{} = L_nL_0V{} + [L_0, L_n] V{}  = (\Delta-n)L_nV{} \ .
 \end{align}
-In an indecomposable representation $\mathcal{R}$, the $L_0$-eigenstate with the lowest eigenvalue must therefore be annihilated by $L_{n>0}$. This eigenstate is therefore a \myindex{primary state}\index{primary!---state}, where we define a primary state $V_\Delta$ of conformal dimension $\Delta$ by 
+In an indecomposable representation $\mathcal{R}$, the $L_0$-eigenstate with the lowest eigenvalue must therefore be annihilated by $L_{n>0}$. This eigenstate is a \myindex{primary state}\index{primary!---state}, where we define a primary state $V_\Delta$ of conformal dimension $\Delta$ by 
 \begin{align}
   \boxed{L_0 V_\Delta = \Delta V_\Delta \quad , \quad L_{n>0} V_\Delta = 0}\ .
  \end{align}
@@ -1880,7 +1870,7 @@ In addition to our assumption that OPEs are discrete, the known constraints on f
  \item the first Kac index is conserved modulo integers \eqref{sriz}.
 \end{itemize}
 
-\subsubsection{$O(n)$ CFT, $U(n)$ CFT, Potts CFT}\label{sec:models}
+\subsubsection{$O(n)$ CFT, $PSU(n)$ CFT, Potts CFT}\label{sec:models}
 
 Three known models give rise to integer-spin subsets of the extended spectrum $\widehat{S}^\text{loop}$. 
 Their spectrums are 
@@ -1888,19 +1878,19 @@ Their spectrums are
 \mathcal{S}^{O(n)} &= \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in 2\mathbb{N}+1} \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \frac12\mathbb{N}^*\\ s\in\frac{1}{r}\mathbb{Z}}}  \ ,
 \label{son}
  \\
- \mathcal{S}^{U(n)} &= \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in\mathbb{N}^*} \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \mathbb{N}^*\\ s\in\frac{1}{r}\mathbb{Z}}}  \ ,
+ \mathcal{S}^{PSU(n)} &= \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in\mathbb{N}^*} \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \mathbb{N}^*\\ s\in\frac{1}{r}\mathbb{Z}}}  \ ,
  \label{sun}
  \\
  \mathcal{S}^\text{Potts} &= \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in\mathbb{N}^*} \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \mathbb{N}+2\\ s\in\frac{1}{r}\mathbb{Z}}} \bigcup  \left\{ V_{P_{(0,s)}}\right\}_{s\in \mathbb{N}+\frac12}\ .
  \label{spotts}
 \end{align}
-The spectrums of the $O(n)$ and $U(n)$ models are natural constructions: we start with a degenerate field $V^d\in\{V^d_{\langle 1,3\rangle},V^d_{\langle 1,2\rangle}\}$, and add non-diagonal fields $V_{(r,s)}\in\widehat{S}^\text{loop}$ such that $V_{(r,s)}$ and the fields that appear in $V^dV_{(r,s)}$ have integer spins. 
-On the other hand, the Potts spectrum has no simple explanation in our formalism. We can only remark that it is obtained from the $U(n)$ spectrum by removing the non-diagonal fields $\left\{V_{(1,s)}\right\}_{s\in\mathbb{Z}}$ and adding the diagonal fields $\left\{ V_{P_{(0,s)}}\right\}_{s\in \mathbb{N}+\frac12}$, see Section \ref{sec:coup} for a justification from statistical physics.  
+The spectrums of the $O(n)$ and $PSU(n)$ models are natural constructions: we start with a degenerate field $V^d\in\{V^d_{\langle 1,3\rangle},V^d_{\langle 1,2\rangle}\}$, and add non-diagonal fields $V_{(r,s)}\in\widehat{S}^\text{loop}$ such that $V_{(r,s)}$ and the fields that appear in $V^dV_{(r,s)}$ have integer spins. 
+On the other hand, the Potts spectrum has no simple explanation in our formalism. We can only remark that it is obtained from the $PSU(n)$ spectrum by removing the non-diagonal fields $\left\{V_{(1,s)}\right\}_{s\in\mathbb{Z}}$ and adding the diagonal fields $\left\{ V_{P_{(0,s)}}\right\}_{s\in \mathbb{N}+\frac12}$, see Section \ref{sec:coup} for a justification from statistical physics.  
 
 Each one of these CFTs has
 \begin{itemize}
  \item a modular-invariant torus partition function,
- \item a group of global symmetries that commutes with conformal symmetry: the orthogonal group $O(n)$, the unitary group $U(n)$, or the symmetric group $S_Q$ in the case of the Potts CFT. The parameters of these groups can take arbitrary complex values \cite{gnjrs21, br19}
+ \item a group of global symmetries that commutes with conformal symmetry: the orthogonal group $O(n)$, the unitary group $PSU(n)$, or the symmetric group $S_Q$ in the case of the Potts CFT. The parameters of these groups can take arbitrary complex values \cite{gnjrs21, br19}
  \begin{align}
   \boxed{n = -2\cos\left(\pi \beta^2\right)} \quad , \quad \boxed{Q = 4\cos^2\left(\pi \beta^2\right)}\ .
   \label{nQ}
@@ -1938,7 +1928,7 @@ V_{(\frac52,0)} &: [5]+[32]+2[311]+[221]+[11111]+[3]+2[21]+[111]+[1]\ .
 \end{subequations}
 In particular, there are 2 fields of type $V_{(\frac52,0)}$ that transform in the irreducible representation $[311]$, and also 2 fields that transform in $[21]$. This is a first hint that field multiplicities become larger as the first index of $V_{(r,s)}$ increases. 
 
-The situation is similar in the $U(n)$ and Potts CFTs: let us only mention that the diagonal non-degenerate fields $V_{P_{(0,s)}}$ of the Potts CFT transform in the standard  representation of $S_Q$, whose dimension is $Q-1$. 
+The situation is similar in the $PSU(n)$ and Potts CFTs: let us only mention that the diagonal non-degenerate fields $V_{P_{(0,s)}}$ of the Potts CFT transform in the standard  representation of $S_Q$, whose dimension is $Q-1$. 
 
 
 \subsection{Completing the picture}
@@ -1987,7 +1977,7 @@ For each CFT, we indicate the values of $\beta^2$, of the Kac indices of degener
   O(n) & \left\{\Re\beta^2>0\right\} & \{1\}\times(2\mathbb{N}+1) &  \frac12\mathbb{N}^* \times \frac{1}{r}\mathbb{Z} & - 
   \\
   \hline 
-  U(n) & \left\{\Re\beta^2>0\right\} & \{1\}\times \mathbb{N}^* &  \mathbb{N}^* \times \frac{1}{r}\mathbb{Z} & - 
+  PSU(n) & \left\{\Re\beta^2>0\right\} & \{1\}\times \mathbb{N}^* &  \mathbb{N}^* \times \frac{1}{r}\mathbb{Z} & - 
   \\
   \hline 
   \text{Potts} & \left\{\Re\beta^2>0\right\} & \{1\}\times \mathbb{N}^* &  (\mathbb{N}+2) \times \frac{1}{r}\mathbb{Z} & 
@@ -3566,11 +3556,11 @@ We therefore define correlation functions that depend on the punctures $z_1,\dot
  \label{zbig}
 \end{align}
 
-\subsubsection{Cases of the $O(n)$, $U(n)$ and Potts models}\label{sec:coup}
+\subsubsection{Cases of the $O(n)$, $PSU(n)$ and Potts models}\label{sec:coup}
 
 In the $O(n)$ model, all possible legged punctures are allowed. But there are no legless punctures: all closed loops have the same weight $n$, whether or not they are contractible. The loop model is obtained by reformulating a model of spins on a lattice, where each spin is an $n$-dimensional vector that transforms in the fundamental representation of the group $O(n)$. 
 
-In the $U(n)$ model, we add the restriction that all loops (closed and open) can be oriented such that any 2 neighbouring loops have opposite orientations. Equivalently, the Riemann sphere should be bicolorable, with each loop separating 2 regions of different colors. This allows only punctures with even valencies $2r\in 2\mathbb{N}^*$:
+In the $PSU(n)$ model, we add the restriction that all loops (closed and open) can be oriented such that any 2 neighbouring loops have opposite orientations. Equivalently, the Riemann sphere should be bicolorable, with each loop separating 2 regions of different colors. This allows only punctures with even valencies $2r\in 2\mathbb{N}^*$:
 \begin{align}
  \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .4]
  \clip (-4, -4) rectangle (4, 4);
@@ -3582,7 +3572,7 @@ In the $U(n)$ model, we add the restriction that all loops (closed and open) can
 \end{align}
 Moreover, we introduce legless punctures that detect the color of the region they belong to. Since that color does not change if we add 2 closed loops around the puncture, the puncture's weight must obey $w^2=n^2$, therefore $w=-n$. 
 
-The Potts model is the same as the $U(n)$ model, except that the fundamental geometrical objects are clusters instead of loops, with loops forming the boundaries of clusters. In general, loops and clusters are equivalent: in the above example, a puncture of valency 4 is a point where 2 large clusters meet, where a cluster is large if it cannot be pulled inside the puncture. In the following example, an open loop can be pulled inside the puncture, and we have a squeezed cluster rather than the meeting of 2 different clusters:
+The Potts model is the same as the $PSU(n)$ model, except that the fundamental geometrical objects are clusters instead of loops, with loops forming the boundaries of clusters. In general, loops and clusters are equivalent: in the above example, a puncture of valency 4 is a point where 2 large clusters meet, where a cluster is large if it cannot be pulled inside the puncture. In the following example, an open loop can be pulled inside the puncture, and we have a squeezed cluster rather than the meeting of 2 different clusters:
 \begin{align}
  \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .4]
   \clip (-4, -4) rectangle (4, 4);
@@ -3693,7 +3683,7 @@ The existence of relevant fields in the CFT influences the critical limit. A pri
 Any given lattice model has a finite set of couplings, which correspond to relevant fields of the CFT, and have to be tuned to their critical values for the critical limit to exist. If there exist relevant fields that do not correspond to any coupling, the critical limit ceases to exist, unless it is protected by some symmetry. Since the 
 dimensions of primary fields depend on the parameter $n$ or $Q$, there exist \myindex{critical regions}\index{critical region} in the complex $n$-plane or $Q$-plane where a given model has a critical limit, and the boundary of these regions are \myindex{marginality lines}\index{marginality line}, where a field becomes marginal. 
 
-Let us plot the marginality lines of a few primary fields, which will give us an idea on how critical regions can look like. For simplicity, we focus on degenerate diagonal fields $V^d_{\langle 1,s\rangle}$. In the $O(n)$, $U(n)$ and Potts models, these fields are invariant under the global symmetry, which therefore does not protect the critical limit from the corresponding couplings. The marginality line of $V^d_{\langle r,s\rangle}$ is
+Let us plot the marginality lines of a few primary fields, which will give us an idea on how critical regions can look like. For simplicity, we focus on degenerate diagonal fields $V^d_{\langle 1,s\rangle}$. In the $O(n)$, $PSU(n)$ and Potts models, these fields are invariant under the global symmetry, which therefore does not protect the critical limit from the corresponding couplings. The marginality line of $V^d_{\langle r,s\rangle}$ is
 \begin{align}
  M_{(r,s)} = \Big\{\Re\Delta_{(r,s)} = 1 \Big\} = \Big\{\Re \left(P_{(r+1,s-1)}P_{(r-1,s+1)}\right) = 0\Big\} \ . 
 \end{align}
@@ -4102,9 +4092,9 @@ If and when loop models can be solved at generic central charge, there will rema
 
 \subsubsection{Global symmetries in $d=2$ and $d\geq 3$}
 
-As we stated in Section \ref{sec:models}, the $O(n)$, $U(n)$ and Potts CFTs have global symmetries, described by the groups $O(n)$, $U(n)$ and $S_Q$ respectively. Usually, in physics, we would expect such unbroken symmetries to have a strong influence. Models with different symmetry groups would behave differently, and we would formulate our analysis in group-theoretic language: spectrums as representations, correlation functions as invariant tensors. 
+As we stated in Section \ref{sec:models}, the $O(n)$, $PSU(n)$ and Potts CFTs have global symmetries, described by the groups $O(n)$, $PSU(n)$ and $S_Q$ respectively. Usually, in physics, we would expect such unbroken symmetries to have a strong influence. Models with different symmetry groups would behave differently, and we would formulate our analysis in group-theoretic language: spectrums as representations, correlation functions as invariant tensors. 
 
-However, the $O(n)$, $U(n)$ and Potts CFTs share many conformal dimensions and even some correlation functions.
+However, the $O(n)$, $PSU(n)$ and Potts CFTs share many conformal dimensions and even some correlation functions.
 This is because they are all formulated in terms of similar loop ensembles, see Section \ref{sec:coup}.
 Moreover, if we decompose the spectrum of the $O(n)$ CFT into $O(n)$ representations, as we sketched in Eq. \eqref{von}, we find that a primary field $V_{(r,s)}$ with a given conformal dimension generally does not transform in an irreducible representation, but in a larger representation. This shows that the model's global symmetry is larger than $O(n)$. 
 
@@ -4137,11 +4127,11 @@ where $(v_i\cdot v_j)$ is the scalar product of 2 elements of the vector represe
 
 When it comes to a 4-point function $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$, the number of 4-point invariant tensors is larger than the number of solutions of crossing symmetry (= the number of combinatorial maps). If $\sum r_i = 2, 3$ these numbers actually coincide, while if $\sum r_i\geq 4$ the inequality becomes strict in most cases (for example, $6>5$ for $\big\langle V_{(\frac32,0)}^2V_{(\frac12,0)}^2\big\rangle$), and the number of solutions grows much slower with $r_i$ \cite{gjnrs23}. This slower growth is a manifestation of the larger symmetry at the level of 4-point functions. 
 
-In $d\geq 3$ dimensions, the $O(n)$ and $U(n)$ models can still be formulated in terms of loops, but
+In $d\geq 3$ dimensions, the $O(n)$ and $PSU(n)$ models can still be formulated in terms of loops, but
 from a distance there is no way to tell whether 2 loops intersect or not. The case $d\geq 3$ is therefore similar to the case $d=2$ with intersecting loops, and we expect no larger symmetry. 
 In the critical $O(n)$ model for $d\geq 3$ or $d=2$ with intersecting loops, we expect that a puncture with a given valency $2r$ gives rise to the same fields as in the $O(n)$ CFT, transforming in the same irreducible $O(n)$ representations. However, all their conformal dimensions are modified, due to the breaking of the larger global symmetry, the breaking of interchiral symmetry, and if $d\geq 3$ the breaking of local conformal symmetry down to global conformal symmetry. As a result, for any conformal dimension that appears in the spectrum, we expect 1 primary field that transforms in an irreducible representation of $O(n)$. If we write a 4-point function as a linear combination of 4-point invariant tensors, the coefficients are all solutions of crossing symmetry, and have no reason to be linearly dependent. Therefore, we expect as many solutions of crossing symmetry as 4-point invariant tensors. 
 
-In the $d\geq 3$ Potts model, the boundaries of clusters are not loops, but objects of dimension $d-1\geq 2$. Therefore, we do not expect the critical Potts model to share non-trivial conformal dimensions with the critical $O(n)$ and $U(n)$ models. 
+In the $d\geq 3$ Potts model, the boundaries of clusters are not loops, but objects of dimension $d-1\geq 2$. Therefore, we do not expect the critical Potts model to share non-trivial conformal dimensions with the critical $O(n)$ and $PSU(n)$ models. 
 
 
 \bibliographystyle{cft}
