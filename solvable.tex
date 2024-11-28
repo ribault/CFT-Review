@@ -190,17 +190,28 @@ In the case of loop CFTs, we sketch the corresponding statistical models, and de
 
 \subsubsection*{Exact solvability in CFT}
 
-In 1997, di Francesco, Mathieu and Sénéchal wrote a book called Conformal field theory \cite{fms97}, which dealt almost exclusively with conformal field theory \textit{in two dimensions}. Today, a book with that title would be expected to also cover CFT in $d\geq 3$. However, when it comes to CFTs that we can solve exactly, we are back to $d=2$, because exact solvability relies on 2 ingredients:
+In 1997, di Francesco, Mathieu and Sénéchal wrote a book called Conformal field theory \cite{fms97}, which dealt almost exclusively with conformal field theory \textit{in two dimensions}. Since then, there has been much progress on CFT in $d\geq 3$, thanks in particular to the development and systematic use of the conformal bootstrap approach \cite{prv18}. However, when it comes to CFTs that we can solve exactly, the nontrivial cases are still all in $d=2$, and their solvability relies on 2 ingredients:
 \begin{itemize}
- \item An infinite-dimensional algebra of conformal transformations. 
- \item Degenerate fields: fields whose OPEs with other fields have finitely many terms, modulo conformal symmetry. 
+ \item An infinite-dimensional algebra of conformal transformations, called the Virasoro algebra. In general dimension, the algebra $\mathfrak{so}(d+1,1)$ of conformal transformations of the flat Euclidean space $\mathbb{R}^d$ is finite-dimensional. 
+ \item Degenerate fields: fields whose products with any other fields may be written as sums of finitely many fields, modulo conformal symmetry. Degenerate fields can be constructed not only in $d=2$, but also in general dimension, where they are called weight-shifting operators \cite{kks17}. Under an OPE with a weight-shifting operator, the conformal dimension of a field is shifted by an integer. But except in special cases, the spectrum is not stable under such shifts. So weight-shifting operators cannot be consistenly added to the CFT, and do not constrain it, although they are still useful for studying conformal blocks. 
 \end{itemize}
-This gives us access to powerful bootstrap techniques, analytic and numerical. But even in $d=2$, solvable CFTs are very special cases. Starting from a simple CFT and following a renormalization group flow, we can easily end up at a fixed point whose CFT is intractable.
+In $d=2$, these ingredients give us access to powerful bootstrap techniques, analytic and numerical, which underlie the solvability of physically well-motivated CFTs such as the Ising model or more generally the $O(n)$ model.
+Even then, solvable CFTs are very special cases. Starting from a simple CFT and following a renormalization group flow, we can easily end up at a fixed point whose CFT is intractable.
 
-In $d\geq 3$, the conformal algebra is finite-dimensional. Degenerate fields can however be constructed, under the name of weight-shifting operators \cite{kks17}. Under an OPE with a weight-shifting operator, the conformal dimension of a field is shifted by an integer. But except in particular CFTs such as generalized free theories, the spectrum is not stable under such shifts. So weight-shifting operators cannot be consistenly added to the CFT, and do not constrain it, although they are still useful for studying conformal blocks. The main bootstrap techniques in $d\geq 3$ are numerical instead, and rely on the assumption of unitarity \cite{prv18}. This not only restricts the CFTs that can be addressed, but also leads to inequalities rather than equalities, making it harder to reach exact results. 
+
+\subsubsection*{Exact results in $d\geq 3$}
+
+In $d\geq 3$, there are no known techniques that could lead to exact solutions for the Ising or $O(n)$ models. The main bootstrap techniques are numerical instead, and rely on the assumption of unitarity \cite{prv18}. This not only restricts the CFTs that can be addressed, but also leads to inequalities rather than equalities, making it harder to reach exact results. 
+Exact solvability is restricted to toy models: CFTs that are constructed for the purpose of allowing exact calculations, rather than for answering physical questions: 
+\begin{itemize}
+ \item Mean field theory, also known as the theory of generalized free fields. In this CFT, fields come in infinite series, with conformal dimensions that differ by integers. Weight-shifting operators can be used for computing structure constants, whose exact expressions are written in terms of the Gamma function \cite{kks18}.
+ % \item Harmonic analysis on groups or group quotients provides a generic way of constructing CFTs, and generalizations thereof. The resulting theories are in general not exactly solvable \cite{kmp21}, but solvable examples with global conf. sym. although in d=2... not very exciting
+ % \item Fishnet: better than N=4 SYM but still no exact results? Reference? 
+ \item The Parisi--Sourlas uplift leads to the construction of a $d=4$ CFT from any $d=2$ CFT. If the initial $d=2$ CFT is exactly solved, this leads to exact expressions for a class of correlation functions in the $d=4$ CFT \cite{tre24}. It remains to be seen whether the full $d=4$ CFT is exactly solvable.
+\end{itemize}
  
 
-\subsubsection*{Solvable CFTs}
+\subsubsection*{Solvable CFTs in $d=2$}
 
 We will first deal with CFTs that are considered solved, in that we exactly know the 3-point structure constants, and can compute any correlation function to arbitrary precision:
 \begin{itemize}
@@ -211,7 +222,7 @@ We will also propose a unified treatment of loop CFTs, which are not solved but 
 
 There are other solved or solvable CFTs that we will not mention, because they have extended chiral algebras, which imply extra local symmetries in addition to conformal symmetry. Some CFTs of that type can be solved using the methods that we will cover, for example certain Wess--Zumino--Witten models. 
 
-\subsubsection*{Solving CFTs}
+\subsubsection*{Solving CFTs in $d=2$}
 
 When a CFT is solvable, it can typically be solved in several different ways. In this text, we will only use the conformal bootstrap approach, and omit other historically relevant techniques such as Coulomb gas integrals, and the modular bootstrap. We believe that the conformal bootstrap approach is technically simpler, more general, and more powerful. In particular, our main objects are correlation functions on the sphere, and we do not have a rigid notion of which fields belong to a CFT. For example, in the Ising model, we can introduce disorder fields or compute cluster connectivities, without having to worry about modular invariance of the torus partition function. 
 
