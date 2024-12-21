@@ -127,17 +127,18 @@
 \patchcmd{\BR@backref}{\par}{)\par}{}{}
 \makeatother
 
-% The option [parse=true] is required by the arXiv compiler, but crashes XeLatex.
+% The option [parse=true] is required by the arXiv compiler,
+% and by newer XeLatex, but crashes older XeLatex.
 \newcommand{\kac}[2]{
  \draw[latex-latex] (#1-.3, .5) -- (.5, .5) -- (.5, #2-.3);
  \node [below] at (#1-.3, .4) {$r$};
  \node [left] at (.4, #2-.3) {$s$};
- \foreach \r in {1,...,#1-1}{
- %\foreach[parse=true] \r in {1,...,#1-1}{
+ %\foreach \r in {1,...,#1-1}{
+ \foreach[parse=true] \r in {1,...,#1-1}{
  \draw (\r, .6) -- (\r, .4) node[below] {$\r$};
  }
- \foreach \s in {1,...,#2-1}{
- %\foreach[parse=true] \s in {1,...,#2-1}{
+ %\foreach \s in {1,...,#2-1}{
+ \foreach[parse=true] \s in {1,...,#2-1}{
  \draw (.6, \s) -- (.4, \s) node[left] {$\s$};
  }
  \def\p{#1};
