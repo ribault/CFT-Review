@@ -197,7 +197,7 @@ In 1997, di Francesco, Mathieu and Sénéchal wrote a book called Conformal fiel
  \item Degenerate fields: fields whose products with any other fields may be written as sums of finitely many fields, modulo conformal symmetry. Degenerate fields can be constructed not only in $d=2$, but also in general dimension, where they are called weight-shifting operators \cite{kks17}. Under an OPE with a weight-shifting operator, the conformal dimension of a field is shifted by an integer. But except in special cases, the spectrum is not stable under such shifts. So weight-shifting operators cannot be consistenly added to the CFT, and do not constrain it, although they are still useful for studying conformal blocks. 
 \end{itemize}
 In $d=2$, these ingredients give us access to powerful bootstrap techniques, analytic and numerical, which underlie the solvability of physically well-motivated CFTs such as the Ising model or more generally the $O(n)$ model.
-Even then, solvable CFTs are very special cases. Starting from a simple CFT and following a renormalization group flow, we can easily end up at a fixed point whose CFT is intractable.
+Even then, solvable CFTs are very special cases. Starting from a simple CFT and following a renormalization group flow, we can easily end up at a fixed point whose CFT is intractable \cite{ab24}.
 
 
 \subsubsection*{Not much exact solvability in $d\geq 3$}
@@ -229,7 +229,12 @@ There are other solved or solvable CFTs that we will not mention, because they h
 
 \subsubsection*{Solving CFTs in $d=2$}
 
-When a CFT is solvable, it can typically be solved in several different ways. In this text, we will only use the conformal bootstrap approach, and omit other historically relevant techniques such as Coulomb gas integrals, and the modular bootstrap. We believe that the conformal bootstrap approach is technically simpler, more general, and more powerful. In particular, our main objects are correlation functions on the sphere, and we do not have a rigid notion of which fields belong to a CFT. For example, in the Ising model, we can introduce disorder fields or compute cluster connectivities, without having to worry about modular invariance of the torus partition function. 
+When a CFT is solvable, it can typically be solved in several different ways. In this text, we will only use the conformal bootstrap approach, and omit other historically relevant techniques, in particular:
+\begin{itemize}
+ \item The modular bootstrap consists in exploiting modular invariance of the torus partition function. This object has the advantage of being technically simple, since it involves only the spectrum and not the structure constants. The corresponding drawback is that modular invariance is neither necessary nor sufficient for consistency of the CFT.
+ \item Coulomb gas integrals can be used for deriving exact results in some models, by writing them as perturbed free field theories. With this technique, the conservation of momentum in the free theories limits the correlation functions that can be computed. In some cases, this limitation can be overcome to some extent: for example, torus partition functions in loop CFTs can be computed as infinite combinations of partition functions of free theories with different radiuses of compactification \cite{fsz87}.
+\end{itemize}
+We believe that the conformal bootstrap approach is technically simpler, more general, and more powerful. In particular, our main objects are correlation functions on the sphere, and we do not have a rigid notion of which fields belong to a CFT. For example, in the Ising model, we can introduce disorder fields or compute cluster connectivities, without having to worry about modular invariance of the torus partition function.
 
 Solving a CFT means determining its spectrum and structure constants. We deduce spectrums from assumptions such as 
 \begin{itemize}
@@ -469,7 +474,7 @@ and it follows that the null vector $L_{\langle r,s\rangle} V_{\Delta_{(r, s)}}$
  \boxed{\Delta_{(r, s)} + rs = \Delta_{(r, -s)}}\ , 
  \label{drms}
 \end{align}
-We will provide a derivation of $P_{(r, s)}$ using operator product expansions in Section \ref{sec:dope}. On the other hand, the expressions of $L_{\langle r,s\rangle} $ for $rs\geq 3$ are complicated and not particularly useful, see \cite{ken92} or \cite[Appendix 8A]{fms97}.
+We will provide a derivation of $P_{(r, s)}$ using operator product expansions in Section \ref{sec:dope}. On the other hand, the expressions of $L_{\langle r,s\rangle} $ for $rs\geq 3$ are complicated and not particularly useful, see \cite{wat24}.
 
 For $\beta^2\in\mathbb{C}\backslash \mathbb{Q}$, the Verma module $\mathcal{V}_\Delta$ has a null vector if and only if $\Delta=\Delta_{(r, s)}$ for some $r,s\in\mathbb{N}^*$, in which case it has only 1 null vector. For $\beta^2\in\mathbb{Q}$ however, a Verma module can have several null vectors. If $\beta^2 = \frac{q}{p}$ with $p,q$ coprime integers, we indeed have the identity
 \begin{align}
@@ -913,7 +918,7 @@ Using Eq. \eqref{zgc} for a correlation function that involves $T$, we deduce a 
 \end{align}
 (Compare with $L_nV_\Delta(z)$ \eqref{lvtv}.) 
 We could alternatively use the transformation $z\mapsto \frac{1}{z-a}$ for any $a\in\mathbb{C}$, and obtain an $a$-dependent definition $ \frac{1}{2\pi i} \oint_\infty dy\ (y-a)^{1-n} T(y)V_\Delta(\infty)$. 
-We interpret $\frac{1}{z-a}$ as a \myindex{local coordinate}\index{local coordinate} near $z=\infty$. Correlation functions on general Riemann surfaces depend on choices of local coordinates, see \cite[Section 3]{br24}. In the case of the Riemann sphere, there is 
+We interpret $\frac{1}{z-a}$ as a \myindex{local coordinate}\index{local coordinate} near $z=\infty$. On general Riemann surfaces, correlation functions that involve descendant fields depend on choices of local coordinates, whereas correlation functions of primary fields do not, see \cite[Section 3]{br24}. On the Riemann sphere, there is
 a canonical local coordinate near any point $z\in\mathbb{C}$, but not near $z=\infty$. So we chose the local coordinate $\frac{1}{z}$ near $z=\infty$. 
 
 Let us solve the global Ward identities in the cases $N=1,2,3,4$. We have $3$ linear differential equations in the $N$ variables $z_i$, and we write their solutions up to $z_i$-independent prefactors:
@@ -3610,7 +3615,8 @@ We will now propose an argument that starts with relating non-diagonal primary f
 
 \subsubsection{Relations between punctures and primary fields}
 
-Our starting assumption is that in the critical limit, a legged puncture tends to a primary field of a loop CFT. We have used the same notation $r,s$ for these punctures' parameters as for the non-diagonal fields $V_{(r,s)}$. Let us justify this notation by showing that $r,s$ take the same values in the loop model as in the CFT:
+Our starting assumption is that in the critical limit, the punctures tend to fields of a loop CFT.
+Since the correlation functions \eqref{zbig} do not depend on choices of local coordinates, the resulting fields must be primary. We first focus on legged punctures. We have used the same notation $r,s$ for these punctures' parameters as for the non-diagonal fields $V_{(r,s)}$. Let us justify this notation by showing that $r,s$ take the same values in the loop model as in the CFT:
 \begin{itemize}
  \item In the CFT, as a result of the existence of the degenerate field $V^d_{\langle 1,2\rangle}$, the first Kac index $r$ is half-integer, and conserved modulo $\mathbb{Z}$, see Eq. \eqref{sriz}. For a legged puncture, $2r$ is the valency, and it obeys the same constraints, see Eq. \eqref{srin}.
  \item In the CFT, $rs$ is the conformal spin, and it is integer for bosonic fields. Under a rotation around the puncture, which we interpret as $\theta_k\mapsto \theta_k + \theta$, the weight factor \eqref{wrs} picks up a factor $e^{irs\theta}$: according to Eq. \eqref{veis}, this means that our legged puncture has the conformal spin $rs$. 
