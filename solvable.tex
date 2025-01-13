@@ -77,48 +77,6 @@
   \endgroup
 }
 
-\usepackage[most]{tcolorbox}
-
-\tcbset{
-    frame code={}
-    center title,
-    left=0pt,
-    right=0pt,
-    top=0pt,
-    bottom=0pt,
-    colback=green!15,
-    colframe=white,
-    % width=\dimexpr\textwidth\relax,
-    enlarge left by=0mm,
-    % boxsep=5pt,
-    arc=0pt,outer arc=0pt,
-    breakable,
-    }
-
-\usepackage{amsthm}
-
-\usepackage{thmtools}
-%\usepackage{thm-restate}   This package does not interact very smoothly with \theoremstyle and \listoftheorems
-
-\newtheoremstyle{break}{9pt}{9pt}{\itshape}{}{\bfseries}{}{\newline}{}
-\theoremstyle{break}    
-
-\newtheorem{exo}{Exercise}[section]
-\newtheorem{hyp}[exo]{Axiom}
-\newtheorem{res}[exo]{Result}
-\newtheorem{defn}[exo]{Definition}
-
-\makeatletter
-\def\ll@exo{%
-  \protect\numberline{\csname the\thmt@envname\endcsname}%
-  \ifx\@empty\thmt@shortoptarg
-    \thmt@thmname
-  \else
-    \thmt@shortoptarg
-  \fi}
-\def\l@thmt@exo{} 
-\makeatother
-
 \usepackage[colorlinks=true,linktoc=all,linkcolor=black,citecolor=red,urlcolor=blue,backref=page]{hyperref}
 
 \usepackage{etoolbox}
@@ -215,7 +173,6 @@ There are other examples of exact results, most notably in CFTs with supersymmet
 \end{itemize}
 
  
-
 \subsubsection*{Solvable CFTs in $d=2$}
 
 We will first deal with CFTs that are considered solved, in that we exactly know the 3-point structure constants, and can compute any correlation function to arbitrary precision:
@@ -259,8 +216,6 @@ Technical terms that are defined in this text can be found in the index. We also
  \item I would like to thank Max Downing, Kay Wiese and Rongvoram Nivesvivat for comments and suggestions on the manuscript. 
  \item This work is partly a result of the project ReNewQuantum, which received funding from the European Research Council.
 \end{itemize}
-
-%\end{tcolorbox}
 
 \section{Basics of 2d CFT}\label{sec:bo}
 
