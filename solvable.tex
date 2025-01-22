@@ -213,7 +213,7 @@ Technical terms that are defined in this text can be found in the index. We also
  \item This text is based on lecture notes for a course given at IPhT Saclay in March-April 2024. Video recordings are available on \href{https://www.youtube.com/playlist?list=PLrLctLPAdPNtD7yFOcfdNx2J-A_CE1svr}{IPhT-TV}. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica. 
  \item I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop CFTs and related subjects. 
  \item I am grateful to Victor Godet, Jesper Jacobsen, Gregory Korchemsky, Paul Roux, Ingo Runkel, Hubert Saleur, Xi Yin and Bernardo Zan for helpful discussions and correspondence. 
- \item I would like to thank Max Downing, Kay Wiese and Rongvoram Nivesvivat for comments and suggestions on the manuscript. 
+ \item I would like to thank Max Downing, Kay Wiese, Rongvoram Nivesvivat and Paul Roux for comments and suggestions on the manuscript. 
  \item This work is partly a result of the project ReNewQuantum, which received funding from the European Research Council.
 \end{itemize}
 
@@ -2287,14 +2287,14 @@ This is called a \myindex{shift equation}\index{shift equation}, because it dete
 Our 2 shift equations were associated to the degenerate field $V^d_{\langle 2,1\rangle}$. To obtain the shift equations associated to $V^d_{\langle 1,2\rangle}$ instead, we may perform the substitutions $\beta\to \beta^{-1}$ and $r\leftrightarrow s$, which imply $(P,\bar P)\to (-P,\bar P)$. We obtain 
 \begin{align}
  \frac{C_{1^-23}}{C_{1^+23}} = 
- (-)^{2r_2}\beta^{-4\beta^{-2}s_1} \frac{\prod_{\pm,\pm}\Gamma\left(\tfrac12 -\beta\bar P_1\pm\beta \bar P_2\pm\beta \bar P_3\right)}{\prod_{\pm,\pm}
- \Gamma\left(\tfrac12 -\beta P_1\pm \beta P_2\pm\beta P_3\right)} \ ,
+ (-)^{2r_2}\beta^{-4\beta^{-2}s_1} \frac{\prod_{\pm,\pm}\Gamma\left(\tfrac12 -\beta^{-1}\bar P_1\pm\beta^{-1} \bar P_2\pm\beta^{-1} \bar P_3\right)}{\prod_{\pm,\pm}
+ \Gamma\left(\tfrac12 -\beta^{-1} P_1\pm \beta^{-1} P_2\pm\beta^{-1} P_3\right)} \ ,
  \label{sh-mp2}
 \end{align}
 \begin{align}
 \frac{C_{123^+}}{C_{1^+23}} = 
- (-)^{s_3} \beta^{-2\beta^2(s_1-s_3)}
- \frac{ \prod_\pm\Gamma\left(\frac12 -\beta\bar P_1 \pm \beta\bar P_2 +\beta\bar P_3\right)}{ \prod_\pm\Gamma\left(\frac12-\beta P_1 \pm \beta P_2 -\beta P_3\right)}\ .
+ (-)^{s_3} \beta^{-2\beta^{-2}(s_1-s_3)}
+ \frac{ \prod_\pm\Gamma\left(\frac12 -\beta^{-1}\bar P_1 \pm \beta^{-1}\bar P_2 +\beta^{-1}\bar P_3\right)}{ \prod_\pm\Gamma\left(\frac12-\beta^{-1} P_1 \pm \beta^{-1} P_2 +\beta^{-1} P_3\right)}\ .
  \label{sh-pp2}
 \end{align}
 
@@ -2752,7 +2752,7 @@ is finite after cancelling poles from the numerator and denominator. Such cancel
  \frac{C_{(r_1,s_1-1)(r_2,s_2)(r_3,s_3)}}{C_{(r_1,s_1+1)(r_2,s_2)(r_3,s_3)}} = (-)^{2r_3}(-)^{\max(2r_1,2r_2,2r_3,r_1+r_2+r_3)} \beta^{-4\beta^{-2}s_1} 
  \\ \times 
  \prod_{\epsilon_2,\epsilon_3=\pm} 
- \frac{\Gamma\left(\frac12 + |\epsilon_2r_2+\epsilon_3 r_3-r_1| + \frac{\beta^{-2}}{2}(\epsilon_2s_2+\epsilon_3s_3-s_1)\right)}{\Gamma\left(\frac12 + |\epsilon_2r_2+\epsilon_3 r_3+r_1| + \frac{\beta^{-2}}{2}(\epsilon_2s_2+\epsilon_3s_3+s_1)\right)}\ ,
+ \frac{\Gamma\left(\frac12 + \frac12 |\epsilon_2r_2+\epsilon_3 r_3-r_1| + \frac{\beta^{-2}}{2}(\epsilon_2s_2+\epsilon_3s_3-s_1)\right)}{\Gamma\left(\frac12 + \frac12 |\epsilon_2r_2+\epsilon_3 r_3+r_1| + \frac{\beta^{-2}}{2}(\epsilon_2s_2+\epsilon_3s_3+s_1)\right)}\ ,
  \label{cshift}
 \end{multline}
 where $2r_i, r_1+r_2+r_3\in\mathbb{Z}$ from Eq. \eqref{sriz}. The shift equation for the 2-point structure constant follows from the 3-point case via Eq. \eqref{bicii},
