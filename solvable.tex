@@ -725,12 +725,12 @@ The form of the dependence on $z_1,z_2$ provides an a posteriori justification f
 
 \subsubsection{Fusion rules and fusion products}\label{sec:dope}
 
-Because of the poles in OPE coefficients, there are constraints on the fields that can appear in OPEs. Let us focus on the pole at $\Delta_{(1,1)}=0$. There are 2 types of primary fields of dimension $0$: the non-degenerate field $V_0$, which generates the Verma module $\mathcal{V}_0$, and the degenerate field $V^d_{\langle 1,1\rangle}$, which obeys the null vector equation $L_{-1}V^d_{\langle 1,1\rangle}=\partial V^d_{\langle 1,1\rangle}=0$ and generates the degenerate representation $\mathcal{R}^d_{\langle 1,1\rangle}$ \eqref{r11}. 
+Because of the poles in OPE coefficients, there are constraints on the fields that can appear in the OPE $V_{\Delta_1}V_{\Delta_2}$. Let us focus on the pole at $\Delta_{(1,1)}=0$. There are 2 types of primary fields of dimension $0$: the non-degenerate field $V_0$, which generates the Verma module $\mathcal{V}_0$, and the degenerate field $V^d_{\langle 1,1\rangle}$, which obeys the null vector equation $L_{-1}V^d_{\langle 1,1\rangle}=\partial V^d_{\langle 1,1\rangle}=0$ and generates the degenerate representation $\mathcal{R}^d_{\langle 1,1\rangle}$ \eqref{r11}.
 \begin{itemize}
- \item Can $V_0$ appear in the OPE $V_{\Delta_1}V_{\Delta_2}$? The pole of $f^{L_{-1}}$ \eqref{fl1} means we cannot impose the normalization condition $f^1=1$: we in fact have $f^1=0$ while $f^{L_{-1}}\neq 0$. Therefore, the non-vanishing null vector $L_{-1}V_0$ may appear in the OPE, together with its descendants, while $V_0$ itself and its other descendants give vanishing contributions. This situation is better interpreted as the appearance of $V_1$, not $V_0$.  
- \item In the case of $V^d_{\langle 1,1\rangle}$, the null vector vanishes, and no non-vanishing descendant of $V^d_{\langle 1,1\rangle}$ may appear --- unless $g^{L_{-1}}=0$ in Eq. \eqref{sgl}, which happens if $\Delta_1=\Delta_2$.
+ \item If $\Delta_1\neq \Delta_2$, then $\operatorname{Res}_{\Delta=0}f^{\Delta,L_{-1}}_{\Delta_1,\Delta_2}\neq 0$, and we cannot impose the normalization $C^{\Delta,1}_{\Delta_1,\Delta_2}=0$: rather, we may choose $C^{L_{-1}}=0$ while $C^1=0$. Therefore, the non-vanishing null vector $L_{-1}V_0\propto V_1$ may appear in the OPE, together with its descendants, while $V_0$ itself and its other descendants give vanishing contributions. In particular, neither $V^d_{\langle 1,1\rangle}$ nor its descendants can contribute.
+ \item If $\Delta_1=\Delta_2$, then $\operatorname{Res}_{\Delta=0}f^{\Delta,L_{-1}}_{\Delta_1,\Delta_2}= 0$. The equation $L_1W_1=\theta_{1,1}W_0$ \eqref{opew} reduces to $0=0$, and does not determine $C^{L_{-1}}$ from $C^1$. In particular, our OPE can include $V^d_{\langle 1,1\rangle}$.
 \end{itemize}
-On the other hand, the OPE $V_0V_{\Delta_2}$ is just a special case of the OPE \eqref{prope}.
+What about OPEs that involve $V_0$ or $V^d_{\langle 1,1\rangle}$? The OPE $V_0V_{\Delta_2}$ is just a special case of the OPE \eqref{prope}.
 But the OPE $V^d_{\langle 1,1\rangle}V_{\Delta_2}$ must obey 
 \begin{align}
  0 = \frac{\partial}{\partial z_1} V^d_{\langle 1,1\rangle}(z_1)V_{\Delta_2}(z_2) \supset C_{\langle 1,1\rangle,\Delta_2}^{\Delta} \frac{\partial}{\partial z_1} z_{12}^{\Delta-\Delta_2} \big(V_\Delta(z_2) +\cdots \big) \ ,
