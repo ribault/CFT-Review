@@ -3485,7 +3485,9 @@ Notice that we forbid edges that can be pulled inside vertices, as the correspon
    \draw (0, 0) to [out = 20, in = 90] (2, 0) to [out = -90, in = -20] (0, 0);
   \end{tikzpicture}
 \end{align}
-To a combinatorial map $M$, we associate the ensemble $\mathcal{E}_M$ of configurations of non-intersecting open and closed loops, such that the open loops connect the punctures according to $M$. The map $M$ dictates which types of closed loops can exist: for example, the last map in Eq. \eqref{4maps} allows closed loops with weights $n,w_4,w_s$. Conformal symmetry allows the weight of a loop configuration to depend on the relative angles of open loops at punctures. More precisely, at any puncture we have a weight factor that depends on an angular momentum $s$,
+To a combinatorial map $M$, we associate the ensemble $\mathcal{E}_M$ of configurations of non-intersecting open and closed loops, such that the open loops connect the punctures according to $M$. The map $M$ dictates which types of closed loops can exist: for example, the last map in Eq. \eqref{4maps} allows closed loops with weights $n,w_4,w_s$. Conformal symmetry allows the weight of a loop configuration to depend on the angles of incidence of open loops at punctures. 
+% But not on relative angles! Cf the 1-loop case.
+More precisely, at any puncture we have a weight factor that depends on an angular momentum $s$,
 \begin{align}
  \boxed{w_{(r,s)}(E) = \exp \left\{\tfrac{i}{2} s\textstyle{\sum}_{k=1}^{2r}\theta_{k}\right\}}\ .
  \label{wrs}
