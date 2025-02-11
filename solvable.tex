@@ -29,6 +29,7 @@
 
 \usepackage{pgf}
 \usepackage{tikz}
+\usetikzlibrary {shadings} 
 \usetikzlibrary{shapes}
 \usetikzlibrary{shapes.misc}
 \tikzset{cross/.style={cross out, draw=black, thick, fill=none, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt}, cross/.default={3pt}}
@@ -203,14 +204,14 @@ These assumptions also lead to constraints on structure constants, which may or 
 
 \subsubsection*{This text's approach}
 
-We strive to give simple derivations of non-trivial results, without introducing too many auxiliary objects that are later discarded. The calculations are not all done in detail in this text, but they are doable with reasonable effort. Readers who want formal exercises are directed to earlier texts in the same spirit: the minimal review \cite{rib16}, and the more extended review \cite{rib14}. However, these texts do not cover loop CFTs.
+We strive to give simple derivations of non-trivial results, without introducing too many auxiliary objects that are later discarded. The calculations are not all done in detail in this text, but they are doable with reasonable effort. Readers who want formal exercises are directed to earlier texts in the same spirit: the minimal review \cite{rib16}, and the more extended review \cite{rib14}. Further exercises can be found in a Wikiversity course \cite{rib25}, which is partly based on this text. 
 
 Technical terms that are defined in this text can be found in the index. We also use standard terms that we do not define, because adequate definitions are easily found in Wikipedia or other resources. For example, the definitions of an \textit{irreducible representation}, an \textit{indecomposable representation} or a \textit{projective representation} are found in Wikipedia as the first results of searches for these terms. 
 
 \subsubsection*{Acknowledgements}
 
 \begin{itemize}
- \item This text is based on lecture notes for a course given at IPhT Saclay in March-April 2024. Video recordings are available on \href{https://www.youtube.com/playlist?list=PLrLctLPAdPNtD7yFOcfdNx2J-A_CE1svr}{IPhT-TV}. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica. 
+ \item This text is based on lecture notes for a course given at IPhT Saclay in March-April 2024. Video recordings are available on \href{https://www.youtube.com/playlist?list=PLrLctLPAdPNtD7yFOcfdNx2J-A_CE1svr}{IPhT-TV}. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica.
  \item I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop CFTs and related subjects. 
  \item I am grateful to Victor Godet, Jesper Jacobsen, Gregory Korchemsky, Paul Roux, Ingo Runkel, Hubert Saleur, Xi Yin and Bernardo Zan for helpful discussions and correspondence. 
  \item I would like to thank Max Downing, Kay Wiese, Rongvoram Nivesvivat and Paul Roux for comments and suggestions on the manuscript. 
@@ -327,18 +328,18 @@ L_n L_{-1}V_\Delta = [L_n, L_{-1}] V_\Delta = (n+1) L_{n-1}V_\Delta =
 \end{align}
 Therefore, $\mathcal{V}_\Delta$ has a null vector at level $1$ if and only if $\Delta=0$. Next, consider the case of level $2$, where we write states as 
 \begin{align}
- X{} = \left(a^{L_{-1}^2} L_{-1}^2 + a^{L_{-2}} L_{-2}\right) V_\Delta\ ,
+ X{} = \left(\lambda L_{-1}^2 + \mu L_{-2}\right) V_\Delta\ ,
 \end{align}
-where $a^{L_{-1}^2}$ and $a^{L_{-2}}$ are complex coefficients. It is easy to show that $L_{n\geq 3}X{}=0$, and we compute 
+where $\lambda$ and $\mu$ are complex coefficients. It is easy to show that $L_{n\geq 3}X{}=0$, and we compute 
 \begin{subequations}
 \label{l1x}
 \begin{align}
- L_1X{} &= \left((4\Delta+2)a^{L_{-1}^2} + 3a^{L_{-2}}\right) L_{-1}V_\Delta\ ,
+ L_1X{} &= \left((4\Delta+2)\lambda + 3\mu\right) L_{-1}V_\Delta\ ,
 \\
-L_2 X{} &= \left(6\Delta a^{L_{-1}^2}+(4\Delta+\tfrac12 c) a^{L_{-2}}\right)V_\Delta\ .
+L_2 X{} &= \left(6\Delta \lambda+(4\Delta+\tfrac12 c) \mu\right)V_\Delta\ .
 \end{align}
 \end{subequations}
-Therefore, the conditions $L_1X{}=L_2 X{}=0$ for $X{}$ to be a null vector boil down to a system of 2 linear equations for the coefficients $(a^{L_{-1}^2},a^{L_{-2}})$. The vanishing of that system's determinant determines the conformal dimension $\Delta$ as a function of the central charge $c$,
+Therefore, the conditions $L_1X{}=L_2 X{}=0$ for $X{}$ to be a null vector boil down to a system of 2 linear equations for the coefficients $(\lambda,\mu)$. The vanishing of that system's determinant determines the conformal dimension $\Delta$ as a function of the central charge $c$,
 \begin{align}
  \Delta = \frac{1}{16}\left( 5-c\pm\sqrt{(c-1)(c-25)} \right) \ .
  \label{dpm}
@@ -374,10 +375,10 @@ N & (r,s) & \Delta_{(r,s)} & L_{\langle r,s\rangle}
 \\
 \hline
 \multirow{2}{*}{3} &
-(3,1 ) &  -1 +2 \beta^2  &L_{-1}^3 -4\beta^2 L_{-1}L_{-2}+2\beta^2(\beta^2+1)L_{-3}
+(3,1 ) &  -1 +2 \beta^2  &L_{-1}^3 -4\beta^2 L_{-1}L_{-2}+2\beta^2(2\beta^2+1)L_{-3}
 \\
 \cline{2-4}
-& (1,3 ) &  -1 +2 \beta^{-2}  &L_{-1}^3 -4\beta^{-2} L_{-1}L_{-2}+2\beta^{-2}(\beta^{-2}+1)L_{-3}
+& (1,3 ) &  -1 +2 \beta^{-2}  &L_{-1}^3 -4\beta^{-2} L_{-1}L_{-2}+2\beta^{-2}(2\beta^{-2}+1)L_{-3}
 \\
 \hline
 \multirow{5}{*}{4} &
@@ -460,29 +461,42 @@ To summarize, numbers of null vectors depend a lot on $\beta^2$. If $\beta^2<0$,
   \hline 
  \end{array}
 \end{align}
-To illustrate the 2 cases $\beta^2\in \mathbb{Q}_{>0}$ and $\beta^2\in \mathbb{Q}_{<0}$, let us plot at each $(r,s)\in \{1,\dots, 10\}^2$ a dot whose size increases with 
-$\Delta_{(r,s)}$, together with the vector $(p, q)$ of Eq. \eqref{rpsq} as a red arrow:
+To illustrate the 2 cases $\beta^2\in \mathbb{Q}_{>0}$ and $\beta^2\in \mathbb{Q}_{<0}$, let us plot the points $(r,s)\in \mathbb{N}^*\times \mathbb{N}^*$, with a green shade that increases with the conformal dimension $\Delta_{(r,s)}$. We also draw a red arrow for the vector $(p, q)$, along which $\Delta_{(r,s)}$ is constant according to Eq. \eqref{rpsq}:
 \begin{align}
  \begin{tikzpicture}[baseline=(base), scale = .5]
- \coordinate (base) at (0, 4);
-  \draw[latex-latex] (0, 10) node [left] {$s$} -- (0, 0) node[below left] {$0$} -- (10, 0) node [below] {$r$};
+ \coordinate (base) at (0, 2);
+\begin{scope}
+ \clip (0, 0) rectangle (10, 6);
+ \begin{scope}[transform canvas={rotate=31}]
+ \fill[top color=green] (0,0) rectangle (11.6,5.2);
+ \end{scope}
+ \begin{scope}[transform canvas={rotate=31}]
+ \fill[bottom color=green, top color = white] (0,-5.2) rectangle (11.6,0);
+ \end{scope}
+ \end{scope}
+  \draw[latex-latex] (0, 6) node [left] {$s$} -- (0, 0) node[below left] {$0$} -- (10, 0) node [below] {$r$};
   \draw[thick, red, -latex] (0, 0) -- (5, 3);
   \foreach \r in {1,...,10}{
-  \foreach \s in {1,...,10}{
-  \pgfmathsetmacro{\myrad}{.2+.12*abs(3*\r-5*\s)}
-  \filldraw (\r, \s) circle [radius = \myrad pt];
+  \foreach \s in {1,...,6}{
+  %\pgfmathsetmacro{\myrad}{.2+.12*abs(3*\r-5*\s)}
+  \filldraw (\r, \s) circle [radius = 1.3pt];
   }}
   \node at (5, -2) {$\beta^2 = \frac35>0$};
  \end{tikzpicture}
- \qquad \qquad
- \begin{tikzpicture}[baseline=(base), scale = .5]
- \coordinate (base) at (0, 4);
-  \draw[latex-latex] (0, 10) node [left] {$s$} -- (0, 0) node[below left] {$0$} -- (10, 0) node [below] {$r$};
+\qquad \qquad 
+\begin{tikzpicture}[baseline=(base), scale = .5]
+ \coordinate (base) at (0, 2);
+ \begin{scope}
+  \clip (0, 0) rectangle (10, 6);
+  \begin{scope}[transform canvas={rotate=-31}]
+  \fill[bottom color=green, top color = white] (-7,0) rectangle (13,10.3);
+  \end{scope}
+ \end{scope}
+  \draw[latex-latex] (0, 6) node [left] {$s$} -- (0, 0) node[below left] {$0$} -- (10, 0) node [below] {$r$};
   \draw[thick, red, -latex] (5, 0) -- (0, 3);
   \foreach \r in {1,...,10}{
-  \foreach \s in {1,...,10}{
-  \pgfmathsetmacro{\myrad}{6-(3*\r+5*\s)/15}
-  \filldraw (\r, \s) circle [radius = \myrad pt];
+  \foreach \s in {1,...,6}{
+  \filldraw (\r, \s) circle [radius = 1.3pt];
   }}
   \node at (5, -2) {$\beta^2 = -\frac35<0$};
  \end{tikzpicture}
@@ -492,6 +506,28 @@ $\Delta_{(r,s)}$, together with the vector $(p, q)$ of Eq. \eqref{rpsq} as a red
 
 When a representation $\mathcal{R}$ has a null vector $X{}=LV{}$, this allows us to define a quotient representation $\frac{\mathcal{R}}{\mathcal{R}_{X{}}}$ by setting the null vector to zero. 
 By an abuse of terminology, we say that $\frac{\mathcal{R}}{\mathcal{R}_{X{}}}$ has a \myindex{vanishing null vector}\index{null vector!vanishing---}, which really means that its primary state $V{}$ obeys the \myindex{null vector equation}\index{null vector!---equation} $LV{}=0$. On the other hand, $\mathcal{R}$ itself has a non-vanishing null vector $X{}$. 
+
+For example, let us set $L_{-1}V_0=0$ in $\mathcal{V}_0$. The resulting quotient representation has a basis made of states $LV_0$ such that the creation operator $L\in\mathcal{L}$ does not involve $L_{-1}$. Let us sketch this basis up to the level $N=4$, for comparison with a Verma module \eqref{verma}:
+ \begin{align}
+ \begin{tikzpicture}[scale = .15, baseline=(current  bounding  box.center)]
+  \draw[-latex, very thick] (20, 0) -- (20, -28) node [right] {$N$};
+  \foreach \x in {0, ..., 4}
+  {
+  \draw [dotted] (-6, {-6*\x}) -- (20, {-6*\x}) node [right] {${\x}$};
+  }
+  \node[fill = white] at (0, 0) (0) {$1$};
+  \node[fill = white] at (0,-12) (2) {$L_{-2}$};
+  \node[fill = white] at (0,-24) (22) {$L_{-2}^2$};
+  \node[fill = white] at (6,-18) (3) {$L_{-3}$};
+  \node[fill = white] at (12,-24) (4) {$L_{-4}$};
+  \draw[-latex] (0) -- (2);
+  \draw[-latex] (0) -- (3);
+  \draw[-latex] (0) -- (4);
+  \draw[-latex] (2) -- (22);
+ \end{tikzpicture}
+ \label{r11}
+\end{align}
+Similarly, if we set a level $N$ null vector to zero, the creation operators that do not involve $L_{-N}$ provide a basis of the resulting quotient representation.
 
 If $\mathcal{R}$ has several null vectors, we can define various quotient representations by setting some null vectors to zero. A \myindex{degenerate representation}\index{degenerate!---representation} is a representation that has at least 1 vanishing null vector. A degenerate representation is partly degenerate if it has some non-vanishing null vectors, and \myindex{fully degenerate}\index{fully degenerate!---representation} if all null vectors vanish. Partly degenerate representations play an important role in CFTs with extended chiral algebras, such as conformal Toda theories \cite{fl07c}. 
 
@@ -512,27 +548,6 @@ L_{\langle r, s\rangle} V^d_{\langle r,s\rangle} = L_{\langle r, s\rangle} V^f_{
 \label{lvdz}
 \end{align}
 We use the notation $V_{\Delta_{(r,s)}}$ for a primary state that has the same dimension as $V^d_{\langle r,s\rangle}$ and $V^f_{\langle r,s\rangle}$, but does not necessarily obey the null vector equation. 
-
-A basis of the degenerate representation $\mathcal{R}^d_{\langle r,s\rangle}$ is formed by the descendant states $LV^d_{\langle r,s\rangle}$ such that the creation operator $L$ does not involve the Virasoro generator $L_{-rs}$. In the simplest example $(r,s)=(1,1)$, let us sketch $\mathcal{R}^d_{\langle 1,1\rangle}$ up to the level $N=4$, so that it may be compared to a Verma module \eqref{verma}:
- \begin{align}
- \begin{tikzpicture}[scale = .15, baseline=(current  bounding  box.center)]
-  \draw[-latex, very thick] (20, 0) -- (20, -28) node [right] {$N$};
-  \foreach \x in {0, ..., 4}
-  {
-  \draw [dotted] (-6, {-6*\x}) -- (20, {-6*\x}) node [right] {${\x}$};
-  }
-  \node[fill = white] at (0, 0) (0) {$1$};
-  \node[fill = white] at (0,-12) (2) {$L_{-2}$};
-  \node[fill = white] at (0,-24) (22) {$L_{-2}^2$};
-  \node[fill = white] at (6,-18) (3) {$L_{-3}$};
-  \node[fill = white] at (12,-24) (4) {$L_{-4}$};
-  \draw[-latex] (0) -- (2);
-  \draw[-latex] (0) -- (3);
-  \draw[-latex] (0) -- (4);
-  \draw[-latex] (2) -- (22);
- \end{tikzpicture}
- \label{r11}
-\end{align}
 
 \subsubsection{The Shapovalov form}
 
@@ -556,11 +571,11 @@ At each level $N\in\mathbb{N}$, the Shapovalov form is described by a matrix tha
  \begin{bmatrix} 4\Delta(2\Delta+1) & 6\Delta \\ 6\Delta & 4\Delta+\frac{c}{2}\end{bmatrix}\ .
  \label{sh012}
 \end{align}
-From its definition, it follows that the Shapovalov form has zeros: 
+The Shapovalov form vanishes when applied to any null vector or descendant thereof. In particular,
 \begin{align}
- \forall L, L'\in \mathcal{L}\ , \quad S_{LL_{\langle r,s\rangle},L'}(\Delta_{(r,s)})=0 \ . 
+ \forall L, L'\in \mathcal{L}\ , \quad \big(LL_{\langle r,s\rangle} V_{\Delta_{(r,s)}}\big|L' V_{\Delta_{(r,s)}}\big) =0 \ . 
 \end{align}
-For generic values of the central charge, these are simple zeros. This implies that the inverse Shapovalov matrix at level $N$ has simple poles for $\Delta\in \left\{\Delta_{(r,s)}\right\}_{rs\leq N}$. In a basis of level-$rs$ creation operators that includes $L_{\langle r,s\rangle}$, the level-$rs$ inverse Shapovalov matrix behaves as 
+For generic values of the central charge, $S_{LL_{\langle r,s\rangle},L'}(\Delta)$ has a simple zero at $\Delta=\Delta_{(r,s)}$. This implies that the inverse Shapovalov matrix at level $N$ has simple poles for $\Delta\in \left\{\Delta_{(r,s)}\right\}_{rs\leq N}$. In a basis of level-$rs$ creation operators that includes $L_{\langle r,s\rangle}$, the level-$rs$ inverse Shapovalov matrix behaves as 
 \begin{align}
  S^{-1}_{L,L'}(\Delta) \underset{\Delta\to \Delta_{(r,s)}} = \frac{1}{\Delta-\Delta_{(r,s)}} \frac{\delta_{L,L_{\langle r,s\rangle}}\delta_{L',L_{\langle r,s\rangle}}}{S'_{L_{\langle r,s\rangle},L_{\langle r,s\rangle}}(\Delta_{(r,s)})}  + O(1) \ . 
  \label{smo}
