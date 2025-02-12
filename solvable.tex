@@ -650,7 +650,7 @@ $
 $. 
 Comparing this with Eq. \eqref{lvtv} applied to $I(z)$, we find 
 \begin{align}
- L_{n\geq -1} I(z) = 0 \quad , \quad T(z) = L_{-2}I(z)\ .
+ L_{n\geq -1} I(z) = 0 \quad , \quad L_{-2}I(z)=T(z) \ .
 \end{align}
 In particular, the identity field is a degenerate primary field of conformal dimension zero, with a vanishing null vector at level $1$, i.e. $I(z) \propto V^d_{\langle 1,1\rangle}(z)$. And from the expression of $T(z)$ as a descendant of that field, we deduce
 \begin{align}
@@ -665,37 +665,39 @@ For technical simplicity, we focus on an OPE of 2 primary fields. In that OPE, w
 \begin{align}
  V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset \sum_{L\in \mathcal{L}} C_{\Delta_1,\Delta_2}^{\Delta, L}(z_1,z_2) LV_\Delta(z_2) \ ,
 \end{align}
-where $\mathcal{L}$ \eqref{lcm} is the set of creation operators. On both sides of the OPE, let us insert $\frac{1}{2\pi i}\oint_{z_1,z_2} dy (y-z_2)^{n+1}T(y)$, where the integration contour encloses both $z_1$ and $z_2$. Using Eqs. \eqref{lvtv} and \eqref{tvd}, we find
+where $\mathcal{L}$ \eqref{lcm} is the set of creation operators. On both sides of the OPE, let us insert $\frac{1}{2\pi i}\oint_{z_1,z_2} dy (y-z_2)^{m+1}T(y)$, where the integration contour encloses both $z_1$ and $z_2$. Using Eqs. \eqref{lvtv} and \eqref{tvd}, we find
 \begin{align}
- \left(L_n^{(z_2)} +z_{12}^{n+1}\partial_{z_1} + (n+1)z_{12}^n\Delta_1\right) V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset \sum_{L\in \mathcal{L}} C_{\Delta_1,\Delta_2}^{\Delta, L}(z_1,z_2)L_nLV_\Delta(z_2) \ .
+ \left(L_m^{(z_2)} +z_{12}^{m+1}\partial_{z_1} + (m+1)z_{12}^m\Delta_1\right) V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset \sum_{L\in \mathcal{L}} C_{\Delta_1,\Delta_2}^{\Delta, L}(z_1,z_2)L_mLV_\Delta(z_2) \ .
+ \label{lmope}
 \end{align}
 We focus on 3 cases:
 \begin{itemize}
- \item $\boxed{n=-1}$\ : We use Eq. \eqref{pvlv} for $V_{\Delta_2}(z_2)$ and $LV_{\Delta}(z_2)$, and perform the OPE again on the left-hand side:
+ \item $\boxed{m=-1}$\ : We use Eq. \eqref{pvlv} for $V_{\Delta_2}(z_2)$ and $LV_{\Delta}(z_2)$, and perform the OPE again on the left-hand side:
  \begin{align}
  \left(\partial_{z_1}+\partial_{z_2}\right) \sum_{L\in \mathcal{L}} C_{\Delta_1,\Delta_2}^{\Delta, L}(z_1,z_2)LV_\Delta(z_2) = \sum_{L\in \mathcal{L}} C_{\Delta_1,\Delta_2}^{\Delta, L}(z_1,z_2)\partial_{z_2} LV_\Delta(z_2) \ .
  \end{align}
  This leads to $(\partial_{z_1}+\partial_{z_2})C^{\Delta,L}_{\Delta_1,\Delta_2}(z_1,z_2)=0$, i.e. translation invariance of the OPE coefficients.
- \item $\boxed{n=0}$\ : We use $L_0LV_{\Delta}(z_2)= (\Delta+|L|) V_{\Delta}(z_2)$, and perform the OPE again on the left-hand side. This leads to $(z_{12}\partial_{z_1}+\Delta_1+\Delta_2-\Delta-|L|)C^{\Delta,L}_{\Delta_1,\Delta_2}(z_1,z_2) = 0$, and we deduce the dependence of OPE coefficients on $z_1,z_2$:
+ \item $\boxed{m=0}$\ : We use $L_0LV_{\Delta}(z_2)= (\Delta+|L|) V_{\Delta}(z_2)$, and perform the OPE again on the left-hand side. This leads to $(z_{12}\partial_{z_1}+\Delta_1+\Delta_2-\Delta-|L|)C^{\Delta,L}_{\Delta_1,\Delta_2}(z_1,z_2) = 0$, and we deduce the dependence of OPE coefficients on $z_1,z_2$:
  \begin{align}
   C^{\Delta,L}_{\Delta_1,\Delta_2}(z_1,z_2) = z_{12}^{\Delta+|L|-\Delta_1-\Delta_2} C^{\Delta,L}_{\Delta_1,\Delta_2}\ . 
  \end{align}
-\item $\boxed{n\geq 1}$\ : We use $L_n^{(z_2)}V_{\Delta_2}(z_2)=0$, and perform the OPE again on the left-hand side. The action of the differential operator on the OPE coefficients is now known, and we find 
+\item $\boxed{m\geq 1}$\ : We use $L_m^{(z_2)}V_{\Delta_2}(z_2)=0$, and perform the OPE again on the left-hand side. The action of the differential operator on the OPE coefficients is now known, and we find 
 \begin{align}
- \sum_{L\in\mathcal{L}} C^{\Delta,L}_{\Delta_1,\Delta_2}z_{12}^{|L|+n}(\Delta+|L|+n\Delta_1-\Delta_2) LV_{\Delta}= \sum_{L\in\mathcal{L}} C^{\Delta,L}_{\Delta_1,\Delta_2}z_{12}^{|L|}L_n LV_{\Delta}\ .
+ \sum_{L\in\mathcal{L}} C^{\Delta,L}_{\Delta_1,\Delta_2}z_{12}^{|L|+m}(\Delta+|L|+m\Delta_1-\Delta_2) LV_{\Delta}= \sum_{L\in\mathcal{L}} C^{\Delta,L}_{\Delta_1,\Delta_2}z_{12}^{|L|}L_m LV_{\Delta}\ .
 \end{align}
 Extracting the coefficient of $z_{12}^N$ for some $N\in\mathbb{N}$, we find 
 \begin{align}
- L_n W_N = \theta_{N,n}W_{N-n} \quad \text{with} \quad \left\{\begin{array}{l} W_N = \sum_{|L|=N}C^{\Delta,L}_{\Delta_1,\Delta_2} LV_{\Delta}\ , \\  \theta_{N,n} = N-n+n\Delta_1-\Delta_2 + \Delta\ . \end{array}\right.
+ L_m W_N = \left(\theta_{m}+N-m\right)W_{N-m} \quad \text{with} \quad \left\{\begin{array}{l} W_N = \sum_{|L|=N}C^{\Delta,L}_{\Delta_1,\Delta_2} LV_{\Delta}\ , \\  \theta_{m} = m\Delta_1-\Delta_2 + \Delta\ . \end{array}\right.
  \label{opew}
 \end{align}
+For example, $L_1W_1 = \theta_1 W_0$, which amounts to $2\Delta C^{\Delta,1}_{\Delta_1,\Delta_2} = (\Delta+\Delta_1-\Delta_2) C^{\Delta,L_{-1}}_{\Delta_1,\Delta_2}$. 
 \end{itemize}
 These linear equations for the OPE coefficients $C^{\Delta,L}_{\Delta_1,\Delta_2}$ are called \myindex{OPE Ward identities}\index{Ward identity!OPE---}. 
 Let us look for a solution $\left(f^{\Delta,L}_{\Delta_1,\Delta_2}\right)_{L\in\mathcal{L}}=\left(f^L\right)_{L\in\mathcal{L}}$, normalized by setting $f^{1}=1$, equivalently $W_0 = V_\Delta$. Iterating Eq. \eqref{opew}, we can compute $L^*W_N$ for any creation operator $L\in\mathcal{L}_N$. On the other hand, $L^*W_N = \sum_{L'\in\mathcal{L}_N} S_{L,L'} f^{L'}V_\Delta$ where $S_{L,L'}$ is the Shapovalov form \eqref{shap}.
 This leads to the linear system 
 \begin{align}
  \forall L\in \mathcal{L}_N, \ \sum_{L'\in\mathcal{L}_N} S_{L,L'} f^{L'} = g^L \quad \text{with} \quad 
- g^{L_{-n_1}L_{-n_2}\cdots L_{-n_k}}_{\Delta,\Delta_2,\Delta_1} = \prod_{i=1}^k \theta_{\sum_{j=i}^k n_j, n_i}
+ g^{L_{-n_1}L_{-n_2}\cdots L_{-n_k}}_{\Delta,\Delta_2,\Delta_1} = \prod_{i=1}^k \left(\theta_{n_i}+\textstyle{\sum}_{j=i+1}^k n_j\right)
  \ .
  \label{sgl}
 \end{align}
@@ -704,10 +706,7 @@ Assuming the Shapovalov form is invertible at level $N$, the solution is
  \boxed{f^{\Delta,L}_{\Delta_1,\Delta_2} = \sum_{|L'|=|L|} S_{L,L'}^{-1}(\Delta) g^{L'}_{\Delta,\Delta_2,\Delta_1}}\ .
  \label{fsg}
 \end{align}
-For example, we have $g^{L_{-1}} = \theta_{1,1}$, $g^{L_{-1}^2} = \theta_{1,1}\theta_{2,1}$ and $g^{L_{-2}}=\theta_{2,2}$ with 
-\begin{align}
- \theta_{1,1} = \Delta+\Delta_1-\Delta_2 \quad , \quad \theta_{2,1} = \theta_{1,1}+1 \quad , \quad \theta_{2,2} = \Delta+2\Delta_2-\Delta_1 \ .
-\end{align}
+For example, we have $g^{L_{-1}} = \theta_{1}$, $g^{L_{-1}^2} = \theta_{1}(\theta_{1}+1)$ and $g^{L_{-2}}=\theta_{2}$.
 Inverting the Shapovalov matrix \eqref{sh012}, we deduce
 \begin{subequations}
  \label{fl12}
@@ -722,6 +721,7 @@ Inverting the Shapovalov matrix \eqref{sh012}, we deduce
    \frac{1}{16(\Delta-\Delta_{(2,1)})(\Delta-\Delta_{(1,2)})}
 \left[\begin{smallmatrix} 2+\frac{c}{4\Delta} & -3 \\ -3 & 4\Delta+2 \end{smallmatrix}\right]
 \left[\begin{smallmatrix} (\Delta+\Delta_1-\Delta_2)(\Delta+\Delta_1-\Delta_2+1) \\ \Delta+2\Delta_1-\Delta_2 \end{smallmatrix}\right] \ .
+\label{fl2}
  \end{align}
 \end{subequations}
 The solution $\left(f^L\right)_{L\in\mathcal{L}}$ of the OPE Ward identities is unique if and only if the Shapovalov matrix is invertible, i.e. if and only if there is no null vector in the Verma module $\mathcal{V}_\Delta$. A null vector $L_{\langle r,s\rangle} V_{\Delta_{(r,s)}}$ at level $rs$ manifests itself as a simple pole at $\Delta=\Delta_{(r,s)}$ of the vectors $(f^L)_{L\in\mathcal{L}_N}$ for any $N\geq rs$.
@@ -752,33 +752,43 @@ But the OPE $V^d_{\langle 1,1\rangle}V_{\Delta_2}$ must obey
 \end{align}
 therefore $V_\Delta$ may appear only provided $\Delta=\Delta_2$. This agrees with the remark (in Section \ref{sec:ope}) that $V^d_{\langle 1,1\rangle}$ is proportional to the identity field. 
 
-Let us introduce the \myindex{fusion rules}\index{fusion!---rule} as a convenient notation for writing constraints on OPEs, by omitting everything but the primary fields:
+Let us introduce the \myindex{fusion rules}\index{fusion!---rule} as a convenient notation for writing which primary fields can appear in OPEs:
 \begin{align}
  V^d_{\langle 1,1\rangle} V_{\Delta} = V_\Delta \quad , \quad V_{\Delta_1} V_{\Delta_2} \ni V^d_{\langle 1,1\rangle} \implies \Delta_1=\Delta_2\ . 
+ \label{vov}
 \end{align}
-This may be reformulated in terms of 
-the \myindex{fusion product}\index{fusion!---product} of representations of the Virasoro algebra:
+Just like OPEs themselves, fusion rules are commutative and associative. Moreover, 
 \begin{align}
- \mathcal{R}^d_{\langle 1,1\rangle} \times \mathcal{V}_\Delta = \mathcal{V}_\Delta \quad , \quad \dim\text{Hom}\left(\mathcal{V}_{\Delta_1}\times \mathcal{V}_{\Delta_2}, \mathcal{R}^d_{\langle 1,1\rangle}\right) = \delta_{\Delta_1,\Delta_2}\ ,
+ V_1V_2\ni V_3 \iff V_1V_3 \ni V_2 \ . 
+ \label{nini}
+\end{align}
+These properties of fusion rules can be deduced from the construction of
+the \myindex{fusion product}\index{fusion!---product} of representations of the Virasoro algebra \cite{gab99}.
+In contrast to the tensor product, the fusion product has a definition that involves the fields' positions. This allows the fusion product to preserve the central charge, whereas the tensor product adds the central charges. In terms of the fusion product, the fusion rule \eqref{vov} reads 
+\begin{align}
+ \mathcal{R}^d_{\langle 1,1\rangle} \times \mathcal{V}_\Delta = \mathcal{V}_\Delta \quad , \quad \mathcal{R}^d_{\langle 1,1\rangle} \subset \mathcal{V}_{\Delta_1}\times \mathcal{V}_{\Delta_2} \implies \Delta_1=\Delta_2\ . 
  \label{rtv}
 \end{align}
-where $\text{Hom}(\mathcal{R},\mathcal{R}')$ is the space of linear maps from $\mathcal{R}$ to $\mathcal{R}'$ that commute with the action of the Virasoro algebra. 
-The fusion product can be algebraically defined \cite{gab99}. It differs from the tensor product, in particular its definition involves the fields' positions, although the resulting product does not. Just like OPEs, the fusion product is commutative and associative. Moreover, as we just saw in the case of Verma modules, we have an isomorphism
-\begin{align}
- \text{Hom}\left(\mathcal{R},\mathcal{R}'\right) \simeq \text{Hom}\left(\mathcal{R}\times\mathcal{R}',\mathcal{R}^d_{\langle 1,1\rangle}\right)\ ,
-\end{align}
-which together with associativity implies 
-\begin{align}
- \text{Hom}\left(\mathcal{R}\times\mathcal{R}',\mathcal{R}''\right) \simeq \text{Hom}\left(\mathcal{R}'\times\mathcal{R}'',\mathcal{R}\right)\ .
- \label{hrr}
-\end{align}
-Given 3 representations $\mathcal{R},\mathcal{R}',\mathcal{R}''$, the number $\dim \text{Hom}\left(\mathcal{R}\times\mathcal{R}',\mathcal{R}''\right) \in \mathbb{N}$ is called the \myindex{fusion multiplicity}\index{fusion!---multiplicity} of $\mathcal{R}''$ in the fusion product $\mathcal{R}\times\mathcal{R}'$. A fusion multiplicity is called nontrivial if it is $\geq 2$. 
+The fusion product encodes isomorphisms of representations $\mathcal{R}_i \times \mathcal{R}_j = \sum_k m_{i,j}^k \mathcal{R}_k$, where $m_{i,j}^k\in \mathbb{N}\cup\{\infty\}$ is called a \myindex{fusion multiplicity}\index{fusion!---multiplicity}. In the case of highest-weight representations of the Virasoro algebra, $m_{i,j}^k\in \{0,1\}$, and $m_{i,j}^k$ is invariant under permutations of its 3 indices. 
 
 \subsubsection{Fusion products of degenerate representations}
 
-According to the isomorphism \eqref{hrr}, $V^d_{\langle 2,1\rangle} V_{\Delta_1} \ni V_{\Delta_2} \iff V_{\Delta_1}V_{\Delta_2} \ni V^d_{\langle 2,1\rangle} \iff $ the 2-dimensional linear system \eqref{sgl} at $N=2$ with $\Delta=\Delta_{(2,1)}$ has a solution, even though it is of rank 1. Explicitly, this condition reads
+Let us derive the fusion rules that involve the degenerate field $V^d_{\langle 2,1\rangle}$. These fusion rules are encoded in the 3 equivalent conditions 
 \begin{align}
- \left(4\Delta_{(2,1)}+2\right) \left(\Delta_{(2,1)}+¨2\Delta_1-\Delta_2\right) = 3\left(\Delta_{(2,1)}+\Delta_1-\Delta_2\right)\left(\Delta_{(2,1)}+1+\Delta_1-\Delta_2\right)\ .
+V^d_{\langle 2,1\rangle} V_{\Delta_1}\ni V_{\Delta_2} \iff V_{\Delta_1}V_{\Delta_2} \ni V^d_{\langle 2,1\rangle} \iff \underset{\Delta=\Delta_{(2,1)}}{\operatorname{Res}} f^{\Delta,L_{-1}^2}_{\Delta_1,\Delta_2}=0\ . 
+\end{align}
+The latter condition can be evaluated explicitly using Eq. \eqref{fl2}, leading to a constraint on $\Delta_1,\Delta_2$. Equivalently, the OPE $V_{\Delta_1}(z_1)V^d_{\langle 2,1\rangle}(z_2)$ is constrained by $L_{\langle 2,1\rangle}V^d_{\langle 2,1\rangle}=0$ with $L_{\langle 2,1\rangle} = L_{-1}^2 -\beta^2L_{-2}$ \eqref{ars}. Assuming $V_{\Delta_1}(z_1)V^d_{\langle 2,1\rangle}(z_2)\ni V_{\Delta_2}$, 
+using Eq. \eqref{pvlv} and Eq. \eqref{lmope}, we deduce 
+\begin{multline}
+ V_{\Delta_1}(z_1)L_{\langle 2,1\rangle}V^d_{\langle 2,1\rangle} \supset \left(\frac{\partial^2}{\partial z_2^2} + \frac{\beta^2}{z_{12}}\frac{\partial}{\partial z_1} -\frac{\beta^2\Delta_1}{z_{12}^2}+L_{-2}\right)
+ \\
+ C_{\Delta_2,\langle 2,1\rangle}^{\Delta_2} z_{12}^{\Delta_2-\Delta_1-\Delta_{(2,1)}}\Big(V_{\Delta_2}(z_2)+O(z_{12})\Big)\ . 
+\end{multline}
+This OPE must vanish, including the contribution of the primary field $V_{\Delta_2}(z_2)$, therefore 
+$\left(\frac{\partial^2}{\partial z_2^2} + \frac{\beta^2}{z_{12}}\frac{\partial}{\partial z_1} -\frac{\beta^2\Delta_1}{z_{12}^2}\right)
+ z_{12}^{\Delta_2-\Delta_1-\Delta_{(2,1)}} =0$. This amounts to 
+\begin{align}
+ \beta^2 \left(\Delta_{(2,1)}+¨2\Delta_1-\Delta_2\right) = \left(\Delta_{(2,1)}+\Delta_1-\Delta_2\right)\left(\Delta_{(2,1)}+1+\Delta_1-\Delta_2\right)\ .
 \end{align}
 Using the expression \eqref{ars} for $\Delta_{(2,1)}$, and replacing conformal dimensions with momentums \eqref{dp}, this equation reduces to 
 \begin{align}
