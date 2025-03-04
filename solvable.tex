@@ -1293,9 +1293,16 @@ While they were derived under the assumption $\beta^2\notin \mathbb{Q}$, we will
 
 The OPEs \eqref{vdvrs} and \eqref{vpope} indicate which primary fields can appear: we now assume that in each one of these OPEs, the 2 fields that can appear do appear, i.e.  $V^d_{\langle 1,2\rangle},V_{(r,s)}\in\widehat{\mathcal{S}}\implies V_{(r,s\pm 1)}\in\widehat{\mathcal{S}}$. 
 So the conformal spin \eqref{srs} must remain half-integer under $s\to s\pm 1$, therefore
-$r\in \frac12 \mathbb{Z}$. Moreover, the OPE \eqref{tope} implies that the monodromy of $V^d_{\langle 1,2\rangle}$ around $V_{(r,s)}$ is $e^{2\pi ir}\in \{1,-1\}$.
-In the $N+1$-point function $\left<V^d_{\langle 1,2\rangle}\prod_{i=1}^NV_{(r_i,s_i)}\right>$,
-the product of the monodromies of $V^d_{\langle 1,2\rangle}$ must be $1$, therefore $\sum_{i=1}^N r_i  \in \mathbb{Z}$. This conclusion also holds for $N$-point functions of the type $\left<\prod_{i=1}^NV_{(r_i,s_i)}\right>$, which may be deduced from our $N+1$-point function using an OPE. Therefore, if $V^d_{\langle 1,2\rangle}$ exists, then the first Kac index of non-diagonal fields $V_{(r,s)}$ is half-integer and conserved modulo integers:
+$r\in \frac12 \mathbb{Z}$. 
+Moreover, we can compute the monodromy
+\begin{align}
+ V^d_{\langle 1,2\rangle}\left(e^{2\pi i}z\right) V_{(r,s)} (0) = e^{2\pi i r} V^d_{\langle 1,2\rangle}\left(z\right) V_{(r,s)} (0) \ ,
+ \label{dnmono}
+\end{align}
+where the phase is $e^{2\pi i(S_{(r,s\pm 1)}-S_{(r,s)})} =e^{2\pi ir}\in \{1,-1\}$. Single-valuedness would require this phase to be $1$, but in extended CFTs we slightly relax this axiom, so that the phase can also be $-1$. 
+In any case, 
+if $\left<V^d_{\langle 1,2\rangle}\prod_{i=1}^NV_{(r_i,s_i)}\right>\neq 0$,
+then the product of the monodromies of $V^d_{\langle 1,2\rangle}$ must be $1$, therefore $\sum_{i=1}^N r_i  \in \mathbb{Z}$. This conclusion also holds for $N$-point functions of the type $\left<\prod_{i=1}^NV_{(r_i,s_i)}\right>$, which may be deduced from our $N+1$-point function using an OPE. Therefore, if $V^d_{\langle 1,2\rangle}$ exists, then the first Kac index of non-diagonal fields $V_{(r,s)}$ is half-integer and conserved modulo integers:
 \begin{subequations}
 \begin{align}
  \boxed{V^d_{\langle 1,2\rangle}\in\widehat{\mathcal{S}} \quad \implies\quad  r\in \frac12\mathbb{Z} \quad , \quad \sum_{i=1}^N r_i  \in \mathbb{Z}}\ . 
@@ -2035,8 +2042,8 @@ Let us mention a few other solvable CFTs:
  \item \myindex{E-series minimal models}\index{minimal model!E-series---} exist for $\beta^2=\frac{q}{p}$ with $p=12, 18, 30$ \cite{fms97}. They have finitely many primary fields, which belong to fully degenerate representations from the Kac table. 
 They have 2 independent degenerate fields $\left\{V^f_{\langle r,1\rangle},V^f_{\langle 1,2\rangle}\right\}$ with $r=4,5,7$. 
 However, we do not know how to derive their known spectrums from the study of fusion rules. 
-Solving E-series minimal models is apparently still an open problem. 
-\item \myindex{Logarithmic minimal models}\index{minimal model!logarithmic---} are believed to exist for $\beta^2\in \mathbb{Q}_{>0}$ \cite{prz06}. Their primary fields belong to the extended Kac table, i.e. they have integer Kac indices. Their spectrums include logarithmic representations. Their spectrums and fusion rules are not fully known. It is in fact not clear how many such CFTs exist at any given central charge. Presumably, they can be obtained as limits of generalized minimal models. 
+The 3-point structure constants are known explicitly for $p=12$, but not for $p=18,30$ \cite{nr25}.
+\item \myindex{Logarithmic minimal models}\index{minimal model!logarithmic---} may be defined for $\beta^2\in \mathbb{Q}_{>0}$ by the assumption that their primary fields belong to the extended Kac table, i.e. they have integer Kac indices. (However, this definition is not universally accepted, and the same name is sometimes applied to other vaguely defined and poorly understood CFTs \cite{prz06}.) The spectrums of logarithmic minimal models include logarithmic representations. Their spectrums and fusion rules are not fully known. It is in fact not clear how many such CFTs exist at any given central charge. Presumably, they can be obtained as limits of generalized minimal models. 
 \item At $c=1$, the \myindex{compactified free boson}\index{compactified free boson} and its $\mathbb{Z}_2$ orbifold the \myindex{Ashkin--Teller model}\index{Ashkin--Teller model} are better understood in terms of an extended symmetry algebra (an abelian affine Lie algebra), although they can also be solved in terms of Virasoro symmetry only \cite{nr21}. They have a degenerate field $V^f_{\langle 1, 3\rangle}=V^f_{\langle 3,1\rangle}$, which however behaves as the identity field under fusion with non-diagonal fields. As a result, the constraints \eqref{sriz} are not obeyed. These models have a continuous parameter: the compactification radius $R\in\mathbb{C}^*$. For a special value of $R$, the compactified free boson is a $c\to 1$ limit of the $O(n)$ CFT, and the Ashkin--Teller model is a $c\to 1$ limit of the Potts CFT. Compactified free bosons also exist for $c\in\mathbb{C}$, but then $R$ is quantized \cite{rib14}. 
 \end{itemize}
 
