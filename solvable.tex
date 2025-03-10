@@ -1223,6 +1223,7 @@ Let us summarize the primary fields that we will consider, together with their m
  \label{fields}
 \end{align}
 We parametrize non-diagonal primary fields $V_{(r,s)}$ using the Kac indices defined by Eq. \eqref{prs}, instead of the left and right dimensions. 
+The indices $r,s$ are found by solving the linear system $\renewcommand{\arraystretch}{0.9}\Big\{\begin{array}{l} \beta r-\beta^{-1}s = 2P\ , \\ \beta r+\beta^{-1}s = 2\bar P\ . \end{array}$
 According to Eq. \eqref{drms}, the conformal spin of $V_{(r,s)}$ is 
 \begin{align}
  \boxed{S_{(r,s)}= -rs} \ . 
@@ -1353,7 +1354,7 @@ Let us consider the spectrum of a generalized minimal model with $\beta^2\in\mat
  \forall P\in\mathbb{R}\ , \quad V_P = \lim_{\substack{r,s\to\infty \\ P_{(r,s)}\to P}} V^d_{\langle r,s\rangle}\ .
  \label{vplim}
 \end{align}
-We assume that the resulting fields are only characterized by their conformal dimensions. This implies that $V_P$ does not depend on how exactly we take the limit, and also that $V_P=V_{-P}$. The study of correlation functions in Section \ref{sec:ab} will justify this assumption.
+It turns out that $V_P$ does not depend on how exactly we take the limit, and also that $V_P=V_{-P}$. This statement can be proved at the level of correlation functions, by decomposing them into structure constants and conformal blocks. By definition, conformal blocks only depend on conformal dimensions. It remains to check that GMM's structure constants only depend on $r,s$ via the combination $P_{(r,s)}$, see Section \ref{sec:dtdf}.
 
 If we apply the limit to both fields in the OPE $V^d_{\langle r_1,s_1\rangle}V^d_{\langle r_2,s_2\rangle}$, the resulting OPE is formally given by the degenerate fusion rules \eqref{rrsr} with $r_1,s_1,r_2,s_2\to\infty$, and we obtain
 \begin{align}
@@ -1738,6 +1739,7 @@ In DMM$_{6,5}$, only 6 of these fields are present, and they are complemented by
   \\
   \hline 
  \end{array}
+ \label{dmm65}
 \end{align}
 We therefore have the coincidences of conformal dimensions $V_{(0,\frac12)}\simeq V^f_{\langle 3,2\rangle}$ and $V_{(0,\frac32)}\simeq V^f_{\langle 3,1\rangle}$. The OPEs however do not coincide, for example 
 \begin{align}
@@ -1932,6 +1934,10 @@ V_{(\frac52,0)} &: [5]+[32]+2[311]+[221]+[11111]+[3]+2[21]+[111]+[1]\ .
 In particular, there are 2 fields of type $V_{(\frac52,0)}$ that transform in the irreducible representation $[311]$, and also 2 fields that transform in $[21]$. This is a first hint that field multiplicities become larger as the first index of $V_{(r,s)}$ increases. 
 
 The situation is similar in the $PSU(n)$ and Potts CFTs: let us only mention that the diagonal non-degenerate fields $V_{P_{(0,s)}}$ of the Potts CFT transform in the standard  representation of $S_Q$, whose dimension is $Q-1$. 
+For $Q=2$, the Potts CFT describes observables of the critical Ising model, and includes the minimal model AMM$_{4,3}$. For $Q=3$, the Potts CFT describes observables of the critical 3-state Potts model, and includes the minimal model DMM$_{6,5}$. The diagonal fields $V_{P_{(0,\frac12)}}$ appears twice in the spectrum \eqref{dmm65} of DMM$_{6,5}$, under the names $V_{(0,\frac12)}$ and $V^f_{\langle 3,2\rangle}$, because the standard representation of $S_3$ has dimension $2$. In brief,
+\begin{align}
+ \mathcal{S}^{\text{AMM}_{4,3}}\subset \mathcal{S}^\text{Potts}_{Q=2} \quad , \quad \mathcal{S}^{\text{DMM}_{6,5}}\subset \mathcal{S}^\text{Potts}_{Q=3}\ .
+\end{align}
 
 
 \subsection{Completing the picture}
