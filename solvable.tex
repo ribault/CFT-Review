@@ -11,7 +11,7 @@
 
 \usepackage[top=18mm,bottom=18mm,left=25mm,right=25mm]{geometry}
 
-\usepackage{showkeys}
+%\usepackage{showkeys}
 
 \usepackage{amsmath,amssymb,amsfonts}
 
@@ -183,7 +183,7 @@ We will first deal with CFTs that are considered solved, in that we exactly know
 \end{itemize}
 We will also propose a unified treatment of loop CFTs, which are not solved but are believed to be solvable, because we have sufficiently many exact results. By loop CFTs we mean a large class of CFTs, with various global symmetry groups, which describe critical limits of various statistical models in various phases. The known solvable CFTs have many applications to statistical physics, in particular to percolation, to polymers, and more recently to active hydraulics \cite{jcpb23}. Liouville theory and minimal models have well-known applications to quantum gravity in 2d. Applications of non-diagonal solvable CFTs such as loop CFTs to quantum gravity in 3d are limited by the bound on the central charge $\Re c < 13$. (See Section \ref{sec:dotc}.) A CFT that would be holographically dual to quantum gravity in 3d Anti-de Sitter space would need to exist for $c\to+\infty$, while for 3d de Sitter space we would need $\Re c = 13$ \cite{god24, cemr24}. 
 
-There are other solved or solvable CFTs that we will not mention, because they have extended chiral algebras, which imply extra local symmetries in addition to conformal symmetry. Some CFTs of that type can be solved using the methods that we will cover, for example certain Wess--Zumino--Witten models. 
+There are other solved or solvable CFTs that we will not mention, because they have extended chiral symmetries, in addition to conformal symmetry. Some CFTs of that type can be solved using the methods that we will cover, for example certain Wess--Zumino--Witten models.
 
 \subsubsection*{Solving CFTs in $d=2$}
 
@@ -211,7 +211,7 @@ Technical terms that are defined in this text can be found in the index. We also
 \subsubsection*{Acknowledgements}
 
 \begin{itemize}
- \item This text is based on lecture notes for a course given at IPhT Saclay in March-April 2024. Video recordings are available on \href{https://www.youtube.com/playlist?list=PLrLctLPAdPNtD7yFOcfdNx2J-A_CE1svr}{IPhT-TV}. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica.
+ \item This text is based on lecture notes for a course given at IPhT Saclay in March-April 2024. Video recordings are available on \href{https://www.youtube.com/playlist?list=PLrLctLPAdPNtD7yFOcfdNx2J-A_CE1svr}{IPhT-TV}. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica, and to the participants. I am also grateful to the students who followed my M2 ICFP course in January-March 2025.
  \item I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop CFTs and related subjects. 
  \item I am grateful to Victor Godet, Jesper Jacobsen, Gregory Korchemsky, Paul Roux, Ingo Runkel, Hubert Saleur, Xi Yin and Bernardo Zan for helpful discussions and correspondence. 
  \item I would like to thank Max Downing, Kay Wiese, Rongvoram Nivesvivat and Paul Roux for comments and suggestions on the manuscript. 
@@ -529,7 +529,7 @@ For example, let us set $L_{-1}V_0=0$ in $\mathcal{V}_0$. The resulting quotient
 \end{align}
 Similarly, if we set a level $N$ null vector to zero, the creation operators that do not involve $L_{-N}$ provide a basis of the resulting quotient representation.
 
-If $\mathcal{R}$ has several null vectors, we can define various quotient representations by setting some null vectors to zero. A \myindex{degenerate representation}\index{degenerate!---representation} is a representation that has at least 1 vanishing null vector. A degenerate representation is partly degenerate if it has some non-vanishing null vectors, and \myindex{fully degenerate}\index{fully degenerate!---representation} if all null vectors vanish. Partly degenerate representations play an important role in CFTs with extended chiral algebras, such as conformal Toda theories \cite{fl07c}. 
+If $\mathcal{R}$ has several null vectors, we can define various quotient representations by setting some null vectors to zero. A \myindex{degenerate representation}\index{degenerate!---representation} is a representation that has at least 1 vanishing null vector. A degenerate representation is partly degenerate if it has some non-vanishing null vectors, and \myindex{fully degenerate}\index{fully degenerate!---representation} if all null vectors vanish. Partly degenerate representations play an important role in CFTs with extended chiral symmetries, such as conformal Toda theories \cite{fl07c}.
 
 For $r,s\in\mathbb{N}^*$, the level-$rs$ null vector $L_{\langle r,s\rangle}V_{\Delta_{(r,s)}}\in \mathcal{V}_{\Delta_{(r,s)}}$ is a primary state of dimension $\Delta_{(r,-s)}$, according to Eq. \eqref{drms}. Together with its descendants, this state generates a Verma module $\mathcal{V}_{\Delta_{(r,-s)}}\subset \mathcal{V}_{\Delta_{(r,s)}}$. Setting the null vector to zero, we obtain the degenerate representation 
 \begin{align}
@@ -960,9 +960,9 @@ which vanishes if $|L|>|L'|$ because $V_\Delta$ is primary, and also if $|L|<|L'
 
 We assume that correlation functions are \myindex{single-valued}\index{single-valuedness} on the Riemann sphere. Equivalently, we assume that any 2 fields are \myindex{mutually local}\index{mutual locality}, i.e. that they have trivial monodromies around each other: $V_1(ze^{2\pi i})V_2(0)=V_1(z)V_2(0)$. 
 
-The correlation functions of Section \ref{sec:csc} are of the form $z^\Delta$, which is multivalued unless $\Delta\in\mathbb{Z}$. Single-valued functions like $|z|^{2\Delta}=z^\Delta\bar{z}^\Delta$ are not written in terms of powers of $z$, but also involve $\bar z$. In the literature, the notation $f(z,\bar z)$ is sometimes used for arbitrary functions of $z$, with $f(z)$ reserved to locally holomorphic functions, i.e. functions such that $\frac{\partial}{\partial \bar z} f(z) =0$. We will not use the notation $f(z,\bar z)$, which is redundant since $\bar z$ is itself a function of $z$. 
+The correlation functions of Section \ref{sec:csc} are of the form $z^\Delta$, which is multivalued unless $\Delta\in\mathbb{Z}$. Single-valued functions like $|z|^{2\Delta}=z^\Delta\bar{z}^\Delta$ are not written in terms of powers of $z$, but also involve $\bar z$. In the literature, the notation $f(z,\bar z)$ is sometimes used for arbitrary functions of $z$, with $f(z)$ reserved to holomorphic functions, i.e. functions such that $\frac{\partial}{\partial \bar z} f(z) =0$. We will not use the notation $f(z,\bar z)$, which is redundant since $\bar z$ is itself a function of $z$.
 
-The generators $\ell_n$ \eqref{lpz} of local conformal transformations are only valid when acting on locally holomorphic functions: for more general functions, the generators are 
+The generators $\ell_n$ \eqref{lpz} of local conformal transformations are only valid when acting on holomorphic functions: for more general functions, the generators are
 \begin{align}
  \ell_n +\bar{\ell}_n \quad , \quad i(\ell_n -\bar \ell_n)\  .
  \label{epbe}
@@ -971,7 +971,7 @@ In fact we want the algebra of conformal transformations to act on a complex vec
 
 In Sections \ref{sec:vir} and \ref{sec:fope}, we have been doing \myindex{chiral CFT}\index{CFT!chiral---}, which means considering $\mathfrak{V}$ only. In a full CFT, the symmetry algebra is the \myindex{conformal algebra}\index{conformal!---algebra} $\mathfrak{V}\times \bar{\mathfrak{V}}$, where for simplicity we assume that the left and right central charges are equal. When it comes to representations, Verma modules of $\mathfrak{V}\times \bar{\mathfrak{V}}$ are simply $\mathcal{V}_\Delta\otimes \bar{\mathcal{V}}_{\bar \Delta}$, where we write a bar over representations of $\bar{\mathfrak{V}}$. There also exist representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$ that are not factorized, in particular logarithmic representations \cite{nr20}. 
 
-Fields now belong to representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$, and they obey $\frac{\partial}{\partial \bar z} V(z) = \bar L_{-1} V(z)$, which is the antiholomorphic version of Eq. \eqref{pvlv}. This allows us to define a right-moving energy-momentum tensor $\bar T(y) = \sum_{n\in\mathbb{Z}} \frac{\bar L_n^{(z)}}{(\bar y-\bar z)^{n+2}}$. While $T$ is locally holomorphic, $\bar T$ is locally antiholomorphic:
+Fields now belong to representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$, and they obey $\frac{\partial}{\partial \bar z} V(z) = \bar L_{-1} V(z)$, which is the antiholomorphic version of Eq. \eqref{pvlv}. This allows us to define a right-moving energy-momentum tensor $\bar T(y) = \sum_{n\in\mathbb{Z}} \frac{\bar L_n^{(z)}}{(\bar y-\bar z)^{n+2}}$. While $T$ is holomorphic, $\bar T$ is antiholomorphic:
 \begin{align}
  \partial_{\bar z} T(z) = 0 \quad , \quad \partial_z \bar T(z) = 0 \ . 
 \end{align}
@@ -1021,11 +1021,11 @@ Unless stated otherwise, we will assume that spins are integer:
 \end{align}
 Finally, notice that $\left<V_1V_2\right> = \left<IV_1V_2\right>$, where $I$ is the identity field. Assuming for simplicity
 \begin{align}
- B_{ij}=\delta_{ij}B_i\ ,
+ B_{jk}=\delta_{jk}B_j\ ,
 \end{align}
 this implies 
 \begin{align}
- \boxed{B_i = C_{Iii}}\ .
+ \boxed{B_k = C_{Ikk}}\ .
  \label{bicii}
 \end{align}
 
@@ -1371,9 +1371,9 @@ Let us call \myindex{Liouville theory}\index{Liouville theory} the resulting CFT
  \boxed{\mathcal{S}^\text{Liouville} = \frac12 \left\{ V_P\right\}_{P\in \mathbb{R}}}\ .
  \label{sliou}
 \end{align}
-The regularized OPE \eqref{ireg} requires that we extend the spectrum to complex momentums. This will turn out to be possible, because correlation functions are analytic in $P$. 
+The regularized OPE \eqref{ireg} requires that we extend the spectrum to complex momentums. This will turn out to be possible, because correlation functions are holomorphic in $P$.
 
-For the moment, we have defined Liouville theory for $\beta^2\in\mathbb{R}_{>0}\backslash\mathbb{Q}$. By taking limits, we can extend it to the half-line $c\leq 1$ i.e. $\beta^2\in\mathbb{R}_{>0}$. But we cannot do an analytic continuation to the rest of the complex $c$-plane, because of the poles of OPE coefficients. These poles lie on the real $P$-line if $c\leq 1$, but as soon as $c$ strays from this half-line, the poles spread out in the complex $P$-plane, and cross the integration line $\mathbb{R}+i\epsilon$ for any $\epsilon>0$. In the following figures, we draw the regions where poles are found in blue, and the poles $\pm P_{(1,1)}$ as blue circles; the integration line is in red: 
+For the moment, we have defined Liouville theory for $\beta^2\in\mathbb{R}_{>0}\backslash\mathbb{Q}$. By taking limits, we can extend it to the half-line $c\leq 1$ i.e. $\beta^2\in\mathbb{R}_{>0}$. But we cannot do an analytic continuation to the rest of the complex $\beta^2$-plane, because of the poles of OPE coefficients. These poles lie on the real $P$-line if $\beta^2\in\mathbb{R}_{>0}$, but as soon as $c$ strays from this half-line, the poles spread out in the complex $P$-plane, and cross the integration line $\mathbb{R}+i\epsilon$ for any $\epsilon>0$. In the following figures, we draw the regions where poles are found in blue, and the poles $\pm P_{(1,1)}$ as blue circles; the integration line is in red:
 \begin{align}
  \newcommand{\polewedge}[3]{
 \begin{scope}[#1]
@@ -1419,14 +1419,16 @@ For the moment, we have defined Liouville theory for $\beta^2\in\mathbb{R}_{>0}\
 \beta^2>0 & \beta^2\in\mathbb{C}\backslash \mathbb{R} & \beta^2<0
 \end{array}
 \end{align}
-We nevertheless define Liouville theory for $\beta^2\in \mathbb{C}\backslash\mathbb{R}_{\geq 0}$ by the spectrum \eqref{sliou} and OPE \eqref{idpv}, where we no longer need to shift the integration line. 
-We also assume that correlation functions are analytic in momentums and in the central charge, and that degenerate fields exist, so that we have the extended spectrum
+As a result, correlation functions of Liouville theory are only real-analytic functions of $\beta^2 \in \mathbb{R}_{>0}$.
+
+Since we cannot do an analytic continuation from $\beta^2\in \mathbb{R}_{>0}$,
+we simply define Liouville theory for $\beta^2\in \mathbb{C}\backslash\mathbb{R}_{\geq 0}$
+by the spectrum \eqref{sliou} and OPE \eqref{idpv}, where we no longer need to shift the integration line. We expect correlation functions to be holomorphic in $\beta^2\in \mathbb{C}\backslash\mathbb{R}_{\geq 0}$, because poles of OPE coefficients never cross the integration line. We also expect that correlation functions are holomorphic in $P$. (In fact they turn out to be holomorphic over the complex $P$-plane, minus a discrete set of poles.) And most importantly for the analytic bootstrap approach, we assume that degenerate fields exist, so that we have the extended spectrum
 \begin{align}
  \boxed{ \widehat{\mathcal{S}}^\text{Liouville} = \frac12 \left\{ V_P\right\}_{P\in \mathbb{C}} \cup \left\{ V^d_{\langle r,s\rangle}\right\}_{r,s\in\mathbb{N}^*} }\ .
  \label{stliou}
 \end{align}
-The resulting extended CFT therefore includes a generalized minimal model. 
-
+The resulting extended CFT therefore includes a generalized minimal model. As we will see in Section \ref{sec:dtdf}, there is at most one CFT that obeys our definition of Liouville theory. Proving that it exists amounts to proving that 4-point functions are crossing-symmetric. This is very hard to do analytically, see Section \ref{sec:alaa} for references.
 
 \subsubsection{A-series minimal models}\label{sec:amm}
 
@@ -1820,9 +1822,29 @@ Like Liouville theory, generalized D-series minimal models cannot be analyticall
 
 \subsection{Loop CFTs}
 
-Critical loop models were originally defined as critical limits of statistical models that describe non-intersecting loops in a 2d space. Starting with the Ising model, many statistical models can be reformulated in terms of loops, or directly constructed from loops. But there is a lot of choice about which observables to include in the model. In the Ising model, if we consider only local observables, we obtain the minimal model $\text{AMM}_{4,3}$ in the critical limit. If we also consider non-local observables such as cluster connectivities, we obtain a much richer CFT. For applications to statistical physics, what matters is less to define a consistent CFT than to compute correlation functions, which are then interpreted in terms of probabilities. We will sketch a few consistent CFTs in Section \ref{sec:models}, but our main focus will be on correlation functions, which will be the subject of Section \ref{sec:cloop}.
+Critical loop models were originally defined as critical limits of statistical models that describe non-intersecting loops in a 2d space. Starting with the Ising model, many statistical models can be reformulated in terms of loops, or directly constructed from loops.
 
-To begin with, we will now propose a simple extended spectrum that will include all the known loop CFTs, based on the assumption that there exists 1 degenerate field. 
+However, there is a lot of choice about which observables to include in the model. In the Ising model, if we consider only local observables, we obtain the minimal model $\text{AMM}_{4,3}$ in the critical limit. If we also consider non-local observables such as cluster connectivities, we obtain a much richer CFT.
+
+For applications to statistical physics, what matters is less to define a consistent CFT than to compute correlation functions, which are then interpreted in terms of probabilities. We will sketch a few consistent CFTs in Section \ref{sec:models}, but our main focus will be on correlation functions, which will be the subject of Section \ref{sec:cloop}.
+
+\subsubsection{Definition and basic properties}
+
+Let a \textbf{loop CFT}\index{loop CFT} be a 2d CFT with no extended chiral symmetry, such that:
+\begin{enumerate}
+ \item The degenerate field $V^d_{\langle 1,2\rangle}$ exists.
+ \item The spectrum contains infinitely many non-diagonal fields.
+ \item All OPE spectrums are discrete.
+\end{enumerate}
+The crucial assumption is the existence of $V^d_{\langle 1,2\rangle}$; the other assumptions are meant to exclude other known CFTs. In particular, assumptions 2 excludes minimal models, assumption 3 excludes generalized D-series minimal models, and both assumptions 2 and 3 exclude Liouville theory.
+
+It follows that the central charge obeys the constraint $\Re c<13$ \eqref{rbp}. And the existence of $V^d_{\langle 1,2\rangle}$ but not $V^d_{\langle 2,1\rangle}$ means that loop CFTs really depend on $\beta^2$ \eqref{cb}, not on $c$. We expect that this dependence is holomorphic over the domain $\Re c<13$: thanks to the assumption that OPE spectrums are discrete, correlation functions do not have the non-analyticities on the line $c\leq 1$ that we saw in the context of Liouville theory in Section \ref{sec:liou}.
+
+Moreover, there are known constraints on fusion rules:
+\begin{itemize}
+\item OPEs that involve the degenerate field $V^d_{\langle 1,2\rangle}$ are given by Eqs. \eqref{vpope} and \eqref{vdvrs},
+ \item the first Kac index is conserved modulo integers \eqref{sriz}.
+\end{itemize}
 
 \subsubsection{Extended spectrum}\label{sec:es}
 
@@ -1852,32 +1874,15 @@ Non-diagonal fields with integer spins include:
 \end{subequations}
 Our simple extended spectrum hides important subtleties: 
 \begin{itemize}
- \item We characterize fields by their conformal dimensions, but there could be several independent fields with the same dimensions, in other words there could be nontrivial field multiplicities. This is known to occur in the loop CFTs of Section \ref{sec:models}, where the multiplicities are described in terms of representations of global symmetry groups.  
+ \item We characterize fields by their conformal dimensions, but there could be several independent fields with the same dimensions, in other words there could be nontrivial field multiplicities. This is known to occur in the loop CFTs of Section \ref{sec:models}, where the multiplicities may be described in terms of representations of global symmetry groups.
  \item Knowing which primary fields belong to $\widehat{S}^\text{loop}$ is not enough for determining how the conformal algebra acts on $\widehat{S}^\text{loop}$. For $(r,s)\in \mathbb{N}^*\times \mathbb{Z}^*$, the primary field $V_{(r,s)}$ has a null vector, and the Verma module $\mathcal{V}_{\Delta_{(r,s)}}\otimes\bar{\mathcal{V}}_{\Delta_{(r,-s)}}$ is not the only representation that includes $V_{(r,s)}$. The correct representation can be determined by starting with $V_{(r,0)}$ and repeatedly taking OPEs with $V^d_{\langle 1,2\rangle}$. This leads to a logarithmic indecomposable representation $\mathcal{W}_{(r,|s|)}$ that contains both $V_{(r,s)}$ and $V_{(r,-s)}$, and is not left-right factorized \cite{nr20}. By convention we label the resulting family $\left(\mathcal{W}_{(r,s)}\right)_{\substack{r\in \mathbb{N}^*\\ s\in\mathbb{N}}}$ with natural integers $s$, where we define 
  $\mathcal{W}_{(r,0)}= \mathcal{V}_{\Delta_{(r,0)}}\otimes\bar{\mathcal{V}}_{\Delta_{(r,0)}}$.
 \end{itemize}
 
-\subsubsection{Dependence on the central charge and fusion rules}
-
-In loop CFTs, the existence of non-diagonal fields together with $V^d_{\langle 1,2\rangle}$ leads to the half-plane constraint $\Re c<13$ \eqref{rbp} on the central charge. And the asymmetry between the 2 Kac indices $r,s$ means that loop CFTs really depend on $\beta^2$ \eqref{cb}, not on $c$. The known constraints on fusion rules are:
-\begin{itemize}
-\item OPEs that involve the degenerate field $V^d_{\langle 1,2\rangle}$ are given by Eqs. \eqref{vpope} and \eqref{vdvrs},
- \item the first Kac index is conserved modulo integers \eqref{sriz}.
-\end{itemize}
-We now add an assumption that has 2 different formulations:
-\begin{enumerate}
- \item Any OPE spectrum is discrete.
- \item Correlation functions are meromorphic in $\beta$ over the whole domain $\Re c<13$.
-\end{enumerate}
-These fomulations are equivalent because a continous OPE spectrum would produce non-analyticities on the line $c\leq 1$, as we saw in the context of Liouville theory in Section \ref{sec:liou}. Admittedly, it is only a conjecture that discreteness of the OPEs implies that correlation functions are meromorphic.
-
-We therefore define a \textbf{loop CFT}\index{loop CFT} as a non-diagonal CFT whose spectrum is a subset of the extended spectrum $\widehat{S}^\text{loop}$ \eqref{sloop}, and whose OPEs are discrete.
-
 
 \subsubsection{$O(n)$ CFT, $PSU(n)$ CFT, Potts CFT}\label{sec:models}
 
-Three known models give rise to integer-spin subsets of the extended spectrum $\widehat{S}^\text{loop}$. 
-Their spectrums are 
+In any loop CFT, the spectrum must be a subset of the extended spectrum $\widehat{S}^\text{loop}$. In particular, three known loop CFTs give rise to integer-spin subsets:
 \begin{align}
 \mathcal{S}^{O(n)} &= \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in 2\mathbb{N}+1} \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \frac12\mathbb{N}^*\\ s\in\frac{1}{r}\mathbb{Z}}}  \ ,
 \label{son}
@@ -2344,11 +2349,14 @@ Since shift equations produce Gamma functions, their solutions should be written
 \frac{\Gamma_\beta(x+\beta^{-1})}{\Gamma_\beta(x)} = \sqrt{2\pi}\frac{\beta^{\frac12-\beta^{-1}x}}{\Gamma(\beta^{-1}x)} \ .
 \label{gshift}
 \end{align}
-The double Gamma function also obeys $\Gamma_\beta(x)= \Gamma_{\beta^{-1}}(x)$. It is a meromorphic function of $x\in\mathbb{C}$, with simple poles for $x\in -\beta\mathbb{N}-\beta^{-1}\mathbb{N}$ and no zeros. It is also a meromorphic function of $\beta\in \mathbb{C}\backslash i\mathbb{R}$. It can be convenient to use the following consequence of Eq. \eqref{gshift}:
+The double Gamma function also obeys $\Gamma_\beta(x)= \Gamma_{\beta^{-1}}(x)$. It is a meromorphic function of $x\in\mathbb{C}$, with simple poles for $x\in -\beta\mathbb{N}-\beta^{-1}\mathbb{N}$ and no zeros. It is also a meromorphic function of $\beta\in \mathbb{C}\backslash i\mathbb{R}$, undefined for $\beta\in i\mathbb{R}$. To see that these values of $\beta$ are problematic, notice that $\text{closure}\left(-\beta\mathbb{N}-\beta^{-1}\mathbb{N}\right)\underset{\beta^2\in \mathbb{R}_{<0}-\mathbb{Q}} = i\mathbb{R}$, i.e. the simple poles would become dense in the imaginary axis.
+
+Using the double Gamma function, we will write solutions of the shift equations for 3-point structure constants. We will deduce solutions for 2-point structure constants using $B_k\propto C_{Ikk}$ \eqref{bicii}, where the shift equations allow a $k$-independent factor.
+
+A convenient identity that follows from Eq. \eqref{gshift} is:
 \begin{align}
- \frac{\prod_\pm \Gamma_\beta\left(x \pm (y-\frac{\beta}{2})\right)}{\prod_\pm \Gamma_\beta\left(x \pm (y+\frac{\beta}{2})\right)} = \beta^{-2\beta y}\frac{\Gamma\left(\beta x+\beta y - \frac12 \beta^2\right)}{\Gamma\left(\beta x-\beta y -\frac12 \beta^2\right)}\ . 
+ \frac{\prod_\pm \Gamma_\beta\left(x \pm (y-\frac{\beta}{2})\right)}{\prod_\pm \Gamma_\beta\left(x \pm (y+\frac{\beta}{2})\right)} = \beta^{-2\beta y}\frac{\Gamma\left(\beta x+\beta y - \frac12 \beta^2\right)}{\Gamma\left(\beta x-\beta y -\frac12 \beta^2\right)}\ .
 \end{align}
-Using the double Gamma function, we will write solutions of the shift equations for 3-point structure constants. We will deduce solutions for 2-point structure constants using $B_i\propto C_{Iii}$ \eqref{bicii}, where the shift equations allow an $i$-independent factor. 
 
 \subsubsection{Diagonal CFTs with 2 degenerate fields}\label{sec:dtdf}
 
@@ -2395,7 +2403,7 @@ Instead, we should use the function $\hat{\Gamma}_\beta(x) = \frac{1}{\Gamma_{i\
 \frac{\hat\Gamma_\beta(x+\beta^{-1})}{\hat\Gamma_\beta(x)} = \sqrt{2\pi}(i\beta)^{\frac12-\beta^{-1}x}\Gamma(1-\beta^{-1}x) \ .
 \label{hgshift}
 \end{align}
-Since we now have powers of $i\beta$ instead of $\beta$, we need to slightly modify the degenerate OPE structure constants \eqref{cpcm}, for example $c_i^+ = \beta^{4\beta P_i}\frac{\Gamma(-2\beta P_i)}{\Gamma(1+2\beta P_i)} \to (i\beta)^{4\beta P_i}\frac{\Gamma(-2\beta P_i)}{\Gamma(1+2\beta P_i)}$. The shift equation for structure constants \eqref{sh-mp} is similarly modified, i.e. $\beta^y \to (i\beta)^y$. Its solutions $\hat B_{P_1},\hat C_{P_1,P_2,P_3}$ are obtained from $B_{P_1},C_{P_1,P_2,P_3}$ \eqref{bc} by $\Gamma_\beta \to \hat\Gamma_\beta$. Explicitly,
+Since we now have powers of $i\beta$ instead of $\beta$, we need to slightly modify the degenerate OPE structure constants \eqref{cpcm}, for example $c_i^+ = \beta^{4\beta P_i}\frac{\Gamma(-2\beta P_i)}{\Gamma(1+2\beta P_i)} \to (i\beta)^{4\beta P_i}\frac{\Gamma(-2\beta P_i)}{\Gamma(1+2\beta P_i)}$. The shift equation for structure constants \eqref{sh-mp} is similarly modified, i.e. $\beta^y \to (i\beta)^y$. Its unique solution $\hat B_{P_1},\hat C_{P_1,P_2,P_3}$ is obtained from $B_{P_1},C_{P_1,P_2,P_3}$ \eqref{bc} by $\Gamma_\beta \to \hat\Gamma_\beta$. Explicitly,
 \begin{align}
  \boxed{\hat B_{P_1} = \prod_\pm \Gamma_b\left(\pm 2iP_1\right)\Gamma_b\left(Q\pm 2iP_1\right)} \quad , \quad 
  \boxed{\hat C_{P_1,P_2,P_3} = \prod_{\pm,\pm,\pm} \Gamma_b\left(\tfrac{Q}{2} \pm iP_1\pm iP_2\pm iP_3\right)}\ ,
@@ -2616,7 +2624,7 @@ In the analytic bootstrap approach of Section \ref{sec:ab}, we have used the cro
 
 \subsection{Approaches to crossing symmetry}
 
-\subsubsection{Achievements and limitations of analytic approaches}
+\subsubsection{Achievements and limitations of analytic approaches}\label{sec:alaa}
 
 It is not easy to directly evaluate the crossing symmetry equations \eqref{seteu}: conformal blocks are complicated, and their sums are even more complicated. Another approach is to construct 4-point functions in channel-independent ways, and then show that they can be decomposed into conformal blocks. This has led to analytic proofs of crossing symmetry in CFTs that can be constructed by perturbing a free bosonic CFT:
 \begin{itemize}
@@ -2732,11 +2740,13 @@ L_0 &=2\sum_{m=1}^\infty J_{-m}J_m +J_0^2+\left(\beta-\beta^{-1}\right)J_0 \ ,
 \label{lzj}
 \end{align}
 \end{subequations}
-where $\beta$ was defined from $c$ in Eq. \eqref{cb}. Let us define an affine primary state $V_P$ of momentum $P$ by 
+where $\beta$ was defined from $c$ in Eq. \eqref{cb}.
+(The central term in $[L_n,L_{-n}]$ is formally divergent, and becomes finite if the generators $J_m$ act on a state $V$ such that $\exists m_0, J_{m>m_0}V=0$.)
+Let us define an \textbf{affine-primary state}\index{affine-primary state} $V_P$ of momentum $P$ by
 \begin{align}
  J_0 V_P  = \left(P-\tfrac12\left(\beta-\beta^{-1}\right) \right) V_P \quad , \quad J_{n>0} V_P = 0\ .
 \end{align}
-Then $V_P$ is also a Virasoro primary state, whose conformal dimension is computed from the last 2 terms of Eq. \eqref{lzj}, reproducing Eq. \eqref{dp}. 
+Then $V_P$ is also a primary state, whose conformal dimension is computed from the last 2 terms of Eq. \eqref{lzj}, reproducing Eq. \eqref{dp}.
 
 Now, let us extend the algebra $\hat{\mathfrak{u}}_1\times \overline{\hat{\mathfrak{u}}_1}$ by adding generators $D^\pm$ such that 
 \begin{align}
@@ -2750,7 +2760,7 @@ We can deduce the commutation relations of $D^\pm$ with Virasoro generators,
 \end{align}
 Due to the generators $D^\pm$, the algebra is no longer chirally factorized into a left-moving and a right-moving factor: this is why it is called interchiral. We could have preserved chiral factorization by defining independent left-moving and right-moving generators $D^\pm,\bar D^\pm$, but such generators would produce states with spins that are not half-integer. 
 
-By construction, the generators $D^\pm$ act on affine primary states as $D^\pm V_P \propto V_{P\pm \beta^{-1}}$. Therefore, the representation $\widetilde{\mathcal{V}}_P$ \eqref{wvp} is now irreducible as required. However, our algebra is still way too large, and has way too many representations. To correct this, we may impose additional constraints. A natural constraint is 
+By construction, the generators $D^\pm$ act on affine-primary states as $D^\pm V_P \propto V_{P\pm \beta^{-1}}$. Therefore, the representation $\widetilde{\mathcal{V}}_P$ \eqref{wvp} is now irreducible as required. However, our algebra is still way too large, and has way too many representations. To correct this, we may impose additional constraints. A natural constraint is
 \begin{align}
  [D^+, D^-] = 2\beta^{-1}(J_0+\bar J_0) \ , 
 \end{align}
@@ -3768,7 +3778,7 @@ If we now consider correlation functions, the existence of a critical limit migh
 
 Whenever crossing symmetry equations have a unique solution, numerical bootstrap calculations can give us numerical data for the corresponding 4-point structure constants. From these data, we would like to infer exact expressions. To do this, we will constrain structure constants by making assumptions on their analytic properties. These assumptions will determine each structure constant up to a polynomial in loop weights.
 
-\subsubsection{Analyticity in the channel momentum}
+\subsubsection{Holomorphicity in the channel momentum}
 
 We consider the 4-point function $Z(P)=\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$, with an $s$-channel spectrum $\mathcal{S}_0(P)$ \eqref{sxs}. The decomposition of $Z(P)$ into $s$-channel conformal blocks is
 \begin{align}
@@ -4139,6 +4149,8 @@ from a distance there is no way to tell whether 2 loops intersect or not. The ca
 In the critical $O(n)$ model for $d\geq 3$ or $d=2$ with intersecting loops, we expect that a puncture with a given valency $2r$ gives rise to the same fields as in the $O(n)$ CFT, transforming in the same irreducible $O(n)$ representations. However, all their conformal dimensions are modified, due to the breaking of the larger global symmetry, the breaking of interchiral symmetry, and if $d\geq 3$ the breaking of local conformal symmetry down to global conformal symmetry. As a result, for any conformal dimension that appears in the spectrum, we expect 1 primary field that transforms in an irreducible representation of $O(n)$. If we write a 4-point function as a linear combination of 4-point invariant tensors, the coefficients are all solutions of crossing symmetry, and have no reason to be linearly dependent. Therefore, we expect as many solutions of crossing symmetry as 4-point invariant tensors. 
 
 In the $d\geq 3$ Potts model, the boundaries of clusters are not loops, but objects of dimension $d-1\geq 2$. Therefore, we do not expect the critical Potts model to share non-trivial conformal dimensions with the critical $O(n)$ and $PSU(n)$ models. 
+
+\pagebreak
 
 \bibliographystyle{cft}
 \bibliography{cft}
