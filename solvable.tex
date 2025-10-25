@@ -11,7 +11,7 @@
 
 \usepackage[top=18mm,bottom=18mm,left=25mm,right=25mm]{geometry}
 
-%\usepackage{showkeys}
+\usepackage{showkeys}
 
 \usepackage{amsmath,amssymb,amsfonts}
 
@@ -150,7 +150,7 @@ In the case of loop CFTs, we sketch the corresponding statistical models, and de
 
 \subsubsection*{Exact solvability in CFT}
 
-In 1997, di Francesco, Mathieu and Sénéchal wrote a book called Conformal field theory \cite{fms97}, which dealt almost exclusively with conformal field theory \textit{in two dimensions}. Since then, there has been much progress on CFT in $d\geq 3$, thanks in particular to the development and systematic use of the conformal bootstrap approach \cite{prv18}. However, when it comes to CFTs that we can solve exactly, the nontrivial cases are still all in $d=2$, and their solvability relies on 2 ingredients:
+In 1997, Di Francesco, Mathieu and Sénéchal published a book called Conformal field theory \cite{fms97}, which dealt almost exclusively with conformal field theory \textit{in two dimensions}. Since then, there has been much progress on CFT in $d\geq 3$, thanks in particular to the development and systematic use of the conformal bootstrap approach \cite{prv18}. However, when it comes to CFTs that we can solve exactly, the nontrivial cases are still all in $d=2$, and their solvability relies on 2 ingredients:
 \begin{itemize}
  \item An infinite-dimensional algebra of conformal transformations, called the Virasoro algebra. In general dimension, the algebra $\mathfrak{so}(d+1,1)$ of conformal transformations of the flat Euclidean space $\mathbb{R}^d$ is finite-dimensional. 
  \item Degenerate fields: fields whose products with any other fields may be written as sums of finitely many fields, modulo conformal symmetry. Degenerate fields can be constructed not only in $d=2$, but also in general dimension, where they are called weight-shifting operators \cite{kks17}. Under an OPE with a weight-shifting operator, the conformal dimension of a field is shifted by an integer. But except in special cases, the spectrum is not stable under such shifts. So weight-shifting operators cannot be consistenly added to the CFT, and do not constrain it, although they are still useful for studying conformal blocks. 
@@ -208,13 +208,15 @@ We strive to give simple derivations of non-trivial results, without introducing
 
 Technical terms that are defined in this text can be found in the index. We also use standard terms that we do not define, because adequate definitions are easily found in Wikipedia or other resources. For example, the definitions of an \textit{irreducible representation}, an \textit{indecomposable representation} or a \textit{projective representation} are found in Wikipedia as the first results of searches for these terms. 
 
+
 \subsubsection*{Acknowledgements}
 
 \begin{itemize}
  \item This text is based on lecture notes for a course given at IPhT Saclay in March-April 2024. Video recordings are available on \href{https://www.youtube.com/playlist?list=PLrLctLPAdPNtD7yFOcfdNx2J-A_CE1svr}{IPhT-TV}. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica, and to the participants. I am also grateful to the students who followed my M2 ICFP course in January-March 2025.
  \item I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop CFTs and related subjects. 
- \item I am grateful to Victor Godet, Jesper Jacobsen, Gregory Korchemsky, Paul Roux, Ingo Runkel, Hubert Saleur, Xi Yin and Bernardo Zan for helpful discussions and correspondence. 
+ \item I am grateful to Antoine Bourget, Victor Godet, Jesper Jacobsen, Gregory Korchemsky, Paul Roux, Ingo Runkel, Hubert Saleur, Xi Yin and Bernardo Zan for helpful discussions and correspondence.
  \item I would like to thank Max Downing, Kay Wiese, Rongvoram Nivesvivat and Paul Roux for comments and suggestions on the manuscript. 
+ \item I am grateful to the anonymous SciPost reviewers for their valuable suggestions, which led to many corrections and clarifications.
  \item This work is partly a result of the project ReNewQuantum, which received funding from the European Research Council.
 \end{itemize}
 
@@ -248,16 +250,16 @@ The corresponding Lie group is the group of \myindex{global conformal transforma
  \label{abcd}
 \end{align}
 Now, in a quantum theory, symmetries act projectively on states. And projective representations of an algebra are equivalent to representations of that algebra's central extension. 
-Therefore, the algebra that describes local conformal transformations in conformal field theory is the Witt algebra's central extension, called the Virasoro algebra. The \myindex{Virasoro algebra}\index{Virasoro algebra} $\mathfrak{V}$ has generators $(L_n)_{n\in\mathbb{Z}}$ that correspond to the Witt algebra generators, plus a central generator $\mathbf 1$. The commutation relations are 
+Therefore, the algebra that describes local conformal transformations in conformal field theory is the Witt algebra's central extension, called the Virasoro algebra. The \myindex{Virasoro algebra}\index{Virasoro algebra} $\mathfrak{V}$ has generators $(L_n)_{n\in\mathbb{Z}}$ that correspond to the Witt algebra generators, plus a central generator. We assume that the central generator has only one eigenvalue in a given CFT, called the \myindex{central charge}\index{central charge} $c\in\mathbb{C}$. We replace the central generator with $c$ in the commutation relations:
  \begin{align}
-  [\mathbf 1, L_n] = 0 \quad , \quad \boxed{[L_n,L_m] = (n-m)L_{n+m} +\frac{c}{12}(n-1)n(n+1)\delta_{n+m,0}\mathbf 1} \ .
+  \boxed{[L_n,L_m] = (n-m)L_{n+m} +\frac{c}{12}(n-1)n(n+1)\delta_{n+m,0}} \ .
   \label{vir}
  \end{align}
- The \myindex{central charge}\index{central charge} $c\in\mathbb{C}$ is a fundamental parameter not only of the Virasoro algebra, but also of any conformal field theory built on that algebra. 
+Then we consider $c$ as a parameter not only of a CFT, but also of the underlying Virasoro algebra.
 
 \subsubsection{Highest-weight representations}\label{sec:hwr}
 
-In a conformal field theory, the space of states is a representation of the Virasoro algebra, and can be decomposed into indecomposable representations. But which indecomposable representations are physically relevant? To answer this question, we will focus on the properties of the dilation generator $L_0$ of the Virasoro algebra. Conceptually, this is because $L_0$ can be interpreted as the energy operator. Technically, this is because $L_0$ controls the convergence of operator product expansions, as we will see in Section \ref{sec:csope}. More specifically, a necessary condition for convergence is that the eigenvalues of $L_0$ be bounded from below in any indecomposable representation. We will always assume that this condition holds.
+In a conformal field theory, the space of states is a representation of the Virasoro algebra, and can be decomposed into indecomposable representations. But which indecomposable representations are physically relevant? To answer this question, we will focus on the properties of the dilation generator $L_0$ of the Virasoro algebra. Conceptually, this is because $L_0$ can be interpreted as the energy operator. Technically, this is because $L_0$ controls the convergence of operator product expansions, as we will see in Section \ref{sec:csope}. More specifically, a necessary condition for convergence is that the eigenvalues of $L_0$ be bounded from below in any indecomposable representation (whether or not $L_0$ is diagonalizable in that representation). We will always assume that this condition holds.
 
 The eigenvalues of $L_0$ are called \myindex{conformal dimensions}\index{conformal!---dimension}. Under the action of the Virasoro generator $L_n$, the conformal dimension decreases by $n$. For any vector $V$ in a representation of the Virasoro algebra, we indeed have 
 \begin{align}
@@ -269,9 +271,10 @@ In an indecomposable representation $\mathcal{R}$, the $L_0$-eigenstate with the
  \end{align}
 Let us introduce a basis of \myindex{creation operators}\index{creation operator},
 \begin{align}
- \mathcal{L} = \left\{\prod_{i=1}^k L_{-n_i} \right\}_{k\in\mathbb{N},\ 0<n_1\leq \dots \leq n_k}=\left\{1, L_{-1}, L_{-1}^2, L_{-2},\cdots \right\}\ .
+ \mathcal{L} = \left\{\prod_{i=1}^k L_{-n_i} \right\}_{k\in\mathbb{N},\ 0<n_1\leq \dots \leq n_k}=\left\{1, L_{-1}, L_{-1}^2, L_{-2},\cdots \right\}\ ,
  \label{lcm}
 \end{align}
+where the unit operator $1\in \mathcal{L}$ is obtained in the case $k=0$.
 Any state of the type $L V{}$ with $L\in\mathcal{L}$ is called a \myindex{descendant state}\index{descendant!---state} of the primary state $V$. Let  $N=|L|=\sum_{i=1}^k n_i \in\mathbb{N}$ be the  \myindex{level}\index{level} of that state, then its conformal dimension is $\Delta+N$, and we write
 \begin{align}
  \mathcal{L}_N = \Big\{ L\in\mathcal{L}\Big| |L|=N\Big\}\ . 
@@ -279,7 +282,8 @@ Any state of the type $L V{}$ with $L\in\mathcal{L}$ is called a \myindex{descen
  \end{align}
 By extension, a linear combination of descendant states is also called a descendant state. 
 
-A primary state $V{} \in \mathcal{R}$ generates a subrepresentation $\mathcal{R}_{V{}}= \text{Span}(LV{})_{L\in\mathcal{L}}\subset\mathcal{R}$, which is the space of its descendant states. If the states $(LV{})_{L\in\mathcal{L}}$ are linearly independent, then $\mathcal{R}_{V{}}$ is called the \myindex{Verma module}\index{Verma module} $\mathcal{V}_\Delta$. If not, $\mathcal{R}_{V{}}$ is a quotient of $\mathcal{V}_\Delta$ by a subrepresentation: such quotients are called \myindex{highest-weight representations}\index{highest-weight representation}. In such a representation, $L_0$ is diagonalizable. 
+A primary state $V{} \in \mathcal{R}$ generates a subrepresentation $\mathcal{R}_{V{}}= \text{Span}(LV{})_{L\in\mathcal{L}}\subset\mathcal{R}$, which is the space of its descendant states. If $\mathcal{R}=\mathcal{R}_V$ for some $V\in\mathcal{R}$, then $\mathcal{R}$ is called a \myindex{highest-weight representations}\index{highest-weight representation}. Then $L_0$ is diagonalizable in $\mathcal{R}$. If moreover the states $(LV{})_{L\in\mathcal{L}}$ are linearly independent, then $\mathcal{R}_{V{}}$ is called the \myindex{Verma module}\index{Verma module} $\mathcal{V}_\Delta$, for $\Delta$ the conformal dimension of $V$. If $(LV{})_{L\in\mathcal{L}}$ are not linearly independent, then $\mathcal{R}_{V{}}$ is a quotient representation of $\mathcal{V}_\Delta$ by a nontrivial subrepresentation.
+
 Let us sketch a Verma module by displaying all its basis states up to the level $N=4$, with arrows representing the action of the Virasoro generators $L_{-1},L_{-2},L_{-3},L_{-4}$:
  \begin{align}
  \begin{tikzpicture}[scale = .3, baseline=(current  bounding  box.center)]
@@ -4160,3 +4164,12 @@ In the $d\geq 3$ Potts model, the boundaries of clusters are not loops, but obje
 
 \end{document}
 
+* "di Francesco, Mathieu and Sénéchal wrote a book" -> "Di Francesco, Mathieu and Sénéchal published a book"
+
+* In the Virasoro algebra's commutation relations (1.5), the central generator is made implicit, and the surrounding explanations modified accordingly.
+
+* Added "(whether or not $L_0$ is diagonalizable in that representation)" when discussing eigenvalues of $L_0$.
+
+* After (1.8), added the precision "where the unit operator $1\in \mathcal{L}$ is obtained in the case $k=0$".
+
+* In Section 1.1.2, clarified the definition of a highest-weight representation.
