@@ -360,7 +360,7 @@ $
 $, and the corresponding null vectors are $X\propto \left(L_{-1}^2 -\beta^{\pm 2}L_{-2}\right)V_\Delta$.
 The price to pay for this simplification is that the 4 values $\beta,-\beta,\beta^{-1},-\beta^{-1}$ all correspond to the same central charge. 
 
-More generally, there is an infinite family of conformal dimensions $(\Delta_{(r, s)})_{r,s\in\mathbb{N}^*}$ such that $\mathcal{V}_{\Delta_{(r, s)}}$ has a null vector $L_{\langle r,s\rangle} V_{\Delta_{(r, s)}}$ at level $N=rs$. Let us summarize the cases $N=1,2,3,4$ in these notations:
+More generally, there is an infinite family of conformal dimensions $(\Delta_{(r, s)})_{r,s\in\mathbb{N}^*}$ such that $\mathcal{V}_{\Delta_{(r, s)}}$ has a null vector $L_{\langle r,s\rangle} V_{\Delta_{(r, s)}}$ at level $N=rs$. The first few cases are:
 \begin{align}
 \renewcommand{\arraystretch}{1.5}
 \begin{array}{|c|c|c|l|}
@@ -419,6 +419,12 @@ L_{-1}^4-2\left(\beta^2+\beta^{-2}\right)L_{-1}^2L_{-2}
 \end{array}
 \label{ars}
 \end{align}
+In these cases as in the general case, the dimensions $\Delta_{(r,s)}$ and null vectors $L_{\langle r,s\rangle}$ have simple behaviours under the transformations $\beta\to -\beta$ and $\beta\to \beta^{-1}$, which leave $c$ \eqref{cb} invariant:
+\begin{align}
+ \Delta_{(r,s)}(\beta)&=\Delta_{(r,s)}(-\beta)=\Delta_{(s,r)}(\beta^{-1})\ ,
+ \\
+ L_{\langle r,s\rangle}(\beta)&=L_{\langle r,s\rangle}(-\beta)=L_{\langle s,r\rangle}(\beta^{-1})\ .
+\end{align}
 To write $\Delta_{(r, s)}$ for any $r,s\in\mathbb{N}^*$, we rewrite the conformal dimension in terms of the momentum $P$ defined by 
 \begin{align}
  \boxed{\Delta = \frac{c-1}{24} + P^2}\ .
@@ -443,12 +449,13 @@ For $\beta^2\in\mathbb{C}\backslash \mathbb{Q}$, the Verma module $\mathcal{V}_\
 \end{align}
 which together with $\Delta_{(r,s)}=\Delta_{(-r,-s)}$ implies coincidences of the type $\Delta_{(r,s)}=\Delta_{(r',s')}$ with $r',s'\in\mathbb{Z}$. 
 Given $r_1,s_1\in \mathbb{N}^*$, the reducible Verma module $\mathcal{V}_{\Delta_{(r_1,s_1)}}$ has a null vector $L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. If $pq>0$, or if $pq<0$ with $\left\lfloor \frac{r_1}{|p|}\right\rfloor \neq \left\lfloor \frac{s_1}{|q|}\right\rfloor$ and $\left\lceil \frac{r_1}{|p|}\right\rceil \neq \left\lceil \frac{s_1}{|q|}\right\rceil$, then the dimension $\Delta_{(r_1,-s_1)}$ \eqref{drms} of this null vector is of the type $\Delta_{(r_2,s_2\rangle}$ with $r_2,s_2\in\mathbb{N}^*$, leading to another null vector $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. 
-It turns out that all null vectors of Verma modules are of the type $L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$ or $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. In particular, given a null vector of the type $L_{\langle r_3,s_3\rangle}L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r_1,s_1)}}$, 
+It turns out that all null vectors of Verma modules are of the type $L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$ or $L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r,s)}}$. Assuming null vectors are normalized as $L_{\langle r,s\rangle} = L_{-1}^{rs} +\cdots$,
+given a null vector of the type $L_{\langle r_3,s_3\rangle}L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r_1,s_1)}}$, we indeed have
 \begin{align}
  \exists r_4,s_4\in \mathbb{N}^*\ , \ L_{\langle r_3,s_3\rangle}L_{\langle r_2,s_2\rangle}L_{\langle r_1,s_1\rangle} V_{\Delta_{(r_1,s_1)}} = L_{\langle r_4,s_4\rangle} V_{\Delta_{(r_4,s_4)}}\ .
  \label{lllel}
 \end{align}
-To see this, let $\epsilon,\eta\in\{+,-\}$ be the signs such that $P_{(-r_1,s_1)}=\epsilon P_{(r_2,s_2)}$ and $P_{(r_2,-s_2)}=\eta P_{(r_3,s_3)}$, and let $r_4=|\epsilon r_1-r_2+\eta r_3|$ and $s_4=|\epsilon s_1+s_2+\eta s_3|$, then $\sum_{i=1}^3 r_is_i=r_4s_4$, i.e. the 2 null vectors in Eq. \eqref{lllel} have the same level. 
+To see this, let $\epsilon,\eta\in\{+,-\}$ be the signs such that $P_{(r_1,-s_1)}=\epsilon P_{(r_2,s_2)}$ and $P_{(r_2,-s_2)}=\eta P_{(r_3,s_3)}$, and let $r_4=|\epsilon r_1-r_2+\eta r_3|$ and $s_4=|\epsilon s_1+s_2+\eta s_3|$, then $\sum_{i=1}^3 r_is_i=r_4s_4$, i.e. the 2 null vectors in Eq. \eqref{lllel} have the same level.
 
 To summarize, numbers of null vectors depend a lot on $\beta^2$. If $\beta^2<0$, then $\{\Delta_{(r, s)}\}_{r,s\in\mathbb{N}^*}$ is bounded from above, and Eq. \eqref{drms} implies that a Verma module can only have finitely many null vectors. If $\beta^2\in \mathbb{Q}_{>0}$, then by Eq. \eqref{rpsq} the existence of a null vector implies the existence of infinitely many others: 
 \begin{align}
@@ -531,8 +538,6 @@ For example, let us set $L_{-1}V_0=0$ in $\mathcal{V}_0$. The resulting quotient
  \end{tikzpicture}
  \label{r11}
 \end{align}
-Similarly, if we set a level $N$ null vector to zero, the creation operators that do not involve $L_{-N}$ provide a basis of the resulting quotient representation.
-
 If $\mathcal{R}$ has several null vectors, we can define various quotient representations by setting some null vectors to zero. A \myindex{degenerate representation}\index{degenerate!---representation} is a representation that has at least 1 vanishing null vector. A degenerate representation is partly degenerate if it has some non-vanishing null vectors, and \myindex{fully degenerate}\index{fully degenerate!---representation} if all null vectors vanish. Partly degenerate representations play an important role in CFTs with extended chiral symmetries, such as conformal Toda theories \cite{fl07c}.
 
 For $r,s\in\mathbb{N}^*$, the level-$rs$ null vector $L_{\langle r,s\rangle}V_{\Delta_{(r,s)}}\in \mathcal{V}_{\Delta_{(r,s)}}$ is a primary state of dimension $\Delta_{(r,-s)}$, according to Eq. \eqref{drms}. Together with its descendants, this state generates a Verma module $\mathcal{V}_{\Delta_{(r,-s)}}\subset \mathcal{V}_{\Delta_{(r,s)}}$. Setting the null vector to zero, we obtain the degenerate representation 
@@ -4173,3 +4178,10 @@ In the $d\geq 3$ Potts model, the boundaries of clusters are not loops, but obje
 * After (1.8), added the precision "where the unit operator $1\in \mathcal{L}$ is obtained in the case $k=0$".
 
 * In Section 1.1.2, clarified the definition of a highest-weight representation.
+
+* Added Eqs. (1.17) and (1.18) on the behaviour of null vectors under $\beta\to -\beta$ and $\beta\to \beta^{-1}$.
+
+* Around Eq. (1.23), added assumption on null vector normalization, and flipped the sign of $\epsilon$ in its definition.
+
+* After (1.26), removed the statement about the basis of the quotient representation.
+
