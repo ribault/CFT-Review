@@ -2532,48 +2532,36 @@ From the structure of the loop CFTs' extended spectrum $\widehat{S}^\text{loop}$
  \item In the case of non-diagonal fields $V_{(r,s)}$, the dependence on $r$ is not constrained, because the spectrum $\widehat{S}^\text{loop}$ does not include the degenerate field $V_{\langle 2,1\rangle}^d$. We only have $V^d_{\langle 1,2\rangle}$, whose shift equations determine how structure constants behave under $s\to s+2$, whereas $s$ takes fractional values.
  \item In the case of diagonal fields $V_P$, the shift equations from $V^d_{\langle 1,2\rangle}$ determine how structure constants behave under $P\to P+\beta^{-1}$. 
 \end{itemize}
-Let us nevertheless look for simple solutions of the shift equations. As an ansatz, we introduce the \myindex{reference structure constant}\index{structure constant!reference---}
+The formula for the structure constants of loop CFTs is one of many solutions of the shift equations: a product of double Gamma functions of combinations of Kac indices, involving the absolute value of $\sum_i\epsilon_i r_i$ \cite{jnrr25}:
 \begin{align}
-\boxed{C^\text{ref}_{(r_1,s_1)(r_2,s_2)(r_3,s_3)} =\prod_{\epsilon_1,\epsilon_2,\epsilon_3=\pm} \Gamma_\beta^{-1} \left(\tfrac{\beta+\beta^{-1}}{2} + \tfrac{\beta}{2}\left|\textstyle{\sum_i} \epsilon_ir_i\right| + \tfrac{\beta^{-1}}{2}\textstyle{\sum_i} \epsilon_is_i\right)}\ ,
+\boxed{C_{(r_1,s_1)(r_2,s_2)(r_3,s_3)} =\varphi_{123}\prod_{\epsilon_1,\epsilon_2,\epsilon_3=\pm} \Gamma_\beta^{-1} \left(\tfrac{\beta+\beta^{-1}}{2} + \tfrac{\beta}{2}\left|\textstyle{\sum_i} \epsilon_ir_i\right| + \tfrac{\beta^{-1}}{2}\textstyle{\sum_i} \epsilon_is_i\right)}\ ,
  \label{cref}
 \end{align}
-which is a product of double Gamma functions of combinations of Kac indices, involving the absolute value of $\sum_i\epsilon_i r_i$. 
-This expression is also supposed to be valid if some of the fields are diagonal, via the identification $V_P = V_{(0,2\beta P)}$ \eqref{sP}. If all fields are diagonal, it reduces to $C_{P_1,P_2,P_3}$ \eqref{bc}. 
-For reference 2-point structure constants of diagonal fields, we simply set $B^\text{ref}_P = B_P$. For non-diagonal fields, we define 
+where $\varphi_{123}\in \{-1,1\}$ is a sign factor that obeys the permutation relation \eqref{b21}, and the shift equations \cite{nrj23}
 \begin{align}
- \boxed{B^\text{ref}_{(r,s)} = \frac{(-)^{rs}}{2\sin\left(\pi(\{r\}+s)\right)\sin\left(\pi(r+\beta^{-2}s)\right)}\prod_{\pm,\pm}\Gamma_\beta^{-1}\left(\beta\pm \beta r \pm \beta^{-1}s\right)} \ ,
- \label{bref}
- \end{align}
- where $\{r\}\in\{0,\frac12\}$ is the fractional part of $r\in\frac12\mathbb{N}^*$. This is formally ill-defined if $r\in\mathbb{N}^*$ and $s\in\mathbb{Z}$, but can be regularized by taking a limit from generic values of $s$. 
- From the relation \eqref{bicii} between 2-point and 3-point structure constants, we would have expected $B^\text{ref}_{(r,s)}$ to coincide with 
- \begin{align}
-  C^\text{ref}_{(0,2\beta P_{(1,1)})(r,s)(r,s)} =  \prod_\pm \Gamma_\beta^{-2}\left(\beta^{\pm 1}\right)\prod_{\pm,\pm}\Gamma_\beta^{-1}\left(\beta^{\pm 1}+\beta r \pm \beta^{-1}s\right)  \ .
+ \frac{\varphi_{(r_1,s_1+1)(r_2,s_2)(r_3,s_3)}}{\varphi_{(r_1,s_1-1)(r_2,s_2)(r_3,s_3)}} &\ =\  (-)^{2r_3}(-)^{\max(2r_1, 2r_2, 2r_3,r_1+r_2+r_3)} \ ,
+ \label{tpt}
+ \\
+ \frac{\varphi_{(r_1,s_1+1)(r_2,s_2)(r_3,s_3)}}{\varphi_{(r_1,s_1)(r_2,s_2)(r_3,s_3+1)}} &\underset{r_i\in\mathbb{N}^*}{=}
+ \left\{\begin{array}{ll} (-)^{r_1+r_2} &\text{ if } r_2\geq |r_1-r_3|\ ,
+                        \\ (-)^{r_3} &\text{ else}\ .
+                       \end{array}\right.
+\label{tppt}
+\end{align}
+The formula is also valid if some of the fields are diagonal, via the identification $V_P = V_{(0,2\beta P)}$ \eqref{sP}. If all fields are diagonal, it reduces to $C_{P_1,P_2,P_3}$ \eqref{bc}. The relation \eqref{bicii} between 2-point and 3-point structure constants leads to
+\begin{align}
+ B_{(r,s)} = C_{(0,2\beta P_{(1,1)})(r,s)(r,s)} =  \prod_\pm \Gamma_\beta^{-2}\left(\beta^{\pm 1}\right)\prod_{\pm,\pm}\Gamma_\beta^{-1}\left(\beta^{\pm 1}+\beta r \pm \beta^{-1}s\right)  \ .
   \label{cref0}
- \end{align}
-This differs from $B^\text{ref}_{(r,s)}$ by a factor that is invariant under shifts $s\to s+2$, except the sign factor $(-)^{rs}$:
- \begin{align}
-  \frac{B^\text{ref}_{(r,s)}}{C^\text{ref}_{(0,2\beta P_{(1,1)})(r,s)(r,s)}} = 
-  \frac{(-)^{rs} 4^r}{2\sin\left(\pi(\{r\}+s)\right)}
-  \prod_\pm \Gamma_\beta^{2}(\beta^{\pm 1})
-  \prod_{j\overset{1}{=}1-r}^{r-1} \sin\pi(\beta^2j+s) \ .
- \end{align}
-In particular, we have $B^\text{ref}_{(0,2\beta P)} = \frac{1}{2\sin(2\pi\beta P)^2}B_P$.
+\end{align}
+
+
 
 The reference 3-point structure constant only obeys the shift equations \eqref{sh-mp2}, \eqref{sh-pp2} and permutation equation \eqref{b21} up to signs. Let us define the normalized 3-point structure constant 
 \begin{align}
  C^\text{norm} = \frac{C}{C^\text{ref}}\ , 
 \end{align}
-then the shift equations amount to \cite{nrj23}
-\begin{align}
- \frac{C^\text{norm}_{(r_1,s_1+1)(r_2,s_2)(r_3,s_3)}}{C^\text{norm}_{(r_1,s_1-1)(r_2,s_2)(r_3,s_3)}} &\ =\  (-)^{2r_3}(-)^{\max(2r_1, 2r_2, 2r_3,r_1+r_2+r_3)} \ ,
- \label{tpt}
- \\
- \frac{C^\text{norm}_{(r_1,s_1+1)(r_2,s_2)(r_3,s_3)}}{C^\text{norm}_{(r_1,s_1)(r_2,s_2)(r_3,s_3+1)}} &\underset{r_i\in\mathbb{N}^*}{=} 
- \left\{\begin{array}{ll} (-)^{r_1+r_2} &\text{ if } r_2\geq |r_1-r_3|\ ,
-                        \\ (-)^{r_3} &\text{ else}\ .
-                       \end{array}\right. 
-\label{tppt}
-\end{align}
+then the shift equations amount to
+
 Let us focus in particular on diagonal fields. If $r_1=0$, then $r_2\equiv r_3\bmod\mathbb{Z}$, and Eq. \eqref{tpt} reduces to the invariance of $C^\text{norm}$ under $s_1\to s_1+2$. As a function of the momentum $P$ of a diagonal field, $C^\text{norm}$ is therefore periodic with period $\beta^{-1}$, and it is also even by reflection invariance \eqref{refl}. So it is a function of the \myindex{loop weight}\index{loop weight}
 \begin{align}
  \boxed{w(P) = 2\cos(2\pi\beta P)}\ .
