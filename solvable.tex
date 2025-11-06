@@ -2550,39 +2550,13 @@ where $\varphi_{123}\in \{-1,1\}$ is a sign factor that obeys the permutation re
 \end{align}
 The formula is also valid if some of the fields are diagonal, via the identification $V_P = V_{(0,2\beta P)}$ \eqref{sP}. If all fields are diagonal, it reduces to $C_{P_1,P_2,P_3}$ \eqref{bc}. The relation \eqref{bicii} between 2-point and 3-point structure constants leads to
 \begin{align}
- B_{(r,s)} = C_{(0,2\beta P_{(1,1)})(r,s)(r,s)} =  \prod_\pm \Gamma_\beta^{-2}\left(\beta^{\pm 1}\right)\prod_{\pm,\pm}\Gamma_\beta^{-1}\left(\beta^{\pm 1}+\beta r \pm \beta^{-1}s\right)  \ .
-  \label{cref0}
+ \boxed{B_{(r,s)} = \prod_\pm \Gamma_\beta^{2}\left(\beta^{\pm 1}\right)\cdot C_{(0,2\beta P_{(1,1)})(r,s)(r,s)} =  (-)^{rs}\prod_{\pm,\pm}\Gamma_\beta^{-1}\left(\beta^{\pm 1}+\beta r \pm \beta^{-1}s\right)}  \ ,
+  \label{bref}
 \end{align}
+where we include the $r,s$-independent prefactor $\prod_\pm \Gamma_\beta^{2}\left(\beta^{\pm 1}\right)$ for simplicity, and the sign factor has the explicit expression $\varphi_{123}=(-)^{rs}$ in this case.
 
+In contrast to the CFTs with 2 degenerate fields, loop CFTs are not solved by the determination of 2-point and 3-point structure constants. This is because we do not know the structure or even the existence of OPEs, which would be needed to reduce $N$-point functions to 2-point and 3-point functions. In particular, 4-point structure constants are not combinations of 2-point and 3-point structure constants as in Eq. \eqref{stu}. However, they differ from the combinations by relatively simple factors, as we will see in Section \ref{sec:plw}.
 
-
-The reference 3-point structure constant only obeys the shift equations \eqref{sh-mp2}, \eqref{sh-pp2} and permutation equation \eqref{b21} up to signs. Let us define the normalized 3-point structure constant 
-\begin{align}
- C^\text{norm} = \frac{C}{C^\text{ref}}\ , 
-\end{align}
-then the shift equations amount to
-
-Let us focus in particular on diagonal fields. If $r_1=0$, then $r_2\equiv r_3\bmod\mathbb{Z}$, and Eq. \eqref{tpt} reduces to the invariance of $C^\text{norm}$ under $s_1\to s_1+2$. As a function of the momentum $P$ of a diagonal field, $C^\text{norm}$ is therefore periodic with period $\beta^{-1}$, and it is also even by reflection invariance \eqref{refl}. So it is a function of the \myindex{loop weight}\index{loop weight}
-\begin{align}
- \boxed{w(P) = 2\cos(2\pi\beta P)}\ .
- \label{wP}
-\end{align}
-We conjecture that $C^\text{norm}$ is in fact a polynom of loop weights, and that its dependence on the central charge is in fact polynomial in the \myindex{contractible loop weight}\index{loop weight!contractible---}
-\begin{align}
- \boxed{n= w\left(P_{(1,1)}\right) = -2\cos(\pi \beta^2)} \ .
- \label{ncb}
-\end{align}
-(This is the same $n$ as in the $O(n)$ CFT \eqref{nQ}.) In Section \ref{sec:plw} we will formulate this conjecture in more detail for 4-point structure constants. 
-
-Even if the conjecture only applies to loop CFTs, it is interesting to compute the normalized 3-point structure constant associated to $C_{P_1,(r_2,s_2),(r_3,s_3)}$ \eqref{cdnn} from (generalized) D-series minimal models:
-\begin{align}
- C^\text{norm}_{P_1,(r_2,s_2),(r_3,s_3)} = (-)^{\frac{r_3}{2}}(-)^{\frac{s_2+s_3}{2}} \prod_\pm \prod_{j=-\frac{|r_2\pm r_3|-1}{2}}^{\frac{|r_2\pm r_3|-1}{2}} 2\cos \pi(\beta P_1+\beta^2j) \ ,
-\end{align}
-where the product over $j$ runs by steps of $1$. Since $r_2,r_3\in\mathbb{Z}+\frac12$, there is one $j=0$ factor, which is $2\cos(\pi \beta P_1)$. The rest of the product can be written in terms of 
-\begin{align}
- 4\cos \pi(\beta P_1+\beta^2j)\cos \pi(\beta P_1-\beta^2j) = 2\cos(2\pi\beta P_1)+2\cos(2\pi \beta^2j)\ , 
-\end{align}
-which for $j\in\frac12\mathbb{Z}^*$ is polynomial in loop weights. 
 
 \subsubsection{Summary table}\label{sec:table}
 
@@ -2622,10 +2596,10 @@ Let us summarize the solutions of shift equations for 2-point and 3-point struct
   & & & & & \cellcolor{green} & 
   \\
   \hline 
-  $B^\text{ref}_{(r,s)}$ & \eqref{bref} & & & & & & & \cellcolor{green}
+  $B_{(r,s)}$ & \eqref{bref} & & & & & & & \cellcolor{green}
   \\
   \hline 
-  $C^\text{ref}_{(r_1,s_1)(r_2,s_2)(r_3,s_3)}$ & \eqref{cref} & & & & & & & \cellcolor{green}
+  $C_{(r_1,s_1)(r_2,s_2)(r_3,s_3)}$ & \eqref{cref} & & & & & & & \cellcolor{green}
   \\
   \hline 
 \end{tabular}
@@ -2804,7 +2778,7 @@ Let us compute $s$-channel interchiral blocks for the 4-point function $\left<\p
  \label{gtrs}
 \end{align}
 To make this explicit, it remains to compute the ratios of 4-point structure constants. This is in principle a straightforward consequence of the shift equation for the 3-point structure constant \eqref{sh-mp2}. However, for certain values of the parameters, this shift equation 
-is finite after cancelling poles from the numerator and denominator. Such cancellations can be avoided by writing the shift equations differently. In fact, in shifts of the reference 3-point structure constant $C^\text{ref}$ \eqref{cref}, no cancelling poles occur. The price to pay is that $C^\text{ref}$ only solves shift equations up to signs, see Eq. \eqref{tpt}. Taking these signs into account, the shift equation \eqref{sh-mp2} may be rewritten as 
+is finite after cancelling poles from the numerator and denominator. Such cancellations can be avoided by writing the shift equations differently. In fact, in shifts of the reference 3-point structure constant $C$ \eqref{cref}, no cancelling poles occur. The price to pay is that $C$ only solves shift equations up to signs, see Eq. \eqref{tpt}. Taking these signs into account, the shift equation \eqref{sh-mp2} may be rewritten as
 \begin{subequations}
  \label{cbshift}
  \begin{multline}
@@ -3645,6 +3619,20 @@ Finally, the identity field $V^d_{\langle 1,1\rangle}$ should not change the wei
 the corresponding loop weight is still given by Eq. \eqref{wP}, we obtain 
 $n=w(P_{(1,1)})$, which boils down to the expression \eqref{ncb} for the contractible loop weight $n$ in terms of the central charge. We do not discuss the loop model interpretation of the non-trivial degenerate fields $V^d_{\langle 1,s\geq 2\rangle}$, because we will not study their correlation functions. These fields cannot simply correspond to legless punctures, if only because $w(P_{(1,3)})=w(P_{(1,1)})=n$. 
 
+XXX To be updated!
+
+Let us focus in particular on diagonal fields. If $r_1=0$, then $r_2\equiv r_3\bmod\mathbb{Z}$, and Eq. \eqref{tpt} reduces to the invariance of $C^\text{norm}$ under $s_1\to s_1+2$. As a function of the momentum $P$ of a diagonal field, $C^\text{norm}$ is therefore periodic with period $\beta^{-1}$, and it is also even by reflection invariance \eqref{refl}. So it is a function of the \myindex{loop weight}\index{loop weight}
+\begin{align}
+ \boxed{w(P) = 2\cos(2\pi\beta P)}\ .
+ \label{wP}
+\end{align}
+We conjecture that $C^\text{norm}$ is in fact a polynom of loop weights, and that its dependence on the central charge is in fact polynomial in the \myindex{contractible loop weight}\index{loop weight!contractible---}
+\begin{align}
+ \boxed{n= w\left(P_{(1,1)}\right) = -2\cos(\pi \beta^2)} \ .
+ \label{ncb}
+\end{align}
+(This is the same $n$ as in the $O(n)$ CFT \eqref{nQ}.) In Section \ref{sec:plw} we will formulate this conjecture in more detail for 4-point structure constants.
+
 \subsubsection{Correlation functions}\label{sec:cf}
 
 According to our identification of punctures with primary fields, the loop model $N$-point function \eqref{zbig} corresponds to a loop CFT $N$-point function of the type $\left<\prod_{i=1}^N V_{(r_i,s_i)}\right>$. In the bootstrap approach, $N$-point functions are defined as single-valued solutions of crossing symmetry equations. To write these equations, we need to know the spectrum in any channel. We introduce the following notations for spectrums:
@@ -3803,10 +3791,10 @@ Besides the Virasoro blocks $\mathcal{F}_P$, this involves conformal blocks $\ma
 Analytic bootstrap equations from the existence of $V^d_{\langle 1,2\rangle}$ imply $Z(P)=Z(P+\beta^{-1})$, so $Z(P)$ is in fact a function of the channel weight $w(P)$ \eqref{wP}, but we find it more convenient to write it as a function of $P$. In particular, we have $D_{(r,s)}(P)=D_{(r,s)}(P+\beta^{-1})$. Moreover, the analytic bootstrap equations 
 determine how $D_P$ behaves under $P\to P+\beta^{-1}$. Let us assume that diagonal structure constants are reference structure constants,
 \begin{align}
- D_P = \frac{C^\text{ref}_{P(r_1,s_1)(r_2,s_2)}C^\text{ref}_{P(r_3,s_3)(r_4,s_4)}}{B_P}\ ,
+ D_P = \frac{C_{P(r_1,s_1)(r_2,s_2)}C_{P(r_3,s_3)(r_4,s_4)}}{B_P}\ ,
  \label{dccb}
 \end{align}
-where $B_P$ is given in Eq. \eqref{bc} and $C^\text{ref}$ in Eq. \eqref{cref}. For any given 4-point function $Z(P)$, this assumption only amounts to an overall choice of normalization. 
+where $B_P$ is given in Eq. \eqref{bc} and $C$ in Eq. \eqref{cref}. For any given 4-point function $Z(P)$, this assumption only amounts to an overall choice of normalization.
 
 Then we further assume that $Z(P)$ is a holomorphic function of $P\in\mathbb{C}$. From the point of view of loop models, this is a natural assumption, because $Z(P)$ is the critical limit of polynomials in loop weights. From the point of view of the CFT, this is a non-trivial assumption, because the diagonal terms have poles, which must therefore cancel. 
 To begin with, according to Eq. \eqref{resf}, the Virasoro block $\mathcal{F}_P$ has a simple pole at $P=P_{(r,s)}$ with $r,s\in \mathbb{N}^*$, so that 
@@ -4205,3 +4193,5 @@ In the $d\geq 3$ Potts model, the boundaries of clusters are not loops, but obje
 * At the end of Section 2.4.2, added a reference on logarithmic representations, and a reference to the section on logarithmic blocks.
 
 * Around Eq. (2.72), introduced the distinction between the group and the category of representations.
+
+* Rewritten Section 3.3.3, removing the concept of reference structure constants.
