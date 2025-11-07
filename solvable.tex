@@ -1842,9 +1842,11 @@ Like Liouville theory, generalized D-series minimal models cannot be analyticall
 
 \subsection{Loop CFTs}
 
-Critical loop models were originally defined as critical limits of statistical models that describe non-intersecting loops in a 2d space. Starting with the Ising model, many statistical models can be reformulated in terms of loops, or directly constructed from loops.
+In statistical physics, \textbf{loop models}\index{loop model} are a class of 2d lattice models whose states can be described in terms of configurations of non-intersecting loops. (See \cite{jac16} for a review.) Starting from the Ising model, many statistical models can indeed be reformulated in terms of loops, or directly constructed from loops.
 
-However, there is a lot of choice about which observables to include in the model. In the Ising model, if we consider only local observables, we obtain the minimal model $\text{AMM}_{4,3}$ in the critical limit. If we also consider non-local observables such as cluster connectivities, we obtain a much richer CFT.
+In the critical limit, loop models become conformally invariant, and give rise to conformal field theories called \textbf{critical loop models}\index{loop model!critical---}. Since the definition of loop models is broad and vague, and taking the critical limit is nontrivial, the notion of critical loop models does not mean much in CFT. We will shortly introduce the notion of a loop CFT, which captures a few crucial features of the known critical loop models. The price to pay for this precise definition is that a loop CFT may not be the critical limit of any particular loop model.
+
+There is a lot of choice about which observables to include in a loop model. In the Ising model, if we consider only local observables, we obtain the minimal model $\text{AMM}_{4,3}$ in the critical limit. If we also consider non-local observables such as cluster connectivities, we obtain a much richer CFT.
 
 For applications to statistical physics, what matters is less to define a consistent CFT than to compute correlation functions, which are then interpreted in terms of probabilities. We will sketch a few consistent CFTs in Section \ref{sec:models}, but our main focus will be on correlation functions, which will be the subject of Section \ref{sec:cloop}.
 
@@ -2023,7 +2025,7 @@ For each CFT, we indicate the values of $\beta^2$, of the Kac indices of degener
  \end{array}
  \label{sostab}
 \end{align}
-In the case of loop models, this picture is most probably not complete. In addition to the extended spectrum of $\widehat{\text{Loop}}$, it is possible to defined a backbone field: a diagonal primary field whose conformal dimension does not have a simple expression in terms of Kac indices \cite{nqsz23}. In fact, from its dimension, it looks like this field may not be compatible with the existence of any degenerate field. Moreover, when studying correlation functions, we will see that the degenerate field $V^d_{\langle 2,1\rangle}$, which is absent from our extended spectrum, seems to play a role in the CFT, see Section \ref{sec:cod}. 
+In the case of loop CFTs, this picture is most probably not complete. In addition to the extended spectrum of $\widehat{\text{Loop}}$, it is possible to defined a backbone field: a diagonal primary field whose conformal dimension does not have a simple expression in terms of Kac indices \cite{nqsz23}. In fact, from its dimension, it looks like this field may not be compatible with the existence of any degenerate field. Moreover, when studying correlation functions, we will see that the degenerate field $V^d_{\langle 2,1\rangle}$, which is absent from our extended spectrum, seems to play a role in the CFT, see Section \ref{sec:cod}.
 
 \subsubsection{Limits of diagonal CFTs}\label{sec:lod}
 
@@ -3399,13 +3401,13 @@ The method of removing primary fields can also work if $\mathcal{N}=\infty$. For
 
 \section{Correlation functions in loop CFTs} \label{sec:cloop}
 
-We will now take a short break from CFT, and build correlation functions as statistical sums over loop ensembles. This will motivate the introduction of combinatorial maps, which give rise to a basis of solutions of crossing symmetry. We can then forget about the statistical sums, which are not universal objects, while keeping the combinatorial maps, which are intrinsic features of the CFT.
+We will now take a short break from CFT, and build correlation functions as statistical sums over loop ensembles. While this construction can be done in detail in lattice loop models, we will only describe some of its main features. We will focus on features that survive in the critical limit, and are therefore relevant to loop CFTs. In particular, we will use combinatorial maps for describing combinatorial features of loop configurations. In loop CFTs, it turns out that combinatorial maps parametrize solutions of crossing symmetry.
 
 \subsection{Statistical sums over loop ensembles}
 
 \subsubsection{Sums over configurations of non-intersecting loops}
 
-In statistical physics, loop models have correlation functions of the type
+Loop models have correlation functions of the type
 \begin{align}
  Z(\mathcal{E}) = \sum_{E\in\mathcal{E}} W(E)\ , 
 \end{align}
@@ -3615,25 +3617,22 @@ Since the correlation functions \eqref{zbig} do not depend on choices of local c
 \end{itemize}
 Therefore, a legged puncture can be identified with a non-diagonal primary field $V_{(r,s)}$ in a CFT where $V^d_{\langle 1,2\rangle}$ exists. 
 
-Next, let us consider a legless puncture of weight $w$. We again assume that it tends to a primary field. Since $w$ is a continuous parameter, this must be a diagonal field. To determine its momentum, let us use the idea \eqref{sP} that a diagonal field is a non-diagonal field with $r=0$. The analogous idea for punctures is that the weight $w$ of a closed loop is related to the weight factor \eqref{wrs} associated to a rotation $\theta = 2\pi$. In fact, since our closed loop is not oriented, we have to add the rotations by $2\pi$ and $-2\pi$, and we find $w=2\cos(\pi s)$, which is equivalent to Eq. \eqref{wP}. 
-
-Finally, the identity field $V^d_{\langle 1,1\rangle}$ should not change the weight of loops. Assuming that 
-the corresponding loop weight is still given by Eq. \eqref{wP}, we obtain 
-$n=w(P_{(1,1)})$, which boils down to the expression \eqref{ncb} for the contractible loop weight $n$ in terms of the central charge. We do not discuss the loop model interpretation of the non-trivial degenerate fields $V^d_{\langle 1,s\geq 2\rangle}$, because we will not study their correlation functions. These fields cannot simply correspond to legless punctures, if only because $w(P_{(1,3)})=w(P_{(1,1)})=n$. 
-
-XXX To be updated!
-
-Let us focus in particular on diagonal fields. If $r_1=0$, then $r_2\equiv r_3\bmod\mathbb{Z}$, and Eq. \eqref{tpt} reduces to the invariance of $C^\text{norm}$ under $s_1\to s_1+2$. As a function of the momentum $P$ of a diagonal field, $C^\text{norm}$ is therefore periodic with period $\beta^{-1}$, and it is also even by reflection invariance \eqref{refl}. So it is a function of the \myindex{loop weight}\index{loop weight}
+Next, let us consider a legless puncture of weight $w$. We again assume that it tends to a primary field. Since $w$ is a continuous parameter, this must be a diagonal field. To determine its momentum, let us use the idea \eqref{sP} that a diagonal field is a non-diagonal field with $r=0$. The analogous idea for punctures is that the weight $w$ of a closed loop is related to the weight factor \eqref{wrs} associated to a rotation $\theta = 2\pi$. In fact, since our closed loop is not oriented, we have to add the rotations by $2\pi$ and $-2\pi$. This gives us the \myindex{loop weight}\index{loop weight} $w=2\cos(\pi s)$, equivalently
 \begin{align}
  \boxed{w(P) = 2\cos(2\pi\beta P)}\ .
  \label{wP}
 \end{align}
-We conjecture that $C^\text{norm}$ is in fact a polynomial of loop weights, and that its dependence on the central charge is in fact polynomial in the \myindex{contractible loop weight}\index{loop weight!contractible---}
+Finally, the identity field $V^d_{\langle 1,1\rangle}$ should not change the weight of loops.
+Therefore, the
+\myindex{contractible loop weight}\index{loop weight!contractible---} is
 \begin{align}
  \boxed{n= w\left(P_{(1,1)}\right) = -2\cos(\pi \beta^2)} \ .
  \label{ncb}
 \end{align}
-(This is the same $n$ as in the $O(n)$ CFT \eqref{nQ}.) In Section \ref{sec:plw} we will formulate this conjecture in more detail for 4-point structure constants.
+This is the same $n$ as in the $O(n)$ CFT \eqref{nQ}, because in the lattice $O(n)$ model, the contractible loop weight is the dimension of the vector representation.
+
+We do not discuss the loop model interpretation of the non-trivial degenerate fields $V^d_{\langle 1,s\geq 2\rangle}$, because we will not study their correlation functions. These fields cannot simply correspond to legless punctures, if only because $w(P_{(1,3)})=w(P_{(1,1)})=n$.
+
 
 \subsubsection{Correlation functions}\label{sec:cf}
 
@@ -3856,6 +3855,14 @@ Just like Virasoro blocks, logarithmic blocks can be combined into interchiral b
 where $s_0\in \{0,1\}$, and the ratios of 4-point structure constants are again determined by the shift equations \eqref{cbshift}. 
 
 \subsubsection{Polynomials in loop weights}\label{sec:plw}
+
+===============
+
+Let us focus in particular on diagonal fields. If $r_1=0$, then $r_2\equiv r_3\bmod\mathbb{Z}$, and Eq. \eqref{tpt} reduces to the invariance of $C^\text{norm}$ under $s_1\to s_1+2$. As a function of the momentum $P$ of a diagonal field, $C^\text{norm}$ is therefore periodic with period $\beta^{-1}$, and it is also even by reflection invariance \eqref{refl}. So it is a function of the loop weight \eqref{wP}.
+
+We conjecture that $C^\text{norm}$ is in fact a polynomial of loop weights, and that its dependence on the central charge is in fact polynomial in the contractible loop weight $n$ \eqref{ncb}.
+
+===============
 
 For a combinatorial map $M$, let us write the $s$-channel 4-point structure constants $D_{(r,s)}$ after factoring out the reference 4-point structure constant 
 \begin{align}
@@ -4108,7 +4115,7 @@ On the other hand, 3-point structure constants may also depend on field multipli
 
 In fact, it is not even clear that OPEs exist in loop CFTs. The fact that 4-point functions are combinations of conformal blocks is a necessary condition for the existence of OPEs, but it is not sufficient. This condition may seem empty at first sight, because conformal blocks form a basis of functions of the cross-ratio. However, only blocks that correspond to channel fields in the loop CFTs' spectrum appear, and this makes the condition nontrivial. More fundamentally, we may try to deduce the existence of OPEs from the definition of statistical loop models. Technically, this might be done by constructing lattice loop models, and studying the algebraic properties of the resulting diagram algebras, see \cite{im23} for work in that direction.    
 
-If and when loop models can be solved at generic central charge, there will remain the challenge of taking rational limits. Such limits are relevant to applications such as percolation ($\beta^2=\frac23$) or polymers ($\beta^2=\frac12$). These special cases are more difficult than the general case, because representations of the Virasoro algebra have more complicated structures, see for instance \cite{hs21}. Hints of these algebraic complications are visible in the fusion rules of degenerate representations, which are simpler for generic $\beta^2$ \eqref{rrrs} than for rational $\beta^2$ \eqref{rfrf}. In the case of a 4-point function, we know that conformal blocks diverge in the limit $\beta^2\to \frac{q}{p}\in\mathbb{Q}$, but we expect that the divergences cancel so that the 4-point function converges. When a linear combination of divergent blocks $\mathcal{G} = \sum_k D_k \mathcal{G}_k$ converges, the interpretation is that the corresponding modules of the conformal algebra combine into a bigger indecomposable module in the limit. Such phenomenons also occur in CFTs with 2 degenerate fields, in particular in the limit GMM\,$\to$\,AMM of Section \ref{sec:lod}. 
+If and when loop CFTs can be solved at generic central charge, there will remain the challenge of taking rational limits. Such limits are relevant to applications such as percolation ($\beta^2=\frac23$) or polymers ($\beta^2=\frac12$). These special cases are more difficult than the general case, because representations of the Virasoro algebra have more complicated structures, see for instance \cite{hs21}. Hints of these algebraic complications are visible in the fusion rules of degenerate representations, which are simpler for generic $\beta^2$ \eqref{rrrs} than for rational $\beta^2$ \eqref{rfrf}. In the case of a 4-point function, we know that conformal blocks diverge in the limit $\beta^2\to \frac{q}{p}\in\mathbb{Q}$, but we expect that the divergences cancel so that the 4-point function converges. When a linear combination of divergent blocks $\mathcal{G} = \sum_k D_k \mathcal{G}_k$ converges, the interpretation is that the corresponding modules of the conformal algebra combine into a bigger indecomposable module in the limit. Such phenomenons also occur in CFTs with 2 degenerate fields, in particular in the limit GMM\,$\to$\,AMM of Section \ref{sec:lod}.
 
 \subsubsection{Global symmetries in $d=2$ and $d\geq 3$}
 
@@ -4192,6 +4199,8 @@ In the $d\geq 3$ Potts model, the boundaries of clusters are not loops, but obje
 
 * After (2.60), added comment on null vectors.
 
+* At the beginning of Section 2.4, made the distinction between critical loop models and loop CFTs.
+
 * At the end of Section 2.4.2, added a reference on logarithmic representations, and a reference to the section on logarithmic blocks.
 
 * Around Eq. (2.72), introduced the distinction between the group and the category of representations.
@@ -4199,3 +4208,7 @@ In the $d\geq 3$ Potts model, the boundaries of clusters are not loops, but obje
 * Rewritten Section 3.3.3, removing the concept of reference structure constants.
 
 * At the beginning of Section 4.2, added a second paragraph on interechiral symmetry, with a comparison to supersymmetry.
+
+* Rewrote the introduction of Section 5.
+
+* Revised Section 5.2.1, which now include the formulas for $n$ and $w(P)$.
