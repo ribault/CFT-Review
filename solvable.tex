@@ -755,7 +755,7 @@ The form of the dependence on $z_1,z_2$ provides an a posteriori justification f
 
 Because of the poles in OPE coefficients, there are constraints on the fields that can appear in the OPE $V_{\Delta_1}V_{\Delta_2}$. Let us focus on the pole at $\Delta_{(1,1)}=0$. There are 2 types of primary fields of dimension $0$: the non-degenerate field $V_0$, which generates the Verma module $\mathcal{V}_0$, and the degenerate field $V^d_{\langle 1,1\rangle}$, which obeys the null vector equation $L_{-1}V^d_{\langle 1,1\rangle}=\partial V^d_{\langle 1,1\rangle}=0$ and generates the degenerate representation $\mathcal{R}^d_{\langle 1,1\rangle}$ \eqref{r11}.
 \begin{itemize}
- \item If $\Delta_1\neq \Delta_2$, then $\operatorname{Res}_{\Delta=0}f^{\Delta,L_{-1}}_{\Delta_1,\Delta_2}\neq 0$, and we cannot impose the normalization $C^{\Delta,1}_{\Delta_1,\Delta_2}=0$: rather, we may choose $C^{L_{-1}}=0$ while $C^1=0$. Therefore, the non-vanishing null vector $L_{-1}V_0\propto V_1$ may appear in the OPE, together with its descendants, while $V_0$ itself and its other descendants give vanishing contributions. In particular, neither $V^d_{\langle 1,1\rangle}$ nor its descendants can contribute.
+ \item If $\Delta_1\neq \Delta_2$, then $\operatorname{Res}_{\Delta=0}f^{\Delta,L_{-1}}_{\Delta_1,\Delta_2}\neq 0$, and we cannot impose the normalization $C^{\Delta,1}_{\Delta_1,\Delta_2}=0$: rather, we may choose $C^{L_{-1}}\neq 0$ while $C^1=0$. Therefore, the non-vanishing null vector $L_{-1}V_0\propto V_1$ may appear in the OPE, together with its descendants, while $V_0$ itself and its other descendants give vanishing contributions. In particular, neither $V^d_{\langle 1,1\rangle}$ nor its descendants can contribute.
  \item If $\Delta_1=\Delta_2$, then $\operatorname{Res}_{\Delta=0}f^{\Delta,L_{-1}}_{\Delta_1,\Delta_2}= 0$. The equation $L_1W_1=\theta_{1,1}W_0$ \eqref{opew} reduces to $0=0$, and does not determine $C^{L_{-1}}$ from $C^1$. In particular, our OPE can include $V^d_{\langle 1,1\rangle}$.
 \end{itemize}
 What about OPEs that involve $V_0$ or $V^d_{\langle 1,1\rangle}$? The OPE $V_0V_{\Delta_2}$ is just a special case of the OPE \eqref{prope}.
@@ -2537,7 +2537,7 @@ From the structure of the loop CFTs' extended spectrum $\widehat{S}^\text{loop}$
  \item In the case of diagonal fields $V_P$, the shift equations from $V^d_{\langle 1,2\rangle}$ determine how structure constants behave under $P\to P+\beta^{-1}$. 
 \end{itemize}
 The formula for the 3-point structure constants of loop CFTs is one of many solutions of the shift equations. It is of the type $\omega C$, where $\omega\in \{-1,1\}$ is a sign factor, and $C$ is
-a product of double Gamma functions of combinations of Kac indices, involving the absolute value of $\sum_i\epsilon_i r_i$ \cite{jnrr25}:
+a product of double Gamma functions of combinations of Kac indices, involving the absolute value of $\sum_i\epsilon_i r_i$ \cite{nrj23, jnrr25}:
 \begin{align}
 \boxed{C_{(r_1,s_1)(r_2,s_2)(r_3,s_3)} =\prod_{\epsilon_1,\epsilon_2,\epsilon_3=\pm} \Gamma_\beta^{-1} \left(\tfrac{\beta+\beta^{-1}}{2} + \tfrac{\beta}{2}\left|\textstyle{\sum_i} \epsilon_ir_i\right| + \tfrac{\beta^{-1}}{2}\textstyle{\sum_i} \epsilon_is_i\right)}\ .
  \label{cref}
@@ -2553,7 +2553,7 @@ This expression is invariant under permutations, and obeys the shift equations o
                        \end{array}\right.
 \label{tppt}
 \end{align}
-The expression $\omega C$ for the 3-point structure constants is also valid if some of the fields are diagonal, via the identification $V_P = V_{(0,2\beta P)}$ \eqref{sP}. If all fields are diagonal, it reduces to $C_{P_1,P_2,P_3}$ \eqref{bc}. The relation \eqref{bicii} between 2-point and 3-point structure constants leads to
+The expression $\omega C$ for the 3-point structure constants is also valid if some of the fields are diagonal, via the identification $V_P = V_{(0,2\beta P)}$ \eqref{sP}. In particular, the relation \eqref{bicii} between 2-point and 3-point structure constants leads to
 \begin{align}
  \boxed{B_{(r,s)} = (-)^{rs}\prod_\pm \Gamma_\beta^{2}\left(\beta^{\pm 1}\right)\cdot C_{(0,2\beta P_{(1,1)})(r,s)(r,s)} =  (-)^{rs}\prod_{\pm,\pm}\Gamma_\beta^{-1}\left(\beta^{\pm 1}+\beta r \pm \beta^{-1}s\right)}  \ ,
   \label{bref}
@@ -2562,6 +2562,7 @@ where we include the $r,s$-independent prefactor $\prod_\pm \Gamma_\beta^{2}\lef
 
 In contrast to the CFTs with 2 degenerate fields, loop CFTs are not solved by the determination of 2-point and 3-point structure constants. This is because we do not know the structure or even the existence of OPEs, which would be needed to reduce $N$-point functions to 2-point and 3-point functions. In particular, 4-point structure constants are not combinations of 2-point and 3-point structure constants as in Eq. \eqref{stu}. However, they differ from the combinations by relatively simple factors, as we will see in Section \ref{sec:plw}.
 
+The appearance of double Gamma functions in loop CFTs is remarkable, as this special function is the solution of 2 independent shift equations, while loop CFTs only have one degenerate field $V^d_{\langle 1,2\rangle}$. In particular, in the case of 3 diagonal fields, loop CFTs have the same 3-point structure constants $C_{P_1,P_2,P_3}$ \eqref{bc} as Liouville theory with $c\leq 1$. This coincidence of structure constants  has been a source of puzzlement \cite{ijs15, rib22}. Ultimately, the coincidence must be due to $C_{P_1,P_2,P_3}$ being the unique solution of the shift equations from $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$. But in loop CFTs, why would $C_{P_1,P_2,P_3}$ obey the shift equation from $V^d_{\langle 2,1\rangle}$? This degenerate field does not belong to the spectrum, and we cannot easily add it because its OPE with non-diagonal fields $V_{(r,s)}$ would generate fields with non-integer spins.
 
 \subsubsection{Summary table}\label{sec:table}
 
@@ -2785,7 +2786,7 @@ Let us compute $s$-channel interchiral blocks for the 4-point function $\left<\p
  \label{gtrs}
 \end{align}
 To make this explicit, it remains to compute the ratios of 4-point structure constants. This is in principle a straightforward consequence of the shift equation for the 3-point structure constant \eqref{sh-mp2}. However, for certain values of the parameters, this shift equation 
-is finite after cancelling poles from the numerator and denominator. Such cancellations can be avoided by writing the shift equations differently. In fact, in shifts of the reference 3-point structure constant $C$ \eqref{cref}, no cancelling poles occur. The price to pay is that $C$ only solves shift equations up to signs. Taking these signs into account, the shift equation \eqref{sh-mp2} may be rewritten as
+is finite after cancelling poles from the numerator and denominator. Such cancellations can be avoided by writing the shift equations differently. In fact, in shifts of the 3-point structure constant $C$ \eqref{cref}, no cancelling poles occur. The price to pay is that $C$ only solves shift equations up to signs. Taking these signs into account, the shift equation \eqref{sh-mp2} may be rewritten as
 \begin{subequations}
  \label{cbshift}
  \begin{multline}
@@ -3953,9 +3954,6 @@ We have a unique solution of crossing symmetry for any 4 fields $V_{P_i}$ and ch
 Formulas for $d^{(s,t,u)}_{(3,*)}$ are known but rather complicated.
 
 In the diagonal 4-point function $\left<\prod_{i=1}^4 V_{P_i}\right>$, it is particularly easy to study the factorization \eqref{dcc} of 4-point structure constants into 3-point structure constants. In particular, we see that $d^{(s)}_{(2,*)}$ is a sum of 3 factorized terms. Due to pole terms, $D^{(s)}_{(2,0)}$ and $D^{(s)}_{(2,1)}$ are sums of 4 terms, while $D^{(s)}_{(2,\frac12)}$ is still a sum of 3 terms. And the presence of several terms is not due to combinatorial defects: in the case $w_s=w_t=w_u=n$ where the defects are absent, $D^{(s)}_{(2,*)}$ loses only 1 term. 
-
-The trivial-looking result $d_\text{diag}^{(s,t,u)} = 1$ \eqref{ddiag} implies that the diagonal 3-point structure constant $C_{P_1,P_2,P_3}$ reduces to the reference 3-point structure constant, which for $c\leq 1$ coindices with Liouville theory's 3-point structure constant. This coincidence of structure constants between loop models and Liouville theory, in spite of their very different properties, has been a source of puzzlement \cite{ijs15, rib22}. Ultimately, the coincidence must be due to $C_{P_1,P_2,P_3}$ being the unique solution of 
-the shift equations from $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$. But in loop models, why would $C_{P_1,P_2,P_3}$ obey the shift equation from $V^d_{\langle 2,1\rangle}$? This degenerate field does not belong to the spectrum, and we cannot add it because its OPE with non-diagonal fields $V_{(r,s)}$ would generate fields with non-integer spins. In fact, this raises the more general issue of explaining why structure constants are built from the double Gamma function, which is characterized as the solution of 2 shift equations.
 
 \subsubsection[Case of $\left<V_{(\frac12, 0)}^4\right>$]{Case of $\left<V_{(\frac12, 0)}^4\right>$ \pice}
 
