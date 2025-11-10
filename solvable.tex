@@ -251,7 +251,7 @@ The corresponding Lie group is the group of \myindex{global conformal transforma
  \label{abcd}
 \end{align}
 Now, in a quantum theory, symmetries act projectively on states. And projective representations of an algebra are equivalent to representations of that algebra's central extension. 
-Therefore, the algebra that describes local conformal transformations in conformal field theory is the Witt algebra's central extension, called the Virasoro algebra. The \myindex{Virasoro algebra}\index{Virasoro algebra} $\mathfrak{V}$ has generators $(L_n)_{n\in\mathbb{Z}}$ that correspond to the Witt algebra generators, plus a central generator. We assume that the central generator has only one eigenvalue in a given CFT, called the \myindex{central charge}\index{central charge} $c\in\mathbb{C}$. We replace the central generator with $c$ in the commutation relations:
+Therefore, the algebra that describes local conformal transformations in conformal field theory is the Witt algebra's central extension, called the Virasoro algebra. The \myindex{Virasoro algebra}\index{Virasoro!---algebra} $\mathfrak{V}$ has generators $(L_n)_{n\in\mathbb{Z}}$ that correspond to the Witt algebra generators, plus a central generator. We assume that the central generator has only one eigenvalue in a given CFT, called the \myindex{central charge}\index{central charge} $c\in\mathbb{C}$. We replace the central generator with $c$ in the commutation relations:
  \begin{align}
   \boxed{[L_n,L_m] = (n-m)L_{n+m} +\frac{c}{12}(n-1)n(n+1)\delta_{n+m,0}} \ .
   \label{vir}
@@ -262,7 +262,7 @@ Then we consider $c$ as a parameter not only of a CFT, but also of the underlyin
 
 In a conformal field theory, the space of states is a representation of the Virasoro algebra, and can be decomposed into indecomposable representations. But which indecomposable representations are physically relevant? To answer this question, we will focus on the properties of the dilation generator $L_0$ of the Virasoro algebra. Conceptually, this is because $L_0$ can be interpreted as the energy operator. Technically, this is because $L_0$ controls the convergence of operator product expansions, as we will see in Section \ref{sec:csope}. More specifically, a necessary condition for convergence is that the eigenvalues of $L_0$ be bounded from below in any indecomposable representation (whether or not $L_0$ is diagonalizable in that representation). We will always assume that this condition holds.
 
-The eigenvalues of $L_0$ are called \myindex{conformal dimensions}\index{conformal!---dimension}. Under the action of the Virasoro generator $L_n$, the conformal dimension decreases by $n$. For any vector $V$ in a representation of the Virasoro algebra, we indeed have 
+The eigenvalues of $L_0$ are called \myindex{conformal dimensions}\index{conformal!---dimension}\index{dimension!conformal---}. Under the action of the Virasoro generator $L_n$, the conformal dimension decreases by $n$. For any vector $V$ in a representation of the Virasoro algebra, we indeed have
 \begin{align}
  L_0V{} = \Delta V{} \quad \Rightarrow\quad  L_0 L_nV{} = L_nL_0V{} + [L_0, L_n] V{}  = (\Delta-n)L_nV{} \ .
 \end{align}
@@ -283,7 +283,7 @@ Any state of the type $L V{}$ with $L\in\mathcal{L}$ is called a \myindex{descen
  \end{align}
 By extension, a linear combination of descendant states is also called a descendant state. 
 
-A primary state $V{} \in \mathcal{R}$ generates a subrepresentation $\mathcal{R}_{V{}}= \text{Span}(LV{})_{L\in\mathcal{L}}\subset\mathcal{R}$, which is the space of its descendant states. If $\mathcal{R}=\mathcal{R}_V$ for some $V\in\mathcal{R}$, then $\mathcal{R}$ is called a \myindex{highest-weight representations}\index{highest-weight representation}. Then $L_0$ is diagonalizable in $\mathcal{R}$, and $\mathcal{R}$ is indecomposable. If moreover the states $(LV{})_{L\in\mathcal{L}}$ are linearly independent, then $\mathcal{R}_{V{}}$ is called the \myindex{Verma module}\index{Verma module} $\mathcal{V}_\Delta$, for $\Delta$ the conformal dimension of $V$. If $(LV{})_{L\in\mathcal{L}}$ are not linearly independent, then $\mathcal{R}_{V{}}$ is a quotient representation of $\mathcal{V}_\Delta$ by a nontrivial subrepresentation.
+A primary state $V{} \in \mathcal{R}$ generates a subrepresentation $\mathcal{R}_{V{}}= \text{Span}(LV{})_{L\in\mathcal{L}}\subset\mathcal{R}$, which is the space of its descendant states. If $\mathcal{R}=\mathcal{R}_V$ for some $V\in\mathcal{R}$, then $\mathcal{R}$ is called a \myindex{highest-weight representation}\index{highest-weight representation}\index{representation!highest-weight---}. Then $L_0$ is diagonalizable in $\mathcal{R}$, and $\mathcal{R}$ is indecomposable. If moreover the states $(LV{})_{L\in\mathcal{L}}$ are linearly independent, then $\mathcal{R}_{V{}}$ is called the \myindex{Verma module}\index{Verma module} $\mathcal{V}_\Delta$, for $\Delta$ the conformal dimension of $V$. If $(LV{})_{L\in\mathcal{L}}$ are not linearly independent, then $\mathcal{R}_{V{}}$ is a quotient representation of $\mathcal{V}_\Delta$ by a nontrivial subrepresentation.
 
 Let us sketch a Verma module by displaying all its basis states up to the level $N=4$, with arrows representing the action of the Virasoro generators $L_{-1},L_{-2},L_{-3},L_{-4}$:
  \begin{align}
@@ -322,7 +322,7 @@ Let us sketch a Verma module by displaying all its basis states up to the level 
 States such as 
 $L_{-2}L_{-1}V = L_{-1}L_{-2}V -L_{-3}V$ are linear combination of elements of our basis, and are therefore not displayed.
 
-It is sometimes useful to consider representations that are not highest-weight. This is in particular the case of \textbf{logarithmic representations}\index{logarithmic representation}, which we define as indecomposable representations where $L_0$ is bounded from below but not diagonalizable. A logarithmic representation is always reducible, because the highest-weight representation generated by the $L_0$-eigenvector with the smallest eigenvalue is a nontrivial subrepresentation. A simple way to build a logarithmic representation is to generate it from the formal $\Delta$-derivative of a primary state $V_\Delta$, which obeys in particular $L_0 V'_\Delta = \Delta V'_\Delta + V_\Delta$.
+It is sometimes useful to consider representations that are not highest-weight. This is in particular the case of \textbf{logarithmic representations}\index{logarithmic representation}\index{representation!logarithmic---}, which we define as indecomposable representations where $L_0$ is bounded from below but not diagonalizable. A logarithmic representation is always reducible, because the highest-weight representation generated by the $L_0$-eigenvector with the smallest eigenvalue is a nontrivial subrepresentation. A simple way to build a logarithmic representation is to generate it from the formal $\Delta$-derivative of a primary state $V_\Delta$, which obeys in particular $L_0 V'_\Delta = \Delta V'_\Delta + V_\Delta$.
 
 \subsubsection{Null vectors of Verma modules}\label{sec:nvvm}
 
@@ -541,7 +541,7 @@ For example, let us set $L_{-1}V_0=0$ in $\mathcal{V}_0$. The resulting quotient
  \end{tikzpicture}
  \label{r11}
 \end{align}
-If $\mathcal{R}$ has several null vectors, we can define various quotient representations by setting some null vectors to zero. A \myindex{degenerate representation}\index{degenerate!---representation} is a representation that has at least 1 vanishing null vector. A degenerate representation is partly degenerate if it has some non-vanishing null vectors, and \myindex{fully degenerate}\index{fully degenerate!---representation} if all null vectors vanish. Partly degenerate representations play an important role in CFTs with extended chiral symmetries, such as conformal Toda theories \cite{fl07c}.
+If $\mathcal{R}$ has several null vectors, we can define various quotient representations by setting some null vectors to zero. A \myindex{degenerate representation}\index{degenerate!---representation}\index{representation!degenerate---} is a representation that has at least 1 vanishing null vector. A degenerate representation is partly degenerate if it has some non-vanishing null vectors, and \myindex{fully degenerate}\index{fully degenerate!---representation}\index{representation!fully degenerate---} if all null vectors vanish. Partly degenerate representations play an important role in CFTs with extended chiral symmetries, such as conformal Toda theories \cite{fl07c}.
 
 For $r,s\in\mathbb{N}^*$, the level-$rs$ null vector $L_{\langle r,s\rangle}V_{\Delta_{(r,s)}}\in \mathcal{V}_{\Delta_{(r,s)}}$ is a primary state of dimension $\Delta_{(r,-s)}$, according to Eq. \eqref{drms}. Together with its descendants, this state generates a Verma module $\mathcal{V}_{\Delta_{(r,-s)}}\subset \mathcal{V}_{\Delta_{(r,s)}}$.
 The Verma $\mathcal{V}_{\Delta_{(r,s)}}$ is therefore reducible, as is any highest-weight representation with a non-vanishing null vector.
@@ -595,7 +595,7 @@ For generic values of the central charge, $S_{LL_{\langle r,s\rangle},L'}(\Delta
 \end{align}
 In fact, the level-$N$ inverse Shapovalov matrix can be computed explicitly in terms of $\left\{L_{\langle r,s\rangle}\right\}_{rs\leq N}$ \cite{fqs24}.
 
-Using the same coefficients \eqref{shap}, we can define a sesquilinear form instead of a bilinear form. This sesquilinear form is Hermitian if its coefficients are real, i.e. if $\Delta,c\in\mathbb{R}$. Our highest-weight representation is called \myindex{unitary}\index{highest-weight representation!unitary---} if that Hermitian form is positive definite. Unitarity plays an important role in some applications of CFT, but it has no bearing on exact solvability, so we will not elaborate further on that subject. 
+Using the same coefficients \eqref{shap}, we can define a sesquilinear form instead of a bilinear form. This sesquilinear form is Hermitian if its coefficients are real, i.e. if $\Delta,c\in\mathbb{R}$. Our highest-weight representation is called \myindex{unitary}\index{representation!unitary---} if that Hermitian form is positive definite. Unitarity plays an important role in some applications of CFT, but it has no bearing on exact solvability, so we will not elaborate further on that subject.
 
 
 \subsection{Fields and operator product expansions}\label{sec:fope}
@@ -982,13 +982,13 @@ The generators $\ell_n$ \eqref{lpz} of local conformal transformations are only 
 \end{align}
 In fact we want the algebra of conformal transformations to act on a complex vector space: the space of complex-valued functions on $\overline{\mathbb{C}}$ for the Witt algebra, the space of states of the CFT for the Virasoro algebra. We should therefore complexify our symmetry algebra, and we obtain 2 copies of the Virasoro algebra: a \myindex{left-moving}  Virasoro algebra\index{left-moving} $\mathfrak{V}$ with generators $L_n$, and a \myindex{right-moving} Virasoro algebra\index{right-moving} $\bar{\mathfrak{V}}$ with generators $\bar{L}_n$. In the case of the algebra of global conformal transformations, we start with the 6-dimensional real Lie algebra $\mathfrak{sl}_2(\mathbb{C})$, with generators \eqref{epbe} with $n=-1,0,1$, and the complexification yields $\mathfrak{sl}_2(\mathbb{C})^\mathbb{C} = \mathfrak{sl}_2(\mathbb{C})\times \mathfrak{sl}_2(\mathbb{C})$.
 
-In Sections \ref{sec:vir} and \ref{sec:fope}, we have been doing \myindex{chiral CFT}\index{CFT!chiral---}, which means considering $\mathfrak{V}$ only. In a full CFT, the symmetry algebra is the \myindex{conformal algebra}\index{conformal!---algebra} $\mathfrak{V}\times \bar{\mathfrak{V}}$, where for simplicity we assume that the left and right central charges are equal. When it comes to representations, Verma modules of $\mathfrak{V}\times \bar{\mathfrak{V}}$ are simply $\mathcal{V}_\Delta\otimes \bar{\mathcal{V}}_{\bar \Delta}$, where we write a bar over representations of $\bar{\mathfrak{V}}$. There also exist representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$ that are not factorized, in particular logarithmic representations \cite{nr20}. 
+In Sections \ref{sec:vir} and \ref{sec:fope}, we have been doing \myindex{chiral CFT}\index{CFT!chiral---}\index{chiral CFT}, which means considering $\mathfrak{V}$ only. In a full CFT, the symmetry algebra is the \myindex{conformal algebra}\index{conformal!---algebra} $\mathfrak{V}\times \bar{\mathfrak{V}}$, where for simplicity we assume that the left and right central charges are equal. When it comes to representations, Verma modules of $\mathfrak{V}\times \bar{\mathfrak{V}}$ are simply $\mathcal{V}_\Delta\otimes \bar{\mathcal{V}}_{\bar \Delta}$, where we write a bar over representations of $\bar{\mathfrak{V}}$. There also exist representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$ that are not factorized, in particular logarithmic representations \cite{nr20}.
 
 Fields now belong to representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$, and they obey $\frac{\partial}{\partial \bar z} V(z) = \bar L_{-1} V(z)$, which is the antiholomorphic version of Eq. \eqref{pvlv}. This allows us to define a right-moving energy-momentum tensor $\bar T(y) = \sum_{n\in\mathbb{Z}} \frac{\bar L_n^{(z)}}{(\bar y-\bar z)^{n+2}}$. While $T$ is holomorphic, $\bar T$ is antiholomorphic:
 \begin{align}
  \partial_{\bar z} T(z) = 0 \quad , \quad \partial_z \bar T(z) = 0 \ . 
 \end{align}
-Let $V_{\Delta,\bar\Delta}(z)$ be a field that is primary with respect to the conformal algebra, with the left dimension $\Delta$ and the right dimension $\bar\Delta$. The difference of these dimensions is called the \myindex{conformal spin}\index{conformal!---spin}
+Let $V_{\Delta,\bar\Delta}(z)$ be a field that is primary with respect to the conformal algebra, with the left dimension $\Delta$ and the right dimension $\bar\Delta$. The difference of these dimensions is called the \myindex{conformal spin}\index{conformal!---spin}\index{spin!conformal---}
 \begin{align}
  S = \Delta -\bar\Delta\ . 
  \label{sdd} 
@@ -1073,7 +1073,7 @@ This allows us to write our 4-point function as
  \boxed{\Big<V_1(z)V_2(0)V_3(\infty)V_4(1)\Big> = \sum_{k\in\mathcal{S}^{(s)}} C_{12}^k C_{k34} \left|\mathcal{F}^{(s)}_{\Delta_k}\left(c\middle|\Delta_1,\Delta_2,\Delta_3,\Delta_4\middle|z\right)\right|^2}  \ ,
  \label{sdec}
 \end{align}
-where we introduce the $s$-\myindex{channel spectrum}\index{spectrum!channel---} $\mathcal{S}^{(s)}= \mathcal{S}^{12}\cap \mathcal{S}^{34}$, and the $s$-channel \myindex{Virasoro blocks}\index{block!Virasoro---}, which are known (in principle) functions of $z$ as well as the central charge and conformal dimensions, of the type
+where we introduce the $s$-\myindex{channel spectrum}\index{spectrum!channel---} $\mathcal{S}^{(s)}= \mathcal{S}^{12}\cap \mathcal{S}^{34}$, and the $s$-channel \myindex{Virasoro blocks}\index{block!Virasoro---}\index{Virasoro!---block}, which are known (in principle) functions of $z$ as well as the central charge and conformal dimensions, of the type
 \begin{align}
  \mathcal{F}_{\Delta}^{(s)}\left(c\middle|\Delta_1,\Delta_2,\Delta_3,\Delta_4\middle|z\right) =  z^{\Delta-\Delta_1-\Delta_2}\sum_{N=0}^\infty f_N(\Delta)z^N \ .
  \label{fsl}
@@ -1138,7 +1138,7 @@ The commutativity of the product of fields implies that the 4-point function \eq
  \mathcal{F}^{(u)}_\Delta(z) = z^{-2\Delta_1}\mathcal{F}^{(s)}_\Delta(\Delta_1,\Delta_3,\Delta_2,\Delta_4|\tfrac{1}{z})\ .
  \label{stotu}
 \end{align}
-The decomposition \eqref{sdec} of a 4-point function involves $s$-channel \myindex{conformal blocks}\index{block!conformal---} of the form
+The decomposition \eqref{sdec} of a 4-point function involves $s$-channel \myindex{conformal blocks}\index{block!conformal---}\index{conformal!---block} of the form
 \begin{align}
  \mathcal{G}^{(x)}_{\Delta,\bar\Delta}(z) = \left|\mathcal{F}_{\Delta}^{(x)}(z)\right|^2\ , \qquad (x=s,t,u)\ . 
  \label{gf2}
@@ -1171,7 +1171,7 @@ Here we recover their spectrums from assumptions about Virasoro representations,
 
 We define a \myindex{conformal field theory}\index{conformal!---field theory} as a set of correlation functions that obey the assumptions of Section \ref{sec:bo}, most importantly Virasoro symmetry, the commutativity of fields, the existence of OPEs, and single-valuedness. We already know that on the sphere, a conformal field theory is characterized by a spectrum and 2-point and 3-point structure constants such that crossing symmetry is obeyed.
 
-This definition works very well in \myindex{rational CFTs}\index{CFT!rational---}, i.e. CFTs whose spectrums are made of finitely many primary fields and their descendants. However, in more general CFTs, the notion of the spectrum becomes fuzzy. To say why, let us compare various spectrums associated to various objects. By an abuse of terminology, we call spectrum a basis of primary fields: 
+This definition works very well in \myindex{rational CFTs}\index{CFT!rational---}\index{rational CFT}, i.e. CFTs whose spectrums are made of finitely many primary fields and their descendants. However, in more general CFTs, the notion of the spectrum becomes fuzzy. To say why, let us compare various spectrums associated to various objects. By an abuse of terminology, we call spectrum a basis of primary fields:
 \begin{align}
  \begin{array}{|c|c|l|}
   \hline 
@@ -1193,8 +1193,8 @@ This definition works very well in \myindex{rational CFTs}\index{CFT!rational---
  \end{array}
  \label{specs}
 \end{align}
-The \myindex{physical spectrum}\index{spectrum!physical---} is made of the fields whose correlation functions we are interested in. Our constraint on the physical spectrum is called \myindex{closure under OPE}\index{closure under OPE}. This constraint means that if a field appears in an OPE (or a fortiori in a channel spectrum), then its correlation functions exist. 
-We also introduce \myindex{extended spectrums}\index{spectrum!extended---} as larger spectrums that are also closed under OPE. There are various reasons for considering extended spectrums:
+The \myindex{physical spectrum}\index{spectrum!physical---}\index{physical spectrum} is made of the fields whose correlation functions we are interested in. Our constraint on the physical spectrum is called \myindex{closure under OPE}\index{closure under OPE}. This constraint means that if a field appears in an OPE (or a fortiori in a channel spectrum), then its correlation functions exist.
+We also introduce \myindex{extended spectrums}\index{spectrum!extended---}\index{extended spectrum} as larger spectrums that are also closed under OPE. There are various reasons for considering extended spectrums:
 \begin{itemize}
  \item In Section \ref{sec:csc}, we have used the energy-momentum tensor $T$ for deriving Ward identities. However, in Liouville theory, $T$ does not belong to the physical spectrum. Nevertheless, it always makes sense to insert $T$ in correlation functions, because it is a descendant of the identity field. 
  \item In the $O(n)$ model and in Liouville theory, we will use the degenerate field $V^d_{\langle 1,2\rangle}$ for constraining correlation functions, even though it does not belong to the physical spectrum. Correlation functions of the $O(n)$ model that involve $V^d_{\langle 1,2\rangle}$ are not single-valued: they belong to an extended CFT that obeys weaker assumptions. 
@@ -1208,7 +1208,7 @@ Motivated by the single-valuedness of correlation functions, we have made the as
 \begin{align}
  i\in\mathcal{S}\implies S_i\in\mathbb{Z} \quad , \quad i \in \widehat{\mathcal{S}}\implies S_i\in\frac12\mathbb{Z}\ . 
 \end{align}
-A simple way to satisfy these assumptions is to have fields of spin zero, i.e. \myindex{spinless fields}\index{field!spinless---}. However, whenever degenerate fields exist, we will use the slightly different notion of a \myindex{diagonal field}\index{field!diagonal---}: a spinless field whose OPEs with degenerate fields only produces spinless fields. Conversely, a \myindex{non-diagonal field}\index{field!non-diagonal---} is a field that either has nonzero spin, or is related to fields with nonzero spins by taking OPEs with degenerate fields. A \myindex{diagonal CFT}\index{CFT!diagonal---} is a CFT whose spectrum only involves diagonal fields.  
+A simple way to satisfy these assumptions is to have fields of spin zero. However, whenever degenerate fields exist, we will use the slightly different notion of a \myindex{diagonal field}\index{field!diagonal---}\index{diagonal!---field}: a field of spin zero whose OPEs with degenerate fields only produces fields of spin zero. Conversely, a \myindex{non-diagonal field}\index{field!non-diagonal---} is a field that either has nonzero spin, or is related to fields with nonzero spins by taking OPEs with degenerate fields. A \myindex{diagonal CFT}\index{CFT!diagonal---}\index{diagonal!---CFT} is a CFT whose spectrum only involves diagonal fields.
 
 Let us summarize the primary fields that we will consider, together with their momentums, and the representations of the conformal algebra that they generate. 
 \begin{align}
@@ -1272,7 +1272,7 @@ In order to solve CFTs, the existence of degenerate fields matters much more tha
  \item \myindex{CFTs with 1 degenerate field}\index{CFT!---with 1 degenerate field} $V^d_{\langle 1,2\rangle}$. Because the invariance under $\beta\to \beta^{-1}$ is broken by choosing $V^d_{\langle 1,2\rangle}$ rather than $V^d_{\langle 2,1\rangle}$, such CFTs depend on $\beta^2$ \eqref{cb} rather than on the central charge $c$. 
 \end{itemize}
 Next, let us determine the OPEs of degenerate fields with other primary fields.
-The OPE of $V^d_{\langle 2,1\rangle}$ or $V^d_{\langle 1,2\rangle}$ with a given primary field is constrained by the fusion rules \eqref{rvvp}, which allow 2 left-moving momentums and 2 right-moving momentums, for a total of 4 representations.  In the case of a diagonal field $V_P$, the requirement that only spinless primary fields appear single out 2 of the 4 possibilities:
+The OPE of $V^d_{\langle 2,1\rangle}$ or $V^d_{\langle 1,2\rangle}$ with a given primary field is constrained by the fusion rules \eqref{rvvp}, which allow 2 left-moving momentums and 2 right-moving momentums, for a total of 4 representations.  In the case of a diagonal field $V_P$, the requirement that only primary fields of spin zero appear singles out 2 of the 4 possibilities:
 \begin{align}
  \boxed{V^d_{\langle 2,1\rangle} V_P \sim \sum_\pm V_{P\pm\frac{\beta}{2}}} \quad , \quad \boxed{V^d_{\langle 1,2\rangle} V_P \sim \sum_\pm V_{P\pm\frac{1}{2\beta}}} \ . 
  \label{vpope}
@@ -2075,9 +2075,11 @@ Somewhat subjectively, we have distinguished limits that are straightforward (fu
 Let us mention a few other solvable CFTs:
 \begin{itemize}
  \item \myindex{E-series minimal models}\index{minimal model!E-series---} exist for $\beta^2=\frac{q}{p}$ with $p=12, 18, 30$ \cite{fms97}. They have finitely many primary fields, which belong to fully degenerate representations from the Kac table. 
-They have 2 independent degenerate fields $\left\{V^f_{\langle r,1\rangle},V^f_{\langle 1,2\rangle}\right\}$ with $r=4,5,7$. 
+They have 2 independent degenerate fields $\left\{V^f_{\langle r,1\rangle},V^f_{\langle 1,2\rangle}\right\}$ with $r=4,5,7$ respectively.
 However, we do not know how to derive their known spectrums from the study of fusion rules. 
 The 3-point structure constants are known explicitly for $p=12$, but not for $p=18,30$ \cite{nr25}.
+
+A-series, D-series and E-series minimal models form the full set of rational CFTs that exist on any Riemann surface, also called \myindex{Virasoro minimal models}\index{minimal model!Virasoro---}\index{Virasoro!---minimal model}. The names of the 3 series come from the A-D-E classification of modular invariant torus partition functions \cite{cz09}.
 \item \myindex{Logarithmic minimal models}\index{minimal model!logarithmic---} may be defined for $\beta^2\in \mathbb{Q}_{>0}$ by the assumption that their primary fields belong to the extended Kac table, i.e. they have integer Kac indices. (However, this definition is not universally accepted, and the same name is sometimes applied to other vaguely defined and poorly understood CFTs \cite{prz06}.) The spectrums of logarithmic minimal models include logarithmic representations. Their spectrums and fusion rules are not fully known. It is in fact not clear how many such CFTs exist at any given central charge. Presumably, they can be obtained as limits of generalized minimal models. 
 \item At $c=1$, the \myindex{compactified free boson}\index{compactified free boson} and its $\mathbb{Z}_2$ orbifold the \myindex{Ashkin--Teller model}\index{Ashkin--Teller model} are better understood in terms of an extended symmetry algebra (an abelian affine Lie algebra), although they can also be solved in terms of Virasoro symmetry only \cite{nr21}. They have a degenerate field $V^f_{\langle 1, 3\rangle}=V^f_{\langle 3,1\rangle}$, which however behaves as the identity field under fusion with non-diagonal fields. As a result, the constraints \eqref{sriz} are not obeyed. These models have a continuous parameter: the compactification radius $R\in\mathbb{C}^*$. For a special value of $R$, the compactified free boson is a $c\to 1$ limit of the $O(n)$ CFT, and the Ashkin--Teller model is a $c\to 1$ limit of the Potts CFT. Compactified free bosons also exist for $c\in\mathbb{C}$, but then $R$ is quantized \cite{rib14}. 
 \end{itemize}
@@ -2160,7 +2162,7 @@ For $z_0=0,1$ this behaviour is of the type $z^{\delta_1}$ and $(1-z)^{\delta_3}
 \begin{align}
  \delta_i=\Delta\left(P_i+\tfrac{\beta}{2}\right) - \Delta(P_i) -\Delta_{(2,1)} = \beta P_i + \tfrac{1-\beta^2}{2}\ .
 \end{align}
-Introducing $\varphi(z) = z^{\delta_1}(1-z)^{\delta_3}$, we deduce that the differential equation for $\varphi^{-1}(z) G(z)$ has holomorphic solutions near $z=0$ and near $z=1$, namely $\varphi(z)\mathcal{F}^{(s)}_+(z)$ and $\varphi(z)\mathcal{F}^{(t)}_+(z)$ respectively. By a tedious but straightforward calculation, we find that the equation for $\varphi^{-1}(z) G(z)$ is a \myindex{hypergeometric differential equation}\index{hypergeometric!---differential equation} 
+Introducing $\varphi(z) = z^{\delta_1}(1-z)^{\delta_3}$, we deduce that the differential equation for $\varphi^{-1}(z) G(z)$ has holomorphic solutions near $z=0$ and near $z=1$, namely $\varphi(z)\mathcal{F}^{(s)}_+(z)$ and $\varphi(z)\mathcal{F}^{(t)}_+(z)$ respectively. By a tedious but straightforward calculation, we find that the equation for $\varphi^{-1}(z) G(z)$ is a hypergeometric differential equation
 \begin{align}
  \left(z(1-z)\frac{\partial^2}{\partial z^2} + \left[C-(A+B+1)z\right]\frac{\partial}{\partial z} -AB\right) \varphi^{-1}(z) G(z) = 0 \ , 
 \end{align}
@@ -2168,7 +2170,7 @@ with the parameters
 \begin{align}
  \{A,B\} = \left\{\tfrac12+\beta(P_1\pm P_2+P_3)\right\}_\pm \quad , \quad  C=1+2\beta P_1\ .
 \end{align}
-This allows us to write our conformal blocks in terms of the \myindex{hypergeometric function}\index{hypergeometric!---function}  ${}_2F_1$,
+This allows us to write our conformal blocks in terms of the \myindex{hypergeometric function}\index{hypergeometric function}  ${}_2F_1$,
 \begin{subequations}
 \begin{align}
  \mathcal{F}_+^{(s)}(z) &= z^{\beta P_1 +\frac{1-\beta^2}{2}}(1-z)^{\beta P_3 + \frac{1-\beta^2}{2}} {}_2F_1\left(\tfrac12+ \beta P_{123},\tfrac12+\beta P_{13}^2,1+2\beta P_1,z\right) \ , 
@@ -2185,7 +2187,7 @@ the change of basis that relates the $s$- and $t$-channel conformal blocks as
  \mathcal{F}^{(s)}_{\epsilon_1} = \sum_{\epsilon_3\pm} F_{\epsilon_1,\epsilon_3} \mathcal{F}^{(t)}_{\epsilon_3}\ , 
  \label{fsfft}
 \end{align}
-where the size 2 matrix $\left(F_{\epsilon_1,\epsilon_3}\right)_{\epsilon_1,\epsilon_3=\pm}$ is a \myindex{degenerate fusing matrix}\index{fusing matrix!degenerate---}. This matrix has the coefficients 
+where the size 2 matrix $\left(F_{\epsilon_1,\epsilon_3}\right)_{\epsilon_1,\epsilon_3=\pm}$ is a \myindex{degenerate fusing matrix}\index{degenerate!---fusing matrix}. This matrix has the coefficients
 \begin{align}
  \boxed{F_{\epsilon_1,\epsilon_3} = \frac{\Gamma(1+2\beta\epsilon_1P_1)\Gamma(-2\beta \epsilon_3P_3)}{\prod_\pm \Gamma(\frac12 +\beta \epsilon_1P_1 \pm \beta P_2 -\beta \epsilon_3P_3)}}\ ,
  \label{fee}
@@ -2195,7 +2197,7 @@ and the determinant
  \det F = -\frac{P_1}{P_3}\ .
  \label{detf}
 \end{align}
-The degenerate fusing matrix is built from Euler's \myindex{Gamma function}\index{Gamma function} $\Gamma(x)$: a meromorphic function of $x\in\mathbb{C}$ with simple poles for $x\in -\mathbb{N}$ and no zeros, which obeys $\Gamma(x+1)=x\Gamma(x)$ and $\Gamma(x)\Gamma(1-x)=\frac{\pi}{\sin(\pi x)}$. 
+The degenerate fusing matrix is built from Euler's \myindex{Gamma function}\index{Gamma function}\index{function!Gamma---} $\Gamma(x)$: a meromorphic function of $x\in\mathbb{C}$ with simple poles for $x\in -\mathbb{N}$ and no zeros, which obeys $\Gamma(x+1)=x\Gamma(x)$ and $\Gamma(x)\Gamma(1-x)=\frac{\pi}{\sin(\pi x)}$.
 
 \subsubsection{Crossing symmetry}
 
@@ -2368,7 +2370,7 @@ Our 2 shift equations were associated to the degenerate field $V^d_{\langle 2,1\
 
 \subsection{Solutions of shift equations}\label{sec:essc}
 
-Since shift equations produce Gamma functions, their solutions should be written in terms of Barnes' \myindex{double Gamma function}\index{double Gamma function} $\Gamma_\beta$, which obeys
+Since shift equations produce Gamma functions, their solutions should be written in terms of Barnes' \myindex{double Gamma function}\index{double Gamma function}\index{function!double Gamma---} $\Gamma_\beta$, which obeys
 \begin{align}
 \frac{\Gamma_\beta(x+\beta)}{\Gamma_\beta(x)} = \sqrt{2\pi}\frac{\beta^{\beta x-\frac12}}{\Gamma(\beta x)}
 \quad , \quad 
@@ -2486,7 +2488,7 @@ which follows from the cases $(r,s)=(r_2\pm r_3,s_2\pm s_3)$ of the identity
  r,s\in\mathbb{Z} \implies \frac{\prod_\pm S_\beta\left(\frac{\beta+\beta^{-1}}{2} +P_1 \pm P_{(r,s)}\right)}{\prod_\pm S_\beta\left(\frac{\beta+\beta^{-1}}{2} +P_1 \pm P_{(r,-s)}\right)} =(-)^{rs}\ ,
  \label{dsr}
 \end{align}
-where we introduced the \myindex{double Sine function}\index{double Sine function}
+where we introduced the \myindex{double Sine function}\index{double Sine function}\index{function!double Sine---}
 \begin{align}
  S_\beta(x) = \frac{\Gamma_\beta(x)}{\Gamma_\beta(\beta + \beta^{-1}-x)}\quad \implies \quad \frac{S_\beta(x+\beta)}{S_\beta(x)} = 2\sin(\pi\beta x)\ .
  \label{sb}
@@ -2953,7 +2955,7 @@ The inverse relation is
  {}_2F_1\left(\tfrac12,\tfrac12,1,z\right) =\theta_3^2(q)\ , 
 \end{align}
 where $\theta_k(q)$ are 
-\myindex{Jacobi theta functions}\index{Jacobi theta function} 
+\myindex{Jacobi theta functions}\index{Jacobi theta function}\index{function!Jacobi theta---}
 \begin{align}
  \theta_2(q) = \sum_{n=-\infty}^\infty q^{(n+\frac12)^2} \quad , \quad \theta_3(q) = \sum_{n=-\infty}^\infty q^{n^2}\quad , \quad \theta_4(q) = \sum_{n=-\infty}^\infty (-1)^n q^{n^2} \ ,
 \end{align}
@@ -3262,17 +3264,17 @@ In the limit $\Lambda\to \infty$, the solutions $\left(D_k^{(x)|\Lambda,Z_\Lambd
 \begin{align}
  \forall k,x,Z_\Lambda\ , \quad \lim_{\Lambda\to \infty} D_k^{(x)|\Lambda,Z_\Lambda} = D_k^{(x)}\ .
 \end{align}
-However, it is computationally expensive to use large values of the cutoff $\Lambda$ in order to test convergence. In practice, we instead diagnose convergence by studying how strongly $D_k^{(x)|\Lambda,Z_\Lambda}$ depend on $Z_\Lambda$. To do this quantitatively, we introduce the \myindex{relative deviation}\index{relative deviation} of a structure constant for 2 choices $Z_\Lambda^{(1)},Z_\Lambda^{(2)}$ of sets of points:
+However, it is computationally expensive to use large values of the cutoff $\Lambda$ in order to test convergence. In practice, we instead diagnose convergence by studying how strongly $D_k^{(x)|\Lambda,Z_\Lambda}$ depend on $Z_\Lambda$. To do this quantitatively, we introduce the \myindex{deviation}\index{deviation} of a structure constant for 2 choices $Z_\Lambda^{(1)},Z_\Lambda^{(2)}$ of sets of points:
 \begin{align}
  \epsilon_k^{(x)|\Lambda} = \left| 1- \frac{D_k^{(x)|\Lambda,Z^{(1)}_\Lambda}}{D_k^{(x)|\Lambda,Z^{(2)}_\Lambda}}\right|\ .
 \end{align}
-While the relative deviation depends on $Z_\Lambda^{(1)},Z_\Lambda^{(2)}$, we are only interested in its order of magnitude, which typically does not, so we omit this dependence in the notation $\epsilon_k^{(x)|\Lambda}$.
-When computing relative deviations, we encounter the following situations, depending on the number $\mathcal{N}$ \eqref{nsol} of solutions of crossing symmetry: 
+While the deviation depends on $Z_\Lambda^{(1)},Z_\Lambda^{(2)}$, we are only interested in its order of magnitude, which typically does not, so we omit this dependence in the notation $\epsilon_k^{(x)|\Lambda}$.
+When computing deviations, we encounter the following situations, depending on the number $\mathcal{N}$ \eqref{nsol} of solutions of crossing symmetry:
 \begin{align}
 \renewcommand{\arraystretch}{1.5}
  \begin{tabular}{|l|l|}
  \hline 
-  Situation & Relative deviation 
+  Situation & Deviation
   \\
   \hline \hline 
   $\mathcal{N}\neq 1$ & $\log \epsilon_k^{(x)|\Lambda} \sim -2$
@@ -3287,7 +3289,7 @@ When computing relative deviations, we encounter the following situations, depen
  \end{tabular}
  \label{les}
 \end{align}
-If there is no solution or if there are several solutions, relative deviations remain quite large, irrespective of $\Lambda$. A unique solution leads to small relative deviations, but only for structure constants that are nonzero.
+If there is no solution or if there are several solutions, deviations remain quite large, irrespective of $\Lambda$. A unique solution leads to small deviations, but only for structure constants that are nonzero.
 
 For example, consider the 4-point function $\left<V_{(\frac32,\frac23)}V_{(\frac12,0)}V_{(1,0)}V_{P_{(0,\frac{4+i}{10})}}\right>$ at $\beta = \frac{5}{4+i}$. Taking interchiral symmetry into account, we write the spectrums
 \begin{align}
@@ -3318,7 +3320,7 @@ and the signature $\sigma = (0,\frac52,\frac52)$. We will now display numerical 
   \hline 
  \end{array}
 \end{align}
-Times are indicated for Python code \cite{rn23} running on an old desktop computer. For each value of $\Lambda$, we display the real parts of $s$- and $t$-channel structure constants together with their relative deviations, for all $r\leq \frac72$ as well as $(r,s)\in\left\{(4,0),(4,\frac14),(\frac92,0),(\frac92,\frac29)\right\}$. To save space, we show only about $15$ of the $24$ or $56$ digits:
+Times are indicated for Python code \cite{rn23} running on an old desktop computer. For each value of $\Lambda$, we display the real parts of $s$- and $t$-channel structure constants together with their deviations, for all $r\leq \frac72$ as well as $(r,s)\in\left\{(4,0),(4,\frac14),(\frac92,0),(\frac92,\frac29)\right\}$. To save space, we show only about $15$ of the $24$ or $56$ digits:
 \begin{align}
 \renewcommand{\arraystretch}{1.1}
  \begin{array}{|l||r|r||r|r|}
@@ -3364,9 +3366,9 @@ Times are indicated for Python code \cite{rn23} running on an old desktop comput
 Let us interpret these results:
 \begin{itemize}
  \item
- Whenever a relative deviation is small, which in the case $\Lambda=30$ means $\leq 10^{-6}$, we expect that we obtain an approximation of the corresponding structure constant. For example, $\epsilon_{(\frac72,\frac27)}^{(t)|30}\sim 10^{-8}$ suggests that $D_{(\frac72,-\frac27)}^{(t)|30}$ gives about $8$ correct digits of the exact solution $D_{(\frac72,-\frac27)}^{(t)}$. This is confirmed by comparing with $D_{(\frac72,-\frac27)}^{(t)|70}$, which has the same $7$ leading nonzero digits. In all $\Lambda = 30$ results, we have underlined the digits that agree with $\Lambda = 70$ results: the number of correct digits is always accurately estimated by the relative deviation. 
+ Whenever a deviation is small, which in the case $\Lambda=30$ means $\leq 10^{-6}$, we expect that we obtain an approximation of the corresponding structure constant. For example, $\epsilon_{(\frac72,\frac27)}^{(t)|30}\sim 10^{-8}$ suggests that $D_{(\frac72,-\frac27)}^{(t)|30}$ gives about $8$ correct digits of the exact solution $D_{(\frac72,-\frac27)}^{(t)}$. This is confirmed by comparing with $D_{(\frac72,-\frac27)}^{(t)|70}$, which has the same $7$ leading nonzero digits. In all $\Lambda = 30$ results, we have underlined the digits that agree with $\Lambda = 70$ results: the number of correct digits is always accurately estimated by the deviation.
  \item
- When a relative deviation is $O(1)$, we have either a vanishing structure constant, or a non-vanishing structure constant that can only be estimated with a larger cutoff. The $\Lambda =30$ results
+ When a deviation is $O(1)$, we have either a vanishing structure constant, or a non-vanishing structure constant that can only be estimated with a larger cutoff. The $\Lambda =30$ results
  indicate that $D^{(s)}_{(3,\frac13)}=0$, because $V_{(3,0)}$ and $V_{(3,\frac13)}$ have similar total conformal dimensions, so according to Table \eqref{les} they should have similar deviations if $D^{(s)}_{(3,\frac13)}\neq 0$. This is confirmed by the $\Lambda = 70$ results $\epsilon_{(3,\frac13)}^{(s)|70} = O(1)$ and $D_{(3,\frac13)}^{(s)|70} \ll D_{(3,\frac13)}^{(s)|30}$.
  Similarly, the $\Lambda = 30$ results are enough for concluding $D^{(s)}_{(2,\pm\frac12)} =D^{(s)}_{(3,\pm \frac13)} = D^{(s)}_{(3,\pm \frac23)}=0$.
  \item
@@ -3393,9 +3395,9 @@ Then we expect
  \item $\mathcal{N}=0\implies \delta_\Lambda(z_0) = O(\eta_\Lambda)$: the large deviation $\epsilon_k^{(s)|\Lambda}$ measures the failure of crossing symmetry.
  \item $\mathcal{N}>1\implies \delta_\Lambda(z_0) \ll \eta_\Lambda$: the large deviation reflects the existence of several solutions, and the 3 channels should agree up to a small discrepancy that is due to our truncation of the system. 
 \end{itemize}
-Once we know that $\mathcal{N}>1$, the idea is to add $\mathcal{N}$ equations to the crossing symmetry equations. Then the solution becomes unique, leading to small relative deviations as in Section \ref{sec:sos}. Without loss of generality, we may use equations of the type $D^{(x)}_k=0$, in addition to the normalization condition $D^{(s)}_k=1$. This is equivalent to removing primary fields from the spectrum, until we have small relative deviations. When this is achieved, we have $\mathcal{N}\leq \mathcal{R}+1$, where $\mathcal{R}$ is the number of removed fields. We have an inequality rather than an equality, because it may happen that some of our additional equations are in fact obeyed by all solutions, and are therefore redundant with crossing symmetry equations. To eliminate this possibility, we should test whether removing all $\mathcal{R}$ primary fields is necessary for having small relative deviations. If the set of removed fields is minimal, then $\mathcal{N}= \mathcal{R}+1$.
+Once we know that $\mathcal{N}>1$, the idea is to add $\mathcal{N}$ equations to the crossing symmetry equations. Then the solution becomes unique, leading to small deviations as in Section \ref{sec:sos}. Without loss of generality, we may use equations of the type $D^{(x)}_k=0$, in addition to the normalization condition $D^{(s)}_k=1$. This is equivalent to removing primary fields from the spectrum, until we have small deviations. When this is achieved, we have $\mathcal{N}\leq \mathcal{R}+1$, where $\mathcal{R}$ is the number of removed fields. We have an inequality rather than an equality, because it may happen that some of our additional equations are in fact obeyed by all solutions, and are therefore redundant with crossing symmetry equations. To eliminate this possibility, we should test whether removing all $\mathcal{R}$ primary fields is necessary for having small deviations. If the set of removed fields is minimal, then $\mathcal{N}= \mathcal{R}+1$.
 
-The method of removing primary fields is computationally cheap, because it only involves deleting columns of the matrix $\mathcal{C}_\Lambda$, without recomputing $\mathcal{C}_\Lambda$, or changing the cutoff $\Lambda$. This method is however pedestrian, because it involves inspecting relative deviations for various sets of removed fields, and determining a minimal set by trial and error. It would be nice to find a simple way of determining $\mathcal{N}$ from $\mathcal{C}_\Lambda$. 
+The method of removing primary fields is computationally cheap, because it only involves deleting columns of the matrix $\mathcal{C}_\Lambda$, without recomputing $\mathcal{C}_\Lambda$, or changing the cutoff $\Lambda$. This method is however pedestrian, because it involves inspecting deviations for various sets of removed fields, and determining a minimal set by trial and error. It would be nice to find a simple way of determining $\mathcal{N}$ from $\mathcal{C}_\Lambda$.
 
 The method of removing primary fields can also work if $\mathcal{N}=\infty$. For example, in the case of 4-point connectivities in the Potts CFT, using only the first equation in \eqref{seteu} (i.e. leaving the $u$-channel unconstrained) leads to an infinite-dimensional space of solutions, instead of the finite-dimensional spaces that otherwise occur in loop CFTs. Nevertheless, it is possible to determine a basis of solutions, where each element corresponds to a set of removed fields that is infinite before truncation \cite{nr20}.
 
@@ -3624,8 +3626,7 @@ Next, let us consider a legless puncture of weight $w$. We again assume that it 
  \label{wP}
 \end{align}
 Finally, the identity field $V^d_{\langle 1,1\rangle}$ should not change the weight of loops.
-Therefore, the
-\myindex{contractible loop weight}\index{loop weight!contractible---} is
+Therefore, the contractible loop weight is
 \begin{align}
  \boxed{n= w\left(P_{(1,1)}\right) = -2\cos(\pi \beta^2)} \ .
  \label{ncb}
@@ -3781,14 +3782,14 @@ If we now consider correlation functions, the existence of a critical limit migh
 
 Whenever crossing symmetry equations have a unique solution, numerical bootstrap calculations can give us numerical data for the corresponding 4-point structure constants. From these data, we would like to infer exact expressions. To do this, we will constrain structure constants by making assumptions on their analytic properties. These assumptions will determine each structure constant up to a polynomial in loop weights.
 
-\subsubsection{Holomorphicity in the channel momentum}
-
-We consider the 4-point function $Z(P)=\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$, with an $s$-channel spectrum $\mathcal{S}_0(P)$ \eqref{sxs}. The decomposition of $Z(P)$ into $s$-channel conformal blocks is
+We consider a 4-point function $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$, associated to a combinatorial map $M$. If the $s$-channel signature is $\sigma=0$, the $s$-channel spectrum $\mathcal{S}_0(P)$ \eqref{sxs} depends on a channel momentum $P$. Then the decomposition of our 4-point function into $s$-channel conformal blocks reads
 \begin{align}
- Z(P) = \sum_{k\in\mathbb{Z}} D_{P+k\beta^{-1}} \left|\mathcal{F}_{P+k\beta^{-1}}\right|^2 +\sum_{r=1}^\infty \sum_{s\in\frac{1}{r}\mathbb{Z}} D_{(r,s)}(P) \mathcal{G}_{(r,s)}\ .
+ Z(P) =  \sum_{k\in\mathbb{Z}} D_{P+k\beta^{-1}} \left|\mathcal{F}_{P+k\beta^{-1}}\right|^2 +\sum_{r=1}^\infty \sum_{s\in\frac{1}{r}\mathbb{Z}} D_{(r,s)}(P) \mathcal{G}_{(r,s)}\ .
  \label{zop}
 \end{align}
-Besides the Virasoro blocks $\mathcal{F}_P$, this involves conformal blocks $\mathcal{G}_{(r,s)}$ that gather the contributions of non-diagonal primary fields $V_{(r,s)}$ and their descendants, with $s\notin\mathbb{Z}\implies \mathcal{G}_{(r,s)} = \mathcal{F}_{P_{(r,s)}}\bar{\mathcal{F}}_{P_{(r,-s)}}$. 
+Besides the Virasoro blocks $\mathcal{F}_P$, this involves conformal blocks $\mathcal{G}_{(r,s)}$ that gather the contributions of non-diagonal primary fields $V_{(r,s)}$ and their descendants, with $s\notin\mathbb{Z}\implies \mathcal{G}_{(r,s)} = \mathcal{F}_{P_{(r,s)}}\bar{\mathcal{F}}_{P_{(r,-s)}}$.
+
+\subsubsection{Holomorphicity in the channel momentum}\label{sec:hcm}
 
 Analytic bootstrap equations from the existence of $V^d_{\langle 1,2\rangle}$ imply $Z(P)=Z(P+\beta^{-1})$, so $Z(P)$ is in fact a function of the channel weight $w(P)$ \eqref{wP}, but we find it more convenient to write it as a function of $P$. In particular, we have $D_{(r,s)}(P)=D_{(r,s)}(P+\beta^{-1})$. Moreover, the analytic bootstrap equations 
 determine how $D_P$ behaves under $P\to P+\beta^{-1}$. Let us assume that diagonal 4-point structure constants factorize into 2-point and 3-point structure constants
@@ -3859,28 +3860,30 @@ where $s_0\in \{0,1\}$, and the ratios of 4-point structure constants are again 
 
 \subsubsection{Polynomials in loop weights}\label{sec:plw}
 
-===============
+Given our 4-point function $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$ and combinatorial map $M$ with $s$-channel signature $\sigma$, let us study the $s$-channel 4-point structure constants $D_{(r,s)}$. A natural ansatz for $D_{(r,s)}$ is a combination of 2-point and 3-point structure constants $D_k \underset{\text{ansatz}}{=} \frac{C_{12k}C_{k34}}{B_k}$. It turns out that this ansatz is incorrect, but obeys the same shift equations as $D_k$. This implies that $D_k$ is given by the ansatz, times a shift-invariant function.
 
-Let us focus in particular on diagonal fields. If $r_1=0$, then $r_2\equiv r_3\bmod\mathbb{Z}$, and Eq. \eqref{tpt} reduces to the invariance of $C^\text{norm}$ under $s_1\to s_1+2$. As a function of the momentum $P$ of a diagonal field, $C^\text{norm}$ is therefore periodic with period $\beta^{-1}$, and it is also even by reflection invariance \eqref{refl}. So it is a function of the loop weight \eqref{wP}.
+Our 4-point function can depend on the momentums of diagonal fields $V_P$: either one of the 4 fields $V_{(r_i,s_i)}$ with $r_i=0$, or a channel field if $\sigma =0$. A function of the momentum $P$ that is invariant under shifts $P\to P+\beta^{-1}$ and reflections $P\to -P$ must be a function of the loop weight $w(P)$ \eqref{wP}. Therefore, in order to complete the ansatz, we must determine functions of loop weights.
 
-We conjecture that $C^\text{norm}$ is in fact a polynomial of loop weights, and that its dependence on the central charge is in fact polynomial in the contractible loop weight $n$ \eqref{ncb}.
-
-===============
-
-For a combinatorial map $M$, let us write the $s$-channel 4-point structure constants $D_{(r,s)}$ after factoring out the reference 4-point structure constant 
+We first focus on the weight $w=w(P)$ of a channel diagonal field. We have argued in Section \ref{sec:hcm} that $D_{(r,s)}$ is meromorphic in $P$, therefore $D_{(r,s)}$ is also meromorphic in $w=w(P)$. In fact $D_{(r,s)}$ is holomorphic unless $s\in \mathbb{Z}$, in which case $D_{(r,s)}$ has a simple pole at $w=w(P_{(r,s)})$. The residue can be computed using Eqs. \eqref{rdp} and \eqref{dccb}, leading to
 \begin{align}
- D_{(r,s)}^\text{ref} = \frac{C^\text{ref}_{(r,s)(r_1,s_1)(r_2,s_2)} C^\text{ref}_{(r,s)(r_3,s_3)(r_4,s_4)}}{B^\text{ref}_{(r,s)}}\ , 
+ D_{(r,s)} =  \frac{C_{(r,s)(r_1,s_1)(r_2,s_2)}C_{(r,s)(r_3,s_3)(r_4,s_4)}}{B_{(r,s)}\kappa^{r,s}} \left[d_{(r,s)}  - \delta_{\sigma,0}\delta_{s\in\mathbb{Z}}\frac{(-)^{(r+1)s}\rho^{r,s}_{(r_1,s_1)(r_2,s_2)}\rho^{r,s}_{(r_4,s_4)(r_3,s_3)}}{w-w(P_{(r,s)})}\right] \, .
+ \label{sdrs}
 \end{align}
-which is a combination of the reference 2-point \eqref{bref} and 3-point \eqref{cref} structure constants. If $M$ has a vanishing $s$-channel signature $\sigma=0$, then $D_{(r,s)}$ depends on the weight $w$ of $s$-channel loops. Furthermore, if $s\in\mathbb{Z}$, then $D_{(r,s)}$ has a pole at $w=w(P_{(r,s)})$, whose residue is determined by our assumption that the 4-point function is holomorphic as a function of $w$. Computing the residue using Eqs. \eqref{rdp} and \eqref{dccb}, we find 
+In this expression, the second term accounts for the simple pole at $w=w(P_{(r,s)})$. We have written the corresponding residue in terms of our ansatz $\frac{CC}{B}$, times trigonometric factors $\frac{\rho\rho}{\kappa}$, where we define
 \begin{align}
- D_{(r,s)} =  D_{(r,s)}^\text{ref} \left(d_{(r,s)}  - \delta_{\sigma,0}\delta_{s\in\mathbb{Z}}\frac{(-)^{(r+1)s}\rho^{r,s}_{(r_1,s_1)(r_2,s_2)}\rho^{r,s}_{(r_4,s_4)(r_3,s_3)}}{w-w(P_{(r,s)})}\right) \ ,
-\end{align}
-where $d_{(r,s)}$ is a holomorphic function of $w$ if $\sigma=0$, and we define
-\begin{align}
-\rho^{r,s}_{(r_1,s_1)(r_2,s_2)}= (-)^{s\min(r,|r_1-r_2|)\delta_{r_1<r_2}} \prod_\pm \prod_{j\overset{1}{=}-\frac{r-1-|r_1\pm r_2|}{2}}^{\frac{r-1-|r_1\pm r_2|}{2}} 2\cos\pi\left(j\beta^2+\tfrac{s-s_1\mp s_2}{2}\right)\ . 
+\rho^{r,s}_{(r_1,s_1)(r_2,s_2)}= (-)^{s\min(r,|r_1-r_2|)\delta_{r_1<r_2}} \prod_\pm \prod_{j\overset{1}{=}-\frac{r-1-|r_1\pm r_2|}{2}}^{\frac{r-1-|r_1\pm r_2|}{2}} 2\cos\pi\left(j\beta^2+\tfrac{s-s_1\mp s_2}{2}\right)\ .
  \label{rhop}
 \end{align}
-The crucial observation is that $\rho^{r,s}$ is a polynomial in $n$. Moreover, if $r_1=0$ or $r_2=0$, it is also a polynomial in the corresponding loop weight $w_1$ or $w_2$. This leads us to conjecture that $d_{(r,s)}$ is also a polynomial in $n$, in the weights $w_i$, and in the $s$-channel weight $w$: not only in the case $\sigma=0, s\in\mathbb{Z}$ where $D_{(r,s)}$ depends on a channel weight and has a pole, but in all cases. 
+and
+\begin{align}
+\kappa^{r,s} = \frac{2^{2r-1}}{\sin\pi(\{r\}+s)}\prod_{j\overset{1}{=}1-r}^{r-1} \sin\pi(j\beta^2 +s) \ .
+ \label{kappa}
+\end{align}
+After subtracting the pole term, our structure constant $D_{(r,s)}$ is proportional to a quantity that we called $d_{(r,s)}$, which should therefore be holomorphic in the channel weight $w$.
+
+Numerical results suggest that $d_{(r,s)}$ is not only holomorphic in $w$, but in fact polynomial. Furthermore, the quantity $\rho^{r,s}$ is polynomial in the loop weights $w_i=\cos(\pi s_i)$ of the fields $V_{(r_i,s_i)}$ with $r_i=0$. And both $\rho^{r,s},\kappa^{r,s}$ are polynomial in the contractible loop weight $n$ \eqref{ncb}. This suggests that $d_{(r,s)}$ might be polynomial in $n,w_i$ as well. Numerical results are consistent with this suggestion, not only in the case $\sigma=0, s\in\mathbb{Z}$ where $D_{(r,s)}$ depends on a channel weight and has a pole, but in all cases.
+
+We conjecture that $d_{(r,s)}$ is polynomial in all loop weights $n,w_i,w$.
 Thanks to this conjecture, we can extract analytic expressions for $d_{(r,s)}$ from numerical results for $D_{(r,s)}$. 
 
 
@@ -4111,18 +4114,17 @@ The coefficients of these polynomials are trigonometric numbers, related to the 
 
 \subsubsection{Towards solving loop CFTs}
 
-In the conformal bootstrap approach, solving loop CFTs on the sphere means being able to compute $N$-point functions for any $N\in \mathbb{N}^*$. If OPEs exist, this problem reduces to knowing the 3-point structure constants. (See Section \ref{sec:cscb}.) However, most known results are for 4-point structure constants, as we saw in Section \ref{sec:ex4pt}. The factorization of 4-point into 3-point structure constants can in principle be explored numerically, as we discussed in Section \ref{sec:factor}. But a case-by-case analysis of factorization would be tedious and not necessarily very illuminating, so long we do not understand the underlying algebraic structure. 
+In the conformal bootstrap approach, solving loop CFTs on the sphere means being able to compute $N$-point functions for any $N\in \mathbb{N}^*$. If OPEs exist, this problem reduces to knowing the 3-point structure constants. (See Section \ref{sec:cscb}.) However, 4-point structure constants \eqref{sdrs} are more complicated than products of 3-point structure constants. The factorization of 4-point structure constants can in principle be explored numerically, as we discussed in Section \ref{sec:factor}. But a case-by-case analysis of factorization would be tedious and not necessarily very illuminating, so long we do not understand the underlying algebraic structure.
 
-Since correlation functions correspond to combinatorial maps, factorization should be formulated in terms of combinatorial maps. However, 3-point combinatorial maps on the sphere correspond to 3-point functions, not to 3-point structure constants. A 3-point function $\left<\prod_{i=1}^3 V_{(r_i,s_i)}\right>$ only depends on the 3 fields' conformal dimensions, and for any $r_1,r_2,r_3\in \frac12\mathbb{N}$ such that $\sum r_i\in\mathbb{N}$ there exists exactly one 3-point combinatorial map on the sphere with vertices of valencies $2r_1,2r_2,2r_3$.
-On the other hand, 3-point structure constants may also depend on field multiplicities and fusion multiplicities. Since 4-point structure constants do not always factorize into products of 3-point structure constants, we know that some of these multiplicities are nontrivial. Therefore, 3-point structure constants should be described by richer combinatorial objects. 
+In fact, it is not even clear that OPEs exist in loop CFTs. The fact that 4-point functions are combinations of conformal blocks is a necessary condition for the existence of OPEs, but it is not sufficient. This condition may seem empty at first sight, because conformal blocks form a basis of functions of the cross-ratio. However, only blocks that correspond to channel fields in the loop CFTs' spectrum appear, and this makes the condition nontrivial. More fundamentally, we may try to deduce the existence of OPEs from the definition of statistical loop models. Technically, this might be done by constructing lattice loop models, and studying the algebraic properties of the resulting diagram algebras, see \cite{im25} for work in that direction.
 
-In fact, it is not even clear that OPEs exist in loop CFTs. The fact that 4-point functions are combinations of conformal blocks is a necessary condition for the existence of OPEs, but it is not sufficient. This condition may seem empty at first sight, because conformal blocks form a basis of functions of the cross-ratio. However, only blocks that correspond to channel fields in the loop CFTs' spectrum appear, and this makes the condition nontrivial. More fundamentally, we may try to deduce the existence of OPEs from the definition of statistical loop models. Technically, this might be done by constructing lattice loop models, and studying the algebraic properties of the resulting diagram algebras, see \cite{im23} for work in that direction.    
+Since correlation functions correspond to combinatorial maps, OPEs and factorization should be formulated in terms of combinatorial maps. For any $r_1,r_2,r_3\in \frac12\mathbb{N}$ such that $\sum r_i\in\mathbb{N}$ there exists exactly one 3-point combinatorial map on the sphere with vertices of valencies $2r_1,2r_2,2r_3$. But it is not clear how to reconstruct the finitely many 4-point maps for a given 4-point function $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$, from these 3-point maps.
 
 If and when loop CFTs can be solved at generic central charge, there will remain the challenge of taking rational limits. Such limits are relevant to applications such as percolation ($\beta^2=\frac23$) or polymers ($\beta^2=\frac12$). These special cases are more difficult than the general case, because representations of the Virasoro algebra have more complicated structures, see for instance \cite{hs21}. Hints of these algebraic complications are visible in the fusion rules of degenerate representations, which are simpler for generic $\beta^2$ \eqref{rrrs} than for rational $\beta^2$ \eqref{rfrf}. In the case of a 4-point function, we know that conformal blocks diverge in the limit $\beta^2\to \frac{q}{p}\in\mathbb{Q}$, but we expect that the divergences cancel so that the 4-point function converges. When a linear combination of divergent blocks $\mathcal{G} = \sum_k D_k \mathcal{G}_k$ converges, the interpretation is that the corresponding modules of the conformal algebra combine into a bigger indecomposable module in the limit. Such phenomenons also occur in CFTs with 2 degenerate fields, in particular in the limit GMM\,$\to$\,AMM of Section \ref{sec:lod}.
 
 \subsubsection{Global symmetries in $d=2$ and $d\geq 3$}
 
-As we stated in Section \ref{sec:models}, the $O(n)$, $PSU(n)$ and Potts CFTs have global symmetries, described by the groups $O(n)$, $PSU(n)$ and $S_Q$ respectively. Usually, in physics, we would expect such unbroken symmetries to have a strong influence. Models with different symmetry groups would behave differently, and we would formulate our analysis in group-theoretic language: spectrums as representations, correlation functions as invariant tensors. 
+As we stated in Section \ref{sec:models}, the $O(n)$, $PSU(n)$ and Potts CFTs have global symmetries, described by the groups $O(n)$, $PSU(n)$ and $S_Q$ respectively (or their categories of representations if $n,Q$ are not integer). Usually, in physics, we would expect such unbroken symmetries to have a strong influence. Models with different symmetry groups would behave differently, and we would formulate our analysis in group-theoretic language: spectrums as representations, correlation functions as invariant tensors.
 
 However, the $O(n)$, $PSU(n)$ and Potts CFTs share many conformal dimensions and even some correlation functions.
 This is because they are all formulated in terms of similar loop ensembles, see Section \ref{sec:coup}.
@@ -4208,10 +4210,18 @@ In the $d\geq 3$ Potts model, the boundaries of clusters are not loops, but obje
 
 * Around Eq. (2.72), introduced the distinction between the group and the category of representations.
 
+* In Section 2.5.3, mentioned the A-D-E classification of minimal models.
+
 * Rewritten Section 3.3.3, removing the concept of reference structure constants.
 
 * At the beginning of Section 4.2, added a second paragraph on interechiral symmetry, with a comparison to supersymmetry.
 
-* Rewrote the introduction of Section 5.
+* Rewritten the introduction of Section 5.
 
 * Revised Section 5.2.1, which now include the formulas for $n$ and $w(P)$.
+
+* Rewritten Section 5.3.3.
+
+* Simplified Section 5.5.1 in light of more recent developments.
+
+* Terminology: replaced 'relative deviation' with 'deviation'.
