@@ -758,7 +758,7 @@ Because of the poles in OPE coefficients, there are constraints on the fields th
  \item If $\Delta_1\neq \Delta_2$, then $\operatorname{Res}_{\Delta=0}f^{\Delta,L_{-1}}_{\Delta_1,\Delta_2}\neq 0$, and we cannot impose the normalization $C^{\Delta,1}_{\Delta_1,\Delta_2}=0$: rather, we may choose $C^{L_{-1}}\neq 0$ while $C^1=0$. Therefore, the non-vanishing null vector $L_{-1}V_0\propto V_1$ may appear in the OPE, together with its descendants, while $V_0$ itself and its other descendants give vanishing contributions. In particular, neither $V^d_{\langle 1,1\rangle}$ nor its descendants can contribute.
  \item If $\Delta_1=\Delta_2$, then $\operatorname{Res}_{\Delta=0}f^{\Delta,L_{-1}}_{\Delta_1,\Delta_2}= 0$. The equation $L_1W_1=\theta_{1,1}W_0$ \eqref{opew} reduces to $0=0$, and does not determine $C^{L_{-1}}$ from $C^1$. In particular, our OPE can include $V^d_{\langle 1,1\rangle}$.
 \end{itemize}
-What about OPEs that involve $V_0$ or $V^d_{\langle 1,1\rangle}$? The OPE $V_0V_{\Delta_2}$ is just a special case of the OPE \eqref{prope}.
+What about OPEs that involve $V_0$ or $V^d_{\langle 1,1\rangle}$? The OPE $V_0V_{\Delta_2}$ is just a special case of the OPE \eqref{prope}, where arbitrary primary fields may appear.
 But the OPE $V^d_{\langle 1,1\rangle}V_{\Delta_2}$ must obey 
 \begin{align}
  0 = \frac{\partial}{\partial z_1} V^d_{\langle 1,1\rangle}(z_1)V_{\Delta_2}(z_2) \supset C_{\langle 1,1\rangle,\Delta_2}^{\Delta} \frac{\partial}{\partial z_1} z_{12}^{\Delta-\Delta_2} \big(V_\Delta(z_2) +\cdots \big) \ ,
@@ -770,21 +770,20 @@ Let us introduce the \myindex{fusion rules}\index{fusion!---rule} as a convenien
  V^d_{\langle 1,1\rangle} V_{\Delta} = V_\Delta \quad , \quad V_{\Delta_1} V_{\Delta_2} \ni V^d_{\langle 1,1\rangle} \implies \Delta_1=\Delta_2\ . 
  \label{vov}
 \end{align}
-Just like OPEs themselves, fusion rules are commutative and associative. Moreover, 
+Just like OPEs themselves, fusion rules are commutative and associative.
+
+Fusion rules of primary fields have an algebraic counterpart: the \myindex{fusion product}\index{fusion!---product} of the corresponding representations of the Virasoro algebra \cite{kr18}.
+In terms of the fusion product, the fusion rule \eqref{vov} reads
 \begin{align}
- V_1V_2\ni V_3 \iff V_1V_3 \ni V_2 \ . 
- \label{nini}
-\end{align}
-These properties of fusion rules can be deduced from the construction of
-the \myindex{fusion product}\index{fusion!---product} of representations of the Virasoro algebra \cite{gab99}.
-In contrast to the tensor product, the fusion product has a definition that involves the fields' positions. This allows the fusion product to preserve the central charge, whereas the tensor product adds the central charges. In terms of the fusion product, the fusion rule \eqref{vov} reads 
-\begin{align}
- \mathcal{R}^d_{\langle 1,1\rangle} \times \mathcal{V}_\Delta = \mathcal{V}_\Delta \quad , \quad \mathcal{R}^d_{\langle 1,1\rangle} \subset \mathcal{V}_{\Delta_1}\times \mathcal{V}_{\Delta_2} \implies \Delta_1=\Delta_2\ . 
+ \mathcal{R}^d_{\langle 1,1\rangle} \times \mathcal{V}_\Delta = \mathcal{V}_\Delta \quad , \quad \mathcal{R}^d_{\langle 1,1\rangle} \subset \mathcal{V}_{\Delta_1}\times \mathcal{V}_{\Delta_2} \implies \Delta_1=\Delta_2\ .
  \label{rtv}
 \end{align}
-The fusion product encodes isomorphisms of representations $\mathcal{R}_i \times \mathcal{R}_j = \sum_k m_{i,j}^k \mathcal{R}_k$, where $m_{i,j}^k\in \mathbb{N}\cup\{\infty\}$ is called a \myindex{fusion multiplicity}\index{fusion!---multiplicity}. In the case of highest-weight representations of the Virasoro algebra, $m_{i,j}^k\in \{0,1\}$, and $m_{i,j}^k$ is invariant under permutations of its 3 indices. 
+Given 2 representations $\mathcal{R}_i,\mathcal{R}_j$, the fusion product $\mathcal{R}_i \times \mathcal{R}_j$ is itself a representation. In contrast to the tensor product $\mathcal{R}_i\otimes \mathcal{R}_j$, the fusion product has a definition that involves the fields' positions. This allows the fusion product to preserve the central charge, whereas the tensor product adds the central charges.
+Then the decomposition into indecomposables $\mathcal{R}_i \times \mathcal{R}_j = \sum_k m_{i,j}^k \mathcal{R}_k$ is the algebraic counterpart of the OPE. The coefficient $m_{i,j}^k\in \mathbb{N}\cup\{\infty\}$ is called a \myindex{fusion multiplicity}\index{fusion!---multiplicity}.
 
-\subsubsection{Fusion products of degenerate representations}
+Technical assumptions are needed for constructing the fusion product, and deriving its properties. We will use the fusion product in cases where it is commutative and associative, with multiplicities $m_{i,j}^k\in \{0,1\}$ that are  invariant under permutations of the 3 indices. These cases involve either degenerate representations and Verma modules at generic $\beta^2\in \mathbb{C}\backslash\mathbb{Q}$ (Section \ref{sec:fpdr}), or irreducible Kac table representations at $\beta^2 \in \mathbb{Q}_{>0}$ (Section \ref{sec:amm}). The construction and properties of the fusion product are well-established in the second case \cite{gab99}, from which the first case can be obtained by taking limits and doing analytic continuation in $\beta^2$. However, to actually compute fusion products, it will be easier to start with the first case, and deduce the second.
+
+\subsubsection{Fusion products of degenerate representations}\label{sec:fpdr}
 
 Let us derive the fusion rules that involve the degenerate field $V^d_{\langle 2,1\rangle}$. These fusion rules are encoded in the 3 equivalent conditions 
 \begin{align}
@@ -4172,54 +4171,78 @@ In the $d\geq 3$ Potts model, the boundaries of clusters are not loops, but obje
 
 \end{document}
 
-* "di Francesco, Mathieu and Sénéchal wrote a book" -> "Di Francesco, Mathieu and Sénéchal published a book"
+C01. "di Francesco, Mathieu and Sénéchal wrote a book" -> "Di Francesco, Mathieu and Sénéchal published a book"
 
-* In the introduction, mentioned Teschner's seminal work on the analytic bootstrap in Liouville theory.
+C02. In the introduction, mentioned Teschner's seminal work on the analytic bootstrap in Liouville theory.
 
-* In the Virasoro algebra's commutation relations (1.5), the central generator is made implicit, and the surrounding explanations modified accordingly.
+C03. In the Virasoro algebra's commutation relations (1.5), the central generator is made implicit, and the surrounding explanations modified accordingly.
 
-* Added "(whether or not $L_0$ is diagonalizable in that representation)" when discussing eigenvalues of $L_0$.
+C04. Added "(whether or not $L_0$ is diagonalizable in that representation)" when discussing eigenvalues of $L_0$.
 
-* After (1.8), added the precision "where the unit operator $1\in \mathcal{L}$ is obtained in the case $k=0$".
+C05. After (1.8), added the precision "where the unit operator $1\in \mathcal{L}$ is obtained in the case $k=0$".
 
-* In Section 1.1.2, clarified the definition of a highest-weight representation.
+C06. In Section 1.1.2, clarified the definition of a highest-weight representation.
 
-* At the end of Section 1.1.2, defined logarithmic representations.
+C07. At the end of Section 1.1.2, defined logarithmic representations.
 
-* Added Eqs. (1.17) and (1.18) on the behaviour of null vectors under $\beta\to -\beta$ and $\beta\to \beta^{-1}$.
+C08. Added Eqs. (1.17) and (1.18) on the behaviour of null vectors under $\beta\to -\beta$ and $\beta\to \beta^{-1}$.
 
-* Around Eq. (1.23), added assumption on null vector normalization, and flipped the sign of $\epsilon$ in its definition.
+C09. After (1.26), removed the statement about the basis of the quotient representation.
 
-* After (1.26), removed the statement about the basis of the quotient representation.
+C10. Before (1.27), added statement on reducibility and non-vanishing null vectors.
 
-* Before (1.27), added statement on reducibility and non-vanishing null vectors.
+C11. At the beginning of Section 1.1.5, the involution is no longer called an automorphism.
 
-* At the beginning of Section 1.1.5, the involution is no longer called an automorphism.
+C12. Rewritten the second half of Section 1.2.4, in order to clarify the properties of the fusion product, and better define fusion multiplicities.
 
-* Added precision on limit of fields in (2.37).
+C13. Added precision on limit of fields in (2.37).
 
-* Rewritten (2.42) more correctly.
+C14. Rewritten (2.42) more correctly.
 
-* After (2.60), added comment on null vectors.
+C15. After (2.60), added comment on null vectors.
 
-* At the beginning of Section 2.4, made the distinction between critical loop models and loop CFTs.
+C16. At the beginning of Section 2.4, made the distinction between critical loop models and loop CFTs.
 
-* At the end of Section 2.4.2, added a reference on logarithmic representations, and a reference to the section on logarithmic blocks.
+C17. At the end of Section 2.4.2, added a reference on logarithmic representations, and a reference to the section on logarithmic blocks.
 
-* Around Eq. (2.72), introduced the distinction between the group and the category of representations.
+C18. Around Eq. (2.72), introduced the distinction between the group and the category of representations.
 
-* In Section 2.5.3, mentioned the A-D-E classification of minimal models.
+C19. In Section 2.5.3, mentioned the A-D-E classification of minimal models.
 
-* Rewritten Section 3.3.3, removing the concept of reference structure constants.
+C20. Rewritten Section 3.3.3, removing the concept of reference structure constants.
 
-* At the beginning of Section 4.2, added a second paragraph on interechiral symmetry, with a comparison to supersymmetry.
+C21. At the beginning of Section 4.2, added a second paragraph on interechiral symmetry, with a comparison to supersymmetry.
 
-* Rewritten the introduction of Section 5.
+C22. Rewritten the introduction of Section 5.
 
-* Revised Section 5.2.1, which now include the formulas for $n$ and $w(P)$.
+C23. Revised Section 5.2.1, which now include the formulas for $n$ and $w(P)$.
 
-* Rewritten Section 5.3.3.
+C24. Rewritten Section 5.3.3.
 
-* Simplified Section 5.5.1 in light of more recent developments.
+C25. Simplified Section 5.5.1 in light of more recent developments.
 
-* Terminology: replaced 'relative deviation' with 'deviation'.
+C26. Terminology: replaced 'relative deviation' with 'deviation'.
+
+C27. Around Eq. (1.23), added assumption on null vector normalization, and flipped the sign of $\epsilon$ in its definition.
+
+Reply to Referee 1.
+
+1- Corrected as suggested, see C01.
+
+2- No change: My notation is more compact and it is standard although less popular than the suggested notation.
+
+3- No change: For spectrum, momentum, etc, regular plurals are correct and more logical than Latin nominative plurals (why nominative?), although less popular. I am sorry that they make the text less readable to some readers, but I believe they make things easier for an international audience.
+
+4- Removed the confusion, see C03.
+
+5- Clarified this point, see C04.
+
+6- Clarified this point, see C05.
+
+7- Added suggested comment, see C08.
+
+8- Added a clause about normalization before what is now Eq. (1.23).
+
+9- There was indeed a mistake in the formulas, which is now corrected by flipping the sign of $\epsilon$ in its definition.
+
+10-
