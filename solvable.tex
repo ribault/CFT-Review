@@ -203,6 +203,8 @@ Solving a CFT means determining its spectrum and structure constants. We deduce 
 As first demonstrated by Teschner in the case of Liouville theory \cite{tes95},
 these assumptions also lead to constraints on structure constants, which may or may not be enough for determining them analytically. If they are not enough, we can determine structure constants numerically by solving crossing symmetry equations. And from sufficiently precise numerical results, we can deduce analytic formulas.
 
+XXXXX here say bootstrap does not prove existence! Reasoning can be made rigorous cf Liouville proba once we have construction.
+
 \subsubsection*{This text's approach}
 
 We strive to give simple derivations of non-trivial results, without introducing too many auxiliary objects that are later discarded. The calculations are not all done in detail in this text, but they are doable with reasonable effort. Readers who want formal exercises are directed to earlier texts in the same spirit: the minimal review \cite{rib16}, and the more extended review \cite{rib14}. Further exercises can be found in a Wikiversity course \cite{rib25}, which is partly based on this text. 
@@ -1515,8 +1517,7 @@ We therefore define the \myindex{A-series minimal model}\index{minimal model!A-s
  \boxed{\mathcal{S}^{\text{AMM}_{p,q}} = \frac12\left\{ V^f_{\langle r,s\rangle} \right\}_{(r,s)\in K_{p,q}} \quad \text{with} \quad 2\leq q<p \quad \text{and} \quad p, q \text{ coprime}}\ .
  \label{samm}
 \end{align}
-The factor $\frac12$ accounts for the $\mathbb{Z}_2$ symmetry \eqref{prqs}. We assume $2\leq q$ for the Kac table to be non-empty, and 
-$q<p$ because AMM$_{p, q}=$AMM$_{q,p}$.
+The factor $\frac12$ accounts for the $\mathbb{Z}_2$ symmetry \eqref{prqs}. We assume $2\leq q$ for the Kac table to be non-empty, and $q<p$ because AMM$_{p, q}=$AMM$_{q,p}$. The field $V^f_{\langle 1,1\rangle}$ is the identity field.
 
 For example, AMM$_{4,3}$ has the central charge $c=\frac12$ and describes some of the observables of the critical Ising model. Let us describe its 3 primary fields, and display their dimensions in the Kac table: 
 \begin{align}
@@ -4111,7 +4112,7 @@ The coefficients of these polynomials are trigonometric numbers, related to the 
 
 \subsubsection{Towards solving loop CFTs}
 
-In the conformal bootstrap approach, solving loop CFTs on the sphere means being able to compute $N$-point functions for any $N\in \mathbb{N}^*$. If OPEs exist, this problem reduces to knowing the 3-point structure constants. (See Section \ref{sec:cscb}.) However, 4-point structure constants \eqref{sdrs} are more complicated than products of 3-point structure constants. The factorization of 4-point structure constants can in principle be explored numerically, as we discussed in Section \ref{sec:factor}. But a case-by-case analysis of factorization would be tedious and not necessarily very illuminating, so long we do not understand the underlying algebraic structure.
+In the conformal bootstrap approach, solving loop CFTs on the sphere means being able to compute $N$-point functions for any $N\in \mathbb{N}^*$. If OPEs exist, this problem reduces to knowing the 3-point structure constants. (See Section \ref{sec:cscb}.) However, 4-point structure constants \eqref{sdrs} are more complicated than products of 3-point structure constants. The factorization of 4-point structure constants can in principle be explored numerically, as we discussed in Section \ref{sec:factor}. But a case-by-case analysis of factorization would be tedious and not necessarily very illuminating, as long as we do not understand the underlying algebraic structure.
 
 In fact, it is not even clear that OPEs exist in loop CFTs. The fact that 4-point functions are combinations of conformal blocks is a necessary condition for the existence of OPEs, but it is not sufficient. This condition may seem empty at first sight, because conformal blocks form a basis of functions of the cross-ratio. However, only blocks that correspond to channel fields in the loop CFTs' spectrum appear, and this makes the condition nontrivial. More fundamentally, we may try to deduce the existence of OPEs from the definition of statistical loop models. Technically, this might be done by constructing lattice loop models, and studying the algebraic properties of the resulting diagram algebras, see \cite{im25} for work in that direction.
 
@@ -4227,6 +4228,10 @@ C27. Around Eq. (1.23), added assumption on null vector normalization, and flipp
 
 Reply to Referee 1.
 
+Weakness #1: Hopefully this is addressed to some extent by performing the requested changes, plus some more.
+
+Weakness #2: Need to state bootstrap philosophy. General disclaimer in intro. XXXXXXXXX
+
 1- Corrected as suggested, see C01.
 
 2- No change: My notation is more compact and it is standard although less popular than the suggested notation.
@@ -4255,4 +4260,26 @@ Reply to Referee 1.
 
 14- Yes indeed, see C03.
 
-15- No change, for fear of confusing readers with this subtle point. In a minimal model, we have 2 ways of writing the identity field $V^f_{\langle 1,1\rangle}=V^d_{\langle 1,1\rangle}$. In other words, the second null vector of $V^d_{\langle 1,1\rangle}$ vanishes in all of the model's correlation functions. There might exist models where this is not true. XXXX
+15- Only added a statement after (2.33) about the identity field in minimal models. Not more, for fear of confusing readers with this subtle point. In a minimal model, there is no field $V^d_{\langle 1,1\rangle}$ distinct from $V^f_{\langle 1,1\rangle}$. In other words, the second null vector of $V^d_{\langle 1,1\rangle}$ vanishes (in all of the model's correlation functions). This would not be true if there existed fields outside the Kac table.
+
+16- Clarified the definition of fusion multiplicity, see C12. I think the good definition is not the number of independent intertwiners, rather it should refer to a decomposition into indecomposables.
+
+17- No remark with that number.
+
+18- and 19- See C13 and C14.
+
+20- When integrating over a continuous spectrum such as $P\in\mathbb{R}$, it does not matter what happens on a set of measure zero such as the set of degenerate momentums $P_{(r,s)}$. The question would matter if we were specifically interested in taking the limit $P\to P_{(1,1)}$ as in (3.42) in a correlation function, but in GDMMs it is not known what happens in this limit.
+
+21- Right, see C18.
+
+22- Fixed.
+
+23- Fixed.
+
+24- Fixed.
+
+25- These days, in this field, journal data are not needed for finding papers, and do not give much useful information in terms of quality or else. A journal can be a venue for improving a paper as we are doing right now, but this does not imply that journal data should be displayed to readers in the list of citations. This said, I can add the data if the editors require it.
+
+Reply to Referee 2.
+
+
