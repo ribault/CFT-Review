@@ -194,18 +194,20 @@ When a CFT is solvable, it can typically be solved in several different ways. In
 \end{itemize}
 We believe that the conformal bootstrap approach is technically simpler, more general, and more powerful. In particular, our main objects are correlation functions on the sphere, and we do not have a rigid notion of which fields belong to a CFT. For example, in the Ising model, we can introduce disorder fields or compute cluster connectivities, without having to worry about modular invariance of the torus partition function.
 
+\subsubsection*{Conformal bootstrap approach}
+
 Solving a CFT means determining its spectrum and structure constants. We deduce spectrums from assumptions such as 
 \begin{itemize}
  \item the existence of degenerate fields,
- \item singe-valuedness of correlation functions,
+ \item single-valuedness of correlation functions,
  \item analyticity in the central charge or in conformal dimensions, which in particular allows us to find CFTs as limits of sequences of other CFTs. 
 \end{itemize}
 As first demonstrated by Teschner in the case of Liouville theory \cite{tes95},
 these assumptions also lead to constraints on structure constants, which may or may not be enough for determining them analytically. If they are not enough, we can determine structure constants numerically by solving crossing symmetry equations. And from sufficiently precise numerical results, we can deduce analytic formulas.
 
-XXXXX here say bootstrap does not prove existence! Reasoning can be made rigorous cf Liouville proba once we have construction.
+While a CFT can be defined as a solution of bootstrap equations, the spectrum and structure constants of solvable CFTs are determined by solving only a small subset of equations. And it is very hard to prove that they solve all equations. In other words, the bootstrap approach is better at addressing uniqueness than existence of CFTs. In the case of Liouville theory with $c\geq 25$, a rigorous probabilistic construction is known. In the probabilistic approach, the theory is solved using bootstrap ideas, and it can be proved that all bootstrap equations are obeyed \cite{gkr24}. For most other solvable CFTs, existence is not proved, but it is supported by various types of evidence, such as lattice constructions, field theory constructions, or numerical checks of bootstrap equations.
 
-\subsubsection*{This text's approach}
+\subsubsection*{Related resources}
 
 We strive to give simple derivations of non-trivial results, without introducing too many auxiliary objects that are later discarded. The calculations are not all done in detail in this text, but they are doable with reasonable effort. Readers who want formal exercises are directed to earlier texts in the same spirit: the minimal review \cite{rib16}, and the more extended review \cite{rib14}. Further exercises can be found in a Wikiversity course \cite{rib25}, which is partly based on this text. 
 
@@ -4230,7 +4232,7 @@ Reply to Referee 1.
 
 Weakness #1: Hopefully this is addressed to some extent by performing the requested changes, plus some more.
 
-Weakness #2: Need to state bootstrap philosophy. General disclaimer in intro. XXXXXXXXX
+Weakness #2: I gave a generic answer to this concern by adding a paragraph in the introduction, starting with "While a CFT can be defined as a solution". A specific answer for each CFT under consideration is outside the scope of this text.
 
 1- Corrected as suggested, see C01.
 
