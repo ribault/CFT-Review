@@ -169,7 +169,7 @@ Exact solvability is restricted to toy models: CFTs that are constructed for the
 \end{itemize}
 There are other examples of exact results, most notably in CFTs with supersymmetry, but they are restricted to special observables, and do not imply that all correlation functions of the CFT can be exactly computed. Nevertheless, there are exact results that might be hints of exact solvability:
 \begin{itemize}
- \item In $d=4$, the planar conformal fishnet theory is a non-supersymmetric CFT where quite a few conformal dimensions and correlation functions can be exactly computed \cite{gkk18}. However the theory is admittedly a toy model, and is still far short of being exactly solved.  
+ \item In $d=4$, the planar conformal fishnet theory is a non-supersymmetric CFT where quite a few conformal dimensions and correlation functions can be exactly computed \cite{gkk18}. However the theory is admittedly a toy model, and is still far from being exactly solved.
  \item Harmonic analysis on groups or group quotients provides a generic way of constructing CFTs, and generalizations thereof. Of course, the resulting theories are typically not exactly solvable \cite{kmp21}. However, harmonic analysis on $H_3^+=SL_2(\mathbb{C})/SU_2$ can be interpreted as an exactly solvable $d=2$ CFT with only global conformal symmetry, also known as the light asymptotic limit of Liouville theory \cite{rib14}. This raises the possibility that other group quotients might give rise to exactly solvable $d\geq 3$ CFTs. 
 \end{itemize}
 
@@ -181,11 +181,13 @@ We will first deal with CFTs that are considered solved, in that we exactly know
  \item Liouville theory,
  \item (generalized) minimal models, and limits thereof. 
 \end{itemize}
-We will also propose a unified treatment of loop CFTs, which are not solved but are believed to be solvable, because we have sufficiently many exact results. By loop CFTs we mean a large class of CFTs, with various global symmetry groups, which describe critical limits of various statistical models in various phases. The known solvable CFTs have many applications to statistical physics, in particular to percolation, to polymers, and more recently to active hydraulics \cite{jcpb23}. Liouville theory and minimal models have well-known applications to quantum gravity in 2d. Applications of non-diagonal solvable CFTs such as loop CFTs to quantum gravity in 3d are limited by the bound on the central charge $\Re c < 13$. (See Section \ref{sec:dotc}.) A CFT that would be holographically dual to quantum gravity in 3d Anti-de Sitter space would need to exist for $c\to+\infty$, while for 3d de Sitter space we would need $\Re c = 13$ \cite{god24, cemr24}. 
+We will also propose a unified treatment of loop CFTs, which are not solved but are believed to be solvable, because we have sufficiently many exact results. By loop CFTs we mean a large class of CFTs, with various global symmetry groups, which describe critical limits of various statistical models in various phases.
+
+The known solvable CFTs have many applications to statistical physics, in particular to percolation, to polymers, and more recently to active hydraulics \cite{jcpb23}. Liouville theory and minimal models have well-known applications to quantum gravity in 2d. Applications of non-diagonal solvable CFTs such as loop CFTs to quantum gravity in 3d are limited by the bound on the central charge $\Re c < 13$. (See Section \ref{sec:dotc}.) A CFT that would be holographically dual to quantum gravity in 3d Anti-de Sitter space would need to exist for $c\to+\infty$, while for 3d de Sitter space we would need $\Re c = 13$ \cite{god24, cemr24}.
 
 There are other solved or solvable CFTs that we will not mention, because they have extended chiral symmetries, in addition to conformal symmetry. Some CFTs of that type can be solved using the methods that we will cover, for example certain Wess--Zumino--Witten models.
 
-\subsubsection*{Solving CFTs in $d=2$}
+\subsubsection*{How to solve CFTs in $d=2$}
 
 When a CFT is solvable, it can typically be solved in several different ways. In this text, we will only use the conformal bootstrap approach, and omit other historically relevant techniques, in particular:
 \begin{itemize}
@@ -209,7 +211,7 @@ While a CFT can be defined as a solution of bootstrap equations, the spectrum an
 
 \subsubsection*{Related resources}
 
-We strive to give simple derivations of non-trivial results, without introducing too many auxiliary objects that are later discarded. The calculations are not all done in detail in this text, but they are doable with reasonable effort. Readers who want formal exercises are directed to earlier texts in the same spirit: the minimal review \cite{rib16}, and the more extended review \cite{rib14}. Further exercises can be found in a Wikiversity course \cite{rib25}, which is partly based on this text. 
+We strive to give simple derivations of non-trivial results, without introducing too many auxiliary objects that are later discarded. The calculations are not all done in detail in this text, but they are doable with reasonable effort. Readers who want formal exercises are directed to earlier texts in the same spirit: the minimal review \cite{rib16}, and the longer review \cite{rib14}. Further exercises can be found in a Wikiversity course \cite{rib25}, which is partly based on this text.
 
 Technical terms that are defined in this text can be found in the index. We also use standard terms that we do not define, because adequate definitions are easily found in Wikipedia or other resources. For example, the definitions of an \textit{irreducible representation}, an \textit{indecomposable representation} or a \textit{projective representation} are found in Wikipedia as the first results of searches for these terms. 
 
@@ -221,7 +223,7 @@ Technical terms that are defined in this text can be found in the index. We also
  \item I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop CFTs and related subjects. 
  \item I am grateful to Antoine Bourget, Victor Godet, Jesper Jacobsen, Gregory Korchemsky, Paul Roux, Ingo Runkel, Hubert Saleur, Xi Yin and Bernardo Zan for helpful discussions and correspondence.
  \item I would like to thank Max Downing, Kay Wiese, Rongvoram Nivesvivat and Paul Roux for comments and suggestions on the manuscript. 
- \item I am grateful to the anonymous SciPost reviewers for their valuable suggestions, which led to many corrections and clarifications.
+ \item I am grateful to the 2 anonymous SciPost reviewers for their valuable suggestions, which led to many corrections and clarifications.
  \item This work is partly a result of the project ReNewQuantum, which received funding from the European Research Council.
 \end{itemize}
 
@@ -264,7 +266,7 @@ Then we consider $c$ as a parameter not only of a CFT, but also of the underlyin
 
 \subsubsection{Highest-weight representations}\label{sec:hwr}
 
-In a conformal field theory, the space of states is a representation of the Virasoro algebra, and can be decomposed into indecomposable representations. But which indecomposable representations are physically relevant? To answer this question, we will focus on the properties of the dilation generator $L_0$ of the Virasoro algebra. Conceptually, this is because $L_0$ can be interpreted as the energy operator. Technically, this is because $L_0$ controls the convergence of operator product expansions, as we will see in Section \ref{sec:csope}. More specifically, a necessary condition for convergence is that the eigenvalues of $L_0$ be bounded from below in any indecomposable representation (whether or not $L_0$ is diagonalizable in that representation). We will always assume that this condition holds.
+In a conformal field theory, the space of states is a representation of the Virasoro algebra, and can be decomposed into indecomposable representations. But which indecomposable representations are physically relevant? To answer this question, we will focus on the properties of the dilation generator $L_0$ of the Virasoro algebra. Conceptually, this is because $L_0$ can be interpreted as the energy operator. Technically, this is because $L_0$ controls the convergence of operator product expansions, as we will see in Section \ref{sec:csope}. More specifically, a necessary condition for convergence is that the eigenvalues of $L_0$ be bounded from below in any indecomposable representation, whether or not $L_0$ is diagonalizable in that representation. We will always assume that this condition holds.
 
 The eigenvalues of $L_0$ are called \myindex{conformal dimensions}\index{conformal!---dimension}\index{dimension!conformal---}. Under the action of the Virasoro generator $L_n$, the conformal dimension decreases by $n$. For any vector $V$ in a representation of the Virasoro algebra, we indeed have
 \begin{align}
@@ -326,7 +328,7 @@ Let us sketch a Verma module by displaying all its basis states up to the level 
 States such as 
 $L_{-2}L_{-1}V = L_{-1}L_{-2}V -L_{-3}V$ are linear combination of elements of our basis, and are therefore not displayed.
 
-It is sometimes useful to consider representations that are not highest-weight. This is in particular the case of \textbf{logarithmic representations}\index{logarithmic representation}\index{representation!logarithmic---}, which we define as indecomposable representations where $L_0$ is bounded from below but not diagonalizable. A logarithmic representation is always reducible, because the highest-weight representation generated by the $L_0$-eigenvector with the smallest eigenvalue is a nontrivial subrepresentation. A simple way to build a logarithmic representation is to generate it from the formal $\Delta$-derivative of a primary state $V_\Delta$, which obeys in particular $L_0 V'_\Delta = \Delta V'_\Delta + V_\Delta$.
+It is sometimes useful to consider representations that are not highest-weight. This is in particular the case of \textbf{logarithmic representations}\index{logarithmic representation}\index{representation!logarithmic---}, which we define as indecomposable representations where $L_0$ is bounded from below but not diagonalizable. A logarithmic representation is always reducible, because the highest-weight representation generated by the $L_0$-eigenvector with the smallest eigenvalue is a nontrivial subrepresentation. For example, a simple logarithmic representation can be constructed from the formal $\Delta$-derivative of a primary state $V_\Delta$, which obeys $L_0 V'_\Delta = \Delta V'_\Delta + V_\Delta$.
 
 \subsubsection{Singular vectors of Verma modules}\label{sec:nvvm}
 
@@ -350,13 +352,13 @@ where $\lambda$ and $\mu$ are complex coefficients. It is easy to show that $L_{
 L_2 X{} &= \left(6\Delta \lambda+(4\Delta+\tfrac12 c) \mu\right)V_\Delta\ .
 \end{align}
 \end{subequations}
-Therefore, the conditions $L_1X{}=L_2 X{}=0$ for $X{}$ to be a singular vector boil down to a system of 2 linear equations for the coefficients $(\lambda,\mu)$. The vanishing of that system's determinant determines the conformal dimension $\Delta$ as a function of the central charge $c$,
+Therefore, the conditions $L_1X{}=L_2 X{}=0$ for $X{}$ to be a singular vector boil down to a system of 2 linear equations for the coefficients $(\lambda,\mu)$. The system has a nonzero solution if and only if its determinant vanishes, which amounts to
 \begin{align}
  \Delta = \frac{1}{16}\left( 5-c\pm\sqrt{(c-1)(c-25)} \right) \ .
  \label{dpm}
 \end{align}
 Solving CFTs will lead to fairly complicated formulas, which would become even more complicated if we tolerated a square root at this early stage.
-To get rid of the square root, we rewrite the central charge in terms of the parameter $\beta$ such that 
+To get rid of the square root, we introduce a new notation for the central charge: a parameter $\beta$ defined by
 \begin{align}
  \boxed{c = 1- 6\left(\beta - \beta^{-1}\right)^2 } \ .
  \label{cb}
@@ -426,18 +428,19 @@ L_{-1}^4-2\left(\beta^2+\beta^{-2}\right)L_{-1}^2L_{-2}
 \end{array}
 \label{ars}
 \end{align}
-In these cases as in the general case, the dimensions $\Delta_{(r,s)}$ and singular vectors $L_{\langle r,s\rangle}$ have simple behaviours under the transformations $\beta\to -\beta$ and $\beta\to \beta^{-1}$, which leave $c$ \eqref{cb} invariant:
+In these cases as in the general case, the dimensions $\Delta_{(r,s)}$ and singular vectors $L_{\langle r,s\rangle}$ have simple behaviours under the transformations $\beta\to -\beta$ and $\beta\to \beta^{-1}$, which leave the central charge \eqref{cb} invariant:
 \begin{align}
  \Delta_{(r,s)}(\beta)&=\Delta_{(r,s)}(-\beta)=\Delta_{(s,r)}(\beta^{-1})\ ,
  \\
  L_{\langle r,s\rangle}(\beta)&=L_{\langle r,s\rangle}(-\beta)=L_{\langle s,r\rangle}(\beta^{-1})\ .
 \end{align}
-To write $\Delta_{(r, s)}$ for any $r,s\in\mathbb{N}^*$, we rewrite the conformal dimension in terms of the momentum $P$ defined by 
+Let us introduce a new notation for the conformal dimension: the \myindex{momentum}\index{momentum} $P$ defined by
 \begin{align}
  \boxed{\Delta = \frac{c-1}{24} + P^2}\ .
  \label{dp}
 \end{align}
-We can rewrite Verma modules as $\mathcal{V}_P=\mathcal{V}_{-P}$, where the parameter $P$ is redundant due to the invariance of $\Delta$ under the \myindex{reflection}\index{reflection} $P\to -P$. The dimensions $\Delta_{(r, s)}$ correspond to the momentums 
+In this notation, a Verma module is now called $\mathcal{V}_P$. The \myindex{reflection}\index{reflection} $P\to -P$ leaves
+$\Delta$ invariant, therefore $\mathcal{V}_P=\mathcal{V}_{-P}$. For any $r,s\in\mathbb{N}^*$, the dimension $\Delta_{(r, s)}$ corresponds to the momentums
 \begin{align}
  \boxed{P_{(r, s)} = \frac12\left(r\beta -s\beta^{-1}\right)}\ ,
  \label{prs}
@@ -522,7 +525,7 @@ To illustrate the 2 cases $\beta^2\in \mathbb{Q}_{>0}$ and $\beta^2\in \mathbb{Q
 
 \subsubsection{Vanishing and non-vanishing singular vectors}
 
-When a representation $\mathcal{R}$ has a singular vector $X{}=LV{}$, this allows us to define a quotient representation $\frac{\mathcal{R}}{\mathcal{R}_{X{}}}$ by setting the singular vector to zero.
+When a representation $\mathcal{R}$ has a singular vector $X{}=LV{}$, we can define a quotient representation $\frac{\mathcal{R}}{\mathcal{R}_{X{}}}$ by setting the singular vector to zero.
 By an abuse of terminology, we say that $\frac{\mathcal{R}}{\mathcal{R}_{X{}}}$ has a \myindex{vanishing singular vector}\index{singular vector!vanishing---}, which really means that its primary state $V{}$ obeys the \myindex{singular vector equation}\index{singular vector!---equation} $LV{}=0$. On the other hand, $\mathcal{R}$ itself has a non-vanishing singular vector $X{}$.
 
 For example, let us set $L_{-1}V_0=0$ in $\mathcal{V}_0$. The resulting quotient representation has a basis made of states $LV_0$ such that the creation operator $L\in\mathcal{L}$ does not involve $L_{-1}$. Let us sketch this basis up to the level $N=4$, for comparison with a Verma module \eqref{verma}:
@@ -599,14 +602,14 @@ For generic values of the central charge, $S_{LL_{\langle r,s\rangle},L'}(\Delta
 \end{align}
 In fact, the level-$N$ inverse Shapovalov matrix can be computed explicitly in terms of $\left\{L_{\langle r,s\rangle}\right\}_{rs\leq N}$ \cite{fqs24}.
 
-Using the same coefficients \eqref{shap}, we can define a sesquilinear form instead of a bilinear form. This sesquilinear form is Hermitian if its coefficients are real, i.e. if $\Delta,c\in\mathbb{R}$. Our highest-weight representation is called \myindex{unitary}\index{representation!unitary---} if that Hermitian form is positive definite. Unitarity plays an important role in some applications of CFT, but it has no bearing on exact solvability, so we will not elaborate further on that subject.
+Using the same coefficients $\big(LV_\Delta\big| L'V_\Delta\big)$ \eqref{shap}, we can define a sesquilinear form instead of a bilinear form. This sesquilinear form is Hermitian if its coefficients are real, i.e. if $\Delta,c\in\mathbb{R}$. Our highest-weight representation is called \myindex{unitary}\index{representation!unitary---} if that Hermitian form is positive definite. Unitarity plays an important role in some applications of CFT, but it has no bearing on exact solvability, so we will not elaborate further on that subject.
 
 
 \subsection{Fields and operator product expansions}\label{sec:fope}
 
 The fundamental objects of conformal field theory are fields. In quantum field theory, all states can be obtained by acting on the vacuum state with fields: this is called the \myindex{state-field correspondence}\index{state-field correspondence} or operator-state correspondence. In conformal field theory, the correspondence is bijective, and allows us to identify the space of fields with the \myindex{space of states}\index{space of states}  or \myindex{spectrum}\index{spectrum}  --- a vector space on which the Virasoro algebra acts. To a state $V$, the correspondence associates a field $V(z)$, which depends on a position $z\in\overline{\mathbb{C}}$ in the Riemann sphere. Primary states, descendant states and degenerate states respectively give rise to \myindex{primary fields}\index{primary!---field}\index{field!primary---}, \myindex{descendant fields}\index{descendant!---field}\index{field!descendant---} and \myindex{degenerate fields}\index{degenerate!---field}\index{field!degenerate---}.
 
-In the bootstrap approach, which is axiomatic rather than constructive, we need not define fields. Rather, we use fields as a convenient notation for stating properties of correlation functions, which we will introduce in Section \ref{sec:cor}.
+In the bootstrap approach, which is axiomatic rather than constructive, fields need not be defined as operators acting on the space of states, or constructed from other objects. Rather, we use fields as a convenient notation for stating properties of correlation functions, which we will introduce in Section \ref{sec:cor}.
 
 \subsubsection{The energy-momentum tensor}
 
@@ -648,11 +651,11 @@ where we used Eq. \eqref{pvlv} and wrote the regular terms as $O(1)$.
 
 The fundamental axiom of conformal field theory, which underlies the conformal bootstrap approach, is the existence of \myindex{operator product expansions (OPEs)}\index{OPE}. This axiom states that there exists a bilinear product on the space of fields, 
 \begin{align}
-  \boxed{V_1(z_1)V_2(z_2) = \sum_{k\in\mathcal{S}} C^k_{12}(z_1,z_2) V_k(z_2)}\ ,
+  \boxed{V_1(z_1)V_2(z_2) = \sum_{k} C^k_{12}(z_1,z_2) V_k(z_2)}\ ,
   \label{ope}
  \end{align}
- for some family $(V_k)_{k\in\mathcal{S}}$ of linearly independent states, and
-some functions $C^k_{12}(z_1,z_2)$ called \myindex{OPE coefficients}\index{OPE!---coefficient}. Operator product expansions generally exist in quantum field theory, but they are particularly useful in conformal field theory because they are supposed to hold for any $z_1$ in a finite neighbourhood of $z_2$ (but $z_1\neq z_2$), and not just asymptotically as $z_1\to z_2$. The finite neighbourhood in question may depend on the correlation function in which we perform the OPE, and also on the basis $(V_k)_{k\in\mathcal{S}}$. 
+ for some family $(V_k)_{k}$ of linearly independent states, and
+some functions $C^k_{12}(z_1,z_2)$ called \myindex{OPE coefficients}\index{OPE!---coefficient}. Operator product expansions generally exist in quantum field theory, but they are particularly useful in conformal field theory because they are supposed to hold for any $z_1$ in a finite neighbourhood of $z_2$ (but $z_1\neq z_2$), and not just asymptotically as $z_1\to z_2$. The finite neighbourhood in question may depend on the correlation function in which we perform the OPE, and also on the family $(V_k)_{k}$.
 
 We further assume that the product of fields is commutative,
 \begin{align}
@@ -661,7 +664,7 @@ We further assume that the product of fields is commutative,
 \end{align}
 This implies that OPEs are \myindex{commutative}\index{OPE!---commutativity} and \myindex{associative}\index{OPE!---associativity}. However, the resulting constraints on the coefficients $C^i_{12}(z_1,z_2)$ are not particularly simple, because of having to choose a position ($z_2$ in our conventions) for the fields in the right-hand side of the OPE \eqref{ope}. 
 
-We also assume that there exists an \myindex{identity field}\index{identity field} $I(z)$ whose OPE with any other field is trivial, namely $I(z_1)V(z_2) = V(z_2)$. (The corresponding state is called the vacuum state.) Let us consider the energy-momentum tensor $T$ as a field, then we have 
+We also assume that there exists an \myindex{identity field}\index{identity field} $I(z)$ whose OPE with any other field is trivial, namely $I(z_1)V(z_2) = V(z_2)$. (The corresponding state is called the \myindex{vacuum state}\index{vacuum state}.) Let us consider the energy-momentum tensor $T$ as a field, then we have
 $
  T(y)I(z) = T(y) = T(z)  + O(y-z)
 $. 
@@ -682,12 +685,12 @@ For technical simplicity, we focus on an OPE of 2 primary fields. In that OPE, w
 \begin{align}
  V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset \sum_{L\in \mathcal{L}} C_{\Delta_1,\Delta_2}^{\Delta, L}(z_1,z_2) LV_\Delta(z_2) \ ,
 \end{align}
-where $\mathcal{L}$ \eqref{lcm} is the set of creation operators. On both sides of the OPE, let us insert $\frac{1}{2\pi i}\oint_{z_1,z_2} dy (y-z_2)^{m+1}T(y)$, where the integration contour encloses both $z_1$ and $z_2$. Using Eqs. \eqref{lvtv} and \eqref{tvd}, we find
+where $\mathcal{L}$ \eqref{lcm} is the set of creation operators. On both sides of the OPE, let us insert $\frac{1}{2\pi i}\oint_{z_1,z_2} dy (y-z_2)^{m+1}T(y)$ with $m\in\mathbb{Z}$, where the integration contour encloses both $z_1$ and $z_2$. Using Eqs. \eqref{lvtv} and \eqref{tvd}, we find
 \begin{align}
  \left(L_m^{(z_2)} +z_{12}^{m+1}\partial_{z_1} + (m+1)z_{12}^m\Delta_1\right) V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset \sum_{L\in \mathcal{L}} C_{\Delta_1,\Delta_2}^{\Delta, L}(z_1,z_2)L_mLV_\Delta(z_2) \ .
  \label{lmope}
 \end{align}
-We focus on 3 cases:
+We consider 3 cases:
 \begin{itemize}
  \item $\boxed{m=-1}$\ : We use Eq. \eqref{pvlv} for $V_{\Delta_2}(z_2)$ and $LV_{\Delta}(z_2)$, and perform the OPE again on the left-hand side:
  \begin{align}
@@ -750,7 +753,7 @@ To summarize, the contributions of $V_\Delta$ and its descendants in an OPE of 2
 \end{align}
 where the \myindex{OPE structure constant}\index{OPE!---structure constant}\index{structure constant!OPE---} $C^\Delta_{\Delta_1,\Delta_2}$ is left undetermined by conformal symmetry, while the dependence on $z_1,z_2$ and the coefficients $f^{\Delta,L}_{\Delta_1,\Delta_2}$ are universal quantities that are in principle known. 
 
-In the case of the OPE coefficients $C^{\Delta,L}_{\Delta_1,\Delta_2}(z_1,z_2)$, we have seen that the primary field determines the contributions of its descendant fields. This will also be true in correlation functions, as a result of Virasoro symmetry. However, this would not necessarily hold if we had a larger chiral symmetry algebra such as a W-algebra. 
+In the case of the OPE coefficients $C^{\Delta,L}_{\Delta_1,\Delta_2}(z_1,z_2)$, we have just seen that the primary field determines the contributions of its descendant fields. This will also be true in correlation functions, as a result of Virasoro symmetry. However, this would not necessarily hold if we had a larger chiral symmetry algebra such as a W-algebra.
 
 The form of the dependence on $z_1,z_2$ provides an a posteriori justification for our assumption in Section \ref{sec:hwr} that $L_0$-eigenvalues be bounded from below. We have indeed seen that an $L_0$-eigenvector $LV_\Delta$ of dimension $\Delta+|L|$ comes with a factor $z_{12}^{\Delta+|L|}$. If $L_0$-eigenvalues were not bounded from below, the sum over states could not converge in a neighbourhood of $z_1=z_2$. 
 
@@ -762,7 +765,7 @@ Because of the poles in OPE coefficients, there are constraints on the fields th
  \item If $\Delta_1\neq \Delta_2$, then $\operatorname{Res}_{\Delta=0}f^{\Delta,L_{-1}}_{\Delta_1,\Delta_2}\neq 0$, and we cannot impose the normalization $C^{\Delta,1}_{\Delta_1,\Delta_2}=0$: rather, we may choose $C^{L_{-1}}\neq 0$ while $C^1=0$. Therefore, the non-vanishing singular vector $L_{-1}V_0\propto V_1$ may appear in the OPE, together with its descendants, while $V_0$ itself and its other descendants give vanishing contributions. In particular, neither $V^d_{\langle 1,1\rangle}$ nor its descendants can contribute.
  \item If $\Delta_1=\Delta_2$, then $\operatorname{Res}_{\Delta=0}f^{\Delta,L_{-1}}_{\Delta_1,\Delta_2}= 0$. The equation $L_1W_1=\theta_{1,1}W_0$ \eqref{opew} reduces to $0=0$, and does not determine $C^{L_{-1}}$ from $C^1$. In particular, our OPE can include $V^d_{\langle 1,1\rangle}$.
 \end{itemize}
-What about OPEs that involve $V_0$ or $V^d_{\langle 1,1\rangle}$? The OPE $V_0V_{\Delta_2}$ is just a special case of the OPE \eqref{prope}, where arbitrary primary fields may appear.
+What about an OPE of $V_0$ or $V^d_{\langle 1,1\rangle}$ with another primary field? The OPE $V_0V_{\Delta_2}$ is just a special case of the OPE \eqref{prope}, where arbitrary primary fields may appear.
 But the OPE $V^d_{\langle 1,1\rangle}V_{\Delta_2}$ must obey 
 \begin{align}
  0 = \frac{\partial}{\partial z_1} V^d_{\langle 1,1\rangle}(z_1)V_{\Delta_2}(z_2) \supset C_{\langle 1,1\rangle,\Delta_2}^{\Delta} \frac{\partial}{\partial z_1} z_{12}^{\Delta-\Delta_2} \big(V_\Delta(z_2) +\cdots \big) \ ,
@@ -785,7 +788,7 @@ In terms of the fusion product, the fusion rule \eqref{vov} reads
 Given 2 representations $\mathcal{R}_i,\mathcal{R}_j$, the fusion product $\mathcal{R}_i \times \mathcal{R}_j$ is itself a representation. In contrast to the tensor product $\mathcal{R}_i\otimes \mathcal{R}_j$, the fusion product has a definition that involves the fields' positions. This allows the fusion product to preserve the central charge, whereas the tensor product adds the central charges.
 Then the decomposition into indecomposables $\mathcal{R}_i \times \mathcal{R}_j = \sum_k m_{i,j}^k \mathcal{R}_k$ is the algebraic counterpart of the OPE. The coefficient $m_{i,j}^k\in \mathbb{N}\cup\{\infty\}$ is called a \myindex{fusion multiplicity}\index{fusion!---multiplicity}.
 
-Technical assumptions are needed for constructing the fusion product, and deriving its properties. We will use the fusion product in cases where it is commutative and associative, with multiplicities $m_{i,j}^k\in \{0,1\}$ that are  invariant under permutations of the 3 indices. These cases involve either degenerate representations and Verma modules at generic $\beta^2\in \mathbb{C}\backslash\mathbb{Q}$ (Section \ref{sec:fpdr}), or irreducible Kac table representations at $\beta^2 \in \mathbb{Q}_{>0}$ (Section \ref{sec:amm}). The construction and properties of the fusion product are well-established in the second case \cite{gab99}, from which the first case can be obtained by taking limits and doing analytic continuation in $\beta^2$. However, to actually compute fusion products, it will be easier to start with the first case, and deduce the second.
+The construction and properties of the fusion product are well-established for irreducible Kac table representations at $\beta^2 \in \mathbb{Q}_{>0}$ \cite{gab99}. Then the case of degenerate representations and Verma modules at generic $\beta^2\in \mathbb{C}\backslash\mathbb{Q}$ can be deduced by taking limits and doing analytic continuation in $\beta^2$. To actually compute fusion products, it will be technically easier to begin with the second case in Section \ref{sec:fpdr}, and deduce the first case in Section \ref{sec:amm}. We will accept that in both cases the fusion product is commutative and associative, with multiplicities $m_{i,j}^k\in \{0,1\}$ that are  invariant under permutations of the 3 indices. In fact, $m_{i,j}^k\in \{0,1\}$ is the algebraic counterpart of the statement \eqref{prope} that in OPEs, primary fields determine descendant fields.
 
 \subsubsection{Fusion products of degenerate representations}\label{sec:fpdr}
 
@@ -810,7 +813,7 @@ Using the expression \eqref{ars} for $\Delta_{(2,1)}$, and replacing conformal d
 \begin{align}
  \prod_{\pm,\pm}\left(\tfrac{\beta}{2}\pm P_1\pm P_2\right) = 0\ . 
 \end{align}
-This leads to the fusion rules of $V^d_{\langle 2,1\rangle}$, from which the fusion rules of $V^d_{\langle 1,2\rangle}$ are deduced by $\beta\to \beta^{-1}$. We write these fusion rules in terms of fusion products, where we index Verma modules by their momentums:
+This leads to the fusion rules of $V^d_{\langle 2,1\rangle}$, from which the fusion rules of $V^d_{\langle 1,2\rangle}$ are deduced by $\beta\to \beta^{-1}$. We write these fusion rules in terms of fusion products, where we label Verma modules by their momentums:
 \begin{align}
  \boxed{\mathcal{R}^d_{\langle 2,1\rangle}\times \mathcal{V}_P = \sum_\pm \mathcal{V}_{P\pm \frac{\beta}{2}}} \quad, \quad \boxed{\mathcal{R}^d_{\langle 1,2\rangle}\times \mathcal{V}_P = \sum_\pm \mathcal{V}_{P\pm \frac{1}{2\beta}}}\ . 
  \label{rvvp}
@@ -844,7 +847,7 @@ This allows us to find the fusion product of any degenerate representation with 
 \end{align}
 where the sums run by increments of $1$. Since this sum has $rs$ terms, the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$ must have a singular vector at level $rs$, a result that we stated in Section \ref{sec:nvvm}, and which we now derived using fusion products. Fusion can even be used to compute the singular vectors themselves \cite{fms97}.
 
-We can then find the fusion product $\mathcal{R}^d_{\langle r_1,s_1\rangle}\times \mathcal{R}^d_{\langle r_2,s_2\rangle}$, either by again iterating over $r_1$ and $s_1$, or by summing the degenerate representations whose momentums appear in both  $\mathcal{R}^d_{\langle r_1,s_1\rangle}\times \mathcal{V}_{P_{(r_2,s_2)}}$ and $\mathcal{R}^d_{\langle r_2,s_2\rangle}\times \mathcal{V}_{P_{(r_1,s_1)}}$:
+We can then find the fusion product $\mathcal{R}^d_{\langle r_1,s_1\rangle}\times \mathcal{R}^d_{\langle r_2,s_2\rangle}$, either by iterating over $r_1$ and $s_1$, or by summing the degenerate representations whose momentums appear in both  $\mathcal{R}^d_{\langle r_1,s_1\rangle}\times \mathcal{V}_{P_{(r_2,s_2)}}$ and $\mathcal{R}^d_{\langle r_2,s_2\rangle}\times \mathcal{V}_{P_{(r_1,s_1)}}$:
 \begin{align}
   \boxed{\mathcal{R}^d_{\langle r_1,s_1 \rangle} \times \mathcal{R}^d_{\langle r_2,s_2 \rangle} = \sum_{r\overset{2}{=}|r_1-r_2|+1}^{r_1+r_2-1}\ \sum_{s\overset{2}{=}|s_1-s_2|+1}^{s_1+s_2-1} \mathcal{R}^d_{\langle r,s \rangle}}\ ,
   \label{rrsr}
@@ -858,7 +861,7 @@ where the sums now run by increments of $2$. The number of terms is $\min(r_1,r_
 
 \subsection{Correlation functions}\label{sec:cor}
 
-Correlation functions are observables of quantum field theory: quantities that we can in principle compute, and compare with experimental data. We will focus on $N$-point functions on the Riemann sphere: functions of $N$ distinct positions $z_1,z_2,\dots, z_N\in \overline{\mathbb{C}}$, which are written in terms of $N$ fields as 
+Correlation functions are observables of quantum field theory: quantities that we can in principle compute, and compare with experimental data. We will focus on $N$-point \myindex{correlation functions}\index{correlation function} (or \myindex{$N$-point functions}\index{N-point function@$N$-point function} for short) on the Riemann sphere: functions of $N$ distinct positions $z_1,z_2,\dots, z_N\in \overline{\mathbb{C}}$, which are written in terms of $N$ fields as
 \begin{align}
  \Big< V_1(z_1) V_2(z_2) \cdots V_N(z_N)\Big>\ . 
 \end{align}
@@ -899,7 +902,7 @@ Equivalently, the behaviour of $Z$ under global conformal transformations \eqref
  = \prod_{i=1}^N (cz_i +d)^{2\Delta_i} \left< \prod_{i=1}^N V_{\Delta_i}(z_i) \right>}\ .
  \label{zgc}
 \end{align}
-The global Ward identities are valid not only for primary fields, but also for quasi-primary fields: $L_0$-eigenvectors that are annihilated by $L_1$ but not necessarily by $L_{n\geq 2}$. 
+The global Ward identities are valid not only for primary fields, but also for \myindex{quasi-primary fields}\index{quasi-primary field}\index{field!quasi-primary---}: $L_0$-eigenvectors that are annihilated by $L_1$ but not necessarily by $L_{n\geq 2}$.
 In particular, applying Eq. \eqref{zgc} to the transformation $z\mapsto \frac{1}{z}$, we find $V_\Delta(z)\underset{z\to\infty}{=} O(z^{-2\Delta})$, which allows us to define 
 \begin{align}
  V_\Delta(\infty) = \lim_{z\to\infty} z^{2\Delta}V_\Delta(z)\ . 
