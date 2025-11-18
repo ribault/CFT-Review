@@ -916,9 +916,9 @@ Using Eq. \eqref{zgc} for a correlation function that involves $T$, we deduce a 
  \label{lnia}
 \end{align}
 (Compare with $L_nV_\Delta(z)$ \eqref{lvtv}.) 
-We could alternatively use the transformation $z\mapsto \frac{1}{z-a}$ for any $a\in\mathbb{C}$, and obtain an $a$-dependent definition $ \frac{1}{2\pi i} \oint_\infty dy\ (y-a)^{1-n} T(y)V_\Delta(\infty)$. 
+For any $a\in\mathbb{C}$, we could alternatiely define $L_n V_\Delta(\infty)$ as $\frac{1}{2\pi i} \oint_\infty dy\ (y-a)^{1-n} T(y)V_\Delta(\infty)$. This would amount to using the tranformation $z\mapsto \frac{1}{z-a}$ instead of $z\mapsto \frac{1}{z}$.
 We interpret $\frac{1}{z-a}$ as a \myindex{local coordinate}\index{local coordinate} near $z=\infty$. On general Riemann surfaces, correlation functions that involve descendant fields depend on choices of local coordinates, whereas correlation functions of primary fields do not, see \cite[Section 3]{br24}. On the Riemann sphere, there is
-a canonical local coordinate near any point $z\in\mathbb{C}$, but not near $z=\infty$. So we chose the local coordinate $\frac{1}{z}$ near $z=\infty$. 
+a canonical local coordinate near any point $z\in\mathbb{C}$, but not near $z=\infty$, where we chose the local coordinate $\frac{1}{z}$.
 
 Let us solve the global Ward identities in the cases $N=1,2,3,4$. We have $3$ linear differential equations in the $N$ variables $z_i$, and we write their solutions up to $z_i$-independent prefactors:
 \begin{itemize}
@@ -990,7 +990,7 @@ In fact we want the algebra of conformal transformations to act on a complex vec
 
 In Sections \ref{sec:vir} and \ref{sec:fope}, we have been doing \myindex{chiral CFT}\index{CFT!chiral---}\index{chiral CFT}, which means considering $\mathfrak{V}$ only. In a full CFT, the symmetry algebra is the \myindex{conformal algebra}\index{conformal!---algebra} $\mathfrak{V}\times \bar{\mathfrak{V}}$, where for simplicity we assume that the left and right central charges are equal. When it comes to representations, Verma modules of $\mathfrak{V}\times \bar{\mathfrak{V}}$ are simply $\mathcal{V}_\Delta\otimes \bar{\mathcal{V}}_{\bar \Delta}$, where we write a bar over representations of $\bar{\mathfrak{V}}$. There also exist representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$ that are not factorized, in particular logarithmic representations \cite{nr20}.
 
-Fields now belong to representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$, and they obey $\frac{\partial}{\partial \bar z} V(z) = \bar L_{-1} V(z)$, which is the antiholomorphic version of Eq. \eqref{pvlv}. This allows us to define a right-moving energy-momentum tensor $\bar T(y) = \sum_{n\in\mathbb{Z}} \frac{\bar L_n^{(z)}}{(\bar y-\bar z)^{n+2}}$. While $T$ is holomorphic, $\bar T$ is antiholomorphic:
+Fields now belong to representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$, and they obey the right-moving equation $\frac{\partial}{\partial \bar z} V(z) = \bar L_{-1} V(z)$, in addition to the left-moving equation \eqref{pvlv}. This allows us to define a right-moving energy-momentum tensor $\bar T(y) = \sum_{n\in\mathbb{Z}} \frac{\bar L_n^{(z)}}{(\bar y-\bar z)^{n+2}}$. While $T$ is holomorphic, $\bar T$ is antiholomorphic:
 \begin{align}
  \partial_{\bar z} T(z) = 0 \quad , \quad \partial_z \bar T(z) = 0 \ . 
 \end{align}
@@ -1057,7 +1057,17 @@ Let us systematically use OPEs for simplifying correlation functions. Knowing th
  \label{tope}
 \end{align}
 where the basis $\mathcal{L}$ of creation operators was defined in Eq. \eqref{lcm},
-we assume that all fields are primaries or descendants thereof, and the \myindex{OPE spectrum}\index{spectrum!OPE---}\index{OPE!---spectrum} $\mathcal{S}^{12}$ is the set of primary fields that appear in our OPE. Let us insert this OPE in a 3-point function, and focus on the leading terms as $z_1\to z_2$. Using the 2-point function \eqref{2ptb}, we obtain
+we assume that all fields are primaries or descendants thereof, and the \myindex{OPE spectrum}\index{spectrum!OPE---}\index{OPE!---spectrum} $\mathcal{S}^{12}$ is the set of primary fields that appear in our OPE.
+The first few terms read
+\begin{multline}
+ V_1(z_1)V_2(z_2) = \sum_{k\in\mathcal{S}^{12}} C_{12}^k \left|z_{12}^{\Delta_k-\Delta_1-\Delta_2}\right|^2
+ \times \Big\{V_k(z_2) + f_{\Delta_1,\Delta_2}^{\Delta_k,L_{-1}} z_{12} L_{-1}V_k(z_2)
+ \\
+ + f_{\bar\Delta_1,\bar\Delta_2}^{\bar\Delta_k,L_{-1}} \bar z_{12} \bar L_{-1}V_k(z_2) + f_{\Delta_1,\Delta_2}^{\Delta_k,L_{-1}}f_{\bar\Delta_1,\bar\Delta_2}^{\bar\Delta_k,L_{-1}} |z_{12}|^2 L_{-1}\bar L_{-1}V_k(z_2)
+ %+ f_{\Delta_1,\Delta_2}^{\Delta_k,L_{-2}} z_{12}^2 L_{-2}V_k(z_2)
+ +\cdots \Big\} \ .
+\end{multline}
+Let us insert this OPE in a 3-point function, and focus on the leading terms as $z_1\to z_2$. Using the 2-point function \eqref{2ptb}, we obtain
 \begin{align}
   \Big< V_1(z_1)V_2(z_2)V_3(z_3) \Big> \underset{z_1\to z_2}{\sim} 
   \left|z_{12}^{\Delta_3-\Delta_1-\Delta_2}z_{23}^{-2\Delta_3}\right|^2 
@@ -1138,7 +1148,7 @@ The $s$-channel decomposition \eqref{sdec} reduces the 4-point function to a com
  \end{array}
  \label{stu}
 \end{align}
-The commutativity of the product of fields implies that the 4-point function \eqref{4pt} is invariant under permutations of the 4 fields, and this determines how Virasoro blocks behave under permutations. In particular, $t$-channel and $u$-channel blocks can be deduced from $s$-channel blocks via the relations 
+By the commutativity axiom \eqref{comm}, the 4-point function \eqref{4pt} is invariant under permutations of the 4 fields, and this determines how Virasoro blocks behave under permutations. In particular, $t$-channel and $u$-channel blocks can be deduced from $s$-channel blocks via the relations
 \begin{align}
  \mathcal{F}^{(t)}_\Delta(z) = \mathcal{F}^{(s)}_\Delta(\Delta_1,\Delta_4,\Delta_3,\Delta_2|1-z) \quad , \quad 
  \mathcal{F}^{(u)}_\Delta(z) = z^{-2\Delta_1}\mathcal{F}^{(s)}_\Delta(\Delta_1,\Delta_3,\Delta_2,\Delta_4|\tfrac{1}{z})\ .
@@ -1149,7 +1159,9 @@ The decomposition \eqref{sdec} of a 4-point function involves $s$-channel \myind
  \mathcal{G}^{(x)}_{\Delta,\bar\Delta}(z) = \left|\mathcal{F}_{\Delta}^{(x)}(z)\right|^2\ , \qquad (x=s,t,u)\ . 
  \label{gf2}
 \end{align}
-These conformal blocks are chirally factorized into Virasoro blocks because of our assumption that all fields are primaries or descendants. However, representations of the conformal algebra that are not factorized give rise to conformal blocks that are also not factorized: this is the case with the logarithmic blocks of Section \ref{sec:log}. Let us now write the \myindex{crossing symmetry equations}\index{crossing symmetry equation} as the equality between the 3 decompositions of a 4-point function into structure constants and conformal blocks:
+These conformal blocks are chirally factorized into Virasoro blocks because of our assumption that all fields are primaries or descendants. However, representations of the conformal algebra that are not factorized give rise to conformal blocks that are also not factorized: this is the case with the logarithmic blocks of Section \ref{sec:log}.
+
+Let us now write the \myindex{crossing symmetry equations}\index{crossing symmetry equation} as the equality between the 3 decompositions of a 4-point function into structure constants and conformal blocks:
 \begin{align}
  \boxed{\forall z\in \overline{\mathbb{C}}\backslash\{0,1,\infty\} \ , \quad 
  \sum_{k\in\mathcal{S}^{(s)}} D_k^{(s)} \mathcal{G}^{(s)}_{\Delta_k,\bar\Delta_k}(z) 
@@ -1157,7 +1169,8 @@ These conformal blocks are chirally factorized into Virasoro blocks because of o
  = \sum_{k\in\mathcal{S}^{(u)}} D_k^{(u)} \mathcal{G}^{(u)}_{\Delta_k,\bar\Delta_k}(z)} \ . 
  \label{seteu}
 \end{align}
-Given 4 fields $V_1,V_2,V_3,V_4$, this is a system of infinitely many equations (parametrized by the cross-ratio $z$) for the spectrum $\mathcal{S}$ and the 4-point structure constants $D_k^{(x)}$. Alternatively, we can take the unknowns to be the \myindex{CFT data}\index{CFT!---data}: the spectrum and the 2-point and 3-point structure constants. CFT data determine OPEs, and crossing symmetry of all 4-point functions is equivalent to the associativity of OPEs, and therefore to the consistency of the CFT on the sphere. 
+Given 4 fields $V_1,V_2,V_3,V_4$, this is a system of infinitely many equations (parametrized by the cross-ratio $z$) for the channel spectrums $\mathcal{S}^{(x)}$ and the 4-point structure constants $D_k^{(x)}$.
+We may also consider the system of crossing symmetry for all 4-point functions, whose unknowns are the \myindex{CFT data}\index{CFT!---data}: the spectrum of the theory (which includes the channel spectrums of all 4-point functions) and the 2-point and 3-point structure constants. CFT data determine OPEs, and crossing symmetry of all 4-point functions is equivalent to the associativity of OPEs, and therefore to the consistency of the CFT on the sphere.
 
 
 \section{Sketching exactly solvable CFTs}\label{sec:sesc}
@@ -1177,7 +1190,7 @@ Here we recover their spectrums from assumptions about Virasoro representations,
 
 We define a \myindex{conformal field theory}\index{conformal!---field theory} as a set of correlation functions that obey the assumptions of Section \ref{sec:bo}, most importantly Virasoro symmetry, the commutativity of fields, the existence of OPEs, and single-valuedness. We already know that on the sphere, a conformal field theory is characterized by a spectrum and 2-point and 3-point structure constants such that crossing symmetry is obeyed.
 
-This definition works very well in \myindex{rational CFTs}\index{CFT!rational---}\index{rational CFT}, i.e. CFTs whose spectrums are made of finitely many primary fields and their descendants. However, in more general CFTs, the notion of the spectrum becomes fuzzy. To say why, let us compare various spectrums associated to various objects. By an abuse of terminology, we call spectrum a basis of primary fields:
+This definition works very well in \myindex{rational CFTs}\index{CFT!rational---}\index{rational CFT}, i.e. CFTs whose spectrums are made of finitely many primary fields and their descendants. However, in more general CFTs, the notion of spectrum becomes fuzzy. To say why, let us compare various spectrums associated to various objects. By an abuse of terminology, we call spectrum a basis of primary fields:
 \begin{align}
  \begin{array}{|c|c|l|}
   \hline 
@@ -1314,12 +1327,12 @@ While they were derived under the assumption $\beta^2\notin \mathbb{Q}$, we will
 The OPEs \eqref{vdvrs} and \eqref{vpope} indicate which primary fields can appear: we now assume that in each one of these OPEs, the 2 fields that can appear do appear, i.e.  $V^d_{\langle 1,2\rangle},V_{(r,s)}\in\widehat{\mathcal{S}}\implies V_{(r,s\pm 1)}\in\widehat{\mathcal{S}}$. 
 So the conformal spin \eqref{srs} must remain half-integer under $s\to s\pm 1$, therefore
 $r\in \frac12 \mathbb{Z}$. 
-Moreover, we can compute the monodromy
+Moreover, using the full OPE Eq. \eqref{tope}, we can compute the monodromy
 \begin{align}
  V^d_{\langle 1,2\rangle}\left(e^{2\pi i}z\right) V_{(r,s)} (0) = e^{2\pi i r} V^d_{\langle 1,2\rangle}\left(z\right) V_{(r,s)} (0) \ ,
  \label{dnmono}
 \end{align}
-where the phase is $e^{2\pi i(S_{(r,s\pm 1)}-S_{(r,s)})} =e^{2\pi ir}\in \{1,-1\}$. Single-valuedness would require this phase to be $1$, but in extended CFTs we slightly relax this axiom, so that the phase can also be $-1$. 
+where the phase is $e^{2\pi i(S_{(r,s\pm 1)}-S_{(r,s)})} =e^{2\pi ir}\in \{1,-1\}$. In a CFT where $r$ can be half-integer, the existence of $V^d_{\langle 1,2\rangle}$ therefore requires that we slightly relax the axiom of single-valuedness, which would imply that the phase is $1$.
 In any case, 
 if $\left<V^d_{\langle 1,2\rangle}\prod_{i=1}^NV_{(r_i,s_i)}\right>\neq 0$,
 then the product of the monodromies of $V^d_{\langle 1,2\rangle}$ must be $1$, therefore $\sum_{i=1}^N r_i  \in \mathbb{Z}$. This conclusion also holds for $N$-point functions of the type $\left<\prod_{i=1}^NV_{(r_i,s_i)}\right>$, which may be deduced from our $N+1$-point function using an OPE. Therefore, if $V^d_{\langle 1,2\rangle}$ exists, then the first Kac index of non-diagonal fields $V_{(r,s)}$ is half-integer and conserved modulo integers:
@@ -1356,7 +1369,7 @@ This constraint holds for all known non-diagonal CFTs with at least 1 degenerate
 
 \subsubsection{Generalized minimal models}\label{sec:gmm}
 
-For $\beta^2\in\mathbb{C}^*\backslash\mathbb{Q}$, we define the \myindex{generalized minimal model (GMM)}\index{minimal model!generalized---}\index{GMM} as the CFT whose spectrum of primary fields is made of all diagonal degenerate fields:
+For $\beta^2\in\mathbb{C}\backslash\mathbb{Q}$, we define the \myindex{generalized minimal model (GMM)}\index{minimal model!generalized---}\index{GMM} as the CFT whose spectrum of primary fields is made of all diagonal degenerate fields:
 \begin{align}
  \boxed{\mathcal{S}^\text{GMM} = \left\{ V^d_{\langle r,s\rangle}\right\}_{r,s\in\mathbb{N}^*}} \ . 
 \end{align}
@@ -1364,7 +1377,7 @@ Thanks to the degenerate fusion rules \eqref{rrsr}, any OPE spectrum is finite, 
 
 For $\beta^2\in \mathbb{Q}$, the degenerate dimensions $\Delta_{(r,s)}$ are not all different, and there is no GMM. However, there exist other CFTs whose primary fields are diagonal and (partly or fully) degenerate, starting with A-series minimal models. One way to explore this issue is to take limits of GMM correlation functions as $\beta^2\to \beta^2_0\in \mathbb{Q}$. This can give rise not only to minimal model correlation functions, but also to logarithmic correlation functions \cite{rib18}, suggesting the existence of non-minimal CFTs. 
 
-Generalized minimal models exist only on the sphere. In particular, their torus partition functions are infinite, because $\lim_{r,s\to\infty} \Delta_{(r,s)}\neq +\infty$. Nevertheless, GMMs are interesting because they are very simple and natural CFTs, which give rise to various other CFTs in certain limits --- starting with Liouville theory.
+Generalized minimal models exist only on the sphere. In particular, their torus partition functions are infinite, because $\lim_{r,s\to\infty} \Re\Delta_{(r,s)}\neq +\infty$. Nevertheless, GMMs are interesting because they are very simple and natural CFTs, which give rise to various other CFTs in certain limits --- starting with Liouville theory.
 
 \subsubsection{Liouville theory}\label{sec:liou}
 
