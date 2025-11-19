@@ -2272,7 +2272,7 @@ Explicitly, these relations read
  \label{dtdp}
 \end{align}
 \end{subequations}
-We will also need Eq. \eqref{dmdp} in the special case $\left<V_{\langle 2,1\rangle}^d V_1V_{\langle 2,1\rangle}^d V_1\right>$, where 2 of the fields are degenerate and the remaining 2 are equal:
+We will also need Eq. \eqref{dmdp} in the case of $\left<V_{\langle 2,1\rangle}^d V_1V_{\langle 2,1\rangle}^d V_1\right>$, where 2 of the fields are degenerate and the remaining 2 are equal:
 \begin{align}
 \frac{d^{(s)}_-}{d^{(s)}_+} =
 -\frac{\Gamma\left(1+2\beta P_1\right)}{\Gamma\left(1-2\beta P_1\right)} \frac{\Gamma\left(1+2\beta \bar P_1\right)}{\Gamma\left(1-2\beta \bar P_1\right)} 
@@ -2336,7 +2336,7 @@ With these notations, the degenerate 4-point structure constants are:
 \end{align}
 Notice that the OPEs $V^d_{\langle 2,1\rangle}V_i$ and $V_iV^d_{\langle 2,1\rangle}$ are related by a permutation, under which the OPE structure constant picks up a factor $e^{i\pi(S_i-S_{i^\pm})} = e^{i\pi s_i}$, using Eq. \eqref{sdiff1}. 
 This explains the factors $e^{\mp i\pi s_1}$ and $e^{\pm i\pi s_3}$, where $s_i\in\frac12\mathbb{Z}$.
-In the case of the 4-point function $\left<V_{\langle 2,1\rangle}^d V_iV_{\langle 2,1\rangle}^d V_i\right>$, we deduce the ratio 
+In the case of the 4-point function $\left<V_{\langle 2,1\rangle}^d V_iV_{\langle 2,1\rangle}^d V_i\right>$, we therefore have
 \begin{align}
  \frac{d^{(s)}_-}{d^{(s)}_+}= (-)^{2s_i}\frac{c_i^-}{c_{i^+}^-} \frac{c_{i^-}^+}{c_i^+}\ .
  \label{ddcccc}
@@ -2347,13 +2347,13 @@ It can be checked that the following expressions solves this constraint, and als
  c^+_i = \beta^{2\beta(P_i+\bar P_i)} \frac{\Gamma(-2\beta P_i)}{\Gamma(1+2\beta \bar P_i)} \quad , \quad c^-_i = \beta^{-2\beta(P_i+\bar P_i)} \frac{\Gamma(2\beta P_i)}{\Gamma(1-2\beta \bar P_i)}\ ,
  \label{cpcm}
 \end{align}
-This solution is far from unique, because in the bootstrap approach we are always free to perform \myindex{field renormalizations}\index{field!---renormalization} using arbitrary constant coefficients $\lambda_i$,
+This solution is far from unique, because in the bootstrap approach we are always free to perform \myindex{field renormalizations}\index{field!---renormalization} using arbitrary $z$-independent coefficients $\lambda_i$,
 \begin{align}
  V_i(z) \to \lambda_i V_i(z)\quad \implies \quad c_i^\pm \to \lambda_{\langle 2,1\rangle}\frac{\lambda_i}{\lambda_{i^\pm}}c_i^\pm \ , \  B_i \to \lambda_i^2B_i \ , \ C_{ijk}\to \lambda_i\lambda_j\lambda_k C_{ijk}\ .
  \label{vlv}
 \end{align}
 Instead of choosing a solution for $c_i^\pm$, and therefore a particular field normalization, 
-we could work with renormalization-invariant quantities, which cannot involve $c_i^\pm$. For example, the $s$-channel 4-point structure constant $D^{(s)}_k = \frac{C_{12k}C_{k34}}{B_k}$ is invariant under renormalization of the channel field $V_k$. Using the identity $c_i^- B_{i^-} = (-)^{s_i} c^+_{i^-} B_i$, which follows from Eqs. \eqref{b21} and \eqref{ccb}, it is possible to write $D^{(s)}_{k^+}$ as a combination of degenerate 4-point structure constants \eqref{cs}. 
+we could work with renormalization-invariant quantities, which cannot involve $c_i^\pm$. For example, the $s$-channel 4-point structure constant $D^{(s)}_k = \frac{C_{12k}C_{k34}}{B_k}$ is invariant under renormalization of the channel field $V_k$. And $D^{(s)}_{k^+}$ can be written as a combination of degenerate 4-point structure constants of the type $d^{(s)}_\pm$ \eqref{cs}, where $c_i^\pm$ factors cancel. (To see this, use the identity $c_i^- B_{i^-} = (-)^{s_i} c^+_{i^-} B_i$, which follows from Eqs. \eqref{b21} and \eqref{ccb}).
 
 In a CFT with 2 degenerate fields, the associativity of OPEs of the type 
 $V^d_{\langle 2,1\rangle}V^d_{\langle 1,2\rangle}V_i$ leads to relations between 
@@ -2368,7 +2368,7 @@ Combining the crossing symmetry equation \eqref{dmdp}, and \eqref{ddb} with the 
  \Gamma\left(\tfrac12 +\beta P_1\pm \beta P_2\pm\beta P_3\right)}} \ ,
  \label{sh-mp}
 \end{align}
-This is called a \myindex{shift equation}\index{shift equation}, because it determines how structure constants behave when the momentums $P_1,\bar P_1$ of a field are shifted by $\beta$, under the condition $s_i\in \frac12 \mathbb{Z}$ \eqref{ssiz}. If $s_i\in\mathbb{Z}$, then not only $S_{i^-}-S_{i^+}\in\mathbb{Z}$ but also $S_{i}-S_{i^+}\in\mathbb{Z}$, and we also have the more refined shift equation, deduced from Eq. \eqref{dpdp},
+This is called a \myindex{shift equation}\index{shift equation}, because it determines how structure constants behave when the momentums $P_1,\bar P_1$ of a field are shifted by $\beta$, under the condition $s_i\in \frac12 \mathbb{Z}$ \eqref{ssiz}. If now $s_i\in\mathbb{Z}$, then not only $S_{i^-}-S_{i^+}\in\mathbb{Z}$ but also $S_{i}-S_{i^+}\in\mathbb{Z}$. The fields $V_i$ and $V_{i^+}$ can both have integer spins, and we may want to relate their structure constants. From Eq. \eqref{dpdp}, we deduce an equation for shifts of momentums by $\frac{\beta}{2}$,
 \begin{align}
  \boxed{\frac{C_{123^+}}{C_{1^+23}} = 
  (-)^{s_3} \beta^{2\beta^2(r_1-r_3)}
@@ -2426,7 +2426,7 @@ It is invariant under $P_i\to -P_i$, i.e. it obeys the reflection relation \eqre
 And it is invariant under $\beta \to \beta^{-1}$, so it also obeys the shift equation \eqref{sh-mp2}. 
 Remarkably, the 2-point and 3-point functions can be analytically continued beyond the half-line $c\in (-\infty ,1]$, while $N$-point functions with $N\geq 4$ cannot, as follows from our discussion of the OPE in Section \ref{sec:liou}. 
 
-The expressions \eqref{bc} for 2-point and 3-point structure constants are also valid in generalized minimal models, and in A-series minimal models. In such models, solutions of shift equations are unique, up to a field-independent factor. In the case of $C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}$, our shift equations \eqref{sh-mp} and \eqref{sh-pp}, together with the invariance under permutations of the 3 fields, determine all integer shifts that preserve $r_1+r_2+r_3\bmod 2$. But the fusion rules \eqref{rrsr} imply that the 3-point structure constant exists only if $r_1+r_2+r_3\equiv 1\bmod 2$, and can therefore be deduced from $C_{P_{(1,1)},P_{(1,1)},P_{(1,1)}}$ using shift equations. This implies in particular that the double Gamma functions can be replaced with products of Gamma functions. (See \cite[Section 3.2.1]{rib14} for explicit expressions.) This makes the 3-point structure constants well-defined for any $\beta\in \mathbb{C}^*$, including in the regime $\beta\in i\mathbb{R}$ where $\Gamma_\beta$ is not defined.
+The expressions \eqref{bc} for 2-point and 3-point structure constants are also valid in generalized minimal models, and in A-series minimal models. In such models, solutions of shift equations are unique, up to a field-independent factor. In the case of $C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}$, our shift equations \eqref{sh-mp} and \eqref{sh-pp}, together with the invariance under permutations of the 3 fields, determine all integer shifts that preserve $r_1+r_2+r_3\bmod 2$. But the fusion rules \eqref{rrsr} imply that the 3-point structure constant exists only if $r_1+r_2+r_3\equiv 1\bmod 2$, and can therefore be deduced from $C_{P_{(1,1)},P_{(1,1)},P_{(1,1)}}$ using shift equations. In other words, the ratio $\frac{C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}}{C_{P_{(1,1)},P_{(1,1)},P_{(1,1)}}}$ can be rewritten in terms of Gamma functions. (See \cite[Section 3.2.1]{rib14} for explicit expressions.) In particular, this shows that the 3-point structure constants are well-defined for any $\beta\in \mathbb{C}^*$, including in the regime $\beta\in i\mathbb{R}$ where $\Gamma_\beta$ is not defined.
 
 In (generalized) minimal models, the structure constants are always non-vanishing, even though the function $\Gamma_\beta^{-1}$ has zeros. For the 3-point structure constant, this is again because of the fusion rules. 
 The factor $\Gamma_\beta^{-1}\left(\frac{1+\sum_i\epsilon_ir_i}{2}\beta + \frac{1-\sum_i \epsilon_is_i}{2}\beta^{-1}\right)$ (with $\epsilon_i\in \{+,-\}$) of $C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}$ would indeed vanish if the 2 integers $\frac{1+\sum_i\epsilon_ir_i}{2}$ and $\frac{1-\sum_i \epsilon_is_i}{2}$ were both negative, but the fusion rules imply that the 3 integers $\sum_i\epsilon_i,\sum_i\epsilon_ir_i,\sum_i\epsilon_is_i$ all have the same (nonzero) sign. Conversely, if the fusion rules are violated, then $C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}$ vanishes in some cases, but not in some others. This has been a source of puzzlement \cite{zam05}. In the bootstrap approach, there is no puzzle, because structure constants make sense only provided fusion rules are obeyed. 
@@ -2480,10 +2480,11 @@ A remarkable property of Liouville theory in the DOZZ normalization is that dege
  \lim_{P\to P_{(r,s)}} V_P = V^d_{\langle r,s\rangle} \ .
  \label{limvp}
 \end{align}
-This relation is natural in the path integral construction of Liouville theory \cite{zz95}, but not necessarily in the bootstrap approach: it is not true in Liouville theory with $c\in (-\infty, 1]$, and for $c\in\mathbb{C}\backslash (-\infty,1]$ it requires a particular normalization. It is thanks to this relation that generalized minimal models can be obtained as limits of Liouville theory, as announced in Section \ref{sec:lod}. This relation follows from the analytic properties of the structure constants, as we will now show in the case $(r,s)=(1,1)$. (See \cite[Section 3.1.5]{rib14} for the general case $r,s\in\mathbb{N}^*$.) Since $2iP_{(1,1)}=Q$ and $\Gamma_b(x)$ has a pole at $x=0$, we have $\hat C^\text{DOZZ}_{P_{(1,1)},P_2,P_3} = 0$ and it may seem that $\lim_{P_1\to P_{(1,1)}} V_{P_1} = 0$. However, it is not so easy to take the limit of the OPE 
+This relation is natural in the path integral construction of Liouville theory \cite{zz95}, but not necessarily in the bootstrap approach: it is not true in Liouville theory with $c\in (-\infty, 1]$, and for $c\in\mathbb{C}\backslash (-\infty,1]$ it requires a particular normalization. It is thanks to this relation that generalized minimal models can be obtained as limits of Liouville theory, as announced in Section \ref{sec:lod}. This relation follows from the analytic properties of the structure constants, as we will now show in the case $(r,s)=(1,1)$. (See \cite[Section 3.1.5]{rib14} for the general case $r,s\in\mathbb{N}^*$.) Since $2iP_{(1,1)}=Q$ and $\Gamma_b(x)$ has a pole at $x=0$, we have $\hat C^\text{DOZZ}_{P_{(1,1)},P_2,P_3} = 0$ and it may seem that $\lim_{P_1\to P_{(1,1)}} V_{P_1} = 0$. However, in the OPE
 \begin{align}
 V_{P_1}V_{P_2} \sim \frac12 \int_{\mathbb{R}}dP\ \frac{\hat C^\text{DOZZ}_{P_1,P_2,P}}{\hat B^\text{DOZZ}_{P}}V_P\ , 
 \end{align}
+the limit does not commute with the integral,
 because of the poles of $\hat C^\text{DOZZ}_{P_1,P_2,P}$. In particular, each factor $\Gamma_b(\frac{Q}{2}-iP_1\pm (iP_2-iP))$ has a pole at $P= P_2\pm (P_{(1,1)}-P_1)$. In the limit $P_1\to P_{(1,1)}$, these 2 poles coincide at $P=P_2$, with 1 pole coming from above the integration line and 1 from below. As a result, the limit of the integral is not zero: 
 \begin{align}
  \lim_{P_1\to P_{(1,1)}}V_{P_1}V_{P_2} \sim \lim_{P_1\to P_{(1,1)}}  \underset{P=P_1+P_2-P_{(1,1)}}{\operatorname{Res}}\frac{\hat C^\text{DOZZ}_{P_1,P_2,P}}{\hat B^\text{DOZZ}_{P}}V_P=V_{P_2}\ ,
@@ -2492,7 +2493,7 @@ which implies Eq. \eqref{limvp} in the case $(r,s)=(1,1)$.
 
 \subsubsection{Non-diagonal CFTs with 2 degenerate fields}
 
-Recall that non-diagonal fields $V_{(r,s)}$ have indices $r\in 2\mathbb{Z}$ and $s\in\mathbb{Z}+\frac12$. 
+In (generalized) D-series minimal models, non-diagonal fields $V_{(r,s)}$ have indices $r\in 2\mathbb{Z}$ and $s\in\mathbb{Z}+\frac12$.
 Due to the conservation of diagonality \eqref{ddd}, we have either $0$ or $2$ non-diagonal fields in a non-vanishing 3-point function. Let us begin with the latter case. We introduce the ansatz 
 \begin{align}
  \boxed{C_{P_1,(r_2,s_2),(r_3,s_3)} = (-)^{\frac{r_3}{2}}\prod_{\pm,\pm}
@@ -2515,7 +2516,7 @@ where we introduced the \myindex{double Sine function}\index{double Sine functio
  S_\beta(x) = \frac{\Gamma_\beta(x)}{\Gamma_\beta(\beta + \beta^{-1}-x)}\quad \implies \quad \frac{S_\beta(x+\beta)}{S_\beta(x)} = 2\sin(\pi\beta x)\ .
  \label{sb}
 \end{align}
-Having worked out the basic properties of our ansatz \eqref{cdnn}, let us check whether it obeys the shift equations. The spectrum \eqref{sdmm} of D-series minimal models is invariant under $s\to s+1$, both in the diagonal and non-diagonal sectors. Therefore, when it comes to the shifts from $V^d_{\langle 1,2\rangle}$, we have to check the 2 shift equations \eqref{sh-mp2} and \eqref{sh-pp2}. This is straightforward, if we remember $r_2,r_3\in 2\mathbb{Z}$, leading to trivial sign factors $(-)^{r_i}=1$. We will now deal with the subtler case of the shifts from $V^d_{\langle 2,1\rangle}$. The spectrum of D-series minimal models is invariant under $r\to r+2$ but not $r\to r+1$, so we only have to deal with the shift equation \eqref{sh-mp}. If we shift a non-diagonal field, our ansatz \eqref{cdnn} behaves as 
+Having worked out the basic properties of our ansatz \eqref{cdnn}, let us check that it obeys the shift equations. The spectrum \eqref{sdmm} of D-series minimal models is invariant under $s\to s+1$, both in the diagonal and non-diagonal sectors. Therefore, when it comes to the shifts from $V^d_{\langle 1,2\rangle}$, we have to check the 2 shift equations \eqref{sh-mp2} and \eqref{sh-pp2}. This is straightforward, if we remember $r_2,r_3\in 2\mathbb{Z}$, leading to trivial sign factors $(-)^{r_i}=1$. We will now deal with the subtler case of the shifts from $V^d_{\langle 2,1\rangle}$. The spectrum of D-series minimal models is invariant under $r\to r+2$ but not $r\to r+1$, so we only have to deal with the shift equation \eqref{sh-mp}. If we shift a non-diagonal field, our ansatz \eqref{cdnn} behaves as
 \begin{align}
  \frac{C_{(r_1-1,s_1),(r_2,s_2),P_3}}{C_{(r_1+1,s_1),(r_2,s_2),P_3}} = - \beta^{4\beta^2r_1}\frac{\prod_{\pm,\pm} \Gamma(\frac12-\beta \bar P_1\pm \beta\bar P_2\pm \beta P_3)}{\prod_{\pm,\pm} \Gamma(\frac12+\beta P_1\pm \beta P_2\pm \beta P_3)}\ , 
 \end{align}
@@ -2525,7 +2526,8 @@ where the overall sign comes from $\prod_\pm \frac{\cos \pi\beta(P_1\pm P_2-P_3)
 \end{align}
 Now this ratio differs from Eq. \eqref{sh-mp} with $\bar P_1=P_1$ by an overall sign. 
 In the case of D-series minimal models, 
-let us cancel this sign . Since diagonal fields are now degenerate, they can be labelled by Kac indices, and subjected to the field renormalization 
+let us cancel this sign.
+Diagonal fields are degenerate in this case, so they can be labelled by Kac indices, and subjected to the field renormalization
 $V^d_{\langle r,s\rangle}\to (-)^{\frac{r+1}{2}} V^d_{\langle r,s\rangle}$. 
 This renormalization flips the sign of Eq. \eqref{sh-mp}, while leaving the other shift equations unchanged. As a result, the ansatz \eqref{cdnn} is now a solution of the shift equations. On the other hand, $C_{P_{(r_1,s_1)},P_{(r_2,s_2)},P_{(r_3,s_3)}}$ is no longer a solution
 of the shift equations for the diagonal 3-point structure constant: the solution has an extra sign prefactor,
@@ -2549,7 +2551,7 @@ Sign subtleties do not affect 2-point structure constants. For diagonal fields, 
  \boxed{B_{(r,s)} = (-)^\frac{r}{2} \prod_\pm \Gamma_\beta^{-1}\left(\beta\pm 2P\right)\Gamma_\beta^{-1}\left(\beta^{-1}\pm 2\bar P\right)}\ ,
  \label{nbrs}
 \end{align}
-with $\{P,\bar P\}=\{P_{(r,s)},P_{(r,-s)}\}$. (The formula is invariant under $P\leftrightarrow \bar P$.)
+with $\{P,\bar P\}=\{P_{(r,s)},P_{(r,-s)}\}$.
 
 \subsubsection{Loop CFTs}\label{sec:bcloop}
 
@@ -2582,7 +2584,7 @@ The expression $\omega C$ for the 3-point structure constants is also valid if s
 \end{align}
 where we include the $r,s$-independent prefactor $\prod_\pm \Gamma_\beta^{2}\left(\beta^{\pm 1}\right)$ so that $B_{(0,2\beta P)}=B_P$ (for the $B_P$ of Eq. \eqref{bc}), and the sign factor has the explicit expression $\omega=(-)^{rs}$ in this case.
 
-In contrast to the CFTs with 2 degenerate fields, loop CFTs are not solved by the determination of 2-point and 3-point structure constants. This is because we do not know the structure or even the existence of OPEs, which would be needed to reduce $N$-point functions to 2-point and 3-point functions. In particular, 4-point structure constants are not combinations of 2-point and 3-point structure constants as in Eq. \eqref{stu}. However, they differ from the combinations by relatively simple factors, as we will see in Section \ref{sec:plw}.
+In contrast to CFTs with 2 degenerate fields, loop CFTs are not solved by the determination of 2-point and 3-point structure constants. This is because we do not know the structure or even the existence of OPEs, which would be needed to reduce $N$-point functions to 2-point and 3-point functions. In particular, 4-point structure constants are not combinations of 2-point and 3-point structure constants as in Eq. \eqref{stu}. However, they differ from the combinations by relatively simple factors, as we will see in Section \ref{sec:plw}.
 
 The appearance of double Gamma functions in loop CFTs is remarkable, as this special function is the solution of 2 independent shift equations, while loop CFTs only have one degenerate field $V^d_{\langle 1,2\rangle}$. In particular, in the case of 3 diagonal fields, loop CFTs have the same 3-point structure constants $C_{P_1,P_2,P_3}$ \eqref{bc} as Liouville theory with $c\leq 1$. This coincidence of structure constants  has been a source of puzzlement \cite{ijs15, rib22}. Ultimately, the coincidence must be due to $C_{P_1,P_2,P_3}$ being the unique solution of the shift equations from $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$. But in loop CFTs, why would $C_{P_1,P_2,P_3}$ obey the shift equation from $V^d_{\langle 2,1\rangle}$? This degenerate field does not belong to the spectrum, and we cannot easily add it because its OPE with non-diagonal fields $V_{(r,s)}$ would generate fields with non-integer spins.
 
@@ -2595,39 +2597,39 @@ Let us summarize the solutions of shift equations for 2-point and 3-point struct
  Constants & Eqs. & (G)MM & Liou$_{c\leq 1}$ & RWT & Liou & DMM & GDMM & Loop 
  \\
  \hline
-  $B_{P_1}$ & \eqref{bc} & \cellcolor{green} & \cellcolor{green} & \cellcolor{green} &  & \cellcolor{green} & \cellcolor{green} & \cellcolor{green} 
+  $B_{P_1}$ & \eqref{bc} & \cellcolor{green!80!black} & \cellcolor{green!80!black} & \cellcolor{green!80!black} &  & \cellcolor{green!80!black} & \cellcolor{green!80!black} & \cellcolor{green!80!black}
   \\
   \hline 
-  $C_{P_1,P_2,P_3}$& \eqref{bc} & \cellcolor{green} & \cellcolor{green} & \cellcolor{green} &  &  &  & \cellcolor{green} 
+  $C_{P_1,P_2,P_3}$& \eqref{bc} & \cellcolor{green!80!black} & \cellcolor{green!80!black} & \cellcolor{green!80!black} &  &  &  & \cellcolor{green!80!black}
   \\
   \hline 
-  $\widetilde{C}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle\langle r_3,s_3\rangle}$ & \eqref{wtc} & \cellcolor{green!20} & & & & & & 
+  $\widetilde{C}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle\langle r_3,s_3\rangle}$ & \eqref{wtc} & \cellcolor{green!60} & & & & & &
   \\
   \hline 
-  $\hat{B}_{P_1},\hat{C}_{P_1,P_2,P_3}$ &  \eqref{bci} & & & & \cellcolor{green} & & & 
+  $\hat{B}_{P_1},\hat{C}_{P_1,P_2,P_3}$ &  \eqref{bci} & & & & \cellcolor{green!80!black} & & &
   \\
   \hline 
-  $\hat{B}^\text{DOZZ}_{P_1},\hat{C}^\text{DOZZ}_{P_1,P_2,P_3}$ & \eqref{dozz} & & & & \cellcolor{green!20} & & &
+  $\hat{B}^\text{DOZZ}_{P_1},\hat{C}^\text{DOZZ}_{P_1,P_2,P_3}$ & \eqref{dozz} & & & & \cellcolor{green!60} & & &
   \\
   \hline 
-  $B_{(r,s)}$ & \eqref{nbrs} & & & & & \cellcolor{green} & \cellcolor{green} & 
+  $B_{(r,s)}$ & \eqref{nbrs} & & & & & \cellcolor{green!80!black} & \cellcolor{green!80!black} &
   \\
   \hline 
-  $C_{P_1,(r_2,s_2),(r_3,s_3)}$ & \eqref{cdnn} & & & & & \cellcolor{green} & \cellcolor{green} & 
+  $C_{P_1,(r_2,s_2),(r_3,s_3)}$ & \eqref{cdnn} & & & & & \cellcolor{green!80!black} & \cellcolor{green!80!black} &
   \\
   \hline 
   $C^\text{DMM}_{\langle r_1,s_1\rangle\langle r_2,s_2\rangle\langle r_3,s_3\rangle}$ & \eqref{cdmm} &
-  & & & & \cellcolor{green} & & 
+  & & & & \cellcolor{green!80!black} & &
   \\
   \hline 
   $C^\text{GDMM}_{P_1,P_2,P_3}$ & \eqref{cgdmm} &
-  & & & & & \cellcolor{green} & 
+  & & & & & \cellcolor{green!80!black} &
   \\
   \hline 
-  $B_{(r,s)}$ & \eqref{bref} & & & & & & & \cellcolor{green}
+  $B_{(r,s)}$ & \eqref{bref} & & & & & & & \cellcolor{green!80!black}
   \\
   \hline 
-  $C_{(r_1,s_1)(r_2,s_2)(r_3,s_3)}$ & \eqref{cref} & & & & & & & \cellcolor{green}
+  $C_{(r_1,s_1)(r_2,s_2)(r_3,s_3)}$ & \eqref{cref} & & & & & & & \cellcolor{green!80!black}
   \\
   \hline 
 \end{tabular}
@@ -3492,11 +3494,11 @@ This leads to 8 combinatorially inequivalent classes of loops, with 8 different 
    \draw[blue, thick] (-1.4, 0) to [out = 90, in = 90] (3.8, 0) to [out = -90, in = -90] cycle;
    \draw[blue, thick] (-1, 4) to [out = 45, in = 135] (2.4, 2.4) to [out = -45, in = 45] (4, -1) to
    [out = -135, in = -45] (.6, .6) to [out = 135, in = -135] cycle;
-   \draw[thick, green!60!black] (6, 1) circle [radius = 1.3];
+   \draw[thick, green!80!black] (6, 1) circle [radius = 1.3];
    \node[blue] at (-1.9, 1.5) {$w_s$};
    \node[blue] at (-1.9, -.5) {$w_t$};
    \node[blue] at (-1.9, 3.5) {$w_u$};
-   \node[green!60!black] at (7.7, 1) {$n$};
+   \node[green!80!black] at (7.7, 1) {$n$};
    \node[red] at (0, .5) {$w_1$};
    \node[red] at (0, 3.3) {$w_2$};
     \node[red] at (3, .5) {$w_4$};
