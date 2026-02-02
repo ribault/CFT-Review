@@ -219,7 +219,7 @@ Technical terms that are defined in this text can be found in the index. We also
 \subsubsection*{Acknowledgements}
 
 \begin{itemize}
- \item This text is based on lecture notes for a course given at IPhT Saclay in March-April 2024. Video recordings are available on \href{https://www.youtube.com/playlist?list=PLrLctLPAdPNtD7yFOcfdNx2J-A_CE1svr}{IPhT-TV}. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica, and to the participants. I am also grateful to the students who followed my M2 ICFP course in January-March 2025.
+ \item This text is based on lecture notes for a course given at IPhT Saclay in March-April 2024. Video recordings are available on \href{https://www.youtube.com/playlist?list=PLrLctLPAdPNtD7yFOcfdNx2J-A_CE1svr}{IPhT-TV}. I am grateful to the course organizers Riccardo Guida, Pierfrancesco Urbani and Monica Guica, and to the participants. I am also grateful to the students who followed my M2 ICFP course in 2025 and 2026.
  \item I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop CFTs and related subjects. 
  \item I am grateful to Antoine Bourget, Victor Godet, Jesper Jacobsen, Gregory Korchemsky, Paul Roux, Ingo Runkel, Hubert Saleur, Xi Yin and Bernardo Zan for helpful discussions and correspondence.
  \item I would like to thank Max Downing, Kay Wiese, Rongvoram Nivesvivat and Paul Roux for comments and suggestions on the manuscript. 
@@ -282,16 +282,12 @@ Let us introduce a basis of \myindex{creation operators}\index{creation operator
  \label{lcm}
 \end{align}
 where the unit operator $1\in \mathcal{L}$ is obtained in the case $k=0$.
-Any state of the type $L V{}$ with $L\in\mathcal{L}$ is called a \myindex{descendant state}\index{descendant!---state} of the primary state $V$. Let  $N=|L|=\sum_{i=1}^k n_i \in\mathbb{N}$ be the  \myindex{level}\index{level} of that state, then its conformal dimension is $\Delta+N$, and we write
+Let  $N=|L|=\sum_{i=1}^k n_i \in\mathbb{N}$ be the  \myindex{level}\index{level} of $|L|$, then we write
 \begin{align}
  \mathcal{L}_N = \Big\{ L\in\mathcal{L}\Big| |L|=N\Big\}\ . 
 \label{ln}
  \end{align}
-By extension, a linear combination of descendant states is also called a descendant state. 
-
-A primary state $V{} \in \mathcal{R}$ generates a subrepresentation $\mathcal{R}_{V{}}= \text{Span}(LV{})_{L\in\mathcal{L}}\subset\mathcal{R}$, which is the space of its descendant states. If $\mathcal{R}=\mathcal{R}_V$ for some $V\in\mathcal{R}$, then $\mathcal{R}$ is called a \myindex{highest-weight representation}\index{highest-weight representation}\index{representation!highest-weight---}. Then $L_0$ is diagonalizable in $\mathcal{R}$, and $\mathcal{R}$ is indecomposable. If moreover the states $(LV{})_{L\in\mathcal{L}}$ are linearly independent, then $\mathcal{R}_{V{}}$ is called the \myindex{Verma module}\index{Verma module} $\mathcal{V}_\Delta$, for $\Delta$ the conformal dimension of $V$. If $(LV{})_{L\in\mathcal{L}}$ are not linearly independent, then $\mathcal{R}_{V{}}$ is a quotient representation of $\mathcal{V}_\Delta$ by a nontrivial subrepresentation.
-
-Let us sketch a Verma module by displaying all its basis states up to the level $N=4$, with arrows representing the action of the Virasoro generators $L_{-1},L_{-2},L_{-3},L_{-4}$:
+Let us sketch our basis of creation operators up to the level $N=4$, with arrows representing the action of the Virasoro generators $L_{-1},L_{-2},L_{-3},L_{-4}$:
  \begin{align}
  \begin{tikzpicture}[scale = .3, baseline=(current  bounding  box.center)]
   \draw[-latex, very thick] (20, 0) -- (20, -27) node [right] {$N$};
@@ -325,8 +321,15 @@ Let us sketch a Verma module by displaying all its basis states up to the level 
  \end{tikzpicture}
  \label{verma}
 \end{align}
-States such as 
-$L_{-2}L_{-1}V = L_{-1}L_{-2}V -L_{-3}V$ are linear combination of elements of our basis, and are therefore not displayed.
+Operators such as
+$L_{-2}L_{-1} = L_{-1}L_{-2} -L_{-3}$ are linear combination of elements of our basis, and are therefore not displayed.
+
+Let $V_\Delta$ be a primary state of dimension $\Delta$.
+Any state of the type $L V_\Delta$ with $L\in\mathcal{L}$ is called a \myindex{descendant state}\index{descendant!---state} of $V$ of level $|L|$. Its conformal dimension is $\Delta+|L|$.
+By extension, a linear combination of descendant states is also called a descendant state.
+
+A primary state $V{} \in \mathcal{R}$ generates a subrepresentation $\mathcal{R}_{V{}}= \text{Span}(LV{})_{L\in\mathcal{L}}\subset\mathcal{R}$, which is the space of its descendant states. If $\mathcal{R}=\mathcal{R}_V$ for some $V\in\mathcal{R}$, then $\mathcal{R}$ is called a \myindex{highest-weight representation}\index{highest-weight representation}\index{representation!highest-weight---}. Then $L_0$ is diagonalizable in $\mathcal{R}$, and $\mathcal{R}$ is indecomposable. If moreover the states $(LV{})_{L\in\mathcal{L}}$ are linearly independent, then $\mathcal{R}_{V{}}$ is called the \myindex{Verma module}\index{Verma module} $\mathcal{V}_\Delta$, for $\Delta$ the conformal dimension of $V$.
+If $(LV{})_{L\in\mathcal{L}}$ are not linearly independent, then $\mathcal{R}_{V{}}$ is the quotient representation of $\mathcal{V}_\Delta$ by a nontrivial subrepresentation, namely by the kernel of the canonical surjective map $\mathcal{V}_\Delta\to \mathcal{R}$.
 
 It is sometimes useful to consider representations that are not highest-weight. This is in particular the case of \textbf{logarithmic representations}\index{logarithmic!---representation}\index{representation!logarithmic---}, which we define as indecomposable representations where $L_0$ is bounded from below but not diagonalizable. A logarithmic representation is always reducible, because the highest-weight representation generated by the $L_0$-eigenvector with the smallest eigenvalue is a nontrivial subrepresentation. For example, a simple logarithmic representation can be constructed from the formal $\Delta$-derivative of a primary state $V_\Delta$, which obeys $L_0 V'_\Delta = \Delta V'_\Delta + V_\Delta$.
 
@@ -607,7 +610,7 @@ Using the same coefficients $\big(LV_\Delta\big| L'V_\Delta\big)$ \eqref{shap}, 
 
 \subsection{Fields and operator product expansions}\label{sec:fope}
 
-The fundamental objects of conformal field theory are fields. In quantum field theory, all states can be obtained by acting on the vacuum state with fields: this is called the \myindex{state-field correspondence}\index{state-field correspondence} or operator-state correspondence. In conformal field theory, the correspondence is bijective, and allows us to identify the space of fields with the \myindex{space of states}\index{space of states}  or \myindex{spectrum}\index{spectrum}  --- a vector space on which the Virasoro algebra acts. To a state $V$, the correspondence associates a field $V(z)$, which depends on a position $z\in\overline{\mathbb{C}}$ in the Riemann sphere. Primary states, descendant states and degenerate states respectively give rise to \myindex{primary fields}\index{primary!---field}\index{field!primary---}, \myindex{descendant fields}\index{descendant!---field}\index{field!descendant---} and \myindex{degenerate fields}\index{degenerate!---field}\index{field!degenerate---}.
+The fundamental objects of conformal field theory are fields. In quantum field theory, there is a \myindex{state-field correspondence}\index{state-field correspondence} or operator-state correspondence. Taking Euclidean time to be the radial coordinate around a point $z_0$, states live on spheres of radius $R$ while fields live at $z_0$. In the presence of scale invariance, we do not lose information by sending $R\to 0$, so the correspondence is bijective. In particular, in a conformal field theory, we identify the space of fields with the \myindex{space of states}\index{space of states}  or \myindex{spectrum}\index{spectrum}  --- a vector space on which the Virasoro algebra acts. To a state $V$, the correspondence associates a field $V(z)$, which depends on a position $z\in\overline{\mathbb{C}}$ in the Riemann sphere. Primary states, descendant states and degenerate states respectively give rise to \myindex{primary fields}\index{primary!---field}\index{field!primary---}, \myindex{descendant fields}\index{descendant!---field}\index{field!descendant---} and \myindex{degenerate fields}\index{degenerate!---field}\index{field!degenerate---}.
 
 In the bootstrap approach, which is axiomatic rather than constructive, fields need not be defined as operators acting on the space of states, or constructed from other objects. Rather, we use fields as a convenient notation for stating properties of correlation functions, which we will introduce in Section \ref{sec:cor}.
 
@@ -685,7 +688,7 @@ For technical simplicity, we focus on an OPE of 2 primary fields. In that OPE, w
 \begin{align}
  V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset \sum_{L\in \mathcal{L}} C_{\Delta_1,\Delta_2}^{\Delta, L}(z_1,z_2) LV_\Delta(z_2) \ ,
 \end{align}
-where $\mathcal{L}$ \eqref{lcm} is the set of creation operators. On both sides of the OPE, let us insert $\frac{1}{2\pi i}\oint_{z_1,z_2} dy (y-z_2)^{m+1}T(y)$ with $m\in\mathbb{Z}$, where the integration contour encloses both $z_1$ and $z_2$. Using Eqs. \eqref{lvtv} and \eqref{tvd}, we find
+where $\mathcal{L}$ \eqref{lcm} is the set of creation operators. On both sides of the OPE, let us insert $\frac{1}{2\pi i}\oint_{z_1,z_2} dy (y-z_2)^{m+1}T(y)$ with $m+1\in\mathbb{N}$, where the integration contour encloses both $z_1$ and $z_2$. Using Eqs. \eqref{lvtv} and \eqref{tvd}, we find
 \begin{align}
  \left(L_m^{(z_2)} +z_{12}^{m+1}\partial_{z_1} + (m+1)z_{12}^m\Delta_1\right) V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset \sum_{L\in \mathcal{L}} C_{\Delta_1,\Delta_2}^{\Delta, L}(z_1,z_2)L_mLV_\Delta(z_2) \ .
  \label{lmope}
@@ -710,7 +713,7 @@ Extracting the coefficient of $z_{12}^N$ for some $N\in\mathbb{N}$, we find
  L_m W_N = \left(\theta_{m}+N-m\right)W_{N-m} \quad \text{with} \quad \left\{\begin{array}{l} W_N = \sum_{|L|=N}C^{\Delta,L}_{\Delta_1,\Delta_2} LV_{\Delta}\ , \\  \theta_{m} = m\Delta_1-\Delta_2 + \Delta\ . \end{array}\right.
  \label{opew}
 \end{align}
-For example, $L_1W_1 = \theta_1 W_0$, which amounts to $2\Delta C^{\Delta,1}_{\Delta_1,\Delta_2} = (\Delta+\Delta_1-\Delta_2) C^{\Delta,L_{-1}}_{\Delta_1,\Delta_2}$. 
+For example, $L_1W_1 = \theta_1 W_0$, which amounts to $2\Delta C^{\Delta,L_{-1}}_{\Delta_1,\Delta_2} = (\Delta+\Delta_1-\Delta_2) C^{\Delta,1}_{\Delta_1,\Delta_2}$.
 \end{itemize}
 These linear equations for the OPE coefficients $C^{\Delta,L}_{\Delta_1,\Delta_2}$ are called \myindex{OPE Ward identities}\index{Ward identity!OPE---}. 
 Let us look for a solution $\left(f^{\Delta,L}_{\Delta_1,\Delta_2}\right)_{L\in\mathcal{L}}=\left(f^L\right)_{L\in\mathcal{L}}$, normalized by setting $f^{1}=1$, equivalently $W_0 = V_\Delta$. Iterating Eq. \eqref{opew}, we can compute $L^*W_N$ for any creation operator $L\in\mathcal{L}_N$. On the other hand, $L^*W_N = \sum_{L'\in\mathcal{L}_N} S_{L,L'} f^{L'}V_\Delta$ where $S_{L,L'}$ is the Shapovalov form \eqref{shap}.
