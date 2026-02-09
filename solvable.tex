@@ -610,9 +610,10 @@ Using the same coefficients $\big(LV_\Delta\big| L'V_\Delta\big)$ \eqref{shap}, 
 
 \subsection{Fields and operator product expansions}\label{sec:fope}
 
-The fundamental objects of conformal field theory are fields. In quantum field theory, there is a \myindex{state-field correspondence}\index{state-field correspondence} or operator-state correspondence. Taking Euclidean time to be the radial coordinate around a point $z_0$, states live on spheres of radius $R$ while fields live at $z_0$. In the presence of scale invariance, we do not lose information by sending $R\to 0$, so the correspondence is bijective. In particular, in a conformal field theory, we identify the space of fields with the \myindex{space of states}\index{space of states}  or \myindex{spectrum}\index{spectrum}  --- a vector space on which the Virasoro algebra acts. To a state $V$, the correspondence associates a field $V(z)$, which depends on a position $z\in\overline{\mathbb{C}}$ in the Riemann sphere. Primary states, descendant states and degenerate states respectively give rise to \myindex{primary fields}\index{primary!---field}\index{field!primary---}, \myindex{descendant fields}\index{descendant!---field}\index{field!descendant---} and \myindex{degenerate fields}\index{degenerate!---field}\index{field!degenerate---}.
+In quantum field theory, there is a \myindex{state-field correspondence}\index{state-field correspondence} or operator-state correspondence. Taking Euclidean time to be the radial coordinate around a point $z_0$, states live on spheres of radius $R$ while fields live at $z_0$, so in the limit $R\to 0$ a state gives rise to a field.
+In the presence of scale invariance, we do not lose information by sending $R\to 0$, so the correspondence is bijective. In particular, in a conformal field theory, we identify the space of fields with the \myindex{space of states}\index{space of states}  or \myindex{spectrum}\index{spectrum}  --- a vector space on which the Virasoro algebra acts. To a state $V$, the correspondence associates a field $V(z)$, which depends on a position $z\in\overline{\mathbb{C}}$ in the Riemann sphere. Primary states, descendant states and degenerate states respectively give rise to \myindex{primary fields}\index{primary!---field}\index{field!primary---}, \myindex{descendant fields}\index{descendant!---field}\index{field!descendant---} and \myindex{degenerate fields}\index{degenerate!---field}\index{field!degenerate---}.
 
-In the bootstrap approach, which is axiomatic rather than constructive, fields need not be defined as operators acting on the space of states, or constructed from other objects. Rather, we use fields as a convenient notation for stating properties of correlation functions, which we will introduce in Section \ref{sec:cor}.
+In the bootstrap approach, which is axiomatic rather than constructive, fields need not be constructed from other objects. Rather, we use fields as a convenient notation for stating properties of correlation functions, which we will introduce in Section \ref{sec:cor}.
 
 \subsubsection{The energy-momentum tensor}
 
@@ -688,7 +689,7 @@ For technical simplicity, we focus on an OPE of 2 primary fields. In that OPE, w
 \begin{align}
  V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset \sum_{L\in \mathcal{L}} C_{\Delta_1,\Delta_2}^{\Delta, L}(z_1,z_2) LV_\Delta(z_2) \ ,
 \end{align}
-where $\mathcal{L}$ \eqref{lcm} is the set of creation operators. On both sides of the OPE, let us insert $\frac{1}{2\pi i}\oint_{z_1,z_2} dy (y-z_2)^{m+1}T(y)$ with $m+1\in\mathbb{N}$, where the integration contour encloses both $z_1$ and $z_2$. Using Eqs. \eqref{lvtv} and \eqref{tvd}, we find
+where $\mathcal{L}$ \eqref{lcm} is the set of creation operators. On both sides of the OPE, let us insert $\frac{1}{2\pi i}\oint_{z_1,z_2} dy (y-z_2)^{m+1}T(y)$ with $m\in\mathbb{Z}$, where the integration contour encloses both $z_1$ and $z_2$. Using Eqs. \eqref{lvtv} and \eqref{tvd}, we find
 \begin{align}
  \left(L_m^{(z_2)} +z_{12}^{m+1}\partial_{z_1} + (m+1)z_{12}^m\Delta_1\right) V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset \sum_{L\in \mathcal{L}} C_{\Delta_1,\Delta_2}^{\Delta, L}(z_1,z_2)L_mLV_\Delta(z_2) \ .
  \label{lmope}
@@ -788,10 +789,12 @@ In terms of the fusion product, the fusion rule \eqref{vov} reads
  \mathcal{R}^d_{\langle 1,1\rangle} \times \mathcal{V}_\Delta = \mathcal{V}_\Delta \quad , \quad \mathcal{R}^d_{\langle 1,1\rangle} \subset \mathcal{V}_{\Delta_1}\times \mathcal{V}_{\Delta_2} \implies \Delta_1=\Delta_2\ .
  \label{rtv}
 \end{align}
-Given 2 representations $\mathcal{R}_i,\mathcal{R}_j$, the fusion product $\mathcal{R}_i \times \mathcal{R}_j$ is itself a representation. In contrast to the tensor product $\mathcal{R}_i\otimes \mathcal{R}_j$, the fusion product has a definition that involves the fields' positions. This allows the fusion product to preserve the central charge, whereas the tensor product adds the central charges.
-Then the decomposition into indecomposables $\mathcal{R}_i \times \mathcal{R}_j = \sum_k m_{i,j}^k \mathcal{R}_k$ is the algebraic counterpart of the OPE. The coefficient $m_{i,j}^k\in \mathbb{N}\cup\{\infty\}$ is called a \myindex{fusion multiplicity}\index{fusion!---multiplicity}.
+Given 2 representations $\mathcal{R}_i,\mathcal{R}_j$ of the Virasoro algebra with a given central charge, the fusion product $\mathcal{R}_i \times \mathcal{R}_j$ is a representation of the same Virasoro algebra. This allows the fusion product to describe the behaviour of OPEs in a given CFT. The decomposition into indecomposables $\mathcal{R}_i \times \mathcal{R}_j = \sum_k m_{i,j}^k \mathcal{R}_k$ is the algebraic counterpart of the OPE. The coefficient $m_{i,j}^k\in \mathbb{N}\cup\{\infty\}$ is called a \myindex{fusion multiplicity}\index{fusion!---multiplicity}.
+The price to pay is that the fusion product has a complicated definition that involves the fields' positions.
 
-The construction and properties of the fusion product are well-established for irreducible Kac table representations at $\beta^2 \in \mathbb{Q}_{>0}$ \cite{gab99}. Then the case of degenerate representations and Verma modules at generic $\beta^2\in \mathbb{C}\backslash\mathbb{Q}$ can be deduced by taking limits and doing analytic continuation in $\beta^2$. To actually compute fusion products, it will be technically easier to begin with the second case in Section \ref{sec:fpdr}, and deduce the first case in Section \ref{sec:amm}. We will accept that in both cases the fusion product is commutative and associative, with multiplicities $m_{i,j}^k\in \{0,1\}$ that are  invariant under permutations of the 3 indices. In fact, $m_{i,j}^k\in \{0,1\}$ is the algebraic counterpart of the statement \eqref{prope} that in OPEs, primary fields determine descendant fields.
+In contrast, given representations $\mathcal{R}_1,\mathcal{R}_2$ of two copies of the Virasoro algebra with central charges $c_1,c_2$, the tensor product $\mathcal{R}_1\otimes \mathcal{R}_2$ is a representation of the Virasoro algebra with central charge $c_1+c_2$. The tensor product is useful for defining the product of two CFTs, with a spectrum that is the tensor product of their two spectrums.
+
+The construction and properties of the fusion product are well-established in the case of irreducible Kac table representations at $\beta^2 \in \mathbb{Q}_{>0}$ \cite{gab99}. Then the case of degenerate representations and Verma modules at generic $\beta^2\in \mathbb{C}\backslash\mathbb{Q}$ can be deduced by taking limits and doing analytic continuation in $\beta^2$. To actually compute fusion products, it will be technically easier to begin with the second case in Section \ref{sec:fpdr}, and deduce the first case in Section \ref{sec:amm}. We will accept that in both cases the fusion product is commutative and associative, with multiplicities $m_{i,j}^k\in \{0,1\}$ that are  invariant under permutations of the 3 indices. In fact, $m_{i,j}^k\in \{0,1\}$ is the algebraic counterpart of the statement \eqref{prope} that in OPEs, primary fields determine descendant fields.
 
 \subsubsection{Fusion products of degenerate representations}\label{sec:fpdr}
 
@@ -804,7 +807,7 @@ using Eq. \eqref{pvlv} and Eq. \eqref{lmope}, we deduce
 \begin{multline}
  V_{\Delta_1}(z_1)L_{\langle 2,1\rangle}V^d_{\langle 2,1\rangle} \supset \left(\frac{\partial^2}{\partial z_2^2} + \frac{\beta^2}{z_{12}}\frac{\partial}{\partial z_1} -\frac{\beta^2\Delta_1}{z_{12}^2}+L_{-2}\right)
  \\
- C_{\Delta_2,\langle 2,1\rangle}^{\Delta_2} z_{12}^{\Delta_2-\Delta_1-\Delta_{(2,1)}}\Big(V_{\Delta_2}(z_2)+O(z_{12})\Big)\ . 
+ C_{\Delta_1,\langle 2,1\rangle}^{\Delta_2} z_{12}^{\Delta_2-\Delta_1-\Delta_{(2,1)}}\Big(V_{\Delta_2}(z_2)+O(z_{12})\Big)\ .
 \end{multline}
 This OPE must vanish, including the contribution of the primary field $V_{\Delta_2}(z_2)$, therefore 
 $\left(\frac{\partial^2}{\partial z_2^2} + \frac{\beta^2}{z_{12}}\frac{\partial}{\partial z_1} -\frac{\beta^2\Delta_1}{z_{12}^2}\right)
@@ -823,12 +826,14 @@ This leads to the fusion rules of $V^d_{\langle 2,1\rangle}$, from which the fus
 \end{align}
 From these simple formulas, all the discrete spectrums of Section \ref{sec:sesc} will follow. For the moment, let us deduce the fusion products of higher degenerate representations $\mathcal{R}^d_{\langle r,s\rangle}$, using the associativity of the fusion product. We start with the remark that a highest-weight representation $\mathcal{R}$ is degenerate if and only if its fusion product with any Verma module $\mathcal{R}\times \mathcal{V}_P$ has finitely many terms:
 \begin{itemize}
- \item If $\mathcal{R}=\mathcal{R}^d_{\langle r,s\rangle}$ is degenerate, the condition that $V^d_{\langle r,s\rangle}$ may appear in the OPE $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$ leads to polynomial equations of order $rs$ on $\Delta_1,\Delta_2$, just as we saw in the case $(r,s)=(2,1)$. These equations may be interpreted as conditions on residues of OPE coefficients,
+ \item If $\mathcal{R}=\mathcal{R}^d_{\langle r,s\rangle}$ is degenerate, the corresponding field $V^d_{\langle r,s\rangle}$ obeys
  \begin{align}
-  V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset V^d_{\langle r,s\rangle} \quad \implies \quad \forall L\in \mathcal{L},\ \underset{\Delta=\Delta_{(r,s)}}{\operatorname{Res}} f^{\Delta,L}_{\Delta_1,\Delta_2} = 0\ .
- \end{align}
- (If the residues vanish for $|L|=rs$, then they vanish for all $L\in\mathcal{L}$.)
- \item If $\mathcal{R}$ is not degenerate, the corresponding primary field may appear in any OPE of the type $V_{\Delta_1}(z_1)V_{\Delta_2}(z_2)$, because the OPE Ward identities have a solution. 
+V^d_{\langle r,s\rangle} V_{\Delta_1}\ni V_{\Delta_2} \iff V_{\Delta_1}V_{\Delta_2} \ni V^d_{\langle r,s\rangle} \iff\forall L\in \mathcal{L},\  \underset{\Delta=\Delta_{(r,s)}}{\operatorname{Res}} f^{\Delta,L}_{\Delta_1,\Delta_2}=0\ ,
+\end{align}
+ as we saw already for $(r,s)=(1,1)$ and $(r,s)=(2,1)$. (If the residues vanish for $|L|=rs$, then they vanish for all $L\in\mathcal{L}$.) This condition is a polynomial equation of order $rs$ on $\Delta_1,\Delta_2$.
+
+ \item If $\mathcal{R}$ is not degenerate, OPEs of the corresponding primary field
+ only obey constraints from conformal symmetry, which do not restrict the primary fields that can appear.
 \end{itemize}
 It follows that a fusion product of degenerate representations is itself a finite sum of degenerate representations. 
 For example, according to Eq. \eqref{rvvp}, the product $\mathcal{R}^d_{\langle 2,1\rangle}\times\mathcal{R}^d_{\langle 2,1\rangle}$ is the sum of 2 representations of momentums $\{P_{(2,1)} \pm \frac{\beta}{2}\} = \{P_{(1,1)},P_{(3,1)}\}$. These representations must be degenerate, therefore $\mathcal{R}^d_{\langle 2,1\rangle}\times\mathcal{R}^d_{\langle 2,1\rangle}=\mathcal{R}^d_{\langle 1,1\rangle}+\mathcal{R}^d_{\langle 3,1\rangle}$. By associativity of $\mathcal{R}^d_{\langle 2,1\rangle}\times\mathcal{R}^d_{\langle 2,1\rangle}\times \mathcal{V}_P$, we then deduce 
