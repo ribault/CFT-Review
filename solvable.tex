@@ -1652,7 +1652,7 @@ both $\frac{r}{p}$ and $\frac{s}{q}$, and therefore also $x=\frac12\left(\frac{r
 \end{align}
 Of course, $V_{n,x}$ is just another notation for the diagonal field $V_P$, with $n,x$ the integer and fractional parts of $2\sqrt{p_0q_0}P$:
 \begin{align}
- P=\frac{n+x}{2\sqrt{p_0q_0}} \quad , \quad n=\Big\lfloor 2\sqrt{p_0q_0}P \Big\rfloor \quad , \quad x = \Big\{2\sqrt{p_0q_0}P \Big\}\ .
+ P=\frac{n+x}{2\sqrt{p_0q_0}} \quad , \quad n=\Big\lfloor 2\sqrt{p_0q_0}P \Big\rfloor \quad , \quad x = \text{frac}\Big(2\sqrt{p_0q_0}P \Big)\ .
 \end{align}
 The reflection relation $V_P=V_{-P}$ is now $V_{n,x}=V_{-n-1,1-x}$. 
 The resulting Runkel--Watts-type CFT has the same spectrum as Liouville theory \eqref{sliou} $
@@ -2568,33 +2568,35 @@ From the structure of the loop CFTs' extended spectrum $\widehat{S}^\text{loop}$
  \item In the case of non-diagonal fields $V_{(r,s)}$, the dependence on $r$ is not constrained, because the spectrum $\widehat{S}^\text{loop}$ does not include the degenerate field $V_{\langle 2,1\rangle}^d$. We only have $V^d_{\langle 1,2\rangle}$, whose shift equations determine how structure constants behave under $s\to s+2$, whereas $s$ takes fractional values.
  \item In the case of diagonal fields $V_P$, the shift equations from $V^d_{\langle 1,2\rangle}$ determine how structure constants behave under $P\to P+\beta^{-1}$. 
 \end{itemize}
-The formula for the 3-point structure constants of loop CFTs is one of many solutions of the shift equations. It is of the type $\omega C$, where $\omega\in \{-1,1\}$ is a sign factor, and $C$ is
+The formula for the 3-point structure constants of loop CFTs is one of many solutions of the shift equations. It is of the type $C=\omega \check C$, where $\omega\in \{-1,1\}$ is a sign factor, and $\check C$ is
 a product of double Gamma functions of combinations of Kac indices, involving the absolute value of $\sum_i\epsilon_i r_i$ \cite{nrj23, jnrr25}:
 \begin{align}
-\boxed{C_{(r_1,s_1)(r_2,s_2)(r_3,s_3)} =\prod_{\epsilon_1,\epsilon_2,\epsilon_3=\pm} \Gamma_\beta^{-1} \left(\tfrac{\beta+\beta^{-1}}{2} + \tfrac{\beta}{2}\left|\textstyle{\sum_i} \epsilon_ir_i\right| + \tfrac{\beta^{-1}}{2}\textstyle{\sum_i} \epsilon_is_i\right)}\ .
+\boxed{\check{C}_{(r_1,s_1)(r_2,s_2)(r_3,s_3)} =\prod_{\epsilon_1,\epsilon_2,\epsilon_3=\pm} \Gamma_\beta^{-1} \left(\tfrac{\beta+\beta^{-1}}{2} + \tfrac{\beta}{2}\left|\textstyle{\sum_i} \epsilon_ir_i\right| + \tfrac{\beta^{-1}}{2}\textstyle{\sum_i} \epsilon_is_i\right)}\ .
  \label{cref}
 \end{align}
-This expression is invariant under permutations, and obeys the shift equations only modulo signs. A sign factor $\omega$ is therefore needed to enforce the permutation relation \eqref{b21} and the shift equations. This sign factor does not have a simple explicit expression: rather, it is characterized by its behaviour under shifts \cite{nrj23}:
+This expression is invariant under permutations, and obeys the shift equations only modulo signs. A sign factor $\omega$ is therefore needed to enforce the permutation relation \eqref{b21} and the shift equations. This sign factor does not have a simple explicit expression: rather, it is characterized by its invariance under cyclic permutations, and by its behaviour under shifts \cite{nrj23}:
 \begin{align}
  \frac{\omega_{(r_1,s_1+1)(r_2,s_2)(r_3,s_3)}}{\omega_{(r_1,s_1-1)(r_2,s_2)(r_3,s_3)}} &\ =\  (-)^{2r_3}(-)^{\max(2r_1, 2r_2, 2r_3,r_1+r_2+r_3)} \ ,
  \label{tpt}
  \\
- \frac{\omega_{(r_1,s_1+1)(r_2,s_2)(r_3,s_3)}}{\omega_{(r_1,s_1)(r_2,s_2)(r_3,s_3+1)}} &\underset{r_i\in\mathbb{N}^*}{=}
- \left\{\begin{array}{ll} (-)^{r_1+r_2} &\text{ if } r_2\geq |r_1-r_3|\ ,
-                        \\ (-)^{r_3} &\text{ else}\ .
-                       \end{array}\right.
+ \frac{\omega_{(r_1,s_1+1)(r_2,s_2)(r_3,s_3+1)}}{\omega_{(r_1,s_1)(r_2,s_2)(r_3,s_3)}} &\underset{r_i\in\mathbb{N}^*}{=}
+ (-)^{\max(r_3, r_2-r_1)}\ .
 \label{tppt}
 \end{align}
-The expression $\omega C$ for the 3-point structure constants is also valid if some of the fields are diagonal, via the identification $V_P = V_{(0,2\beta P)}$ \eqref{sP}. In particular, the relation \eqref{bicii} between 2-point and 3-point structure constants leads to
+The expression $C=\omega \check{C}$ for the 3-point structure constants is also valid if some of the fields are diagonal, via the identification $V_P = V_{(0,2\beta P)}$ \eqref{sP}. In particular, the relation \eqref{bicii} between 2-point and 3-point structure constants leads to
 \begin{align}
- \boxed{B_{(r,s)} = (-)^{rs}\prod_\pm \Gamma_\beta^{2}\left(\beta^{\pm 1}\right)\cdot C_{(0,2\beta P_{(1,1)})(r,s)(r,s)} =  (-)^{rs}\prod_{\pm,\pm}\Gamma_\beta^{-1}\left(\beta^{\pm 1}+\beta r \pm \beta^{-1}s\right)}  \ ,
+ \boxed{B_{(r,s)} = (-)^{rs}\prod_\pm \Gamma_\beta^{2}\left(\beta^{\pm 1}\right)\cdot \check{C}_{(0,2\beta P_{(1,1)})(r,s)(r,s)} =  (-)^{rs}\prod_{\pm,\pm}\Gamma_\beta^{-1}\left(\beta^{\pm 1}+\beta r \pm \beta^{-1}s\right)}  \ ,
   \label{bref}
 \end{align}
 where we include the $r,s$-independent prefactor $\prod_\pm \Gamma_\beta^{2}\left(\beta^{\pm 1}\right)$ so that $B_{(0,2\beta P)}=B_P$ (for the $B_P$ of Eq. \eqref{bc}), and the sign factor has the explicit expression $\omega=(-)^{rs}$ in this case.
 
 In contrast to CFTs with 2 degenerate fields, loop CFTs are not solved by the determination of 2-point and 3-point structure constants. This is because we do not know the structure or even the existence of OPEs, which would be needed to reduce $N$-point functions to 2-point and 3-point functions. In particular, 4-point structure constants are not combinations of 2-point and 3-point structure constants as in Eq. \eqref{stu}. However, they differ from the combinations by relatively simple factors, as we will see in Section \ref{sec:plw}.
 
-The appearance of double Gamma functions in loop CFTs is remarkable, as this special function is the solution of 2 independent shift equations, while loop CFTs only have one degenerate field $V^d_{\langle 1,2\rangle}$. In particular, in the case of 3 diagonal fields, loop CFTs have the same 3-point structure constants $C_{P_1,P_2,P_3}$ \eqref{bc} as Liouville theory with $c\leq 1$. This coincidence of structure constants  has been a source of puzzlement \cite{ijs15, rib22}. Ultimately, the coincidence must be due to $C_{P_1,P_2,P_3}$ being the unique solution of the shift equations from $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$. But in loop CFTs, why would $C_{P_1,P_2,P_3}$ obey the shift equation from $V^d_{\langle 2,1\rangle}$? This degenerate field does not belong to the spectrum, and we cannot easily add it because its OPE with non-diagonal fields $V_{(r,s)}$ would generate fields with non-integer spins.
+The appearance of double Gamma functions in loop CFTs is remarkable, as this special function is the solution of 2 independent shift equations, while loop CFTs only have one degenerate field $V^d_{\langle 1,2\rangle}$. In particular, in the case of 3 diagonal fields, loop CFTs have the same 3-point structure constants $C_{P_1,P_2,P_3}$ \eqref{bc} as Liouville theory with $c\leq 1$, since
+\begin{align}
+\omega_{(0,2\beta P_1)(0,2\beta P_2)(0,2\beta P_3)} = 1 \quad , \quad \check{C}_{(0,2\beta P_1)(0,2\beta P_2)(0,2\beta P_3)} = C_{P_1,P_2,P_3}\ .
+\end{align}
+This coincidence of structure constants  has been a source of puzzlement \cite{ijs15, rib22}. Ultimately, the coincidence must be due to $C_{P_1,P_2,P_3}$ being the unique solution of the shift equations from $V^d_{\langle 2,1\rangle}$ and $V^d_{\langle 1,2\rangle}$. But in loop CFTs, why would $C_{P_1,P_2,P_3}$ obey the shift equation from $V^d_{\langle 2,1\rangle}$? This degenerate field does not belong to the spectrum, and we cannot easily add it because its OPE with non-diagonal fields $V_{(r,s)}$ would generate fields with non-integer spins.
 
 \subsubsection{Summary table}\label{sec:table}
 
@@ -2637,7 +2639,7 @@ Let us summarize the solutions of shift equations for 2-point and 3-point struct
   $B_{(r,s)}$ & \eqref{bref} & & & & & & & \cellcolor{green!80!black}
   \\
   \hline 
-  $C_{(r_1,s_1)(r_2,s_2)(r_3,s_3)}$ & \eqref{cref} & & & & & & & \cellcolor{green!80!black}
+  $\check{C}_{(r_1,s_1)(r_2,s_2)(r_3,s_3)}$ & \eqref{cref} & & & & & & & \cellcolor{green!80!black}
   \\
   \hline 
 \end{tabular}
@@ -3833,11 +3835,11 @@ Besides the Virasoro blocks $\mathcal{F}_P$, this involves conformal blocks $\ma
 Analytic bootstrap equations from the existence of $V^d_{\langle 1,2\rangle}$ imply $Z(P)=Z(P+\beta^{-1})$, so $Z(P)$ is in fact a function of the channel weight $w(P)$ \eqref{wP}, but we find it more convenient to write it as a function of $P$. In particular, we have $D_{(r,s)}(P)=D_{(r,s)}(P+\beta^{-1})$. Moreover, the analytic bootstrap equations 
 determine how $D_P$ behaves under $P\to P+\beta^{-1}$. Let us assume that diagonal 4-point structure constants factorize into 2-point and 3-point structure constants
 \begin{align}
- D_P = \frac{C_{(0,2\beta P)(r_1,s_1)(r_2,s_2)}C_{(0,2\beta P)(r_3,s_3)(r_4,s_4)}}{B_{P}}\ ,
+ D_P = \frac{\check{C}_{(0,2\beta P)(r_1,s_1)(r_2,s_2)}\check{C}_{(0,2\beta P)(r_3,s_3)(r_4,s_4)}}{B_{P}}\ ,
  \label{dccb}
 \end{align}
-where $B$ is given in Eq. \eqref{bc} and $C$ in Eq. \eqref{cref}.
-(We use $C$ rather than the full 3-point structure constant $\omega C$, as the sign factor $\omega$ is invariant under $P\to P+\beta^{-1}$.)
+where $B$ is given in Eq. \eqref{bc} and $\check{C}$ in Eq. \eqref{cref}.
+(We use $\check{C}$ rather than the full 3-point structure constant $C=\omega \check{C}$, as the sign factor $\omega$ is invariant under $P\to P+\beta^{-1}$.)
 For any given 4-point function $Z(P)$, this assumption only amounts to an overall choice of normalization.
 
 Then we further assume that $Z(P)$ is a holomorphic function of $P\in\mathbb{C}$. From the point of view of loop models, this is a natural assumption, because $Z(P)$ is the critical limit of polynomials in loop weights. From the point of view of the CFT, this is a nontrivial assumption, because the diagonal terms have poles.
@@ -3905,21 +3907,27 @@ Our 4-point function can depend on the momentums of diagonal fields $V_P$: eithe
 
 We first focus on the weight $w=w(P)$ of a channel diagonal field. We have argued in Section \ref{sec:hcm} that $D_{(r,s)}$ is meromorphic in $P$, therefore $D_{(r,s)}$ is also meromorphic in $w=w(P)$. In fact $D_{(r,s)}$ is holomorphic unless $s\in \mathbb{Z}$, in which case $D_{(r,s)}$ has a simple pole at $w=w(P_{(r,s)})$. The residue can be computed using Eqs. \eqref{rdp} and \eqref{dccb}, leading to
 \begin{align}
- D_{(r,s)} =  \frac{C_{(r,s)(r_1,s_1)(r_2,s_2)}C_{(r,s)(r_3,s_3)(r_4,s_4)}}{B_{(r,s)}\kappa^{r,s}} \left[d_{(r,s)}  - \delta_{\sigma,0}\delta_{s\in\mathbb{Z}}\frac{(-)^{(r+1)s}\rho^{r,s}_{(r_1,s_1)(r_2,s_2)}\rho^{r,s}_{(r_4,s_4)(r_3,s_3)}}{w-w(P_{(r,s)})}\right] \, .
+ D_{(r,s)} =  \frac{\check{C}_{(r,s)(r_1,s_1)(r_2,s_2)}\check{C}_{(r,s)(r_3,s_3)(r_4,s_4)}}{B_{(r,s)}\kappa^{r,s}} \left[d_{(r,s)}  - \delta_{\sigma,0}\delta_{s\in\mathbb{Z}}\frac{(-)^{(r+1)s}\rho^{r,s}_{(r_1,s_1)(r_2,s_2)}\rho^{r,s}_{(r_4,s_4)(r_3,s_3)}}{w-w(P_{(r,s)})}\right] \, .
  \label{sdrs}
 \end{align}
-In this expression, the second term accounts for the simple pole at $w=w(P_{(r,s)})$. We have written the corresponding residue in terms of our ansatz $\frac{CC}{B}$, times trigonometric factors $\frac{\rho\rho}{\kappa}$, where we define
+In this expression, the second term accounts for the simple pole at $w=w(P_{(r,s)})$. We have written the corresponding residue in terms of our ansatz $\frac{\check{C}\check{C}}{B}$, times trigonometric factors $\frac{\rho\rho}{\kappa}$, where we define
 \begin{align}
-\rho^{r,s}_{(r_1,s_1)(r_2,s_2)}= (-)^{s\min(r,|r_1-r_2|)\delta_{r_1<r_2}} \prod_\pm \prod_{j\overset{1}{=}-\frac{r-1-|r_1\pm r_2|}{2}}^{\frac{r-1-|r_1\pm r_2|}{2}} 2\cos\pi\left(j\beta^2+\tfrac{s-s_1\mp s_2}{2}\right)\ .
+\rho^{r,s}_{(r_1,s_1)(r_2,s_2)}= (-)^{s\min(r,|r_1-r_2|)\delta_{r_1<r_2}} \prod_\pm \prod_{j\overset{1}{=}-\frac{r-1-|r_1\pm r_2|}{2}}^{\frac{r-1-|r_1\pm r_2|}{2}} 2\cos\pi\left(j\beta^2+\tfrac{s-s_1\mp s_2}{2}\right)\ ,
  \label{rhop}
 \end{align}
 and
 \begin{align}
-\kappa^{r,s} = \frac{2^{2r-1}}{\sin\pi(\{r\}+s)}\prod_{j\overset{1}{=}1-r}^{r-1} \sin\pi(j\beta^2 +s) \ .
+\kappa^{0,s} = \frac{1}{2\sin^2(\pi s)} \ , \quad \kappa^{\frac12,s}=1 \ , \quad
+\kappa^{r,s} \underset{r\geq 1}{=} \frac{2^{2r-1}}{\sin\pi(\text{frac}(r)+s)}\prod_{j\overset{1}{=}1-r}^{r-1} \sin\pi(j\beta^2 +s) \ .
  \label{kappa}
 \end{align}
-After subtracting the pole term, our structure constant $D_{(r,s)}$ is proportional to a quantity that we called $d_{(r,s)}$, which should therefore be holomorphic in the channel weight $w$.
-
+Here $\kappa^{0,s}$ is chosen such that $\kappa^{0,2\beta P}B_{(0,2\beta P)}=B_P$. We can write $\kappa^{r,s}$ in a manifestly polynomial form:
+\begin{align}
+ \kappa_{r,s} \ &\underset{r\in \mathbb{N}^*}{=}\  2\prod_{j=1}^{r-1}\prod_{k=0}^{j-1} \left(n^2 -4\cos^2\pi \tfrac{k+s}{j}\right) \ ,
+ \\
+ \kappa_{r,s} \ &\underset{r\in \mathbb{N}+\frac32}{=}\ \frac{(-)^{r-\frac12}}{\cos\pi s} \prod_{j\overset{2}=1}^{2r-2} \prod_{k=0}^{j-1}\left(n+2\cos 2\pi \tfrac{k+s}{j}\right)\ .
+\end{align}
+After subtracting the pole term, our structure constant $D_{(r,s)}$ \eqref{sdrs} is proportional to a quantity that we called $d_{(r,s)}$, which should therefore be holomorphic in the channel weight $w$.
 Numerical results suggest that $d_{(r,s)}$ is not only holomorphic in $w$, but in fact polynomial. Furthermore, the quantity $\rho^{r,s}$ is polynomial in the loop weights $w_i=\cos(\pi s_i)$ of the fields $V_{(r_i,s_i)}$ with $r_i=0$. And both $\rho^{r,s},\kappa^{r,s}$ are polynomial in the contractible loop weight $n$ \eqref{ncb}. This suggests that $d_{(r,s)}$ might be polynomial in $n,w_i$ as well. Numerical results are consistent with this suggestion, not only in the case $\sigma=0, s\in\mathbb{Z}$ where $D_{(r,s)}$ depends on a channel weight and has a pole, but in all cases.
 
 We conjecture that $d_{(r,s)}$ is polynomial in all loop weights $n,w_i,w$.
