@@ -906,8 +906,8 @@ Furthermore, Eq. \eqref{tinf} implies the vanishing of the coefficients of $y^{-
 \end{align}
 Equivalently, the behaviour of $Z$ under global conformal transformations \eqref{abcd} must be
 \begin{align}
- \boxed{\left< \prod_{i=1}^N  V_{\Delta_i}\left(\frac{az_i+b}{cz_i+d}\right) \right>
- = \prod_{i=1}^N (cz_i +d)^{2\Delta_i} \left< \prod_{i=1}^N V_{\Delta_i}(z_i) \right>}\ .
+ \boxed{\left< \prod_{i=1}^N V_{\Delta_i}(z_i) \right>
+ = \prod_{i=1}^N (cz_i +d)^{-2\Delta_i}\left< \prod_{i=1}^N  V_{\Delta_i}\left(\frac{az_i+b}{cz_i+d}\right) \right> }\ .
  \label{zgc}
 \end{align}
 The global Ward identities are valid not only for primary fields, but also for \myindex{quasi-primary fields}\index{quasi-primary field}\index{field!quasi-primary---}: $L_0$-eigenvectors that are annihilated by $L_1$ but not necessarily by $L_{n\geq 2}$.
@@ -957,7 +957,7 @@ A 4-point function is therefore completely determined by its dependence on $1$ o
  \Big< V_{\Delta_1}(z) V_{\Delta_2}(0)V_{\Delta_3}(\infty)V_{\Delta_4}(1) \Big> \propto G(z)\ . 
 \end{align}
 \end{itemize}
-In addition to global Ward identities, there are \myindex{local Ward identities}\index{Ward identity!local---} , which follow from $\oint_\infty dy\ \epsilon(y)Z(y)=0$, where $\epsilon(y)$ is a meromorphic function such that $\epsilon(y)\underset{y\to\infty}{=}O(y^2)$, with poles at $y=z_i$. Local Ward identities allow us to determine correlation functions of descendant fields from the corresponding correlation functions of primary fields. In the case $\epsilon(y) = \frac{1}{(y-z_1)^{n-1}}$ with $n\geq -1$, using the expressions \eqref{zy} for $Z(y)$ and \eqref{lvtv} for $L_{-n}V_{\Delta_1}(z_1)$, we obtain the Ward identity
+In addition to global Ward identities, there are \myindex{local Ward identities}\index{Ward identity!local---} , which follow from $\oint_\infty dy\ \epsilon(y)Z(y)=0$, where $\epsilon(y)$ is a meromorphic function such that $\epsilon(y)\underset{y\to\infty}{=}O(y^2)$, with poles at $y=z_i$. Local Ward identities allow us to determine correlation functions of descendant fields from the corresponding correlation functions of primary fields. In the case $\epsilon(y) = \frac{1}{(y-z_1)^{n-1}}$ with $n\geq -1$, we compute $\oint_\infty = \sum_{i=1}^N\oint_{z_i}$ using Eq. \eqref{lvtv} for $L_{-n}V_{\Delta_1}(z_1)$ as well as Eq. \eqref{tvd} for $T(y)V_{\Delta_j}(z_j)$ if $j\geq 2$, we obtain the Ward identity
 \begin{align}
  \left<L_{-n}V_{\Delta_1}(z_1)\prod_{j=2}^N V_{\Delta_j}(z_j)\right> = \sum_{j=2}^N \left(-\frac{1}{z_{j1}^{n-1}}\frac{\partial}{\partial z_j} +\frac{n-1}{z_{j1}^n} \Delta_j\right) \left<\prod_{j=1}^N V_{\Delta_j}(z_j)\right>\ . 
  \label{lwi}
@@ -994,7 +994,12 @@ The generators $\ell_n$ \eqref{lpz} of local conformal transformations are only 
  \ell_n +\bar{\ell}_n \quad , \quad i(\ell_n -\bar \ell_n)\  .
  \label{epbe}
 \end{align}
-In fact we want the algebra of conformal transformations to act on a complex vector space: the space of complex-valued functions on $\overline{\mathbb{C}}$ for the Witt algebra, the space of states of the CFT for the Virasoro algebra. We should therefore complexify our symmetry algebra, and we obtain 2 copies of the Virasoro algebra: a \myindex{left-moving}  Virasoro algebra\index{left-moving} $\mathfrak{V}$ with generators $L_n$, and a \myindex{right-moving} Virasoro algebra\index{right-moving} $\bar{\mathfrak{V}}$ with generators $\bar{L}_n$. In the case of the algebra of global conformal transformations, we start with the 6-dimensional real Lie algebra $\mathfrak{sl}_2(\mathbb{C})$, with generators \eqref{epbe} with $n=-1,0,1$, and the complexification yields $\mathfrak{sl}_2(\mathbb{C})^\mathbb{C} = \mathfrak{sl}_2(\mathbb{C})\times \mathfrak{sl}_2(\mathbb{C})$.
+In fact we want the algebra of conformal transformations to act on a complex vector space: the space of complex-valued functions on $\overline{\mathbb{C}}$ for the Witt algebra, the space of states of the CFT for the Virasoro algebra. We should therefore complexify our symmetry algebra:
+\begin{align}
+ \text{Span}_\mathbb{R}\left(\ell_n +\bar{\ell}_n , i(\ell_n -\bar \ell_n)\right)_{n\in\mathbb{Z}}\ \underset{\text{complexify}}{\longrightarrow}\ \text{Span}_\mathbb{C}\left(\ell_n , \bar \ell_n\right)_{n\in\mathbb{Z}}=\text{Witt}_\mathbb{C}\times \overline{\text{Witt}}_\mathbb{C}\ .
+\end{align}
+After taking central extensions, we obtain 2 copies of the Virasoro algebra over $\mathbb{C}$: a \myindex{left-moving}  Virasoro algebra\index{left-moving} $\mathfrak{V}$ with generators $L_n$, and a \myindex{right-moving} Virasoro algebra\index{right-moving} $\bar{\mathfrak{V}}$ with generators $\bar{L}_n$, such that $[L_m,\bar L_n]=0$. For simplicity we assume that the left and right central charges coincide.
+In the case of the algebra of global conformal transformations, we start with the 6-dimensional real Lie algebra $\mathfrak{sl}_2(\mathbb{C})$, with generators \eqref{epbe} with $n=-1,0,1$, and the complexification yields $\mathfrak{sl}_2(\mathbb{C})^\mathbb{C} = \mathfrak{sl}_2(\mathbb{C})\times \mathfrak{sl}_2(\mathbb{C})$.
 
 In Sections \ref{sec:vir} and \ref{sec:fope}, we have been doing \myindex{chiral CFT}\index{CFT!chiral---}\index{chiral CFT}, which means considering $\mathfrak{V}$ only. In a full CFT, the symmetry algebra is the \myindex{conformal algebra}\index{conformal!---algebra} $\mathfrak{V}\times \bar{\mathfrak{V}}$, where for simplicity we assume that the left and right central charges are equal. When it comes to representations, Verma modules of $\mathfrak{V}\times \bar{\mathfrak{V}}$ are simply $\mathcal{V}_\Delta\otimes \bar{\mathcal{V}}_{\bar \Delta}$, where we write a bar over representations of $\bar{\mathfrak{V}}$. There also exist representations of $\mathfrak{V}\times \bar{\mathfrak{V}}$ that are not factorized, in particular logarithmic representations \cite{nr20}.
 
@@ -1506,7 +1511,7 @@ To show that we obtain fully degenerate fields, we can use OPE associativity, as
 \end{align}
 where $\{P\pm \frac12\sqrt{-pq}\}_\pm = \{P+i\beta\}_{i=-\frac{p}{2},\cdots, \frac{p}{2}} \cap \{P+j\beta^{-1}\}_{j=-\frac{q}{2},\cdots, \frac{q}{2}}$. 
 
-We therefore focus on the case $\beta^2 = \frac{q}{p}>0$ with $p,q\in\mathbb{N}^*$ coprime. For simplicity, we will only study the representations that are generated by $\mathcal{R}^f_{\langle 2,1\rangle}$ and $\mathcal{R}^f_{\langle 1,2\rangle}$. This is enough for recovering the known A-series minimal models, but not for investigating other diagonal, rational CFTs that might exist on the sphere. 
+We therefore focus on the case $\beta^2 = \frac{q}{p}>0$ with $p,q\in\mathbb{N}^*$ coprime. For simplicity, we will start with $\mathcal{R}^f_{\langle 2,1\rangle}$ and $\mathcal{R}^f_{\langle 1,2\rangle}$, and generate a spectrum by repeatedly taking fusion products of these representations. This yields the known A-series minimal model: we neglect other diagonal, rational CFTs that exist on the sphere.
 Let us show that $\mathcal{R}^f_{\langle 2,1\rangle}$ and $\mathcal{R}^f_{\langle 1,2\rangle}$ generate the representations $\mathcal{R}^f_{\langle r,s\rangle}$  whose indices belong to the \myindex{Kac table}\index{Kac table}
 \begin{align}
  \boxed{ K_{p, q}=  \big((0,p)\times (0,q)\big)\bigcap \big(\mathbb{N}\times \mathbb{N}\big) }\ .
