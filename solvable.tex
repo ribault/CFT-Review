@@ -1041,11 +1041,7 @@ Now we have assumed that fields commute \eqref{comm}, but the $z_i$-dependent fa
  \label{b21}
 \end{align}
 where $\sigma$ is a permutation of $\{1,2,3\}$. In particular, for the 2-point function of a field with itself, we have $B_{12}=B_{21}$, which must vanish if the spin is half-integer $S_1\in \frac12+\mathbb{Z}$. Fields with half-integer spins should rather anti-commute with themselves, i.e. they should be fermionic. 
-Unless stated otherwise, we will assume that spins are integer:
-\begin{align}
- \boxed{S\in \mathbb{Z}}\ .
- \label{siz}
-\end{align}
+
 Finally, notice that $\left<V_1V_2\right> = \left<IV_1V_2\right>$, where $I$ is the identity field. Assuming for simplicity
 \begin{align}
  B_{jk}=\delta_{jk}B_j\ ,
@@ -1231,11 +1227,7 @@ We will say that \myindex{a field exists}\index{existence (of a field)} if it be
 
 \subsubsection{Diagonal and non-diagonal fields}
 
-Motivated by the single-valuedness of correlation functions, we have made the assumption \eqref{siz} that conformal spins are integer. In extended spectrums, we may relax this assumption to the half-integer spin condition \eqref{sihz}:
-\begin{align}
- i\in\mathcal{S}\implies S_i\in\mathbb{Z} \quad , \quad i \in \widehat{\mathcal{S}}\implies S_i\in\frac12\mathbb{Z}\ . 
-\end{align}
-A simple way to satisfy these assumptions is to have fields of spin zero. However, whenever degenerate fields exist, we will use the slightly different notion of a \myindex{diagonal field}\index{field!diagonal---}\index{diagonal!---field}: a field of spin zero whose OPEs with degenerate fields only produces fields of spin zero. Conversely, a \myindex{non-diagonal field}\index{field!non-diagonal---} is a field that either has nonzero spin, or is related to fields with nonzero spins by taking OPEs with degenerate fields. A \myindex{diagonal CFT}\index{CFT!diagonal---}\index{diagonal!---CFT} is a CFT whose spectrum only involves diagonal fields.
+A simple way to satisfy the half-integer spin condition \eqref{sihz} is to have fields of spin zero. However, whenever degenerate fields exist, we will use the slightly different notion of a \myindex{diagonal field}\index{field!diagonal---}\index{diagonal!---field}: a field of spin zero whose OPEs with degenerate fields only produces fields of spin zero. Conversely, a \myindex{non-diagonal field}\index{field!non-diagonal---} is a field that either has nonzero spin, or is related to fields with nonzero spins by taking OPEs with degenerate fields. A \myindex{diagonal CFT}\index{CFT!diagonal---}\index{diagonal!---CFT} is a CFT whose spectrum only involves diagonal fields.
 
 Let us summarize the primary fields that we will consider, together with their momentums, and the representations of the conformal algebra that they generate. 
 \begin{align}
@@ -1314,7 +1306,7 @@ In the case of a non-diagonal field $V_{(r,s)}$, the 4 fields that can a priori 
  \label{votvrs}
 \end{align}
 \end{subequations}
-Since all fields have half-integer spins, the following spin differences must also be half-integer whenever the corresponding fields exist: 
+By Eq. \eqref{sihz} all fields must have half-integer spins, so the following spin differences must also be half-integer whenever the corresponding fields exist:
 \begin{subequations}
 \begin{align}
  S_{(r\pm 1,s)} - S_{(r,s)} = \mp s &\quad , \quad S_{(r,s\pm \beta^2)} - S_{(r,s)} = \mp r\beta^2\ ,
