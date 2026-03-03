@@ -598,12 +598,12 @@ For the Shapovalov form, any singular vector or descendant thereof is a \myindex
 \begin{align}
  \forall L, L'\in \mathcal{L}\ , \quad \big(LL_{\langle r,s\rangle} V_{\Delta_{(r,s)}}\big|L' V_{\Delta_{(r,s)}}\big) =0 \ . 
 \end{align}
-For generic values of the central charge, $S_{LL_{\langle r,s\rangle},L'}(\Delta)$ has a simple zero at $\Delta=\Delta_{(r,s)}$. This implies that the inverse Shapovalov matrix at level $N$ has simple poles for $\Delta\in \left\{\Delta_{(r,s)}\right\}_{rs\leq N}$. In a basis of level-$rs$ creation operators that includes $L_{\langle r,s\rangle}$, the level-$rs$ inverse Shapovalov matrix behaves as 
+For generic values of the central charge, $S_{LL_{\langle r,s\rangle},L'}(\Delta)$ has a simple zero at $\Delta=\Delta_{(r,s)}$. This implies that the inverse Shapovalov form at level $N$ has simple poles for $\Delta\in \left\{\Delta_{(r,s)}\right\}_{rs\leq N}$. In a basis of level-$rs$ creation operators that includes $L_{\langle r,s\rangle}$, the level-$rs$ inverse Shapovalov form behaves as
 \begin{align}
  S^{-1}_{L,L'}(\Delta) \underset{\Delta\to \Delta_{(r,s)}} = \frac{1}{\Delta-\Delta_{(r,s)}} \frac{\delta_{L,L_{\langle r,s\rangle}}\delta_{L',L_{\langle r,s\rangle}}}{S'_{L_{\langle r,s\rangle},L_{\langle r,s\rangle}}(\Delta_{(r,s)})}  + O(1) \ . 
  \label{smo}
 \end{align}
-In fact, the level-$N$ inverse Shapovalov matrix can be computed explicitly in terms of $\left\{L_{\langle r,s\rangle}\right\}_{rs\leq N}$ \cite{fqs24}.
+In fact, the level-$N$ inverse Shapovalov form can be computed explicitly in terms of $\left\{L_{\langle r,s\rangle}\right\}_{rs\leq N}$ \cite{fqs24}.
 
 Using the same coefficients $\big(LV_\Delta\big| L'V_\Delta\big)$ \eqref{shap}, we can define a sesquilinear form instead of a bilinear form. This sesquilinear form is Hermitian if its coefficients are real, i.e. if $\Delta,c\in\mathbb{R}$. Our highest-weight representation is called \myindex{unitary}\index{representation!unitary---} if that Hermitian form is positive definite. Unitarity plays an important role in some applications of CFT, but it has no bearing on exact solvability, so we will not elaborate further on that subject.
 
@@ -725,13 +725,13 @@ This leads to the linear system
  \ .
  \label{sgl}
 \end{align}
-Assuming the Shapovalov form is invertible at level $N$, the solution is 
+Assuming the Shapovalov form is invertible at level $N$, the solution is
 \begin{align}
- \boxed{f^{\Delta,L}_{\Delta_1,\Delta_2} = \sum_{|L'|=|L|} S_{L,L'}^{-1}(\Delta) g^{L'}_{\Delta,\Delta_2,\Delta_1}}\ .
+ \boxed{f^{\Delta,L}_{\Delta_1,\Delta_2} = \sum_{L'\in\mathcal{L}_{N}} S_{L,L'}^{-1}(\Delta) g^{L'}_{\Delta,\Delta_2,\Delta_1}}\ .
  \label{fsg}
 \end{align}
 For example, we have $g^{L_{-1}} = \theta_{1}$, $g^{L_{-1}^2} = \theta_{1}(\theta_{1}+1)$ and $g^{L_{-2}}=\theta_{2}$.
-Inverting the Shapovalov matrix \eqref{sh012}, we deduce
+Inverting the Shapovalov form \eqref{sh012}, we deduce
 \begin{subequations}
  \label{fl12}
  \begin{align}
@@ -748,8 +748,7 @@ Inverting the Shapovalov matrix \eqref{sh012}, we deduce
 \label{fl2}
  \end{align}
 \end{subequations}
-The solution $\left(f^L\right)_{L\in\mathcal{L}}$ of the OPE Ward identities is unique if and only if the Shapovalov matrix is invertible, i.e. if and only if there is no singular vector in the Verma module $\mathcal{V}_\Delta$. A singular vector $L_{\langle r,s\rangle} V_{\Delta_{(r,s)}}$ at level $rs$ manifests itself as a simple pole at $\Delta=\Delta_{(r,s)}$ of the vectors $(f^L)_{L\in\mathcal{L}_N}$ for any $N\geq rs$.
-To summarize, the contributions of $V_\Delta$ and its descendants in an OPE of 2 primary fields read
+If $\Delta\notin\left\{\Delta_{(r,s)}\right\}_{rs\in\mathbb{N}^*}$, the Shapovalov form is invertible over the whole Verma module $\mathcal{V}_\Delta$. The solution $\left(f^L\right)_{L\in\mathcal{L}}$ of the OPE Ward identities is unique, and the contributions of $V_\Delta$ and its descendants in an OPE of 2 primary fields read
 \begin{align}
  \boxed{V_{\Delta_1}(z_1)V_{\Delta_2}(z_2) \supset  C_{\Delta_1,\Delta_2}^{\Delta} z_{12}^{\Delta-\Delta_1-\Delta_2} \Bigg(V_\Delta(z_2) +\sum_{L\in \mathcal{L}\backslash\{1\}}z_{12}^{|L|} f^{\Delta,L}_{\Delta_1,\Delta_2} LV_\Delta(z_2)\Bigg)}
  \ ,
@@ -757,14 +756,17 @@ To summarize, the contributions of $V_\Delta$ and its descendants in an OPE of 2
 \end{align}
 where the \myindex{OPE structure constant}\index{OPE!---structure constant}\index{structure constant!OPE---} $C^\Delta_{\Delta_1,\Delta_2}$ is left undetermined by conformal symmetry, while the dependence on $z_1,z_2$ and the coefficients $f^{\Delta,L}_{\Delta_1,\Delta_2}$ are universal quantities that are in principle known. 
 
-In the case of the OPE coefficients $C^{\Delta,L}_{\Delta_1,\Delta_2}(z_1,z_2)$, we have just seen that the primary field determines the contributions of its descendant fields. This will also be true in correlation functions, as a result of Virasoro symmetry. However, this would not necessarily hold if we had a larger chiral symmetry algebra such as a W-algebra.
+If $\Delta=\Delta_{(r,s)}$, there is a singular vector $L_{\langle r,s\rangle} V_{\Delta_{(r,s)}}$ at level $rs$ in the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$. This singular vector manifests itself as a simple pole at $\Delta=\Delta_{(r,s)}$ of the vectors $(f^L)_{L\in\mathcal{L}_N}$ for any $N\geq rs$. Nevertheless, the Shapovalov form becomes invertible again if the singular vector vanishes (and any other singular vectors vanish as well). Then the primary field is fully degenerate, let us call it $V^f_{\langle r,s\rangle}$.
+The basis of descendant fields that appear in the OPE is a subset of $(LV^f_{\langle r,s\rangle})_{L\in\mathcal{L}}$. Their coefficients are again universal quantities. However, as we will see in Section \ref{sec:dope}, a degenerate field can appear in the OPE $V_{\Delta_1}V_{\Delta_2}$, only under certain conditions on $\Delta_1$ and $\Delta_2$.
+
+In the case of the OPE coefficients $C^{\Delta,L}_{\Delta_1,\Delta_2}(z_1,z_2)$, we have just seen that the primary field determines the contributions of its descendant fields, provided there is no singular vector among these descendants. In Section \ref{sec:csc}, we will also see that correlation functions of primary fields determine the correlation functions of their descendant fields, with no caveats about singular vectors this time. This property of Virasoro symmetry would  not necessarily hold if we had a larger chiral symmetry algebra such as a W-algebra.
 
 The form of the dependence on $z_1,z_2$ provides an a posteriori justification for our assumption in Section \ref{sec:hwr} that $L_0$-eigenvalues be bounded from below. We have indeed seen that an $L_0$-eigenvector $LV_\Delta$ of dimension $\Delta+|L|$ comes with a factor $z_{12}^{\Delta+|L|}$. If $L_0$-eigenvalues were not bounded from below, the sum over states could not converge in a neighbourhood of $z_1=z_2$. 
 
 
 \subsubsection{Fusion rules and fusion products}\label{sec:dope}
 
-Because of the poles in OPE coefficients, there are constraints on the fields that can appear in the OPE $V_{\Delta_1}V_{\Delta_2}$. Let us focus on the pole at $\Delta_{(1,1)}=0$. There are 2 types of primary fields of dimension $0$: the non-degenerate field $V_0$, which generates the Verma module $\mathcal{V}_0$, and the degenerate field $V^d_{\langle 1,1\rangle}$, which obeys the singular vector equation $L_{-1}V^d_{\langle 1,1\rangle}=\partial V^d_{\langle 1,1\rangle}=0$ and generates the degenerate representation $\mathcal{R}^d_{\langle 1,1\rangle}$ \eqref{r11}.
+Because of the poles in OPE coefficients, there are constraints on the fields that can appear in the OPE $V_{\Delta_1}V_{\Delta_2}$. Let us focus on the pole at $\Delta_{(1,1)}=0$. Assuming $\beta^2\notin \mathbb{Q}$ for simplicity, there are 2 types of primary fields of dimension $0$: the non-degenerate field $V_0$, which generates the Verma module $\mathcal{V}_0$, and the degenerate field $V^d_{\langle 1,1\rangle}$, which obeys the singular vector equation $L_{-1}V^d_{\langle 1,1\rangle}=\partial V^d_{\langle 1,1\rangle}=0$ and generates the degenerate representation $\mathcal{R}^d_{\langle 1,1\rangle}$ \eqref{r11}.
 \begin{itemize}
  \item If $\Delta_1\neq \Delta_2$, then $\operatorname{Res}_{\Delta=0}f^{\Delta,L_{-1}}_{\Delta_1,\Delta_2}\neq 0$, and we cannot impose the normalization $C^{\Delta,1}_{\Delta_1,\Delta_2}=0$: rather, we may choose $C^{L_{-1}}\neq 0$ while $C^1=0$. Therefore, the non-vanishing singular vector $L_{-1}V_0\propto V_1$ may appear in the OPE, together with its descendants, while $V_0$ itself and its other descendants give vanishing contributions. In particular, neither $V^d_{\langle 1,1\rangle}$ nor its descendants can contribute.
  \item If $\Delta_1=\Delta_2$, then $\operatorname{Res}_{\Delta=0}f^{\Delta,L_{-1}}_{\Delta_1,\Delta_2}= 0$. The equation $L_1W_1=\theta_{1,1}W_0$ \eqref{opew} reduces to $0=0$, and does not determine $C^{L_{-1}}$ from $C^1$. In particular, our OPE can include $V^d_{\langle 1,1\rangle}$.
@@ -794,10 +796,11 @@ The price to pay is that the fusion product has a complicated definition that in
 
 In contrast, given representations $\mathcal{R}_1,\mathcal{R}_2$ of two copies of the Virasoro algebra with central charges $c_1,c_2$, the tensor product $\mathcal{R}_1\otimes \mathcal{R}_2$ is a representation of the Virasoro algebra with central charge $c_1+c_2$. The tensor product is useful for defining the product of two CFTs, with a spectrum that is the tensor product of their two spectrums.
 
-The construction and properties of the fusion product are well-established in the case of irreducible Kac table representations at $\beta^2 \in \mathbb{Q}_{>0}$ \cite{gab99}. Then the case of degenerate representations and Verma modules at generic $\beta^2\in \mathbb{C}\backslash\mathbb{Q}$ can be deduced by taking limits and doing analytic continuation in $\beta^2$. To actually compute fusion products, it will be technically easier to begin with the second case in Section \ref{sec:fpdr}, and deduce the first case in Section \ref{sec:amm}. We will accept that in both cases the fusion product is commutative and associative, with multiplicities $m_{i,j}^k\in \{0,1\}$ that are  invariant under permutations of the 3 indices. In fact, $m_{i,j}^k\in \{0,1\}$ is the algebraic counterpart of the statement \eqref{prope} that in OPEs, primary fields determine descendant fields.
+The construction and properties of the fusion product are well-established in the case of irreducible Kac table representations at $\beta^2 \in \mathbb{Q}_{>0}$ \cite{gab99}. Then the case of degenerate representations and Verma modules at generic $\beta^2\in \mathbb{C}\backslash\mathbb{Q}$ can be deduced by taking limits and doing analytic continuation in $\beta^2$. To actually compute fusion products, it will be technically easier to begin with the second case in Section \ref{sec:fpdr}, and deduce the first case in Section \ref{sec:amm}. We will accept that in both cases the fusion product is commutative and associative, with multiplicities $m_{i,j}^k\in \{0,1\}$ that are  invariant under permutations of the 3 indices. In fact, $m_{i,j}^k\in \{0,1\}$ is an algebraic consequence of the result of Section \ref{sec:csope} that in OPEs, primary fields determine descendant fields, which holds for the fully degenerate representations whose fusion products we will compute.
 
 \subsubsection{Fusion products of degenerate representations}\label{sec:fpdr}
 
+In this section we assume $\beta^2\in\mathbb{Q}$, so that the degenerate fields $V^d_{\langle r,s\rangle}$ are fully degenerate, with only 1 vanishing singular vector.
 Let us derive the fusion rules that involve the degenerate field $V^d_{\langle 2,1\rangle}$. These fusion rules are encoded in the 3 equivalent conditions 
 \begin{align}
 V^d_{\langle 2,1\rangle} V_{\Delta_1}\ni V_{\Delta_2} \iff V_{\Delta_1}V_{\Delta_2} \ni V^d_{\langle 2,1\rangle} \iff \underset{\Delta=\Delta_{(2,1)}}{\operatorname{Res}} f^{\Delta,L_{-1}^2}_{\Delta_1,\Delta_2}=0\ . 
@@ -4208,6 +4211,9 @@ In the $d\geq 3$ Potts model, the boundaries of clusters are not loops, but obje
 
 \end{document}
 
+
+===== Reply to the first two reports =======
+
 C01. "di Francesco, Mathieu and Sénéchal wrote a book" -> "Di Francesco, Mathieu and Sénéchal published a book"
 
 C02. In the introduction, mentioned Teschner's seminal work on the analytic bootstrap in Liouville theory.
@@ -4330,4 +4336,8 @@ Reply to Referee 2.
 
 6- For indecomposable representations, see C10. --- It was already said explicitly in Section 2.4.2 that logarithmic representations appear in loop CFTs. I welcome the suggestion to strengthen this aspect. See changes C07 and C17.
 
+===== Reply to the follow-up report by Referee 1 =========
 
+- Rewritten Section 1.2.3 after Eq. (1.54), in order to clarify in which cases descendants are determined by primaries. Also modified the last sentence of Section 1.2.4.
+
+- At the beginning of Section 1.2.4, added a clause assuming $\beta^2\notin\mathbb{Q}$. Added the same assumption at the beginning of 1.2.5, as suggested by the referee.
