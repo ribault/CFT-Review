@@ -455,7 +455,7 @@ and it follows that the singular vector $L_{\langle r,s\rangle} V_{\Delta_{(r, s
 \end{align}
 We will provide a derivation of $P_{(r, s)}$ using operator product expansions in Section \ref{sec:dope}. On the other hand, the expressions of $L_{\langle r,s\rangle} $ for $rs\geq 3$ are complicated and not particularly useful, see \cite{wat24}.
 
-For $\beta^2\in\mathbb{C}\backslash \mathbb{Q}$, the Verma module $\mathcal{V}_\Delta$ has a singular vector if and only if $\Delta=\Delta_{(r, s)}$ for some $r,s\in\mathbb{N}^*$, in which case it has only 1 singular vector. For $\beta^2\in\mathbb{Q}$ however, a Verma module can have several singular vectors. If $\beta^2 = \frac{q}{p}$ with $p,q$ coprime integers, we indeed have the identity
+For $\beta^2\in\mathbb{C}\backslash \mathbb{Q}$, the Verma module $\mathcal{V}_\Delta$ has a singular vector if and only if $\Delta=\Delta_{(r, s)}$ for some $r,s\in\mathbb{N}^*$, in which case it has only 1 singular vector. For $\beta^2\in\mathbb{Q}$ however, a Verma module can have several singular vectors. If $\beta^2 = \frac{q}{p}$ with $p,q\in\mathbb{N}^*$, we indeed have the identity
 \begin{align}
  \Delta_{(r+p,s+q)} = \Delta_{(r,s)}\ ,
  \label{rpsq}
@@ -613,7 +613,13 @@ Using the same coefficients $\big(LV_\Delta\big| L'V_\Delta\big)$ \eqref{shap}, 
 In quantum field theory, there is a \myindex{state-field correspondence}\index{state-field correspondence} or operator-state correspondence. Taking Euclidean time to be the radial coordinate around a point $z_0$, states live on spheres of radius $R$ while fields live at $z_0$, so in the limit $R\to 0$ a state gives rise to a field.
 In the presence of scale invariance, we do not lose information by sending $R\to 0$, so the correspondence is bijective. In particular, in a conformal field theory, we identify the space of fields with the \myindex{space of states}\index{space of states}  or \myindex{spectrum}\index{spectrum}  --- a vector space on which the Virasoro algebra acts. To a state $V$, the correspondence associates a field $V(z)$, which depends on a position $z\in\overline{\mathbb{C}}$ in the Riemann sphere. Primary states, descendant states and degenerate states respectively give rise to \myindex{primary fields}\index{primary!---field}\index{field!primary---}, \myindex{descendant fields}\index{descendant!---field}\index{field!descendant---} and \myindex{degenerate fields}\index{degenerate!---field}\index{field!degenerate---}.
 
-In the bootstrap approach, which is axiomatic rather than constructive, fields need not be constructed from other objects. Rather, we use fields as a convenient notation for stating properties of correlation functions, which we will introduce in Section \ref{sec:cor}.
+In the bootstrap approach, which is axiomatic rather than constructive, fields need not be constructed from other objects. Rather, we use fields as a convenient notation for stating properties of correlation functions, which we will introduce in Section \ref{sec:cor}. In order to facilitate comparisons, let us indicate how fields are constructed in other approaches:
+\begin{itemize}
+ \item \textbf{Fields as operators:} Fields may be constructed as linear maps from the spectrum to itself. Since the Virasoro algebra also acts on the spectrum, there is a natural action of the Virasoro algebra on fields. Namely, the action that we will write as $L_nV(z)$ is defined as the operator commutator $[L_n,V(z)]$. The $N$-point function that we will write as $\left<\prod_{i=1}^N V_i(z_i)\right>$ is then constructed as $\left<0\middle| \prod_{i=1}^N V_i(z_i)\middle|0\right>$, where $\left|0\right>$ is the vacuum state, on which the $N$ operators act in some order. The formalism of vertex operator algebras provides an algebraic construction of fields as operators.
+ \item \textbf{Fields as functionals:} In a functional integral approach such as the Coulomb gas formalism, fields are constructed from a fundamental free field $\varphi(z)$, in terms of which the functional integration measure $D\varphi(z)$ is defined. A primary fields $V_\Delta(z)$ is constructed as an exponential $e^{\alpha\varphi(z)}$, where $\alpha$ depends on the dimension $\Delta$ and on the central charge. Descendant fields also involve derivatives of $\varphi(z)$.
+\end{itemize}
+
+
 
 \subsubsection{The energy-momentum tensor}
 
@@ -1597,15 +1603,14 @@ For example, AMM$_{7,4}$ has the central charges $c=-\frac{13}{14}$. Its $9$ pri
 
 \subsubsection{Runkel--Watts-type CFTs}\label{sec:rwt}
 
-Let us consider a limit of A-series minimal models where $\frac{q}{p}\to \beta_0^2>0$. We first take the Kac table indices to be fixed. 
-The Kac table becomes infinite, which suggests 
+Let us consider a limit of A-series minimal models where $p,q\to\infty$ such that $\frac{q}{p}\to \beta_0^2>0$. We first take the Kac table indices to be fixed: for any $r,s\in\mathbb{N}^*$, the minimal model AMM$_{p,q}$ has a
+field $V^f_{\langle r,s\rangle}$
+provided $p>r$ and $q>s$. In AMM$_{p,q}$, this field has vanishing singular vectors at levels $rs$ and $(p-r)(q-s)$ by Eq. \eqref{prqs}. The second singular vector disappears as its level tends to infinity, and the field tends to the simply degenerate field $V^d_{\langle r,s\rangle}$. Therefore, in this limit, we obtain all the primary fields of a GMM, and we write
 \begin{align}
  \lim_{\substack{\frac{q}{p}\to \beta_0^2\\ r,s\text{ fixed}}} \text{AMM}_{p,q} = \text{GMM}\qquad \text{with} \qquad \lim_{\substack{\frac{q}{p}\to \beta_0^2\\ r,s\text{ fixed}}}
 V^f_{\langle r,s\rangle} = V^d_{\langle r,s\rangle}\ .
  \label{mm-gmm}
 \end{align}
-In particular, the doubly degenerate primary field $V^f_{\langle r,s\rangle}$ has vanishing singular vectors at levels $rs$ and $(p-r)(q-s)$ by Eq. \eqref{prqs}. The second singular vector disappears as its level tends to infinity, and the field becomes simply degenerate.
-
 Since we obtain arbitrary degenerate fields $V^d_{\langle r,s\rangle}$ in the limit, it is also possible to send the indices $r,s$ to $\infty$, and therefore to send the momentums $P_{(r,s)}$ to arbitrary values $P\in\mathbb{R}$, just as in Eq. \eqref{vplim}. Therefore, Liouville theory with $c\leq 1$ is not only a limit of generalized minimal models, but also a limit of minimal models:
 \begin{align}
  \lim_{\substack{\frac{q}{p}\to \beta_0^2\\ P_{(r,s)}\to P}} \text{AMM}_{p,q} = \text{Liouville}\ . 
@@ -4341,3 +4346,9 @@ Reply to Referee 2.
 - Rewritten Section 1.2.3 after Eq. (1.54), in order to clarify in which cases descendants are determined by primaries. Also modified the last sentence of Section 1.2.4.
 
 - At the beginning of Section 1.2.4, added a clause assuming $\beta^2\notin\mathbb{Q}$. Added the same assumption at the beginning of 1.2.5, as suggested by the referee.
+
+- At the beginning of Section 1.2, sketched how fields are constructed in two other types of approaches.
+
+- Before (1.22), removed the superfluous assumption that $p,q$ are coprime, making it clearer that $(p, q)=(1,1)$ is allowed.
+
+- More explanations before what is now Eq. (2.35), to better describe the limit.
