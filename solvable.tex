@@ -2188,15 +2188,15 @@ For $z_0=0,1$ this behaviour is of the type $z^{\delta_1}$ and $(1-z)^{\delta_3}
 \begin{align}
  \delta_i=\Delta\left(P_i+\tfrac{\beta}{2}\right) - \Delta(P_i) -\Delta_{(2,1)} = \beta P_i + \tfrac{1-\beta^2}{2}\ .
 \end{align}
-Introducing $\varphi(z) = z^{\delta_1}(1-z)^{\delta_3}$, we deduce that the differential equation for $\varphi^{-1}(z) G(z)$ has holomorphic solutions near $z=0$ and near $z=1$, namely $\varphi(z)\mathcal{F}^{(s)}_+(z)$ and $\varphi(z)\mathcal{F}^{(t)}_+(z)$ respectively. By a tedious but straightforward calculation, we find that the equation for $\varphi^{-1}(z) G(z)$ is a hypergeometric differential equation
+Introducing $\varphi(z) = z^{-\delta_1}(1-z)^{-\delta_3}$, we deduce that the differential equation for $\varphi(z) G(z)$ has holomorphic solutions near $z=0$ and near $z=1$, namely $\varphi(z)\mathcal{F}^{(s)}_+(z)$ and $\varphi(z)\mathcal{F}^{(t)}_+(z)$ respectively. By a tedious but straightforward calculation, we find that the equation for $\varphi(z) G(z)$ is a hypergeometric differential equation
 \begin{align}
- \left(z(1-z)\frac{\partial^2}{\partial z^2} + \left[C-(A+B+1)z\right]\frac{\partial}{\partial z} -AB\right) \varphi^{-1}(z) G(z) = 0 \ , 
+ \left(z(1-z)\frac{\partial^2}{\partial z^2} + \left[C-(A+B+1)z\right]\frac{\partial}{\partial z} -AB\right) \varphi(z) G(z) = 0 \ ,
 \end{align}
 with the parameters 
 \begin{align}
  \{A,B\} = \left\{\tfrac12+\beta(P_1\pm P_2+P_3)\right\}_\pm \quad , \quad  C=1+2\beta P_1\ .
 \end{align}
-This allows us to write our conformal blocks in terms of the \myindex{hypergeometric function}\index{hypergeometric function}  ${}_2F_1$,
+This allows us to write our conformal blocks in terms of the \myindex{hypergeometric function}\index{hypergeometric function}  ${}_2F_1(A,B,C,z)=\sum_{n=0}^\infty \left(\prod_{i=0}^{n-1}\frac{(A+i)(B+i)}{C+i}\right)\frac{z^n}{n!}$,
 \begin{subequations}
 \begin{align}
  \mathcal{F}_+^{(s)}(z) &= z^{\beta P_1 +\frac{1-\beta^2}{2}}(1-z)^{\beta P_3 + \frac{1-\beta^2}{2}} {}_2F_1\left(\tfrac12+ \beta P_{123},\tfrac12+\beta P_{13}^2,1+2\beta P_1,z\right) \ , 
@@ -2207,8 +2207,8 @@ This allows us to write our conformal blocks in terms of the \myindex{hypergeome
 \end{align}
 \end{subequations}
 where we used the notations $P_{123}=P_1+P_2+P_3$ and $P_{12}^3 = P_1+P_2-P_3$. The block $\mathcal{F}^{(x)}_-$ is obtained from $\mathcal{F}^{(x)}_+$ by $P_i\to -P_i$ where $i=1,3,2$ for $x=s,t,u$. 
-Let us write 
-the change of basis that relates the $s$- and $t$-channel conformal blocks as 
+
+The change of basis that relates the $s$- and $t$-channel conformal blocks is of the type
 \begin{align}
  \mathcal{F}^{(s)}_{\epsilon_1} = \sum_{\epsilon_3\pm} F_{\epsilon_1,\epsilon_3} \mathcal{F}^{(t)}_{\epsilon_3}\ , 
  \label{fsfft}
@@ -2223,7 +2223,7 @@ and the determinant
  \det F = -\frac{P_1}{P_3}\ .
  \label{detf}
 \end{align}
-The degenerate fusing matrix is built from Euler's \myindex{Gamma function}\index{Gamma function}\index{function!Gamma---} $\Gamma(x)$: a meromorphic function of $x\in\mathbb{C}$ with simple poles for $x\in -\mathbb{N}$ and no zeros, which obeys $\Gamma(x+1)=x\Gamma(x)$ and $\Gamma(x)\Gamma(1-x)=\frac{\pi}{\sin(\pi x)}$.
+The degenerate fusing matrix is built from the \myindex{Gamma function}\index{Gamma function}\index{function!Gamma---} $\Gamma(x)=\int_0^\infty t^{x-1}e^{-t}dt$: a meromorphic function of $x\in\mathbb{C}$ with simple poles for $x\in -\mathbb{N}$ and no zeros, which obeys $\Gamma(x+1)=x\Gamma(x)$ and $\Gamma(x)\Gamma(1-x)=\frac{\pi}{\sin(\pi x)}$.
 
 \subsubsection{Crossing symmetry}
 
