@@ -167,7 +167,7 @@ Exact solvability is restricted to toy models: CFTs that are constructed for the
  \item Mean field theory, also known as the theory of generalized free fields. In this CFT, fields come in infinite series, with conformal dimensions that differ by integers. Weight-shifting operators can be used for computing structure constants, whose exact expressions are written in terms of the Gamma function \cite{kks18}.
  \item The Parisi--Sourlas uplift leads to the construction of a $d=4$ CFT from any $d=2$ CFT. If the initial $d=2$ CFT is exactly solved, this leads to exact expressions for a class of correlation functions in the $d=4$ CFT \cite{tre24}. It remains to be seen whether the full $d=4$ CFT is exactly solvable.
 \end{itemize}
-There are other examples of exact results \cite{vtrz+25}, most notably in CFTs with supersymmetry, but they are restricted to special observables, and do not imply that all correlation functions of the CFT can be exactly computed. Nevertheless, there are exact results that might be hints of exact solvability:
+There are other examples of exact results \cite{vtrz+25}, most notably in CFTs with supersymmetry, but they are restricted to special observables, and do not imply that all correlation functions of the CFT can be exactly computed. Nevertheless, some exact results might be hints of exact solvability:
 \begin{itemize}
  \item In $d=4$, the planar conformal fishnet theory is a non-supersymmetric CFT where quite a few conformal dimensions and correlation functions can be exactly computed \cite{gkk18}. However the theory is admittedly a toy model, and is still far from being exactly solved.
  \item Harmonic analysis on groups or group quotients provides a generic way of constructing CFTs, and generalizations thereof. Of course, the resulting theories are typically not exactly solvable \cite{kmp21}. However, harmonic analysis on $H_3^+=SL_2(\mathbb{C})/SU_2$ can be interpreted as an exactly solvable $d=2$ CFT with only global conformal symmetry, also known as the light asymptotic limit of Liouville theory \cite{rib14}. This raises the possibility that other group quotients might give rise to exactly solvable $d\geq 3$ CFTs. 
@@ -211,7 +211,7 @@ While a CFT can be defined as a solution of bootstrap equations, the spectrum an
 
 \subsubsection*{Related resources}
 
-We strive to give simple derivations of nontrivial results, without introducing too many auxiliary objects that are later discarded. The calculations are not all done in detail in this text, but they are doable with reasonable effort. Readers who want formal exercises are directed to earlier texts in the same spirit: the minimal review \cite{rib16}, and the longer review \cite{rib14}. Further exercises can be found in a Wikiversity course \cite{rib25}, which is partly based on this text.
+We strive to give simple derivations of nontrivial results, without introducing too many auxiliary objects that are later discarded. The calculations are not all done in detail in this text, but they are doable with reasonable effort. Readers who want formal exercises are directed to earlier texts in the same spirit: the minimal review \cite{rib16}, and the longer review \cite{rib14}. Further exercises can be found in a Wikiversity course \cite{rib25}, which is mostly based on this text.
 
 Technical terms that are defined in this text can be found in the index. We also use standard terms that we do not define, because adequate definitions are easily found in Wikipedia or other resources. For example, the definitions of an \textit{irreducible representation}, an \textit{indecomposable representation} or a \textit{projective representation} are found in Wikipedia as the first results of searches for these terms. 
 
@@ -551,7 +551,7 @@ For example, let us set $L_{-1}V_0=0$ in $\mathcal{V}_0$. The resulting quotient
  \end{tikzpicture}
  \label{r11}
 \end{align}
-If $\mathcal{R}$ has several singular vectors, we can define various quotient representations by setting some singular vectors to zero. A \myindex{degenerate representation}\index{degenerate!---representation}\index{representation!degenerate---} is a representation that has at least 1 vanishing singular vector. A degenerate representation is partly degenerate if it has some non-vanishing singular vectors, and \myindex{fully degenerate}\index{fully degenerate!---representation}\index{representation!fully degenerate---} if all singular vectors vanish. Partly degenerate representations play an important role in CFTs with extended chiral symmetries, such as conformal Toda theories \cite{fl07c}.
+If $\mathcal{R}$ has several singular vectors, we can define various quotient representations by setting some singular vectors to zero. A \myindex{degenerate representation}\index{degenerate!---representation}\index{representation!degenerate---} is a representation that has at least 1 vanishing singular vector. A degenerate representation is partly degenerate (= reducible) if it contains some non-vanishing singular vectors, and \myindex{fully degenerate}\index{fully degenerate!---representation}\index{representation!fully degenerate---} (= irreducible) if all singular vectors vanish.
 
 For $r,s\in\mathbb{N}^*$, the level-$rs$ singular vector $L_{\langle r,s\rangle}V_{\Delta_{(r,s)}}\in \mathcal{V}_{\Delta_{(r,s)}}$ is a primary state of dimension $\Delta_{(r,-s)}$, according to Eq. \eqref{drms}. Together with its descendants, this state generates a Verma module $\mathcal{V}_{\Delta_{(r,-s)}}\subset \mathcal{V}_{\Delta_{(r,s)}}$.
 The Verma $\mathcal{V}_{\Delta_{(r,s)}}$ is therefore reducible, as is any highest-weight representation with a non-vanishing singular vector.
@@ -571,6 +571,26 @@ $\mathcal{R}^f_{\langle r,s\rangle}$. These states obey the singular vector equa
 L_{\langle r, s\rangle} V^d_{\langle r,s\rangle} = L_{\langle r, s\rangle} V^f_{\langle r,s\rangle} = 0\ .
 \label{lvdz}
 \end{align}
+Let us summarize these notations:
+\begin{align}
+\renewcommand{\arraystretch}{1.3}
+ \begin{array}{|c|r|l|}
+  \hline
+  \text{Primary state} & \text{Highest-weight representation} & \text{Irreducible?}
+  \\
+  \hline\hline
+  V_\Delta   &  \text{Verma module } \mathcal{V}_\Delta & \text{if and only if } \Delta\notin\{\Delta_{(r,s)}\}_{r,s\in\mathbb{N}^*}
+  \\
+  \hline
+  V^d_{\langle r,s\rangle} & \text{degenerate rep. } \mathcal{R}^d_{\langle r,s\rangle} & \text{if } \beta^2\notin \mathbb{Q}
+  \\
+  \hline
+  V^f_{\langle r,s\rangle} & \text{fully degenerate rep. } \mathcal{R}^f_{\langle r,s\rangle} & \text{yes}
+  \\
+  \hline
+ \end{array}
+\end{align}
+It can happen that $V^d_{\langle r,s\rangle}=V^f_{\langle r,s\rangle}$, in which case we may use the former notation to emphasize the existence of a vanishing descendant, or the latter notation to emphasize the absence of non-vanishing singular vectors.
 
 \subsubsection{The Shapovalov form}
 
@@ -4351,5 +4371,7 @@ Reply to Referee 2.
 - At the beginning of Section 1.2, sketched how fields are constructed in two other types of approaches.
 
 - Before (1.22), removed the superfluous assumption that $p,q$ are coprime, making it clearer that $(p, q)=(1,1)$ is allowed.
+
+- At the end of Section 1.4, summarized notations and clarified the relation with reducibility.
 
 - More explanations before what is now Eq. (2.35), to better describe the limit.
