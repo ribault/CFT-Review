@@ -608,7 +608,7 @@ This involution obeys $[L_m,L_n]^* = -[L_m^*,L_n^*]$. It can be extended to the 
                                              \end{array}\right.
 \label{shap}
 \end{align}
-At each level $N\in\mathbb{N}$, the Shapovalov form is described by a matrix that depends on $\Delta$ and $c$. In the cases $N=0,1,2$, these matrices are 
+At each level $N\in\mathbb{N}$, the Shapovalov form is described by a matrix that depends on $\Delta$ and $c$. In the case of a Verma module at levels $N=0,1,2$, these matrices are
 \begin{align}
  S_{1,1} = 1 \ \  , \ \   S_{L_{-1},L_{-1}} = 2\Delta \ \  , \ \  \begin{bmatrix} S_{L_{-1}^2,L_{-1}^2} & S_{L_{-1}^2,L_{-2}} \\ S_{L_{-1}^2,L_{-2}} & S_{L_{-2},L_{-2}}\end{bmatrix} = 
  \begin{bmatrix} 4\Delta(2\Delta+1) & 6\Delta \\ 6\Delta & 4\Delta+\frac{c}{2}\end{bmatrix}\ .
@@ -618,7 +618,9 @@ For the Shapovalov form, any singular vector or descendant thereof is a \myindex
 \begin{align}
  \forall L, L'\in \mathcal{L}\ , \quad \big(LL_{\langle r,s\rangle} V_{\Delta_{(r,s)}}\big|L' V_{\Delta_{(r,s)}}\big) =0 \ . 
 \end{align}
-For generic values of the central charge, $S_{LL_{\langle r,s\rangle},L'}(\Delta)$ has a simple zero at $\Delta=\Delta_{(r,s)}$. This implies that the inverse Shapovalov form at level $N$ has simple poles for $\Delta\in \left\{\Delta_{(r,s)}\right\}_{rs\leq N}$. In a basis of level-$rs$ creation operators that includes $L_{\langle r,s\rangle}$, the level-$rs$ inverse Shapovalov form behaves as
+A highest-weight representation is irreducible if and only if at each level $N\in\mathbb{N}$, its Shapovalov matrix is invertible.
+
+For a Verma module at generic values of the central charge, $S_{LL_{\langle r,s\rangle},L'}(\Delta)$ has a simple zero at $\Delta=\Delta_{(r,s)}$. This implies that the inverse Shapovalov form at level $N$ has simple poles for $\Delta\in \left\{\Delta_{(r,s)}\right\}_{rs\leq N}$. In a basis of level-$rs$ creation operators that includes $L_{\langle r,s\rangle}$, the level-$rs$ inverse Shapovalov form behaves as
 \begin{align}
  S^{-1}_{L,L'}(\Delta) \underset{\Delta\to \Delta_{(r,s)}} = \frac{1}{\Delta-\Delta_{(r,s)}} \frac{\delta_{L,L_{\langle r,s\rangle}}\delta_{L',L_{\langle r,s\rangle}}}{S'_{L_{\langle r,s\rangle},L_{\langle r,s\rangle}}(\Delta_{(r,s)})}  + O(1) \ . 
  \label{smo}
@@ -635,7 +637,7 @@ In the presence of scale invariance, we do not lose information by sending $R\to
 
 In the bootstrap approach, which is axiomatic rather than constructive, fields need not be constructed from other objects. Rather, we use fields as a convenient notation for stating properties of correlation functions, which we will introduce in Section \ref{sec:cor}. In order to facilitate comparisons, let us indicate how fields are constructed in other approaches:
 \begin{itemize}
- \item \textbf{Fields as operators:} Fields may be constructed as linear maps from the spectrum to itself. Since the Virasoro algebra also acts on the spectrum, there is a natural action of the Virasoro algebra on fields. Namely, the action that we will write as $L_nV(z)$ is defined as the operator commutator $[L_n,V(z)]$. The $N$-point function that we will write as $\left<\prod_{i=1}^N V_i(z_i)\right>$ is then constructed as $\left<0\middle| \prod_{i=1}^N V_i(z_i)\middle|0\right>$, where $\left|0\right>$ is the vacuum state, on which the $N$ operators act in some order. The formalism of vertex operator algebras provides an algebraic construction of fields as operators.
+ \item \textbf{Fields as operators:} Fields may be constructed as linear maps from the spectrum to itself. Since the Virasoro algebra also acts on the spectrum, there is a natural action of the Virasoro algebra on fields. Namely, the action that we will write as $L_nV(z)$ is defined as the operator commutator $[L_n,V(z)]$. The $N$-point correlation function that we will write as $\left<\prod_{i=1}^N V_i(z_i)\right>$ is then constructed as $\left<0\middle| \prod_{i=1}^N V_i(z_i)\middle|0\right>$, where $\left|0\right>$ is the vacuum state, on which the $N$ operators act in some order. The formalism of vertex operator algebras provides an algebraic construction of fields as operators.
  \item \textbf{Fields as functionals:} In a functional integral approach such as the Coulomb gas formalism, fields are constructed from a fundamental free field $\varphi(z)$, in terms of which the functional integration measure $D\varphi(z)$ is defined. A primary fields $V_\Delta(z)$ is constructed as an exponential $e^{\alpha\varphi(z)}$, where $\alpha$ depends on the dimension $\Delta$ and on the central charge. Descendant fields also involve derivatives of $\varphi(z)$.
 \end{itemize}
 
@@ -658,7 +660,7 @@ Applying Eq. \eqref{pvlv} to $L_n^{(z)} V(z)$, we find how the Virasoro generato
 \end{align}
 This can be rewritten as the $z$-independence of a formal Laurent series that combines all the generators $(L_n^{(z)})_{n\in\mathbb{Z}}$, 
 \begin{align}
- \frac{\partial}{\partial z} \sum_{n\in\mathbb{Z}} \frac{L_n^{(z)}}{(y-z)^{n+2}} = 0\ ,\qquad (\forall y\in\mathbb{C}\backslash \{z\})\ .
+ \forall y\in\mathbb{C}\backslash \{z\}\ , \qquad \frac{\partial}{\partial z} \sum_{n\in\mathbb{Z}} \frac{L_n^{(z)}}{(y-z)^{n+2}} = 0\  .
 \end{align}
 The formal Laurent series is then called the \myindex{energy-momentum tensor}\index{energy-momentum tensor}, 
 \begin{align}
@@ -685,7 +687,7 @@ The fundamental axiom of conformal field theory, which underlies the conformal b
   \label{ope}
  \end{align}
  for some family $(V_k)_{k}$ of linearly independent states, and
-some functions $C^k_{12}(z_1,z_2)$ called \myindex{OPE coefficients}\index{OPE!---coefficient}. Operator product expansions generally exist in quantum field theory, but they are particularly useful in conformal field theory because they are supposed to hold for any $z_1$ in a finite neighbourhood of $z_2$ (but $z_1\neq z_2$), and not just asymptotically as $z_1\to z_2$. The finite neighbourhood in question may depend on the correlation function in which we perform the OPE, and also on the family $(V_k)_{k}$.
+some functions $C^k_{12}(z_1,z_2)$ called \myindex{OPE coefficients}\index{OPE!---coefficient}. Operator product expansions generally exist in quantum field theory, but they are particularly useful in conformal field theory because they hold for any $z_1$ in a finite neighbourhood of $z_2$ (but $z_1\neq z_2$), and not just asymptotically as $z_1\to z_2$. The finite neighbourhood in question depends on the correlation function in which we perform the OPE, and also on the family $(V_k)_{k}$.
 
 We further assume that the product of fields is commutative,
 \begin{align}
@@ -782,7 +784,11 @@ If $\Delta\notin\left\{\Delta_{(r,s)}\right\}_{rs\in\mathbb{N}^*}$, the Shapoval
 \end{align}
 where the \myindex{OPE structure constant}\index{OPE!---structure constant}\index{structure constant!OPE---} $C^\Delta_{\Delta_1,\Delta_2}$ is left undetermined by conformal symmetry, while the dependence on $z_1,z_2$ and the coefficients $f^{\Delta,L}_{\Delta_1,\Delta_2}$ are universal quantities that are in principle known. 
 
-If $\Delta=\Delta_{(r,s)}$, there is a singular vector $L_{\langle r,s\rangle} V_{\Delta_{(r,s)}}$ at level $rs$ in the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$. This singular vector manifests itself as a simple pole at $\Delta=\Delta_{(r,s)}$ of the vectors $(f^L)_{L\in\mathcal{L}_N}$ for any $N\geq rs$. Nevertheless, the Shapovalov form is invertible provided the singular vector vanishes (and any other singular vectors vanish as well). Then the primary field is fully degenerate, let us call it $V^f_{\langle r,s\rangle}$.
+If $\Delta=\Delta_{(r,s)}$, there is a singular vector $L_{\langle r,s\rangle} V_{\Delta_{(r,s)}}$ at level $rs$ in the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$. This singular vector manifests itself as a simple pole at $\Delta=\Delta_{(r,s)}$ of the inverse Shapovalov form \eqref{smo}, so that $(f^L)_{L\in\mathcal{L}_{N\geq rs}}$ also have a simple pole at $\Delta=\Delta_{(r,s)}$.
+
+TO BE COMPLETED
+
+Nevertheless, the Shapovalov form is invertible provided the singular vector vanishes (and any other singular vectors vanish as well). Then the primary field is fully degenerate, let us call it $V^f_{\langle r,s\rangle}$.
 The basis of descendant fields that appear in the OPE is a subset of $(LV^f_{\langle r,s\rangle})_{L\in\mathcal{L}}$. Their coefficients are again universal quantities. However, as we will see in Section \ref{sec:dope}, a degenerate field can appear in the OPE $V_{\Delta_1}V_{\Delta_2}$, only under certain conditions on $\Delta_1$ and $\Delta_2$.
 
 In the case of the OPE coefficients $C^{\Delta,L}_{\Delta_1,\Delta_2}(z_1,z_2)$, we have just seen that the primary field determines the contributions of its descendant fields, provided there is no singular vector among these descendants, i.e. provided the primary field generates an irreducible representation. In Section \ref{sec:csc}, we will also see that correlation functions of primary fields determine the correlation functions of their descendant fields, with no caveats about singular vectors this time. This property of Virasoro symmetry would  not necessarily hold if we had a larger chiral symmetry algebra such as a W-algebra.
