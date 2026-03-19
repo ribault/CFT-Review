@@ -2472,7 +2472,7 @@ These conditions are fulfilled by
  {\sqrt{B_{P_{(r_1,s_1)}}B_{P_{(r_2,s_2)}} B_{P_{(r_3,s_3)}}}}\ ,
  \label{wtc}
 \end{align}
-where the undetermined sign of $\sqrt{B_{P_{(r,s)}}}$ comes from the field renormalization $V^d_{\langle r,s\rangle}\to - V^d_{\langle r,s\rangle}$, which is still allowed as it does not modify 2-point functions.
+where the undetermined sign of $\sqrt{B_{P_{(r,s)}}}$ comes from the field renormalization $V^d_{\langle r,s\rangle}\to - V^d_{\langle r,s\rangle}$.
 For example, in the Ising minimal model at $\beta^2=\frac34$, the nontrivial structure constant is $\widetilde{C}_{\langle 2,1\rangle\langle 2,1\rangle\langle 1,2\rangle}=\frac12$ (or $-\frac12$ if we renormalize $V^d_{\langle 1,2\rangle}$). In this case, the double Gamma functions not only combine into Gamma functions, but further simplify into a rational number.
 
 Finally, let us consider Liouville theory with $c\in \mathbb{C}\backslash (-\infty,1]$. This includes the half-line $c\in [25,\infty)$ i.e. $\beta\in i\mathbb{R}^*$, where the function $\Gamma_\beta$ is not defined.
@@ -2509,7 +2509,7 @@ A remarkable property of Liouville theory in the DOZZ normalization is that dege
  \lim_{P\to P_{(r,s)}} V_P = V^d_{\langle r,s\rangle} \ .
  \label{limvp}
 \end{align}
-This relation is natural in the path integral construction of Liouville theory \cite{zz95}, but not necessarily in the bootstrap approach: it is not true in Liouville theory with $c\in (-\infty, 1]$, and for $c\in\mathbb{C}\backslash (-\infty,1]$ it requires a particular normalization. It is thanks to this relation that generalized minimal models can be obtained as limits of Liouville theory, as announced in Section \ref{sec:lod}. This relation follows from the analytic properties of the structure constants, as we will now show in the case $(r,s)=(1,1)$. (See \cite[Section 3.1.5]{rib14} for the general case $r,s\in\mathbb{N}^*$.) Since $2iP_{(1,1)}=Q$ and $\Gamma_b(x)$ has a pole at $x=0$, we have $\hat C^\text{DOZZ}_{P_{(1,1)},P_2,P_3} = 0$ and it may seem that $\lim_{P_1\to P_{(1,1)}} V_{P_1} = 0$. However, in the OPE
+This relation is natural in the path integral construction of Liouville theory \cite{zz95}, but not necessarily in the bootstrap approach: it is not true in Liouville theory with $c\in (-\infty, 1]$, and for $c\in\mathbb{C}\backslash (-\infty,1]$ it requires a particular field normalization. It is thanks to this relation that generalized minimal models can be obtained as limits of Liouville theory, as announced in Section \ref{sec:lod}. This relation follows from the analytic properties of the structure constants, as we will now show in the case $(r,s)=(1,1)$. (See \cite[Section 3.1.5]{rib14} for the general case $r,s\in\mathbb{N}^*$.) Since $2iP_{(1,1)}=Q$ and $\Gamma_b(x)$ has a pole at $x=0$, we have $\hat C^\text{DOZZ}_{P_{(1,1)},P_2,P_3} = 0$ and it may seem that $\lim_{P_1\to P_{(1,1)}} V_{P_1} = 0$. However, in the OPE
 \begin{align}
 V_{P_1}V_{P_2} \sim \frac12 \int_{\mathbb{R}}dP\ \frac{\hat C^\text{DOZZ}_{P_1,P_2,P}}{\hat B^\text{DOZZ}_{P}}V_P\ , 
 \end{align}
@@ -2680,10 +2680,12 @@ It is not easy to directly evaluate the crossing symmetry equations \eqref{seteu
  \item In Liouville theory with $c\geq 25$, 4-point functions can be constructed from chiral vertex operators \cite{tes03b}.
  \item Again in Liouville theory with $c\geq 25$, 4-point functions can be constructed as expectation values in a probabilistic Gaussian free field theory \cite{ckrv05}. 
 \end{itemize}
-From these cases, all diagonal CFTs with 2 degenerate fields can be obtained by analytic continuation and taking limits \eqref{lims}, although mathematical rigor is lost in the process. In particular, the probabilistic construction only makes sense for $c\geq 25$. 
+From these cases, all diagonal CFTs with 2 degenerate fields can be obtained by analytic continuation and taking limits \eqref{lims}, although mathematical rigor is lost in the process. In particular, the probabilistic construction only makes sense for $c\geq 25$.
+
+Constructing Liouville theory with $c\leq 1$ would be particularly challenging, because in that case $\lim_{P\to P_{(1,1)}}V_P(z) = V_{P_{(1,1)}}(z)$ is a $z$-dependent, non-degenerate field. (Compare with \eqref{limvp} for $c\in\mathbb{C}\backslash(-\infty, 1)$.) But in the construction of $V_P$ as $e^{\alpha\varphi}$, our limit corresponds to $\alpha\to 0$ and leads to the identity field. And the limit can hardly fail to commute with the functional integral over $\varphi(z)$, which must yield correlation functions that are holomorphic in $\alpha$.
 
 In this text we will focus on a numerical approach to crossing symmetry. This approach is applicable to any CFT whose spectrum is exactly known, and therefore to all the exactly solvable CFTs that we have considered. 
-A similar approach is also applicable to integrable conformal gauge theories such as $\mathcal{N}=4$ super-Yang--Mills theory in 4 dimensions; these gauge theories however have spectrums that are much denser than in our 2-dimensional CFTs, requiring more sophisticated tools \cite{cgjp22}.
+A similar approach is also applicable to integrable conformal gauge theories such as $\mathcal{N}=4$ super-Yang--Mills theory in 4 dimensions; these gauge theories however have spectrums that are denser than in our 2-dimensional CFTs, requiring more sophisticated tools \cite{cgjp22}.
 
 \subsubsection{Various flavours of numerics}\label{sec:vfn}
 
@@ -2729,7 +2731,7 @@ In order to solve a CFT, we need to determine 2-point and 3-point structure cons
 \end{align}
 This is a sum of as many terms as the multiplicity of the primary field $V_{\Delta,\bar\Delta}$ in the $s$-channel spectrum $\mathcal{S}^{(s)}$.
 
-This raises the problem of the \myindex{factorization of structure constants}\index{factorization of structure constants}, which may mean determining $C_{ijk}$ from $D^{(x)}_{\Delta,\bar\Delta}$, or just constraining $D^{(x)}_{\Delta,\bar\Delta}$ by requiring that it can be rewritten in terms of some $C_{ijk}$. If we know nothing about field multiplicities, factorization is empty constraint. (Any function of 2 variables has a decomposition of the type $f(x,y)=\sum_{i=1}^m g_i(x)h_i(y)$, if we allow the number of terms $m\in\mathbb{N}\cup \infty$ to be large enough.)
+This raises the problem of the \myindex{factorization of structure constants}\index{factorization of structure constants}, which means determining $C_{ijk}$ from $D^{(x)}_{\Delta,\bar\Delta}$, or just constraining $D^{(x)}_{\Delta,\bar\Delta}$ by requiring that it can be rewritten in terms of some $C_{ijk}$. If we know nothing about field multiplicities, factorization is empty constraint. (Any function of 2 variables has a decomposition of the type $f(x,y)=\sum_{i=1}^m g_i(x)h_i(y)$, if we allow the number of terms $m\in\mathbb{N}\cup \infty$ to be large enough.)
 In principle, knowing the spectrum means knowing field multiplicities. In practice however, in loop CFTs, we know the spectrum of conformal dimensions without knowing the multiplicities.
 
 If the multiplicity $m(V_{\Delta,\bar\Delta})$ of $V_{\Delta,\bar\Delta}$ in the spectrum $\mathcal{S}$ is finite, it can in principle be determined from the values of $D^{(s)}_{\Delta,\bar\Delta}$ for all possible 4-point functions $\left<V_{k_1}V_{k_2}V_{k_3}V_{k_4}\right>$:
@@ -2737,7 +2739,7 @@ If the multiplicity $m(V_{\Delta,\bar\Delta})$ of $V_{\Delta,\bar\Delta}$ in the
  m\left(V_{\Delta,\bar\Delta}\right) = \text{rank}\left(\left.D^{(s)}_{\Delta,\bar\Delta}\right|_{\left<V_{k_1}V_{k_2}V_{k_3}V_{k_4}\right>}\right)_{(k_1,k_2),(k_3,k_4)\in\mathcal{S}^2\times \mathcal{S}^2}\ .
 \end{align}
 In principle it is impossible to compute the rank of an infinite matrix, but 
-in practice it may be enough to study a few 4-point functions for guessing a given multiplicity. This has been done in a few examples of diagonal 4-point functions in loop CFTs \cite{rib22}.
+in practice it is enough to study a few 4-point functions for determining a given multiplicity. This has been done in a few examples of diagonal 4-point functions in loop CFTs \cite{rib22}.
 
 \subsection{Interchiral symmetry} \label{sec:icb}
 
@@ -2758,7 +2760,7 @@ Here we will focus on the extended spectrum $\widehat{\mathcal{S}}^\text{loop}$ 
   \widetilde{\mathcal{V}}_{(r,s)} &= \bigoplus_{k\in\mathbb{Z}} \mathcal{V}_{P_{(r,s+2k)}}\otimes \overline{\mathcal{V}}_{P_{(-r,s+2k)}} && \ , \  r\in \tfrac12\mathbb{N}^*,\ s\in \tfrac{1}{2r}\mathbb{Z}\cap (-1, 1],\ (r,s)\notin \mathbb{N}^2\ , 
  \label{wvrs}
  \\
- \widetilde{\mathcal{W}}_{(r,s)} &= \bigoplus_{k\in \mathbb{N}} \mathcal{W}_{(r, s+k)} && \ , \ r\in \mathbb{N}^*,\ s\in \{0,1\}\ ,
+ \widetilde{\mathcal{W}}_{(r,s)} &= \bigoplus_{k\in \mathbb{N}} \mathcal{W}_{(r, s+2k)} && \ , \ r\in \mathbb{N}^*,\ s\in \{0,1\}\ ,
  \label{wlog}
  \\
    \widetilde{\mathcal{V}}_P &= \bigoplus_{k\in\mathbb{Z}} \mathcal{V}_{P+k\beta^{-1}}\otimes \overline{\mathcal{V}}_{P+k\beta^{-1}} && \ , \ P\in \mathbb{C}\ ,
@@ -2843,7 +2845,7 @@ Let us compute $s$-channel interchiral blocks for the 4-point function $\left<\p
  \label{gtrs}
 \end{align}
 To make this explicit, it remains to compute the ratios of 4-point structure constants. This is in principle a straightforward consequence of the shift equation for the 3-point structure constant \eqref{sh-mp2}. However, for certain values of the parameters, this shift equation 
-is finite after cancelling poles from the numerator and denominator. Such cancellations can be avoided by writing the shift equations differently. In fact, in shifts of the 3-point structure constant $C$ \eqref{cref}, no cancelling poles occur. The price to pay is that $C$ only solves shift equations up to signs. Taking these signs into account, the shift equation \eqref{sh-mp2} may be rewritten as
+is finite after cancelling poles from the numerator and denominator. Such cancellations can be avoided by writing the shift equations differently. In fact, in shifts of the 3-point structure constant $\check C$ \eqref{cref}, no cancelling poles occur. The price to pay is that $\check C$ only solves shift equations up to signs. Taking these signs into account, the shift equation \eqref{sh-mp2} may be rewritten as
 \begin{subequations}
  \label{cbshift}
  \begin{multline}
