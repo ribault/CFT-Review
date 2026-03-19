@@ -185,7 +185,7 @@ We will also propose a unified treatment of loop CFTs, which are not solved but 
 
 The known solvable CFTs have many applications to statistical physics, in particular to percolation, to polymers, and more recently to active hydraulics \cite{jcpb23}. Liouville theory and minimal models have well-known applications to quantum gravity in 2d. Applications of non-diagonal solvable CFTs such as loop CFTs to quantum gravity in 3d are limited by the bound on the central charge $\Re c < 13$. (See Section \ref{sec:dotc}.) A CFT that would be holographically dual to quantum gravity in 3d Anti-de Sitter space would need to exist for $c\to+\infty$, while for 3d de Sitter space we would need $\Re c = 13$ \cite{god24, cemr24}.
 
-There are other solved or solvable CFTs that we will not mention, because they have extended chiral symmetries, in addition to conformal symmetry. Some CFTs of that type can be solved using the methods that we will cover, for example certain Wess--Zumino--Witten models.
+We will not cover solved or solvable CFTs that have extended chiral symmetries: symmetry algebras strictly larger than the conformal algebra, while being left-right factorized like the conformal algebra. Some CFTs of that type can be solved using the methods that we will cover, for example certain Wess--Zumino--Witten models.
 
 \subsubsection*{How to solve CFTs in $d=2$}
 
@@ -1551,7 +1551,8 @@ where $\mathcal{R}^d_{\langle r,s\rangle}$ is a representation that may or may n
  \boxed{\mathcal{R}^f_{\langle r_1,s_1\rangle} \times \mathcal{R}^f_{\langle r_2,s_2\rangle} = \sum_{r\overset{2}{=} |r_1-r_2|+1}^{\min(r_1+r_2,2p-r_1-r_2)-1}\sum_{s\overset{2}{=} |s_1-s_2|+1}^{\min(s_1+s_2,2q-s_1-s_2)-1} \mathcal{R}^f_{\langle r,s\rangle}} \ , 
  \label{rfrf}
 \end{align}
-where we only generate Kac indices in the Kac table $(r,s)\in K_{p,q}$. The number of terms is $\min(r_1,r_2,p-r_1,p-r_2)\min(s_1,s_2,q-s_1,q-s_2)$. To show that $\mathcal{R}^f_{\langle r,s\rangle}$ is fully degenerate, it is enough to realize that a Kac table representation is fully degenerate if and only if its fusion with a generic Verma module $\mathcal{V}_P$ is zero. From Eq. \eqref{rrsvp},
+where the indices on the right-hand side belong to the Kac table $(r,s)\in K_{p,q}$. The number of terms is $\min(r_1,r_2,p-r_1,p-r_2)\min(s_1,s_2,q-s_1,q-s_2)$. To show that $\mathcal{R}^f_{\langle r,s\rangle}$ is fully degenerate, let us study the fusion of fully degenerate representations with Verma modules.
+From Eq. \eqref{rrsvp},
 \begin{align}
  \mathcal{R}^f_{\langle r,s\rangle}\times \mathcal{V}_P \subset \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}} \mathcal{V}_{P+i\beta +j\beta^{-1}} \cap \sum_{i'=-\frac{p-r-1}{2}}^{\frac{p-r-1}{2}} \sum_{j'=-\frac{q-s-1}{2}}^{\frac{q-s-1}{2}} \mathcal{V}_{P+i'\beta +j'\beta^{-1}}\ .
 \end{align}
@@ -1560,7 +1561,8 @@ But parity forbids $(i,j)=(i',j')$, since $p$ or $q$ is odd. And we have $2|i-i'
 \begin{align}
  \mathcal{R}^f_{\langle r,s\rangle}\times \mathcal{V}_P = 0 \ . 
 \end{align}
-Therefore, by associativity of the fusion product, the product of 2 fully degenerate representations is again a combination of fully degenerate representations.
+Therefore, a Kac table representation is fully degenerate if and only if its fusion with a generic Verma module $\mathcal{V}_P$ is zero.
+By associativity of the fusion product, the product \eqref{rfrf} of 2 fully degenerate representations is again a combination of fully degenerate representations.
 
 We therefore define the \myindex{A-series minimal model}\index{minimal model!A-series---} AMM$_{p,q}$ by its spectrum, made of fully degenerate fields in the Kac table:
 \begin{align}
@@ -1848,7 +1850,7 @@ The diagonal model AMM$_{8,5}$ has 14 primary fields $V^f_{\langle r,s\rangle}$ 
   \text{Field} & V_{(0,\frac12)} & V_{(0,\frac32)} & V_{(2,-\frac32)} & V_{(2,-\frac12)} & V_{(2,\frac12)} & V_{(2,\frac32)} 
   \\
   \hline
-  \text{Indices} & \langle 4,2\rangle\langle 4,2\rangle & \langle 4,1\rangle\langle 4,1\rangle &  \langle 6,1\rangle\langle 2,1\rangle & \langle 6,2\rangle\langle 2,2\rangle  & \langle 2,2\rangle\langle 6,2\rangle  &  \langle 2,1\rangle\langle 6,1\rangle
+  \text{Indices} & ( 4,2)( 4,2) & ( 4,1)( 4,1) &  ( 6,1)( 2,1) & ( 6,2)( 2,2)  & ( 2,2)( 6,2)  &  ( 2,1)( 6,1)
   \\
   \hline 
  \end{array}
@@ -1897,7 +1899,7 @@ In the critical limit, loop models become conformally invariant, and give rise t
 
 There is a lot of choice about which observables to include in a loop model. In the case of the Ising model, if we consider only local observables, we obtain the minimal model $\text{AMM}_{4,3}$ in the critical limit. If we also consider non-local observables such as cluster connectivities, we obtain a much richer CFT.
 
-For applications to statistical physics, what matters is less to define a consistent CFT than to compute correlation functions, which are then interpreted in terms of probabilities. We will sketch a few consistent CFTs in Section \ref{sec:models}, but our main focus will be on correlation functions, which will be the subjects of Sections \ref{sec:bcloop} and \ref{sec:cloop}.
+For applications to statistical physics, what matters is less to define a consistent CFT than to compute correlation functions, which are then interpreted in terms of probabilities. We will sketch a few consistent CFTs in Section \ref{sec:models}, but our main focus will be on correlation functions, which will be the subject of Section \ref{sec:bcloop} and Section \ref{sec:cloop}.
 
 \subsubsection{Definition and basic properties}
 
@@ -1950,7 +1952,7 @@ Our simple extended spectrum hides important subtleties:
  To some extent, the structure of that representation can alternatively be derived from lattice loop models \cite{glhjs20}.
  By convention we label the resulting family $\left(\mathcal{W}_{(r,s)}\right)_{\substack{r\in \mathbb{N}^*\\ s\in\mathbb{N}}}$ with natural integers $s$, where we define
  $\mathcal{W}_{(r,0)}= \mathcal{V}_{\Delta_{(r,0)}}\otimes\bar{\mathcal{V}}_{\Delta_{(r,0)}}$.
-In Section \ref{sec:log} we will derive the corresponding logarithmic conformal blocks from the analytic properties of correlation functions.
+In Section \ref{sec:log} we will deduce the corresponding logarithmic conformal blocks from the analytic properties of correlation functions.
 \end{itemize}
 
 
@@ -1981,7 +1983,6 @@ Each one of these CFTs has:
  The group structure actually exists only if $n,Q\in\mathbb{N}^*$. However, what matters for the CFT is the category of finite-dimensional representations, which can be defined for any $n,Q\in\mathbb{C}$ \cite{gnjrs21, br19}.
 \end{itemize}
 Degenerate fields are invariant under global symmetries, while other fields can transform in nontrivial representations \cite{jrs22, rjrs24}.
-
 For example, in the $O(n)$ CFT, the fields $V_{(\frac12,0)},V_{(1,0)}$ and $V_{(1,1)}$ transform under $O(n)$ as a vector, a symmetric 2-tensor and an antisymmetric 2-tensor respectively. There are 2 fields of the type $V_{(\frac32,0)}$, which transform as symmetric and antisymmetric 3-tensors. Let us diplay the behaviour of these fields and a few more, while writing finite-dimensional irreducible representations of $O(n)$ as Young diagrams:
 \begin{subequations}
 \label{von}
