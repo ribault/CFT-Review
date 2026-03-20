@@ -198,7 +198,7 @@ We believe that the conformal bootstrap approach is technically simpler, more ge
 
 \subsubsection*{Conformal bootstrap approach}
 
-Solving a CFT means determining its spectrum and structure constants. We deduce spectrums from assumptions such as 
+Solving a CFT means determining its spectrum and structure constants. We deduce spectra from assumptions such as
 \begin{itemize}
  \item the existence of degenerate fields,
  \item single-valuedness of correlation functions,
@@ -443,7 +443,7 @@ Let us introduce a new notation for the conformal dimension: the \myindex{moment
  \label{dp}
 \end{align}
 In this notation, a Verma module is now called $\mathcal{V}_P$. The \myindex{reflection}\index{reflection} $P\to -P$ leaves
-$\Delta$ invariant, therefore $\mathcal{V}_P=\mathcal{V}_{-P}$. For any $r,s\in\mathbb{N}^*$, the dimension $\Delta_{(r, s)}$ corresponds to the momentums
+$\Delta$ invariant, therefore $\mathcal{V}_P=\mathcal{V}_{-P}$. For any $r,s\in\mathbb{N}^*$, the dimension $\Delta_{(r, s)}$ corresponds to the momenta
 \begin{align}
  \boxed{P_{(r, s)} = \frac12\left(r\beta -s\beta^{-1}\right)}\ ,
  \label{prs}
@@ -823,7 +823,7 @@ In terms of the fusion product, the fusion rule \eqref{vov} reads
 Given 2 representations $\mathcal{R}_i,\mathcal{R}_j$ of the Virasoro algebra with a given central charge, the fusion product $\mathcal{R}_i \times \mathcal{R}_j$ is a representation of the same Virasoro algebra. This allows the fusion product to describe the behaviour of OPEs in a given CFT. The decomposition into indecomposables $\mathcal{R}_i \times \mathcal{R}_j = \sum_k m_{i,j}^k \mathcal{R}_k$ is the algebraic counterpart of the OPE. The coefficient $m_{i,j}^k\in \mathbb{N}\cup\{\infty\}$ is called a \myindex{fusion multiplicity}\index{fusion!---multiplicity}.
 The price to pay is that the fusion product has a complicated definition that involves the fields' positions.
 
-In contrast, given representations $\mathcal{R}_1,\mathcal{R}_2$ of two copies of the Virasoro algebra with central charges $c_1,c_2$, the tensor product $\mathcal{R}_1\otimes \mathcal{R}_2$ is a representation of the Virasoro algebra with central charge $c_1+c_2$. The tensor product is useful for defining the product of two CFTs, with a spectrum that is the tensor product of their two spectrums.
+In contrast, given representations $\mathcal{R}_1,\mathcal{R}_2$ of two copies of the Virasoro algebra with central charges $c_1,c_2$, the tensor product $\mathcal{R}_1\otimes \mathcal{R}_2$ is a representation of the Virasoro algebra with central charge $c_1+c_2$. The tensor product is useful for defining the product of two CFTs, with a spectrum that is the tensor product of their two spectra.
 
 The construction and properties of the fusion product are well-established in the case of irreducible Kac table representations at $\beta^2 \in \mathbb{Q}_{>0}$ \cite{gab99}. Then the case of degenerate representations and Verma modules at generic $\beta^2\in \mathbb{C}\backslash\mathbb{Q}$ can be deduced by taking limits and doing analytic continuation in $\beta^2$. To actually compute fusion products, it will be technically easier to begin with the second case in Section \ref{sec:fpdr}, and deduce the first case in Section \ref{sec:amm}. We will accept that in both cases the fusion product is commutative and associative, with multiplicities $m_{i,j}^k\in \{0,1\}$ that are  invariant under permutations of the 3 indices. In fact, $m_{i,j}^k\in \{0,1\}$ is an algebraic consequence of the result of Section \ref{sec:csope} that in OPEs, primary fields determine descendant fields, provided the fields transform in irreducible representations of the Virasoro algebra.
 
@@ -847,16 +847,16 @@ $\left(\frac{\partial^2}{\partial z_2^2} + \frac{\beta^2}{z_{12}}\frac{\partial}
 \begin{align}
  \beta^2 \left(\Delta_{(2,1)}+¨2\Delta_1-\Delta_2\right) = \left(\Delta_{(2,1)}+\Delta_1-\Delta_2\right)\left(\Delta_{(2,1)}+1+\Delta_1-\Delta_2\right)\ .
 \end{align}
-Using the expression \eqref{ars} for $\Delta_{(2,1)}$, and replacing conformal dimensions with momentums \eqref{dp}, this equation reduces to 
+Using the expression \eqref{ars} for $\Delta_{(2,1)}$, and replacing conformal dimensions with momenta \eqref{dp}, this equation reduces to
 \begin{align}
  \prod_{\pm,\pm}\left(\tfrac{\beta}{2}\pm P_1\pm P_2\right) = 0\ . 
 \end{align}
-This leads to the fusion rules of $V^d_{\langle 2,1\rangle}$, from which the fusion rules of $V^d_{\langle 1,2\rangle}$ are deduced by $\beta\to \beta^{-1}$. We write these fusion rules in terms of fusion products, where we label Verma modules by their momentums:
+This leads to the fusion rules of $V^d_{\langle 2,1\rangle}$, from which the fusion rules of $V^d_{\langle 1,2\rangle}$ are deduced by $\beta\to \beta^{-1}$. We write these fusion rules in terms of fusion products, where we label Verma modules by their momenta:
 \begin{align}
  \boxed{\mathcal{R}^d_{\langle 2,1\rangle}\times \mathcal{V}_P = \sum_\pm \mathcal{V}_{P\pm \frac{\beta}{2}}} \quad, \quad \boxed{\mathcal{R}^d_{\langle 1,2\rangle}\times \mathcal{V}_P = \sum_\pm \mathcal{V}_{P\pm \frac{1}{2\beta}}}\ . 
  \label{rvvp}
 \end{align}
-From these simple formulas, all the discrete spectrums of Section \ref{sec:sesc} will follow. For the moment, let us deduce the fusion products of higher degenerate representations $\mathcal{R}^d_{\langle r,s\rangle}$, using the associativity of the fusion product. We start with the remark that a highest-weight representation $\mathcal{R}$ is degenerate if and only if its fusion product with any Verma module $\mathcal{R}\times \mathcal{V}_P$ has finitely many terms:
+From these simple formulas, all the discrete spectra of Section \ref{sec:sesc} will follow. For the moment, let us deduce the fusion products of higher degenerate representations $\mathcal{R}^d_{\langle r,s\rangle}$, using the associativity of the fusion product. We start with the remark that a highest-weight representation $\mathcal{R}$ is degenerate if and only if its fusion product with any Verma module $\mathcal{R}\times \mathcal{V}_P$ has finitely many terms:
 \begin{itemize}
  \item If $\mathcal{R}=\mathcal{R}^d_{\langle r,s\rangle}$ is degenerate, the corresponding field $V^d_{\langle r,s\rangle}$ obeys
  \begin{align}
@@ -868,7 +868,7 @@ V^d_{\langle r,s\rangle} V_{\Delta_1}\ni V_{\Delta_2} \iff V_{\Delta_1}V_{\Delta
  only obey constraints from conformal symmetry, which do not restrict the primary fields that can appear.
 \end{itemize}
 It follows that a fusion product of degenerate representations is itself a finite sum of degenerate representations. 
-For example, according to Eq. \eqref{rvvp}, the product $\mathcal{R}^d_{\langle 2,1\rangle}\times\mathcal{R}^d_{\langle 2,1\rangle}$ is the sum of 2 representations of momentums $\{P_{(2,1)} \pm \frac{\beta}{2}\} = \{P_{(1,1)},P_{(3,1)}\}$. These representations must be degenerate, therefore $\mathcal{R}^d_{\langle 2,1\rangle}\times\mathcal{R}^d_{\langle 2,1\rangle}=\mathcal{R}^d_{\langle 1,1\rangle}+\mathcal{R}^d_{\langle 3,1\rangle}$. By associativity of $\mathcal{R}^d_{\langle 2,1\rangle}\times\mathcal{R}^d_{\langle 2,1\rangle}\times \mathcal{V}_P$, we then deduce 
+For example, according to Eq. \eqref{rvvp}, the product $\mathcal{R}^d_{\langle 2,1\rangle}\times\mathcal{R}^d_{\langle 2,1\rangle}$ is the sum of 2 representations of momenta $\{P_{(2,1)} \pm \frac{\beta}{2}\} = \{P_{(1,1)},P_{(3,1)}\}$. These representations must be degenerate, therefore $\mathcal{R}^d_{\langle 2,1\rangle}\times\mathcal{R}^d_{\langle 2,1\rangle}=\mathcal{R}^d_{\langle 1,1\rangle}+\mathcal{R}^d_{\langle 3,1\rangle}$. By associativity of $\mathcal{R}^d_{\langle 2,1\rangle}\times\mathcal{R}^d_{\langle 2,1\rangle}\times \mathcal{V}_P$, we then deduce
 $
  \mathcal{R}^d_{\langle 3,1\rangle} \times \mathcal{V}_P = \mathcal{V}_{P-\beta}+\mathcal{V}_P+\mathcal{V}_{P+\beta}
 $. Iterating this reasoning over $r$ or $s$, we obtain 
@@ -887,7 +887,7 @@ This allows us to find the fusion product of any degenerate representation with 
 \end{align}
 where the sums run by increments of $1$. Since this sum has $rs$ terms, the Verma module $\mathcal{V}_{\Delta_{(r,s)}}$ must have a singular vector at level $rs$, a result that we stated in Section \ref{sec:nvvm}, and which we now derived using fusion products. Fusion can even be used to compute the singular vectors themselves \cite{fms97}.
 
-We can then find the fusion product $\mathcal{R}^d_{\langle r_1,s_1\rangle}\times \mathcal{R}^d_{\langle r_2,s_2\rangle}$, either by iterating over $r_1$ and $s_1$, or by summing the degenerate representations whose momentums appear in both  $\mathcal{R}^d_{\langle r_1,s_1\rangle}\times \mathcal{V}_{P_{(r_2,s_2)}}$ and $\mathcal{R}^d_{\langle r_2,s_2\rangle}\times \mathcal{V}_{P_{(r_1,s_1)}}$:
+We can then find the fusion product $\mathcal{R}^d_{\langle r_1,s_1\rangle}\times \mathcal{R}^d_{\langle r_2,s_2\rangle}$, either by iterating over $r_1$ and $s_1$, or by summing the degenerate representations whose momenta appear in both  $\mathcal{R}^d_{\langle r_1,s_1\rangle}\times \mathcal{V}_{P_{(r_2,s_2)}}$ and $\mathcal{R}^d_{\langle r_2,s_2\rangle}\times \mathcal{V}_{P_{(r_1,s_1)}}$:
 \begin{align}
   \boxed{\mathcal{R}^d_{\langle r_1,s_1 \rangle} \times \mathcal{R}^d_{\langle r_2,s_2 \rangle} = \sum_{r\overset{2}{=}|r_1-r_2|+1}^{r_1+r_2-1}\ \sum_{s\overset{2}{=}|s_1-s_2|+1}^{s_1+s_2-1} \mathcal{R}^d_{\langle r,s \rangle}}\ ,
   \label{rrsr}
@@ -1213,20 +1213,20 @@ Let us now write the \myindex{crossing symmetry equations}\index{crossing symmet
  = \sum_{k\in\mathcal{S}^{(u)}} D_k^{(u)} \mathcal{G}^{(u)}_{\Delta_k,\bar\Delta_k}(z)} \ . 
  \label{seteu}
 \end{align}
-Given 4 fields $V_1,V_2,V_3,V_4$, this is a system of infinitely many equations (parametrized by the cross-ratio $z$) for the channel spectrums $\mathcal{S}^{(x)}$ and the 4-point structure constants $D_k^{(x)}$.
-We may also consider the system of crossing symmetry for all 4-point functions, whose unknowns are the \myindex{CFT data}\index{CFT!---data}: the spectrum of the theory (which includes the channel spectrums of all 4-point functions) and the 2-point and 3-point structure constants. CFT data determine OPEs, and crossing symmetry of all 4-point functions is equivalent to the associativity of OPEs, and therefore to the consistency of the CFT on the sphere.
+Given 4 fields $V_1,V_2,V_3,V_4$, this is a system of infinitely many equations (parametrized by the cross-ratio $z$) for the channel spectra $\mathcal{S}^{(x)}$ and the 4-point structure constants $D_k^{(x)}$.
+We may also consider the system of crossing symmetry for all 4-point functions, whose unknowns are the \myindex{CFT data}\index{CFT!---data}: the spectrum of the theory (which includes the channel spectra of all 4-point functions) and the 2-point and 3-point structure constants. CFT data determine OPEs, and crossing symmetry of all 4-point functions is equivalent to the associativity of OPEs, and therefore to the consistency of the CFT on the sphere.
 
 
 \section{Sketching exactly solvable CFTs}\label{sec:sesc}
 
-In this section we derive the spectrums and fusion rules of exactly solvable CFTs. We begin with a general discussion of CFTs, their spectrums, and the consequences of having degenerate fields. Historically, the CFTs we will discuss have been discovered using a variety of techniques: 
+In this section we derive the spectra and fusion rules of exactly solvable CFTs. We begin with a general discussion of CFTs, their spectra, and the consequences of having degenerate fields. Historically, the CFTs we will discuss have been discovered using a variety of techniques:
 \begin{itemize}
  \item the modular bootstrap for minimal models \cite{fms97},
  \item the Lagrangian approach for Liouville theory with $c\geq 25$ \cite{zz95},
  \item lattice constructions for the $O(n)$ and Potts models \cite{fsz87},
  \item the numerical bootstrap for Liouville theory with $c\leq 1$ \cite{rs15}.
 \end{itemize}
-Here we recover their spectrums from assumptions about Virasoro representations, their fusion rules, and single-valuedness of correlation functions. Although our assumptions are simple, they are not unique or inevitable, and it can be interesting to relax or modify them. This approach can also be used in CFTs with extended symmetry algebras, see for example \cite{bp24}.
+Here we recover their spectra from assumptions about Virasoro representations, their fusion rules, and single-valuedness of correlation functions. Although our assumptions are simple, they are not unique or inevitable, and it can be interesting to relax or modify them. This approach can also be used in CFTs with extended symmetry algebras, see for example \cite{bp24}.
 
 \subsection{Spectrum and degenerate fields}
 
@@ -1234,8 +1234,8 @@ Here we recover their spectrums from assumptions about Virasoro representations,
 
 We define a \myindex{conformal field theory}\index{conformal!---field theory} as a set of correlation functions that obey the assumptions of Section \ref{sec:bo}, most importantly Virasoro symmetry, the commutativity of fields, the existence of OPEs, and single-valuedness. We already know that on the sphere, a conformal field theory is characterized by a spectrum and 2-point and 3-point structure constants such that crossing symmetry is obeyed.
 
-This definition works well in \myindex{rational CFTs}\index{CFT!rational---}\index{rational CFT}, i.e. CFTs whose spectrums are generated by finitely many primary fields and their infinitely many descendants.
-In more general CFTs, we have to distinguish various spectrums associated to various objects. By an abuse of terminology, we now call spectrum a basis of primary fields:
+This definition works well in \myindex{rational CFTs}\index{CFT!rational---}\index{rational CFT}, i.e. CFTs whose spectra are generated by finitely many primary fields and their infinitely many descendants.
+In more general CFTs, we have to distinguish various spectra associated to various objects. By an abuse of terminology, we now call spectrum a basis of primary fields:
 \begin{align}
  \begin{array}{|c|c|l|}
   \hline 
@@ -1258,11 +1258,11 @@ In more general CFTs, we have to distinguish various spectrums associated to var
  \label{specs}
 \end{align}
 The \myindex{physical spectrum}\index{spectrum!physical---} is made of the fields whose correlation functions we are interested in. Our constraint on the physical spectrum is called \myindex{closure under OPE}\index{closure under OPE}. This constraint means that if a field appears in an OPE (or a fortiori in a channel spectrum), then its correlation functions exist.
-We also introduce \myindex{extended spectrums}\index{spectrum!extended---} as larger spectrums that are also closed under OPE. There are various reasons for considering extended spectrums:
+We also introduce \myindex{extended spectra}\index{spectrum!extended---} as larger spectra that are also closed under OPE. There are various reasons for considering extended spectra:
 \begin{itemize}
  \item In Section \ref{sec:csc}, we have used the energy-momentum tensor $T$ for deriving Ward identities. However, in Liouville theory, $T$ does not belong to the physical spectrum. Nevertheless, it always makes sense to insert $T$ in correlation functions, because it is a descendant of the identity field. 
  \item In the $O(n)$ model and in Liouville theory, we will use the degenerate field $V^d_{\langle 1,2\rangle}$ for constraining correlation functions, even though it does not belong to the physical spectrum. Correlation functions of the $O(n)$ model that involve $V^d_{\langle 1,2\rangle}$ are not single-valued: they belong to an extended CFT that obeys weaker assumptions. 
- \item The spectrum of Liouville theory is continuous, so that the OPE gives rise to an integral over the real momentums of primary fields. Since the integrand is meromorphic, the integration contour can be deformed in the complex plane. This leads to an extended spectrum of complex momentums. 
+ \item The spectrum of Liouville theory is continuous, so that the OPE gives rise to an integral over the real momenta of primary fields. Since the integrand is meromorphic, the integration contour can be deformed in the complex plane. This leads to an extended spectrum of complex momenta.
 \end{itemize}
 We will say that \myindex{a field exists}\index{existence (of a field)} if it belongs to some extended spectrum, i.e. if it can be consistently added to our CFT.
 
@@ -1270,7 +1270,7 @@ We will say that \myindex{a field exists}\index{existence (of a field)} if it be
 
 A simple way to satisfy the half-integer spin condition \eqref{sihz} is to have fields of spin zero. However, whenever degenerate fields exist, we will use the slightly different notion of a \myindex{diagonal field}\index{field!diagonal---}\index{diagonal!---field}: a field of spin zero whose OPEs with degenerate fields only produces fields of spin zero. Conversely, a \myindex{non-diagonal field}\index{field!non-diagonal---} is a field that either has nonzero spin, or is related to fields with nonzero spins by taking OPEs with degenerate fields. A \myindex{diagonal CFT}\index{CFT!diagonal---}\index{diagonal!---CFT} is a CFT whose spectrum only involves diagonal fields.
 
-Let us summarize the primary fields that we will consider, together with their momentums, and the representations of the conformal algebra that they generate. 
+Let us summarize the primary fields that we will consider, together with their momenta, and the representations of the conformal algebra that they generate.
 \begin{align}
  \begin{array}{|r|l|l|l|l|}
   \hline 
@@ -1322,7 +1322,7 @@ We will now study how the existence of diagonal degenerate fields constrains the
 There might be CFTs such as $V^d_{\langle 1,3\rangle}$ exists whereas $V^d_{\langle 1,2\rangle}$ does not, but no examples are known.
 
 Let us determine the OPEs of degenerate fields with other primary fields.
-The OPE of $V^d_{\langle 2,1\rangle}$ or $V^d_{\langle 1,2\rangle}$ with a given primary field is constrained by the fusion rules \eqref{rvvp}, which allow 2 left-moving momentums and 2 right-moving momentums, leading to 4 allowed primary fields. In the case of a diagonal field $V_P$, the requirement that only primary fields of spin zero appear singles out the 2 diagonal fields among the 4 allowed fields,
+The OPE of $V^d_{\langle 2,1\rangle}$ or $V^d_{\langle 1,2\rangle}$ with a given primary field is constrained by the fusion rules \eqref{rvvp}, which allow 2 left-moving momenta and 2 right-moving momenta, leading to 4 allowed primary fields. In the case of a diagonal field $V_P$, the requirement that only primary fields of spin zero appear singles out the 2 diagonal fields among the 4 allowed fields,
 \begin{align}
  \boxed{V^d_{\langle 2,1\rangle} V_P \sim \sum_\pm V_{P\pm\frac{\beta}{2}}} \quad , \quad \boxed{V^d_{\langle 1,2\rangle} V_P \sim \sum_\pm V_{P\pm\frac{1}{2\beta}}} \ . 
  \label{vpope}
@@ -1406,13 +1406,13 @@ For $\beta^2\in\mathbb{C}\backslash\mathbb{Q}$, we define the \myindex{generaliz
 \end{align}
 Thanks to the degenerate fusion rules \eqref{rrsr}, any OPE spectrum is finite, and therefore respects the convergence condition \eqref{iddb}.
 
-For $\beta^2\in \mathbb{Q}$, the degenerate dimensions $\Delta_{(r,s)}$ are not all different, and there is no GMM. However, there exist other CFTs whose primary fields are diagonal and (partly or fully) degenerate, starting from A-series minimal models. One way to explore these CFTs is to take limits of GMM correlation functions as $\beta^2\to \beta^2_0\in \mathbb{Q}$. This can give rise not only to minimal model correlation functions, but also to logarithmic correlation functions \cite{rib18}. According to Section \ref{sec:hwr}, a logarithmic representation can be generated by a $\Delta$-derivative field $V'_\Delta$. Correlation functions of $V'_\Delta$ have logarithmic dependence on its position, because $\frac{\partial}{\partial \Delta} z^\Delta = z^\Delta \log(z)$: this is why logarithmic representations are called logarithmic. Therefore, the logarithmic correlation functions that appear as $\beta^2\to \beta^2_0\in \mathbb{Q}$ may belong to \myindex{logarithmic CFTs}\index{CFT!logarithmic---}\index{logarithmic!---CFT}, i.e. CFTs whose spectrums include logarithmic representations.
+For $\beta^2\in \mathbb{Q}$, the degenerate dimensions $\Delta_{(r,s)}$ are not all different, and there is no GMM. However, there exist other CFTs whose primary fields are diagonal and (partly or fully) degenerate, starting from A-series minimal models. One way to explore these CFTs is to take limits of GMM correlation functions as $\beta^2\to \beta^2_0\in \mathbb{Q}$. This can give rise not only to minimal model correlation functions, but also to logarithmic correlation functions \cite{rib18}. According to Section \ref{sec:hwr}, a logarithmic representation can be generated by a $\Delta$-derivative field $V'_\Delta$. Correlation functions of $V'_\Delta$ have logarithmic dependence on its position, because $\frac{\partial}{\partial \Delta} z^\Delta = z^\Delta \log(z)$: this is why logarithmic representations are called logarithmic. Therefore, the logarithmic correlation functions that appear as $\beta^2\to \beta^2_0\in \mathbb{Q}$ may belong to \myindex{logarithmic CFTs}\index{CFT!logarithmic---}\index{logarithmic!---CFT}, i.e. CFTs whose spectra include logarithmic representations.
 
 Generalized minimal models exist only on the sphere. In particular, their torus partition functions are infinite, because $\lim_{r,s\to\infty} \Re\Delta_{(r,s)}\neq +\infty$. Nevertheless, GMMs are interesting because they are very simple and natural CFTs, which give rise to various other CFTs in certain limits --- starting from Liouville theory.
 
 \subsubsection{Liouville theory}\label{sec:liou}
 
-Let us consider the spectrum of a generalized minimal model with $\beta^2\in\mathbb{R}_{>0}\backslash\mathbb{Q}$. The momentums $P_{(r,s)}$ \eqref{prs} are dense in the real line, i.e. $\mathbb{R}=\text{closure}\big(\left\{ P_{(r,s)}\right\}_{r,s\in\mathbb{N}^*}\big)$. Any diagonal field with a real momentum can therefore be obtained as a limit of degenerate fields,
+Let us consider the spectrum of a generalized minimal model with $\beta^2\in\mathbb{R}_{>0}\backslash\mathbb{Q}$. The momenta $P_{(r,s)}$ \eqref{prs} are dense in the real line, i.e. $\mathbb{R}=\text{closure}\big(\left\{ P_{(r,s)}\right\}_{r,s\in\mathbb{N}^*}\big)$. Any diagonal field with a real momentum can therefore be obtained as a limit of degenerate fields,
 \begin{align}
  \forall P\in\mathbb{R}\ , \quad V_P = \lim_{\substack{r,s\to\infty \\ P_{(r,s)}\to P}} V^d_{\langle r,s\rangle}\ ,
  \label{vplim}
@@ -1438,7 +1438,7 @@ Let us call \myindex{Liouville theory}\index{Liouville theory} the resulting CFT
  \boxed{\mathcal{S}^\text{Liouville} = \frac12 \left\{ V_P\right\}_{P\in \mathbb{R}}}\ .
  \label{sliou}
 \end{align}
-The regularized OPE \eqref{ireg} requires that we extend the spectrum to complex momentums. This will turn out to be possible, because correlation functions are holomorphic in $P$.
+The regularized OPE \eqref{ireg} requires that we extend the spectrum to complex momenta. This will turn out to be possible, because correlation functions are holomorphic in $P$.
 
 For the moment, we have defined Liouville theory for $\beta^2\in\mathbb{R}_{>0}\backslash\mathbb{Q}$. By taking limits, we can extend it to the half-line $c\leq 1$ i.e. $\beta^2\in\mathbb{R}_{>0}$. But we cannot do an analytic continuation to the rest of the complex $\beta^2$-plane, because of the poles of OPE coefficients. These poles lie on the real $P$-line if $\beta^2\in\mathbb{R}_{>0}$, but as soon as $c$ strays from this half-line, the poles spread out in the complex $P$-plane, and cross the integration line $\mathbb{R}+i\epsilon$ for any $\epsilon>0$. In the following figures, we draw the regions where poles are found in blue, and the poles $\pm P_{(1,1)}$ as blue circles; the integration line is in red:
 \begin{align}
@@ -1558,7 +1558,7 @@ From Eq. \eqref{rrsvp},
 \begin{align}
  \mathcal{R}^f_{\langle r,s\rangle}\times \mathcal{V}_P \subset \sum_{i=-\frac{r-1}{2}}^{\frac{r-1}{2}} \sum_{j=-\frac{s-1}{2}}^{\frac{s-1}{2}} \mathcal{V}_{P+i\beta +j\beta^{-1}} \cap \sum_{i'=-\frac{p-r-1}{2}}^{\frac{p-r-1}{2}} \sum_{j'=-\frac{q-s-1}{2}}^{\frac{q-s-1}{2}} \mathcal{V}_{P+i'\beta +j'\beta^{-1}}\ .
 \end{align}
-The modules $\mathcal{V}_{P+i\beta +j\beta^{-1}}$ and $\mathcal{V}_{P+i'\beta +j'\beta^{-1}}$ coincide if and only if their momentums are opposite or equal. If they are opposite, $P=-P_{(i+i',j+j')}$ must belong to the (reflected) Kac table, so it is not generic. If they are equal, we have $i\beta +j\beta^{-1} = i'\beta +j'\beta^{-1}$ i.e. $2(i-i')q = 2(j'-j)p$. 
+The modules $\mathcal{V}_{P+i\beta +j\beta^{-1}}$ and $\mathcal{V}_{P+i'\beta +j'\beta^{-1}}$ coincide if and only if their momenta are opposite or equal. If they are opposite, $P=-P_{(i+i',j+j')}$ must belong to the (reflected) Kac table, so it is not generic. If they are equal, we have $i\beta +j\beta^{-1} = i'\beta +j'\beta^{-1}$ i.e. $2(i-i')q = 2(j'-j)p$.
 But parity forbids $(i,j)=(i',j')$, since $p$ or $q$ is odd. And we have $2|i-i'|<p$ and $2|j-j'|<q$, so our equality cannot be satisfied, and 
 \begin{align}
  \mathcal{R}^f_{\langle r,s\rangle}\times \mathcal{V}_P = 0 \ . 
@@ -1639,7 +1639,7 @@ provided $p>r$ and $q>s$. In AMM$_{p,q}$, this field has vanishing singular vect
 V^f_{\langle r,s\rangle} = V^d_{\langle r,s\rangle}\ .
  \label{mm-gmm}
 \end{align}
-Since we obtain arbitrary degenerate fields $V^d_{\langle r,s\rangle}$ in the limit, it is also possible to send the indices $r,s$ to $\infty$, and therefore to send the momentums $P_{(r,s)}$ to arbitrary values $P\in\mathbb{R}$, just as in Eq. \eqref{vplim}. Therefore, Liouville theory with $c\leq 1$ is not only a limit of generalized minimal models, but also a limit of minimal models:
+Since we obtain arbitrary degenerate fields $V^d_{\langle r,s\rangle}$ in the limit, it is also possible to send the indices $r,s$ to $\infty$, and therefore to send the momenta $P_{(r,s)}$ to arbitrary values $P\in\mathbb{R}$, just as in Eq. \eqref{vplim}. Therefore, Liouville theory with $c\leq 1$ is not only a limit of generalized minimal models, but also a limit of minimal models:
 \begin{align}
  \lim_{\substack{\frac{q}{p}\to \beta_0^2\\ P_{(r,s)}\to P}} \text{AMM}_{p,q} = \text{Liouville}\ . 
  \label{mm-liou}
@@ -1668,7 +1668,7 @@ This leads to
 \begin{align}
  \lim_{p,q\to\infty} P_{(r,s)} = \frac{1}{2\sqrt{p_0q_0}}\left(n+x\right)\quad \text{with} \quad \left\{\begin{array}{l} n =r_0q_0 - s_0p_0 \in \mathbb{Z} \ , \\ x =  \lim\frac{r}{p} = \lim\frac{s}{q} \in (0, 1) \ . \end{array}\right.
 \end{align}
-Now what happens to the minimal model fusion rules $\mathcal{R}^f_{\langle r_1,s_1\rangle} \times \mathcal{R}^f_{\langle r_2,s_2\rangle}$ \eqref{rfrf} when we apply our limit to both representations? Let us examine the momentums \eqref{prsrwt} of the resulting representations $\mathcal{R}^f_{\langle r,s\rangle}$. The combination $n=rq_0-sp_0$ takes integer values such that $n\equiv n_1+n_2+p_0+q_0\bmod 2$, while 
+Now what happens to the minimal model fusion rules $\mathcal{R}^f_{\langle r_1,s_1\rangle} \times \mathcal{R}^f_{\langle r_2,s_2\rangle}$ \eqref{rfrf} when we apply our limit to both representations? Let us examine the momenta \eqref{prsrwt} of the resulting representations $\mathcal{R}^f_{\langle r,s\rangle}$. The combination $n=rq_0-sp_0$ takes integer values such that $n\equiv n_1+n_2+p_0+q_0\bmod 2$, while
 both $\frac{r}{p}$ and $\frac{s}{q}$, and therefore also $x=\frac12\left(\frac{r}{p}+\frac{s}{q}\right)$, are evenly distributed in the interval $(|x_1-x_2|, \min(x_1+x_2,2-x_1-x_2))$. Writing the primary fields as $V_{n,x} = \lim V_{(r,s)}^f$, we thus find the OPE
 \begin{align}
  \boxed{V_{n_1,x_1}V_{n_2,x_2} \sim \sum_{n\in n_1+n_2+p_0+q_0+2\mathbb{Z}}
@@ -1680,12 +1680,12 @@ Of course, $V_{n,x}$ is just another notation for the diagonal field $V_P$, with
 \end{align}
 The reflection relation $V_P=V_{-P}$ is now $V_{n,x}=V_{-n-1,1-x}$. 
 The resulting Runkel--Watts-type CFT has the same spectrum as Liouville theory \eqref{sliou} $
- \mathcal{S}^{\text{RWT}_{p_0,q_0}} = \frac12 \left\{ V_P\right\}_{P\in \mathbb{R}}$. In contrast to Liouville theory, the momentums cannot be continued to complex values, where the OPE would no longer make sense. Notice however that if $x_1\neq x_2$, the OPE does not produce fields with degenerate momentums, i.e. fields of the type $V_{n,0}$. So there is no need to regularize the integral over $x$. Alternatively, the OPE may be written in a manifestly reflection-invariant way using the momentums $P_i$ \cite{rs15},
+ \mathcal{S}^{\text{RWT}_{p_0,q_0}} = \frac12 \left\{ V_P\right\}_{P\in \mathbb{R}}$. In contrast to Liouville theory, the momenta cannot be continued to complex values, where the OPE would no longer make sense. Notice however that if $x_1\neq x_2$, the OPE does not produce fields with degenerate momenta, i.e. fields of the type $V_{n,0}$. So there is no need to regularize the integral over $x$. Alternatively, the OPE may be written in a manifestly reflection-invariant way using the momenta $P_i$ \cite{rs15},
  \begin{align}
   \left<\prod_{i=1}^3 V_{P_i}\right>\neq 0 \implies \prod_{\pm,\pm} \sin\pi\left(\tfrac{p_0+q_0}{2}+\sqrt{p_0q_0}(P_1\pm P_2\pm P_3)\right) < 0 \ .
   \label{rwtz}
  \end{align}
-It turns out that Runkel--Watts-type theories can also be obtained as limits of Liouville theory with $\beta^2\in \mathbb{C}\backslash \mathbb{R}$ \cite{sch03, mce07}. The limit of Liouville theory for $\beta^2\to \beta_0^2>0$ generally does not make sense, but it exists if $\beta_0^2$ is rational and the momentums are real. In this limit, the condition \eqref{rwtz} emerges from the 3-point structure constants of Liouville theory. 
+It turns out that Runkel--Watts-type theories can also be obtained as limits of Liouville theory with $\beta^2\in \mathbb{C}\backslash \mathbb{R}$ \cite{sch03, mce07}. The limit of Liouville theory for $\beta^2\to \beta_0^2>0$ generally does not make sense, but it exists if $\beta_0^2$ is rational and the momenta are real. In this limit, the condition \eqref{rwtz} emerges from the 3-point structure constants of Liouville theory.
 
 
 \subsection{Non-diagonal CFTs with 2 degenerate fields}
@@ -1763,7 +1763,7 @@ The fusion rules of D-series and fermionic minimal models are obtained by combin
 \end{subequations}
 Curiously, the diagonal field $V^f_{\langle \frac{p}{2}, s\rangle}$ has the same conformal dimensions as the non-diagonal field $V_{(0,s-\frac{q}{2})}$: this an instance of a nontrivial \myindex{field multiplicity}\index{field!---multiplicity}. However, these 2 fields have different OPEs. 
 
-For example, let us compare the diagonal and non-diagonal minimal models AMM$_{6,5}$ and DMM$_{6,5}$, which both have $c= \frac45$, and respectively describe observables of the tetracritical Ising model and of the critical 3-state Potts model. The Virasoro representations that appear in the spectrums of both models belong to the Kac table $K_{6,5}$. Each entry in the table correspond to a primary field of AMM$_{6,5}$. Since $p=6\equiv 2\bmod 4$, both sectors of DMM$_{6,5}$ are built from representations $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}+1$. We indicate this in the Kac table by having the $r\in 2\mathbb{N}+1$ columns both boxed (for the diagonal sector) and highlighted (for the non-diagonal sector):
+For example, let us compare the diagonal and non-diagonal minimal models AMM$_{6,5}$ and DMM$_{6,5}$, which both have $c= \frac45$, and respectively describe observables of the tetracritical Ising model and of the critical 3-state Potts model. The Virasoro representations that appear in the spectra of both models belong to the Kac table $K_{6,5}$. Each entry in the table correspond to a primary field of AMM$_{6,5}$. Since $p=6\equiv 2\bmod 4$, both sectors of DMM$_{6,5}$ are built from representations $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}+1$. We indicate this in the Kac table by having the $r\in 2\mathbb{N}+1$ columns both boxed (for the diagonal sector) and highlighted (for the non-diagonal sector):
 \begin{align}
 \text{AMM}_{6,5}\ \&\ \text{DMM}_{6,5} \ : \qquad 
  \begin{tikzpicture}[baseline=(current  bounding  box.center)]
@@ -1818,7 +1818,7 @@ We therefore have coincidences of conformal dimensions for $V_{(0,\frac12)}\sime
 \begin{align}
  V^f_{\langle 3,1\rangle} V^f_{\langle 3,1\rangle} \sim V^f_{\langle 1,1\rangle} + V^f_{\langle 3, 1\rangle} + V^f_{\langle 5,1\rangle} \quad , \quad V^f_{\langle 3,1\rangle}V_{(0,\frac32)} \sim V_{(2,-\frac32)} + V_{(0,\frac32)} + V_{(2,\frac32)}\ . 
 \end{align}
-As another example, let us compare the diagonal and non-diagonal minimal models AMM$_{8,5}$ and DMM$_{8,5}$, which both have $c=-\frac{7}{20}$. The Virasoro representations that appear in the spectrums of both models belong to the Kac table $K_{8,5}$. Each entry in the table correspond to a primary field of AMM$_{8,5}$. Since $p=8\equiv 0\bmod 4$, the diagonal sector of DMM$_{8,5}$ is built from representations $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}+1$ (boxed), while the non-diagonal sector is built from $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}$ (highlighted):
+As another example, let us compare the diagonal and non-diagonal minimal models AMM$_{8,5}$ and DMM$_{8,5}$, which both have $c=-\frac{7}{20}$. The Virasoro representations that appear in the spectra of both models belong to the Kac table $K_{8,5}$. Each entry in the table correspond to a primary field of AMM$_{8,5}$. Since $p=8\equiv 0\bmod 4$, the diagonal sector of DMM$_{8,5}$ is built from representations $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}+1$ (boxed), while the non-diagonal sector is built from $\mathcal{R}^f_{\langle r,s\rangle}$ with $r\in 2\mathbb{N}$ (highlighted):
 \begin{align}
 \text{AMM}_{8,5}\ \&\ \text{DMM}_{8,5} \ : \qquad 
 \begin{tikzpicture}[baseline=(current  bounding  box.center)]
@@ -1872,7 +1872,7 @@ As we saw in Section \ref{sec:rwt}, there are several possible limits of A-serie
 \begin{align}
  \lim_{p,q\to\infty} V_{(r_1,s_1)} V_{(r_2,s_2)}  \overset{?}{\sim} \sum_{r\overset{2}{=}|r_1-r_2|+1}^{\infty} \sum_{s\overset{2}{=}|s_1-s_2|+1}^{\infty} V^d_{\langle r,s\rangle}\ .
 \end{align}
-This is a sum over infinitely many degenerate fields, whose momentums $P_{(r,s)}$ are dense in the real line if $\beta^2\notin \mathbb{Q}$. The sum is therefore divergent. To obtain a finite limit, we need to compute 
+This is a sum over infinitely many degenerate fields, whose momenta $P_{(r,s)}$ are dense in the real line if $\beta^2\notin \mathbb{Q}$. The sum is therefore divergent. To obtain a finite limit, we need to compute
 \begin{align}
  \lim_{p,q\to\infty} \frac{1}{q} V_{(r_1,s_1)} V_{(r_2,s_2)} \sim \frac12 \int_\mathbb{R} dP \ V_P\ .
 \end{align}
@@ -1890,7 +1890,7 @@ The OPEs of this CFT are determined by the conservation of diagonality: in addit
 \begin{align}
  V_{(r_1,s_1)}V_P \sim \frac12 \sum_{r\in 2\mathbb{Z}}\sum_{s\in \mathbb{Z}+\frac12} V_{(r,s)} \ . 
 \end{align}
-Like Liouville theory, generalized D-series minimal models cannot be analytically continued beyond $\beta^2\in \mathbb{R}_{>0}$. However, we can define these models by their spectrums in the range $\Re\beta^2>0$ \eqref{rbp}, assuming that they exist. There is indeed evidence that they exist \cite{mr17}, although they have not been fully solved, and the OPEs \eqref{vrsvrs} may include discrete terms in addition to the integral \cite{rib19}. 
+Like Liouville theory, generalized D-series minimal models cannot be analytically continued beyond $\beta^2\in \mathbb{R}_{>0}$. However, we can define these models by their spectra in the range $\Re\beta^2>0$ \eqref{rbp}, assuming that they exist. There is indeed evidence that they exist \cite{mr17}, although they have not been fully solved, and the OPEs \eqref{vrsvrs} may include discrete terms in addition to the integral \cite{rib19}.
 
 
 \subsection{Loop CFTs}
@@ -1909,11 +1909,11 @@ Let a \textbf{loop CFT}\index{loop CFT} be a 2d CFT with no extended chiral symm
 \begin{enumerate}
  \item The degenerate field $V^d_{\langle 1,2\rangle}$ exists.
  \item The spectrum contains infinitely many non-diagonal fields.
- \item All OPE spectrums are discrete.
+ \item All OPE spectra are discrete.
 \end{enumerate}
 The crucial assumption is the existence of $V^d_{\langle 1,2\rangle}$; the other assumptions are meant to exclude other known CFTs. In particular, assumptions 2 excludes minimal models, assumption 3 excludes generalized D-series minimal models, and both assumptions 2 and 3 exclude Liouville theory.
 
-It follows that the central charge obeys the constraint $\Re c<13$ \eqref{rbp}. And the existence of $V^d_{\langle 1,2\rangle}$ but not $V^d_{\langle 2,1\rangle}$ means that loop CFTs really depend on $\beta^2$ \eqref{cb}, not on $c$. We expect that this dependence is holomorphic over the domain $\Re c<13$: thanks to the assumption that OPE spectrums are discrete, correlation functions do not have the non-analyticities on the line $c\leq 1$ that we saw in the context of Liouville theory in Section \ref{sec:liou}.
+It follows that the central charge obeys the constraint $\Re c<13$ \eqref{rbp}. And the existence of $V^d_{\langle 1,2\rangle}$ but not $V^d_{\langle 2,1\rangle}$ means that loop CFTs really depend on $\beta^2$ \eqref{cb}, not on $c$. We expect that this dependence is holomorphic over the domain $\Re c<13$: thanks to the assumption that OPE spectra are discrete, correlation functions do not have the non-analyticities on the line $c\leq 1$ that we saw in the context of Liouville theory in Section \ref{sec:liou}.
 
 Moreover, there are known constraints on fusion rules:
 \begin{itemize}
@@ -1971,7 +1971,7 @@ In any loop CFT, the spectrum must be a subset of the extended spectrum $\wideha
  \mathcal{S}^\text{Potts} &= \left\{V^d_{\langle 1,s\rangle}\right\}_{s\in\mathbb{N}^*} \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in \mathbb{N}+2\\ s\in\frac{1}{r}\mathbb{Z}}} \bigcup  \left\{ V_{P_{(0,s)}}\right\}_{s\in \mathbb{N}+\frac12}\ .
  \label{spotts}
 \end{align}
-The spectrums of the $O(n)$ and $PSU(n)$ models are natural constructions: we start with a degenerate field $V^d\in\{V^d_{\langle 1,3\rangle},V^d_{\langle 1,2\rangle}\}$, and add non-diagonal fields $V_{(r,s)}\in\widehat{S}^\text{loop}$ such that $V_{(r,s)}$ and the fields that appear in $V^dV_{(r,s)}$ have integer spins. 
+The spectra of the $O(n)$ and $PSU(n)$ models are natural constructions: we start with a degenerate field $V^d\in\{V^d_{\langle 1,3\rangle},V^d_{\langle 1,2\rangle}\}$, and add non-diagonal fields $V_{(r,s)}\in\widehat{S}^\text{loop}$ such that $V_{(r,s)}$ and the fields that appear in $V^dV_{(r,s)}$ have integer spins.
 On the other hand, the Potts spectrum has no simple explanation in our formalism. We can only remark that it is obtained from the $PSU(n)$ spectrum by removing the non-diagonal fields $\left\{V_{(1,s)}\right\}_{s\in\mathbb{Z}}$ and adding the diagonal fields $\left\{ V_{P_{(0,s)}}\right\}_{s\in \mathbb{N}+\frac12}$, see Section \ref{sec:coup} for a justification from statistical physics.  
 
 Each one of these CFTs has:
@@ -2023,9 +2023,9 @@ For $Q=2$, the Potts CFT describes observables of the critical Ising model, and 
 
 \subsection{Completing the picture}
 
-\subsubsection{Summary of spectrums}
+\subsubsection{Summary of spectra}
 
-For each CFT, we indicate the values of $\beta^2$, of the Kac indices of degenerate fields, of the indices of non-diagonal fields, and of the momentums of diagonal fields:
+For each CFT, we indicate the values of $\beta^2$, of the Kac indices of degenerate fields, of the indices of non-diagonal fields, and of the momenta of diagonal fields:
 \begin{align}
  \begin{array}{|c|c|c|c|c|}
   \hline 
@@ -2130,9 +2130,9 @@ Let us mention a few other solvable CFTs:
 They have 2 independent degenerate fields $\left\{V^f_{\langle r,1\rangle},V^f_{\langle 1,2\rangle}\right\}$ with $r=4,5,7$ respectively.
 The 3-point structure constants are known explicitly for $p=12$, but not for $p=18,30$ \cite{nr25}.
 
-A-series, D-series and E-series minimal models form the full set of rational CFTs that exist on any Riemann surface, also called \myindex{Virasoro minimal models}\index{minimal model!Virasoro---}\index{Virasoro!---minimal model}. The names of the 3 series come from the A-D-E classification of modular invariant torus partition functions, which provides a derivation of the spectrums \cite{cz09}. In Section \ref{sec:sesc} we rederived the A-series and D-series spectrums from the study of fusion rules, but we do not know how to do it for the E-series.
+A-series, D-series and E-series minimal models form the full set of rational CFTs that exist on any Riemann surface, also called \myindex{Virasoro minimal models}\index{minimal model!Virasoro---}\index{Virasoro!---minimal model}. The names of the 3 series come from the A-D-E classification of modular invariant torus partition functions, which provides a derivation of the spectra \cite{cz09}. In Section \ref{sec:sesc} we rederived the A-series and D-series spectra from the study of fusion rules, but we do not know how to do it for the E-series.
 
-\item \myindex{Logarithmic minimal models}\index{minimal model!logarithmic---}\index{logarithmic!---minimal model} may be defined for $\beta^2\in \mathbb{Q}_{>0}$ by the assumption that their primary fields belong to the extended Kac table, i.e. they have integer Kac indices. (However, this definition is not universally accepted, and the same name is sometimes applied to other vaguely defined and poorly understood CFTs \cite{prz06}.) The spectrums of logarithmic minimal models include logarithmic representations. Their spectrums and fusion rules are not fully known. It is in fact not clear how many such CFTs exist at any given central charge. Some of them are probably limits of generalized minimal models, see Section \ref{sec:gmm}.
+\item \myindex{Logarithmic minimal models}\index{minimal model!logarithmic---}\index{logarithmic!---minimal model} may be defined for $\beta^2\in \mathbb{Q}_{>0}$ by the assumption that their primary fields belong to the extended Kac table, i.e. they have integer Kac indices. (However, this definition is not universally accepted, and the same name is sometimes applied to other vaguely defined and poorly understood CFTs \cite{prz06}.) The spectra of logarithmic minimal models include logarithmic representations. Their spectra and fusion rules are not fully known. It is in fact not clear how many such CFTs exist at any given central charge. Some of them are probably limits of generalized minimal models, see Section \ref{sec:gmm}.
 
 \item At $c=1$, the \myindex{compactified free boson}\index{compactified free boson} and its $\mathbb{Z}_2$ orbifold the \myindex{Ashkin--Teller model}\index{Ashkin--Teller model} are better understood in terms of an extended symmetry algebra (an abelian affine Lie algebra), although they can also be solved in terms of Virasoro symmetry only \cite{nr21}. They have a degenerate field $V^f_{\langle 1, 3\rangle}=V^f_{\langle 3,1\rangle}$, which however behaves as the identity field under fusion with non-diagonal fields. As a result, the constraints \eqref{sriz} are not obeyed. These models have a continuous parameter: the compactification radius $R\in\mathbb{C}^*$. For a special value of $R$, the compactified free boson is a $c\to 1$ limit of the $O(n)$ CFT, and the Ashkin--Teller model is a $c\to 1$ limit of the Potts CFT. Compactified free bosons also exist for $c\in\mathbb{C}$, but then $R$ is quantized \cite{rib14}. 
 \end{itemize}
@@ -2186,7 +2186,7 @@ Combining our rewritten local Ward identity with $L_{\langle 2,1\rangle}V^d_{\la
 
 \subsubsection{Hypergeometric conformal blocks}
 
-According to the degenerate fusion rule \eqref{rvvp}, the decomposition of $G(z)$ into $s$-channel left-moving conformal blocks is a combination of 2 blocks with momentums $P_1\pm \frac{\beta}{2}$. The situation is similar in the $t$- and $u$-channels, and we write the resulting blocks as $\mathcal{F}^{(x)}_\pm(z)$ with $x\in\{s,t,u\}$:
+According to the degenerate fusion rule \eqref{rvvp}, the decomposition of $G(z)$ into $s$-channel left-moving conformal blocks is a combination of 2 blocks with momenta $P_1\pm \frac{\beta}{2}$. The situation is similar in the $t$- and $u$-channels, and we write the resulting blocks as $\mathcal{F}^{(x)}_\pm(z)$ with $x\in\{s,t,u\}$:
 \begin{align}
 \mathcal{F}^{(s)}_\pm = 
  \begin{tikzpicture}[baseline=(current  bounding  box.center), very thick, scale = .35]
@@ -2254,7 +2254,7 @@ The degenerate fusing matrix is built from the \myindex{Gamma function}\index{Ga
 
 \subsubsection{Crossing symmetry}
 
-We will now assemble hypergeometric conformal blocks into crossing-symmetric 4-point functions. We assume that fusion with $V^d_{\langle 2,1\rangle}$ acts diagonally on $V_1,V_2,V_3$, i.e. the left and right momentums $P_i,\bar P_i$ are shifted by the same amount $\frac{\beta}{2}$ or $-\frac{\beta}{2}$. (The case where they are shifted by opposite amounts is equivalent, and can be obtained by $\bar P_i\to -\bar P_i$.) This assumption is fulfilled by diagonal fields $V_P$, but also by non-diagonal fields $V_{(r,s)}$ with momentums of the type $(P,\bar P)= (P_{(r,s)},P_{(r,-s)})$. 
+We will now assemble hypergeometric conformal blocks into crossing-symmetric 4-point functions. We assume that fusion with $V^d_{\langle 2,1\rangle}$ acts diagonally on $V_1,V_2,V_3$, i.e. the left and right momenta $P_i,\bar P_i$ are shifted by the same amount $\frac{\beta}{2}$ or $-\frac{\beta}{2}$. (The case where they are shifted by opposite amounts is equivalent, and can be obtained by $\bar P_i\to -\bar P_i$.) This assumption is fulfilled by diagonal fields $V_P$, but also by non-diagonal fields $V_{(r,s)}$ with momenta of the type $(P,\bar P)= (P_{(r,s)},P_{(r,-s)})$.
 Then the degenerate 4-point function \eqref{goz} decomposes into degenerate $x$-channel conformal blocks as 
 \begin{align}
  \Big<V_{\langle 2,1\rangle}^dV_{1}V_{2}V_{3}\Big> 
@@ -2399,7 +2399,7 @@ Combining the crossing symmetry equation \eqref{dmdp}, and \eqref{ddb} with the 
  \Gamma\left(\tfrac12 +\beta P_1\pm \beta P_2\pm\beta P_3\right)}} \ ,
  \label{sh-mp}
 \end{align}
-This is called a \myindex{shift equation}\index{shift equation}, because it determines how structure constants behave when the momentums $P_1,\bar P_1$ of a field are shifted by $\beta$, under the condition $s_i\in \frac12 \mathbb{Z}$ \eqref{ssiz}. If now $s_i\in\mathbb{Z}$, then not only $S_{i^-}-S_{i^+}\in\mathbb{Z}$ but also $S_{i}-S_{i^+}\in\mathbb{Z}$. The fields $V_i$ and $V_{i^+}$ can both have integer spins, and we may want to relate their structure constants. From Eq. \eqref{dpdp}, we deduce an equation for shifts of momentums by $\frac{\beta}{2}$,
+This is called a \myindex{shift equation}\index{shift equation}, because it determines how structure constants behave when the momenta $P_1,\bar P_1$ of a field are shifted by $\beta$, under the condition $s_i\in \frac12 \mathbb{Z}$ \eqref{ssiz}. If now $s_i\in\mathbb{Z}$, then not only $S_{i^-}-S_{i^+}\in\mathbb{Z}$ but also $S_{i}-S_{i^+}\in\mathbb{Z}$. The fields $V_i$ and $V_{i^+}$ can both have integer spins, and we may want to relate their structure constants. From Eq. \eqref{dpdp}, we deduce an equation for shifts of momenta by $\frac{\beta}{2}$,
 \begin{align}
  \boxed{\frac{C_{123^+}}{C_{1^+23}} = 
  (-)^{s_3} \beta^{2\beta^2(r_1-r_3)}
@@ -2442,7 +2442,7 @@ A convenient identity that follows from Eq. \eqref{gshift} is:
 \subsubsection{Diagonal CFTs with 2 degenerate fields}\label{sec:dtdf}
 
 Let us start with Liouville theory for $c\in (-\infty ,1]$ i.e. $\beta^2\in\mathbb{R}_{>0}$. 
-We assume that the 3-point structure constant $C_{P_1,P_2,P_3}$ is a meromorphic function of the momentums, and a continuous function of $\beta$. 
+We assume that the 3-point structure constant $C_{P_1,P_2,P_3}$ is a meromorphic function of the momenta, and a continuous function of $\beta$.
 The shift equations determine $C_{P_1,P_2,P_3}$ modulo a factor that is invariant under $P_i\to P_i+\beta$ and $P_i\to P_i+\beta^{-1}$. 
 If $\beta^2\notin \mathbb{Q}$, this factor must be constant on the complex $P_i$-plane. By continuity in $\beta$, the structure constant is unique on $c\in (-\infty,1]$ modulo an unimportant $P_i$-independent factor. The unique solution turns out to be a holomorphic function of $P_i\in\mathbb{C}$ and $\beta\in \mathbb{C}\backslash i\mathbb{R}$. We then deduce $B_{P_1}\propto C_{P_{(1,1)},P_1,P_1}$,
 \begin{align}
@@ -2687,7 +2687,7 @@ From these cases, all diagonal CFTs with 2 degenerate fields can be obtained by 
 Constructing Liouville theory with $c\leq 1$ would be particularly challenging, because in that case $\lim_{P\to P_{(1,1)}}V_P(z) = V_{P_{(1,1)}}(z)$ is a $z$-dependent, non-degenerate field. (Compare with \eqref{limvp} for $c\in\mathbb{C}\backslash(-\infty, 1)$.) But in the construction of $V_P$ as $e^{\alpha\varphi}$, our limit corresponds to $\alpha\to 0$ and leads to the identity field. And the limit can hardly fail to commute with the functional integral over $\varphi(z)$, which must yield correlation functions that are holomorphic in $\alpha$.
 
 In this text we will focus on a numerical approach to crossing symmetry. This approach is applicable to any CFT whose spectrum is exactly known, and therefore to all the exactly solvable CFTs that we have considered. 
-A similar approach is also applicable to integrable conformal gauge theories such as $\mathcal{N}=4$ super-Yang--Mills theory in 4 dimensions; these gauge theories however have spectrums that are denser than in our 2-dimensional CFTs, requiring more sophisticated tools \cite{cgjp22}.
+A similar approach is also applicable to integrable conformal gauge theories such as $\mathcal{N}=4$ super-Yang--Mills theory in 4 dimensions; these gauge theories however have spectra that are denser than in our 2-dimensional CFTs, requiring more sophisticated tools \cite{cgjp22}.
 
 \subsubsection{Various flavours of numerics}\label{sec:vfn}
 
@@ -2749,7 +2749,7 @@ As we have seen in Section \ref{sec:ab}, degenerate fields play a crucial role b
 
 The extra generators do not commute with the conformal algebra (i.e. the OPE $TV^d_{\langle 1,2\rangle}$ is nontrivial), so interchiral symmetry is not a global symmetry: rather, it is an extension of spacetime symmetry, just like supersymmetry. This extension is natural in lattice loop models, where it is easy to construct a Temperley--Lieb algebra whose indecomposable representations tend to indecomposable representations of the interchiral algebra in the critical limit. On the other hand, there are no known lattice objects that tend to indecomposable representations of the conformal algebra \cite{gjs20}.
 
-Using interchiral symmetry rather than conformal symmetry, the spectrums \eqref{sostab} can be rewritten in terms of a smaller number of larger representations. In particular, each spectrum of an A-series or D-series minimal model is a combination of 4 (or fewer) interchiral representations. It would be interesting to reformulate the definition and classification of minimal models in terms of the representation theory of an interchiral algebra.  
+Using interchiral symmetry rather than conformal symmetry, the spectra \eqref{sostab} can be rewritten in terms of a smaller number of larger representations. In particular, each spectrum of an A-series or D-series minimal model is a combination of 4 (or fewer) interchiral representations. It would be interesting to reformulate the definition and classification of minimal models in terms of the representation theory of an interchiral algebra.
 
 Here we will focus on the extended spectrum $\widehat{\mathcal{S}}^\text{loop}$ \eqref{sloop}, which involves the following representations of the interchiral algebra generated by $T,\bar T,V^d_{\langle 1,2\rangle}$:
 \begin{subequations}
@@ -2779,7 +2779,7 @@ We will sketch a tentative construction of an interchiral algebra, but we will s
 
 \subsubsection{Towards an interchiral algebra}
 
-By definition, the interchiral algebra is supposed to shift momentums of primary fields. We therefore need to replace the Virasoro generator $L_0$, whose eigenvalues are conformal dimensions, with a generator whose eigenvalues are momentums. This can be done by rewriting the Virasoro algebra in terms of an \myindex{abelian affine Lie algebra $\hat{\mathfrak{u}}_1$}\index{abelian affine Lie algebra $\hat{\mathfrak{u}}_1$}. The algebra $\hat{\mathfrak{u}}_1$ is the chiral symmetry algebra of free bosonic CFTs, which have a $\mathfrak{u}_1$ symmetry, and where the momentum is conserved. 
+By definition, the interchiral algebra is supposed to shift momenta of primary fields. We therefore need to replace the Virasoro generator $L_0$, whose eigenvalues are conformal dimensions, with a generator whose eigenvalues are momenta. This can be done by rewriting the Virasoro algebra in terms of an \myindex{abelian affine Lie algebra $\hat{\mathfrak{u}}_1$}\index{abelian affine Lie algebra $\hat{\mathfrak{u}}_1$}. The algebra $\hat{\mathfrak{u}}_1$ is the chiral symmetry algebra of free bosonic CFTs, which have a $\mathfrak{u}_1$ symmetry, and where the momentum is conserved.
 However, this algebra can also be used for studying non-free CFTs, giving rise to Coulomb gas techniques. (See \cite[Section 4.1]{rib14} for a quick review.)
 
 The algebra $\hat{\mathfrak{u}}_1$ has generators $(J_n)_{n\in\mathbb{Z}}$ and relations 
@@ -2828,7 +2828,7 @@ This value of the quadratic Casimir is natural from the point of view of the int
 
 Our tentative construction of an interchiral algebra is surely not the final word on the subject. Remaining issues include:
 \begin{itemize}
-\item Explain algebraically what is special with having $D^\pm$ shift momentums by $\beta^{-1}$, as opposed to other numbers. 
+\item Explain algebraically what is special with having $D^\pm$ shift momenta by $\beta^{-1}$, as opposed to other numbers.
  \item Explain why $\widetilde{\mathcal{R}}^d_{\langle 1,2\rangle}$ is a semi-infinite combination.
  \item Predict the structure of the logarithmic representations $\mathcal{W}_{(r,s)}$ in Eq. \eqref{wlog}, which are supposed to be deduced from the Verma modules $\mathcal{W}_{(r,0)}$ by interchiral symmetry. We will see in Section \ref{sec:log} how this works at the level of conformal blocks, but an algebraic derivation would be welcome. 
  \item Define the fusion of interchiral representations, from which shift equations for 3-point structure constants should follow.
@@ -2969,7 +2969,7 @@ Let us explicitly write these quantities for $rs\leq 4$. Since $c^{r,s},b^{r,s}$
 \begin{align}
  \prod_{\pm,\pm}\left(P_2\pm P_1\pm \ell\beta\right) = \left(\Delta_1-\Delta_2\right)^2 -2\ell^2\beta^2\left(\Delta_1+\Delta_2-1\right) +\ell^2(\ell^2-1)\beta^4-\ell^2\ ,
 \end{align}
-where conformal dimensions and momentums are related by Eq. \eqref{dp}, we find 
+where conformal dimensions and momenta are related by Eq. \eqref{dp}, we find
 \begin{subequations}
 \begin{align}
  c^{1,1}(P_1,P_2) &= \Delta_1-\Delta_2\ ,
@@ -3296,7 +3296,7 @@ Given a spectrum $\mathcal{S}$ and a cutoff $\Lambda \in \mathbb{R}_+$, let us d
  \mathcal{S}_\Lambda = \left\{ k\in \mathcal{S}\middle| \Re\left(\Delta_k+\bar\Delta_k\right)<\Lambda \right\} \ . 
  \label{sl}
 \end{align}
-We assume that truncated channel spectrums $\mathcal{S}^{(x)}_\Lambda$ are finite, i.e. there are finitely many primary states in each channel. This is necessary for our numerical method to apply, but not for consistency: in Liouville theory, truncated spectrums are continuous. Moreover, we need to assume that the terms that we truncate out tend to zero as $\Lambda\to +\infty$. In Liouville theory, it can be shown that $D^{(x)}_\Delta \left|\mathcal{F}^{(x)}_\Delta(q)\right|^2 \underset{\Delta\to+\infty}{\propto} |q|^{2\Delta}$ with $|q|<1$ \cite{rs15}, as a consequence of the behaviour of Virasoro blocks \eqref{fdq} and of structure constants. In loop CFTs, a similar behaviour is observed numerically.
+We assume that truncated channel spectra $\mathcal{S}^{(x)}_\Lambda$ are finite, i.e. there are finitely many primary states in each channel. This is necessary for our numerical method to apply, but not for consistency: in Liouville theory, truncated spectra are continuous. Moreover, we need to assume that the terms that we truncate out tend to zero as $\Lambda\to +\infty$. In Liouville theory, it can be shown that $D^{(x)}_\Delta \left|\mathcal{F}^{(x)}_\Delta(q)\right|^2 \underset{\Delta\to+\infty}{\propto} |q|^{2\Delta}$ with $|q|<1$ \cite{rs15}, as a consequence of the behaviour of Virasoro blocks \eqref{fdq} and of structure constants. In loop CFTs, a similar behaviour is observed numerically.
 
 The truncation scheme remains the same if we use interchiral blocks rather than conformal blocks: in each interchiral block, we keep only the conformal blocks whose total conformal dimension obeys the cutoff \eqref{sl}. 
 
@@ -3355,7 +3355,7 @@ When computing deviations, we encounter the following situations, depending on t
 \end{align}
 If there is no solution or if there are several solutions, deviations remain quite large, irrespective of $\Lambda$. A unique solution leads to small deviations, but only for structure constants that are nonzero.
 
-For example, consider the 4-point function $\left<V_{(\frac32,\frac23)}V_{(\frac12,0)}V_{(1,0)}V_{P_{(0,\frac{4+i}{10})}}\right>$ in a loop CFT at $\beta = \frac{5}{4+i}$. Taking interchiral symmetry into account, we write the spectrums
+For example, consider the 4-point function $\left<V_{(\frac32,\frac23)}V_{(\frac12,0)}V_{(1,0)}V_{P_{(0,\frac{4+i}{10})}}\right>$ in a loop CFT at $\beta = \frac{5}{4+i}$. Taking interchiral symmetry into account, we write the spectra
 \begin{align}
  \widetilde{S}^{(s)} = \left\{V_{P_{(0,\frac{1+i}{10})}}\right\}\cup \left\{V_{(r,s)}\right\}_{\substack{r\in\mathbb{N}^*\\ s\in \frac{1}{r}\mathbb{Z} \\ -1<s\leq 1 }} \quad ,\quad \widetilde{S}^{(t)}=\widetilde{S}^{(u)} = \left\{V_{(r,s)}\right\}_{\substack{r\in \frac52+\mathbb{N}\\ s\in \frac{1}{r}\mathbb{Z} \\ -1<s\leq 1 }}\ ,
 \end{align}
@@ -3703,7 +3703,7 @@ We do not discuss the loop model interpretation of the nontrivial degenerate fie
 
 \subsubsection{Correlation functions}\label{sec:cf}
 
-According to our identification of punctures with primary fields, the loop model $N$-point function \eqref{zbig} corresponds to a loop CFT $N$-point function of the type $\left<\prod_{i=1}^N V_{(r_i,s_i)}\right>$. In the bootstrap approach, $N$-point functions are defined as single-valued solutions of crossing symmetry equations. To write these equations, we need to know the spectrum in any channel. We introduce the following notations for spectrums:
+According to our identification of punctures with primary fields, the loop model $N$-point function \eqref{zbig} corresponds to a loop CFT $N$-point function of the type $\left<\prod_{i=1}^N V_{(r_i,s_i)}\right>$. In the bootstrap approach, $N$-point functions are defined as single-valued solutions of crossing symmetry equations. To write these equations, we need to know the spectrum in any channel. We introduce the following notations for spectra:
 \begin{align}
  \mathcal{S}_{\sigma} \underset{\sigma\in \frac12\mathbb{N}^*}{=} \left\{V_{(r,s)}\right\}_{\substack{r\in \sigma+\mathbb{N} \\ s\in\frac{1}{r}\mathbb{Z}}} \quad , \quad \mathcal{S}_0(P) = \left\{V_{P+k\beta^{-1}}\right\}_{k\in\mathbb{Z}} \bigcup \left\{V_{(r,s)}\right\}_{\substack{r\in\mathbb{N}^* \\ s\in\frac{1}{r}\mathbb{Z}}}\ .
  \label{sxs}
@@ -3725,7 +3725,7 @@ has signature $(\sigma^{(s)},\sigma^{(t)},\sigma^{(u)})=(0,2,2)$. Then let us de
 \end{align}
 In the case $\sigma^{(x)}=0$, there can exist $x$-loops with weight $w_x=2\cos(2\pi\beta P_x)$, and we take the $x$-channel spectrum to be $\mathcal{S}_0(P_x)$. 
 
-We conjecture that each combinatorial map $M$ with vertices of valencies $(2r_1,\dots, 2r_N)$ corresponds to a solution $Z_M = \lim_\text{critical} Z(\mathcal{E}_M)$ of the crossing symmetry equations with spectrums $\mathcal{S}_M$, and that these solutions form a basis of the space of solutions \cite{gjnrs23}:
+We conjecture that each combinatorial map $M$ with vertices of valencies $(2r_1,\dots, 2r_N)$ corresponds to a solution $Z_M = \lim_\text{critical} Z(\mathcal{E}_M)$ of the crossing symmetry equations with spectra $\mathcal{S}_M$, and that these solutions form a basis of the space of solutions \cite{gjnrs23}:
 \begin{align}
  \mathcal{Z} = \operatorname{Span}\left\{ Z_M\right\}_{M}\  .
 \end{align}
@@ -3934,7 +3934,7 @@ where $s_0\in \{0,1\}$, and the ratios of 4-point structure constants are again 
 
 Given our 4-point function $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$ and combinatorial map $M$ with $s$-channel signature $\sigma$, let us study the $s$-channel 4-point structure constants $D_{(r,s)}$. A natural ansatz for $D_{(r,s)}$ is a combination of 2-point and 3-point structure constants $D_k \underset{\text{ansatz}}{=} \frac{C_{12k}C_{k34}}{B_k}$ from Eq. \eqref{stu}. It turns out that this ansatz is incorrect, but it obeys the same shift equations as $D_k$. This implies that $D_k$ is given by the ansatz, times a shift-invariant function.
 
-Our 4-point function can depend on the momentums of diagonal fields $V_P$: either one of the 4 fields $V_{(r_i,s_i)}$ with $r_i=0$, or a channel field if $\sigma =0$. A function of the momentum $P$ that is invariant under shifts $P\to P+\beta^{-1}$ and reflections $P\to -P$ must be a function of the loop weight $w(P)$ \eqref{wP}. Therefore, in order to complete the ansatz, we must determine functions of loop weights.
+Our 4-point function can depend on the momenta of diagonal fields $V_P$: either one of the 4 fields $V_{(r_i,s_i)}$ with $r_i=0$, or a channel field if $\sigma =0$. A function of the momentum $P$ that is invariant under shifts $P\to P+\beta^{-1}$ and reflections $P\to -P$ must be a function of the loop weight $w(P)$ \eqref{wP}. Therefore, in order to complete the ansatz, we must determine functions of loop weights.
 
 We first focus on the weight $w=w(P)$ of a channel diagonal field. We have argued in Section \ref{sec:hcm} that $D_{(r,s)}$ is meromorphic in $P$, therefore $D_{(r,s)}$ is also meromorphic in $w=w(P)$. In fact $D_{(r,s)}$ is holomorphic unless $s\in \mathbb{Z}$, in which case $D_{(r,s)}$ has a simple pole at $w=w(P_{(r,s)})$. The residue can be computed using Eqs. \eqref{rdp} and \eqref{dccb}, leading to
 \begin{align}
@@ -4199,7 +4199,7 @@ If and when loop CFTs can be solved at generic central charge, there will remain
 
 \subsubsection{Global symmetries in $d=2$ and $d\geq 3$}
 
-As we stated in Section \ref{sec:models}, the $O(n)$, $PSU(n)$ and Potts CFTs have global symmetries, described by the groups $O(n)$, $PSU(n)$ and $S_Q$ respectively (or their categories of representations if $n,Q$ are not integer). Usually, in physics, we would expect such unbroken symmetries to have a strong influence. Models with different symmetry groups would behave differently, and we would formulate our analysis in group-theoretic language: spectrums as representations, correlation functions as invariant tensors.
+As we stated in Section \ref{sec:models}, the $O(n)$, $PSU(n)$ and Potts CFTs have global symmetries, described by the groups $O(n)$, $PSU(n)$ and $S_Q$ respectively (or their categories of representations if $n,Q$ are not integer). Usually, in physics, we would expect such unbroken symmetries to have a strong influence. Models with different symmetry groups would behave differently, and we would formulate our analysis in group-theoretic language: spectra as representations, correlation functions as invariant tensors.
 
 However, the $O(n)$, $PSU(n)$ and Potts CFTs share many conformal dimensions and even some correlation functions.
 This is because they are all formulated in terms of similar loop ensembles, see Section \ref{sec:coup}.
@@ -4351,7 +4351,7 @@ Weakness #2: I gave a generic answer to this concern by adding a paragraph in th
 
 18- and 19- See C13 and C14.
 
-20- When integrating over a continuous spectrum such as $P\in\mathbb{R}$, it does not matter what happens on a set of measure zero such as the set of degenerate momentums $P_{(r,s)}$. The question would matter if we were specifically interested in taking the limit $P\to P_{(1,1)}$ as in (3.42) in a correlation function, but in GDMMs it is not known what happens in this limit.
+20- When integrating over a continuous spectrum such as $P\in\mathbb{R}$, it does not matter what happens on a set of measure zero such as the set of degenerate momenta $P_{(r,s)}$. The question would matter if we were specifically interested in taking the limit $P\to P_{(1,1)}$ as in (3.42) in a correlation function, but in GDMMs it is not known what happens in this limit.
 
 21- Right, see C18.
 
@@ -4365,7 +4365,7 @@ Weakness #2: I gave a generic answer to this concern by adding a paragraph in th
 
 Reply to Referee 2.
 
-1- This text is about the bootstrap approach. More intuition about the stress-energy tensor is not needed, and would require introducing the Lagrangian approach, so it is outside the scope. --- Basic calculations can be found in exercises. Where to find exercises is indicated in the introduction. --- I have added the origin of the A-D-E terminology for minimal models, see C19. --- Torus and modular invariance are outside the scope of this text, as announced in the introduction. The study of modular invariant partition functions was historically relevant, but I am rederiving the same spectrums in a simpler way.
+1- This text is about the bootstrap approach. More intuition about the stress-energy tensor is not needed, and would require introducing the Lagrangian approach, so it is outside the scope. --- Basic calculations can be found in exercises. Where to find exercises is indicated in the introduction. --- I have added the origin of the A-D-E terminology for minimal models, see C19. --- Torus and modular invariance are outside the scope of this text, as announced in the introduction. The study of modular invariant partition functions was historically relevant, but I am rederiving the same spectra in a simpler way.
 
 2- For lattice loop models, I have added reference [36]. As suggested in the introduction, the Coulomb gas approach is only of historical interest, and irrelevant to current research. Results from that approach are rederived in a simpler way in this text.
 
