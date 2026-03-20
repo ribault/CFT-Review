@@ -590,6 +590,8 @@ Let us summarize these notations:
   \hline
  \end{array}
 \end{align}
+We only wrote a sufficient condition of irreducibility for $\mathcal{R}^d_{\langle r,s\rangle}$: a necessary condition would be more complicated.
+% The representation $\mathcal{R}^d_{\langle r,s\rangle}$ is irreducible if and only if $\Delta_{(r,s)}\notin\{\Delta_{(r',s')}\}_{\substack{r',s'\in\mathbb{N}^*\\ (r',s')\neq (r,s)}}$, but for simplicity we have indicated the sufficient condition $\beta^2\notin \mathbb{Q}$.  ->  Wrong! singular vector at level r's' could be descendant of singular vector at level rs. It seems hard to write a necessary condition for irreducibility.
 It can happen that $V^d_{\langle r,s\rangle}=V^f_{\langle r,s\rangle}$, in which case we may use the former notation to emphasize the existence of a vanishing descendant, or the latter notation to emphasize the absence of non-vanishing singular vectors.
 
 \subsubsection{The Shapovalov form}
@@ -2880,7 +2882,7 @@ in which case the degenerate interchiral block is
 
 \subsection{Computation of Virasoro blocks}
 
-In order to solve crossing symmetry equations numerically, we need an efficient way to compute Virasoro blocks. It is possible to compute Virasoro blocks from their definition \eqref{sdec}, but this is awfully inefficient. We will now review the more efficient recursive representation due to Alexey Zamolodchikov \cite{zam87b}, in the case of 4-point $s$-channel blocks on the sphere. The $t$-channel and $u$-channel blocks can then be deduced using Eq. \eqref{stotu}. For $N$-point blocks on arbitrary Riemann surfaces, see \cite{ccy17}.
+In order to solve crossing symmetry equations numerically, we need to compute Virasoro blocks. It is possible to compute Virasoro blocks from their definition \eqref{sdec}, but this is awfully inefficient. We will now review the more efficient recursive representation due to Alexey Zamolodchikov \cite{zam87b}, in the case of 4-point $s$-channel blocks on the sphere. The $t$-channel and $u$-channel blocks can then be deduced using Eq. \eqref{stotu}. For $N$-point blocks on arbitrary Riemann surfaces, see \cite{ccy17}.
 
 The idea of Zamolodchikov's recursion is to characterize Virasoro blocks by their analytic properties as functions of the channel dimension, in particular their poles, residues, and behaviour at $\infty$. 
 
@@ -2902,6 +2904,7 @@ where the factors are
  c^{r,s}(P_1,P_2) = g^{L_{\langle r,s\rangle}}_{\Delta_{(r,s)},\Delta_1,\Delta_2} \quad , \quad b^{r,s} =
  S'_{L_{(r,s)},L_{(r,s)}}(\Delta_{(r,s)})\ .
 \end{align}
+Let us determine $b^{r,s}$ and $c^{r,s}$ explicitly.
 Using the expression \eqref{sll} of the Shapovalov form as a 2-point function, we write
 \begin{align}
  S_{L_{(r,s)},L_{(r,s)}}(\Delta) = \frac{ \left<L_{(r,s)}V_P(0)L_{(r,s)}V_P(\infty)\right>}{\left<V_P(0)L_{(r,s)}V_P(\infty)\right>} \Big<V_P(0)L_{(r,s)}V_P(\infty)\Big> \ . 
@@ -3297,7 +3300,7 @@ We assume that truncated channel spectrums $\mathcal{S}^{(x)}_\Lambda$ are finit
 
 The truncation scheme remains the same if we use interchiral blocks rather than conformal blocks: in each interchiral block, we keep only the conformal blocks whose total conformal dimension obeys the cutoff \eqref{sl}. 
 
-We then have to approximate conformal blocks so that they can be computed in finite time. Virasoro blocks are defined as infinite series, and Zamolodchikov's recursion also leads to an infinite series, see Section \ref{sec:zrr}. In principle, in order to make errors of the same order of magnitude as when truncating the spectrum, we should use the same cutoff $\Lambda$, now applied to descendant states rather than primary states. This means that in the series $H_\Delta(q)$ \eqref{hdq}, we should keep the term of order $q^N$ provided 
+We then have to approximate conformal blocks so that they can be computed in finite time. To do this, we use Zamolodchikov's recursion for Virasoro blocks, and truncate the resulting infinite series. In order for the block-truncating errors to be comparable to the spectrum-truncating errors, we should use the same cutoff $\Lambda$, now applied to descendant states rather than primary states. This means that in the series $H_\Delta(q)$ \eqref{hdq}, we should keep the term of order $q^N$ provided
 \begin{align}
  \Re\left(\Delta +\bar\Delta\right) + N + \bar N <\Lambda\ . 
 \end{align}
@@ -3316,7 +3319,7 @@ After these truncations and approximations, the crossing symmetry equations \eqr
  = \sum_{k\in\mathcal{S}^{(u)}_\Lambda} D_k^{(u)} \mathcal{G}^{(u)}_{\Lambda|\Delta_k,\bar\Delta_k}(z)\ .
  \label{fziz}
 \end{align}
-After choosing a normalization, for example $D_{k_0}^{(s)}=1$, we choose $Z_\Lambda$ such that $1+|Z_\Lambda|=\sum_{x\in\{s,t,u\}}\left|\mathcal{S}^{(x)}_\Lambda\right|$, so that the system has as many equations as unknowns. Then there is a unique solution $\left(D_k^{(x)|\Lambda,Z_\Lambda}\right)_{k,x}$.
+The number of unknowns is $\sum_{x\in\{s,t,u\}}\left|\mathcal{S}^{(x)}_\Lambda\right|$, and the number of equations is $2|Z_\Lambda|+1$, if we add a normalization condition such as $D_{k_0}^{(s)}=1$. We choose $Z_\Lambda$ such that these two numbers coincide. Then there is a unique solution $\left(D_k^{(x)|\Lambda,Z_\Lambda}\right)_{k,x}$.
 
 \subsubsection{Studying one solution}\label{sec:sos}
 
@@ -3328,7 +3331,8 @@ However, it is computationally expensive to use large values of the cutoff $\Lam
 \begin{align}
  \epsilon_k^{(x)|\Lambda} = \left| 1- \frac{D_k^{(x)|\Lambda,Z^{(1)}_\Lambda}}{D_k^{(x)|\Lambda,Z^{(2)}_\Lambda}}\right|\ .
 \end{align}
-While the deviation depends on $Z_\Lambda^{(1)},Z_\Lambda^{(2)}$, we are only interested in its order of magnitude, which typically does not, so we omit this dependence in the notation $\epsilon_k^{(x)|\Lambda}$.
+While the deviation depends on $Z_\Lambda^{(1)},Z_\Lambda^{(2)}$, we are only interested in its order of magnitude, which typically does not, so we omit this dependence in the notation $\epsilon_k^{(x)|\Lambda}$. In order to minimize the computational cost, we can choose two sets $Z_\Lambda^{(1)},Z_\Lambda^{(2)}$ that differ only by a few points.
+
 When computing deviations, we encounter the following situations, depending on the number $\mathcal{N}$ \eqref{nsol} of solutions of crossing symmetry:
 \begin{align}
 \renewcommand{\arraystretch}{1.5}
@@ -3465,9 +3469,9 @@ The method of removing primary fields can also work if $\mathcal{N}=\infty$. For
 
 \section{Correlation functions in loop CFTs} \label{sec:cloop}
 
-We will now take a short break from CFT, and build correlation functions as statistical sums over loop ensembles. While this construction can be done in detail in lattice loop models, we will only describe some of its main features. We will focus on features that survive in the critical limit, and are therefore relevant to loop CFTs. In particular, we will use combinatorial maps for describing combinatorial features of loop configurations. In loop CFTs, it turns out that combinatorial maps parametrize solutions of crossing symmetry.
-
 \subsection{Statistical sums over loop ensembles}
+
+Let us sketch the construction of correlation functions as statistical sums over loop ensembles. We will focus on features that survive in the critical limit, and are therefore relevant to loop CFTs. In particular, we will use combinatorial maps for describing combinatorial features of loop configurations. In loop CFTs, it turns out that combinatorial maps parametrize solutions of crossing symmetry.
 
 \subsubsection{Sums over configurations of non-intersecting loops}
 
@@ -3475,7 +3479,7 @@ Loop models have correlation functions of the type
 \begin{align}
  Z(\mathcal{E}) = \sum_{E\in\mathcal{E}} W(E)\ , 
 \end{align}
-where $E$ is a set of non-intersecting closed loops on the Riemann sphere $\overline{\mathbb{C}}$, belonging to an ensemble $\mathcal{E}$, and $W$ is a weight function. 
+where $E$ is a set of non-intersecting closed loops on the Riemann sphere $\overline{\mathbb{C}}$, belonging to an ensemble $\mathcal{E}$ of such sets, and $W$ is a weight function.
 
 If we discretize $\overline{\mathbb{C}}$ and replace it with a finite lattice, the ensemble $\mathcal{E}$ becomes finite, and each configuration $E$ is made of finitely many loops: $|\mathcal{E}|, |E|<\infty$. Then the sum $Z(\mathcal{E})$ is manifestly finite, and can be numerically evaluated on a computer. The price to pay for the lattice discretization is that conformal symmetry is broken, and reemerges only in a large lattice size limit --- provided $Z(\mathcal{E})$ does have a limit. 
 
@@ -3491,7 +3495,7 @@ where $n$ is the \myindex{contractible loop weight}\index{loop weight!contractib
 
 \subsubsection{Legless punctures}
 
-Our correlation function $Z(\mathcal{E})$ is the analog of a 0-point function in CFT. In order to have analogs of an $N$-point function, 
+Our correlation function $Z(\mathcal{E})$ is the analog of a 0-point function in CFT. In order to define the analog of an $N$-point function,
 we introduce $N$ \myindex{legless punctures}\index{legless puncture} on our sphere with positions $z_1,\dots, z_N$, which will modify the weights of loops.
 Without violating conformal symmetry, we can let the weight of a loop depend on how the loop splits the set $\{z_1,\dots, z_N\}$ into 2 subsets, i.e. on the loop's combinatorial properties. It cannot however depend on the loop's topology in $\overline{\mathbb{C}}\backslash \{z_1,\dots, z_N\}$, because we want $Z(\mathcal{E})$ to be a single-valued function of $z_1,\dots, z_N$. For example, in the case $N=4$, the following 2 loops are topologically different but combinatorially equivalent, and must therefore have the same weight: 
 \begin{align}
@@ -3651,7 +3655,7 @@ The Potts model is the same as the $PSU(n)$ model, except that the fundamental g
    \draw (0, 0) node[fill, circle, minimum size = 2mm, inner sep = 0]{};
  \end{tikzpicture}
 \end{align}
-However, there is a subtle difference between loops and clusters in the case of a puncture of valency 2. In the following 2 examples, which are equivalent in the loop model, the puncture belongs to a large cluster in the first case but not in the second one: 
+However, there is a subtle difference between loops and clusters in the case of a puncture of valency 2. In the following 2 examples, which are equivalent in the loop model, the puncture belongs to a large cluster in the first case but not in the second case:
 \begin{align}
  \begin{tikzpicture}[baseline=(current  bounding  box.center), scale = .4]
   \fill[red!30] (-2, -3) rectangle (5, 2);
@@ -3667,9 +3671,9 @@ Therefore, the Potts model has punctures with valencies $2r\in 2(\mathbb{N}+2)$,
 
 \subsection{Relation with loop CFTs}
 
-The claim that loop CFTs describe the critical limit of loop models is supported by a large body of work, including direct numerical checks. However, it is not easy to derive it. In fact, it is already tricky to derive the relation between the central charge $c$ and the contractible loop weight $n$. See for example \cite[Appendix A]{grz18} for a discussion of Kondev's original argument, and for an attempt to patch its perceived flaws with the help of the torus partition function. 
+There is much evidence that loop CFTs describe the critical limit of loop models, including direct numerical checks. But it is not easy to prove this statement, or even to find which CFT is the limit of which loop model. In fact, it is already tricky to derive the relation between the central charge $c$ and the contractible loop weight $n$. See for example \cite[Appendix A]{grz18} for a discussion of Kondev's original argument, and for an attempt to patch its perceived flaws with the help of the torus partition function.
 
-We will now assume that loop CFTs are crtitical limits of loop models, and give a simple derivation of the relation between their parameters. We will start with the relation between non-diagonal primary fields $V_{(r,s)}$ and legged punctures. This is relatively straightforward, because both objects have discrete parameters. We will then deduce the relation between diagonal fields $V_P$ and legless punctures, and finally the relation between the central charge and the contractible loop weight.
+We will now assume that loop CFTs are critical limits of loop models, and give a simple derivation of the relation between their parameters. We will start with the relation between non-diagonal primary fields $V_{(r,s)}$ and legged punctures. This is relatively straightforward, because both objects have discrete parameters. We will then deduce the relation between diagonal fields $V_P$ and legless punctures, and finally the relation between the central charge and the contractible loop weight.
 
 \subsubsection{Relations between punctures and primary fields}
 
@@ -3745,7 +3749,7 @@ $ and $
   \end{tikzpicture}
 $. On the other hand, if $M$ is strictly maximal for our ordering, i.e. if $\nexists M'\neq M, M'\geq M$, we expect that the corresponding crossing symmetry equations have a 1d space of solutions, proportional to $Z_M$.
 
-Can we interpret the elements of our space $\mathcal{Z}$ as $4$-point functions $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$? A potential puzzle is that the 4-point functions should only depend on the 4 fields $V_{(r_i,s_i)}$, whereas our solutions can depend on channel weights, for example on $w_s$ if $\sigma^{(s)}=0$. The proposed explanation is that our $4$-point functions involve not only 4 primary fields, but also a combinatorial defect with parameter $w_s$ \cite{rib22}. In the presence of this defect, $s$-channel diagonal fields $V_{P_s}$ such that $w(P_s)=w_s$ appear in the $s$-channel spectrum, and the structure constants of non-diagonal fields may depend on $w_s$. By combinatorial defect we mean a defect that only depends on which punctures are inside or outside the defect. This implies that the defect is topological, but not all topological defects are combinatorial, see Figure \eqref{tvsc}. In the $O(n)$ CFT on the torus, adding combinatorial defect would not spoil modular invariance, but the partition function would become a function of the defect's weight.
+Can we interpret the elements of our space $\mathcal{Z}$ as $4$-point functions $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$? A potential puzzle is that the 4-point functions should only depend on the 4 fields $V_{(r_i,s_i)}$, whereas our solutions can depend on channel weights, for example on $w_s$ if $\sigma^{(s)}=0$. The proposed explanation is that our $4$-point functions involve not only 4 primary fields, but also a combinatorial defect with parameter $w_s$ \cite{rib22}. In the presence of this defect, $s$-channel diagonal fields $V_{P_s}$ such that $w(P_s)=w_s$ appear in the $s$-channel spectrum, and the structure constants of non-diagonal fields may depend on $w_s$. By combinatorial defect we mean a defect that only depends on which punctures are inside or outside the defect. This implies that the defect is topological, but not all topological defects are combinatorial, see Figure \eqref{tvsc}. In the $O(n)$ CFT on the torus, adding a combinatorial defect does not spoil modular invariance, but the partition function becomes a function of the defect's weight.
 
 In particular CFTs, there may exist more or fewer solutions than combinatorial maps. 
 For example, the map 
@@ -3851,7 +3855,11 @@ We consider a 4-point function $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$, assoc
  Z(P) =  \sum_{k\in\mathbb{Z}} D_{P+k\beta^{-1}} \left|\mathcal{F}_{P+k\beta^{-1}}\right|^2 +\sum_{r=1}^\infty \sum_{s\in\frac{1}{r}\mathbb{Z}} D_{(r,s)}(P) \mathcal{G}_{(r,s)}\ .
  \label{zop}
 \end{align}
-Besides the Virasoro blocks $\mathcal{F}_P$, this involves conformal blocks $\mathcal{G}_{(r,s)}$ that gather the contributions of non-diagonal primary fields $V_{(r,s)}$ and their descendants, with $s\notin\mathbb{Z}\implies \mathcal{G}_{(r,s)} = \mathcal{F}_{P_{(r,s)}}\bar{\mathcal{F}}_{P_{(r,-s)}}$.
+Besides the Virasoro blocks $\mathcal{F}_P$, we introduce conformal blocks $\mathcal{G}_{(r,s)}$ that gather the contributions of non-diagonal primary fields $V_{(r,s)}$ and their descendants, with
+\begin{align}
+ (r,s)\notin\mathbb{N}^*\times \mathbb{Z}^*\quad \implies\quad \mathcal{G}_{(r,s)} = \mathcal{F}_{P_{(r,s)}}\bar{\mathcal{F}}_{P_{(r,-s)}}\ .
+\end{align}
+For $(r,s)\in\mathbb{N}^*\times \mathbb{Z}^*$, the primary field $V_{(r,s)}$ has a singular vector. So there exist several representations of the conformal algebra to which $V_{(r,s)}$ could belong, giving rise to different conformal blocks.
 
 \subsubsection{Holomorphicity in the channel momentum}\label{sec:hcm}
 
@@ -3883,7 +3891,7 @@ Simple poles of $Z(P)$ must cancel too, i.e. $\operatorname{Res}_{P=P_{(r,s)}}Z(
   \underset{P=P_{(r,0)}}{\operatorname{Res}} D_{(r,0)}(P) + \underset{P=P_{(r,0)}}{\operatorname{Res}}D_P = 0 \ .
 \end{align}
 Finally, let us consider the simple pole of $\left|\mathcal{F}_{P}\right|^2$ at $P=P_{(r,s)}$ with $r,s\in \mathbb{N}^*$. The residue at this pole includes the term 
-$\mathcal{F}_{P_{(r,s)}}^\text{reg}\bar{\mathcal{F}}_{P_{(r,-s)}}$, which is also present in $\mathcal{G}_{(r,s)}$, so that we must have 
+$\mathcal{F}_{P_{(r,s)}}^\text{reg}\bar{\mathcal{F}}_{P_{(r,-s)}}$, which must also appear in $\mathcal{G}_{(r,s)}$ as the contribution of $V_{(r,s)}$ and some of its descendants. This leads to the relation
 \begin{align}
  \underset{P=P_{(r,s)}}{\operatorname{Res}} D_{(r,s)}(P) + \bar R^{\#}_{r,s} D_{P_{(r,s)}} = 0\ .
  \label{rdp}
@@ -4181,11 +4189,11 @@ The coefficients of these polynomials are trigonometric numbers, related to the 
 
 \subsubsection{Towards solving loop CFTs}
 
-In the conformal bootstrap approach, solving loop CFTs on the sphere means being able to compute $N$-point functions for any $N\in \mathbb{N}^*$. If OPEs exist, this problem reduces to knowing the 3-point structure constants. (See Section \ref{sec:cscb}.) However, 4-point structure constants \eqref{sdrs} are more complicated than products of 3-point structure constants. The factorization of 4-point structure constants can in principle be explored numerically, as we discussed in Section \ref{sec:factor}. But a case-by-case analysis of factorization would be tedious and not necessarily very illuminating, as long as we do not understand the underlying algebraic structure.
+In the conformal bootstrap approach, solving loop CFTs on the sphere means being able to compute $N$-point functions for any $N\in \mathbb{N}^*$. If OPEs exist, this problem reduces to knowing the 3-point structure constants. (See Section \ref{sec:cscb}.) However, 4-point structure constants \eqref{sdrs} are more complicated than products of 3-point structure constants. The factorization of 4-point structure constants can in principle be explored numerically, as we discussed in Section \ref{sec:factor}. But a case-by-case analysis of factorization would be tedious and not necessarily very illuminating, if we do not understand the underlying algebraic structure.
 
 In fact, it is not even clear that OPEs exist in loop CFTs. The fact that 4-point functions are combinations of conformal blocks is a necessary condition for the existence of OPEs, but it is not sufficient. This condition may seem empty at first sight, because conformal blocks form a basis of functions of the cross-ratio. However, only blocks that correspond to channel fields in the loop CFTs' spectrum appear, and this makes the condition nontrivial. More fundamentally, we may try to deduce the existence of OPEs from the definition of statistical loop models. Technically, this might be done by constructing lattice loop models, and studying the algebraic properties of the resulting diagram algebras, see \cite{im25} for work in that direction.
 
-Since correlation functions correspond to combinatorial maps, OPEs and factorization should be formulated in terms of combinatorial maps. For any $r_1,r_2,r_3\in \frac12\mathbb{N}$ such that $\sum r_i\in\mathbb{N}$ there exists exactly one 3-point combinatorial map on the sphere with vertices of valencies $2r_1,2r_2,2r_3$. But it is not clear how to reconstruct the finitely many 4-point maps for a given 4-point function $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$, from these 3-point maps.
+Since correlation functions correspond to combinatorial maps, OPEs and factorization should be formulated in terms of combinatorial maps. For any $r_1,r_2,r_3\in \frac12\mathbb{N}$ such that $\sum r_i\in\mathbb{N}$ there exists exactly one 3-point combinatorial map on the sphere with vertices of valencies $2r_1,2r_2,2r_3$. But it is not clear how to reconstruct the finitely many 4-point maps for a given 4-point function $\left<\prod_{i=1}^4 V_{(r_i,s_i)}\right>$, from such 3-point maps.
 
 If and when loop CFTs can be solved at generic central charge, there will remain the challenge of taking rational limits. Such limits are relevant to applications such as percolation ($\beta^2=\frac23$) or polymers ($\beta^2=\frac12$). These special cases are more difficult than the general case, because representations of the Virasoro algebra have more complicated structures, see for instance \cite{hs21}. Hints of these algebraic complications are visible in the fusion rules of degenerate representations, which are simpler for generic $\beta^2$ \eqref{rrrs} than for rational $\beta^2$ \eqref{rfrf}. In the case of a 4-point function, we know that conformal blocks diverge in the limit $\beta^2\to \frac{q}{p}\in\mathbb{Q}$, but we expect that the divergences cancel so that the 4-point function converges. When a linear combination of divergent blocks $\mathcal{G} = \sum_k D_k \mathcal{G}_k$ converges, the interpretation is that the corresponding modules of the conformal algebra combine into a bigger indecomposable module in the limit. Such phenomenons also occur in CFTs with 2 degenerate fields, in particular in the limit GMM\,$\to$\,AMM of Section \ref{sec:lod}.
 
