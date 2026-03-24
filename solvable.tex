@@ -1,4 +1,6 @@
 
+% Changes to be reverted: plurals of spectrum and momentum, BST file.
+
 \documentclass[12pt, a4paper]{article}
 
 \raggedbottom
@@ -11,7 +13,7 @@
 
 \usepackage[top=18mm,bottom=18mm,left=25mm,right=25mm]{geometry}
 
-\usepackage{showkeys}
+%\usepackage{showkeys}
 
 \usepackage{amsmath,amssymb,amsfonts}
 
@@ -223,7 +225,7 @@ Technical terms that are defined in this text can be found in the index. We also
  \item I would like to thank Linnea Grans-Samuelsson, Jesper Jacobsen, Santiago Migliaccio, Nikita Nemkov, Rongvoram Nivesvivat, Marco Picco, Paul Roux, Hubert Saleur, and Raoul Santachiara for collaboration on loop CFTs and related subjects. 
  \item I am grateful to Antoine Bourget, Victor Godet, Jesper Jacobsen, Gregory Korchemsky, Paul Roux, Ingo Runkel, Hubert Saleur, Xi Yin and Bernardo Zan for helpful discussions and correspondence.
  \item I would like to thank Max Downing, Kay Wiese, Rongvoram Nivesvivat and Paul Roux for comments and suggestions on the manuscript. 
- \item I am grateful to the 2 anonymous SciPost reviewers for their valuable suggestions, which led to many corrections and clarifications.
+ \item I am grateful to the 2 anonymous SciPost reviewers for their valuable suggestions, which led to many corrections and clarifications, and to the editor Monica Guica.
  \item This work is partly a result of the project ReNewQuantum, which received funding from the European Research Council.
 \end{itemize}
 
@@ -4379,14 +4381,38 @@ Reply to Referee 2.
 
 ===== Reply to the follow-up report by Referee 1 =========
 
-- At the end of Section 1.4, summarized notations and clarified the relation with irreducibility.
+List of changes:
 
-- Rewritten Section 1.2.3 after Eq. (1.54), in order to clarify in which cases descendants are determined by primaries. Also modified the last sentence of Section 1.2.4.
+C1. At the end of Section 1.4, summarized notations and clarified the relation with irreducibility.
 
-- At the beginning of Section 1.2.4, added a clause assuming $\beta^2\notin\mathbb{Q}$. Added the same assumption at the beginning of 1.2.5, as suggested by the referee.
+C2. Rewritten Section 1.2.3 after Eq. (1.54), in order to clarify in which cases descendants are determined by primaries. Also modified the last sentence of Section 1.2.4.
 
-- At the beginning of Section 1.2, sketched how fields are constructed in two other types of approaches.
+C3. At the beginning of Section 1.2.4, added a clause assuming $\beta^2\notin\mathbb{Q}$. Added the same assumption at the beginning of 1.2.5.
 
-- Before (1.22), removed the superfluous assumption that $p,q$ are coprime, making it clearer that $(p, q)=(1,1)$ is allowed.
+C4. At the beginning of Section 1.2, sketched how fields are constructed in two other types of approaches.
 
-- More explanations before what is now Eq. (2.35), to better describe the limit.
+C5. Before (1.22), removed the superfluous assumption that $p,q$ are coprime, making it clearer that $(p, q)=(1,1)$ is allowed.
+
+C6. More explanations before what is now Eq. (2.35), to better describe the limit.
+
+C7. Changed bibliography style to SciPost_bibstyle, which displays journal references.
+
+C8. Changed to Latin plurals: momentums -> momenta, spectrums -> spectra.
+
+Reply to Report #2 by Referee 1:
+
+1. I have tried to clarify this point, and to make less general and more precise statements. See changes C1, C2, C3.
+
+2. Done, see C3.
+
+3. Sorry for not paying enough attention to this issue in the previous revision. This is now addressed in changes C1 and C3: C1 for $V^d$ versus $V^f$, and C3 for correcting section 1.2.4 by assuming $\beta^2\notin\mathbb{Q}$, which makes $V^d_{\langle 1,1\rangle}$ unambiguous.
+
+4. The description of fields as operators and as functionals is now mentioned, see C4.
+
+5. See change C5.
+
+6. See change C6.
+
+6.1. The referee makes a convincing case that the origin of plurals is not relevant. I still believe that it is better to use regular plurals when available. For this version, I have deferred to the referee, see C8.
+
+7. I have done this, see C7. This has broken all links to arXiv, presumably due to a feature of SciPost_bibstyle.bst.
